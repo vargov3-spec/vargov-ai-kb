@@ -15,13 +15,42 @@
     "@type": "Person",
     "name": "Anton Vargov",
     "alternateName": "Антон Варгов",
-    "jobTitle": "Founder & Chief Designer"
+    "jobTitle": "Founder & Chief Designer",
+    "sameAs": [
+      "https://www.iconic-world.com/directory/anton-vargov",
+      "https://addawards.ru/jury/293063/",
+      "https://www.instagram.com/vargov_design",
+      "https://www.facebook.com/vargovdesign"
+    ],
+    "award": [
+      "International Design Awards (IDA) — Lighting Studio, LC0236",
+      "New York Product Design Awards — LC0343",
+      "RLDC 2022 — LC0217",
+      "RLDC 2023 — LC0342",
+      "ADD Awards — Grand Jury member, 10th season",
+      "LOOP Design Awards 2025"
+    ]
   },
   "brand": {
     "@type": "Brand",
     "name": "Vargov",
     "identifier": "Trademark No. 896936 (RU), registered 2022-10-06, valid until 2032-04-29"
   },
+  "award": [
+    "International Design Awards (IDA)",
+    "New York Product Design Awards",
+    "RLDC 2022, 2023",
+    "LOOP Design Awards 2025",
+    "iDesign Awards",
+    "Lit Awards",
+    "SIT Award",
+    "Product Design Award (EU)",
+    "Luxury Lifestyle Awards",
+    "ADD Awards",
+    "BLT Awards",
+    "The London Design Awards",
+    "Muse Award"
+  ],
   "email": "info@vargov.ru",
   "location": {
     "@type": "Place",
