@@ -1,0 +1,41 @@
+<!-- Vargov Design — site-wide structured data. Вставить в Tilda: Настройки сайта -> Ещё -> "Код в head для всех страниц" (или аналогичный пункт, отвечающий за код в <head>). -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vargov Design",
+  "alternateName": "Vargov® Design",
+  "url": "https://vargov.ru",
+  "sameAs": ["https://vargov.design"],
+  "slogan": "Russian design. World scale. Made in Vargov®",
+  "founder": {"@type": "Person", "name": "Anton Vargov"},
+  "brand": {"@type": "Brand", "name": "Vargov", "identifier": "Trademark No. 896936 (RU)"},
+  "email": "info@vargov.ru",
+  "location": {
+    "@type": "Place",
+    "address": {"@type": "PostalAddress", "streetAddress": "Nakhimovsky Prospekt 24, Pavilion 2, Stand 212", "addressLocality": "Moscow", "addressCountry": "RU"}
+  }
+}
+</script>
+
+<script>
+(function () {
+  var DATA_URL = "https://vargov.ru/vargov-schema-by-path.json";
+  fetch(DATA_URL, { cache: "force-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (byPath) {
+      if (!byPath) return;
+      var path = window.location.pathname.replace(/\/$/, "") || "/";
+      var node = byPath[path] || byPath[window.location.pathname];
+      if (!node) return;
+      var wrapped = { "@context": "https://schema.org", "@type": "Product" };
+      for (var k in node) { if (k !== "@type") wrapped[k] = node[k]; }
+      var s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.text = JSON.stringify(wrapped);
+      document.head.appendChild(s);
+    })
+    .catch(function () { /* нет данных для страницы — не критично, Organization schema уже есть */ });
+})();
+</script>

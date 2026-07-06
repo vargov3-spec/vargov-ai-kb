@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vargov Design",
+  "alternateName": "Vargov® Design",
+  "legalName": "Варгов Антон Геннадьевич (VARGOV trademark holder)",
+  "url": "https://vargov.ru",
+  "sameAs": [
+    "https://vargov.design",
+    "https://t.me/AntonVargov"
+  ],
+  "logo": "https://vargov.ru/favicon.ico",
+  "slogan": "Russian design. World scale. Made in Vargov®",
+  "founder": {
+    "@type": "Person",
+    "name": "Anton Vargov",
+    "alternateName": "Антон Варгов",
+    "jobTitle": "Founder & Chief Designer"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Vargov",
+    "identifier": "Trademark No. 896936 (RU), registered 2022-10-06, valid until 2032-04-29"
+  },
+  "email": "info@vargov.ru",
+  "location": {
+    "@type": "Place",
+    "name": "Vargov Design Official Showroom",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nakhimovsky Prospekt 24, Pavilion 2, Stand 212",
+      "addressLocality": "Moscow",
+      "addressCountry": "RU"
+    }
+  },
+  "areaServed": ["RU", "AE", "VN", "CIS", "Global"],
+  "manufacturingFacility": {
+    "@type": "Place",
+    "name": "Vargov Design exclusive factory",
+    "addressCountry": "CN"
+  },
+  "makesOffer": {
+    "@type": "OfferCatalog",
+    "name": "Vargov Design product categories",
+    "itemListElement": [
+      {"@type": "OfferCatalog", "name": "Lighting compositions", "url": "https://vargov.ru/lighting_compositions_vargovdesign_ru"},
+      {"@type": "OfferCatalog", "name": "Decorative compositions", "url": "https://vargov.ru/decorative_compositions_vargovdesign_ru"},
+      {"@type": "OfferCatalog", "name": "Floor lamps, sconces, tabletop art objects", "url": "https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru"},
+      {"@type": "OfferCatalog", "name": "Sculptural compositions, decor", "url": "https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru"}
+    ]
+  }
+}

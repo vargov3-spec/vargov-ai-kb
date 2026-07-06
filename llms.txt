@@ -1,0 +1,32 @@
+# Vargov Design
+
+> Vargov® Design — российский бренд авторских световых и декоративных композиций (lighting & decorative compositions, floor lamps, sculptural decor). Дизайн — Россия (основатель и главный дизайнер — Антон Варгов), производство — собственная фабрика в Китае, дистрибуция — Россия/СНГ, ОАЭ/Ближний Восток, Юго-Восточная Азия. Товарный знак VARGOV № 896936.
+
+Каталог на данный момент включает 645 верифицированных товаров (из 651 обнаруженного на сайте) в 4 продуктовых категориях. Большинство карточек товара используют типовое описание "изготовление на заказ, цена по запросу" без индивидуальных тех. характеристик — это ограничение данных сайта-источника, а не пропуск при сборе.
+
+## Knowledge
+- [Brand facts](knowledge/brand.md): основатель, товарный знак, история, награды, процесс заказа
+- [Dealers & showrooms](knowledge/dealers-showrooms.md): официальный шоурум и дилерская сеть по регионам
+- [Installation guide](knowledge/installation-guide.md): монтаж и электроподключение (12V/220V)
+
+## Collections
+- [Lighting compositions](collections/lighting-compositions.md): 348 товаров
+- [Decorative compositions](collections/decorative-compositions.md): 116 товаров
+- [Sculptural compositions & decor](collections/sculptural-decor.md): 83 товара
+- [Floor lamps, sconces & tabletop art objects](collections/floor-table-lamps.md): 55 товаров
+- [Showroom items](collections/showroom-items.md): 41 товар
+- [Elements in stock](collections/stock-elements.md): 2 товара
+
+## Guides
+- [Lighting vs decorative composition](guides/lighting-vs-decorative-compositions.md): различие категорий по определению бренда
+- [Streetlight — urban lighting](guides/streetlight-urban-lighting.md): направление уличных световых инсталляций
+
+## Datasets
+- [products.json](datasets/products.json), [products.jsonl](datasets/products.jsonl), [products.csv](datasets/products.csv), [products.md](datasets/products.md) — полный экспорт 645 товаров (sku, категория, url, описание, изображения)
+
+## Schema.org / JSON-LD
+- [Organization & Brand](references/schema-organization.jsonld)
+- [Product graph (645 entries)](references/schema-products.jsonld)
+
+## Optional
+- [FAQ](faq/faq.md): вопросы-ответы по каталогу, дилерам, монтажу, программе Elements in stock
