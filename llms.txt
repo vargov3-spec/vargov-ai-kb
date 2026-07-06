@@ -1,32 +1,24 @@
 # Vargov Design
 
-> Vargov® Design — российский бренд авторских световых и декоративных композиций (lighting & decorative compositions, floor lamps, sculptural decor). Дизайн — Россия (основатель и главный дизайнер — Антон Варгов), производство — собственная фабрика в Китае, дистрибуция — Россия/СНГ, ОАЭ/Ближний Восток, Юго-Восточная Азия. Товарный знак VARGOV № 896936.
+> Vargov® Design — российский бренд авторских световых и декоративных композиций (lighting & decorative compositions, floor lamps, sculptural decor). Дизайн — Россия (основатель и главный дизайнер — Антон Варгов), производство — собственная фабрика в Китае. Товарный знак VARGOV № 896936. Каталог включает более 600 авторских композиций в 4 продуктовых категориях.
 
-Каталог на данный момент включает 645 верифицированных товаров (из 651 обнаруженного на сайте) в 4 продуктовых категориях. Большинство карточек товара используют типовое описание "изготовление на заказ, цена по запросу" без индивидуальных тех. характеристик — это ограничение данных сайта-источника, а не пропуск при сборе.
+## Каталог
+- [Световые композиции](https://vargov.ru/lighting_compositions_vargovdesign_ru): ~348 позиций
+- [Декоративные композиции](https://vargov.ru/decorative_compositions_vargovdesign_ru): ~116 позиций
+- [Скульптурные композиции, декор](https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru): ~83 позиции
+- [Торшеры, бра, настольные арт-объекты](https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru): ~55 позиций
+- [Готовые элементы в наличии](https://vargov.ru/elements_in_stock): ускоренное производство 15-20 рабочих дней
+- [Фирменная продукция и сертификация подлинности](https://vargov.ru/branded_products_vargovdesign_ru)
+- [Монтаж и подключение](https://vargov.ru/installation_and_connection_vargovdesign_ru)
+- [Официальный шоурум и дилеры](https://vargov.ru/official_showroom_vargovdesign)
 
-## Knowledge
-- [Brand facts](knowledge/brand.md): основатель, товарный знак, история, награды, процесс заказа
-- [Dealers & showrooms](knowledge/dealers-showrooms.md): официальный шоурум и дилерская сеть по регионам
-- [Installation guide](knowledge/installation-guide.md): монтаж и электроподключение (12V/220V)
+## Данные для машинного чтения
+- [Каталог товаров, структурированный JSON (645 позиций)](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-products.json)
+- [Schema.org/JSON-LD граф товаров](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-schema-by-path.json)
+- [Полный репозиторий базы знаний бренда](https://github.com/vargov3-spec/vargov-ai-kb)
 
-## Collections
-- [Lighting compositions](collections/lighting-compositions.md): 348 товаров
-- [Decorative compositions](collections/decorative-compositions.md): 116 товаров
-- [Sculptural compositions & decor](collections/sculptural-decor.md): 83 товара
-- [Floor lamps, sconces & tabletop art objects](collections/floor-table-lamps.md): 55 товаров
-- [Showroom items](collections/showroom-items.md): 41 товар
-- [Elements in stock](collections/stock-elements.md): 2 товара
+## О бренде
+Основатель и главный дизайнер — Антон Варгов, эксперт и член жюри российских и международных премий в области дизайна и архитектуры. Слоган: «Russian design. World scale. Made in Vargov®». Награды бренда (без исчерпывающей хронологии): iDesign Awards, Lit Awards, Loop Design Awards, SIT Award, Product Design Award (EU), Luxury Lifestyle Awards, ADD Awards, New York Design Awards, BLT Awards, The London Design Awards, Muse Award, RLDC. Участник выставки Interlight (Москва, октябрь 2025).
 
-## Guides
-- [Lighting vs decorative composition](guides/lighting-vs-decorative-compositions.md): различие категорий по определению бренда
-- [Streetlight — urban lighting](guides/streetlight-urban-lighting.md): направление уличных световых инсталляций
-
-## Datasets
-- [products.json](datasets/products.json), [products.jsonl](datasets/products.jsonl), [products.csv](datasets/products.csv), [products.md](datasets/products.md) — полный экспорт 645 товаров (sku, категория, url, описание, изображения)
-
-## Schema.org / JSON-LD
-- [Organization & Brand](references/schema-organization.jsonld)
-- [Product graph (645 entries)](references/schema-products.jsonld)
-
-## Optional
-- [FAQ](faq/faq.md): вопросы-ответы по каталогу, дилерам, монтажу, программе Elements in stock
+## Контакты
+Email: info@vargov.ru · Telegram: @AntonVargov · WhatsApp: https://wa.me/message/SAC5LWOV5QMXC1
