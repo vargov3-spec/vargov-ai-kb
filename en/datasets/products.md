@@ -1,13 +1,13 @@
 # Vargov Design — product summary
 
-Total products collected: 645
+Total products collected: 651
 
 | Category | Count |
 |---|---|
-| Lighting compositions | 348 |
+| Lighting compositions | 353 |
 | Decorative compositions | 116 |
 | Sculptural compositions & decor | 83 |
-| Floor lamps, sconces & tabletop art objects | 55 |
+| Floor lamps, sconces & tabletop art objects | 56 |
 | Showroom items | 41 |
 | Elements in stock | 2 |
 
@@ -32,8 +32,8 @@ Total products collected: 645
 | LC0024 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-160513443831-dekorativnaya-kompozitsiya |
 | LC0030 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-801845719751-dekorativnaya-kompozitsiya |
 | LC0034 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-558794771441-dekorativnaya-kompozitsiya |
-| LC0037 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-148550483401-dekorativnaya-kompozitsiya |
 | LC0037 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-104432255321-dekorativnaya-kompozitsiya |
+| LC0037 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-148550483401-dekorativnaya-kompozitsiya |
 | LC0047 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-210800206641-dekorativnaya-kompozitsiya |
 | LC0049 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-741119931231-dekorativnaya-kompozitsiya |
 | LC0050 | Decorative compositions | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-372937012751-dekorativnaya-kompozitsiya |
@@ -180,6 +180,7 @@ Total products collected: 645
 | LC0565 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-935840569182-bra-nastennaya-svetovaya-kompozitsiya |
 | LC0567 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-610840687692-bra |
 | LC0569 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-185649609872-nastolnii-art-obekt |
+| LC0583 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-647521537732-bra |
 | LC0586 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-176715272222-torsher-driplight |
 | LC0593 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-789365745292-torsher |
 | LC0593-1 | Floor lamps, sconces & tabletop art objects | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-703064580592-torsher |
@@ -241,6 +242,7 @@ Total products collected: 645
 | LC0129 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-556363437641-svetovaya-kompozitsiya |
 | LC0132 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-383543375531-svetovaya-kompozitsiya |
 | LC0133 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-369857147741-svetovaya-kompozitsiya |
+| LC0134 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-942054287141-svetovaya-kompozitsiya |
 | LC0135 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-180442517611-svetovaya-kompozitsiya |
 | LC0137 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-989887678951-svetovaya-kompozitsiya |
 | LC0138 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya |
@@ -267,6 +269,7 @@ Total products collected: 645
 | LC0191 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-315399171911-svetovaya-kompozitsiya |
 | LC0192 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-296271890451-svetovaya-kompozitsiya |
 | LC0192-1 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-767045508961-svetovaya-kompozitsiya |
+| LC0193 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-664570610321-svetovaya-kompozitsiya |
 | LC0202 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-741106806531-svetovaya-kompozitsiya |
 | LC0203 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-497738429011-svetovaya-kompozitsiya |
 | LC0216 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-237731409711-svetovaya-kompozitsiya |
@@ -314,6 +317,7 @@ Total products collected: 645
 | LC0302 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-453804169001-svetovaya-kompozitsiya |
 | LC0303 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-761587163161-svetovaya-kompozitsiya |
 | LC0304 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-123177401411-svetovaya-kompozitsiya |
+| LC0305 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-960308810281-svetovaya-kompozitsiya |
 | LC0306 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-966112742881-svetovaya-kompozitsiya |
 | LC0307 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-912315738321-svetovaya-kompozitsiya |
 | LC0308 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-139532820071-svetovaya-kompozitsiya |
@@ -345,6 +349,7 @@ Total products collected: 645
 | LC0347 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-303940464841-svetovaya-kompozitsiya |
 | LC0348 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-592628322791-svetovaya-kompozitsiya |
 | LC0350 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-721448258801-svetovaya-kompozitsiya |
+| LC0351 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-962748462131-svetovaya-kompozitsiya |
 | LC0352 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-830976939841-svetovaya-kompozitsiya |
 | LC0353 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-110311780441-svetovaya-kompozitsiya |
 | LC0354 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-794408338491-svetovaya-kompozitsiya |
@@ -498,6 +503,7 @@ Total products collected: 645
 | LC0540 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-169961402292-svetovaya-kompozitsiya |
 | LC0541 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-120505114532-svetovaya-kompozitsiya |
 | LC0542 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-896095370942-svetovaya-kompozitsiya |
+| LC0543-2 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-202422240802-svetovaya-kompozitsiya |
 | LC0544 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-256989362292-svetovaya-kompozitsiya |
 | LC0545 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-152539694592-svetovaya-kompozitsiya |
 | LC0545-1 | Lighting compositions | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-623760643502-svetovaya-kompozitsiya |
@@ -618,45 +624,45 @@ Total products collected: 645
 | LC0594 | Sculptural compositions & decor | https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-961607348842-nastennie-svetovie-kompozitsii |
 | LC0600 | Sculptural compositions & decor | https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-499797017883-nastenno-potolochnaya-dekorativnaya-komp |
 | 212938893182 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-212938893182-svetovaya-kompozitsiya-lc0218 |
-| 234661451062 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-234661451062-svetovaya-kompozitsiya-lc0282 |
-| 172654861122 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-172654861122-svetovaya-kompozitsiya-lc0298 |
 | 772967826842 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-772967826842-svetovaya-kompozitsiya-lc0433 |
-| 538361402832 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-538361402832-svetovaya-kompozitsiya-lc0365 |
+| 172654861122 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-172654861122-svetovaya-kompozitsiya-lc0298 |
 | 924729097312 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-924729097312-svetovaya-kompozitsiya-lc0310 |
+| 538361402832 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-538361402832-svetovaya-kompozitsiya-lc0365 |
+| 724654671882 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-724654671882-svetovaya-kompozitsiya-lc0358 |
 | 482767782522 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-482767782522-nastennaya-svetovaya-kompozitsiya-lc0495 |
 | 407154384152 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-407154384152-nastolnii-art-obekt-lc0357 |
-| 310225621252 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-310225621252-svetovaya-kompozitsiya-lc0435 |
+| 639189206022 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-639189206022-nastennaya-svetovaya-kompozitsiya-lc0258 |
+| 232799418342 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-232799418342-svetovaya-kompozitsiya-lc0218 |
+| 968794029062 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-968794029062-nastennaya-svetovaya-kompozitsiya-lc0373 |
 | 991713946112 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-991713946112-svetovoi-element-lc0137 |
 | 381753378112 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-381753378112-svetovoi-element-lc0478 |
-| 639189206022 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-639189206022-nastennaya-svetovaya-kompozitsiya-lc0258 |
-| 796979818002 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-796979818002-svetovoi-element-lc0334 |
-| 968794029062 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-968794029062-nastennaya-svetovaya-kompozitsiya-lc0373 |
 | 683334890622 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-683334890622-svetovoi-element-lc0287 |
-| 232799418342 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-232799418342-svetovaya-kompozitsiya-lc0218 |
-| 767856602512 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-767856602512-svetovoi-element-lc0332 |
+| 801609124302 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-801609124302-svetovoi-element-lc0319 |
+| 234661451062 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-234661451062-svetovaya-kompozitsiya-lc0282 |
+| 796979818002 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-796979818002-svetovoi-element-lc0334 |
 | 644350158812 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-644350158812-svetovaya-kompozitsiya-lc0319 |
 | 467136994522 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-467136994522-nastennaya-dekorativnaya-kompozitsiya-lc |
-| 300287759572 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-300287759572-svetovoi-element-lc0272 |
 | 330278760532 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-330278760532-svetovoi-element-lc0510 |
-| 429658748472 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-429658748472-svetovoi-element-lc0371 |
-| 658107124782 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-658107124782-svetovoi-element-lc0400 |
+| 767856602512 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-767856602512-svetovoi-element-lc0332 |
+| 300287759572 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-300287759572-svetovoi-element-lc0272 |
 | 499821971892 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-499821971892-svetovoi-element-lc0365 |
 | 823591019442 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-823591019442-svetovoi-element-lc0536 |
-| 538789809242 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-538789809242-svetovoi-element-lc0028 |
-| 597133512132 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-597133512132-svetovaya-kompozitsiya-lc0164 |
 | 617033344292 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-617033344292-svetovoi-element-lc0383 |
-| 869270585992 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-869270585992-svetovoi-element-lc0031 |
-| 802325814232 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-802325814232-svetovoi-element-lc0372 |
+| 429658748472 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-429658748472-svetovoi-element-lc0371 |
+| 658107124782 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-658107124782-svetovoi-element-lc0400 |
+| 672118902932 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-672118902932-svetovoi-element-lc0310 |
+| 597133512132 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-597133512132-svetovaya-kompozitsiya-lc0164 |
 | 521353378352 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-521353378352-svetovoi-element-lc0262 |
+| 869270585992 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-869270585992-svetovoi-element-lc0031 |
+| 310225621252 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-310225621252-svetovaya-kompozitsiya-lc0435 |
+| 802325814232 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-802325814232-svetovoi-element-lc0372 |
+| 538789809242 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-538789809242-svetovoi-element-lc0028 |
 | 348074910292 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-348074910292-svetovaya-kompozitsiya-lc0217 |
-| 751993277582 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-751993277582-svetovoi-element-lc0164 |
+| 837392712952 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-837392712952-elementi-dlya-kompozitsii-lc0406-i-dlya |
 | 857320580032 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-857320580032-svetovoi-element-lc0087 |
+| 751993277582 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-751993277582-svetovoi-element-lc0164 |
+| 213072977992 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-213072977992-svetovoi-element-lc0232 |
 | 474151273432 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-474151273432-svetovaya-kompozitsiya-lc0536 |
 | 578470979502 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-578470979502-svetovaya-kompozitsiya-lc0217 |
-| 213072977992 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-213072977992-svetovoi-element-lc0232 |
-| 801609124302 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-801609124302-svetovoi-element-lc0319 |
-| 724654671882 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-724654671882-svetovaya-kompozitsiya-lc0358 |
-| 837392712952 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-837392712952-elementi-dlya-kompozitsii-lc0406-i-dlya |
-| 672118902932 | Showroom items | https://vargov.ru/official_showroom_vargovdesign/tproduct/1876430811-672118902932-svetovoi-element-lc0310 |
-| 355090529943 | Elements in stock | https://vargov.ru/elements_in_stock/tproduct/2401769381-355090529943-elementi-lc0298-v-nalichii |
 | 222090772823 | Elements in stock | https://vargov.ru/elements_in_stock/tproduct/2401769381-222090772823-elementi-lc0264-v-nalichii |
+| 355090529943 | Elements in stock | https://vargov.ru/elements_in_stock/tproduct/2401769381-355090529943-elementi-lc0298-v-nalichii |
