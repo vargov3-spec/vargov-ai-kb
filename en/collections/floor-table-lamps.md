@@ -2,7 +2,7 @@
 
 Source category: https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru
 
-Items in this collection: 55
+Items in this collection: 56
 
 ## Item list
 - [LC0023](../products/floor-table-lamps/LC0023.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-850569515171-torsher
@@ -54,6 +54,7 @@ Items in this collection: 55
 - [LC0565](../products/floor-table-lamps/LC0565.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-935840569182-bra-nastennaya-svetovaya-kompozitsiya
 - [LC0567](../products/floor-table-lamps/LC0567.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-610840687692-bra
 - [LC0569](../products/floor-table-lamps/LC0569.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-185649609872-nastolnii-art-obekt
+- [LC0583](../products/floor-table-lamps/LC0583.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-647521537732-bra
 - [LC0586](../products/floor-table-lamps/LC0586.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-176715272222-torsher-driplight
 - [LC0593](../products/floor-table-lamps/LC0593.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-789365745292-torsher
 - [LC0593-1](../products/floor-table-lamps/LC0593-1.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-703064580592-torsher
