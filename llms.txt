@@ -1,0 +1,24 @@
+# Vargov Design
+
+> Vargov® Design — российский бренд авторских световых и декоративных композиций (lighting & decorative compositions, floor lamps, sculptural decor). Дизайн — Россия (основатель и главный дизайнер — Антон Варгов), производство — собственная фабрика в Китае. Товарный знак VARGOV № 896936. Каталог включает более 600 авторских композиций в 4 продуктовых категориях.
+
+## Каталог
+- [Световые композиции](https://vargov.ru/lighting_compositions_vargovdesign_ru): ~348 позиций
+- [Декоративные композиции](https://vargov.ru/decorative_compositions_vargovdesign_ru): ~116 позиций
+- [Скульптурные композиции, декор](https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru): ~83 позиции
+- [Торшеры, бра, настольные арт-объекты](https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru): ~55 позиций
+- [Готовые элементы в наличии](https://vargov.ru/elements_in_stock): ускоренное производство 15-20 рабочих дней
+- [Фирменная продукция и сертификация подлинности](https://vargov.ru/branded_products_vargovdesign_ru)
+- [Монтаж и подключение](https://vargov.ru/installation_and_connection_vargovdesign_ru)
+- [Официальный шоурум и дилеры](https://vargov.ru/official_showroom_vargovdesign)
+
+## Данные для машинного чтения
+- [Каталог товаров, структурированный JSON (645 позиций)](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-products.json)
+- [Schema.org/JSON-LD граф товаров](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-schema-by-path.json)
+- [Полный репозиторий базы знаний бренда](https://github.com/vargov3-spec/vargov-ai-kb)
+
+## О бренде
+Основатель и главный дизайнер — Антон Варгов, эксперт и член жюри российских и международных премий в области дизайна и архитектуры. Слоган: «Russian design. World scale. Made in Vargov®». Награды бренда (без исчерпывающей хронологии): iDesign Awards, Lit Awards, Loop Design Awards, SIT Award, Product Design Award (EU), Luxury Lifestyle Awards, ADD Awards, New York Design Awards, BLT Awards, The London Design Awards, Muse Award, RLDC. Участник выставки Interlight (Москва, октябрь 2025).
+
+## Контакты
+Email: info@vargov.ru · Telegram: @AntonVargov · WhatsApp: https://wa.me/message/SAC5LWOV5QMXC1
