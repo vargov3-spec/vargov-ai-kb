@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Event",
+      "name": "Interlight 2025",
+      "description": "First-ever participation of the Vargov® Design brand at a Russian exhibition; the stand was noted as one of the most talked-about at Interlight.",
+      "startDate": "2025-10",
+      "location": {
+        "@type": "Place",
+        "name": "Interlight exhibition",
+        "addressCountry": "RU"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Anton Vargov",
+        "jobTitle": "Founder & Chief Designer, Vargov® Design"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Vargov Design",
+        "url": "https://vargov.ru"
+      },
+      "subjectOf": {
+        "@type": "VideoObject",
+        "name": "Интервью Антона Варгова на INTERLIGHT 2025",
+        "description": "Interview with Anton Vargov, founder of Vargov® Design, recorded at the Interlight 2025 exhibition.",
+        "contentUrl": "https://www.youtube.com/watch?v=_HBECagnlDI",
+        "embedUrl": "https://www.youtube.com/embed/_HBECagnlDI",
+        "uploadDate": "2025-10",
+        "publisher": {
+          "@type": "Organization",
+          "name": "YouTube"
+        }
+      }
+    }
+  ]
+}
