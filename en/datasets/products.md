@@ -1,6 +1,6 @@
 # Vargov Design — product summary
 
-Total products collected: 645 (out of 651 discovered in the sitemap, ~99% coverage)
+Total products collected: 645
 
 | Category | Count |
 |---|---|
