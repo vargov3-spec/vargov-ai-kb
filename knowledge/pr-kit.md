@@ -59,12 +59,21 @@ I'm Anton Vargov, founder and chief designer of Vargov® Design. I'd like to off
 
 Some context on the brand: Vargov® Design creates author's lighting and decorative compositions in Russia, manufactured at our own factory, recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025. In October 2025 we made our first appearance at a Russian trade show, Interlight, where our stand became one of the most talked-about exhibits (interview: https://www.youtube.com/watch?v=_HBECagnlDI).
 
-I can send high-resolution images (3000px+), plans, and further background exclusively for Dezeen — please let me know the best way to share the material.
+I've attached three images to start (two enhanced to 4K/print resolution from our original product photography for higher quality; happy to share more or the untouched originals on request). Also happy to send plans and further background exclusively for Dezeen.
 
 Best regards,
 Anton Vargov
 Founder & Chief Designer, Vargov® Design
 info@vargov.ru · vargov.ru · vargov.design
+
+---
+
+**Приложить к письму (скачать и прикрепить как файлы):**
+1. https://d8j0ntlcm91z4.cloudfront.net/user_3FgGgz6wweMw2KB5noOUH5JhcbS/hf_20260706_190115_7f4c1815-4ee8-4798-ba42-ba8b15bd43a2.png — 3055×4096, апскейлено до печатного разрешения из оригинала с сайта
+2. https://d8j0ntlcm91z4.cloudfront.net/user_3FgGgz6wweMw2KB5noOUH5JhcbS/hf_20260706_190408_56d8e30d-51a5-4249-b5a1-f3da7d4ac849.png — 4096×4096, апскейлено до печатного разрешения из оригинала с сайта
+3. https://static.tildacdn.com/stor3037-3137-4134-a436-366532643331/cbae37d6b524bdcc3a17fcf731f53bc3.jpg — 1680×1680, оригинал с сайта (не апскейлено)
+
+**Статус:** ожидает отправки пользователем (данные подготовлены 2026-07-06, апскейл не завершён для фото №3 — закончились кредиты Higgsfield).
 
 ---
 
