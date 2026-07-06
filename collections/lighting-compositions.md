@@ -2,7 +2,7 @@
 
 Источник категории: https://vargov.ru/lighting_compositions_vargovdesign_ru
 
-Товаров в коллекции: 348
+Товаров в коллекции: 353
 
 ## Список товаров
 - [LC0004](../products/lighting-compositions/LC0004.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-422377055401-svetovaya-kompozitsiya
@@ -60,6 +60,7 @@
 - [LC0129](../products/lighting-compositions/LC0129.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-556363437641-svetovaya-kompozitsiya
 - [LC0132](../products/lighting-compositions/LC0132.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-383543375531-svetovaya-kompozitsiya
 - [LC0133](../products/lighting-compositions/LC0133.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-369857147741-svetovaya-kompozitsiya
+- [LC0134](../products/lighting-compositions/LC0134.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-942054287141-svetovaya-kompozitsiya
 - [LC0135](../products/lighting-compositions/LC0135.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-180442517611-svetovaya-kompozitsiya
 - [LC0137](../products/lighting-compositions/LC0137.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-989887678951-svetovaya-kompozitsiya
 - [LC0138](../products/lighting-compositions/LC0138.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
@@ -86,6 +87,7 @@
 - [LC0191](../products/lighting-compositions/LC0191.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-315399171911-svetovaya-kompozitsiya
 - [LC0192](../products/lighting-compositions/LC0192.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-296271890451-svetovaya-kompozitsiya
 - [LC0192-1](../products/lighting-compositions/LC0192-1.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-767045508961-svetovaya-kompozitsiya
+- [LC0193](../products/lighting-compositions/LC0193.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-664570610321-svetovaya-kompozitsiya
 - [LC0202](../products/lighting-compositions/LC0202.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-741106806531-svetovaya-kompozitsiya
 - [LC0203](../products/lighting-compositions/LC0203.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-497738429011-svetovaya-kompozitsiya
 - [LC0216](../products/lighting-compositions/LC0216.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-237731409711-svetovaya-kompozitsiya
@@ -133,6 +135,7 @@
 - [LC0302](../products/lighting-compositions/LC0302.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-453804169001-svetovaya-kompozitsiya
 - [LC0303](../products/lighting-compositions/LC0303.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-761587163161-svetovaya-kompozitsiya
 - [LC0304](../products/lighting-compositions/LC0304.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-123177401411-svetovaya-kompozitsiya
+- [LC0305](../products/lighting-compositions/LC0305.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-960308810281-svetovaya-kompozitsiya
 - [LC0306](../products/lighting-compositions/LC0306.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-966112742881-svetovaya-kompozitsiya
 - [LC0307](../products/lighting-compositions/LC0307.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-912315738321-svetovaya-kompozitsiya
 - [LC0308](../products/lighting-compositions/LC0308.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-139532820071-svetovaya-kompozitsiya
@@ -164,6 +167,7 @@
 - [LC0347](../products/lighting-compositions/LC0347.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-303940464841-svetovaya-kompozitsiya
 - [LC0348](../products/lighting-compositions/LC0348.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-592628322791-svetovaya-kompozitsiya
 - [LC0350](../products/lighting-compositions/LC0350.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-721448258801-svetovaya-kompozitsiya
+- [LC0351](../products/lighting-compositions/LC0351.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-962748462131-svetovaya-kompozitsiya
 - [LC0352](../products/lighting-compositions/LC0352.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-830976939841-svetovaya-kompozitsiya
 - [LC0353](../products/lighting-compositions/LC0353.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-110311780441-svetovaya-kompozitsiya
 - [LC0354](../products/lighting-compositions/LC0354.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-794408338491-svetovaya-kompozitsiya
@@ -317,6 +321,7 @@
 - [LC0540](../products/lighting-compositions/LC0540.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-169961402292-svetovaya-kompozitsiya
 - [LC0541](../products/lighting-compositions/LC0541.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-120505114532-svetovaya-kompozitsiya
 - [LC0542](../products/lighting-compositions/LC0542.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-896095370942-svetovaya-kompozitsiya
+- [LC0543-2](../products/lighting-compositions/LC0543-2.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-202422240802-svetovaya-kompozitsiya
 - [LC0544](../products/lighting-compositions/LC0544.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-256989362292-svetovaya-kompozitsiya
 - [LC0545](../products/lighting-compositions/LC0545.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-152539694592-svetovaya-kompozitsiya
 - [LC0545-1](../products/lighting-compositions/LC0545-1.md) — https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-623760643502-svetovaya-kompozitsiya
