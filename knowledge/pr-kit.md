@@ -46,6 +46,8 @@ Anton Vargov
 Founder & Chief Designer, Vargov® Design
 info@vargov.ru · vargov.ru · vargov.design
 
+**Статус:** отправлено на showroom@dezeen.com — 2026-07-06. Ждём ответа, повторно не питчить.
+
 ---
 
 ## Готовое письмо — Dezeen Exclusives (редакционная история)
