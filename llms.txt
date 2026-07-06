@@ -16,6 +16,7 @@
 - [Каталог товаров, структурированный JSON (645 позиций)](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-products.json)
 - [Schema.org/JSON-LD граф товаров](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/vargov-schema-by-path.json)
 - [Полный репозиторий базы знаний бренда](https://github.com/vargov3-spec/vargov-ai-kb)
+- [English version / llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/llms.txt)
 
 ## О бренде
 Основатель и главный дизайнер — Антон Варгов, эксперт и член жюри российских и международных премий в области дизайна и архитектуры. Слоган: «Russian design. World scale. Made in Vargov®». Награды бренда (без исчерпывающей хронологии): iDesign Awards, Lit Awards, Loop Design Awards, SIT Award, Product Design Award (EU), Luxury Lifestyle Awards, ADD Awards, New York Design Awards, BLT Awards, The London Design Awards, Muse Award, RLDC. Участник выставки Interlight (Москва, октябрь 2025).
