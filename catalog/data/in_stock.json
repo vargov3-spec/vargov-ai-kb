@@ -1,0 +1,14 @@
+{
+  "updated": "2026-07-12",
+  "source": "https://vargov.ru/elements_in_stock",
+  "note": "Артикулы из раздела «в наличии» на vargov.ru. Обновлять при смене складского ассортимента; затем прогнать scripts/build-data.mjs и закоммитить models.json.",
+  "skus": [
+    "LC0001",
+    "LC0214",
+    "LC0236",
+    "LC0264",
+    "LC0346",
+    "LC0385",
+    "LC0510"
+  ]
+}
