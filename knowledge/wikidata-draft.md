@@ -41,18 +41,22 @@
 |---|---|---|
 | instance of (P31) | human (Q5) | — |
 | occupation (P106) | designer (Q1281618) | vargov.ru, iconic-world.com |
-| country of citizenship (P27) | Russia (Q159) | косвенно (бренд "Russian", шоурум в Москве) — проверить перед публикацией |
+| country of citizenship (P27) | Russia (Q159) | **подтверждено** — страна «Russia / Russian Federation» указана в анкетах победителя трёх независимых премий (IDA, NYPDA, AD-C), см. [[awards-verified]] |
 | official website / sameAs | https://www.iconic-world.com/directory/anton-vargov | независимый справочник |
-| award received (P166) | International Design Awards winner (LC0236) | https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22 |
-| award received (P166) | New York Product Design Awards winner (LC0343) | https://nydesignawards.com/winner-info.php?id=1296 |
+| award received (P166) | International Architecture & Design Awards 2023 — **Platinum Winner**, Lighting Design (LC0303) | https://ad-c.org/winner/light-composition-vargov-design-lc0303/ |
+| award received (P166) | NY Product Design Awards 2023 — **Designer of the Year (Gold)**, Pendant Luminaires (LC0343) | https://nydesignawards.com/winner-info.php?id=1296 |
+| award received (P166) | International Design Awards 2026 — **Silver**, Illumination/Designer Lighting (LC0236) | https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22 |
+| award received (P166) | International Design Awards 2026 — Honorable Mention, Product Design (LC0516) | https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25 |
 | position held / jury member | ADD Awards Grand Jury, 10th season | https://addawards.ru/jury/293063/ |
 
 ---
 
 ## Что нужно перед публикацией
-1. Подтвердить у Антона Варгова точное гражданство/страну (не только предполагать по бренду).
-2. Проверить, есть ли у наград (IDA, NYPDA, RLDC, LOOP, ADD) собственные пункты Wikidata — если нет, ссылки на них как на "award received" будут просто текстом/URL, без связи QID-to-QID, это нормально для старта.
+1. ~~Подтвердить гражданство~~ — **сделано 2026-07-07**: страна Russia подтверждена анкетами трёх независимых премий, см. [[awards-verified]].
+2. Проверить, есть ли у наград (IDA, NYPDA, AD-C, RLDC, LOOP, ADD) собственные пункты Wikidata — если нет, ссылки на них как на "award received" будут просто текстом/URL, без связи QID-to-QID, это нормально для старта.
 3. Создать аккаунт на wikidata.org (обычная бесплатная регистрация) — без аккаунта редактирование ограничено.
 4. Опубликовать сначала сущность 2 (Anton Vargov), затем сущность 1 со ссылкой founder → на неё.
+
+**Статус готовности: черновик полный, блокеров нет.** Осталось только действие пользователя — аккаунт и внесение (создание учётных записей я не выполняю).
 
 См. также [[brand]], [[external-references]].
