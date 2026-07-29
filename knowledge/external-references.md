@@ -4,6 +4,8 @@
 
 ## Базы данных наград (независимые площадки)
 - [International Design Awards — LC0236, Vargov Anton, Vargov® Design-Lighting studio](https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22) — победитель, официальная страница IDA.
+- [International Design Awards — LC0516](https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25) — победитель, сезон 2025 (найдено при аудите 2026-07-07).
+- [International Architecture & Design Awards 2026 (ad-c.org) — LC0303](https://ad-c.org/winner/light-composition-vargov-design-lc0303/) — победитель, Architecture & Design Community (найдено при аудите 2026-07-07).
 - [New York Product Design Awards — LC0343](https://nydesignawards.com/winner-info.php?id=1296) — победитель, официальная страница NYPDA.
 - [RLDC 2022 — LC0217](https://online.gefera.ru/contest/rldc-2022/works/?work_id=14012747) — конкурсная площадка gefera.ru.
 - [RLDC 2023 — LC0342](https://online.gefera.ru/contest/rldc-2023/works/?work_id=14119182) — конкурсная площадка gefera.ru.
@@ -22,6 +24,9 @@
 ## Соцсети (не источник для нотабильности, но канал присутствия)
 - Instagram: @vargov_design
 - Facebook: facebook.com/vargovdesign
+
+## Обновление 2026-07-07
+Проведён полноценный аудит видимости в ИИ — результаты и приоритеты в [[ai-visibility-audit-2026-07]]. Кратко: находимость по имени бренда высокая, по категорийным запросам («посоветуй бренд освещения») — нулевая на английском и последняя позиция на русском. Vargov Design и Anton Vargov отсутствуют в Wikidata, тогда как Moooi, Flos, Ingo Maurer там есть.
 
 ## Вывод по аудиту (на 2026-07-06)
 - Прямых упоминаний бренда в дизайн-медиа (Dezeen, ArchDaily, Archello, Houzz и т.п.) поиском не найдено — это главный пробел для PR-работы (Приоритет 3).
