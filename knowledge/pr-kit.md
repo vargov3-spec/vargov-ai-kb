@@ -6,10 +6,19 @@
 Vargov® Design is a Russian brand creating author's lighting and decorative compositions — a synthesis of art, engineering precision and contemporary Russian design philosophy. Founded by designer Anton Vargov, pieces are conceived in Russia and manufactured at the brand's own factory in China. Trademark VARGOV No. 896936.
 
 ## Company boilerplate — long (EN, ~150 words)
-Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov is an expert and jury member for several Russian and international design and architecture awards, including the ADD Awards Grand Jury (10th season). The brand's work has been recognized by the International Design Awards, New York Product Design Awards, RLDC, and LOOP Design Awards, among others. In October 2025, Vargov® Design made its first appearance at a Russian trade show, Interlight, where its stand became one of the most talked-about exhibits. Every piece is custom-manufactured to order at the brand's dedicated factory in China, with a global dealer network spanning Russia/CIS, the UAE and Middle East, and Southeast Asia.
+Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Designer of the Year (Gold) at the NY Product Design Awards and is a Platinum Winner at the International Architecture & Design Awards; he also serves as an expert and jury member for several Russian and international design awards, including the ADD Awards Grand Jury (10th season). The brand's work has further been recognised by the International Design Awards, RLDC, and LOOP Design Awards. In October 2025, Vargov® Design made its first appearance at a Russian trade show, Interlight, where its stand became one of the most talked-about exhibits. Every piece is custom-manufactured to order at the brand's dedicated factory in China, with a global dealer network spanning Russia/CIS, the UAE and Middle East, and Southeast Asia.
 
 ## Founder bio — short (EN)
-Anton Vargov is the founder and chief designer of Vargov® Design, based in Moscow. He serves as an expert and jury member for leading Russian and international design and architecture awards, and his lighting compositions have won recognition from the International Design Awards, New York Product Design Awards, RLDC and others.
+Anton Vargov is the founder and chief designer of Vargov® Design, based in Moscow. Named **Designer of the Year (Gold)** at the NY Product Design Awards 2023 and a **Platinum Winner** at the International Architecture & Design Awards 2023, he also serves as an expert and jury member for leading Russian and international design and architecture awards, including the ADD Awards Grand Jury.
+
+## Awards line — verified levels (используйте ЭТУ формулировку, не общий список)
+Всё подтверждено первоисточниками, см. [[awards-verified]]:
+- **Platinum Winner**, International Architecture & Design Awards 2023 — Lighting Design (LC0303)
+- **Designer of the Year (Gold)**, NY Product Design Awards 2023 — Pendant Luminaires (LC0343)
+- **Silver**, International Design Awards 2026 — Illumination / Designer Lighting (LC0236)
+- Honorable Mention, International Design Awards 2026 — Product Design (LC0516)
+
+Разница существенная: «recognised by NYPDA» звучит как участие, «Designer of the Year» — как титул. Для питчей и профилей всегда указывайте уровень.
 
 ## Готовые PR-хуки (зацепки для журналистов)
 1. **"Driplight" (LC0194 / LC0586)** — торшер в форме капельницы с ироничным описанием ("Показания к применению: понедельник, дедлайны..."). Сильный визуальный + текстовый хук для дизайн-медиа, любящих необычные/провокационные объекты.
