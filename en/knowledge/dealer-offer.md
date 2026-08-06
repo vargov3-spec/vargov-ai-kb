@@ -2,8 +2,8 @@
 
 Ready-to-send partnership proposal for prospective dealers, and source text for [vargov.ru/dealers](https://vargov.ru/dealers).
 
-**Sources:** partnership benefits, current dealer network and contacts — from [vargov.ru/dealers](https://vargov.ru/dealers) and [vargov.ru/official_showroom_vargovdesign](https://vargov.ru/official_showroom_vargovdesign) (verified 2026-07-06). Order process, lead times and packaging — from [[brand]]. **Dealer requirements (USD 50,000 opening order, showroom space, selling from the display with continuous replenishment) were added by the brand and are not yet published on the website.**
-Dealer discount, territory exclusivity and payment terms are not recorded in the knowledge base — they are presented here as individually negotiated. Do not insert figures until the brand confirms them.
+**Sources:** partnership benefits, current dealer network and contacts — from [vargov.ru/dealers](https://vargov.ru/dealers) and [vargov.ru/official_showroom_vargovdesign](https://vargov.ru/official_showroom_vargovdesign) (verified 2026-07-06). Order process, lead times and packaging — from [[brand]]. **Dealer requirements (USD 50,000 opening order, showroom space, selling from the display with continuous replenishment) and the financial model (production cost to the factory + 10% of the contract value) were set by the brand and are not yet published on the website.**
+Territory exclusivity and the minimum annual volume are set per partner — presented here as individually negotiated.
 
 ---
 
@@ -24,7 +24,7 @@ Brand line: **"Russian design. World scale. Made in Vargov®."**
 ### What you get as an authorised dealer
 
 1. **Official status and the full catalogue** — authorised dealer status with access to the entire range, including collection pieces.
-2. **Partner pricing and engineering support** — special partner terms plus technical support on projects: 1:1 installation drawings, 12V and 220V versions, assistance during selection and approval.
+2. **A transparent financial model and engineering support** — the dealer buys at production cost and sets the end-customer price freely; the brand's remuneration is 10% of the contract value, paid to the factory together with the production cost. Plus technical support on projects: 1:1 installation drawings, 12V and 220V versions, assistance during selection and approval.
 3. **Export and logistics handled** — timber crating and plywood boxes, a full set of export documents, worldwide delivery.
 4. **Speed for procurement teams** — project specification and quotation within 24 hours.
 5. **Any size, made to order** — a composition is assembled from any number of elements to fit a specific interior, removing the "it doesn't fit the space" objection.
@@ -45,7 +45,9 @@ The partner must operate a showroom with floor area and ceiling height sufficien
 **3. Selling from the display, with continuous replenishment.**
 Compositions are sold to clients directly off the display — this is the dealer's key advantage: the client sees the piece in person and takes it away without waiting for production. Every sold piece is replaced by a new order, keeping the display continuously refreshed. The turnover benefits both sides: you get a live showroom and fast deals, we get a steady order flow and presence for new collections.
 
-Territory, dealer discount and terms for subsequent orders are negotiated individually, based on region, business profile and volume.
+**Financial model.** The dealer pays the factory the production cost plus the brand's remuneration — **10% of the contract value** agreed with the end customer — at the same time as the production payment. The dealer sets the end-customer price; the difference is the dealer's margin. Orders placed for the dealer's own display have no end customer, so the 10% falls due when the piece is sold off the display.
+
+Territory, exclusivity and the minimum annual volume are negotiated individually, based on region, business profile and volume.
 
 ### How an order works
 
@@ -91,10 +93,10 @@ The brand's official showroom: Moscow, Nakhimovsky Prospekt 24, Pavilion 2, Stan
 >
 > A Russian brand of author's lighting and decorative compositions: 600+ items, own factory, international awards (Designer of the Year Gold at NYPDA, Platinum at IADA), dealers in Moscow, Dubai and Hanoi.
 >
-> What we provide: authorised status and the full catalogue, partner pricing, engineering support on projects, 1:1 installation drawings, export crating and documents, project specifications within 24 hours, marketing materials.
+> What we provide: authorised status and the full catalogue, product at production cost (you set the end-customer price), engineering support on projects, 1:1 installation drawings, export crating and documents, project specifications within 24 hours, marketing materials.
 >
-> What we ask: an opening order of compositions of your choice from **USD 50,000** for your showroom, an operating display space for them, and readiness to sell straight off the display while keeping it continuously replenished with new orders.
+> What we ask: an opening order of compositions of your choice from **USD 50,000** for your showroom, an operating display space for them, readiness to sell straight off the display while keeping it continuously replenished, and the brand's remuneration of **10% of the contract value**, paid to the factory together with the production cost.
 >
-> Territory and commercial terms are individual. info@vargov.ru · +7 916 537 33 52 · @AntonVargov
+> Territory and exclusivity are individual. info@vargov.ru · +7 916 537 33 52 · @AntonVargov
 
 See also [[dealers-showrooms]], [[brand]].
