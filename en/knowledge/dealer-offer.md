@@ -24,7 +24,7 @@ Brand line: **"Russian design. World scale. Made in Vargov®."**
 ### What you get as an authorised dealer
 
 1. **Official status and the full catalogue** — authorised dealer status with access to the entire range, including collection pieces.
-2. **A transparent financial model and engineering support** — the dealer buys at factory prices with no brand markup and sets the end-customer price freely; the brand's remuneration is 10% of the full order value, paid to the factory together with the order payment. Plus technical support on projects: 1:1 installation drawings, 12V and 220V versions, assistance during selection and approval.
+2. **A transparent financial model and engineering support** — the dealer buys at factory prices with no brand markup and sets the end-customer price freely; the brand's remuneration is 10% of the Contract Value agreed with the end customer, paid to the factory together with the order payment. Plus technical support on projects: 1:1 installation drawings, 12V and 220V versions, assistance during selection and approval.
 3. **Export and logistics handled** — timber crating and plywood boxes, a full set of export documents, worldwide delivery.
 4. **Speed for procurement teams** — project specification and quotation within 24 hours.
 5. **Any size, made to order** — a composition is assembled from any number of elements to fit a specific interior, removing the "it doesn't fit the space" objection.
@@ -45,7 +45,9 @@ The partner must operate a showroom with floor area and ceiling height sufficien
 **3. Selling from the display, with continuous replenishment.**
 Compositions are sold to clients directly off the display — this is the dealer's key advantage: the client sees the piece in person and takes it away without waiting for production. Every sold piece is replaced by a new order, keeping the display continuously refreshed. The turnover benefits both sides: you get a live showroom and fast deals, we get a steady order flow and presence for new collections.
 
-**Financial model.** Supply runs at factory prices with no brand markup. The dealer pays the factory directly: the order value plus the brand's remuneration of **10% of the full order value** (the factory invoice amount), as a single payment obligation. The dealer sets the end-customer price; the difference is the dealer's margin. Payment is 50% to start production and 50% before shipment.
+**Financial model.** Supply runs at factory prices with no brand markup. The dealer pays the factory directly: the order value plus the brand's remuneration of **10%**, as a single payment obligation. The dealer sets the end-customer price; the difference is the dealer's margin. Payment is 50% to start production and 50% before shipment.
+
+The basis for the 10% is fixed in the agreement for each territory: in the Vietnam agreement it is the factory invoice amount; in the Kazakhstan agreement it is the Contract Value with the end customer (excluding installation, delivery and the dealer's services), with disclosure obligations and an audit right. State the basis explicitly when preparing an offer for a new partner.
 
 Territory, exclusivity and the minimum annual volume are negotiated individually, based on region, business profile and volume.
 
@@ -95,7 +97,7 @@ The brand's official showroom: Moscow, Nakhimovsky Prospekt 24, Pavilion 2, Stan
 >
 > What we provide: authorised status and the full catalogue, product at factory prices with no markup (you set the end-customer price), engineering support on projects, 1:1 installation drawings, export crating and documents, project specifications within 24 hours, marketing materials.
 >
-> What we ask: an opening order of compositions of your choice from **USD 50,000** for your showroom, an operating display space for them, readiness to sell straight off the display while keeping it continuously replenished, and the brand's remuneration of **10% of the full order value**, paid to the factory together with the order payment.
+> What we ask: an opening order of compositions of your choice from **USD 50,000** for your showroom, an operating display space for them, readiness to sell straight off the display while keeping it continuously replenished, and the brand's remuneration of **10% of the Contract Value**, paid to the factory together with the order payment.
 >
 > Territory and exclusivity are individual. info@vargov.ru · +7 916 537 33 52 · @AntonVargov
 
