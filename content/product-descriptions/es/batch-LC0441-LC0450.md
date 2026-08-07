@@ -6,7 +6,7 @@ Versión española. Estructura aprobada: imagen artística e intención → el p
 
 ## LC0450 — Composición luminosa
 
-Una composición sobre el abanico. El disco plisado se lee tanto como una concha de vieira como como el sombrero de una seta: lo que tienen en común es que los pliegues se abren desde un solo punto — un principio constructivo, no un adorno.
+Una composición sobre el abanico. El disco plisado se lee tanto como una concha de vieira como el sombrero de una seta: lo que tienen en común es que los pliegues se abren desde un solo punto — un principio constructivo, no un adorno.
 
 El color lo decide todo: el rosa ceniza vuelve la pieza cálida y adulta a la vez, un matiz raro para la luz y precioso para el interior.
 

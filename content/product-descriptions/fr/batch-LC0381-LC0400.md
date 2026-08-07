@@ -8,7 +8,7 @@ Version française. Structure approuvée : image artistique et intention → le 
 
 Une composition sur les dernières gouttes. La cascade est montée en cœur : un noyau dense au centre, des éléments rares sur les bords et des fuseaux solitaires qui descendent plus bas que les autres — comme les dernières gouttes d'une pluie qui s'éloigne. Ce sont justement ces éléments détachés qui rendent la forme vivante.
 
-Des losanges à facettes aux becs pointus reprennent les fleurons des balustres anciens ; entre eux se dressent de fines bougies dorées. La formule classique du lustre d'apparat est traduite en langue contemporaine : aucune clinquaille, seulement les facettes, la lumière et une ligne juste.
+Des losanges à facettes aux becs pointus reprennent les fleurons des balustres anciens ; entre eux se dressent de fines bougies dorées. La formule classique du lustre d'apparat est traduite en langue contemporaine : aucun clinquant, seulement les facettes, la lumière et une ligne juste.
 
 Le jour, c'est un massif cristallin — dense depuis un point, semaille aérienne depuis un autre ; la pièce se lit par sa taille et ses reflets. Le soir, chaque fuseau capte la lumière de la bougie voisine et s'allume du dedans d'un éclat froid — la cascade gagne une profondeur qu'on ne lui voit pas dans la journée.
 
@@ -278,7 +278,7 @@ Le nombre d'éléments, l'équilibre des finitions et la hauteur du tourbillon s
 
 ## LC0383 — Composition lumineuse
 
-Une composition-citation. La silhouette d'une pendeloque de lustre ancien est agrandie et débarrassée du superflu : le contour découpé, presque en dentelle, demeure, et tout ce qui en faisait une clinquaille a été retiré. La forme est reconnaissable, l'exécution minimaliste.
+Une composition-citation. La silhouette d'une pendeloque de lustre ancien est agrandie et débarrassée du superflu : le contour découpé, presque en dentelle, demeure, et tout ce qui en faisait du clinquant a été retiré. La forme est reconnaissable, l'exécution minimaliste.
 
 La taille ne court que sur le bord et capte la lumière en la dispersant en étincelles irisées ; le centre lisse reste transparent, et à travers lui on voit les pendeloques voisines. La cascade se monte par étages et se rejoint en un coin aigu.
 

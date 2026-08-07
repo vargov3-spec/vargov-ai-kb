@@ -4,7 +4,7 @@ Deutsche Fassung. Genehmigter Aufbau: künstlerisches Bild und Absicht → der W
 
 ---
 
-## LC0562 — Pop-art-Stehleuchte
+## LC0562 — Pop-Art-Stehleuchte
 
 Eine Komposition über die Wiederholung als Rhythmus. Jedes Modul ist ein eigener grafischer Pinselstrich; zusammen ergeben sie Wiederholung, Symmetrie und Kontrast. Das Licht ist hier Teil des visuellen Rhythmus und keine Funktion.
 

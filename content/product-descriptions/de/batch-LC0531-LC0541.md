@@ -30,7 +30,7 @@ Tagsüber sind es durchsichtige Vertikalen mit Bläschen im Durchschein — das 
 
 **Wo es wirkt.** Treppenaugen und Zonen über der Kücheninsel, wo sich die Vertikalen in voller Größe lesen; zeitgenössische Räume mit Panoramafenstern und lakonischer Ausstattung. Die Kaskade wird für die Höhe entworfen.
 
-**Stilistik.** Zeitgenössischer Minimalismus und High-Tech: die Kälte als ästhetische Haltung. Die Botschaft ist klar und technisch — ein Stück für ein Interieur ohne Zierat.
+**Stilistik.** Zeitgenössischer Minimalismus und High-Tech: die Kälte als ästhetische Haltung. Die Botschaft ist klar und technisch — ein Stück für ein Interieur ohne Zierrat.
 
 Anzahl der Röhren, ihre Längen und das Format der Kaskade sind Maßanfertigung.
 

@@ -38,9 +38,9 @@ Anzahl der Spitzen, ihre Längen und der Anteil des Goldes sind Maßanfertigung.
 
 ## LC0518 — Lichtkomposition
 
-Eine Komposition über die aufsteigende Ader. Der Blick liest die Bewegung von unten nach oben: unten ein großer Nugget, und darüber steigt an unsichtbaren Fäden ein Streuen von Splittern auf — ein Aufblitzen, im Moment des Aufstiegs angehalten.
+Eine Komposition über die aufsteigende Ader. Der Blick liest die Bewegung von unten nach oben: unten ein großes Nugget, und darüber steigt an unsichtbaren Fäden ein Streuen von Splittern auf — ein Aufblitzen, im Moment des Aufstiegs angehalten.
 
-Der Nugget ist wie eine umgekehrte Geode gebaut: ein spiegelnder goldener Kern in einer durchsichtigen Hülle, das Licht kommt aus der Mitte.
+Das Nugget ist wie eine umgekehrte Geode gebaut: ein spiegelnder goldener Kern in einer durchsichtigen Hülle, das Licht kommt aus der Mitte.
 
 Tagsüber ist es ein facettierter Stein mit goldenem Inneren und ein Streuen bernsteinfarbener Splitter darüber — das Stück liest sich über den Schliff und die vertikale Bewegung. Abends brennt der Kern in dichtem warmem Licht, die Splitter flimmern in Spiegelungen, und die ganze Ader beginnt aufzusteigen: Das Licht nimmt nach oben hin ab, wie es in der Wassertiefe abnimmt.
 
