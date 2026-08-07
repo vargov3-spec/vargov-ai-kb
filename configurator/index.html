@@ -130,6 +130,12 @@
       <div class="row"><label for="ribbons">Кол-во лент</label>
         <select id="ribbons"><option>1</option><option selected>2</option><option>3</option></select>
       </div>
+      <div class="row"><label for="rows">Рядность</label>
+        <select id="rows">
+          <option value="1">1 ряд (2 контура)</option>
+          <option value="2" selected>2 ряда (3 контура)</option>
+        </select>
+      </div>
       <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="200" value="115"><span class="val" id="densityV"></span></div>
       <div class="row"><label for="ampl">Амплитуда волн</label><input id="ampl" type="range" min="20" max="100" value="62"><span class="val" id="amplV"></span></div>
       <div class="row"><label for="twist">Закрутка</label><input id="twist" type="range" min="0" max="100" value="55"><span class="val" id="twistV"></span></div>
@@ -195,9 +201,11 @@ const ROD_R = ROD_D/2;
 const WIRE_D = 5;        // проволока каркаса
 const ROD_STEP = 17;     // шаг стержней вдоль ленты (почти вплотную)
 const ROD_MIN = 150, ROD_MAX = 300;
-const LED_STEP = 180;    // шаг LED-точек вдоль оси
+const LED_PITCH = 100;   // средний шаг диодов (белые сферы Ø3), хаотично
 const CABLE_STEP = 650;  // примерный шаг подвесов
 const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
+const R_MIN = 100;       // мин. радиус изгиба/поворота осевой (Ø200 мм)
+const R_FIT = 115;       // целевой радиус лимитера (запас к норме)
 
 const GLASS_COLORS = [
   {id:"amber",   name:"Янтарь",     c:"#e8a33d"},
@@ -229,6 +237,29 @@ function mulberry32(seed){
     t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t;
     return ((t ^ t>>>14) >>> 0) / 4294967296;
   };
+}
+
+/* Ограничитель кривизны: угол между соседними звеньями полилинии
+   не должен превышать step/R_MIN (изгиб не острее Ø200 мм).
+   Нарушающие точки подтягиваются к середине соседей. */
+function limitCurvature(C, step, rMin, passes){
+  const np = passes||16;
+  for(let pass=0; pass<np; pass++){
+    let bad=0;
+    for(let i=1;i<C.length-1;i++){
+      const v1=V.sub(C[i],C[i-1]), v2=V.sub(C[i+1],C[i]);
+      const l1=V.len(v1)||1, l2=V.len(v2)||1;
+      const cosA=Math.min(1,Math.max(-1, V.dot(v1,v2)/(l1*l2)));
+      const ang=Math.acos(cosA);
+      const maxAng=((l1+l2)/2)/rMin;
+      if(ang>maxAng){
+        bad++;
+        const lam=Math.min(0.6, 0.55*(1-maxAng/ang)+0.08);
+        for(let x=0;x<3;x++) C[i][x]+=lam*((C[i-1][x]+C[i+1][x])/2 - C[i][x]);
+      }
+    }
+    if(!bad) break;
+  }
 }
 
 /* Catmull-Rom по массиву точек, t∈[0..1] по сегментам */
@@ -327,7 +358,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
 }
 
 function buildRibbon(params, rngSeed, lane){
-  const {style, box, ampl, twistAmt, ribbonW, taper, lengthK, lanes} = params;
+  const {style, box, ampl, twistAmt, ribbonW, rows, taper, lengthK, lanes} = params;
   const rng = mulberry32(rngSeed);
 
   // отступ: половина ширины ленты + радиус стержня
@@ -348,7 +379,7 @@ function buildRibbon(params, rngSeed, lane){
   const margin = ROD_R+1;
   let geo = null;
   for(let iter=0; iter<6; iter++){
-    geo = sampleRibbon(ctrl, {twistAt, ribbonW, taper, style});
+    geo = sampleRibbon(ctrl, {twistAt, ribbonW, rows, taper, style});
     // фактические экстенты по концам стержней
     const bb = geoBBox(geo);
     const cx=(bb.min[0]+bb.max[0])/2, cy=(bb.min[1]+bb.max[1])/2, cz=(bb.min[2]+bb.max[2])/2;
@@ -363,7 +394,7 @@ function buildRibbon(params, rngSeed, lane){
       box.d/2 + (p[2]-cz)*fz,
     ]);
     if(Math.abs(1-fx)<0.004 && Math.abs(1-fy)<0.004 && Math.abs(1-fz)<0.004) {
-      geo = sampleRibbon(ctrl, {twistAt, ribbonW, taper, style});
+      geo = sampleRibbon(ctrl, {twistAt, ribbonW, rows, taper, style});
       break;
     }
   }
@@ -376,26 +407,20 @@ function buildRibbon(params, rngSeed, lane){
 function fitExact(geo, box, margin){
   const lim = [box.w, box.h, box.d];
   const target = [box.w/2, box.h/2, box.d/2];
-  for(let it=0; it<8; it++){
+  for(let it=0; it<10; it++){
     const bb = geoBBox(geo);
     const bc = [(bb.min[0]+bb.max[0])/2,(bb.min[1]+bb.max[1])/2,(bb.min[2]+bb.max[2])/2];
     const scale = [1,1,1];
     let shrunk = false;
     for(let k=0;k<3;k++){
       const ext = bb.max[k]-bb.min[k];
-      const s = (lim[k]-2*margin)/Math.max(1,ext);
-      if(s<1){ scale[k]=s; shrunk=true; }
+      const s2 = (lim[k]-2*margin)/Math.max(1,ext);
+      if(s2<1){ scale[k]=s2; shrunk=true; }
     }
-    for(let i=0;i<geo.rods.length;i++){
-      const r = geo.rods[i];
-      for(let k=0;k<3;k++){
-        const c = (r.a[k]+r.b[k])/2, half = (r.a[k]-r.b[k])/2;
-        const nc = target[k] + (c-bc[k])*scale[k];
-        r.a[k] = nc + half;  // r.a/r.b — те же массивы, что railA/railB
-        r.b[k] = nc - half;
-        geo.centers[i][k] = nc;
-      }
+    for(const c of geo.centers){
+      for(let k=0;k<3;k++) c[k]=target[k]+(c[k]-bc[k])*scale[k];
     }
+    rebuildRods(geo);
     if(!shrunk) break;
   }
 }
@@ -425,17 +450,22 @@ function sampleRibbon(ctrl, opt){
     ];
   };
 
-  // 2) центры/касательные
-  const C = [], T = [];
+  // 2) центры стержней по длине дуги
+  const C = [];
   for(let i=0;i<nRods;i++){
     const L = (i+0.5)*stepEff;
     if(L>ribbonLen) break;
-    const p = atLen(L);
-    const p2 = atLen(Math.min(ribbonLen, L+2));
-    const p0 = atLen(Math.max(0, L-2));
-    C.push(p); T.push(V.norm(V.sub(p2,p0)));
+    C.push(atLen(L));
   }
+  // изгиб/поворот не острее Ø(2·R_MIN)
+  limitCurvature(C, stepEff, R_FIT);
+  // касательные по сглаженной полилинии
   const n = C.length;
+  const T = [];
+  for(let i=0;i<n;i++){
+    const p0 = C[Math.max(0,i-1)], p1 = C[Math.min(n-1,i+1)];
+    T.push(V.norm(V.sub(p1,p0)));
+  }
 
   // 3) rotation-minimizing frame (двойное отражение) + закрутка
   //    W — направление ширины ленты (вдоль стержней)
@@ -459,9 +489,11 @@ function sampleRibbon(ctrl, opt){
     Wf.push(w);
   }
 
-  // 4) стержни: применяем твист и профиль ширины
-  const rods = [], railA = [], railB = [], centers = [];
-  const halfMaxByLen = [];
+  // 4) станции ленты: твист, профиль ширины, ряды стержней.
+  //    Однорядная: 2 контура проволоки, стержни на всю ширину.
+  //    Двурядная: 3 контура (2 канта + центральный), 2 ряда стержней.
+  const rows = opt.rows||1;
+  const rods = [], railA = [], railB = [], centers = [], dirs = [], uTop = [], uBot = [];
   for(let i=0;i<n;i++){
     const s = i/(n-1);
     const tw = twistAt(s);
@@ -469,24 +501,114 @@ function sampleRibbon(ctrl, opt){
     const t=T[i], w=Wf[i];
     const cos=Math.cos(tw), sin=Math.sin(tw);
     const wN = V.norm(V.add(V.mul(w,cos), V.mul(V.cross(t,w),sin)));
-    // длина стержня: сужение к концам + лёгкая органика
+    // ширина ленты: сужение к концам (smoothstep на 10% длины)
     let L = ribbonW;
     if(taper){
-      const e = 0.10; // доля длины на сужение
+      const e = 0.10;
       const k = s<e ? s/e : (s>1-e ? (1-s)/e : 1);
-      const kk = k*k*(3-2*k); // smoothstep
+      const kk = k*k*(3-2*k);
       L = ROD_MIN + (ribbonW-ROD_MIN)*kk;
     }
-    L = Math.max(ROD_MIN, Math.min(ROD_MAX, Math.round(L/10)*10));
-    const half = L/2;
-    const a = V.add(C[i], V.mul(wN, half));
-    const b = V.sub(C[i], V.mul(wN, half));
-    const N = V.norm(V.cross(t, wN)); // нормаль поверхности ленты
-    rods.push({a, b, n:N, len:L});
-    railA.push(a); railB.push(b); centers.push(C[i]);
+    centers.push(C[i]); dirs.push(wN);
+    if(rows===2){
+      const l2 = Math.max(70, Math.round(L/2/5)*5); // стержень одного ряда
+      rods.push({st:i, u1:0,   u2:l2, len:l2, a:[0,0,0], b:[0,0,0], n:[0,1,0]});
+      rods.push({st:i, u1:-l2, u2:0,  len:l2, a:[0,0,0], b:[0,0,0], n:[0,1,0]});
+      uTop.push(l2); uBot.push(-l2);
+    } else {
+      const lq = Math.max(ROD_MIN, Math.min(ROD_MAX, Math.round(L/10)*10));
+      rods.push({st:i, u1:-lq/2, u2:lq/2, len:lq, a:[0,0,0], b:[0,0,0], n:[0,1,0]});
+      uTop.push(lq/2); uBot.push(-lq/2);
+    }
+    railA.push([0,0,0]); railB.push([0,0,0]);
   }
+  const geo = {rods, railA, railB, centers, dirs, uTop, uBot, rows, stepEff, ribbonLen:0};
+  rebuildRods(geo);
+  return geo;
+}
 
-  return {rods, railA, railB, centers, ribbonLen, stepEff};
+/* пересборка стержней/кантов/нормалей по центрам и направлениям станций */
+function rebuildRods(rb){
+  const C=rb.centers, n=C.length, dirs=rb.dirs;
+  const T=[];
+  for(let i=0;i<n;i++){
+    T.push(V.norm(V.sub(C[Math.min(n-1,i+1)], C[Math.max(0,i-1)])));
+    dirs[i]=V.norm(V.sub(dirs[i], V.mul(T[i], V.dot(dirs[i],T[i]))));
+  }
+  // плавность разворота стержней вдоль ленты
+  for(let i=1;i<n-1;i++){
+    const a=dirs[i-1], b=dirs[i], c=dirs[i+1];
+    let d=V.norm([a[0]*0.25+b[0]*0.5+c[0]*0.25, a[1]*0.25+b[1]*0.5+c[1]*0.25, a[2]*0.25+b[2]*0.5+c[2]*0.25]);
+    dirs[i]=V.norm(V.sub(d, V.mul(T[i], V.dot(d,T[i]))));
+  }
+  for(const r of rb.rods){
+    const c=C[r.st], d=dirs[r.st];
+    for(let x=0;x<3;x++){ r.a[x]=c[x]+d[x]*r.u2; r.b[x]=c[x]+d[x]*r.u1; }
+    r.n=V.norm(V.cross(T[r.st], d));
+  }
+  // точное удержание в слое: сдвигаем станцию целиком
+  if(rb.clampMin){
+    const mn=rb.clampMin, mx=rb.clampMax, M=ROD_R+1;
+    for(let i=0;i<n;i++){
+      const c=C[i], d=dirs[i];
+      const u=Math.max(Math.abs(rb.uTop[i]), Math.abs(rb.uBot[i]));
+      for(let x=0;x<3;x++){
+        const reach=Math.abs(d[x])*u + M;
+        let sh=0;
+        if(c[x]-reach<mn[x]) sh=mn[x]-(c[x]-reach);
+        else if(c[x]+reach>mx[x]) sh=mx[x]-(c[x]+reach);
+        if(sh) c[x]+=sh;
+      }
+    }
+    for(const r of rb.rods){
+      const c=C[r.st], d=dirs[r.st];
+      for(let x=0;x<3;x++){ r.a[x]=c[x]+d[x]*r.u2; r.b[x]=c[x]+d[x]*r.u1; }
+    }
+  }
+  for(let i=0;i<n;i++){
+    const c=C[i], d=dirs[i];
+    for(let x=0;x<3;x++){
+      rb.railA[i][x]=c[x]+d[x]*rb.uTop[i];
+      rb.railB[i][x]=c[x]+d[x]*rb.uBot[i];
+    }
+  }
+  let L=rb.stepEff;
+  for(let i=1;i<n;i++) L+=V.len(V.sub(C[i],C[i-1]));
+  rb.ribbonLen=L;
+}
+
+/* мягкие ограничения формы: сглаживание, постоянный шаг станций,
+   кривизна не острее Ø200, удержание в габарите с учётом вылета стержней */
+function ribbonConstraints(rb, box, smoothLam, smoothPasses, curvPasses){
+  const C=rb.centers, n=C.length;
+  if(n<3) return;
+  for(let p=0;p<smoothPasses;p++){
+    for(let i=1;i<n-1;i++){
+      for(let x=0;x<3;x++) C[i][x]+=smoothLam*((C[i-1][x]+C[i+1][x])/2 - C[i][x]);
+    }
+  }
+  // сохранение шага (иначе стержни сползаются и пересекаются)
+  for(let p=0;p<3;p++){
+    for(let i=0;i<n-1;i++){
+      const d=V.sub(C[i+1],C[i]), l=V.len(d);
+      if(l<1e-6) continue;
+      const k=0.5*(l-rb.stepEff)/l;
+      for(let x=0;x<3;x++){ C[i][x]+=d[x]*k; C[i+1][x]-=d[x]*k; }
+    }
+  }
+  // сначала клэмп в слой, потом лимитер кривизны — изгиб у стены
+  // сглаживается, а небольшой выход лимитера за клэмп покрыт буфером
+  const mn=rb.clampMin||[0,0,0], mx=rb.clampMax||[box.w,box.h,box.d];
+  const M=ROD_R+10; // буфер > дрейфа направлений и хода лимитера
+  for(let i=0;i<n;i++){
+    const d=rb.dirs[i], u=Math.max(Math.abs(rb.uTop[i]), Math.abs(rb.uBot[i]));
+    for(let x=0;x<3;x++){
+      const reach=Math.abs(d[x])*u + M;
+      if(C[i][x]<mn[x]+reach) C[i][x]=mn[x]+reach;
+      else if(C[i][x]>mx[x]-reach) C[i][x]=mx[x]-reach;
+    }
+  }
+  limitCurvature(C, rb.stepEff, R_FIT, curvPasses);
 }
 
 function geoBBox(geo){
@@ -500,6 +622,178 @@ function geoBBox(geo){
     }
   }
   return {min,max};
+}
+
+/* ============================================================
+   Коллизии: лента и стержни не должны пересекаться.
+   Каждый стержень — капсула Ø15. Проверяем пары стержней разных
+   лент и далёких участков одной ленты (капсула-капсула), витки
+   расталкиваем итеративной релаксацией; «веер» на крутом изгибе
+   внутри ленты лечим локальным распрямлением дуги.
+   ============================================================ */
+const CLEAR_FAR  = 24;   // мин. дистанция осей далёких стержней (15 стекло + 9 воздух)
+const CLEAR_NEAR = 15.8; // внутри ленты на изгибе (едва не касаются)
+const SKIP_NEAR  = 2;    // соседи по каркасу (k≤2) не проверяются
+const NEAR_WIN   = 8;    // 2<k≤8 — «ближняя зона» своей ленты
+
+function closestSegSeg(P1,Q1,P2,Q2){
+  const d1=V.sub(Q1,P1), d2=V.sub(Q2,P2), r=V.sub(P1,P2);
+  const a=V.dot(d1,d1), e=V.dot(d2,d2), f=V.dot(d2,r);
+  const c=V.dot(d1,r), b=V.dot(d1,d2);
+  const denom=a*e-b*b;
+  let s = denom!==0 ? Math.min(1,Math.max(0,(b*f-c*e)/denom)) : 0;
+  let t = (b*s+f)/e;
+  if(t<0){ t=0; s=Math.min(1,Math.max(0,-c/a)); }
+  else if(t>1){ t=1; s=Math.min(1,Math.max(0,(b-c)/a)); }
+  const c1=V.add(P1,V.mul(d1,s)), c2=V.add(P2,V.mul(d2,t));
+  return [V.len(V.sub(c1,c2)), c1, c2];
+}
+
+/* обход близких пар стержней через пространственный хэш */
+function forEachClosePair(ribbons, radius, cb){
+  const H = 170+radius;
+  const grid = new Map();
+  const items = [];
+  ribbons.forEach((rb,ri)=>rb.rods.forEach((r,i)=>items.push({ri,i,r})));
+  items.forEach((o,oi)=>{
+    const {a,b} = o.r;
+    let prev = null;
+    for(let s=0;s<=3;s++){
+      const k = Math.floor((a[0]+(b[0]-a[0])*s/3)/H)+"|"
+              + Math.floor((a[1]+(b[1]-a[1])*s/3)/H)+"|"
+              + Math.floor((a[2]+(b[2]-a[2])*s/3)/H);
+      if(k!==prev){
+        let cell = grid.get(k);
+        if(!cell){ cell=[]; grid.set(k,cell); }
+        cell.push(oi); prev=k;
+      }
+    }
+  });
+  const seen = new Set();
+  for(const cell of grid.keys()){
+    const [cx,cy,cz] = cell.split("|").map(Number);
+    const base = grid.get(cell);
+    for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++)for(let dz=-1;dz<=1;dz++){
+      const nb = grid.get((cx+dx)+"|"+(cy+dy)+"|"+(cz+dz));
+      if(!nb) continue;
+      for(const oi of base) for(const oj of nb){
+        if(oi>=oj) continue;
+        const key = oi*131072+oj;
+        if(seen.has(key)) continue;
+        seen.add(key);
+        const A=items[oi], B=items[oj];
+        if(A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=SKIP_NEAR) continue;
+        // быстрый отсев по сферам
+        const ra=A.r, rb=B.r;
+        const mx=(ra.a[0]+ra.b[0]-rb.a[0]-rb.b[0])/2,
+              my=(ra.a[1]+ra.b[1]-rb.a[1]-rb.b[1])/2,
+              mz=(ra.a[2]+ra.b[2]-rb.a[2]-rb.b[2])/2;
+        const reach = (ra.len+rb.len)/2 + radius;
+        if(mx*mx+my*my+mz*mz > reach*reach) continue;
+        cb(A,B);
+      }
+    }
+  }
+}
+
+function resolveCollisions(ribbons, box){
+  const KW=[];
+  for(let k=-5;k<=5;k++) KW.push(0.5*(1+Math.cos(Math.PI*k/6)));
+  let last={collisions:0, minClear:1e9, near:0, self:0, cross:0};
+  let stagBest=1e9, stagCnt=0;
+  for(let it=0; it<40; it++){
+    const disp = ribbons.map(rb=>rb.centers.map(()=>null));
+    const chords = [];
+    let coll=0, minClear=1e9, nearC=0, selfC=0, crossC=0;
+    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
+      const sa=A.r.st, sb=B.r.st;
+      const near = A.ri===B.ri && Math.abs(sa-sb)<=NEAR_WIN;
+      const limD = near ? CLEAR_NEAR : CLEAR_FAR;
+      const [d,c1,c2] = closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b);
+      if(d<minClear) minClear=d;
+      if(d>=limD) return;
+      coll++;
+      if(near) nearC++; else if(A.ri===B.ri) selfC++; else crossC++;
+      if(near){
+        chords.push([A.ri, Math.min(sa,sb), Math.max(sa,sb)]);
+      } else {
+        let nv=V.sub(c1,c2), L=V.len(nv);
+        if(L<1e-6){
+          nv=V.cross(ribbons[A.ri].dirs[sa], ribbons[B.ri].dirs[sb]); L=V.len(nv);
+          if(L<1e-6){ nv=[0,1,0]; L=1; }
+        }
+        nv=V.mul(nv,1/L);
+        const need=(limD-d)*0.5*0.8;
+        for(let k=-5;k<=5;k++){
+          const w=KW[k+5];
+          const ia=sa+k;
+          if(ia>=0 && ia<ribbons[A.ri].centers.length){
+            const D=disp[A.ri][ia]||(disp[A.ri][ia]=[0,0,0]);
+            D[0]+=nv[0]*need*w; D[1]+=nv[1]*need*w; D[2]+=nv[2]*need*w;
+          }
+          const ib=sb+k;
+          if(ib>=0 && ib<ribbons[B.ri].centers.length){
+            const D=disp[B.ri][ib]||(disp[B.ri][ib]=[0,0,0]);
+            D[0]-=nv[0]*need*w; D[1]-=nv[1]*need*w; D[2]-=nv[2]*need*w;
+          }
+        }
+      }
+    });
+    last={collisions:coll, minClear, near:nearC, self:selfC, cross:crossC};
+    if(coll===0) break;
+    if(coll>=stagBest){ if(++stagCnt>=8) break; } else { stagBest=coll; stagCnt=0; }
+    // распрямление «вееров» на крутых изгибах своей ленты
+    for(const ch of chords){
+      const rb=ribbons[ch[0]], i=ch[1], j=ch[2];
+      const di=rb.dirs[i], dj=rb.dirs[j];
+      for(let k=i+1;k<j;k++){
+        const t=(k-i)/(j-i);
+        for(let x=0;x<3;x++){
+          rb.centers[k][x]+=0.45*((rb.centers[i][x]*(1-t)+rb.centers[j][x]*t) - rb.centers[k][x]);
+        }
+        // сгоняем градиент закрутки — «веер» тоже от него
+        const tgt=V.norm([di[0]*(1-t)+dj[0]*t, di[1]*(1-t)+dj[1]*t, di[2]*(1-t)+dj[2]*t]);
+        const dk=rb.dirs[k];
+        rb.dirs[k]=V.norm([dk[0]+(tgt[0]-dk[0])*0.5, dk[1]+(tgt[1]-dk[1])*0.5, dk[2]+(tgt[2]-dk[2])*0.5]);
+      }
+    }
+    // смещения витков (шаг ограничен 10 мм) + мягкие ограничения формы
+    ribbons.forEach((rb,ri)=>{
+      disp[ri].forEach((D,i)=>{
+        if(!D) return;
+        const l=V.len(D), s=l>10 ? 10/l : 1;
+        rb.centers[i][0]+=D[0]*s; rb.centers[i][1]+=D[1]*s; rb.centers[i][2]+=D[2]*s;
+      });
+      ribbonConstraints(rb, box, 0.10, 1, 12);
+      rebuildRods(rb);
+    });
+  }
+  return last;
+}
+
+function measureClearance(ribbons){
+  let minClear=1e9;
+  forEachClosePair(ribbons, 40, (A,B)=>{
+    const [d] = closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b);
+    if(d<minClear) minClear=d;
+  });
+  return minClear;
+}
+
+/* фактический минимальный радиус изгиба осевой линии */
+function measureMinRadius(ribbons){
+  let minR=1e9;
+  for(const rb of ribbons){
+    const C=rb.centers;
+    for(let i=1;i<C.length-1;i++){
+      const v1=V.sub(C[i],C[i-1]), v2=V.sub(C[i+1],C[i]);
+      const l1=V.len(v1)||1, l2=V.len(v2)||1;
+      const cosA=Math.min(1,Math.max(-1, V.dot(v1,v2)/(l1*l2)));
+      const ang=Math.acos(cosA);
+      if(ang>1e-6) minR=Math.min(minR, (l1+l2)/2/ang);
+    }
+  }
+  return minR;
 }
 
 /* ============================================================
@@ -520,39 +814,100 @@ function buildScene(){
     ampl: (+ui.ampl.value)/100,           // 0.2..1
     twistAmt: (+ui.twist.value)/100 * 1.15, // рад амплитуда
     ribbonW: +ui.rWidth.value,
+    rows: +ui.rows.value,
     taper: ui.taper.checked,
     lengthK: (+ui.density.value)/100,
     lanes,
   };
-  const ribbons = [];
-  for(let i=0;i<lanes;i++){
-    ribbons.push(buildRibbon(params, state.seed + i*7919, i));
+  // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
+  // поэтому пересечь другую ленту она не может по построению.
+  // Спирали слоятся по высоте, остальные стили — по глубине.
+  // Внутри ленты самопересечения разводит релаксация; при неудаче —
+  // новый вариант, дальше постепенно снижаем насыщенность.
+  const GAP = 30;
+  const slabAxis = params.style==="spiral" ? 1 : 2;
+  let ribbons=null, clear=null, best=null;
+  outer:
+  for(let effLanes=lanes; effLanes>=1; effLanes--){
+    for(let attempt=0; attempt<6; attempt++){
+      // прогрессивное укрощение: длина/амплитуда мягче, закрутка до нуля
+      const p0 = Object.assign({}, params, {
+        lengthK: params.lengthK*Math.pow(0.86, attempt),
+        twistAmt: attempt>=4 ? 0 : params.twistAmt*Math.pow(0.75, attempt),
+        ampl: params.ampl*Math.pow(0.88, attempt),
+      });
+      ribbons = [];
+      for(let i=0;i<effLanes;i++){
+        const slabBox = {w:box.w, h:box.h, d:box.d};
+        const off = [0,0,0];
+        if(effLanes>1){
+          if(slabAxis===1){
+            slabBox.h = (box.h - GAP*(effLanes-1))/effLanes;
+            off[1] = (effLanes-1-i)*(slabBox.h + GAP);
+          } else {
+            slabBox.d = (box.d - GAP*(effLanes-1))/effLanes;
+            off[2] = i*(slabBox.d + GAP);
+          }
+        }
+        const p = Object.assign({}, p0, {box:slabBox, lanes:1});
+        const rb = buildRibbon(p, state.seed + i*7919 + attempt*104729 + effLanes*31, 0);
+        for(const c of rb.centers){ c[0]+=off[0]; c[1]+=off[1]; c[2]+=off[2]; }
+        rb.clampMin = [off[0], off[1], off[2]];
+        rb.clampMax = [off[0]+slabBox.w, off[1]+slabBox.h, off[2]+slabBox.d];
+        rebuildRods(rb);
+        ribbons.push(rb);
+      }
+      // цикл «выгладить → развести витки»; финал — чистые плавные ленты
+      ribbons.forEach(rb=>{ ribbonConstraints(rb, box, 0.18, 2, 16); rebuildRods(rb); });
+      resolveCollisions(ribbons, box);
+      for(let f=0;f<4;f++){
+        const cp = f<2 ? 24 : 64;
+        ribbons.forEach(rb=>{ ribbonConstraints(rb, box, 0.05, 1, cp); rebuildRods(rb); });
+      }
+      clear = resolveCollisions(ribbons, box);
+      clear.attempt = attempt; clear.lanes = effLanes;
+      if(!best || clear.collisions<best.clear.collisions) best={ribbons, clear};
+      if(clear.collisions===0) break outer;
+    }
+  }
+  ribbons = best.ribbons; clear = best.clear;
+  // финальная полировка плавности + верификация зазоров
+  if(clear.collisions===0){
+    for(let f=0; f<3; f++){
+      ribbons.forEach(rb=>{ ribbonConstraints(rb, box, 0.03, 1, 64); rebuildRods(rb); });
+      const v = resolveCollisions(ribbons, box);
+      clear = Object.assign({}, clear, v);
+      if(v.collisions===0 && measureMinRadius(ribbons)>=R_MIN) break;
+    }
   }
   // LED-точки и подвесы
-  for(const rb of ribbons){
+  ribbons.forEach((rb, ri)=>{
+    // диоды — белые сферы Ø3 на одном контуре каркаса:
+    // у двурядной — центральный контур; шаг хаотичный, в среднем 100 мм
     rb.leds = [];
     if(ui.leds.checked){
-      let acc = LED_STEP*0.5;
-      for(let i=1;i<rb.centers.length;i++){
+      const lr = mulberry32(((state.seed ^ 0x9e37) + ri*613)>>>0);
+      const wirePts = rb.rows===2 ? rb.centers : rb.railA;
+      let next = LED_PITCH*(0.4+lr()*1.2), acc = 0;
+      for(let i=1;i<wirePts.length;i++){
         acc += rb.stepEff;
-        if(acc>=LED_STEP){ rb.leds.push(rb.centers[i]); acc=0; }
+        if(acc>=next){ rb.leds.push(wirePts[i]); acc=0; next=LED_PITCH*(0.4+lr()*1.2); }
       }
     }
     rb.cabs = [];
     if(ui.cables.checked){
       let acc = CABLE_STEP*0.6;
-      for(let i=0;i<rb.rods.length;i++){
+      for(let i=0;i<rb.centers.length;i++){
         acc += rb.stepEff;
         if(acc>=CABLE_STEP){
-          const r = rb.rods[i];
-          const top = r.a[1]>r.b[1] ? r.a : r.b;
+          const top = rb.railA[i][1]>rb.railB[i][1] ? rb.railA[i] : rb.railB[i];
           rb.cabs.push({from:[top[0], box.h, top[2]], to:top});
           acc = 0;
         }
       }
     }
-  }
-  scene = {box, ribbons, params};
+  });
+  scene = {box, ribbons, params, clear};
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
@@ -664,19 +1019,23 @@ function draw(){
         wpx:Math.max(1.1, ROD_D*p1[3]),
         shade:0.40+0.60*nd});
     }
-    // канты (сегменты между соседними концами)
-    for(const rail of [rb.railA, rb.railB]){
+    // контуры каркаса: два канта + центральный (у двурядной)
+    const railSets = [[rb.railA,1],[rb.railB,1]];
+    if(rb.rows===2) railSets.push([rb.centers,0.8]);
+    for(const rs of railSets){
+      const rail=rs[0], wk=rs[1];
       for(let i=1;i<rail.length;i++){
         if(!project(rail[i-1],B,p1) || !project(rail[i],B,p2)) continue;
         prims.push({z:(p1[2]+p2[2])/2-2, kind:2,
           x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
-          wpx:Math.max(0.8, WIRE_D*p1[3])});
+          wpx:Math.max(0.8, WIRE_D*wk*p1[3])});
       }
     }
     // LED
     for(const l of rb.leds){
       if(!project(l,B,p1)) continue;
-      prims.push({z:p1[2]-4, kind:3, x1:p1[0], y1:p1[1], r:Math.max(2.5, 26*p1[3])});
+      prims.push({z:p1[2]-4, kind:3, x1:p1[0], y1:p1[1],
+        rCore:Math.max(1.1, 3*p1[3]), r:Math.max(3, 15*p1[3])});
     }
   }
 
@@ -701,14 +1060,16 @@ function draw(){
       ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
-    } else { // LED
+    } else { // диод: белая сфера Ø3 + мягкий ореол
       ctx.globalCompositeOperation = "lighter";
       const gg = ctx.createRadialGradient(pr.x1,pr.y1,0, pr.x1,pr.y1,pr.r);
-      gg.addColorStop(0,"rgba(255,248,225,1)");
-      gg.addColorStop(0.22,"rgba(255,225,150,.75)");
-      gg.addColorStop(1,"rgba(255,200,90,0)");
+      gg.addColorStop(0,"rgba(255,255,255,.9)");
+      gg.addColorStop(0.3,"rgba(255,250,235,.5)");
+      gg.addColorStop(1,"rgba(255,244,214,0)");
       ctx.fillStyle=gg;
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.r,0,7); ctx.fill();
+      ctx.fillStyle="rgba(255,255,255,.98)";
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
       ctx.globalCompositeOperation = "source-over";
     }
   }
@@ -726,7 +1087,7 @@ function updateSpec(){
     rods += rb.rods.length;
     leds += rb.leds.length;
     cabs += rb.cabs.length;
-    wire += rb.ribbonLen*3; // 2 канта + осевая струна
+    wire += rb.ribbonLen*(rb.rows===2?3:2); // контуры каркаса
     for(const r of rb.rods){
       byLen.set(r.len, (byLen.get(r.len)||0)+1);
       glassMass += Math.PI*ROD_R*ROD_R*r.len*GLASS_DENSITY; // г, полнотелый стержень
@@ -740,20 +1101,28 @@ function updateSpec(){
     }
     return [max[0]-min[0]+ROD_D, max[1]-min[1]+ROD_D, max[2]-min[2]+ROD_D];
   })();
-  state.lastSpec = {totalLen, rods, glassMass, wire, leds, cabs, byLen, bb};
+  const minClear = measureClearance(scene.ribbons);
+  const minRad = measureMinRadius(scene.ribbons);
+  const airGap = minClear>=1e9 ? 25 : Math.max(0, Math.round(minClear - ROD_D));
+  state.lastSpec = {totalLen, rods, glassMass, wire, leds, cabs, byLen, bb,
+                    airGap, minRad, clean: scene.clear.collisions===0};
 
   const m = (totalLen/1000);
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
       <tr><td>Лент в композиции</td><td>${scene.ribbons.length}</td></tr>
+      <tr><td>Рядность</td><td>${scene.params.rows===2?"2 ряда, 3 контура":"1 ряд, 2 контура"}</td></tr>
       <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
-      <tr><td>Длины стержней</td><td>${ROD_MIN}–${ROD_MAX} мм</td></tr>
+      <tr><td>Длины стержней</td><td>${Math.min(...byLen.keys())}–${Math.max(...byLen.keys())} мм</td></tr>
       <tr><td>Масса стекла (оценка)</td><td>${(glassMass*0.46/1000).toFixed(1)}–${(glassMass/1000).toFixed(1)} кг</td></tr>
       <tr><td>Проволока каркаса Ø5</td><td>${(wire/1000).toFixed(1)} м</td></tr>
       ${leds?`<tr><td>LED-точки по оси</td><td>${leds} шт (~${(leds*0.2).toFixed(0)} Вт)</td></tr>`:""}
       ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт</td></tr>`:""}
       <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
+      <tr><td>Пересечения витков</td><td>${state.lastSpec.clean
+        ? `нет (зазор ≥ ${state.lastSpec.airGap} мм)` : "⚠ проверить вручную"}</td></tr>
+      <tr><td>Мин. диаметр изгиба</td><td>${Math.round(state.lastSpec.minRad*2)} мм (норма ≥ ${R_MIN*2})</td></tr>
       <tr><td>Цена</td><td>за 1 пог. м — по запросу</td></tr>
     </table>`;
   document.getElementById("dims").textContent =
@@ -764,7 +1133,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","style","ribbons","density","ampl","twist","rWidth","taper","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","style","ribbons","rows","density","ampl","twist","rWidth","taper","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -792,8 +1161,13 @@ function refreshLabels(){
 }
 refreshLabels();
 
-const rebuild = ()=>{ refreshLabels(); buildScene(); };
-for(const id of ["dimW","dimD","dimH","style","ribbons","rWidth"]) ui[id].addEventListener("change", rebuild);
+let rebuildTimer=null;
+const rebuild = ()=>{
+  refreshLabels();
+  clearTimeout(rebuildTimer);
+  rebuildTimer=setTimeout(buildScene, 120);
+};
+for(const id of ["dimW","dimD","dimH","style","ribbons","rows","rWidth"]) ui[id].addEventListener("change", rebuild);
 for(const id of ["density","ampl","twist"]) ui[id].addEventListener("input", rebuild);
 for(const id of ["taper","leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
@@ -827,12 +1201,15 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Стиль", ui.style.options[ui.style.selectedIndex].text],
     ["Цвет стекла", state.color.name],
     ["Лент", scene.ribbons.length],
+    ["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     ["Стержни Ø15, всего шт", s.rods],
     ["Масса стекла, кг (оценка: трубка - полнотелые)", `${(s.glassMass*0.46/1000).toFixed(1)} - ${(s.glassMass/1000).toFixed(1)}`],
     ["Проволока Ø5, м", (s.wire/1000).toFixed(1)],
     ["LED-точек", s.leds],
     ["Подвесов", s.cabs],
+    ["Пересечения витков", s.clean ? `нет (зазор >= ${s.airGap} мм)` : "требует ручной проверки"],
+    ["Мин. диаметр изгиба, мм", `${Math.round(s.minRad*2)} (норма >= ${R_MIN*2})`],
     [],
     ["Длина стержня, мм","Количество, шт"],
     ...[...s.byLen.entries()].sort((a,b)=>a[0]-b[0]).map(([l,c])=>[l,c]),
@@ -900,7 +1277,12 @@ requestAnimationFrame(loop);
 window.__vargov = {
   bbox: ()=>{ if(!scene) return null;
     const s=state.lastSpec; return {box:scene.box, actual:s.bb, rods:s.rods, lenM:s.totalLen/1000}; },
-  set: (id,v)=>{ ui[id].value=v; rebuild(); },
+  clearance: ()=>{ if(!scene) return null;
+    return Object.assign({}, scene.clear, {
+            minClear: measureClearance(scene.ribbons),
+            minRadius: measureMinRadius(scene.ribbons)}); },
+  set: (id,v)=>{ ui[id].value=v; refreshLabels(); buildScene(); },
+  apply: (o)=>{ for(const k in o) ui[k].value=o[k]; refreshLabels(); buildScene(); },
   regen: ()=>document.getElementById("regen").click(),
 };
 </script>
