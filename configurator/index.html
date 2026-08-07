@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vargov®Design — конфигуратор ленточных композиций (LC0217)</title>
+<style>
+  :root{
+    --bg:#0b0b0d; --panel:#131318; --panel2:#1a1a21; --line:#2a2a33;
+    --gold:#c9a227; --gold2:#e8c96a; --txt:#e8e6e1; --dim:#9b9890;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--txt);
+    font:14px/1.45 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  header{
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    padding:10px 18px; border-bottom:1px solid var(--line); background:var(--panel);
+  }
+  header h1{font-size:16px; font-weight:600; letter-spacing:.06em}
+  header h1 b{color:var(--gold2); font-weight:700}
+  header .sub{color:var(--dim); font-size:12px}
+  #layout{flex:1; display:flex; min-height:0}
+  #panel{
+    width:334px; min-width:290px; overflow-y:auto; background:var(--panel);
+    border-right:1px solid var(--line); padding:14px 14px 24px 16px;
+    scrollbar-width:thin; scrollbar-gutter:stable;
+  }
+  #stage{flex:1; position:relative; min-width:0}
+  canvas{display:block; width:100%; height:100%; cursor:grab}
+  canvas:active{cursor:grabbing}
+  fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
+  legend{padding:0 6px; color:var(--gold2); font-size:12px; letter-spacing:.08em; text-transform:uppercase}
+  .row{display:flex; gap:8px; align-items:center; margin:7px 0}
+  .row label{flex:1; color:var(--dim)}
+  .row input[type=number]{
+    width:86px; background:var(--panel2); color:var(--txt); border:1px solid var(--line);
+    border-radius:6px; padding:5px 7px; font-size:13px;
+  }
+  .row input[type=range]{flex:1.2; accent-color:var(--gold)}
+  .row select{
+    flex:1.2; background:var(--panel2); color:var(--txt); border:1px solid var(--line);
+    border-radius:6px; padding:5px 6px; font-size:13px;
+  }
+  .row .val{width:44px; flex:none; text-align:right; color:var(--txt); font-size:12px; font-variant-numeric:tabular-nums}
+  .row input[type=checkbox]{accent-color:var(--gold)}
+  .presets{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+  .presets button{
+    background:var(--panel2); border:1px solid var(--line); color:var(--dim);
+    border-radius:6px; padding:4px 8px; font-size:12px; cursor:pointer;
+  }
+  .presets button:hover{color:var(--txt); border-color:var(--gold)}
+  .swatches{display:flex; gap:7px; flex-wrap:wrap; margin-top:6px}
+  .sw{
+    width:26px; height:26px; border-radius:50%; cursor:pointer; border:2px solid transparent;
+    box-shadow:inset 0 0 6px rgba(0,0,0,.5);
+  }
+  .sw.sel{border-color:var(--gold2)}
+  .btn{
+    display:block; width:100%; text-align:center; background:linear-gradient(180deg,#d9b13a,#a8841c);
+    color:#17130a; font-weight:700; border:none; border-radius:8px; padding:10px;
+    font-size:14px; cursor:pointer; margin:10px 0 6px; letter-spacing:.03em;
+  }
+  .btn:hover{filter:brightness(1.08)}
+  .btn2{
+    display:inline-block; width:auto; flex:1; background:var(--panel2); color:var(--txt);
+    border:1px solid var(--line); border-radius:8px; padding:8px 6px; font-size:12.5px;
+    cursor:pointer; text-align:center; text-decoration:none;
+  }
+  .btn2:hover{border-color:var(--gold)}
+  .btns{display:flex; gap:8px}
+  #spec{font-size:13px}
+  #spec table{width:100%; border-collapse:collapse}
+  #spec td{padding:3px 0; vertical-align:top}
+  #spec td:last-child{text-align:right; font-variant-numeric:tabular-nums; color:var(--txt)}
+  #spec td:first-child{color:var(--dim)}
+  #spec .hl td{color:var(--gold2); font-weight:600; font-size:14px}
+  .note{color:var(--dim); font-size:11.5px; margin-top:8px; line-height:1.5}
+  .hud{
+    position:absolute; left:12px; bottom:10px; color:var(--dim); font-size:11.5px;
+    background:rgba(11,11,13,.55); padding:4px 8px; border-radius:6px; pointer-events:none;
+  }
+  #dims{
+    position:absolute; right:12px; top:10px; color:var(--gold2); font-size:13px;
+    background:rgba(11,11,13,.55); padding:5px 10px; border-radius:6px; pointer-events:none;
+    font-variant-numeric:tabular-nums;
+  }
+  @media (max-width:760px){
+    #layout{flex-direction:column}
+    #panel{width:100%; max-height:46%; border-right:none; border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1><b>Vargov®Design</b> · Конфигуратор ленточных композиций</h1>
+  <span class="sub">тип «лента из стеклянных стержней» — по мотивам LC0217 / LC0217-1</span>
+</header>
+
+<div id="layout">
+  <div id="panel">
+    <fieldset>
+      <legend>Габариты композиции, мм</legend>
+      <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
+      <div class="row"><label for="dimD">Глубина (Z)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
+      <div class="row"><label for="dimH">Высота (Y)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="presets">
+        <button data-p="2400,900,800">Гостиная 2.4м</button>
+        <button data-p="3500,1200,900">Холл 3.5м</button>
+        <button data-p="6000,1500,1200">Ресепшн 6м</button>
+        <button data-p="1500,1500,4000">Лестница 4м</button>
+        <button data-p="1200,400,500">Компакт 1.2м</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Пластика ленты</legend>
+      <div class="row"><label for="style">Стиль</label>
+        <select id="style">
+          <option value="wave" selected>Волна (как LC0217)</option>
+          <option value="serpentine">Серпантин</option>
+          <option value="spiral">Спираль</option>
+          <option value="cascade">Каскад</option>
+          <option value="free">Свободная форма</option>
+        </select>
+      </div>
+      <div class="row"><label for="ribbons">Кол-во лент</label>
+        <select id="ribbons"><option>1</option><option selected>2</option><option>3</option></select>
+      </div>
+      <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="200" value="115"><span class="val" id="densityV"></span></div>
+      <div class="row"><label for="ampl">Амплитуда волн</label><input id="ampl" type="range" min="20" max="100" value="62"><span class="val" id="amplV"></span></div>
+      <div class="row"><label for="twist">Закрутка</label><input id="twist" type="range" min="0" max="100" value="55"><span class="val" id="twistV"></span></div>
+      <div class="row"><label for="rWidth">Ширина ленты</label>
+        <select id="rWidth">
+          <option value="200">200 мм</option>
+          <option value="250">250 мм</option>
+          <option value="300" selected>300 мм (стандарт)</option>
+        </select>
+      </div>
+      <div class="row"><label for="taper">Сужение к концам</label><input id="taper" type="checkbox" checked></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Стекло и свет</legend>
+      <div class="swatches" id="swatches"></div>
+      <div class="row" style="margin-top:10px"><label for="leds">LED-подсветка по оси</label><input id="leds" type="checkbox" checked></div>
+      <div class="row"><label for="cables">Подвесы</label><input id="cables" type="checkbox" checked></div>
+      <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
+      <div class="row"><label for="autorot">Автовращение</label><input id="autorot" type="checkbox" checked></div>
+    </fieldset>
+
+    <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
+    <div class="btns">
+      <button class="btn2" id="savePng">Скачать PNG</button>
+      <button class="btn2" id="saveCsv">Спецификация CSV</button>
+    </div>
+
+    <fieldset style="margin-top:14px">
+      <legend>Расчёт</legend>
+      <div id="spec"></div>
+      <div class="note">
+        Расчёт предварительный: финальную спецификацию, стоимость производства и доставки
+        подтверждает производство Vargov®Design.
+      </div>
+      <div class="btns" style="margin-top:10px">
+        <a class="btn2" href="https://wa.me/message/SAC5LWOV5QMXC1" target="_blank" rel="noopener">Запрос в WhatsApp</a>
+        <a class="btn2" href="https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-371033491511-svetovaya-kompozitsiya" target="_blank" rel="noopener">Карточка LC0217</a>
+      </div>
+    </fieldset>
+  </div>
+
+  <div id="stage">
+    <canvas id="cv"></canvas>
+    <div id="dims"></div>
+    <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+   Vargov®Design — генератор «ленточных» композиций (LC0217).
+   Лента = гибкий каркас (проволока Ø5 мм по кантам + осевая
+   LED-струна) с плотно уложенными поперёк стеклянными стержнями
+   Ø15 мм, L 150–300 мм. Генератор вписывает извивающуюся ленту
+   в заданные габариты W×D×H.
+   Все размеры в мм. Y — вверх.
+   ============================================================ */
+
+const ROD_D = 15;        // диаметр стержня
+const ROD_R = ROD_D/2;
+const WIRE_D = 5;        // проволока каркаса
+const ROD_STEP = 17;     // шаг стержней вдоль ленты (почти вплотную)
+const ROD_MIN = 150, ROD_MAX = 300;
+const LED_STEP = 180;    // шаг LED-точек вдоль оси
+const CABLE_STEP = 650;  // примерный шаг подвесов
+const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
+
+const GLASS_COLORS = [
+  {id:"amber",   name:"Янтарь",     c:"#e8a33d"},
+  {id:"cognac",  name:"Коньяк",     c:"#a96428"},
+  {id:"gold",    name:"Золото",     c:"#d4b23c"},
+  {id:"cobalt",  name:"Кобальт",    c:"#2439c8"},
+  {id:"ruby",    name:"Рубин",      c:"#c01f35"},
+  {id:"smoke",   name:"Дымчатый",   c:"#8d939c"},
+  {id:"clear",   name:"Прозрачный", c:"#cfdde6"},
+];
+
+/* ---------- малая векторная алгебра ---------- */
+const V = {
+  add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],
+  sub:(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],
+  mul:(a,s)=>[a[0]*s,a[1]*s,a[2]*s],
+  dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],
+  cross:(a,b)=>[a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]],
+  len:a=>Math.hypot(a[0],a[1],a[2]),
+  norm:a=>{const l=Math.hypot(a[0],a[1],a[2])||1; return [a[0]/l,a[1]/l,a[2]/l];}
+};
+
+/* детерминированный ГПСЧ */
+function mulberry32(seed){
+  let a = seed>>>0;
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a>>>15, 1 | a);
+    t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t;
+    return ((t ^ t>>>14) >>> 0) / 4294967296;
+  };
+}
+
+/* Catmull-Rom по массиву точек, t∈[0..1] по сегментам */
+function catmullRom(pts, t){
+  const n = pts.length-1;
+  const f = Math.min(n-1e-9, Math.max(0, t*n));
+  const i = Math.floor(f), u = f-i;
+  const p0 = pts[Math.max(0,i-1)], p1 = pts[i], p2 = pts[Math.min(n,i+1)], p3 = pts[Math.min(n,i+2)];
+  const out = [0,0,0];
+  for(let k=0;k<3;k++){
+    out[k] = 0.5*((2*p1[k]) + (-p0[k]+p2[k])*u
+           + (2*p0[k]-5*p1[k]+4*p2[k]-p3[k])*u*u
+           + (-p0[k]+3*p1[k]-3*p2[k]+p3[k])*u*u*u);
+  }
+  return out;
+}
+
+/* ============================================================
+   Генерация одной ленты.
+   1. Контрольные точки осевой линии по выбранному стилю.
+   2. Ресемплирование по длине дуги.
+   3. Rotation-minimizing frame (метод двойного отражения)
+      + управляемая закрутка.
+   4. Стержни поперёк ленты, канты, LED, подвесы.
+   ============================================================ */
+
+function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
+  // box = {w,d,h} — рабочий бокс ленты (уже с отступами)
+  // lengthK («насыщенность») управляет числом волн/витков → длиной ленты
+  const pts = [];
+  const {w,d,h} = box;
+  const jitter = (s)=> (rng()*2-1)*s;
+  const laneZ = lanes>1 ? (lane+0.5)/lanes : 0.5;
+
+  if(style === "wave"){
+    // движение вдоль X, вертикальные волны со случайными складками
+    const n = Math.max(6, Math.round((7 + rng()*3)*Math.max(1,lengthK*0.9)));
+    const ph1 = rng()*Math.PI*2, ph2 = rng()*Math.PI*2;
+    const f1 = (1.5+rng()*1.3)*lengthK, f2 = (3+rng()*2)*lengthK;
+    for(let i=0;i<n;i++){
+      const t = i/(n-1);
+      const y = 0.5 + ampl*(0.42*Math.sin(t*Math.PI*2*f1+ph1) + 0.25*Math.sin(t*Math.PI*2*f2+ph2)) + jitter(0.06);
+      const z = laneZ + jitter(lanes>1 ? 0.10 : 0.22);
+      pts.push([t*w, Math.min(0.95,Math.max(0.05,y))*h, Math.min(0.95,Math.max(0.05,z))*d]);
+    }
+  } else if(style === "serpentine"){
+    // S-петли в плане, лента «на ребре»
+    const n = Math.max(7, Math.round((8 + rng()*3)*Math.max(1,lengthK*0.9)));
+    const ph = rng()*Math.PI*2;
+    const f = (1.6+rng()*1.2)*lengthK;
+    for(let i=0;i<n;i++){
+      const t = i/(n-1);
+      const z = 0.5 + ampl*0.62*Math.sin(t*Math.PI*2*f+ph) + jitter(0.05);
+      const y = laneZ*0.4+0.3 + ampl*0.22*Math.sin(t*Math.PI*2*(f*0.5)+ph*1.7) + jitter(0.05);
+      pts.push([t*w, Math.min(0.95,Math.max(0.05,y))*h, Math.min(0.95,Math.max(0.05,z))*d]);
+    }
+  } else if(style === "spiral"){
+    // спуск по спирали вокруг вертикальной оси
+    const turns = (1.2 + ampl*1.6 + rng()*0.5)*lengthK;
+    const n = Math.max(9, Math.round(turns*5));
+    const ph = rng()*Math.PI*2;
+    const dir = rng()<0.5 ? 1 : -1;
+    for(let i=0;i<n;i++){
+      const t = i/(n-1);
+      const a = ph + dir*t*turns*Math.PI*2;
+      const r = 0.38 + 0.1*Math.sin(t*Math.PI*2+ph) + jitter(0.03);
+      const yy = lanes>1 ? (1-t)*0.9+0.05 : (1-t)*0.86+0.07;
+      pts.push([(0.5+r*Math.cos(a))*w, yy*h, (0.5+r*Math.sin(a))*d]);
+    }
+  } else if(style === "cascade"){
+    // диагональный поток сверху вниз
+    const n = Math.max(7, Math.round((8 + rng()*3)*Math.max(1,lengthK*0.9)));
+    const ph = rng()*Math.PI*2;
+    const f = (1.8+rng()*1.4)*lengthK;
+    for(let i=0;i<n;i++){
+      const t = i/(n-1);
+      const y = 0.92 - t*0.84 + ampl*0.12*Math.sin(t*Math.PI*2*f+ph);
+      const z = laneZ + ampl*0.35*Math.sin(t*Math.PI*2*f*0.7+ph*2) + jitter(0.05);
+      pts.push([t*w, Math.min(0.95,Math.max(0.05,y))*h, Math.min(0.95,Math.max(0.05,z))*d]);
+    }
+  } else { // free
+    const n = Math.max(7, Math.round((8 + rng()*4)*lengthK));
+    let prev = [rng()*0.3, 0.3+rng()*0.4, 0.3+rng()*0.4];
+    for(let i=0;i<n;i++){
+      const t = i/(n-1);
+      const p = [
+        Math.min(0.97,Math.max(0.03, t + jitter(0.10))),
+        Math.min(0.95,Math.max(0.05, prev[1] + jitter(0.30)*ampl*1.6)),
+        Math.min(0.95,Math.max(0.05, prev[2] + jitter(0.34)*ampl*1.6)),
+      ];
+      pts.push([p[0]*w, p[1]*h, p[2]*d]);
+      prev = p;
+    }
+  }
+  return pts;
+}
+
+function buildRibbon(params, rngSeed, lane){
+  const {style, box, ampl, twistAmt, ribbonW, taper, lengthK, lanes} = params;
+  const rng = mulberry32(rngSeed);
+
+  // отступ: половина ширины ленты + радиус стержня
+  const inset = ribbonW/2 + ROD_R + 5;
+  const work = {
+    w: Math.max(120, box.w - 2*inset),
+    h: Math.max(120, box.h - 2*inset),
+    d: Math.max(120, box.d - 2*inset),
+  };
+
+  let ctrl = controlPoints(style, rng, work, lane, lanes, ampl, lengthK);
+
+  // twist-профиль
+  const tf1 = 1+rng()*2, tf2 = 2.5+rng()*2.5, tp1 = rng()*Math.PI*2, tp2 = rng()*Math.PI*2;
+  const twistAt = s => twistAmt*(0.65*Math.sin(s*Math.PI*2*tf1+tp1) + 0.35*Math.sin(s*Math.PI*2*tf2+tp2));
+
+  // --- итеративное вписывание в габариты ---
+  const margin = ROD_R+1;
+  let geo = null;
+  for(let iter=0; iter<6; iter++){
+    geo = sampleRibbon(ctrl, {twistAt, ribbonW, taper, style});
+    // фактические экстенты по концам стержней
+    const bb = geoBBox(geo);
+    const cx=(bb.min[0]+bb.max[0])/2, cy=(bb.min[1]+bb.max[1])/2, cz=(bb.min[2]+bb.max[2])/2;
+    const sx=(box.w-2*margin)/Math.max(1,bb.max[0]-bb.min[0]);
+    const sy=(box.h-2*margin)/Math.max(1,bb.max[1]-bb.min[1]);
+    const sz=(box.d-2*margin)/Math.max(1,bb.max[2]-bb.min[2]);
+    // масштабируем контрольные точки к центру бокса (рост ограничен, сжатие — нет)
+    const fx=Math.min(sx,1.5), fy=Math.min(sy,1.5), fz=Math.min(sz,1.5);
+    ctrl = ctrl.map(p=>[
+      box.w/2 + (p[0]-cx)*fx,
+      box.h/2 + (p[1]-cy)*fy,
+      box.d/2 + (p[2]-cz)*fz,
+    ]);
+    if(Math.abs(1-fx)<0.004 && Math.abs(1-fy)<0.004 && Math.abs(1-fz)<0.004) {
+      geo = sampleRibbon(ctrl, {twistAt, ribbonW, taper, style});
+      break;
+    }
+  }
+  // финальная точная подгонка: двигаем только центры стержней,
+  // длины и ориентация стержней сохраняются
+  fitExact(geo, box, margin);
+  return geo;
+}
+
+function fitExact(geo, box, margin){
+  const lim = [box.w, box.h, box.d];
+  const target = [box.w/2, box.h/2, box.d/2];
+  for(let it=0; it<8; it++){
+    const bb = geoBBox(geo);
+    const bc = [(bb.min[0]+bb.max[0])/2,(bb.min[1]+bb.max[1])/2,(bb.min[2]+bb.max[2])/2];
+    const scale = [1,1,1];
+    let shrunk = false;
+    for(let k=0;k<3;k++){
+      const ext = bb.max[k]-bb.min[k];
+      const s = (lim[k]-2*margin)/Math.max(1,ext);
+      if(s<1){ scale[k]=s; shrunk=true; }
+    }
+    for(let i=0;i<geo.rods.length;i++){
+      const r = geo.rods[i];
+      for(let k=0;k<3;k++){
+        const c = (r.a[k]+r.b[k])/2, half = (r.a[k]-r.b[k])/2;
+        const nc = target[k] + (c-bc[k])*scale[k];
+        r.a[k] = nc + half;  // r.a/r.b — те же массивы, что railA/railB
+        r.b[k] = nc - half;
+        geo.centers[i][k] = nc;
+      }
+    }
+    if(!shrunk) break;
+  }
+}
+
+function sampleRibbon(ctrl, opt){
+  const {twistAt, ribbonW, taper, style} = opt;
+  // 1) плотное сэмплирование сплайна, таблица длин дуги
+  const NS = 900;
+  const raw = [], cum = [0];
+  for(let i=0;i<=NS;i++) raw.push(catmullRom(ctrl, i/NS));
+  for(let i=1;i<=NS;i++) cum.push(cum[i-1] + V.len(V.sub(raw[i],raw[i-1])));
+  const stepEff = ROD_STEP;   // физический шаг стержней
+  const ribbonLen = cum[NS];  // погонная длина ленты
+  const nRods = Math.max(8, Math.floor(ribbonLen/stepEff));
+
+  // выборка точки по длине дуги
+  let ci = 0;
+  const atLen = (L)=>{
+    while(ci<NS && cum[ci+1]<L) ci++;
+    while(ci>0 && cum[ci]>L) ci--;
+    const seg = cum[ci+1]-cum[ci] || 1;
+    const u = (L-cum[ci])/seg;
+    return [
+      raw[ci][0]+(raw[ci+1][0]-raw[ci][0])*u,
+      raw[ci][1]+(raw[ci+1][1]-raw[ci][1])*u,
+      raw[ci][2]+(raw[ci+1][2]-raw[ci][2])*u,
+    ];
+  };
+
+  // 2) центры/касательные
+  const C = [], T = [];
+  for(let i=0;i<nRods;i++){
+    const L = (i+0.5)*stepEff;
+    if(L>ribbonLen) break;
+    const p = atLen(L);
+    const p2 = atLen(Math.min(ribbonLen, L+2));
+    const p0 = atLen(Math.max(0, L-2));
+    C.push(p); T.push(V.norm(V.sub(p2,p0)));
+  }
+  const n = C.length;
+
+  // 3) rotation-minimizing frame (двойное отражение) + закрутка
+  //    W — направление ширины ленты (вдоль стержней)
+  let W0;
+  if(style==="serpentine" || style==="cascade") W0 = [0,1,0];       // лента «на ребре»
+  else if(style==="spiral") W0 = V.norm([0,1,0.35]);
+  else W0 = V.norm(V.cross(T[0], Math.abs(T[0][1])>0.9?[1,0,0]:[0,1,0])); // плашмя
+  // ортогонализуем к T0
+  W0 = V.norm(V.sub(W0, V.mul(T[0], V.dot(W0,T[0]))));
+  const Wf = [W0];
+  for(let i=1;i<n;i++){
+    // double reflection
+    const v1 = V.sub(C[i], C[i-1]);
+    const c1 = V.dot(v1,v1)||1;
+    const rL = V.sub(Wf[i-1], V.mul(v1, 2*V.dot(v1,Wf[i-1])/c1));
+    const tL = V.sub(T[i-1],  V.mul(v1, 2*V.dot(v1,T[i-1])/c1));
+    const v2 = V.sub(T[i], tL);
+    const c2 = V.dot(v2,v2)||1;
+    let w = V.sub(rL, V.mul(v2, 2*V.dot(v2,rL)/c2));
+    w = V.norm(V.sub(w, V.mul(T[i], V.dot(w,T[i]))));
+    Wf.push(w);
+  }
+
+  // 4) стержни: применяем твист и профиль ширины
+  const rods = [], railA = [], railB = [], centers = [];
+  const halfMaxByLen = [];
+  for(let i=0;i<n;i++){
+    const s = i/(n-1);
+    const tw = twistAt(s);
+    // поворот W вокруг T на угол tw
+    const t=T[i], w=Wf[i];
+    const cos=Math.cos(tw), sin=Math.sin(tw);
+    const wN = V.norm(V.add(V.mul(w,cos), V.mul(V.cross(t,w),sin)));
+    // длина стержня: сужение к концам + лёгкая органика
+    let L = ribbonW;
+    if(taper){
+      const e = 0.10; // доля длины на сужение
+      const k = s<e ? s/e : (s>1-e ? (1-s)/e : 1);
+      const kk = k*k*(3-2*k); // smoothstep
+      L = ROD_MIN + (ribbonW-ROD_MIN)*kk;
+    }
+    L = Math.max(ROD_MIN, Math.min(ROD_MAX, Math.round(L/10)*10));
+    const half = L/2;
+    const a = V.add(C[i], V.mul(wN, half));
+    const b = V.sub(C[i], V.mul(wN, half));
+    const N = V.norm(V.cross(t, wN)); // нормаль поверхности ленты
+    rods.push({a, b, n:N, len:L});
+    railA.push(a); railB.push(b); centers.push(C[i]);
+  }
+
+  return {rods, railA, railB, centers, ribbonLen, stepEff};
+}
+
+function geoBBox(geo){
+  const min=[1e9,1e9,1e9], max=[-1e9,-1e9,-1e9];
+  for(const r of geo.rods){
+    for(const p of [r.a,r.b]){
+      for(let k=0;k<3;k++){
+        if(p[k]<min[k])min[k]=p[k];
+        if(p[k]>max[k])max[k]=p[k];
+      }
+    }
+  }
+  return {min,max};
+}
+
+/* ============================================================
+   Сцена: сборка композиции из нескольких лент + подвесы + LED
+   ============================================================ */
+let scene = null;
+
+function buildScene(){
+  const box = {
+    w:+ui.dimW.value || 2400,
+    h:+ui.dimH.value || 800,
+    d:+ui.dimD.value || 900,
+  };
+  const lanes = +ui.ribbons.value;
+  const params = {
+    style: ui.style.value,
+    box,
+    ampl: (+ui.ampl.value)/100,           // 0.2..1
+    twistAmt: (+ui.twist.value)/100 * 1.15, // рад амплитуда
+    ribbonW: +ui.rWidth.value,
+    taper: ui.taper.checked,
+    lengthK: (+ui.density.value)/100,
+    lanes,
+  };
+  const ribbons = [];
+  for(let i=0;i<lanes;i++){
+    ribbons.push(buildRibbon(params, state.seed + i*7919, i));
+  }
+  // LED-точки и подвесы
+  for(const rb of ribbons){
+    rb.leds = [];
+    if(ui.leds.checked){
+      let acc = LED_STEP*0.5;
+      for(let i=1;i<rb.centers.length;i++){
+        acc += rb.stepEff;
+        if(acc>=LED_STEP){ rb.leds.push(rb.centers[i]); acc=0; }
+      }
+    }
+    rb.cabs = [];
+    if(ui.cables.checked){
+      let acc = CABLE_STEP*0.6;
+      for(let i=0;i<rb.rods.length;i++){
+        acc += rb.stepEff;
+        if(acc>=CABLE_STEP){
+          const r = rb.rods[i];
+          const top = r.a[1]>r.b[1] ? r.a : r.b;
+          rb.cabs.push({from:[top[0], box.h, top[2]], to:top});
+          acc = 0;
+        }
+      }
+    }
+  }
+  scene = {box, ribbons, params};
+  updateSpec();
+  camera.fitTo(box);
+  needRedraw = true;
+}
+
+/* ============================================================
+   Камера и проекция
+   ============================================================ */
+const camera = {
+  yaw:-0.55, pitch:-0.28, dist:4200, target:[0,0,0], fov:40,
+  home:{yaw:-0.55, pitch:-0.28},
+  fitTo(box){
+    this.target = [box.w/2, box.h/2, box.d/2];
+    const diag = Math.hypot(box.w, box.h, box.d);
+    this.dist = diag*1.35 + 400;
+  },
+  basis(){
+    const cy=Math.cos(this.yaw), sy=Math.sin(this.yaw);
+    const cp=Math.cos(this.pitch), sp=Math.sin(this.pitch);
+    const fwd = [cp*cy, sp, cp*sy];
+    const right = V.norm(V.cross(fwd,[0,1,0]));
+    const up = V.cross(right,fwd);
+    const eye = V.sub(this.target, V.mul(fwd,this.dist));
+    return {eye,fwd,right,up};
+  }
+};
+
+let cw=0, chgt=0, dpr=1;
+function project(p, B, out){
+  const d = V.sub(p, B.eye);
+  const z = V.dot(d, B.fwd);
+  if(z<10) return false;
+  const f = (chgt/2)/Math.tan(camera.fov*Math.PI/360);
+  out[0] = cw/2 + V.dot(d,B.right)*f/z;
+  out[1] = chgt/2 - V.dot(d,B.up)*f/z;
+  out[2] = z;
+  out[3] = f/z; // масштаб мм→px на этой глубине
+  return true;
+}
+
+/* ============================================================
+   Отрисовка
+   ============================================================ */
+const cv = document.getElementById("cv");
+const ctx = cv.getContext("2d");
+let needRedraw = true;
+
+function hexRgb(h){
+  return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)];
+}
+function shadeCss(rgb, k, a){
+  return `rgba(${Math.min(255,rgb[0]*k)|0},${Math.min(255,rgb[1]*k)|0},${Math.min(255,rgb[2]*k)|0},${a})`;
+}
+
+const LIGHT = V.norm([0.35, 0.85, 0.40]);
+
+function draw(){
+  const B = camera.basis();
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  // фон-виньетка
+  const g = ctx.createRadialGradient(cw/2,chgt*0.42,chgt*0.1, cw/2,chgt/2,chgt*0.95);
+  g.addColorStop(0,"#17171c"); g.addColorStop(1,"#0a0a0c");
+  ctx.fillStyle=g; ctx.fillRect(0,0,cw,chgt);
+  if(!scene) return;
+
+  const glass = hexRgb(state.color.c);
+  const isClear = state.color.id==="clear";
+  const prims = [];
+  const p1=[0,0,0,0], p2=[0,0,0,0];
+
+  // габаритный бокс
+  if(ui.showBox.checked){
+    const {w,h,d} = scene.box;
+    const cor = [[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
+    const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+    ctx.strokeStyle="rgba(120,120,140,.35)"; ctx.lineWidth=1; ctx.setLineDash([5,6]);
+    for(const [a,b] of edges){
+      if(project(cor[a],B,p1) && project(cor[b],B,p2)){
+        ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
+      }
+    }
+    ctx.setLineDash([]);
+    // подписи размеров
+    ctx.fillStyle="rgba(200,190,160,.8)"; ctx.font="12px system-ui";
+    const lbl = (a,b,txt)=>{
+      const m=[(cor[a][0]+cor[b][0])/2,(cor[a][1]+cor[b][1])/2,(cor[a][2]+cor[b][2])/2];
+      if(project(m,B,p1)) ctx.fillText(txt, p1[0]+6, p1[1]-4);
+    };
+    lbl(0,1, `${scene.box.w} мм`);
+    lbl(1,2, `${scene.box.d} мм`);
+    lbl(1,5, `${scene.box.h} мм`);
+  }
+
+  for(const rb of scene.ribbons){
+    // подвесы
+    for(const c of rb.cabs){
+      if(project(c.from,B,p1) && project(c.to,B,p2)){
+        prims.push({z:(p1[2]+p2[2])/2+200, kind:0,
+          x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1]});
+      }
+    }
+    // стержни
+    for(const r of rb.rods){
+      if(!project(r.a,B,p1) || !project(r.b,B,p2)) continue;
+      const nd = Math.abs(V.dot(r.n, LIGHT));
+      const zz = (p1[2]+p2[2])/2;
+      prims.push({z:zz, kind:1,
+        x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
+        wpx:Math.max(1.1, ROD_D*p1[3]),
+        shade:0.40+0.60*nd});
+    }
+    // канты (сегменты между соседними концами)
+    for(const rail of [rb.railA, rb.railB]){
+      for(let i=1;i<rail.length;i++){
+        if(!project(rail[i-1],B,p1) || !project(rail[i],B,p2)) continue;
+        prims.push({z:(p1[2]+p2[2])/2-2, kind:2,
+          x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
+          wpx:Math.max(0.8, WIRE_D*p1[3])});
+      }
+    }
+    // LED
+    for(const l of rb.leds){
+      if(!project(l,B,p1)) continue;
+      prims.push({z:p1[2]-4, kind:3, x1:p1[0], y1:p1[1], r:Math.max(2.5, 26*p1[3])});
+    }
+  }
+
+  prims.sort((a,b)=>b.z-a.z);
+
+  const gold = [201,162,39];
+  for(const pr of prims){
+    if(pr.kind===0){ // подвес
+      ctx.strokeStyle="rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
+      ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
+    } else if(pr.kind===1){ // стержень
+      ctx.lineCap="round";
+      ctx.strokeStyle = shadeCss(glass, pr.shade, isClear?0.45:0.88);
+      ctx.lineWidth = pr.wpx;
+      ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
+      // блик
+      ctx.strokeStyle = `rgba(255,255,255,${0.10+0.28*pr.shade})`;
+      ctx.lineWidth = Math.max(0.5, pr.wpx*0.24);
+      ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
+    } else if(pr.kind===2){ // золотой кант
+      ctx.lineCap="round";
+      ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
+      ctx.lineWidth = pr.wpx;
+      ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
+    } else { // LED
+      ctx.globalCompositeOperation = "lighter";
+      const gg = ctx.createRadialGradient(pr.x1,pr.y1,0, pr.x1,pr.y1,pr.r);
+      gg.addColorStop(0,"rgba(255,248,225,1)");
+      gg.addColorStop(0.22,"rgba(255,225,150,.75)");
+      gg.addColorStop(1,"rgba(255,200,90,0)");
+      ctx.fillStyle=gg;
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.r,0,7); ctx.fill();
+      ctx.globalCompositeOperation = "source-over";
+    }
+  }
+}
+
+/* ============================================================
+   Спецификация
+   ============================================================ */
+function updateSpec(){
+  if(!scene) return;
+  let totalLen=0, rods=0, glassMass=0, wire=0, leds=0, cabs=0;
+  const byLen = new Map();
+  for(const rb of scene.ribbons){
+    totalLen += rb.ribbonLen;
+    rods += rb.rods.length;
+    leds += rb.leds.length;
+    cabs += rb.cabs.length;
+    wire += rb.ribbonLen*3; // 2 канта + осевая струна
+    for(const r of rb.rods){
+      byLen.set(r.len, (byLen.get(r.len)||0)+1);
+      glassMass += Math.PI*ROD_R*ROD_R*r.len*GLASS_DENSITY; // г, полнотелый стержень
+    }
+  }
+  const bb = (()=>{ // фактический габарит
+    const min=[1e9,1e9,1e9],max=[-1e9,-1e9,-1e9];
+    for(const rb of scene.ribbons){
+      const b=geoBBox(rb);
+      for(let k=0;k<3;k++){min[k]=Math.min(min[k],b.min[k]); max[k]=Math.max(max[k],b.max[k]);}
+    }
+    return [max[0]-min[0]+ROD_D, max[1]-min[1]+ROD_D, max[2]-min[2]+ROD_D];
+  })();
+  state.lastSpec = {totalLen, rods, glassMass, wire, leds, cabs, byLen, bb};
+
+  const m = (totalLen/1000);
+  document.getElementById("spec").innerHTML = `
+    <table>
+      <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
+      <tr><td>Лент в композиции</td><td>${scene.ribbons.length}</td></tr>
+      <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
+      <tr><td>Длины стержней</td><td>${ROD_MIN}–${ROD_MAX} мм</td></tr>
+      <tr><td>Масса стекла (оценка)</td><td>${(glassMass*0.46/1000).toFixed(1)}–${(glassMass/1000).toFixed(1)} кг</td></tr>
+      <tr><td>Проволока каркаса Ø5</td><td>${(wire/1000).toFixed(1)} м</td></tr>
+      ${leds?`<tr><td>LED-точки по оси</td><td>${leds} шт (~${(leds*0.2).toFixed(0)} Вт)</td></tr>`:""}
+      ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт</td></tr>`:""}
+      <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
+      <tr><td>Цена</td><td>за 1 пог. м — по запросу</td></tr>
+    </table>`;
+  document.getElementById("dims").textContent =
+    `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`;
+}
+
+/* ============================================================
+   UI, события, экспорт
+   ============================================================ */
+const ui = {};
+for(const id of ["dimW","dimD","dimH","style","ribbons","density","ampl","twist","rWidth","taper","leds","cables","showBox","autorot"]){
+  ui[id] = document.getElementById(id);
+}
+const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
+
+// свотчи стекла
+const swBox = document.getElementById("swatches");
+GLASS_COLORS.forEach((c,i)=>{
+  const el = document.createElement("div");
+  el.className = "sw"+(c===state.color?" sel":"");
+  el.style.background = `radial-gradient(circle at 35% 30%, ${c.c}, #000 160%)`;
+  el.title = c.name;
+  el.onclick = ()=>{
+    state.color = c;
+    swBox.querySelectorAll(".sw").forEach(s=>s.classList.remove("sel"));
+    el.classList.add("sel");
+    needRedraw = true;
+  };
+  swBox.appendChild(el);
+});
+
+function refreshLabels(){
+  document.getElementById("densityV").textContent = (+ui.density.value/100).toFixed(2)+"×";
+  document.getElementById("amplV").textContent = ui.ampl.value+"%";
+  document.getElementById("twistV").textContent = ui.twist.value+"%";
+}
+refreshLabels();
+
+const rebuild = ()=>{ refreshLabels(); buildScene(); };
+for(const id of ["dimW","dimD","dimH","style","ribbons","rWidth"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["density","ampl","twist"]) ui[id].addEventListener("input", rebuild);
+for(const id of ["taper","leds","cables"]) ui[id].addEventListener("change", rebuild);
+ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
+
+document.querySelectorAll(".presets button").forEach(b=>{
+  b.onclick = ()=>{
+    const [w,d,h] = b.dataset.p.split(",").map(Number);
+    ui.dimW.value=w; ui.dimD.value=d; ui.dimH.value=h;
+    rebuild();
+  };
+});
+
+document.getElementById("regen").onclick = ()=>{
+  state.seed = (state.seed*1664525+1013904223)>>>0;
+  buildScene();
+};
+
+document.getElementById("savePng").onclick = ()=>{
+  const a = document.createElement("a");
+  a.download = `vargov-ribbon-${ui.dimW.value}x${ui.dimD.value}x${ui.dimH.value}.png`;
+  a.href = cv.toDataURL("image/png");
+  a.click();
+};
+
+document.getElementById("saveCsv").onclick = ()=>{
+  const s = state.lastSpec; if(!s) return;
+  const rows = [
+    ["Vargov(R) Design — предварительная спецификация ленточной композиции (тип LC0217)"],
+    ["Габарит (задан), мм", `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`],
+    ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
+    ["Стиль", ui.style.options[ui.style.selectedIndex].text],
+    ["Цвет стекла", state.color.name],
+    ["Лент", scene.ribbons.length],
+    ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
+    ["Стержни Ø15, всего шт", s.rods],
+    ["Масса стекла, кг (оценка: трубка - полнотелые)", `${(s.glassMass*0.46/1000).toFixed(1)} - ${(s.glassMass/1000).toFixed(1)}`],
+    ["Проволока Ø5, м", (s.wire/1000).toFixed(1)],
+    ["LED-точек", s.leds],
+    ["Подвесов", s.cabs],
+    [],
+    ["Длина стержня, мм","Количество, шт"],
+    ...[...s.byLen.entries()].sort((a,b)=>a[0]-b[0]).map(([l,c])=>[l,c]),
+    [],
+    ["Цена за 1 пог. м — по запросу: https://wa.me/message/SAC5LWOV5QMXC1"],
+  ];
+  const csv = "﻿"+rows.map(r=>r.join(";")).join("\r\n");
+  const a = document.createElement("a");
+  a.download = "vargov-ribbon-spec.csv";
+  a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+  a.click();
+};
+
+/* камера: события */
+let drag=null;
+cv.addEventListener("pointerdown", e=>{
+  drag={x:e.clientX,y:e.clientY}; cv.setPointerCapture(e.pointerId);
+});
+cv.addEventListener("pointermove", e=>{
+  if(!drag) return;
+  camera.yaw   += (e.clientX-drag.x)*0.006;
+  camera.pitch += (e.clientY-drag.y)*0.005;
+  camera.pitch = Math.max(-1.35, Math.min(1.35, camera.pitch));
+  drag={x:e.clientX,y:e.clientY};
+  needRedraw=true;
+});
+cv.addEventListener("pointerup", ()=>{drag=null;});
+cv.addEventListener("wheel", e=>{
+  e.preventDefault();
+  camera.dist *= (e.deltaY>0?1.1:0.9);
+  camera.dist = Math.max(400, Math.min(60000, camera.dist));
+  needRedraw=true;
+},{passive:false});
+cv.addEventListener("dblclick", ()=>{
+  camera.yaw=camera.home.yaw; camera.pitch=camera.home.pitch;
+  camera.fitTo(scene.box);
+  needRedraw=true;
+});
+
+function resize(){
+  dpr = Math.min(2, window.devicePixelRatio||1);
+  const r = cv.parentElement.getBoundingClientRect();
+  cw = r.width; chgt = r.height;
+  cv.width = Math.round(cw*dpr); cv.height = Math.round(chgt*dpr);
+  needRedraw = true;
+}
+window.addEventListener("resize", resize);
+
+let lastT = 0;
+function loop(t){
+  if(ui.autorot.checked && !drag){
+    camera.yaw += Math.min(50, t-lastT)*0.00009;
+    needRedraw = true;
+  }
+  lastT = t;
+  if(needRedraw){ draw(); needRedraw=false; }
+  requestAnimationFrame(loop);
+}
+
+resize();
+buildScene();
+requestAnimationFrame(loop);
+
+// отладочный хук для автотестов
+window.__vargov = {
+  bbox: ()=>{ if(!scene) return null;
+    const s=state.lastSpec; return {box:scene.box, actual:s.bb, rods:s.rods, lenM:s.totalLen/1000}; },
+  set: (id,v)=>{ ui[id].value=v; rebuild(); },
+  regen: ()=>document.getElementById("regen").click(),
+};
+</script>
+</body>
+</html>
