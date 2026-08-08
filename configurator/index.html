@@ -412,21 +412,35 @@ function buildRibbon(params, rngSeed, lane){
   // twist-профиль: у «Хаоса» сильнее и с третьей гармоникой — перекруты
   const tf1 = 1+rngL()*2, tf2 = 2.5+rngL()*2.5, tf3 = 5+rngL()*4;
   const tp1 = rngL()*Math.PI*2, tp2 = rngL()*Math.PI*2, tp3 = rngL()*Math.PI*2;
-  const tsc = style==="chaos" ? 1.9 : 1;
+  const tsc = style==="chaos" ? 1.9 : 1.4;
   const twistAt = s => twistAmt*tsc*(
-    0.55*Math.sin(s*Math.PI*2*tf1+tp1) +
+    0.50*Math.sin(s*Math.PI*2*tf1+tp1) +
     0.30*Math.sin(s*Math.PI*2*tf2+tp2) +
-    0.15*Math.sin(s*Math.PI*2*tf3+tp3));
+    0.20*Math.sin(s*Math.PI*2*tf3+tp3));
   // хаос: случайная начальная ориентация ленты
   const w0hint = style==="chaos" ? [rngL()*2-1, rngL()*2-1, rngL()*2-1] : null;
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
-  const foldAmp = 0.15+0.5*ampl;
+  const foldAmp = 0.2+0.55*ampl;
   const ffU1=0.8+rngL()*1.7, fpU1=rngL()*Math.PI*2, ffU2=2+rngL()*2, fpU2=rngL()*Math.PI*2;
   const ffD1=0.8+rngL()*1.7, fpD1=rngL()*Math.PI*2, ffD2=2+rngL()*2, fpD2=rngL()*Math.PI*2;
   const foldUp = s => foldAmp*(0.7*Math.sin(s*Math.PI*2*ffU1+fpU1)+0.3*Math.sin(s*Math.PI*2*ffU2+fpU2));
   const foldDn = s => foldAmp*(0.7*Math.sin(s*Math.PI*2*ffD1+fpD1)+0.3*Math.sin(s*Math.PI*2*ffD2+fpD2));
-  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn};
+  // «ветер»: многооктавная турбулентность направляющей — крупные
+  // покачивания, средние волны и мелкое трепетание, как шёлк на ветру.
+  // Марш отфильтрует нефизичное, лента живёт на пределе пластики.
+  const wBase = Math.min(work.h, work.d) * (rows===2 ? 1 : 0.65);
+  const wAmp = [0.30*wBase*ampl, 0.13*wBase*ampl, 0.05*wBase*ampl];
+  const wind = [];
+  for(let x=0;x<3;x++){
+    const f1=(1.4+rngL()*1.4), f2=(3.5+rngL()*2.5), f3=(8+rngL()*6);
+    const p1=rngL()*Math.PI*2, p2=rngL()*Math.PI*2, p3=rngL()*Math.PI*2;
+    wind.push(t =>
+      wAmp[0]*Math.sin(t*Math.PI*2*f1+p1) +
+      wAmp[1]*Math.sin(t*Math.PI*2*f2+p2) +
+      wAmp[2]*Math.sin(t*Math.PI*2*f3+p3));
+  }
+  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind};
 
   // --- вписывание: масштабируем направляющую по ФАКТИЧЕСКОЙ (марш) геометрии ---
   const margin = ROD_R+1;
@@ -504,6 +518,14 @@ function sampleGuide(ctrl, opt){
   const G = [];
   for(let k=0;k<m;k++) G.push(atLen(Math.min(natLen-1e-6, (k+0.5)*stepEff)));
   const n = G.length;
+  if(opt.wind){
+    for(let i=0;i<n;i++){
+      const t=i/(n-1);
+      G[i][0]+=opt.wind[0](t);
+      G[i][1]+=opt.wind[1](t);
+      G[i][2]+=opt.wind[2](t);
+    }
+  }
   const T = [];
   for(let i=0;i<n;i++){
     T.push(V.norm(V.sub(G[Math.min(n-1,i+1)], G[Math.max(0,i-1)])));
