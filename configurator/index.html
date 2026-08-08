@@ -1411,6 +1411,7 @@ function updateSpec(){
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
+      <tr><td>К расчёту цены (округление)</td><td>${Math.ceil(m)} пог. м</td></tr>
       <tr><td>Рядность</td><td>${scene.params.rows===2?"2 ряда, 3 контура":"1 ряд, 2 контура"}</td></tr>
       <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
       <tr><td>Длина стержня (все одинаковые)</td><td>${[...byLen.keys()][0]} мм</td></tr>
@@ -1507,6 +1508,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Цвет стекла", state.color.name],
     ["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
+    ["К расчёту цены (округление вверх), пог. м", Math.ceil(s.totalLen/1000)],
     ["Стержни Ø15, всего шт", s.rods],
     ["Длина стержня (все одинаковые), мм", [...s.byLen.keys()][0]],
     ["Зазор между стержнями, мм", `${s.gaps.gmin.toFixed(1)} - ${s.gaps.gmax.toFixed(1)} (норма ${GAP_MIN}-${GAP_MAX})`],
