@@ -14,7 +14,7 @@
 
 **Расчёты остаются через фабрику.** В отличие от петербургской версии, вознаграждение бренда не выводится на российский счёт: и стоимость производства, и 10 % уходят на счёт Производителя в Гонконге. Это не техническая деталь, а главное конструктивное решение: платёж европейской компании напрямую российскому ИП с высокой вероятностью упрётся в комплаенс банка-корреспондента. Именно поэтому вьетнамский договор изначально построен через фабрику, и для ЕС эта схема сохранена.
 
-**Раздел 3.7 — соответствие требованиям ЕС.** Маркировка CE; директивы 2014/35/EU (низковольтное оборудование), 2014/30/EU (ЭМС), 2011/65/EU (RoHS); регламенты 2019/2020 (экодизайн источников света) и 2019/2015 (энергомаркировка). Дистрибьютор как импортёр выполняет обязанности импортёра: проверяет декларацию о соответствии и техдокументацию, наносит свои данные, обеспечивает инструкции на румынском, хранит декларацию 10 лет. Отдельно закреплено ответственное лицо по GPSR (Регламент 2023/988) — по умолчанию сам дистрибьютор, и регистрация в реестрах WEEE и упаковки за его счёт. Бренд и фабрика обязаны дать декларацию, техдокументацию, протоколы испытаний и образцы для испытаний.
+**Раздел 3.7 — соответствие требованиям ЕС, с учётом того, что CE-документации пока нет.** В договоре это признано прямо (п. 3.7.3): техдокументация, испытания и декларация о соответствии готовятся **до отгрузки первого заказа**, включая экспозиционный. Обязанности изготовителя в значении права ЕС несёт брендодержатель — продукция выходит на рынок под знаком Vargov®, переложить это на дистрибьютора нельзя. Расходы на документацию и испытания — на бренде и фабрике (п. 3.7.3.1, можно изменить письменно). Защита дистрибьютора: отгрузка без декларации запрещена, а если её нет через 60 дней после завершения производства — выход из заказа с полным возвратом, включая вознаграждение, без последствий для экспозиции и годового объёма (п. 3.7.3.2). Дальше стандартные обязанности импортёра: свои данные на продукции, инструкции на румынском, хранение декларации 10 лет, ответственное лицо по GPSR (дистрибьютор — он в ЕС, как требует Регламент 2023/988), WEEE и упаковка за его счёт.
 
 **Раздел 3.8 — конкурентное право ЕС.** Это защита самого договора: эксклюзивная дистрибуция в ЕС допустима по Регламенту (EU) 2022/720, но фиксация цен перепродажи и запрет пассивных продаж — грубые нарушения, обнуляющие изъятие целиком. Поэтому прямо записано: цену перепродажи дистрибьютор определяет сам, рекомендованные цены необязательны, пассивные продажи по всему ЕС не ограничены, покупатели свободны в перепродаже, а любое условие, выходящее за пределы допустимого, применяется в допустимой части. Базовый текст изначально не содержал ни RPM, ни запрета пассивных продаж — этот раздел делает соответствие явным для юриста контрагента.
 
@@ -36,7 +36,7 @@
 
 **1. Гарантия 12 или 24 месяца.** По праву ЕС потребитель имеет два года. Оговорка защищает фабрику юридически, но коммерчески дистрибьютор будет год нести риск сам. Если хотите снять возражение заранее — поднимите заводскую гарантию до 24 месяцев для ЕС.
 
-**2. Кто отвечает за декларацию соответствия ЕС.** Сейчас её предоставляет бренд, а импортёр проверяет. Если такой декларации на продукцию ещё нет, её нужно готовить, и это реальная работа: испытания, техническое досье, оформление. Стоит выяснить до подписания, есть ли CE-документация на композиции.
+**2. План получения CE — теперь это проект, а не проверка.** Подтверждено: документации нет. Хорошая новость — для светильников по LVD и EMC нотифицированный орган не нужен, достаточно самодекларирования: техническое досье + испытания + декларация. Практичный путь для композиций, собираемых на заказ: сертифицировать не каждое изделие, а **базовые семейства элементов** (программа Elements in stock как раз даёт их перечень) и использовать CE-маркированные комплектующие — драйверы, кабели, патроны. Тогда каждая новая композиция попадает в уже испытанное семейство. Ориентир по затратам — лабораторные испытания нескольких семейств, недели, а не месяцы; заняться этим нужно до подписания, потому что договор запрещает отгрузку без декларации, а часы годового объёма дистрибьютора при задержке останавливаются.
 
 **3. Валюта.** Оставлен доллар США. Румынскому партнёру удобнее евро; смена валюты — вопрос к фабрике.
 
@@ -60,7 +60,7 @@ About the brand: author's lighting and decorative compositions, 600+ items in th
 
 **How the agreement works.** It is trilateral — the brand owner, you and the factory. You place orders directly with the factory and work with its manager on pricing and lead times. Supply is at factory prices with no brand markup, and you set your own resale prices: the agreement expressly confirms your pricing freedom and unrestricted passive sales across the EU, in line with Regulation (EU) 2022/720.
 
-The brand fee is **10 % of the contract value** with your end customer, paid to the factory account together with the order payment. Payment terms: 50 % to start production, 50 % before shipment. Import into the EU, customs duties, import VAT, CE conformity and WEEE/packaging registration are on your side; we provide the declaration of conformity, technical documentation, test reports and samples for testing.
+The brand fee is **10 % of the contract value** with your end customer, paid to the factory account together with the order payment. Payment terms: 50 % to start production, 50 % before shipment. Import into the EU, customs duties, import VAT and WEEE/packaging registration are on your side. CE conformity documentation for the compositions is being prepared on our side: the technical file, testing and the EU declaration of conformity will be completed at our cost before the first order ships, and no order ships without a declaration covering it.
 
 **What we ask:**
 
@@ -91,7 +91,7 @@ vargov.ru · vargov.design
 >
 > What we ask: a **display order from USD 50,000**, an **operating showroom** for it, **selling from the display** with replacement within six months, and a **minimum annual volume of USD 100,000** in production value.
 >
-> What we provide: full catalogue, brand guide and materials, listing as an official partner, 12-month factory warranty with replacements at the factory's cost, and the CE documentation you need as importer.
+> What we provide: full catalogue, brand guide and materials, listing as an official partner, 12-month factory warranty with replacements at the factory's cost, and the CE documentation prepared at our cost before the first shipment.
 >
 > Sending the full agreement (EN/RU, arbitration in Vienna). Tell me about your showroom — floor area and ceiling height — and we will put the selection together.
 
@@ -99,7 +99,7 @@ vargov.ru · vargov.design
 
 ## Чек-лист
 
-- [ ] Проверить, есть ли готовая декларация о соответствии ЕС и техническое досье на композиции — от этого зависит выполнимость п. 3.7.
+- [ ] Запустить подготовку CE до подписания: перечень базовых семейств элементов, CE-статус комплектующих (драйверы, кабели), выбор лаборатории для испытаний LVD/EMC, назначение ответственного за техническое досье.
 - [ ] Решить вопрос гарантии: 12 месяцев по договору против 2 лет по праву ЕС.
 - [ ] Урегулировать пересечение с дубайским дистрибьютором, чья территория включает Европу.
 - [ ] Рассмотреть регистрацию товарного знака ЕС до выхода на европейский рынок.
