@@ -139,7 +139,14 @@
       </div>
       <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="400" value="115"><span class="val" id="densityV"></span></div>
       <div class="row"><label for="ampl">Амплитуда волн</label><input id="ampl" type="range" min="20" max="100" value="62"><span class="val" id="amplV"></span></div>
-      <div class="row"><label for="twist">Закрутка</label><input id="twist" type="range" min="0" max="100" value="55"><span class="val" id="twistV"></span></div>
+      <div class="row"><label for="twist">Закрутка</label><input id="twist" type="range" min="0" max="100" value="40"><span class="val" id="twistV"></span></div>
+      <div class="row"><label for="fold">Складка центра</label><input id="fold" type="range" min="0" max="100" value="12"><span class="val" id="foldV"></span></div>
+      <div class="row"><label for="frame">Каркас</label>
+        <select id="frame">
+          <option value="gold" selected>Золото</option>
+          <option value="chrome">Хром</option>
+        </select>
+      </div>
       <div class="row"><label for="rWidth">Ширина ленты</label>
         <select id="rWidth">
           <option value="200">200 мм</option>
@@ -199,10 +206,10 @@
 const ROD_D = 15;        // диаметр стержня
 const ROD_R = ROD_D/2;
 const WIRE_D = 5;        // проволока каркаса
-const ROD_STEP = 17;     // шаг стержней вдоль ленты (почти вплотную)
+const ROD_STEP = 16.6;   // шаг стержней вдоль ленты (зазор у оси ~1.6 мм)
 const ROD_MIN = 150, ROD_MAX = 300;
 const GAP_MIN = 1, GAP_MAX = 10; // зазор между соседними стержнями, мм
-const LED_PITCH = 100;   // средний шаг диодов (белые сферы Ø3), хаотично
+const LED_PITCH = 100;   // средний шаг диодов (белые точки Ø4), хаотично
 const CABLE_STEP = 650;  // примерный шаг подвесов
 const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
 const R_MIN = 100;       // мин. радиус изгиба/поворота осевой (Ø200 мм)
@@ -372,6 +379,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
 
 function buildRibbon(params, rngSeed, lane){
   const {style, box, ampl, twistAmt, ribbonW, rows, lengthK, lanes} = params;
+  const foldK = params.foldK!==undefined ? params.foldK : 0.12;
   // общий rng (rngSeed одинаков для всех лент попытки) строит базовый
   // поток; rngL даёт каждой ленте индивидуальность
   const rng = mulberry32(rngSeed);
@@ -391,8 +399,8 @@ function buildRibbon(params, rngSeed, lane){
   // со своей фазой: обвивают друг друга, меняются сторонами, проходят
   // рядом и «пересекаются» визуально (геометрию разводит relax)
   if(lanes>1){
-    const rB = Math.max(170, Math.min(0.3*Math.min(work.h, work.d)+60, 300));
-    const winds = 0.5 + lengthK*0.45 + rng()*0.7;
+    const rB = Math.max(185, Math.min(0.3*Math.min(work.h, work.d)+60, 300));
+    const winds = 0.4 + lengthK*0.35 + rng()*0.5;
     const ph0 = Math.PI*2*lane/lanes + rng()*0.5;
     const n0 = ctrl.length;
     const src = ctrl.map(c=>c.slice());
@@ -412,7 +420,7 @@ function buildRibbon(params, rngSeed, lane){
   // twist-профиль: у «Хаоса» сильнее и с третьей гармоникой — перекруты
   const tf1 = 1+rngL()*2, tf2 = 2.5+rngL()*2.5, tf3 = 5+rngL()*4;
   const tp1 = rngL()*Math.PI*2, tp2 = rngL()*Math.PI*2, tp3 = rngL()*Math.PI*2;
-  const tsc = style==="chaos" ? 1.9 : 1.4;
+  const tsc = style==="chaos" ? 1.5 : 1.15;
   const twistAt = s => twistAmt*tsc*(
     0.50*Math.sin(s*Math.PI*2*tf1+tp1) +
     0.30*Math.sin(s*Math.PI*2*tf2+tp2) +
@@ -421,7 +429,7 @@ function buildRibbon(params, rngSeed, lane){
   const w0hint = style==="chaos" ? [rngL()*2-1, rngL()*2-1, rngL()*2-1] : null;
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
-  const foldAmp = 0.2+0.55*ampl;
+  const foldAmp = foldK*(0.3+0.7*ampl);
   const ffU1=0.8+rngL()*1.7, fpU1=rngL()*Math.PI*2, ffU2=2+rngL()*2, fpU2=rngL()*Math.PI*2;
   const ffD1=0.8+rngL()*1.7, fpD1=rngL()*Math.PI*2, ffD2=2+rngL()*2, fpD2=rngL()*Math.PI*2;
   const foldUp = s => foldAmp*(0.7*Math.sin(s*Math.PI*2*ffU1+fpU1)+0.3*Math.sin(s*Math.PI*2*ffU2+fpU2));
@@ -440,7 +448,7 @@ function buildRibbon(params, rngSeed, lane){
       wAmp[1]*Math.sin(t*Math.PI*2*f2+p2) +
       wAmp[2]*Math.sin(t*Math.PI*2*f3+p3));
   }
-  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind};
+  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind, foldK};
 
   // --- вписывание: масштабируем направляющую по ФАКТИЧЕСКОЙ (марш) геометрии ---
   const margin = ROD_R+1;
@@ -570,7 +578,7 @@ function sampleGuide(ctrl, opt){
       guideDn.push(V.norm([-wN[0]*cD+N[0]*sD, -wN[1]*cD+N[1]*sD, -wN[2]*cD+N[2]*sD]));
     }
   }
-  return {guideC:G, guideD, guideUp, guideDn, rows, halfW, stepEff};
+  return {guideC:G, guideD, guideUp, guideDn, rows, halfW, stepEff, foldK:opt.foldK||0};
 }
 
 /* поворот единичного вектора a к b не более чем на maxAng (slerp) */
@@ -621,10 +629,10 @@ function marchRibbon(rb){
   const A_OP=step/R_FIT;
   // бюджет сближения торцов (мм на шаг) делится между поперечным
   // изгибом (веер) и изгибом при наклонённых складкой рядах
-  const IP_SLACK=0.4, OP_SLACK=0.45;
+  const IP_SLACK=0.25, OP_SLACK=0.30;
   const TH_IP=IP_SLACK/halfW;
   const ROT_ROW=0.85*budget;
-  const ROT_W=(twoRow?0.5:0.9)*budget;
+  const ROT_W=(twoRow ? 0.9-0.45*Math.min(1, rb.foldK||0) : 0.9)*budget;
   // лимит углового ускорения: кромка (кант) изгибается не острее ~R_FIT
   const ACC=step*step/(R_FIT*halfW)*0.75;
   // таблица дуги направляющей
@@ -782,7 +790,7 @@ function geoBBox(geo){
    расталкиваем итеративной релаксацией; «веер» на крутом изгибе
    внутри ленты лечим локальным распрямлением дуги.
    ============================================================ */
-const CLEAR_FAR  = 24;   // мин. дистанция осей далёких стержней (15 стекло + 9 воздух)
+const CLEAR_FAR  = 26;   // мин. дистанция осей далёких стержней (15 стекло + 11 воздуха)
 const CLEAR_NEAR = ROD_D + GAP_MIN*0.9; // внутри ленты: зазор не меньше ~1 мм
 const SKIP_NEAR  = 2;    // соседи по каркасу (k≤2) не проверяются
 const NEAR_WIN   = 8;    // 2<k≤8 — «ближняя зона» своей ленты
@@ -1050,6 +1058,7 @@ function buildScene(){
     box,
     ampl: (+ui.ampl.value)/100,           // 0.2..1
     twistAmt: (+ui.twist.value)/100 * 1.15, // рад амплитуда
+    foldK: (+ui.fold.value)/100,
     ribbonW: +ui.rWidth.value,
     rows: +ui.rows.value,
     lengthK: (+ui.density.value)/100,
@@ -1063,12 +1072,17 @@ function buildScene(){
   let ribbons=null, clear=null, best=null;
   outer:
   for(let effLanes=lanes; effLanes>=1; effLanes--){
-    for(let attempt=0; attempt<6; attempt++){
-      // прогрессивное укрощение: длина/амплитуда мягче, закрутка до нуля
+    for(let attempt=0; attempt<10; attempt++){
+      // прогрессивное укрощение; с 6-й попытки — совсем спокойные
+      // варианты: число лент важнее дикости формы
+      const calm = attempt>=6;
+      const a2 = calm ? attempt-6 : attempt;
       const p0 = Object.assign({}, params, {
-        lengthK: params.lengthK*Math.pow(0.93, attempt),
-        twistAmt: attempt>=4 ? 0 : params.twistAmt*Math.pow(0.75, attempt),
-        ampl: params.ampl*Math.pow(0.88, attempt),
+        lengthK: calm ? params.lengthK*0.55*Math.pow(0.8, a2)
+                      : params.lengthK*Math.pow(0.93, attempt),
+        twistAmt: (calm || attempt>=4) ? 0 : params.twistAmt*Math.pow(0.75, attempt),
+        ampl: params.ampl*(calm ? 0.5 : Math.pow(0.88, attempt)),
+        foldK: calm ? 0 : (params.foldK!==undefined?params.foldK:0.12)*Math.pow(0.7, attempt),
       });
       ribbons = [];
       const baseSeed = (state.seed + attempt*104729 + effLanes*31)>>>0;
@@ -1110,10 +1124,14 @@ function buildScene(){
   if(clear.collisions>0){
     rescue:
     for(let rl=lanes; rl>=1; rl--){
-      for(let rs=0; rs<5; rs++){
+      for(let rs=0; rs<10; rs++){
+        // каждая следующая попытка короче и спокойнее: короткая плавная
+        // лента разводится всегда — касания не показываются никогда
         const pS = Object.assign({}, params, {
-          twistAmt:0, ampl:params.ampl*0.45, lengthK:params.lengthK*0.55,
-          style: rs>=3 ? "wave" : params.style});
+          twistAmt:0, ampl:params.ampl*0.45,
+          lengthK: Math.max(0.25, params.lengthK*0.6*Math.pow(0.65, rs)),
+          foldK: 0,
+          style: rs>=4 ? "wave" : params.style});
         const rr = [];
         const rSeed = (state.seed + 900001 + rs*57 + rl*31)>>>0;
         for(let i=0;i<rl;i++){
@@ -1323,13 +1341,13 @@ function draw(){
     for(const l of rb.leds){
       if(!project(l,B,p1)) continue;
       prims.push({z:p1[2]-4, kind:3, x1:p1[0], y1:p1[1],
-        rCore:Math.max(1.1, 3*p1[3]), r:Math.max(3, 15*p1[3])});
+        rCore:Math.max(1.1, 2*p1[3])});
     }
   }
 
   prims.sort((a,b)=>b.z-a.z);
 
-  const gold = [201,162,39];
+  const gold = ui.frame.value==="chrome" ? [198,204,212] : [201,162,39];
   for(const pr of prims){
     if(pr.kind===0){ // подвес
       ctx.strokeStyle="rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
@@ -1348,17 +1366,9 @@ function draw(){
       ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
-    } else { // диод: белая сфера Ø3 + мягкий ореол
-      ctx.globalCompositeOperation = "lighter";
-      const gg = ctx.createRadialGradient(pr.x1,pr.y1,0, pr.x1,pr.y1,pr.r);
-      gg.addColorStop(0,"rgba(255,255,255,.9)");
-      gg.addColorStop(0.3,"rgba(255,250,235,.5)");
-      gg.addColorStop(1,"rgba(255,244,214,0)");
-      ctx.fillStyle=gg;
-      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.r,0,7); ctx.fill();
-      ctx.fillStyle="rgba(255,255,255,.98)";
+    } else { // диод: белая точка Ø4, без свечения
+      ctx.fillStyle="rgba(255,255,255,.97)";
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
-      ctx.globalCompositeOperation = "source-over";
     }
   }
 }
@@ -1425,7 +1435,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","style","ribbons","rows","density","ampl","twist","rWidth","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","style","ribbons","rows","density","ampl","twist","fold","frame","rWidth","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -1450,6 +1460,7 @@ function refreshLabels(){
   document.getElementById("densityV").textContent = (+ui.density.value/100).toFixed(2)+"×";
   document.getElementById("amplV").textContent = ui.ampl.value+"%";
   document.getElementById("twistV").textContent = ui.twist.value+"%";
+  document.getElementById("foldV").textContent = ui.fold.value+"%";
 }
 refreshLabels();
 
@@ -1460,7 +1471,8 @@ const rebuild = ()=>{
   rebuildTimer=setTimeout(buildScene, 120);
 };
 for(const id of ["dimW","dimD","dimH","style","ribbons","rows","rWidth"]) ui[id].addEventListener("change", rebuild);
-for(const id of ["density","ampl","twist"]) ui[id].addEventListener("input", rebuild);
+ui.frame.addEventListener("change", ()=>{needRedraw=true;});
+for(const id of ["density","ampl","twist","fold"]) ui[id].addEventListener("input", rebuild);
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
