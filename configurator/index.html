@@ -285,14 +285,16 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
   if(style==="chaos" || lengthK>=1.9){
     // лента идёт НА РЕБРЕ: повороты серпантина — лёгкий изгиб вокруг
     // стержней, строки плотные; слои по высоте — в шахматном порядке
-    const nz=Math.max(1, Math.min(8, Math.floor(d/150)));
-    const ny=Math.max(1, Math.min(3, Math.round(h/330+0.2)));
+    const nz=Math.max(1, Math.min(8, Math.floor(d/170)));
+    const ny=(h>1300)?2:1; // смена слоя — тяжёлый манёвр, только в высоких
     const targetLen=lengthK*2100;
     const runLen=w*0.73; // петли разворотов живут в торцевых запасах
     const runs=Math.max(1, Math.min(ny*nz, Math.round(targetLen/(runLen*1.3))));
     const slotH=h/ny, slotD=d/nz;
-    const aY=Math.min(55, 20+60*ampl);
-    const aZ=Math.min(slotD*0.22, 40);
+    // крупные вертикальные волны — лёгкий изгиб для ленты на ребре,
+    // они же добавляют погонные метры на месте
+    const aY=Math.min(slotH*0.34, 60+240*ampl);
+    const aZ=Math.min(slotD*0.20, 36);
     const ppr=6;
     const slots=[];
     for(let iy=0; iy<ny; iy++){
@@ -317,7 +319,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         const x=(0.135+0.73*(rev?1-t:t))*w + jitter(w*0.012);
         pts.push([
           x,
-          Math.min(h-40, Math.max(40, cy + aY*Math.sin(t*Math.PI*2*1.5+ph) + jitter(20))),
+          Math.min(h-40, Math.max(40, cy + aY*Math.sin(t*Math.PI*2*1.3+ph) + jitter(25))),
           Math.min(d-40, Math.max(40, cz + aZ*Math.sin(t*Math.PI*2*1.1+ph2) + jitter(20))),
         ]);
       }
@@ -470,6 +472,22 @@ function buildRibbon(params, rngSeed, lane){
   let geo = null;
   if(isFill){
     geo = sampleGuide(ctrl, opt);
+    // двойной марш: первый проход без рулей делает маршрут физичным
+    // и гладким, второй идёт по нему след-в-след без раскачки
+    geo.noSteer=true;
+    marchRibbon(geo);
+    geo.guideC=geo.centers.map(c=>c.slice());
+    geo.guideD=geo.dirs.map(v=>v.slice());
+    if(geo.dirUp){
+      geo.guideUp=geo.dirUp.map(v=>v.slice());
+      geo.guideDn=geo.dirDn.map(v=>v.slice());
+    }
+    {
+      const bb=geoBBox(geo);
+      const sh=[(box.w-(bb.min[0]+bb.max[0]))/2, (box.h-(bb.min[1]+bb.max[1]))/2, (box.d-(bb.min[2]+bb.max[2]))/2];
+      for(const c of geo.guideC){ c[0]+=sh[0]; c[1]+=sh[1]; c[2]+=sh[2]; }
+    }
+    geo.noSteer=false;
     geo.clampMin=[0,0,0]; geo.clampMax=[box.w,box.h,box.d];
     marchRibbon(geo);
     const bbF = geoBBox(geo);
@@ -698,7 +716,7 @@ function marchRibbon(rb){
     // стены слоя: дальний руль начинает разворот заранее (ленте
     // «плашмя» нужно ~0.4 м на перекрутку в поворот), ближний дожимает.
     // Отступ — по фактическому вылету станции на каждой оси.
-    if(rb.clampMin){
+    if(rb.clampMin && !rb.noSteer){
       const mn=rb.clampMin, mx=rb.clampMax;
       let steer=false;
       const v2=[v[0],v[1],v[2]];
