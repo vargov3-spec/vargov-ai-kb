@@ -283,46 +283,48 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
   // высоте, с плавными разворотами (радиус ≥ R изгиба ленты) и волнами
   // внутри пробега. Частотой волн длину не набрать — физика не даст.
   if(style==="chaos" || lengthK>=1.9){
-    // лента идёт НА РЕБРЕ: повороты серпантина — лёгкий изгиб вокруг
-    // стержней, строки плотные; слои по высоте — в шахматном порядке
-    const nz=Math.max(1, Math.min(8, Math.floor(d/170)));
-    const ny=(h>1300)?2:1; // смена слоя — тяжёлый манёвр, только в высоких
+    // Лента НА РЕБРЕ: строки вдоль X через ~115 мм по глубине (на ребре
+    // лента занимает мало глубины). Порядок строк «чётные, затем
+    // нечётные» — U-развороты получаются Ø≥230 (диаметр изгиба ленты)
+    // и не пересекают соседнюю строку.
+    const nz=Math.max(1, Math.min(10, Math.floor(d/115)));
+    const ny=(h>960)?2:1;
     const targetLen=lengthK*2100;
-    const runLen=w*0.60; // запас на спрямление дуг маршем и петли
-    const runs=Math.max(1, Math.min(ny*nz, Math.round(targetLen/(runLen*1.3))));
+    const runLen=w*0.84;
+    const runs=Math.max(1, Math.min(ny*nz, Math.round(targetLen/(runLen*1.08)+0.35)));
     const slotH=h/ny, slotD=d/nz;
-    // лента на ребре гнётся в горизонтальной плоскости: метры набираются
-    // строками и Z-меандрами; вертикаль — только спокойный дрейф
     const aY=Math.min(slotH*0.10, 20+30*ampl);
-    const aZ=Math.min(slotD*0.24, 30+30*ampl);
+    const aZ=Math.min(slotD*0.10, 14);
     const ppr=6;
     const slots=[];
     for(let iy=0; iy<ny; iy++){
-      for(let zi=0; zi<nz; zi++){
-        const iz=(iy%2===0)? zi : nz-1-zi;
-        slots.push([(iy+0.5)*slotH, (iz+0.5)*slotD]);
-      }
+      // порядок рядов «через один»: U-развороты Ø≥230 (=Ø изгиба ленты)
+      const evens=[], odds=[];
+      for(let iz=0; iz<nz; iz++) (iz%2===0?evens:odds).push(iz);
+      for(const iz of evens.concat(odds)) slots.push([(iy+0.5)*slotH, (iz+0.5)*slotD]);
     }
+    let prev=null;
     for(let run=0; run<runs; run++){
       const rev=(run%2===1);
-      const cy=slots[run][0];
-      const cz=Math.min(d-30, slots[run][1] + (Math.floor(run/nz)%2)*slotD*0.5);
-      // разворотный крюк за торцом предыдущей строки — плавная дуга
+      const cy=slots[run][0], cz=slots[run][1];
+      // разворотный крюк за торцом: глубина чередуется, чтобы петли
+      // одного торца не легли друг на друга
       if(run>0){
-        const py=slots[run-1][0], pz=slots[run-1][1];
-        const xh=(rev? 0.20-0.10 : 0.80+0.10)*w;
-        pts.push([xh*1, (py+cy)/2, (pz+cz)/2]);
+        const hookExt=0.035+0.030*(Math.floor(run/2)%2); // петли одного торца — на разной глубине
+        const xh=(rev? 0.92+hookExt : 0.08-hookExt)*w;
+        pts.push([xh, (prev[0]+cy)/2, (prev[1]+cz)/2]);
       }
       const ph=rng()*Math.PI*2, ph2=rng()*Math.PI*2;
       for(let k2=0;k2<ppr;k2++){
         const t=k2/(ppr-1);
-        const x=(0.20+0.60*(rev?1-t:t))*w + jitter(w*0.012);
+        const x=(0.08+0.84*(rev?1-t:t))*w + jitter(w*0.010);
         pts.push([
           x,
-          Math.min(h-40, Math.max(40, cy + aY*Math.sin(t*Math.PI*2*1.3+ph) + jitter(25))),
-          Math.min(d-40, Math.max(40, cz + aZ*Math.sin(t*Math.PI*2*1.1+ph2) + jitter(20))),
+          Math.min(h-40, Math.max(40, cy + aY*Math.sin(t*Math.PI*2*1.3+ph) + jitter(20))),
+          Math.min(d-25, Math.max(25, cz + aZ*Math.sin(t*Math.PI*2*1.1+ph2) + jitter(8))),
         ]);
       }
+      prev=[cy,cz];
     }
     return pts;
   }
@@ -406,7 +408,15 @@ function buildRibbon(params, rngSeed, lane){
     d: Math.max(120, box.d - 2*inset),
   };
 
-  let ctrl = controlPoints(style, rng, work, 0, 1, ampl, lengthK);
+  const isFill = (style==="chaos" || lengthK>=1.9);
+  // рабочий бокс укладки: отступы по физике ленты на ребре
+  // (вертикаль ±170 = полширины+радиус+запас; глубина ±45; торцы ±70)
+  const workF = {
+    w: Math.max(300, box.w-140),
+    h: Math.max(200, box.h-340),
+    d: Math.max(140, box.d-90),
+  };
+  let ctrl = controlPoints(style, rng, isFill?workF:work, 0, 1, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
   // со своей фазой: обвивают друг друга, меняются сторонами, проходят
@@ -430,7 +440,6 @@ function buildRibbon(params, rngSeed, lane){
     }
   }
 
-  const isFill = (style==="chaos" || lengthK>=1.9);
   // twist-профиль: у «Хаоса» сильнее и с третьей гармоникой — перекруты
   const twistEff = isFill ? twistAmt*0.35 : twistAmt;
   const tf1 = 1+rngL()*2, tf2 = 2.5+rngL()*2.5, tf3 = 5+rngL()*4;
@@ -463,7 +472,7 @@ function buildRibbon(params, rngSeed, lane){
       wAmp[1]*Math.sin(t*Math.PI*2*f2+p2) +
       wAmp[2]*Math.sin(t*Math.PI*2*f3+p3));
   }
-  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind, foldK};
+  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind: (isFill?null:wind), foldK};
 
   // --- вписывание ---
   // Заполняющий маршрут построен сразу в верных координатах: сжатие ему
@@ -710,8 +719,45 @@ function marchRibbon(rb){
   const C=[[g0.c[0],g0.c[1],g0.c[2]]];
   const Ts=[T], dirs=[W];
   const dirUp=twoRow?[Up]:null, dirDn=twoRow?[Dn]:null;
-  for(let k=1;k<m;k++){
-    const g=atG(Math.min(total-1e-6, k*step));
+  // PURE PURSUIT: цель — точка направляющей на упреждении впереди
+  // БЛИЖАЙШЕЙ к текущей позиции. Иначе срезанные маршем повороты
+  // копят «долг длины», который выстреливает прямой за габарит.
+  const LA=step*14; // упреждение ≈2R изгиба: цель всегда достижима
+  const maxSt=Math.ceil(total/step*1.6)+8;
+  // углы поворота направляющей по точкам — для предикции: складка и
+  // закрутка прижимаются ДО прихода поворота, а не в нём
+  const gAng=[0];
+  for(let i2=1;i2<gn-1;i2++){
+    const a2=V.norm(V.sub(G[i2],G[i2-1])), b2=V.norm(V.sub(G[i2+1],G[i2]));
+    gAng.push(Math.acos(Math.max(-1,Math.min(1,V.dot(a2,b2)))));
+  }
+  gAng.push(0);
+  let gi=0, stall=0, prevOp=0, behind=0, escapes=0;
+  const d2=(a,b)=>{const dx=a[0]-b[0],dy=a[1]-b[1],dz=a[2]-b[2];return dx*dx+dy*dy+dz*dz;};
+  for(let k=1;k<maxSt;k++){
+    // продвинуть указатель к ближайшей гид-точке: полный argmin по
+    // окну (ранний break застревает на вершинах разворотов)
+    const gi0=gi;
+    let bd=d2(G[gi], C[k-1]);
+    for(let t2=gi+1; t2<=Math.min(gn-1, gi+14); t2++){
+      const dd=d2(G[t2], C[k-1]);
+      if(dd<bd-1e-9){ bd=dd; gi=t2; }
+    }
+    if(gi>=gn-2){ rb.endReason='end'; break; }
+    if(gi===gi0){
+      if(++stall>30){
+        // вырыв из орбитальной ловушки: цель прыгает вперёд по гиду
+        if(escapes<5 && gi<gn-16){ gi+=12; stall=0; escapes++; }
+        else { rb.endReason='stall@'+gi; break; }
+      }
+    } else stall=0;
+    let aheadAng=0;
+    for(let t2=gi; t2<=Math.min(gn-1, gi+22); t2++) aheadAng=Math.max(aheadAng, gAng[t2]);
+    const needTurn=Math.min(1, aheadAng/A_OP);
+    // в развороте цель ведётся коротким поводком (~R изгиба) — орбитальная
+    // ловушка не возникает; на прямых поводок длинный (гладкость)
+    const LAe = needTurn>0.5 ? step*7 : LA;
+    const g=atG(Math.min(total-1e-6, cum[gi]+LAe));
     let v=V.sub(g.c, C[k-1]);
     v = V.len(v)>1e-6 ? V.norm(v) : T;
     // стены слоя: дальний руль начинает разворот заранее (ленте
@@ -739,7 +785,15 @@ function marchRibbon(rb){
     const N=V.norm(V.cross(T,W));
     const xt=V.dot(v,T), yw=V.dot(v,W), zn=V.dot(v,N);
     const rawIp=Math.atan2(yw, Math.max(1e-4,xt));
-    const rawOp=Math.max(-A_OP, Math.min(A_OP, Math.atan2(zn, Math.max(1e-4,xt))));
+    let rawOp=Math.max(-A_OP, Math.min(A_OP, Math.atan2(zn, Math.max(1e-4,xt))));
+    // цель сбоку или позади — доворот максимальной кривизной в её
+    // сторону (иначе сингулярность: op≈0 и лента летит прямо)
+    if(xt<0.2){
+      rawOp=A_OP*(Math.abs(zn)>1e-6 ? Math.sign(zn) : (prevOp>=0?1:-1));
+      // цель слишком долго позади — она внутри непроходимого круга:
+      // переносим её вперёд по направляющей
+      if(++behind>22 && gi<gn-14 && escapes<6){ gi+=10; behind=0; escapes++; }
+    } else behind=0;
     let ip=Math.max(-TH_IP, Math.min(TH_IP, rawIp));
     // складка наклоняет торцы с оси изгиба: изгиб ограничен так,
     // чтобы внутренние торцы рядов не сблизились меньше GAP_MIN
@@ -747,8 +801,15 @@ function marchRibbon(rb){
     if(twoRow){
       h=Math.max(h, halfW*Math.abs(V.dot(Up,N)), halfW*Math.abs(V.dot(Dn,N)));
     }
-    const opLim=Math.min(A_OP, OP_SLACK/h);
+    // разворот стержней (закрутка, перекрутка на ребро) требует более
+    // пологого изгиба: пока торцы гуляют (omW), радиус не короче ~205 —
+    // иначе «штопор»: тюбик ленты складывается сам на себя торец-к-торцу
+    // (при R≥205 торцы безопасны при любом наклоне стержней к оси изгиба)
+    const tSp=Math.min(1, Math.abs(omW)/(0.7*ROT_W));
+    const opLim=Math.min(A_OP*(1-tSp)+(step/205)*tSp, OP_SLACK/h);
     let op=Math.max(-opLim, Math.min(opLim, rawOp));
+    prevOp=op;
+    if(rb.__log) rb.__log.push([k, gi, +xt.toFixed(2), +rawOp.toFixed(3), +op.toFixed(3), +opLim.toFixed(4), +ip.toFixed(4), Math.round(C[k-1][0]), Math.round(C[k-1][2])]);
     const Tn=V.norm(V.add(V.add(T, V.mul(W,Math.tan(ip))), V.mul(N,Math.tan(op))));
     C.push(V.add(C[k-1], V.mul(Tn,step)));
     Ts.push(Tn);
@@ -757,7 +818,18 @@ function marchRibbon(rb){
     // Руление: если поворот «плашмя» невозможен (поперечный конус),
     // лента сама докручивается на ребро поворота — как в реальности
     let wTgt = orthoTo(g.d, Tn);
-    if(!rb.fillMode && Math.abs(rawIp) > TH_IP*1.5){
+    if(rb.fillMode){
+      // банк: в повороте стержни выравниваются с осью изгиба (как
+      // мотоцикл в вираже) — закрутка живёт на прямых участках
+      const need=Math.max(Math.min(1, Math.abs(rawOp)/(0.5*A_OP)), needTurn)*0.9;
+      if(need>0.05){
+        // развороты укладки — вокруг вертикали: ось банка не зависит
+        // от вектора на цель (он ненадёжен, когда цель позади)
+        let axO=orthoTo([0,1,0], Tn);
+        if(V.dot(axO,wTgt)<0) axO=V.mul(axO,-1);
+        wTgt=V.norm([wTgt[0]+(axO[0]-wTgt[0])*need, wTgt[1]+(axO[1]-wTgt[1])*need, wTgt[2]+(axO[2]-wTgt[2])*need]);
+      }
+    } else if(Math.abs(rawIp) > TH_IP*1.5){
       let ax=V.cross(T, v);
       if(V.len(ax)>1e-4){
         ax=V.norm(ax);
@@ -771,7 +843,7 @@ function marchRibbon(rb){
     if(twoRow){
       // при потребности в изгибе складка прижимается к плоскости ленты
       const needOp=Math.min(1, Math.abs(rawOp)/A_OP);
-      const flat=needOp*0.85;
+      const flat=rb.fillMode ? Math.max(needOp*0.85, needTurn*0.92) : needOp*0.85;
       let uT=orthoTo(g.u,Tn), dT=orthoTo(g.v,Tn);
       if(flat>0.02){
         uT=V.norm([uT[0]+( W[0]-uT[0])*flat, uT[1]+( W[1]-uT[1])*flat, uT[2]+( W[2]-uT[2])*flat]);
@@ -1234,7 +1306,7 @@ function buildScene(){
   }
   // LED-точки и подвесы
   ribbons.forEach((rb, ri)=>{
-    // диоды — белые сферы Ø3 на одном контуре каркаса:
+    // диоды — белые точки Ø4 на одном контуре каркаса:
     // у двурядной — центральный контур; шаг хаотичный, в среднем 100 мм
     rb.leds = [];
     if(ui.leds.checked){
