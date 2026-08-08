@@ -128,9 +128,6 @@
           <option value="free">Свободная форма</option>
         </select>
       </div>
-      <div class="row"><label for="ribbons">Кол-во лент</label>
-        <select id="ribbons"><option>1</option><option selected>2</option><option>3</option></select>
-      </div>
       <div class="row"><label for="rows">Рядность</label>
         <select id="rows">
           <option value="1">1 ряд (2 контура)</option>
@@ -1054,7 +1051,7 @@ function buildScene(){
     h:+ui.dimH.value || 800,
     d:+ui.dimD.value || 900,
   };
-  const lanes = +ui.ribbons.value;
+  const lanes = 1; // одна лента заполняет пространство
   const params = {
     style: ui.style.value,
     box,
@@ -1414,7 +1411,6 @@ function updateSpec(){
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
-      <tr><td>Лент в композиции</td><td>${scene.ribbons.length}</td></tr>
       <tr><td>Рядность</td><td>${scene.params.rows===2?"2 ряда, 3 контура":"1 ряд, 2 контура"}</td></tr>
       <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
       <tr><td>Длина стержня (все одинаковые)</td><td>${[...byLen.keys()][0]} мм</td></tr>
@@ -1440,7 +1436,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","style","ribbons","rows","density","ampl","twist","fold","frame","rWidth","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","style","rows","density","ampl","twist","fold","frame","rWidth","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -1475,7 +1471,7 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildScene, 120);
 };
-for(const id of ["dimW","dimD","dimH","style","ribbons","rows","rWidth"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","style","rows","rWidth"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 for(const id of ["density","ampl","twist","fold"]) ui[id].addEventListener("input", rebuild);
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
@@ -1509,7 +1505,6 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Стиль", ui.style.options[ui.style.selectedIndex].text],
     ["Цвет стекла", state.color.name],
-    ["Лент", scene.ribbons.length],
     ["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     ["Стержни Ø15, всего шт", s.rods],
@@ -1638,8 +1633,8 @@ window.__vargov = {
     out.sort((a,b)=>a.gap-b.gap);
     return {worst:out.slice(0,10), count:out.length};
   },
-  set: (id,v)=>{ ui[id].value=v; refreshLabels(); buildScene(); },
-  apply: (o)=>{ for(const k in o) ui[k].value=o[k]; refreshLabels(); buildScene(); },
+  set: (id,v)=>{ if(ui[id]) ui[id].value=v; refreshLabels(); buildScene(); },
+  apply: (o)=>{ for(const k in o){ if(ui[k]) ui[k].value=o[k]; } refreshLabels(); buildScene(); },
   regen: ()=>document.getElementById("regen").click(),
 };
 </script>
