@@ -212,6 +212,8 @@ const GAP_MIN = 1, GAP_MAX = 10; // зазор между соседними с�
 const LED_PITCH = 100;   // средний шаг диодов (белые точки Ø4), хаотично
 const CABLE_STEP = 650;  // примерный шаг подвесов
 const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
+const GLASS_WALL = 2;          // стенка стеклянной трубки, мм
+const STEEL_DENSITY = 7.85e-3; // г/мм³ (сталь, проволока каркаса)
 const R_MIN = 100;       // мин. радиус изгиба/поворота осевой (Ø200 мм)
 const R_FIT = 115;       // целевой радиус лимитера (запас к норме)
 
@@ -1388,7 +1390,8 @@ function updateSpec(){
     wire += rb.ribbonLen*(rb.rows===2?3:2); // контуры каркаса
     for(const r of rb.rods){
       byLen.set(r.len, (byLen.get(r.len)||0)+1);
-      glassMass += Math.PI*ROD_R*ROD_R*r.len*GLASS_DENSITY; // г, полнотелый стержень
+      // трубка Ø15, стенка 2 мм: сечение π·(R²−(R−t)²)
+      glassMass += Math.PI*(ROD_R*ROD_R-(ROD_R-GLASS_WALL)*(ROD_R-GLASS_WALL))*r.len*GLASS_DENSITY;
     }
   }
   const bb = (()=>{ // фактический габарит
@@ -1416,8 +1419,10 @@ function updateSpec(){
       <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
       <tr><td>Длина стержня (все одинаковые)</td><td>${[...byLen.keys()][0]} мм</td></tr>
       <tr><td>Зазор между стержнями</td><td>${state.lastSpec.gaps.gmin.toFixed(1)}–${state.lastSpec.gaps.gmax.toFixed(1)} мм (норма ${GAP_MIN}–${GAP_MAX})</td></tr>
-      <tr><td>Масса стекла (оценка)</td><td>${(glassMass*0.46/1000).toFixed(1)}–${(glassMass/1000).toFixed(1)} кг</td></tr>
+      <tr><td>Масса стекла (трубки, стенка 2 мм)</td><td>${(glassMass/1000).toFixed(2)} кг</td></tr>
       <tr><td>Проволока каркаса Ø5</td><td>${(wire/1000).toFixed(1)} м</td></tr>
+      <tr><td>Масса каркаса (сталь)</td><td>${(wire*Math.PI*6.25*STEEL_DENSITY/1000).toFixed(2)} кг</td></tr>
+      <tr class="hl"><td>Масса композиции</td><td>${((glassMass+wire*Math.PI*6.25*STEEL_DENSITY)/1000).toFixed(2)} кг</td></tr>
       ${leds?`<tr><td>LED-точки по оси</td><td>${leds} шт (~${(leds*0.2).toFixed(0)} Вт)</td></tr>`:""}
       ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт</td></tr>`:""}
       <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
@@ -1510,7 +1515,9 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Стержни Ø15, всего шт", s.rods],
     ["Длина стержня (все одинаковые), мм", [...s.byLen.keys()][0]],
     ["Зазор между стержнями, мм", `${s.gaps.gmin.toFixed(1)} - ${s.gaps.gmax.toFixed(1)} (норма ${GAP_MIN}-${GAP_MAX})`],
-    ["Масса стекла, кг (оценка: трубка - полнотелые)", `${(s.glassMass*0.46/1000).toFixed(1)} - ${(s.glassMass/1000).toFixed(1)}`],
+    ["Масса стекла (трубки Ø15, стенка 2 мм), кг", (s.glassMass/1000).toFixed(2)],
+    ["Масса каркаса (сталь Ø5), кг", (s.wire*Math.PI*6.25*STEEL_DENSITY/1000).toFixed(2)],
+    ["Масса композиции, кг", ((s.glassMass+s.wire*Math.PI*6.25*STEEL_DENSITY)/1000).toFixed(2)],
     ["Проволока Ø5, м", (s.wire/1000).toFixed(1)],
     ["LED-точек", s.leds],
     ["Подвесов", s.cabs],
