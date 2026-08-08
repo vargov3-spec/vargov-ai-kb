@@ -278,6 +278,53 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
   const jitter = (s)=> (rng()*2-1)*s;
   const laneZ = lanes>1 ? (lane+0.5)/lanes : 0.5;
 
+  // ЗАПОЛНЕНИЕ ОБЪЁМА: погонные метры набираются пространственным
+  // маршрутом — пробеги через весь габарит, разнесённые по глубине и
+  // высоте, с плавными разворотами (радиус ≥ R изгиба ленты) и волнами
+  // внутри пробега. Частотой волн длину не набрать — физика не даст.
+  if(style==="chaos" || lengthK>=1.9){
+    // лента идёт НА РЕБРЕ: повороты серпантина — лёгкий изгиб вокруг
+    // стержней, строки плотные; слои по высоте — в шахматном порядке
+    const nz=Math.max(1, Math.min(8, Math.floor(d/150)));
+    const ny=Math.max(1, Math.min(3, Math.round(h/330+0.2)));
+    const targetLen=lengthK*2100;
+    const runLen=w*0.73; // петли разворотов живут в торцевых запасах
+    const runs=Math.max(1, Math.min(ny*nz, Math.round(targetLen/(runLen*1.3))));
+    const slotH=h/ny, slotD=d/nz;
+    const aY=Math.min(55, 20+60*ampl);
+    const aZ=Math.min(slotD*0.22, 40);
+    const ppr=6;
+    const slots=[];
+    for(let iy=0; iy<ny; iy++){
+      for(let zi=0; zi<nz; zi++){
+        const iz=(iy%2===0)? zi : nz-1-zi;
+        slots.push([(iy+0.5)*slotH, (iz+0.5)*slotD]);
+      }
+    }
+    for(let run=0; run<runs; run++){
+      const rev=(run%2===1);
+      const cy=slots[run][0];
+      const cz=Math.min(d-30, slots[run][1] + (Math.floor(run/nz)%2)*slotD*0.5);
+      // разворотный крюк за торцом предыдущей строки — плавная дуга
+      if(run>0){
+        const py=slots[run-1][0], pz=slots[run-1][1];
+        const xh=(rev? 0.135-0.085 : 0.865+0.085)*w;
+        pts.push([xh*1, (py+cy)/2, (pz+cz)/2]);
+      }
+      const ph=rng()*Math.PI*2, ph2=rng()*Math.PI*2;
+      for(let k2=0;k2<ppr;k2++){
+        const t=k2/(ppr-1);
+        const x=(0.135+0.73*(rev?1-t:t))*w + jitter(w*0.012);
+        pts.push([
+          x,
+          Math.min(h-40, Math.max(40, cy + aY*Math.sin(t*Math.PI*2*1.5+ph) + jitter(20))),
+          Math.min(d-40, Math.max(40, cz + aZ*Math.sin(t*Math.PI*2*1.1+ph2) + jitter(20))),
+        ]);
+      }
+    }
+    return pts;
+  }
+
   if(style === "wave"){
     // движение вдоль X, вертикальные волны со случайными складками
     const n = Math.max(6, Math.round((7 + rng()*3)*Math.max(1,lengthK*0.9)));
@@ -324,41 +371,6 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const z = laneZ + ampl*0.35*Math.sin(t*Math.PI*2*f*0.7+ph*2) + jitter(0.05);
       pts.push([t*w, Math.min(0.95,Math.max(0.05,y))*h, Math.min(0.95,Math.max(0.05,z))*d]);
     }
-  } else if(style === "chaos"){
-    // длина ленты не ограничена — одна лента может заполнить всё
-    // пространство: объём делится на перемешанные ячейки, лента жадным
-    // обходом ближайших посещает их все (петли, нырки и перекруты
-    // возникают сами; физику обеспечивает марш-укладка)
-    const target = Math.max(6, Math.round(4 + lengthK*9));
-    const maxdim = Math.max(w,h,d);
-    const base = Math.cbrt(target * maxdim*maxdim*maxdim/(w*h*d));
-    const nx = Math.max(1, Math.round(base*w/maxdim));
-    const ny = Math.max(1, Math.round(base*h/maxdim));
-    const nz = Math.max(1, Math.round(base*d/maxdim));
-    // поджим крайних ячеек: разворотным петлям змейки нужно ~R изгиба
-    const shX=Math.max(0.35, (w-240)/w), shY=Math.max(0.4, (h-90)/h), shZ=Math.max(0.4, (d-90)/d);
-    const cellAt=(ix,iy,iz)=>[
-      (0.5+((ix+0.5)/nx-0.5+jitter(0.35/nx))*shX)*w,
-      (0.5+((iy+0.5)/ny-0.5+jitter(0.35/ny))*shY)*h,
-      (0.5+((iz+0.5)/nz-0.5+jitter(0.35/nz))*shZ)*d,
-    ];
-    // змейка по слоям: почти без самопересечений по построению,
-    // случайные перестановки соседей дают живость завихрений
-    const list=[];
-    for(let iy=0; iy<ny; iy++){
-      const zdir = iy%2===0;
-      for(let zi=0; zi<nz; zi++){
-        const iz = zdir ? zi : nz-1-zi;
-        const xdir = (iy+zi)%2===0;
-        for(let xi=0; xi<nx; xi++){
-          list.push(cellAt(xdir ? xi : nx-1-xi, iy, iz));
-        }
-      }
-    }
-    for(let i2=0;i2+1<list.length;i2++){
-      if(rng()<0.25){ const t=list[i2]; list[i2]=list[i2+1]; list[i2+1]=t; }
-    }
-    for(const c of list) pts.push(c);
   } else { // free
     const n = Math.max(7, Math.round((8 + rng()*4)*lengthK));
     let prev = [rng()*0.3, 0.3+rng()*0.4, 0.3+rng()*0.4];
@@ -416,16 +428,18 @@ function buildRibbon(params, rngSeed, lane){
     }
   }
 
+  const isFill = (style==="chaos" || lengthK>=1.9);
   // twist-профиль: у «Хаоса» сильнее и с третьей гармоникой — перекруты
+  const twistEff = isFill ? twistAmt*0.6 : twistAmt;
   const tf1 = 1+rngL()*2, tf2 = 2.5+rngL()*2.5, tf3 = 5+rngL()*4;
   const tp1 = rngL()*Math.PI*2, tp2 = rngL()*Math.PI*2, tp3 = rngL()*Math.PI*2;
   const tsc = style==="chaos" ? 1.5 : 1.15;
-  const twistAt = s => twistAmt*tsc*(
+  const twistAt = s => twistEff*tsc*(
     0.50*Math.sin(s*Math.PI*2*tf1+tp1) +
     0.30*Math.sin(s*Math.PI*2*tf2+tp2) +
     0.20*Math.sin(s*Math.PI*2*tf3+tp3));
-  // хаос: случайная начальная ориентация ленты
-  const w0hint = style==="chaos" ? [rngL()*2-1, rngL()*2-1, rngL()*2-1] : null;
+  // заполнение: лента на ребре (стержни вертикальны)
+  const w0hint = isFill ? [0,1,0] : null;
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
   const foldAmp = foldK*(0.3+0.7*ampl);
@@ -449,9 +463,23 @@ function buildRibbon(params, rngSeed, lane){
   }
   const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind, foldK};
 
-  // --- вписывание: масштабируем направляющую по ФАКТИЧЕСКОЙ (марш) геометрии ---
+  // --- вписывание ---
+  // Заполняющий маршрут построен сразу в верных координатах: сжатие ему
+  // только вредит (сплющивает строки) — марш с рулём сам держит стены.
   const margin = ROD_R+1;
   let geo = null;
+  if(isFill){
+    geo = sampleGuide(ctrl, opt);
+    geo.clampMin=[0,0,0]; geo.clampMax=[box.w,box.h,box.d];
+    marchRibbon(geo);
+    const bbF = geoBBox(geo);
+    geo.fitScale = (bbF.max[0]-bbF.min[0]+ROD_D > box.w+2 ||
+                    bbF.max[1]-bbF.min[1]+ROD_D > box.h+2 ||
+                    bbF.max[2]-bbF.min[2]+ROD_D > box.d+2) ? 0 : 1;
+    if(!geo.fitScale) (window.__fitlog=window.__fitlog||[]).push(
+      [0,1,2].map(k=>Math.round(bbF.max[k]-bbF.min[k]+ROD_D-[box.w,box.h,box.d][k])));
+    return geo;
+  }
   for(let iter=0; iter<16; iter++){
     geo = sampleGuide(ctrl, opt);
     geo.clampMin=[0,0,0]; geo.clampMax=[box.w,box.h,box.d];
@@ -1419,7 +1447,7 @@ function updateSpec(){
       <tr><td>Масса стекла (трубки, стенка 2 мм)</td><td>${(glassMass/1000).toFixed(2)} кг</td></tr>
       <tr><td>Проволока каркаса Ø5</td><td>${(wire/1000).toFixed(1)} м</td></tr>
       <tr><td>Масса каркаса (сталь)</td><td>${(wire*Math.PI*6.25*STEEL_DENSITY/1000).toFixed(2)} кг</td></tr>
-      <tr class="hl"><td>Масса композиции</td><td>${((glassMass+wire*Math.PI*6.25*STEEL_DENSITY)/1000).toFixed(2)} кг</td></tr>
+      <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*Math.PI*6.25*STEEL_DENSITY)/1000)} кг</td></tr>
       ${leds?`<tr><td>LED-точки по оси</td><td>${leds} шт (~${(leds*0.2).toFixed(0)} Вт)</td></tr>`:""}
       ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт</td></tr>`:""}
       <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
@@ -1514,7 +1542,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Зазор между стержнями, мм", `${s.gaps.gmin.toFixed(1)} - ${s.gaps.gmax.toFixed(1)} (норма ${GAP_MIN}-${GAP_MAX})`],
     ["Масса стекла (трубки Ø15, стенка 2 мм), кг", (s.glassMass/1000).toFixed(2)],
     ["Масса каркаса (сталь Ø5), кг", (s.wire*Math.PI*6.25*STEEL_DENSITY/1000).toFixed(2)],
-    ["Масса композиции, кг", ((s.glassMass+s.wire*Math.PI*6.25*STEEL_DENSITY)/1000).toFixed(2)],
+    ["Масса композиции, кг (округление вверх)", Math.ceil((s.glassMass+s.wire*Math.PI*6.25*STEEL_DENSITY)/1000)],
     ["Проволока Ø5, м", (s.wire/1000).toFixed(1)],
     ["LED-точек", s.leds],
     ["Подвесов", s.cabs],
