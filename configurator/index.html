@@ -277,258 +277,56 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
   // завёрнуты в СВИТКИ (LC0327). Повороты в плане лента проходит,
   // перекатываясь с лица на ребро — как шёлк на ветру.
   if(style==="chaos" || lengthK>=1.9){
-    const vert=!!box.vert;
-    // ВЕРТИКАЛЬНЫЙ ГАБАРИТ — СПИРАЛЬ: лента встаёт на ребро (стержни
-    // вертикальны) и винтом обходит объём, поднимаясь на шаг витка.
-    // Круг в плане для ленты на ребре — изгиб вокруг стержней, он
-    // разрешён; шаг витка = ширина ленты + зазор, поэтому витки не
-    // задевают друг друга. Так объём заполняется по-настоящему.
-    if(vert){
-      const rw2=box.rw||300;
-      const dens2=Math.max(0, Math.min(1, (lengthK-0.55)/3.45));
-      const relax2=box.relax||0;
-      const Rmax=Math.min(w, d)/2 - 60;
-      const Rbase=Math.max(150, Rmax*0.72);
-      const pitchY=(rw2+70)+(1-dens2)*380+relax2*220;
-      const turns=Math.max(1.5, Math.min(14, (h-rw2-80)/pitchY));
-      const y0s=rw2/2+40, cx=w/2, cz=d/2;
-      const ph0=rng()*Math.PI*2;
-      // «дыхание» радиуса и наклон оси — спираль живая, не цилиндр
-      const rf1=1.2+rng()*1.1, rp1=rng()*Math.PI*2;
-      const rAmp=Math.min(Rbase*0.22, Math.max(0, Rmax-Rbase));
-      const tf=1.1+rng()*0.9, tp=rng()*Math.PI*2;
-      const tilt=Math.min(0.10*Math.min(w,d), 70);
-      const N2=Math.max(24, Math.round(turns*14));
-      for(let k2=0;k2<=N2;k2++){
-        const t=k2/N2;
-        const th=ph0+turns*Math.PI*2*t;
-        const R2=Rbase+rAmp*Math.sin(Math.PI*2*rf1*t+rp1);
-        const yy=y0s+(h-rw2-80)*t;
-        pts.push([
-          Math.min(w-30, Math.max(30, cx+R2*Math.cos(th)+tilt*Math.sin(Math.PI*2*tf*t+tp))),
-          Math.min(h-30, Math.max(30, yy)),
-          Math.min(d-30, Math.max(30, cz+R2*Math.sin(th)+tilt*Math.cos(Math.PI*2*tf*t+tp))),
-        ]);
-      }
-      return pts;
-    }
-    // A — главная ось течения, B — ось ярусов, d — ось строк (глубина)
-    const A=vert?h:w, B=vert?w:h;
-    const P=(av,bv,zv)=> vert? [bv,av,zv] : [av,bv,zv];
-    const target=lengthK*2100;
+    // ЗАПОЛНЕНИЕ ОБЪЁМА — ВИНТ ВОКРУГ ГЛАВНОЙ ОСИ ГАБАРИТА.
+    // Лента идёт спиралью: стержни параллельны оси винта, поэтому
+    // виток — чистый изгиб вокруг стержней (физически самый лёгкий), а
+    // шаг витка = ширина ленты + зазор, значит витки ложатся плотно и
+    // не задевают друг друга. Сечение — эллипс по двум другим осям:
+    // объём заполняется целиком, а лента нигде не идёт по прямой.
+    // Так выглядят LC0326/LC0419 (винт) и LC0217 (пологий винт с волной).
     const rw=box.rw||300;
-    // СЕТКА ПРЯДЕЙ: плоская лента занимает по глубине свою ширину,
-    // поэтому пряди раскладываются змейкой в плане — строки по глубине
-    // и ярусами по высоте. Лента заполняет ВСЮ сетку: «Насыщенность»
-    // задаёт ПЛОТНОСТЬ (шаг строк), а метраж — её следствие.
     const dens=Math.max(0, Math.min(1, (lengthK-0.55)/3.45));
-    const relax=box.relax||0;             // лестница разряжает сетку
-    const pitchZ=rw+110+(1-dens)*520+relax*260;
-    const nz=Math.max(1, Math.min(9, Math.floor((d-40)/pitchZ)));
-    const yPitch=rw+230+relax*160;        // ярус: лента + перегиб
-    const ny=Math.max(1, Math.min(3, Math.floor(B/yPitch)));
-    // строки по глубине: центрированная сетка
-    const zSpan=(nz-1)*pitchZ;
-    const z0=(d-zSpan)/2;
-    // строки идут подряд: разворот между соседними — полукруг радиусом
-    // pitchZ/2 (≥185 > 110), вылет за торец всего pitchZ/2
-    const order=[];
-    for(let i2=0;i2<nz;i2++) order.push(i2);
-    // ярусы по высоте
-    const ySpan=(ny-1)*Math.min(yPitch*1.6, (B-rw-40)/Math.max(1,ny-1));
-    const y0=(B-(ny>1?ySpan:0))/2;
-    const dy=ny>1 ? ySpan/(ny-1) : 0;
-    // фирменные вертикальные волны вдоль прядей (как LC0217): амплитуда
-    // из бюджета яруса И радиуса изгиба (R = lam²/(4π²·A) ≥ 260)
-    const lam=Math.max(900, A/1.9);
-    const budY=ny>1 ? (dy-rw-60)/2 : (B-rw-60)/2;
-    const ampW=Math.max(Math.min(budY, 40), Math.min(budY, lam*lam/(39.5*260))*(0.45+0.8*ampl));
-    const kW=Math.PI*2*ampW/lam;
-    const strandLen=A*0.87*(1+kW*kW/4)*1.04;
-    const strands=nz*ny;   // объём заполняется целиком
-    // ЗАВИТКИ: вертикальные петли-перекаты («ленточная карамель», как
-    // LC0419/0327) — чистый изгиб вокруг стержней, перекат не нужен
-    const curlR=Math.min(320, Math.max(0, (ny>1?dy:B)-rw-40)/2);
-    const canCurl=curlR>=118;
-    // фактическая длина завитка: ¾ витка + подход/выход
-    const curlLen=canCurl ? 1.5*Math.PI*curlR+200 : 1;
-    // завитки добирают метраж, когда прядей на цель не хватает
-    // (как «карамельные» перекруты LC0419/0326)
-    let nRings=canCurl ? Math.min(2, Math.round(dens*2)) : 0;
-    if(typeof window!=="undefined" && window.__noCurl) nRings=0;
-    // свитки на свободных концах — если есть высота на завиток
-    const scrollR=Math.min(165, (B-60)/2.6);
-    const doScroll=scrollR>=118 && !(typeof window!=="undefined" && window.__noScroll);
-    const mV=Math.max(5, Math.round(0.87*A/340)+1);
-    // где вставлять кольца: раскидать по прядям/позициям
-    const ringAt=new Set();
-    for(let r2=0;r2<nRings;r2++) ringAt.add(Math.floor(rng()*(strands*(mV-3)))|0);
-    // глубина — ОДНА непрерывная волна вдоль всей ленты (включая
-    // перегибы): изломов глубины на складках не бывает, плоской ленте
-    // хватает пологого руления
-    // меандр ПОЛОГИЙ (R ≥ ~4 м): плоской ленте хватает микро-крена,
-    // банк не нужен — складки и меандр не конфликтуют
-    // меандр по глубине: длинная волна на всю ленту — заполняет глубину,
-    // оставаясь пологой (R ≈ (L/zf)²/(4π²·A) ≫ 230)
-    // покачивание строки по глубине — в пределах свободного зазора
-    const zAmp=Math.max(0, Math.min(26, (pitchZ-rw-14)/2));
-    const zf1=1.3+rng()*0.9, zp1=rng()*Math.PI*2;
-    const zf2=2.7+rng()*1.3, zp2=rng()*Math.PI*2;
-    // две гармоники: строка нигде не идёт по прямой
-    const zWob=(t)=> zAmp*(0.68*Math.sin(Math.PI*2*zf1*t+zp1)
-                          +0.32*Math.sin(Math.PI*2*zf2*t+zp2));
-    // свиток: спираль в вертикальной плоскости у конца пряди.
-    // Завивается в сторону свободного места; если высоты на виток
-    // не хватает — конец остаётся простым
-    const scroll=(xe,ye,ze,dirX)=>{
-      const spaceUp=B-40-ye, spaceDn=ye-40;
-      const dirY=spaceUp>=spaceDn ? 1 : -1;
-      const R0=Math.min(scrollR, (dirY>0?spaceUp:spaceDn)/1.95);
-      if(R0<118) return [];
-      // якорь свитка отодвинут от стен — рулю у стены не с чем воевать
-      const xa=Math.min(A-95-R0, Math.max(95+R0, xe));
-      const out=[];
-      let R=R0;
-      // ровно один виток, радиус убывает не ниже физического минимума
-      for(let a2=1;a2<=8;a2++){
-        const th=a2*Math.PI*2/8;
-        out.push(P(
-          Math.min(A-40, Math.max(40, xa+dirX*Math.sin(th)*R)),
-          ye+dirY*(1-Math.cos(th))*R*0.92,
-          Math.min(d-40, Math.max(40, ze+42*th/(Math.PI*2))),
-        ));
-        R=Math.max(126, R*0.965);
-      }
-      return out;
-    };
-    let ringIdx=0;
-    let prevZ=null, prevY=null;
-    for(let s2=0; s2<strands; s2++){
-      const rev=(s2%2===1);
-      const iy=Math.floor(s2/nz), iz=order[s2%nz];
-      const yBand=y0+dy*iy;
-      const zBand=z0+pitchZ*iz;
-      const phy=rng()*Math.PI*2;
-      const nW=Math.max(2, Math.round(A*0.87/lam));      // волн на прядь
-      // торцы: за ними остаётся место на вылет разворота (pitchZ/2)
-      const mrgX=Math.min(0.18, (pitchZ/2+45)/A);
-      const xLo=mrgX+0.03*rng(), xHi=1-mrgX-0.03*rng();
-      if(s2>0){
-        if(iy!==Math.floor((s2-1)/nz)){
-          // смена яруса — вертикальная драпировка: лента складывается
-          // сама над собой (LC0217/0279)
-          const xe=rev? Math.min(A-70, xHi*A+Math.max(240,dy*0.6))
-                      : Math.max(70, xLo*A-Math.max(240,dy*0.6));
-          pts.push(P(xe, (prevY+yBand)/2, (prevZ+zBand)/2));
-        } else {
-          // смена строки — РАЗВОРОТ В ПЛАНЕ за торцом: лента
-          // перекатывается на ребро и уходит полукругом по глубине
-          // (как в LC0280/0326). Радиус = половина шага строк «через одну»
-          const R3=Math.abs(zBand-prevZ)/2;
-          const zc=(prevZ+zBand)/2;
-          const sgn=(prevZ>=zBand)?1:-1;
-          const xc=rev? xHi*A : xLo*A;
-          const dirX=rev?1:-1;
-          const yMid=(prevY+yBand)/2;
-          if(R3>=160){
-            // разворот в плане: лента перекатывается на ребро (банк
-            // смотрит вперёд ~0.55 м) и описывает полукруг. Радиус ≥125 —
-            // на перекате лента не гнётся круче ~110 (анти-«штопор»)
-            for(let a3=1;a3<=7;a3++){
-              const th=a3*Math.PI/8;
-              pts.push(P(
-                Math.min(A-20, Math.max(20, xc+dirX*R3*Math.sin(th))),
-                Math.min(B-25, Math.max(25, yMid+jitter(10))),
-                Math.min(d-25, Math.max(25, zc+sgn*R3*Math.cos(th))),
-              ));
-            }
-          } else {
-            // шпилька: разворот ВЕРТИКАЛЬНОЙ петлёй — изгиб вокруг
-            // собственных стержней (перекат не нужен, радиус свободен),
-            // сдвиг по глубине берётся наклоном петли
-            const Rv=Math.max(150, Math.min(320, (B-60)/2.2));
-            const up=(yMid<B/2)?1:-1;
-            for(let a3=1;a3<=7;a3++){
-              const th=a3*Math.PI/7;
-              pts.push(P(
-                Math.min(A-20, Math.max(20, xc+dirX*Rv*Math.sin(th)*0.62)),
-                Math.min(B-25, Math.max(25, yMid+up*(1-Math.cos(th))*Rv*0.5)),
-                Math.min(d-25, Math.max(25, prevZ+(zBand-prevZ)*(a3/7))),
-              ));
-            }
-          }
-        }
-      }
-      for(let k2=0;k2<mV;k2++){
-        const t=k2/(mV-1);
-        const x=(xLo+(xHi-xLo)*(rev?1-t:t))*A + jitter(A*0.012);
-        const y=Math.min(B-25, Math.max(25,
-          yBand + ampW*Math.sin(Math.PI*2*nW*t+phy)
-                + 0.28*ampW*Math.sin(Math.PI*2*nW*2.3*t+phy*1.7) + jitter(9)));
-        const z=Math.min(d-25, Math.max(25, zBand+zWob(t)+jitter(5)));
-        pts.push(P(x,y,z));
-        if(k2===mV-1){ prevZ=zBand; prevY=yBand; }
-        // завиток: вертикальная петля по ходу ленты (вход по
-        // касательной, полный виток, дрейф вбок для зазора витка)
-        if(ringAt.has(ringIdx) && k2>0 && k2<mV-2){
-          const R2=curlR*(0.78+0.44*rng());
-          // петля вверх в свободную высоту; у верхнего яруса — вниз
-          const up=(iy<ny-1 || ny===1)?1:-1;
-          const ex=(rev?-1:1), ez=0;  // курс в плане (вдоль строки)
-          const nx=0, nzp=1;          // ось дрейфа — по глубине
-          // открытая петля (¾ витка) с боковым дрейфом: лента не
-          // возвращается в ту же точку — след остаётся однозначным
-          // дрейф ≈ радиусу, но в пределах свободного зазора строки
-          const drift=Math.min(Math.max(150, R2*0.85), pitchZ*0.45)*(rng()<0.5?1:-1);
-          const TH=Math.PI*1.5;
-          for(let a2=1;a2<=7;a2++){
-            const th=a2*TH/7;
-            const sn=Math.sin(th), c1=1-Math.cos(th);
-            pts.push(P(
-              Math.min(A-30, Math.max(30, x+ex*R2*sn+nx*drift*th/(Math.PI*2))),
-              Math.min(B-25, Math.max(25, y+up*c1*R2)),
-              Math.min(d-30, Math.max(30, z+ez*R2*sn+nzp*drift*th/(Math.PI*2))),
-            ));
-          }
-        }
-        ringIdx++;
-      }
+    const relax=box.relax||0;
+    // главная ось — самая длинная сторона
+    const dims=[w,h,d];
+    const ax=dims.indexOf(Math.max(...dims));
+    const L=dims[ax];
+    const u1=(ax+1)%3, u2=(ax+2)%3;   // оси сечения
+    // полуоси эллипса сечения: лента в плоскости витка тонкая (15 мм),
+    // запас 30 мм от стен
+    const a1=Math.max(120,(dims[u1]-60)/2), a2=Math.max(120,(dims[u2]-60)/2);
+    // шаг витка: плотность из «Насыщенности», лестница разряжает
+    // зазор витка: лента в винте слегка наклонена и несёт волну,
+    // поэтому чистый шаг = ширина + 150, а не + 60
+    const pitch=(rw+150)+(1-dens)*560+relax*300;
+    const run=Math.max(rw+60, L-rw-60);          // ход вдоль оси
+    // метраж ограничен: плотный шаг в большом сечении даёт десятки
+    // метров, которые марш не проходит. Целевой запас — 1.55× от
+    // «Насыщенности», дальше витки разряжаются
+    const lenTurn=Math.PI*(a1+a2)*0.88;
+    const turnsCap=Math.max(1.2, (lengthK*2100*1.55)/Math.max(600,lenTurn));
+    const turns=Math.max(1.2, Math.min(16, run/pitch, turnsCap));
+    const ph0=rng()*Math.PI*2;
+    // «дыхание» сечения и блуждание центра — винт живой, не цилиндр
+    const bf=1.1+rng()*1.2, bp=rng()*Math.PI*2;
+    const bAmp=0.16+0.10*rng();
+    const cf1=0.8+rng()*0.9, cp1=rng()*Math.PI*2;
+    const cf2=1.3+rng()*1.1, cp2=rng()*Math.PI*2;
+    const cAmp1=Math.min(a1*0.20, 90), cAmp2=Math.min(a2*0.20, 90);
+    const N=Math.max(30, Math.round(turns*16));
+    const c1=dims[u1]/2, c2=dims[u2]/2, s0=(L-run)/2;
+    for(let k2=0;k2<=N;k2++){
+      const t=k2/N;
+      const th=ph0+turns*Math.PI*2*t;
+      const br=1+bAmp*Math.sin(Math.PI*2*bf*t+bp);
+      const q=[0,0,0];
+      q[ax]=s0+run*t;
+      q[u1]=c1+a1*br*Math.cos(th)*0.88+cAmp1*Math.sin(Math.PI*2*cf1*t+cp1);
+      q[u2]=c2+a2*br*Math.sin(th)*0.88+cAmp2*Math.sin(Math.PI*2*cf2*t+cp2);
+      for(let x2=0;x2<3;x2++) q[x2]=Math.min(dims[x2]-25, Math.max(25, q[x2]));
+      pts.push(q);
     }
-    // свитки на свободных концах
-    if(doScroll && pts.length>2){
-      const p0=pts[0], p1=pts[1];
-      const hd=V.norm(V.sub(p0,p1));
-      const st0=scroll(
-        (vert?p0[1]:p0[0]), (vert?p0[0]:p0[1]), p0[2],
-        Math.sign((vert?hd[1]:hd[0])||1), rng()<0.5?-1:1).reverse();
-      pts.unshift(...st0);
-      const pn=pts[pts.length-1], pm=pts[pts.length-2];
-      const hd2=V.norm(V.sub(pn,pm));
-      pts.push(...scroll(
-        (vert?pn[1]:pn[0]), (vert?pn[0]:pn[1]), pn[2],
-        Math.sign((vert?hd2[1]:hd2[0])||1), rng()<0.5?-1:1));
-    }
-    // вписывание маршрута в рабочий бокс по всем осям: свитки, завитки
-    // и вершины складок не должны прижиматься к стенам (иначе руль у
-    // стены воюет с ними, а марш не успевает завить радиус)
-    {
-      const lim=[A, B, d], pad=[70, 30, 45];
-      const mn=[1e9,1e9,1e9], mx=[-1e9,-1e9,-1e9];
-      const g=(q,k)=> k===0 ? (vert?q[1]:q[0]) : k===1 ? (vert?q[0]:q[1]) : q[2];
-      const s=(q,k,v)=>{ if(k===0){ if(vert) q[1]=v; else q[0]=v; }
-                         else if(k===1){ if(vert) q[0]=v; else q[1]=v; }
-                         else q[2]=v; };
-      for(const q of pts) for(let k=0;k<3;k++){
-        const v=g(q,k); if(v<mn[k])mn[k]=v; if(v>mx[k])mx[k]=v;
-      }
-      for(let k=0;k<3;k++){
-        const lo=pad[k], hi=lim[k]-pad[k];
-        if(mn[k]>=lo && mx[k]<=hi) continue;
-        const sc=Math.min(1,(hi-lo)/Math.max(1,mx[k]-mn[k]));
-        const off=lo+((hi-lo)-(mx[k]-mn[k])*sc)/2;
-        for(const q of pts) s(q,k, off+(g(q,k)-mn[k])*sc);
-      }
-    }
+    pts.__axis=ax;
     return pts;
   }
 
@@ -619,9 +417,10 @@ function buildRibbon(params, rngSeed, lane){
   // (у горизонтальной — вдоль глубины: отступы глубины ±170 =
   // полширины+радиус+запас; вертикаль ±100 на перекаты и волны)
   const relax = params.fillRelax||0;
-  const workF = fillVert
-    ? { w: Math.max(200, box.w-260), h: Math.max(300, box.h-140), d: Math.max(rw+90, box.d-90), vert:true, rw, relax }
-    : { w: Math.max(300, box.w-140), h: Math.max(200, box.h-160), d: Math.max(rw+90, box.d-90), rw, relax };
+  // винт: по оси винта нужен запас на полширины ленты, по сечению —
+  // только на радиус стержня (лента в плоскости витка тонкая)
+  const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
+                  d: Math.max(200, box.d-40), rw, relax };
   let ctrl = controlPoints(style, rng, isFill?workF:work, 0, 1, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
@@ -650,10 +449,9 @@ function buildRibbon(params, rngSeed, lane){
   // заполнение: закрутка живёт на прямых участках пробегов (в изгибе
   // её гасят банк и анти-«штопор»); лента катится и вертится вдоль
   // пробегов — шаг строк по глубине расширяется под размах стержней
-  // постоянный твист в заполнении не годится: он съедает бюджет
-  // расхождения торцов и включает анти-«штопор», из-за чего марш теряет
-  // строки. Волнистость даёт геометрия маршрута (волны + покачивание)
-  const twistEff = isFill ? twistAmt*0.5 : twistAmt;
+  // в винте твист не нужен: вращение даёт сама спираль, а твист съедает
+  // бюджет расхождения торцов и включает анти-«штопор» (витки редеют)
+  const twistEff = isFill ? 0 : twistAmt;
   const tf1 = 1+rngL()*2, tf2 = 2.5+rngL()*2.5, tf3 = 5+rngL()*4;
   const tp1 = rngL()*Math.PI*2, tp2 = rngL()*Math.PI*2, tp3 = rngL()*Math.PI*2;
   const tsc = style==="chaos" ? 1.5 : 1.15;
@@ -663,17 +461,11 @@ function buildRibbon(params, rngSeed, lane){
     0.20*Math.sin(s*Math.PI*2*tf3+tp3));
   // заполнение: ПЛОСКАЯ лента — стержни горизонтальны, поперёк хода
   // (лицо вверх у горизонтальной укладки, к зрителю — у вертикальной)
-  let w0hint = null;
+  let w0hint = null, fillAxisV = [0,1,0];
   if(isFill){
-    if(fillVert){
-      w0hint=[0,1,0];      // спираль: лента на ребре, стержни вертикальны
-    } else {
-      let t0=V.sub(ctrl[Math.min(1,ctrl.length-1)], ctrl[0]);
-      t0=V.len(t0)>1e-6 ? V.norm(t0) : [1,0,0];
-      w0hint=V.cross([0,1,0], t0);
-      if(V.len(w0hint)<1e-4) w0hint=[0,0,1];
-      w0hint=V.norm(w0hint);
-    }
+    const axi = (ctrl.__axis!==undefined) ? ctrl.__axis : 0;
+    w0hint=[0,0,0]; w0hint[axi]=1;   // стержни вдоль оси винта
+    fillAxisV=w0hint.slice();        // ось банка = ось винта
   }
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
@@ -718,7 +510,7 @@ function buildRibbon(params, rngSeed, lane){
   if(isFill){
     geo = sampleGuide(ctrl, opt);
     geo.fillMode=true;
-    geo.fillAxis=[0,1,0]; // ось банка: виражи в плане (и спираль, и змейка)
+    geo.fillAxis=fillAxisV; // ось банка = ось винта
     // двойной марш: первый проход без рулей делает маршрут физичным
     // и гладким, второй идёт по нему след-в-след без раскачки
     geo.noSteer=true;
