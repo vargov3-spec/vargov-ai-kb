@@ -107,7 +107,7 @@
       <legend>Пластика ленты</legend>
       <div class="row"><label for="form">Форма композиции</label>
         <select id="form">
-          <option value="box" selected>Куб / параллелепипед</option>
+          <option value="box" selected>Поток (винт)</option>
           <option value="sphere">Шар</option>
           <option value="hemi">Полусфера</option>
           <option value="cone">Конус</option>
@@ -343,7 +343,7 @@ function sectionPerim(A1, A2){
 }
 
 const FORMS = {
-  box:   "Куб / параллелепипед", sphere:"Шар",       hemi:  "Полусфера",
+  box:   "Поток (винт)", sphere:"Шар",       hemi:  "Полусфера",
   cone:  "Конус",                cyl:   "Цилиндр",   pyr:   "Пирамида",
   casc:  "Каскад",               ring:  "Кольцо",    wave:  "Волна",
   spiral:"Спираль",              drop:  "Капля / параболоид", lens: "Линза",
@@ -1100,10 +1100,18 @@ function buildRibbon(params, rngSeed, lane){
             for(let x=0;x<3;x++) c[x]=near[x]+(c[x]-near[x])*0.75;
         }
       }
+      // ОБРАТНАЯ СВЯЗЬ ПО ПРЕДМАРШУ, В ОБЕ СТОРОНЫ.
+      // Если предмарш прошёл направляющую целиком, но метраж ниже цели —
+      // добираем витки. Если он ОБОРВАЛСЯ, витков наоборот слишком много:
+      // добор в этом случае только усугублял обрыв (лента укладывалась на
+      // треть габарита), поэтому навивку разряжаем.
       const tg=ctrl.__target||0;
       const got=geo.ribbonLen||1;
-      if(!tg || got>=0.94*tg || bi===1) break;
-      boost=Math.min(1.8, boost*Math.min(1.45, tg/got));
+      if(bi>=3) break;
+      // предмарш оборвался — навивка слишком плотная для марша, разряжаем
+      if(geo.covPre<0.92){ boost=Math.max(0.28, boost*0.62); continue; }
+      if(!tg || got>=0.94*tg) break;
+      boost=Math.min(1.8, boost*Math.min(1.35, tg/got));
     }
     // покрытие ПРЕДМАРША: если сорвался он, второй марш пройдёт короткую
     // направляющую целиком и обрыв останется незамеченным
@@ -1613,13 +1621,25 @@ function marchRibbon(rb){
       // в заполнении при полном изгибе — ПОЛНОСТЬЮ (ряды строго ±W:
       // ось витка = ось стержней, дрожь рядов не душит кривизну)
       const needOp=Math.min(1, Math.abs(rawOp)/A_OP);
-      // складка прижимается не «в любом повороте», а только если она
-      // мешает: гасить нужно ту часть складки, что ушла ВНУТРЬ поворота
+      // ПРИЖИМ СКЛАДКИ РОВНО ПО НУЖНОМУ РАДИУСУ. Наклон рядов уводит торцы
+      // с плоскости изгиба на h, и это ограничивает изгиб: внутрь поворота
+      // допустимо h ≤ OP_SLACK/op, наружу — h ≤ OP_OUT/op. Считаем, сколько
+      // наклона позволяет предстоящий изгиб, и прижимаем только избыток.
+      // На пробегах изгиб мал, допуск огромен — складка живёт целиком и
+      // центральный контур занимает своё положение; в развороте складка
+      // прижимается ровно настолько, чтобы марш прошёл. Раньше стояла
+      // грубая связка (прижимать в любом повороте либо не прижимать вовсе):
+      // в первом случае центр дублировал середину, во втором лента не
+      // проходила повороты и обрывалась на середине габарита.
       const sgnOp=rawOp>=0?1:-1;
       const dU2=V.dot(Up,N), dD2=V.dot(Dn,N);
-      const innerK=Math.min(1, 3*Math.max(0, sgnOp*dU2, sgnOp*dD2));
+      const hIn =halfW*Math.max(0,  sgnOp*dU2,  sgnOp*dD2);
+      const hOut=halfW*Math.max(0, -sgnOp*dU2, -sgnOp*dD2);
+      const opNeed=Math.max(Math.abs(rawOp), needTurn*A_OP, 1e-5);
+      const okIn=OP_SLACK/opNeed, okOut=OP_OUT/opNeed;
       const flat=rb.fillMode
-        ? Math.min(1, Math.max(needOp, needTurn)*1.08*(0.25+0.75*innerK))
+        ? Math.min(1, 1.15*Math.max(hIn >okIn  ? 1-okIn/hIn   : 0,
+                                    hOut>okOut ? 1-okOut/hOut : 0))
         : needOp*0.85;
       let uT=orthoTo(g.u,Tn), dT=orthoTo(g.v,Tn);
       if(flat>0.02){
@@ -2012,17 +2032,18 @@ function buildEnvWire(form, dims, rw, seed, off){
    Проверка идёт по покрытию направляющей, а не по габариту: у круглых
    форм (кольцо, восьмёрка) незаполненные углы — это сама форма. */
 function fillGate(ribbons){
+  const why=(r)=>{ (window.__gate=window.__gate||[]).push(r); return false; };
   for(const rb of ribbons){
     if(!rb.giMap || !rb.guideC || rb.guideC.length<8) continue;
     const cov=rb.giMap[rb.giMap.length-1]/Math.max(1, rb.guideC.length-2);
-    if(cov<0.9) return false;                  // направляющая не доложена
-    if(rb.covPre!==undefined && rb.covPre<0.9) return false;   // сорвался предмарш
+    if(cov<0.9) return why('cov='+cov.toFixed(2));   // направляющая не доложена
+    if(rb.covPre!==undefined && rb.covPre<0.9) return why('covPre='+rb.covPre.toFixed(2));
     // сильная утяжка = композиция сплющена в часть габарита
-    if(rb.shrK!==undefined && rb.shrK<0.86) return false;
+    if(rb.shrK!==undefined && rb.shrK<0.86) return why('shrK='+rb.shrK.toFixed(2));
     // вылет предмарша сам по себе не брак: предмарш идёт без рулей, а
     // стены держит второй марш — бракуем только по факту (утяжка и обрыв)
-    if((rb.escapes||0)>2 || (rb.escPre||0)>2) return false;    // цель прыгала
-    if(rb.endReason && rb.endReason.indexOf('stall')===0) return false;
+    if((rb.escapes||0)>2 || (rb.escPre||0)>2) return why('esc='+rb.escapes+'/'+rb.escPre);
+    if(rb.endReason && rb.endReason.indexOf('stall')===0) return why(rb.endReason);
   }
   return true;
 }
@@ -2084,7 +2105,7 @@ function buildScene(){
   const lanesFit=Math.max(1, Math.min(lanes, Math.floor(runMain/(params.ribbonW+30))));
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
-  window.__ladder=[];
+  window.__ladder=[]; window.__gate=[];
   outer:
   for(let effLanes=lanesFit; effLanes>=1; effLanes--){
     // многожильные варианты считаются дорого (пар капсул кратно больше)
@@ -2184,7 +2205,7 @@ function buildScene(){
         // сильно утянутая сцена — та самая «вырожденная» генерация:
         // композиция сплющена в треть габарита. Это не брак геометрии,
         // но показывать её нельзя — ищем дальше
-        const gate=fillGate(ribbons) && Math.min(shr[0],shr[1],shr[2])>=0.86;
+        const gate=fillGate(ribbons) && (Math.min(shr[0],shr[1],shr[2])>=0.86 || (window.__gate=window.__gate||[]).push('sceneShr='+Math.min(shr[0],shr[1],shr[2]).toFixed(2))&&false);
         // вариант, прошедший ворота, всегда лучше более длинного, но
         // вырожденного: иначе лестница выходит с оборванной лентой
         const better = !bestClean || (gate && !bestClean.gate) ||
