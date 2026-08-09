@@ -389,6 +389,82 @@ function roundRectPt(frac, Ax, Az, cr){
   return arc(-(ax-cr), az-cr, Math.PI);
 }
 
+/* рамка навивки в точке осевой линии: e1 — вдоль опорного вектора,
+   e2 = ход × e1 */
+function frameT(sp, i){
+  const P=sp.P, n=P.length;
+  const t=V.sub(P[Math.min(n-1,i+1)], P[Math.max(0,i-1)]);
+  return V.len(t)>1e-6 ? V.norm(t) : [1,0,0];
+}
+function frameE1(sp, i){
+  const t=frameT(sp,i);
+  let e1=V.sub(sp.ref, V.mul(t, V.dot(sp.ref,t)));
+  if(V.len(e1)<1e-4) e1=V.cross(t, Math.abs(t[1])>0.9?[1,0,0]:[0,1,0]);
+  return V.norm(e1);
+}
+function frameE2(sp, i){ return V.norm(V.cross(frameT(sp,i), frameE1(sp,i))); }
+
+/* ОСЕВАЯ ЛИНИЯ УКЛАДКИ — всегда «Поток (винт)»: вдоль самой длинной
+   стороны габарита. Пластика композиции одна для всех форм; форма только
+   ограничивает объём, в который эта укладка вписывается. */
+function flowSpine(dims, rw){
+  const M=200, P=[];
+  const ax=dims.indexOf(Math.max(...dims));
+  const u1=(ax+1)%3, u2=(ax+2)%3;
+  const rBox=(dim)=>Math.max(90, (dim-60-rw*0.7)/2);
+  const run=Math.max(rw+60, dims[ax]-rw-60), s0=(dims[ax]-run)/2;
+  for(let i=0;i<=M;i++){
+    const q=[dims[0]/2, dims[1]/2, dims[2]/2];
+    q[ax]=s0+run*(i/M);
+    P.push(q);
+  }
+  const ref=[0,0,0]; ref[u1]=1;
+  return {P, ref, r1:rBox(dims[u1]), r2:rBox(dims[u2]), ax};
+}
+
+/* ТЕЛО ФОРМЫ: предикат «точка внутри формы». Тела вращения заданы
+   аналитически (силуэт по высоте), формы-полосы (кольцо, рамка, змейка,
+   каскад, дуга, винт, спираль, восьмёрка) — расстоянием до своей срединной
+   линии в пределах её сечения. Этим предикатом и ограничивается сечение
+   навивки, и рисуется пунктирная оболочка. */
+function formSolid(form, dims, rw, rng){
+  const sp=formSpine(form, dims, rw, rng);
+  const R1=sp.r1*0.88, R2=sp.r2*0.88;
+  if(form==="box") return {sp, inside:()=>true};
+  if(sp.radial){          // тело вращения вокруг вертикали
+    const {cx,cz,y0,y1}=sp.radial;
+    return {sp, inside:(p)=>{
+      const t=(p[1]-y0)/Math.max(1,y1-y0);
+      if(t<-0.03 || t>1.03) return false;
+      const kk=sp.prof ? sp.prof(Math.max(0,Math.min(1,t))) : [1,1];
+      const dx=(p[0]-cx)/Math.max(1,R1*kk[0]), dz=(p[2]-cz)/Math.max(1,R2*kk[1]);
+      return dx*dx+dz*dz<=1;
+    }};
+  }
+  // полоса: ближайшая точка срединной линии + её локальная рамка
+  const SP=sp.P, n=SP.length;
+  const T=[], E1=[], E2=[];
+  for(let i=0;i<n;i++){
+    const a=SP[Math.max(0,i-1)], b=SP[Math.min(n-1,i+1)];
+    let t=V.sub(b,a); t = V.len(t)>1e-6 ? V.norm(t) : [1,0,0];
+    let e1=V.sub(sp.ref, V.mul(t, V.dot(sp.ref,t)));
+    if(V.len(e1)<1e-4) e1=V.cross(t, Math.abs(t[1])>0.9?[1,0,0]:[0,1,0]);
+    e1=V.norm(e1);
+    T.push(t); E1.push(e1); E2.push(V.norm(V.cross(t,e1)));
+  }
+  return {sp, inside:(p)=>{
+    let bi=0, bd=1e18;
+    for(let i=0;i<n;i+=2){
+      const dx=p[0]-SP[i][0], dy=p[1]-SP[i][1], dz=p[2]-SP[i][2];
+      const d=dx*dx+dy*dy+dz*dz;
+      if(d<bd){ bd=d; bi=i; }
+    }
+    const d=V.sub(p, SP[bi]);
+    const a1=V.dot(d,E1[bi])/Math.max(1,R1), a2=V.dot(d,E2[bi])/Math.max(1,R2);
+    return a1*a1+a2*a2<=1;
+  }};
+}
+
 function formSpine(form, dims, rw, rng){
   const W=dims[0], H=dims[1], D=dims[2];
   const M=200, P=[];
@@ -657,8 +733,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const relax=box.relax||0;
     const dims=[w,h,d];
     const L=Math.max(...dims);
-    // осевая линия формы + сечение навивки
-    const sp=formSpine(box.form||"box", dims, rw, rng);
+    // ФОРМА ограничивает объём, а укладка одна для всех форм: осевая
+    // линия — «Поток (винт)» вдоль главной оси габарита
+    const sol=formSolid(box.form||"box", dims, rw, rng);
+    const sp=flowSpine(dims, rw);
     const SP=sp.P, nsp=SP.length;
     const cumP=[0];
     for(let i=1;i<nsp;i++) cumP.push(cumP[i-1]+V.len(V.sub(SP[i],SP[i-1])));
@@ -684,23 +762,37 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // виток, а КОЛЕБЛЕТСЯ вдоль длинной полуоси — пластика LC0217:
     // частота колебания ограничена тем же правилом кривизны.
     const A1s=a1*0.88, A2s=a2*0.88;
-    // ПРОФИЛЬ СИЛУЭТА: у тел вращения (шар, конус, линза, ярусы…) радиус
-    // сечения меняется по высоте — это и есть форма оболочки. Средний
-    // профиль нужен для правила метража, минимальный — чтобы виток нигде
-    // не стал круче технологического предела
-    const prof=sp.prof, lobes=sp.lobes||0;
-    let km1=1, km2=1;
-    if(prof){ km1=0; km2=0;
-      for(let i2=0;i2<=10;i2++){ const kk=prof(i2/10); km1+=kk[0]/11; km2+=kk[1]/11; } }
-    const Amax=Math.max(A1s*km1,A2s*km2), Bmin=Math.min(A1s*km1,A2s*km2);
+    // ПОЛУОСИ СЕЧЕНИЯ ЗАДАЁТ ФОРМА: от точки осевой линии пускаем луч в
+    // четыре стороны рамки и делением отрезка ищем границу формы. Так одна
+    // и та же укладка вписывается в любой силуэт
+    const reach=(p,dir,lim)=>{
+      if(lim<=1) return lim;
+      const q=[0,0,0];
+      const ok=(t)=>{ for(let x=0;x<3;x++) q[x]=p[x]+dir[x]*t; return sol.inside(q); };
+      if(ok(lim)) return lim;
+      let lo=0, hi=lim;
+      for(let it=0; it<11; it++){ const mid=(lo+hi)/2; if(ok(mid)) lo=mid; else hi=mid; }
+      return lo;
+    };
+    const halfAt=(p,e,lim)=>Math.min(reach(p,e,lim), reach(p,V.mul(e,-1),lim));
+    // средние полуоси внутри формы — для правила метража и режима витка
+    let mA1=0, mA2=0;
+    {
+      const NS2=9;
+      for(let i2=0;i2<=NS2;i2++){
+        const ip=Math.round(i2/NS2*(sp.P.length-1));
+        mA1+=halfAt(sp.P[ip], frameE1(sp,ip), A1s)/(NS2+1);
+        mA2+=halfAt(sp.P[ip], frameE2(sp,ip), A2s)/(NS2+1);
+      }
+      mA1=Math.max(60,mA1); mA2=Math.max(60,mA2);
+    }
+    const Amax=Math.max(mA1,mA2), Bmin=Math.min(mA1,mA2);
     const coil=Bmin>=170;
-    // навивка не тоньше минимального радиуса витка: в вершине конуса
-    // лента остаётся малым витком, а не сходится в точку
-    const secFloor=coil?170:60;
+    const secFloor=50;
     // шаг витка: лента в винте слегка наклонена и несёт волну,
     // поэтому чистый шаг = ширина + 150, а не + 60
     const pitch=(rw+150)+relax*300;
-    const lenTurn=coil ? sectionPerim(A1s*km1, A2s*km2) : 4*Amax;
+    const lenTurn=coil ? sectionPerim(mA1, mA2) : 4*Amax;
     // ПРАВИЛО ПРОИЗВОДСТВА: метраж ленты пропорционален длине композиции —
     // на 2000 мм габарита идёт ~4 пог. м, на 4000 мм ~8 пог. м. Лишняя
     // длина уходит в повороты и изгибы, а не растягивается по габариту.
@@ -767,12 +859,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const e2=V.norm(V.cross(T,e1));
       const th=ph0+turns*Math.PI*2*t;
       const br=1+bAmp*Math.sin(Math.PI*2*bf*t+bp);
-      // сечение витка в этой точке: базовые полуоси × профиль силуэта ×
-      // «дыхание»; лепестки (биоформа) модулируют радиус по фазе витка
-      let kp1=1, kp2=1;
-      if(prof){ const kk=prof(t); kp1=kk[0]; kp2=kk[1]; }
-      if(lobes){ const kl=1+0.22*Math.sin(lobes*th); kp1*=kl; kp2*=kl; }
-      const B1=Math.max(secFloor, A1s*kp1*br), B2=Math.max(secFloor, A2s*kp2*br);
+      // сечение витка в этой точке: сколько даёт форма, с «дыханием»
+      const B1=Math.max(secFloor, halfAt(g.p,e1,A1s)*br);
+      const B2=Math.max(secFloor, halfAt(g.p,e2,A2s)*br);
       const sec=coil ? sectionLoop(th, B1, B2)
                      : (B1>=B2 ? [B1*Math.sin(th), 0] : [0, B2*Math.sin(th)]);
       const R1=sec[0]+cAmp1*Math.sin(Math.PI*2*cf1*t+cp1);
@@ -785,7 +874,12 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     }
     pts.__axisAt=axisAt;
     pts.__target=target;   // цель метража по правилу производства
-    if(sp.radial) pts.__radial=Object.assign({r1:a1, r2:a2, prof:sp.prof}, sp.radial);
+    pts.__formIn=(box.form && box.form!=="box") ? sol.inside : null;
+    { // ось укладки: по ней направляющую подтягивают внутрь формы
+      const axf=sp.ax, c0=[dims[0]/2, dims[1]/2, dims[2]/2];
+      const s0f=sp.P[0][axf], s1f=sp.P[sp.P.length-1][axf];
+      pts.__flow={ax:axf, c:c0, s0:Math.min(s0f,s1f), s1:Math.max(s0f,s1f)};
+    }
     return pts;
   }
 
@@ -980,7 +1074,7 @@ function buildRibbon(params, rngSeed, lane){
     // ДОБОР МЕТРАЖА: предмарш замеряет фактическую длину. Марш срезает
     // повороты, поэтому длина выходит короче цели правила производства —
     // добавляем витков и повторяем (не больше трёх проходов)
-    let boost=1, shC=[0,0,0], envRad=null;
+    let boost=1, shC=[0,0,0], envIn=null;
     for(let bi=0; bi<3; bi++){
       workF.turnsBoost=boost;
       ctrl = controlPoints(style, mulberry32(rngSeed), workF, lane, lanes, ampl, lengthK);
@@ -991,7 +1085,21 @@ function buildRibbon(params, rngSeed, lane){
       geo.fillAxis=(opt.w0hint||fillAxisV).slice();
       geo.noSteer=true;
       marchRibbon(geo);
-      envRad=ctrl.__radial||null;
+      envIn=ctrl.__formIn||null;
+      // НАПРАВЛЯЮЩАЯ ВНУТРЬ ФОРМЫ. Предмарш идёт без рулей и может выйти
+      // за силуэт; второй марш пошёл бы по такой направляющей и лента
+      // вылезла бы из нарисованной формы. Подтягиваем точки к оси укладки,
+      // пока они не окажутся внутри
+      if(envIn && ctrl.__flow){
+        const fl=ctrl.__flow;
+        for(const c of geo.centers){
+          if(envIn(c)) continue;
+          const near=[fl.c[0], fl.c[1], fl.c[2]];
+          near[fl.ax]=Math.max(fl.s0, Math.min(fl.s1, c[fl.ax]));
+          for(let it=0; it<12 && !envIn(c); it++)
+            for(let x=0;x<3;x++) c[x]=near[x]+(c[x]-near[x])*0.75;
+        }
+      }
       const tg=ctrl.__target||0;
       const got=geo.ribbonLen||1;
       if(!tg || got>=0.94*tg || bi===1) break;
@@ -1034,18 +1142,10 @@ function buildRibbon(params, rngSeed, lane){
     // радиус на каждой высоте. Без этого руления марш держит только стены
     // бокса и лента выходит из формы (в вершине конуса виток настолько
     // тугой, что марш его срезает и уходит наружу)
-    if(envRad){
-      const R1=envRad.r1*0.88, R2=envRad.r2*0.88, pf=envRad.prof;
-      const cx=envRad.cx+shC[0], cz=envRad.cz+shC[2];
-      const y0=envRad.y0+shC[1], y1=envRad.y1+shC[1];
-      geo.formRad=(y)=>{
-        const t=Math.max(0, Math.min(1, (y-y0)/Math.max(1,y1-y0)));
-        let k1=1, k2=1;
-        if(pf){ const kk=pf(t); k1=kk[0]; k2=kk[1]; }
-        // запас 1.18: осевая линия навивки живёт внутри силуэта, а лента
-        // выступает за неё на полширины — оболочка нарисована с этим запасом
-        return [cx, cz, Math.max(60, R1*k1*1.18), Math.max(60, R2*k2*1.18)];
-      };
+    if(envIn){
+      // предикат формы задан до центрирующего сдвига — компенсируем его
+      const qq=[0,0,0];
+      geo.formIn=(p)=>{ for(let x=0;x<3;x++) qq[x]=p[x]-shC[x]; return envIn(qq); };
     }
     geo.noSteer=false;
     geo.clampMin=[0,0,0]; geo.clampMax=[box.w,box.h,box.d];
@@ -1395,17 +1495,16 @@ function marchRibbon(rb){
           else if(pos>mx[x]-mrg){ v2[x]-=(pos-(mx[x]-mrg))/look*gain; steer=true; }
         }
       }
-      // граница формы: тянем внутрь силуэта тем же двухгоризонтным рулём
-      if(rb.formRad){
-        for(const hz of [[220,0.9],[70,2.0]]){
+      // ГРАНИЦА ФОРМЫ: если прогноз уходит за форму, руль тянет станцию к
+      // направляющей — она по построению внутри формы (её сечение задано
+      // формой). Иначе лента выпирает из нарисованного силуэта
+      if(rb.formIn){
+        for(const hz of [[230,1.0],[80,2.2]]){
           const look=hz[0], gain=hz[1];
-          const qx=C[k-1][0]+v[0]*look, qy=C[k-1][1]+v[1]*look, qz=C[k-1][2]+v[2]*look;
-          const lm=rb.formRad(qy);
-          const dx=qx-lm[0], dz=qz-lm[1];
-          const e=Math.sqrt((dx/lm[2])*(dx/lm[2])+(dz/lm[3])*(dz/lm[3]));
-          if(e>1){
-            const kIn=(1-1/e)/look*gain;
-            v2[0]-=dx*kIn; v2[2]-=dz*kIn; steer=true;
+          const q=[C[k-1][0]+v[0]*look, C[k-1][1]+v[1]*look, C[k-1][2]+v[2]*look];
+          if(!rb.formIn(q)){
+            for(let x=0;x<3;x++) v2[x]+=(g.c[x]-q[x])/look*gain;
+            steer=true;
           }
         }
       }
