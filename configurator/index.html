@@ -747,7 +747,18 @@ function buildRibbon(params, rngSeed, lane){
   }
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
-  const foldAmp = foldK*(0.3+0.7*ampl);
+  // АМПЛИТУДА СКЛАДКИ ПО РАДИУСУ ВИТКА. Наклон рядов на угол α уводит
+  // торцы с плоскости изгиба на полширины×sin α, а это ограничивает радиус
+  // (внутрь поворота бюджет 0.6 мм на шаг). Чем теснее навивка, тем меньше
+  // складки она держит: иначе марш не проходит повороты и лента обрывается.
+  const foldGeo=(()=>{
+    const dW=[workF.w, workF.h, workF.d];
+    const axW=dW.indexOf(Math.max(...dW));
+    const rB=(d)=>Math.max(90,(d-60-rw*0.7)/2);
+    const Rsec=Math.min(rB(dW[(axW+1)%3]), rB(dW[(axW+2)%3]))*0.88;
+    return Math.max(0.25, Math.min(1, Rsec/700));
+  })();
+  const foldAmp = foldK*(0.3+0.7*ampl)*foldGeo;
   // ОБЩАЯ составляющая (одинаковый знак у обоих рядов) — «домик» или
   // «ложбина»: канты сближаются, и центральный контур уходит из их
   // плоскости. НЕЗАВИСИМАЯ составляющая оставляет рядам свободу друг от
@@ -1340,7 +1351,7 @@ function marchRibbon(rb){
       // (прижимать в повороте): иначе в тесном габарите марш не проходит
       const flatNeed=Math.min(1, 1.15*Math.max(hIn >okIn  ? 1-okIn/hIn   : 0,
                                                hOut>okOut ? 1-okOut/hOut : 0));
-      const flatTurn=Math.min(1, Math.max(needOp, needTurn)*1.08)*0.9;
+      const flatTurn=Math.min(1, Math.max(needOp, needTurn)*1.08);
       const flat=rb.fillMode ? Math.max(flatNeed, flatTurn) : needOp*0.85;
       let uT=orthoTo(g.u,Tn), dT=orthoTo(g.v,Tn);
       if(flat>0.02){
@@ -2029,16 +2040,14 @@ function buildScene(){
       rb.cabSpan=Math.round(span);
     }
   });
-  // форма габарита для пунктирной отрисовки: сдвигаем на фактический центр
-  // композиции (вписывание и утяжка её центрируют)
+  // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
+  // построенной ленте: даже если композиция ушла на страховочный проход,
+  // выбранная форма должна быть видна
   let env=null;
-  if(ribbons[0] && ribbons[0].formDraw){
-    const fd=ribbons[0].formDraw;
-    const mM=[1e9,1e9,1e9], xM=[-1e9,-1e9,-1e9];
-    for(const rb of ribbons){ const b=geoBBox(rb);
-      for(let k=0;k<3;k++){ mM[k]=Math.min(mM[k],b.min[k]); xM[k]=Math.max(xM[k],b.max[k]); } }
-    env={kind:"sphere", R:fd.R.slice(),
-         c:[0,1,2].map(k=>Math.max(fd.R[k], Math.min([box.w,box.h,box.d][k]-fd.R[k], (mM[k]+xM[k])/2)))};
+  if(params.form==="sphere"){
+    const so=sphereOf([Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
+                      params.ribbonW);
+    env={kind:"sphere", c:[box.w/2, box.h/2, box.d/2], R:so.R.slice()};
   }
   scene = {box, ribbons, params, clear, env};
   updateSpec();
