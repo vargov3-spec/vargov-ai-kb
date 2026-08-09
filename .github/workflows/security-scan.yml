@@ -1,0 +1,32 @@
+name: Security scan vargov.ru
+
+on:
+  schedule:
+    - cron: "0 5 * * *"  # ежедневно 05:00 UTC (08:00 МСК)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Скрипт падает (exit 1) при чужом скрипте, неожиданном счётчике Метрики
+      # или новом внешнем домене — упавший workflow = уведомление владельцу.
+      - name: Scan external domains and Metrika counters
+        run: python scripts/security_scan.py
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: scan/security_report.md
+          if-no-files-found: ignore
