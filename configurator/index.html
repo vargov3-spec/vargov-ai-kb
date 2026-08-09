@@ -147,7 +147,6 @@
           <option value="6">6 лент</option>
         </select>
       </div>
-      <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="200" value="115"><span class="val" id="densityV"></span></div>
       <div class="row"><label for="frame">Каркас</label>
         <select id="frame">
           <option value="gold" selected>Золото</option>
@@ -409,10 +408,12 @@ function formSpine(form, dims, rw, rng){
   // ТЕЛО ВРАЩЕНИЯ: осевая линия — вертикаль, силуэт задаёт профиль
   // радиуса по высоте. Сечение навивки — план габарита (или вписанный
   // круг), умноженный на профиль
+  let radial=null;   // граница формы для руления марша (тела вращения)
   const vert=()=>{
     const run=Math.max(rw+60, H-rw-60), s0=(H-run)/2;
     for(let i=0;i<=M;i++) P.push([W/2, s0+run*(i/M), D/2]);
     ref=[1,0,0];
+    radial={cx:W/2, cz:D/2, y0:s0, y1:s0+run};
   };
   const circle=()=>{ const r=Math.min(rBox(W), rBox(D)); r1=r; r2=r; };
   const rect=()=>{ r1=rBox(W); r2=rBox(D); };
@@ -623,7 +624,7 @@ function formSpine(form, dims, rw, rng){
       ref=[0,0,0]; ref[u1]=1;
     }
   }
-  return {P, ref, r1, r2, prof, lobes};
+  return {P, ref, r1, r2, prof, lobes, radial};
 }
 
 function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
@@ -784,6 +785,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     }
     pts.__axisAt=axisAt;
     pts.__target=target;   // цель метража по правилу производства
+    if(sp.radial) pts.__radial=Object.assign({r1:a1, r2:a2, prof:sp.prof}, sp.radial);
     return pts;
   }
 
@@ -857,6 +859,7 @@ function buildRibbon(params, rngSeed, lane){
   // поток; rngL даёт каждой ленте индивидуальность
   const rng = mulberry32(rngSeed);
   const rngL = mulberry32((rngSeed + lane*7919 + 13)>>>0);
+  const seedUsed = rngSeed;
 
   // отступ: половина ширины ленты + радиус стержня
   const inset = ribbonW/2 + ROD_R + 5;
@@ -977,7 +980,7 @@ function buildRibbon(params, rngSeed, lane){
     // ДОБОР МЕТРАЖА: предмарш замеряет фактическую длину. Марш срезает
     // повороты, поэтому длина выходит короче цели правила производства —
     // добавляем витков и повторяем (не больше трёх проходов)
-    let boost=1;
+    let boost=1, shC=[0,0,0], envRad=null;
     for(let bi=0; bi<3; bi++){
       workF.turnsBoost=boost;
       ctrl = controlPoints(style, mulberry32(rngSeed), workF, lane, lanes, ampl, lengthK);
@@ -988,6 +991,7 @@ function buildRibbon(params, rngSeed, lane){
       geo.fillAxis=(opt.w0hint||fillAxisV).slice();
       geo.noSteer=true;
       marchRibbon(geo);
+      envRad=ctrl.__radial||null;
       const tg=ctrl.__target||0;
       const got=geo.ribbonLen||1;
       if(!tg || got>=0.94*tg || bi===1) break;
@@ -1024,6 +1028,24 @@ function buildRibbon(params, rngSeed, lane){
       const bb=geoBBox(geo);
       const sh=[(box.w-(bb.min[0]+bb.max[0]))/2, (box.h-(bb.min[1]+bb.max[1]))/2, (box.d-(bb.min[2]+bb.max[2]))/2];
       for(const c of geo.guideC){ c[0]+=sh[0]; c[1]+=sh[1]; c[2]+=sh[2]; }
+      shC=sh;
+    }
+    // ГРАНИЦА ФОРМЫ ДЛЯ МАРША: у тел вращения силуэт задаёт допустимый
+    // радиус на каждой высоте. Без этого руления марш держит только стены
+    // бокса и лента выходит из формы (в вершине конуса виток настолько
+    // тугой, что марш его срезает и уходит наружу)
+    if(envRad){
+      const R1=envRad.r1*0.88, R2=envRad.r2*0.88, pf=envRad.prof;
+      const cx=envRad.cx+shC[0], cz=envRad.cz+shC[2];
+      const y0=envRad.y0+shC[1], y1=envRad.y1+shC[1];
+      geo.formRad=(y)=>{
+        const t=Math.max(0, Math.min(1, (y-y0)/Math.max(1,y1-y0)));
+        let k1=1, k2=1;
+        if(pf){ const kk=pf(t); k1=kk[0]; k2=kk[1]; }
+        // запас 1.18: осевая линия навивки живёт внутри силуэта, а лента
+        // выступает за неё на полширины — оболочка нарисована с этим запасом
+        return [cx, cz, Math.max(60, R1*k1*1.18), Math.max(60, R2*k2*1.18)];
+      };
     }
     geo.noSteer=false;
     geo.clampMin=[0,0,0]; geo.clampMax=[box.w,box.h,box.d];
@@ -1053,6 +1075,8 @@ function buildRibbon(params, rngSeed, lane){
     const bbF = geoBBox(geo);
     // у многожильного винта вписывание проверяет и утягивает сцена:
     // жилы вместе занимают габарит, порознь их бракуют зря
+    geo.seed = seedUsed;   // по нему рисуется пунктирная оболочка формы
+    geo.form = params.form||"box";
     geo.fitScale = (lanes>1) ? 1 :
                    ((bbF.max[0]-bbF.min[0]+ROD_D > box.w+2 ||
                      bbF.max[1]-bbF.min[1]+ROD_D > box.h+2 ||
@@ -1369,6 +1393,20 @@ function marchRibbon(rb){
           const pos=C[k-1][x]+v[x]*look;
           if(pos<mn[x]+mrg){ v2[x]+=(mn[x]+mrg-pos)/look*gain; steer=true; }
           else if(pos>mx[x]-mrg){ v2[x]-=(pos-(mx[x]-mrg))/look*gain; steer=true; }
+        }
+      }
+      // граница формы: тянем внутрь силуэта тем же двухгоризонтным рулём
+      if(rb.formRad){
+        for(const hz of [[220,0.9],[70,2.0]]){
+          const look=hz[0], gain=hz[1];
+          const qx=C[k-1][0]+v[0]*look, qy=C[k-1][1]+v[1]*look, qz=C[k-1][2]+v[2]*look;
+          const lm=rb.formRad(qy);
+          const dx=qx-lm[0], dz=qz-lm[1];
+          const e=Math.sqrt((dx/lm[2])*(dx/lm[2])+(dz/lm[3])*(dz/lm[3]));
+          if(e>1){
+            const kIn=(1-1/e)/look*gain;
+            v2[0]-=dx*kIn; v2[2]-=dz*kIn; steer=true;
+          }
         }
       }
       if(steer) v=V.norm(v2);
@@ -1811,6 +1849,62 @@ function measureMinRadius(ribbons){
   return minR;
 }
 
+/* ПУНКТИРНАЯ ОБОЛОЧКА ФОРМЫ. Форма композиции задаётся габаритными
+   размерами и рисуется в окне пунктиром — как габаритный бокс. Строится
+   по той же осевой линии и тому же сечению, что и сама укладка (то же
+   зерно), поэтому лента генерируется ровно внутри нарисованной формы.
+   Возвращает набор «обручей» — сечений вдоль осевой линии. */
+function buildEnvWire(form, dims, rw, seed, off){
+  const sp=formSpine(form, dims, rw, mulberry32(seed));
+  const SP=sp.P, n=SP.length;
+  const cum=[0];
+  for(let i=1;i<n;i++) cum.push(cum[i-1]+V.len(V.sub(SP[i],SP[i-1])));
+  const S=cum[n-1]||1;
+  const NR=16, NPH=24;
+  // лента выступает за осевую навивку на полширины (стержни лежат
+  // поперёк хода), поэтому оболочку раздуваем на эту величину и
+  // продлеваем за концы осевой линии — иначе лента торчит из формы
+  const infl=0.42*rw;
+  const rings=[];
+  let pj=0;
+  for(let k=0;k<=NR;k++){
+    const t=k/NR, L=-infl+(S+2*infl)*t;
+    const Lc=Math.max(0, Math.min(S, L));
+    while(pj<n-2 && cum[pj+1]<Lc) pj++;
+    while(pj>0 && cum[pj]>Lc) pj--;
+    const seg=cum[pj+1]-cum[pj]||1, u=(Lc-cum[pj])/seg;
+    const p=[0,0,0];
+    for(let x=0;x<3;x++) p[x]=SP[pj][x]+(SP[pj+1][x]-SP[pj][x])*u;
+    const i0=Math.max(0,pj-1), i1=Math.min(n-1,pj+2);
+    let T=V.sub(SP[i1],SP[i0]);
+    T = V.len(T)>1e-6 ? V.norm(T) : [1,0,0];
+    // за концами осевой линии — продолжение по касательной (шапка формы)
+    if(L<0 || L>S){ const ov=L-Lc; for(let x=0;x<3;x++) p[x]+=T[x]*ov; }
+    let e1=V.sub(sp.ref, V.mul(T, V.dot(sp.ref,T)));
+    if(V.len(e1)<1e-4) e1=V.cross(T, Math.abs(T[1])>0.9?[1,0,0]:[0,1,0]);
+    e1=V.norm(e1);
+    const e2=V.norm(V.cross(T,e1));
+    // профиль силуэта берём в точке осевой линии (за концами — крайний)
+    const tc=Math.max(0, Math.min(1, Lc/S));
+    let k1=1, k2=1;
+    if(sp.prof){ const kk=sp.prof(tc); k1=kk[0]; k2=kk[1]; }
+    // шапка на концах: радиус скругляется, а не обрывается
+    const cap=(L<0||L>S) ? Math.sqrt(Math.max(0, 1-Math.pow(Math.abs(L-Lc)/infl,2))) : 1;
+    const ring=[];
+    for(let j=0;j<NPH;j++){
+      const th=Math.PI*2*j/NPH;
+      let m1=k1, m2=k2;
+      if(sp.lobes){ const kl=1+0.22*Math.sin(sp.lobes*th); m1*=kl; m2*=kl; }
+      const sc=sectionLoop(th, sp.r1*0.88*m1+infl*cap, sp.r2*0.88*m2+infl*cap);
+      ring.push([off+p[0]+e1[0]*sc[0]+e2[0]*sc[1],
+                 off+p[1]+e1[1]*sc[0]+e2[1]*sc[1],
+                 off+p[2]+e1[2]*sc[0]+e2[2]*sc[1]]);
+    }
+    rings.push(ring);
+  }
+  return rings;
+}
+
 /* ВОРОТА КАЧЕСТВА: лента обязана быть УЛОЖЕНА ДО КОНЦА по своей
    направляющей. Марш может сорваться (орбитальная ловушка на вершине
    разворота) и оборваться на середине — получается чистая, вписанная,
@@ -1873,7 +1967,9 @@ function buildScene(){
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
     form: ui.form.value in FORMS ? ui.form.value : "box",
-    lengthK: (+ui.density.value)/100,
+    // насыщенность фиксирована: 1.15× к правилу производства — при этом
+    // значении композиция плотная и любая генерация проходима маршем
+    lengthK: 1.15,
     lanes,
   };
   // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
@@ -2172,7 +2268,28 @@ function buildScene(){
       rb.cabSpan=Math.round(span);
     }
   });
-  scene = {box, ribbons, params, clear};
+  // пунктирная оболочка формы: строится по зерну принятого варианта.
+  // страховочные проходы уходят на «волну» — там формы нет, рисуем бокс
+  let env=null;
+  if(params.form && params.form!=="box" && ribbons[0] && ribbons[0].fillMode && ribbons[0].seed!==undefined){
+    try{
+      env=buildEnvWire(ribbons[0].form||params.form,
+        [Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
+        params.ribbonW, ribbons[0].seed, 20);
+      // композицию центрируют вписывание и утяжка, поэтому оболочку
+      // сдвигаем на фактический центр композиции — иначе форма и лента
+      // расходятся по месту
+      const eb={mn:[1e9,1e9,1e9],mx:[-1e9,-1e9,-1e9]};
+      for(const rg of env) for(const q of rg) for(let k=0;k<3;k++){
+        eb.mn[k]=Math.min(eb.mn[k],q[k]); eb.mx[k]=Math.max(eb.mx[k],q[k]); }
+      const gb={mn:[1e9,1e9,1e9],mx:[-1e9,-1e9,-1e9]};
+      for(const rb of ribbons){ const b=geoBBox(rb);
+        for(let k=0;k<3;k++){ gb.mn[k]=Math.min(gb.mn[k],b.min[k]); gb.mx[k]=Math.max(gb.mx[k],b.max[k]); } }
+      const sh=[0,1,2].map(k=>((gb.mn[k]+gb.mx[k])-(eb.mn[k]+eb.mx[k]))/2);
+      for(const rg of env) for(const q of rg) for(let k=0;k<3;k++) q[k]+=sh[k];
+    }catch(e){ env=null; }
+  }
+  scene = {box, ribbons, params, clear, env};
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
@@ -2248,11 +2365,25 @@ function draw(){
     const {w,h,d} = scene.box;
     const cor = [[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
     const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
-    ctx.strokeStyle="rgba(120,120,140,.35)"; ctx.lineWidth=1; ctx.setLineDash([5,6]);
+    const hasEnv = !!(scene.env && scene.env.length);
+    // при выбранной форме бокс остаётся, но еле заметным — габарит виден,
+    // а форму рисуем тем же пунктиром
+    ctx.strokeStyle = hasEnv ? "rgba(120,120,140,.13)" : "rgba(120,120,140,.35)";
+    ctx.lineWidth=1; ctx.setLineDash([5,6]);
     for(const [a,b] of edges){
       if(project(cor[a],B,p1) && project(cor[b],B,p2)){
         ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
       }
+    }
+    if(hasEnv){
+      ctx.strokeStyle="rgba(150,145,170,.38)";
+      const rings=scene.env, NPH=rings[0].length;
+      const seg=(A,Bp)=>{ if(project(A,B,p1) && project(Bp,B,p2)){
+        ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke(); } };
+      for(const ring of rings)                       // сечения-обручи
+        for(let j=0;j<NPH;j++) seg(ring[j], ring[(j+1)%NPH]);
+      for(let j=0;j<NPH;j+=Math.max(1,Math.round(NPH/6)))  // продольные линии
+        for(let k=0;k+1<rings.length;k++) seg(rings[k][j], rings[k+1][j]);
     }
     ctx.setLineDash([]);
     // подписи размеров
@@ -2440,7 +2571,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","form","rows","lanes","density","frame","rWidth","rodD","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","form","rows","lanes","frame","rWidth","rodD","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -2461,10 +2592,7 @@ GLASS_COLORS.forEach((c,i)=>{
   swBox.appendChild(el);
 });
 
-function refreshLabels(){
-  document.getElementById("densityV").textContent = (+ui.density.value/100).toFixed(2)+"×";
-}
-refreshLabels();
+function refreshLabels(){}
 
 let rebuildTimer=null;
 const rebuild = ()=>{
@@ -2474,7 +2602,6 @@ const rebuild = ()=>{
 };
 for(const id of ["dimW","dimD","dimH","form","rows","lanes","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
-ui.density.addEventListener("input", rebuild);
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
