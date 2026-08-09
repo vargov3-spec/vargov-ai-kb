@@ -326,18 +326,29 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // многожильный винт: жилы идут по одной спирали со сдвигом фазы,
     // поэтому обвивают друг друга; расстояние между жилами по окружности
     // = периметр/lanes и должно быть больше ширины ленты с зазором
-    const pitch=(rw+150)+(1-dens)*560+relax*300;
+    // минимальный шаг витка: ширина ленты + зазор (+ разрежение лестницы)
+    const pitch=(rw+150)+relax*300;
     const run=Math.max(rw+60, L-rw-60);          // ход вдоль оси
     // метраж ограничен: плотный шаг в большом сечении даёт десятки
     // метров, которые марш не проходит. Целевой запас — 1.55× от
     // «Насыщенности», дальше витки разряжаются
     const lenTurn=Math.PI*(a1+a2)*0.88;
-    // метраж делится между жилами: цель на композицию, не на ленту
-    const turnsCap=Math.max(1.2, (lengthK*2100*1.55/Math.max(1,lanes))/Math.max(600,lenTurn));
+    // ПРАВИЛО ПРОИЗВОДСТВА: метраж ленты пропорционален длине композиции —
+    // на 2000 мм габарита идёт ~4 пог. м, на 4000 мм ~8 пог. м. Лишняя
+    // длина уходит в повороты и изгибы, а не растягивается по габариту.
+    // «Насыщенность» — множитель к этому правилу (≈2× при 1.15, до ≈3.3×).
+    // множитель откалиброван по факту: марш и вписывание съедают 10–20%
+    // от заданной цели, поэтому цель берём с запасом
+    const mult=2.15+1.9*dens;
+    const target=mult*L/Math.max(1,lanes);
+    const turnsCap=Math.max(1.2, target/Math.max(600,lenTurn));
     // у внутренних жил витков меньше пропорционально радиусу: крутизна
     // винта у всех одинаковая, иначе внутренние витки сгущаются и
     // начинают задевать друг друга
-    const turns=Math.max(1.0, Math.min(16, run/pitch, turnsCap)*kLane);
+    // число витков — ИЗ ЦЕЛЕВОГО МЕТРАЖА (правило производства), а шаг
+    // витка получается как следствие; ограничение снизу — ширина ленты
+    // с зазором, иначе витки задели бы друг друга
+    const turns=Math.max(1.0, Math.min(16, turnsCap, run/pitch*2.6)*kLane);
     const ph0=rng()*Math.PI*2 + Math.PI*lane;
     // «дыхание» сечения и блуждание центра — винт живой, не цилиндр
     const bf=1.1+rng()*1.2, bp=rng()*Math.PI*2;
@@ -1534,17 +1545,63 @@ function buildScene(){
         if(acc>=next){ rb.leds.push(wirePts[i]); acc=0; next=LED_PITCH*(0.4+lr()*1.2); }
       }
     }
+    // ПОДВЕСЫ: расставляются по физике, а не «через равные промежутки».
+    // Три правила: (1) пролёт между подвесами не больше допустимого для
+    // проволоки Ø5 с грузом стержней; (2) каждый изгиб фиксируется —
+    // на крутых участках подвес обязателен, иначе лента распрямится;
+    // (3) точка крепления сдвигается на локальную вершину контура, чтобы
+    // трос шёл вертикально и работал на растяжение, а не тянул форму вбок.
     rb.cabs = [];
     if(ui.cables.checked){
-      let acc = CABLE_STEP*0.6;
-      for(let i=0;i<rb.centers.length;i++){
-        acc += rb.stepEff;
-        if(acc>=CABLE_STEP){
-          const top = rb.railA[i][1]>rb.railB[i][1] ? rb.railA[i] : rb.railB[i];
-          rb.cabs.push({from:[top[0], box.h, top[2]], to:top});
-          acc = 0;
-        }
+      const C=rb.centers, n=C.length;
+      // радиус кривизны осевой по станциям
+      const R=new Array(n).fill(1e9);
+      for(let i=1;i<n-1;i++){
+        const v1=V.sub(C[i],C[i-1]), v2=V.sub(C[i+1],C[i]);
+        const l1=V.len(v1)||1, l2=V.len(v2)||1;
+        const a2=Math.acos(Math.max(-1,Math.min(1,V.dot(v1,v2)/(l1*l2))));
+        if(a2>1e-6) R[i]=(l1+l2)/2/a2;
       }
+      const topAt=(i)=> rb.railA[i][1]>rb.railB[i][1] ? rb.railA[i] : rb.railB[i];
+      // локальная вершина контура в окне ±9 станций (~150 мм)
+      const peak=(i)=>{
+        let bi=i, by=topAt(i)[1];
+        for(let k=Math.max(0,i-9); k<=Math.min(n-1,i+9); k++){
+          const y=topAt(k)[1];
+          if(y>by){ by=y; bi=k; }
+        }
+        return bi;
+      };
+      const picked=[];
+      const MAXSPAN=CABLE_STEP;            // предельный пролёт, мм
+      let lastS=-1e9;
+      for(let i=0;i<n;i++){
+        const sArc=i*rb.stepEff;
+        // изгиб круче ~R400 нужно держать: без подвеса он распрямляется
+        const sharp = R[i]<400;
+        const need = (sArc-lastS>=MAXSPAN) || (sharp && sArc-lastS>=MAXSPAN*0.45);
+        if(!need) continue;
+        const j=peak(i);
+        const jj=picked.length && Math.abs(j-picked[picked.length-1])*rb.stepEff<120
+                 ? -1 : j;
+        if(jj<0) continue;
+        picked.push(jj);
+        lastS=jj*rb.stepEff;
+      }
+      // концы ленты держим обязательно — иначе свободный конец падает
+      if(n>4){
+        if(!picked.length || picked[0]*rb.stepEff>MAXSPAN*0.6) picked.unshift(peak(2));
+        const lastIdx=picked[picked.length-1]||0;
+        if((n-1-lastIdx)*rb.stepEff>MAXSPAN*0.6) picked.push(peak(n-3));
+      }
+      for(const i of picked){
+        const top=topAt(i);
+        rb.cabs.push({from:[top[0], box.h, top[2]], to:top});
+      }
+      // фактический максимальный пролёт — в спецификацию
+      let span=0;
+      for(let k=1;k<picked.length;k++) span=Math.max(span,(picked[k]-picked[k-1])*rb.stepEff);
+      rb.cabSpan=Math.round(span);
     }
   });
   scene = {box, ribbons, params, clear};
@@ -1712,13 +1769,15 @@ function draw(){
    ============================================================ */
 function updateSpec(){
   if(!scene) return;
-  let totalLen=0, rods=0, glassMass=0, wire=0, leds=0, cabs=0;
+  let totalLen=0, rods=0, glassMass=0, wire=0, leds=0, cabs=0, cabLen=0, cabSpan=0;
   const byLen = new Map();
   for(const rb of scene.ribbons){
     totalLen += rb.ribbonLen;
     rods += rb.rods.length;
     leds += rb.leds.length;
     cabs += rb.cabs.length;
+    for(const cb of rb.cabs) cabLen += Math.abs(cb.from[1]-cb.to[1]);
+    cabSpan = Math.max(cabSpan, rb.cabSpan||0);
     wire += rb.ribbonLen*(rb.rows===2?3:2); // контуры каркаса
     for(const r of rb.rods){
       byLen.set(r.len, (byLen.get(r.len)||0)+1);
@@ -1771,7 +1830,7 @@ function updateSpec(){
     const sum=lens.reduce((a2,b2)=>a2+b2,0);
     runsBreak={lens, turns:Math.max(0, rb0.ribbonLen/1000-sum)};
   }
-  state.lastSpec = {totalLen, rods, glassMass, wire, leds, cabs, byLen, bb, runsBreak,
+  state.lastSpec = {totalLen, rods, glassMass, wire, leds, cabs, cabLen, cabSpan, byLen, bb, runsBreak,
                     airGap, minRad, railRad, gaps, clean: scene.clear.collisions===0};
 
   const m = (totalLen/1000);
@@ -1793,7 +1852,8 @@ function updateSpec(){
       <tr><td>Масса каркаса (сталь)</td><td>${(wire*Math.PI*6.25*STEEL_DENSITY/1000).toFixed(2)} кг</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*Math.PI*6.25*STEEL_DENSITY)/1000)} кг</td></tr>
       ${leds?`<tr><td>LED-точки по оси</td><td>${leds} шт (~${(leds*0.2).toFixed(0)} Вт)</td></tr>`:""}
-      ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт</td></tr>`:""}
+      ${cabs?`<tr><td>Тросовые подвесы</td><td>${cabs} шт, трос ${(state.lastSpec.cabLen/1000).toFixed(1)} м${
+        state.lastSpec.cabSpan?`, макс. пролёт ${state.lastSpec.cabSpan} мм`:""}</td></tr>`:""}
       <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
       <tr><td>Пересечения витков</td><td>${state.lastSpec.clean
         ? `нет (зазор ≥ ${state.lastSpec.airGap} мм)` : "⚠ проверить вручную"}</td></tr>
@@ -1889,7 +1949,9 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Масса композиции, кг (округление вверх)", Math.ceil((s.glassMass+s.wire*Math.PI*6.25*STEEL_DENSITY)/1000)],
     ["Проволока Ø5, м", (s.wire/1000).toFixed(1)],
     ["LED-точек", s.leds],
-    ["Подвесов", s.cabs],
+    ["Подвесов, шт", s.cabs],
+    ["Троса подвесов, м", (s.cabLen/1000).toFixed(1)],
+    ["Макс. пролёт между подвесами, мм", s.cabSpan||"-"],
     ["Пересечения витков", s.clean ? `нет (зазор >= ${s.airGap} мм)` : "требует ручной проверки"],
     ["Мин. диаметр изгиба, мм", Math.round(s.minRad*2)],
     [],
