@@ -201,8 +201,11 @@ const CABLE_STEP = 650;  // примерный шаг подвесов
 const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
 const GLASS_WALL = 2;          // стенка стеклянной трубки, мм
 const STEEL_DENSITY = 7.85e-3; // г/мм³ (сталь, проволока каркаса)
-const R_MIN = 100;       // мин. радиус изгиба/поворота осевой (Ø200 мм)
-const R_FIT = 115;       // целевой радиус лимитера (запас к норме)
+// Минимальный радиус изгиба: правило Ø200 снято по решению
+// производства. Остаётся физика вязки: шаг стержней и зазоры
+// (веер) сами не дают согнуть ленту круче, чем позволяет стекло.
+const R_MIN = 75;        // технологический предел (Ø150)
+const R_FIT = 80;        // целевой радиус лимитера
 
 const GLASS_COLORS = [
   {id:"amber",   name:"Янтарь",     c:"#e8a33d"},
@@ -287,16 +290,15 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // поэтому пряди раскладываются змейкой в плане — строки по глубине
     // через (ширина+зазор) — и ярусами по высоте. Иначе одна прядь
     // тянется шнурком, а объём пустует.
-    const pitchZ=rw+70;
+    const pitchZ=rw+120;   // запас на завитки и волны у соседней строки
     const nz=Math.max(1, Math.min(8, Math.floor((d-40)/pitchZ)));
     const yPitch=rw+240;                  // ярус: лента + перегиб Ø≥230
     const ny=Math.max(1, Math.min(3, Math.floor(B/yPitch)));
     // строки по глубине: центрированная сетка
     const zSpan=(nz-1)*pitchZ;
     const z0=(d-zSpan)/2;
-    // строки идут подряд: разворот между соседними строками — полукруг
-    // радиусом pitchZ/2 (Ø≥370 > Ø200) и вылетом за торец всего pitchZ/2.
-    // Развороты чередуют торцы, поэтому по глубине не накладываются
+    // строки идут подряд: разворот между соседними — полукруг радиусом
+    // pitchZ/2 (≥185 > 110), вылет за торец всего pitchZ/2
     const order=[];
     for(let i2=0;i2<nz;i2++) order.push(i2);
     // ярусы по высоте
@@ -374,7 +376,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const phy=rng()*Math.PI*2;
       const nW=Math.max(1, Math.round(A*0.87/lam));      // волн на прядь
       // торцы: за ними остаётся место на вылет разворота (pitchZ/2)
-      const mrgX=Math.min(0.2, (pitchZ/2+40)/A);
+      const mrgX=Math.min(0.18, (pitchZ/2+45)/A);
       const xLo=mrgX+0.03*rng(), xHi=1-mrgX-0.03*rng();
       if(s2>0){
         if(iy!==Math.floor((s2-1)/nz)){
@@ -387,24 +389,38 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
           // смена строки — РАЗВОРОТ В ПЛАНЕ за торцом: лента
           // перекатывается на ребро и уходит полукругом по глубине
           // (как в LC0280/0326). Радиус = половина шага строк «через одну»
-          // разворот от торца: полукруг в плане радиусом pitchZ/2.
-          // Перекрутку на ребро лента берёт на прямом участке в конце
-          // строки (банк смотрит вперёд ~0.55 м), поэтому отдельный
-          // разгон за торцом не нужен
-          const R3=Math.max(150, Math.abs(zBand-prevZ)/2);
+          const R3=Math.abs(zBand-prevZ)/2;
           const zc=(prevZ+zBand)/2;
           const sgn=(prevZ>=zBand)?1:-1;
           const xc=rev? xHi*A : xLo*A;
           const dirX=rev?1:-1;
-          // 7 точек на полукруг: сплайн держит радиус и не срезает
-          // разворот по хорде (иначе лента «теряет» строки)
-          for(let a3=1;a3<=7;a3++){
-            const th=a3*Math.PI/8;
-            pts.push(P(
-              Math.min(A-20, Math.max(20, xc+dirX*R3*Math.sin(th))),
-              Math.min(B-25, Math.max(25, (prevY+yBand)/2+jitter(10))),
-              Math.min(d-25, Math.max(25, zc+sgn*R3*Math.cos(th))),
-            ));
+          const yMid=(prevY+yBand)/2;
+          if(R3>=160){
+            // разворот в плане: лента перекатывается на ребро (банк
+            // смотрит вперёд ~0.55 м) и описывает полукруг. Радиус ≥125 —
+            // на перекате лента не гнётся круче ~110 (анти-«штопор»)
+            for(let a3=1;a3<=7;a3++){
+              const th=a3*Math.PI/8;
+              pts.push(P(
+                Math.min(A-20, Math.max(20, xc+dirX*R3*Math.sin(th))),
+                Math.min(B-25, Math.max(25, yMid+jitter(10))),
+                Math.min(d-25, Math.max(25, zc+sgn*R3*Math.cos(th))),
+              ));
+            }
+          } else {
+            // шпилька: разворот ВЕРТИКАЛЬНОЙ петлёй — изгиб вокруг
+            // собственных стержней (перекат не нужен, радиус свободен),
+            // сдвиг по глубине берётся наклоном петли
+            const Rv=Math.max(150, Math.min(320, (B-60)/2.2));
+            const up=(yMid<B/2)?1:-1;
+            for(let a3=1;a3<=7;a3++){
+              const th=a3*Math.PI/7;
+              pts.push(P(
+                Math.min(A-20, Math.max(20, xc+dirX*Rv*Math.sin(th)*0.62)),
+                Math.min(B-25, Math.max(25, yMid+up*(1-Math.cos(th))*Rv*0.5)),
+                Math.min(d-25, Math.max(25, prevZ+(zBand-prevZ)*(a3/7))),
+              ));
+            }
           }
         }
       }
@@ -428,7 +444,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
           // открытая петля (¾ витка) с боковым дрейфом: лента не
           // возвращается в ту же точку — след остаётся однозначным
           // дрейф ≈ радиусу, но в пределах свободного зазора строки
-          const drift=Math.min(Math.max(150, R2*0.85), pitchZ*0.8)*(rng()<0.5?1:-1);
+          const drift=Math.min(Math.max(150, R2*0.85), pitchZ*0.45)*(rng()<0.5?1:-1);
           const TH=Math.PI*1.5;
           for(let a2=1;a2<=7;a2++){
             const th=a2*TH/7;
@@ -691,7 +707,10 @@ function buildRibbon(params, rngSeed, lane){
         if(ov[k2]<=2) continue;
         // с запасом и небольшим перебором: марш нелинеен, за один
         // проход точный масштаб не угадать
-        const sc=(lim2[k2]-ROD_D-10-it2*4)/Math.max(1,bb2.max[k2]-bb2.min[k2]);
+        // сжимать сильнее 12% нельзя: схлопывается сетка строк, и
+        // композиция вырождается в узкую полосу — лучше забраковать
+        // вариант и дать лестнице подобрать менее насыщенный
+        const sc=Math.max(0.88,(lim2[k2]-ROD_D-10-it2*4)/Math.max(1,bb2.max[k2]-bb2.min[k2]));
         for(const c of geo.guideC) c[k2]=bc2[k2]+(c[k2]-bc2[k2])*sc*0.99;
       }
       marchRibbon(geo);
@@ -866,7 +885,8 @@ function spinTowards(prev, tgt, Tn, omega, rotMax, accMax){
    МАРШ-УКЛАДКА: строит ленту вдоль направляющей станция за
    станцией. Физические лимиты соблюдаются ПО ПОСТРОЕНИЮ:
    - шаг станций ровно 17 мм (стержни одинаковые, зазор осей 2 мм);
-   - изгиб/поворот не острее Ø200 (конус step/R_FIT);
+   - изгиб/поворот ограничен конусом step/R_FIT (технологический
+     предел проволоки; правило Ø200 снято);
    - поперечный изгиб («веер» стержней) в пределах зазора GAP_MIN;
    - скорость твиста/складки ограничена так, что торцы соседних
      стержней не расходятся дальше GAP_MAX.
@@ -885,7 +905,7 @@ function marchRibbon(rb){
   const ROT_ROW=0.85*budget;
   const ROT_W=(twoRow ? 0.9-0.45*Math.min(1, rb.foldK||0) : 0.9)*budget;
   // лимит углового ускорения: кромка (кант) изгибается не острее ~R_FIT
-  const ACC=step*step/(R_FIT*halfW)*0.75;
+  const ACC=step*step/(Math.max(115,R_FIT)*halfW)*0.75;
   // таблица дуги направляющей
   const cum=[0];
   for(let i=1;i<gn;i++) cum.push(cum[i-1]+V.len(V.sub(G[i],G[i-1])));
@@ -1005,14 +1025,17 @@ function marchRibbon(rb){
     // чтобы внутренние торцы рядов не сблизились меньше GAP_MIN
     let h=1e-3;
     if(twoRow){
+      // связка «изгиб↔складка» действует в полную силу: ослаблять её
+      // нельзя — наклонённые ряды реально сближают внутренние торцы
+      // (проверено: ослабление роняет зазор до 0.3 мм)
       h=Math.max(h, halfW*Math.abs(V.dot(Up,N)), halfW*Math.abs(V.dot(Dn,N)));
     }
     // разворот стержней (закрутка, перекрутка на ребро) требует более
-    // пологого изгиба: пока торцы гуляют (omW), радиус не короче ~205 —
+    // пологого изгиба: пока торцы гуляют (omW), радиус не короче ~110 —
     // иначе «штопор»: тюбик ленты складывается сам на себя торец-к-торцу
-    // (при R≥205 торцы безопасны при любом наклоне стержней к оси изгиба)
+    // (при R≥110 торцы безопасны при любом наклоне стержней к оси изгиба)
     const tSp=Math.min(1, Math.abs(omW)/(0.7*ROT_W));
-    const opLim=Math.min(A_OP*(1-tSp)+(step/205)*tSp, OP_SLACK/h);
+    const opLim=Math.min(A_OP*(1-tSp)+(step/145)*tSp, OP_SLACK/h);
     let op=Math.max(-opLim, Math.min(opLim, rawOp));
     prevOp=op;
     if(rb.__log) rb.__log.push([k, gi, +xt.toFixed(2), +rawOp.toFixed(3), +op.toFixed(3), +opLim.toFixed(4), +ip.toFixed(4), Math.round(C[k-1][0]), Math.round(C[k-1][2]),
@@ -1052,7 +1075,7 @@ function marchRibbon(rb){
         } else {
           // изгиб вокруг оси стержней (складки, завитки, свитки) —
           // чистый изгиб: ориентация замирает, иначе разворот стержней
-          // включает анти-«штопор» и душит кривизну (R→205)
+          // включает анти-«штопор» и душит кривизну (R→110)
           const wCur=orthoTo(W, Tn);
           const k4=need*(1-al);
           wTgt=V.norm([wTgt[0]+(wCur[0]-wTgt[0])*k4, wTgt[1]+(wCur[1]-wTgt[1])*k4, wTgt[2]+(wCur[2]-wTgt[2])*k4]);
@@ -1080,9 +1103,12 @@ function marchRibbon(rb){
         uT=V.norm([uT[0]+( W[0]-uT[0])*flat, uT[1]+( W[1]-uT[1])*flat, uT[2]+( W[2]-uT[2])*flat]);
         dT=V.norm([dT[0]+(-W[0]-dT[0])*flat, dT[1]+(-W[1]-dT[1])*flat, dT[2]+(-W[2]-dT[2])*flat]);
       }
-      const su = spinTowards(Up, uT, Tn, omU, ROT_ROW, ACC);
+      // в заполнении ряды идут за контуром с его же скоростью: иначе
+      // они отстают на перекате и связка «изгиб↔складка» душит кривизну
+      const rotRow = rb.fillMode ? ROT_W : ROT_ROW;
+      const su = spinTowards(Up, uT, Tn, omU, rotRow, ACC);
       Up=su[0]; omU=su[1];
-      const sd = spinTowards(Dn, dT, Tn, omD, ROT_ROW, ACC);
+      const sd = spinTowards(Dn, dT, Tn, omD, rotRow, ACC);
       Dn=sd[0]; omD=sd[1];
       dirUp.push(Up); dirDn.push(Dn);
     }
@@ -1473,7 +1499,7 @@ function buildScene(){
         const bc3=[0,1,2].map(k3=>(mM2[k3]+xM2[k3])/2);
         for(let k3=0;k3<3;k3++){
           if(ov3[k3]<=2) continue;
-          const sc3=(lim3[k3]-ROD_D-10-fx*5)/Math.max(1,xM2[k3]-mM2[k3]);
+          const sc3=Math.max(0.9,(lim3[k3]-ROD_D-10-fx*5)/Math.max(1,xM2[k3]-mM2[k3]));
           for(const rb of ribbons) for(const c of rb.guideC) c[k3]=bc3[k3]+(c[k3]-bc3[k3])*sc3*0.99;
         }
         for(const rb of ribbons) marchRibbon(rb);
@@ -1547,6 +1573,29 @@ function buildScene(){
           ribbons=rr; clear=cl2;
           break rescue;
         }
+      }
+    }
+  }
+  // ПОСЛЕДНИЙ РУБЕЖ: если лестница и страховка не дали чистого варианта,
+  // строим заведомо разводимую спокойную дугу — композиций с касаниями
+  // не бывает ни при каких настройках
+  if(clear.collisions>0){
+    for(let k4=0;k4<8 && clear.collisions>0;k4++){
+      const pF = Object.assign({}, params, {
+        style:"wave", twistAmt:0, foldK:0,
+        ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1});
+      const rbF = buildRibbon(pF, (state.seed + 770001 + k4*911)>>>0, 0);
+      rbF.clampMin=[0,0,0]; rbF.clampMax=[box.w,box.h,box.d];
+      if(!rbF.fillMode) marchRibbon(rbF);
+      if(!rbF.fitScale) continue;
+      const clF = resolveCollisions([rbF], box);
+      const bF = geoBBox(rbF);
+      const fitsF = (bF.max[0]-bF.min[0]+ROD_D<=box.w+2) &&
+                    (bF.max[1]-bF.min[1]+ROD_D<=box.h+2) &&
+                    (bF.max[2]-bF.min[2]+ROD_D<=box.d+2);
+      if(clF.collisions===0 && fitsF){
+        clF.attempt=98; clF.lanes=1;
+        ribbons=[rbF]; clear=clF;
       }
     }
   }
@@ -1849,7 +1898,7 @@ function updateSpec(){
       <tr><td>Фактический габарит</td><td>${bb.map(v=>Math.round(v)).join(" × ")} мм</td></tr>
       <tr><td>Пересечения витков</td><td>${state.lastSpec.clean
         ? `нет (зазор ≥ ${state.lastSpec.airGap} мм)` : "⚠ проверить вручную"}</td></tr>
-      <tr><td>Мин. диаметр изгиба ленты</td><td>${Math.round(state.lastSpec.minRad*2)} мм (норма ≥ ${R_MIN*2})</td></tr>
+      <tr><td>Мин. диаметр изгиба ленты</td><td>${Math.round(state.lastSpec.minRad*2)} мм</td></tr>
       <tr><td>Мин. диаметр изгиба канта</td><td>${Math.round(Math.min(state.lastSpec.railRad, 9999)*2)} мм</td></tr>
       <tr><td>Цена</td><td>за 1 пог. м — по запросу</td></tr>
     </table>`;
@@ -1945,7 +1994,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["LED-точек", s.leds],
     ["Подвесов", s.cabs],
     ["Пересечения витков", s.clean ? `нет (зазор >= ${s.airGap} мм)` : "требует ручной проверки"],
-    ["Мин. диаметр изгиба, мм", `${Math.round(s.minRad*2)} (норма >= ${R_MIN*2})`],
+    ["Мин. диаметр изгиба, мм", Math.round(s.minRad*2)],
     [],
     ["Цена за 1 пог. м — по запросу: https://wa.me/message/SAC5LWOV5QMXC1"],
   ];
