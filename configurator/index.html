@@ -311,13 +311,14 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // МНОГОЖИЛЬНЫЙ ВИНТ: жилы — вложенные спирали. Радиальный разнос
     // «ширина ленты + зазор» гарантирует, что жилы не пересекутся ни при
     // какой фазе; сдвиг фазы на π через жилу делает переплетение живым.
+    let kLane=1;
     if(lanes>1){
       // радиально лента занимает лишь толщину стержня (15 мм) — её
-      // ширина идёт вдоль оси винта. Поэтому вложенные спирали можно
-      // разносить на 95 мм: зазор с запасом на волну и складку
-      const stepR=150;   // радиальный зазор жил с запасом на складку и волну
-      const k=Math.max(0.18, 1 - lane*stepR/Math.max(220, Math.min(a1,a2)));
-      a1*=k; a2*=k;
+      // ширина идёт вдоль оси винта, поэтому вложенные спирали можно
+      // разносить на 150 мм: зазор с запасом на волну и складку
+      const stepR=150;
+      kLane=Math.max(0.22, 1 - lane*stepR/Math.max(220, Math.min(a1,a2)));
+      a1*=kLane; a2*=kLane;
     }
     // шаг витка: плотность из «Насыщенности», лестница разряжает
     // зазор витка: лента в винте слегка наклонена и несёт волну,
@@ -333,7 +334,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const lenTurn=Math.PI*(a1+a2)*0.88;
     // метраж делится между жилами: цель на композицию, не на ленту
     const turnsCap=Math.max(1.2, (lengthK*2100*1.55/Math.max(1,lanes))/Math.max(600,lenTurn));
-    const turns=Math.max(1.2, Math.min(16, run/pitch, turnsCap));
+    // у внутренних жил витков меньше пропорционально радиусу: крутизна
+    // винта у всех одинаковая, иначе внутренние витки сгущаются и
+    // начинают задевать друг друга
+    const turns=Math.max(1.0, Math.min(16, run/pitch, turnsCap)*kLane);
     const ph0=rng()*Math.PI*2 + Math.PI*lane;
     // «дыхание» сечения и блуждание центра — винт живой, не цилиндр
     const bf=1.1+rng()*1.2, bp=rng()*Math.PI*2;
@@ -1322,7 +1326,10 @@ function buildScene(){
   // новый вариант, дальше постепенно снижаем насыщенность.
   // сколько вложенных спиралей влезает по сечению габарита
   const dimsS=[box.w,box.h,box.d].slice().sort((a,b)=>a-b);
-  const lanesFit=Math.max(1, Math.min(lanes, 1+Math.floor((Math.min((dimsS[0]-170)/2,(dimsS[1]-170)/2)-240)/150)));
+  // внутренняя жила существует, пока её полуось ≥120 мм (минимальный
+  // виток винта); разнос жил — 150 мм по радиусу
+  const aOut=Math.min((dimsS[0]-170)/2,(dimsS[1]-170)/2);
+  const lanesFit=Math.max(1, Math.min(lanes, 1+Math.floor((aOut-120)/150)));
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
   window.__ladder=[];
