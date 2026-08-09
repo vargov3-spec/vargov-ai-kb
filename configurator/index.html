@@ -107,16 +107,28 @@
       <legend>Пластика ленты</legend>
       <div class="row"><label for="form">Форма композиции</label>
         <select id="form">
-          <option value="flow" selected>Поток (винт)</option>
-          <option value="wave">Волна</option>
-          <option value="ring">Кольцо</option>
-          <option value="horse">Подкова</option>
-          <option value="mean">Меандр</option>
-          <option value="eight">Восьмёрка</option>
-          <option value="vortex">Вихрь</option>
-          <option value="column">Колонна</option>
-          <option value="dome">Купол</option>
+          <option value="box" selected>Куб / параллелепипед</option>
+          <option value="sphere">Шар</option>
+          <option value="hemi">Полусфера</option>
+          <option value="cone">Конус</option>
+          <option value="cyl">Цилиндр</option>
+          <option value="pyr">Пирамида</option>
           <option value="casc">Каскад</option>
+          <option value="ring">Кольцо</option>
+          <option value="wave">Волна</option>
+          <option value="spiral">Спираль</option>
+          <option value="drop">Капля / параболоид</option>
+          <option value="lens">Линза</option>
+          <option value="funnel">Воронка</option>
+          <option value="frame">Рамка</option>
+          <option value="arc">Дуга / лента</option>
+          <option value="snake">Змейка</option>
+          <option value="screw">Винт</option>
+          <option value="tiers">Ярусы</option>
+          <option value="bowl">Чаша</option>
+          <option value="bio">Биоформа</option>
+          <option value="horse">Подкова</option>
+          <option value="eight">Восьмёрка</option>
         </select>
       </div>
       <div class="row"><label for="rows">Рядность</label>
@@ -307,13 +319,6 @@ function catmullRom(pts, t){
    чтобы соседние проходы осевой линии были разнесены не меньше чем на
    диаметр навивки + воздух — тогда форма не пересекает сама себя.
    ============================================================ */
-const FORMS = {
-  flow:  "Поток (винт)", wave:   "Волна",  ring: "Кольцо",
-  horse: "Подкова",      mean:   "Меандр", eight:"Восьмёрка",
-  vortex:"Вихрь",        column: "Колонна",dome: "Купол",
-  casc:  "Каскад",
-};
-
 /* СЕЧЕНИЕ ВИТКА — «стадион»: две полуокружности радиуса B, соединённые
    прямыми вдоль длинной стороны. Эллипс здесь не годится: у вытянутого
    эллипса на остром конце радиус кривизны B²/A падает ниже
@@ -338,7 +343,18 @@ function sectionPerim(A1, A2){
   return 4*(A-B)+2*Math.PI*B;
 }
 
-/* Минимальный радиус кривизны ОСЕВОЙ ЛИНИИ формы. Технологический
+const FORMS = {
+  box:   "Куб / параллелепипед", sphere:"Шар",       hemi:  "Полусфера",
+  cone:  "Конус",                cyl:   "Цилиндр",   pyr:   "Пирамида",
+  casc:  "Каскад",               ring:  "Кольцо",    wave:  "Волна",
+  spiral:"Спираль",              drop:  "Капля / параболоид", lens: "Линза",
+  funnel:"Воронка",              frame: "Рамка",     arc:   "Дуга / лента",
+  snake: "Змейка",               screw: "Винт",      tiers: "Ярусы",
+  bowl:  "Чаша",                 bio:   "Биоформа",
+  horse: "Подкова",              eight: "Восьмёрка",
+};
+
+/* Минимальный радиус кривизны ОСЕВОЙ ЛИНИИ оболочки. Технологический
    предел изгиба ленты — R_FIT=80 мм, но по осевой линии одновременно
    идёт навивка, поэтому форме оставляем двойной запас. Именно из-за
    нарушения этого правила вытянутые кольца и зигзаги обрывали марш:
@@ -349,11 +365,29 @@ const SP_R = 170;
 function sineFMax(run, A){
   return run/(2*Math.PI*Math.sqrt(SP_R*Math.max(1,A)));
 }
-/* точка на «стадионе» в плане (скруглённый прямоугольник): прямые
-   участки вдоль длинной стороны + полукольца радиусом B. Так вытянутая
-   форма заполняет габарит по длине, но нигде не круче B */
+/* точка на «стадионе» в плане: прямые участки вдоль длинной стороны +
+   полукольца радиусом B. Вытянутая оболочка заполняет габарит по длине,
+   но нигде не круче B */
 function stadiumPt(frac, A1, A2){
   return sectionLoop(frac*Math.PI*2, A1, A2);
+}
+/* точка на СКРУГЛЁННОМ ПРЯМОУГОЛЬНИКЕ (для «Рамки»): прямые стороны и
+   углы радиусом cr — силуэт читается прямоугольным, а не круглым.
+   cr не меньше SP_R, иначе угол непроходим для ленты. */
+function roundRectPt(frac, Ax, Az, cr){
+  const ax=Math.max(cr+1,Ax), az=Math.max(cr+1,Az);
+  const sx=2*(ax-cr), sz=2*(az-cr), ac=Math.PI*cr/2;
+  const P=2*sx+2*sz+4*ac;
+  let s=(((frac%1)+1)%1)*P;
+  const arc=(c0,c1,a0)=>{ const a=a0-s/cr; return [c0+cr*Math.cos(a), c1+cr*Math.sin(a)]; };
+  if(s<sx) return [-(ax-cr)+s, az];
+  if((s-=sx)<ac) return arc(ax-cr, az-cr, Math.PI/2);
+  if((s-=ac)<sz) return [ax, (az-cr)-s];
+  if((s-=sz)<ac) return arc(ax-cr, -(az-cr), 0);
+  if((s-=ac)<sx) return [(ax-cr)-s, -az];
+  if((s-=sx)<ac) return arc(-(ax-cr), -(az-cr), -Math.PI/2);
+  if((s-=ac)<sz) return [-ax, -(az-cr)+s];
+  return arc(-(ax-cr), az-cr, Math.PI);
 }
 
 function formSpine(form, dims, rw, rng){
@@ -364,38 +398,85 @@ function formSpine(form, dims, rw, rng){
   const axH=(W>=D?0:2), oh=(axH===0?2:0);     // главная и вторая горизонтальные
   // ПОЛУОСЬ СЕЧЕНИЯ ПО ГАБАРИТУ. Лента шириной rw может лечь поперёк
   // навивки (перекат на ребро), тогда она выступает за радиус витка на
-  // полширины. Поэтому от габарита вычитается вся ширина ленты — иначе
+  // полширины. Поэтому от габарита вычитается ширина ленты — иначе
   // композиция вылетает за бокс, её утягивает утяжка и она вырождается.
   const rBox=(dim)=>Math.max(90, (dim-60-rw*0.7)/2);
-  // ТОЛЩИНА ПОЛОСЫ ОБОЛОЧКИ: у форм с «дыркой» (кольцо, подкова,
-  // восьмёрка, вихрь) лента заполняет не весь план, а полосу — её
-  // толщину задаём долей габарита, чтобы силуэт формы читался
+  // ТОЛЩИНА ПОЛОСЫ ОБОЛОЧКИ: у форм с пустотой в середине (кольцо,
+  // рамка, восьмёрка, спираль) лента заполняет не весь план, а полосу —
+  // её толщину задаём долей габарита, чтобы силуэт формы читался
   const bandT=(dim)=>cl(dim*0.34, Math.min(300, dim*0.5), 900);
-  let ref=[0,1,0], r1=110, r2=110;
+  let ref=[0,1,0], r1=110, r2=110, prof=null, lobes=0;
+  // ТЕЛО ВРАЩЕНИЯ: осевая линия — вертикаль, силуэт задаёт профиль
+  // радиуса по высоте. Сечение навивки — план габарита (или вписанный
+  // круг), умноженный на профиль
+  const vert=()=>{
+    const run=Math.max(rw+60, H-rw-60), s0=(H-run)/2;
+    for(let i=0;i<=M;i++) P.push([W/2, s0+run*(i/M), D/2]);
+    ref=[1,0,0];
+  };
+  const circle=()=>{ const r=Math.min(rBox(W), rBox(D)); r1=r; r2=r; };
+  const rect=()=>{ r1=rBox(W); r2=rBox(D); };
+  // профиль не опускается ниже минимального радиуса витка: в вершине
+  // конуса лента не может сойтись в точку — там остаётся малый виток
+  const kFloor=(k)=>Math.max(0.14, k);
+
   switch(form){
-    case "wave": {
-      // ОБОЛОЧКА: волнистый слой вдоль главной горизонтальной оси
-      // (LC0217-1). По высоте слой тоньше габарита — волна видна
-      const rUp=cl((H-60)/4, 150, 320);
-      const A=Math.max(40, (H-60)/2-rUp);
-      const run=Math.max(rw+60, dims[axH]-rw-60), s0=(dims[axH]-run)/2;
-      const f=cl(1.2+rng()*0.7, 0.5, sineFMax(run, A)), ph=rng()*Math.PI*2;
-      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
-        q[axH]=s0+run*t; q[1]=H/2+A*Math.sin(Math.PI*2*f*t+ph); q[oh]=dims[oh]/2;
-        P.push(q); }
-      r1=rUp; r2=rBox(dims[oh]);
+    /* ---------- тела вращения (силуэт по высоте) ---------- */
+    case "sphere":                       // шар / эллипсоид по габариту
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(Math.sqrt(Math.max(0,1-(2*t-1)*(2*t-1)))); return [k,k]; };
+      break;
+    case "hemi":                         // полусфера: плоский верх, купол вниз
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(Math.sqrt(Math.max(0,t*(2-t)))); return [k,k]; };
+      break;
+    case "bowl":                         // чаша: прямые стенки, дно скруглено
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(t<0.45 ? Math.sqrt(Math.max(0,1-(1-t/0.45)*(1-t/0.45))) : 1); return [k,k]; };
+      break;
+    case "cone":                         // конус вершиной вниз
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(t); return [k,k]; };
+      break;
+    case "pyr":                          // пирамида: то же, но план прямоугольный
+      vert(); rect();
+      prof=(t)=>{ const k=kFloor(t); return [k,k]; };
+      break;
+    case "drop":                         // капля / параболоид
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(Math.sqrt(t)); return [k,k]; };
+      break;
+    case "funnel":                       // воронка: вытянутая книзу капля
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(Math.pow(t,0.65)); return [k,k]; };
+      break;
+    case "lens":                         // линза: сходится и сверху, и снизу
+      vert(); circle();
+      prof=(t)=>{ const k=kFloor(Math.sin(Math.PI*t)); return [k,k]; };
+      break;
+    case "tiers": {                      // ярусы: три уступа, книзу уже
+      vert(); circle();
+      const lv=[0.52,0.76,1.0];
+      prof=(t)=>{ const k=lv[Math.min(2, Math.floor(t*3))]; return [k,k]; };
       break;
     }
+    case "bio":                          // биоформа: силуэт с лепестками
+      vert(); circle();
+      lobes=5+Math.floor(rng()*3);
+      prof=(t)=>{ const k=kFloor(0.82+0.18*Math.sin(Math.PI*t)); return [k,k]; };
+      break;
+    case "cyl":                          // цилиндр по плану габарита
+      vert(); rect();
+      break;
+
+    /* ---------- оболочки с пустотой и полосы ---------- */
     case "ring": case "horse": {
-      // ОБОЛОЧКА: кольцевая полоса в плане на всю высоту габарита
-      // (в середине — пустота). Подкова — та же полоса, разомкнутая на 80°.
-      // Осевая линия идёт по середине полосы, сечение навивки заполняет
-      // её толщину и высоту
+      // кольцевая полоса в плане на всю высоту (в середине пустота).
+      // Подкова — та же полоса, разомкнутая на 80°. Стадион, а не эллипс:
+      // в вытянутом габарите это два прогона с разворотами по краям
       const bt=bandT(Math.min(W,D));
       const rSide=Math.max(140, bt/2);
       const Rx=Math.max(140, W/2-25-rSide), Rz=Math.max(140, D/2-25-rSide);
-      // кольцо — стадион в плане: в вытянутом габарите это два прогона
-      // с разворотами по краям, а не эллипс с непроходимыми концами
       const span=(form==="ring"?0.955:0.78);
       const ph=rng(), dir=rng()<0.5?1:-1;
       for(let i=0;i<=M;i++){
@@ -404,45 +485,23 @@ function formSpine(form, dims, rw, rng){
       r1=rBox(H); r2=rSide;
       break;
     }
-    case "mean": {
-      // ОБОЛОЧКА: змеящаяся полоса в плане на всю высоту габарита
-      const rSide=Math.max(140, bandT(dims[oh])/2);
-      const Az=Math.max(60, dims[oh]/2-25-rSide);
-      const run=Math.max(rw+60, dims[axH]-rw-60), s0=(dims[axH]-run)/2;
-      const f=cl(1.3+rng()*0.9, 0.5, sineFMax(run, Az)), ph=rng()*Math.PI*2;
-      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
-        q[axH]=s0+run*t; q[1]=H/2; q[oh]=dims[oh]/2+Az*Math.sin(Math.PI*2*f*t+ph);
-        P.push(q); }
+    case "frame": {
+      // рамка: полоса по периметру плана со скруглёнными углами,
+      // середина пустая. Углы не круче SP_R, иначе лента их не пройдёт
+      const bt=bandT(Math.min(W,D));
+      const rSide=Math.max(140, bt/2);
+      const Ax=Math.max(160, W/2-25-rSide), Az=Math.max(160, D/2-25-rSide);
+      const cr=cl(Math.min(Ax,Az)*0.32, SP_R, Math.min(Ax,Az)*0.9);
+      const ph=rng(), dir=rng()<0.5?1:-1;
+      for(let i=0;i<=M;i++){
+        const pl=roundRectPt(ph+dir*0.96*(i/M), Ax, Az, cr);
+        P.push([W/2+pl[0], H/2, D/2+pl[1]]); }
       r1=rBox(H); r2=rSide;
       break;
     }
-    case "eight": {
-      // ОБОЛОЧКА: две кольцевые полосы (восьмёрка в плане), пройденные в
-      // разные стороны. В точке пересечения ветви разведены по высоте на
-      // Ay ≥ диаметр навивки + воздух — лента проходит сама над собой
-      // (LC0327). Лемниската не годится: её петли нельзя растянуть по
-      // габариту, радиус на конце петли падает до десятков мм
-      const rUp=Math.max(35,(H-102)/6*0.9);
-      const rSide=Math.max(140, bandT(Math.min(W,D))/2);
-      const Ay=Math.max(2*rUp+26, (H-50)/2-rUp);
-      const Rz=Math.max(140, D/2-25-rSide);
-      const Lx=Math.max(Rz, (W/2-25-rSide)/2);
-      const dir=rng()<0.5?1:-1;
-      const ph=rng();
-      for(let i=0;i<=M;i++){
-        const t=i/M;
-        const right=t<0.5;                 // первая петля справа, вторая слева
-        const u=right ? t*2 : (t-0.5)*2;
-        const pl=stadiumPt(0.5+(right?u:-u), Lx, Rz);  // старт — у середины
-        const cx=(right?1:-1)*dir*Lx;
-        P.push([W/2+cx+dir*pl[0]*(right?1:-1), H/2+Ay*(0.5-t)*2, D/2+pl[1]]);
-      }
-      r1=rUp; r2=rSide;
-      break;
-    }
-    case "vortex": {
-      // ОБОЛОЧКА: спиральная полоса в плане (вихрь) на всю высоту.
-      // Полосы витков расходятся радиально на свою толщину с воздухом
+    case "spiral": {
+      // спираль: полоса, расходящаяся в плане. Витки разнесены радиально
+      // на свою толщину с воздухом
       const rSide=cl(bandT(Math.min(W,D))/2, 140, 260);
       const bz=Math.max(140, D/2-25-rSide);
       const bx=Math.max(bz, W/2-25-rSide);
@@ -456,17 +515,66 @@ function formSpine(form, dims, rw, rng){
       r1=rBox(H); r2=rSide;
       break;
     }
-    case "column": {
-      // ОБОЛОЧКА: вертикальный цилиндр по плану габарита (LC0326)
-      r1=rBox(W); r2=rBox(D);
-      const run=Math.max(rw+60, H-rw-60), s0=(H-run)/2;
-      for(let i=0;i<=M;i++) P.push([W/2, s0+run*(i/M), D/2]);
-      ref=[1,0,0];
+    case "screw": {
+      // винт: осевая линия — восходящая спираль в цилиндре габарита.
+      // Соседние витки разнесены по высоте не меньше толщины полосы
+      const rUp=cl((H-60)/6, 140, 300);
+      const rSide=cl(bandT(Math.min(W,D))/2, 140, 300);
+      const Rh=Math.max(SP_R, Math.min(W,D)/2-25-rSide);
+      const run=Math.max(rw+60, H-2*rUp-50), s0=(H-run)/2;
+      const nT=cl(run/(2*rUp+40), 1, 4);
+      const ph=rng()*Math.PI*2, dir=rng()<0.5?1:-1;
+      for(let i=0;i<=M;i++){ const t=i/M, a=ph+dir*Math.PI*2*nT*t;
+        P.push([W/2+Rh*Math.cos(a)*(W/Math.min(W,D)), s0+run*t,
+                D/2+Rh*Math.sin(a)*(D/Math.min(W,D))]); }
+      r1=rUp; r2=rSide;
       break;
     }
-    case "dome": {
-      // ОБОЛОЧКА: арочный свод — прямой верх и два скругления. Полоса
-      // свода толщиной r2b, по глубине заполняет габарит.
+    case "wave": {
+      // волнистый слой вдоль главной горизонтальной оси (LC0217-1)
+      const rUp=cl((H-60)/4, 150, 320);
+      const A=Math.max(40, (H-60)/2-rUp);
+      const run=Math.max(rw+60, dims[axH]-rw-60), s0=(dims[axH]-run)/2;
+      const f=cl(1.2+rng()*0.7, 0.5, sineFMax(run, A)), ph=rng()*Math.PI*2;
+      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
+        q[axH]=s0+run*t; q[1]=H/2+A*Math.sin(Math.PI*2*f*t+ph); q[oh]=dims[oh]/2;
+        P.push(q); }
+      r1=rUp; r2=rBox(dims[oh]);
+      break;
+    }
+    case "snake": {
+      // змейка: полоса, змеящаяся в плане, на всю высоту габарита
+      const rSide=Math.max(140, bandT(dims[oh])/2);
+      const Az=Math.max(60, dims[oh]/2-25-rSide);
+      const run=Math.max(rw+60, dims[axH]-rw-60), s0=(dims[axH]-run)/2;
+      const f=cl(1.3+rng()*0.9, 0.5, sineFMax(run, Az)), ph=rng()*Math.PI*2;
+      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
+        q[axH]=s0+run*t; q[1]=H/2; q[oh]=dims[oh]/2+Az*Math.sin(Math.PI*2*f*t+ph);
+        P.push(q); }
+      r1=rBox(H); r2=rSide;
+      break;
+    }
+    case "casc": {
+      // каскад: полоса, спускающаяся уступами (водопад). Зигзаг в
+      // вертикальной плоскости в плоском габарите непроходим (радиус на
+      // повороте — единицы мм), поэтому меандр в плане + спуск
+      const rUpC=cl((H-60)/3, 150, 300);
+      const rSideC=Math.max(140, bandT(dims[oh])/2);
+      const Az=Math.max(60, dims[oh]/2-25-rSideC);
+      const run=Math.max(rw+60, dims[axH]-rw-60), s0c=(dims[axH]-run)/2;
+      const f=cl(1.1+rng()*0.8, 0.5, sineFMax(run, Az));
+      const ph=rng()*Math.PI*2;
+      const yT=H-25-rUpC, yB=25+rUpC;
+      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
+        q[axH]=s0c+run*t;
+        q[1]=yT-(yT-yB)*t;
+        q[oh]=dims[oh]/2+Az*Math.sin(Math.PI*2*f*t+ph);
+        P.push(q); }
+      r1=rUpC; r2=rSideC;
+      break;
+    }
+    case "arc": {
+      // дуга / лента: арочный свод — прямой верх и два скругления.
       // Полуэллипс в широком габарите непроходим (радиус у пят Ry²/Rx)
       const r2b=cl((H-60)/4, 170, 320);
       const Ry=Math.max(140, H-50-2*r2b);
@@ -485,26 +593,29 @@ function formSpine(form, dims, rw, rng){
       r1=rBox(dims[oh]); r2=r2b;
       break;
     }
-    case "casc": {
-      // ОБОЛОЧКА: полоса, спускающаяся уступами (водопад). Меандр в плане
-      // + монотонный спуск по высоте. Зигзаг в вертикальной плоскости в
-      // плоском габарите непроходим (радиус на повороте — единицы мм)
-      const rUpC=cl((H-60)/3, 150, 300);
-      const rSideC=Math.max(140, bandT(dims[oh])/2);
-      const Az=Math.max(60, dims[oh]/2-25-rSideC);
-      const run=Math.max(rw+60, dims[axH]-rw-60), s0c=(dims[axH]-run)/2;
-      const f=cl(1.1+rng()*0.8, 0.5, sineFMax(run, Az));
-      const ph=rng()*Math.PI*2;
-      const yT=H-25-rUpC, yB=25+rUpC;
-      for(let i=0;i<=M;i++){ const t=i/M, q=[0,0,0];
-        q[axH]=s0c+run*t;
-        q[1]=yT-(yT-yB)*t;
-        q[oh]=dims[oh]/2+Az*Math.sin(Math.PI*2*f*t+ph);
-        P.push(q); }
-      r1=rUpC; r2=rSideC;
+    case "eight": {
+      // восьмёрка: две кольцевые полосы, пройденные в разные стороны.
+      // В точке пересечения ветви разведены по высоте на Ay ≥ диаметр
+      // навивки + воздух — лента проходит сама над собой (LC0327)
+      const rUp=Math.max(35,(H-102)/6*0.9);
+      const rSide=Math.max(140, bandT(Math.min(W,D))/2);
+      const Ay=Math.max(2*rUp+26, (H-50)/2-rUp);
+      const Rz=Math.max(140, D/2-25-rSide);
+      const Lx=Math.max(Rz, (W/2-25-rSide)/2);
+      const dir=rng()<0.5?1:-1;
+      const ph=rng();
+      for(let i=0;i<=M;i++){
+        const t=i/M;
+        const right=t<0.5;               // первая петля справа, вторая слева
+        const u=right ? t*2 : (t-0.5)*2;
+        const pl=stadiumPt(0.5+(right?u:-u), Lx, Rz);
+        const cx=(right?1:-1)*dir*Lx;
+        P.push([W/2+cx+dir*pl[0]*(right?1:-1), H/2+Ay*(0.5-t)*2, D/2+pl[1]]);
+      }
+      r1=rUp; r2=rSide;
       break;
     }
-    default: {  // flow — ОБОЛОЧКА: весь габарит, винт вдоль главной оси
+    default: {  // box — оболочка совпадает с габаритом: винт вдоль главной оси
       const u1=(ax+1)%3, u2=(ax+2)%3;
       r1=rBox(dims[u1]); r2=rBox(dims[u2]);
       const run=Math.max(rw+60, dims[ax]-rw-60), s0=(dims[ax]-run)/2;
@@ -512,7 +623,7 @@ function formSpine(form, dims, rw, rng){
       ref=[0,0,0]; ref[u1]=1;
     }
   }
-  return {P, ref, r1, r2};
+  return {P, ref, r1, r2, prof, lobes};
 }
 
 function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
@@ -546,7 +657,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const dims=[w,h,d];
     const L=Math.max(...dims);
     // осевая линия формы + сечение навивки
-    const sp=formSpine(box.form||"flow", dims, rw, rng);
+    const sp=formSpine(box.form||"box", dims, rw, rng);
     const SP=sp.P, nsp=SP.length;
     const cumP=[0];
     for(let i=1;i<nsp;i++) cumP.push(cumP[i-1]+V.len(V.sub(SP[i],SP[i-1])));
@@ -572,12 +683,23 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // виток, а КОЛЕБЛЕТСЯ вдоль длинной полуоси — пластика LC0217:
     // частота колебания ограничена тем же правилом кривизны.
     const A1s=a1*0.88, A2s=a2*0.88;
-    const Amax=Math.max(A1s,A2s), Bmin=Math.min(A1s,A2s);
+    // ПРОФИЛЬ СИЛУЭТА: у тел вращения (шар, конус, линза, ярусы…) радиус
+    // сечения меняется по высоте — это и есть форма оболочки. Средний
+    // профиль нужен для правила метража, минимальный — чтобы виток нигде
+    // не стал круче технологического предела
+    const prof=sp.prof, lobes=sp.lobes||0;
+    let km1=1, km2=1;
+    if(prof){ km1=0; km2=0;
+      for(let i2=0;i2<=10;i2++){ const kk=prof(i2/10); km1+=kk[0]/11; km2+=kk[1]/11; } }
+    const Amax=Math.max(A1s*km1,A2s*km2), Bmin=Math.min(A1s*km1,A2s*km2);
     const coil=Bmin>=170;
+    // навивка не тоньше минимального радиуса витка: в вершине конуса
+    // лента остаётся малым витком, а не сходится в точку
+    const secFloor=coil?170:60;
     // шаг витка: лента в винте слегка наклонена и несёт волну,
     // поэтому чистый шаг = ширина + 150, а не + 60
     const pitch=(rw+150)+relax*300;
-    const lenTurn=coil ? sectionPerim(A1s, A2s) : 4*Amax;
+    const lenTurn=coil ? sectionPerim(A1s*km1, A2s*km2) : 4*Amax;
     // ПРАВИЛО ПРОИЗВОДСТВА: метраж ленты пропорционален длине композиции —
     // на 2000 мм габарита идёт ~4 пог. м, на 4000 мм ~8 пог. м. Лишняя
     // длина уходит в повороты и изгибы, а не растягивается по габариту.
@@ -644,9 +766,14 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const e2=V.norm(V.cross(T,e1));
       const th=ph0+turns*Math.PI*2*t;
       const br=1+bAmp*Math.sin(Math.PI*2*bf*t+bp);
-      const sec=coil ? sectionLoop(th, A1s*br, A2s*br)
-                     : (A1s>=A2s ? [Amax*br*Math.sin(th), 0]
-                                 : [0, Amax*br*Math.sin(th)]);
+      // сечение витка в этой точке: базовые полуоси × профиль силуэта ×
+      // «дыхание»; лепестки (биоформа) модулируют радиус по фазе витка
+      let kp1=1, kp2=1;
+      if(prof){ const kk=prof(t); kp1=kk[0]; kp2=kk[1]; }
+      if(lobes){ const kl=1+0.22*Math.sin(lobes*th); kp1*=kl; kp2*=kl; }
+      const B1=Math.max(secFloor, A1s*kp1*br), B2=Math.max(secFloor, A2s*kp2*br);
+      const sec=coil ? sectionLoop(th, B1, B2)
+                     : (B1>=B2 ? [B1*Math.sin(th), 0] : [0, B2*Math.sin(th)]);
       const R1=sec[0]+cAmp1*Math.sin(Math.PI*2*cf1*t+cp1);
       const R2=sec[1]+cAmp2*Math.sin(Math.PI*2*cf2*t+cp2);
       const q=[0,0,0];
@@ -750,7 +877,7 @@ function buildRibbon(params, rngSeed, lane){
   // винт: по оси винта нужен запас на полширины ленты, по сечению —
   // только на радиус стержня (лента в плоскости витка тонкая)
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
-                  d: Math.max(200, box.d-40), rw, relax, form: params.form||"flow" };
+                  d: Math.max(200, box.d-40), rw, relax, form: params.form||"box" };
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
@@ -802,10 +929,17 @@ function buildRibbon(params, rngSeed, lane){
   // двурядная: центральный контур независим — провисает/поднимается.
   // Каждый ряд получает свой плавный профиль угла складки.
   const foldAmp = foldK*(0.3+0.7*ampl);
+  // ОБЩАЯ составляющая (одинаковый знак у обоих рядов) — «домик» или
+  // «ложбина»: боковые контуры сближаются, и центральный уходит из их
+  // плоскости на длина_стержня×sin(угол). НЕЗАВИСИМАЯ составляющая
+  // оставляет рядам свободу друг от друга (стержни крепятся к
+  // центральному контуру с двух сторон независимо)
+  const ffC=0.6+rngL()*1.0, fpC=rngL()*Math.PI*2;
+  const common = s => 0.7*foldAmp*Math.sin(s*Math.PI*2*ffC+fpC);
   const ffU1=0.8+rngL()*1.7, fpU1=rngL()*Math.PI*2, ffU2=2+rngL()*2, fpU2=rngL()*Math.PI*2;
   const ffD1=0.8+rngL()*1.7, fpD1=rngL()*Math.PI*2, ffD2=2+rngL()*2, fpD2=rngL()*Math.PI*2;
-  const foldUp = s => foldAmp*(0.7*Math.sin(s*Math.PI*2*ffU1+fpU1)+0.3*Math.sin(s*Math.PI*2*ffU2+fpU2));
-  const foldDn = s => foldAmp*(0.7*Math.sin(s*Math.PI*2*ffD1+fpD1)+0.3*Math.sin(s*Math.PI*2*ffD2+fpD2));
+  const foldUp = s => common(s) + 0.3*foldAmp*(0.7*Math.sin(s*Math.PI*2*ffU1+fpU1)+0.3*Math.sin(s*Math.PI*2*ffU2+fpU2));
+  const foldDn = s => common(s) + 0.3*foldAmp*(0.7*Math.sin(s*Math.PI*2*ffD1+fpD1)+0.3*Math.sin(s*Math.PI*2*ffD2+fpD2));
   // «ветер»: многооктавная турбулентность направляющей — крупные
   // покачивания, средние волны и мелкое трепетание, как шёлк на ветру.
   // Марш отфильтрует нефизичное, лента живёт на пределе пластики.
@@ -1116,7 +1250,14 @@ function marchRibbon(rb){
   const A_OP=step/R_FIT;
   // бюджет сближения торцов (мм на шаг) делится между поперечным
   // изгибом (веер) и изгибом при наклонённых складкой рядах
+  // IP_SLACK — бюджет «веера», OP_SLACK — сближения торцов на внутренней
+  // стороне изгиба, OP_OUT — их расхождения на внешней (там запас до
+  // GAP_MAX, поэтому он в разы больше)
   const IP_SLACK=0.25, OP_SLACK=0.30;
+  // расхождение внешних торцов делит общий бюджет (ROD_D+GAP_MAX−step)
+  // с твистом и веером, поэтому берём его четверть: при 0.55 фактический
+  // зазор доходил до 11.5 мм
+  const OP_OUT=Math.max(1.0, (ROD_D+GAP_MAX-step)*0.25);
   const TH_IP=IP_SLACK/halfW;
   const ROT_ROW=0.85*budget;
   const ROT_W=(twoRow ? 0.9-0.45*Math.min(1, rb.foldK||0) : 0.9)*budget;
@@ -1248,20 +1389,32 @@ function marchRibbon(rb){
     let ip=Math.max(-TH_IP, Math.min(TH_IP, rawIp));
     // складка наклоняет торцы с оси изгиба: изгиб ограничен так,
     // чтобы внутренние торцы рядов не сблизились меньше GAP_MIN
-    let h=1e-3;
+    // СВЯЗКА «ИЗГИБ ↔ СКЛАДКА» — ЗНАКОВАЯ. Складка уводит торцы стержней
+    // с плоскости изгиба. Те, что ушли НАРУЖУ поворота, при изгибе
+    // расходятся: запас большой (до GAP_MAX=10 мм). Те, что ушли ВНУТРЬ,
+    // сближаются, а там запас всего 0.6 мм (шаг 11.6 при трубке 10).
+    // Симметричный лимит душил складку в обе стороны, и центральный
+    // контур не мог занять своё положение. Теперь лимит односторонний:
+    // сложенная «домиком» лента свободно гнётся в сторону домика и почти
+    // не гнётся против него — как в реальности.
+    let hPos=1e-3, hNeg=1e-3;
     if(twoRow){
-      // связка «изгиб↔складка» действует в полную силу: ослаблять её
-      // нельзя — наклонённые ряды реально сближают внутренние торцы
-      // (проверено: ослабление роняет зазор до 0.3 мм)
-      h=Math.max(h, halfW*Math.abs(V.dot(Up,N)), halfW*Math.abs(V.dot(Dn,N)));
+      const dU=V.dot(Up,N), dD=V.dot(Dn,N);
+      hPos=Math.max(hPos, halfW*Math.max(0,  dU), halfW*Math.max(0,  dD));
+      hNeg=Math.max(hNeg, halfW*Math.max(0, -dU), halfW*Math.max(0, -dD));
     }
     // разворот стержней (закрутка, перекрутка на ребро) требует более
     // пологого изгиба: пока торцы гуляют (omW), радиус не короче ~110 —
     // иначе «штопор»: тюбик ленты складывается сам на себя торец-к-торцу
     // (при R≥110 торцы безопасны при любом наклоне стержней к оси изгиба)
     const tSp=Math.min(1, Math.abs(omW)/(0.7*ROT_W));
-    const opLim=Math.min(A_OP*(1-tSp)+(step/145)*tSp, OP_SLACK/h);
-    let op=Math.max(-opLim, Math.min(opLim, rawOp));
+    const opBase=A_OP*(1-tSp)+(step/145)*tSp;
+    // при повороте к +N центр кривизны лежит со стороны +N, значит
+    // ВНУТРЕННИЕ торцы — те, что ушли в +N: им и достаётся жёсткий лимит
+    const limPos=Math.min(opBase, OP_SLACK/hPos, OP_OUT/hNeg);
+    const limNeg=Math.min(opBase, OP_SLACK/hNeg, OP_OUT/hPos);
+    const opLim=Math.max(limPos, limNeg);   // для предикции складки
+    let op=rawOp>=0 ? Math.min(rawOp, limPos) : Math.max(rawOp, -limNeg);
     prevOp=op;
     if(rb.__log) rb.__log.push([k, gi, +xt.toFixed(2), +rawOp.toFixed(3), +op.toFixed(3), +opLim.toFixed(4), +ip.toFixed(4), Math.round(C[k-1][0]), Math.round(C[k-1][2]),
       twoRow? +V.dot(Up,N).toFixed(3):0, +V.dot(W,[0,1,0]).toFixed(3), +omW.toFixed(4)]);
@@ -1323,7 +1476,14 @@ function marchRibbon(rb){
       // в заполнении при полном изгибе — ПОЛНОСТЬЮ (ряды строго ±W:
       // ось витка = ось стержней, дрожь рядов не душит кривизну)
       const needOp=Math.min(1, Math.abs(rawOp)/A_OP);
-      const flat=rb.fillMode ? Math.min(1, Math.max(needOp, needTurn)*1.08) : needOp*0.85;
+      // складка прижимается не «в любом повороте», а только если она
+      // мешает: гасить нужно ту часть складки, что ушла ВНУТРЬ поворота
+      const sgnOp=rawOp>=0?1:-1;
+      const dU2=V.dot(Up,N), dD2=V.dot(Dn,N);
+      const innerK=Math.min(1, 3*Math.max(0, sgnOp*dU2, sgnOp*dD2));
+      const flat=rb.fillMode
+        ? Math.min(1, Math.max(needOp, needTurn)*1.08*(0.25+0.75*innerK))
+        : needOp*0.85;
       let uT=orthoTo(g.u,Tn), dT=orthoTo(g.v,Tn);
       if(flat>0.02){
         uT=V.norm([uT[0]+( W[0]-uT[0])*flat, uT[1]+( W[1]-uT[1])*flat, uT[2]+( W[2]-uT[2])*flat]);
@@ -1695,17 +1855,24 @@ function buildScene(){
     // живая (волны, скрутка, складка) и всегда проходима маршем
     ampl: 0.62,
     twistAmt: 0.46,
-    // складка наклоняет ряды, а наклон рядов ограничивает радиус изгиба
-    // как OP_SLACK/(полширина·sin α): у широкой ленты та же складка душит
-    // изгиб вдвое сильнее, поэтому амплитуда складки обратна полуширине
-    foldK: 0.12*Math.min(1, 150/(rodLen*(+ui.rows.value===2?1:0.5))),
+    // СКЛАДКА = независимое положение центрального контура. Стержни
+    // жёсткие: длина от центрального контура до канта всегда равна длине
+    // трубки, поэтому как только боковые контуры сближаются, центр обязан
+    // выйти из их плоскости — провиснуть или вздыбиться. Угол складки и
+    // есть эта величина: смещение центра = длина стержня × sin(угол).
+    // Складка сильно ограничивает изгиб (наклонённые ряды сближают
+    // внутренние торцы, лимит OP_SLACK/(полширина·sin α)) — физически
+    // верно: сложенная «домиком» лента жёстче. Поэтому марш прижимает
+    // складку в поворотах и распускает её на пробегах, а лестница гасит
+    // её в трудных габаритах.
+    foldK: (+ui.rows.value===2 ? 0.5 : 0),
     // ШИРИНА ЛЕНТЫ = длина стержня × число рядов. В двурядной ленте два
     // ряда стержней по 300 мм дают ленту 600 мм; центральная проволока —
     // граница между рядами, ряды независимы друг от друга
     rodLen,
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
-    form: ui.form.value in FORMS ? ui.form.value : "flow",
+    form: ui.form.value in FORMS ? ui.form.value : "box",
     lengthK: (+ui.density.value)/100,
     lanes,
   };
