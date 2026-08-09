@@ -1518,7 +1518,12 @@ function buildScene(){
     const lim=[box.w,box.h,box.d];
     const sh=[0,0,0];
     for(let k=0;k<3;k++){
-      if(mM[k]-ROD_R<0) sh[k]=ROD_R-mM[k];
+      const ext=xM[k]-mM[k]+ROD_D;
+      if(ext < lim[k]-60){
+        // композиция заметно меньше габарита (сработала страховка или
+        // короткий вариант) — ставим её по ЦЕНТРУ, а не прижимаем к краю
+        sh[k]=(lim[k]-(mM[k]+xM[k]))/2;
+      } else if(mM[k]-ROD_R<0) sh[k]=ROD_R-mM[k];
       else if(xM[k]+ROD_R>lim[k]) sh[k]=lim[k]-xM[k]-ROD_R;
     }
     if(sh[0]||sh[1]||sh[2]){
