@@ -16,6 +16,7 @@ Output: scan/security_report.md. Exit code 1 при любом нарушени�
 GitHub Action упал и владелец получил уведомление.
 """
 import re, subprocess, sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -73,33 +74,44 @@ def main():
         print("WARN: sitemap пуст или недоступен", file=sys.stderr)
 
     script_hosts, all_hosts, metrika_ids = {}, {}, {}
-    seen_js = set()
+    fetched_pages = 0
 
-    for page in pages:
-        html = curl(page)
-        if not html:
-            print(f"WARN: не скачалась {page}", file=sys.stderr)
-            continue
-        origin = "https://" + host_of(page)
-        for rx in (SCRIPT_SRC_RE, IFRAME_SRC_RE, PRECONNECT_RE):
-            for u in rx.findall(html):
-                script_hosts.setdefault(host_of(u), set()).add(page)
-        for h in URL_RE.findall(html):
-            all_hosts.setdefault(h.lower(), set()).add(page)
-        for mid in METRIKA_ID_RE.findall(html):
-            metrika_ids.setdefault(mid, set()).add(page)
-        # Свои JS-бандлы тоже проверяем на зашитые внешние адреса.
-        js_paths = [p for p in LOCAL_JS_RE.findall(html)][:MAX_JS_PER_HOST]
-        for jp in js_paths:
-            js_url = origin + jp
-            if js_url in seen_js:
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        page_bodies = list(zip(pages, pool.map(curl, pages)))
+
+        js_urls = set()
+        for page, html in page_bodies:
+            if not html:
+                print(f"WARN: не скачалась {page}", file=sys.stderr)
                 continue
-            seen_js.add(js_url)
-            js = curl(js_url)
+            fetched_pages += 1
+            origin = "https://" + host_of(page)
+            for rx in (SCRIPT_SRC_RE, IFRAME_SRC_RE, PRECONNECT_RE):
+                for u in rx.findall(html):
+                    script_hosts.setdefault(host_of(u), set()).add(page)
+            for h in URL_RE.findall(html):
+                all_hosts.setdefault(h.lower(), set()).add(page)
+            for mid in METRIKA_ID_RE.findall(html):
+                metrika_ids.setdefault(mid, set()).add(page)
+            # Свои JS-бандлы тоже проверяем на зашитые внешние адреса.
+            for jp in LOCAL_JS_RE.findall(html)[:MAX_JS_PER_HOST]:
+                js_urls.add(origin + jp)
+
+        seen_js = sorted(js_urls)
+        for js_url, js in zip(seen_js, pool.map(curl, seen_js)):
             for h in URL_RE.findall(js):
                 all_hosts.setdefault(h.lower(), set()).add(js_url)
             for mid in METRIKA_ID_RE.findall(js):
                 metrika_ids.setdefault(mid, set()).add(js_url)
+
+    # Защита от ложного «всё чисто»: если сайт не отвечает, это тоже тревога.
+    if fetched_pages < 5 or not seen_js:
+        REPORT.write_text(
+            f"# Отчёт мониторинга целостности сайта\n\n"
+            f"ОШИБКА: сайт недоступен для проверки (страниц: {fetched_pages}, "
+            f"JS: {len(seen_js)}) — результат недостоверен.\n", encoding="utf-8")
+        print(REPORT.read_text(encoding="utf-8"))
+        sys.exit(1)
 
     def own(h):
         return h == "vargov.ru" or h.endswith(".vargov.ru")
