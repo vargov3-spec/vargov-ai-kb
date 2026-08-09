@@ -352,10 +352,17 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const ph0=rng()*Math.PI*2 + Math.PI*lane;
     // «дыхание» сечения и блуждание центра — винт живой, не цилиндр
     const bf=1.1+rng()*1.2, bp=rng()*Math.PI*2;
-    const bAmp=0.16+0.10*rng();
+    // «дыхание» сечения ограничено шагом витка: радиальное отклонение не
+    // должно съедать зазор между соседними витками, иначе плотный винт не
+    // разводится и вся генерация уходит в страховку (метраж падал втрое)
+    const bMax=Math.max(0.03, (pitch - rw*0.97 - 34)/(2*Math.max(1,a1)));
+    const bAmp=Math.min(0.16+0.10*rng(), bMax);
     const cf1=0.8+rng()*0.9, cp1=rng()*Math.PI*2;
     const cf2=1.3+rng()*1.1, cp2=rng()*Math.PI*2;
-    const cAmp1=Math.min(a1*0.20, 90), cAmp2=Math.min(a2*0.20, 90);
+    // блуждание центра витка тоже сближает соседние витки: соседи могут
+    // разойтись в противоположные стороны, поэтому бюджет делится пополам
+    const cBud=Math.max(6,(pitch - rw*0.97 - 34)/4);
+    const cAmp1=Math.min(a1*0.20, 90, cBud), cAmp2=Math.min(a2*0.20, 90, cBud);
     const N=Math.max(30, Math.round(turns*16));
     const c1=dims[u1]/2, c2=dims[u2]/2, s0=(L-run)/2;
     for(let k2=0;k2<=N;k2++){
