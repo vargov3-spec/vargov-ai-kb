@@ -105,37 +105,12 @@
 
     <fieldset>
       <legend>Пластика ленты</legend>
-      <div class="row"><label for="form">Форма композиции</label>
-        <select id="form">
-          <option value="flow" selected>Поток (винт)</option>
-          <option value="wave">Волна</option>
-          <option value="ring">Кольцо</option>
-          <option value="horse">Подкова</option>
-          <option value="mean">Меандр</option>
-          <option value="eight">Восьмёрка</option>
-          <option value="vortex">Вихрь</option>
-          <option value="column">Колонна</option>
-          <option value="dome">Купол</option>
-          <option value="casc">Каскад</option>
-        </select>
-      </div>
       <div class="row"><label for="rows">Рядность</label>
         <select id="rows">
           <option value="1">1 ряд (2 контура)</option>
           <option value="2" selected>2 ряда (3 контура)</option>
         </select>
       </div>
-      <div class="row"><label for="lanes">Количество лент</label>
-        <select id="lanes">
-          <option value="1" selected>1 лента</option>
-          <option value="2">2 ленты</option>
-          <option value="3">3 ленты</option>
-          <option value="4">4 ленты</option>
-          <option value="5">5 лент</option>
-          <option value="6">6 лент</option>
-        </select>
-      </div>
-      <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="200" value="115"><span class="val" id="densityV"></span></div>
       <div class="row"><label for="frame">Каркас</label>
         <select id="frame">
           <option value="gold" selected>Золото</option>
@@ -1685,7 +1660,9 @@ function buildScene(){
     h:+ui.dimH.value || 800,
     d:+ui.dimD.value || 900,
   };
-  const lanes = Math.max(1, Math.min(6, +ui.lanes.value||1));
+  // одна лента, одна форма («Поток (винт)») и насыщенность 1× —
+  // выбора в интерфейсе нет
+  const lanes = 1;
   const rodLen = ROD_LENGTHS.indexOf(+ui.rWidth.value)>=0 ? +ui.rWidth.value : 300;
   setRodD(+ui.rodD.value===8 ? 8 : 10);   // диаметр трубки → шаг и допуски
   const params = {
@@ -1705,8 +1682,8 @@ function buildScene(){
     rodLen,
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
-    form: ui.form.value in FORMS ? ui.form.value : "flow",
-    lengthK: (+ui.density.value)/100,
+    form: "flow",
+    lengthK: 1.0,
     lanes,
   };
   // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
@@ -2273,7 +2250,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","form","rows","lanes","density","frame","rWidth","rodD","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","rows","frame","rWidth","rodD","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -2294,10 +2271,7 @@ GLASS_COLORS.forEach((c,i)=>{
   swBox.appendChild(el);
 });
 
-function refreshLabels(){
-  document.getElementById("densityV").textContent = (+ui.density.value/100).toFixed(2)+"×";
-}
-refreshLabels();
+function refreshLabels(){}
 
 let rebuildTimer=null;
 const rebuild = ()=>{
@@ -2305,9 +2279,8 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildScene, 120);
 };
-for(const id of ["dimW","dimD","dimH","form","rows","lanes","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
-ui.density.addEventListener("input", rebuild);
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
