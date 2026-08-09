@@ -124,6 +124,16 @@
           <option value="2" selected>2 ряда (3 контура)</option>
         </select>
       </div>
+      <div class="row"><label for="lanes">Количество лент</label>
+        <select id="lanes">
+          <option value="1" selected>1 лента</option>
+          <option value="2">2 ленты</option>
+          <option value="3">3 ленты</option>
+          <option value="4">4 ленты</option>
+          <option value="5">5 лент</option>
+          <option value="6">6 лент</option>
+        </select>
+      </div>
       <div class="row"><label for="density">Насыщенность</label><input id="density" type="range" min="60" max="400" value="115"><span class="val" id="densityV"></span></div>
       <div class="row"><label for="frame">Каркас</label>
         <select id="frame">
@@ -294,19 +304,37 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const u1=(ax+1)%3, u2=(ax+2)%3;   // оси сечения
     // полуоси эллипса сечения: лента в плоскости витка тонкая (15 мм),
     // запас 30 мм от стен
-    const a1=Math.max(120,(dims[u1]-60)/2), a2=Math.max(120,(dims[u2]-60)/2);
+    // сечение с запасом на «раздутие» маршем (волна, дуги, складка);
+    // у многожильного винта запас больше — жилы не должны налезать
+    const inS=170;
+    let a1=Math.max(110,(dims[u1]-inS)/2), a2=Math.max(110,(dims[u2]-inS)/2);
+    // МНОГОЖИЛЬНЫЙ ВИНТ: жилы — вложенные спирали. Радиальный разнос
+    // «ширина ленты + зазор» гарантирует, что жилы не пересекутся ни при
+    // какой фазе; сдвиг фазы на π через жилу делает переплетение живым.
+    if(lanes>1){
+      // радиально лента занимает лишь толщину стержня (15 мм) — её
+      // ширина идёт вдоль оси винта. Поэтому вложенные спирали можно
+      // разносить на 95 мм: зазор с запасом на волну и складку
+      const stepR=150;   // радиальный зазор жил с запасом на складку и волну
+      const k=Math.max(0.18, 1 - lane*stepR/Math.max(220, Math.min(a1,a2)));
+      a1*=k; a2*=k;
+    }
     // шаг витка: плотность из «Насыщенности», лестница разряжает
     // зазор витка: лента в винте слегка наклонена и несёт волну,
     // поэтому чистый шаг = ширина + 150, а не + 60
+    // многожильный винт: жилы идут по одной спирали со сдвигом фазы,
+    // поэтому обвивают друг друга; расстояние между жилами по окружности
+    // = периметр/lanes и должно быть больше ширины ленты с зазором
     const pitch=(rw+150)+(1-dens)*560+relax*300;
     const run=Math.max(rw+60, L-rw-60);          // ход вдоль оси
     // метраж ограничен: плотный шаг в большом сечении даёт десятки
     // метров, которые марш не проходит. Целевой запас — 1.55× от
     // «Насыщенности», дальше витки разряжаются
     const lenTurn=Math.PI*(a1+a2)*0.88;
-    const turnsCap=Math.max(1.2, (lengthK*2100*1.55)/Math.max(600,lenTurn));
+    // метраж делится между жилами: цель на композицию, не на ленту
+    const turnsCap=Math.max(1.2, (lengthK*2100*1.55/Math.max(1,lanes))/Math.max(600,lenTurn));
     const turns=Math.max(1.2, Math.min(16, run/pitch, turnsCap));
-    const ph0=rng()*Math.PI*2;
+    const ph0=rng()*Math.PI*2 + Math.PI*lane;
     // «дыхание» сечения и блуждание центра — винт живой, не цилиндр
     const bf=1.1+rng()*1.2, bp=rng()*Math.PI*2;
     const bAmp=0.16+0.10*rng();
@@ -421,12 +449,12 @@ function buildRibbon(params, rngSeed, lane){
   // только на радиус стержня (лента в плоскости витка тонкая)
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax };
-  let ctrl = controlPoints(style, rng, isFill?workF:work, 0, 1, ampl, lengthK);
+  let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
   // со своей фазой: обвивают друг друга, меняются сторонами, проходят
   // рядом и «пересекаются» визуально (геометрию разводит relax)
-  if(lanes>1){
+  if(lanes>1 && !isFill){
     const rB = Math.max(185, Math.min(0.3*Math.min(work.h, work.d)+60, 300));
     const winds = 0.4 + lengthK*0.35 + rng()*0.5;
     const ph0 = Math.PI*2*lane/lanes + rng()*0.5;
@@ -522,6 +550,9 @@ function buildRibbon(params, rngSeed, lane){
       geo.guideDn=geo.dirDn.map(v=>v.slice());
     }
     {
+      // лента центрируется по своему габариту; вложенные спирали соосны
+      // винта центрирование ОБЩЕЕ (иначе фазы жил съезжают и они
+      // налезают друг на друга) — его делает сцена
       const bb=geoBBox(geo);
       const sh=[(box.w-(bb.min[0]+bb.max[0]))/2, (box.h-(bb.min[1]+bb.max[1]))/2, (box.d-(bb.min[2]+bb.max[2]))/2];
       for(const c of geo.guideC){ c[0]+=sh[0]; c[1]+=sh[1]; c[2]+=sh[2]; }
@@ -1270,7 +1301,7 @@ function buildScene(){
     h:+ui.dimH.value || 800,
     d:+ui.dimD.value || 900,
   };
-  const lanes = 1; // одна лента заполняет пространство
+  const lanes = Math.max(1, Math.min(6, +ui.lanes.value||1));
   const params = {
     style: "chaos", // единственный стиль: хаотичное заполнение объёма
     box,
@@ -1289,12 +1320,17 @@ function buildScene(){
   // Спирали слоятся по высоте, остальные стили — по глубине.
   // Внутри ленты самопересечения разводит релаксация; при неудаче —
   // новый вариант, дальше постепенно снижаем насыщенность.
+  // сколько вложенных спиралей влезает по сечению габарита
+  const dimsS=[box.w,box.h,box.d].slice().sort((a,b)=>a-b);
+  const lanesFit=Math.max(1, Math.min(lanes, 1+Math.floor((Math.min((dimsS[0]-170)/2,(dimsS[1]-170)/2)-240)/150)));
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
   window.__ladder=[];
   outer:
-  for(let effLanes=lanes; effLanes>=1; effLanes--){
-    for(let attempt=0; attempt<10; attempt++){
+  for(let effLanes=lanesFit; effLanes>=1; effLanes--){
+    // многожильные варианты считаются дорого (пар капсул кратно больше)
+    const maxAtt = effLanes>2 ? 3 : (effLanes>1 ? 5 : 10);
+    for(let attempt=0; attempt<maxAtt; attempt++){
       // прогрессивное укрощение; с 6-й попытки — совсем спокойные
       // варианты: число лент важнее дикости формы
       const calm = attempt>=6;
@@ -1341,7 +1377,7 @@ function buildScene(){
       // вылет за габарит после разведения лечится утяжкой сцены
       // (сжать направляющие по перебравшим осям + перемаршировать),
       // иначе годная пластика бракуется из-за пары сантиметров
-      for(let fx=0; fx<3; fx++){
+      for(let fx=0; fx<6; fx++){
         const mM2=[1e9,1e9,1e9], xM2=[-1e9,-1e9,-1e9];
         for(const rb of ribbons){
           const b3=geoBBox(rb);
@@ -1353,7 +1389,7 @@ function buildScene(){
         const bc3=[0,1,2].map(k3=>(mM2[k3]+xM2[k3])/2);
         for(let k3=0;k3<3;k3++){
           if(ov3[k3]<=2) continue;
-          const sc3=Math.max(0.9,(lim3[k3]-ROD_D-10-fx*5)/Math.max(1,xM2[k3]-mM2[k3]));
+          const sc3=Math.max(effLanes>1?0.72:0.9,(lim3[k3]-ROD_D-10-fx*5)/Math.max(1,xM2[k3]-mM2[k3]));
           for(const rb of ribbons) for(const c of rb.guideC) c[k3]=bc3[k3]+(c[k3]-bc3[k3])*sc3*0.99;
         }
         for(const rb of ribbons) marchRibbon(rb);
@@ -1391,7 +1427,7 @@ function buildScene(){
   if(clear.collisions>0){
     rescue:
     for(let rl=lanes; rl>=1; rl--){
-      for(let rs=0; rs<10; rs++){
+      for(let rs=0; rs<(rl>2?4:10); rs++){
         // каждая следующая попытка короче и спокойнее: короткая плавная
         // лента разводится всегда — касания не показываются никогда
         const pS = Object.assign({}, params, {
@@ -1433,10 +1469,11 @@ function buildScene(){
   // строим заведомо разводимую спокойную дугу — композиций с касаниями
   // не бывает ни при каких настройках
   if(clear.collisions>0){
-    for(let k4=0;k4<8 && clear.collisions>0;k4++){
+    for(let k4=0;k4<12 && clear.collisions>0;k4++){
       const pF = Object.assign({}, params, {
         style:"wave", twistAmt:0, foldK:0,
-        ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1});
+        ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1,
+        fillRelax: 0});
       const rbF = buildRibbon(pF, (state.seed + 770001 + k4*911)>>>0, 0);
       rbF.clampMin=[0,0,0]; rbF.clampMax=[box.w,box.h,box.d];
       if(!rbF.fillMode) marchRibbon(rbF);
@@ -1738,6 +1775,8 @@ function updateSpec(){
       ${runsBreak?`<tr><td>Разбивка: пробеги (${runsBreak.lens.length})</td><td>${
         runsBreak.lens.map(v=>v.toFixed(2)).join(" + ")} м</td></tr>
       <tr><td>Развороты и подходы</td><td>${runsBreak.turns.toFixed(2)} м</td></tr>`:""}
+      <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
+        scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
       <tr><td>Рядность</td><td>${scene.params.rows===2?"2 ряда, 3 контура":"1 ряд, 2 контура"}</td></tr>
       <tr><td>Стеклянные стержни Ø15</td><td>${rods} шт</td></tr>
       <tr><td>Длина стержня (все одинаковые)</td><td>${[...byLen.keys()][0]} мм</td></tr>
@@ -1763,7 +1802,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","rows","density","frame","rWidth","leds","cables","showBox","autorot"]){
+for(const id of ["dimW","dimD","dimH","rows","lanes","density","frame","rWidth","leds","cables","showBox","autorot"]){
   ui[id] = document.getElementById(id);
 }
 const state = {seed: 20260807, color: GLASS_COLORS[0], lastSpec:null};
@@ -1795,7 +1834,7 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildScene, 120);
 };
-for(const id of ["dimW","dimD","dimH","rows","rWidth"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","rows","lanes","rWidth"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 ui.density.addEventListener("input", rebuild);
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
@@ -1829,6 +1868,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Стиль", "Хаос (заполнение объёма)"],
     ["Цвет стекла", state.color.name],
+    ["Лент в композиции, шт", scene.ribbons.length],
     ["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     ["К расчёту цены (округление вверх), пог. м", Math.ceil(s.totalLen/1000)],
