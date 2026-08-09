@@ -425,46 +425,48 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // от 150 мм. Радиально лента занимает только толщину трубки, значит
     // витки спирали можно ставить через 26 мм + воздух.
     if(box.plast==="edge"){
+      // ПЛАСТИКА «НА РЕБРО»: вся лента стоит на ребре (стержни вертикальны)
+      // и закручивается спиралью, повторяя контур выбранной формы. Изгиб
+      // идёт вокруг стержней — самый лёгкий для каркаса, поэтому спираль
+      // физична при любом радиусе от 150 мм. Соседние витки стоят друг над
+      // другом, поэтому шаг по высоте не меньше ширины ленты с воздухом.
       const H=dims[1];
       const sphE=(box.form==="sphere") ? sphereOf(dims, rw) : null;
-      // в шаре спираль живёт внутри эллипсоида: радиус ограничен его
-      // сечением на текущей высоте
-      const rhoMax=Math.max(200, Math.min(dims[0], dims[2])/2-ROD_R-20);
-      const rho0=Math.max(150, rhoMax*0.22);
-      const kx=(dims[0]/2-ROD_R-20)/rhoMax, kz=(dims[2]/2-ROD_R-20)/rhoMax;
-      // число витков — из правила производства, но шаг витка не тоньше
-      // диаметра трубки с воздухом
+      const rise=Math.max(rw*0.5, H-rw-40);          // набор высоты
+      const y0=(H-rise)/2;
+      const kx=(dims[0]/2-ROD_R-20), kz=(dims[2]/2-ROD_R-20);
+      // радиус витка по контуру формы на текущей высоте
+      const rhoAt=(y)=>{
+        if(!sphE) return 1;                          // параллелепипед: контур постоянный
+        const uy=(y-sphE.c[1])/Math.max(1,sphE.R[1]);
+        return Math.max(0.18, Math.sqrt(Math.max(0, 1-uy*uy)));
+      };
+      // витки: из правила производства, но не плотнее, чем позволяет
+      // ширина ленты по высоте
       const dens0=Math.max(0, Math.min(1, (lengthK-0.6)/1.4));
       const wK0=Math.max(0.5, Math.min(1.8, 300/rw));
       const tgt=(1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0;
-      const perim=Math.PI*(rho0+rhoMax)*(kx+kz)/2;
-      let nA=Math.max(1.2, Math.min((rhoMax-rho0)/(ROD_D+18), tgt/Math.max(300,perim)));
-      // подъём по высоте: лента занимает rw, остальное — плавный набор
-      const rise=Math.max(0, H-rw-60);
-      const y0=(H-rise)/2;
-      const NE=Math.max(60, Math.round(nA*40));
+      let rMean=0;
+      for(let i2=0;i2<=10;i2++) rMean+=rhoAt(y0+rise*i2/10)/11;
+      const perim=Math.PI*(kx+kz)*rMean;             // средняя длина витка
+      const nMax=Math.max(1, rise/(rw+22));
+      const nA=Math.max(1, Math.min(nMax, tgt/Math.max(300,perim)));
+      const NE=Math.max(80, Math.round(nA*48));
       const axisAtE=[];
       const phE=rng()*Math.PI*2, dirE=rng()<0.5?1:-1;
       for(let k3=0;k3<=NE;k3++){
         const t=k3/NE;
-        const rho=rho0+(rhoMax-rho0)*t;
-        const th=phE+dirE*Math.PI*2*nA*t;
         const yq=y0+rise*t;
-        // в шаре радиус спирали сужается по силуэту на этой высоте
-        let kf=1;
-        if(sphE){
-          const uy=(yq-sphE.c[1])/Math.max(1,sphE.R[1]);
-          kf=Math.max(0.18, Math.sqrt(Math.max(0, 1-uy*uy)));
-        }
-        const q=[dims[0]/2+rho*kx*kf*Math.cos(th),
-                 yq,
-                 dims[2]/2+rho*kz*kf*Math.sin(th)];
+        const kf=rhoAt(yq);
+        const th=phE+dirE*Math.PI*2*nA*t;
+        const q=[dims[0]/2+kx*kf*Math.cos(th), yq, dims[2]/2+kz*kf*Math.sin(th)];
         for(let x2=0;x2<3;x2++) q[x2]=Math.min(dims[x2]-25, Math.max(25, q[x2]));
         pts.push(q);
         axisAtE.push([0,1,0]);      // стержни вертикальны — лента на ребре
       }
       pts.__axisAt=axisAtE;
       pts.__target=tgt;
+      pts.__edge=true;
       if(sphE){
         const c=sphE.c.slice(), R=sphE.R.slice();
         pts.__formIn=(q2)=>{
@@ -504,7 +506,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // заданный объём обратно пропорционален ширине ленты: широкая лента
     // закрывает ту же площадь меньшим числом метров
     const wK=Math.max(0.5, Math.min(1.8, 300/rw));
-    const target=mult*L*wK/Math.max(1,lanes);
+    // ПРАВИЛО ПРОИЗВОДСТВА КАК МИНИМУМ: на 2000 мм габарита не меньше
+    // 4 пог. м ленты, то есть 2 пог. м на метр длины
+    const target=Math.max(2.05*L, mult*L*wK)/Math.max(1,lanes);
     // метраж даёт НЕ только навивка: ход вдоль осевой линии формы — уже
     // длина ленты. Витки добирают лишь остаток по теореме Пифагора
     // (винт разворачивается в прямоугольный треугольник S × витки·периметр)
@@ -528,6 +532,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // этот разнос был не меньше ширины ленты с воздухом — тогда жилы
     // физически не могут сблизиться ближе 10 мм
     if(lanes>1) turns=Math.min(turns, S/(lanes*(rw+30)));
+    // ФОРМА ДОЛЖНА ЧИТАТЬСЯ: у шара лента обязана заполнить силуэт целиком,
+    // поэтому витков берём столько, сколько физически влезает (шаг витка —
+    // ширина ленты с зазором), а не сколько просит правило метража
+    if(isSphere) turns=Math.max(turns, S/(rw+60)*0.70);
     // фаза захода: жилы равномерно по окружности витка
     const ph0=rng()*Math.PI*2 + Math.PI*2*lane/Math.max(1,lanes);
     // «дыхание» сечения и блуждание центра — винт живой, не цилиндр.
@@ -796,7 +804,11 @@ function buildRibbon(params, rngSeed, lane){
       fWind.push(t=>amps[x2]*(0.7*Math.sin(t*Math.PI*2*f1+p1)+0.3*Math.sin(t*Math.PI*2*f2+p2)));
     }
   }
-  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn, wind: (isFill?fWind:wind), foldK, axisAt};
+  const edgeMode=(params.plast==="edge");
+  const opt = {twistAt, ribbonW, rows, style, w0hint, foldUp, foldDn,
+               wind: (isFill?fWind:wind), foldK, axisAt,
+               // на ребро: ориентация ленты задана жёстко — стержни вертикальны
+               wForce: edgeMode ? [0,1,0] : null};
 
   // --- вписывание ---
   // Заполняющий маршрут построен сразу в верных координатах: сжатие ему
@@ -815,6 +827,7 @@ function buildRibbon(params, rngSeed, lane){
       if(opt.axisAt) opt.w0hint = ctrl.__axisAt[0].slice();
       geo = sampleGuide(ctrl, opt);
       geo.fillMode=true;
+      geo.edgeMode=edgeMode;
       geo.fillAxis=(opt.w0hint||fillAxisV).slice();
       geo.noSteer=true;
       marchRibbon(geo);
@@ -1037,7 +1050,10 @@ function sampleGuide(ctrl, opt){
     const t=T[i], w=Wf[i];
     const th = twistAt(i/(n-1));
     const cs=Math.cos(th), sn=Math.sin(th);
-    const wN = V.norm(V.add(V.mul(w,cs), V.mul(V.cross(t,w),sn)));
+    // «на ребро»: направление стержней задано жёстко (вертикаль), а не
+    // rotation-minimizing frame — иначе лента подкатывается с ребра
+    const wN = opt.wForce ? orthoTo(opt.wForce, t)
+                          : V.norm(V.add(V.mul(w,cs), V.mul(V.cross(t,w),sn)));
     guideD.push(wN);
     if(rows===2){
       const N=V.norm(V.cross(t,wN));
@@ -1287,7 +1303,7 @@ function marchRibbon(rb){
     // Руление: если поворот «плашмя» невозможен (поперечный конус),
     // лента сама докручивается на ребро поворота — как в реальности
     let wTgt = orthoTo(g.d, Tn);
-    if(rb.fillMode){
+    if(rb.fillMode && !rb.edgeMode){
       // банк: в повороте стержни выравниваются с осью изгиба (как
       // мотоцикл в вираже) — закрутка живёт на прямых участках
       const need=Math.max(Math.min(1, Math.abs(rawOp)/(0.5*A_OP)), needTurn)*0.9;
@@ -1320,7 +1336,7 @@ function marchRibbon(rb){
           wTgt=V.norm([wTgt[0]+(wCur[0]-wTgt[0])*k4, wTgt[1]+(wCur[1]-wTgt[1])*k4, wTgt[2]+(wCur[2]-wTgt[2])*k4]);
         }
       }
-    } else if(Math.abs(rawIp) > TH_IP*1.5){
+    } else if(!rb.edgeMode && Math.abs(rawIp) > TH_IP*1.5){
       let ax=V.cross(T, v);
       if(V.len(ax)>1e-4){
         ax=V.norm(ax);
@@ -1328,6 +1344,9 @@ function marchRibbon(rb){
         wTgt=orthoTo(ax, Tn);
       }
     }
+    // «на ребро»: стержни вертикальны по всей ленте — ни банк, ни доворот
+    // на ребро поворота не имеют права её подкатить
+    if(rb.edgeMode) wTgt = orthoTo([0,1,0], Tn);
     const sw = spinTowards(W, wTgt, Tn, omW, ROT_W, ACC);
     W=sw[0]; omW=sw[1];
     dirs.push(W);
@@ -1376,6 +1395,95 @@ function marchRibbon(rb){
       dirUp.push(Up); dirDn.push(Dn);
     }
     T=Tn;
+  }
+  // СГЛАЖИВАНИЕ КАРКАСА. Проволока Ø3 имеет собственную жёсткость и не
+  // может идти мелкими биениями: изломы короче ~5 см она сама распрямляет.
+  // Пропускаем осевую линию и направления рядов через лёгкий биномиальный
+  // фильтр (1-4-6-4-1 по пяти станциям ≈ 5 см) — контуры получаются
+  // плавными, а шаг станций и зазоры меняются меньше чем на процент.
+  {
+    const W5=[1,4,6,4,1], SW=16;
+    const smoothPts=(A)=>{
+      const out=A.map(p=>p.slice());
+      for(let i=2;i<A.length-2;i++){
+        for(let k=0;k<3;k++){
+          let acc=0;
+          for(let j=-2;j<=2;j++) acc+=A[i+j][k]*W5[j+2];
+          out[i][k]=acc/SW;
+        }
+      }
+      return out;
+    };
+    const smoothDirs=(A)=>{
+      if(!A) return A;
+      const out=A.map(p=>p.slice());
+      for(let i=2;i<A.length-2;i++){
+        const acc=[0,0,0];
+        for(let j=-2;j<=2;j++) for(let k=0;k<3;k++) acc[k]+=A[i+j][k]*W5[j+2];
+        const L=Math.hypot(acc[0],acc[1],acc[2])||1;
+        out[i]=[acc[0]/L, acc[1]/L, acc[2]/L];
+      }
+      return out;
+    };
+    const Cs=smoothPts(C);
+    for(let i=0;i<C.length;i++) C[i]=Cs[i];
+    const ds=smoothDirs(dirs);
+    for(let i=0;i<dirs.length;i++) dirs[i]=ds[i];
+    if(twoRow){
+      // ряды сглаживаем мягче (три станции): сильный фильтр сближает
+      // внутренние торцы ниже нормы 1 мм
+      const soft=(A)=>{
+        const out=A.map(p=>p.slice());
+        for(let i=1;i<A.length-1;i++){
+          const acc=[0,0,0];
+          for(let k=0;k<3;k++) acc[k]=A[i-1][k]+2*A[i][k]+A[i+1][k];
+          const L2=Math.hypot(acc[0],acc[1],acc[2])||1;
+          out[i]=[acc[0]/L2, acc[1]/L2, acc[2]/L2];
+        }
+        return out;
+      };
+      const du=soft(dirUp), dd=soft(dirDn);
+      for(let i=0;i<dirUp.length;i++){ dirUp[i]=du[i]; dirDn[i]=dd[i]; }
+    }
+    // ПЕРЕСЭМПЛИРОВАНИЕ РОВНЫМ ШАГОМ. Сглаживание чуть сдвигает станции, а
+    // шаг стержней должен остаться точным (иначе зазоры и радиус изгиба
+    // считаются по неравномерной сетке). Проходим сглаженную линию по длине
+    // дуги ровно через step и переносим на новую сетку направления рядов.
+    {
+      const cumC=[0];
+      for(let i=1;i<C.length;i++) cumC.push(cumC[i-1]+V.len(V.sub(C[i],C[i-1])));
+      const tot=cumC[cumC.length-1];
+      const m2=Math.max(8, Math.floor(tot/step)+1);
+      const C2=[], D2=[], U2=[], N2=[];
+      let j2=0;
+      for(let k2=0;k2<m2;k2++){
+        const Lq=Math.min(tot, k2*step);
+        while(j2<C.length-2 && cumC[j2+1]<Lq) j2++;
+        const seg=cumC[j2+1]-cumC[j2]||1, u=(Lq-cumC[j2])/seg;
+        const mix=(A)=>{
+          const q=[0,0,0];
+          for(let k=0;k<3;k++) q[k]=A[j2][k]+(A[j2+1][k]-A[j2][k])*u;
+          return q;
+        };
+        C2.push(mix(C));
+        D2.push(V.norm(mix(dirs)));
+        if(twoRow){ U2.push(V.norm(mix(dirUp))); N2.push(V.norm(mix(dirDn))); }
+      }
+      C.length=0; dirs.length=0; Ts.length=0;
+      if(twoRow){ dirUp.length=0; dirDn.length=0; }
+      for(let k2=0;k2<C2.length;k2++){
+        C.push(C2[k2]); dirs.push(D2[k2]);
+        if(twoRow){ dirUp.push(U2[k2]); dirDn.push(N2[k2]); }
+        Ts.push([1,0,0]);
+      }
+      for(let i=0;i<C.length;i++){
+        const a=C[Math.max(0,i-1)], b2=C[Math.min(C.length-1,i+1)];
+        const t2=V.sub(b2,a);
+        Ts[i]=V.len(t2)>1e-6 ? V.norm(t2) : (i>0?Ts[i-1]:[1,0,0]);
+      }
+      if(giMap.length>C.length) giMap.length=C.length;
+      while(giMap.length<C.length) giMap.push(giMap[giMap.length-1]||0);
+    }
   }
   // сборка стержней, кантов, нормалей
   const n=C.length;
@@ -1687,7 +1795,12 @@ function measureMinRadius(ribbons){
    ниже правила производства. Такое не показываем — лестница ищет дальше.
    Проверка идёт по покрытию направляющей, а не по габариту: у круглых
    форм (кольцо, восьмёрка) незаполненные углы — это сама форма. */
-function fillGate(ribbons){
+function fillGate(ribbons, box, totLen){
+  // правило производства: не меньше 2 пог. м на метр главного габарита
+  if(box && totLen!==undefined && totLen < 1.9*Math.max(box.w, box.h, box.d)) return false;
+  return fillGateGeom(ribbons);
+}
+function fillGateGeom(ribbons){
   for(const rb of ribbons){
     if(!rb.giMap || !rb.guideC || rb.guideC.length<8) continue;
     const cov=rb.giMap[rb.giMap.length-1]/Math.max(1, rb.guideC.length-2);
@@ -1857,7 +1970,7 @@ function buildScene(){
         // сильно утянутая сцена — та самая «вырожденная» генерация:
         // композиция сплющена в треть габарита. Это не брак геометрии,
         // но показывать её нельзя — ищем дальше
-        const gate=fillGate(ribbons) && Math.min(shr[0],shr[1],shr[2])>=0.86;
+        const gate=fillGate(ribbons, box, totLen) && Math.min(shr[0],shr[1],shr[2])>=0.86;
         // вариант, прошедший ворота, всегда лучше более длинного, но
         // вырожденного: иначе лестница выходит с оборванной лентой
         const better = !bestClean || (gate && !bestClean.gate) ||
@@ -1906,7 +2019,7 @@ function buildScene(){
           const lim2=[box.w,box.h,box.d];
           for(let k2=0;k2<3;k2++) if(xM[k2]-mM[k2]+ROD_D > lim2[k2]+2) fits=false;
         }
-        if(cl2.collisions===0 && fits && fillGate(rr)){
+        if(cl2.collisions===0 && fits && fillGate(rr, box, rr.reduce((a2,rb)=>a2+rb.ribbonLen,0))){
           cl2.attempt=99; cl2.lanes=rl;
           ribbons=rr; clear=cl2;
           break rescue;
