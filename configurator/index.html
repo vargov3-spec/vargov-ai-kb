@@ -125,6 +125,8 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Z)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Y)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="row"><label for="lenM">Метраж ленты, пог. м<br><span style="font-size:11px;opacity:.6">0 — автоматически</span></label>
+        <input id="lenM" type="number" min="0" max="60" step="0.5" value="0"></div>
       <div class="row"><label for="form">Форма габарита</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -431,7 +433,10 @@ function formOf(dims, rw, form){
   const clampTo=(q, mg, inset, ell)=>{
     const m=(mg===undefined)?0.97:mg, ins=inset||0;
     q[ax]=Math.min(c[ax]+R[ax], Math.max(c[ax]-R[ax], q[ax]));
-    const k=kAt(q[ax])*m;
+    // СВЕРХУ ФОРМЫ ВЫХОД ЗА КОНТУР ДОПУСКАЕТСЯ: у сужающихся форм верх — это
+    // раскрытие композиции, там лента имеет право выйти за силуэт
+    const hq=hAt(q[ax]);
+    const k=kAt(q[ax])*m*(1+0.35*Math.max(0, (hq-0.70)/0.30));
     // отступ на выступ стержней: в повороте лента перекатывается на ребро и
     // её торцы выметают радиус — направляющая должна идти внутри контура
     const a=Math.max(60, R[u1]*k-ins), b=Math.max(60, R[u2]*k-ins);
@@ -450,7 +455,12 @@ function envelopeSpine(dims, rw, form){
   // у остальных вертикаль), у параллелепипеда — самая длинная сторона
   const ax=fo ? fo.ax : dims.indexOf(Math.max(...dims));
   const u1=(ax+1)%3, u2=(ax+2)%3;
-  const rBox=(dim)=>Math.max(90, (dim-60-rw*0.7)/2);
+  // ПОЛУОСИ СЕЧЕНИЯ НАВИВКИ. Стержни в навивке лежат ВДОЛЬ осевой линии,
+  // поэтому ширина ленты в плоскости сечения места не занимает: резерв —
+  // радиус трубки с воздухом. Раньше вычиталась почти вся ширина ленты, и в
+  // узком габарите (500×500) сечение падало ниже предела витка — лента
+  // вырождалась в плоскую змейку вместо навивки
+  const rBox=(dim)=>Math.max(90, (dim-2*(ROD_R+12))/2);
   // ход осевой линии — размер формы вдоль оси минус выступ ленты: стержни
   // лежат поперёк навивки и выступают за её концы на полширины
   const Rax=Math.max(rw*0.6, dims[ax]/2-rw/2-ROD_R-10);
@@ -555,7 +565,8 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nFit=Math.max(1.2, (Math.min(kx,kz)*(rho1-rho0))/dR);
       const dens0=Math.max(0, Math.min(1, (lengthK-0.6)/1.4));
       const wK0=Math.max(0.5, Math.min(1.8, 300/rw));
-      const tgt=Math.max(2.05*Math.max(...dims), (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
+      const tgt=box.lenTarget ||
+        Math.max(2.05*Math.max(...dims), (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
       const perimMean=Math.PI*(kx+kz)*(rho0+rho1)/2;
       // ПЛОТНОСТЬ ПО ВЕРТИКАЛИ: шаг витка меньше ширины ленты — верхний виток
       // всегда немного перекрывает нижний, поэтому пустот между витками не
@@ -566,19 +577,22 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // в габарите 2400×900 это 24 пог. м стекла
       const riseMax=Math.max(0, H-rw-40);
       const nRule=tgt/Math.max(300,perimMean);
-      const nOver=riseMax/Math.max(1, rw*0.85);   // перекрытие витков 15%
+      // ПЛОТНОСТЬ: шаг витка меньше ширины ленты — верхний виток немного
+      // перекрывает нижний, пустот между витками не видно
+      const nOver=riseMax/Math.max(1, rw*0.85);
       // РАДИАЛЬНЫЙ ШАГ ЗА ВИТОК ОГРАНИЧЕН: если радиус уходит к центру больше
       // чем на ~220 мм за виток, спираль превращается в конус с крутым
       // заходом и марш её не проходит. Значит витков нужно не меньше, чем
       // требует плавность закручивания
       const nCurl=(rho1-rho0)*Math.min(kx,kz)/220;
-      const nNeed=Math.max(nRule*1.5, nOver, nCurl);
-      // витков не больше 2.2 правил метража (длинную спираль марш не
-      // проходит) — но плавность закручивания важнее этого предела
-      const nMax=Math.max(3, Math.min(nFit*0.92, Math.max(nRule*2.2, nCurl)));
-      const nA=Math.max(3, Math.min(nMax, nNeed));
-      // спуск (вершина внизу) укорачивается до плотного шага витка: лучше
-      // чуть меньше высота, чем видимые пустоты между витками
+      // сколько витков нужно: плотность, плавность закручивания и правило
+      // метража как нижняя граница. Предел — радиальная ёмкость формы
+      // при заданном вручную метраже витки считаются прямо от него
+      const nNeed=box.lenTarget ? Math.max(nRule, nCurl)
+                                : Math.max(nRule*1.5, nOver, nCurl);
+      const nA=Math.max(3, Math.min(nFit*0.92, Math.max(nNeed, nOver*(box.lenTarget?0:1))));
+      // спуск укорачивается до плотного шага витка: лучше чуть меньше высота,
+      // чем видимые пустоты между витками
       const rise=Math.min(riseMax, nA*rw*0.85);
       const y0=(H-rise)/2;
       const NE=Math.max(90, Math.round(nA*56));
@@ -601,11 +615,11 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
             kf=Math.max(0.2, Math.sqrt(Math.max(0, 1-uy*uy)));
           }
         }
-        // КАЖДЫЙ НИЖНИЙ ВИТОК МЕНЬШЕ ВЕРХНЕГО: радиус убывает монотонно и
-        // заметно (0.6·t), а на последнем витке уходит в центр формы (0.4·t³).
-        // Если витков мало (широкая лента в шаре), такой профиль даёт слишком
-        // крутой заход и марш его не проходит — там радиус убывает мягче
-        const uR=(nA>=5) ? (0.6*t+0.4*Math.pow(t,3)) : Math.pow(t,1.35);
+        // КАЖДЫЙ НИЖНИЙ ВИТОК МЕНЬШЕ ВЕРХНЕГО, но радиус держится у контура
+        // формы почти до конца и уходит в центр на последнем витке (t^2.5).
+        // Иначе середина композиции не доходила до границы формы (ромб, шар,
+        // барабан — там контур широк как раз посередине)
+        const uR=(nA>=5) ? Math.pow(t,2.5) : Math.pow(t,1.6);
         // РАДИУС: меньший из «своего» радиуса спирали и контура формы, но не
         // меньше радиуса финального завитка. Раньше они перемножались, и в
         // сужающихся формах (конус, капля) спираль схлопывалась в точку
@@ -661,7 +675,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const wK=Math.max(0.5, Math.min(1.8, 300/rw));
     // ПРАВИЛО ПРОИЗВОДСТВА КАК МИНИМУМ: на 2000 мм габарита не меньше
     // 4 пог. м ленты, то есть 2 пог. м на метр длины
-    const target=Math.max(2.05*L, mult*L*wK)/Math.max(1,lanes);
+    // РУЧНОЙ МЕТРАЖ: если задан, он и есть цель (правило производства —
+    // только значение по умолчанию)
+    const target=(box.lenTarget || Math.max(2.05*L, mult*L*wK))/Math.max(1,lanes);
     // метраж даёт НЕ только навивка: ход вдоль осевой линии формы — уже
     // длина ленты. Витки добирают лишь остаток по теореме Пифагора
     // (винт разворачивается в прямоугольный треугольник S × витки·периметр)
@@ -721,9 +737,13 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // точек хватает и на витки, и на изгибы самой осевой линии
     const N=Math.max(30, Math.round(Math.max(turns*16, S/60)));
     const axisAt=[];
+    // У СУЖАЮЩИХСЯ ФОРМ ЛЕНТА ИДЁТ СВЕРХУ ВНИЗ И КОНЧАЕТСЯ В НИЖНЕМ ЦЕНТРЕ
+    // ФОРМЫ: обход осевой линии разворачивается, а сечение витка сходит к оси
+    // на последних процентах пути
+    const revAx=!!(fo && fo.ax===1);
     for(let k2=0;k2<=N;k2++){
       const t=k2/N;
-      const g=atSpine(S*t);
+      const g=atSpine(S*(revAx ? 1-t : t));
       const T=g.T;
       // рамка навивки: e1 вдоль опорного вектора формы, e2 — ход×e1
       let e1=V.sub(sp.ref, V.mul(T, V.dot(sp.ref,T)));
@@ -737,6 +757,8 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // (у шара к полюсам, у конуса к низу, у песочных часов к середине)
       let kS=1;
       if(fo) kS=Math.max(0.10, fo.kAt(g.p[fo.ax]));
+      // сход к оси на конце пути — лента приходит в центр низа формы
+      if(revAx) kS*=Math.max(0.04, Math.min(1, (1-t)/0.14));
       const B1=A1s*kS*br, B2=A2s*kS*br;
       // СЕЧЕНИЕ ВИТКА: эллипс, если его радиус на остром конце (b²/a) проходит
       // технологический предел, иначе стадион. Стадион — «скруглённый
@@ -867,7 +889,8 @@ function buildRibbon(params, rngSeed, lane){
   // только на радиус стержня (лента в плоскости витка тонкая)
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
-                  form: params.form||"box", plast: params.plast||"mix" };
+                  form: params.form||"box", plast: params.plast||"mix",
+                  lenTarget: params.lenTarget||0 };
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
@@ -925,7 +948,7 @@ function buildRibbon(params, rngSeed, lane){
   const foldGeo=(()=>{
     const dW=[workF.w, workF.h, workF.d];
     const axW=dW.indexOf(Math.max(...dW));
-    const rB=(d)=>Math.max(90,(d-60-rw*0.7)/2);
+    const rB=(d)=>Math.max(90,(d-2*(ROD_R+12))/2);
     const Rsec=Math.min(rB(dW[(axW+1)%3]), rB(dW[(axW+2)%3]))*0.88;
     // тесное сечение раньше душило складку целиком; теперь допустимый
     // наклон считает сам марш по зазору, поэтому пол поднят
@@ -2142,8 +2165,12 @@ function measureMinRadius(ribbons){
    Проверка идёт по покрытию направляющей, а не по габариту: у круглых
    форм (кольцо, восьмёрка) незаполненные углы — это сама форма. */
 function fillGate(ribbons, box, totLen){
-  // правило производства: не меньше 2 пог. м на метр главного габарита
-  if(box && totLen!==undefined && totLen < 1.9*Math.max(box.w, box.h, box.d)) return false;
+  // правило производства: не меньше 2 пог. м на метр главного габарита,
+  // а при заданном вручную метраже — не меньше 85% от заказанного
+  if(box && totLen!==undefined){
+    const need=box.lenTarget ? box.lenTarget*0.70 : 1.9*Math.max(box.w, box.h, box.d);
+    if(totLen < need) return false;
+  }
   return fillGateGeom(ribbons);
 }
 function fillGateGeom(ribbons){
@@ -2184,6 +2211,8 @@ function buildScene(){
     w:+ui.dimW.value || 2400,
     h:+ui.dimH.value || 800,
     d:+ui.dimD.value || 900,
+    // ручной метраж (мм); 0 — по правилу производства
+    lenTarget: Math.max(0, Math.min(60, +ui.lenM.value||0))*1000,
   };
   // одна лента, одна форма («Поток (винт)») и насыщенность 1× —
   // выбора в интерфейсе нет
@@ -2213,6 +2242,8 @@ function buildScene(){
     form: (FORMS[ui.form.value] ? ui.form.value : "box"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
     lengthK: 1.0,
+    // РУЧНОЙ МЕТРАЖ: 0 — по правилу производства
+    lenTarget: Math.max(0, Math.min(60, +ui.lenM.value||0))*1000,
     lanes,
   };
   // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
@@ -2255,6 +2286,9 @@ function buildScene(){
             // складка = независимое положение центрального контура: гасить
             // её лестницей почти не нужно (её и так ограничивает зазор)
             foldK: params.foldK*Math.pow(0.85, attempt),
+            // ручной метраж не всегда строится чисто: с каждой попыткой
+            // уступаем по 10%, иначе вариант уходит на страховочный проход
+            lenTarget: (params.lenTarget||0)*Math.pow(0.90, attempt),
           })
         : Object.assign({}, params, {
             lengthK: calm ? params.lengthK*0.55*Math.pow(0.8, a2)
@@ -2420,6 +2454,10 @@ function buildScene(){
           lengthK: Math.max(0.35, params.lengthK*0.8*Math.pow(0.82, rs)),
           // и в страховочном варианте центральный контур независим
           foldK: params.foldK*0.7,
+          // страховка НЕ держится за ручной метраж: если заказанный метраж
+          // не строится, лучше показать плотную автоматическую композицию,
+          // чем спокойную дугу последнего рубежа
+          lenTarget: 0,
           style: rs>=4 ? "wave" : params.style});
         const rr = [];
         const rSeed = (state.seed + 900001 + rs*57 + rl*31)>>>0;
@@ -2476,7 +2514,7 @@ function buildScene(){
       const pF = Object.assign({}, params, {
         // последний рубеж — гарантированно разводимая дуга: складку здесь
         // не просим совсем, иначе теряется сама гарантия
-        style:"wave", twistAmt:0, foldK: 0,
+        style:"wave", twistAmt:0, foldK: 0, lenTarget: 0,
         ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1,
         fillRelax: 0});
       const rbF = buildRibbon(pF, (state.seed + 770001 + k4*911)>>>0, 0);
@@ -2969,7 +3007,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","lenM","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -2999,7 +3037,7 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildDeferred, 120);
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","lenM","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
