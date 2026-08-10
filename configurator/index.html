@@ -402,23 +402,45 @@ function formOf(dims, rw, form){
   if(!F.prof) return null;
   const ax=F.axLong ? dims.indexOf(Math.max(...dims)) : 1;
   const u1=(ax+1)%3, u2=(ax+2)%3;
-  const Rax=Math.max(rw*0.6, dims[ax]/2-rw/2-ROD_R-10);
-  const R1=Math.max(90, dims[u1]/2-ROD_R-15);
-  const R2=Math.max(90, dims[u2]/2-ROD_R-15);
-  const R=[0,0,0];
-  R[ax]=Rax+rw*0.5; R[u1]=R1+ROD_R+8; R[u2]=R2+ROD_R+8;
+  // САМА ФОРМА вписана в габарит симметрично: полуоси одинаково уменьшены на
+  // радиус трубки с воздухом. Раньше вдоль оси дополнительно вычиталась
+  // полширины ленты (запас на выступ стержней) — и «шар» в кубе выходил
+  // приплюснутым эллипсоидом. Запас на стержни нужен только ходу осевой
+  // линии навивки (Rax), а не форме
+  const R=[dims[0]/2-ROD_R-10, dims[1]/2-ROD_R-10, dims[2]/2-ROD_R-10];
+  for(let k=0;k<3;k++) R[k]=Math.max(60, R[k]);
+  const Rax=Math.max(rw*0.6, R[ax]-rw/2);       // ход осевой линии
+  const R1=Math.max(90, R[u1]-ROD_R-5);         // полуоси сечения навивки
+  const R2=Math.max(90, R[u2]-ROD_R-5);
   const c=[dims[0]/2, dims[1]/2, dims[2]/2];
   const prof=F.prof, rect=!!F.rect;
   // доля оси: 0 — «низ» (или начало) оси, 1 — «верх»
-  const hAt=(v)=>Math.min(1, Math.max(0, 0.5+(v-c[ax])/(2*Rax)));
+  const hAt=(v)=>Math.min(1, Math.max(0, 0.5+(v-c[ax])/(2*R[ax])));
   const kAt=(v)=>Math.max(0.07, prof(hAt(v)));
   const inside=(q)=>{
-    if(Math.abs(q[ax]-c[ax])>Rax+1) return false;
+    if(Math.abs(q[ax]-c[ax])>R[ax]+1) return false;
     const k=kAt(q[ax]);
     const a=(q[u1]-c[u1])/(R[u1]*k), b=(q[u2]-c[u2])/(R[u2]*k);
     return rect ? (Math.abs(a)<=1 && Math.abs(b)<=1) : (a*a+b*b<=1);
   };
-  return {form, ax, u1, u2, Rax, R1, R2, R, c, prof, rect, hAt, kAt, inside};
+  // ПОДЖАТЬ ТОЧКУ ВНУТРЬ ФОРМЫ (на месте). Дыхание сечения, блуждание центра
+  // и покоординатный масштаб могут вынести точку направляющей за силуэт —
+  // проекция к оси формы возвращает её на контур с внутренним запасом
+  // ell=true — поджимать по вписанному эллипсу даже у прямоугольных форм:
+  // проекция на квадрат даёт углы, а на углах марш ломается
+  const clampTo=(q, mg, inset, ell)=>{
+    const m=(mg===undefined)?0.97:mg, ins=inset||0;
+    q[ax]=Math.min(c[ax]+R[ax], Math.max(c[ax]-R[ax], q[ax]));
+    const k=kAt(q[ax])*m;
+    // отступ на выступ стержней: в повороте лента перекатывается на ребро и
+    // её торцы выметают радиус — направляющая должна идти внутри контура
+    const a=Math.max(60, R[u1]*k-ins), b=Math.max(60, R[u2]*k-ins);
+    const s1=(q[u1]-c[u1])/a, s2=(q[u2]-c[u2])/b;
+    const n=(rect&&!ell) ? Math.max(Math.abs(s1), Math.abs(s2)) : Math.hypot(s1,s2);
+    if(n>1){ q[u1]=c[u1]+(q[u1]-c[u1])/n; q[u2]=c[u2]+(q[u2]-c[u2])/n; }
+    return q;
+  };
+  return {form, ax, u1, u2, Rax, R1, R2, R, c, prof, rect, hAt, kAt, inside, clampTo};
 }
 
 function envelopeSpine(dims, rw, form){
@@ -584,7 +606,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // Если витков мало (широкая лента в шаре), такой профиль даёт слишком
         // крутой заход и марш его не проходит — там радиус убывает мягче
         const uR=(nA>=5) ? (0.6*t+0.4*Math.pow(t,3)) : Math.pow(t,1.35);
-        const rho=(rho1-(rho1-rho0)*uR)*kf;
+        // РАДИУС: меньший из «своего» радиуса спирали и контура формы, но не
+        // меньше радиуса финального завитка. Раньше они перемножались, и в
+        // сужающихся формах (конус, капля) спираль схлопывалась в точку
+        const rho=Math.max(rho0, Math.min(rho1-(rho1-rho0)*uR, kf));
         const th=phE+dirE*Math.PI*2*nA*t;
         // внутренние витки — круглые, внешние вытянуты по габариту: иначе
         // у вытянутого внутреннего витка радиус на конце (b²/a) падает ниже
@@ -594,6 +619,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         const q=[dims[0]/2+sxE*rho*Math.cos(th), yq, dims[2]/2+szE*rho*Math.sin(th)];
         for(let x2=0;x2<3;x2++) q[x2]=Math.min(dims[x2]-25, Math.max(25,
               dims[x2]/2+(q[x2]-dims[x2]/2)*sK[x2]));
+        if(sphE) sphE.clampTo(q, 1.0, ROD_R+4, true);
         pts.push(q);
         axisAtE.push([0,1,0]);      // стержни вертикальны — лента на ребре
       }
@@ -605,6 +631,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         pts.__formAx={ax:sphE.ax, c:sphE.c.slice(),
                       s0:sphE.c[sphE.ax]-sphE.Rax, s1:sphE.c[sphE.ax]+sphE.Rax};
         pts.__formDraw={c:sphE.c.slice(), R:sphE.R.slice(), form:box.form};
+        pts.__formClamp=sphE.clampTo;
       }
       return pts;
     }
@@ -733,6 +760,8 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         q[x2]=Math.min(dims[x2]-25, Math.max(25,
               dims[x2]/2+(v-dims[x2]/2)*sK[x2]));
       }
+      // ЛЕНТА НЕ ДОЛЖНА ВЫХОДИТЬ ЗА ФОРМУ: точка поджимается к силуэту
+      if(fo) fo.clampTo(q, 1.0, rw*0.15);
       pts.push(q);
       axisAt.push(T);   // стержни — вдоль осевой линии формы
     }
@@ -742,6 +771,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       pts.__formIn=fo.inside;
       pts.__formAx={ax:fo.ax, c:fo.c.slice(), s0:fo.c[fo.ax]-fo.Rax, s1:fo.c[fo.ax]+fo.Rax};
       pts.__formDraw={c:fo.c.slice(), R:fo.R.slice(), form:box.form};
+      pts.__formClamp=fo.clampTo;
     }
     return pts;
   }
@@ -1005,9 +1035,11 @@ function buildRibbon(params, rngSeed, lane){
       // иначе второй марш пойдёт по «внешней» направляющей и лента вылезет
       // из нарисованного пунктиром объёма
       if(ctrl.__formIn && ctrl.__formAx){
-        const fin=ctrl.__formIn, fa=ctrl.__formAx;
+        const fin=ctrl.__formIn, fa=ctrl.__formAx, fcl=ctrl.__formClamp;
         for(const c of geo.centers){
           if(fin(c)) continue;
+          // проекция на силуэт формы (жёстче прежней утяжки к оси)
+          if(fcl){ fcl(c, 0.97); continue; }
           const near=[fa.c[0], fa.c[1], fa.c[2]];
           near[fa.ax]=Math.max(fa.s0, Math.min(fa.s1, c[fa.ax]));
           for(let it=0; it<12 && !fin(c); it++)
@@ -1046,8 +1078,18 @@ function buildRibbon(params, rngSeed, lane){
       }
       if(ctrl.__formIn){
         // предикат задан до центрирующего сдвига — компенсируем его
-        const fin=ctrl.__formIn, qq=[0,0,0];
-        geo.formIn=(q3)=>{ for(let x=0;x<3;x++) qq[x]=q3[x]-shC[x]; return fin(qq); };
+        const fin=ctrl.__formIn, fcl=ctrl.__formClamp, qq=[0,0,0], sh=shC.slice();
+        geo.formIn=(q3)=>{ for(let x=0;x<3;x++) qq[x]=q3[x]-sh[x]; return fin(qq); };
+        // поджать точку направляющей внутрь формы (с тем же сдвигом):
+        // масштабирование направляющей при вписывании в габарит иначе
+        // выносит её за силуэт формы
+        if(fcl) geo.formClamp=(q3)=>{
+          for(let x=0;x<3;x++) qq[x]=q3[x]-sh[x];
+          // осевая линия — внутри силуэта формы, а стержням позволено
+          // немного выходить за контур: такие выходы делают композицию живее
+          fcl(qq, 1.0, 0, true);
+          for(let x=0;x<3;x++) q3[x]=qq[x]+sh[x];
+        };
         geo.formDraw=ctrl.__formDraw;
       }
       geo.noSteer=false;
@@ -1077,6 +1119,8 @@ function buildRibbon(params, rngSeed, lane){
         const scaleGuide=(k2, sc, bc)=>{
           cum[k2]*=sc;
           for(const c of geo.guideC) c[k2]=bc[k2]+(c[k2]-bc[k2])*sc;
+          // вписывание в габарит не имеет права выносить ленту за форму
+          if(geo.formClamp) for(const c of geo.guideC) geo.formClamp(c);
         };
         let st=stateOf();
         let best=null;
@@ -1497,6 +1541,11 @@ function marchRibbon(rb){
       // ГРАНИЦА ФОРМЫ ГАБАРИТА: если прогноз хода уходит за форму, руль
       // тянет станцию к направляющей — она по построению внутри формы
       if(rb.formIn){
+        // уже вышли за форму — доворот к направляющей с полной силой
+        if(!rb.formIn(C[k-1])){
+          for(let x=0;x<3;x++) v2[x]+=(g.c[x]-C[k-1][x])/220*2.6;
+          steer=true;
+        }
         for(const hz of [[230,1.0],[80,2.2]]){
           const look=hz[0], gain=hz[1];
           const q4=[C[k-1][0]+v[0]*look, C[k-1][1]+v[1]*look, C[k-1][2]+v[2]*look];
@@ -2256,6 +2305,7 @@ function buildScene(){
           shr[k3]*=sc3*0.99;
           for(const rb of ribbons) for(const c of rb.guideC) c[k3]=bc3[k3]+(c[k3]-bc3[k3])*sc3*0.99;
         }
+        for(const rb of ribbons) if(rb.formClamp) for(const c of rb.guideC) rb.formClamp(c);
         for(const rb of ribbons) marchRibbon(rb);
         clear = resolveCollisions(ribbons, box);
         clear.attempt = attempt; clear.lanes = effLanes;
@@ -2286,6 +2336,7 @@ function buildScene(){
           const sc4=Math.min(1.06, need4[k3]);
           for(const rb of ribbons) for(const c of rb.guideC) c[k3]=bc4[k3]+(c[k3]-bc4[k3])*sc4;
         }
+        for(const rb of ribbons) if(rb.formClamp) for(const c of rb.guideC) rb.formClamp(c);
         for(const rb of ribbons) marchRibbon(rb);
         const cl4=resolveCollisions(ribbons, box);
         const sb2=sceneBB();
@@ -2562,7 +2613,7 @@ function buildScene(){
     const fo=formOf([Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
                     params.ribbonW, params.form);
     if(fo) env={kind:"form", form:params.form, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
-                R:fo.R.slice(), Rax:fo.Rax, rect:fo.rect, prof:fo.prof};
+                R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
   }
   scene = {box, ribbons, params, clear, env};
   updateSpec();
@@ -2686,28 +2737,39 @@ function draw(){
         }
         return out;
       };
-      poly(ringAt(0)); poly(ringAt(1));
-      const NH=48;
-      if(E.rect){
-        for(const sg of [[1,1],[1,-1],[-1,-1],[-1,1]]){
-          const line=[];
-          for(let j2=0;j2<=NH;j2++){
-            const h=j2/NH, k=kOf(h);
-            line.push(pAt(h, sg[0]*ea0*k, sg[1]*eb0*k));
+      // ОЧЕРК ФОРМЫ — выпуклая оболочка проекции её сечений. Так очерк
+      // верен при любом ракурсе: когда ось формы смотрит в камеру, силуэт
+      // даёт «экватор», когда поперёк — профиль. Отдельные силуэтные кривые
+      // в первом случае схлопывались, и «шар» в кубе выглядел двумя точками
+      {
+        const pts2=[];
+        for(let jh=0; jh<=24; jh++){
+          for(const q of ringAt(jh/24)){
+            if(project(q,B,p1)) pts2.push([p1[0],p1[1]]);
           }
-          poly(line);
         }
-      } else {
-        const rx=B.right[e1i], rz=B.right[e2i];
-        const sA=[], sB=[];
-        for(let j2=0;j2<=NH;j2++){
-          const h=j2/NH, k=kOf(h), a=ea0*k, b=eb0*k;
-          const e=Math.hypot(a*rx, b*rz)||1;
-          const o1=a*a*rx/e, o2=b*b*rz/e;
-          sA.push(pAt(h, o1, o2)); sB.push(pAt(h, -o1, -o2));
+        if(pts2.length>2){
+          pts2.sort((a2,b2)=>a2[0]-b2[0]||a2[1]-b2[1]);
+          const cr=(o,a2,b2)=>(a2[0]-o[0])*(b2[1]-o[1])-(a2[1]-o[1])*(b2[0]-o[0]);
+          const lo=[], up=[];
+          for(const q of pts2){
+            while(lo.length>=2 && cr(lo[lo.length-2],lo[lo.length-1],q)<=0) lo.pop();
+            lo.push(q);
+          }
+          for(let k4=pts2.length-1;k4>=0;k4--){
+            const q=pts2[k4];
+            while(up.length>=2 && cr(up[up.length-2],up[up.length-1],q)<=0) up.pop();
+            up.push(q);
+          }
+          const hull=lo.concat(up.slice(1));
+          ctx.beginPath();
+          ctx.moveTo(hull[0][0], hull[0][1]);
+          for(let k4=1;k4<hull.length;k4++) ctx.lineTo(hull[k4][0], hull[k4][1]);
+          ctx.closePath(); ctx.stroke();
         }
-        poly(sA); poly(sB);
       }
+      // верхнее и нижнее сечения — форма читается в объёме
+      poly(ringAt(0)); poly(ringAt(1));
     }
     ctx.setLineDash([]);
     // подписи размеров
@@ -3049,7 +3111,7 @@ function drawSplash(msg){
     const fo=formOf([Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
                     rw, ui.form.value);
     if(fo) env={kind:"form", form:ui.form.value, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
-                R:fo.R.slice(), Rax:fo.Rax, rect:fo.rect, prof:fo.prof};
+                R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
   }
   scene={box, ribbons:[], params:{form:ui.form.value, ribbonW:rw, rows:+ui.rows.value, lanes:1},
          clear:{collisions:0}, env};
