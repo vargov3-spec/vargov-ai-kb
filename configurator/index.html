@@ -30,6 +30,21 @@
     scrollbar-width:thin; scrollbar-gutter:stable;
   }
   #stage{flex:1; position:relative; min-width:0}
+  /* индикатор генерации: вращение задано CSS-анимацией трансформа — она идёт
+     на композиторе и продолжается, пока основной поток занят сборкой */
+  #busy{
+    position:absolute; left:50%; bottom:54px; transform:translateX(-50%);
+    display:none; align-items:center; gap:10px; padding:9px 16px;
+    background:rgba(16,16,20,.86); border:1px solid var(--line);
+    border-radius:20px; color:var(--gold2); font-size:13px; pointer-events:none;
+  }
+  #busy.on{display:flex}
+  #busy .spin{
+    width:15px; height:15px; border-radius:50%;
+    border:2px solid rgba(201,162,39,.25); border-top-color:var(--gold);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
   canvas{display:block; width:100%; height:100%; cursor:grab}
   canvas:active{cursor:grabbing}
   fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
@@ -178,6 +193,7 @@
   <div id="stage">
     <canvas id="cv"></canvas>
     <div id="dims"></div>
+    <div id="busy"><span class="spin"></span><span id="busyTxt">Подбор варианта композиции…</span></div>
     <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
   </div>
 </div>
@@ -456,7 +472,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const phE=rng()*Math.PI*2, dirE=rng()<0.5?1:-1;
       for(let k3=0;k3<=NE;k3++){
         const t=k3/NE;
-        const yq=y0+rise*t;
+        // ВЕРШИНА ВСЕГДА ВНИЗ: спираль закручивается к центру и одновременно
+        // ОПУСКАЕТСЯ, поэтому самый маленький внутренний виток оказывается
+        // снизу — композиция висит вершиной вниз, как люстра
+        const yq=y0+rise*(1-t);
         // контур формы на этой высоте (у шара сечение сужается к полюсам)
         let kf=1;
         if(sphE){
@@ -2879,18 +2898,26 @@ function drawSplash(msg){
          clear:{collisions:0}, env};
   camera.fitTo(box);
   draw();
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  ctx.fillStyle="rgba(214,201,166,.9)"; ctx.font="15px system-ui";
-  ctx.textAlign="center";
-  ctx.fillText(msg, cw/2, chgt-38);
-  ctx.textAlign="left";
+  if(msg){
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.fillStyle="rgba(214,201,166,.9)"; ctx.font="15px system-ui";
+    ctx.textAlign="center";
+    ctx.fillText(msg, cw/2, chgt-38);
+    ctx.textAlign="left";
+  }
 }
 /* сборка после отрисовки кадра с подписью — интерфейс отвечает сразу.
    Первая сборка обязана уйти ЗА событие load: иначе браузер (и обёртка
    iframe) держит индикатор загрузки все секунды подбора варианта */
 function buildDeferred(){
-  drawSplash("Подбор варианта композиции…");
-  const run=()=>{ buildScene(); needRedraw=true; };
+  drawSplash("");
+  const busy=document.getElementById("busy");
+  if(busy) busy.classList.add("on");
+  const run=()=>{
+    try { buildScene(); }
+    finally { if(busy) busy.classList.remove("on"); }
+    needRedraw=true;
+  };
   if(document.readyState!=="complete")
     window.addEventListener("load", ()=>setTimeout(run, 30), {once:true});
   else requestAnimationFrame(()=>setTimeout(run, 0));
