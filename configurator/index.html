@@ -1024,6 +1024,7 @@ function buildRibbon(params, rngSeed, lane){
     // Из двух проходов остаётся лучший — тот, что вписался и заполнил больше.
     let secK=[1,1,1], shC=[0,0,0];
     let bestPass=null;
+
     for(let pass=0; pass<3; pass++){
       shC=[0,0,0];
       // ДОБОР МЕТРАЖА: предмарш замеряет фактическую длину. Марш срезает
@@ -1048,7 +1049,7 @@ function buildRibbon(params, rngSeed, lane){
         const tg=ctrl.__target||0;
         const got=geo.ribbonLen||1;
         if(!tg || got>=0.94*tg || bi===1) break;
-        boost=Math.min(1.8, boost*Math.min(1.45, tg/got));
+        boost=Math.min(2.6, boost*Math.min(1.45, tg/got));
       }
       // покрытие ПРЕДМАРША: если сорвался он, второй марш пройдёт короткую
       // направляющую целиком и обрыв останется незамеченным
