@@ -45,6 +45,15 @@
     animation:spin .8s linear infinite;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
+  /* круглая кнопка повторной генерации — прямо в окне композиции */
+  #regen2{
+    position:absolute; right:22px; bottom:22px; width:54px; height:54px;
+    border-radius:50%; border:1px solid var(--gold2); cursor:pointer;
+    background:radial-gradient(circle at 34% 30%, #d8b356, #a9822a 70%, #7d5f1c);
+    color:#1a1408; font-size:22px; line-height:1; box-shadow:0 4px 16px rgba(0,0,0,.5);
+  }
+  #regen2:hover{filter:brightness(1.12)}
+  #regen2:active{transform:translateY(1px)}
   canvas{display:block; width:100%; height:100%; cursor:grab}
   canvas:active{cursor:grabbing}
   fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
@@ -194,6 +203,7 @@
     <canvas id="cv"></canvas>
     <div id="dims"></div>
     <div id="busy"><span class="spin"></span><span id="busyTxt">Подбор варианта композиции…</span></div>
+    <button id="regen2" title="Сгенерировать новый вариант" aria-label="Сгенерировать новый вариант">✦</button>
     <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
   </div>
 </div>
@@ -454,18 +464,25 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const kx=(dims[0]/2-ROD_R-20), kz=(dims[2]/2-ROD_R-20);
       const dR=ROD_D+22;                    // радиальный шаг между витками
       const rho1=1.0;                       // внешний виток — по контуру формы
-      const rho0=Math.max(0.14, 170/Math.min(kx,kz));  // внутренний: радиус ≥170 мм
+      // НИЖНИЙ КОНЕЦ ЗАКРУЧИВАЕТСЯ К ЦЕНТРУ ФОРМЫ: последний виток уходит
+      // почти в ось. Лента на ребре гнётся вокруг своих вертикальных
+      // стержней — это самый лёгкий изгиб, поэтому финальный завиток
+      // радиусом 110 мм каркас проходит
+      const rho0=Math.max(0.10, 110/Math.min(kx,kz));
       // сколько витков влезает радиально и сколько просит правило метража
       const nFit=Math.max(1.2, (Math.min(kx,kz)*(rho1-rho0))/dR);
       const dens0=Math.max(0, Math.min(1, (lengthK-0.6)/1.4));
       const wK0=Math.max(0.5, Math.min(1.8, 300/rw));
       const tgt=Math.max(2.05*Math.max(...dims), (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
       const perimMean=Math.PI*(kx+kz)*(rho0+rho1)/2;
-      // витков не меньше 2.5 (иначе спираль не читается как спираль) и не
-      // больше, чем влезает радиально; правило метража — нижняя граница
-      const nA=Math.max(2.5, Math.min(nFit, Math.max(tgt/Math.max(300,perimMean), 2.5)));
-      // подъём/спуск по высоте — плавный, лента при этом остаётся на ребре
-      const rise=Math.min(Math.max(0, H-rw-40), (H-rw)*0.6);
+      // ПЛОТНОСТЬ: витков в полтора раза больше, чем требует правило метража
+      // (спираль читается плотной), но не больше, чем влезает радиально —
+      // шаг между витками не меньше толщины трубки с воздухом. Брать всю
+      // радиальную ёмкость нельзя: в габарите 2400×900 это 24 пог. м стекла
+      const nRule=tgt/Math.max(300,perimMean);
+      const nA=Math.max(3, Math.min(nFit, nRule*1.5));
+      // спуск использует всю высоту формы (вершина внизу)
+      const rise=Math.max(0, H-rw-40);
       const y0=(H-rise)/2;
       const NE=Math.max(90, Math.round(nA*56));
       const axisAtE=[];
@@ -482,7 +499,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
           const uy=(yq-sphE.c[1])/Math.max(1,sphE.R[1]);
           kf=Math.max(0.2, Math.sqrt(Math.max(0, 1-uy*uy)));
         }
-        const rho=(rho1-(rho1-rho0)*t)*kf;   // закручивание К ЦЕНТРУ
+        // радиус держится широким и резко уходит к центру на последнем витке:
+        // низ композиции — плотный завиток в центре формы
+        const rho=(rho1-(rho1-rho0)*Math.pow(t,1.35))*kf;
         const th=phE+dirE*Math.PI*2*nA*t;
         // внутренние витки — круглые, внешние вытянуты по габариту: иначе
         // у вытянутого внутреннего витка радиус на конце (b²/a) падает ниже
@@ -1266,6 +1285,11 @@ function marchRibbon(rb){
   // OP_OUT — их расхождения на ВНЕШНЕЙ (там запас до GAP_MAX, берём
   // четверть: остальное нужно твисту и вееру)
   const IP_SLACK=0.25, OP_SLACK=0.30;
+  // РЫЧАГ ЗАЗОРА — ПО ФАКТИЧЕСКОЙ ТРУБКЕ, А НЕ ПО ШИРИНЕ ЛЕНТЫ. Торец не
+  // доходит до проволоки на 3 мм, поэтому крайняя точка стекла ближе к оси
+  // ленты, чем кант: при том же зазоре между трубками наклон рядов может
+  // быть больше — центральный контур уходит из плоскости кантов заметнее
+  const armW=Math.max(1, halfW-(WIRE_D/2+3));
   const OP_OUT=Math.max(1.0, (ROD_D+GAP_MAX-step)*0.25);
   const TH_IP=IP_SLACK/halfW;
   const ROT_ROW=0.85*budget;
@@ -1426,8 +1450,8 @@ function marchRibbon(rb){
     let hPos=1e-3, hNeg=1e-3;
     if(twoRow){
       const dU=V.dot(Up,N), dD=V.dot(Dn,N);
-      hPos=Math.max(hPos, halfW*Math.max(0,  dU), halfW*Math.max(0,  dD));
-      hNeg=Math.max(hNeg, halfW*Math.max(0, -dU), halfW*Math.max(0, -dD));
+      hPos=Math.max(hPos, armW*Math.max(0,  dU), armW*Math.max(0,  dD));
+      hNeg=Math.max(hNeg, armW*Math.max(0, -dU), armW*Math.max(0, -dD));
     }
     // разворот стержней (закрутка, перекрутка на ребро) требует более
     // пологого изгиба: пока торцы гуляют (omW), радиус не короче ~110 —
@@ -1523,10 +1547,10 @@ function marchRibbon(rb){
       const aWant=rb.foldMax||0;
       // ОБЩИЙ наклон (оба ряда в одну сторону, «домик»): торцы уходят НАРУЖУ
       // поворота, где шаг раскрывается до GAP_MAX — бюджет OP_OUT
-      const aAllow=Math.min(aWant, 0.30*OP_OUT/(opNeed*Math.max(1,halfW)));
+      const aAllow=Math.min(aWant, 0.30*OP_OUT/(opNeed*armW));
       // НЕЗАВИСИМАЯ часть рядов: у неё один торец уходит ВНУТРЬ поворота,
       // где запаса всего OP_SLACK — поэтому её лимит в пять раз жёстче
-      const dLim=Math.min(aWant, 0.30*OP_SLACK/(opNeed*Math.max(1,halfW)));
+      const dLim=Math.min(aWant, 0.30*OP_SLACK/(opNeed*armW));
       // СТОРОНА НАКЛОНА — ПО ПРЕДСТОЯЩЕМУ ПОВОРОТУ НАПРАВЛЯЮЩЕЙ, ПЛАВНО.
       // Мгновенный знак изгиба дёргается: ряды гонялись бы за перекидывающейся
       // целью, связка «изгиб↔складка» зажимала бы кривизну и марш терял
@@ -2647,14 +2671,26 @@ function draw(){
       ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
-    } else { // диод: светящийся белый шарик Ø4 на проволоке каркаса
-      const gl=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,pr.rCore*3.4);
-      gl.addColorStop(0,"rgba(255,253,238,.50)");
-      gl.addColorStop(0.45,"rgba(255,251,225,.16)");
-      gl.addColorStop(1,"rgba(255,250,220,0)");
-      ctx.fillStyle=gl;
-      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore*3.4,0,7); ctx.fill();
-      ctx.fillStyle="rgba(255,255,252,.98)";
+    } else { // диод Ø4 на проволоке каркаса: тёплое свечение 3000 K
+      // 3000 K ≈ RGB(255,168,86). Ореол рисуется в режиме сложения (lighter):
+      // он не гасит ленту, а подсвечивает её, поэтому диод читается ярким
+      const R1=Math.max(9, pr.rCore*8), R2=Math.max(4, pr.rCore*2.8);
+      const op=ctx.globalCompositeOperation;
+      ctx.globalCompositeOperation="lighter";
+      const g1=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R1);
+      g1.addColorStop(0,"rgba(255,168,86,.55)");
+      g1.addColorStop(0.45,"rgba(255,150,66,.20)");
+      g1.addColorStop(1,"rgba(255,140,56,0)");
+      ctx.fillStyle=g1;
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R1,0,7); ctx.fill();
+      const g2=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R2);
+      g2.addColorStop(0,"rgba(255,214,160,.95)");
+      g2.addColorStop(1,"rgba(255,186,116,0)");
+      ctx.fillStyle=g2;
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R2,0,7); ctx.fill();
+      ctx.globalCompositeOperation=op;
+      // ядро — тёплый белый 3000 K
+      ctx.fillStyle="rgba(255,241,224,1)";
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
     }
   }
@@ -2789,10 +2825,12 @@ ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
-document.getElementById("regen").onclick = ()=>{
+const regenClick = ()=>{
   state.seed = (state.seed*1664525+1013904223)>>>0;
   buildDeferred();
 };
+document.getElementById("regen").onclick = regenClick;
+document.getElementById("regen2").onclick = regenClick;
 
 document.getElementById("savePng").onclick = ()=>{
   const a = document.createElement("a");
