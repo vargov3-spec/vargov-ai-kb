@@ -476,6 +476,225 @@ function envelopeSpine(dims, rw, form){
   return {P, ref, ax, Rax, r1:rBox(dims[u1]), r2:rBox(dims[u2])};
 }
 
+/* ============================================================
+   ТУР ПО ФОРМЕ: ХАОТИЧНОЕ ЗАПОЛНЕНИЕ СО СМЕНОЙ НАПРАВЛЕНИЙ
+   ============================================================
+   Одна навивка вокруг оси читается как винт: лента идёт в одну сторону и
+   метраж ограничен шагом витка. Тур строит направляющую иначе: лента идёт
+   ПРОБЕГАМИ вдоль главной оси формы и на концах РАЗВОРАЧИВАЕТСЯ ПЕРЕГИБОМ —
+   изгибом вокруг собственных стержней, самым лёгким для каркаса (так же
+   гнётся спираль «на ребро»). Стержни в перегибе не поворачиваются, поэтому
+   разворот не выметает габарит, как разворот винта, и пробеги можно ставить
+   через два радиуса перегиба. Отсюда:
+     • лента меняет направление столько раз, сколько нужно метража;
+     • на тот же габарит входит кратно больше пог. м (правило метража и
+       ручная надбавка становятся достижимыми);
+     • композиция читается как драпировка (LC0217/LC0327), а не как винт.
+   Ось стержней лента закрывает своей шириной и меандром в плоскости лица
+   (изгиб «плашмя» ограничен правилом зазора 8 мм — отсюда предел меандра).
+   Возвращает null, если тур не заполнит габарит: тогда строится навивка. */
+function tourGuide(dims, rw, box, rng, tgt){
+  const fo=formOf(dims, rw, box.form);
+  // ось пробегов: ось формы (у шара — самая длинная сторона)
+  const ax=fo ? fo.ax : dims.indexOf(Math.max(...dims));
+  const o1=(ax+1)%3, o2=(ax+2)%3;
+  const rB=(dim)=>Math.max(90, (dim-2*(ROD_R+12))/2);
+  // СТОПКА ПРОБЕГОВ — ПО ВЕРТИКАЛИ: перегиб идёт вокруг горизонтальных
+  // стержней, лента лежит лицом вверх и складывается сама над собой.
+  // Если сама ось пробегов вертикальна, стопка ложится по широкой
+  // горизонтальной оси, а перегибы приходятся на верх и низ формы
+  const stk=(o1===1||o2===1) ? 1 : (dims[o1]>=dims[o2]?o1:o2);
+  const rodAx=(stk===o1)?o2:o1;
+  const secR=(i)=>{ const r=rB(dims[i]);
+                    return fo ? Math.min(r, (i===fo.u1?fo.R1:fo.R2)) : r; };
+  const rodR=secR(rodAx), stkR=secR(stk);
+  // ОСЬ СТЕРЖНЕЙ ЗАКРЫВАЕТСЯ ШИРИНОЙ ЛЕНТЫ И ПОПЕРЕЧНЫМ ХОДОМ ПРОБЕГА:
+  // пробег идёт по диагонали — уходит от одного края формы к другому.
+  // Прямая диагональ не стоит ничего (кривизны нет), а разворот поперечного
+  // хода ограничен правилом зазора 8 мм: на изгибе «плашмя» стержни
+  // расходятся веером, и радиус меньше ~1000 мм даёт разрыв больше 8 мм
+  // РАДИУС ИЗГИБА «ПЛАШМЯ» (в плоскости лица ленты): стержни расходятся
+  // веером, прибавка к зазору = длина_стержня·шаг/R, а зазор по правилу не
+  // больше 8 мм. Предел взят с запасом (измерено маршем: на радиусе по
+  // «сырому» правилу зазора лента срывается со стен) — для ленты 600 мм
+  // это ≈ 1580 мм
+  const R_IP=Math.max(700, (rw/2)*ROD_STEP/2.2);
+  const mAmp0=Math.max(0, rodR-rw*0.5);
+  let mAmp=mAmp0;
+  const c=[dims[0]/2, dims[1]/2, dims[2]/2];
+  // ход вдоль оси: стержни лежат ПОПЕРЁК пробега и за его концы не
+  // выступают — пробег идёт во всю длину формы
+  const Rax=fo ? fo.R[ax] : dims[ax]/2-ROD_R-14;
+  const aLo=c[ax]-Rax, aHi=c[ax]+Rax, span=aHi-aLo;
+  if(span<Math.max(420, rw*0.8)) return null;
+  // радиус перегиба: лента гнётся вокруг стержней, предел ~135 мм
+  const RT=Math.max(135, rw*0.22);
+  // ВОЛНА ПРОБЕГА (ДРАПИРОВКА): пробег — не полка, он идёт волной вверх-вниз.
+  // Это изгиб вокруг стержней, самый лёгкий для каркаса, поэтому волна не
+  // стоит ничего, а композиция читается драпировкой, а не стопкой полок.
+  // ВОЛНА СОГЛАСОВАНА У ВСЕХ ПРОБЕГОВ: они колышутся в одной фазе, значит
+  // соседние пробеги нигде не сближаются и композиция всегда разводится
+  // (при независимых фазах витки сходились и вся генерация уходила в
+  // разведение коллизий, съедая бюджет). Гребни волны и добирают габарит по
+  // стопке — поэтому оси пробегов стоят на ±(полуось − размах волны)
+  const wCap=Math.min(0.20*stkR, 200);
+  const nCap=Math.max(1, Math.floor(stkR/RT+0.4));
+  const geoOf=(n)=>{
+    // размах волны — не больше 30% шага стопки: даже если пробеги разойдутся
+    // по фазе (укороченный пробег), между ними остаётся 40% шага
+    const spA=2*stkR/(n-1+0.6);
+    const A=Math.min(wCap, 0.30*spA);
+    const sp=n>1 ? 2*(stkR-A)/(n-1) : 0;
+    const rt=n>1 ? sp/2 : 0;
+    const rl=Math.max(250, span-2*rt);
+    const dev=Math.min(0.16*sp, A*0.5);       // личная добавка к волне
+    // длина волны: не короче предела изгиба вокруг стержней И не короче
+    // трёх ширин ленты — на частой волне марш срывается (лента шириной
+    // 600 мм не может колыхаться с полуволной 400 мм)
+    const lamMin=Math.max(2*Math.PI*Math.sqrt(140*Math.max(1, A+dev)), 3*rw);
+    // ЧИСЛО ПОЛУВОЛН НЕЧЁТНОЕ. Соседние пробеги идут в противоположных
+    // направлениях: при чётном числе полуволн волна у них зеркалится и
+    // пробеги сходятся гребнями. При нечётном профиль симметричен —
+    // пробеги колышутся согласованно в любом направлении
+    let nh=Math.max(1, Math.floor(2*rl/lamMin));
+    if(nh%2===0) nh=Math.max(1, nh-1);
+    return {A, dev, tilt:0.10*sp, sp, rt, rl, nh, off:stkR-A};
+  };
+  // длина направляющей: волна пробега и поперечный ход удлиняют пробег —
+  // считаем численно, иначе заказанный метраж не сойдётся
+  const lenOf=(n)=>{
+    const w=geoOf(n), rl=w.rl, Aw=w.A+w.dev*0.5;
+    const kMn=Math.max(1, Math.floor(rl/Math.max(1,
+                 Math.PI*Math.sqrt(R_IP*Math.max(1,mAmp0)))));
+    const mA=Math.min(mAmp0, Math.pow(rl/(kMn*Math.PI), 2)/R_IP);
+    let s=0; const M=48;
+    for(let i=0;i<M;i++){
+      const t=(i+0.5)/M;
+      const dS=Aw*(Math.PI*w.nh*Math.cos(Math.PI*w.nh*t)*Math.sin(Math.PI*t)
+                  +Math.PI*Math.cos(Math.PI*t)*Math.sin(Math.PI*w.nh*t));
+      const dM=-mA*Math.PI*kMn*Math.sin(Math.PI*kMn*t);
+      s+=Math.hypot(1, dS/rl, dM/rl);
+    }
+    return n*rl*(s/M)+(n-1)*Math.PI*w.rt;
+  };
+  // ЧИСЛО ПРОБЕГОВ — ИЗ ПРАВИЛА МЕТРАЖА (и ручной надбавки): берём
+  // наименьшее, которое даёт заказанную длину; больше стопки не влезает
+  let n=1;
+  while(n<nCap && lenOf(n)<tgt) n++;
+  if(n<2) return null;                      // один пробег — это не тур
+  const wv=geoOf(n), rt=wv.rt, sp=wv.sp;
+  const pts=[], axisAt=[];
+  const rodV=[0,0,0]; rodV[rodAx]=1;
+  const sK=box.secK||[1,1,1];
+  const push=(u, so, mo)=>{
+    const q=[0,0,0];
+    q[ax]=u; q[stk]=c[stk]+so; q[rodAx]=c[rodAx]+mo;
+    for(let x=0;x<3;x++) q[x]=Math.min(dims[x]-25, Math.max(25,
+          c[x]+(q[x]-c[x])*sK[x]));
+    if(fo) fo.clampTo(q, 1.0, rw*0.12, true);
+    pts.push(q); axisAt.push(rodV);
+  };
+  // ПОПЕРЕЧНЫЙ ХОД: за пробег лента переходит от края к краю формы по
+  // полуволне косинуса (на концах поперечная скорость нулевая — стык с
+  // перегибом без изломов), фаза продолжается из пробега в пробег.
+  // Число полуволн на пробег — сколько позволяет радиус изгиба «плашмя»
+  const runL=Math.max(300, span-2*rt);
+  let kM=Math.max(1, Math.floor(runL/Math.max(1, Math.PI*Math.sqrt(R_IP*Math.max(1,mAmp)))));
+  // полуволна короче предела — уменьшаем поперечный ход (габарит по этой
+  // оси добирать нечем, зато лента остаётся физичной)
+  mAmp=Math.min(mAmp, Math.pow(runL/(kM*Math.PI), 2)/R_IP);
+  // ТУР ОБЯЗАН ЗАКРЫТЬ ГАБАРИТ: если ширина ленты с поперечным ходом не
+  // накрывает ось стержней (широкая круглая форма), объём остался бы пустым —
+  // там композицию строит навивка, она заполняет сечение витком
+  if(mAmp+rw*0.5 < rodR*0.93) return null;
+  // ПОСЛЕДНИЙ ПРОБЕГ ЗАКАНЧИВАЕТСЯ ВНИЗУ: у формы с вертикальной осью
+  // нижний конец ленты обязан прийти в нижний центр
+  const vertAx=(ax===1);
+  let dir=vertAx ? ((n%2===1)?-1:1) : (rng()<0.5?1:-1);
+  const ordUp=rng()<0.5;
+  const step=42;
+  // параметры пробегов считаются заранее: перегиб обязан прийти точно в
+  // начало следующего пробега, иначе на стыке остаётся излом
+  const RN=[];
+  for(let i=0;i<n;i++){
+    const idx=ordUp ? i : n-1-i;
+    RN.push({so0:-wv.off+sp*idx,
+      // НАКЛОН ПРОБЕГА: пробег немного уходит по высоте — стопка не читается
+      // полкой; размах в пределах зазора стопки
+      tilt:(rng()*2-1)*wv.tilt, cut:0,
+      // ЛИЧНАЯ ДОБАВКА К ВОЛНЕ: пробеги не точные копии друг друга, но общая
+      // часть волны у них одна — сблизиться они не могут
+      ws:(rng()*2-1)});
+  }
+  // ЗАКАЗАННЫЙ МЕТРАЖ ТОЧНО: число пробегов даёт длину с излишком (стопка
+  // квантована), излишек снимается укорочением пробегов. Укорачивать можно
+  // только там, где габарит держит другой перегиб: свободные концы ленты и
+  // развороты, начиная с третьего, — тогда композиция доходит до граней, а
+  // контур получается живым, а не гребёнкой
+  {
+    const cutMax=Math.max(0, Math.min(0.34*span, span-2*rt-260));
+    const knobs=[];                          // куда можно снять излишек
+    for(let i=2;i<n-1;i++) knobs.push(i);    // развороты с третьего
+    knobs.push(0);                           // свободное начало ленты
+    if(!vertAx) knobs.push(n-1);             // свободный конец ленты
+    let excess=Math.max(0, lenOf(n)-tgt);
+    const w=knobs.map(()=>0.35+rng());
+    const ws=w.reduce((a,b)=>a+b,0)||1;
+    for(let j=0;j<knobs.length;j++){
+      const c0=Math.min(cutMax, excess*w[j]/ws);
+      RN[knobs[j]].cut=c0;
+    }
+  }
+  const soAt=(i,u)=>RN[i].so0+RN[i].tilt*((u-(aLo+aHi)/2)/span);
+  // ВОЛНА ПРОБЕГА: общая часть (одинаковая для всех пробегов — они колышутся
+  // согласованно) плюс личная добавка. На концах волна гаснет (огибающая
+  // sin πt), поэтому стык с перегибом выходит гладким, без излома
+  const wSgn=(rng()<0.5?-1:1);
+  const wvAt=(i,t)=>(wSgn*wv.A+RN[i].ws*wv.dev)
+                    *Math.sin(Math.PI*wv.nh*t)*Math.sin(Math.PI*t);
+  // поперечный ход: фаза непрерывна сквозь все пробеги, поэтому лента
+  // переходит от одного края формы к другому и обратно без изломов
+  const moAt=(i,t)=>mAmp*Math.cos(Math.PI*kM*(i+t));
+  let uS=(dir>0) ? aLo+rt+RN[0].cut : aHi-rt-RN[0].cut;
+  for(let i=0;i<n;i++){
+    let uE=(dir>0) ? aHi-rt : aLo+rt;
+    if(i>=2) uE-=dir*RN[i].cut;
+    const segL=Math.abs(uE-uS), ns=Math.max(6, Math.round(segL/step));
+    for(let k=0;k<=ns;k++){
+      const t=k/ns, u=uS+(uE-uS)*t;
+      push(u, soAt(i,u)+wvAt(i,t), moAt(i,t));
+    }
+    if(i===n-1) break;
+    // ПЕРЕГИБ: полуокружность в плоскости (ось пробегов, стопка). Стержни
+    // в ней не поворачиваются — это чистый изгиб вокруг стержней, самый
+    // лёгкий для каркаса; в развороте стержни не выметают габарит
+    const soA=soAt(i,uE), soB=soAt(i+1,uE);
+    const mid=(soA+soB)/2, rr=Math.abs(soB-soA)/2;
+    const nf=Math.max(7, Math.round(Math.PI*rr/step));
+    const mo=moAt(i,1);                       // = moAt(i+1,0): ход непрерывен
+    for(let k=1;k<nf;k++){
+      const ph=Math.PI*k/nf;
+      push(uE+dir*rr*Math.sin(ph), mid+(soA-mid)*Math.cos(ph), mo);
+    }
+    dir=-dir; uS=uE;
+  }
+  // НИЖНИЙ КОНЕЦ — В НИЖНИЙ ЦЕНТР ФОРМЫ (для формы с вертикальной осью)
+  if(vertAx){
+    const q=[c[0], aLo, c[2]];
+    pts.push(q); axisAt.push(rodV);
+  }
+  pts.__axisAt=axisAt;
+  pts.__target=tgt;
+  pts.__tour=true;
+  if(fo){
+    pts.__formIn=fo.inside;
+    pts.__formAx={ax:fo.ax, c:fo.c.slice(), s0:fo.c[fo.ax]-fo.Rax, s1:fo.c[fo.ax]+fo.Rax};
+    pts.__formDraw={c:fo.c.slice(), R:fo.R.slice(), form:box.form};
+    pts.__formClamp=fo.clampTo;
+  }
+  return pts;
+}
+
 function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
   // box = {w,d,h} — рабочий бокс ленты (уже с отступами)
   // lengthK («насыщенность») управляет числом волн/витков → длиной ленты
@@ -507,6 +726,30 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const sK=box.secK||[1,1,1];      // покоординатный масштаб под габарит
     const dims=[w,h,d];
     const L=Math.max(...dims);
+    // ЦЕЛЬ МЕТРАЖА СЧИТАЕТСЯ ДО ВЫБОРА ПЛАСТИКИ: от неё зависит и число
+    // витков навивки, и число пробегов тура.
+    // ПРАВИЛО МЕТРАЖА (жёсткое, для «микса»): на каждый метр длины формы —
+    // метр ленты плюс метр на повороты, то есть 2 пог. м на метр главного
+    // габарита, И ПРОПОРЦИОНАЛЬНО ШИРИНЕ формы: базовая ширина 700 мм даёт
+    // 2 пог. м/м (форма 2000×700 → 4.1 пог. м), шире форма — больше метража.
+    // Плюс РУЧНАЯ НАДБАВКА («добавить к расчётной длине N пог. м»)
+    const multM=(1.72+0.62*dens)*1.14;   // 1.14 — потери марша и вписывания
+    const wKM=Math.max(0.5, Math.min(1.8, 300/rw));
+    const dimsSm=[...dims].sort((a,b)=>b-a);
+    const wRuleM=1+0.55*Math.max(-0.35, (dimsSm[1]-700)/700);
+    const target=(Math.max(2.05*L*wRuleM, multM*L*wKM)+(box.addLen||0))
+                 /Math.max(1,lanes);
+    // ХАОТИЧНОЕ ЗАПОЛНЕНИЕ ОБЪЁМА: тур со сменой направлений вместо одной
+    // навивки. Строится не всегда — только если тур закроет габарит; иначе
+    // ниже собирается навивка (винт). Фигурные формы остаются на навивке:
+    // её сечение следует профилю силуэта, а прямые пробеги тура выходили бы
+    // за фигурный контур
+    if(box.plast!=="edge" && box.tour && !FORMS[box.form]?.prof){
+      const kT=Math.max(0.5, Math.min(1.8, box.turnsBoost||1))
+              *Math.max(0.35, Math.min(1, box.densK||1));
+      const tp=tourGuide(dims, rw, box, rng, target*kT);
+      if(tp){ tp.__target=target; return tp; }
+    }
     // осевая линия формы + сечение навивки
     const sp=envelopeSpine(dims, rw, box.form);
     const SP=sp.P, nsp=SP.length;
@@ -611,7 +854,15 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // редкой, хотя по высоте помещалось шесть
       const nVert=riseMax/Math.max(1, rw+20);
       const nCap=Math.max(nFit*0.92, nVert);
-      const nA=Math.max(2.5, Math.min(nCap, 12, nPitch, nNeed)*densK);
+      // МОЖНО ЛИ ВЗЯТЬ БОЛЬШЕ ВИТКОВ, ЧЕМ ПОЗВОЛЯЕТ ВЕРТИКАЛЬНЫЙ ШАГ. Да, если
+      // витки развести РАДИАЛЬНО: для этого радиус должен убывать РАВНОМЕРНО
+      // (профиль t, а не t^2.5) и шаг между витками — не меньше толщины трубки
+      // с зазором. В сужающихся формах это единственный способ получить много
+      // витков: конус 900×900×1500 давал всего 4 витка вместо восьми
+      const nRad=(rho1-rho0)*Math.min(kx,kz)/Math.max(1, ROD_D+21);
+      const radial=(nNeed>nPitch*1.05) && (nRad>=Math.min(nNeed, 12));
+      const nA=Math.max(2.5, Math.min(nCap, 12,
+                        radial ? Math.min(nRad, nNeed) : nPitch, nNeed)*densK);
       // спуск укорачивается до плотного шага витка: лучше чуть меньше высота,
       // чем видимые пустоты между витками
       const rise=Math.min(riseMax, nA*rw*0.85);
@@ -640,7 +891,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // формы почти до конца и уходит в центр на последнем витке (t^2.5).
         // Иначе середина композиции не доходила до границы формы (ромб, шар,
         // барабан — там контур широк как раз посередине)
-        const uR=(nA>=5) ? Math.pow(t,2.5) : Math.pow(t,1.6);
+        // при радиальном разведении радиус обязан убывать РАВНОМЕРНО, иначе
+        // соседние витки окажутся на одном радиусе и заденут друг друга
+        const uR=radial ? t : ((nA>=5) ? Math.pow(t,2.5) : Math.pow(t,1.6));
         // РАДИУС: меньший из «своего» радиуса спирали и контура формы, но не
         // меньше радиуса финального завитка. Раньше они перемножались, и в
         // сужающихся формах (конус, капля) спираль схлопывалась в точку
@@ -657,6 +910,15 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         if(sphE) sphE.clampTo(q, 1.0, ROD_R+4, true);
         pts.push(q);
         axisAtE.push([0,1,0]);      // стержни вертикальны — лента на ребре
+      }
+      // НИЖНИЙ КОНЕЦ — В ЦЕНТР НИЗА ФОРМЫ: последняя точка направляющей стоит
+      // на оси. Предыдущая точка на радиусе финального завитка (≈110 мм),
+      // поэтому марш проходит этот участок дугой радиусом ≈110 мм — выше
+      // технологического предела
+      {
+        const yEnd=y0;                       // низ спуска (вершина внизу)
+        pts.push([dims[0]/2, yEnd, dims[2]/2]);
+        axisAtE.push([0,1,0]);
       }
       pts.__axisAt=axisAtE;
       pts.__target=tgt;
@@ -689,21 +951,8 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // «Насыщенность» — множитель к этому правилу (≈2× при 1.15, до ≈3.3×).
     // множитель откалиброван по факту: марш и вписывание съедают 10–20%
     // от заданной цели, поэтому цель берём с запасом
-    const mult=(1.72+0.62*dens)*1.14;   // 1.14 — потери марша и вписывания
-    // правило производства откалибровано на ленту 300 мм. Метраж на
-    // заданный объём обратно пропорционален ширине ленты: широкая лента
-    // закрывает ту же площадь меньшим числом метров
-    const wK=Math.max(0.5, Math.min(1.8, 300/rw));
-    // ПРАВИЛО ПРОИЗВОДСТВА КАК МИНИМУМ: на 2000 мм габарита не меньше
-    // 4 пог. м ленты, то есть 2 пог. м на метр длины
-    // ПРАВИЛО МЕТРАЖА (жёсткое, для «микса»): на каждый метр длины формы —
-    // метр ленты плюс метр на повороты, то есть 2 пог. м на метр главного
-    // габарита, И ПРОПОРЦИОНАЛЬНО ШИРИНЕ формы: базовая ширина 700 мм даёт
-    // 2 пог. м/м (форма 2000×700 → 4.1 пог. м), шире форма — больше метража
-    const dimsS=[...dims].sort((a,b)=>b-a);
-    const Wform=dimsS[1];
-    const wRule=1+0.55*Math.max(-0.35, (Wform-700)/700);
-    const target=(Math.max(2.05*L*wRule, mult*L*wK)+(box.addLen||0))/Math.max(1,lanes);
+    // цель метража (правило производства + ручная надбавка) посчитана выше:
+    // она общая для навивки и для тура
     // метраж даёт НЕ только навивка: ход вдоль осевой линии формы — уже
     // длина ленты. Витки добирают лишь остаток по теореме Пифагора
     // (винт разворачивается в прямоугольный треугольник S × витки·периметр)
@@ -916,7 +1165,9 @@ function buildRibbon(params, rngSeed, lane){
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
-                  densK: params.densK||1, addLen: params.addLen||0 };
+                  densK: params.densK||1, addLen: params.addLen||0,
+                  // хаотичный тур со сменой направлений вместо одной навивки
+                  tour: !!params.tour };
 
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
@@ -1066,6 +1317,7 @@ function buildRibbon(params, rngSeed, lane){
         if(opt.axisAt) opt.w0hint = ctrl.__axisAt[0].slice();
         geo = sampleGuide(ctrl, opt);
         geo.fillMode=true;
+        geo.tour=!!ctrl.__tour;
         geo.edgeMode=edgeMode;
         geo.fillAxis=(opt.w0hint||fillAxisV).slice();
         geo.noSteer=true;
@@ -2292,7 +2544,8 @@ function buildScene(){
     const maxAtt = effLanes>2 ? 4 : (effLanes>1 ? 6 : 8);
     for(let attempt=0; attempt<maxAtt; attempt++){
       // бюджет исчерпан и что-то годное уже есть — не заставляем ждать
-      if(attempt>0 && perfNow()>buildDeadline && bestClean) break outer;
+      if(attempt>0 && perfNow()>buildDeadline && bestClean){
+        window.__ladder.push([attempt,'budget']); break outer; }
       // прогрессивное укрощение; с 6-й попытки — совсем спокойные
       // варианты: число лент важнее дикости формы
       const calm = attempt>=6;
@@ -2302,6 +2555,12 @@ function buildScene(){
       const isFillP = (params.style==="chaos" || params.lengthK>=1.9);
       const p0 = isFillP
         ? Object.assign({}, params, {
+            // ХАОТИЧНЫЙ ТУР И НАВИВКА ЧЕРЕДУЮТСЯ ПО ПОПЫТКАМ: тур даёт смену
+            // направлений и кратный метраж, навивка — плавный винт. Что
+            // прошло ворота качества с лучшим заполнением, то и показывается;
+            // с какого начать — решает зерно, так «Повторная генерация»
+            // чередует и сами пластики заполнения
+            tour: (params.plast!=="edge") && ((attempt+(state.seed&1))%2===0),
             fillRelax: attempt*0.26,
             ampl: params.ampl*Math.pow(0.9, attempt),
             twistAmt: attempt>=3 ? 0 : params.twistAmt*Math.pow(0.8, attempt),
@@ -2419,7 +2678,9 @@ function buildScene(){
         for(let k2=0;k2<3;k2++) if(xM[k2]-mM[k2]+ROD_D > lim2[k2]+2) ovr=true;
       }
       if(ovr) clear.collisions += 1000;
-      window.__ladder.push([attempt, clear.collisions, clear.self, ovr?1:0]);
+      window.__ladder.push([attempt, clear.collisions, clear.self, ovr?1:0,
+        Math.round(ribbons.reduce((a5,rb)=>a5+rb.ribbonLen,0)),
+        ribbons[0]&&ribbons[0].tour?'T':'H']);
       if(!best || clear.collisions<best.clear.collisions) best={ribbons, clear};
       if(clear.collisions===0){
         const totLen=ribbons.reduce((a2,rb)=>a2+rb.ribbonLen,0);
