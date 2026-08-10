@@ -125,6 +125,8 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Z)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Y)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="row"><label for="addM">Добавить метраж, пог. м<br><span style="font-size:11px;opacity:.6">к расчётной длине</span></label>
+        <input id="addM" type="number" min="0" max="20" step="0.5" value="0"></div>
       <div class="row"><label for="form">Форма габарита</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -563,8 +565,15 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nFit=Math.max(1.2, (Math.min(kx,kz)*(rho1-rho0))/dR);
       const dens0=Math.max(0, Math.min(1, (lengthK-0.6)/1.4));
       const wK0=Math.max(0.5, Math.min(1.8, 300/rw));
-      const tgtAuto=Math.max(2.05*Math.max(...dims),
-                             (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
+      // ПРАВИЛО МЕТРАЖА ДЛЯ «НА РЕБРО» — ВДВОЕ БОЛЬШЕ, чем для «микса»: лента
+      // стоит на ребре, радиально занимает только толщину трубки, и витки
+      // можно ставить вплотную — в тот же габарит входит вдвое больше метража.
+      // Ширина формы учитывается так же, как в «миксе»
+      const dimsSe=[...dims].sort((a,b)=>b-a);
+      const wRuleE=1+0.55*Math.max(-0.35, (dimsSe[1]-700)/700);
+      const tgtAuto=Math.max(2*2.05*dimsSe[0]*wRuleE,
+                             (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0)
+                    +(box.addLen||0);
       const perimMean=Math.PI*(kx+kz)*(rho0+rho1)/2;
       const tgt=tgtAuto;
       // ПЛОТНОСТЬ ПО ВЕРТИКАЛИ: шаг витка меньше ширины ленты — верхний виток
@@ -595,7 +604,14 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nPitch=riseMax/Math.max(1, rw*(sphE?0.95:0.85));
       // плотность можно снизить сверху (страховочные проходы)
       const densK=Math.max(0.35, Math.min(1, box.densK||1));
-      const nA=Math.max(2.5, Math.min(nFit*0.92, 12, nPitch, nNeed)*densK);
+      // РАДИАЛЬНАЯ ЁМКОСТЬ — НЕ ЕДИНСТВЕННЫЙ ПРЕДЕЛ. Если шаг витка по высоте
+      // и так не меньше ширины ленты с воздухом, соседние витки разведены
+      // вертикально и радиальная ёмкость их не ограничивает. В узкой высокой
+      // форме (колонна 600×600) радиально влезало 4 витка, и спираль выходила
+      // редкой, хотя по высоте помещалось шесть
+      const nVert=riseMax/Math.max(1, rw+20);
+      const nCap=Math.max(nFit*0.92, nVert);
+      const nA=Math.max(2.5, Math.min(nCap, 12, nPitch, nNeed)*densK);
       // спуск укорачивается до плотного шага витка: лучше чуть меньше высота,
       // чем видимые пустоты между витками
       const rise=Math.min(riseMax, nA*rw*0.85);
@@ -687,7 +703,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const dimsS=[...dims].sort((a,b)=>b-a);
     const Wform=dimsS[1];
     const wRule=1+0.55*Math.max(-0.35, (Wform-700)/700);
-    const target=Math.max(2.05*L*wRule, mult*L*wK)/Math.max(1,lanes);
+    const target=(Math.max(2.05*L*wRule, mult*L*wK)+(box.addLen||0))/Math.max(1,lanes);
     // метраж даёт НЕ только навивка: ход вдоль осевой линии формы — уже
     // длина ленты. Витки добирают лишь остаток по теореме Пифагора
     // (винт разворачивается в прямоугольный треугольник S × витки·периметр)
@@ -900,7 +916,7 @@ function buildRibbon(params, rngSeed, lane){
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
-                  densK: params.densK||1 };
+                  densK: params.densK||1, addLen: params.addLen||0 };
 
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
@@ -2252,6 +2268,8 @@ function buildScene(){
     form: (FORMS[ui.form.value] ? ui.form.value : "box"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
     lengthK: 1.0,
+    // РУЧНАЯ ДОБАВКА К МЕТРАЖУ (мм): «добавь к расчётной длине столько-то»
+    addLen: Math.max(0, Math.min(20, +ui.addM.value||0))*1000,
     lanes,
   };
   // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
@@ -2461,6 +2479,8 @@ function buildScene(){
           foldK: params.foldK*0.7,
           // спираль «на ребро» разводится снижением плотности витков
           densK: Math.max(0.4, 0.85*Math.pow(0.9, rs)),
+          // ручную добавку страховка не держит: главное — чистая композиция
+          addLen: (params.addLen||0)*Math.max(0, 1-0.25*rs),
           style: rs>=4 ? "wave" : params.style});
         const rr = [];
         const rSeed = (state.seed + 900001 + rs*57 + rl*31)>>>0;
@@ -3021,7 +3041,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","addM","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -3051,7 +3071,7 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildDeferred, 120);
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","addM","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
