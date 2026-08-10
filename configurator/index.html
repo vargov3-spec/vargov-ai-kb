@@ -236,6 +236,10 @@ const LED_PITCH = 100;   // шаг диодов по каркасу (0.1 W, 3 V 
 const LED_W = 0.1, LED_V = 3;
 const CABLE_STEP = 650;  // примерный шаг подвесов
 const GLASS_DENSITY = 2.5e-3;  // г/мм³ (стекло)
+// ВОЗДУХ МЕЖДУ ТОРЦОМ ТРУБКИ И ПРОВОЛОКОЙ КАРКАСА: стержень не доходит до
+// каркаса, поэтому каркас и диоды на нём видны насквозь, а рычаг правила
+// зазора считается по фактической трубке (наклон рядов допустим больше)
+const ROD_AIR = 4;
 const GLASS_WALL = 1.5;        // стенка стеклянной трубки, мм
 const STEEL_DENSITY = 7.85e-3; // г/мм³ (сталь, проволока каркаса)
 /* диаметр трубки задаётся в UI: шаг стержней и допуски зазоров
@@ -1286,10 +1290,10 @@ function marchRibbon(rb){
   // четверть: остальное нужно твисту и вееру)
   const IP_SLACK=0.25, OP_SLACK=0.30;
   // РЫЧАГ ЗАЗОРА — ПО ФАКТИЧЕСКОЙ ТРУБКЕ, А НЕ ПО ШИРИНЕ ЛЕНТЫ. Торец не
-  // доходит до проволоки на 3 мм, поэтому крайняя точка стекла ближе к оси
+  // доходит до проволоки на ROD_AIR, поэтому крайняя точка стекла ближе к оси
   // ленты, чем кант: при том же зазоре между трубками наклон рядов может
   // быть больше — центральный контур уходит из плоскости кантов заметнее
-  const armW=Math.max(1, halfW-(WIRE_D/2+3));
+  const armW=Math.max(1, halfW-(WIRE_D/2+ROD_AIR));
   const OP_OUT=Math.max(1.0, (ROD_D+GAP_MAX-step)*0.25);
   const TH_IP=IP_SLACK/halfW;
   const ROT_ROW=0.85*budget;
@@ -1697,8 +1701,8 @@ function marchRibbon(rb){
   // между торцом стекла и каркасом остаётся воздух, поэтому и сам каркас,
   // и диоды на нём видны. Каркас (канты и центральный контур) стоит на
   // своих местах: ширина ленты по-прежнему равна длине стержня × рядность
-  // отступ торца трубки от ОСИ проволоки: радиус проволоки + 2 мм воздуха
-  const IN=WIRE_D/2+2;
+  // отступ торца трубки от ОСИ проволоки: радиус проволоки + воздух
+  const IN=WIRE_D/2+ROD_AIR;
   const n=C.length;
   const rods=[], railA=[], railB=[], uTop=[], uBot=[];
   for(let i=0;i<n;i++){
@@ -2674,23 +2678,23 @@ function draw(){
     } else { // диод Ø4 на проволоке каркаса: тёплое свечение 3000 K
       // 3000 K ≈ RGB(255,168,86). Ореол рисуется в режиме сложения (lighter):
       // он не гасит ленту, а подсвечивает её, поэтому диод читается ярким
-      const R1=Math.max(9, pr.rCore*8), R2=Math.max(4, pr.rCore*2.8);
+      const R1=Math.max(6, pr.rCore*4.5), R2=Math.max(3, pr.rCore*1.9);
       const op=ctx.globalCompositeOperation;
       ctx.globalCompositeOperation="lighter";
       const g1=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R1);
-      g1.addColorStop(0,"rgba(255,168,86,.55)");
-      g1.addColorStop(0.45,"rgba(255,150,66,.20)");
+      g1.addColorStop(0,"rgba(255,168,86,.22)");
+      g1.addColorStop(0.45,"rgba(255,150,66,.08)");
       g1.addColorStop(1,"rgba(255,140,56,0)");
       ctx.fillStyle=g1;
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R1,0,7); ctx.fill();
       const g2=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R2);
-      g2.addColorStop(0,"rgba(255,214,160,.95)");
+      g2.addColorStop(0,"rgba(255,214,160,.42)");
       g2.addColorStop(1,"rgba(255,186,116,0)");
       ctx.fillStyle=g2;
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R2,0,7); ctx.fill();
       ctx.globalCompositeOperation=op;
       // ядро — тёплый белый 3000 K
-      ctx.fillStyle="rgba(255,241,224,1)";
+      ctx.fillStyle="rgba(255,238,216,.95)";
       ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
     }
   }
