@@ -125,11 +125,6 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Z)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Y)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
-      <div class="row"><label for="sat">Насыщенность<br><span style="font-size:11px;opacity:.6">0 — базовая, 100 — максимум</span></label>
-        <span style="display:flex;align-items:center;gap:8px;width:86px">
-          <input id="sat" type="range" min="0" max="100" step="5" value="0" style="flex:1;width:56px">
-          <span id="satVal" style="width:26px;text-align:right;color:var(--gold2)">0</span>
-        </span></div>
       <div class="row"><label for="form">Форма габарита</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -571,14 +566,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const tgtAuto=Math.max(2.05*Math.max(...dims),
                              (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
       const perimMean=Math.PI*(kx+kz)*(rho0+rho1)/2;
-      // НАСЫЩЕННОСТЬ: 0 — метраж по правилу производства, 1 — сколько витков
-      // физически влезает радиально (шаг между витками — толщина трубки с
-      // воздухом). Бегунок интерполирует между этими целями
-      const satE=Math.max(0, Math.min(1, box.sat||0));
-      // потолок: 2.2 правила метража. Дальше направляющая становится такой
-      // длинной, что подбор варианта занимает минуты
-      const tgtMax=Math.min(nFit*0.92*perimMean, tgtAuto*2.2);
-      const tgt=tgtAuto+Math.max(0, tgtMax-tgtAuto)*satE;
+      const tgt=tgtAuto;
       // ПЛОТНОСТЬ ПО ВЕРТИКАЛИ: шаг витка меньше ширины ленты — верхний виток
       // всегда немного перекрывает нижний, поэтому пустот между витками не
       // видно. Радиально соседние витки при этом разнесены на толщину трубки
@@ -599,8 +587,15 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // сколько витков нужно: плотность, плавность закручивания и правило
       // метража как нижняя граница. Предел — радиальная ёмкость формы
       // при заданном вручную метраже витки считаются прямо от него
-      const nNeed=Math.max(nRule*(satE>0?1:1.5), nOver, nCurl);
-      const nA=Math.max(3, Math.min(nFit*0.92, 12, nNeed));
+      const nNeed=Math.max(nRule*1.5, nOver, nCurl);
+      // ШАГ ВИТКА ПО ВЫСОТЕ. В форме с сужением радиус витка задаёт контур
+      // (а не спираль), поэтому радиальный разнос соседних витков может
+      // исчезнуть — тогда единственная защита от касаний — вертикальный шаг.
+      // У формы держим шаг ≈ ширина ленты, у параллелепипеда допускаем 0.85
+      const nPitch=riseMax/Math.max(1, rw*(sphE?0.95:0.85));
+      // плотность можно снизить сверху (страховочные проходы)
+      const densK=Math.max(0.35, Math.min(1, box.densK||1));
+      const nA=Math.max(2.5, Math.min(nFit*0.92, 12, nPitch, nNeed)*densK);
       // спуск укорачивается до плотного шага витка: лучше чуть меньше высота,
       // чем видимые пустоты между витками
       const rise=Math.min(riseMax, nA*rw*0.85);
@@ -685,21 +680,14 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const wK=Math.max(0.5, Math.min(1.8, 300/rw));
     // ПРАВИЛО ПРОИЗВОДСТВА КАК МИНИМУМ: на 2000 мм габарита не меньше
     // 4 пог. м ленты, то есть 2 пог. м на метр длины
-    // НАСЫЩЕННОСТЬ: 0 — метраж по правилу производства, 1 — максимум, который
-    // физически влезает (шаг витка не меньше ширины ленты с воздухом).
-    // Бегунок просто интерполирует между этими двумя целями
-    const tgAuto=Math.max(2.05*L, mult*L*wK);
-    const turnsCap2=S/(rw+34);
-    const lenMax=Math.sqrt(S*S + Math.pow(turnsCap2*lenTurn, 2));
-    const sat=Math.max(0, Math.min(1, box.sat||0));
-    // потолок ограничен: за 1.8 правила метража плотная навивка перестаёт
-    // разводиться и вариант всё равно бракуется
-    // в «миксе» потолок плотности задаёт не геометрия, а разведение витков:
-    // за 1.15 правила метража почти все варианты бракуются по касаниям и
-    // лестница выходит на страховочный проход — то есть насыщенность
-    // оборачивалась ПОТЕРЕЙ метража. Поэтому здесь бегунок работает мягко
-    const lenUse=Math.min(lenMax, tgAuto*1.15);
-    const target=(tgAuto+Math.max(0, lenUse-tgAuto)*sat)/Math.max(1,lanes);
+    // ПРАВИЛО МЕТРАЖА (жёсткое, для «микса»): на каждый метр длины формы —
+    // метр ленты плюс метр на повороты, то есть 2 пог. м на метр главного
+    // габарита, И ПРОПОРЦИОНАЛЬНО ШИРИНЕ формы: базовая ширина 700 мм даёт
+    // 2 пог. м/м (форма 2000×700 → 4.1 пог. м), шире форма — больше метража
+    const dimsS=[...dims].sort((a,b)=>b-a);
+    const Wform=dimsS[1];
+    const wRule=1+0.55*Math.max(-0.35, (Wform-700)/700);
+    const target=Math.max(2.05*L*wRule, mult*L*wK)/Math.max(1,lanes);
     // метраж даёт НЕ только навивка: ход вдоль осевой линии формы — уже
     // длина ленты. Витки добирают лишь остаток по теореме Пифагора
     // (винт разворачивается в прямоугольный треугольник S × витки·периметр)
@@ -791,10 +779,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const sec=coil ? (ell ? [B1*Math.cos(th), B2*Math.sin(th)]
                             : sectionLoop(th, B1, B2))
                      : (B1>=B2 ? [B1*Math.sin(th), 0] : [0, B2*Math.sin(th)]);
-      const R1=sec[0]+cAmp1*Math.sin(Math.PI*2*cf1*t+cp1)
-                     +tAmp1*Math.sin(Math.PI*2*altF*t+1.7);
-      const R2=sec[1]+cAmp2*Math.sin(Math.PI*2*cf2*t+cp2)
-                     +tAmp2*Math.cos(Math.PI*2*altF*t+1.7);
+      let R1=sec[0]+cAmp1*Math.sin(Math.PI*2*cf1*t+cp1)
+                   +tAmp1*Math.sin(Math.PI*2*altF*t+1.7);
+      let R2=sec[1]+cAmp2*Math.sin(Math.PI*2*cf2*t+cp2)
+                   +tAmp2*Math.cos(Math.PI*2*altF*t+1.7);
       const q=[0,0,0];
       // РАЗМЕР ПОД ГАБАРИТ: secK — покоординатный масштаб навивки от центра
       // габарита. Его подбирает buildRibbon по факту (замер габарита ленты
@@ -912,7 +900,8 @@ function buildRibbon(params, rngSeed, lane){
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
-                  sat: params.sat||0 };
+                  densK: params.densK||1 };
+
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
   // ПЛЕТЕНИЕ: ленты не параллельны — каждая вьётся вокруг общего потока
@@ -2234,8 +2223,6 @@ function buildScene(){
     w:+ui.dimW.value || 2400,
     h:+ui.dimH.value || 800,
     d:+ui.dimD.value || 900,
-    // насыщенность 0..1 (для ворот качества)
-    sat: Math.max(0, Math.min(100, +ui.sat.value||0))/100,
   };
   // одна лента, одна форма («Поток (винт)») и насыщенность 1× —
   // выбора в интерфейсе нет
@@ -2255,7 +2242,7 @@ function buildScene(){
     // складка = независимое положение центрального контура. 0.22 — по
     // замеру лучший компромисс: центр отходит от середины кантов на
     // 19–60 мм, и при этом композиция строится с первой-второй попытки
-    foldK: (+ui.rows.value===2 ? 0.38 : 0),
+    foldK: (+ui.rows.value===2 ? 0.60 : 0),
     // ШИРИНА ЛЕНТЫ = длина стержня × число рядов. В двурядной ленте два
     // ряда стержней по 300 мм дают ленту 600 мм; центральная проволока —
     // граница между рядами, ряды независимы друг от друга
@@ -2265,9 +2252,6 @@ function buildScene(){
     form: (FORMS[ui.form.value] ? ui.form.value : "box"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
     lengthK: 1.0,
-    // НАСЫЩЕННОСТЬ 0..1: 0 — базовая генерация по правилу производства,
-    // 1 — максимум, который физически влезает в форму
-    sat: Math.max(0, Math.min(100, +ui.sat.value||0))/100,
     lanes,
   };
   // Каждая лента живёт в своём «слое» габарита (слои разделены зазором),
@@ -2287,11 +2271,7 @@ function buildScene(){
   outer:
   for(let effLanes=lanesFit; effLanes>=1; effLanes--){
     // многожильные варианты считаются дорого (пар капсул кратно больше)
-    // на высокой насыщенности «на ребро» каждая попытка дороже (спираль в
-    // 12–16 пог. м) — там попыток меньше; в «миксе» число попыток не режем:
-    // с меньшим числом попыток лестница находит вариант хуже
-    const maxAtt = effLanes>2 ? 4 : (effLanes>1 ? 6
-                 : (((params.sat||0)>0.5 && params.plast==="edge") ? 5 : 8));
+    const maxAtt = effLanes>2 ? 4 : (effLanes>1 ? 6 : 8);
     for(let attempt=0; attempt<maxAtt; attempt++){
       // бюджет исчерпан и что-то годное уже есть — не заставляем ждать
       if(attempt>0 && perfNow()>buildDeadline && bestClean) break outer;
@@ -2314,9 +2294,6 @@ function buildScene(){
             // складка = независимое положение центрального контура: гасить
             // её лестницей почти не нужно (её и так ограничивает зазор)
             foldK: params.foldK*Math.pow(0.85, attempt),
-            // насыщенность держим первые четыре попытки и только потом
-            // уступаем: слишком плотный вариант не разводится
-            sat: (params.sat||0)*Math.pow(0.85, Math.max(0, attempt-3)),
           })
         : Object.assign({}, params, {
             lengthK: calm ? params.lengthK*0.55*Math.pow(0.8, a2)
@@ -2455,9 +2432,9 @@ function buildScene(){
         // заполнении — по метражу): показанная композиция должна доходить до
         // граней настолько, насколько это вообще удалось за лестницу
         const better = !bestClean || (gate && !bestClean.gate) ||
-                       (gate===bestClean.gate &&
-                        (fillBox>bestClean.fill+0.01 ||
-                         (Math.abs(fillBox-bestClean.fill)<=0.01 && totLen>bestClean.len)));
+          (gate===bestClean.gate &&
+            (fillBox>bestClean.fill+0.01 ||
+             (Math.abs(fillBox-bestClean.fill)<=0.01 && totLen>bestClean.len)));
         if(better) bestClean={ribbons, clear, len:totLen, gate, fill:fillBox};
         window.__ladder.push([attempt, 'clean', gate?'fill-ok':'underfilled']);
         if(gate) break outer;
@@ -2482,9 +2459,8 @@ function buildScene(){
           lengthK: Math.max(0.35, params.lengthK*0.8*Math.pow(0.82, rs)),
           // и в страховочном варианте центральный контур независим
           foldK: params.foldK*0.7,
-          // страховка идёт с базовой насыщенностью: главное — чистая
-          // композиция, а не заказанная плотность
-          sat: 0,
+          // спираль «на ребро» разводится снижением плотности витков
+          densK: Math.max(0.4, 0.85*Math.pow(0.9, rs)),
           style: rs>=4 ? "wave" : params.style});
         const rr = [];
         const rSeed = (state.seed + 900001 + rs*57 + rl*31)>>>0;
@@ -2538,12 +2514,23 @@ function buildScene(){
     let bestLast=null;
     for(let k4=0;k4<12;k4++){
       if(k4>0 && perfNow()>buildDeadline+2000 && bestLast) break;
-      const pF = Object.assign({}, params, {
-        // последний рубеж — гарантированно разводимая дуга: складку здесь
-        // не просим совсем, иначе теряется сама гарантия
-        style:"wave", twistAmt:0, foldK: 0, sat: 0,
-        ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1,
-        fillRelax: 0});
+      // ПОСЛЕДНИЙ РУБЕЖ СОХРАНЯЕТ ПЛАСТИКУ. Плоская дуга стиля «wave» ломала
+      // выбор «на ребро»: композиция выходила лежащей волной, а не спиралью
+      // на ребре. Для «на ребро» остаёмся в своей пластике и просто снижаем
+      // плотность, для «микса» — прежняя гарантированно разводимая дуга
+      const pF = (params.plast==="edge")
+        ? Object.assign({}, params, {
+            twistAmt:0, foldK: 0, lanes:1, fillRelax: 0,
+            ampl: 0.3*Math.pow(0.85,k4),
+            // плотность спирали снижаем шаг за шагом: это единственный
+            // надёжный способ развести витки «на ребро»
+            densK: Math.max(0.35, 0.7*Math.pow(0.88,k4)),
+            lengthK: Math.max(0.5, 1-0.06*k4)})
+        : Object.assign({}, params, {
+            // складку здесь не просим совсем, иначе теряется сама гарантия
+            style:"wave", twistAmt:0, foldK: 0,
+            ampl: 0.22*Math.pow(0.75,k4), lengthK: 0.3, lanes:1,
+            fillRelax: 0});
       const rbF = buildRibbon(pF, (state.seed + 770001 + k4*911)>>>0, 0);
       rbF.clampMin=[0,0,0]; rbF.clampMax=[box.w,box.h,box.d];
       if(!rbF.fillMode) marchRibbon(rbF);
@@ -3034,7 +3021,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","sat","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -3056,10 +3043,7 @@ GLASS_COLORS.forEach((c,i)=>{
   swBox.appendChild(el);
 });
 
-function refreshLabels(){
-  const sv=document.getElementById("satVal");
-  if(sv) sv.textContent=ui.sat.value;
-}
+function refreshLabels(){}
 
 let rebuildTimer=null;
 const rebuild = ()=>{
@@ -3067,7 +3051,7 @@ const rebuild = ()=>{
   clearTimeout(rebuildTimer);
   rebuildTimer=setTimeout(buildDeferred, 120);
 };
-for(const id of ["dimW","dimD","dimH","sat","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
