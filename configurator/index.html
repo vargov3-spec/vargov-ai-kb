@@ -191,6 +191,9 @@
     <div class="btns">
       <button class="btn2" id="savePng">Скачать PNG</button>
       <button class="btn2" id="saveCsv">Спецификация CSV</button>
+      <button class="btn2" id="saveObj">3D-модель OBJ</button>
+      <button class="btn2" id="saveDxf">Чертёж DXF (3D)</button>
+      <button class="btn2" id="saveMont">Монтажная карта CSV</button>
     </div>
 
     <fieldset style="margin-top:14px">
@@ -793,7 +796,13 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     const coil=Bmin>=170;
     // шаг витка: лента в винте слегка наклонена и несёт волну,
     // поэтому чистый шаг = ширина + 150, а не + 60
-    const pitch=(rw+150)+relax*300;
+    // ОДНОРЯДНАЯ ЛЕНТА: СКРУЧИВАНИЯ ЧЕРЕДУЮТСЯ С ПОВОРОТАМИ. У ленты в один
+    // ряд каркас узкий, она охотно идёт витком — и композиция читалась
+    // «вся из спиралей». Даём витку шаг в полтора раза больше: витков
+    // становится меньше, а освободившийся зазор уходит в ПОВОРОТЫ на плато
+    // чередования (там лента почти не крутится и проходит поворот или изгиб)
+    const oneRow=(box.rows===1);
+    const pitch=(rw+150)*(oneRow?1.55:1)+relax*300;
     const lenTurn=coil ? sectionPerim(A1s, A2s) : 4*Amax;
     // ПРАВИЛО ПРОИЗВОДСТВА: метраж ленты пропорционален длине композиции —
     // на 2000 мм габарита идёт ~4 пог. м, на 4000 мм ~8 пог. м. Лишняя
@@ -852,11 +861,20 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // правилу производства) не меняется. Глубина чередования — по запасу
     // сечения: в тесном сечении плато требует изгиба, который лента там
     // пройти не может
-    const altF=Math.max(0.7, Math.min(6, turns/1.6));
-    const altA=0.75*Math.max(0.15, Math.min(1, (Math.min(a1,a2)*0.88-150)/220));
+    // частота чередования: у однорядной — реже (длиннее участки «виток» и
+    // «поворот», они читаются по отдельности, а не сливаются)
+    const altF=Math.max(0.7, Math.min(6, turns/(oneRow?2.6:1.6)));
+    // глубина чередования: у однорядной плато почти полное — на нём фаза
+    // витка замирает и лента идёт поворотом
+    const altA=(oneRow?0.98:0.75)
+               *Math.max(oneRow?0.45:0.15,
+                         Math.min(1, (Math.min(a1,a2)*0.88-150)/220));
     // на плато лента уходит в сторону — это и есть поворот; размах
     // ограничен тем же бюджетом зазора между витками
-    const tAmp1=Math.min(a1*0.16, cBud), tAmp2=Math.min(a2*0.16, cBud);
+    // размах поворота на плато: у однорядной больше — шаг витка увеличен,
+    // и высвободившийся зазор между витками можно потратить на поворот
+    const tK=oneRow?0.34:0.16;
+    const tAmp1=Math.min(a1*tK, cBud), tAmp2=Math.min(a2*tK, cBud);
     // точек хватает и на витки, и на изгибы самой осевой линии
     const N=Math.max(30, Math.round(Math.max(turns*16, S/60)));
     const axisAt=[];
@@ -1012,6 +1030,7 @@ function buildRibbon(params, rngSeed, lane){
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
+                  rows: params.rows||2,
                   densK: params.densK||1, addLen: params.addLen||0 };
 
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
@@ -2811,8 +2830,12 @@ function buildScene(){
   {
     const fo=formOf([Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
                     params.ribbonW, params.form);
-    if(fo) env={kind:"form", form:params.form, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
-                R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
+    // ПУНКТИР ФОРМЫ ПОКАЗЫВАЕМ ТОЛЬКО ДЛЯ «НА РЕБРО». В «миксе» форма одна
+    // («Шар») и служит только генератору: она задаёт силуэт потока, но
+    // рисовать её контур не нужно — виден только габаритный бокс
+    if(fo && params.plast==="edge")
+      env={kind:"form", form:params.form, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
+           R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
   }
   scene = {box, ribbons, params, clear, env};
   updateSpec();
@@ -3190,7 +3213,19 @@ GLASS_COLORS.forEach((c,i)=>{
   swBox.appendChild(el);
 });
 
-function refreshLabels(){}
+/* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
+   плавный поток ленты читается в шаре, а в фигурных силуэтах (конус,
+   песочные часы, ромб) навивка плашмя их не держит. Для «на ребро»
+   доступны все формы — спираль вписывается в любой силуэт. */
+function syncForms(){
+  const mixOnly=(ui.plast.value!=="edge");
+  for(const o of ui.form.options){
+    const keep=!mixOnly || o.value==="sphere";
+    o.hidden=!keep; o.disabled=!keep;
+  }
+  if(mixOnly && ui.form.value!=="sphere") ui.form.value="sphere";
+}
+function refreshLabels(){ syncForms(); }
 
 let rebuildTimer=null;
 const rebuild = ()=>{
@@ -3255,6 +3290,184 @@ document.getElementById("saveCsv").onclick = ()=>{
   a.click();
 };
 
+/* ============================================================
+   ЭКСПОРТ ГЕОМЕТРИИ: технологу — под монтажную схему, монтажникам — под
+   сборку в реале. Три файла:
+     • OBJ — 3D-модель композиции (каркас полилиниями, каждая трубка
+       отдельной линией): открывается в Rhino / 3ds Max / Blender / SketchUp;
+     • DXF (R12, 3D) — те же линии по слоям: WIRE_*, ROD_GLASS, LED,
+       SUSPENSION, BBOX. По нему технолог делает монтажную схему в CAD;
+     • монтажная карта CSV — таблица для монтажников: каждая трубка с
+       координатами торцов и её положением по длине каркаса, точки диодов
+       и подвесов.
+   СИСТЕМА КООРДИНАТ ЭКСПОРТА: Z — ВВЕРХ (как принято в CAD и на стройке),
+   начало — нижний угол габарита. X — ширина, Y — глубина, Z — высота.
+   Внутри конфигуратора вверх смотрит Y, поэтому при экспорте оси
+   переставляются: X=x, Y=z, Z=y. Все размеры в миллиметрах.
+   ============================================================ */
+const EXP = {
+  // конфигуратор: [x=ширина, y=высота, z=глубина] → CAD: [x, y=глубина, z=высота]
+  p: (q)=>[q[0], q[2], q[1]],
+  f: (v)=>v.toFixed(1),
+  name: (ext)=>`vargov-ribbon-${ui.dimW.value}x${ui.dimD.value}x${ui.dimH.value}-`
+              +`${scene.params.plast==="edge"?"na-rebro":"mix"}.${ext}`,
+  // BOM нужен только CSV (иначе Excel ломает кириллицу); в OBJ и DXF он
+  // мешает парсерам
+  save: (fname, text, mime)=>{
+    const a=document.createElement("a");
+    a.download=fname;
+    const bom=/csv/.test(mime) ? "﻿" : "";
+    a.href=URL.createObjectURL(new Blob([bom+text],{type:mime}));
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 8000);
+  },
+  // контуры каркаса ленты: у двурядной три (кант A, центральный, кант B),
+  // у однорядной два канта
+  wires: (rb)=>rb.rows===2
+    ? [["WIRE_EDGE_A", rb.railA], ["WIRE_CENTER", rb.centers], ["WIRE_EDGE_B", rb.railB]]
+    : [["WIRE_EDGE_A", rb.railA], ["WIRE_EDGE_B", rb.railB]],
+};
+
+document.getElementById("saveObj").onclick = ()=>{
+  if(!scene) return;
+  const L=[], V2=[]; let vi=1;
+  L.push("# Vargov(R) Design - ленточная композиция из стеклянных стержней");
+  L.push(`# габарит (Ш x Г x В), мм: ${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`);
+  L.push(`# пластика: ${scene.params.plast==="edge"?"на ребро":"микс"}; `
+        +`рядность: ${scene.params.rows}; лента ${scene.params.ribbonW} мм; `
+        +`трубка Ø${ROD_D} x ${GLASS_WALL} мм`);
+  L.push(`# длина ленты: ${(state.lastSpec.totalLen/1000).toFixed(2)} пог. м; `
+        +`трубок: ${state.lastSpec.rods} шт`);
+  L.push("# оси: X - ширина, Y - глубина, Z - высота (Z вверх), мм");
+  const put=(q)=>{ const e=EXP.p(q); V2.push(`v ${EXP.f(e[0])} ${EXP.f(e[1])} ${EXP.f(e[2])}`); return vi++; };
+  const groups=[];
+  scene.ribbons.forEach((rb, ri)=>{
+    // каркас: полилинии
+    for(const [nm, arr] of EXP.wires(rb)){
+      const idx=arr.map(put);
+      groups.push([`R${ri+1}_${nm}`, ["l "+idx.join(" ")]]);
+    }
+    // стеклянные трубки: каждая отдельным отрезком
+    const rodL=[];
+    for(const r of rb.rods) rodL.push(`l ${put(r.b)} ${put(r.a)}`);
+    groups.push([`R${ri+1}_ROD_GLASS`, rodL]);
+    // диоды и подвесы — точками
+    if(rb.leds && rb.leds.length)
+      groups.push([`R${ri+1}_LED`, ["p "+rb.leds.map(put).join(" ")]]);
+    if(rb.cabs && rb.cabs.length){
+      const cl=[];
+      for(const c of rb.cabs) cl.push(`l ${put(c.to)} ${put(c.from)}`);
+      groups.push([`R${ri+1}_SUSPENSION`, cl]);
+    }
+  });
+  const out=L.concat(V2);
+  for(const [nm, lines] of groups){ out.push(`g ${nm}`); out.push(...lines); }
+  EXP.save(EXP.name("obj"), out.join("\n")+"\n", "text/plain;charset=utf-8");
+};
+
+document.getElementById("saveDxf").onclick = ()=>{
+  if(!scene) return;
+  // DXF R12: минимальный валидный файл из отрезков по слоям — его читают
+  // AutoCAD, Rhino, NanoCAD, LibreCAD, Fusion
+  const o=[];
+  const rec=(c,v)=>{ o.push(String(c)); o.push(String(v)); };
+  const line=(layer,a,b)=>{
+    const p1=EXP.p(a), p2=EXP.p(b);
+    rec(0,"LINE"); rec(8,layer);
+    rec(10,EXP.f(p1[0])); rec(20,EXP.f(p1[1])); rec(30,EXP.f(p1[2]));
+    rec(11,EXP.f(p2[0])); rec(21,EXP.f(p2[1])); rec(31,EXP.f(p2[2]));
+  };
+  const pt=(layer,a)=>{
+    const p1=EXP.p(a);
+    rec(0,"POINT"); rec(8,layer);
+    rec(10,EXP.f(p1[0])); rec(20,EXP.f(p1[1])); rec(30,EXP.f(p1[2]));
+  };
+  // заголовок: версия R12 и единицы — миллиметры
+  rec(0,"SECTION"); rec(2,"HEADER");
+  rec(9,"$ACADVER"); rec(1,"AC1009");
+  rec(9,"$INSUNITS"); rec(70,4);
+  rec(0,"ENDSEC");
+  rec(0,"SECTION"); rec(2,"ENTITIES");
+  scene.ribbons.forEach((rb, ri)=>{
+    const pre=scene.ribbons.length>1 ? `R${ri+1}_` : "";
+    for(const [nm, arr] of EXP.wires(rb))
+      for(let i=1;i<arr.length;i++) line(pre+nm, arr[i-1], arr[i]);
+    for(const r of rb.rods) line(pre+"ROD_GLASS", r.b, r.a);
+    if(rb.leds) for(const l of rb.leds) pt(pre+"LED", l);
+    if(rb.cabs) for(const c of rb.cabs) line(pre+"SUSPENSION", c.to, c.from);
+  });
+  { // габаритный бокс
+    const {w,h,d}=scene.box;
+    const K=[[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
+    for(const [a,b] of [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]])
+      line("BBOX", K[a], K[b]);
+  }
+  rec(0,"ENDSEC"); rec(0,"EOF");
+  EXP.save(EXP.name("dxf"), o.join("\r\n")+"\r\n", "application/dxf");
+};
+
+document.getElementById("saveMont").onclick = ()=>{
+  if(!scene) return;
+  const s=state.lastSpec;
+  const R=[];
+  R.push(["Vargov(R) Design - МОНТАЖНАЯ КАРТА ленточной композиции"]);
+  R.push([`Габарит (Ш x Г x В), мм`, `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`]);
+  R.push(["Пластика", scene.params.plast==="edge"?"на ребро":"микс"]);
+  R.push(["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"]);
+  R.push(["Ширина ленты, мм", scene.params.ribbonW]);
+  R.push([`Трубка`, `Ø${ROD_D} x ${GLASS_WALL} мм, длина ${[...s.byLen.keys()][0]} мм`]);
+  R.push(["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)]);
+  R.push(["Оси: X - ширина, Y - глубина, Z - высота (Z вверх); начало - нижний угол габарита; мм"]);
+  R.push([]);
+  scene.ribbons.forEach((rb, ri)=>{
+    if(scene.ribbons.length>1) R.push([`ЛЕНТА ${ri+1}`]);
+    // ход по центральному контуру: по нему монтажник размечает каркас
+    const wire=rb.rows===2 ? rb.centers : rb.railA;
+    R.push([]);
+    R.push(["КАРКАС: разметка по контуру (шаг станции = шаг трубок)"]);
+    R.push(["№ станции","ход по каркасу, мм","X","Y","Z","угол поворота к пред., град"]);
+    let acc=0;
+    for(let i=0;i<wire.length;i++){
+      if(i>0) acc+=V.len(V.sub(wire[i], wire[i-1]));
+      let ang="";
+      if(i>0 && i<wire.length-1){
+        const v1=V.sub(wire[i],wire[i-1]), v2=V.sub(wire[i+1],wire[i]);
+        const l1=V.len(v1)||1, l2=V.len(v2)||1;
+        ang=(Math.acos(Math.max(-1,Math.min(1,V.dot(v1,v2)/(l1*l2))))*180/Math.PI).toFixed(2);
+      }
+      const e=EXP.p(wire[i]);
+      // каждая 10-я станция: карта остаётся читаемой на печати
+      if(i%10===0 || i===wire.length-1)
+        R.push([i+1, Math.round(acc), EXP.f(e[0]), EXP.f(e[1]), EXP.f(e[2]), ang]);
+    }
+    R.push([]);
+    R.push(["СТЕКЛЯННЫЕ ТРУБКИ: торцы (b - у каркаса, a - наружный)"]);
+    R.push(["№ трубки","ряд","станция","длина, мм","Xb","Yb","Zb","Xa","Ya","Za"]);
+    rb.rods.forEach((r, k)=>{
+      const b=EXP.p(r.b), a=EXP.p(r.a);
+      R.push([k+1, r.u2>0 ? "верхний" : "нижний", r.st+1, r.len.toFixed(1),
+              EXP.f(b[0]),EXP.f(b[1]),EXP.f(b[2]), EXP.f(a[0]),EXP.f(a[1]),EXP.f(a[2])]);
+    });
+    if(rb.leds && rb.leds.length){
+      R.push([]);
+      R.push([`ДИОДЫ ${LED_W} W / ${LED_V} V, шаг ${LED_PITCH} мм по каркасу`]);
+      R.push(["№","X","Y","Z"]);
+      rb.leds.forEach((l,k)=>{ const e=EXP.p(l); R.push([k+1, EXP.f(e[0]),EXP.f(e[1]),EXP.f(e[2])]); });
+    }
+    if(rb.cabs && rb.cabs.length){
+      R.push([]);
+      R.push(["ПОДВЕСЫ: точка крепления на ленте и длина троса до потолка габарита"]);
+      R.push(["№","X","Y","Z","длина троса, мм"]);
+      rb.cabs.forEach((c,k)=>{
+        const e=EXP.p(c.to);
+        R.push([k+1, EXP.f(e[0]),EXP.f(e[1]),EXP.f(e[2]), Math.round(c.from[1]-c.to[1])]);
+      });
+    }
+  });
+  EXP.save(EXP.name("csv").replace(".csv","-montage.csv"),
+           R.map(r=>r.join(";")).join("\r\n"), "text/csv;charset=utf-8");
+};
+
 /* камера: события */
 let drag=null;
 cv.addEventListener("pointerdown", e=>{
@@ -3309,8 +3522,10 @@ function drawSplash(msg){
   {
     const fo=formOf([Math.max(200,box.w-40), Math.max(200,box.h-40), Math.max(200,box.d-40)],
                     rw, ui.form.value);
-    if(fo) env={kind:"form", form:ui.form.value, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
-                R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
+    // на заглушке пунктир формы тоже только для «на ребро»
+    if(fo && ui.plast.value==="edge")
+      env={kind:"form", form:ui.form.value, ax:fo.ax, c:[box.w/2, box.h/2, box.d/2],
+           R:fo.R.slice(), Rax:fo.R[fo.ax], rect:fo.rect, prof:fo.prof};
   }
   scene={box, ribbons:[], params:{form:ui.form.value, ribbonW:rw, rows:+ui.rows.value, lanes:1},
          clear:{collisions:0}, env};
