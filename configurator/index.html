@@ -3228,14 +3228,21 @@ function syncForms(){
 function refreshLabels(){ syncForms(); }
 
 let rebuildTimer=null;
-const rebuild = ()=>{
+const rebuild = (msg)=>{
   refreshLabels();
   clearTimeout(rebuildTimer);
-  rebuildTimer=setTimeout(buildDeferred, 120);
+  const m=(typeof msg==="string") ? msg : null;
+  rebuildTimer=setTimeout(()=>buildDeferred(m), 120);
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"]) ui[id].addEventListener("change", rebuild);
+for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
+  ui[id].addEventListener("change", ()=>rebuild("Подбор варианта композиции…"));
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
-for(const id of ["leds","cables"]) ui[id].addEventListener("change", rebuild);
+// подпись индикатора — по операции: галочки диодов и подвесов не подбирают
+// композицию заново, они доукомплектовывают уже готовый каркас
+ui.leds.addEventListener("change", ()=>rebuild(
+  ui.leds.checked ? "Добавляем диоды на контур…" : "Убираем диоды с контура…"));
+ui.cables.addEventListener("change", ()=>rebuild(
+  ui.cables.checked ? "Расставляем подвесы…" : "Убираем подвесы…"));
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
 const regenClick = ()=>{
@@ -3542,9 +3549,14 @@ function drawSplash(msg){
 /* сборка после отрисовки кадра с подписью — интерфейс отвечает сразу.
    Первая сборка обязана уйти ЗА событие load: иначе браузер (и обёртка
    iframe) держит индикатор загрузки все секунды подбора варианта */
-function buildDeferred(){
+/* ИНДИКАТОР ГЕНЕРАЦИИ ГОВОРИТ, ЧТО ИМЕННО ИДЁТ. Подбор варианта композиции
+   и «добавляем диоды на контур» — разные операции, и подпись обязана
+   соответствовать нажатой галочке */
+function buildDeferred(msg){
   drawSplash("");
   const busy=document.getElementById("busy");
+  const txt=document.getElementById("busyTxt");
+  if(txt) txt.textContent=msg||"Подбор варианта композиции…";
   if(busy) busy.classList.add("on");
   const run=()=>{
     try { buildScene(); }
