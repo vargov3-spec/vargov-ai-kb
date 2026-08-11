@@ -75,13 +75,6 @@
   }
   .row .val{width:44px; flex:none; text-align:right; color:var(--txt); font-size:12px; font-variant-numeric:tabular-nums}
   .row input[type=checkbox]{accent-color:var(--gold)}
-  .picks{display:grid; grid-template-columns:repeat(5,1fr); gap:6px}
-  .pick{position:relative; padding:0; border:1px solid #262a31; border-radius:9px;
-    background:#15181c; cursor:pointer; aspect-ratio:1; display:flex;
-    align-items:center; justify-content:center; transition:border-color .15s, background .15s}
-  .pick:hover{background:#1a1e23}
-  .pick.sel{border-color:#e7c76a; background:#1c1f24}
-  .pick svg{width:86%; height:86%; display:block}
   .swatches{display:grid; grid-template-columns:repeat(6, 1fr); gap:7px; margin-top:6px}
   .anyc{grid-column:1/-1; display:flex; align-items:center; gap:9px; cursor:pointer;
         margin-top:2px}
@@ -142,10 +135,7 @@
       <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
       <div class="row"><label for="dimC">Высота до потолка<br><span style="font-size:11px;opacity:.6">длина тросов от верха композиции</span></label>
         <input id="dimC" type="number" min="0" max="10000" step="50" value="600"></div>
-      <div class="row" id="planRow" style="display:block">
-        <label for="plan" style="display:block;margin-bottom:6px">Форма в плане (вид сверху)</label>
-        <select id="plan" style="display:none"></select>
-        <div class="picks" id="planPicks"></div></div>
+      <select id="plan" style="display:none"></select>
       <div class="row" id="formRow"><label for="form">Форма</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -2541,9 +2531,13 @@ function buildScene(){
     rodLen,
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
-    form: (FORMS[ui.form.value] ? ui.form.value : "box"),
-    // силуэт в плане (вид сверху) для «на ребро»
-    plan: (PLAN_SHAPES[ui.plan.value] ? ui.plan.value : "circle"),   // форма габарита
+    // ФОРМА: либо силуэт габарита (цилиндр, конус, полусфера, ромб), либо
+    // силуэт В ПЛАНЕ («plan_имя») — тогда спуск цилиндрический, а витки
+    // несутся по выбранному контуру сверху
+    form: (ui.form.value.indexOf("plan_")===0 ? "cyl"
+           : (FORMS[ui.form.value] ? ui.form.value : "box")),
+    plan: (ui.form.value.indexOf("plan_")===0
+           && PLAN_SHAPES[ui.form.value.slice(5)] ? ui.form.value.slice(5) : "circle"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
     lengthK: 1.0,
     lanes,
@@ -3404,39 +3398,19 @@ GLASS_COLORS.forEach((c)=>{
    плавный поток ленты читается в шаре, а в фигурных силуэтах (конус,
    песочные часы, ромб) навивка плашмя их не держит. Для «на ребро»
    доступны все формы — спираль вписывается в любой силуэт. */
-// СИЛУЭТЫ В ПЛАНЕ — КНОПКИ С ИКОНКАМИ. Иконка рисуется той же функцией
-// r(θ), что и сама композиция: три вложенных контура — ровно так, как силуэт
-// выглядит сверху (и как он нарисован от руки)
-{
-  const box=document.getElementById("planPicks");
-  const path=(fn, k)=>{
-    let d="";
-    for(let i=0;i<=96;i++){
-      const a=i/96*Math.PI*2, r=Math.max(0.06, fn(a))*k*21;
-      d+=(i?"L":"M")+(24+r*Math.cos(a)).toFixed(2)+" "+(24+r*Math.sin(a)).toFixed(2)+" ";
-    }
-    return d+"Z";
-  };
-  for(const key in PLAN_SHAPES){
-    const sh=PLAN_SHAPES[key];
-    const o=document.createElement("option");
-    o.value=key; o.textContent=sh.label; ui.plan.appendChild(o);
-    const btn=document.createElement("button");
-    btn.type="button"; btn.className="pick"+(key==="circle"?" sel":"");
-    btn.title=sh.label;
-    btn.innerHTML='<svg viewBox="0 0 48 48" fill="none" stroke="#e0c37a" '
-      +'stroke-width="1.5" stroke-linejoin="round">'
-      +[1,0.66,0.33].map(k=>`<path d="${path(sh.r,k)}"/>`).join("")+'</svg>';
-    btn.onclick=()=>{
-      ui.plan.value=key;
-      box.querySelectorAll(".pick").forEach(b=>b.classList.remove("sel"));
-      btn.classList.add("sel");
-      rebuild("Генерация варианта композиции…");
-    };
-    box.appendChild(btn);
-  }
-  ui.plan.value="circle";
+// СИЛУЭТЫ В ПЛАНЕ ЖИВУТ В ОБЩЕМ СПИСКЕ ФОРМ. Каждый силуэт — отдельный пункт
+// «Формы»: спуск идёт цилиндром, а витки несутся по выбранному контуру
+// (вид сверху). Скрытый select#plan остаётся носителем значения силуэта
+for(const key in PLAN_SHAPES){
+  const o=document.createElement("option");
+  o.value=key; o.textContent=PLAN_SHAPES[key].label;
+  ui.plan.appendChild(o);
+  if(key==="circle") continue;
+  const of=document.createElement("option");
+  of.value="plan_"+key; of.textContent="В плане: "+PLAN_SHAPES[key].label;
+  ui.form.appendChild(of);
 }
+ui.plan.value="circle";
 
 function syncForms(){
   const mixOnly=(ui.plast.value!=="edge");
@@ -3445,7 +3419,8 @@ function syncForms(){
   // песочные часы отклонены по результату — их силуэт спираль не отрабатывает
   const EDGE_OFF={box:1, sphere:1, drop:1, barrel:1, waist:1, pyr:1};
   for(const o of ui.form.options){
-    const keep = mixOnly ? (o.value==="sphere") : !EDGE_OFF[o.value];
+    const keep = mixOnly ? (o.value==="sphere")
+                         : (o.value.indexOf("plan_")===0 || !EDGE_OFF[o.value]);
     o.hidden=!keep; o.disabled=!keep;
   }
   if(mixOnly && ui.form.value!=="sphere") ui.form.value="sphere";
@@ -3456,8 +3431,7 @@ function syncForms(){
   if(row) row.style.display = mixOnly ? "none" : "";
   // силуэт в плане — только для «на ребро»: в «миксе» лента лежит плашмя и
   // плановый контур ей не задаётся
-  const prow=document.getElementById("planRow");
-  if(prow) prow.style.display = mixOnly ? "none" : "block";
+
   // ОДНОРЯДНАЯ ЛЕНТА: СТЕРЖЕНЬ НЕ КОРОЧЕ 200 мм. У однорядной ширина ленты
   // равна длине стержня, и на 100–150 мм лента получается слишком узкой —
   // производство такую не делает
