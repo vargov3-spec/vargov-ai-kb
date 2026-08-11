@@ -71,7 +71,11 @@
   }
   .row .val{width:44px; flex:none; text-align:right; color:var(--txt); font-size:12px; font-variant-numeric:tabular-nums}
   .row input[type=checkbox]{accent-color:var(--gold)}
-  .swatches{display:flex; gap:7px; flex-wrap:wrap; margin-top:6px}
+  .swatches{display:grid; grid-template-columns:repeat(6, 1fr); gap:7px; margin-top:6px}
+  .anyc{grid-column:1/-1; display:flex; align-items:center; gap:9px; cursor:pointer;
+        margin-top:2px}
+  .anyc input[type=color]{width:0; height:0; opacity:0; position:absolute; pointer-events:none}
+  .anyc-cap{font-size:12px; opacity:.75}
   .sw{
     width:26px; height:26px; border-radius:50%; cursor:pointer; border:2px solid transparent;
     box-shadow:inset 0 0 6px rgba(0,0,0,.5);
@@ -123,9 +127,9 @@
     <fieldset>
       <legend>Габариты композиции, мм</legend>
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
-      <div class="row"><label for="dimD">Глубина (Z)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
-      <div class="row"><label for="dimH">Высота (Y)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
-      <div class="row"><label for="form">Форма габарита</label>
+      <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
+      <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="row" id="formRow"><label for="form">Форма габарита</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
           <option value="sphere">Шар</option>
@@ -189,7 +193,6 @@
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
     <div class="btns">
-      <button class="btn2" id="savePng">Скачать PNG</button>
       <button class="btn2" id="saveCsv">Спецификация CSV</button>
       <button class="btn2" id="saveObj">3D-модель OBJ</button>
       <button class="btn2" id="saveDxf">Чертёж DXF (3D)</button>
@@ -202,10 +205,6 @@
       <div class="note">
         Расчёт предварительный: финальную спецификацию, стоимость производства и доставки
         подтверждает производство Vargov®Design.
-      </div>
-      <div class="btns" style="margin-top:10px">
-        <a class="btn2" href="https://wa.me/message/SAC5LWOV5QMXC1" target="_blank" rel="noopener">Запрос в WhatsApp</a>
-        <a class="btn2" href="https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-371033491511-svetovaya-kompozitsiya" target="_blank" rel="noopener">Карточка LC0217</a>
       </div>
     </fieldset>
   </div>
@@ -268,14 +267,34 @@ function setRodD(d){
 const R_MIN = 75;        // технологический предел (Ø150)
 const R_FIT = 80;        // целевой радиус лимитера
 
+/* ЦВЕТ ЭЛЕМЕНТОВ — палитра как в конфигураторе Vargov®Design
+   (configurator.vargov.ru): 24 базовых цвета плюс «Выбрать любой» —
+   произвольный цвет из системной пипетки */
 const GLASS_COLORS = [
-  {id:"amber",   name:"Янтарь",     c:"#e8a33d"},
-  {id:"cognac",  name:"Коньяк",     c:"#a96428"},
-  {id:"gold",    name:"Золото",     c:"#d4b23c"},
-  {id:"cobalt",  name:"Кобальт",    c:"#2439c8"},
-  {id:"ruby",    name:"Рубин",      c:"#c01f35"},
-  {id:"smoke",   name:"Дымчатый",   c:"#8d939c"},
-  {id:"clear",   name:"Прозрачный", c:"#cfdde6"},
+  {id:"red",     name:"Красный",     c:"#c92c39"},
+  {id:"vermil",  name:"Киноварь",    c:"#dd4b2a"},
+  {id:"orange",  name:"Оранжевый",   c:"#e2812a"},
+  {id:"amber",   name:"Янтарь",      c:"#e8a33d"},
+  {id:"gold",    name:"Золото",      c:"#d4b23c"},
+  {id:"lime",    name:"Лайм",        c:"#b4c93f"},
+  {id:"green",   name:"Зелёный",     c:"#57a24d"},
+  {id:"emerald", name:"Изумруд",     c:"#3d9070"},
+  {id:"teal",    name:"Бирюза",      c:"#3a8a8f"},
+  {id:"azure",   name:"Лазурь",      c:"#3a8ec0"},
+  {id:"blue",    name:"Синий",       c:"#2f74be"},
+  {id:"cobalt",  name:"Кобальт",     c:"#2f4bb0"},
+  {id:"indigo",  name:"Индиго",      c:"#4034a8"},
+  {id:"violet",  name:"Фиолетовый",  c:"#6a2f9e"},
+  {id:"purple",  name:"Пурпур",      c:"#9c2f95"},
+  {id:"magenta", name:"Маджента",    c:"#bd2878"},
+  {id:"ruby",    name:"Рубин",       c:"#c01f35"},
+  {id:"marsala", name:"Марсала",     c:"#8f4040"},
+  {id:"cognac",  name:"Коньяк",      c:"#8a5a28"},
+  {id:"graphite",name:"Графит",      c:"#3a4048"},
+  {id:"black",   name:"Чёрный",      c:"#1c1f22"},
+  {id:"steel",   name:"Сталь",       c:"#8d939c"},
+  {id:"silver",  name:"Серебро",     c:"#ccd3d8"},
+  {id:"clear",   name:"Прозрачный",  c:"#eef2f3"},
 ];
 
 /* ---------- малая векторная алгебра ---------- */
@@ -772,6 +791,32 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         if(sphE) sphE.clampTo(q, 1.0, ROD_R+4, true);
         pts.push(q);
         axisAtE.push([0,1,0]);      // стержни вертикальны — лента на ребре
+      }
+      // ВЕРХНИЙ КОНЕЦ ЛЕНТЫ ПРИЖАТ К СОСЕДНЕМУ ВИТКУ — ДЛЯ ЛЮБОЙ ФОРМЫ.
+      // Считать прижим по профилю спирали нельзя: фактический радиальный шаг
+      // задают ещё контур формы, завал горизонта и вписывание в габарит —
+      // поэтому шаг ЗАМЕРЯЕТСЯ. Для каждой точки первых 3/4 витка берётся
+      // точка витком ниже (та же угловая позиция) и радиус подтягивается так,
+      // чтобы между ними осталась толщина трубки с воздухом. Прижим гаснет за
+      // 3/4 витка, дальше спираль идёт как есть. По высоте виток и его сосед
+      // разведены шагом витка, поэтому это не касание, а плотная укладка
+      {
+        const per=Math.max(4, Math.round(NE/Math.max(1,nA)));   // точек на виток
+        const nH=Math.min(pts.length-per-1, Math.round(per*0.75));
+        const cx=dims[0]/2, cz=dims[2]/2;
+        for(let i=0;i<nH;i++){
+          const j=i+per;
+          if(j>=pts.length) break;
+          const r1=Math.hypot(pts[i][0]-cx, pts[i][2]-cz);
+          const r2=Math.hypot(pts[j][0]-cx, pts[j][2]-cz);
+          const want=r2+ROD_D+10;
+          if(r1>want+1){
+            const w=(1-i/nH)*(1-i/nH);
+            const kk=1+(Math.max(0.15, want/Math.max(1,r1))-1)*w;
+            pts[i][0]=cx+(pts[i][0]-cx)*kk;
+            pts[i][2]=cz+(pts[i][2]-cz)*kk;
+          }
+        }
       }
       pts.__axisAt=axisAtE;
       pts.__target=tgt;
@@ -3197,21 +3242,42 @@ for(const id of ["dimW","dimD","dimH","form","plast","rows","frame","rWidth","ro
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
 const state = {seed: 20260807, color: DEFAULT_GLASS, lastSpec:null};
 
-// свотчи стекла
+// свотчи стекла: 24 базовых цвета и «Выбрать любой» (произвольный цвет)
 const swBox = document.getElementById("swatches");
-GLASS_COLORS.forEach((c,i)=>{
+const pick = (c, el)=>{
+  state.color = c;
+  swBox.querySelectorAll(".sw").forEach(s=>s.classList.remove("sel"));
+  if(el) el.classList.add("sel");
+  needRedraw = true;
+  if(state.lastSpec) updateSpec();
+};
+GLASS_COLORS.forEach((c)=>{
   const el = document.createElement("div");
   el.className = "sw"+(c===state.color?" sel":"");
   el.style.background = `radial-gradient(circle at 35% 30%, ${c.c}, #000 160%)`;
   el.title = c.name;
-  el.onclick = ()=>{
-    state.color = c;
-    swBox.querySelectorAll(".sw").forEach(s=>s.classList.remove("sel"));
-    el.classList.add("sel");
-    needRedraw = true;
-  };
+  el.onclick = ()=>pick(c, el);
   swBox.appendChild(el);
 });
+{ // ПРОИЗВОЛЬНЫЙ ЦВЕТ: системная пипетка. Выбранный цвет становится свотчем
+  // и остаётся в спецификации как HEX — производству этого достаточно
+  const wrap=document.createElement("label");
+  wrap.className="anyc";
+  const inp=document.createElement("input");
+  inp.type="color"; inp.value=state.color.c;
+  const dot=document.createElement("span");
+  dot.className="sw anyc-dot";
+  dot.style.background=`radial-gradient(circle at 35% 30%, ${state.color.c}, #000 160%)`;
+  const cap=document.createElement("span");
+  cap.className="anyc-cap"; cap.textContent="Выбрать любой";
+  inp.oninput=()=>{
+    const hex=inp.value;
+    dot.style.background=`radial-gradient(circle at 35% 30%, ${hex}, #000 160%)`;
+    pick({id:"custom", name:"Свой цвет "+hex.toUpperCase(), c:hex}, dot);
+  };
+  wrap.appendChild(inp); wrap.appendChild(dot); wrap.appendChild(cap);
+  swBox.appendChild(wrap);
+}
 
 /* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
    плавный поток ленты читается в шаре, а в фигурных силуэтах (конус,
@@ -3224,6 +3290,10 @@ function syncForms(){
     o.hidden=!keep; o.disabled=!keep;
   }
   if(mixOnly && ui.form.value!=="sphere") ui.form.value="sphere";
+  // в «миксе» выбора нет — строка формы габарита скрыта целиком: генерация
+  // идёт в «шаре», он задаёт силуэт потока, но выбирать тут нечего
+  const row=document.getElementById("formRow");
+  if(row) row.style.display = mixOnly ? "none" : "";
 }
 function refreshLabels(){ syncForms(); }
 
@@ -3251,13 +3321,6 @@ const regenClick = ()=>{
 };
 document.getElementById("regen").onclick = regenClick;
 document.getElementById("regen2").onclick = regenClick;
-
-document.getElementById("savePng").onclick = ()=>{
-  const a = document.createElement("a");
-  a.download = `vargov-ribbon-${ui.dimW.value}x${ui.dimD.value}x${ui.dimH.value}.png`;
-  a.href = cv.toDataURL("image/png");
-  a.click();
-};
 
 document.getElementById("saveCsv").onclick = ()=>{
   const s = state.lastSpec; if(!s) return;
@@ -3568,6 +3631,7 @@ function buildDeferred(msg){
   else requestAnimationFrame(()=>setTimeout(run, 0));
 }
 resize();
+syncForms();          // строка формы габарита прячется в «миксе» сразу
 buildDeferred();
 requestAnimationFrame(loop);
 
