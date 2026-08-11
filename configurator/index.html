@@ -812,7 +812,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         const rad=(q)=>Math.hypot(q[0]-cx, q[2]-cz);
         if(pts.length>per+4){
           const dTurn=Math.max(1, rad(pts[0])-rad(pts[per]));   // шаг витка, мм
-          const press=Math.max(0, dTurn-(ROD_D+10));
+          // просвет между концом и соседним витком — 55 мм (5-6 см):
+          // «почти вплотную», но конец читается отдельно и монтаж проще
+          const press=Math.max(0, dTurn-55);
           // длина прижима: 2·прижим/шаг витка — при ней производная радиуса
           // не меняет знак; не короче витка и не длиннее двух
           const nH=Math.min(pts.length-2,
@@ -2836,6 +2838,7 @@ function buildScene(){
     }
   }
   // LED-точки и подвесы
+  const scene0Plast=params.plast||"mix";
   ribbons.forEach((rb, ri)=>{
     // диоды — белые точки Ø4 на одном контуре каркаса:
     // у двурядной — центральный контур; шаг хаотичный, в среднем 100 мм
@@ -2879,13 +2882,21 @@ function buildScene(){
         return bi;
       };
       const picked=[];
-      const MAXSPAN=CABLE_STEP;            // предельный пролёт, мм
+      // ПОДВЕСЫ У «НА РЕБРО» — РЕЖЕ. Лента на ребре стоит на трёх контурах,
+      // поставленных вертикально: такой каркас держит форму сам, и подвесы
+      // нужны только чтобы нести вес и не давать витку раскрываться. Поэтому
+      // пролёт вдвое больше (500 мм против расчётного для ленты плашмя), а
+      // добавочные подвесы на крутых изгибах не ставятся — на ребре изгиб
+      // идёт вокруг стержней и не распрямляется
+      const onEdge=(scene0Plast==="edge");
+      const MAXSPAN=onEdge ? 500 : CABLE_STEP;   // предельный пролёт, мм
       let lastS=-1e9;
       for(let i=0;i<n;i++){
         const sArc=i*rb.stepEff;
         // изгиб круче ~R400 нужно держать: без подвеса он распрямляется
         const sharp = R[i]<400;
-        const need = (sArc-lastS>=MAXSPAN) || (sharp && sArc-lastS>=MAXSPAN*0.45);
+        const need = (sArc-lastS>=MAXSPAN)
+                     || (!onEdge && sharp && sArc-lastS>=MAXSPAN*0.45);
         if(!need) continue;
         const j=peak(i);
         const jj=picked.length && Math.abs(j-picked[picked.length-1])*rb.stepEff<120
