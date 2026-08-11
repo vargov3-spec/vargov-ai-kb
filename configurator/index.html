@@ -758,7 +758,14 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // плотность витков можно снизить сверху: этим страховочные проходы
       // разводят спираль, не меняя пластику
       const densKE=Math.max(0.35, Math.min(1, box.densK||1));
-      const nA=Math.max(2.5, Math.min(nMax, nNeed)*densKE);
+      // КОНУС ВЫВЕДЕН ИЗ ВСЕХ ПРАВИЛ: ни правило метража, ни пределы плотности
+      // к нему не применяются. Витки ставятся так, чтобы лента ЗАПОЛНИЛА
+      // ФОРМУ — сверху донизу с перекрытием; радиус каждого витка задаёт сам
+      // контур конуса (каждый нижний меньше верхнего, поэтому радиальное
+      // разведение получается само). Витков — сколько влезает по высоте
+      const nA=(box.form==="cone")
+        ? Math.max(3, Math.min(18, riseFree/pitchE)*densKE)
+        : Math.max(2.5, Math.min(nMax, nNeed)*densKE);
       // спуск (вершина внизу) — по шагу витка; размах завала горизонта
       // зарезервирован в габарите, иначе спираль вылезает за верх и низ
       const kminE=kminE0;
@@ -796,7 +803,16 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // вертикальными — завал это изгиб ленты вокруг них, самый лёгкий
       // силуэт в плане: функция r(θ) из таблицы (по умолчанию круг)
       const planF=(PLAN_SHAPES[box.plan]||PLAN_SHAPES.circle).r;
-      const planR=(a)=>Math.max(0.25, planF(a));
+      // ХАОС В КОНТУРЕ (у «боба»): на каждую генерацию своя случайная
+      // модуляция силуэта — форма выемки и лепестков каждый раз другая
+      const planCh=((PLAN_SHAPES[box.plan]||{}).chaos||0);
+      const chA=planCh?(0.10+0.12*rng()):0;
+      const chP1=rng()*Math.PI*2, chP2=rng()*Math.PI*2;
+      const chF1=2+Math.floor(rng()*3), chF2=4+Math.floor(rng()*3);
+      const planR=(a)=>Math.max(0.25, planF(a)*(1+chA*(0.62*Math.sin(chF1*a+chP1)
+                                                      +0.38*Math.sin(chF2*a+chP2))));
+      const planTw=((PLAN_SHAPES[box.plan]||{}).tw||0)*Math.PI/180;
+      const liftA=((PLAN_SHAPES[box.plan]||{}).lift||0)*(rng()*2-1)*rw*0.55;
       const tiltMax=tiltMm/kminE;
       // РАНДОМ ЗАВАЛА: у каждой генерации свой характер — размах от чуть
       // заметного до предельного, своё направление, своя скорость поворота
@@ -811,7 +827,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // ВЕРШИНА ВСЕГДА ВНИЗ: спираль закручивается к центру и одновременно
         // ОПУСКАЕТСЯ, поэтому самый маленький внутренний виток оказывается
         // снизу — композиция висит вершиной вниз, как люстра
-        const yq=y0+rise*(1-t);
+        // ЗАВИТОК ГУЛЯЕТ ПО ВЕРТИКАЛИ (у «капли»): внутренние витки уходят
+        // случайно выше или ниже, движение плавное и растёт к концу спуска
+        const yq=y0+rise*(1-t)+liftA*t*t*(3-2*t);
         // контур формы на этой высоте (у шара сечение сужается к полюсам)
         let kf=1;
         if(sphE){
@@ -867,7 +885,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // СИЛУЭТ В ПЛАНЕ: радиус витка модулируется контуром r(θ). Витки
         // вкладываются друг в друга по одному и тому же контуру, поэтому
         // радиальный зазор между ними сохраняется
-        const kPlan=planR(th);
+        // ПОВОРОТ СИЛУЭТА НА КАЖДЫЙ ВИТОК (у «звезды» 15°): контур витка
+        // доворачивается вокруг вертикальной оси пропорционально номеру витка
+        const kPlan=planR(th - planTw*nA*t);
         const q=[dims[0]/2+sxE*rho*kPlan*Math.cos(th), yq+yT,
                  dims[2]/2+szE*rho*kPlan*Math.sin(th)];
         // плавный подход к стенке габарита (жёсткое обрезание давало зубцы).
@@ -2565,6 +2585,11 @@ function buildScene(){
   // одна лента, одна форма («Поток (винт)») и насыщенность 1× —
   // выбора в интерфейсе нет
   const lanes = 1;
+  // закреплённая композиция по умолчанию: своё зерно на каждую рядность
+  if(state.autoSeed){
+    const sp=SEED_PINNED[+ui.rows.value===1?1:2];
+    if(sp!==undefined) state.seed=sp;
+  }
   const rodLen = ROD_LENGTHS.indexOf(+ui.rWidth.value)>=0 ? +ui.rWidth.value : 300;
   setRodD(+ui.rodD.value===8 ? 8 : 10);   // диаметр трубки → шаг и допуски
   const params = {
@@ -3415,7 +3440,14 @@ for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
-const state = {seed: 20260807, color: DEFAULT_GLASS, lastSpec:null};
+/* КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ ЗАФИКСИРОВАНА — своя для каждой рядности.
+   При первом открытии и при переключении рядности (до первой ручной
+   генерации) берётся закреплённое зерно: заказчик видит именно ту
+   композицию, которая утверждена, а не случайную. Кнопка «Сгенерировать
+   новый вариант» снимает закрепление и дальше идут случайные варианты. */
+const SEED_PINNED = {1: 20260811, 2: 20260807};
+const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
+               autoSeed: true};
 
 // свотчи стекла: 24 базовых цвета и «Выбрать любой» (произвольный цвет)
 const swBox = document.getElementById("swatches");
@@ -3524,6 +3556,7 @@ ui.cables.addEventListener("change", ()=>rebuild(
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
 const regenClick = ()=>{
+  state.autoSeed = false;          // дальше — случайные варианты
   state.seed = (state.seed*1664525+1013904223)>>>0;
   buildDeferred();
 };
@@ -3905,7 +3938,7 @@ window.__vargov = {
   },
   set: (id,v)=>{ if(ui[id]) ui[id].value=v; refreshLabels(); buildScene(); },
   apply: (o)=>{ for(const k in o){ if(ui[k]) ui[k].value=o[k]; } refreshLabels(); buildScene(); },
-  regen: ()=>{ state.seed=(state.seed*1664525+1013904223)>>>0; buildScene(); needRedraw=true; },
+  regen: ()=>{ state.autoSeed=false; state.seed=(state.seed*1664525+1013904223)>>>0; buildScene(); needRedraw=true; },
   raw: ()=>scene,
 };
 </script>
