@@ -2948,7 +2948,7 @@ function buildScene(){
   }
   scene = {box, ribbons, params, clear, env};
   updateSpec();
-  camera.fitTo(box, Math.max(0, +ui.dimC.value||0));
+  camera.fitTo(box);
   needRedraw = true;
 }
 
@@ -2959,12 +2959,13 @@ const camera = {
   // стартовый ракурс: композиция сразу в кадре, вид чуть сверху и сбоку
   yaw:-0.22, pitch:-0.15, dist:3400, target:[0,0,0], fov:40,
   home:{yaw:-0.22, pitch:-0.15},
-  fitTo(box, ceilH){
-    // в кадр входит и потолок с тросами: цель поднимается на половину
-    // высоты подвеса, а дистанция считается от полной высоты сцены
-    const cH=ceilH||0;
-    this.target = [box.w/2, (box.h+cH)/2, box.d/2];
-    const diag = Math.hypot(box.w, box.h+cH, box.d);
+  fitTo(box){
+    // КАДР ВСЕГДА ПО ЦЕНТРУ КОМПОЗИЦИИ. Высота до потолка на кадрирование не
+    // влияет: тросы могут уходить за верх кадра, но сама композиция стоит в
+    // центре и в том же масштабе — иначе при большом подвесе она уезжала
+    // вниз и мельчала
+    this.target = [box.w/2, box.h/2, box.d/2];
+    const diag = Math.hypot(box.w, box.h, box.d);
     this.dist = diag*1.20 + 300;
   },
   basis(){
@@ -3658,7 +3659,7 @@ cv.addEventListener("wheel", e=>{
 },{passive:false});
 cv.addEventListener("dblclick", ()=>{
   camera.yaw=camera.home.yaw; camera.pitch=camera.home.pitch;
-  camera.fitTo(scene.box, Math.max(0, +ui.dimC.value||0));
+  camera.fitTo(scene.box);
   needRedraw=true;
 });
 
@@ -3697,7 +3698,7 @@ function drawSplash(msg){
   }
   scene={box, ribbons:[], params:{form:ui.form.value, ribbonW:rw, rows:+ui.rows.value, lanes:1},
          clear:{collisions:0}, env};
-  camera.fitTo(box, Math.max(0, +ui.dimC.value||0));
+  camera.fitTo(box);
   draw();
   if(msg){
     ctx.setTransform(dpr,0,0,dpr,0,0);
