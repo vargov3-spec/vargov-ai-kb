@@ -3063,6 +3063,30 @@ function buildScene(){
     env=null; void fo;
   }
   scene = {box, ribbons, params, clear, env};
+  // ВЫРОЖДЕННЫЕ ВАРИАНТЫ НЕ ПОКАЗЫВАЮТСЯ. Иногда лестница и страховка
+  // выходят с короткой лентой, висящей в углу габарита (замер: 3.14 пог. м
+  // при заполнении около 40% на однорядной 2400×900×800). Такой вариант
+  // чистый, но показывать его нельзя: пересобираем с другим зерном.
+  // Пересборка разрешена дважды — разведение теперь быстрое, время есть
+  {
+    const mm=[1e9,1e9,1e9], xx=[-1e9,-1e9,-1e9];
+    for(const rb of ribbons){
+      const bb=geoBBox(rb);
+      for(let k=0;k<3;k++){ mm[k]=Math.min(mm[k],bb.min[k]); xx[k]=Math.max(xx[k],bb.max[k]); }
+    }
+    const lim=[box.w,box.h,box.d];
+    const fillMin=Math.min(...[0,1,2].map(k=>(xx[k]-mm[k]+ROD_D)/lim[k]));
+    const tries=state.reTry||0;
+    if(fillMin<0.80 && tries<2){
+      state.reTry=tries+1;
+      state.autoSeed=false;
+      state.seed=(state.seed*1664525+1013904223)>>>0;
+      buildScene();
+      state.reTry=0;
+      return;
+    }
+    state.reTry=0;
+  }
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
