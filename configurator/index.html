@@ -133,6 +133,8 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="row"><label for="dimC">Высота до потолка<br><span style="font-size:11px;opacity:.6">длина тросов от верха композиции</span></label>
+        <input id="dimC" type="number" min="0" max="10000" step="50" value="600"></div>
       <div class="row" id="formRow"><label for="form">Форма</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -213,7 +215,7 @@
   <div id="stage">
     <canvas id="cv"></canvas>
     <div id="dims"></div>
-    <div id="busy"><span class="spin"></span><span id="busyTxt">Подбор варианта композиции…</span></div>
+    <div id="busy"><span class="spin"></span><span id="busyTxt">Генерация варианта композиции…</span></div>
     <button id="regen2" title="Сгенерировать новый вариант" aria-label="Сгенерировать новый вариант">✦</button>
     <div id="hintRegen">Не нравится результат — нажмите «Сгенерировать новый вариант» ещё раз</div>
     <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
@@ -2842,8 +2844,10 @@ function buildScene(){
       }
     }
   }
-  // LED-точки и подвесы
+  // LED-точки и тросы
   const scene0Plast=params.plast||"mix";
+  // высота до потолка: на столько потолок выше верха габарита
+  const ceilH=Math.max(0, Math.min(10000, +ui.dimC.value||0));
   ribbons.forEach((rb, ri)=>{
     // диоды — белые точки Ø4 на одном контуре каркаса:
     // у двурядной — центральный контур; шаг хаотичный, в среднем 100 мм
@@ -2918,7 +2922,9 @@ function buildScene(){
       }
       for(const i of picked){
         const top=topAt(i);
-        rb.cabs.push({from:[top[0], box.h, top[2]], to:top});
+        // ВЫСОТА ДО ПОТОЛКА: трос идёт от точки крепления на ленте до
+        // потолка, который стоит выше габарита на заданную величину
+        rb.cabs.push({from:[top[0], box.h+ceilH, top[2]], to:top});
       }
       // фактический максимальный пролёт — в спецификацию
       let span=0;
@@ -2942,7 +2948,7 @@ function buildScene(){
   }
   scene = {box, ribbons, params, clear, env};
   updateSpec();
-  camera.fitTo(box);
+  camera.fitTo(box, Math.max(0, +ui.dimC.value||0));
   needRedraw = true;
 }
 
@@ -2953,9 +2959,12 @@ const camera = {
   // стартовый ракурс: композиция сразу в кадре, вид чуть сверху и сбоку
   yaw:-0.22, pitch:-0.15, dist:3400, target:[0,0,0], fov:40,
   home:{yaw:-0.22, pitch:-0.15},
-  fitTo(box){
-    this.target = [box.w/2, box.h/2, box.d/2];
-    const diag = Math.hypot(box.w, box.h, box.d);
+  fitTo(box, ceilH){
+    // в кадр входит и потолок с тросами: цель поднимается на половину
+    // высоты подвеса, а дистанция считается от полной высоты сцены
+    const cH=ceilH||0;
+    this.target = [box.w/2, (box.h+cH)/2, box.d/2];
+    const diag = Math.hypot(box.w, box.h+cH, box.d);
     this.dist = diag*1.20 + 300;
   },
   basis(){
@@ -3108,8 +3117,25 @@ function draw(){
     lbl(1,5, `${scene.box.h} мм`);
   }
 
+  { // ПОТОЛОК: пунктирный контур на высоте подвеса — видно, куда идут тросы
+    const cH=Math.max(0, +ui.dimC.value||0);
+    if(cH>0 && ui.cables.checked){
+      const {w,d}=scene.box, y=scene.box.h+cH;
+      const K=[[0,y,0],[w,y,0],[w,y,d],[0,y,d]];
+      ctx.strokeStyle="rgba(150,150,165,.30)"; ctx.lineWidth=1; ctx.setLineDash([6,7]);
+      ctx.beginPath();
+      let ok=true;
+      for(let i=0;i<4;i++){
+        const a=[0,0,0], b2=[0,0,0];
+        if(!project(K[i],B,a) || !project(K[(i+1)%4],B,b2)){ ok=false; break; }
+        ctx.moveTo(a[0],a[1]); ctx.lineTo(b2[0],b2[1]);
+      }
+      if(ok) ctx.stroke();
+      ctx.setLineDash([]);
+    }
+  }
   for(const rb of scene.ribbons){
-    // подвесы
+    // тросы
     for(const c of rb.cabs){
       if(project(c.from,B,p1) && project(c.to,B,p2)){
         prims.push({z:(p1[2]+p2[2])/2+200, kind:0,
@@ -3293,7 +3319,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -3376,10 +3402,11 @@ const rebuild = (msg)=>{
   rebuildTimer=setTimeout(()=>buildDeferred(m), 120);
 };
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
-  ui[id].addEventListener("change", ()=>rebuild("Подбор варианта композиции…"));
+  ui[id].addEventListener("change", ()=>rebuild("Генерация варианта композиции…"));
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
+ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
 ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на контур…" : "Убираем диоды с контура…"));
 ui.cables.addEventListener("change", ()=>rebuild(
@@ -3631,7 +3658,7 @@ cv.addEventListener("wheel", e=>{
 },{passive:false});
 cv.addEventListener("dblclick", ()=>{
   camera.yaw=camera.home.yaw; camera.pitch=camera.home.pitch;
-  camera.fitTo(scene.box);
+  camera.fitTo(scene.box, Math.max(0, +ui.dimC.value||0));
   needRedraw=true;
 });
 
@@ -3670,7 +3697,7 @@ function drawSplash(msg){
   }
   scene={box, ribbons:[], params:{form:ui.form.value, ribbonW:rw, rows:+ui.rows.value, lanes:1},
          clear:{collisions:0}, env};
-  camera.fitTo(box);
+  camera.fitTo(box, Math.max(0, +ui.dimC.value||0));
   draw();
   if(msg){
     ctx.setTransform(dpr,0,0,dpr,0,0);
@@ -3683,14 +3710,14 @@ function drawSplash(msg){
 /* сборка после отрисовки кадра с подписью — интерфейс отвечает сразу.
    Первая сборка обязана уйти ЗА событие load: иначе браузер (и обёртка
    iframe) держит индикатор загрузки все секунды подбора варианта */
-/* ИНДИКАТОР ГЕНЕРАЦИИ ГОВОРИТ, ЧТО ИМЕННО ИДЁТ. Подбор варианта композиции
+/* ИНДИКАТОР ГЕНЕРАЦИИ ГОВОРИТ, ЧТО ИМЕННО ИДЁТ. Генерация варианта композиции
    и «добавляем диоды на контур» — разные операции, и подпись обязана
    соответствовать нажатой галочке */
 function buildDeferred(msg){
   drawSplash("");
   const busy=document.getElementById("busy");
   const txt=document.getElementById("busyTxt");
-  if(txt) txt.textContent=msg||"Подбор варианта композиции…";
+  if(txt) txt.textContent=msg||"Генерация варианта композиции…";
   if(busy) busy.classList.add("on");
   const run=()=>{
     try { buildScene(); }
