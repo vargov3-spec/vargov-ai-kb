@@ -141,9 +141,7 @@
           <option value="box" selected>Параллелепипед</option>
           <option value="sphere">Шар</option>
           <option value="cyl">Цилиндр</option>
-          <option value="cone">Конус (вершиной вниз)</option>
           <option value="pyr">Пирамида (вершиной вниз)</option>
-          <option value="dome">Полусфера</option>
           <option value="drop">Капля</option>
           <option value="barrel">Барабан</option>
           <option value="waist">Песочные часы</option>
@@ -423,10 +421,7 @@ const FORMS = {
   sphere: {label:"Шар",                      rect:false, axLong:true,
            prof:h=>2*Math.sqrt(Math.max(0, h*(1-h)))},
   cyl:    {label:"Цилиндр",                  rect:false, prof:h=>1},
-  cone:   {label:"Конус (вершиной вниз)",    rect:false, prof:h=>Math.max(0.07, h)},
   pyr:    {label:"Пирамида (вершиной вниз)", rect:true,  prof:h=>Math.max(0.07, h)},
-  dome:   {label:"Полусфера",                rect:false,
-           prof:h=>Math.max(0.07, Math.sqrt(Math.max(0, h*(2-h))))},
   drop:   {label:"Капля",                    rect:false,
            prof:h=>Math.max(0.07, Math.pow(Math.max(0,1-h), 0.6))},
   barrel: {label:"Барабан",                  rect:false,
@@ -758,14 +753,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // плотность витков можно снизить сверху: этим страховочные проходы
       // разводят спираль, не меняя пластику
       const densKE=Math.max(0.35, Math.min(1, box.densK||1));
-      // КОНУС ВЫВЕДЕН ИЗ ВСЕХ ПРАВИЛ: ни правило метража, ни пределы плотности
-      // к нему не применяются. Витки ставятся так, чтобы лента ЗАПОЛНИЛА
-      // ФОРМУ — сверху донизу с перекрытием; радиус каждого витка задаёт сам
-      // контур конуса (каждый нижний меньше верхнего, поэтому радиальное
-      // разведение получается само). Витков — сколько влезает по высоте
-      const nA=(box.form==="cone")
-        ? Math.max(3, Math.min(18, riseFree/pitchE)*densKE)
-        : Math.max(2.5, Math.min(nMax, nNeed)*densKE);
+      const nA=Math.max(2.5, Math.min(nMax, nNeed)*densKE);
       // спуск (вершина внизу) — по шагу витка; размах завала горизонта
       // зарезервирован в габарите, иначе спираль вылезает за верх и низ
       const kminE=kminE0;
@@ -2616,7 +2604,7 @@ function buildScene(){
     rodLen,
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
-    // ФОРМА: либо силуэт габарита (цилиндр, конус, полусфера, ромб), либо
+    // ФОРМА: либо силуэт габарита (цилиндр, пирамида, ромб), либо
     // силуэт В ПЛАНЕ («plan_имя») — тогда спуск цилиндрический, а витки
     // несутся по выбранному контуру сверху
     form: (ui.form.value.indexOf("plan_")===0 ? "cyl"
@@ -3511,9 +3499,14 @@ GLASS_COLORS.forEach((c)=>{
 }
 
 /* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
-   плавный поток ленты читается в шаре, а в фигурных силуэтах (конус,
-   песочные часы, ромб) навивка плашмя их не держит. Для «на ребро»
-   доступны все формы — спираль вписывается в любой силуэт. */
+   плавный поток ленты читается в шаре, а в фигурных силуэтах (пирамида,
+   ромб) навивка плашмя их не держит. Для «на ребро» доступны цилиндр, ромб
+   и силуэты в плане — спираль вписывается в них витками.
+   КОНУС И ПОЛУСФЕРА ИЗ СПИСКА УБРАНЫ: конус спираль отрабатывала только
+   страховочным проходом (замер: 1500×1500×2000 — 8.68 пог. м при заполнении
+   63/76/69%), а полусфера, вписанная в габарит, отличается от цилиндра
+   только нижней четвертью высоты (на середине высоты радиус меньше всего
+   на 13%) — на витках это не читается. */
 // СИЛУЭТЫ В ПЛАНЕ ЖИВУТ В ОБЩЕМ СПИСКЕ ФОРМ. Каждый силуэт — отдельный пункт
 // «Формы»: спуск идёт цилиндром, а витки несутся по выбранному контуру
 // (вид сверху). Скрытый select#plan остаётся носителем значения силуэта
@@ -3527,6 +3520,33 @@ for(const key in PLAN_SHAPES){
   ui.form.appendChild(of);
 }
 ui.plan.value="circle";
+
+/* ПАРАМЕТРЫ ПО УМОЛЧАНИЮ ДЛЯ ПЛАСТИКИ И ФОРМЫ. У «на ребро» своя рабочая
+   точка габарита: 1500×1500×1000 при 600 мм тросов — на ней спираль читается
+   витками, а не столбом. У ромба (и его силуэта в плане) — вытянутый вверх
+   габарит 1500×1500×3000: ромб узнаётся только на высоте. Пресеты
+   выставляются при ПЕРЕКЛЮЧЕНИИ пластики на «ребро» и при ВЫБОРЕ формы;
+   набранные потом руками размеры не трогаются */
+const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
+const FORM_DEF = {
+  rhomb:       {w:1500, d:1500, h:3000, c:600},
+  plan_rhomb4: {w:1500, d:1500, h:3000, c:600},
+};
+function setDims(p){
+  if(p.w) ui.dimW.value=String(p.w);
+  if(p.d) ui.dimD.value=String(p.d);
+  if(p.h) ui.dimH.value=String(p.h);
+  if(p.c!=null) ui.dimC.value=String(p.c);
+}
+function applyPreset(which){
+  if(which==="plast"){
+    if(ui.plast.value==="edge"){ ui.form.value=EDGE_DEF.form; setDims(EDGE_DEF); }
+    return;
+  }
+  if(ui.plast.value!=="edge") return;      // в «миксе» форма одна, пресета нет
+  const p=FORM_DEF[ui.form.value];
+  if(p) setDims(p);
+}
 
 function syncForms(){
   const mixOnly=(ui.plast.value!=="edge");
@@ -3568,7 +3588,10 @@ const rebuild = (msg)=>{
   rebuildTimer=setTimeout(()=>buildDeferred(m), 120);
 };
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
-  ui[id].addEventListener("change", ()=>rebuild("Генерация варианта композиции…"));
+  ui[id].addEventListener("change", ()=>{
+    if(id==="plast" || id==="form") applyPreset(id);
+    rebuild("Генерация варианта композиции…");
+  });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
