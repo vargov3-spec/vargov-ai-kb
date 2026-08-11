@@ -75,6 +75,13 @@
   }
   .row .val{width:44px; flex:none; text-align:right; color:var(--txt); font-size:12px; font-variant-numeric:tabular-nums}
   .row input[type=checkbox]{accent-color:var(--gold)}
+  .picks{display:grid; grid-template-columns:repeat(5,1fr); gap:6px}
+  .pick{position:relative; padding:0; border:1px solid #262a31; border-radius:9px;
+    background:#15181c; cursor:pointer; aspect-ratio:1; display:flex;
+    align-items:center; justify-content:center; transition:border-color .15s, background .15s}
+  .pick:hover{background:#1a1e23}
+  .pick.sel{border-color:#e7c76a; background:#1c1f24}
+  .pick svg{width:86%; height:86%; display:block}
   .swatches{display:grid; grid-template-columns:repeat(6, 1fr); gap:7px; margin-top:6px}
   .anyc{grid-column:1/-1; display:flex; align-items:center; gap:9px; cursor:pointer;
         margin-top:2px}
@@ -135,6 +142,10 @@
       <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
       <div class="row"><label for="dimC">Высота до потолка<br><span style="font-size:11px;opacity:.6">длина тросов от верха композиции</span></label>
         <input id="dimC" type="number" min="0" max="10000" step="50" value="600"></div>
+      <div class="row" id="planRow" style="display:block">
+        <label for="plan" style="display:block;margin-bottom:6px">Форма в плане (вид сверху)</label>
+        <select id="plan" style="display:none"></select>
+        <div class="picks" id="planPicks"></div></div>
       <div class="row" id="formRow"><label for="form">Форма</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
@@ -400,6 +411,23 @@ function sineFMax(run, A){
    У шара ось — самая длинная сторона габарита (лента ложится вдоль неё),
    у остальных форм ось вертикальная: «вершиной вниз» имеет смысл только
    по вертикали. */
+/* СИЛУЭТЫ В ПЛАНЕ (вид сверху) для пластики «на ребро» — по рисункам от руки.
+   Каждый силуэт задан радиальной функцией r(θ) с максимумом 1: витки спирали
+   несутся по этому контуру и вкладываются друг в друга, как на рисунке.
+   Амплитуды подобраны так, чтобы изгиб «плашмя» оставался проходимым для
+   каркаса (радиус кривизны в плане не уходит ниже технологического). */
+const PLAN_SHAPES = {
+  circle: {label:"Круг (по умолчанию)", r:()=>1},
+  star4:  {label:"Звезда (4 луча)",     r:(a)=>(1+0.30*Math.cos(4*a))/1.30},
+  rhomb4: {label:"Ромб в плане",        r:(a)=>0.72/(0.72*(Math.abs(Math.cos(a))**1.35+Math.abs(Math.sin(a))**1.35))},
+  bean:   {label:"Боб (с выемкой)",     r:(a)=>(1+0.20*Math.cos(a)-0.26*Math.cos(2*a))/1.46},
+  pear:   {label:"Капля в плане",       r:(a)=>(1+0.26*Math.cos(a))/1.26},
+  clover: {label:"Клевер (3 лепестка)", r:(a)=>(1+0.22*Math.cos(3*a))/1.22},
+  arc:    {label:"Дуга (серп)",         r:(a)=>(1+0.42*Math.cos(a)-0.16*Math.cos(2*a))/1.42},
+  blob:   {label:"Клякса (органика)",   r:(a)=>(1+0.13*Math.sin(3*a+0.7)+0.10*Math.sin(5*a+2.1))/1.23},
+  wave:   {label:"Волна (змейка)",      r:(a)=>(1+0.40*Math.cos(2*a)+0.10*Math.cos(4*a))/1.50},
+};
+
 const FORMS = {
   box:    {label:"Параллелепипед",           rect:true,  prof:null},
   sphere: {label:"Шар",                      rect:false, axLong:true,
@@ -723,6 +751,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // соседними витками сохраняется и они не сближаются: размах завала
       // ограничен третью шага витка. Стержни при этом остаются
       // вертикальными — завал это изгиб ленты вокруг них, самый лёгкий
+      // силуэт в плане: функция r(θ) из таблицы (по умолчанию круг)
+      const planF=(PLAN_SHAPES[box.plan]||PLAN_SHAPES.circle).r;
+      const planR=(a)=>Math.max(0.25, planF(a));
       const tiltMax=tiltMm/kminE;
       // РАНДОМ ЗАВАЛА: у каждой генерации свой характер — размах от чуть
       // заметного до предельного, своё направление, своя скорость поворота
@@ -790,8 +821,12 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // завал витка: высота ходит по кругу витка — плоскость наклонена
         const sT=tiltMax*tiltK*(0.62+0.38*Math.sin(Math.PI*2*tiltF*t+tiltVar));
         const yT=sT*rho*kminE*Math.cos(th-(tiltPh+Math.PI*2*tiltRot*t));
-        const q=[dims[0]/2+sxE*rho*Math.cos(th), yq+yT,
-                 dims[2]/2+szE*rho*Math.sin(th)];
+        // СИЛУЭТ В ПЛАНЕ: радиус витка модулируется контуром r(θ). Витки
+        // вкладываются друг в друга по одному и тому же контуру, поэтому
+        // радиальный зазор между ними сохраняется
+        const kPlan=planR(th);
+        const q=[dims[0]/2+sxE*rho*kPlan*Math.cos(th), yq+yT,
+                 dims[2]/2+szE*rho*kPlan*Math.sin(th)];
         // плавный подход к стенке габарита (жёсткое обрезание давало зубцы).
         // У ленты НА РЕБРО стержни вертикальны и за контур витка радиально не
         // выступают, поэтому подход к стенке жёстче (колено 0.97): мягкое
@@ -1126,7 +1161,7 @@ function buildRibbon(params, rngSeed, lane){
   const workF = { w: Math.max(200, box.w-40), h: Math.max(200, box.h-40),
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
-                  rows: params.rows||2,
+                  plan: params.plan||"circle", rows: params.rows||2,
                   densK: params.densK||1, addLen: params.addLen||0 };
 
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
@@ -2506,7 +2541,9 @@ function buildScene(){
     rodLen,
     ribbonW: rodLen*(+ui.rows.value===2 ? 2 : 1),
     rows: +ui.rows.value,
-    form: (FORMS[ui.form.value] ? ui.form.value : "box"),   // форма габарита
+    form: (FORMS[ui.form.value] ? ui.form.value : "box"),
+    // силуэт в плане (вид сверху) для «на ребро»
+    plan: (PLAN_SHAPES[ui.plan.value] ? ui.plan.value : "circle"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
     lengthK: 1.0,
     lanes,
@@ -3320,7 +3357,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -3367,6 +3404,40 @@ GLASS_COLORS.forEach((c)=>{
    плавный поток ленты читается в шаре, а в фигурных силуэтах (конус,
    песочные часы, ромб) навивка плашмя их не держит. Для «на ребро»
    доступны все формы — спираль вписывается в любой силуэт. */
+// СИЛУЭТЫ В ПЛАНЕ — КНОПКИ С ИКОНКАМИ. Иконка рисуется той же функцией
+// r(θ), что и сама композиция: три вложенных контура — ровно так, как силуэт
+// выглядит сверху (и как он нарисован от руки)
+{
+  const box=document.getElementById("planPicks");
+  const path=(fn, k)=>{
+    let d="";
+    for(let i=0;i<=96;i++){
+      const a=i/96*Math.PI*2, r=Math.max(0.06, fn(a))*k*21;
+      d+=(i?"L":"M")+(24+r*Math.cos(a)).toFixed(2)+" "+(24+r*Math.sin(a)).toFixed(2)+" ";
+    }
+    return d+"Z";
+  };
+  for(const key in PLAN_SHAPES){
+    const sh=PLAN_SHAPES[key];
+    const o=document.createElement("option");
+    o.value=key; o.textContent=sh.label; ui.plan.appendChild(o);
+    const btn=document.createElement("button");
+    btn.type="button"; btn.className="pick"+(key==="circle"?" sel":"");
+    btn.title=sh.label;
+    btn.innerHTML='<svg viewBox="0 0 48 48" fill="none" stroke="#e0c37a" '
+      +'stroke-width="1.5" stroke-linejoin="round">'
+      +[1,0.66,0.33].map(k=>`<path d="${path(sh.r,k)}"/>`).join("")+'</svg>';
+    btn.onclick=()=>{
+      ui.plan.value=key;
+      box.querySelectorAll(".pick").forEach(b=>b.classList.remove("sel"));
+      btn.classList.add("sel");
+      rebuild("Генерация варианта композиции…");
+    };
+    box.appendChild(btn);
+  }
+  ui.plan.value="circle";
+}
+
 function syncForms(){
   const mixOnly=(ui.plast.value!=="edge");
   // «НА РЕБРО» — ФОРМЫ НАЧИНАЯ С ЦИЛИНДРА, БЕЗ КАПЛИ, БАРАБАНА И ПЕСОЧНЫХ
@@ -3383,6 +3454,10 @@ function syncForms(){
   // идёт в «шаре», он задаёт силуэт потока, но выбирать тут нечего
   const row=document.getElementById("formRow");
   if(row) row.style.display = mixOnly ? "none" : "";
+  // силуэт в плане — только для «на ребро»: в «миксе» лента лежит плашмя и
+  // плановый контур ей не задаётся
+  const prow=document.getElementById("planRow");
+  if(prow) prow.style.display = mixOnly ? "none" : "block";
   // ОДНОРЯДНАЯ ЛЕНТА: СТЕРЖЕНЬ НЕ КОРОЧЕ 200 мм. У однорядной ширина ленты
   // равна длине стержня, и на 100–150 мм лента получается слишком узкой —
   // производство такую не делает
