@@ -3469,8 +3469,12 @@ function updateSpec(){
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
       ${leds?`<tr><td>Диоды на ленте</td><td>${leds} шт × ${LED_W} W / ${LED_V} V — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
     </table>`;
+  // НОМЕР ВАРИАНТА ВЫВОДИТСЯ РЯДОМ С ГАБАРИТОМ. Каждая композиция полностью
+  // определяется этим номером: назвав его, можно вернуться к тому же варианту
+  // или закрепить его по умолчанию — по картинке вариант не опознать
   document.getElementById("dims").textContent =
-    `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`;
+    `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`
+    + ` · вариант №${state.seed}`;
 }
 
 /* ============================================================
