@@ -644,8 +644,20 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // витков выходило вдвое меньше и спираль читалась редкой
       const dimsSe=[...dims].sort((a,b)=>b-a);
       const wRuleE=1+0.55*Math.max(-0.35, (dimsSe[1]-700)/700);
-      const tgt=Math.max(2*2.05*dimsSe[0]*wRuleE,
-                         (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0);
+      // МЕТРАЖ — ИЗ ПЛОЩАДИ СИЛУЭТА, А НЕ ИЗ ГЛАВНОГО ГАБАРИТА. У конуса
+      // силуэт вдвое меньше цилиндра того же габарита, и правило метража,
+      // посчитанное по габариту, просило витков больше, чем контур вмещает:
+      // плотный вариант отбраковывался, композицию собирала страховка —
+      // отсюда «недокручивание» и воздух между витками. Множитель — средняя
+      // доля контура по спуску (у цилиндра 1, у конуса ≈0.5)
+      let kArea=1;
+      if(sphE && sphE.prof){
+        let acc=0;
+        for(let i=0;i<=40;i++) acc+=Math.max(0.1, sphE.prof(i/40));
+        kArea=Math.max(0.35, Math.min(1, acc/41));
+      }
+      const tgt=Math.max(2*2.05*dimsSe[0]*wRuleE*kArea,
+                         (1.72+0.62*dens0)*1.14*Math.max(...dims)*wK0*kArea);
       const perimMean=Math.PI*(kx+kz)*(rho0+rho1)/2;
       // ПЛОТНОСТЬ ПО ВЕРТИКАЛИ: шаг витка меньше ширины ленты — верхний виток
       // всегда немного перекрывает нижний, поэтому пустот между витками не
@@ -713,8 +725,12 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nDense=riseFree/pitchOvl;
       const stepDense=(rho1-rho0)*kminE0/Math.max(1, Math.min(nDense, 16));
       const pitchE=(!midWide && nOvl>nFlat*1.05)
-                   ? ((stepDense>=ROD_D+40) ? pitchOvl : rw*0.85)
-                   : rw+14+0.7*tiltMm;
+                   ? ((stepDense>=ROD_D+40) ? pitchOvl : rw*0.72)
+                   // НИЖНИЙ ВИТОК ВСЕГДА ЗАХОДИТ ПОД ВЕРХНИЙ. Даже там, где
+                   // витки почти не расходятся радиально (формы, широкие
+                   // посередине), шаг витка меньше ширины ленты: перекрытие
+                   // остаётся, между витками не бывает воздуха
+                   : Math.min(rw*0.92, rw+14+0.7*tiltMm);
       const nOver=riseFree/pitchE;
       // РАДИАЛЬНЫЙ ШАГ ЗА ВИТОК ОГРАНИЧЕН: если радиус уходит к центру больше
       // чем на ~220 мм за виток, спираль превращается в конус с крутым
