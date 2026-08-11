@@ -192,7 +192,7 @@
     <fieldset>
       <legend>Стекло и свет</legend>
       <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="leds">LED-подсветка</label><input id="leds" type="checkbox"></div>
+      <div class="row" style="margin-top:10px"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
     </fieldset>
@@ -3310,7 +3310,7 @@ function updateSpec(){
       <tr><td>Ширина ленты</td><td>${scene.params.ribbonW} мм${
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
-      ${leds?`<tr><td>Диоды по каркасу</td><td>${leds} шт × ${LED_W} W / ${LED_V} V — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
+      ${leds?`<tr><td>Диоды на ленте</td><td>${leds} шт × ${LED_W} W / ${LED_V} V — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
     </table>`;
   document.getElementById("dims").textContent =
     `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`;
@@ -3409,7 +3409,7 @@ ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 // композицию заново, они доукомплектовывают уже готовый каркас
 ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
 ui.leds.addEventListener("change", ()=>rebuild(
-  ui.leds.checked ? "Добавляем диоды на контур…" : "Убираем диоды с контура…"));
+  ui.leds.checked ? "Добавляем диоды на ленту…" : "Убираем диоды с ленты…"));
 ui.cables.addEventListener("change", ()=>rebuild(
   ui.cables.checked ? "Расставляем тросы…" : "Убираем тросы…"));
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
@@ -3442,7 +3442,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     [`Масса каркаса (сталь Ø${WIRE_D}), кг`, (s.wire*WIRE_AREA*STEEL_DENSITY/1000).toFixed(2)],
     ["Масса композиции, кг (округление вверх)", Math.ceil((s.glassMass+s.wire*WIRE_AREA*STEEL_DENSITY)/1000)],
     [`Проволока Ø${WIRE_D}, м`, (s.wire/1000).toFixed(1)],
-    [`Диоды ${LED_W} W / ${LED_V} V (шаг ${LED_PITCH} мм), шт`, s.leds],
+    [`Диоды на ленте ${LED_W} W / ${LED_V} V, шт`, s.leds],
     ["Мощность подсветки, Вт", (s.leds*LED_W).toFixed(1)],
     ["Тросов, шт", s.cabs],
     ["Троса, м", (s.cabLen/1000).toFixed(1)],
@@ -3619,7 +3619,7 @@ document.getElementById("saveMont").onclick = ()=>{
     });
     if(rb.leds && rb.leds.length){
       R.push([]);
-      R.push([`ДИОДЫ ${LED_W} W / ${LED_V} V, шаг ${LED_PITCH} мм по каркасу`]);
+      R.push([`ДИОДЫ НА ЛЕНТЕ ${LED_W} W / ${LED_V} V, шаг ${LED_PITCH} мм`]);
       R.push(["№","X","Y","Z"]);
       rb.leds.forEach((l,k)=>{ const e=EXP.p(l); R.push([k+1, EXP.f(e[0]),EXP.f(e[1]),EXP.f(e[2])]); });
     }
