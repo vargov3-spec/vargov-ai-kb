@@ -39,6 +39,10 @@
     border-radius:20px; color:var(--gold2); font-size:13px; pointer-events:none;
   }
   #busy.on{display:flex}
+  #hintRegen{position:absolute; right:78px; bottom:26px; max-width:300px; text-align:right;
+    font-size:12px; line-height:1.35; color:#cfc9bb; opacity:0; pointer-events:none;
+    transition:opacity .6s ease}
+  #hintRegen.on{opacity:.7}
   #busy .spin{
     width:15px; height:15px; border-radius:50%;
     border:2px solid rgba(201,162,39,.25); border-top-color:var(--gold);
@@ -129,7 +133,7 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
-      <div class="row" id="formRow"><label for="form">Форма габарита</label>
+      <div class="row" id="formRow"><label for="form">Форма</label>
         <select id="form">
           <option value="box" selected>Параллелепипед</option>
           <option value="sphere">Шар</option>
@@ -155,8 +159,8 @@
       </div>
       <div class="row"><label for="rows">Рядность</label>
         <select id="rows">
-          <option value="1">1 ряд (2 контура)</option>
-          <option value="2" selected>2 ряда (3 контура)</option>
+          <option value="1">1 ряд</option>
+          <option value="2" selected>2 ряда</option>
         </select>
       </div>
       <div class="row"><label for="frame">Каркас</label>
@@ -186,8 +190,8 @@
     <fieldset>
       <legend>Стекло и свет</legend>
       <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="leds">LED-подсветка по оси</label><input id="leds" type="checkbox"></div>
-      <div class="row"><label for="cables">Подвесы</label><input id="cables" type="checkbox" checked></div>
+      <div class="row" style="margin-top:10px"><label for="leds">LED-подсветка</label><input id="leds" type="checkbox"></div>
+      <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
     </fieldset>
 
@@ -202,10 +206,7 @@
     <fieldset style="margin-top:14px">
       <legend>Расчёт</legend>
       <div id="spec"></div>
-      <div class="note">
-        Расчёт предварительный: финальную спецификацию, стоимость производства и доставки
-        подтверждает производство Vargov®Design.
-      </div>
+      
     </fieldset>
   </div>
 
@@ -214,6 +215,7 @@
     <div id="dims"></div>
     <div id="busy"><span class="spin"></span><span id="busyTxt">Подбор варианта композиции…</span></div>
     <button id="regen2" title="Сгенерировать новый вариант" aria-label="Сгенерировать новый вариант">✦</button>
+    <div id="hintRegen">Не нравится результат — нажмите «Сгенерировать новый вариант» ещё раз</div>
     <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
   </div>
 </div>
@@ -704,7 +706,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // спуск (вершина внизу) — по шагу витка; размах завала горизонта
       // зарезервирован в габарите, иначе спираль вылезает за верх и низ
       const kminE=kminE0;
-      const rise=Math.min(Math.max(rw, riseMax-2*tiltMm), nA*pitchE);
+      // спуск по числу витков. Растягивать его на всю высоту нельзя: резерв
+      // завала горизонта тогда выходит за габарит, вписывание утягивает сцену
+      // и витки сближаются — замер давал 194-559 касаний
+      const rise=Math.min(riseFree, nA*pitchE);
       const y0=(H-rise)/2;
       const NE=Math.max(90, Math.round(nA*56));
       const axisAtE=[];
@@ -3272,14 +3277,13 @@ function updateSpec(){
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
-      <tr><td>К расчёту цены (округление)</td><td>${Math.ceil(m)} пог. м</td></tr>
       <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
         scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
       <tr><td>Стеклянные трубки Ø${ROD_D}</td><td>${rods} шт</td></tr>
       <tr><td>Ширина ленты</td><td>${scene.params.ribbonW} мм${
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
-      ${leds?`<tr><td>Диоды по каркасу (шаг ${LED_PITCH} мм)</td><td>${leds} шт × ${LED_W} W / ${LED_V} V — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
+      ${leds?`<tr><td>Диоды по каркасу</td><td>${leds} шт × ${LED_W} W / ${LED_V} V — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
     </table>`;
   document.getElementById("dims").textContent =
     `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`;
@@ -3341,7 +3345,7 @@ function syncForms(){
   // «НА РЕБРО» — ФОРМЫ НАЧИНАЯ С ЦИЛИНДРА, БЕЗ КАПЛИ, БАРАБАНА И ПЕСОЧНЫХ
   // ЧАСОВ. Параллелепипед и шар витки на ребре не держат; капля, барабан и
   // песочные часы отклонены по результату — их силуэт спираль не отрабатывает
-  const EDGE_OFF={box:1, sphere:1, drop:1, barrel:1, waist:1};
+  const EDGE_OFF={box:1, sphere:1, drop:1, barrel:1, waist:1, pyr:1};
   for(const o of ui.form.options){
     const keep = mixOnly ? (o.value==="sphere") : !EDGE_OFF[o.value];
     o.hidden=!keep; o.disabled=!keep;
@@ -3379,7 +3383,7 @@ ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на контур…" : "Убираем диоды с контура…"));
 ui.cables.addEventListener("change", ()=>rebuild(
-  ui.cables.checked ? "Расставляем подвесы…" : "Убираем подвесы…"));
+  ui.cables.checked ? "Расставляем тросы…" : "Убираем тросы…"));
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
 const regenClick = ()=>{
@@ -3397,9 +3401,9 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Цвет стекла", state.color.name],
     ["Лент в композиции, шт", scene.ribbons.length],
-    ["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"],
+    ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
-    ["К расчёту цены (округление вверх), пог. м", Math.ceil(s.totalLen/1000)],
+    
     ...(s.runsBreak ? s.runsBreak.lens.map((v,i)=>[`Пробег ${i+1}, пог. м`, v.toFixed(2)]) : []),
     ...(s.runsBreak ? [["Развороты и подходы, пог. м", s.runsBreak.turns.toFixed(2)]] : []),
     [`Стеклянные трубки Ø${ROD_D}, всего шт`, s.rods],
@@ -3412,9 +3416,9 @@ document.getElementById("saveCsv").onclick = ()=>{
     [`Проволока Ø${WIRE_D}, м`, (s.wire/1000).toFixed(1)],
     [`Диоды ${LED_W} W / ${LED_V} V (шаг ${LED_PITCH} мм), шт`, s.leds],
     ["Мощность подсветки, Вт", (s.leds*LED_W).toFixed(1)],
-    ["Подвесов, шт", s.cabs],
-    ["Троса подвесов, м", (s.cabLen/1000).toFixed(1)],
-    ["Макс. пролёт между подвесами, мм", s.cabSpan||"-"],
+    ["Тросов, шт", s.cabs],
+    ["Троса, м", (s.cabLen/1000).toFixed(1)],
+    ["Макс. пролёт между тросами, мм", s.cabSpan||"-"],
     ["Пересечения витков", s.clean ? `нет (зазор >= ${s.airGap} мм)` : "требует ручной проверки"],
     ["Мин. диаметр изгиба, мм", Math.round(s.minRad*2)],
     [],
@@ -3550,7 +3554,7 @@ document.getElementById("saveMont").onclick = ()=>{
   R.push(["Vargov(R) Design - МОНТАЖНАЯ КАРТА ленточной композиции"]);
   R.push([`Габарит (Ш x Г x В), мм`, `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`]);
   R.push(["Пластика", scene.params.plast==="edge"?"на ребро":"микс"]);
-  R.push(["Рядность", scene.params.rows===2?"2 ряда (3 контура)":"1 ряд (2 контура)"]);
+  R.push(["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"]);
   R.push(["Ширина ленты, мм", scene.params.ribbonW]);
   R.push([`Трубка`, `Ø${ROD_D} x ${GLASS_WALL} мм, длина ${[...s.byLen.keys()][0]} мм`]);
   R.push(["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)]);
@@ -3593,7 +3597,7 @@ document.getElementById("saveMont").onclick = ()=>{
     }
     if(rb.cabs && rb.cabs.length){
       R.push([]);
-      R.push(["ПОДВЕСЫ: точка крепления на ленте и длина троса до потолка габарита"]);
+      R.push(["ТРОСЫ: точка крепления на ленте и длина троса до потолка габарита"]);
       R.push(["№","X","Y","Z","длина троса, мм"]);
       rb.cabs.forEach((c,k)=>{
         const e=EXP.p(c.to);
@@ -3690,7 +3694,14 @@ function buildDeferred(msg){
   if(busy) busy.classList.add("on");
   const run=()=>{
     try { buildScene(); }
-    finally { if(busy) busy.classList.remove("on"); }
+    finally {
+      if(busy) busy.classList.remove("on");
+      // ПОДСКАЗКА ПОСЛЕ ГЕНЕРАЦИИ: вариант — один из многих, повторное
+      // нажатие даёт другой. Без этой строки не очевидно, что кнопку можно
+      // нажимать сколько угодно раз
+      const h=document.getElementById("hintRegen");
+      if(h) h.classList.add("on");
+    }
     needRedraw=true;
   };
   if(document.readyState!=="complete")
