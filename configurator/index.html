@@ -75,15 +75,30 @@
   }
   .row .val{width:44px; flex:none; text-align:right; color:var(--txt); font-size:12px; font-variant-numeric:tabular-nums}
   .row input[type=checkbox]{accent-color:var(--gold)}
-  .swatches{display:grid; grid-template-columns:repeat(6, 1fr); gap:7px; margin-top:6px}
+  .colorBtn{display:flex; align-items:center; gap:8px; max-width:180px; overflow:hidden}
+  .colorBtn span:last-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:12px}
+  .swdot{width:16px; height:16px; min-width:16px; border-radius:50%;
+         box-shadow:inset 0 0 4px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.18)}
+  .ralOverlay{position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:60;
+              display:flex; align-items:center; justify-content:center}
+  .ralPop{background:#17171d; border:1px solid #34343e; border-radius:12px;
+          padding:16px 16px 12px; width:min(560px, 92vw); max-height:82vh;
+          display:flex; flex-direction:column; box-shadow:0 18px 60px rgba(0,0,0,.6)}
+  .ralPop h3{font:600 14px system-ui; color:#e8c46a; margin:0 0 10px}
+  .ralFind{margin:0 0 10px; padding:7px 10px; background:#101014; color:#e8e6e1;
+           border:1px solid #2a2a33; border-radius:8px; font-size:13px; width:100%}
+  .ralGrid{display:grid; grid-template-columns:repeat(12, 1fr); gap:5px;
+           overflow-y:auto; padding:2px 4px 8px}
+  .ralSw{aspect-ratio:1; border-radius:5px; cursor:pointer; border:2px solid transparent;
+         box-shadow:inset 0 0 5px rgba(0,0,0,.4)}
+  .ralSw:hover{transform:scale(1.18); border-color:#fff}
+  .ralSw.sel{border-color:#e8c46a}
+  .ralCur{font-size:12px; opacity:.75; margin-top:8px}
   .anyc{grid-column:1/-1; display:flex; align-items:center; gap:9px; cursor:pointer;
         margin-top:2px}
   .anyc input[type=color]{width:0; height:0; opacity:0; position:absolute; pointer-events:none}
   .anyc-cap{font-size:12px; opacity:.75}
-  .sw{
-    width:26px; height:26px; border-radius:50%; cursor:pointer; border:2px solid transparent;
-    box-shadow:inset 0 0 6px rgba(0,0,0,.5);
-  }
+
   .sw.sel{border-color:var(--gold2)}
   .btn{
     display:block; width:100%; text-align:center; background:linear-gradient(180deg,#d9b13a,#a8841c);
@@ -190,10 +205,14 @@
 
     <fieldset>
       <legend>Стекло и свет</legend>
-      <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов RAL (крайние и средний), растяжка их количеством</span></label>
+      <div class="row"><label>Цвет трубок</label>
+        <button class="btn2 colorBtn" id="colorBtn" type="button">
+          <span class="swdot" id="colorDot"></span><span id="colorName"></span></button></div>
+      <input id="gradC" type="hidden" value="RAL1005">
+      <div class="row"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов RAL (крайние и средний), растяжка их количеством</span></label>
         <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
-          <select id="gradC" style="max-width:150px"></select>
+          <button class="btn2 colorBtn" id="gradBtn" type="button">
+            <span class="swdot" id="gradDot"></span><span id="gradName"></span></button>
           <input id="gradOn" type="checkbox">
         </span></div>
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
@@ -278,35 +297,210 @@ const R_FIT = 80;        // целевой радиус лимитера
 /* ЦВЕТ ЭЛЕМЕНТОВ — палитра как в конфигураторе Vargov®Design
    (configurator.vargov.ru): 24 базовых цвета плюс «Выбрать любой» —
    произвольный цвет из системной пипетки */
-// ДОСТУПНЫЕ ЦВЕТА — ТОЛЬКО RAL (по каталогу производства Ralcolor_VG).
-// Каждый цвет — код RAL + название: он и показывается, и уходит в
-// спецификацию и монтажную карту. НАБОР ПРЕДВАРИТЕЛЬНЫЙ (классические RAL,
-// подобранные к прежней палитре) — заменить точным списком из Ralcolor_VG.pdf
+// ДОСТУПНЫЕ ЦВЕТА — ПОЛНЫЙ КАТАЛОГ ПРОИЗВОДСТВА Ralcolor_VG: 198 цветов
+// RAL Classic (серии 1000-8028, серии 9000 в каталоге нет). Код и название
+// показываются на свотче и уходят в спецификацию и монтажную карту.
+// В каталоге на месте RAL 3032 извлечение дало несуществующий «RAL 3021» —
+// принят RAL 3032 (перламутрово-рубиновый), по порядку ряда 3031…3033
 const GLASS_COLORS = [
-  {id:"RAL3020", name:"RAL3020 Транспортный красный", c:"#C1121C"},
-  {id:"RAL2002", name:"RAL2002 Алый",                 c:"#CB2821"},
-  {id:"RAL2004", name:"RAL2004 Оранжевый",            c:"#F44611"},
-  {id:"RAL1033", name:"RAL1033 Георгиново-жёлтый",    c:"#F3A505"},
-  {id:"RAL1005", name:"RAL1005 Медово-жёлтый",        c:"#CB8E00"},
-  {id:"RAL1016", name:"RAL1016 Серно-жёлтый",         c:"#EDFF21"},
-  {id:"RAL6018", name:"RAL6018 Жёлто-зелёный",        c:"#57A639"},
-  {id:"RAL6029", name:"RAL6029 Мятно-зелёный",        c:"#20603D"},
-  {id:"RAL6033", name:"RAL6033 Мятно-бирюзовый",      c:"#497E76"},
-  {id:"RAL5012", name:"RAL5012 Голубой",              c:"#3B83BD"},
-  {id:"RAL5015", name:"RAL5015 Небесно-синий",        c:"#2271B3"},
-  {id:"RAL5002", name:"RAL5002 Ультрамарин",          c:"#20214F"},
-  {id:"RAL4005", name:"RAL4005 Сине-сиреневый",       c:"#76689A"},
-  {id:"RAL4008", name:"RAL4008 Сигнальный фиолетовый",c:"#924E7D"},
-  {id:"RAL4006", name:"RAL4006 Транспортный пурпур",  c:"#A03472"},
-  {id:"RAL4010", name:"RAL4010 Телемаджента",         c:"#CF3476"},
-  {id:"RAL3003", name:"RAL3003 Рубиново-красный",     c:"#8D1D2C"},
-  {id:"RAL3005", name:"RAL3005 Винно-красный",        c:"#5E2028"},
-  {id:"RAL8003", name:"RAL8003 Глиняно-коричневый",   c:"#7E4B26"},
-  {id:"RAL7024", name:"RAL7024 Графитовый серый",     c:"#45494E"},
-  {id:"RAL9005", name:"RAL9005 Чёрный янтарь",        c:"#0A0A0D"},
+  {id:"RAL1000", name:"RAL1000 Зелёно-бежевый", c:"#BEBD7F"},
+  {id:"RAL1001", name:"RAL1001 Бежевый", c:"#C2B078"},
+  {id:"RAL1002", name:"RAL1002 Песочно-жёлтый", c:"#C6A664"},
+  {id:"RAL1003", name:"RAL1003 Сигнальный жёлтый", c:"#E5BE01"},
+  {id:"RAL1004", name:"RAL1004 Золотисто-жёлтый", c:"#CDA434"},
+  {id:"RAL1005", name:"RAL1005 Медово-жёлтый", c:"#A98307"},
+  {id:"RAL1006", name:"RAL1006 Кукурузно-жёлтый", c:"#E4A010"},
+  {id:"RAL1007", name:"RAL1007 Нарциссово-жёлтый", c:"#DC9D00"},
+  {id:"RAL1011", name:"RAL1011 Коричнево-бежевый", c:"#8A6642"},
+  {id:"RAL1012", name:"RAL1012 Лимонно-жёлтый", c:"#C7B446"},
+  {id:"RAL1013", name:"RAL1013 Устрично-белый", c:"#EAE6CA"},
+  {id:"RAL1014", name:"RAL1014 Слоновая кость", c:"#E1CC4F"},
+  {id:"RAL1015", name:"RAL1015 Светлая слоновая кость", c:"#E6D690"},
+  {id:"RAL1016", name:"RAL1016 Серно-жёлтый", c:"#EDFF21"},
+  {id:"RAL1017", name:"RAL1017 Шафраново-жёлтый", c:"#F5D033"},
+  {id:"RAL1018", name:"RAL1018 Цинково-жёлтый", c:"#F8F32B"},
+  {id:"RAL1019", name:"RAL1019 Серо-бежевый", c:"#9E9764"},
+  {id:"RAL1020", name:"RAL1020 Оливково-жёлтый", c:"#999950"},
+  {id:"RAL1021", name:"RAL1021 Рапсово-жёлтый", c:"#F3DA0B"},
+  {id:"RAL1023", name:"RAL1023 Транспортный жёлтый", c:"#FAD201"},
+  {id:"RAL1024", name:"RAL1024 Охра жёлтая", c:"#AEA04B"},
+  {id:"RAL1026", name:"RAL1026 Люминесцентный жёлтый", c:"#FFFF00"},
+  {id:"RAL1027", name:"RAL1027 Карри жёлтый", c:"#9D9101"},
+  {id:"RAL1028", name:"RAL1028 Дынно-жёлтый", c:"#F4A900"},
+  {id:"RAL1032", name:"RAL1032 Ракитниково-жёлтый", c:"#D6AE01"},
+  {id:"RAL1033", name:"RAL1033 Георгиново-жёлтый", c:"#F3A505"},
+  {id:"RAL1034", name:"RAL1034 Пастельно-жёлтый", c:"#EFA94A"},
+  {id:"RAL1035", name:"RAL1035 Перламутрово-бежевый", c:"#6A5D4D"},
+  {id:"RAL1036", name:"RAL1036 Перламутрово-золотой", c:"#705335"},
+  {id:"RAL1037", name:"RAL1037 Солнечно-жёлтый", c:"#F39F18"},
+  {id:"RAL2000", name:"RAL2000 Жёлто-оранжевый", c:"#ED760E"},
+  {id:"RAL2001", name:"RAL2001 Красно-оранжевый", c:"#C93C20"},
+  {id:"RAL2002", name:"RAL2002 Алый", c:"#CB2821"},
+  {id:"RAL2003", name:"RAL2003 Пастельно-оранжевый", c:"#FF7514"},
+  {id:"RAL2004", name:"RAL2004 Оранжевый", c:"#F44611"},
+  {id:"RAL2005", name:"RAL2005 Люминесцентный оранжевый", c:"#FF2301"},
+  {id:"RAL2007", name:"RAL2007 Люмин. ярко-оранжевый", c:"#FFA420"},
+  {id:"RAL2008", name:"RAL2008 Ярко-красно-оранжевый", c:"#F75E25"},
+  {id:"RAL2009", name:"RAL2009 Транспортный оранжевый", c:"#F54021"},
+  {id:"RAL2010", name:"RAL2010 Сигнальный оранжевый", c:"#D84B20"},
+  {id:"RAL2011", name:"RAL2011 Насыщенный оранжевый", c:"#EC7C26"},
+  {id:"RAL2012", name:"RAL2012 Лососёво-оранжевый", c:"#E55137"},
+  {id:"RAL2013", name:"RAL2013 Перламутрово-оранжевый", c:"#C35831"},
+  {id:"RAL3000", name:"RAL3000 Огненно-красный", c:"#AF2B1E"},
+  {id:"RAL3001", name:"RAL3001 Сигнальный красный", c:"#A52019"},
+  {id:"RAL3002", name:"RAL3002 Карминно-красный", c:"#A2231D"},
+  {id:"RAL3003", name:"RAL3003 Рубиново-красный", c:"#9B111E"},
+  {id:"RAL3004", name:"RAL3004 Пурпурно-красный", c:"#75151E"},
+  {id:"RAL3005", name:"RAL3005 Винно-красный", c:"#5E2129"},
+  {id:"RAL3007", name:"RAL3007 Чёрно-красный", c:"#412227"},
+  {id:"RAL3009", name:"RAL3009 Оксид красный", c:"#642424"},
+  {id:"RAL3011", name:"RAL3011 Коричнево-красный", c:"#781F19"},
+  {id:"RAL3012", name:"RAL3012 Бежево-красный", c:"#C1876B"},
+  {id:"RAL3013", name:"RAL3013 Томатно-красный", c:"#A12312"},
+  {id:"RAL3014", name:"RAL3014 Розовый антик", c:"#D36E70"},
+  {id:"RAL3015", name:"RAL3015 Светло-розовый", c:"#EA899A"},
+  {id:"RAL3016", name:"RAL3016 Кораллово-красный", c:"#B32821"},
+  {id:"RAL3017", name:"RAL3017 Розовый", c:"#E63244"},
+  {id:"RAL3018", name:"RAL3018 Клубнично-красный", c:"#D53032"},
+  {id:"RAL3020", name:"RAL3020 Транспортный красный", c:"#CC0605"},
+  {id:"RAL3022", name:"RAL3022 Лососёво-красный", c:"#D95030"},
+  {id:"RAL3024", name:"RAL3024 Люминесцентный красный", c:"#F80000"},
+  {id:"RAL3026", name:"RAL3026 Люмин. ярко-красный", c:"#FE0000"},
+  {id:"RAL3027", name:"RAL3027 Малиново-красный", c:"#C51D34"},
+  {id:"RAL3028", name:"RAL3028 Красный чистый", c:"#CB3234"},
+  {id:"RAL3031", name:"RAL3031 Ориент красный", c:"#B32428"},
+  {id:"RAL3032", name:"RAL3032 Перламутрово-рубиновый", c:"#721422"},
+  {id:"RAL3033", name:"RAL3033 Перламутрово-розовый", c:"#B44C43"},
+  {id:"RAL4001", name:"RAL4001 Красно-сиреневый", c:"#6D3F5B"},
+  {id:"RAL4002", name:"RAL4002 Красно-фиолетовый", c:"#922B3E"},
+  {id:"RAL4003", name:"RAL4003 Вересково-фиолетовый", c:"#DE4C8A"},
+  {id:"RAL4004", name:"RAL4004 Бордово-фиолетовый", c:"#641C34"},
+  {id:"RAL4005", name:"RAL4005 Сине-сиреневый", c:"#6C4675"},
+  {id:"RAL4006", name:"RAL4006 Транспортный пурпурный", c:"#A03472"},
+  {id:"RAL4007", name:"RAL4007 Пурпурно-фиолетовый", c:"#4A192C"},
+  {id:"RAL4008", name:"RAL4008 Сигнальный фиолетовый", c:"#924E7D"},
+  {id:"RAL4009", name:"RAL4009 Пастельно-фиолетовый", c:"#A18594"},
+  {id:"RAL4010", name:"RAL4010 Телемаджента", c:"#CF3476"},
+  {id:"RAL4011", name:"RAL4011 Перламутрово-фиолетовый", c:"#8673A1"},
+  {id:"RAL4012", name:"RAL4012 Перламутрово-ежевичный", c:"#6C6874"},
+  {id:"RAL5000", name:"RAL5000 Фиолетово-синий", c:"#354D73"},
+  {id:"RAL5001", name:"RAL5001 Зелёно-синий", c:"#1F3438"},
+  {id:"RAL5002", name:"RAL5002 Ультрамарин", c:"#20214F"},
+  {id:"RAL5003", name:"RAL5003 Сапфирово-синий", c:"#1D1E33"},
+  {id:"RAL5004", name:"RAL5004 Чёрно-синий", c:"#18171C"},
+  {id:"RAL5005", name:"RAL5005 Сигнальный синий", c:"#1E2460"},
+  {id:"RAL5007", name:"RAL5007 Бриллиантово-синий", c:"#3E5F8A"},
+  {id:"RAL5008", name:"RAL5008 Серо-синий", c:"#26252D"},
+  {id:"RAL5009", name:"RAL5009 Азурно-синий", c:"#025669"},
+  {id:"RAL5010", name:"RAL5010 Горечавково-синий", c:"#0E294B"},
+  {id:"RAL5011", name:"RAL5011 Стально-синий", c:"#231A24"},
+  {id:"RAL5012", name:"RAL5012 Голубой", c:"#3B83BD"},
+  {id:"RAL5013", name:"RAL5013 Кобальтово-синий", c:"#1E213D"},
+  {id:"RAL5014", name:"RAL5014 Голубино-синий", c:"#606E8C"},
+  {id:"RAL5015", name:"RAL5015 Небесно-синий", c:"#2271B3"},
+  {id:"RAL5017", name:"RAL5017 Транспортный синий", c:"#063971"},
+  {id:"RAL5018", name:"RAL5018 Бирюзово-синий", c:"#3F888F"},
+  {id:"RAL5019", name:"RAL5019 Капри синий", c:"#1B5583"},
+  {id:"RAL5020", name:"RAL5020 Океанская синь", c:"#1D334A"},
+  {id:"RAL5021", name:"RAL5021 Водная синь", c:"#256D7B"},
+  {id:"RAL5022", name:"RAL5022 Ночной синий", c:"#252850"},
+  {id:"RAL5023", name:"RAL5023 Отдалённо-синий", c:"#49678D"},
+  {id:"RAL5024", name:"RAL5024 Пастельно-синий", c:"#5D9B9B"},
+  {id:"RAL5025", name:"RAL5025 Перламутрово-горечавковый", c:"#2A6478"},
+  {id:"RAL5026", name:"RAL5026 Перламутровый ночной синий", c:"#102C54"},
+  {id:"RAL6000", name:"RAL6000 Патиново-зелёный", c:"#316650"},
+  {id:"RAL6001", name:"RAL6001 Изумрудно-зелёный", c:"#287233"},
+  {id:"RAL6002", name:"RAL6002 Лиственно-зелёный", c:"#2D572C"},
+  {id:"RAL6003", name:"RAL6003 Оливково-зелёный", c:"#424632"},
+  {id:"RAL6004", name:"RAL6004 Сине-зелёный", c:"#1F3A3D"},
+  {id:"RAL6005", name:"RAL6005 Зелёный мох", c:"#2F4538"},
+  {id:"RAL6006", name:"RAL6006 Серо-оливковый", c:"#3E3B32"},
+  {id:"RAL6007", name:"RAL6007 Бутылочно-зелёный", c:"#343B29"},
+  {id:"RAL6008", name:"RAL6008 Коричнево-зелёный", c:"#39352A"},
+  {id:"RAL6009", name:"RAL6009 Пихтовый зелёный", c:"#31372B"},
+  {id:"RAL6010", name:"RAL6010 Травяной зелёный", c:"#35682D"},
+  {id:"RAL6011", name:"RAL6011 Резедово-зелёный", c:"#587246"},
+  {id:"RAL6012", name:"RAL6012 Чёрно-зелёный", c:"#343E40"},
+  {id:"RAL6013", name:"RAL6013 Тростниково-зелёный", c:"#6C7156"},
+  {id:"RAL6014", name:"RAL6014 Жёлто-оливковый", c:"#47402E"},
+  {id:"RAL6015", name:"RAL6015 Чёрно-оливковый", c:"#3B3C36"},
+  {id:"RAL6016", name:"RAL6016 Бирюзово-зелёный", c:"#1E5945"},
+  {id:"RAL6017", name:"RAL6017 Майский зелёный", c:"#4C9141"},
+  {id:"RAL6018", name:"RAL6018 Жёлто-зелёный", c:"#57A639"},
+  {id:"RAL6019", name:"RAL6019 Бело-зелёный", c:"#BDECB6"},
+  {id:"RAL6020", name:"RAL6020 Хромовый зелёный", c:"#2E3A23"},
+  {id:"RAL6021", name:"RAL6021 Бледно-зелёный", c:"#89AC76"},
+  {id:"RAL6022", name:"RAL6022 Коричнево-оливковый", c:"#25221B"},
+  {id:"RAL6024", name:"RAL6024 Транспортный зелёный", c:"#308446"},
+  {id:"RAL6025", name:"RAL6025 Папоротниково-зелёный", c:"#3D642D"},
+  {id:"RAL6026", name:"RAL6026 Опаловый зелёный", c:"#015D52"},
+  {id:"RAL6027", name:"RAL6027 Светло-зелёный", c:"#84C3BE"},
+  {id:"RAL6028", name:"RAL6028 Сосновый зелёный", c:"#2C5545"},
+  {id:"RAL6029", name:"RAL6029 Мятно-зелёный", c:"#20603D"},
+  {id:"RAL6032", name:"RAL6032 Сигнальный зелёный", c:"#317F43"},
+  {id:"RAL6033", name:"RAL6033 Мятно-бирюзовый", c:"#497E76"},
+  {id:"RAL6034", name:"RAL6034 Пастельно-бирюзовый", c:"#7FB5B5"},
+  {id:"RAL6035", name:"RAL6035 Перламутрово-зелёный", c:"#1C542D"},
+  {id:"RAL6036", name:"RAL6036 Перламутровый опал", c:"#193737"},
+  {id:"RAL6037", name:"RAL6037 Зелёный чистый", c:"#008F39"},
+  {id:"RAL6038", name:"RAL6038 Люминесцентный зелёный", c:"#00BB2D"},
+  {id:"RAL7000", name:"RAL7000 Серая белка", c:"#78858B"},
+  {id:"RAL7001", name:"RAL7001 Серебристо-серый", c:"#8A9597"},
+  {id:"RAL7002", name:"RAL7002 Оливково-серый", c:"#7E7B52"},
+  {id:"RAL7003", name:"RAL7003 Серый мох", c:"#6C7059"},
+  {id:"RAL7004", name:"RAL7004 Сигнальный серый", c:"#969992"},
+  {id:"RAL7005", name:"RAL7005 Мышино-серый", c:"#646B63"},
+  {id:"RAL7006", name:"RAL7006 Бежево-серый", c:"#6D6552"},
+  {id:"RAL7008", name:"RAL7008 Хаки-серый", c:"#6A5F31"},
+  {id:"RAL7009", name:"RAL7009 Зелёно-серый", c:"#4D5645"},
+  {id:"RAL7010", name:"RAL7010 Брезентово-серый", c:"#4C514A"},
+  {id:"RAL7011", name:"RAL7011 Железно-серый", c:"#434B4D"},
+  {id:"RAL7012", name:"RAL7012 Базальтово-серый", c:"#4E5754"},
+  {id:"RAL7013", name:"RAL7013 Коричнево-серый", c:"#464531"},
+  {id:"RAL7015", name:"RAL7015 Сланцево-серый", c:"#434750"},
+  {id:"RAL7016", name:"RAL7016 Антрацитово-серый", c:"#293133"},
+  {id:"RAL7021", name:"RAL7021 Чёрно-серый", c:"#23282B"},
+  {id:"RAL7022", name:"RAL7022 Умбра-серый", c:"#332F2C"},
+  {id:"RAL7023", name:"RAL7023 Бетонно-серый", c:"#686C5E"},
+  {id:"RAL7024", name:"RAL7024 Графитовый серый", c:"#474A51"},
+  {id:"RAL7026", name:"RAL7026 Гранитовый серый", c:"#2F353B"},
+  {id:"RAL7030", name:"RAL7030 Каменно-серый", c:"#8B8C7A"},
+  {id:"RAL7031", name:"RAL7031 Сине-серый", c:"#474B4E"},
+  {id:"RAL7032", name:"RAL7032 Галечно-серый", c:"#B8B799"},
+  {id:"RAL7033", name:"RAL7033 Цементно-серый", c:"#7D8471"},
+  {id:"RAL7034", name:"RAL7034 Жёлто-серый", c:"#8F8B66"},
+  {id:"RAL7035", name:"RAL7035 Светло-серый", c:"#D7D7D7"},
+  {id:"RAL7036", name:"RAL7036 Платиново-серый", c:"#7F7679"},
+  {id:"RAL7037", name:"RAL7037 Пыльно-серый", c:"#7D7F7D"},
+  {id:"RAL7038", name:"RAL7038 Агатовый серый", c:"#B5B8B1"},
+  {id:"RAL7039", name:"RAL7039 Кварцевый серый", c:"#6C6960"},
+  {id:"RAL7040", name:"RAL7040 Серое окно", c:"#9DA1AA"},
   {id:"RAL7042", name:"RAL7042 Транспортный серый A", c:"#8D948D"},
-  {id:"RAL7035", name:"RAL7035 Светло-серый",         c:"#C5C7C4"},
-  {id:"RAL9016", name:"RAL9016 Транспортный белый",   c:"#F1F0EA"},
+  {id:"RAL7043", name:"RAL7043 Транспортный серый B", c:"#4E5452"},
+  {id:"RAL7044", name:"RAL7044 Серый шёлк", c:"#CAC4B0"},
+  {id:"RAL7045", name:"RAL7045 Телегрей 1", c:"#909090"},
+  {id:"RAL7046", name:"RAL7046 Телегрей 2", c:"#82898F"},
+  {id:"RAL7047", name:"RAL7047 Телегрей 4", c:"#D0D0D0"},
+  {id:"RAL7048", name:"RAL7048 Перламутровый мышино-серый", c:"#898176"},
+  {id:"RAL8000", name:"RAL8000 Зелёно-коричневый", c:"#826C34"},
+  {id:"RAL8001", name:"RAL8001 Охра коричневая", c:"#955F20"},
+  {id:"RAL8002", name:"RAL8002 Сигнальный коричневый", c:"#6C3B2A"},
+  {id:"RAL8003", name:"RAL8003 Глиняно-коричневый", c:"#734222"},
+  {id:"RAL8004", name:"RAL8004 Медно-коричневый", c:"#8E402A"},
+  {id:"RAL8007", name:"RAL8007 Олень коричневый", c:"#59351F"},
+  {id:"RAL8008", name:"RAL8008 Оливково-коричневый", c:"#6F4F28"},
+  {id:"RAL8011", name:"RAL8011 Орехово-коричневый", c:"#5B3A29"},
+  {id:"RAL8012", name:"RAL8012 Красно-коричневый", c:"#592321"},
+  {id:"RAL8014", name:"RAL8014 Сепия коричневый", c:"#382C1E"},
+  {id:"RAL8015", name:"RAL8015 Каштаново-коричневый", c:"#633A34"},
+  {id:"RAL8016", name:"RAL8016 Махагон коричневый", c:"#4C2F27"},
+  {id:"RAL8017", name:"RAL8017 Шоколадно-коричневый", c:"#45322E"},
+  {id:"RAL8019", name:"RAL8019 Серо-коричневый", c:"#403A3A"},
+  {id:"RAL8022", name:"RAL8022 Чёрно-коричневый", c:"#212121"},
+  {id:"RAL8023", name:"RAL8023 Оранжево-коричневый", c:"#A65E2E"},
+  {id:"RAL8024", name:"RAL8024 Бежево-коричневый", c:"#79553D"},
+  {id:"RAL8025", name:"RAL8025 Бледно-коричневый", c:"#755C48"},
+  {id:"RAL8028", name:"RAL8028 Терракотово-коричневый", c:"#4E3B31"},
 ];
 // ближайший цвет каталога к произвольному RGB — им подменяется средний
 // цвет градиента: красить можно только цветами каталога
@@ -4027,35 +4221,73 @@ const SEED_PINNED = {1: 4194952124, 2: 1550467706};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
                autoSeed: true};
 
-// свотчи стекла: 24 базовых цвета и «Выбрать любой» (произвольный цвет)
-const swBox = document.getElementById("swatches");
-const pick = (c, el)=>{
+// ВЫБОР ЦВЕТА — КНОПКОЙ. Вместо сетки свотчей в панели — кнопка
+// «Выбрать цвет»: по клику открывается палитра со ВСЕМИ 198 цветами
+// каталога Ralcolor_VG (с поиском по коду и названию). Вторая такая же
+// кнопка — у градиента: ей выбирается второй цвет для микса.
+// Произвольного цвета нет: красить можно только цветами каталога
+function ralOf(id){ return GLASS_COLORS.find(g=>g.id===id) || GLASS_COLORS[0]; }
+const setBtnColor=(dotId, nameId, g)=>{
+  document.getElementById(dotId).style.background=
+    `radial-gradient(circle at 35% 30%, ${g.c}, #000 160%)`;
+  document.getElementById(nameId).textContent=g.name;
+};
+const pick = (c)=>{
   state.color = c;
-  swBox.querySelectorAll(".sw").forEach(s=>s.classList.remove("sel"));
-  if(el) el.classList.add("sel");
+  setBtnColor("colorDot","colorName",c);
   needRedraw = true;
   if(state.lastSpec) updateSpec();
 };
-GLASS_COLORS.forEach((c)=>{
-  const el = document.createElement("div");
-  el.className = "sw"+(c===state.color?" sel":"");
-  el.style.background = `radial-gradient(circle at 35% 30%, ${c.c}, #000 160%)`;
-  el.title = c.name;
-  el.onclick = ()=>pick(c, el);
-  swBox.appendChild(el);
-});
-// ПРОИЗВОЛЬНОГО ЦВЕТА НЕТ: красить можно только цветами каталога RAL
-// (Ralcolor_VG) — пипетка убрана, палитра и есть весь выбор
-
-// второй цвет градиента — тоже из каталога RAL
-for(const g of GLASS_COLORS){
-  const o=document.createElement("option");
-  o.value=g.id; o.textContent=g.name;
-  ui.gradC.appendChild(o);
+// всплывающая палитра каталога: заголовок, поиск, сетка 198 свотчей
+function openRalPicker(title, curId, onPick){
+  const ov=document.createElement("div");
+  ov.className="ralOverlay";
+  const pop=document.createElement("div");
+  pop.className="ralPop";
+  const h=document.createElement("h3"); h.textContent=title;
+  const find=document.createElement("input");
+  find.className="ralFind"; find.placeholder="Поиск: код или название (например 3005 или винно)";
+  const grid=document.createElement("div"); grid.className="ralGrid";
+  const cur=document.createElement("div"); cur.className="ralCur";
+  const curG=ralOf(curId);
+  cur.textContent="Сейчас: "+curG.name;
+  const rebuild=(q)=>{
+    grid.innerHTML="";
+    const qq=(q||"").trim().toLowerCase();
+    for(const g of GLASS_COLORS){
+      if(qq && g.name.toLowerCase().indexOf(qq)<0) continue;
+      const el=document.createElement("div");
+      el.className="ralSw"+(g.id===curId?" sel":"");
+      el.style.background=`radial-gradient(circle at 35% 30%, ${g.c}, #000 170%)`;
+      el.title=g.name;
+      el.onclick=()=>{ document.body.removeChild(ov); onPick(g); };
+      el.onmouseenter=()=>{ cur.textContent=g.name; };
+      el.onmouseleave=()=>{ cur.textContent="Сейчас: "+curG.name; };
+      grid.appendChild(el);
+    }
+  };
+  find.oninput=()=>rebuild(find.value);
+  ov.onclick=(e)=>{ if(e.target===ov) document.body.removeChild(ov); };
+  document.addEventListener("keydown", function esc(e){
+    if(e.key==="Escape" && ov.parentNode){ document.body.removeChild(ov); }
+    if(!ov.parentNode) document.removeEventListener("keydown", esc);
+  });
+  pop.appendChild(h); pop.appendChild(find); pop.appendChild(grid); pop.appendChild(cur);
+  ov.appendChild(pop); document.body.appendChild(ov);
+  rebuild("");
+  find.focus();
 }
-ui.gradC.value="RAL1005";
-// цвет по каталогу: объект GLASS_COLORS по коду RAL
-function ralOf(id){ return GLASS_COLORS.find(g=>g.id===id) || GLASS_COLORS[0]; }
+document.getElementById("colorBtn").onclick=()=>
+  openRalPicker("Цвет трубок — каталог RAL (Ralcolor_VG)", state.color.id, (g)=>pick(g));
+document.getElementById("gradBtn").onclick=()=>
+  openRalPicker("Второй цвет для микса — каталог RAL", ui.gradC.value, (g)=>{
+    ui.gradC.value=g.id;
+    setBtnColor("gradDot","gradName",g);
+    needRedraw=true;
+    if(state.lastSpec) updateSpec();
+  });
+setBtnColor("colorDot","colorName", DEFAULT_GLASS);
+setBtnColor("gradDot","gradName", ralOf("RAL1005"));
 
 /* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
    плавный поток ленты читается в шаре, а в фигурных силуэтах (пирамида,
