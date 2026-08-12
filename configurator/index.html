@@ -632,7 +632,6 @@ const PLAN_SHAPES = {
             return (1+0.38*Math.exp(-(d/0.55)*(d/0.55)))/1.38;
           }},
   pear:   {label:"Капля в плане",       r:(a)=>(1+0.26*Math.cos(a))/1.26},
-  clover: {label:"Клевер (3 лепестка)", r:(a)=>(1+0.22*Math.cos(3*a))/1.22},
   // ПОДКОВА (по эскизу пользователя): круглый контур с плавным проёмом
   // внизу — радиус в нижнем секторе проваливается до 0.38, по бокам и
   // сверху контур круглый. Прежний «серп» (смещённый круг) отклонён
@@ -654,9 +653,9 @@ const PLAN_SHAPES = {
    «Вихрь» и «Рваный ритм» — не отдельные генераторы, а модификаторы обычной
    спирали (см. ветку «на ребро» в controlPoints). */
 // «волна-лежак», «Мёбиус» и «корона» удалены по решению пользователя
-const CONCEPT_DIRECT={galaxy:1,cascade:1,dna:1,rings:1,vortex:1,ritm:1};
-const CONCEPT_LANES={dna:2,rings:3};
-const CONCEPT_FORMS=["galaxy","cascade","dna","vortex","ritm","rings"];
+const CONCEPT_DIRECT={rings:1,vortex:1,ritm:1};
+const CONCEPT_LANES={rings:3};
+const CONCEPT_FORMS=["vortex","ritm","rings"];
 function conceptGuide(key, ctx){
   const {dims,rw,rng,lane}=ctx;
   const kx=ctx.kx, kz=ctx.kz, kmin=Math.min(kx,kz);
@@ -665,62 +664,7 @@ function conceptGuide(key, ctx){
   const dirE=rng()<0.5?-1:1, ph0=rng()*Math.PI*2;
   const dens=Math.max(0.4, Math.min(1, ctx.densK||1));
   let P=null, A=null;
-  if(key==="galaxy"){
-    // СПИРАЛЬ-ГАЛАКТИКА: спираль Архимеда в плане — расстояние между
-    // витками ПОСТОЯННОЕ, сверху читается идеальная галактика. По высоте
-    // почти плоская: небольшой конус вниз задаёт объём. Радиальный шаг
-    // витка не меньше диаметра трубки + 42 мм — касаний нет по построению
-    const rho0=Math.max(0.08, 130/kmin);
-    // шаг витка ROD_D+60: при +42 марш у стенки поджимал внешний виток
-    // внутрь и появлялись касания (замер: 4 прохода вместо одного)
-    // шаг витка ROD_D+72: плотнее (замер на +60) марш пристеночным рулём
-    // поджимал витки и первая сборка выходила со 160 касаниями — чистой
-    // была только вторая, на сниженной плотности
-    const n=Math.max(3, Math.min(16, Math.floor(kmin*(1-rho0)/(ROD_D+72)*dens)));
-    const hSpan=Math.min(0.42*H2, n*30);
-    const uCw=0.35/n;                       // последняя треть витка — в центр
-    // конец останавливается в 26 мм от оси, не в нуле: докрутка до нуля
-    // давала микрозавиток Ø<11 мм и стержни в нём касались (замер: 39
-    // самокасаний). Отступ 32 мм от стенок уводит внешний виток из зоны
-    // пристеночного руления марша
-    const kxg=kx-32, kzg=kz-32, rEnd=26/kmin;
-    P=(t)=>{
-      let rho=1-(1-rho0)*t;
-      const th=ph0+dirE*Math.PI*2*n*t;
-      const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
-      rho=rho*(1-wC)+rEnd*wC;
-      return [cx+kxg*rho*Math.cos(th), ymid+hSpan/2-hSpan*t, cz+kzg*rho*Math.sin(th)];
-    };
-  } else if(key==="cascade"){
-    // КАСКАД (ВОДОПАД): двух- или трёхъярусная композиция — ярусы почти
-    // цилиндрические, каждый уже верхнего, между ярусами быстрый переход
-    // за 0.4 витка. Внутри яруса шаг витка не меньше ширины ленты с
-    // воздухом, радиальный сброс между ярусами ≥ 0.26 радиуса
-    let kR, hFr;
-    if(H2<900){ kR=[1.0,0.60]; hFr=[0.53,0.47]; }
-    else      { kR=[1.0,0.68,0.42]; hFr=[0.36,0.33,0.31]; }
-    const segs=[];
-    for(let i=0;i<kR.length;i++){
-      const nT=Math.max(1, Math.floor(hFr[i]*H2/(rw+22)));
-      segs.push({t:nT, r0:kR[i], r1:kR[i]});
-      if(i<kR.length-1) segs.push({t:0.4, r0:kR[i], r1:kR[i+1]});
-    }
-    const tot=segs.reduce((a2,g)=>a2+g.t,0);
-    const uCw=0.4;                           // финальные 0.4 витка — в центр
-    P=(t)=>{
-      const u=t*tot;
-      let acc=0, r=kR[kR.length-1];
-      for(const g of segs){
-        if(u<=acc+g.t){ const v=(u-acc)/g.t, wv=v*v*(3-2*v);
-                        r=g.r0+(g.r1-g.r0)*wv; break; }
-        acc+=g.t;
-      }
-      const uC=Math.max(0,(u-(tot-uCw))/uCw), wC=uC*uC*(3-2*uC);
-      r=r*(1-wC)+(26/kmin)*wC;              // конец в 26 мм от оси, не в нуле
-      const th=ph0+dirE*Math.PI*2*u;
-      return [cx+kx*r*Math.cos(th), yHi-H2*t, cz+kz*r*Math.sin(th)];
-    };
-  } else if(key==="vortex"){
+  if(key==="vortex"){
     // ВИХРЬ: спираль-смерч. Раньше вихрь был модификатором обычной спирали
     // и на плотной укладке давил собственный крен, чтобы витки не касались,
     // — на габаритах вроде 2500×2500×2000 он выглядел как «рваный ритм»
@@ -730,31 +674,67 @@ function conceptGuide(key, ctx){
     // за спуск. Характер смерча читается на любом габарите
     const rTop=0.94, rIn=0.30;
     const kxg=kx-32, kzg=kz-32;      // отступ от стенок — от пристеночного руля
-    const n=Math.max(4, Math.min(12,
-      Math.floor(kmin*(rTop-rIn)/(ROD_D+50)*dens)));
-    // ПРОФИЛЬ СМЕРЧА: радиус убывает по степени 1.35 — стенки крутые
-    // сверху, к низу узкий хвост (при линейном профиле вихрь был
-    // неотличим от «рваного ритма» — замечание пользователя). Радиальный
-    // шаг у нижних витков при этом остаётся не меньше 45 мм
-    const rhoAt=(t)=>rIn+(rTop-rIn)*Math.pow(1-t, 1.35);
+    const kmE=Math.min(kxg,kzg);
     // запас 45 мм сверху и снизу: волна крена кладёт дугу витка на границу
     // габарита, и марш, отруливая от пола, сжимал витки (замер: пары по
     // 15.6-20.9 мм у самого низа, y около 175)
     const yHiV=yHi-45, yLoV=yLo+45, H2V=Math.max(rw, yHiV-yLoV);
-    const ampAt=(t)=>Math.min(0.32*H2V,
-      Math.tan(15*Math.PI/180)*rhoAt(t)*kmin)*(0.30+0.70*t);
-    const aT=ampAt(0), aB=ampAt(1), Hs=Math.max(rw, H2V-aT-aB);
-    // нырок к центру — за 0.9 витка и до 60 мм: короче и глубже марш
-    // срезал хордой через соседний виток (пары 17-19 мм у низа)
-    const uCw=0.9/n, rEnd=60/kmin;
-    P=(t)=>{
-      const th=ph0+dirE*Math.PI*2*n*t;
-      const phT=ph0+dirE*Math.PI*2*0.6*t;
-      const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
-      const rho=rhoAt(t)*(1-wC)+rEnd*wC;
-      const y=yHiV-aT-Hs*t+ampAt(t)*(1-wC)*Math.cos(th-phT);
-      return [cx+kxg*rho*Math.cos(th), y, cz+kzg*rho*Math.sin(th)];
-    };
+    // ВЫБОР КОНСТРУКЦИИ ПО ИНВАРИАНТУ НАКЛОНА. Витки разводит радиальный
+    // шаг, но наклонная лента «на ребро» занимает по радиусу rw·sin(наклона
+    // спуска на виток) — на узких/высоких габаритах проекция (замер
+    // 800×800×2000: ~90 мм при шаге витков 55) съедает шаг целиком, и
+    // радиальный смерч физически невозможен (замечание пользователя —
+    // сотни касаний). Тогда строится ВЕРТИКАЛЬНЫЙ смерч: витки разведены
+    // по высоте, конус мягче, крен — в пределах вертикального запаса
+    let n=Math.max(4, Math.min(12,
+      Math.floor(kmE*(rTop-rIn)/(ROD_D+50)*dens)));
+    let radialOk=false;
+    for(let n2=n; n2>=4; n2--){
+      const rMid=(rTop+rIn)/2*kmE;
+      const slope=(H2V/n2)/(2*Math.PI*rMid);
+      const need=ROD_D+25+rw*Math.sin(Math.atan(slope)+15*Math.PI/180*0.65);
+      if((rTop-rIn)*kmE/n2>=need){ n=n2; radialOk=true; break; }
+    }
+    if(radialOk){
+      // ПРОФИЛЬ СМЕРЧА: радиус убывает по степени 1.35 — стенки крутые
+      // сверху, к низу узкий хвост (при линейном профиле вихрь был
+      // неотличим от «рваного ритма» — замечание пользователя). Радиальный
+      // шаг у нижних витков при этом остаётся не меньше 45 мм
+      const rhoAt=(t)=>rIn+(rTop-rIn)*Math.pow(1-t, 1.35);
+      const ampAt=(t)=>Math.min(0.32*H2V,
+        Math.tan(15*Math.PI/180)*rhoAt(t)*kmE)*(0.30+0.70*t);
+      const aT=ampAt(0), aB=ampAt(1), Hs=Math.max(rw, H2V-aT-aB);
+      // нырок к центру — за 0.9 витка и до 60 мм: короче и глубже марш
+      // срезал хордой через соседний виток (пары 17-19 мм у низа)
+      const uCw=0.9/n, rEnd=60/kmE;
+      P=(t)=>{
+        const th=ph0+dirE*Math.PI*2*n*t;
+        const phT=ph0+dirE*Math.PI*2*0.6*t;
+        const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
+        const rho=rhoAt(t)*(1-wC)+rEnd*wC;
+        const y=yHiV-aT-Hs*t+ampAt(t)*(1-wC)*Math.cos(th-phT);
+        return [cx+kxg*rho*Math.cos(th), y, cz+kzg*rho*Math.sin(th)];
+      };
+    } else {
+      // ВЕРТИКАЛЬНЫЙ СМЕРЧ: шаг витков по высоте не меньше ширины ленты
+      // + трубка + 40; крен — волной, ФАЗА МЕДЛЕННАЯ (0.6 оборота на весь
+      // спуск): волны соседних витков почти синфазны и вертикальный зазор
+      // между ними не сжимается. Конус мягкий (0.92→0.55), нырок прежний
+      const pitch=rw+ROD_D+40;
+      n=Math.max(3, Math.min(9, Math.floor(H2V/pitch)));
+      const rT2=0.92, rB2=0.55;
+      const amp=Math.max(0, 0.4*(H2V/n-rw-ROD_D-10));
+      const Hs=Math.max(rw, H2V-2*amp);
+      const uCw=0.9/n, rEnd=60/kmE;
+      P=(t)=>{
+        const th=ph0+dirE*Math.PI*2*n*t;
+        const phT=ph0+dirE*Math.PI*2*0.6*t;
+        const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
+        const rho=(rT2-(rT2-rB2)*t)*(1-wC)+rEnd*wC;
+        const y=yHiV-amp-Hs*t+amp*(1-wC)*Math.cos(th-phT);
+        return [cx+kxg*rho*Math.cos(th), y, cz+kzg*rho*Math.sin(th)];
+      };
+    }
   } else if(key==="ritm"){
     // РВАНЫЙ РИТМ: витки идут ПАРАМИ — пара сжата по высоте (0.45 шага,
     // виток заходит под соседний), затем воздух (1.35 шага). Раньше ритм
@@ -764,59 +744,68 @@ function conceptGuide(key, ctx){
     // видны на любом габарите
     const rTop=0.94, rIn=0.30;
     const kxg=kx-32, kzg=kz-32;      // отступ от стенок — от пристеночного руля
-    const n=Math.max(4, Math.min(14,
-      Math.floor(kmin*(rTop-rIn)/(ROD_D+46)*dens)));
-    // контраст пар усилен: 0.32 шага в паре против 1.68 воздуха — иначе
-    // пары читались слабо (замечание пользователя)
-    const yPos=[0];
-    for(let k=1;k<=n;k++) yPos.push(yPos[k-1]+((k%2===1)?0.32:1.68));
-    const tot=yPos[n];
-    const uCw=0.9/n, rEnd=60/kmin;
-    P=(t)=>{
-      const u=Math.min(n, Math.max(0, n*t));
-      const i2=Math.min(n-1, Math.floor(u)), fr=u-i2, sm=fr*fr*(3-2*fr);
-      const gY=(yPos[i2]+(yPos[i2+1]-yPos[i2])*sm)/tot;
-      const th=ph0+dirE*Math.PI*2*u;
-      const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
-      const rho=(rTop-(rTop-rIn)*t)*(1-wC)+rEnd*wC;
-      return [cx+kxg*rho*Math.cos(th), yHi-45-(H2-90)*gY, cz+kzg*rho*Math.sin(th)];
-    };
-  } else if(key==="dna"){
-    // ДВОЙНАЯ СПИРАЛЬ (ДНК): две ленты в противофазе на одном спуске.
-    // На любой высоте пряди диаметрально противоположны — пересечься не
-    // могут; шаг витка одной пряди не меньше ширины ленты + 34 мм
-    // пряди идут на РАЗНЫХ радиусах (0.82 и 0.64): на одном радиусе они
-    // проходят друг над другом на полушаге витка — при полушаге меньше
-    // ширины ленты это касание (замер: 230 касаний между прядями).
-    // Радиальный зазор 0.18 радиуса разводит их на любой высоте.
-    // МИКС ДИАМЕТРОВ: радиус обеих прядей дышит ОБЩЕЙ плавной модуляцией
-    // (0.76…1.15 от базового) — витки то шире, то уже, цилиндра нет.
-    // Модуляция общая, поэтому отношение радиусов прядей сохраняется и
-    // радиальный зазор между ними не сжимается
-    const r0=[0.82,0.64][lane%2];
-    // модуляция — ЦЕЛЫМИ гармониками угла в плане (2-я и 3-я) плюс
-    // медленное дыхание по спуску с ограниченной скоростью. Модуляция от
-    // произвольной фазы спуска замером отклонена: на одном угле в плане
-    // пряди оказывались на разных фазах модуляции и сходились радиально
-    // (85 касаний). Целая гармоника на одном угле даёт обеим прядям один
-    // множитель — их зазор не сжимается нигде
-    // РАНДОМ ДИАМЕТРОВ: у каждой генерации свои амплитуды трёх угловых
-    // гармоник (2-й, 3-й и 4-й) и своё медленное дыхание по спуску —
-    // разброс диаметров витков заметно больше, характер каждый раз другой
-    const p1=rng()*Math.PI*2, p2=rng()*Math.PI*2, p3=rng()*Math.PI*2;
-    const p4=rng()*Math.PI*2;
-    const A2=0.08+rng()*0.09, A3=0.05+rng()*0.08, A4=0.03+rng()*0.06;
-    const AT=0.06+rng()*0.06, fT=0.5+rng()*0.3;
-    const mTh=(th)=>1+A2*Math.sin(2*th+p1)+A3*Math.sin(3*th+p2)
-                     +A4*Math.sin(4*th+p4);
-    const mT=(t)=>1+AT*Math.sin(Math.PI+p3+Math.PI*2*fT*t);
-    const pitch=Math.max(rw+34, H2/Math.max(2, Math.floor(H2/(rw+34))));
-    const turnsD=H2/pitch;
-    P=(t)=>{
-      const th=ph0+dirE*Math.PI*2*turnsD*t+Math.PI*lane;
-      const rho=Math.min(0.97, r0*mTh(th)*mT(t));
-      return [cx+kx*rho*Math.cos(th), yHi-H2*t, cz+kz*rho*Math.sin(th)];
-    };
+    const kmE=Math.min(kxg,kzg);
+    const Hef=H2-90;
+    // ВЫБОР КОНСТРУКЦИИ ПО ИНВАРИАНТУ НАКЛОНА (как у вихря): наклонная
+    // лента «на ребро» занимает по радиусу rw·sin(наклона); на узких
+    // габаритах воздушный виток (крутой спуск 1.68 шага) проецируется на
+    // ~112 мм при радиальном шаге витков 54 — сотни касаний (замечание
+    // пользователя на 800×800×1500). Тогда пары разводятся ПО ВЫСОТЕ,
+    // а радиальный шаг остаётся только ВНУТРИ пары
+    let n=Math.max(4, Math.min(14,
+      Math.floor(kmE*(rTop-rIn)/(ROD_D+46)*dens)));
+    let radialOk=false;
+    for(let n2=n; n2>=4; n2--){
+      const tot2=Math.ceil(n2/2)*0.32+Math.floor(n2/2)*1.68;
+      const rMid=(rTop+rIn)/2*kmE;
+      const slope=(1.68/tot2*Hef)/(2*Math.PI*rMid);
+      const need=ROD_D+25+rw*Math.sin(Math.atan(slope));
+      if((rTop-rIn)*kmE/n2>=need){ n=n2; radialOk=true; break; }
+    }
+    if(radialOk){
+      // контраст пар усилен: 0.32 шага в паре против 1.68 воздуха — иначе
+      // пары читались слабо (замечание пользователя)
+      const yPos=[0];
+      for(let k=1;k<=n;k++) yPos.push(yPos[k-1]+((k%2===1)?0.32:1.68));
+      const tot=yPos[n];
+      const uCw=0.9/n, rEnd=60/kmE;
+      P=(t)=>{
+        const u=Math.min(n, Math.max(0, n*t));
+        const i2=Math.min(n-1, Math.floor(u)), fr=u-i2, sm=fr*fr*(3-2*fr);
+        const gY=(yPos[i2]+(yPos[i2+1]-yPos[i2])*sm)/tot;
+        const th=ph0+dirE*Math.PI*2*u;
+        const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
+        const rho=(rTop-(rTop-rIn)*t)*(1-wC)+rEnd*wC;
+        return [cx+kxg*rho*Math.cos(th), yHi-45-Hef*gY, cz+kzg*rho*Math.sin(th)];
+      };
+    } else {
+      // ВЕРТИКАЛЬНЫЙ РИТМ: витки разведены по высоте (как у вертикального
+      // смерча — та конструкция замером чиста), а рваность задаёт
+      // ПУЛЬСАЦИЯ скорости спуска: виток-к-витку вплотную, затем воздух.
+      // Ступенчатый профиль пар (интерполяция по сегментам) не выживал
+      // марш и разводку — направляющую корёжило (замеры: 141-967 касаний),
+      // гладкая пульсация переживает обоих
+      // минимум — ОДНА пара: два витка на 4 (со средним шагом меньше
+      // ленты с воздухом) не помещаются и давали 63-157 касаний
+      const pitch=rw+ROD_D+40;
+      n=Math.max(2, Math.min(10, 2*Math.floor(Hef/(2*pitch))));
+      // скорость спуска гуляет (1-q)…(1+q) — пары видны. Повторные
+      // попытки обвязки (densK 0.87^cs) ОСЛАБЛЯЮТ пульс: на тесном
+      // габарите слабее пары — чище укладка. Линеаризация нырка и
+      // адаптивный q замерены хуже (73/0 → 63/76) — отклонены
+      const q=0.72*(0.55+0.45*dens);
+      const nP=n/2;
+      const sPr=(t)=>t - q*Math.sin(2*Math.PI*nP*t)/(2*Math.PI*nP);
+      const uCw=0.9/n, rEnd=60/kmE;
+      P=(t)=>{
+        const th=ph0+dirE*Math.PI*2*n*t;
+        const rho=0.92-0.26*t;
+        const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
+        const rho2=Math.max(rEnd, rho*(1-wC)+rEnd*wC);
+        return [cx+kxg*rho2*Math.cos(th), yHi-45-Hef*sPr(t),
+                cz+kzg*rho2*Math.sin(th)];
+      };
+    }
   } else if(key==="rings"){
     // ПЕРЕСЕКАЮЩИЕСЯ КОЛЬЦА (ГИРОСКОП): замкнутые кольца разного диаметра,
     // каждое в своей наклонённой плоскости (8–16° — наклон здесь и есть
@@ -4908,10 +4897,17 @@ for(const ck of CONCEPT_FORMS){
    набранные потом руками размеры не трогаются */
 const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 const FORM_DEF = {
-  rhomb:      {w:1500, d:1500, h:3000, c:600},  // «Ромб»; «Ромб в плане» — нет
+  rhomb:      {w:1500, d:1500, h:3000, c:600},  // Форма-2 «Ромб»
   plan_star4: {w:1500, d:1500, h:1000, c:600},  // Форма-3 (звезда)
-  c_ritm:     {w:2500, d:2500, h:2500, c:600},  // Форма-15 (рваный ритм)
-  c_rings:    {w:4500, d:4500, h:4000, c:600},  // Форма-16 (гироскоп)
+  plan_rhomb4:{w:1000, d:2000, h:1500, c:600},  // Форма-4 (ромб в плане)
+  plan_bean:  {w:3000, d:1000, h:1500, c:600},  // Форма-5 (боб)
+  plan_pear:  {w:3000, d:3000, h:1500, c:600},  // Форма-6 (груша)
+  plan_arc:   {w:2000, d:2000, h:2000, c:600},  // Форма-7 (подкова)
+  plan_blob:  {w:2000, d:2000, h:1000, c:600},  // Форма-8 (блоб)
+  plan_wave:  {w:2000, d:2000, h:1500, c:600},  // Форма-9 (волна в плане)
+  c_vortex:   {w:2000, d:2000, h:1500, c:600},  // вихрь
+  c_ritm:     {w:2500, d:2500, h:2500, c:600},  // рваный ритм
+  c_rings:    {w:4500, d:4500, h:4000, c:600},  // гироскоп
 };
 function setDims(p){
   if(p.w) ui.dimW.value=String(p.w);
