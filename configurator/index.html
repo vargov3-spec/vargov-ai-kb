@@ -3143,21 +3143,28 @@ function buildScene(){
   const wKMEst=Math.max(0.5, Math.min(1.8, 300/rwEst));
   const targetEst=Math.max(2.05*dimsSrt[0]*wRuleEst,
                            2.163*dimsSrt[0]*wKMEst);   // мм ленты по правилу
-  // нарезка — только для ВЫТЯНУТЫХ ПО ШИРИНЕ боксов, где марш одной
-  // лентой рвётся (>3 м); эталонный 2400×900×800 собирается одной лентой
-  // 8.56 пог. м и нарезаться не должен, хотя метраж превышает порог.
-  // ПРАВИЛО ПОЛЬЗОВАТЕЛЯ: вертикальная композиция «микс» (высота —
-  // доминирующий габарит) всегда ОДИН отрезок. Отсеки режутся по оси X,
-  // поэтому нарезка законна только когда ширина и есть длинная сторона.
-  // ЧИСЛО ОТРЕЗКОВ — ПО ДЛИНЕ БОКСА (отсек ~2.2 м, как эталонный бокс),
-  // а не по метражу: на 4400 однорядная лента должна давать два отрезка,
-  // как и двухрядная (замечание пользователя), хотя метраж у неё в
-  // полтора раза больше
-  const dimWv=+ui.dimW.value||2400;
-  const lanes = (ui.plast.value!=="edge" && dimWv>3000 &&
-                 dimWv>=dimsSrt[0] && targetEst>6500)
-    ? Math.max(2, Math.min(4, Math.round(dimWv/2200)))
-    : 1;
+  // нарезка — для боксов, где марш одной лентой рвётся или тесен:
+  // (1) ВЫТЯНУТЫХ ПО ШИРИНЕ (>3 м): отсеки режутся по оси X, число — по
+  //     длине бокса (отсек ~2.2 м, как эталонный), а не по метражу;
+  // (2) ГЛУБОКИХ (глубина ≥1000, не вертикальных): винт одной пряди на
+  //     сильно вытянутом сечении глобально тесен — все попытки либо с
+  //     касаниями 355-667, либо однопрядные с покрытием 0.42 (жалоба
+  //     пользователя «не приемлемо» на 2400×1200×800). Отсеки режутся
+  //     ПО ГЛУБИНЕ на слои стандартных пропорций (слой 550-650 мм).
+  // Эталонный 2400×900×800 не нарезается. ПРАВИЛО ПОЛЬЗОВАТЕЛЯ:
+  // вертикальная композиция «микс» — всегда один отрезок
+  const dimWv=+ui.dimW.value||2400, dimDv=+ui.dimD.value||900,
+        dimHv=+ui.dimH.value||800;
+  let lanes=1, sliceAxis=0;
+  if(ui.plast.value!=="edge"){
+    if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
+      lanes=Math.max(2, Math.min(4, Math.round(dimWv/2200)));
+      sliceAxis=0;
+    } else if(dimDv>=1000 && dimHv<Math.max(dimWv,dimDv)){
+      lanes=Math.max(2, Math.min(3, Math.round(dimDv/580)));
+      sliceAxis=2;
+    }
+  }
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
   // Закрепление действует, пока не нажата кнопка генерации: после неё идут
@@ -3221,7 +3228,8 @@ function buildScene(){
   // на каждую жилу нужен свой участок хода шириной «лента + воздух»
   // лестница всегда строит ОДНУ ленту: длинные габариты нарезает на
   // отсеки отдельный путь ниже (две-три ленты по всему объёму дрались за
-  // место — 2700-4700 касаний и 107 с сборки)
+  // место — 2700-4700 касаний и 107 с; двухпрядная лестница с плетением
+  // на глубоком боксе замерена ещё хуже: 1886-3156 касаний, до 225 с)
   const lanesFit=1;
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
@@ -3278,14 +3286,18 @@ function buildScene(){
     // стык 36 мм (санитарно хватает 25): зазор 120 читался провалом между
     // отрезками. Отсек обязан заполнить свой бокс по длине не меньше чем на
     // 92% — иначе перебираем зерно (до трёх), недобор тоже читался провалом
-    const nL=lanes, sliceW=box.w/nL, seamGap=36;
-    const keepW=ui.dimW.value, seed0=state.seed, keepAuto=state.autoSeed;
+    // ОСЬ НАРЕЗКИ: широкие боксы режутся по X, глубокие — по Z (слоями
+    // стандартных пропорций); механика отсеков и мостов осе-независимая
+    const AX=sliceAxis;
+    const uiDim=AX===0? ui.dimW : ui.dimD;
+    const nL=lanes, sliceW=(AX===0? box.w : box.d)/nL, seamGap=36;
+    const keepW=uiDim.value, seed0=state.seed, keepAuto=state.autoSeed;
     const rrAll=[]; let okAll=true;
     state.subBuild=true;
     for(let i=0;i<nL && okAll;i++){
       let bestSl=null;
       for(let tr=0; tr<3 && !(bestSl && bestSl.ok); tr++){
-        ui.dimW.value=String(Math.round(sliceW-seamGap));
+        uiDim.value=String(Math.round(sliceW-seamGap));
         state.autoSeed=false;
         state.seed=(seed0+i*104729+tr*7717)>>>0;
         buildScene();
@@ -3293,12 +3305,13 @@ function buildScene(){
         let x0=1e9, x1=-1e9;
         for(const rb of scene.ribbons){
           const b2=geoBBox(rb);
-          x0=Math.min(x0,b2.min[0]); x1=Math.max(x1,b2.max[0]);
+          x0=Math.min(x0,b2.min[AX]); x1=Math.max(x1,b2.max[AX]);
         }
         const fillX=(x1-x0+ROD_D)/(sliceW-seamGap);
         { // вылет отсека за его виртуальный бокс (диагностика)
           let oS=[0,0,0];
-          const limS=[Math.round(sliceW-seamGap), box.h, box.d];
+          const limS=[box.w, box.h, box.d];
+          limS[AX]=Math.round(sliceW-seamGap);
           for(const rb of scene.ribbons) for(const r of rb.rods)
             for(const p of [r.a,r.b]) for(let x=0;x<3;x++)
               oS[x]=Math.max(oS[x], p[x]-limS[x], -p[x]);
@@ -3313,15 +3326,15 @@ function buildScene(){
       if(!bestSl){ okAll=false; break; }
       const dx=i*sliceW+seamGap/2;
       for(const rb of bestSl.ribbons){
-        for(const r of rb.rods){ r.a[0]+=dx; r.b[0]+=dx; }
+        for(const r of rb.rods){ r.a[AX]+=dx; r.b[AX]+=dx; }
         for(const arr of [rb.centers, rb.railA, rb.railB, rb.guideC])
-          if(arr) for(const p2 of arr) p2[0]+=dx;
+          if(arr) for(const p2 of arr) p2[AX]+=dx;
         rb.clampMin=[0,0,0]; rb.clampMax=[box.w, box.h, box.d];
         rrAll.push(rb);
       }
     }
     state.subBuild=false;
-    ui.dimW.value=keepW;
+    uiDim.value=keepW;
     state.seed=seed0; state.autoSeed=keepAuto;
     // СТЫК НЕВИДИМ: КОМПОЗИЦИЯ ЧИТАЕТСЯ ОДНОЙ ДЛИННОЙ ЛЕНТОЙ. Ближние концы
     // соседних отрезков ПРОДОЛЖАЮТСЯ гладкими мостами (кубика Эрмита) до
@@ -3396,10 +3409,13 @@ function buildScene(){
           if(twoRow){ GU.push(GU[GU.length-1].slice());
                       GN.push(GN[GN.length-1].slice()); }
         }
+        // кламп моста — с отступом 12 мм от граней: мягкий руль марша
+        // перелетал грань на 10-25 мм, и кандидаты стыка резались проверкой
+        // бокса (замер на глубокой нарезке 2400×1000×800 — все 'box')
         const rbB={guideC:G, guideD:GD, guideUp:GU, guideDn:GN, rows:rb.rows,
                    halfW:rb.halfW, stepEff:step, foldK:rb.foldK||0,
-                   foldMax:rb.foldMax||0, clampMin:[0,0,0],
-                   clampMax:[box.w,box.h,box.d]};
+                   foldMax:rb.foldMax||0, clampMin:[12,12,12],
+                   clampMax:[box.w-12, box.h-12, box.d-12]};
         marchRibbon(rbB);
         // примыкание: первая станция моста — по фактическому капсульному
         // зазору с концевыми стержнями ленты (впритык торцы сходились на
@@ -3503,9 +3519,11 @@ function buildScene(){
       // и против граней бокса
       const rodsOk=(newRods, rbSelf)=>{
         const lim=[box.w,box.h,box.d];
+        // допуск вылета торца моста за грань: радиус трубки + 6 мм (руль
+        // марша мягкий; вылет меньше диаметра трубки на виде не читается)
         for(const r of newRods) for(const p of [r.a,r.b])
           for(let x=0;x<3;x++)
-            if(p[x]<-ROD_R-2 || p[x]>lim[x]+ROD_R+2) return 'box';
+            if(p[x]<-ROD_R-6 || p[x]>lim[x]+ROD_R+6) return 'box';
         for(const r of newRods){
           for(const rb of rrAll){
             for(const q of rb.rods){
@@ -3526,8 +3544,8 @@ function buildScene(){
       for(let j=0;j<rrAll.length-1;j++){
         const A=rrAll[j], B=rrAll[j+1];
         // у каждого отрезка берём конец, ближний к границе отсеков
-        const aHead=(A.centers[0][0] > A.centers[A.centers.length-1][0]);
-        const bHead=(B.centers[0][0] < B.centers[B.centers.length-1][0]);
+        const aHead=(A.centers[0][AX] > A.centers[A.centers.length-1][AX]);
+        const bHead=(B.centers[0][AX] < B.centers[B.centers.length-1][AX]);
         // выбор пары подрезок концов — по сонаправленности касательных
         // с линией между концами (мост тем прямее, чем лучше согласованы)
         const endInfo=(rb, head, nT)=>{
@@ -3535,7 +3553,9 @@ function buildScene(){
           const i0=head? nT : n-1-nT, i1=head? nT+1 : n-2-nT;
           return {P:C[i0], T:V.norm(V.sub(C[i0],C[i1])), D:rb.dirs[i0]};
         };
-        const NTs=[0,4,8,12,16,20,24];
+        // глубокие подрезки (до 44 станций ~510 мм) нужны концам, севшим
+        // на грань бокса: рядом с ними мост не построить, надо отойти
+        const NTs=[0,4,8,12,16,20,24,30,37,44];
         const pairs=[];
         for(const ta of NTs) for(const tb of NTs){
           const ea=endInfo(A,aHead,ta), eb=endInfo(B,bHead,tb);
@@ -3552,7 +3572,7 @@ function buildScene(){
         }
         pairs.sort((q,z)=>z.score-q.score);
         let done=false;
-        for(const pr of pairs.slice(0,8)){
+        for(const pr of pairs.slice(0,14)){
           const bakTA=pr.ta? trim(A,aHead,pr.ta) : null;
           const bakTB=pr.tb? trim(B,bHead,pr.tb) : null;
           const pa=(aHead? A.centers[0] : A.centers[A.centers.length-1]).slice();
@@ -3568,9 +3588,14 @@ function buildScene(){
           const nS=A.dirDn? mid(A.dirDn[eIdx(A,aHead)], B.dirDn[eIdx(B,bHead)]) : null;
           // кандидаты точки встречи: середина линии, приподнятая дуга,
           // широкая петля, длинный разбег вдоль собственного хода (уводит
-          // трек от концевого стержня прежде чем повернуть к стыку)
-          const M0=[0,1,2].map(x=>(pa[x]+pb[x])/2);
-          const Mup=[M0[0], Math.min(box.h-70, M0[1]+120), M0[2]];
+          // трек от концевого стержня прежде чем повернуть к стыку).
+          // Точка встречи ОТТЯГИВАЕТСЯ ОТ СТЕН на 80 мм: у концов, сидящих
+          // на грани бокса, мост перелетал грань мягким рулём марша и все
+          // кандидаты резались проверкой бокса (замер 2400×1000×800)
+          const limM=[box.w,box.h,box.d];
+          const inb=(P)=>P.map((v,x)=>Math.min(limM[x]-80, Math.max(80, v)));
+          const M0=inb([0,1,2].map(x=>(pa[x]+pb[x])/2));
+          const Mup=inb([M0[0], Math.min(box.h-70, M0[1]+120), M0[2]]);
           const cand=[[M0,0.45,0.65],[Mup,0.45,0.65],[M0,0.9,0.9],
                       [M0,1.3,0.6]];
           for(let ci=0;ci<cand.length && !done;ci++){
