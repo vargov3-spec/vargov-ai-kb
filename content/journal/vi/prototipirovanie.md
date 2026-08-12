@@ -18,6 +18,6 @@ Làm mẫu thử là phần không thể tách rời trong công việc của Va
 
 🔹 Cho khách hàng thấy sản phẩm tương lai từ trước khi nó được chế tác từ pha lê, thủy tinh hay gốm.
 
-Khi kết quả làm chúng tôi hoàn toàn hài lòng, chúng tôi chuyển mẫu thử đến nhà máy Vargov®Design tại Trung Quốc, nơi chi tiết được chế tác từ vật liệu «thật» — gốm, pha lê, thủy tinh hoặc kim loại. Như vậy, việc làm mẫu thử trở thành mắt xích nối giữa ý tưởng và tác phẩm cuối cùng. Đó là công cụ giúp quy trình của chúng tôi nhanh hơn, sạch hơn, tiết kiệm hơn và sáng tạo hơn. Ở nơi người khác chỉ «đoán», chúng tôi biết chính xác kết quả.
+Khi kết quả làm chúng tôi hoàn toàn hài lòng, chúng tôi chuyển mẫu thử đến cơ sở sản xuất của riêng Vargov®Design, nơi chi tiết được chế tác từ vật liệu «thật» — gốm, pha lê, thủy tinh hoặc kim loại. Như vậy, việc làm mẫu thử trở thành mắt xích nối giữa ý tưởng và tác phẩm cuối cùng. Đó là công cụ giúp quy trình của chúng tôi nhanh hơn, sạch hơn, tiết kiệm hơn và sáng tạo hơn. Ở nơi người khác chỉ «đoán», chúng tôi biết chính xác kết quả.
 
 Có thể làm giả hình khối. Nhưng làm giả ý tưởng thì không thể. Bạn có theo kịp chúng tôi không?
