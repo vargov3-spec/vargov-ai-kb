@@ -3142,7 +3142,10 @@ function buildScene(){
   const wKMEst=Math.max(0.5, Math.min(1.8, 300/rwEst));
   const targetEst=Math.max(2.05*dimsSrt[0]*wRuleEst,
                            2.163*dimsSrt[0]*wKMEst);   // мм ленты по правилу
-  const lanes = (ui.plast.value!=="edge" && targetEst>6500)
+  // нарезка — только для ВЫТЯНУТЫХ боксов, где марш одной лентой рвётся
+  // (>3 м по длине); эталонный 2400×900×800 собирается одной лентой
+  // 8.56 пог. м и нарезаться не должен, хотя метраж превышает порог
+  const lanes = (ui.plast.value!=="edge" && dimsSrt[0]>3000 && targetEst>6500)
     ? Math.max(2, Math.min(4, Math.round(targetEst/5000)))
     : 1;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
@@ -3302,6 +3305,84 @@ function buildScene(){
     state.subBuild=false;
     ui.dimW.value=keepW;
     state.seed=seed0; state.autoSeed=keepAuto;
+    // СТЫК НЕВИДИМ: КОМПОЗИЦИЯ ЧИТАЕТСЯ ОДНОЙ ДЛИННОЙ ЛЕНТОЙ. Ближние концы
+    // соседних отрезков ПРОДОЛЖАЮТСЯ гладкими мостами (кубика Эрмита) до
+    // общей точки на границе отсеков (монтажный зазор 30 мм); оба моста
+    // приходят к стыку по ходу оси X, поэтому лента читается сквозной.
+    // Мост — НОВЫЕ точки направляющей. Деформация готового хвоста не
+    // работает: замер 4400×900×800 давал 583-657 самокасаний (хвост
+    // протаскивало сквозь плотную укладку) и сведение откатывалось всегда
+    if(okAll && rrAll.length===nL && rrAll.length>1){
+      // копии ГЛУБОКИЕ, и restore ставит каждый раз СВЕЖУЮ копию: разводка
+      // правит точки направляющей на месте, а мост склеивает массивы
+      // поверхностно (concat) — мелкий снимок копил порчу от неудачных
+      // попыток (замер: контрольный стык после отката держал 219 касаний)
+      const cp=(A2)=>A2 && A2.map(c=>c.slice());
+      const snap=(rb)=>({C:cp(rb.guideC), D:cp(rb.guideD),
+                         U:cp(rb.guideUp), N:cp(rb.guideDn)});
+      const restore=(rb,s)=>{ rb.guideC=cp(s.C); rb.guideD=cp(s.D);
+                              rb.guideUp=cp(s.U); rb.guideDn=cp(s.N); };
+      const bridge=(rb, head, PS)=>{
+        const G=rb.guideC, n=G.length;
+        const P0=head? G[0] : G[n-1];
+        // касательная наружу от тела ленты — мост продолжает её ход
+        const tOut=head? V.norm(V.sub(G[0],G[1])) : V.norm(V.sub(G[n-1],G[n-2]));
+        const dist=V.len(V.sub(PS,P0));
+        if(dist<25) return;
+        const dirX=Math.sign(PS[0]-P0[0])||1;
+        const mBody=V.mul(tOut, dist*0.45);  // от конца — по его касательной
+        const mSeam=[dist*0.65*dirX,0,0];    // у стыка — строго вдоль оси X
+        const ns=Math.max(3, Math.round(dist/14));
+        const pts=[];
+        for(let k=1;k<=ns;k++){
+          const t=k/ns, t2=t*t, t3=t2*t;
+          const h00=2*t3-3*t2+1, h10=t3-2*t2+t, h01=-2*t3+3*t2, h11=t3-t2;
+          pts.push([0,1,2].map(x=>
+            h00*P0[x]+h10*mBody[x]+h01*PS[x]+h11*mSeam[x]));
+        }
+        // ориентация стержней на мосту — как у конца (марш сам сгладит)
+        const last=(A2)=>head? A2[0] : A2[A2.length-1];
+        const dE=last(rb.guideD), uE=rb.guideUp&&last(rb.guideUp),
+              nE=rb.guideDn&&last(rb.guideDn);
+        const pad=(A2,v)=>head? pts.map(()=>v.slice()).concat(A2)
+                              : A2.concat(pts.map(()=>v.slice()));
+        if(head) pts.reverse();
+        rb.guideC=head? pts.concat(G) : G.concat(pts);
+        rb.guideD=pad(rb.guideD,dE);
+        if(rb.guideUp) rb.guideUp=pad(rb.guideUp,uE);
+        if(rb.guideDn) rb.guideDn=pad(rb.guideDn,nE);
+      };
+      // каждый стык сводится отдельно: до четырёх точек встречи — середина
+      // между концами, высокая дуга над витками (мост летит по свободному
+      // верху бокса), уровень конца A, уровень конца B. Неудачный вариант
+      // откатывается (guideC — единственный источник геометрии), удачный
+      // фиксируется вместе с правками разводки (она тоже двигает guideC)
+      for(let j=0;j<rrAll.length-1;j++){
+        const xJ=(j+1)*sliceW;
+        const A=rrAll[j], B=rrAll[j+1];
+        // у каждого отрезка берём конец, ближний к границе отсеков
+        const aHead=(A.guideC[0][0] > A.guideC[A.guideC.length-1][0]);
+        const bHead=(B.guideC[0][0] < B.guideC[B.guideC.length-1][0]);
+        const pa=(aHead? A.guideC[0] : A.guideC[A.guideC.length-1]).slice();
+        const pb=(bHead? B.guideC[0] : B.guideC[B.guideC.length-1]).slice();
+        const yArc=Math.min(box.h-70, Math.max(pa[1],pb[1])+130);
+        const cand=[[(pa[1]+pb[1])/2,(pa[2]+pb[2])/2],
+                    [yArc,(pa[2]+pb[2])/2],
+                    [pa[1],pa[2]], [pb[1],pb[2]]];
+        const sA=snap(A), sB=snap(B);
+        for(let ci=0;ci<cand.length;ci++){
+          const [my,mz]=cand[ci];
+          bridge(A, aHead, [xJ-15, my, mz]);
+          bridge(B, bHead, [xJ+15, my, mz]);
+          marchRibbon(A); marchRibbon(B);
+          const clJ=resolveCollisions(rrAll, box);
+          window.__ladder.push(['join'+j+'.'+ci, clJ.collisions, clJ.self||0, 0]);
+          if(clJ.collisions===0) break;
+          restore(A,sA); restore(B,sB);
+          marchRibbon(A); marchRibbon(B);
+        }
+      }
+    }
     if(okAll){
       // стык: отсеки разведены зазором 120 мм, проверка обычно чиста сразу
       const clS=resolveCollisions(rrAll, box);
