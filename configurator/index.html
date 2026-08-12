@@ -191,7 +191,12 @@
     <fieldset>
       <legend>Стекло и свет</legend>
       <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
+      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">от выбранного ко второму по ходу ленты</span></label>
+        <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
+          <input id="gradC" type="color" value="#f2c14e" style="width:44px;height:26px;border:none;background:none;padding:0">
+          <input id="gradOn" type="checkbox">
+        </span></div>
+      <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
     </fieldset>
@@ -416,6 +421,202 @@ const PLAN_SHAPES = {
   wave:   {label:"Волна (змейка)",      r:(a)=>(1+0.40*Math.cos(2*a)+0.10*Math.cos(4*a))/1.50},
 };
 
+/* ═══ КОНЦЕПТ-ФОРМЫ (Форма-11 … Форма-19): особые виды генерации «на ребро».
+   В отличие от спирали они геометрически детерминированы: правило метража и
+   ворота заполнения к ним не применяются — их силуэт и есть замысел.
+   Стержни везде вертикальны, кроме «Мёбиуса»: там ось стержня плавно
+   поворачивается вдоль кольца на 180° (полуоборот ленты Мёбиуса).
+   Радиальные зазоры заложены в построение: соседние витки и кольца разнесены
+   минимум на диаметр трубки с воздухом, поэтому касаний нет по построению.
+   «Вихрь» и «Рваный ритм» — не отдельные генераторы, а модификаторы обычной
+   спирали (см. ветку «на ребро» в controlPoints). */
+const CONCEPT_DIRECT={galaxy:1,cascade:1,wavebed:1,mobius:1,crown:1,dna:1,rings:1};
+const CONCEPT_LANES={dna:2,crown:2,rings:3};
+const CONCEPT_FORMS=["galaxy","cascade","wavebed","mobius","crown","dna",
+                     "vortex","ritm","rings"];
+function conceptGuide(key, ctx){
+  const {dims,rw,rng,lane}=ctx;
+  const kx=ctx.kx, kz=ctx.kz, kmin=Math.min(kx,kz);
+  const H=dims[1], cx=dims[0]/2, cz=dims[2]/2, ymid=H/2;
+  const yPad=rw*0.55+12, yLo=yPad, yHi=H-yPad, H2=Math.max(rw, yHi-yLo);
+  const dirE=rng()<0.5?-1:1, ph0=rng()*Math.PI*2;
+  const dens=Math.max(0.4, Math.min(1, ctx.densK||1));
+  let P=null, A=null;
+  if(key==="galaxy"){
+    // СПИРАЛЬ-ГАЛАКТИКА: спираль Архимеда в плане — расстояние между
+    // витками ПОСТОЯННОЕ, сверху читается идеальная галактика. По высоте
+    // почти плоская: небольшой конус вниз задаёт объём. Радиальный шаг
+    // витка не меньше диаметра трубки + 42 мм — касаний нет по построению
+    const rho0=Math.max(0.08, 130/kmin);
+    // шаг витка ROD_D+60: при +42 марш у стенки поджимал внешний виток
+    // внутрь и появлялись касания (замер: 4 прохода вместо одного)
+    // шаг витка ROD_D+72: плотнее (замер на +60) марш пристеночным рулём
+    // поджимал витки и первая сборка выходила со 160 касаниями — чистой
+    // была только вторая, на сниженной плотности
+    const n=Math.max(3, Math.min(16, Math.floor(kmin*(1-rho0)/(ROD_D+72)*dens)));
+    const hSpan=Math.min(0.42*H2, n*30);
+    const uCw=0.35/n;                       // последняя треть витка — в центр
+    // конец останавливается в 26 мм от оси, не в нуле: докрутка до нуля
+    // давала микрозавиток Ø<11 мм и стержни в нём касались (замер: 39
+    // самокасаний). Отступ 32 мм от стенок уводит внешний виток из зоны
+    // пристеночного руления марша
+    const kxg=kx-32, kzg=kz-32, rEnd=26/kmin;
+    P=(t)=>{
+      let rho=1-(1-rho0)*t;
+      const th=ph0+dirE*Math.PI*2*n*t;
+      const uC=Math.max(0,(t-(1-uCw))/uCw), wC=uC*uC*(3-2*uC);
+      rho=rho*(1-wC)+rEnd*wC;
+      return [cx+kxg*rho*Math.cos(th), ymid+hSpan/2-hSpan*t, cz+kzg*rho*Math.sin(th)];
+    };
+  } else if(key==="cascade"){
+    // КАСКАД (ВОДОПАД): двух- или трёхъярусная композиция — ярусы почти
+    // цилиндрические, каждый уже верхнего, между ярусами быстрый переход
+    // за 0.4 витка. Внутри яруса шаг витка не меньше ширины ленты с
+    // воздухом, радиальный сброс между ярусами ≥ 0.26 радиуса
+    let kR, hFr;
+    if(H2<900){ kR=[1.0,0.60]; hFr=[0.53,0.47]; }
+    else      { kR=[1.0,0.68,0.42]; hFr=[0.36,0.33,0.31]; }
+    const segs=[];
+    for(let i=0;i<kR.length;i++){
+      const nT=Math.max(1, Math.floor(hFr[i]*H2/(rw+22)));
+      segs.push({t:nT, r0:kR[i], r1:kR[i]});
+      if(i<kR.length-1) segs.push({t:0.4, r0:kR[i], r1:kR[i+1]});
+    }
+    const tot=segs.reduce((a2,g)=>a2+g.t,0);
+    const uCw=0.4;                           // финальные 0.4 витка — в центр
+    P=(t)=>{
+      const u=t*tot;
+      let acc=0, r=kR[kR.length-1];
+      for(const g of segs){
+        if(u<=acc+g.t){ const v=(u-acc)/g.t, wv=v*v*(3-2*v);
+                        r=g.r0+(g.r1-g.r0)*wv; break; }
+        acc+=g.t;
+      }
+      const uC=Math.max(0,(u-(tot-uCw))/uCw), wC=uC*uC*(3-2*uC);
+      r=r*(1-wC)+(26/kmin)*wC;              // конец в 26 мм от оси, не в нуле
+      const th=ph0+dirE*Math.PI*2*u;
+      return [cx+kx*r*Math.cos(th), yHi-H2*t, cz+kz*r*Math.sin(th)];
+    };
+  } else if(key==="wavebed"){
+    // ВОЛНА-ЛЕЖАК: лента на ребре идёт длинной плавной синусоидой вдоль
+    // длинной стороны габарита, у дальнего торца разворачивается полукругом
+    // и возвращается вторым ходом. Ходы разнесены и в плане (±радиус
+    // разворота), и по высоте (ширина ленты + воздух) — касаний нет.
+    // Радиус изгиба на гребне волны λ²/(4π²A) удержан не меньше 245 мм
+    const axI=dims[0]>=dims[2]?0:2, ozI=axI===0?2:0;
+    const kA=(axI===0?kx:kz), kO=(axI===0?kz:kx);
+    const c1=dims[axI]/2, c2=dims[ozI]/2;
+    const margin=Math.max(150, rw*0.35);
+    const x0=c1-kA+margin, x1=c1+kA-margin, Lr=Math.max(400, x1-x0);
+    const rU=Math.max(170, Math.min(300, kO*0.35));
+    let Aw=Math.max(40, kO-rU-40);
+    let lam=Math.max(2*Math.PI*Math.sqrt(245*Aw), Lr/2.6);
+    if(lam>Lr/1.05){ lam=Lr/1.05; Aw=Math.min(Aw, Math.pow(lam/(2*Math.PI),2)/245); }
+    // предел крутизны волны 0.30 (17°): круче — вертикальные стержни
+    // сходятся в плане ближе диаметра с зазором (см. «корону»)
+    Aw=Math.min(Aw, 0.30*lam/(2*Math.PI));
+    const dy=(H2>=rw+40)?(rw+24)/2:0;
+    const ph1=-2*Math.PI*Lr/lam;             // на дальнем торце волна в нуле
+    const Lu=Math.PI*rU, tot=Lr+Lu+Lr;
+    P=(t)=>{
+      const sPos=t*tot, q=[0,0,0];
+      if(sPos<=Lr){
+        q[axI]=x0+sPos; q[ozI]=c2-rU+Aw*Math.sin(2*Math.PI*sPos/lam+ph1);
+        q[1]=ymid+dy;
+      } else if(sPos<=Lr+Lu){
+        const an=(sPos-Lr)/rU, vv=(sPos-Lr)/Lu;
+        q[axI]=x1+rU*Math.sin(an); q[ozI]=c2-rU*Math.cos(an);
+        q[1]=ymid+dy-2*dy*(vv*vv*(3-2*vv));
+      } else {
+        const sb=sPos-Lr-Lu;
+        q[axI]=x1-sb; q[ozI]=c2+rU+Aw*0.85*Math.sin(2*Math.PI*sb/lam*1.18+ph0);
+        q[1]=ymid-dy;
+      }
+      return q;
+    };
+  } else if(key==="mobius"){
+    // ЛЕНТА МЁБИУСА: кольцо с одним полуоборотом — ось стержня плавно
+    // поворачивается на 180° вдоль кольца, концы встречаются с
+    // перевёрнутой ориентацией. Шов 0.05 оборота оставлен: там концы
+    // разведены в плане и не пересекаются
+    const rM=Math.max(0.30, Math.min(0.80, 1-(rw/2+30)/kmin));
+    const span=Math.PI*2*0.95;
+    P=(t)=>{
+      const th=ph0+dirE*span*t;
+      return [cx+kx*rM*Math.cos(th), ymid, cz+kz*rM*Math.sin(th)];
+    };
+    A=(t)=>{
+      const th=ph0+dirE*span*t, psi=Math.PI*t;
+      const ax=[Math.cos(th)*Math.sin(psi), Math.cos(psi), Math.sin(th)*Math.sin(psi)];
+      const L2=Math.hypot(ax[0],ax[1],ax[2])||1;
+      return [ax[0]/L2, ax[1]/L2, ax[2]/L2];
+    };
+  } else if(key==="crown"){
+    // ТОР С ВОЛНОЙ (КОРОНА): два замкнутых кольца, верхний кант дышит
+    // волной — 3 волны у внешнего кольца, 4 у внутреннего, в противофазе.
+    // Кольца концентрические с радиальным зазором 0.13 радиуса — при
+    // вертикальных стержнях они не могут коснуться ни на какой высоте
+    const l=lane%2, rK=[0.93,0.80][l], m=3+l;
+    // ПРЕДЕЛ КРУТИЗНЫ ВОЛНЫ 0.30 (17°). Стержни вертикальны и стоят через
+    // ROD_STEP вдоль проволоки: на крутой волне их шаг В ПЛАНЕ сжимается на
+    // косинус крутизны, и при >18° соседние стержни сходятся ближе диаметра
+    // с зазором (замер: 920 самокасаний при волне 50°)
+    const Aw=Math.min(rw*0.9, 0.26*H2, 0.30*rK*kmin/m);
+    const off=Math.min(0.24*H2, Math.max(0, H2/2-Aw-rw/2));
+    const yb=ymid+(l?-1:1)*off, phL=ph0+l*1.7;
+    P=(t)=>{
+      const th=dirE*Math.PI*2*0.985*t+phL;
+      return [cx+kx*rK*Math.cos(th), yb+Aw*Math.sin(m*th+phL*2), cz+kz*rK*Math.sin(th)];
+    };
+  } else if(key==="dna"){
+    // ДВОЙНАЯ СПИРАЛЬ (ДНК): две ленты в противофазе на одном спуске.
+    // На любой высоте пряди диаметрально противоположны — пересечься не
+    // могут; шаг витка одной пряди не меньше ширины ленты + 34 мм
+    // пряди идут на РАЗНЫХ радиусах (0.82 и 0.64): на одном радиусе они
+    // проходят друг над другом на полушаге витка — при полушаге меньше
+    // ширины ленты это касание (замер: 230 касаний между прядями).
+    // Радиальный зазор 0.18 радиуса разводит их на любой высоте
+    const r0=[0.82,0.64][lane%2];
+    const pitch=Math.max(rw+34, H2/Math.max(2, Math.floor(H2/(rw+34))));
+    const turnsD=H2/pitch;
+    P=(t)=>{
+      const th=ph0+dirE*Math.PI*2*turnsD*t+Math.PI*lane;
+      const rho=r0*(1+0.03*Math.sin(2.2*th+1.3));
+      return [cx+kx*rho*Math.cos(th), yHi-H2*t, cz+kz*rho*Math.sin(th)];
+    };
+  } else if(key==="rings"){
+    // ПЕРЕСЕКАЮЩИЕСЯ КОЛЬЦА (ГИРОСКОП): три замкнутых кольца разного
+    // диаметра, каждое в своей наклонённой плоскости (8–14° — наклон здесь
+    // и есть форма). Стержни вертикальны: наклон — это ход высоты по
+    // кругу. Кольца концентрические с зазором ≥0.23 радиуса — при
+    // вертикальных стержнях пересечься не могут ни на какой высоте
+    const l=lane%3, rK=[0.94,0.70,0.47][l], tiltD=[8,11,14][l];
+    const phL=ph0+2.4*l;
+    const hAmp=Math.min((H2-rw)/2*0.9,
+                        Math.tan(tiltD*Math.PI/180)*rK*kmin);
+    let off=[0.10,-0.06,0.02][l]*H2;
+    const offMax=Math.max(0, H2/2-hAmp-rw/2);
+    off=Math.max(-offMax, Math.min(offMax, off));
+    P=(t)=>{
+      const th=dirE*Math.PI*2*0.985*t+phL;
+      return [cx+kx*rK*Math.cos(th), ymid+off+hAmp*Math.cos(th-phL), cz+kz*rK*Math.sin(th)];
+    };
+  }
+  if(!P) return null;
+  // выборка: шаг вдоль пути ~14 мм (по грубой оценке длины)
+  let cl=0, prev=P(0);
+  for(let i2=1;i2<=240;i2++){ const q=P(i2/240); cl+=Math.hypot(q[0]-prev[0],q[1]-prev[1],q[2]-prev[2]); prev=q; }
+  const N=Math.max(160, Math.min(2800, Math.round(cl/14)));
+  const pts=[], axisAt=[];
+  for(let i2=0;i2<=N;i2++){
+    const t=i2/N;
+    pts.push(P(t));
+    axisAt.push(A?A(t):[0,1,0]);
+  }
+  pts.__axisAt=axisAt;
+  return pts;
+}
+
 const FORMS = {
   box:    {label:"Параллелепипед",           rect:true,  prof:null},
   sphere: {label:"Шар",                      rect:false, axLong:true,
@@ -615,6 +816,12 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const H=dims[1];
       const sphE=formOf(dims, rw, box.form);
       const kx=(dims[0]/2-ROD_R-20), kz=(dims[2]/2-ROD_R-20);
+      // КОНЦЕПТ-ФОРМЫ строят направляющую сами — минуя правила спирали
+      if(box.concept && CONCEPT_DIRECT[box.concept]){
+        const gC=conceptGuide(box.concept, {dims, rw, rng, lane,
+                                            kx, kz, densK:box.densK});
+        if(gC){ gC.__target=0; gC.__edge=true; return gC; }
+      }
       // радиальный шаг между витками: толщина трубки + воздух с запасом
       // (на минимальном шаге плотная спираль срывалась в касания)
       const dR=ROD_D+28;
@@ -792,6 +999,26 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // — 184 касания против чистой укладки при том же зерне)
       let rise=Math.min(riseFree, nA*pitchE);
       let y0=(H-rise)/2;
+      // «РВАНЫЙ РИТМ» (концепт-форма): витки идут парами — пара сжата
+      // почти в перекрытие (0.38 шага), затем воздух. Пары допустимы только
+      // когда витки разведены радиально не меньше диаметра трубки + 30 мм,
+      // иначе ритм отключается и спираль остаётся равномерной
+      let ritmMap=null;
+      if(box.concept==="ritm"){
+        const nTur=Math.max(4, Math.round(nA));
+        const dTurnR=(rho1-rho0)*kminE/Math.max(1,nA);
+        if(dTurnR>=ROD_D+30){
+          const posR=[0];
+          for(let kR2=1;kR2<=nTur;kR2++)
+            posR.push(posR[kR2-1]+((kR2%2===1)?0.38:1.0));
+          const totR=posR[nTur];
+          ritmMap=(t)=>{
+            const u=Math.min(nTur, Math.max(0, nA*t));
+            const i2=Math.min(nTur-1, Math.floor(u)), fr=u-i2;
+            return (posR[i2]+(posR[i2+1]-posR[i2])*fr)/totR;
+          };
+        }
+      }
       // СПУСК ЗАКАНЧИВАЕТСЯ ТАМ, ГДЕ КОНТУР УЖЕ ФИНАЛЬНОГО ЗАВИТКА. У конуса
       // и пирамиды ниже некоторой высоты контур формы становится уже радиуса
       // финального завитка, радиус витка упирается в этот предел, и несколько
@@ -847,6 +1074,9 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // размах делится между ОБЩИМ завалом (вся спираль завалена в одну
       // сторону) и СВОИМ НАКЛОНОМ КАЖДОГО ВИТКА; сумма долей — единица,
       // поэтому запас по высоте (2·tiltMm) остаётся прежним
+      // «ВИХРЬ» (концепт-форма): завал не случайный, а нарастающий к низу
+      // и с равномерным поворотом направления — спираль читается смерчем
+      const vortexC=(box.concept==="vortex");
       const tiltCK=0.35+0.15*rng();             // доля общего завала
       const tiltK=tiltCK*(0.55+0.45*rng());     // доля предельного размаха
       const tiltPh=rng()*Math.PI*2;             // куда завален верхний виток
@@ -863,7 +1093,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nTurnJ=Math.max(2, Math.ceil(nA)+2);
       const tJx=[], tJz=[];
       for(let i=0;i<=nTurnJ;i++){
-        const aJ=tiltMax*(1-tiltCK)*(0.55+0.45*rng());
+        const aJ=tiltMax*(1-tiltCK)*(0.55+0.45*rng())*(vortexC?0.25:1);
         const pJ=rng()*Math.PI*2;
         tJx.push(aJ*Math.cos(pJ)); tJz.push(aJ*Math.sin(pJ));
       }
@@ -874,7 +1104,8 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // снизу — композиция висит вершиной вниз, как люстра
         // ЗАВИТОК ГУЛЯЕТ ПО ВЕРТИКАЛИ (у «капли»): внутренние витки уходят
         // случайно выше или ниже, движение плавное и растёт к концу спуска
-        const yq=y0+rise*(1-t)+liftA*t*t*(3-2*t);
+        const tR=ritmMap?ritmMap(t):t;
+        const yq=y0+rise*(1-tR)+liftA*t*t*(3-2*t);
         // контур формы на этой высоте (у шара сечение сужается к полюсам)
         let kf=1;
         if(sphE){
@@ -927,8 +1158,11 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // завал витка: высота ходит по кругу витка — плоскость наклонена.
         // Общий завал (одно направление на всю спираль) плюс свой наклон
         // каждого витка, сшитый по s-кривой между соседними витками
-        const sT=tiltMax*tiltK*(0.62+0.38*Math.sin(Math.PI*2*tiltF*t+tiltVar));
-        const phT=tiltPh+Math.PI*2*tiltRot*t;
+        const sT=vortexC
+          ? tiltMax*(0.12+0.88*t)
+          : tiltMax*tiltK*(0.62+0.38*Math.sin(Math.PI*2*tiltF*t+tiltVar));
+        const phT=vortexC ? (tiltPh+Math.PI*2*0.85*dirE*t)
+                          : (tiltPh+Math.PI*2*tiltRot*t);
         const uJ=nA*t, iJ=Math.min(nTurnJ-1, Math.floor(uJ));
         const wJ=uJ-iJ, smJ=wJ*wJ*(3-2*wJ);
         const jx=tJx[iJ]+(tJx[iJ+1]-tJx[iJ])*smJ;
@@ -1284,7 +1518,8 @@ function buildRibbon(params, rngSeed, lane){
                   d: Math.max(200, box.d-40), rw, relax,
                   form: params.form||"box", plast: params.plast||"mix",
                   plan: params.plan||"circle", rows: params.rows||2,
-                  densK: params.densK||1, addLen: params.addLen||0 };
+                  densK: params.densK||1, addLen: params.addLen||0,
+                  concept: params.concept||null };
 
   let ctrl = controlPoints(style, rng, isFill?workF:work, lane, lanes, ampl, lengthK);
 
@@ -1606,6 +1841,8 @@ function buildRibbon(params, rngSeed, lane){
       // второй проход только если недобор заметный: он удваивает время
       // второй проход — только по недобору заполнения, без оглядки на время:
       // от времени зависела бы сама геометрия (см. лестницу ниже)
+      // концепт-формы не растягиваются под габарит: их размер — замысел
+      if(workF.concept && CONCEPT_DIRECT[workF.concept]) break;
       if(pass===2 || (okP && fillP>=0.955)) break;
       // исправление масштаба по факту: не больше 25% за проход
       // масштаб навивки ограничен: генератор изначально строит её примерно
@@ -2713,7 +2950,13 @@ function buildScene(){
     // силуэт В ПЛАНЕ («plan_имя») — тогда спуск цилиндрический, а витки
     // несутся по выбранному контуру сверху
     form: (ui.form.value.indexOf("plan_")===0 ? "cyl"
+           : ui.form.value.indexOf("c_")===0
+             ? (ui.form.value==="c_wavebed" ? "box" : "cyl")
            : (FORMS[ui.form.value] ? ui.form.value : "box")),
+    // КОНЦЕПТ-ФОРМА («c_имя»): особый вид генерации «на ребро» — см.
+    // conceptGuide. Силуэт габарита у них цилиндр (у «волны-лежака» — сам
+    // габарит), а геометрию строит собственный генератор
+    concept: (ui.form.value.indexOf("c_")===0 ? ui.form.value.slice(2) : null),
     plan: (ui.form.value.indexOf("plan_")===0
            && PLAN_SHAPES[ui.form.value.slice(5)] ? ui.form.value.slice(5) : "circle"),   // форма габарита
     plast: (ui.plast.value==="edge" ? "edge" : "mix"),      // пластика ленты
@@ -2734,8 +2977,40 @@ function buildScene(){
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
   window.__ladder=[];
+  // КОНЦЕПТ-ФОРМЫ СОБИРАЮТСЯ НАПРЯМУЮ, БЕЗ ЛЕСТНИЦЫ. Их геометрия
+  // детерминирована (кольца, каскад, ДНК...): правило метража и ворота
+  // заполнения не применяются — силуэт и есть замысел. При касаниях —
+  // до пяти попыток со снижением плотности, касания в итоге не показываются
+  let conceptBuilt=false;
+  if(params.plast==="edge" && params.concept && CONCEPT_DIRECT[params.concept]){
+    const nL=CONCEPT_LANES[params.concept]||1;
+    let bestC=null;
+    for(let cs=0; cs<5; cs++){
+      const pC=Object.assign({}, params, {lanes:nL, densK:Math.pow(0.87,cs)});
+      const rr=[]; let okC=true;
+      for(let i=0;i<nL;i++){
+        const rb=buildRibbon(pC, (state.seed+cs*7717)>>>0, i);
+        rb.clampMin=[0,0,0]; rb.clampMax=[box.w,box.h,box.d];
+        if(!rb.fillMode) marchRibbon(rb);
+        if(!rb.fitScale){ okC=false; break; }
+        rr.push(rb);
+      }
+      if(!okC){ window.__ladder.push(['c'+cs,'nofit']); continue; }
+      const clC=resolveCollisions(rr, box);
+      window.__ladder.push(['c'+cs, clC.collisions, clC.self, 0]);
+      if(!bestC || clC.collisions<bestC.cl.collisions) bestC={rr, cl:clC};
+      if(clC.collisions===0) break;
+    }
+    if(bestC){
+      bestC.cl.attempt=0; bestC.cl.lanes=nL;
+      bestClean={ribbons:bestC.rr, clear:bestC.cl,
+                 len:bestC.rr.reduce((a2,rb)=>a2+rb.ribbonLen,0),
+                 gate:true, fill:1, cov:1};
+      best=bestClean; conceptBuilt=true;
+    }
+  }
   outer:
-  for(let effLanes=lanesFit; effLanes>=1; effLanes--){
+  for(let effLanes=(conceptBuilt?0:lanesFit); effLanes>=1; effLanes--){
     // многожильные варианты считаются дорого (пар капсул кратно больше)
     // ЧИСЛО ПОПЫТОК — ДЕТЕРМИНИРОВАННЫЙ ПРЕДЕЛ ВРЕМЕНИ СБОРКИ. Раньше перебор
     // резался по бюджету времени, и номер варианта не воспроизводился на другой
@@ -2944,7 +3219,7 @@ function buildScene(){
   // страховка: спокойный вариант вместо брака И вместо вырожденного
   // (чистого, но оборванного или сплющенного) варианта
   let bestRescue=null;
-  if(clear.collisions>0 || needRescue){
+  if(!conceptBuilt && (clear.collisions>0 || needRescue)){
     rescue:
     for(let rl=lanes; rl>=1; rl--){
       for(let rs=0; rs<(rl>2?3:6); rs++){
@@ -3226,7 +3501,7 @@ function buildScene(){
     // страховкой, и порог покрытия здесь давал 40-секундные сборки —
     // достаточно того, что лестница сама ищет вариант с покрытием выше порога
     const tries=state.reTry||0;
-    if(fillMin<0.80 && tries<2){
+    if(!params.concept && fillMin<0.80 && tries<2){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
@@ -3307,6 +3582,10 @@ function draw(){
   if(!scene) return;
 
   const glass = hexRgb(state.color.c);
+  // ГРАДИЕНТ ЦВЕТА: стержень окрашивается смесью выбранного и второго
+  // цвета по положению вдоль ленты — производство раскладывает трубки
+  // двух цветов по монтажной карте
+  const gradB = (ui.gradOn && ui.gradOn.checked) ? hexRgb(ui.gradC.value) : null;
   const isClear = state.color.id==="clear";
   const prims = [];
   const p1=[0,0,0,0], p2=[0,0,0,0];
@@ -3437,10 +3716,17 @@ function draw(){
       if(!project(r.a,B,p1) || !project(r.b,B,p2)) continue;
       const nd = Math.abs(V.dot(r.n, LIGHT));
       const zz = (p1[2]+p2[2])/2;
+      let colR=null;
+      if(gradB){
+        const tt=(r.st||0)/Math.max(1, rb.centers.length-1);
+        colR=[glass[0]+(gradB[0]-glass[0])*tt,
+              glass[1]+(gradB[1]-glass[1])*tt,
+              glass[2]+(gradB[2]-glass[2])*tt];
+      }
       prims.push({z:zz, kind:1,
         x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
         wpx:Math.max(1.1, ROD_D*p1[3]),
-        shade:0.40+0.60*nd});
+        shade:0.40+0.60*nd, col:colR});
     }
     // контуры каркаса: два канта + центральный (у двурядной)
     // СМЕЩЕНИЕ ПО ГЛУБИНЕ ДЛЯ КАРКАСА И ДИОДОВ. Сортировка идёт по СЕРЕДИНЕ
@@ -3479,7 +3765,7 @@ function draw(){
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else if(pr.kind===1){ // стержень
       ctx.lineCap="round";
-      ctx.strokeStyle = shadeCss(glass, pr.shade, isClear?0.45:0.88);
+      ctx.strokeStyle = shadeCss(pr.col||glass, pr.shade, isClear?0.45:0.88);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
       // блик
@@ -3613,7 +3899,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
@@ -3692,6 +3978,14 @@ for(const key in PLAN_SHAPES){
 }
 ui.plan.value="circle";
 
+// КОНЦЕПТ-ФОРМЫ — в конец списка (Форма-11 … Форма-19), чтобы номера
+// существующих форм не сдвигались
+for(const ck of CONCEPT_FORMS){
+  const oc=document.createElement("option");
+  oc.value="c_"+ck; oc.textContent=ck;
+  ui.form.appendChild(oc);
+}
+
 // НАЗВАНИЯ ФОРМ — НОМЕРАМИ: «Форма-1», «Форма-2» … по порядку списка.
 // Описательные названия силуэтов («клякса», «серп») в подборе не помогают и
 // спорят с эскизом, номер короче и однозначен. Нумеруются только формы,
@@ -3699,7 +3993,8 @@ ui.plan.value="circle";
 {
   let nF=0;
   for(const o of ui.form.options){
-    if(o.value.indexOf("plan_")!==0 && EDGE_OFF[o.value]) continue;
+    if(o.value.indexOf("plan_")!==0 && o.value.indexOf("c_")!==0
+       && EDGE_OFF[o.value]) continue;
     o.textContent="Форма-"+(++nF);
   }
 }
@@ -3739,7 +4034,9 @@ function syncForms(){
   const mixOnly=(ui.plast.value!=="edge");
   for(const o of ui.form.options){
     const keep = mixOnly ? (o.value==="sphere")
-                         : (o.value.indexOf("plan_")===0 || !EDGE_OFF[o.value]);
+                         : (o.value.indexOf("plan_")===0
+                            || o.value.indexOf("c_")===0
+                            || !EDGE_OFF[o.value]);
     o.hidden=!keep; o.disabled=!keep;
   }
   if(mixOnly && ui.form.value!=="sphere") ui.form.value="sphere";
@@ -3776,6 +4073,9 @@ for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
     rebuild("Генерация варианта композиции…");
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
+// градиент цвета — чистая перерисовка, каркас не пересобирается
+ui.gradOn.addEventListener("change", ()=>{needRedraw=true;});
+ui.gradC.addEventListener("input", ()=>{needRedraw=true;});
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
 ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
@@ -3800,6 +4100,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (задан), мм", `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`],
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Цвет стекла", state.color.name],
+    ...(ui.gradOn.checked ? [["Градиент к цвету", ui.gradC.value.toUpperCase()]] : []),
     ["Лент в композиции, шт", scene.ribbons.length],
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
