@@ -109,7 +109,13 @@
     cursor:pointer; text-align:center; text-decoration:none;
   }
   .btn2:hover{border-color:var(--gold)}
-  .btns{display:flex; gap:8px}
+  .btns{display:flex; gap:8px; flex-wrap:wrap}
+  .btns .btn2{flex:1 1 44%}
+  .favRow{display:flex; gap:6px; align-items:center; margin:4px 0; font-size:12px}
+  .favRow .favTxt{flex:1; color:var(--txt)}
+  .btn3{background:var(--panel2); color:var(--txt); border:1px solid var(--line);
+    border-radius:6px; padding:3px 8px; font-size:11.5px; cursor:pointer}
+  .btn3:hover{border-color:var(--gold)}
   #spec{font-size:13px}
   #spec table{width:100%; border-collapse:collapse}
   #spec td{padding:3px 0; vertical-align:top}
@@ -214,16 +220,25 @@
         </span></div>
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
+      <div class="row"><label for="sag">Провис под весом</label><input id="sag" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
     </fieldset>
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
     <div class="btns">
+      <button class="btn2" id="favAdd">⭐ В избранное</button>
+      <button class="btn2" id="favLink">Ссылка на вариант</button>
       <button class="btn2" id="saveCsv">Спецификация CSV</button>
       <button class="btn2" id="saveObj">3D-модель OBJ</button>
       <button class="btn2" id="saveDxf">Чертёж DXF (3D)</button>
       <button class="btn2" id="saveMont">Монтажная карта CSV</button>
+      <button class="btn2" id="savePat">Выкройка 1:1 (печать)</button>
     </div>
+
+    <fieldset style="margin-top:14px" id="favBox" hidden>
+      <legend>Избранные композиции</legend>
+      <div id="favList"></div>
+    </fieldset>
 
     <fieldset style="margin-top:14px">
       <legend>Расчёт</legend>
@@ -4268,12 +4283,53 @@ function buildScene(){
         // потолка, который стоит выше габарита на заданную величину
         rb.cabs.push({from:[top[0], box.h+ceilH, top[2]], to:top});
       }
+      rb.cabSt=picked.slice().sort((q,z)=>q-z);
       // фактический максимальный пролёт — в спецификацию
       let span=0;
       for(let k=1;k<picked.length;k++) span=Math.max(span,(picked[k]-picked[k-1])*rb.stepEff);
       rb.cabSpan=Math.round(span);
     }
   });
+  // ПРОВИС ПОД ВЕСОМ (гравитационный реализм). Марш строит идеальную
+  // геометрию; настоящая лента слегка провисает между тросами — стрела
+  // растёт с квадратом пролёта (катенарная), свободные концы провисают
+  // консольно. Провис применяется К ГОТОВОЙ геометрии после разводки и
+  // подвесов: якорные станции стоят на месте, сдвиг плавный, стрела
+  // ограничена 14 мм — на зазоры влияет меньше допуска ближнего лимита
+  if(ui.sag && ui.sag.checked && ui.cables.checked){
+    for(const rb of ribbons){
+      const A2=rb.cabSt;
+      if(!A2 || !A2.length) continue;
+      const n=rb.centers.length;
+      const sagOf=(span)=>Math.min(14, 8*Math.pow(span/1000, 2));
+      const dy=new Array(n).fill(0);
+      // консоль до первого якоря
+      for(let i=0;i<A2[0];i++)
+        dy[i]=Math.min(10, 6*Math.pow((A2[0]-i)*rb.stepEff/800, 2));
+      // пролёты между якорями
+      for(let k=1;k<A2.length;k++){
+        const s0=A2[k-1], s1=A2[k], span=(s1-s0)*rb.stepEff;
+        const sg=sagOf(span);
+        for(let i=s0+1;i<s1;i++){
+          const u=(i-s0)/(s1-s0);
+          dy[i]=sg*4*u*(1-u);
+        }
+      }
+      // консоль после последнего якоря
+      const aL=A2[A2.length-1];
+      for(let i=aL+1;i<n;i++)
+        dy[i]=Math.min(10, 6*Math.pow((i-aL)*rb.stepEff/800, 2));
+      const drop=(P,i)=>{ if(P && P[i]) P[i][1]-=dy[i]; };
+      for(let i=0;i<n;i++){
+        drop(rb.centers,i); drop(rb.railA,i); drop(rb.railB,i);
+        if(rb.guideC && rb.guideC[i]) rb.guideC[i][1]-=dy[i];
+      }
+      for(const r of rb.rods){
+        const d2=dy[Math.min(n-1, r.st)];
+        r.a[1]-=d2; r.b[1]-=d2;
+      }
+    }
+  }
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
@@ -4776,6 +4832,17 @@ function updateSpec(){
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
       ${leds?`<tr><td>Диоды на ленте</td><td>${leds} шт × ${LED_W} W — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
+      ${(()=>{
+        // СВЕТ КАК ТОВАР: поток, мощность и понятная рекомендация площади.
+        // Тёплый мини-диод 0.1 Вт даёт ~10 лм; для общего света жилой зоны
+        // берётся норма 150 лк и коэффициент 0.6 на открытый светильник
+        // (часть света уходит вверх и в стекло)
+        if(!leds) return "";
+        const lm=leds*10;
+        const zone=lm*0.6/150;
+        return `<tr><td>Световой поток</td><td>≈ ${lm>=1000?(lm/1000).toFixed(1)+" клм":lm+" лм"} (${leds} × 10 лм)</td></tr>`
+             + `<tr><td>Освещение зоны</td><td>хватает для общего света ≈ ${zone.toFixed(1)} м² (150 лк)</td></tr>`;
+      })()}
     </table>`;
   // НОМЕР ВАРИАНТА ВЫВОДИТСЯ РЯДОМ С ГАБАРИТОМ. Каждая композиция полностью
   // определяется этим номером: назвав его, можно вернуться к тому же варианту
@@ -4789,7 +4856,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","sag","showBox","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -5019,6 +5086,7 @@ ui.gradC.addEventListener("change", ()=>{needRedraw=true; if(state.lastSpec) upd
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
 ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
+ui.sag.addEventListener("change", ()=>rebuild("Пересчитываем провис…"));
 ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на ленту…" : "Убираем диоды с ленты…"));
 ui.cables.addEventListener("change", ()=>rebuild(
@@ -5365,6 +5433,180 @@ function buildDeferred(msg){
     window.addEventListener("load", ()=>setTimeout(run, 30), {once:true});
   else requestAnimationFrame(()=>setTimeout(run, 0));
 }
+/* ============================================================
+   ИЗБРАННОЕ И ССЫЛКА НА ВАРИАНТ. Номер варианта воспроизводим, поэтому
+   композиция целиком описывается компактным набором параметров:
+   избранное хранится в localStorage браузера, «Ссылка на вариант» несёт
+   те же параметры в hash — по ней открывается ровно тот вариант,
+   который утвердили (менеджер отправляет ссылку клиенту)
+   ============================================================ */
+function variantState(){
+  return {v:state.seed>>>0, w:+ui.dimW.value, d:+ui.dimD.value,
+          h:+ui.dimH.value, c:+ui.dimC.value, pl:ui.plast.value,
+          f:ui.form.value, r:+ui.rows.value, rw:+ui.rWidth.value,
+          rd:+ui.rodD.value, fr:ui.frame.value, col:state.color.id,
+          g:ui.gradOn.checked?1:0, gc:ui.gradC.value,
+          sg:ui.sag.checked?1:0};
+}
+function applyVariant(o){
+  if(o.pl) ui.plast.value=o.pl;
+  syncForms();
+  if(o.f) ui.form.value=o.f;
+  if(o.w) ui.dimW.value=String(o.w);
+  if(o.d) ui.dimD.value=String(o.d);
+  if(o.h) ui.dimH.value=String(o.h);
+  if(o.c!=null && o.c!=="") ui.dimC.value=String(o.c);
+  if(o.r) ui.rows.value=String(o.r);
+  if(o.rw) ui.rWidth.value=String(o.rw);
+  if(o.rd) ui.rodD.value=String(o.rd);
+  if(o.fr) ui.frame.value=o.fr;
+  if(o.col){ state.color=ralOf(o.col);
+             setBtnColor("colorDot","colorName",state.color); }
+  ui.gradOn.checked=!!+(o.g||0);
+  if(o.gc){ ui.gradC.value=o.gc;
+            setBtnColor("gradDot","gradName",ralOf(o.gc)); }
+  if(o.sg!=null && o.sg!=="") ui.sag.checked=!!+o.sg;
+  state.autoSeed=false;
+  state.seed=(+o.v||state.seed)>>>0;
+  refreshLabels();
+}
+const FAV_KEY="vargovFavs";
+const favLoad=()=>{ try{ return JSON.parse(localStorage.getItem(FAV_KEY)||"[]"); }
+                    catch(e){ return []; } };
+const favStore=(a2)=>{ try{ localStorage.setItem(FAV_KEY, JSON.stringify(a2)); }
+                       catch(e){} };
+function favRender(){
+  const list=favLoad();
+  document.getElementById("favBox").hidden=!list.length;
+  document.getElementById("favList").innerHTML=list.map((f,i)=>
+    `<div class="favRow"><span class="favTxt">№${f.o.v} · `
+    +`${f.o.w}×${f.o.d}×${f.o.h} · ${f.m} пог. м</span>`
+    +`<button class="btn3" data-fav-open="${i}">открыть</button>`
+    +`<button class="btn3" data-fav-del="${i}" title="удалить">✕</button></div>`).join("");
+}
+document.getElementById("favList").addEventListener("click",(e)=>{
+  const o=e.target.getAttribute("data-fav-open"),
+        d=e.target.getAttribute("data-fav-del");
+  const list=favLoad();
+  if(o!=null && list[+o]){ applyVariant(list[+o].o);
+                           rebuild("Открываем избранный вариант…"); }
+  if(d!=null){ list.splice(+d,1); favStore(list); favRender(); }
+});
+document.getElementById("favAdd").onclick=()=>{
+  if(!scene) return;
+  const list=favLoad(), o=variantState();
+  if(!list.some(f=>JSON.stringify(f.o)===JSON.stringify(o)))
+    list.unshift({o, m:state.lastSpec?(state.lastSpec.totalLen/1000).toFixed(1):"?"});
+  favStore(list.slice(0,30)); favRender();
+};
+document.getElementById("favLink").onclick=()=>{
+  const o=variantState(), ps=new URLSearchParams();
+  for(const k in o) ps.set(k, o[k]);
+  const url=location.href.split("#")[0]+"#"+ps.toString();
+  const b=document.getElementById("favLink");
+  const ok=()=>{ const t=b.textContent; b.textContent="Скопировано ✓";
+                 setTimeout(()=>{ b.textContent=t; }, 1600); };
+  if(navigator.clipboard && navigator.clipboard.writeText)
+    navigator.clipboard.writeText(url).then(ok, ()=>prompt("Ссылка на вариант:", url));
+  else prompt("Ссылка на вариант:", url);
+};
+favRender();
+// открытие по ссылке: параметры варианта в hash применяются до первой сборки
+(function(){
+  try{
+    if(!location.hash || location.hash.length<3) return;
+    const ps=new URLSearchParams(location.hash.slice(1));
+    if(!ps.get("v")) return;
+    const o={}; for(const kv of ps) o[kv[0]]=kv[1];
+    applyVariant(o);
+  }catch(e){}
+})();
+
+/* ============================================================
+   ВЫКРОЙКА 1:1 — печатный шаблон каркаса. Центральный контур ленты
+   (у однорядной — кант A) разворачивается в прямую полосу с разметкой:
+   тики станций трубок, кружки диодов, стрелки тросов, минимальный радиус
+   изгиба на участке. Полоса нарезана строками по 180 мм — печать на A4
+   в масштабе 100% даёт шаблон истинного размера для стола мастера
+   ============================================================ */
+document.getElementById("savePat").onclick=()=>{
+  if(!scene) return;
+  const SEG=180, ROWH=26;
+  let html=`<!doctype html><html><head><meta charset="utf-8">`
+    +`<title>Выкройка №${state.seed}</title><style>`
+    +`@page{size:A4;margin:10mm}`
+    +`body{font:10px/1.3 Arial,sans-serif;color:#000;margin:0}`
+    +`h2{font-size:13px;margin:6px 0 4px}`
+    +`p.note{color:#444;margin:0 0 8px;font-size:9.5px}`
+    +`svg{display:block}.row{page-break-inside:avoid}`
+    +`</style></head><body>`
+    +`<h2>Vargov&reg;Design — выкройка каркаса 1:1 · вариант №${state.seed}`
+    +` · габарит ${ui.dimW.value}×${ui.dimD.value}×${ui.dimH.value} мм</h2>`
+    +`<p class="note">Печатать в масштабе 100% (не «вписать в страницу»).`
+    +` Полоса — центральный контур каркаса, развёрнутый в прямую.`
+    +` Тики — станции трубок (шаг ${ROD_STEP.toFixed(1)} мм), кружки — диоды`
+    +` (шаг ${LED_PITCH} мм), ▼ — тросы подвеса, R — минимальный радиус`
+    +` изгиба на участке (мм).</p>`;
+  scene.ribbons.forEach((rb,ri)=>{
+    const wirePts=rb.rows===2? rb.centers : rb.railA;
+    const n=wirePts.length, step=rb.stepEff;
+    const RR=new Array(n).fill(1e9);
+    for(let i=1;i<n-1;i++){
+      const v1=V.sub(wirePts[i],wirePts[i-1]), v2=V.sub(wirePts[i+1],wirePts[i]);
+      const l1=V.len(v1)||1, l2=V.len(v2)||1;
+      const a2=Math.acos(Math.max(-1,Math.min(1,V.dot(v1,v2)/(l1*l2))));
+      if(a2>1e-6) RR[i]=(l1+l2)/2/a2;
+    }
+    const cabSet=new Set(rb.cabSt||[]);
+    const total=n*step;
+    html+=`<h2>Лента ${ri+1} из ${scene.ribbons.length} — `
+      +`${(rb.ribbonLen/1000).toFixed(2)} пог. м</h2>`;
+    for(let off=0; off<total; off+=SEG){
+      const segLen=Math.min(SEG, total-off);
+      let s=`<div class="row"><svg width="${(segLen+14).toFixed(1)}mm" `
+        +`height="${ROWH}mm" viewBox="0 0 ${(segLen+14).toFixed(1)} ${ROWH}">`;
+      s+=`<line x1="7" y1="14" x2="${(7+segLen).toFixed(1)}" y2="14" `
+        +`stroke="#000" stroke-width="0.5"/>`;
+      s+=`<text x="0.5" y="4.5" font-size="3">${Math.round(off)}–`
+        +`${Math.round(off+segLen)} мм</text>`;
+      for(let mk=Math.ceil(off/100)*100; mk<=off+segLen; mk+=100){
+        const x=7+(mk-off);
+        s+=`<line x1="${x}" y1="10.5" x2="${x}" y2="17.5" stroke="#000" `
+          +`stroke-width="0.4"/>`
+          +`<text x="${x}" y="9" font-size="3.2" text-anchor="middle">`
+          +`${(mk/1000).toFixed(1)}</text>`;
+      }
+      const i0=Math.max(0, Math.floor(off/step)),
+            i1=Math.min(n-1, Math.ceil((off+segLen)/step));
+      let rmin=1e9;
+      for(let i=i0;i<=i1;i++){
+        const x=7+(i*step-off);
+        if(x<7 || x>7+segLen) continue;
+        s+=`<line x1="${x.toFixed(2)}" y1="12.5" x2="${x.toFixed(2)}" `
+          +`y2="15.5" stroke="#666" stroke-width="0.25"/>`;
+        if(cabSet.has(i))
+          s+=`<text x="${x.toFixed(1)}" y="22.5" font-size="4.5" `
+            +`text-anchor="middle">&#9660;</text>`;
+        rmin=Math.min(rmin, RR[i]);
+      }
+      if(rb.leds && rb.leds.length)
+        for(let mL=Math.ceil(off/LED_PITCH)*LED_PITCH; mL<=off+segLen; mL+=LED_PITCH){
+          const x=7+(mL-off);
+          s+=`<circle cx="${x}" cy="14" r="1.1" fill="none" stroke="#000" `
+            +`stroke-width="0.35"/>`;
+        }
+      if(rmin<900)
+        s+=`<text x="${(7+segLen-1).toFixed(1)}" y="5" font-size="3.4" `
+          +`text-anchor="end">R ≈ ${Math.round(rmin)}</text>`;
+      s+=`</svg></div>`;
+      html+=s;
+    }
+  });
+  html+=`</body></html>`;
+  EXP.save(EXP.name("html").replace(".html","-vykroika.html"),
+           html, "text/html;charset=utf-8");
+};
+
 resize();
 syncForms();          // строка формы габарита прячется в «миксе» сразу
 buildDeferred();
