@@ -283,7 +283,10 @@ const STEEL_DENSITY = 7.85e-3; // г/мм³ (сталь, проволока ка
 function setRodD(d){
   ROD_D = d; ROD_R = d/2; ROD_STEP = d+1.6;
   CLEAR_FAR = ROD_D + 11;              // 10 мм минимального сближения + запас
-  CLEAR_NEAR = ROD_D + GAP_MIN*0.9;    // внутри ленты: зазор не меньше ~1 мм
+  // УТОЧНЕНИЕ ПРОИЗВОДСТВА: между трубками минимальный зазор 0.1 мм,
+  // касание допустимо, пересечение — никогда. Прежний лимит (зазор ~1 мм)
+  // ложно отбраковывал примыкания мостов стыка, не добравшие доли мм
+  CLEAR_NEAR = ROD_D + 0.1;
   SKIP_NEAR = Math.max(2, Math.round(33/ROD_STEP));   // окна — в мм, не в станциях
   NEAR_WIN  = Math.max(SKIP_NEAR+2, Math.round(133/ROD_STEP));
 }
@@ -2781,7 +2784,9 @@ function geoBBox(geo){
    внутри ленты лечим локальным распрямлением дуги.
    ============================================================ */
 let CLEAR_FAR  = ROD_D + 11;   // мин. дистанция осей далёких стержней (стекло + 11 воздуха)
-let CLEAR_NEAR = ROD_D + GAP_MIN*0.9; // внутри ленты: зазор не меньше ~1 мм
+// внутри ленты: уточнение производства — зазор трубок от 0.1 мм,
+// касание допустимо, пересечение — никогда
+let CLEAR_NEAR = ROD_D + 0.1;
 let SKIP_NEAR  = 2;    // соседи по каркасу не проверяются (~33 мм)
 let NEAR_WIN   = 8;    // «ближняя зона» своей ленты (~133 мм)
 
@@ -3142,15 +3147,20 @@ function buildScene(){
   const wKMEst=Math.max(0.5, Math.min(1.8, 300/rwEst));
   const targetEst=Math.max(2.05*dimsSrt[0]*wRuleEst,
                            2.163*dimsSrt[0]*wKMEst);   // мм ленты по правилу
-  // нарезка — только для ВЫТЯНУТЫХ боксов, где марш одной лентой рвётся
-  // (>3 м по длине); эталонный 2400×900×800 собирается одной лентой
+  // нарезка — только для ВЫТЯНУТЫХ ПО ШИРИНЕ боксов, где марш одной
+  // лентой рвётся (>3 м); эталонный 2400×900×800 собирается одной лентой
   // 8.56 пог. м и нарезаться не должен, хотя метраж превышает порог.
+  // ПРАВИЛО ПОЛЬЗОВАТЕЛЯ: вертикальная композиция «микс» (высота —
+  // доминирующий габарит) всегда ОДИН отрезок. Отсеки режутся по оси X,
+  // поэтому нарезка законна только когда ширина и есть длинная сторона.
   // ЧИСЛО ОТРЕЗКОВ — ПО ДЛИНЕ БОКСА (отсек ~2.2 м, как эталонный бокс),
   // а не по метражу: на 4400 однорядная лента должна давать два отрезка,
   // как и двухрядная (замечание пользователя), хотя метраж у неё в
   // полтора раза больше
-  const lanes = (ui.plast.value!=="edge" && dimsSrt[0]>3000 && targetEst>6500)
-    ? Math.max(2, Math.min(4, Math.round(dimsSrt[0]/2200)))
+  const dimWv=+ui.dimW.value||2400;
+  const lanes = (ui.plast.value!=="edge" && dimWv>3000 &&
+                 dimWv>=dimsSrt[0] && targetEst>6500)
+    ? Math.max(2, Math.min(4, Math.round(dimWv/2200)))
     : 1;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
@@ -3664,6 +3674,10 @@ function buildScene(){
       // (~12.5 мм): запас по центрам покупает зазор торцов. Каждая вставка
       // проверяется строгим правилом зазоров против всей сцены и бокса —
       // не прошла, прореха остаётся (это редкость)
+      // до трёх проходов: микро-разводка вставки сдвигает станции и может
+      // растянуть СОСЕДНИЙ интервал, по которому проход уже прошёл
+      for(let pass=0; pass<3; pass++){
+      let insAny=false;
       for(const rb of rrAll){
         const IN=WIRE_D/2+ROD_AIR, halfW=rb.halfW, twoRow=!!rb.dirUp;
         for(let i=1;i<rb.centers.length;i++){
@@ -3772,10 +3786,13 @@ function buildScene(){
           rb.rods=rb.rods.map(r=>r.st>=i? {...r, st:r.st+nIns} : r).concat(rods);
           rb.ribbonLen=rb.centers.length*rb.stepEff;
           i+=nIns;
-          inserted=true;
+          inserted=true; insAny=true;
           }
-          if(!inserted) window.__ladder.push(['gapskip', Math.round(gap), 0, 0]);
+          if(!inserted && pass===2)
+            window.__ladder.push(['gapskip', Math.round(gap), 0, 0]);
         }
+      }
+      if(!insAny) break;
       }
     }
     if(okAll){
@@ -4952,9 +4969,17 @@ const rebuild = (msg)=>{
   const m=(typeof msg==="string") ? msg : null;
   rebuildTimer=setTimeout(()=>buildDeferred(m), 120);
 };
+// ПРАВИЛО ПОЛЬЗОВАТЕЛЯ: у композиций «микс» высота не больше 3500 мм
+// (вертикальная лента — всегда один отрезок, см. нарезку в buildScene)
+const MIX_H_MAX=3500;
+const clampMixH=()=>{
+  if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX)
+    ui.dimH.value=String(MIX_H_MAX);
+};
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form") applyPreset(id);
+    clampMixH();
     rebuild("Генерация варианта композиции…");
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
