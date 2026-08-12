@@ -191,7 +191,7 @@
     <fieldset>
       <legend>Стекло и свет</legend>
       <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки двух цветов ~50/50, растяжка их количеством по ходу ленты</span></label>
+      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов (крайние и средний), растяжка их количеством по ходу ленты</span></label>
         <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
           <input id="gradC" type="color" value="#f2c14e" style="width:44px;height:26px;border:none;background:none;padding:0">
           <input id="gradOn" type="checkbox">
@@ -3617,21 +3617,34 @@ const LIGHT = V.norm([0.35, 0.85, 0.40]);
 function gradMask(rb){
   const n=rb.rods.length, nSt=Math.max(1, rb.centers.length-1);
   const mask=new Uint8Array(n);
-  // ПОСЛЕДОВАТЕЛЬНОСТЬ ЗОЛОТОГО СЕЧЕНИЯ, А НЕ ДИФФУЗИЯ ОШИБКИ. Диффузия на
-  // равных долях даёт ПЕРИОДИЧЕСКИЙ узор — трубки складывались в широкие
-  // полосы. Последовательность h(i)=frac(0.5+i·φ) апериодична и
-  // низкодискрепантна: в любом окне доля второго цвета равна положению по
-  // ходу ленты с точностью до 1-2 трубок — переход читается ПЛОТНОСТЬЮ
-  // одного цвета в другом, без полос. Детерминирована — та же раскладка
-  // уходит в монтажную карту
+  // ТРИ ЦВЕТА: выбранный (0), СРЕДНИЙ между ними (1) и второй (2). Средний
+  // цвет считается автоматически и делает переход плавным: прямое
+  // перемешивание двух контрастных цветов читалось резким. Растяжка в два
+  // этапа — на первой половине хода смешиваются цвет 1 и средний, на второй
+  // средний и цвет 2: в каждой точке ленты соседствуют только БЛИЗКИЕ
+  // цвета. Перемешивание — последовательностью золотого сечения
+  // h(i)=frac(0.5+i·φ): она апериодична и низкодискрепантна, доля цвета в
+  // любом окне равна положению по ходу с точностью до 1-2 трубок (диффузия
+  // ошибки давала периодический узор — широкие полосы). Раскладка
+  // детерминирована — та же уходит в монтажную карту.
+  // Итог по партии: ~25% цвета 1, ~50% среднего, ~25% цвета 2
   const PHI=0.6180339887498949;
   let h=0.5;
   for(let i=0;i<n;i++){
     const tt=(rb.rods[i].st||0)/nSt;
     h+=PHI; if(h>=1) h-=1;
-    mask[i]=(h<tt)?1:0;
+    if(tt<0.5) mask[i]=(h<tt*2)?1:0;
+    else       mask[i]=(h<(tt-0.5)*2)?2:1;
   }
   return mask;
+}
+// средний цвет двух выбранных (в RGB) — им красится середина растяжки
+function gradMid(c1, c2){
+  return [0,1,2].map(k=>Math.round((c1[k]+c2[k])/2));
+}
+function rgbHexStr(c){
+  return "#"+c.map(v=>Math.max(0,Math.min(255,Math.round(v)))
+                     .toString(16).padStart(2,"0")).join("").toUpperCase();
 }
 
 function draw(){
@@ -3651,6 +3664,7 @@ function draw(){
   // цвета растёт с ходом ленты. Раскладка детерминированная (диффузия
   // ошибки), та же самая попадает в монтажную карту
   const gradB = (ui.gradOn && ui.gradOn.checked) ? hexRgb(ui.gradC.value) : null;
+  const gradM = gradB ? gradMid(glass, gradB) : null;   // средний цвет
   const isClear = state.color.id==="clear";
   const prims = [];
   const p1=[0,0,0,0], p2=[0,0,0,0];
@@ -3786,7 +3800,8 @@ function draw(){
       let colR=null;
       if(gradB){
         if(!rb.__gradMask) rb.__gradMask=gradMask(rb);
-        colR=rb.__gradMask[rIdx] ? gradB : null;   // null = основной цвет
+        const gm=rb.__gradMask[rIdx];
+        colR=gm===2 ? gradB : (gm===1 ? gradM : null);   // null = основной
       }
       prims.push({z:zz, kind:1,
         x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
@@ -4166,15 +4181,17 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Цвет стекла", state.color.name],
     ...(ui.gradOn.checked ? (()=>{
-      // раскладка двух цветов: считаем штуки каждого цвета
-      let n2=0, nT=0;
+      // раскладка трёх цветов: считаем штуки каждого
+      const cnt=[0,0,0];
       for(const rb of scene.ribbons){
         const mk=rb.__gradMask||(rb.__gradMask=gradMask(rb));
-        nT+=mk.length; for(const v of mk) n2+=v;
+        for(const v of mk) cnt[v]++;
       }
-      return [["Градиент: трубки красятся в 2 цвета, растяжка их количеством"],
-              [`Трубки цвета 1 (${state.color.name})`, `${nT-n2} шт`],
-              [`Трубки цвета 2 (${ui.gradC.value.toUpperCase()})`, `${n2} шт`]];
+      const midHex=rgbHexStr(gradMid(hexRgb(state.color.c), hexRgb(ui.gradC.value)));
+      return [["Градиент: трубки красятся в 3 цвета (крайние и средний), растяжка их количеством"],
+              [`Трубки цвета 1 (${state.color.name})`, `${cnt[0]} шт`],
+              [`Трубки цвета 2 — средний (${midHex})`, `${cnt[1]} шт`],
+              [`Трубки цвета 3 (${ui.gradC.value.toUpperCase()})`, `${cnt[2]} шт`]];
     })() : []),
     ["Лент в композиции, шт", scene.ribbons.length],
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
@@ -4362,13 +4379,16 @@ document.getElementById("saveMont").onclick = ()=>{
     // при включённом градиенте у каждой трубки указан её цвет (1 или 2):
     // трубка красится целиком, растяжка — количеством трубок каждого цвета
     const gmk=ui.gradOn.checked ? (rb.__gradMask||(rb.__gradMask=gradMask(rb))) : null;
+    const gHex=gmk ? [state.color.c.toUpperCase(),
+                      rgbHexStr(gradMid(hexRgb(state.color.c), hexRgb(ui.gradC.value))),
+                      ui.gradC.value.toUpperCase()] : null;
     R.push(["№ трубки","ряд","станция","длина, мм","Xb","Yb","Zb","Xa","Ya","Za"
             ].concat(gmk?["цвет"]:[]));
     rb.rods.forEach((r, k)=>{
       const b=EXP.p(r.b), a=EXP.p(r.a);
       R.push([k+1, r.u2>0 ? "верхний" : "нижний", r.st+1, r.len.toFixed(1),
               EXP.f(b[0]),EXP.f(b[1]),EXP.f(b[2]), EXP.f(a[0]),EXP.f(a[1]),EXP.f(a[2])
-             ].concat(gmk?[gmk[k]?("2 "+ui.gradC.value.toUpperCase()):("1 "+state.color.c.toUpperCase())]:[]));
+             ].concat(gmk?[(gmk[k]+1)+" "+gHex[gmk[k]]]:[]));
     });
     if(rb.leds && rb.leds.length){
       R.push([]);
