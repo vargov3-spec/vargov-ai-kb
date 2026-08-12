@@ -3601,36 +3601,181 @@ function buildScene(){
             const stB=brB.empty? null : bySt(brB);
             const tipA=brA.empty? tipRods(A,aHead) : null;
             const tipB=brB.empty? tipRods(B,bHead) : null;
-            let bi=0, bj=0, bs=1e9;
+            const PA=brA.empty? [pa] : brA.pts;
+            const PB=brB.empty? [pb] : brB.pts;
+            // носики должны остановиться НАВСТРЕЧУ друг другу: без нахлёста
+            // вдоль линии стыка (иначе канты перекрещивались «клювом»),
+            // с малым боковым уводом и ходом обоих вдоль линии. Пары
+            // обрезок сортируются по этой оценке и пробуются НАСКВОЗЬ
+            // (сварка + полная проверка): лучшая по оценке пара часто
+            // висит на волоске лимитов, а рабочая — следующая за ней
+            const tipPairs=[];
             const iHi=brA.empty?0:brA.pts.length-1;
             const jHi=brB.empty?0:brB.pts.length-1;
             for(let i2=brA.empty?0:1;i2<=iHi;i2++){
               const RA=brA.empty? tipA : stA[i2];
               if(!RA || !RA.length) continue;
+              const tA2=(!brA.empty && i2>0)?
+                V.norm(V.sub(brA.pts[i2], brA.pts[Math.max(0,i2-1)])) : uLn;
               for(let j2=brB.empty?0:1;j2<=jHi;j2++){
                 const RB=brB.empty? tipB : stB[j2];
                 if(!RB || !RB.length) continue;
+                const vx=V.sub(PB[j2], PA[i2]);
+                const proj=V.dot(vx, uLn);
+                if(proj<18) continue;   // нахлёст либо разворот носиков
+                const lat=V.len(V.sub(vx, V.mul(uLn, proj)));
                 let dm=1e9;
                 for(const r of RA) for(const q of RB)
                   dm=Math.min(dm, closestSegSeg(r.a,r.b,q.a,q.b)[0]);
-                const s2=Math.abs(dm-30);
-                if(s2<bs){ bs=s2; bi=i2; bj=j2; }
+                if(dm<23) continue;     // торцы ближе дальнего лимита
+                const tB2=(!brB.empty && j2>0)?
+                  V.norm(V.sub(brB.pts[j2], brB.pts[Math.max(0,j2-1)])) : uLn;
+                tipPairs.push({i2, j2,
+                  s:Math.abs(dm-30)+0.7*lat
+                    +25*(1-Math.abs(V.dot(tA2,uLn)))
+                    +25*(1-Math.abs(V.dot(tB2,uLn)))});
               }
             }
-            if(!brA.empty) cutTo(brA,bi);
-            if(!brB.empty) cutTo(brB,bj);
-            const wA=weld(A, aHead, brA), wB=weld(B, bHead, brB);
-            const whyA=rodsOk(wA.rods, A), whyB=whyA||rodsOk(wB.rods, B);
-            done=!whyB;
-            window.__ladder.push(['join'+j+'.'+pr.ta+'-'+pr.tb+'.'+ci,
-                                  done?0:1, whyB||''].concat(ovr()));
-            if(!done){ unweld(A,wA.bak); unweld(B,wB.bak); }
+            tipPairs.sort((q,z)=>q.s-z.s);
+            for(const tp of tipPairs.slice(0,8)){
+              const brA2={...brA}, brB2={...brB};
+              if(!brA2.empty) cutTo(brA2, tp.i2);
+              if(!brB2.empty) cutTo(brB2, tp.j2);
+              const wA=weld(A, aHead, brA2), wB=weld(B, bHead, brB2);
+              const whyA=rodsOk(wA.rods, A), whyB=whyA||rodsOk(wB.rods, B);
+              done=!whyB;
+              window.__ladder.push(['join'+j+'.'+pr.ta+'-'+pr.tb+'.'+ci+
+                '.'+tp.i2+'/'+tp.j2, done?0:1, whyB||''].concat(ovr()));
+              if(done) break;
+              unweld(A,wA.bak); unweld(B,wB.bak);
+            }
           }
           if(done) break;
           if(bakTB) unweld(B,bakTB);
           if(bakTA) unweld(A,bakTA);
         }
         if(!done) window.__ladder.push(['join'+j+'.fail',-1,0,0,0,0]);
+      }
+      // ЗАПОЛНЕНИЕ РАСТЯНУТЫХ ПРИМЫКАНИЙ. При вклейке моста марш выбрасывал
+      // 1-2 станции у конца ленты (их торцы сходились с концевым стержнем
+      // на 0.1-0.4 мм ближе лимита), и в ленте оставались прорехи 23-35 мм
+      // при шаге 11.6 (вопрос пользователя «потеря трубочек?»). Пропущенные
+      // станции вставляются обратно с равным чуть увеличенным шагом
+      // (~12.5 мм): запас по центрам покупает зазор торцов. Каждая вставка
+      // проверяется строгим правилом зазоров против всей сцены и бокса —
+      // не прошла, прореха остаётся (это редкость)
+      for(const rb of rrAll){
+        const IN=WIRE_D/2+ROD_AIR, halfW=rb.halfW, twoRow=!!rb.dirUp;
+        for(let i=1;i<rb.centers.length;i++){
+          const A2=rb.centers[i-1], B2=rb.centers[i];
+          const gap=V.len(V.sub(B2,A2));
+          if(gap<=rb.stepEff*1.35) continue;
+          const nIns0=Math.min(3, Math.round(gap/rb.stepEff)-1);
+          if(nIns0<1) continue;
+          // если полный комплект вставок не влезает — пробуем меньше:
+          // шаг выйдет шире штатного, но без зияющей прорехи
+          let nIns=nIns0, inserted=false;
+          for(; nIns>=1 && !inserted; nIns--){
+          const T=V.norm(V.sub(B2,A2));
+          const mix=(vA,vB,t)=>orthoTo(V.norm([vA[0]+(vB[0]-vA[0])*t,
+            vA[1]+(vB[1]-vA[1])*t, vA[2]+(vB[2]-vA[2])*t]), T);
+          const pts=[], dd=[], du2=[], dn2=[];
+          for(let k=1;k<=nIns;k++){
+            const t=k/(nIns+1);
+            pts.push([0,1,2].map(x=>A2[x]+(B2[x]-A2[x])*t));
+            dd.push(mix(rb.dirs[i-1],rb.dirs[i],t));
+            if(twoRow){ du2.push(mix(rb.dirUp[i-1],rb.dirUp[i],t));
+                        dn2.push(mix(rb.dirDn[i-1],rb.dirDn[i],t)); }
+          }
+          const stRods=(k)=>{
+            const P=pts[k];
+            if(twoRow){
+              const u=du2[k], n2=dn2[k];
+              return [
+                {st:i+k, u1:IN, u2:halfW-IN, len:halfW-2*IN, nom:halfW,
+                 a:[P[0]+u[0]*(halfW-IN),P[1]+u[1]*(halfW-IN),P[2]+u[2]*(halfW-IN)],
+                 b:[P[0]+u[0]*IN,P[1]+u[1]*IN,P[2]+u[2]*IN], n:V.norm(V.cross(T,u))},
+                {st:i+k, u1:-(halfW-IN), u2:-IN, len:halfW-2*IN, nom:halfW,
+                 a:[P[0]+n2[0]*(halfW-IN),P[1]+n2[1]*(halfW-IN),P[2]+n2[2]*(halfW-IN)],
+                 b:[P[0]+n2[0]*IN,P[1]+n2[1]*IN,P[2]+n2[2]*IN], n:V.norm(V.cross(T,n2))}];
+            }
+            const d=dd[k];
+            return [{st:i+k, u1:-(halfW-IN), u2:halfW-IN,
+              len:2*(halfW-IN), nom:2*halfW,
+              a:[P[0]+d[0]*(halfW-IN),P[1]+d[1]*(halfW-IN),P[2]+d[2]*(halfW-IN)],
+              b:[P[0]-d[0]*(halfW-IN),P[1]-d[1]*(halfW-IN),P[2]-d[2]*(halfW-IN)],
+              n:V.norm(V.cross(T,d))}];
+          };
+          let rods=[];
+          const rebuild=()=>{ rods=[];
+            for(let k=0;k<nIns;k++) rods.push(...stRods(k)); };
+          rebuild();
+          // МИКРО-РАЗВОДКА ВСТАВКИ: станция сдвигается по направлению
+          // раздвижки худшей пары. Вставка по хорде билась о соседей теми
+          // же долями миллиметра, что не добрал марш (замер: 10.0 и 5 мм
+          // при лимите 10.9) — пара миллиметров сдвига решает
+          let okG=false;
+          const lim3=[box.w,box.h,box.d];
+          for(let it=0; it<14 && !okG; it++){
+            let worst=null;
+            rods.forEach((r,ri2)=>{
+              const k=twoRow? (ri2>>1) : ri2;
+              const scan=(q,lim)=>{
+                const [d2,c1,c2]=closestSegSeg(r.a,r.b,q.a,q.b);
+                if(d2>=lim) return;
+                let nv=V.sub(c1,c2); const L=V.len(nv);
+                nv=L>1e-6? V.mul(nv,1/L) : [0,1,0];
+                const need=lim-d2+0.4;
+                if(!worst || need>worst.need) worst={k,nv,need};
+              };
+              for(const rb2 of rrAll) for(const q of rb2.rods)
+                scan(q, (rb2===rb && Math.abs(q.st-r.st)<=NEAR_WIN)
+                        ? CLEAR_NEAR : CLEAR_FAR);
+              rods.forEach((q,rj2)=>{
+                if((twoRow?(rj2>>1):rj2)!==k) scan(q, CLEAR_NEAR); });
+              for(const p of [r.a,r.b]) for(let x=0;x<3;x++){
+                if(p[x]<-ROD_R){ const nv=[0,0,0]; nv[x]=1;
+                  const need=-ROD_R-p[x]+1;
+                  if(!worst||need>worst.need) worst={k,nv,need}; }
+                else if(p[x]>lim3[x]+ROD_R){ const nv=[0,0,0]; nv[x]=-1;
+                  const need=p[x]-lim3[x]-ROD_R+1;
+                  if(!worst||need>worst.need) worst={k,nv,need}; }
+              }
+            });
+            if(!worst){ okG=true; break; }
+            // демпфирование против качелей: пара лечится, соседняя рвётся
+            const kd=it<7? 1.0 : 0.6;
+            for(let x=0;x<3;x++) pts[worst.k][x]+=worst.nv[x]*worst.need*kd;
+            rebuild();
+          }
+          if(!okG) continue;
+          const rlA=[], rlB=[];
+          for(let k=0;k<nIns;k++){
+            const P=pts[k];
+            const u=twoRow? du2[k] : dd[k], n2=twoRow? dn2[k] : dd[k];
+            rlA.push([P[0]+u[0]*halfW,P[1]+u[1]*halfW,P[2]+u[2]*halfW]);
+            rlB.push(twoRow
+              ? [P[0]+n2[0]*halfW,P[1]+n2[1]*halfW,P[2]+n2[2]*halfW]
+              : [P[0]-n2[0]*halfW,P[1]-n2[1]*halfW,P[2]-n2[2]*halfW]);
+          }
+          rb.centers.splice(i,0,...pts);
+          rb.dirs.splice(i,0,...dd);
+          if(twoRow){ rb.dirUp.splice(i,0,...du2); rb.dirDn.splice(i,0,...dn2); }
+          rb.railA.splice(i,0,...rlA); rb.railB.splice(i,0,...rlB);
+          rb.uTop.splice(i,0,...pts.map(()=>halfW));
+          rb.uBot.splice(i,0,...pts.map(()=>-halfW));
+          rb.guideC.splice(i,0,...pts.map(p=>p.slice()));
+          rb.guideD.splice(i,0,...dd.map(v=>v.slice()));
+          if(rb.guideUp) rb.guideUp.splice(i,0,...du2.map(v=>v.slice()));
+          if(rb.guideDn) rb.guideDn.splice(i,0,...dn2.map(v=>v.slice()));
+          rb.giMap.splice(i,0,...pts.map(()=>rb.giMap[i-1]));
+          rb.rods=rb.rods.map(r=>r.st>=i? {...r, st:r.st+nIns} : r).concat(rods);
+          rb.ribbonLen=rb.centers.length*rb.stepEff;
+          i+=nIns;
+          inserted=true;
+          }
+          if(!inserted) window.__ladder.push(['gapskip', Math.round(gap), 0, 0]);
+        }
       }
     }
     if(okAll){
