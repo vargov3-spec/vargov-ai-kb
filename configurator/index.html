@@ -3124,7 +3124,23 @@ function buildScene(){
   };
   // одна лента, одна форма («Поток (винт)») и насыщенность 1× —
   // выбора в интерфейсе нет
-  const lanes = 1;
+  // ДЛИННАЯ ЛЕНТА РАЗБИВАЕТСЯ НА ОТРЕЗКИ ~5 ПОГ. М (решение пользователя:
+  // это упрощает и генерацию, и монтаж на месте). Оценивается метраж по
+  // правилу производства (2.05 пог. м на метр длины с поправкой на ширину);
+  // если он больше ~6.5 м, композиция собирается из 2-4 лент-отрезков,
+  // каждая в своём отсеке по длине. Одной лентой вытянутый габарит и не
+  // строился: марш обрывался на трети длины (замер 4400×900×800 — все
+  // попытки nofit, показывалась страховочная змейка 5.2 пог. м)
+  const dimsSrt=[+ui.dimW.value||2400, +ui.dimH.value||800, +ui.dimD.value||900]
+                .sort((q,z)=>z-q);
+  const wRuleEst=1+0.55*Math.max(-0.35,(dimsSrt[1]-700)/700);
+  const targetEst=2.05*dimsSrt[0]*wRuleEst;   // мм ленты по правилу
+  // фактический метраж отсеков выходит в ~1.4 раза богаче оценки (правило
+  // отсека считается от его собственной ширины) — коэффициент калибрует
+  // отрезки к ~5 пог. м фактических
+  const lanes = (ui.plast.value!=="edge" && targetEst>6500)
+    ? Math.max(2, Math.min(4, Math.round(targetEst*1.4/5000)))
+    : 1;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
   // Закрепление действует, пока не нажата кнопка генерации: после неё идут
@@ -3186,9 +3202,10 @@ function buildScene(){
   // сколько заходов винта влезает в габарит: жилы разнесены по ОСИ
   // винта на шаг_витка/lanes, поэтому решает не сечение, а длина —
   // на каждую жилу нужен свой участок хода шириной «лента + воздух»
-  const Lmain=Math.max(box.w,box.h,box.d);
-  const runMain=Math.max(params.ribbonW+60, Lmain-params.ribbonW-60);
-  const lanesFit=Math.max(1, Math.min(lanes, Math.floor(runMain/(params.ribbonW+30))));
+  // лестница всегда строит ОДНУ ленту: длинные габариты нарезает на
+  // отсеки отдельный путь ниже (две-три ленты по всему объёму дрались за
+  // место — 2700-4700 касаний и 107 с сборки)
+  const lanesFit=1;
   let ribbons=null, clear=null, best=null, bestClean=null;
   const targetLen=params.lengthK*2100;
   window.__ladder=[];
@@ -3228,8 +3245,74 @@ function buildScene(){
       best=bestClean; conceptBuilt=true;
     }
   }
+  // ДЛИННЫЙ «МИКС» СОБИРАЕТСЯ ИЗ ОТСЕКОВ. Одной лентой вытянутый габарит
+  // не строится: марш обрывается на трети длины, вписыватель не ужимает
+  // волны по высоте (замер 4400×900×800: все попытки nofit, показывалась
+  // страховочная змейка 5.2 пог. м на 4.4 м габарита). Габарит нарезается
+  // по длине на 2-3 отсека, в каждом строится своя лента обычным способом
+  // (правило метража отсека суммарно даёт правило целого), затем ленты
+  // сдвигаются на свои места; стык проверяет разводка касаний
+  let directBuilt=conceptBuilt;
+  if(!directBuilt && params.plast!=="edge" && lanes>1 && !state.subBuild){
+    // КАЖДЫЙ ОТРЕЗОК СТРОИТСЯ ПОЛНОЦЕННОЙ ШТАТНОЙ СБОРКОЙ (рекурсивный
+    // вызов buildScene на виртуальном габарите отсека): самодельный
+    // мини-перебор внутри отсека давал либо касания, либо недозаполнение.
+    // Штатная лестница на габарите отсека (~2 м) отработана всеми замерами
+    // стык 36 мм (санитарно хватает 25): зазор 120 читался провалом между
+    // отрезками. Отсек обязан заполнить свой бокс по длине не меньше чем на
+    // 92% — иначе перебираем зерно (до трёх), недобор тоже читался провалом
+    const nL=lanes, sliceW=box.w/nL, seamGap=36;
+    const keepW=ui.dimW.value, seed0=state.seed, keepAuto=state.autoSeed;
+    const rrAll=[]; let okAll=true;
+    state.subBuild=true;
+    for(let i=0;i<nL && okAll;i++){
+      let bestSl=null;
+      for(let tr=0; tr<3 && !(bestSl && bestSl.ok); tr++){
+        ui.dimW.value=String(Math.round(sliceW-seamGap));
+        state.autoSeed=false;
+        state.seed=(seed0+i*104729+tr*7717)>>>0;
+        buildScene();
+        if(!scene || !scene.ribbons.length || scene.clear.collisions>0) continue;
+        let x0=1e9, x1=-1e9;
+        for(const rb of scene.ribbons){
+          const b2=geoBBox(rb);
+          x0=Math.min(x0,b2.min[0]); x1=Math.max(x1,b2.max[0]);
+        }
+        const fillX=(x1-x0+ROD_D)/(sliceW-seamGap);
+        const okSl=fillX>=0.92;
+        if(!bestSl || (okSl && !bestSl.ok) || (okSl===bestSl.ok && fillX>bestSl.fillX))
+          bestSl={ribbons:scene.ribbons, fillX, ok:okSl};
+        window.__ladder.push(['slice'+i+'.'+tr, 'fillX',
+                              Math.round(fillX*100)]);
+      }
+      if(!bestSl){ okAll=false; break; }
+      const dx=i*sliceW+seamGap/2;
+      for(const rb of bestSl.ribbons){
+        for(const r of rb.rods){ r.a[0]+=dx; r.b[0]+=dx; }
+        for(const arr of [rb.centers, rb.railA, rb.railB, rb.guideC])
+          if(arr) for(const p2 of arr) p2[0]+=dx;
+        rb.clampMin=[0,0,0]; rb.clampMax=[box.w, box.h, box.d];
+        rrAll.push(rb);
+      }
+    }
+    state.subBuild=false;
+    ui.dimW.value=keepW;
+    state.seed=seed0; state.autoSeed=keepAuto;
+    if(okAll){
+      // стык: отсеки разведены зазором 120 мм, проверка обычно чиста сразу
+      const clS=resolveCollisions(rrAll, box);
+      window.__ladder.push(['seam', clS.collisions, clS.self, 0]);
+      if(clS.collisions===0){
+        clS.attempt=0; clS.lanes=nL;
+        bestClean={ribbons:rrAll, clear:clS,
+                   len:rrAll.reduce((a2,rb)=>a2+rb.ribbonLen,0),
+                   gate:true, fill:1, cov:1};
+        best=bestClean; directBuilt=true;
+      }
+    }
+  }
   outer:
-  for(let effLanes=(conceptBuilt?0:lanesFit); effLanes>=1; effLanes--){
+  for(let effLanes=(directBuilt?0:lanesFit); effLanes>=1; effLanes--){
     // многожильные варианты считаются дорого (пар капсул кратно больше)
     // ЧИСЛО ПОПЫТОК — ДЕТЕРМИНИРОВАННЫЙ ПРЕДЕЛ ВРЕМЕНИ СБОРКИ. Раньше перебор
     // резался по бюджету времени, и номер варианта не воспроизводился на другой
@@ -3438,7 +3521,7 @@ function buildScene(){
   // страховка: спокойный вариант вместо брака И вместо вырожденного
   // (чистого, но оборванного или сплющенного) варианта
   let bestRescue=null;
-  if(!conceptBuilt && (clear.collisions>0 || needRescue)){
+  if(!directBuilt && (clear.collisions>0 || needRescue)){
     rescue:
     for(let rl=lanes; rl>=1; rl--){
       for(let rs=0; rs<(rl>2?3:6); rs++){
@@ -4150,6 +4233,8 @@ function updateSpec(){
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
       <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
         scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
+      ${scene.ribbons.length>1?`<tr><td>Отрезки ленты</td><td>${
+        scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(1)).join(" + ")} м</td></tr>`:""}
       <tr><td>Стеклянные трубки Ø${ROD_D}</td><td>${rods} шт</td></tr>
       ${(()=>{
         // ЦВЕТА И КОЛИЧЕСТВА — ПРЯМО В РАСЧЁТЕ. Без градиента — один цвет
@@ -4435,6 +4520,10 @@ document.getElementById("saveCsv").onclick = ()=>{
               [`Трубки цвета 3 (${g2.name})`, `${cnt[2]} шт`]];
     })() : []),
     ["Лент в композиции, шт", scene.ribbons.length],
+    ...(scene.ribbons.length>1
+      ? [["Отрезки ленты, пог. м",
+          scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(2)).join(" + ")]]
+      : []),
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     
