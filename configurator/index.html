@@ -89,9 +89,9 @@
            border:1px solid #2a2a33; border-radius:8px; font-size:13px; width:100%}
   .ralGrid{display:grid; grid-template-columns:repeat(12, 1fr); gap:5px;
            overflow-y:auto; padding:2px 4px 8px}
-  .ralSw{aspect-ratio:1; border-radius:5px; cursor:pointer; border:2px solid transparent;
-         box-shadow:inset 0 0 5px rgba(0,0,0,.4)}
-  .ralSw:hover{transform:scale(1.18); border-color:#fff}
+  .ralSw{aspect-ratio:1; border-radius:50%; cursor:pointer; border:2px solid transparent;
+         box-shadow:inset 0 -2px 5px rgba(0,0,0,.38), 0 2px 5px rgba(0,0,0,.5)}
+  .ralSw:hover{transform:scale(1.22); border-color:#fff}
   .ralSw.sel{border-color:#e8c46a}
   .ralCur{font-size:12px; opacity:.75; margin-top:8px}
   .anyc{grid-column:1/-1; display:flex; align-items:center; gap:9px; cursor:pointer;
@@ -209,7 +209,7 @@
         <button class="btn2 colorBtn" id="colorBtn" type="button">
           <span class="swdot" id="colorDot"></span><span id="colorName"></span></button></div>
       <input id="gradC" type="hidden" value="RAL1005">
-      <div class="row"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов RAL (крайние и средний), растяжка их количеством</span></label>
+      <div class="row"><label for="gradOn">Градиент</label>
         <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
           <button class="btn2 colorBtn" id="gradBtn" type="button">
             <span class="swdot" id="gradDot"></span><span id="gradName"></span></button>
@@ -4227,10 +4227,23 @@ const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
 // кнопка — у градиента: ей выбирается второй цвет для микса.
 // Произвольного цвета нет: красить можно только цветами каталога
 function ralOf(id){ return GLASS_COLORS.find(g=>g.id===id) || GLASS_COLORS[0]; }
+// «СТЕКЛЯННЫЙ ШАРИК»: блик сверху, мягкий отсвет снизу и объёмная тень —
+// свотч читается как шарик цветного стекла, а не плоская плашка
+function glassBallCss(hex){
+  const c0=hexRgb(hex);
+  const lt=c0.map(v=>Math.min(255, Math.round(v*1.35+42)));
+  const dk=c0.map(v=>Math.round(v*0.42));
+  const rgb=(a2)=>`rgb(${a2[0]},${a2[1]},${a2[2]})`;
+  return `radial-gradient(circle at 30% 26%, rgba(255,255,255,.85), rgba(255,255,255,0) 27%),`
+       + `radial-gradient(circle at 70% 84%, rgba(255,255,255,.20), rgba(255,255,255,0) 38%),`
+       + `radial-gradient(circle at 42% 38%, ${rgb(lt)}, ${rgb(c0)} 55%, ${rgb(dk)} 105%)`;
+}
 const setBtnColor=(dotId, nameId, g)=>{
-  document.getElementById(dotId).style.background=
-    `radial-gradient(circle at 35% 30%, ${g.c}, #000 160%)`;
-  document.getElementById(nameId).textContent=g.name;
+  document.getElementById(dotId).style.background=glassBallCss(g.c);
+  // на кнопке — только код (RAL5017): название не влезает и дублирует
+  // подсказку; полное имя видно в палитре и уходит в документы
+  document.getElementById(nameId).textContent=g.id;
+  document.getElementById(nameId).title=g.name;
 };
 const pick = (c)=>{
   state.color = c;
@@ -4258,7 +4271,7 @@ function openRalPicker(title, curId, onPick){
       if(qq && g.name.toLowerCase().indexOf(qq)<0) continue;
       const el=document.createElement("div");
       el.className="ralSw"+(g.id===curId?" sel":"");
-      el.style.background=`radial-gradient(circle at 35% 30%, ${g.c}, #000 170%)`;
+      el.style.background=glassBallCss(g.c);
       el.title=g.name;
       el.onclick=()=>{ document.body.removeChild(ov); onPick(g); };
       el.onmouseenter=()=>{ cur.textContent=g.name; };
