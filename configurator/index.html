@@ -1027,6 +1027,16 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // почти в перекрытие (0.38 шага), затем воздух. Пары допустимы только
       // когда витки разведены радиально не меньше диаметра трубки + 30 мм,
       // иначе ритм отключается и спираль остаётся равномерной
+      // «ВИХРЬ»: размах завала подстраивается под ФАКТИЧЕСКИЙ шаг витка.
+      // На низком габарите виткам не хватает высоты без перекрытия, а
+      // перекрытие с вихревым завалом несовместимо (замер: 1281-2989
+      // касаний в лестнице и сборка страховкой за 7-20 с). Завал занимает
+      // только свободный зазор между витками: на высоких формах вихрь
+      // полный, на плоских — сдержанный, но сборка чистая с первой попытки
+      const vortexK=(box.concept==="vortex")
+        ? Math.max(0.25, Math.min(1,
+            (rise/Math.max(1,nA)-rw*0.92)/(0.7*Math.max(1,tiltMm))))
+        : 1;
       let ritmMap=null;
       if(box.concept==="ritm"){
         const nTur=Math.max(4, Math.round(nA));
@@ -1183,7 +1193,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         // Общий завал (одно направление на всю спираль) плюс свой наклон
         // каждого витка, сшитый по s-кривой между соседними витками
         const sT=vortexC
-          ? tiltMax*(0.12+0.88*t)
+          ? tiltMax*vortexK*(0.12+0.88*t)
           : tiltMax*tiltK*(0.62+0.38*Math.sin(Math.PI*2*tiltF*t+tiltVar));
         const phT=vortexC ? (tiltPh+Math.PI*2*0.5*dirE*t)
                           : (tiltPh+Math.PI*2*tiltRot*t);
