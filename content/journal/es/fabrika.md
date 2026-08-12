@@ -22,6 +22,6 @@ Lanzamiento de nuevas colecciones: la manufactura trabajará intensamente en col
 
 Queremos preservar la singularidad de nuestra manufactura, para que siga siendo un centro de innovación y de soluciones originales imposibles de repetir. Cada composición creada aquí es el resultado de unir tecnología avanzada y visión creativa, y eso convierte a Vargov®Design en una marca irrepetible en el mundo del diseño de iluminación.
 
-La manufactura de Vargov®Design envía sus productos a todo el mundo. Trabajamos con socios logísticos de confianza, lo que nos permite transportar las composiciones lumínicas de forma rápida y segura a cualquier punto del planeta. Estén donde estén nuestros clientes — en Europa, Asia, América o Oriente Medio — garantizamos que los productos de Vargov®Design llegarán a tiempo y en perfecto estado, con todas sus cualidades intactas.
+La manufactura de Vargov®Design envía sus productos a todo el mundo. Trabajamos con socios logísticos de confianza, lo que nos permite transportar las composiciones lumínicas de forma rápida y segura a cualquier punto del planeta. Estén donde estén nuestros clientes — en Europa, Asia, América u Oriente Medio — garantizamos que los productos de Vargov®Design llegarán a tiempo y en perfecto estado, con todas sus cualidades intactas.
 
 Vargov®Design es un ejemplo de cómo el futuro de la industria se construye sobre la innovación, el enfoque creativo y la búsqueda constante de la perfección, fijando nuevos estándares en el mundo del diseño de iluminación y de producto.

@@ -195,10 +195,12 @@ dump({'meta': {'kind': 'journal', 'articleCount': len(articles),
 
 # Поязычные срезы: странице товара не нужен файл на 8 МБ.
 for loc in LOCALES:
+    items = {sku: v[loc] for sku, v in products.items() if loc in v}
     dump({'meta': {'kind': 'product-descriptions', 'locale': loc,
                    'dir': 'rtl' if loc in RTL else 'ltr',
-                   'skuCount': len(products), 'generated': now},
-          'items': {sku: v[loc] for sku, v in products.items() if loc in v}},
+                   'skuCount': len(items), 'checksum': sha(items),
+                   'generated': now},
+          'items': items},
          f'{OUT}/by-locale/products.{loc}.json')
 
 print(f'SKU: {len(products)} | статей: {len(articles)}')

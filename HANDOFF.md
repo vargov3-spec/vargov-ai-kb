@@ -28,7 +28,7 @@ git clone -b claude/configurator-continuation-3n0vib https://github.com/vargov3-
 
 | Файл | Что |
 |---|---|
-| `by-locale/products.<язык>.json` | Карточки по языкам, 0,9–1,2 МБ. **Для страниц использовать эти** |
+| `by-locale/products.<язык>.json` | Карточки по языкам, 0,9–1,4 МБ. **Для страниц использовать эти** |
 | `products.json` | Всё в одном файле, 8,5 МБ — как источник правды, не для импорта в страницы |
 | `journal.json` | Статьи: типизированные блоки `p`/`h`/`li`, `dateISO`, `categoryId`, `metaLabels`, `rtlLocales` |
 | `build-bundles.py` | Пересборка из `content/`; падает с ошибкой при битом исходнике |
@@ -44,8 +44,7 @@ git clone -b claude/configurator-continuation-3n0vib https://github.com/vargov3-
 1. **Локали `vi` и `ar`**: маршруты `/vi/journal/*`, `/ar/journal/*`, переключатель языков, hreflang. Для `ar` — `dir="rtl"` и проверка вёрстки (зеркальные отступы, стрелки навигации, выравнивание).
 2. **Карточки товаров**: подключить тексты всех 8 языков из `integration/by-locale/`. Проверить, какие локали каталога вообще существуют сейчас.
 3. **Обновить русские версии трёх статей** — в репозитории они свежее сайта (редакционные правки владельца, см. раздел 3): `fabrika`, `prototipirovanie`, `vysokoe-zhyuri`. Европейские версии этих статей на сайте уже соответствуют новым формулировкам, трогать их не надо.
-4. **Опечатка на живом сайте**, `/es/journal/fabrika`: «América **o** Oriente Medio» → «América **u** Oriente Medio» (RAE: o→u перед словом на o-).
-5. Для vi/ar-версий `istoriya-elementa` использовать версии из репозитория — там добавлен лид-абзац, которого не было в первом переводе.
+4. **Опечатка на живом сайте**, `/es/journal/fabrika`: «América **o** Oriente Medio» → «América **u** Oriente Medio» (RAE: o→u перед словом на o-). В репозитории и пакетах уже исправлено — на сайте уйдёт сама при обновлении статьи из пакетов; если журнал интегрируется позже, поправь на сайте точечно.
 
 Рабочий процесс: код сайта сейчас не в GitHub — см. раздел 4. Если интегрируешь до выгрузки, всё равно бери данные из этого репозитория, а не копипастой из чата.
 
@@ -70,7 +69,7 @@ git clone -b claude/configurator-continuation-3n0vib https://github.com/vargov3-
 
 Просьба: приватный репозиторий `vargov3-spec/vargov-site`, обычный первый пуш. Из очевидного, но критичного: `.gitignore` до первого коммита (`node_modules/`, `.next/`, `out/`, `.env*` кроме `.env.example`, логи), и глазами проверить `git status` на предмет секретов перед пушем.
 
-После выгрузки имеет смысл повторить схему деплоя конфигуратора: сборка в GitHub Actions → VPS сам забирает артефакт по HTTPS (прямой SSH с раннеров на Timeweb блокируется ТСПУ; готовый образец — `vargov-configurator/.github/workflows/deploy-ru-vps.yml` и `deploy/pull-deploy.sh`).
+После выгрузки имеет смысл повторить схему деплоя конфигуратора: сборка в GitHub Actions → VPS сам забирает артефакт по HTTPS (прямой SSH с раннеров на Timeweb блокируется ТСПУ). Готовый образец — в репозитории `vargov3-spec/vargov-configurator` (приватный): `.github/workflows/deploy-ru-vps.yml` и `deploy/pull-deploy.sh`.
 
 ---
 
