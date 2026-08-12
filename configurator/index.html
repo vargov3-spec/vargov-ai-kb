@@ -39,25 +39,23 @@
     border-radius:20px; color:var(--gold2); font-size:13px; pointer-events:none;
   }
   #busy.on{display:flex}
-  #hintRegen{position:absolute; right:78px; bottom:26px; max-width:300px; text-align:right;
-    font-size:12px; line-height:1.35; color:#cfc9bb; opacity:0; pointer-events:none;
-    transition:opacity .6s ease}
-  #hintRegen.on{opacity:.7}
   #busy .spin{
     width:15px; height:15px; border-radius:50%;
     border:2px solid rgba(201,162,39,.25); border-top-color:var(--gold);
     animation:spin .8s linear infinite;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
-  /* круглая кнопка повторной генерации — прямо в окне композиции */
+  /* кнопка повторной генерации — по центру справа в окне композиции
+     (по просьбе пользователя вместо круглой кнопки с подсказкой) */
   #regen2{
-    position:absolute; right:22px; bottom:22px; width:54px; height:54px;
-    border-radius:50%; border:1px solid var(--gold2); cursor:pointer;
-    background:radial-gradient(circle at 34% 30%, #d8b356, #a9822a 70%, #7d5f1c);
-    color:#1a1408; font-size:22px; line-height:1; box-shadow:0 4px 16px rgba(0,0,0,.5);
+    position:absolute; right:22px; top:50%; transform:translateY(-50%);
+    padding:12px 18px; border-radius:8px; border:1px solid var(--gold2);
+    cursor:pointer; font-size:14px; letter-spacing:.02em;
+    background:linear-gradient(180deg, #d8b356, #a9822a 70%, #8a6a20);
+    color:#1a1408; box-shadow:0 4px 16px rgba(0,0,0,.5);
   }
   #regen2:hover{filter:brightness(1.12)}
-  #regen2:active{transform:translateY(1px)}
+  #regen2:active{transform:translateY(calc(-50% + 1px))}
   canvas{display:block; width:100%; height:100%; cursor:grab}
   canvas:active{cursor:grabbing}
   fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
@@ -238,8 +236,7 @@
     <canvas id="cv"></canvas>
     <div id="dims"></div>
     <div id="busy"><span class="spin"></span><span id="busyTxt">Генерация варианта композиции…</span></div>
-    <button id="regen2" title="Сгенерировать новый вариант" aria-label="Сгенерировать новый вариант">✦</button>
-    <div id="hintRegen">Не нравится результат — нажмите «Сгенерировать новый вариант» ещё раз</div>
+    <button id="regen2" title="Обновить композицию" aria-label="Обновить композицию">Обновить композицию</button>
     <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
   </div>
 </div>
@@ -5335,14 +5332,7 @@ function buildDeferred(msg){
   if(busy) busy.classList.add("on");
   const run=()=>{
     try { buildScene(); }
-    finally {
-      if(busy) busy.classList.remove("on");
-      // ПОДСКАЗКА ПОСЛЕ ГЕНЕРАЦИИ: вариант — один из многих, повторное
-      // нажатие даёт другой. Без этой строки не очевидно, что кнопку можно
-      // нажимать сколько угодно раз
-      const h=document.getElementById("hintRegen");
-      if(h) h.classList.add("on");
-    }
+    finally { if(busy) busy.classList.remove("on"); }
     needRedraw=true;
   };
   if(document.readyState!=="complete")
