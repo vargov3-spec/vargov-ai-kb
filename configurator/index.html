@@ -627,8 +627,24 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // ленты — у широкой ленты на ребре слишком тесный завиток упирается
       // сам в себя (витки выше перекрывают его по высоте)
       const rho0=Math.max(0.10, Math.max(110, rw*0.35)/Math.min(kx,kz));
+      // СИЛУЭТ В ПЛАНЕ СЪЕДАЕТ РАДИАЛЬНЫЙ ЗАПАС. Радиус витка умножается на
+      // контур r(θ), поэтому в «впадинах» силуэта (у звезды 0.52 от радиуса)
+      // радиальный зазор между соседними витками сжимается во столько же раз.
+      // Без этого множителя в высокой звезде вставало 14 витков и витки
+      // пересекались (замер: 1456 касаний, габарит 1500×1500×3000)
+      const planF0=(PLAN_SHAPES[box.plan]||PLAN_SHAPES.circle).r;
+      let pMinE=1e9, pGMax=0;
+      for(let ip=0; ip<360; ip++){
+        const ap=ip*Math.PI/180, v0=planF0(ap), v1=planF0(ap+Math.PI/180);
+        pMinE=Math.min(pMinE, v0);
+        pGMax=Math.max(pGMax, Math.abs(v1-v0)/(Math.PI/180));   // |dr/dθ|
+      }
+      pMinE=Math.max(0.25, Math.min(1, pMinE));
       // сколько витков влезает радиально и сколько просит правило метража
-      const nFit=Math.max(1.2, (Math.min(kx,kz)*(rho1-rho0))/dR);
+      // у силуэтов с быстрым контуром (звезда, клевер) радиальный зазор
+      // должен быть с запасом: контур успевает уйти в сторону внутри витка
+      const dRplan=dR*(1+0.5*Math.min(1.6, pGMax));
+      const nFit=Math.max(1.2, (pMinE*Math.min(kx,kz)*(rho1-rho0))/dRplan);
       const dens0=Math.max(0, Math.min(1, (lengthK-0.6)/1.4));
       const wK0=Math.max(0.5, Math.min(1.8, 300/rw));
       // ПРАВИЛО МЕТРАЖА ДЛЯ «НА РЕБРО» — ВДВОЕ БОЛЬШЕ, чем для «микса»: лента
@@ -762,7 +778,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const nMax=Math.max(3, Math.min(nFit*0.92, 14));
       // плотность витков можно снизить сверху: этим страховочные проходы
       // разводят спираль, не меняя пластику
-      const densKE=Math.max(0.35, Math.min(1, box.densK||1));
+      const densKE=Math.max(0.18, Math.min(1, box.densK||1));
       const nA=Math.max(2.5, Math.min(nMax, nNeed)*densKE);
       // спуск (вершина внизу) — по шагу витка; размах завала горизонта
       // зарезервирован в габарите, иначе спираль вылезает за верх и низ
@@ -770,6 +786,10 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       // спуск по числу витков. Растягивать его на всю высоту нельзя: резерв
       // завала горизонта тогда выходит за габарит, вписывание утягивает сцену
       // и витки сближаются — замер давал 194-559 касаний
+      // спуск — по числу витков и шагу. Растяжка на всю свободную высоту
+      // замером отклонена: шаг витка становится больше ширины ленты, спуск
+      // выходит крутым, и марш его не проходит (замер: звезда 1500×1500×3000
+      // — 184 касания против чистой укладки при том же зерне)
       let rise=Math.min(riseFree, nA*pitchE);
       let y0=(H-rise)/2;
       // СПУСК ЗАКАНЧИВАЕТСЯ ТАМ, ГДЕ КОНТУР УЖЕ ФИНАЛЬНОГО ЗАВИТКА. У конуса
@@ -809,7 +829,16 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const chF1=2+Math.floor(rng()*3), chF2=4+Math.floor(rng()*3);
       const planR=(a)=>Math.max(0.25, planF(a)*(1+chA*(0.62*Math.sin(chF1*a+chP1)
                                                       +0.38*Math.sin(chF2*a+chP2))));
-      const planTw=((PLAN_SHAPES[box.plan]||{}).tw||0)*Math.PI/180;
+      // ПОВОРОТ СИЛУЭТА НА ВИТОК ОГРАНИЧЕН РАДИАЛЬНЫМ ШАГОМ. Поворот контура
+      // между соседними витками сдвигает границу радиально на |dr/dθ|·угол:
+      // если этот сдвиг больше шага витка, нижний виток выходит наружу
+      // верхнего и ленты ПЕРЕСЕКАЮТСЯ (замер: звезда 1500×1500×3000 —
+      // 1456 касаний при 15° на виток). Поэтому угол урезается до того,
+      // что помещается в шаг; в разреженной укладке остаются полные 15°
+      const twAsk=((PLAN_SHAPES[box.plan]||{}).tw||0)*Math.PI/180;
+      const stepMmE=pMinE*kminE*(rho1-rho0)/Math.max(1, nA);
+      const twCap=Math.max(0, stepMmE-(ROD_D+16))/Math.max(1e-6, pGMax*kminE);
+      const planTw=Math.min(twAsk, twCap);
       const liftA=((PLAN_SHAPES[box.plan]||{}).lift||0)*(rng()*2-1)*rw*0.55;
       const tiltMax=tiltMm/kminE;
       // РАНДОМ ЗАВАЛА: у каждой генерации свой характер — размах от чуть
@@ -1080,12 +1109,18 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // равна числу витков: на каждый виток приходится ровно одно плато,
     // поэтому «скрутка — поворот — скрутка — поворот». Метраж от этого не
     // меняется: фаза есть интеграл скорости, а средняя скорость та же
-    const altF=Math.max(0.7, Math.min(6, turns/(oneRow?2.0:1.6)));
+    // одно плато на виток и у двухрядной: при частоте turns/1.6 плато
+    // приходилось не на каждый виток, и скрутки шли подряд
+    const altF=Math.max(0.7, Math.min(6, turns/2.0));
     // глубина чередования: у однорядной больше единицы — на плато фаза витка
     // не просто замирает, а немного отходит назад: это РАЗВОРОТ, лента
     // раскручивается и уходит в поворот, а не крутится дальше
-    const altA=(oneRow?0.98:0.75)
-               *Math.max(oneRow?0.45:0.15,
+    // ГЛУБИНА ЧЕРЕДОВАНИЯ. Полный разворот фазы (0.98 с нижним пределом 0.45)
+    // у ДВУХРЯДНОЙ ленты замером отклонён: касания 311/632/191 на попытках
+    // лестницы, сборка 38 с вместо 6-10 с — двухрядной ленте не хватает
+    // радиального места на разворот. Поэтому у двухрядной разворот мягче
+    const altA=(oneRow?0.98:0.86)
+               *Math.max(oneRow?0.45:0.30,
                          Math.min(1, (Math.min(a1,a2)*0.88-150)/220));
     // на плато лента уходит в сторону — это и есть поворот; размах
     // ограничен тем же бюджетом зазора между витками
@@ -2921,7 +2956,7 @@ function buildScene(){
           // и в страховочном варианте центральный контур независим
           foldK: params.foldK*0.7,
           // спираль «на ребро» разводится снижением плотности витков
-          densK: Math.max(0.4, 0.85*Math.pow(0.9, rs)),
+          densK: Math.max(0.22, 0.85*Math.pow(0.82, rs)),
           // ручную добавку страховка не держит: главное — чистая композиция
           addLen: (params.addLen||0)*Math.max(0, 1-0.25*rs),
           // страховка НЕ ПОДМЕНЯЕТ ПЛАСТИКУ: для «на ребро» плоская волна —
@@ -2982,6 +3017,7 @@ function buildScene(){
   // не бывает ни при каких настройках
   if(clear.collisions>0){
     let bestLast=null;
+    window.__lastR=[];
     for(let k4=0;k4<8;k4++){
       // ПОСЛЕДНИЙ РУБЕЖ СОХРАНЯЕТ ПЛАСТИКУ. Плоская дуга стиля «wave» ломала
       // выбор «на ребро»: композиция выходила лежащей волной, а не спиралью
@@ -2993,7 +3029,7 @@ function buildScene(){
             ampl: 0.3*Math.pow(0.85,k4),
             // плотность спирали снижаем шаг за шагом: это единственный
             // надёжный способ развести витки «на ребро»
-            densK: Math.max(0.35, 0.7*Math.pow(0.88,k4)),
+            densK: Math.max(0.18, 0.7*Math.pow(0.80,k4)),
             lengthK: Math.max(0.5, 1-0.06*k4)})
         : Object.assign({}, params, {
             // складку здесь не просим совсем, иначе теряется сама гарантия
@@ -3003,7 +3039,7 @@ function buildScene(){
       const rbF = buildRibbon(pF, (state.seed + 770001 + k4*911)>>>0, 0);
       rbF.clampMin=[0,0,0]; rbF.clampMax=[box.w,box.h,box.d];
       if(!rbF.fillMode) marchRibbon(rbF);
-      if(!rbF.fitScale) continue;
+      if(!rbF.fitScale){ (window.__lastR=window.__lastR||[]).push([k4,'nofit']); continue; }
       const clF = resolveCollisions([rbF], box);
       const bF = geoBBox(rbF);
       const lim5=[box.w,box.h,box.d];
@@ -3013,6 +3049,8 @@ function buildScene(){
         if(e5>lim5[k5]+2) fitsF=false;
         fillF=Math.min(fillF, e5/lim5[k5]);
       }
+      (window.__lastR=window.__lastR||[]).push([k4, clF.collisions, fitsF?1:0,
+                                                 +fillF.toFixed(2)]);
       if(clF.collisions===0 && fitsF){
         clF.attempt=98; clF.lanes=1;
         // и последний рубеж выбирается по заполнению габарита
@@ -3584,7 +3622,9 @@ const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
    генерации) берётся закреплённое зерно: заказчик видит именно ту
    композицию, которая утверждена, а не случайную. Кнопка «Сгенерировать
    новый вариант» снимает закрепление и дальше идут случайные варианты. */
-const SEED_PINNED = {1: 20260811, 2: 20260807};
+// закреплённые пользователем варианты: двухрядный №1550467706,
+// однорядный №4194952124 (габарит по умолчанию 2400×900×800)
+const SEED_PINNED = {1: 4194952124, 2: 1550467706};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
                autoSeed: true};
 
@@ -3673,7 +3713,8 @@ ui.plan.value="circle";
    набранные потом руками размеры не трогаются */
 const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 const FORM_DEF = {
-  rhomb: {w:1500, d:1500, h:3000, c:600},   // только «Ромб»; «Ромб в плане» — нет
+  rhomb:      {w:1500, d:1500, h:3000, c:600},  // «Ромб»; «Ромб в плане» — нет
+  plan_star4: {w:1500, d:1500, h:1000, c:600},  // Форма-3 (звезда)
 };
 function setDims(p){
   if(p.w) ui.dimW.value=String(p.w);
