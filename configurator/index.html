@@ -722,20 +722,29 @@ function conceptGuide(key, ctx){
       return [cx+kx*rho*Math.cos(th), yHi-H2*t, cz+kz*rho*Math.sin(th)];
     };
   } else if(key==="rings"){
-    // ПЕРЕСЕКАЮЩИЕСЯ КОЛЬЦА (ГИРОСКОП): три замкнутых кольца разного
-    // диаметра, каждое в своей наклонённой плоскости (8–14° — наклон здесь
-    // и есть форма). Стержни вертикальны: наклон — это ход высоты по
-    // кругу. Кольца концентрические с зазором ≥0.23 радиуса — при
-    // вертикальных стержнях пересечься не могут ни на какой высоте
-    const l=lane%3, rK=[0.94,0.70,0.47][l], tiltD=[8,11,14][l];
+    // ПЕРЕСЕКАЮЩИЕСЯ КОЛЬЦА (ГИРОСКОП): замкнутые кольца разного диаметра,
+    // каждое в своей наклонённой плоскости (8–16° — наклон здесь и есть
+    // форма). Стержни вертикальны: наклон — это ход высоты по кругу.
+    // ЧИСЛО КОЛЕЦ РАСТЁТ С ДИАМЕТРОМ композиции (по кольцу на каждые
+    // ~500 мм радиуса, от 3 до 9) — на большом габарите дисков больше.
+    // Кольца концентрические: радиальный зазор — по построению, при
+    // вертикальных стержнях пересечься не могут ни на какой высоте.
+    // КОНТУР СОМКНУТ: зазор на стыке равен санитарной дистанции дальних
+    // трубок (25 мм) — читается как обычный шаг между трубками, а не шов
+    const nR=Math.max(3, Math.min(9, ctx.lanes||3));
+    const l=lane%nR;
+    const rIn=(nR>=6)?0.26:0.36;
+    const rK=nR>1 ? 0.94-(0.94-rIn)*l/(nR-1) : 0.94;
+    const tiltD=8+((l*3)%9);
     const phL=ph0+2.4*l;
     const hAmp=Math.min((H2-rw)/2*0.9,
                         Math.tan(tiltD*Math.PI/180)*rK*kmin);
-    let off=[0.10,-0.06,0.02][l]*H2;
+    let off=[0.10,-0.06,0.02,-0.09,0.06,-0.02,0.08,-0.04,0][l%9]*H2;
     const offMax=Math.max(0, H2/2-hAmp-rw/2);
     off=Math.max(-offMax, Math.min(offMax, off));
+    const span=Math.PI*2 - 25/Math.max(120, rK*kmin);
     P=(t)=>{
-      const th=dirE*Math.PI*2*0.985*t+phL;
+      const th=dirE*span*t+phL;
       return [cx+kx*rK*Math.cos(th), ymid+off+hAmp*Math.cos(th-phL), cz+kz*rK*Math.sin(th)];
     };
   }
@@ -955,7 +964,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
       const kx=(dims[0]/2-ROD_R-20), kz=(dims[2]/2-ROD_R-20);
       // КОНЦЕПТ-ФОРМЫ строят направляющую сами — минуя правила спирали
       if(box.concept && CONCEPT_DIRECT[box.concept]){
-        const gC=conceptGuide(box.concept, {dims, rw, rng, lane,
+        const gC=conceptGuide(box.concept, {dims, rw, rng, lane, lanes,
                                             kx, kz, densK:box.densK});
         if(gC){ gC.__target=0; gC.__edge=true; return gC; }
       }
@@ -3138,7 +3147,11 @@ function buildScene(){
   // до пяти попыток со снижением плотности, касания в итоге не показываются
   let conceptBuilt=false;
   if(params.plast==="edge" && params.concept && CONCEPT_DIRECT[params.concept]){
-    const nL=CONCEPT_LANES[params.concept]||1;
+    // у «гироскопа» число колец растёт с диаметром композиции:
+    // по кольцу на каждые ~500 мм радиуса, от 3 до 9
+    const nL=(params.concept==="rings")
+      ? Math.max(3, Math.min(9, Math.floor((Math.min(box.w,box.d)/2-25)/500)+1))
+      : (CONCEPT_LANES[params.concept]||1);
     let bestC=null;
     for(let cs=0; cs<5; cs++){
       const pC=Object.assign({}, params, {lanes:nL, densK:Math.pow(0.87,cs)});
