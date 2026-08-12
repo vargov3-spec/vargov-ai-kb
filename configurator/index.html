@@ -638,10 +638,10 @@ const PLAN_SHAPES = {
    минимум на диаметр трубки с воздухом, поэтому касаний нет по построению.
    «Вихрь» и «Рваный ритм» — не отдельные генераторы, а модификаторы обычной
    спирали (см. ветку «на ребро» в controlPoints). */
-const CONCEPT_DIRECT={galaxy:1,cascade:1,wavebed:1,mobius:1,crown:1,dna:1,rings:1};
-const CONCEPT_LANES={dna:2,crown:2,rings:3};
-const CONCEPT_FORMS=["galaxy","cascade","wavebed","mobius","crown","dna",
-                     "vortex","ritm","rings"];
+// «волна-лежак», «Мёбиус» и «корона» удалены по решению пользователя
+const CONCEPT_DIRECT={galaxy:1,cascade:1,dna:1,rings:1};
+const CONCEPT_LANES={dna:2,rings:3};
+const CONCEPT_FORMS=["galaxy","cascade","dna","vortex","ritm","rings"];
 function conceptGuide(key, ctx){
   const {dims,rw,rng,lane}=ctx;
   const kx=ctx.kx, kz=ctx.kz, kmin=Math.min(kx,kz);
@@ -704,95 +704,6 @@ function conceptGuide(key, ctx){
       r=r*(1-wC)+(26/kmin)*wC;              // конец в 26 мм от оси, не в нуле
       const th=ph0+dirE*Math.PI*2*u;
       return [cx+kx*r*Math.cos(th), yHi-H2*t, cz+kz*r*Math.sin(th)];
-    };
-  } else if(key==="wavebed"){
-    // ВОЛНА-ЛЕЖАК: лента на ребре идёт длинной плавной синусоидой вдоль
-    // длинной стороны габарита, у дальнего торца разворачивается полукругом
-    // и возвращается вторым ходом. Ходы разнесены и в плане (±радиус
-    // разворота), и по высоте (ширина ленты + воздух) — касаний нет.
-    // Радиус изгиба на гребне волны λ²/(4π²A) удержан не меньше 245 мм
-    const axI=dims[0]>=dims[2]?0:2, ozI=axI===0?2:0;
-    const kA=(axI===0?kx:kz), kO=(axI===0?kz:kx);
-    const c1=dims[axI]/2, c2=dims[ozI]/2;
-    const margin=Math.max(150, rw*0.35);
-    const x0=c1-kA+margin, x1=c1+kA-margin, Lr=Math.max(400, x1-x0);
-    // радиус разворота не меньше 0.55 ширины ленты: на Ø600 при ленте
-    // 600 мм марш срезал разворот, и ходы сближались до 15-21 мм
-    // (замер: 142 «тесноты» на 3000×2000×1500 при 2 рядах × 300)
-    const rU=Math.max(170, rw*0.55, Math.min(300, kO*0.35));
-    let Aw=Math.max(40, kO-rU-40);
-    let lam=Math.max(2*Math.PI*Math.sqrt(245*Aw), Lr/2.6);
-    if(lam>Lr/1.05){ lam=Lr/1.05; Aw=Math.min(Aw, Math.pow(lam/(2*Math.PI),2)/245); }
-    // предел крутизны волны 0.30 (17°): круче — вертикальные стержни
-    // сходятся в плане ближе диаметра с зазором (см. «корону»)
-    Aw=Math.min(Aw, 0.30*lam/(2*Math.PI));
-    // оба хода НА ОДНОЙ ВЫСОТЕ: они разведены в плане на 2 радиуса разворота
-    // (со стихшей волной зазор ≥ 430 мм), а вертикальный перепад между ходами
-    // давал крутой подъём проволоки на развороте (до 32°) — стержни
-    // сближались в плане (замер: 134-251 «тесноты» на 3000×2000×1500)
-    const dy=0;
-    const ph1=-2*Math.PI*Lr/lam;             // на дальнем торце волна в нуле
-    // ВОЛНА ГАСИТСЯ К РАЗВОРОТУ: огибающая сводит амплитуду в ноль на
-    // последней полуволне перед торцом — ход входит в разворот ровно вдоль
-    // оси, и стык с полукругом гладкий. Без огибающей на стыке был излом
-    // касательной ~17°, марш на широкой ленте срезал разворот и ходы
-    // сближались до 15-21 мм
-    const envW=(sw,Lw)=>{
-      const uE=Math.min(1, (Lw-sw)/(lam*0.5));
-      return uE*uE*(3-2*uE);
-    };
-    const Lu=Math.PI*rU, tot=Lr+Lu+Lr;
-    P=(t)=>{
-      const sPos=t*tot, q=[0,0,0];
-      if(sPos<=Lr){
-        q[axI]=x0+sPos;
-        q[ozI]=c2-rU+Aw*envW(sPos,Lr)*Math.sin(2*Math.PI*sPos/lam+ph1);
-        q[1]=ymid+dy;
-      } else if(sPos<=Lr+Lu){
-        const an=(sPos-Lr)/rU, vv=(sPos-Lr)/Lu;
-        q[axI]=x1+rU*Math.sin(an); q[ozI]=c2-rU*Math.cos(an);
-        q[1]=ymid+dy-2*dy*(vv*vv*(3-2*vv));
-      } else {
-        const sb=sPos-Lr-Lu;
-        q[axI]=x1-sb;
-        q[ozI]=c2+rU+Aw*0.85*envW(sb,0.7*Lr)*Math.sin(2*Math.PI*sb/lam*1.18+ph0);
-        q[1]=ymid-dy;
-      }
-      return q;
-    };
-  } else if(key==="mobius"){
-    // ЛЕНТА МЁБИУСА: кольцо с одним полуоборотом — ось стержня плавно
-    // поворачивается на 180° вдоль кольца, концы встречаются с
-    // перевёрнутой ориентацией. Шов 0.05 оборота оставлен: там концы
-    // разведены в плане и не пересекаются
-    const rM=Math.max(0.30, Math.min(0.80, 1-(rw/2+30)/kmin));
-    const span=Math.PI*2*0.95;
-    P=(t)=>{
-      const th=ph0+dirE*span*t;
-      return [cx+kx*rM*Math.cos(th), ymid, cz+kz*rM*Math.sin(th)];
-    };
-    A=(t)=>{
-      const th=ph0+dirE*span*t, psi=Math.PI*t;
-      const ax=[Math.cos(th)*Math.sin(psi), Math.cos(psi), Math.sin(th)*Math.sin(psi)];
-      const L2=Math.hypot(ax[0],ax[1],ax[2])||1;
-      return [ax[0]/L2, ax[1]/L2, ax[2]/L2];
-    };
-  } else if(key==="crown"){
-    // ТОР С ВОЛНОЙ (КОРОНА): два замкнутых кольца, верхний кант дышит
-    // волной — 3 волны у внешнего кольца, 4 у внутреннего, в противофазе.
-    // Кольца концентрические с радиальным зазором 0.13 радиуса — при
-    // вертикальных стержнях они не могут коснуться ни на какой высоте
-    const l=lane%2, rK=[0.93,0.80][l], m=3+l;
-    // ПРЕДЕЛ КРУТИЗНЫ ВОЛНЫ 0.30 (17°). Стержни вертикальны и стоят через
-    // ROD_STEP вдоль проволоки: на крутой волне их шаг В ПЛАНЕ сжимается на
-    // косинус крутизны, и при >18° соседние стержни сходятся ближе диаметра
-    // с зазором (замер: 920 самокасаний при волне 50°)
-    const Aw=Math.min(rw*0.9, 0.26*H2, 0.30*rK*kmin/m);
-    const off=Math.min(0.24*H2, Math.max(0, H2/2-Aw-rw/2));
-    const yb=ymid+(l?-1:1)*off, phL=ph0+l*1.7;
-    P=(t)=>{
-      const th=dirE*Math.PI*2*0.985*t+phL;
-      return [cx+kx*rK*Math.cos(th), yb+Aw*Math.sin(m*th+phL*2), cz+kz*rK*Math.sin(th)];
     };
   } else if(key==="dna"){
     // ДВОЙНАЯ СПИРАЛЬ (ДНК): две ленты в противофазе на одном спуске.
@@ -3195,8 +3106,7 @@ function buildScene(){
     // силуэт В ПЛАНЕ («plan_имя») — тогда спуск цилиндрический, а витки
     // несутся по выбранному контуру сверху
     form: (ui.form.value.indexOf("plan_")===0 ? "cyl"
-           : ui.form.value.indexOf("c_")===0
-             ? (ui.form.value==="c_wavebed" ? "box" : "cyl")
+           : ui.form.value.indexOf("c_")===0 ? "cyl"
            : (FORMS[ui.form.value] ? ui.form.value : "box")),
     // КОНЦЕПТ-ФОРМА («c_имя»): особый вид генерации «на ребро» — см.
     // conceptGuide. Силуэт габарита у них цилиндр (у «волны-лежака» — сам
