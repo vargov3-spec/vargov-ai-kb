@@ -191,9 +191,9 @@
     <fieldset>
       <legend>Стекло и свет</legend>
       <div class="swatches" id="swatches"></div>
-      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов (крайние и средний), растяжка их количеством по ходу ленты</span></label>
+      <div class="row" style="margin-top:10px"><label for="gradOn">Градиент цвета<br><span style="font-size:11px;opacity:.6">трубки трёх цветов RAL (крайние и средний), растяжка их количеством</span></label>
         <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
-          <input id="gradC" type="color" value="#f2c14e" style="width:44px;height:26px;border:none;background:none;padding:0">
+          <select id="gradC" style="max-width:150px"></select>
           <input id="gradOn" type="checkbox">
         </span></div>
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
@@ -278,32 +278,47 @@ const R_FIT = 80;        // целевой радиус лимитера
 /* ЦВЕТ ЭЛЕМЕНТОВ — палитра как в конфигураторе Vargov®Design
    (configurator.vargov.ru): 24 базовых цвета плюс «Выбрать любой» —
    произвольный цвет из системной пипетки */
+// ДОСТУПНЫЕ ЦВЕТА — ТОЛЬКО RAL (по каталогу производства Ralcolor_VG).
+// Каждый цвет — код RAL + название: он и показывается, и уходит в
+// спецификацию и монтажную карту. НАБОР ПРЕДВАРИТЕЛЬНЫЙ (классические RAL,
+// подобранные к прежней палитре) — заменить точным списком из Ralcolor_VG.pdf
 const GLASS_COLORS = [
-  {id:"red",     name:"Красный",     c:"#c92c39"},
-  {id:"vermil",  name:"Киноварь",    c:"#dd4b2a"},
-  {id:"orange",  name:"Оранжевый",   c:"#e2812a"},
-  {id:"amber",   name:"Янтарь",      c:"#e8a33d"},
-  {id:"gold",    name:"Золото",      c:"#d4b23c"},
-  {id:"lime",    name:"Лайм",        c:"#b4c93f"},
-  {id:"green",   name:"Зелёный",     c:"#57a24d"},
-  {id:"emerald", name:"Изумруд",     c:"#3d9070"},
-  {id:"teal",    name:"Бирюза",      c:"#3a8a8f"},
-  {id:"azure",   name:"Лазурь",      c:"#3a8ec0"},
-  {id:"blue",    name:"Синий",       c:"#2f74be"},
-  {id:"cobalt",  name:"Кобальт",     c:"#2f4bb0"},
-  {id:"indigo",  name:"Индиго",      c:"#4034a8"},
-  {id:"violet",  name:"Фиолетовый",  c:"#6a2f9e"},
-  {id:"purple",  name:"Пурпур",      c:"#9c2f95"},
-  {id:"magenta", name:"Маджента",    c:"#bd2878"},
-  {id:"ruby",    name:"Рубин",       c:"#c01f35"},
-  {id:"marsala", name:"Марсала",     c:"#8f4040"},
-  {id:"cognac",  name:"Коньяк",      c:"#8a5a28"},
-  {id:"graphite",name:"Графит",      c:"#3a4048"},
-  {id:"black",   name:"Чёрный",      c:"#1c1f22"},
-  {id:"steel",   name:"Сталь",       c:"#8d939c"},
-  {id:"silver",  name:"Серебро",     c:"#ccd3d8"},
-  {id:"clear",   name:"Прозрачный",  c:"#eef2f3"},
+  {id:"RAL3020", name:"RAL3020 Транспортный красный", c:"#C1121C"},
+  {id:"RAL2002", name:"RAL2002 Алый",                 c:"#CB2821"},
+  {id:"RAL2004", name:"RAL2004 Оранжевый",            c:"#F44611"},
+  {id:"RAL1033", name:"RAL1033 Георгиново-жёлтый",    c:"#F3A505"},
+  {id:"RAL1005", name:"RAL1005 Медово-жёлтый",        c:"#CB8E00"},
+  {id:"RAL1016", name:"RAL1016 Серно-жёлтый",         c:"#EDFF21"},
+  {id:"RAL6018", name:"RAL6018 Жёлто-зелёный",        c:"#57A639"},
+  {id:"RAL6029", name:"RAL6029 Мятно-зелёный",        c:"#20603D"},
+  {id:"RAL6033", name:"RAL6033 Мятно-бирюзовый",      c:"#497E76"},
+  {id:"RAL5012", name:"RAL5012 Голубой",              c:"#3B83BD"},
+  {id:"RAL5015", name:"RAL5015 Небесно-синий",        c:"#2271B3"},
+  {id:"RAL5002", name:"RAL5002 Ультрамарин",          c:"#20214F"},
+  {id:"RAL4005", name:"RAL4005 Сине-сиреневый",       c:"#76689A"},
+  {id:"RAL4008", name:"RAL4008 Сигнальный фиолетовый",c:"#924E7D"},
+  {id:"RAL4006", name:"RAL4006 Транспортный пурпур",  c:"#A03472"},
+  {id:"RAL4010", name:"RAL4010 Телемаджента",         c:"#CF3476"},
+  {id:"RAL3003", name:"RAL3003 Рубиново-красный",     c:"#8D1D2C"},
+  {id:"RAL3005", name:"RAL3005 Винно-красный",        c:"#5E2028"},
+  {id:"RAL8003", name:"RAL8003 Глиняно-коричневый",   c:"#7E4B26"},
+  {id:"RAL7024", name:"RAL7024 Графитовый серый",     c:"#45494E"},
+  {id:"RAL9005", name:"RAL9005 Чёрный янтарь",        c:"#0A0A0D"},
+  {id:"RAL7042", name:"RAL7042 Транспортный серый A", c:"#8D948D"},
+  {id:"RAL7035", name:"RAL7035 Светло-серый",         c:"#C5C7C4"},
+  {id:"RAL9016", name:"RAL9016 Транспортный белый",   c:"#F1F0EA"},
 ];
+// ближайший цвет каталога к произвольному RGB — им подменяется средний
+// цвет градиента: красить можно только цветами каталога
+function nearestRal(rgb){
+  let best=null, bd=1e9;
+  for(const g of GLASS_COLORS){
+    const c=hexRgb(g.c);
+    const d=(c[0]-rgb[0])**2 + (c[1]-rgb[1])**2 + (c[2]-rgb[2])**2;
+    if(d<bd){ bd=d; best=g; }
+  }
+  return best;
+}
 
 /* ---------- малая векторная алгебра ---------- */
 const V = {
@@ -3663,8 +3678,10 @@ function draw(){
   // ленты все трубки цвета 1, к концу все цвета 2, между ними доля второго
   // цвета растёт с ходом ленты. Раскладка детерминированная (диффузия
   // ошибки), та же самая попадает в монтажную карту
-  const gradB = (ui.gradOn && ui.gradOn.checked) ? hexRgb(ui.gradC.value) : null;
-  const gradM = gradB ? gradMid(glass, gradB) : null;   // средний цвет
+  const gradB = (ui.gradOn && ui.gradOn.checked) ? hexRgb(ralOf(ui.gradC.value).c) : null;
+  // средний цвет прищёлкивается к БЛИЖАЙШЕМУ ЦВЕТУ КАТАЛОГА: красить можно
+  // только цветами RAL, произвольный усреднённый оттенок производству недоступен
+  const gradM = gradB ? hexRgb(nearestRal(gradMid(glass, gradB)).c) : null;
   const isClear = state.color.id==="clear";
   const prims = [];
   const p1=[0,0,0,0], p2=[0,0,0,0];
@@ -3962,6 +3979,22 @@ function updateSpec(){
       <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
         scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
       <tr><td>Стеклянные трубки Ø${ROD_D}</td><td>${rods} шт</td></tr>
+      ${(()=>{
+        // ЦВЕТА И КОЛИЧЕСТВА — ПРЯМО В РАСЧЁТЕ. Без градиента — один цвет
+        // каталога на все трубки; с градиентом — три цвета RAL со штуками
+        if(!(ui.gradOn && ui.gradOn.checked))
+          return `<tr><td>Цвет трубок</td><td>${state.color.name} — ${rods} шт</td></tr>`;
+        const cnt=[0,0,0];
+        for(const rb of scene.ribbons){
+          const mk=rb.__gradMask||(rb.__gradMask=gradMask(rb));
+          for(const v of mk) cnt[v]++;
+        }
+        const g2=ralOf(ui.gradC.value);
+        const gm=nearestRal(gradMid(hexRgb(state.color.c), hexRgb(g2.c)));
+        return `<tr><td>Цвет 1</td><td>${state.color.name} — ${cnt[0]} шт</td></tr>`
+             + `<tr><td>Цвет 2 (средний)</td><td>${gm.name} — ${cnt[1]} шт</td></tr>`
+             + `<tr><td>Цвет 3</td><td>${g2.name} — ${cnt[2]} шт</td></tr>`;
+      })()}
       <tr><td>Ширина ленты</td><td>${scene.params.ribbonW} мм${
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
@@ -3982,7 +4015,7 @@ const ui = {};
 for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
-const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="ruby") || GLASS_COLORS[0];
+const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
 /* КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ ЗАФИКСИРОВАНА — своя для каждой рядности.
    При первом открытии и при переключении рядности (до первой ручной
    генерации) берётся закреплённое зерно: заказчик видит именно ту
@@ -4011,25 +4044,18 @@ GLASS_COLORS.forEach((c)=>{
   el.onclick = ()=>pick(c, el);
   swBox.appendChild(el);
 });
-{ // ПРОИЗВОЛЬНЫЙ ЦВЕТ: системная пипетка. Выбранный цвет становится свотчем
-  // и остаётся в спецификации как HEX — производству этого достаточно
-  const wrap=document.createElement("label");
-  wrap.className="anyc";
-  const inp=document.createElement("input");
-  inp.type="color"; inp.value=state.color.c;
-  const dot=document.createElement("span");
-  dot.className="sw anyc-dot";
-  dot.style.background=`radial-gradient(circle at 35% 30%, ${state.color.c}, #000 160%)`;
-  const cap=document.createElement("span");
-  cap.className="anyc-cap"; cap.textContent="Выбрать любой";
-  inp.oninput=()=>{
-    const hex=inp.value;
-    dot.style.background=`radial-gradient(circle at 35% 30%, ${hex}, #000 160%)`;
-    pick({id:"custom", name:"Свой цвет "+hex.toUpperCase(), c:hex}, dot);
-  };
-  wrap.appendChild(inp); wrap.appendChild(dot); wrap.appendChild(cap);
-  swBox.appendChild(wrap);
+// ПРОИЗВОЛЬНОГО ЦВЕТА НЕТ: красить можно только цветами каталога RAL
+// (Ralcolor_VG) — пипетка убрана, палитра и есть весь выбор
+
+// второй цвет градиента — тоже из каталога RAL
+for(const g of GLASS_COLORS){
+  const o=document.createElement("option");
+  o.value=g.id; o.textContent=g.name;
+  ui.gradC.appendChild(o);
 }
+ui.gradC.value="RAL1005";
+// цвет по каталогу: объект GLASS_COLORS по коду RAL
+function ralOf(id){ return GLASS_COLORS.find(g=>g.id===id) || GLASS_COLORS[0]; }
 
 /* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
    плавный поток ленты читается в шаре, а в фигурных силуэтах (пирамида,
@@ -4154,8 +4180,8 @@ for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 // градиент цвета — чистая перерисовка, каркас не пересобирается
-ui.gradOn.addEventListener("change", ()=>{needRedraw=true;});
-ui.gradC.addEventListener("input", ()=>{needRedraw=true;});
+ui.gradOn.addEventListener("change", ()=>{needRedraw=true; if(state.lastSpec) updateSpec();});
+ui.gradC.addEventListener("change", ()=>{needRedraw=true; if(state.lastSpec) updateSpec();});
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
 ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
@@ -4181,17 +4207,18 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
     ["Цвет стекла", state.color.name],
     ...(ui.gradOn.checked ? (()=>{
-      // раскладка трёх цветов: считаем штуки каждого
+      // раскладка трёх цветов RAL: считаем штуки каждого
       const cnt=[0,0,0];
       for(const rb of scene.ribbons){
         const mk=rb.__gradMask||(rb.__gradMask=gradMask(rb));
         for(const v of mk) cnt[v]++;
       }
-      const midHex=rgbHexStr(gradMid(hexRgb(state.color.c), hexRgb(ui.gradC.value)));
-      return [["Градиент: трубки красятся в 3 цвета (крайние и средний), растяжка их количеством"],
+      const g2=ralOf(ui.gradC.value);
+      const gm=nearestRal(gradMid(hexRgb(state.color.c), hexRgb(g2.c)));
+      return [["Градиент: трубки красятся в 3 цвета RAL (крайние и средний), растяжка их количеством"],
               [`Трубки цвета 1 (${state.color.name})`, `${cnt[0]} шт`],
-              [`Трубки цвета 2 — средний (${midHex})`, `${cnt[1]} шт`],
-              [`Трубки цвета 3 (${ui.gradC.value.toUpperCase()})`, `${cnt[2]} шт`]];
+              [`Трубки цвета 2 — средний (${gm.name})`, `${cnt[1]} шт`],
+              [`Трубки цвета 3 (${g2.name})`, `${cnt[2]} шт`]];
     })() : []),
     ["Лент в композиции, шт", scene.ribbons.length],
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
@@ -4379,16 +4406,17 @@ document.getElementById("saveMont").onclick = ()=>{
     // при включённом градиенте у каждой трубки указан её цвет (1 или 2):
     // трубка красится целиком, растяжка — количеством трубок каждого цвета
     const gmk=ui.gradOn.checked ? (rb.__gradMask||(rb.__gradMask=gradMask(rb))) : null;
-    const gHex=gmk ? [state.color.c.toUpperCase(),
-                      rgbHexStr(gradMid(hexRgb(state.color.c), hexRgb(ui.gradC.value))),
-                      ui.gradC.value.toUpperCase()] : null;
+    const gHex=gmk ? [state.color.id,
+                      nearestRal(gradMid(hexRgb(state.color.c),
+                                         hexRgb(ralOf(ui.gradC.value).c))).id,
+                      ralOf(ui.gradC.value).id] : null;
     R.push(["№ трубки","ряд","станция","длина, мм","Xb","Yb","Zb","Xa","Ya","Za"
             ].concat(gmk?["цвет"]:[]));
     rb.rods.forEach((r, k)=>{
       const b=EXP.p(r.b), a=EXP.p(r.a);
       R.push([k+1, r.u2>0 ? "верхний" : "нижний", r.st+1, r.len.toFixed(1),
               EXP.f(b[0]),EXP.f(b[1]),EXP.f(b[2]), EXP.f(a[0]),EXP.f(a[1]),EXP.f(a[2])
-             ].concat(gmk?[(gmk[k]+1)+" "+gHex[gmk[k]]]:[]));
+             ].concat(gmk?[gHex[gmk[k]]]:[]));
     });
     if(rb.leds && rb.leds.length){
       R.push([]);
