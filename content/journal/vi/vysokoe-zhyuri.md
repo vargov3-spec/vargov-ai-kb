@@ -24,7 +24,7 @@ Tôi chú trọng nghiên cứu các xu hướng thiết kế thế giới, tham
 
 – Anh đã đi đến việc lập cơ sở sản xuất và thương hiệu riêng như thế nào? Anh có hợp tác với các cơ sở sản xuất khác không?
 
-– Việc lập cơ sở sản xuất riêng là bước đi tự nhiên trên con đường nghề nghiệp của tôi. Đến một lúc, tôi hiểu rằng mình muốn hiện thực hóa các ý tưởng mà không bị giới hạn hay thỏa hiệp. Khởi đầu có nhiều khó khăn, nhưng nhờ sự ủng hộ của đội ngũ và các đối tác, chúng tôi đã tạo dựng được thương hiệu Vargov®Design, hiện được biết đến vượt xa biên giới nước Nga.
+– Việc lập cơ sở sản xuất riêng là bước đi tự nhiên trên con đường nghề nghiệp của tôi. Đến một lúc, tôi hiểu rằng mình muốn hiện thực hóa các ý tưởng mà không bị giới hạn hay thỏa hiệp. Khởi đầu có nhiều khó khăn, nhưng nhờ sự ủng hộ của đội ngũ và các đối tác, chúng tôi đã tạo dựng được thương hiệu Vargov®Design, hiện được biết đến vượt xa thị trường trong nước.
 
 Chúng tôi chọn khu vực đó vì hạ tầng phát triển và khả năng mở rộng quy mô. Chúng tôi bắt đầu bằng việc hợp tác với các nhà máy địa phương, điều giúp chúng tôi hiểu đặc thù sản xuất và thiết lập các quy trình. Sau đó chúng tôi lập cơ sở sản xuất riêng, để hiện thực hóa mọi ý tưởng và duy trì chuẩn mực chất lượng cao.
 
