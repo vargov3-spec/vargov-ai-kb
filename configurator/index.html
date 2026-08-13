@@ -124,6 +124,10 @@
   }
   .btn2:hover{border-color:var(--gold)}
   input[type=range]{accent-color:var(--gold); width:120px; margin:0}
+  /* без штатных стрелок-спиннеров у числовых полей (решение пользователя) */
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+  input[type=number]{-moz-appearance:textfield; appearance:textfield}
   .tiles{display:flex; gap:8px; flex-wrap:wrap; margin:2px 0}
   .tile{flex:1 1 45%; border:1px solid #33333c; border-radius:9px; background:#141418;
     cursor:pointer; padding:8px 4px 6px; display:flex; flex-direction:column;
@@ -5104,6 +5108,7 @@ function draw(){
   const gradM = gradB ? hexRgb(nearestRal(gradMid(glass, gradB)).c) : null;
   const isClear = state.color.id==="clear";
   const prims = [];
+  const ledLayer = [];
   const p1=[0,0,0,0], p2=[0,0,0,0];
 
   // габаритный бокс (при наборе размеров — сразу из полей, до пересборки)
@@ -5284,14 +5289,17 @@ function draw(){
           wpx:Math.max(0.8, WIRE_D*wk*p1[3])});
       }
     }
-    // LED — светящиеся шарики Ø4 на проволоке каркаса
+    // LED — светящиеся шарики Ø4 на проволоке каркаса. Рисуются В
+    // ФИНАЛЬНОМ СЛОЕ поверх стержней: физически диод сидит за трубками
+    // (щель гребёнки 1.6 мм), но свет виден СКВОЗЬ полупрозрачное стекло —
+    // при приближении диоды прятались за широкими штрихами стержней
+    // (замечание пользователя)
     let ledIdx=-1;
     for(const l of rb.leds){
       ledIdx++;
       if(rb.ledSt && rb.ledSt[ledIdx]>=lim) continue;
       if(!project(l,B,p1)) continue;
-      prims.push({z:p1[2]-lBias, kind:3, x1:p1[0], y1:p1[1],
-        rCore:Math.max(1.4, 2*p1[3])});
+      ledLayer.push({x1:p1[0], y1:p1[1], rCore:Math.max(1.4, 2*p1[3])});
     }
   }
 
@@ -5320,42 +5328,40 @@ function draw(){
       ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
-    } else { // диод Ø4 на проволоке каркаса: тёплое свечение 3000 K
-      // 3000 K ≈ RGB(255,168,86). Ореол рисуется в режиме сложения (lighter):
-      // он не гасит ленту, а подсвечивает её, поэтому диод читается ярким.
-      // На СВЕТЛОМ фоне сложение уходит в белизну и ореол невидим — там
-      // диод рисуется обычным наложением: тёплое пятно + янтарное ядро
-      if(LB){
-        const R3=Math.max(4, pr.rCore*2.6);
-        const g3=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R3);
-        g3.addColorStop(0,"rgba(255,170,70,.85)");
-        g3.addColorStop(0.6,"rgba(255,160,60,.30)");
-        g3.addColorStop(1,"rgba(255,150,50,0)");
-        ctx.fillStyle=g3;
-        ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R3,0,7); ctx.fill();
-        ctx.fillStyle="rgba(210,120,20,.95)";
-        ctx.beginPath(); ctx.arc(pr.x1,pr.y1,Math.max(1,pr.rCore*0.8),0,7); ctx.fill();
-        continue;
-      }
-      const R1=Math.max(6, pr.rCore*4.5), R2=Math.max(3, pr.rCore*1.9);
-      const op=ctx.globalCompositeOperation;
-      ctx.globalCompositeOperation="lighter";
-      const g1=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R1);
-      g1.addColorStop(0,"rgba(255,168,86,.22)");
-      g1.addColorStop(0.45,"rgba(255,150,66,.08)");
-      g1.addColorStop(1,"rgba(255,140,56,0)");
-      ctx.fillStyle=g1;
-      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R1,0,7); ctx.fill();
-      const g2=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R2);
-      g2.addColorStop(0,"rgba(255,214,160,.42)");
-      g2.addColorStop(1,"rgba(255,186,116,0)");
-      ctx.fillStyle=g2;
-      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R2,0,7); ctx.fill();
-      ctx.globalCompositeOperation=op;
-      // ядро — тёплый белый 3000 K
-      ctx.fillStyle="rgba(255,238,216,.95)";
-      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
     }
+  }
+  // ФИНАЛЬНЫЙ СЛОЙ ДИОДОВ: тёплое свечение 3000 K поверх стержней —
+  // свет виден сквозь стекло (блум), диоды не исчезают при приближении
+  for(const pr of ledLayer){
+    if(LB){
+      const R3=Math.max(4, pr.rCore*2.6);
+      const g3=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R3);
+      g3.addColorStop(0,"rgba(255,170,70,.85)");
+      g3.addColorStop(0.6,"rgba(255,160,60,.30)");
+      g3.addColorStop(1,"rgba(255,150,50,0)");
+      ctx.fillStyle=g3;
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R3,0,7); ctx.fill();
+      ctx.fillStyle="rgba(210,120,20,.95)";
+      ctx.beginPath(); ctx.arc(pr.x1,pr.y1,Math.max(1,pr.rCore*0.8),0,7); ctx.fill();
+      continue;
+    }
+    const R1=Math.max(6, pr.rCore*4.5), R2=Math.max(3, pr.rCore*1.9);
+    const op=ctx.globalCompositeOperation;
+    ctx.globalCompositeOperation="lighter";
+    const g1=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R1);
+    g1.addColorStop(0,"rgba(255,168,86,.22)");
+    g1.addColorStop(0.45,"rgba(255,150,66,.08)");
+    g1.addColorStop(1,"rgba(255,140,56,0)");
+    ctx.fillStyle=g1;
+    ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R1,0,7); ctx.fill();
+    const g2=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R2);
+    g2.addColorStop(0,"rgba(255,214,160,.42)");
+    g2.addColorStop(1,"rgba(255,186,116,0)");
+    ctx.fillStyle=g2;
+    ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R2,0,7); ctx.fill();
+    ctx.globalCompositeOperation=op;
+    ctx.fillStyle="rgba(255,238,216,.95)";
+    ctx.beginPath(); ctx.arc(pr.x1,pr.y1,pr.rCore,0,7); ctx.fill();
   }
 }
 
