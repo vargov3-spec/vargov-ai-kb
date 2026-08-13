@@ -5433,7 +5433,7 @@ function updateSpec(){
         scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
       ${scene.ribbons.length>1?`<tr><td>Отрезки ленты</td><td>${
         scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(1)).join(" + ")} м</td></tr>`:""}
-      <tr><td>${state.opaque?"Керамические стержни":"Стеклянные трубки"} Ø${ROD_D}</td><td>${rods} шт</td></tr>
+      <tr><td>${state.opaque?"Непрозрачные стержни":"Стеклянные трубки"} Ø${ROD_D}</td><td>${rods} шт</td></tr>
       ${(()=>{
         // ЦВЕТА И КОЛИЧЕСТВА — ПРЯМО В РАСЧЁТЕ. Без градиента — один цвет
         // каталога на все трубки; с градиентом — три цвета RAL со штуками
@@ -5606,7 +5606,7 @@ function openRalPicker(title, curId, onPick, onClear, specials, opaqueOpt){
       if(state.lastSpec) updateSpec();
     };
     const tx=document.createElement("span");
-    tx.textContent="Непрозрачные (керамика)";
+    tx.textContent="Непрозрачные";
     row.appendChild(cb); row.appendChild(tx);
     pop.appendChild(row);
   }
@@ -6046,7 +6046,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Vargov(R) Design — предварительная спецификация ленточной композиции (тип LC0217)"],
     ["Габарит (задан), мм", `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`],
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
-    ["Материал стержней", state.opaque? "керамика (непрозрачные)" : "стекло"],
+    ["Стержни", state.opaque? "непрозрачные" : "стеклянные (прозрачные)"],
     ["Цвет стержней", state.color.name],
     ...(ui.gradOn.checked ? (()=>{
       // раскладка трёх цветов RAL: считаем штуки каждого
