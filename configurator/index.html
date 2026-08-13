@@ -57,15 +57,16 @@
   #regen2:hover{filter:brightness(1.12)}
   #regen2:active{transform:translateY(calc(-50% + 1px))}
   #lightBtn{
-    position:absolute; left:14px; top:12px; width:40px; height:40px;
+    position:absolute; left:14px; top:12px; width:42px; height:42px;
     border-radius:50%; border:1px solid var(--gold2); cursor:pointer;
-    background:rgba(20,20,24,.72); color:var(--gold2); font-size:19px;
+    background:linear-gradient(180deg, #d8b356, #a9822a 70%, #8a6a20);
+    color:#1a1408; font-size:19px;
     line-height:1; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.4);
+    box-shadow:0 4px 16px rgba(0,0,0,.5);
   }
-  #lightBtn:hover{filter:brightness(1.25)}
-  #lightBtn.lit{background:rgba(245,245,247,.85); color:#7a6320;
-    border-color:#b6952f; box-shadow:0 3px 10px rgba(0,0,0,.18)}
+  #lightBtn:hover{filter:brightness(1.12)}
+  #lightBtn:active{transform:translateY(1px)}
+  #lightBtn.lit{box-shadow:0 4px 16px rgba(0,0,0,.25)}
   canvas{display:block; width:100%; height:100%; cursor:grab}
   canvas:active{cursor:grabbing}
   fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
@@ -86,6 +87,8 @@
   .colorBtn{display:flex; align-items:center; justify-content:center; gap:8px;
     width:152px; min-width:152px; height:34px; overflow:hidden}
   .colorBtn span:last-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:12px}
+  .colorBtn.off{border-style:dashed !important; background:transparent !important;
+    color:var(--dim) !important; border-color:#3f3f49 !important}
   .swdot{width:16px; height:16px; min-width:16px; border-radius:3px;
          box-shadow:0 0 0 1px rgba(255,255,255,.22)}
   .ralOverlay{position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:60;
@@ -217,12 +220,13 @@
         <button class="btn2 colorBtn" id="colorBtn" type="button">
           <span class="swdot" id="colorDot"></span><span id="colorName"></span></button></div>
       <input id="gradC" type="hidden" value="RAL1005">
-      <div class="row"><label for="gradOn">Градиент</label>
-        <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
-          <button class="btn2 colorBtn" id="gradBtn" type="button">
-            <span class="swdot" id="gradDot"></span><span id="gradName"></span></button>
-          <input id="gradOn" type="checkbox">
-        </span></div>
+      <div class="row"><label>Градиент</label>
+        <button class="btn2 colorBtn" id="gradBtn" type="button">
+          <span class="swdot" id="gradDot"></span><span id="gradName"></span></button></div>
+      <div class="row"><label>Каркас</label>
+        <button class="btn2 colorBtn" id="frameBtn" type="button">
+          <span id="frameName"></span></button></div>
+      <input id="gradOn" type="checkbox" hidden>
     </fieldset>
 
     <details class="adv" id="advBox">
@@ -233,12 +237,10 @@
           <option value="2" selected>2 ряда</option>
         </select>
       </div>
-      <div class="row"><label for="frame">Каркас</label>
-        <select id="frame">
-          <option value="gold" selected>Золото</option>
-          <option value="chrome">Хром</option>
-        </select>
-      </div>
+      <select id="frame" style="display:none">
+        <option value="gold" selected>Золото</option>
+        <option value="chrome">Хром</option>
+      </select>
       <div class="row"><label for="rWidth">Длина стержня</label>
         <select id="rWidth">
           <option value="100">100 мм</option>
@@ -3197,6 +3199,7 @@ function closeFans(ribbons, box){
           for(let k=i0w;k<=i1w;k++){
             const r=row[k], u=U[k-i0w], L=LEN[k-i0w];
             const st=Math.min(n-1, r.st), P=rb.centers[st];
+            const aOld=r.a.slice(), bOld=r.b.slice();
             if(twoRow){
               r.b=[P[0]+u[0]*IN2, P[1]+u[1]*IN2, P[2]+u[2]*IN2];
               r.a=[P[0]+u[0]*(IN2+L), P[1]+u[1]*(IN2+L), P[2]+u[2]*(IN2+L)];
@@ -3207,10 +3210,12 @@ function closeFans(ribbons, box){
             const t0=Math.max(0,st-1), t1=Math.min(n-1,st+1);
             const T=V.norm(V.sub(rb.centers[t1], rb.centers[t0]));
             r.n=V.norm(V.cross(T,u));
+            // кант двигается ДЕЛЬТОЙ торца: в зонах сварки кант идёт своей
+            // кривой (мост), и абсолютная пересадка рвала его углом до 132°
             const rl=railOf(r);
-            if(rl && rl[st]) rl[st]=[r.a[0]+u[0]*IN2, r.a[1]+u[1]*IN2, r.a[2]+u[2]*IN2];
+            if(rl && rl[st]) for(let x=0;x<3;x++) rl[st][x]+=r.a[x]-aOld[x];
             if(!twoRow && rb.railB[st])
-              rb.railB[st]=[r.b[0]-u[0]*IN2, r.b[1]-u[1]*IN2, r.b[2]-u[2]*IN2];
+              for(let x=0;x<3;x++) rb.railB[st][x]+=r.b[x]-bOld[x];
           }
         };
         // ЭТАП 1: доворот стержней (скольжение на леске), контур на месте
@@ -3225,17 +3230,47 @@ function closeFans(ribbons, box){
           for(const u of U){ dir[0]+=u[0]; dir[1]+=u[1]; dir[2]+=u[2]; }
           const uAvg=V.norm(dir);
           const mAmp=Math.min(rb.halfW*0.35, Math.max(14, (g0-step*1.6)*0.8));
-          const sts=[...stSet].sort((q,z)=>q-z);
+          // ШИРОКОЕ ОКНО С НУЛЕВЫМИ КРАЯМИ И ПРЕДЕЛОМ КРУТИЗНЫ (замечание
+          // пользователя: острые углы на контуре физически невозможны).
+          // Узкий колокол обрывался ступенькой до 20 мм на границе окна —
+          // теперь смещение растянуто на ±10 станций за веер, по краям
+          // ровно ноль, крутизна не выше 3 мм на станцию
+          const stA=Math.min(n-1, row[i0w].st), stB=Math.min(n-1, row[i1w].st);
+          const wideLo=Math.max(0, Math.min(stA,stB)-10);
+          const wideHi=Math.min(n-1, Math.max(stA,stB)+10);
+          const sts=[];
+          for(let st=wideLo; st<=wideHi; st++) sts.push(st);
+          const m2=sts.length;
+          const prof=sts.map((st,si)=>mAmp*Math.sin(Math.PI*si/Math.max(1,m2-1)));
+          for(let p2=0;p2<2;p2++){
+            for(let si=1;si<m2;si++) prof[si]=Math.min(prof[si], prof[si-1]+3);
+            for(let si=m2-2;si>=0;si--) prof[si]=Math.min(prof[si], prof[si+1]+3);
+          }
+          // расширить снимок и набор стержней на широкое окно
+          for(const st of sts){
+            if(stSet.has(st)) continue;
+            stSet.add(st);
+            bakC.push({st, c:rb.centers[st].slice(),
+              rA:rb.railA[st]?rb.railA[st].slice():null,
+              rB:rb.railB[st]?rb.railB[st].slice():null});
+          }
+          for(const r of rb.rods){
+            const st=Math.min(n-1,r.st);
+            if(st>=wideLo && st<=wideHi && !winSet.has(r)){
+              winRods.push(r); winSet.add(r);
+              bakR.push({r, a:r.a.slice(), b:r.b.slice(), nn:r.n.slice()});
+            }
+          }
+          const fanSet=new Set();
+          for(let k=i0w;k<=i1w;k++) fanSet.add(row[k]);
           sts.forEach((st,si)=>{
-            const t=(si+1)/(sts.length+1);
-            const w=Math.sin(Math.PI*t);
-            const dv=[uAvg[0]*mAmp*w, uAvg[1]*mAmp*w, uAvg[2]*mAmp*w];
+            const dv=[uAvg[0]*prof[si], uAvg[1]*prof[si], uAvg[2]*prof[si]];
             const P=rb.centers[st];
             P[0]+=dv[0]; P[1]+=dv[1]; P[2]+=dv[2];
-            // второй ряд (и все стержни станции вне ряда с веером)
-            // переезжает жёстко вместе с контуром
+            // все стержни станции, кроме пересаживаемого ряда веера,
+            // переезжают жёстко вместе с контуром
             for(const r of winRods){
-              if(Math.min(n-1,r.st)!==st || row.indexOf(r)>=0) continue;
+              if(Math.min(n-1,r.st)!==st || fanSet.has(r)) continue;
               for(let x=0;x<3;x++){ r.a[x]+=dv[x]; r.b[x]+=dv[x]; }
               const rl2=railOf(r);
               if(rl2 && rl2[st]) for(let x=0;x<3;x++) rl2[st][x]+=dv[x];
@@ -3319,8 +3354,17 @@ function centerSag(ribbons){
     } else {
       for(let i=0;i<n;i++) f[i]*=24;
     }
-    for(let it=0; it<6; it++)
+    for(let it=0; it<10; it++)
       for(let i=1;i<n-1;i++) f[i]=(f[i-1]+2*f[i]+f[i+1])/4;
+    // ОСТРЫХ УГЛОВ НА КОНТУРЕ НЕ БЫВАЕТ (замечание пользователя: «это
+    // физически невозможно»). У перекатов горизонтальность стержней
+    // гаснет за пару станций, и профиль провиса обрывался ступенькой.
+    // Крутизна профиля ограничена 2.5 мм на станцию проходами вперёд и
+    // назад — контур опускается и поднимается только плавно
+    for(let p2=0;p2<2;p2++){
+      for(let i=1;i<n;i++) f[i]=Math.min(f[i], f[i-1]+2.5);
+      for(let i=n-2;i>=0;i--) f[i]=Math.min(f[i], f[i+1]+2.5);
+    }
     rb.__csag=f;
   }
   if(!anyTwo) return 0;
@@ -3354,6 +3398,113 @@ function centerSag(ribbons){
     restore();
   }
   return 0;
+}
+
+/* СГЛАЖИВАНИЕ УГЛОВ КАНТОВ — острых углов на проволоке не бывает
+   (правило пользователя: «это физически невозможно»). Сварка мостов и
+   локальные правки оставляли на кантах углы 30-132°. Финальный проход:
+   каждый угол круче 32° разглаживается лапласианом в окне ±3 станции
+   (края окна закреплены), торцы стержней ряда следуют за кантом той же
+   дельтой. Приёмка окна: угол уменьшился, капсульные зазоры и бокс
+   соблюдены — иначе откат. Два прохода по сцене */
+function smoothRails(ribbons, box){
+  const lim3=[box.w, box.h, box.d];
+  const angAt=(P,i)=>{
+    if(i<1 || i+1>=P.length) return 0;
+    const v1=[P[i][0]-P[i-1][0],P[i][1]-P[i-1][1],P[i][2]-P[i-1][2]];
+    const v2=[P[i+1][0]-P[i][0],P[i+1][1]-P[i][1],P[i+1][2]-P[i][2]];
+    const l1=Math.hypot(...v1), l2=Math.hypot(...v2);
+    if(l1<3||l2<3) return 0;
+    return Math.acos(Math.max(-1,Math.min(1,
+      (v1[0]*v2[0]+v1[1]*v2[1]+v1[2]*v2[2])/(l1*l2))))*180/Math.PI;
+  };
+  let fixed=0;
+  for(let pass=0; pass<2; pass++)
+  for(const rb of ribbons){
+    const n=rb.centers.length, twoRow=!!rb.dirUp;
+    const mapA={}, mapB={};
+    for(const r of rb.rods){
+      const st=Math.min(n-1,r.st);
+      if(twoRow){ if(r.u2>0) mapA[st]=r; else mapB[st]=r; }
+      else { mapA[st]=r; mapB[st]=r; }
+    }
+    // контуры: кант A (торцы a ряда A), кант B, центральный (крепления b
+    // обоих рядов — только у двурядной)
+    const contours=[
+      {P:rb.railA, rods:(k)=>mapA[k]?[[mapA[k], twoRow?"a":"a"]]:[]},
+      {P:rb.railB, rods:(k)=>mapB[k]?[[mapB[k], twoRow?"a":"b"]]:[]},
+    ];
+    if(twoRow) contours.push(
+      {P:rb.centers, rods:(k)=>[mapA[k],mapB[k]].filter(Boolean).map(r=>[r,"b"])});
+    for(const co of contours){
+      const rail=co.P;
+      if(!rail) continue;
+      for(let i=1;i+1<rail.length;i++){
+        const a0=angAt(rail,i);
+        if(a0<=32) continue;
+        const i0w=Math.max(1,i-3), i1w=Math.min(rail.length-2,i+3);
+        const bakRail=[], bakRod=[];
+        for(let k=i0w;k<=i1w;k++){
+          bakRail.push(rail[k].slice());
+          for(const [r] of co.rods(k)) bakRod.push({r, a:r.a.slice(), b:r.b.slice()});
+        }
+        for(let it=0; it<20; it++){
+          for(let k=i0w+1;k<i1w;k++)
+            for(let x=0;x<3;x++)
+              rail[k][x]+=0.5*(rail[k-1][x]+rail[k+1][x]-2*rail[k][x]);
+          if(angAt(rail,i)<26) break;
+        }
+        // торцы/крепления стержней следуют за контуром той же дельтой
+        const moved=[];
+        for(let k=i0w;k<=i1w;k++){
+          const d0=bakRail[k-i0w];
+          const dv=[rail[k][0]-d0[0], rail[k][1]-d0[1], rail[k][2]-d0[2]];
+          if(Math.hypot(...dv)<0.3) continue;
+          for(const [r, end] of co.rods(k)){
+            const tip=r[end];
+            tip[0]+=dv[0]; tip[1]+=dv[1]; tip[2]+=dv[2];
+            moved.push(r);
+          }
+        }
+        let ok=angAt(rail,i) < Math.max(26, a0-5);
+        if(ok){
+          chk:
+          for(const r of moved){
+            for(const p2 of [r.a, r.b]) for(let x=0;x<3;x++)
+              if(p2[x]<-ROD_R-6 || p2[x]>lim3[x]+ROD_R+6){ ok=false; break chk; }
+            for(const rb2 of ribbons) for(const q of rb2.rods){
+              if(q===r) continue;
+              if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+              const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
+              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+                 (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk; }
+            }
+          }
+        }
+        if(!ok){
+          // стержни двигать нельзя — контур разглаживается сам по себе:
+          // леска позволяет проволоке отходить от торцов на пару
+          // сантиметров, а острый угол на проволоке невозможен физически
+          for(const bk of bakRod){ bk.r.a=bk.a; bk.r.b=bk.b; }
+          let det=0;
+          for(let k=i0w;k<=i1w;k++)
+            det=Math.max(det, Math.hypot(
+              rail[k][0]-bakRail[k-i0w][0],
+              rail[k][1]-bakRail[k-i0w][1],
+              rail[k][2]-bakRail[k-i0w][2]));
+          let railOk=det<=20 && angAt(rail,i)<a0-5;
+          if(railOk) for(let k=i0w;k<=i1w && railOk;k++)
+            for(let x=0;x<3;x++)
+              if(rail[k][x]<-ROD_R-6 || rail[k][x]>lim3[x]+ROD_R+6) railOk=false;
+          if(!railOk){
+            for(let k=i0w;k<=i1w;k++){ rail[k][0]=bakRail[k-i0w][0];
+              rail[k][1]=bakRail[k-i0w][1]; rail[k][2]=bakRail[k-i0w][2]; }
+          } else fixed++;
+        } else fixed++;
+      }
+    }
+  }
+  return fixed;
 }
 
 function volCov(ribbons, box){
@@ -4727,8 +4878,10 @@ function buildScene(){
     }
   }
   // поперечный провис центральной проволоки — после тросов и продольного
-  // провиса: модуляция по пролётам требует якорей rb.cabSt
-  if(scene0Plast!=="edge") centerSag(ribbons);
+  // провиса: модуляция по пролётам требует якорей rb.cabSt; затем
+  // сглаживание углов кантов (сварки и правки не имеют права оставлять
+  // на проволоке угол круче 32°)
+  if(scene0Plast!=="edge"){ centerSag(ribbons); smoothRails(ribbons, box); }
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
@@ -5135,7 +5288,8 @@ function draw(){
 
   // хром — серый металл, не белый: прежние 198-212 после осветления канта
   // (x1.15) уходили в белизну
-  const gold = ui.frame.value==="chrome" ? [150,156,164] : [201,162,39];
+  const gold = state.frameRal ? hexRgb(state.frameRal.c)
+             : (ui.frame.value==="chrome" ? [150,156,164] : [201,162,39]);
   for(const pr of prims){
     if(pr.kind===0){ // подвес
       ctx.strokeStyle=LB ? "rgba(110,110,120,.55)" : "rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
@@ -5357,7 +5511,7 @@ const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
 // однорядный №4194952124 (габарит по умолчанию 2400×900×800)
 const SEED_PINNED = {1: 4194952124, 2: 1550467706};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
-               autoSeed: true};
+               autoSeed: true, frameRal: null};
 
 // ВЫБОР ЦВЕТА — КНОПКОЙ. Вместо сетки свотчей в панели — кнопка
 // «Выбрать цвет»: по клику открывается палитра со ВСЕМИ 198 цветами
@@ -5388,7 +5542,7 @@ const pick = (c)=>{
   if(state.lastSpec) updateSpec();
 };
 // всплывающая палитра каталога: заголовок, поиск, сетка 198 свотчей
-function openRalPicker(title, curId, onPick){
+function openRalPicker(title, curId, onPick, onClear, specials){
   const ov=document.createElement("div");
   ov.className="ralOverlay";
   const pop=document.createElement("div");
@@ -5403,6 +5557,17 @@ function openRalPicker(title, curId, onPick){
   const rebuild=(q)=>{
     grid.innerHTML="";
     const qq=(q||"").trim().toLowerCase();
+    for(const g of (specials||[])){
+      if(qq && g.name.toLowerCase().indexOf(qq)<0) continue;
+      const el=document.createElement("div");
+      el.className="ralSw"+(g.id===curId?" sel":"");
+      el.style.background=g.c;
+      el.title=g.name;
+      el.onclick=()=>{ document.body.removeChild(ov); onPick(g); };
+      el.onmouseenter=()=>{ cur.textContent=g.name; };
+      el.onmouseleave=()=>{ cur.textContent="Сейчас: "+curG.name; };
+      grid.appendChild(el);
+    }
     for(const g of GLASS_COLORS){
       if(qq && g.name.toLowerCase().indexOf(qq)<0) continue;
       const el=document.createElement("div");
@@ -5421,6 +5586,14 @@ function openRalPicker(title, curId, onPick){
     if(e.key==="Escape" && ov.parentNode){ document.body.removeChild(ov); }
     if(!ov.parentNode) document.removeEventListener("keydown", esc);
   });
+  if(onClear){
+    const off=document.createElement("button");
+    off.className="btn2"; off.type="button";
+    off.textContent="Без градиента";
+    off.style.marginBottom="8px";
+    off.onclick=()=>{ document.body.removeChild(ov); onClear(); };
+    pop.appendChild(off);
+  }
   pop.appendChild(h); pop.appendChild(find); pop.appendChild(grid); pop.appendChild(cur);
   ov.appendChild(pop); document.body.appendChild(ov);
   rebuild("");
@@ -5428,15 +5601,66 @@ function openRalPicker(title, curId, onPick){
 }
 document.getElementById("colorBtn").onclick=()=>
   openRalPicker("Цвет трубок — каталог RAL (Ralcolor_VG)", state.color.id, (g)=>pick(g));
+// ГРАДИЕНТ БЕЗ ГАЛОЧКИ (решение пользователя): кнопка по умолчанию
+// неактивна и бесцветна; клик открывает палитру, выбор цвета ВКЛЮЧАЕТ
+// градиент, пункт «Без градиента» в палитре выключает
+function updateGradBtn(){
+  const btn=document.getElementById("gradBtn");
+  const nm=document.getElementById("gradName");
+  if(ui.gradOn.checked){
+    const g=ralOf(ui.gradC.value);
+    nm.textContent=g.id; nm.title=g.name;
+    btn.classList.remove("off");
+    btn.style.background=g.c;
+    const c=hexRgb(g.c), lum=0.299*c[0]+0.587*c[1]+0.114*c[2];
+    btn.style.color=lum>150? "#17130a" : "#f4f0e6";
+    btn.style.borderColor="rgba(255,255,255,.28)";
+  } else {
+    nm.textContent="выбрать…";
+    nm.title="Градиент выключен: нажмите и выберите второй цвет";
+    btn.classList.add("off");
+    btn.style.background=""; btn.style.color=""; btn.style.borderColor="";
+  }
+}
 document.getElementById("gradBtn").onclick=()=>
-  openRalPicker("Второй цвет для микса — каталог RAL", ui.gradC.value, (g)=>{
+  openRalPicker("Второй цвет градиента — каталог RAL", ui.gradC.value, (g)=>{
     ui.gradC.value=g.id;
-    setBtnColor("gradDot","gradName",g);
-    needRedraw=true;
-    if(state.lastSpec) updateSpec();
+    ui.gradOn.checked=true;
+    ui.gradOn.dispatchEvent(new Event("change"));
+    updateGradBtn();
+  }, ()=>{
+    ui.gradOn.checked=false;
+    ui.gradOn.dispatchEvent(new Event("change"));
+    updateGradBtn();
   });
+// ЦВЕТ КАРКАСА (решение пользователя): штатные золото и хром — первыми
+// свотчами палитры, дальше весь каталог RAL
+const FRAME_SPECIALS=[
+  {id:"gold",   name:"Золото (штатная отделка)", c:"#C9A227"},
+  {id:"chrome", name:"Хром (штатная отделка)",   c:"#969CA4"},
+];
+function updateFrameBtn(){
+  const btn=document.getElementById("frameBtn");
+  const nm=document.getElementById("frameName");
+  const g=state.frameRal || FRAME_SPECIALS[ui.frame.value==="chrome"?1:0];
+  nm.textContent=state.frameRal ? g.id : (ui.frame.value==="chrome"?"Хром":"Золото");
+  nm.title=g.name;
+  btn.style.background=g.c;
+  const c=hexRgb(g.c), lum=0.299*c[0]+0.587*c[1]+0.114*c[2];
+  btn.style.color=lum>150? "#17130a" : "#f4f0e6";
+  btn.style.borderColor="rgba(255,255,255,.28)";
+}
+document.getElementById("frameBtn").onclick=()=>
+  openRalPicker("Цвет каркаса — золото, хром или каталог RAL",
+    state.frameRal? state.frameRal.id : ui.frame.value, (g)=>{
+      if(g.id==="gold" || g.id==="chrome"){ state.frameRal=null; ui.frame.value=g.id; }
+      else state.frameRal=g;
+      updateFrameBtn();
+      needRedraw=true;
+    }, null, FRAME_SPECIALS);
 setBtnColor("colorDot","colorName", DEFAULT_GLASS);
-setBtnColor("gradDot","gradName", ralOf("RAL1005"));
+updateGradBtn();
+updateFrameBtn();
 
 /* ФОРМА ГАБАРИТА ЗАВИСИТ ОТ ПЛАСТИКИ. Для «микса» форма одна — «Шар»:
    плавный поток ленты читается в шаре, а в фигурных силуэтах (пирамида,
@@ -5545,18 +5769,34 @@ function prevRings(){ return tilePrev(g=>{
 // схематичные изображения САМИХ КОМПОЗИЦИЙ (по скриншотам пользователя):
 // «микс» — плывущая лента с перекатами, «на ребро» — конус колец-этажерка
 function prevMix(){ return tilePrev(g=>{
-  const N=72, top=[], bot=[];
-  for(let i=0;i<=N;i++){
-    const t=i/N, x=5+t*94;
-    const y=52+13*Math.sin(t*Math.PI*2*1.15+0.4)-6*Math.sin(t*Math.PI*0.9);
-    const w=13*Math.cos(t*Math.PI*1.6-0.5);   // перекаты: ширина меняет знак
-    top.push([x,y-w]); bot.push([x,y+w]);
+  // силуэт реальной генерации (по скриншоту пользователя): лента-змейка
+  // с завитком-петлёй посередине; Катмулл-Ром по опорным точкам
+  const cp=[[2,56],[15,38],[29,56],[41,68],[52,52],[46,35],[33,39],[41,58],
+            [57,68],[71,54],[81,36],[97,46]];
+  const P=[];
+  for(let i=0;i<cp.length-1;i++){
+    const p0=cp[Math.max(0,i-1)], p1=cp[i], p2=cp[i+1],
+          p3=cp[Math.min(cp.length-1,i+2)];
+    for(let j=0;j<8;j++){
+      const t=j/8, t2=t*t, t3=t2*t;
+      P.push([0,1].map(x=>0.5*((2*p1[x])+(-p0[x]+p2[x])*t
+        +(2*p0[x]-5*p1[x]+4*p2[x]-p3[x])*t2
+        +(-p0[x]+3*p1[x]-3*p2[x]+p3[x])*t3)));
+    }
   }
-  g.lineWidth=2.6;
+  const top=[], bot=[];
+  for(let i=0;i<P.length;i++){
+    const a2=P[Math.max(0,i-1)], b2=P[Math.min(P.length-1,i+1)];
+    let nx=-(b2[1]-a2[1]), ny=b2[0]-a2[0];
+    const L=Math.hypot(nx,ny)||1; nx/=L; ny/=L;
+    top.push([P[i][0]+nx*6.5, P[i][1]+ny*6.5]);
+    bot.push([P[i][0]-nx*6.5, P[i][1]-ny*6.5]);
+  }
+  g.lineWidth=2.1;
   g.beginPath(); top.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
   g.beginPath(); bot.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
-  g.lineWidth=1.3;
-  for(let i=2;i<N;i+=3){
+  g.lineWidth=1.1;
+  for(let i=2;i<P.length-1;i+=3){
     g.beginPath(); g.moveTo(top[i][0],top[i][1]); g.lineTo(bot[i][0],bot[i][1]); g.stroke();
   }
 });}
@@ -6135,7 +6375,8 @@ function variantState(){
   return {v:state.seed>>>0, w:+ui.dimW.value, d:+ui.dimD.value,
           h:+ui.dimH.value, c:+ui.dimC.value, pl:ui.plast.value,
           f:ui.form.value, r:+ui.rows.value, rw:+ui.rWidth.value,
-          rd:+ui.rodD.value, fr:ui.frame.value, col:state.color.id,
+          rd:+ui.rodD.value, fr:ui.frame.value,
+          frc:state.frameRal?state.frameRal.id:"", col:state.color.id,
           g:ui.gradOn.checked?1:0, gc:ui.gradC.value};
 }
 function applyVariant(o){
@@ -6153,8 +6394,10 @@ function applyVariant(o){
   if(o.col){ state.color=ralOf(o.col);
              setBtnColor("colorDot","colorName",state.color); }
   ui.gradOn.checked=!!+(o.g||0);
-  if(o.gc){ ui.gradC.value=o.gc;
-            setBtnColor("gradDot","gradName",ralOf(o.gc)); }
+  if(o.gc) ui.gradC.value=o.gc;
+  if(typeof updateGradBtn==="function") updateGradBtn();
+  state.frameRal=(o.frc && o.frc!=="") ? ralOf(o.frc) : null;
+  if(typeof updateFrameBtn==="function") updateFrameBtn();
   // поле sg старых ссылок игнорируется: провис теперь всегда включён
   state.autoSeed=false;
   state.seed=(+o.v||state.seed)>>>0;
