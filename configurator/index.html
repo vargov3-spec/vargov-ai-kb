@@ -3432,6 +3432,123 @@ function centerSag(ribbons){
   return 0;
 }
 
+/* РАЗДВИЖКА ГРЕБЁНКИ. У швов сварки слоёв станции местами разрежены
+   вдвое-втрое против шага (замер 4400/6000: щели 23-35 мм при шаге 11.6)
+   — в гребёнке стержней читается пропуск. Стержни крепятся к контурам
+   свободной петлёй лески, поэтому могут скользить ВДОЛЬ ленты: станции
+   окна ±7 переставляются равномерно по дуговой длине полилинии центров
+   (края окна закреплены), канты, стержни и якоря тросов следуют дельтой
+   своей станции. Пропуск 2х разбирается на ~14 шагов по ~1.07х.
+   Приёмка окна: щель сжалась до <=1.5 шага, зазоры и бокс целы — иначе
+   полный откат */
+function spreadGaps(ribbons, box){
+  const lim3=[box.w, box.h, box.d];
+  let fixed=0;
+  for(const rb of ribbons){
+    const C=rb.centers, n=C.length;
+    if(!C || n<10) continue;
+    const step=rb.stepEff||11.6;
+    const bySt={};
+    for(const r of rb.rods)(bySt[r.st]=bySt[r.st]||[]).push(r);
+    for(let i=1;i<n;i++){
+      const d0=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1],C[i][2]-C[i-1][2]);
+      if(d0<=step*1.7) continue;
+      const W=7;
+      const i0=Math.max(0,i-W), i1=Math.min(n-1,i+W-1);
+      if(i1-i0<4) continue;
+      const bakC=[], bakA=[], bakB=[], bakR=[], bakCab=[];
+      for(let k=i0;k<=i1;k++){
+        bakC.push(C[k].slice());
+        bakA.push(rb.railA && rb.railA[k]? rb.railA[k].slice():null);
+        bakB.push(rb.railB && rb.railB[k]? rb.railB[k].slice():null);
+        for(const r of bySt[k]||[]) bakR.push({r, a:r.a.slice(), b:r.b.slice()});
+      }
+      if(rb.cabs) for(const c of rb.cabs)
+        if(c.st>i0 && c.st<i1) bakCab.push({c, to:c.to.slice(), from:c.from.slice()});
+      // дуговая параметризация старой полилинии окна
+      const s=[0];
+      for(let k=i0+1;k<=i1;k++)
+        s.push(s[s.length-1]+Math.hypot(
+          bakC[k-i0][0]-bakC[k-1-i0][0],
+          bakC[k-i0][1]-bakC[k-1-i0][1],
+          bakC[k-i0][2]-bakC[k-1-i0][2]));
+      const L=s[s.length-1];
+      const posAt=(t)=>{
+        let k=1; while(k<s.length && s[k]<t) k++;
+        if(k>=s.length) k=s.length-1;
+        const u=(t-s[k-1])/Math.max(1e-6, s[k]-s[k-1]);
+        const A=bakC[k-1], B2=bakC[k];
+        return [A[0]+(B2[0]-A[0])*u, A[1]+(B2[1]-A[1])*u, A[2]+(B2[2]-A[2])*u];
+      };
+      const restore=()=>{
+        let bi=0;
+        for(let k=i0;k<=i1;k++){
+          C[k][0]=bakC[bi][0]; C[k][1]=bakC[bi][1]; C[k][2]=bakC[bi][2];
+          if(bakA[bi] && rb.railA[k]){ rb.railA[k][0]=bakA[bi][0];
+            rb.railA[k][1]=bakA[bi][1]; rb.railA[k][2]=bakA[bi][2]; }
+          if(bakB[bi] && rb.railB[k]){ rb.railB[k][0]=bakB[bi][0];
+            rb.railB[k][1]=bakB[bi][1]; rb.railB[k][2]=bakB[bi][2]; }
+          bi++;
+        }
+        for(const bk of bakR){
+          bk.r.a[0]=bk.a[0]; bk.r.a[1]=bk.a[1]; bk.r.a[2]=bk.a[2];
+          bk.r.b[0]=bk.b[0]; bk.r.b[1]=bk.b[1]; bk.r.b[2]=bk.b[2];
+        }
+        for(const bk of bakCab){
+          bk.c.to[0]=bk.to[0]; bk.c.to[1]=bk.to[1]; bk.c.to[2]=bk.to[2];
+          bk.c.from[0]=bk.from[0]; bk.c.from[1]=bk.from[1]; bk.c.from[2]=bk.from[2];
+        }
+      };
+      // стержни у краёв щели часто уже стоят на минимальном капсульном
+      // зазоре серединами (веер шва) — полное сжатие рушит ближний лимит.
+      // Дельта пробуется в масштабе: сколько пускают зазоры, столько щель
+      // и сжимается (0.55 даёт ~1.5 шага вместо 2)
+      let done=false;
+      for(const sc of [1, 0.55, 0.35]){
+        const moved=[];
+        for(let k=i0+1;k<i1;k++){
+          const P=posAt(L*(k-i0)/(i1-i0));
+          const dv=[(P[0]-bakC[k-i0][0])*sc, (P[1]-bakC[k-i0][1])*sc,
+                    (P[2]-bakC[k-i0][2])*sc];
+          if(Math.hypot(...dv)<0.3) continue;
+          C[k][0]=bakC[k-i0][0]+dv[0]; C[k][1]=bakC[k-i0][1]+dv[1];
+          C[k][2]=bakC[k-i0][2]+dv[2];
+          for(const arr of [rb.railA, rb.railB])
+            if(arr && arr[k]){ arr[k][0]+=dv[0]; arr[k][1]+=dv[1]; arr[k][2]+=dv[2]; }
+          for(const r of bySt[k]||[]){
+            for(const p of [r.a, r.b]){ p[0]+=dv[0]; p[1]+=dv[1]; p[2]+=dv[2]; }
+            moved.push(r);
+          }
+          if(rb.cabs) for(const c of rb.cabs) if(c.st===k){
+            c.to[0]+=dv[0]; c.to[1]+=dv[1]; c.to[2]+=dv[2];
+            c.from[0]+=dv[0]; c.from[2]+=dv[2];   // потолочная точка — над якорем
+          }
+        }
+        const d1=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1],C[i][2]-C[i-1][2]);
+        let ok=d1<=d0-3;   // осмысленное улучшение (полный масштаб: <=1.1 шага)
+        if(ok){
+          chk:
+          for(const r of moved){
+            for(const p2 of [r.a, r.b]) for(let x=0;x<3;x++)
+              if(p2[x]<-ROD_R-6 || p2[x]>lim3[x]+ROD_R+6){ ok=false; break chk; }
+            for(const rb2 of ribbons) for(const q of rb2.rods){
+              if(q===r) continue;
+              if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+              const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
+              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+                 (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk; }
+            }
+          }
+        }
+        if(ok){ done=true; fixed++; break; }
+        restore();
+      }
+      void done;
+    }
+  }
+  return fixed;
+}
+
 /* СГЛАЖИВАНИЕ УГЛОВ КАНТОВ — острых углов на проволоке не бывает
    (правило пользователя: «это физически невозможно»). Сварка мостов и
    локальные правки оставляли на кантах углы 30-132°. Финальный проход:
@@ -5035,6 +5152,9 @@ function buildScene(){
   // сглаживание углов кантов (сварки и правки не имеют права оставлять
   // на проволоке угол круче 32°)
   if(scene0Plast!=="edge"){ centerSag(ribbons); smoothRails(ribbons, box); }
+  // раздвижка гребёнки — после всех провисов и сглаживаний: пропуски у
+  // швов разбираются скольжением станций вдоль ленты (для любой пластики)
+  spreadGaps(ribbons, box);
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
