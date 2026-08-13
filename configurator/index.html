@@ -139,8 +139,9 @@
   details.adv summary:hover{color:var(--gold2)}
   details.adv[open] summary{color:var(--gold2); margin-bottom:6px}
   #stat{position:absolute; left:14px; bottom:12px; color:var(--gold2); font-size:12.5px;
-    pointer-events:none; font-variant-numeric:tabular-nums;
+    pointer-events:none; font-variant-numeric:tabular-nums; line-height:1.55;
     text-shadow:0 1px 3px rgba(0,0,0,.45)}
+  #stat span{opacity:.62}
   /* светлый шоурум: надписи поверх сцены — чёрным (решение пользователя) */
   #stage.light #dims{color:#1a1a1e; text-shadow:0 1px 3px rgba(255,255,255,.55)}
   #stage.light #stat{color:#1a1a1e; background:none;
@@ -5498,12 +5499,13 @@ function updateSpec(){
   // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
-  // мощность — и всё (трубки и свет остаются в «Расчёте»)
+  // мощность — с расшифровкой в четыре строки
   const stEl=document.getElementById("stat");
-  if(stEl) stEl.textContent =
-    `${m.toFixed(2)} пог. м · ${scene.params.ribbonW} мм`
-    + ` · ${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг`
-    + (leds ? ` · ${(leds*LED_W).toFixed(1)} Вт` : "");
+  if(stEl) stEl.innerHTML =
+    `<span>Длина ленты:</span> ${m.toFixed(2)} пог. м<br>`
+    + `<span>Ширина ленты:</span> ${scene.params.ribbonW} мм<br>`
+    + `<span>Вес:</span> ${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг`
+    + (leds ? `<br><span>Мощность:</span> ${(leds*LED_W).toFixed(1)} Вт` : "");
 }
 
 /* ============================================================
