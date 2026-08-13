@@ -120,6 +120,29 @@
   }
   .btn2:hover{border-color:var(--gold)}
   input[type=range]{accent-color:var(--gold); width:120px; margin:0}
+  .tiles{display:flex; gap:8px; flex-wrap:wrap; margin:2px 0}
+  .tile{flex:1 1 45%; border:1px solid #33333c; border-radius:9px; background:#141418;
+    cursor:pointer; padding:8px 4px 6px; display:flex; flex-direction:column;
+    align-items:center; gap:3px; color:var(--txt); font-size:11.5px; user-select:none}
+  .tile:hover{border-color:#55555f}
+  .tile.on{border-color:var(--gold2); color:var(--gold2);
+    box-shadow:inset 0 0 0 1px var(--gold2), 0 2px 10px rgba(0,0,0,.35)}
+  .tiles.form .tile{flex:0 0 calc(25% - 6px); padding:6px 2px 5px; font-size:10.5px}
+  .tile canvas{display:block}
+  details.adv{margin:10px 0; border:1px solid #26262c; border-radius:10px; padding:7px 12px}
+  details.adv summary{cursor:pointer; color:var(--dim); font-size:12px;
+    letter-spacing:.08em; text-transform:uppercase; outline:none}
+  details.adv summary:hover{color:var(--gold2)}
+  details.adv[open] summary{color:var(--gold2); margin-bottom:6px}
+  #stat{position:absolute; left:14px; bottom:12px; color:var(--gold2); font-size:12.5px;
+    background:rgba(11,11,13,.60); padding:5px 10px; border-radius:6px;
+    pointer-events:none; font-variant-numeric:tabular-nums}
+  #stat:empty{display:none}
+  #toast{position:absolute; left:50%; top:14px; transform:translateX(-50%);
+    max-width:70%; background:rgba(24,22,14,.92); border:1px solid var(--gold2);
+    color:#e8d9a8; font-size:13px; padding:9px 14px; border-radius:8px;
+    opacity:0; pointer-events:none; transition:opacity .3s}
+  #toast.show{opacity:1}
   .btns{display:flex; gap:8px; flex-wrap:wrap}
   .btns .btn2{flex:1 1 44%}
   .favRow{display:flex; gap:6px; align-items:center; margin:4px 0; font-size:12px}
@@ -179,12 +202,30 @@
 
     <fieldset>
       <legend>Пластика ленты</legend>
-      <div class="row"><label for="plast">Пластика</label>
-        <select id="plast">
-          <option value="mix" selected>Микс</option>
-          <option value="edge">На ребро</option>
-        </select>
-      </div>
+      <div class="tiles" id="plastTiles"></div>
+      <select id="plast" style="display:none">
+        <option value="mix" selected>Микс</option>
+        <option value="edge">На ребро</option>
+      </select>
+      <div class="tiles form" id="formTiles"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Стекло и свет</legend>
+      <div class="row"><label>Цвет трубок</label>
+        <button class="btn2 colorBtn" id="colorBtn" type="button">
+          <span class="swdot" id="colorDot"></span><span id="colorName"></span></button></div>
+      <input id="gradC" type="hidden" value="RAL1005">
+      <div class="row"><label for="gradOn">Градиент</label>
+        <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
+          <button class="btn2 colorBtn" id="gradBtn" type="button">
+            <span class="swdot" id="gradDot"></span><span id="gradName"></span></button>
+          <input id="gradOn" type="checkbox">
+        </span></div>
+    </fieldset>
+
+    <details class="adv" id="advBox">
+      <summary>Подробно</summary>
       <div class="row"><label for="rows">Рядность</label>
         <select id="rows">
           <option value="1">1 ряд</option>
@@ -213,36 +254,26 @@
           <option value="10" selected>Ø10 мм</option>
         </select>
       </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Стекло и свет</legend>
-      <div class="row"><label>Цвет трубок</label>
-        <button class="btn2 colorBtn" id="colorBtn" type="button">
-          <span class="swdot" id="colorDot"></span><span id="colorName"></span></button></div>
-      <input id="gradC" type="hidden" value="RAL1005">
-      <div class="row"><label for="gradOn">Градиент</label>
-        <span style="display:flex;gap:8px;align-items:center;justify-content:flex-end">
-          <button class="btn2 colorBtn" id="gradBtn" type="button">
-            <span class="swdot" id="gradDot"></span><span id="gradName"></span></button>
-          <input id="gradOn" type="checkbox">
-        </span></div>
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
       <div class="row"><label for="asm" title="Монтаж: композиция собирается станция за станцией, как на объекте">Сборка</label><input id="asm" type="range" min="0" max="100" value="100"></div>
-    </fieldset>
+    </details>
 
-    <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
     <div class="btns">
       <button class="btn2" id="favAdd">⭐ В избранное</button>
       <button class="btn2" id="favLink">Ссылка на вариант</button>
-      <button class="btn2" id="saveCsv">Спецификация CSV</button>
-      <button class="btn2" id="saveObj">3D-модель OBJ</button>
-      <button class="btn2" id="saveDxf">Чертёж DXF (3D)</button>
-      <button class="btn2" id="saveMont">Монтажная карта CSV</button>
-      <button class="btn2" id="savePat">Выкройка 1:1 (печать)</button>
     </div>
+    <details class="adv" id="prodBox">
+      <summary>Для производства</summary>
+      <div class="btns">
+        <button class="btn2" id="saveCsv">Спецификация CSV</button>
+        <button class="btn2" id="saveObj">3D-модель OBJ</button>
+        <button class="btn2" id="saveDxf">Чертёж DXF (3D)</button>
+        <button class="btn2" id="saveMont">Монтажная карта CSV</button>
+        <button class="btn2" id="savePat">Выкройка 1:1 (печать)</button>
+      </div>
+    </details>
 
     <fieldset style="margin-top:14px" id="favBox" hidden>
       <legend>Избранные композиции</legend>
@@ -262,6 +293,8 @@
     <div id="busy"><span class="spin"></span><span id="busyTxt">Генерация варианта композиции…</span></div>
     <button id="regen2" title="Обновить композицию" aria-label="Обновить композицию">Обновить композицию</button>
     <button id="lightBtn" title="Светлый шоурум" aria-label="Светлый шоурум">☀</button>
+    <div id="stat"></div>
+    <div id="toast"></div>
   </div>
 </div>
 
@@ -4408,6 +4441,12 @@ function buildScene(){
   // пересборка показывается целиком: слайдер сборки возвращается на 100%
   state.asm=1;
   if(ui.asm) ui.asm.value=100;
+  state.boxPreview=null;
+  // автоматика нарезки объясняет себя: плашка при появлении отрезков
+  if(ribbons.length>1 && state.lastRibN!==ribbons.length && typeof toast==="function")
+    toast("Лента длиннее ~5 пог. м — разбита на "+ribbons.length
+          +" отрезка с невидимым стыком (правило производства)");
+  state.lastRibN=ribbons.length;
   // ВЫРОЖДЕННЫЕ ВАРИАНТЫ НЕ ПОКАЗЫВАЮТСЯ. Иногда лестница и страховка
   // выходят с короткой лентой, висящей в углу габарита (замер: 3.14 пог. м
   // при заполнении около 40% на однорядной 2400×900×800). Такой вариант
@@ -4583,9 +4622,10 @@ function draw(){
   const prims = [];
   const p1=[0,0,0,0], p2=[0,0,0,0];
 
-  // габаритный бокс
+  // габаритный бокс (при наборе размеров — сразу из полей, до пересборки)
+  const boxV = state.boxPreview || scene.box;
   if(ui.showBox.checked){
-    const {w,h,d} = scene.box;
+    const {w,h,d} = boxV;
     const cor = [[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
     const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
     const hasEnv=!!scene.env;
@@ -4675,15 +4715,15 @@ function draw(){
       const m=[(cor[a][0]+cor[b][0])/2,(cor[a][1]+cor[b][1])/2,(cor[a][2]+cor[b][2])/2];
       if(project(m,B,p1)) ctx.fillText(txt, p1[0]+6, p1[1]-4);
     };
-    lbl(0,1, `${scene.box.w} мм`);
-    lbl(1,2, `${scene.box.d} мм`);
-    lbl(1,5, `${scene.box.h} мм`);
+    lbl(0,1, `${boxV.w} мм`);
+    lbl(1,2, `${boxV.d} мм`);
+    lbl(1,5, `${boxV.h} мм`);
   }
 
   { // ПОТОЛОК: пунктирный контур на высоте подвеса — видно, куда идут тросы
     const cH=Math.max(0, +ui.dimC.value||0);
     if(cH>0 && ui.cables.checked){
-      const {w,d}=scene.box, y=scene.box.h+cH;
+      const {w,d}=boxV, y=boxV.h+cH;
       const K=[[0,y,0],[w,y,0],[w,y,d],[0,y,d]];
       ctx.strokeStyle=LB ? "rgba(100,100,115,.40)" : "rgba(150,150,165,.30)"; ctx.lineWidth=1; ctx.setLineDash([6,7]);
       ctx.beginPath();
@@ -4961,6 +5001,12 @@ function updateSpec(){
   document.getElementById("dims").textContent =
     `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · ${m.toFixed(2)} пог. м`
     + ` · вариант №${state.seed}`;
+  // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
+  // к «Расчёту» — разговор с клиентом сразу предметный
+  const stEl=document.getElementById("stat");
+  if(stEl) stEl.textContent =
+    `${m.toFixed(2)} пог. м · ${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг`
+    + ` · ${rods} трубок` + (leds ? ` · ≈${(leds*10/1000).toFixed(1)} клм` : "");
 }
 
 /* ============================================================
@@ -5100,6 +5146,131 @@ for(const ck of CONCEPT_FORMS){
   }
 }
 
+/* ПЛИТКИ ВЫБОРА ПЛАСТИКИ И ФОРМ. Выпадающие списки «Микс/На ребро» и
+   «Форма-N» ни о чём не говорят человеку со стороны — плитки с маленькими
+   процедурными превью узнаются мгновенно. Превью плановых силуэтов
+   рисуются ЧЕСТНО — из тех же функций контура PLAN_SHAPES, что строят
+   геометрию; скрытые <select> остаются источником истины для всего кода */
+function tilePrev(drawFn){
+  const c=document.createElement("canvas");
+  c.width=104; c.height=104; c.style.width="52px"; c.style.height="52px";
+  const g=c.getContext("2d");
+  g.strokeStyle="#cfa93e"; g.lineWidth=3.4; g.lineCap="round"; g.lineJoin="round";
+  drawFn(g);
+  return c;
+}
+function prevPlan(key){ return tilePrev(g=>{
+  const F=(PLAN_SHAPES[key]||PLAN_SHAPES.circle).r;
+  let mx=0; for(let i=0;i<240;i++) mx=Math.max(mx, F(i/240*Math.PI*2));
+  g.beginPath();
+  for(let i=0;i<=240;i++){
+    const a=i/240*Math.PI*2, r=F(a)/mx*42;
+    const x=52+r*Math.cos(a), y=52+r*Math.sin(a);
+    if(i) g.lineTo(x,y); else g.moveTo(x,y);
+  }
+  g.stroke();
+});}
+function prevSpiral(){ return tilePrev(g=>{
+  g.beginPath();
+  for(let i=0;i<=300;i++){
+    const t=i/300, a=t*Math.PI*2*3.1, r=6+t*38;
+    const x=52+r*Math.cos(a), y=52+r*Math.sin(a);
+    if(i) g.lineTo(x,y); else g.moveTo(x,y);
+  }
+  g.stroke();
+});}
+function prevRhomb(){ return tilePrev(g=>{
+  g.beginPath(); g.moveTo(52,10); g.lineTo(88,52); g.lineTo(52,94);
+  g.lineTo(16,52); g.closePath(); g.stroke();
+});}
+function prevCyl(){ return tilePrev(g=>{
+  for(let k=0;k<4;k++){ g.beginPath(); g.ellipse(52,26+k*17,37,9,0,0,7); g.stroke(); }
+});}
+function prevVortex(){ return tilePrev(g=>{
+  for(let k=0;k<4;k++){
+    const y=22+k*18, rx=40-k*10, ry=Math.max(3.5, 9-k*1.6);
+    g.beginPath(); g.ellipse(52,y,Math.max(6,rx),ry,0,0,7); g.stroke();
+  }
+});}
+function prevRitm(){ return tilePrev(g=>{
+  for(const y of [18,29,50,61,83,94]){
+    g.beginPath(); g.ellipse(52,y,36,6.5,0,0,7); g.stroke();
+  }
+});}
+function prevRings(){ return tilePrev(g=>{
+  for(const q of [[0.55,38,17],[-0.55,32,14],[1.15,25,11]]){
+    g.beginPath(); g.ellipse(52,52,q[1],q[2],q[0],0,7); g.stroke();
+  }
+});}
+function prevMix(){ return tilePrev(g=>{
+  const top=[], bot=[];
+  for(let i=0;i<=60;i++){
+    const t=i/60, x=8+t*88, y=36+11*Math.sin(t*Math.PI*2*1.25);
+    top.push([x,y]); bot.push([x,y+28]);
+  }
+  g.beginPath(); top.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
+  g.beginPath(); bot.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
+  g.lineWidth=1.7;
+  for(let i=2;i<60;i+=4){
+    g.beginPath(); g.moveTo(top[i][0],top[i][1]); g.lineTo(bot[i][0],bot[i][1]); g.stroke();
+  }
+});}
+function formPreview(v){
+  if(v.indexOf("plan_")===0) return prevPlan(v.slice(5));
+  if(v==="cyl") return prevCyl();
+  if(v==="rhomb") return prevRhomb();
+  if(v==="c_vortex") return prevVortex();
+  if(v==="c_ritm") return prevRitm();
+  if(v==="c_rings") return prevRings();
+  return prevSpiral();
+}
+function renderPlastTiles(){
+  const box=document.getElementById("plastTiles");
+  if(!box) return;
+  if(!box.childElementCount){
+    const defs=[["mix","Волны · «микс»",prevMix],["edge","Спираль · «на ребро»",prevSpiral]];
+    for(const df of defs){
+      const t=document.createElement("div");
+      t.className="tile"; t.dataset.val=df[0];
+      t.appendChild(df[2]());
+      const sp=document.createElement("span"); sp.textContent=df[1]; t.appendChild(sp);
+      t.addEventListener("click", ()=>{
+        if(ui.plast.value===t.dataset.val) return;
+        ui.plast.value=t.dataset.val;
+        ui.plast.dispatchEvent(new Event("change"));
+      });
+      box.appendChild(t);
+    }
+  }
+  for(const t of box.children) t.classList.toggle("on", t.dataset.val===ui.plast.value);
+}
+function renderFormTiles(){
+  const box=document.getElementById("formTiles");
+  if(!box) return;
+  const edge=(ui.plast.value==="edge");
+  box.style.display = edge ? "" : "none";
+  if(!edge) return;
+  const vis=[...ui.form.options].filter(o=>!o.hidden);
+  const key=vis.map(o=>o.value+"|"+o.textContent).join(",");
+  if(box.dataset.key!==key){
+    box.dataset.key=key;
+    box.innerHTML="";
+    for(const o of vis){
+      const t=document.createElement("div");
+      t.className="tile"; t.dataset.val=o.value; t.title=o.textContent;
+      t.appendChild(formPreview(o.value));
+      const sp=document.createElement("span"); sp.textContent=o.textContent; t.appendChild(sp);
+      t.addEventListener("click", ()=>{
+        if(ui.form.value===t.dataset.val) return;
+        ui.form.value=t.dataset.val;
+        ui.form.dispatchEvent(new Event("change"));
+      });
+      box.appendChild(t);
+    }
+  }
+  for(const t of box.children) t.classList.toggle("on", t.dataset.val===ui.form.value);
+}
+
 /* ПАРАМЕТРЫ ПО УМОЛЧАНИЮ ДЛЯ ПЛАСТИКИ И ФОРМЫ. У «на ребро» своя рабочая
    точка габарита: 1500×1500×1000 при 600 мм тросов — на ней спираль читается
    витками, а не столбом. У формы «Ромб» — вытянутый вверх габарит
@@ -5151,10 +5322,10 @@ function syncForms(){
   }
   if(mixOnly && ui.form.value!=="sphere") ui.form.value="sphere";
   if(!mixOnly && EDGE_OFF[ui.form.value]) ui.form.value="cyl";
-  // в «миксе» выбора нет — строка формы габарита скрыта целиком: генерация
-  // идёт в «шаре», он задаёт силуэт потока, но выбирать тут нечего
+  // выпадающая строка формы скрыта всегда: выбор идёт плитками с превью
+  // (renderFormTiles), скрытый <select> остаётся источником истины
   const row=document.getElementById("formRow");
-  if(row) row.style.display = mixOnly ? "none" : "";
+  if(row) row.style.display = "none";
   // силуэт в плане — только для «на ребро»: в «миксе» лента лежит плашмя и
   // плановый контур ей не задаётся
 
@@ -5167,6 +5338,7 @@ function syncForms(){
     o.hidden=!keep; o.disabled=!keep;
   }
   if(+ui.rWidth.value<minRod) ui.rWidth.value=String(minRod);
+  renderPlastTiles(); renderFormTiles();
 }
 function refreshLabels(){ syncForms(); }
 
@@ -5177,18 +5349,42 @@ const rebuild = (msg)=>{
   const m=(typeof msg==="string") ? msg : null;
   rebuildTimer=setTimeout(()=>buildDeferred(m), 120);
 };
+// ПЛАШКА-ОБЪЯСНЕНИЕ. Молчаливые ограничения пугают: значение тихо
+// меняется, и пользователь думает, что сломалось. Каждый кламп и
+// автоматика говорят о себе плашкой на 4 секунды
+let toastT=null;
+function toast(msg){
+  const t=document.getElementById("toast");
+  if(!t) return;
+  t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastT);
+  toastT=setTimeout(()=>t.classList.remove("show"), 4000);
+}
 // ПРАВИЛО ПОЛЬЗОВАТЕЛЯ: у композиций «микс» высота не больше 3500 мм
 // (вертикальная лента — всегда один отрезок, см. нарезку в buildScene)
 const MIX_H_MAX=3500;
 const clampMixH=()=>{
-  if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX)
+  if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX){
     ui.dimH.value=String(MIX_H_MAX);
+    toast("Высота ограничена "+MIX_H_MAX+" мм — правило производства для лент «микс»");
+  }
 };
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form") applyPreset(id);
     clampMixH();
     rebuild("Генерация варианта композиции…");
+  });
+// ЖИВОЙ ГАБАРИТНЫЙ БОКС: пунктир меняет размер сразу при наборе цифр,
+// не дожидаясь пересборки ленты — видно, что ввод принят (пересборка
+// придёт по change, а до неё сцена показывает старую ленту в новом боксе)
+for(const idD of ["dimW","dimD","dimH","dimC"])
+  ui[idD].addEventListener("input", ()=>{
+    if(!scene) return;
+    state.boxPreview={w:Math.max(100, +ui.dimW.value||scene.box.w),
+                      h:Math.max(100, +ui.dimH.value||scene.box.h),
+                      d:Math.max(100, +ui.dimD.value||scene.box.d)};
+    needRedraw=true;
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
 // градиент цвета — чистая перерисовка, каркас не пересобирается
@@ -5227,7 +5423,8 @@ const regenClick = ()=>{
   state.seed = (state.seed*1664525+1013904223)>>>0;
   buildDeferred();
 };
-document.getElementById("regen").onclick = regenClick;
+// большая кнопка генерации в панели убрана — дублировала «Обновить
+// композицию» в окне (аудит интуитивности, пункт 3)
 document.getElementById("regen2").onclick = regenClick;
 
 document.getElementById("saveCsv").onclick = ()=>{
