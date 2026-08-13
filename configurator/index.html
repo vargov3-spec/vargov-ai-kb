@@ -5296,7 +5296,8 @@ function draw(){
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else if(pr.kind===1){ // стержень
       ctx.lineCap="round";
-      ctx.strokeStyle = shadeCss(pr.col||glass, pr.shade, isClear?0.45:0.88);
+      ctx.strokeStyle = shadeCss(pr.col||glass, pr.shade,
+        isClear?0.45:(state.opaque?1:0.88));
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
       // блик
@@ -5428,7 +5429,7 @@ function updateSpec(){
         scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
       ${scene.ribbons.length>1?`<tr><td>Отрезки ленты</td><td>${
         scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(1)).join(" + ")} м</td></tr>`:""}
-      <tr><td>Стеклянные трубки Ø${ROD_D}</td><td>${rods} шт</td></tr>
+      <tr><td>${state.opaque?"Керамические стержни":"Стеклянные трубки"} Ø${ROD_D}</td><td>${rods} шт</td></tr>
       ${(()=>{
         // ЦВЕТА И КОЛИЧЕСТВА — ПРЯМО В РАСЧЁТЕ. Без градиента — один цвет
         // каталога на все трубки; с градиентом — три цвета RAL со штуками
@@ -5511,7 +5512,7 @@ const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
 // однорядный №4194952124 (габарит по умолчанию 2400×900×800)
 const SEED_PINNED = {1: 4194952124, 2: 1550467706};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
-               autoSeed: true, frameRal: null};
+               autoSeed: true, frameRal: null, opaque: false};
 
 // ВЫБОР ЦВЕТА — КНОПКОЙ. Вместо сетки свотчей в панели — кнопка
 // «Выбрать цвет»: по клику открывается палитра со ВСЕМИ 198 цветами
@@ -5542,7 +5543,7 @@ const pick = (c)=>{
   if(state.lastSpec) updateSpec();
 };
 // всплывающая палитра каталога: заголовок, поиск, сетка 198 свотчей
-function openRalPicker(title, curId, onPick, onClear, specials){
+function openRalPicker(title, curId, onPick, onClear, specials, opaqueOpt){
   const ov=document.createElement("div");
   ov.className="ralOverlay";
   const pop=document.createElement("div");
@@ -5586,6 +5587,25 @@ function openRalPicker(title, curId, onPick, onClear, specials){
     if(e.key==="Escape" && ov.parentNode){ document.body.removeChild(ov); }
     if(!ov.parentNode) document.removeEventListener("keydown", esc);
   });
+  if(opaqueOpt){
+    // МАТЕРИАЛ СТЕРЖНЕЙ (данные производства): стержни бывают не только
+    // из стекла, но и из керамики — те непрозрачные. Галочка действует
+    // на всю композицию (оба цвета градиента)
+    const row=document.createElement("label");
+    row.style.cssText="display:flex;gap:8px;align-items:center;margin:0 0 8px;"
+      +"font-size:13px;color:var(--txt);cursor:pointer";
+    const cb=document.createElement("input");
+    cb.type="checkbox"; cb.checked=!!state.opaque;
+    cb.onchange=()=>{
+      state.opaque=cb.checked;
+      needRedraw=true;
+      if(state.lastSpec) updateSpec();
+    };
+    const tx=document.createElement("span");
+    tx.textContent="Непрозрачные (керамика)";
+    row.appendChild(cb); row.appendChild(tx);
+    pop.appendChild(row);
+  }
   if(onClear){
     const off=document.createElement("button");
     off.className="btn2"; off.type="button";
@@ -5594,13 +5614,15 @@ function openRalPicker(title, curId, onPick, onClear, specials){
     off.onclick=()=>{ document.body.removeChild(ov); onClear(); };
     pop.appendChild(off);
   }
-  pop.appendChild(h); pop.appendChild(find); pop.appendChild(grid); pop.appendChild(cur);
+  pop.insertBefore(h, pop.firstChild);
+  pop.appendChild(find); pop.appendChild(grid); pop.appendChild(cur);
   ov.appendChild(pop); document.body.appendChild(ov);
   rebuild("");
   find.focus();
 }
 document.getElementById("colorBtn").onclick=()=>
-  openRalPicker("Цвет трубок — каталог RAL (Ralcolor_VG)", state.color.id, (g)=>pick(g));
+  openRalPicker("Цвет трубок — каталог RAL (Ralcolor_VG)", state.color.id,
+    (g)=>pick(g), null, null, true);
 // ГРАДИЕНТ БЕЗ ГАЛОЧКИ (решение пользователя): кнопка по умолчанию
 // неактивна и бесцветна; клик открывает палитру, выбор цвета ВКЛЮЧАЕТ
 // градиент, пункт «Без градиента» в палитре выключает
@@ -5632,7 +5654,7 @@ document.getElementById("gradBtn").onclick=()=>
     ui.gradOn.checked=false;
     ui.gradOn.dispatchEvent(new Event("change"));
     updateGradBtn();
-  });
+  }, null, true);
 // ЦВЕТ КАРКАСА (решение пользователя): штатные золото и хром — первыми
 // свотчами палитры, дальше весь каталог RAL
 const FRAME_SPECIALS=[
@@ -6032,7 +6054,8 @@ document.getElementById("saveCsv").onclick = ()=>{
     ["Vargov(R) Design — предварительная спецификация ленточной композиции (тип LC0217)"],
     ["Габарит (задан), мм", `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`],
     ["Габарит (фактический), мм", s.bb.map(v=>Math.round(v)).join(" x ")],
-    ["Цвет стекла", state.color.name],
+    ["Материал стержней", state.opaque? "керамика (непрозрачные)" : "стекло"],
+    ["Цвет стержней", state.color.name],
     ...(ui.gradOn.checked ? (()=>{
       // раскладка трёх цветов RAL: считаем штуки каждого
       const cnt=[0,0,0];
@@ -6377,6 +6400,7 @@ function variantState(){
           f:ui.form.value, r:+ui.rows.value, rw:+ui.rWidth.value,
           rd:+ui.rodD.value, fr:ui.frame.value,
           frc:state.frameRal?state.frameRal.id:"", col:state.color.id,
+          op:state.opaque?1:0,
           g:ui.gradOn.checked?1:0, gc:ui.gradC.value};
 }
 function applyVariant(o){
@@ -6398,6 +6422,7 @@ function applyVariant(o){
   if(typeof updateGradBtn==="function") updateGradBtn();
   state.frameRal=(o.frc && o.frc!=="") ? ralOf(o.frc) : null;
   if(typeof updateFrameBtn==="function") updateFrameBtn();
+  state.opaque=!!+(o.op||0);
   // поле sg старых ссылок игнорируется: провис теперь всегда включён
   state.autoSeed=false;
   state.seed=(+o.v||state.seed)>>>0;
