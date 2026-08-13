@@ -204,6 +204,13 @@
       <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="1500" max="20000" step="50" value="2400"></div>
       <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="600" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="600" max="20000" step="50" value="800"></div>
+      <div class="row" id="ringRow"><label for="ringD" title="Лента идёт по кругу заданного диаметра (по нейтральной оси кольца); длина берётся от окружности, радиальная глубина — пятая часть диаметра">Кольцо</label>
+        <select id="ringD">
+          <option value="0" selected>— прямая лента —</option>
+          <option value="2000">Ø2000 мм</option>
+          <option value="3000">Ø3000 мм</option>
+          <option value="4000">Ø4000 мм</option>
+        </select></div>
       <div class="row"><label for="dimC">Высота до потолка<br><span style="font-size:11px;opacity:.6">длина тросов от верха композиции</span></label>
         <input id="dimC" type="number" min="0" max="10000" step="50" value="600"></div>
       <select id="plan" style="display:none"></select>
@@ -3432,6 +3439,59 @@ function centerSag(ribbons){
   return 0;
 }
 
+/* ОБОРАЧИВАНИЕ ЛЕНТЫ В КОЛЬЦО. Прямая заготовка длиной πD оборачивается
+   вокруг вертикальной оси: x → угол по фактическому спану заготовки
+   (плюс один шаг станций, чтобы конец не налезал на начало — стык
+   замыкается тем же примыканием, что и между отрезками), z → радиус.
+   Провисы вертикальны (y не трогаем), стержни остаются хордами — при
+   шаге станций ~12 мм на радиусе 1000+ искажения меньше миллиметра.
+   Возвращает число нарушений зазоров после оборачивания (внутренняя
+   сторона кольца сжимает гребёнку — сжатие ограничено глубиной D/5) */
+function wrapRing(D){
+  if(!scene || !scene.ribbons.length) return 0;
+  const rr=scene.ribbons;
+  let x0=1e9, x1=-1e9;
+  for(const rb of rr) for(const p of rb.centers){
+    x0=Math.min(x0, p[0]); x1=Math.max(x1, p[0]); }
+  const stepM=rr[0].stepEff||11.6;
+  const W=Math.max(1, x1-x0)+stepM;
+  const dEff=Math.round(D/5), R=D/2;
+  const zMid=(scene.box.d||dEff)/2;
+  const C=R+dEff/2+60;
+  // одна точка может числиться в нескольких списках (guideC делит объекты
+  // с centers, якоря тросов — с верхами станций) — оборачиваем каждую
+  // ровно один раз
+  const seen=new Set();
+  const tf=(p)=>{
+    if(seen.has(p)) return;
+    seen.add(p);
+    const th=(p[0]-x0)/W*Math.PI*2;
+    const rad=R+(p[2]-zMid);
+    p[0]=C+rad*Math.sin(th);
+    p[2]=C-rad*Math.cos(th);
+  };
+  for(const rb of rr){
+    for(const arr of [rb.centers, rb.railA, rb.railB, rb.guideC])
+      if(arr) for(const p of arr) tf(p);
+    for(const r of rb.rods){ tf(r.a); tf(r.b); }
+    if(rb.leds) for(const p of rb.leds) tf(p);
+    if(rb.cabs) for(const c of rb.cabs){ tf(c.to); tf(c.from); }
+    rb.__gradMask=null;
+  }
+  let vio=0;
+  forEachClosePair(rr, CLEAR_FAR, (A,B)=>{
+    const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
+    if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+       (near? CLEAR_NEAR : CLEAR_FAR)) vio++;
+  });
+  const S=Math.round(2*C);
+  scene.box={w:S, h:scene.box.h, d:S};
+  scene.ring=D;
+  camera.fitTo(scene.box);
+  needRedraw=true;
+  return vio;
+}
+
 /* РАЗДВИЖКА ГРЕБЁНКИ. У швов сварки слоёв станции местами разрежены
    вдвое-втрое против шага (замер 4400/6000: щели 23-35 мм при шаге 11.6)
    — в гребёнке стержней читается пропуск. Стержни крепятся к контурам
@@ -3808,6 +3868,35 @@ const COV_MIN = 0.50;
 function buildScene(){
   const tStart = perfNow();
   buildDeadline = tStart + BUILD_BUDGET;
+  // КОЛЬЦО (по просьбе пользователя): лента идёт по кругу Ø2000-4000.
+  // Заготовка строится ПРЯМОЙ лентой длиной πD со всей штатной механикой
+  // — нарезка на отрезки, невидимые стыки, провисы, раздвижка, ворота
+  // качества, — затем оборачивается вокруг вертикальной оси (wrapRing).
+  // Стык начала и конца замыкает круг тем же примыканием, что и между
+  // отрезками. Радиальная глубина кольца — пятая часть диаметра: глубже
+  // внутренняя сторона кольца сжимала бы гребёнку сильнее допуска зазоров
+  const ringD=(ui.ringD && ui.plast.value!=="edge") ? (+ui.ringD.value||0) : 0;
+  if(ringD && !state.ringBuild){
+    state.ringBuild=1;
+    const sw=ui.dimW.value, sd=ui.dimD.value;
+    ui.dimW.value=String(Math.round(Math.PI*ringD));
+    ui.dimD.value=String(Math.round(ringD/5));
+    try{
+      // оборачивание сжимает зазоры на внутренней стороне кольца — при
+      // нарушениях полного скана вариант пересобирается с другим зерном
+      for(let tr=0;;tr++){
+        buildScene();
+        const vio=wrapRing(ringD);
+        if(vio===0 || tr>=2) break;
+        state.autoSeed=false;
+        state.seed=(state.seed*1664525+1013904223)>>>0;
+      }
+    } finally {
+      ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
+    }
+    updateSpec();
+    return;
+  }
   const box = {
     w:+ui.dimW.value || 2400,
     h:+ui.dimH.value || 800,
@@ -5792,8 +5881,9 @@ function updateSpec(){
   // или закрепить его по умолчанию — по картинке вариант не опознать
   // метраж из строки убран — он уже в мини-стикере слева внизу
   // (замечание пользователя: «дублируется информация»)
-  document.getElementById("dims").textContent =
-    `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seed}`;
+  document.getElementById("dims").textContent = scene.ring
+    ? `кольцо Ø${scene.ring} × ${scene.box.h} мм · вариант №${state.seed}`
+    : `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seed}`;
   // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
@@ -5810,7 +5900,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","ringD","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -6164,6 +6254,9 @@ function renderFormTiles(){
   if(!box) return;
   const edge=(ui.plast.value==="edge");
   box.style.display = edge ? "" : "none";
+  // кольцо — только для «микса»: спираль «на ребро» и так круглая
+  const ringRow=document.getElementById("ringRow");
+  if(ringRow) ringRow.style.display = edge ? "none" : "";
   if(!edge) return;
   const vis=[...ui.form.options].filter(o=>!o.hidden);
   const key=vis.map(o=>o.value+"|"+o.textContent).join(",");
@@ -6293,8 +6386,17 @@ const dimMin=(id)=>{
   return 600;
 };
 const clampDims=()=>{
+  // при кольце ширина и глубина считаются от диаметра — поля выключены
+  const ringOn=ui.ringD && +ui.ringD.value>0 && ui.plast.value!=="edge";
+  ui.dimW.disabled=ringOn; ui.dimD.disabled=ringOn;
   ui.dimW.min=String(dimMin("dimW"));
   ui.dimD.min=String(dimMin("dimD"));
+  if(ringOn){
+    if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX)
+      ui.dimH.value=String(MIX_H_MAX);
+    if(+ui.dimH.value<600) ui.dimH.value="600";
+    return;
+  }
   for(const id of ["dimW","dimD","dimH"]){
     const mn=dimMin(id);
     if(+ui[id].value<mn){
@@ -6307,11 +6409,12 @@ const clampDims=()=>{
     toast("Высота ограничена "+MIX_H_MAX+" мм — правило производства для лент «микс»");
   }
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
+for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","ringD"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form") applyPreset(id);
     clampDims();
-    rebuild("Генерация варианта композиции…");
+    rebuild(id==="ringD" && +ui.ringD.value>0
+      ? "Укладываем ленту по кольцу…" : "Генерация варианта композиции…");
   });
 // ЖИВОЙ ГАБАРИТНЫЙ БОКС: пунктир меняет размер сразу при наборе цифр,
 // не дожидаясь пересборки ленты — видно, что ввод принят (пересборка
@@ -6722,7 +6825,8 @@ function variantState(){
           rd:+ui.rodD.value, fr:ui.frame.value,
           frc:state.frameRal?state.frameRal.id:"", col:state.color.id,
           op:state.opaque1?1:0, op2:state.opaque2?1:0,
-          g:ui.gradOn.checked?1:0, gc:ui.gradC.value};
+          g:ui.gradOn.checked?1:0, gc:ui.gradC.value,
+          rg:ui.ringD? +ui.ringD.value : 0};
 }
 function applyVariant(o){
   if(o.pl) ui.plast.value=o.pl;
@@ -6736,6 +6840,8 @@ function applyVariant(o){
   if(o.rw) ui.rWidth.value=String(o.rw);
   if(o.rd) ui.rodD.value=String(o.rd);
   if(o.fr) ui.frame.value=o.fr;
+  // старые ссылки без поля rg — прямая лента
+  if(ui.ringD) ui.ringD.value=String(+o.rg||0);
   if(o.col){ state.color=ralOf(o.col);
              setBtnColor("colorDot","colorName",state.color); }
   ui.gradOn.checked=!!+(o.g||0);
