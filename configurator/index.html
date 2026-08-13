@@ -5238,8 +5238,10 @@ function draw(){
     }
     // стержни (альфа своя у каждого конца растяжки: прозрачный ↔
     // непрозрачный интерполируются той же раскладкой, что и цвет)
-    const alpha1=state.opaque1 ? 1 : (isClear ? 0.45 : 0.88);
-    const alpha2=state.opaque2 ? 1 : 0.88;
+    // прозрачное стекло стало прозрачнее (замечание пользователя):
+    // 0.72 вместо 0.88 — сквозь ленту читаются задние витки
+    const alpha1=state.opaque1 ? 1 : (isClear ? 0.40 : 0.72);
+    const alpha2=state.opaque2 ? 1 : 0.72;
     const alphaM=(alpha1+alpha2)/2;
     let rIdx=-1;
     for(const r of rb.rods){
@@ -5305,7 +5307,7 @@ function draw(){
     } else if(pr.kind===1){ // стержень
       ctx.lineCap="round";
       ctx.strokeStyle = shadeCss(pr.col||glass, pr.shade,
-        pr.al!==undefined ? pr.al : (isClear?0.45:0.88));
+        pr.al!==undefined ? pr.al : (isClear?0.40:0.72));
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
       // блик
