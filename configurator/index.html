@@ -5903,15 +5903,19 @@ const ui = {};
 for(const id of ["dimW","dimD","dimH","dimC","ringD","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
-const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
+// цвет по умолчанию — зелёный RAL6001 (утверждённое состояние двухрядной
+// ленты по скрину пользователя; раньше был RAL3003)
+const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL6001") || GLASS_COLORS[0];
 /* КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ ЗАФИКСИРОВАНА — своя для каждой рядности.
    При первом открытии и при переключении рядности (до первой ручной
    генерации) берётся закреплённое зерно: заказчик видит именно ту
    композицию, которая утверждена, а не случайную. Кнопка «Сгенерировать
    новый вариант» снимает закрепление и дальше идут случайные варианты. */
-// закреплённые пользователем варианты: двухрядный №1550467706,
-// однорядный №4194952124 (габарит по умолчанию 2400×900×800)
-const SEED_PINNED = {1: 4194952124, 2: 1550467706};
+/// закреплённые пользователем варианты (по скринам): двухрядный
+// №2308378654 (RAL6001, 2400×900×800, стержень 150), однорядный
+// №1936864557 (RAL3003, 1800×700×600, стержень 200) — габариты и
+// стержень рядности в ROWS_DEF
+const SEED_PINNED = {1: 1936864557, 2: 2308378654};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
                autoSeed: true, frameRal: null, opaque1: false, opaque2: false};
 
@@ -6291,6 +6295,13 @@ const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 // ставит её обратно (замечание пользователя: после «на ребро» размеры
 // оставались от спирали)
 const MIX_DEF = {w:2400, d:900, h:800, c:600};
+// утверждённые состояния по рядности (скрины пользователя): габариты и
+// длина стержня, зерно — в SEED_PINNED. Применяются при переключении
+// рядности, пока не нажата ручная генерация
+const ROWS_DEF = {
+  1: {w:1800, d:700, h:600, c:600, rod:200},
+  2: {w:2400, d:900, h:800, c:600, rod:150},
+};
 const FORM_DEF = {
   rhomb:      {w:1500, d:1500, h:3000, c:600},  // Форма-2 «Ромб»
   plan_star4: {w:1500, d:1500, h:1000, c:600},  // Форма-3 (звезда)
@@ -6311,12 +6322,23 @@ function setDims(p){
   if(p.c!=null) ui.dimC.value=String(p.c);
 }
 function applyPreset(which){
-  // переключение пластики или выбор формы снова показывает ЗАКРЕПЛЁННЫЙ
-  // вариант этой пластики/формы, а не случайный, доставшийся от предыдущей
+  // переключение пластики, формы или рядности снова показывает
+  // ЗАКРЕПЛЁННЫЙ вариант, а не случайный, доставшийся от предыдущей
   state.autoSeed=true;
   if(which==="plast"){
     if(ui.plast.value==="edge"){ ui.form.value=EDGE_DEF.form; setDims(EDGE_DEF); }
     else setDims(MIX_DEF);
+    return;
+  }
+  // рядность несёт своё утверждённое состояние (скрины пользователя):
+  // однорядная — 1800×700×600 со стержнем 200, двухрядная — 2400×900×800
+  // со стержнем 150 (только для «микса»)
+  if(which==="rows"){
+    const p=ROWS_DEF[+ui.rows.value===1?1:2];
+    if(p && ui.plast.value!=="edge"){
+      setDims(p);
+      ui.rWidth.value=String(p.rod);
+    }
     return;
   }
   if(ui.plast.value!=="edge") return;      // в «миксе» форма одна, пресета нет
@@ -6411,7 +6433,7 @@ const clampDims=()=>{
 };
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","ringD"])
   ui[id].addEventListener("change", ()=>{
-    if(id==="plast" || id==="form") applyPreset(id);
+    if(id==="plast" || id==="form" || id==="rows") applyPreset(id);
     clampDims();
     rebuild(id==="ringD" && +ui.ringD.value>0
       ? "Укладываем ленту по кольцу…" : "Генерация варианта композиции…");
