@@ -3274,6 +3274,82 @@ function closeFans(ribbons, box){
   return closed;
 }
 
+/* ПРОВИС ЦЕНТРА ДВУХРЯДНОЙ ЛЕНТЫ (физика от пользователя: «центр ленты
+   у двухрядной должен провисать под весом»). Средняя проволока держится
+   на стержнях свободными петлями лески, и на плоских участках (стержни
+   горизонтальны, лента лежит плашмя) провисает ПОПЕРЁК ленты: сечение
+   складывается неглубокой галочкой. Центр и внутренние концы стержней
+   опускаются на δ·f, где f — горизонтальность стержней станции
+   (сглаженная по ленте): на ребре и в крутых «юбках» стержни
+   вертикальны и f=0 — там провиса нет. δ ≤ 12 мм (8% полуширины).
+   После применения — полный скан зазоров сцены: при нарушении δ
+   делится пополам (до двух послаблений), затем полный откат */
+function centerSag(ribbons){
+  let anyTwo=false;
+  for(const rb of ribbons){
+    if(!rb.dirUp) continue;
+    anyTwo=true;
+    const n=rb.centers.length;
+    const f=new Array(n).fill(0);
+    for(let i=0;i<n;i++){
+      const uy=rb.dirUp[i]? Math.abs(rb.dirUp[i][1]) : 1;
+      const dy2=rb.dirDn[i]? Math.abs(rb.dirDn[i][1]) : 1;
+      f[i]=Math.max(0, 1-Math.max(uy,dy2)/0.5);
+    }
+    // НЕ ВЕЗДЕ, А МЕСТАМИ (уточнение пользователя): тросы поддерживают
+    // боковые канты, поэтому у якорей сечение собрано, а центральная
+    // проволока провисает под своим весом и весом стержней сильнее всего
+    // в СЕРЕДИНЕ ПРОЛЁТА между тросами — параболой, как и провис вдоль
+    if(rb.cabSt && rb.cabSt.length){
+      const A2=rb.cabSt, w=new Array(n).fill(0);
+      const ramp=(dist)=>Math.min(1, Math.pow(dist*rb.stepEff/500, 2));
+      for(let i=0;i<A2[0];i++) w[i]=ramp(A2[0]-i);
+      for(let k=1;k<A2.length;k++){
+        const s0=A2[k-1], s1=A2[k];
+        for(let i=s0+1;i<s1;i++){ const u=(i-s0)/(s1-s0); w[i]=4*u*(1-u); }
+      }
+      const aL=A2[A2.length-1];
+      for(let i=aL+1;i<n;i++) w[i]=ramp(i-aL);
+      for(let i=0;i<n;i++) f[i]*=w[i];
+    }
+    for(let it=0; it<6; it++)
+      for(let i=1;i<n-1;i++) f[i]=(f[i-1]+2*f[i]+f[i+1])/4;
+    rb.__csag=f;
+  }
+  if(!anyTwo) return 0;
+  const bak=ribbons.map(rb=>({c:rb.centers.map(p=>p[1]),
+                              b:rb.rods.map(r=>r.b[1])}));
+  const restore=()=>{ ribbons.forEach((rb,ri)=>{
+    rb.centers.forEach((p,i)=>{ p[1]=bak[ri].c[i]; });
+    rb.rods.forEach((r,i)=>{ r.b[1]=bak[ri].b[i]; });
+  }); };
+  const apply=(sc)=>{ for(const rb of ribbons){
+    if(!rb.__csag) continue;
+    const n=rb.centers.length;
+    const dMax=Math.min(12, rb.halfW*0.08);
+    for(const r of rb.rods){
+      const dy=rb.__csag[Math.min(n-1,r.st)]*dMax*sc;
+      if(dy>0.2) r.b[1]-=dy;
+    }
+    for(let i=0;i<n;i++) rb.centers[i][1]-=rb.__csag[i]*dMax*sc;
+  } };
+  const viol=()=>{
+    let v=0;
+    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
+      const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
+      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+         (near? CLEAR_NEAR : CLEAR_FAR)) v++;
+    });
+    return v;
+  };
+  for(const sc of [1, 0.5]){
+    apply(sc);
+    if(viol()===0) return sc;
+    restore();
+  }
+  return 0;
+}
+
 function volCov(ribbons, box){
   const NGX=5, NGY=3, NGZ=3, cellN=NGX*NGY*NGZ;
   const cellHit=new Uint8Array(cellN);
@@ -4493,7 +4569,8 @@ function buildScene(){
   // LED-точки и тросы
   const scene0Plast=params.plast||"mix";
   // «леска»: дозакрытие вееров торцов доворотом стержней (только «микс»:
-  // на ребре стержни вертикальны и веером не расходятся)
+  // на ребре стержни вертикальны и веером не расходятся). Поперечный
+  // провис центра — ниже, после расстановки тросов (ему нужны якоря)
   if(scene0Plast!=="edge") closeFans(ribbons, box);
   // высота до потолка: на столько потолок выше верха габарита
   const ceilH=Math.max(0, Math.min(10000, +ui.dimC.value||0));
@@ -4643,6 +4720,9 @@ function buildScene(){
       }
     }
   }
+  // поперечный провис центральной проволоки — после тросов и продольного
+  // провиса: модуляция по пролётам требует якорей rb.cabSt
+  if(scene0Plast!=="edge") centerSag(ribbons);
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
