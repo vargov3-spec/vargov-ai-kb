@@ -3141,6 +3141,107 @@ function measureMinRadius(ribbons){
    лента. Габаритного бокса недостаточно — лента может пройти одной прядью по
    диагонали: бокс «заполнен», а объём пустой (замер: 4.73 пог. м в габарите
    2400×900×800, покрытие 0.42 против 0.62 у живого варианта). */
+/* «ЛЕСКА» — ДОЗАКРЫТИЕ ВЕЕРОВ ТОРЦОВ. Данные производства: стеклянные
+   трубки крепятся к контурам не жёстко, а свободной петлёй лески —
+   стержень может скользить вдоль проволоки и доворачиваться. Поэтому
+   веер торцов на крутом изгибе (наружные концы соседних стержней
+   расходятся шире 2 шагов) можно закрыть, РАЗРАВНИВАЯ ОРИЕНТАЦИИ
+   стержней: осевая линия и центральный контур стоят на месте, стержень
+   поворачивается вокруг своей точки крепления у центра, канты
+   перерисовываются по новым торцам. Правится только окно веера
+   (±4 станции), принимается только чистый результат: веер закрылся,
+   зазоры и бокс соблюдены — иначе откат */
+function closeFans(ribbons, box){
+  const lim3=[box.w, box.h, box.d];
+  let closed=0;
+  for(const rb of ribbons){
+    const twoRow=!!rb.dirUp, n=rb.centers.length;
+    if(n<6) continue;
+    const step=rb.stepEff, gapLim=step*2.2;
+    const rows = twoRow ? [rb.rods.filter(r=>r.u2>0), rb.rods.filter(r=>r.u2<=0)]
+                        : [rb.rods.slice()];
+    for(const row of rows){
+      row.sort((q,z)=>q.st-z.st);
+      const railOf=(r)=> twoRow ? (r.u2>0? rb.railA : rb.railB) : rb.railA;
+      for(let i=1;i<row.length;i++){
+        if(row[i].st-row[i-1].st>3) continue;
+        const g0=V.len(V.sub(row[i].a, row[i-1].a));
+        if(g0<=gapLim) continue;
+        const i0=Math.max(0, i-4), i1=Math.min(row.length-1, i+3);
+        // снимок окна (стержни + точки кантов)
+        const bak=[];
+        for(let k=i0;k<=i1;k++){
+          const r=row[k], st=Math.min(n-1, r.st);
+          bak.push({r, a:r.a.slice(), b:r.b.slice(), nn:r.n.slice(),
+                    st, rA:rb.railA[st]?rb.railA[st].slice():null,
+                    rB:rb.railB[st]?rb.railB[st].slice():null});
+        }
+        // разравнивание ориентаций (опора — точка крепления b у центра;
+        // у однорядной — середина стержня)
+        const U=[], LEN=[], PIV=[];
+        for(let k=i0;k<=i1;k++){
+          const r=row[k];
+          const u=V.norm(V.sub(r.a, r.b));
+          U.push(u); LEN.push(V.len(V.sub(r.a,r.b)));
+          PIV.push(twoRow ? r.b.slice()
+                          : [(r.a[0]+r.b[0])/2,(r.a[1]+r.b[1])/2,(r.a[2]+r.b[2])/2]);
+        }
+        for(let it=0; it<12; it++)
+          for(let k=1;k<U.length-1;k++)
+            U[k]=V.norm([U[k][0]+0.5*(U[k-1][0]+U[k+1][0]-2*U[k][0]),
+                         U[k][1]+0.5*(U[k-1][1]+U[k+1][1]-2*U[k][1]),
+                         U[k][2]+0.5*(U[k-1][2]+U[k+1][2]-2*U[k][2])]);
+        for(let k=i0;k<=i1;k++){
+          const r=row[k], u=U[k-i0], L=LEN[k-i0], p=PIV[k-i0];
+          if(twoRow){
+            r.a=[p[0]+u[0]*L, p[1]+u[1]*L, p[2]+u[2]*L];
+          } else {
+            r.a=[p[0]+u[0]*L/2, p[1]+u[1]*L/2, p[2]+u[2]*L/2];
+            r.b=[p[0]-u[0]*L/2, p[1]-u[1]*L/2, p[2]-u[2]*L/2];
+          }
+          const st=Math.min(n-1, r.st);
+          const t0=Math.max(0,st-1), t1=Math.min(n-1,st+1);
+          const T=V.norm(V.sub(rb.centers[t1], rb.centers[t0]));
+          r.n=V.norm(V.cross(T,u));
+          // кант следует за торцом (леска держит стержень у проволоки)
+          const IN2=WIRE_D/2+ROD_AIR;
+          const rl=railOf(r);
+          if(rl && rl[st]) rl[st]=[r.a[0]+u[0]*IN2, r.a[1]+u[1]*IN2, r.a[2]+u[2]*IN2];
+          if(!twoRow && rb.railB[st])
+            rb.railB[st]=[r.b[0]-u[0]*IN2, r.b[1]-u[1]*IN2, r.b[2]-u[2]*IN2];
+        }
+        // приёмка: веер закрылся, зазоры и бокс чисты — иначе откат
+        const winSet=new Set();
+        for(let k=i0;k<=i1;k++) winSet.add(row[k]);
+        let ok=V.len(V.sub(row[i].a, row[i-1].a)) < g0-2;
+        if(ok){
+          outer2:
+          for(let k=i0;k<=i1 && ok;k++){
+            const r=row[k];
+            for(const p2 of [r.a, r.b]) for(let x=0;x<3;x++)
+              if(p2[x]<-ROD_R-6 || p2[x]>lim3[x]+ROD_R+6){ ok=false; break outer2; }
+            for(const rb2 of ribbons) for(const q of rb2.rods){
+              if(q===r) continue;
+              if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+              const near=(rb2===rb) && (winSet.has(q) || Math.abs(q.st-r.st)<=NEAR_WIN);
+              const lim=near? CLEAR_NEAR : CLEAR_FAR;
+              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] < lim){ ok=false; break outer2; }
+            }
+          }
+        }
+        if(!ok){
+          for(const bk of bak){
+            bk.r.a=bk.a; bk.r.b=bk.b; bk.r.n=bk.nn;
+            if(bk.rA) rb.railA[bk.st]=bk.rA;
+            if(bk.rB) rb.railB[bk.st]=bk.rB;
+          }
+        } else closed++;
+      }
+    }
+  }
+  return closed;
+}
+
 function volCov(ribbons, box){
   const NGX=5, NGY=3, NGZ=3, cellN=NGX*NGY*NGZ;
   const cellHit=new Uint8Array(cellN);
@@ -4359,6 +4460,9 @@ function buildScene(){
   }
   // LED-точки и тросы
   const scene0Plast=params.plast||"mix";
+  // «леска»: дозакрытие вееров торцов доворотом стержней (только «микс»:
+  // на ребре стержни вертикальны и веером не расходятся)
+  if(scene0Plast!=="edge") closeFans(ribbons, box);
   // высота до потолка: на столько потолок выше верха габарита
   const ceilH=Math.max(0, Math.min(10000, +ui.dimC.value||0));
   ribbons.forEach((rb, ri)=>{
