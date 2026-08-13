@@ -113,6 +113,8 @@
   .btns{display:flex; gap:8px; flex-wrap:wrap}
   .btns .btn2{flex:1 1 44%}
   .favRow{display:flex; gap:6px; align-items:center; margin:4px 0; font-size:12px}
+  .favRow img{width:58px; height:38px; object-fit:cover; border-radius:4px;
+    border:1px solid #33333c; background:#101014; flex:none}
   .favRow .favTxt{flex:1; color:var(--txt)}
   .btn3{background:var(--panel2); color:var(--txt); border:1px solid var(--line);
     border-radius:6px; padding:3px 8px; font-size:11.5px; cursor:pointer}
@@ -223,6 +225,7 @@
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
       <div class="row"><label for="asm" title="Монтаж: композиция собирается станция за станцией, как на объекте">Сборка</label><input id="asm" type="range" min="0" max="100" value="100"></div>
+      <div class="row"><label for="lightBg" title="Белая галерея вместо тёмного зала — для светлых интерьеров и печати">Светлый шоурум</label><input id="lightBg" type="checkbox"></div>
     </fieldset>
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
@@ -4549,9 +4552,14 @@ function rgbHexStr(c){
 function draw(){
   const B = camera.basis();
   ctx.setTransform(dpr,0,0,dpr,0,0);
+  // СВЕТЛЫЙ ШОУРУМ: белая галерея вместо тёмного зала — композиции
+  // продаются и в светлые интерьеры; переключается галочкой, влияет
+  // только на подачу (в номер варианта и ссылки не входит)
+  const LB = ui.lightBg && ui.lightBg.checked;
   // фон-виньетка
   const g = ctx.createRadialGradient(cw/2,chgt*0.42,chgt*0.1, cw/2,chgt/2,chgt*0.95);
-  g.addColorStop(0,"#17171c"); g.addColorStop(1,"#0a0a0c");
+  if(LB){ g.addColorStop(0,"#f7f7f8"); g.addColorStop(1,"#dfdfe4"); }
+  else  { g.addColorStop(0,"#17171c"); g.addColorStop(1,"#0a0a0c"); }
   ctx.fillStyle=g; ctx.fillRect(0,0,cw,chgt);
   if(!scene) return;
 
@@ -4578,7 +4586,8 @@ function draw(){
     const hasEnv=!!scene.env;
     // при выбранной форме габарита бокс остаётся еле заметным (габарит
     // виден), а сама форма рисуется тем же пунктиром
-    ctx.strokeStyle = hasEnv ? "rgba(120,120,140,.13)" : "rgba(120,120,140,.35)";
+    ctx.strokeStyle = LB ? (hasEnv ? "rgba(90,90,110,.18)" : "rgba(90,90,110,.45)")
+                       : (hasEnv ? "rgba(120,120,140,.13)" : "rgba(120,120,140,.35)");
     ctx.lineWidth=1; ctx.setLineDash([5,6]);
     for(const [a,b] of edges){
       if(project(cor[a],B,p1) && project(cor[b],B,p2)){
@@ -4591,7 +4600,7 @@ function draw(){
       // силуэт строится по высоте: для эллиптического сечения берётся точка
       // касания эллипса к направлению взгляда, для прямоугольного — углы.
       // Сетка параллелей и меридианов только зашумляет кадр
-      ctx.strokeStyle="rgba(150,145,170,.45)";
+      ctx.strokeStyle=LB ? "rgba(110,105,130,.55)" : "rgba(150,145,170,.45)";
       const E=scene.env, eax=E.ax, e1i=(eax+1)%3, e2i=(eax+2)%3;
       const ec=E.c, eRax=E.Rax, ea0=E.R[e1i], eb0=E.R[e2i];
       const kOf=(h)=>Math.max(0.07, E.prof(h));
@@ -4656,7 +4665,7 @@ function draw(){
     }
     ctx.setLineDash([]);
     // подписи размеров
-    ctx.fillStyle="rgba(200,190,160,.8)"; ctx.font="12px system-ui";
+    ctx.fillStyle=LB ? "rgba(90,80,50,.85)" : "rgba(200,190,160,.8)"; ctx.font="12px system-ui";
     const lbl = (a,b,txt)=>{
       const m=[(cor[a][0]+cor[b][0])/2,(cor[a][1]+cor[b][1])/2,(cor[a][2]+cor[b][2])/2];
       if(project(m,B,p1)) ctx.fillText(txt, p1[0]+6, p1[1]-4);
@@ -4671,7 +4680,7 @@ function draw(){
     if(cH>0 && ui.cables.checked){
       const {w,d}=scene.box, y=scene.box.h+cH;
       const K=[[0,y,0],[w,y,0],[w,y,d],[0,y,d]];
-      ctx.strokeStyle="rgba(150,150,165,.30)"; ctx.lineWidth=1; ctx.setLineDash([6,7]);
+      ctx.strokeStyle=LB ? "rgba(100,100,115,.40)" : "rgba(150,150,165,.30)"; ctx.lineWidth=1; ctx.setLineDash([6,7]);
       ctx.beginPath();
       let ok=true;
       for(let i=0;i<4;i++){
@@ -4757,7 +4766,7 @@ function draw(){
   const gold = ui.frame.value==="chrome" ? [150,156,164] : [201,162,39];
   for(const pr of prims){
     if(pr.kind===0){ // подвес
-      ctx.strokeStyle="rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
+      ctx.strokeStyle=LB ? "rgba(110,110,120,.55)" : "rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else if(pr.kind===1){ // стержень
       ctx.lineCap="round";
@@ -4775,7 +4784,21 @@ function draw(){
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else { // диод Ø4 на проволоке каркаса: тёплое свечение 3000 K
       // 3000 K ≈ RGB(255,168,86). Ореол рисуется в режиме сложения (lighter):
-      // он не гасит ленту, а подсвечивает её, поэтому диод читается ярким
+      // он не гасит ленту, а подсвечивает её, поэтому диод читается ярким.
+      // На СВЕТЛОМ фоне сложение уходит в белизну и ореол невидим — там
+      // диод рисуется обычным наложением: тёплое пятно + янтарное ядро
+      if(LB){
+        const R3=Math.max(4, pr.rCore*2.6);
+        const g3=ctx.createRadialGradient(pr.x1,pr.y1,0,pr.x1,pr.y1,R3);
+        g3.addColorStop(0,"rgba(255,170,70,.85)");
+        g3.addColorStop(0.6,"rgba(255,160,60,.30)");
+        g3.addColorStop(1,"rgba(255,150,50,0)");
+        ctx.fillStyle=g3;
+        ctx.beginPath(); ctx.arc(pr.x1,pr.y1,R3,0,7); ctx.fill();
+        ctx.fillStyle="rgba(210,120,20,.95)";
+        ctx.beginPath(); ctx.arc(pr.x1,pr.y1,Math.max(1,pr.rCore*0.8),0,7); ctx.fill();
+        continue;
+      }
       const R1=Math.max(6, pr.rCore*4.5), R2=Math.max(3, pr.rCore*1.9);
       const op=ctx.globalCompositeOperation;
       ctx.globalCompositeOperation="lighter";
@@ -4939,7 +4962,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","lightBg","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -5181,6 +5204,7 @@ ui.asm.addEventListener("input", ()=>{
   needRedraw=true;
 });
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
+ui.lightBg.addEventListener("change", ()=>{needRedraw=true;});
 
 const regenClick = ()=>{
   state.autoSeed = false;          // дальше — случайные варианты
@@ -5500,7 +5524,8 @@ function drawSplash(msg){
   draw();
   if(msg){
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.fillStyle="rgba(214,201,166,.9)"; ctx.font="15px system-ui";
+    ctx.fillStyle=(ui.lightBg && ui.lightBg.checked) ? "rgba(90,80,50,.9)"
+                 : "rgba(214,201,166,.9)"; ctx.font="15px system-ui";
     ctx.textAlign="center";
     ctx.fillText(msg, cw/2, chgt-38);
     ctx.textAlign="left";
@@ -5572,7 +5597,9 @@ function favRender(){
   const list=favLoad();
   document.getElementById("favBox").hidden=!list.length;
   document.getElementById("favList").innerHTML=list.map((f,i)=>
-    `<div class="favRow"><span class="favTxt">№${f.o.v} · `
+    `<div class="favRow">`
+    +(f.t?`<img src="${f.t}" alt="" data-fav-open="${i}" style="cursor:pointer" title="открыть">`:"")
+    +`<span class="favTxt">№${f.o.v} · `
     +`${f.o.w}×${f.o.d}×${f.o.h} · ${f.m} пог. м</span>`
     +`<button class="btn3" data-fav-open="${i}">открыть</button>`
     +`<button class="btn3" data-fav-del="${i}" title="удалить">✕</button></div>`).join("");
@@ -5585,11 +5612,25 @@ document.getElementById("favList").addEventListener("click",(e)=>{
                            rebuild("Открываем избранный вариант…"); }
   if(d!=null){ list.splice(+d,1); favStore(list); favRender(); }
 });
+// МИНИАТЮРА ИЗБРАННОГО — снимок текущего кадра: центральная область канваса
+// 3:2 ужимается в 174×116 JPEG (~4 КБ) — список избранного становится
+// узнаваемым с одного взгляда, а 30 записей занимают ~120 КБ localStorage
+function favThumb(){
+  try{
+    const H=Math.round(cv.height*0.86), W=Math.min(cv.width, Math.round(H*1.5));
+    const sx=Math.round((cv.width-W)/2), sy=Math.round((cv.height-H)/2);
+    const t=document.createElement("canvas");
+    t.width=174; t.height=116;
+    t.getContext("2d").drawImage(cv, sx, sy, W, H, 0, 0, t.width, t.height);
+    return t.toDataURL("image/jpeg", 0.55);
+  }catch(e){ return null; }
+}
 document.getElementById("favAdd").onclick=()=>{
   if(!scene) return;
   const list=favLoad(), o=variantState();
   if(!list.some(f=>JSON.stringify(f.o)===JSON.stringify(o)))
-    list.unshift({o, m:state.lastSpec?(state.lastSpec.totalLen/1000).toFixed(1):"?"});
+    list.unshift({o, m:state.lastSpec?(state.lastSpec.totalLen/1000).toFixed(1):"?",
+                  t:favThumb()});
   favStore(list.slice(0,30)); favRender();
 };
 document.getElementById("favLink").onclick=()=>{
@@ -5604,6 +5645,43 @@ document.getElementById("favLink").onclick=()=>{
   else prompt("Ссылка на вариант:", url);
 };
 favRender();
+// ОТКРЫТЬ ВАРИАНТ ПО НОМЕРУ. Номер показан крупно как главный идентификатор,
+// значит должен и приниматься: клик по «вариант №…» — окно ввода, куда можно
+// вставить номер (воспроизводит композицию при ТЕКУЩИХ габаритах и настройках)
+// или целиком ссылку «Ссылка на вариант» (восстанавливает вариант полностью,
+// вместе с габаритами, пластикой и цветами)
+{
+  const dimsEl=document.getElementById("dims");
+  dimsEl.style.cursor="pointer";
+  dimsEl.title="Открыть вариант: клик — ввести номер или вставить ссылку";
+  dimsEl.addEventListener("click", ()=>{
+    const inp=prompt(
+      "Вставьте номер варианта (например 4194952124) или ссылку на вариант.\n"+
+      "Номер воспроизводит композицию при текущих габаритах и настройках;\n"+
+      "ссылка восстанавливает вариант целиком.", "");
+    if(inp==null) return;
+    const t=inp.trim();
+    if(!t) return;
+    const hi=t.indexOf("#");
+    if(hi>=0 && t.length>hi+3){
+      // вставлена ссылка — применяем полное состояние
+      try{
+        const ps=new URLSearchParams(t.slice(hi+1));
+        if(ps.get("v")){
+          const o={}; for(const kv of ps) o[kv[0]]=kv[1];
+          applyVariant(o);
+          rebuild("Открываем вариант…");
+          return;
+        }
+      }catch(e){}
+    }
+    const num=(t.replace(/[^0-9]/g,""));
+    if(!num){ alert("Не удалось разобрать номер варианта."); return; }
+    state.autoSeed=false;
+    state.seed=(+num)>>>0;
+    rebuild("Открываем вариант №"+state.seed+"…");
+  });
+}
 // открытие по ссылке: параметры варианта в hash применяются до первой сборки
 (function(){
   try{
