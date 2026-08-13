@@ -141,6 +141,9 @@
   #stat{position:absolute; left:14px; bottom:12px; color:var(--gold2); font-size:12.5px;
     background:rgba(11,11,13,.60); padding:5px 10px; border-radius:6px;
     pointer-events:none; font-variant-numeric:tabular-nums}
+  /* светлый шоурум: надписи поверх сцены — чёрным (решение пользователя) */
+  #stage.light #dims{color:#1a1a1e; text-shadow:0 1px 3px rgba(255,255,255,.55)}
+  #stage.light #stat{color:#1a1a1e; background:rgba(255,255,255,.55)}
   #stat:empty{display:none}
   #toast{position:absolute; left:50%; top:14px; transform:translateX(-50%);
     max-width:70%; background:rgba(24,22,14,.92); border:1px solid var(--gold2);
@@ -6022,6 +6025,7 @@ ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
     lb.textContent=state.lightBg ? "\u263E" : "\u2600";
     lb.title=state.lightBg ? "Тёмный зал" : "Светлый шоурум";
     lb.classList.toggle("lit", state.lightBg);
+    document.getElementById("stage").classList.toggle("light", state.lightBg);
     needRedraw=true;
   });
 }
