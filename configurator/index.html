@@ -109,6 +109,7 @@
     cursor:pointer; text-align:center; text-decoration:none;
   }
   .btn2:hover{border-color:var(--gold)}
+  input[type=range]{accent-color:var(--gold); width:120px; margin:0}
   .btns{display:flex; gap:8px; flex-wrap:wrap}
   .btns .btn2{flex:1 1 44%}
   .favRow{display:flex; gap:6px; align-items:center; margin:4px 0; font-size:12px}
@@ -221,10 +222,12 @@
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
+      <div class="row"><label for="asm" title="Монтаж: композиция собирается станция за станцией, как на объекте">Сборка</label><input id="asm" type="range" min="0" max="100" value="100"></div>
     </fieldset>
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
     <div class="btns">
+      <button class="btn2" id="asmPlay">▶ Анимация сборки</button>
       <button class="btn2" id="favAdd">⭐ В избранное</button>
       <button class="btn2" id="favLink">Ссылка на вариант</button>
       <button class="btn2" id="saveCsv">Спецификация CSV</button>
@@ -4244,9 +4247,10 @@ function buildScene(){
       // двух. Шаг ровно 100 мм каркаса (данные производства: 0.1 W / 3 V)
       const wirePts = rb.rows===2 ? rb.centers : rb.railA;
       let acc = 0;
+      rb.ledSt=[];                       // станции диодов — для анимации сборки
       for(let i=1;i<wirePts.length;i++){
         acc += rb.stepEff;
-        if(acc>=LED_PITCH){ rb.leds.push(wirePts[i]); acc=0; }
+        if(acc>=LED_PITCH){ rb.leds.push(wirePts[i]); rb.ledSt.push(i); acc=0; }
       }
     }
     // ПОДВЕСЫ: расставляются по физике, а не «через равные промежутки».
@@ -4311,13 +4315,30 @@ function buildScene(){
         const top=topAt(i);
         // ВЫСОТА ДО ПОТОЛКА: трос идёт от точки крепления на ленте до
         // потолка, который стоит выше габарита на заданную величину
-        rb.cabs.push({from:[top[0], box.h+ceilH, top[2]], to:top});
+        rb.cabs.push({from:[top[0], box.h+ceilH, top[2]], to:top, st:i});
       }
       rb.cabSt=picked.slice().sort((q,z)=>q-z);
       // фактический максимальный пролёт — в спецификацию
       let span=0;
       for(let k=1;k<picked.length;k++) span=Math.max(span,(picked[k]-picked[k-1])*rb.stepEff);
       rb.cabSpan=Math.round(span);
+      // НАГРУЗКА НА КАЖДЫЙ ТРОС: масса стекла и каркаса раздаётся по
+      // станциям, станция тянет ближайший якорь (границы зон — середины
+      // пролётов). Идёт в «Расчёт» (максимум на трос) и в монтажную карту
+      // (по каждому тросу) — язык проектировщика, а не только картинка
+      if(picked.length){
+        const secA=Math.PI*(ROD_R*ROD_R-(ROD_R-GLASS_WALL)*(ROD_R-GLASS_WALL));
+        const mSt=new Array(n).fill(rb.stepEff*(rb.rows===2?3:2)*WIRE_AREA*STEEL_DENSITY);
+        for(const r of rb.rods)
+          mSt[Math.max(0,Math.min(n-1,r.st))]+=secA*(r.nom||r.len)*GLASS_DENSITY;
+        const A3=rb.cabSt, loads=new Array(A3.length).fill(0);
+        for(let i=0;i<n;i++){
+          let bk=0, bd=1e9;
+          for(let k=0;k<A3.length;k++){ const dd=Math.abs(A3[k]-i); if(dd<bd){bd=dd; bk=k;} }
+          loads[bk]+=mSt[i];
+        }
+        for(const c of rb.cabs){ const k=A3.indexOf(c.st); c.load=(k>=0?loads[k]:0)/1000; }
+      }
     }
   });
   // ПРОВИС ПОД ВЕСОМ (гравитационный реализм). Марш строит идеальную
@@ -4377,6 +4398,9 @@ function buildScene(){
     env=null; void fo;
   }
   scene = {box, ribbons, params, clear, env};
+  // пересборка показывается целиком: слайдер сборки возвращается на 100%
+  state.asm=1;
+  if(ui.asm) ui.asm.value=100;
   // ВЫРОЖДЕННЫЕ ВАРИАНТЫ НЕ ПОКАЗЫВАЮТСЯ. Иногда лестница и страховка
   // выходят с короткой лентой, висящей в углу габарита (замер: 3.14 пог. м
   // при заполнении около 40% на однорядной 2400×900×800). Такой вариант
@@ -4660,9 +4684,17 @@ function draw(){
       ctx.setLineDash([]);
     }
   }
+  // АНИМАЦИЯ СБОРКИ: композиция строится станция за станцией, как на
+  // объекте — лента растёт от начала к концу, ленты монтируются по очереди.
+  // Слайдер «Сборка» задаёт долю построенного; на 100% фильтра нет
+  const asmT=(state.asm===undefined)?1:state.asm;
+  let asmPos=asmT*scene.ribbons.reduce((q,rb)=>q+rb.centers.length,0);
   for(const rb of scene.ribbons){
-    // тросы
+    const lim=(asmT>=1)?Infinity:Math.max(0, Math.round(asmPos));
+    asmPos-=rb.centers.length;
+    // тросы (появляются, когда построена станция их якоря)
     for(const c of rb.cabs){
+      if(c.st!==undefined && c.st>=lim) continue;
       if(project(c.from,B,p1) && project(c.to,B,p2)){
         prims.push({z:(p1[2]+p2[2])/2+200, kind:0,
           x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1]});
@@ -4672,6 +4704,7 @@ function draw(){
     let rIdx=-1;
     for(const r of rb.rods){
       rIdx++;
+      if(r.st>=lim) continue;
       if(!project(r.a,B,p1) || !project(r.b,B,p2)) continue;
       const nd = Math.abs(V.dot(r.n, LIGHT));
       const zz = (p1[2]+p2[2])/2;
@@ -4699,7 +4732,8 @@ function draw(){
     if(rb.rows===2) railSets.push([rb.centers,0.8]);
     for(const rs of railSets){
       const rail=rs[0], wk=rs[1];
-      for(let i=1;i<rail.length;i++){
+      const iMax=Math.min(rail.length, lim+1);
+      for(let i=1;i<iMax;i++){
         if(!project(rail[i-1],B,p1) || !project(rail[i],B,p2)) continue;
         prims.push({z:(p1[2]+p2[2])/2-wBias, kind:2,
           x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],
@@ -4707,7 +4741,10 @@ function draw(){
       }
     }
     // LED — светящиеся шарики Ø4 на проволоке каркаса
+    let ledIdx=-1;
     for(const l of rb.leds){
+      ledIdx++;
+      if(rb.ledSt && rb.ledSt[ledIdx]>=lim) continue;
       if(!project(l,B,p1)) continue;
       prims.push({z:p1[2]-lBias, kind:3, x1:p1[0], y1:p1[1],
         rCore:Math.max(1.4, 2*p1[3])});
@@ -4863,6 +4900,21 @@ function updateSpec(){
       <tr><td>Ширина ленты</td><td>${scene.params.ribbonW} мм${
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
       <tr class="hl"><td>Масса композиции</td><td>${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг</td></tr>
+      ${(()=>{
+        // НАГРУЗКИ И НОРМЫ — язык проектировщика прямо в расчёте.
+        // Нагрузка на трос считается при расстановке подвесов (масса
+        // раздаётся ближайшим якорям); нормы высоты — проход 2100 мм от
+        // пола, над столом 750 мм над столешницей 750 мм (итого 1500)
+        if(!cabs) return "";
+        let mx=0;
+        for(const rb of scene.ribbons) for(const cb of rb.cabs)
+          if(cb.load && cb.load>mx) mx=cb.load;
+        const drop=scene.box.h+Math.max(0,+ui.dimC.value||0);
+        const hp=(Math.ceil((drop+2100)/50)*50/1000).toFixed(2);
+        const ht=(Math.ceil((drop+1500)/50)*50/1000).toFixed(2);
+        return `<tr><td>Нагрузка на тросы</td><td>до ${mx<1?mx.toFixed(2):mx.toFixed(1)} кг на трос (${cabs} шт)${mx>10?" — крепление анкером с распором":""}</td></tr>`
+             + `<tr><td>Высота помещения</td><td>проход под композицией — потолок от ${hp} м; над столом — от ${ht} м</td></tr>`;
+      })()}
       ${leds?`<tr><td>Диоды на ленте</td><td>${leds} шт × ${LED_W} W — ${(leds*LED_W).toFixed(1)} Вт</td></tr>`:""}
       ${(()=>{
         // СВЕТ КАК ТОВАР: поток, мощность и понятная рекомендация площади.
@@ -4888,7 +4940,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -5122,6 +5174,27 @@ ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на ленту…" : "Убираем диоды с ленты…"));
 ui.cables.addEventListener("change", ()=>rebuild(
   ui.cables.checked ? "Расставляем тросы…" : "Убираем тросы…"));
+// АНИМАЦИЯ СБОРКИ: слайдер листает станции без пересборки геометрии,
+// кнопка проигрывает монтаж от пустого зала до готовой композиции
+state.asm=1;
+let asmRAF=0;
+ui.asm.addEventListener("input", ()=>{
+  cancelAnimationFrame(asmRAF);
+  state.asm=+ui.asm.value/100;
+  needRedraw=true;
+});
+document.getElementById("asmPlay").addEventListener("click", ()=>{
+  cancelAnimationFrame(asmRAF);
+  const T0=performance.now(), DUR=8000;
+  const tick=(t)=>{
+    const u=Math.min(1,(t-T0)/DUR);
+    const e=u<0.5 ? 2*u*u : 1-Math.pow(-2*u+2,2)/2;   // мягкий разгон-торможение
+    state.asm=e; ui.asm.value=Math.round(e*100); needRedraw=true;
+    if(u<1) asmRAF=requestAnimationFrame(tick);
+  };
+  state.asm=0; ui.asm.value=0; needRedraw=true;
+  asmRAF=requestAnimationFrame(tick);
+});
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
 const regenClick = ()=>{
@@ -5174,6 +5247,10 @@ document.getElementById("saveCsv").onclick = ()=>{
     [`Диоды на ленте ${LED_W} W / ${LED_V} V, шт`, s.leds],
     ["Мощность подсветки, Вт", (s.leds*LED_W).toFixed(1)],
     ["Тросов, шт", s.cabs],
+    ["Макс. нагрузка на трос, кг", (()=>{ let m=0;
+      for(const rb of scene.ribbons) for(const cb of rb.cabs)
+        if(cb.load && cb.load>m) m=cb.load;
+      return m?m.toFixed(2):""; })()],
     ["Троса, м", (s.cabLen/1000).toFixed(1)],
     ["Макс. пролёт между тросами, мм", s.cabSpan||"-"],
     ["Пересечения витков", s.clean ? `нет (зазор >= ${s.airGap} мм)` : "требует ручной проверки"],
@@ -5363,11 +5440,12 @@ document.getElementById("saveMont").onclick = ()=>{
     }
     if(rb.cabs && rb.cabs.length){
       R.push([]);
-      R.push(["ТРОСЫ: точка крепления на ленте и длина троса до потолка габарита"]);
-      R.push(["№","X","Y","Z","длина троса, мм"]);
+      R.push(["ТРОСЫ: точка крепления на ленте, длина троса до потолка габарита и нагрузка"]);
+      R.push(["№","X","Y","Z","длина троса, мм","нагрузка, кг"]);
       rb.cabs.forEach((c,k)=>{
         const e=EXP.p(c.to);
-        R.push([k+1, EXP.f(e[0]),EXP.f(e[1]),EXP.f(e[2]), Math.round(c.from[1]-c.to[1])]);
+        R.push([k+1, EXP.f(e[0]),EXP.f(e[1]),EXP.f(e[2]), Math.round(c.from[1]-c.to[1]),
+                (c.load||0).toFixed(2)]);
       });
     }
   });
