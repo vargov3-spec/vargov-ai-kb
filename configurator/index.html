@@ -5445,8 +5445,13 @@ function updateSpec(){
       ${(()=>{
         // ЦВЕТА И КОЛИЧЕСТВА — ПРЯМО В РАСЧЁТЕ. Без градиента — один цвет
         // каталога на все трубки; с градиентом — три цвета RAL со штуками
+        // прозрачность каждого цвета — прямо в строках раскладки
+        // (замечание пользователя); у среднего при разных флагах — переход
+        const t1=state.opaque1?"непрозрачные":"прозрачные";
+        const t2=state.opaque2?"непрозрачные":"прозрачные";
+        const tm=(state.opaque1===state.opaque2)? t1 : "полупрозрачные (переход)";
         if(!(ui.gradOn && ui.gradOn.checked))
-          return `<tr><td>Цвет трубок</td><td>${state.color.name} — ${rods} шт</td></tr>`;
+          return `<tr><td>Цвет трубок</td><td>${state.color.name} — ${rods} шт, ${t1}</td></tr>`;
         const cnt=[0,0,0];
         for(const rb of scene.ribbons){
           const mk=rb.__gradMask||(rb.__gradMask=gradMask(rb));
@@ -5454,9 +5459,9 @@ function updateSpec(){
         }
         const g2=ralOf(ui.gradC.value);
         const gm=nearestRal(gradMid(hexRgb(state.color.c), hexRgb(g2.c)));
-        return `<tr><td>Цвет 1</td><td>${state.color.name} — ${cnt[0]} шт</td></tr>`
-             + `<tr><td>Цвет 2 (средний)</td><td>${gm.name} — ${cnt[1]} шт</td></tr>`
-             + `<tr><td>Цвет 3</td><td>${g2.name} — ${cnt[2]} шт</td></tr>`;
+        return `<tr><td>Цвет 1</td><td>${state.color.name} — ${cnt[0]} шт, ${t1}</td></tr>`
+             + `<tr><td>Цвет 2 (средний)</td><td>${gm.name} — ${cnt[1]} шт, ${tm}</td></tr>`
+             + `<tr><td>Цвет 3</td><td>${g2.name} — ${cnt[2]} шт, ${t2}</td></tr>`;
       })()}
       <tr><td>Ширина ленты</td><td>${scene.params.ribbonW} мм${
         scene.params.rows===2?` (2 ряда × ${scene.params.rodLen})`:""}</td></tr>
