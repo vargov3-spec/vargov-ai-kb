@@ -5633,6 +5633,10 @@ function renderFormTiles(){
    выставляются при ПЕРЕКЛЮЧЕНИИ пластики на «ребро» и при ВЫБОРЕ формы;
    набранные потом руками размеры не трогаются */
 const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
+// рабочая точка «микса» — эталонный габарит: возврат на плитку «микс»
+// ставит её обратно (замечание пользователя: после «на ребро» размеры
+// оставались от спирали)
+const MIX_DEF = {w:2400, d:900, h:800, c:600};
 const FORM_DEF = {
   rhomb:      {w:1500, d:1500, h:3000, c:600},  // Форма-2 «Ромб»
   plan_star4: {w:1500, d:1500, h:1000, c:600},  // Форма-3 (звезда)
@@ -5658,6 +5662,7 @@ function applyPreset(which){
   state.autoSeed=true;
   if(which==="plast"){
     if(ui.plast.value==="edge"){ ui.form.value=EDGE_DEF.form; setDims(EDGE_DEF); }
+    else setDims(MIX_DEF);
     return;
   }
   if(ui.plast.value!=="edge") return;      // в «миксе» форма одна, пресета нет
