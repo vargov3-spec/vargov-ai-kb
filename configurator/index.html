@@ -56,6 +56,16 @@
   }
   #regen2:hover{filter:brightness(1.12)}
   #regen2:active{transform:translateY(calc(-50% + 1px))}
+  #lightBtn{
+    position:absolute; left:14px; top:12px; width:40px; height:40px;
+    border-radius:50%; border:1px solid var(--gold2); cursor:pointer;
+    background:rgba(20,20,24,.72); color:var(--gold2); font-size:19px;
+    line-height:1; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.4);
+  }
+  #lightBtn:hover{filter:brightness(1.25)}
+  #lightBtn.lit{background:rgba(245,245,247,.85); color:#7a6320;
+    border-color:#b6952f; box-shadow:0 3px 10px rgba(0,0,0,.18)}
   canvas{display:block; width:100%; height:100%; cursor:grab}
   canvas:active{cursor:grabbing}
   fieldset{border:1px solid var(--line); border-radius:8px; padding:10px 12px 12px; margin-bottom:14px}
@@ -126,10 +136,6 @@
   #spec td:first-child{color:var(--dim)}
   #spec .hl td{color:var(--gold2); font-weight:600; font-size:14px}
   .note{color:var(--dim); font-size:11.5px; margin-top:8px; line-height:1.5}
-  .hud{
-    position:absolute; left:12px; bottom:10px; color:var(--dim); font-size:11.5px;
-    background:rgba(11,11,13,.55); padding:4px 8px; border-radius:6px; pointer-events:none;
-  }
   #dims{
     position:absolute; right:12px; top:10px; color:var(--gold2); font-size:13px;
     background:rgba(11,11,13,.55); padding:5px 10px; border-radius:6px; pointer-events:none;
@@ -225,7 +231,6 @@
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
       <div class="row"><label for="asm" title="Монтаж: композиция собирается станция за станцией, как на объекте">Сборка</label><input id="asm" type="range" min="0" max="100" value="100"></div>
-      <div class="row"><label for="lightBg" title="Белая галерея вместо тёмного зала — для светлых интерьеров и печати">Светлый шоурум</label><input id="lightBg" type="checkbox"></div>
     </fieldset>
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
@@ -256,7 +261,7 @@
     <div id="dims"></div>
     <div id="busy"><span class="spin"></span><span id="busyTxt">Генерация варианта композиции…</span></div>
     <button id="regen2" title="Обновить композицию" aria-label="Обновить композицию">Обновить композицию</button>
-    <div class="hud">ЛКМ — вращать · колесо — масштаб · двойной клик — сброс камеры</div>
+    <button id="lightBtn" title="Светлый шоурум" aria-label="Светлый шоурум">☀</button>
   </div>
 </div>
 
@@ -4555,7 +4560,7 @@ function draw(){
   // СВЕТЛЫЙ ШОУРУМ: белая галерея вместо тёмного зала — композиции
   // продаются и в светлые интерьеры; переключается галочкой, влияет
   // только на подачу (в номер варианта и ссылки не входит)
-  const LB = ui.lightBg && ui.lightBg.checked;
+  const LB = !!state.lightBg;
   // фон-виньетка
   const g = ctx.createRadialGradient(cw/2,chgt*0.42,chgt*0.1, cw/2,chgt/2,chgt*0.95);
   if(LB){ g.addColorStop(0,"#f7f7f8"); g.addColorStop(1,"#dfdfe4"); }
@@ -4962,7 +4967,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","lightBg","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -5204,7 +5209,18 @@ ui.asm.addEventListener("input", ()=>{
   needRedraw=true;
 });
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
-ui.lightBg.addEventListener("change", ()=>{needRedraw=true;});
+{
+  // СВЕТЛЫЙ ШОУРУМ — круглой кнопкой в углу окна генерации (решение
+  // пользователя): ☀ в тёмном зале включает белую галерею, ☾ — обратно
+  const lb=document.getElementById("lightBtn");
+  lb.addEventListener("click", ()=>{
+    state.lightBg=!state.lightBg;
+    lb.textContent=state.lightBg ? "\u263E" : "\u2600";
+    lb.title=state.lightBg ? "Тёмный зал" : "Светлый шоурум";
+    lb.classList.toggle("lit", state.lightBg);
+    needRedraw=true;
+  });
+}
 
 const regenClick = ()=>{
   state.autoSeed = false;          // дальше — случайные варианты
@@ -5524,7 +5540,7 @@ function drawSplash(msg){
   draw();
   if(msg){
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.fillStyle=(ui.lightBg && ui.lightBg.checked) ? "rgba(90,80,50,.9)"
+    ctx.fillStyle=state.lightBg ? "rgba(90,80,50,.9)"
                  : "rgba(214,201,166,.9)"; ctx.font="15px system-ui";
     ctx.textAlign="center";
     ctx.fillText(msg, cw/2, chgt-38);
