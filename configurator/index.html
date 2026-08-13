@@ -202,8 +202,10 @@
   <div id="panel">
     <fieldset>
       <legend>Габариты композиции, мм</legend>
-      <div class="row" id="ringRow"><label for="ringD" title="Диаметр кольца по нейтральной оси ленты; длина ленты берётся от окружности, радиальная глубина — пятая часть диаметра">Диаметр кольца</label>
+      <div class="row" id="ringRow"><label for="ringD" title="Диаметр кольца по средней линии ленты">Диаметр кольца</label>
         <input id="ringD" type="number" min="2000" max="20000" step="50" value="2000"></div>
+      <div class="row" id="ringTRow"><label for="ringT" title="Радиальная толщина кольца — ширина пояса, в котором вьётся лента. Чем толще, тем больше перекатов и свитков (как в «миксе»)">Толщина кольца</label>
+        <input id="ringT" type="number" min="600" max="4000" step="50" value="900"></div>
       <div class="row" id="rowW"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="1500" max="20000" step="50" value="2400"></div>
       <div class="row" id="rowD"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="600" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH" id="labH">Высота (Z)</label><input id="dimH" type="number" min="600" max="20000" step="50" value="800"></div>
@@ -359,8 +361,14 @@ const GLASS_WALL = 1.5;        // стенка стеклянной трубки
 const STEEL_DENSITY = 7.85e-3; // г/мм³ (сталь, проволока каркаса)
 /* диаметр трубки задаётся в UI: шаг стержней и допуски зазоров
    пересчитываются от него (зазор осей = диаметр + воздух) */
+// РАЗРЕЖЕНИЕ ГРЕБЁНКИ ПОД КОЛЬЦО. При сворачивании ленты в кольцо шаг
+// станций на внутренней стороне пояса сжимается пропорционально радиусу.
+// Чтобы там не смыкались трубки, заготовка кольца строится с увеличенным
+// шагом: после сворачивания внутри он приходит к норме, а снаружи слегка
+// разрежается. Для прямых композиций множитель равен 1
+let RING_PITCH_K = 1;
 function setRodD(d){
-  ROD_D = d; ROD_R = d/2; ROD_STEP = d+1.6;
+  ROD_D = d; ROD_R = d/2; ROD_STEP = (d+1.6)*RING_PITCH_K;
   CLEAR_FAR = ROD_D + 11;              // 10 мм минимального сближения + запас
   // УТОЧНЕНИЕ ПРОИЗВОДСТВА: между трубками минимальный зазор 0.1 мм,
   // касание допустимо, пересечение — никогда. Прежний лимит (зазор ~1 мм)
@@ -3451,10 +3459,17 @@ function wrapRing(D){
   for(const rb of rr) for(const p of rb.centers){
     x0=Math.min(x0, p[0]); x1=Math.max(x1, p[0]); }
   const stepM=rr[0].stepEff||11.6;
-  const W=Math.max(1, x1-x0)+stepM;
-  const dEff=Math.round(D/5), R=D/2;
-  const zMid=(scene.box.d||dEff)/2;
+  const dEff=scene.box.d||Math.round(D/5), R=D/2;
+  const zMid=dEff/2;
   const C=R+dEff/2+60;
+  // Сворачивание равномерное: угол пропорционален длине заготовки. Шаг
+  // гребёнки при этом меняется по радиусу (внутри пояса гуще, снаружи
+  // реже) — это физический веер стержней, стоящих поперёк кольца. Чтобы
+  // внутри трубки не смыкались, заготовка строится с УВЕЛИЧЕННЫМ шагом
+  // (RING_PITCH_K, см. setRodD): после сворачивания у внутреннего края
+  // пояса он приходит к норме
+  const W=Math.max(1, x1-x0)+stepM;
+  const thOf=(x)=>(x-x0)/W*Math.PI*2;
   // одна точка может числиться в нескольких списках (guideC делит объекты
   // с centers, якоря тросов — с верхами станций) — оборачиваем каждую
   // ровно один раз
@@ -3462,7 +3477,7 @@ function wrapRing(D){
   const tf=(p)=>{
     if(seen.has(p)) return;
     seen.add(p);
-    const th=(p[0]-x0)/W*Math.PI*2;
+    const th=thOf(p[0]);
     const rad=R+(p[2]-zMid);
     p[0]=C+rad*Math.sin(th);
     p[2]=C-rad*Math.cos(th);
@@ -3483,7 +3498,7 @@ function wrapRing(D){
   });
   const S=Math.round(2*C);
   scene.box={w:S, h:scene.box.h, d:S};
-  scene.ring=D;
+  scene.ring=D; scene.ringT=dEff;
   camera.fitTo(scene.box);
   // круг с ребра не читается: при ПЕРЕХОДЕ на кольцо камера поднимается
   // над композицией. Дальше ракурс пользовательский — при смене диаметра
@@ -3883,20 +3898,50 @@ function buildScene(){
   if(ringD && !state.ringBuild){
     state.ringBuild=1;
     const sw=ui.dimW.value, sd=ui.dimD.value;
+    // ТОЛЩИНА КОЛЬЦА ЗАДАЁТСЯ ПОЛЬЗОВАТЕЛЕМ. Она же — глубина заготовки:
+    // в узком поясе (400 мм при ленте 300) генератор укладывал ленту
+    // тремя полосами и она шла плашмя, без перекатов (замечание «плохо,
+    // нужно как в миксе»). При толщине от 900 пропорции заготовки те же,
+    // что у эталонного микса, — возвращаются свитки и постановка на ребро
+    const ringT=ringTOf(ringD);
     ui.dimW.value=String(Math.round(Math.PI*ringD));
-    ui.dimD.value=String(Math.round(ringD/5));
+    ui.dimD.value=String(ringT);
+    // шаг заготовки: внутренняя сторона пояса сожмётся в (1 - T/D) раз,
+    // и там шаг обязан остаться не меньше «касания» трубок с запасом
+    const baseStep=(+ui.rodD.value===8?8:10)+1.6;
+    const tgtIn=((+ui.rodD.value===8?8:10)+0.1)+0.6;
+    // центры станций не доходят до краёв пояса (у краёв стоят торцы
+    // стержней), фактический радиальный разброс центров — около половины
+    // заявленной толщины: по нему и считается разрежение, иначе гребёнка
+    // выходит вдвое реже нужного и лента встаёт на ребро вместо перекатов
+    RING_PITCH_K=Math.max(1, Math.min(1.45,
+      tgtIn/(baseStep*Math.max(0.5, 1-0.5*ringT/ringD))));
     try{
       // оборачивание сжимает зазоры на внутренней стороне кольца — при
       // нарушениях полного скана вариант пересобирается с другим зерном
+      // ОТРЕЗОК НЕ КОРОЧЕ 5 ПОГ. М — по ФАКТУ, а не по оценке метража:
+      // у кольца оценка завышена (лента вьётся в узком поясе), и правило,
+      // применённое к оценке, оставляло куски по 3.8 м. Если отрезки
+      // вышли короткими — пересобираем с меньшим числом отсеков
+      state.forceLanes=0;
       for(let tr=0;;tr++){
         buildScene();
+        const rr0=scene.ribbons;
+        const shortest=Math.min(...rr0.map(rb=>rb.ribbonLen||0));
+        if(rr0.length>1 && shortest<4800 && tr<3){
+          state.forceLanes=rr0.length-1;
+          if(state.forceLanes<=1) state.forceLanes=1;
+          continue;
+        }
         const vio=wrapRing(ringD);
-        if(vio===0 || tr>=2) break;
+        if(vio===0 || tr>=3) break;
         state.autoSeed=false;
         state.seed=(state.seed*1664525+1013904223)>>>0;
       }
+      state.forceLanes=0;
     } finally {
       ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
+      RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
     }
     updateSpec();
     return;
@@ -3940,7 +3985,12 @@ function buildScene(){
         dimHv=+ui.dimH.value||800;
   let lanes=1, sliceAxis=0;
   if(ui.plast.value!=="edge"){
-    if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
+    if(state.ringBuild){
+      // кольцо режется ТОЛЬКО по длине: «глубина» заготовки — это
+      // радиальная толщина кольца, слоями её делить нельзя
+      lanes=state.forceLanes || Math.max(2, Math.min(4, Math.round(dimWv/2200)));
+      sliceAxis=0;
+    } else if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
       lanes=Math.max(2, Math.min(4, Math.round(dimWv/2200)));
       sliceAxis=0;
     } else if(dimDv>=1000 && dimHv<Math.max(dimWv,dimDv)){
@@ -3948,6 +3998,12 @@ function buildScene(){
       sliceAxis=2;
     }
   }
+  // ОТРЕЗОК НЕ КОРОЧЕ 5 ПОГ. М (правило производства, уточнение
+  // пользователя: «минимальный отрезок 5000 мм, можно три отрезка, если
+  // каждый будет по 5 погонных метров»). Раньше число отсеков считалось
+  // только от длины габарита, и кольцо Ø2000 резалось на три куска по
+  // 2.2 пог. м. Оценка метража груба, поэтому порог берётся с запасом 5%
+  while(lanes>1 && targetEst/lanes < 4750) lanes--;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
   // Закрепление действует, пока не нажата кнопка генерации: после неё идут
@@ -5508,30 +5564,29 @@ function draw(){
   // пунктир меняется сразу при наборе, как и у прямоугольного габарита
   if(ui.showBox.checked && ui.plast.value==="ring"){
     const D=Math.max(RING_MIN, +ui.ringD.value||RING_MIN);
+    const T=ringTOf(D);
     const h=boxV.h, C=boxV.w/2, R=D/2;
     ctx.strokeStyle = LB ? "rgba(90,90,110,.45)" : "rgba(120,120,140,.35)";
     ctx.lineWidth=1; ctx.setLineDash([5,6]);
-    const ringAtY=(y)=>{
+    // пояс кольца: внешний и внутренний диаметры на низу и верху — видно
+    // и диаметр, и толщину, которую задаёт пользователь
+    for(const rad of [R-T/2, R+T/2]) for(const y of [0, h]){
       const P=[];
       for(let i=0;i<=72;i++){
         const a=i/72*Math.PI*2;
-        P.push([C+R*Math.sin(a), y, C-R*Math.cos(a)]);
+        P.push([C+rad*Math.sin(a), y, C-rad*Math.cos(a)]);
       }
-      return P;
-    };
-    for(const y of [0, h]){
-      const P=ringAtY(y);
       for(let i=1;i<P.length;i++){
         if(project(P[i-1],B,p1) && project(P[i],B,p2)){
           ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
         }
       }
     }
-    // четыре вертикальные образующие — читается высота кольца
+    // четыре вертикальные образующие по внешнему краю — читается высота
     for(let k=0;k<4;k++){
-      const a=k/4*Math.PI*2;
-      const q0=[C+R*Math.sin(a), 0, C-R*Math.cos(a)];
-      const q1=[C+R*Math.sin(a), h, C-R*Math.cos(a)];
+      const a=k/4*Math.PI*2, rad=R+T/2;
+      const q0=[C+rad*Math.sin(a), 0, C-rad*Math.cos(a)];
+      const q1=[C+rad*Math.sin(a), h, C-rad*Math.cos(a)];
       if(project(q0,B,p1) && project(q1,B,p2)){
         ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
       }
@@ -5539,8 +5594,9 @@ function draw(){
     ctx.setLineDash([]);
     ctx.fillStyle=LB ? "rgba(90,80,50,.85)" : "rgba(200,190,160,.8)";
     ctx.font="12px system-ui";
-    if(project([C, 0, C-R],B,p1)) ctx.fillText(`Ø${D} мм`, p1[0]+6, p1[1]-4);
-    if(project([C+R, h/2, C],B,p1)) ctx.fillText(`${h} мм`, p1[0]+6, p1[1]-4);
+    if(project([C, 0, C-R-T/2],B,p1)) ctx.fillText(`Ø${D} мм`, p1[0]+6, p1[1]-4);
+    if(project([C+R+T/2, h/2, C],B,p1)) ctx.fillText(`${h} мм`, p1[0]+6, p1[1]-4);
+    if(project([C-R, 0, C],B,p1)) ctx.fillText(`пояс ${T} мм`, p1[0]+6, p1[1]-4);
   } else if(ui.showBox.checked){
     const {w,h,d} = boxV;
     const cor = [[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
@@ -5929,7 +5985,7 @@ function updateSpec(){
   // метраж из строки убран — он уже в мини-стикере слева внизу
   // (замечание пользователя: «дублируется информация»)
   document.getElementById("dims").textContent = scene.ring
-    ? `кольцо Ø${scene.ring} × ${scene.box.h} мм · вариант №${state.seed}`
+    ? `кольцо Ø${scene.ring} · пояс ${scene.ringT||""} × ${scene.box.h} мм · вариант №${state.seed}`
     : `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seed}`;
   // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
   // к «Расчёту» — разговор с клиентом сразу предметный
@@ -5947,7 +6003,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","ringD","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","ringD","ringT","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 // цвет по умолчанию — зелёный RAL6001 (утверждённое состояние двухрядной
@@ -6331,8 +6387,10 @@ function renderFormTiles(){
   // — они считаются от диаметра; высота остаётся и подписана «Высота
   // кольца»
   const ring=(ui.plast.value==="ring");
-  const rr=document.getElementById("ringRow");
-  if(rr) rr.style.display = ring ? "" : "none";
+  for(const id of ["ringRow","ringTRow"]){
+    const el=document.getElementById(id);
+    if(el) el.style.display = ring ? "" : "none";
+  }
   for(const id of ["rowW","rowD"]){
     const el=document.getElementById(id);
     if(el) el.style.display = ring ? "none" : "";
@@ -6373,9 +6431,10 @@ const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 // ставит её обратно (замечание пользователя: после «на ребро» размеры
 // оставались от спирали)
 const MIX_DEF = {w:2400, d:900, h:800, c:600};
-// кольцо: минимальный диаметр и состояние по умолчанию
+// кольцо: минимальный диаметр, минимальная толщина и состояние по умолчанию
 const RING_MIN = 2000;
-const RING_DEF = {ring:2000, h:800, c:600};
+const RING_T_MIN = 600;
+const RING_DEF = {ring:2000, ringT:900, h:800, c:600};
 // утверждённые состояния по рядности (скрины пользователя): габариты и
 // длина стержня, зерно — в SEED_PINNED. Применяются при переключении
 // рядности, пока не нажата ручная генерация
@@ -6397,6 +6456,7 @@ const FORM_DEF = {
   c_rings:    {w:4500, d:4500, h:2000, c:600},  // гироскоп
 };
 function setDims(p){
+  if(p.ringT && ui.ringT) ui.ringT.value=String(p.ringT);
   if(p.w) ui.dimW.value=String(p.w);
   if(p.d) ui.dimD.value=String(p.d);
   if(p.h) ui.dimH.value=String(p.h);
@@ -6486,6 +6546,12 @@ function toast(msg){
 //   «на ребро» — ширина 1000, глубина 1000, высота 600;
 //   «кольцо»   — диаметр от 2000 (любое значение), высота 600
 const MIX_H_MAX=3500;
+// толщина кольца: задана пользователем, но не тоньше RING_T_MIN и не
+// толще 45% диаметра — на большей толщине внутренняя сторона кольца
+// сходится к оси, и веер стержней там смыкается плотнее допуска
+const RING_T_MAX_K = 0.45;
+const ringTOf=(D)=>Math.round(Math.max(RING_T_MIN,
+  Math.min(+ui.ringT.value||RING_DEF.ringT, D*RING_T_MAX_K)));
 const dimMin=(id)=>{
   const edge=ui.plast.value==="edge";
   if(id==="dimW") return edge? 1000 : 1500;
@@ -6495,7 +6561,7 @@ const dimMin=(id)=>{
 // ГАБАРИТ ОДНОЙ СТРОКОЙ ДЛЯ ВЫГРУЗОК: у кольца это диаметр и высота,
 // у остальных — Ш x Г x В
 const dimsLine=()=> (ui.plast.value==="ring")
-  ? `Ø${ui.ringD.value} x ${ui.dimH.value} (кольцо)`
+  ? `Ø${ui.ringD.value} x толщина ${ui.ringT.value} x ${ui.dimH.value} (кольцо)`
   : `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`;
 const clampDims=()=>{
   // у кольца ширина и глубина считаются от диаметра — их поля скрыты
@@ -6505,6 +6571,16 @@ const clampDims=()=>{
       ui.ringD.value=String(RING_MIN);
       toast("Минимальный диаметр кольца — "+RING_MIN+" мм (правило производства)");
     }
+    const D=+ui.ringD.value;
+    const tMax=Math.round(D*RING_T_MAX_K);
+    if(+ui.ringT.value<RING_T_MIN){
+      ui.ringT.value=String(RING_T_MIN);
+      toast("Минимальная толщина кольца — "+RING_T_MIN+" мм: в поясе уже ленте негде вить перекаты");
+    } else if(+ui.ringT.value>tMax){
+      ui.ringT.value=String(tMax);
+      toast("Толщина ограничена "+tMax+" мм — не больше 45% диаметра, иначе гребёнка смыкается у внутреннего края");
+    }
+    ui.ringT.max=String(tMax);
     if(+ui.dimH.value<600) ui.dimH.value="600";
     if(+ui.dimH.value>MIX_H_MAX) ui.dimH.value=String(MIX_H_MAX);
     return;
@@ -6523,7 +6599,7 @@ const clampDims=()=>{
     toast("Высота ограничена "+MIX_H_MAX+" мм — правило производства для лент «микс»");
   }
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","ringD"])
+for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","ringD","ringT"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form" || id==="rows") applyPreset(id);
     clampDims();
@@ -6533,14 +6609,14 @@ for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","rin
 // ЖИВОЙ ГАБАРИТНЫЙ БОКС: пунктир меняет размер сразу при наборе цифр,
 // не дожидаясь пересборки ленты — видно, что ввод принят (пересборка
 // придёт по change, а до неё сцена показывает старую ленту в новом боксе)
-for(const idD of ["dimW","dimD","dimH","dimC","ringD"])
+for(const idD of ["dimW","dimD","dimH","dimC","ringD","ringT"])
   ui[idD].addEventListener("input", ()=>{
     if(!scene) return;
     if(ui.plast.value==="ring"){
       // у кольца пунктир — квадрат по внешнему диаметру (та же формула,
       // что в wrapRing: радиус + половина радиальной глубины + запас)
       const D=Math.max(RING_MIN, +ui.ringD.value||RING_MIN);
-      const S=Math.round(2*(D/2+D/10+60));
+      const S=Math.round(2*(D/2+ringTOf(D)/2+60));
       state.boxPreview={w:S, d:S,
                         h:Math.max(600, +ui.dimH.value||scene.box.h)};
     } else {
@@ -6951,7 +7027,8 @@ function variantState(){
           frc:state.frameRal?state.frameRal.id:"", col:state.color.id,
           op:state.opaque1?1:0, op2:state.opaque2?1:0,
           g:ui.gradOn.checked?1:0, gc:ui.gradC.value,
-          rg:ui.ringD? +ui.ringD.value : 0};
+          rg:ui.ringD? +ui.ringD.value : 0,
+          rt:ui.ringT? +ui.ringT.value : 0};
 }
 function applyVariant(o){
   if(o.pl) ui.plast.value=o.pl;
@@ -6967,6 +7044,7 @@ function applyVariant(o){
   if(o.fr) ui.frame.value=o.fr;
   // старые ссылки без поля rg открываются прямой лентой (там и pl не «ring»)
   if(ui.ringD) ui.ringD.value=String(+o.rg||RING_MIN);
+  if(ui.ringT) ui.ringT.value=String(+o.rt||RING_DEF.ringT);
   if(o.col){ state.color=ralOf(o.col);
              setBtnColor("colorDot","colorName",state.color); }
   ui.gradOn.checked=!!+(o.g||0);
