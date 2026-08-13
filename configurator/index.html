@@ -227,7 +227,6 @@
 
     <button class="btn" id="regen">✦ Сгенерировать новый вариант</button>
     <div class="btns">
-      <button class="btn2" id="asmPlay">▶ Анимация сборки</button>
       <button class="btn2" id="favAdd">⭐ В избранное</button>
       <button class="btn2" id="favLink">Ссылка на вариант</button>
       <button class="btn2" id="saveCsv">Спецификация CSV</button>
@@ -5174,26 +5173,12 @@ ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на ленту…" : "Убираем диоды с ленты…"));
 ui.cables.addEventListener("change", ()=>rebuild(
   ui.cables.checked ? "Расставляем тросы…" : "Убираем тросы…"));
-// АНИМАЦИЯ СБОРКИ: слайдер листает станции без пересборки геометрии,
-// кнопка проигрывает монтаж от пустого зала до готовой композиции
+// СБОРКА: бегунок листает станции монтажа без пересборки геометрии
+// (кнопка автопроигрывания убрана по решению пользователя — дублировала бегунок)
 state.asm=1;
-let asmRAF=0;
 ui.asm.addEventListener("input", ()=>{
-  cancelAnimationFrame(asmRAF);
   state.asm=+ui.asm.value/100;
   needRedraw=true;
-});
-document.getElementById("asmPlay").addEventListener("click", ()=>{
-  cancelAnimationFrame(asmRAF);
-  const T0=performance.now(), DUR=8000;
-  const tick=(t)=>{
-    const u=Math.min(1,(t-T0)/DUR);
-    const e=u<0.5 ? 2*u*u : 1-Math.pow(-2*u+2,2)/2;   // мягкий разгон-торможение
-    state.asm=e; ui.asm.value=Math.round(e*100); needRedraw=true;
-    if(u<1) asmRAF=requestAnimationFrame(tick);
-  };
-  state.asm=0; ui.asm.value=0; needRedraw=true;
-  asmRAF=requestAnimationFrame(tick);
 });
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
 
