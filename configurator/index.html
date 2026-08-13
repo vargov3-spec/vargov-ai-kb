@@ -3426,6 +3426,18 @@ function smoothRails(ribbons, box){
     return Math.acos(Math.max(-1,Math.min(1,
       (v1[0]*v2[0]+v1[1]*v2[1]+v1[2]*v2[2])/(l1*l2))))*180/Math.PI;
   };
+  // радиус дуги в окне ±2 станции: сумма поворотов к длине дуги. Ловит
+  // «шпильки», где каждый отдельный угол мал, а полный поворот крут:
+  // проволока каркаса не гнётся круче нескольких сантиметров радиуса
+  const arcAt=(P,i)=>{
+    if(i<3 || i+3>=P.length) return [0,1e9];
+    let ang=0, arc=0;
+    for(let j=i-2;j<=i+2;j++)
+      ang+=angAt(P,j)*Math.PI/180;
+    for(let j=i-2;j<=i+3;j++)
+      arc+=Math.hypot(P[j][0]-P[j-1][0],P[j][1]-P[j-1][1],P[j][2]-P[j-1][2]);
+    return [ang, arc/Math.max(ang,1e-6)];
+  };
   let fixed=0;
   for(let pass=0; pass<2; pass++)
   for(const rb of ribbons){
@@ -3490,9 +3502,10 @@ function smoothRails(ribbons, box){
           }
         }
         if(!ok){
-          // стержни двигать нельзя — контур разглаживается сам по себе:
-          // леска позволяет проволоке отходить от торцов на пару
-          // сантиметров, а острый угол на проволоке невозможен физически
+          // стержни двигать нельзя — контур разглаживается сам по себе.
+          // Отход канта от торцов ограничен люфтом петли лески: 8 мм,
+          // больше — торцы заметно вылетают из контура (замечание
+          // пользователя), тогда полный откат
           for(const bk of bakRod){ bk.r.a=bk.a; bk.r.b=bk.b; }
           let det=0;
           for(let k=i0w;k<=i1w;k++)
@@ -3500,7 +3513,7 @@ function smoothRails(ribbons, box){
               rail[k][0]-bakRail[k-i0w][0],
               rail[k][1]-bakRail[k-i0w][1],
               rail[k][2]-bakRail[k-i0w][2]));
-          let railOk=det<=20 && angAt(rail,i)<a0-5;
+          let railOk=det<=8 && angAt(rail,i)<a0-5;
           if(railOk) for(let k=i0w;k<=i1w && railOk;k++)
             for(let x=0;x<3;x++)
               if(rail[k][x]<-ROD_R-6 || rail[k][x]>lim3[x]+ROD_R+6) railOk=false;
@@ -3509,6 +3522,80 @@ function smoothRails(ribbons, box){
               rail[k][1]=bakRail[k-i0w][1]; rail[k][2]=bakRail[k-i0w][2]; }
           } else fixed++;
         } else fixed++;
+      }
+      // ЭТАП «ШПИЛЬКИ»: крутая дуга без единичного залома — полный поворот
+      // в окне ±2 при радиусе меньше 48 мм. Лапласиан узкого окна тут
+      // бессилен (полный поворот никуда не девается), поэтому окно шире —
+      // ±8 станций: тот же поворот распределяется по большей длине дуги и
+      // радиус растёт. Стержни следуют за контуром той же дельтой (леска),
+      // приёмка — зазоры, бокс и растяжение стержня ≤10 мм; при отказе
+      // дельта пробуется в масштабе 0.5 и 0.25
+      for(let i=3;i+3<rail.length;i++){
+        const [ang0, rad0]=arcAt(rail,i);
+        if(ang0<0.7 || rad0>=48) continue;
+        const W=8, i0w=Math.max(1,i-W), i1w=Math.min(rail.length-2,i+W);
+        const bakRail=[], bakRod=[];
+        for(let k=i0w;k<=i1w;k++){
+          bakRail.push(rail[k].slice());
+          for(const [r] of co.rods(k)) bakRod.push({r, a:r.a.slice(), b:r.b.slice()});
+        }
+        for(let it=0; it<40; it++){
+          for(let k=i0w+1;k<i1w;k++)
+            for(let x=0;x<3;x++)
+              rail[k][x]+=0.5*(rail[k-1][x]+rail[k+1][x]-2*rail[k][x]);
+          if(arcAt(rail,i)[1]>=56) break;
+        }
+        const tgtRail=[];
+        for(let k=i0w;k<=i1w;k++) tgtRail.push(rail[k].slice());
+        let applied=false;
+        for(const sc of [1, 0.5, 0.25]){
+          // контур в масштабе дельты, стержни следом
+          for(const bk of bakRod){
+            bk.r.a[0]=bk.a[0]; bk.r.a[1]=bk.a[1]; bk.r.a[2]=bk.a[2];
+            bk.r.b[0]=bk.b[0]; bk.r.b[1]=bk.b[1]; bk.r.b[2]=bk.b[2];
+          }
+          const moved=[];
+          for(let k=i0w;k<=i1w;k++){
+            const b0=bakRail[k-i0w], t0=tgtRail[k-i0w];
+            const dv=[(t0[0]-b0[0])*sc,(t0[1]-b0[1])*sc,(t0[2]-b0[2])*sc];
+            rail[k][0]=b0[0]+dv[0]; rail[k][1]=b0[1]+dv[1]; rail[k][2]=b0[2]+dv[2];
+            if(Math.hypot(...dv)<0.3) continue;
+            for(const [r, end] of co.rods(k)){
+              const tip=r[end];
+              tip[0]+=dv[0]; tip[1]+=dv[1]; tip[2]+=dv[2];
+              moved.push(r);
+            }
+          }
+          const rad1=arcAt(rail,i)[1];
+          let ok=rad1>=Math.min(52, rad0+8);
+          if(ok){
+            chk2:
+            for(const r of moved){
+              let bk0=null;
+              for(const bk of bakRod) if(bk.r===r){ bk0=bk; break; }
+              if(bk0){
+                const L0=Math.hypot(r.a[0]-r.b[0],r.a[1]-r.b[1],r.a[2]-r.b[2]);
+                const L1=Math.hypot(bk0.a[0]-bk0.b[0],bk0.a[1]-bk0.b[1],bk0.a[2]-bk0.b[2]);
+                if(Math.abs(L0-L1)>10){ ok=false; break chk2; }
+              }
+              for(const p2 of [r.a, r.b]) for(let x=0;x<3;x++)
+                if(p2[x]<-ROD_R-6 || p2[x]>lim3[x]+ROD_R+6){ ok=false; break chk2; }
+              for(const rb2 of ribbons) for(const q of rb2.rods){
+                if(q===r) continue;
+                if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+                const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
+                if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+                   (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk2; }
+              }
+            }
+          }
+          if(ok){ applied=true; fixed++; break; }
+        }
+        if(!applied){
+          for(const bk of bakRod){ bk.r.a=bk.a; bk.r.b=bk.b; }
+          for(let k=i0w;k<=i1w;k++){ rail[k][0]=bakRail[k-i0w][0];
+            rail[k][1]=bakRail[k-i0w][1]; rail[k][2]=bakRail[k-i0w][2]; }
+        }
       }
     }
   }
@@ -4024,6 +4111,35 @@ function buildScene(){
         }
         return mx;
       };
+      // ШПИЛЬКА КАНТА У СТЫКА. Центры могут сойтись плавно (залом ≤30°,
+      // радиус 75+), а кант при скачке ориентации стержней на шве
+      // заворачивает петлёй радиуса 15-30 мм — проволока так не гнётся,
+      // на виде это острый поворот, и торцы стержней вылетают из контура
+      // (замер 4400×900×800 №42424242: кант A R18 при центре R76).
+      // Критерий — минимальный оконный радиус дуги кантов в окне стыка:
+      // сумма поворотов в окне ±2 станции к длине дуги
+      const railRadOf=(rb, head, span)=>{
+        let mn=1e9;
+        const rails=[rb.railA, rb.railB];
+        if(rb.dirUp) rails.push(rb.centers);
+        for(const P of rails){
+          if(!P) continue;
+          const n=P.length; if(n<8) continue;
+          const i0=head? 3 : Math.max(3, n-4-span);
+          const i1=head? Math.min(n-4, span) : n-4;
+          for(let i=i0;i<=i1;i++){
+            let ang=0, arc=0;
+            for(let j=i-2;j<=i+2;j++){
+              const v1=V.sub(P[j],P[j-1]), v2=V.sub(P[j+1],P[j]);
+              const l1=V.len(v1)||1, l2=V.len(v2)||1;
+              ang+=Math.acos(Math.max(-1,Math.min(1,V.dot(v1,v2)/(l1*l2))));
+            }
+            for(let j=i-2;j<=i+3;j++) arc+=V.len(V.sub(P[j],P[j-1]));
+            if(ang>0.6) mn=Math.min(mn, arc/ang);
+          }
+        }
+        return mn;
+      };
       const rodsOk=(newRods, rbSelf)=>{
         const lim=[box.w,box.h,box.d];
         // допуск вылета торца моста за грань: радиус трубки + 6 мм (руль
@@ -4195,6 +4311,11 @@ function buildScene(){
                 if(!whyB && kLim<100){
                   const fan=Math.max(tipFanOf(A,aHead,spA), tipFanOf(B,bHead,spB));
                   if(fan>36) whyB='fan'+Math.round(fan);
+                  // ...и кантов без шпилек: радиус дуги проволоки ≥ 32 мм
+                  if(!whyB){
+                    const rr=Math.min(railRadOf(A,aHead,spA), railRadOf(B,bHead,spB));
+                    if(rr<32) whyB='rail'+Math.round(rr);
+                  }
                 }
               }
               done=!whyB;
@@ -4947,12 +5068,40 @@ function buildScene(){
     const cov=hit/cellN;
     clear.cov=+cov.toFixed(3);
     clear.fillMin=+fillMin.toFixed(3);
+    // ШПИЛЬКИ КАНТОВ. Послабленный проход сварки (залом без лимита —
+    // последний шанс соединить концы) может оставить на канте петлю
+    // радиуса 15-30 мм: проволока так не гнётся, торцы стержней вылетают
+    // из контура (скрин пользователя, №42424242: кант A R18 при повороте
+    // 276°). Такой вариант чист по зазорам, но показывать его нельзя —
+    // меряем минимальный оконный радиус дуги всех контуров на ГОТОВОЙ
+    // геометрии (после провисов и сглаживаний) и бракуем вместе с
+    // вырожденными
+    let railMin=1e9;
+    for(const rb of ribbons){
+      const rails=[rb.railA, rb.railB];
+      if(rb.dirUp) rails.push(rb.centers);
+      for(const P of rails){
+        if(!P || P.length<8) continue;
+        for(let i=3;i+3<P.length;i++){
+          let ang=0, arc=0;
+          for(let j=i-2;j<=i+2;j++){
+            const v1=V.sub(P[j],P[j-1]), v2=V.sub(P[j+1],P[j]);
+            const l1=V.len(v1)||1, l2=V.len(v2)||1;
+            ang+=Math.acos(Math.max(-1,Math.min(1,V.dot(v1,v2)/(l1*l2))));
+          }
+          if(ang<=0.6) continue;
+          for(let j=i-2;j<=i+3;j++) arc+=V.len(V.sub(P[j],P[j-1]));
+          railMin=Math.min(railMin, arc/ang);
+        }
+      }
+    }
+    clear.railMin=railMin>1e8? null : Math.round(railMin);
     // ПОКРЫТИЕ ЗДЕСЬ ТОЛЬКО ПОКАЗЫВАЕТСЯ, А ОТБРАКОВЫВАЕТСЯ В ВОРОТАХ
     // ЛЕСТНИЦЫ. Пересборка с другим зерном повторяет всю лестницу со
     // страховкой, и порог покрытия здесь давал 40-секундные сборки —
     // достаточно того, что лестница сама ищет вариант с покрытием выше порога
     const tries=state.reTry||0;
-    if(!params.concept && fillMin<0.80 && tries<2){
+    if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
