@@ -3338,21 +3338,21 @@ function centerSag(ribbons){
     // в СЕРЕДИНЕ ПРОЛЁТА между тросами — параболой, как и провис вдоль
     if(rb.cabSt && rb.cabSt.length){
       const A2=rb.cabSt, w=new Array(n).fill(0);
-      // ГЛУБИНА ПРОВИСА — ОТ ДЛИНЫ ПРОЛЁТА (данные пользователя: провис
-      // и подъём центра может быть до 100-120 мм): длиннее пролёт —
-      // глубже провисает центральная проволока
-      const ampOf=(spanMm)=>Math.min(110, 12+0.06*spanMm);
+      // ГЛУБИНА ПРОВИСА — ОТ ДЛИНЫ ПРОЛЁТА (данные пользователя: «делай
+      // провисы и подъёмы до 100-150 мм спокойно, это возможно при
+      // скручивании, на практике так и происходит»)
+      const ampOf=(spanMm)=>Math.min(145, 20+0.09*spanMm);
       const ramp=(dist)=>Math.min(1, Math.pow(dist*rb.stepEff/500, 2));
-      for(let i=0;i<A2[0];i++) w[i]=ramp(A2[0]-i)*40;
+      for(let i=0;i<A2[0];i++) w[i]=ramp(A2[0]-i)*60;
       for(let k=1;k<A2.length;k++){
         const s0=A2[k-1], s1=A2[k], amp=ampOf((s1-s0)*rb.stepEff);
         for(let i=s0+1;i<s1;i++){ const u=(i-s0)/(s1-s0); w[i]=4*u*(1-u)*amp; }
       }
       const aL=A2[A2.length-1];
-      for(let i=aL+1;i<n;i++) w[i]=ramp(i-aL)*40;
+      for(let i=aL+1;i<n;i++) w[i]=ramp(i-aL)*60;
       for(let i=0;i<n;i++) f[i]*=w[i];
     } else {
-      for(let i=0;i<n;i++) f[i]*=24;
+      for(let i=0;i<n;i++) f[i]*=40;
     }
     for(let it=0; it<10; it++)
       for(let i=1;i<n-1;i++) f[i]=(f[i-1]+2*f[i]+f[i+1])/4;
@@ -3362,8 +3362,8 @@ function centerSag(ribbons){
     // Крутизна профиля ограничена 2.5 мм на станцию проходами вперёд и
     // назад — контур опускается и поднимается только плавно
     for(let p2=0;p2<2;p2++){
-      for(let i=1;i<n;i++) f[i]=Math.min(f[i], f[i-1]+2.5);
-      for(let i=n-2;i>=0;i--) f[i]=Math.min(f[i], f[i+1]+2.5);
+      for(let i=1;i<n;i++) f[i]=Math.min(f[i], f[i-1]+3.5);
+      for(let i=n-2;i>=0;i--) f[i]=Math.min(f[i], f[i+1]+3.5);
     }
     rb.__csag=f;
   }
@@ -3378,10 +3378,10 @@ function centerSag(ribbons){
     if(!rb.__csag) continue;
     const n=rb.centers.length;
     for(const r of rb.rods){
-      const dy=Math.min(120, rb.__csag[Math.min(n-1,r.st)])*sc;
+      const dy=Math.min(150, rb.__csag[Math.min(n-1,r.st)])*sc;
       if(dy>0.2) r.b[1]-=dy;
     }
-    for(let i=0;i<n;i++) rb.centers[i][1]-=Math.min(120, rb.__csag[i])*sc;
+    for(let i=0;i<n;i++) rb.centers[i][1]-=Math.min(150, rb.__csag[i])*sc;
   } };
   const viol=()=>{
     let v=0;
@@ -5655,8 +5655,8 @@ document.getElementById("gradBtn").onclick=()=>
     ui.gradOn.dispatchEvent(new Event("change"));
     updateGradBtn();
   }, null, true);
-// ЦВЕТ КАРКАСА (решение пользователя): штатные золото и хром — первыми
-// свотчами палитры, дальше весь каталог RAL
+// КАРКАС — ТОЛЬКО ЗОЛОТО ИЛИ ХРОМ (решение пользователя): кнопка
+// работает переключателем, палитры для каркаса нет
 const FRAME_SPECIALS=[
   {id:"gold",   name:"Золото (штатная отделка)", c:"#C9A227"},
   {id:"chrome", name:"Хром (штатная отделка)",   c:"#969CA4"},
@@ -5672,14 +5672,13 @@ function updateFrameBtn(){
   btn.style.color=lum>150? "#17130a" : "#f4f0e6";
   btn.style.borderColor="rgba(255,255,255,.28)";
 }
-document.getElementById("frameBtn").onclick=()=>
-  openRalPicker("Цвет каркаса — золото, хром или каталог RAL",
-    state.frameRal? state.frameRal.id : ui.frame.value, (g)=>{
-      if(g.id==="gold" || g.id==="chrome"){ state.frameRal=null; ui.frame.value=g.id; }
-      else state.frameRal=g;
-      updateFrameBtn();
-      needRedraw=true;
-    }, null, FRAME_SPECIALS);
+document.getElementById("frameBtn").onclick=()=>{
+  ui.frame.value = ui.frame.value==="gold" ? "chrome" : "gold";
+  state.frameRal=null;
+  updateFrameBtn();
+  needRedraw=true;
+};
+document.getElementById("frameBtn").title="Клик — переключить: золото ⇄ хром";
 setBtnColor("colorDot","colorName", DEFAULT_GLASS);
 updateGradBtn();
 updateFrameBtn();
@@ -5791,34 +5790,22 @@ function prevRings(){ return tilePrev(g=>{
 // схематичные изображения САМИХ КОМПОЗИЦИЙ (по скриншотам пользователя):
 // «микс» — плывущая лента с перекатами, «на ребро» — конус колец-этажерка
 function prevMix(){ return tilePrev(g=>{
-  // силуэт реальной генерации (по скриншоту пользователя): лента-змейка
-  // с завитком-петлёй посередине; Катмулл-Ром по опорным точкам
-  const cp=[[2,56],[15,38],[29,56],[41,68],[52,52],[46,35],[33,39],[41,58],
-            [57,68],[71,54],[81,36],[97,46]];
-  const P=[];
-  for(let i=0;i<cp.length-1;i++){
-    const p0=cp[Math.max(0,i-1)], p1=cp[i], p2=cp[i+1],
-          p3=cp[Math.min(cp.length-1,i+2)];
-    for(let j=0;j<8;j++){
-      const t=j/8, t2=t*t, t3=t2*t;
-      P.push([0,1].map(x=>0.5*((2*p1[x])+(-p0[x]+p2[x])*t
-        +(2*p0[x]-5*p1[x]+4*p2[x]-p3[x])*t2
-        +(-p0[x]+3*p1[x]-3*p2[x]+p3[x])*t3)));
-    }
+  // как реальная генерация (образец пользователя): длинная лента плывёт
+  // слева направо мягкими волнами, два переката — лента поворачивается
+  // лицом/ребром, стержни поперёк
+  const N=84, top=[], bot=[];
+  for(let i=0;i<=N;i++){
+    const t=i/N, x=3+t*98;
+    const y=52+15*Math.sin(t*Math.PI*2*0.85+2.4)+5*Math.sin(t*Math.PI*4.2);
+    // ширина: два переката (смены знака) по ходу ленты
+    const w=12*Math.cos(t*Math.PI*2.1-0.35);
+    top.push([x,y-w]); bot.push([x,y+w]);
   }
-  const top=[], bot=[];
-  for(let i=0;i<P.length;i++){
-    const a2=P[Math.max(0,i-1)], b2=P[Math.min(P.length-1,i+1)];
-    let nx=-(b2[1]-a2[1]), ny=b2[0]-a2[0];
-    const L=Math.hypot(nx,ny)||1; nx/=L; ny/=L;
-    top.push([P[i][0]+nx*6.5, P[i][1]+ny*6.5]);
-    bot.push([P[i][0]-nx*6.5, P[i][1]-ny*6.5]);
-  }
-  g.lineWidth=2.1;
+  g.lineWidth=2.0;
   g.beginPath(); top.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
   g.beginPath(); bot.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
-  g.lineWidth=1.1;
-  for(let i=2;i<P.length-1;i+=3){
+  g.lineWidth=1.05;
+  for(let i=2;i<N;i+=3){
     g.beginPath(); g.moveTo(top[i][0],top[i][1]); g.lineTo(bot[i][0],bot[i][1]); g.stroke();
   }
 });}
