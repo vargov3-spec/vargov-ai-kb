@@ -220,7 +220,6 @@
         </span></div>
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
-      <div class="row"><label for="sag">Провис под весом</label><input id="sag" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
     </fieldset>
 
@@ -4327,7 +4326,9 @@ function buildScene(){
   // консольно. Провис применяется К ГОТОВОЙ геометрии после разводки и
   // подвесов: якорные станции стоят на месте, сдвиг плавный, стрела
   // ограничена 14 мм — на зазоры влияет меньше допуска ближнего лимита
-  if(ui.sag && ui.sag.checked && ui.cables.checked){
+  // ПРОВИС ПОД ВЕСОМ — всегда: идеально ровная лента между подвесами
+  // выглядит рендером, а не вещью (галочка убрана по решению пользователя)
+  if(ui.cables.checked){
     for(const rb of ribbons){
       const A2=rb.cabSt;
       if(!A2 || !A2.length) continue;
@@ -4887,7 +4888,7 @@ function updateSpec(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","sag","showBox","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL3003") || GLASS_COLORS[0];
@@ -5117,7 +5118,6 @@ ui.gradC.addEventListener("change", ()=>{needRedraw=true; if(state.lastSpec) upd
 // подпись индикатора — по операции: галочки диодов и подвесов не подбирают
 // композицию заново, они доукомплектовывают уже готовый каркас
 ui.dimC.addEventListener("change", ()=>rebuild("Пересчитываем длину тросов…"));
-ui.sag.addEventListener("change", ()=>rebuild("Пересчитываем провис…"));
 ui.leds.addEventListener("change", ()=>rebuild(
   ui.leds.checked ? "Добавляем диоды на ленту…" : "Убираем диоды с ленты…"));
 ui.cables.addEventListener("change", ()=>rebuild(
@@ -5476,8 +5476,7 @@ function variantState(){
           h:+ui.dimH.value, c:+ui.dimC.value, pl:ui.plast.value,
           f:ui.form.value, r:+ui.rows.value, rw:+ui.rWidth.value,
           rd:+ui.rodD.value, fr:ui.frame.value, col:state.color.id,
-          g:ui.gradOn.checked?1:0, gc:ui.gradC.value,
-          sg:ui.sag.checked?1:0};
+          g:ui.gradOn.checked?1:0, gc:ui.gradC.value};
 }
 function applyVariant(o){
   if(o.pl) ui.plast.value=o.pl;
@@ -5496,7 +5495,7 @@ function applyVariant(o){
   ui.gradOn.checked=!!+(o.g||0);
   if(o.gc){ ui.gradC.value=o.gc;
             setBtnColor("gradDot","gradName",ralOf(o.gc)); }
-  if(o.sg!=null && o.sg!=="") ui.sag.checked=!!+o.sg;
+  // поле sg старых ссылок игнорируется: провис теперь всегда включён
   state.autoSeed=false;
   state.seed=(+o.v||state.seed)>>>0;
   refreshLabels();
