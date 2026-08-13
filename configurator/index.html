@@ -151,6 +151,14 @@
   #stage.light #stat{color:#1a1a1e; background:none;
     text-shadow:0 1px 3px rgba(255,255,255,.55)}
   #stat:empty{display:none}
+  /* бегунок сборки — внизу окна генерации (перенесён из панели по
+     решению пользователя) */
+  #asmBar{position:absolute; left:50%; bottom:12px; transform:translateX(-50%);
+    width:min(52%, 560px); display:flex; align-items:center; gap:12px; z-index:4}
+  #asmBar span{color:var(--gold2); font-size:12.5px; opacity:.85;
+    user-select:none; text-shadow:0 1px 3px rgba(0,0,0,.45)}
+  #asmBar input[type=range]{flex:1; width:auto}
+  #stage.light #asmBar span{color:#1a1a1e; text-shadow:0 1px 3px rgba(255,255,255,.55)}
   #toast{position:absolute; left:50%; top:14px; transform:translateX(-50%);
     max-width:70%; background:rgba(24,22,14,.92); border:1px solid var(--gold2);
     color:#e8d9a8; font-size:13px; padding:9px 14px; border-radius:8px;
@@ -193,9 +201,9 @@
   <div id="panel">
     <fieldset>
       <legend>Габариты композиции, мм</legend>
-      <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="400" max="20000" step="50" value="2400"></div>
-      <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="300" max="20000" step="50" value="900"></div>
-      <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="300" max="20000" step="50" value="800"></div>
+      <div class="row"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="1500" max="20000" step="50" value="2400"></div>
+      <div class="row"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="600" max="20000" step="50" value="900"></div>
+      <div class="row"><label for="dimH">Высота (Z)</label><input id="dimH" type="number" min="600" max="20000" step="50" value="800"></div>
       <div class="row"><label for="dimC">Высота до потолка<br><span style="font-size:11px;opacity:.6">длина тросов от верха композиции</span></label>
         <input id="dimC" type="number" min="0" max="10000" step="50" value="600"></div>
       <select id="plan" style="display:none"></select>
@@ -269,7 +277,6 @@
       <div class="row"><label for="leds">Диоды на ленте</label><input id="leds" type="checkbox" checked></div>
       <div class="row"><label for="cables">Тросы</label><input id="cables" type="checkbox" checked></div>
       <div class="row"><label for="showBox">Габаритный бокс</label><input id="showBox" type="checkbox" checked></div>
-      <div class="row"><label for="asm" title="Монтаж: композиция собирается станция за станцией, как на объекте">Сборка</label><input id="asm" type="range" min="0" max="100" value="100"></div>
     </details>
 
     <div class="btns">
@@ -305,6 +312,9 @@
     <button id="regen2" title="Обновить композицию" aria-label="Обновить композицию">Обновить композицию</button>
     <button id="lightBtn" title="Светлый шоурум" aria-label="Светлый шоурум">☀</button>
     <div id="stat"></div>
+    <div id="asmBar" title="Монтаж: композиция собирается станция за станцией, как на объекте">
+      <span>Сборка</span><input id="asm" type="range" min="0" max="100" value="100">
+    </div>
     <div id="toast"></div>
   </div>
 </div>
@@ -568,6 +578,20 @@ const GLASS_COLORS = [
   {id:"RAL8024", name:"RAL8024 Бежево-коричневый", c:"#79553D"},
   {id:"RAL8025", name:"RAL8025 Бледно-коричневый", c:"#755C48"},
   {id:"RAL8028", name:"RAL8028 Терракотово-коричневый", c:"#4E3B31"},
+  // 9000-серия — белые, чёрные и алюминиевые (добавлена по просьбе
+  // пользователя: в палитре не было чисто белого)
+  {id:"RAL9001", name:"RAL9001 Кремово-белый", c:"#FDF4E3"},
+  {id:"RAL9002", name:"RAL9002 Светло-серый", c:"#E7EBDA"},
+  {id:"RAL9003", name:"RAL9003 Сигнальный белый", c:"#F4F4F4"},
+  {id:"RAL9004", name:"RAL9004 Сигнальный чёрный", c:"#282828"},
+  {id:"RAL9005", name:"RAL9005 Чёрный янтарь", c:"#0A0A0A"},
+  {id:"RAL9006", name:"RAL9006 Бело-алюминиевый", c:"#A5A5A5"},
+  {id:"RAL9007", name:"RAL9007 Тёмно-алюминиевый", c:"#8F8F8F"},
+  {id:"RAL9010", name:"RAL9010 Чисто белый", c:"#FFFFFF"},
+  {id:"RAL9011", name:"RAL9011 Графитно-чёрный", c:"#1C1C1C"},
+  {id:"RAL9016", name:"RAL9016 Транспортный белый", c:"#F6F6F6"},
+  {id:"RAL9017", name:"RAL9017 Транспортный чёрный", c:"#1E1E1E"},
+  {id:"RAL9018", name:"RAL9018 Папирусно-белый", c:"#D7D7D7"},
 ];
 // ближайший цвет каталога к произвольному RGB — им подменяется средний
 // цвет градиента: красить можно только цветами каталога
@@ -6136,10 +6160,28 @@ function toast(msg){
   clearTimeout(toastT);
   toastT=setTimeout(()=>t.classList.remove("show"), 4000);
 }
-// ПРАВИЛО ПОЛЬЗОВАТЕЛЯ: у композиций «микс» высота не больше 3500 мм
-// (вертикальная лента — всегда один отрезок, см. нарезку в buildScene)
+// ПРАВИЛА ПОЛЬЗОВАТЕЛЯ ПО ГАБАРИТАМ: у композиций «микс» высота не
+// больше 3500 мм (вертикальная лента — всегда один отрезок, см. нарезку
+// в buildScene). Минимальные габариты — меньше система не даёт ставить:
+//   «микс»     — ширина 1500, глубина 600, высота 600;
+//   «на ребро» — ширина 1000, глубина 1000, высота 600
 const MIX_H_MAX=3500;
-const clampMixH=()=>{
+const dimMin=(id)=>{
+  const edge=ui.plast.value==="edge";
+  if(id==="dimW") return edge? 1000 : 1500;
+  if(id==="dimD") return edge? 1000 : 600;
+  return 600;
+};
+const clampDims=()=>{
+  ui.dimW.min=String(dimMin("dimW"));
+  ui.dimD.min=String(dimMin("dimD"));
+  for(const id of ["dimW","dimD","dimH"]){
+    const mn=dimMin(id);
+    if(+ui[id].value<mn){
+      ui[id].value=String(mn);
+      toast("Минимум для этой пластики — "+mn+" мм (правило производства)");
+    }
+  }
   if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX){
     ui.dimH.value=String(MIX_H_MAX);
     toast("Высота ограничена "+MIX_H_MAX+" мм — правило производства для лент «микс»");
@@ -6148,7 +6190,7 @@ const clampMixH=()=>{
 for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form") applyPreset(id);
-    clampMixH();
+    clampDims();
     rebuild("Генерация варианта композиции…");
   });
 // ЖИВОЙ ГАБАРИТНЫЙ БОКС: пунктир меняет размер сразу при наборе цифр,
@@ -6157,9 +6199,9 @@ for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
 for(const idD of ["dimW","dimD","dimH","dimC"])
   ui[idD].addEventListener("input", ()=>{
     if(!scene) return;
-    state.boxPreview={w:Math.max(100, +ui.dimW.value||scene.box.w),
-                      h:Math.max(100, +ui.dimH.value||scene.box.h),
-                      d:Math.max(100, +ui.dimD.value||scene.box.d)};
+    state.boxPreview={w:Math.max(dimMin("dimW"), +ui.dimW.value||scene.box.w),
+                      h:Math.max(dimMin("dimH"), +ui.dimH.value||scene.box.h),
+                      d:Math.max(dimMin("dimD"), +ui.dimD.value||scene.box.d)};
     needRedraw=true;
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
