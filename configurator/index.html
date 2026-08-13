@@ -139,11 +139,12 @@
   details.adv summary:hover{color:var(--gold2)}
   details.adv[open] summary{color:var(--gold2); margin-bottom:6px}
   #stat{position:absolute; left:14px; bottom:12px; color:var(--gold2); font-size:12.5px;
-    background:rgba(11,11,13,.60); padding:5px 10px; border-radius:6px;
-    pointer-events:none; font-variant-numeric:tabular-nums}
+    pointer-events:none; font-variant-numeric:tabular-nums;
+    text-shadow:0 1px 3px rgba(0,0,0,.45)}
   /* светлый шоурум: надписи поверх сцены — чёрным (решение пользователя) */
   #stage.light #dims{color:#1a1a1e; text-shadow:0 1px 3px rgba(255,255,255,.55)}
-  #stage.light #stat{color:#1a1a1e; background:rgba(255,255,255,.55)}
+  #stage.light #stat{color:#1a1a1e; background:none;
+    text-shadow:0 1px 3px rgba(255,255,255,.55)}
   #stat:empty{display:none}
   #toast{position:absolute; left:50%; top:14px; transform:translateX(-50%);
     max-width:70%; background:rgba(24,22,14,.92); border:1px solid var(--gold2);
