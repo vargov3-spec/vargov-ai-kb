@@ -3667,6 +3667,19 @@ function mergeRibbons(ribbons, box, closeRing){
     const r=mergeTry(ribbons, box, closeRing, kTan);
     if(r) return r;
   }
+  // не срослось целиком (далёкие или тесные пары) — пробуем попарно:
+  // сшиваются только близкие соседи, остальные остаются как есть
+  if(ribbons.length>2){
+    for(let i=0;i+1<ribbons.length;i++){
+      for(const kTan of [1, 0.55, 0.25, 0]){
+        const r=mergeTry([ribbons[i], ribbons[i+1]], box, false, kTan);
+        if(r && r.length===1){
+          const next=ribbons.slice(0,i).concat(r, ribbons.slice(i+2));
+          return mergeRibbons(next, box, closeRing);
+        }
+      }
+    }
+  }
   return ribbons;
 }
 function mergeTry(ribbons, box, closeRing, kTan){
@@ -3728,7 +3741,11 @@ function mergeTry(ribbons, box, closeRing, kTan){
     const B=chain[k];
     const nA=out.centers.length;
     const gap=dist(out.centers[nA-1], B.centers[0]);
-    const ins=Math.max(0, Math.min(60, Math.round(gap/step)-1));
+    // МОСТ ТОЛЬКО КОРОТКИЙ: до 8 станций (~90 мм). Длинный прямой мост —
+    // голая проволока через полкомпозиции (скрин пользователя «это что
+    // за ерунда?»); далёкие концы остаются отдельными лентами
+    if(gap>step*9) return null;
+    const ins=Math.max(0, Math.min(8, Math.round(gap/step)-1));
     // касательные на концах — чтобы вставка вышла плавной дугой
     const tA=out.centers[nA-1], tA2=out.centers[Math.max(0,nA-4)];
     const hB=B.centers[0], hB2=B.centers[Math.min(B.centers.length-1,3)];
@@ -3740,7 +3757,18 @@ function mergeTry(ribbons, box, closeRing, kTan){
     };
     const M0=[0,1,2].map(x=>(tA[x]-tA2[x])*(ins+1)/3*kTan);
     const M1=[0,1,2].map(x=>(hB2[x]-hB[x])*(ins+1)/3*kTan);
-    const proto=out.rods.filter(r=>r.st===nA-1);
+    // прототипы стержней вставки: по одному НА КАЖДЫЙ РЯД (на последней
+    // станции бывает один ряд — тогда второй кант моста оставался голым),
+    // ищем назад до 8 станций
+    const proto=[];
+    const two=!!out.dirUp;
+    for(const want of (two? [1, 0] : [1])){
+      for(let i=nA-1;i>=Math.max(0, nA-8) && proto.length<(two?2:1);i--){
+        const r=out.rods.find(r2=>r2.st===i
+          && (!two || (want? r2.u2>0 : r2.u2<=0)));
+        if(r && !proto.includes(r)){ proto.push(r); break; }
+      }
+    }
     for(let i=1;i<=ins;i++){
       const u=i/(ins+1);
       const C=herm(tA, hB, M0, M1, u);
