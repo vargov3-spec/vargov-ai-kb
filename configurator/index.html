@@ -205,7 +205,7 @@
       <div class="row" id="ringRow"><label for="ringD" title="Диаметр кольца по средней линии ленты">Диаметр кольца</label>
         <input id="ringD" type="number" min="2000" max="20000" step="50" value="2000"></div>
       <div class="row" id="ringTRow"><label for="ringT" title="Радиальная толщина кольца — ширина пояса, в котором вьётся лента. Чем толще, тем больше перекатов и свитков (как в «миксе»)">Толщина кольца</label>
-        <input id="ringT" type="number" min="600" max="4000" step="50" value="900"></div>
+        <input id="ringT" type="number" min="800" max="4000" step="50" value="900"></div>
       <div class="row" id="rowW"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="1500" max="20000" step="50" value="2400"></div>
       <div class="row" id="rowD"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="600" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH" id="labH">Высота (Z)</label><input id="dimH" type="number" min="600" max="20000" step="50" value="800"></div>
@@ -4002,8 +4002,15 @@ function buildScene(){
   // пользователя: «минимальный отрезок 5000 мм, можно три отрезка, если
   // каждый будет по 5 погонных метров»). Раньше число отсеков считалось
   // только от длины габарита, и кольцо Ø2000 резалось на три куска по
-  // 2.2 пог. м. Оценка метража груба, поэтому порог берётся с запасом 5%
-  while(lanes>1 && targetEst/lanes < 4750) lanes--;
+  // 2.2 пог. м.
+  // ПРОВЕРЯЕМ ПО ФАКТУ, А НЕ ПО ОЦЕНКЕ: оценка метража груба в обе
+  // стороны, и порог по ней резал деление там, где отрезки выходили
+  // законными (габарит 6000 терял четверть метража). Поэтому деление
+  // остаётся мелким, а короткий отрезок после сборки вызывает пересборку
+  // с меньшим числом отсеков (state.forceLanes). Здесь — только грубый
+  // предохранитель от заведомо мелкой нарезки
+  if(state.forceLanes) lanes=Math.max(1, Math.min(lanes, state.forceLanes));
+  while(lanes>1 && targetEst/lanes < 3000) lanes--;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
   // Закрепление действует, пока не нажата кнопка генерации: после неё идут
@@ -5396,6 +5403,21 @@ function buildScene(){
     // ЛЕСТНИЦЫ. Пересборка с другим зерном повторяет всю лестницу со
     // страховкой, и порог покрытия здесь давал 40-секундные сборки —
     // достаточно того, что лестница сама ищет вариант с покрытием выше порога
+    // ОТРЕЗОК КОРОЧЕ 5 ПОГ. М — ПЕРЕСБОРКА С МЕНЬШИМ ЧИСЛОМ ОТСЕКОВ.
+    // У кольца та же проверка живёт в его собственной обёртке (там мерить
+    // надо до сворачивания), здесь — все прямые композиции
+    if(!state.ringBuild && ribbons.length>1){
+      const shortest=Math.min(...ribbons.map(rb=>rb.ribbonLen||0));
+      const lt=state.laneTry||0;
+      if(shortest<4800 && lt<3){
+        state.laneTry=lt+1;
+        state.forceLanes=ribbons.length-1;
+        buildScene();
+        state.laneTry=0; state.forceLanes=0;
+        return;
+      }
+    }
+    if(!state.ringBuild){ state.laneTry=0; state.forceLanes=0; }
     const tries=state.reTry||0;
     if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
       state.reTry=tries+1;
@@ -6435,7 +6457,8 @@ const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 const MIX_DEF = {w:2400, d:900, h:800, c:600};
 // кольцо: минимальный диаметр, минимальная толщина и состояние по умолчанию
 const RING_MIN = 2000;
-const RING_T_MIN = 600;
+const RING_T_MIN = 800;   // минимальная толщина пояса (правило пользователя)
+const RING_H_MIN = 800;   // минимальная высота кольца
 const RING_DEF = {ring:2000, ringT:900, h:800, c:600};
 // утверждённые состояния по рядности (скрины пользователя): габариты и
 // длина стержня, зерно — в SEED_PINNED. Применяются при переключении
@@ -6577,18 +6600,23 @@ const clampDims=()=>{
     const tMax=Math.round(D*RING_T_MAX_K);
     if(+ui.ringT.value<RING_T_MIN){
       ui.ringT.value=String(RING_T_MIN);
-      toast("Минимальная толщина кольца — "+RING_T_MIN+" мм: в поясе уже ленте негде вить перекаты");
+      toast("Минимальная толщина кольца — "+RING_T_MIN+" мм: в более узком поясе ленте негде вить перекаты");
     } else if(+ui.ringT.value>tMax){
       ui.ringT.value=String(tMax);
       toast("Толщина ограничена "+tMax+" мм — не больше 45% диаметра, иначе гребёнка смыкается у внутреннего края");
     }
     ui.ringT.max=String(tMax);
-    if(+ui.dimH.value<600) ui.dimH.value="600";
+    ui.dimH.min=String(RING_H_MIN);
+    if(+ui.dimH.value<RING_H_MIN){
+      ui.dimH.value=String(RING_H_MIN);
+      toast("Минимальная высота кольца — "+RING_H_MIN+" мм (правило производства)");
+    }
     if(+ui.dimH.value>MIX_H_MAX) ui.dimH.value=String(MIX_H_MAX);
     return;
   }
   ui.dimW.min=String(dimMin("dimW"));
   ui.dimD.min=String(dimMin("dimD"));
+  ui.dimH.min=String(dimMin("dimH"));
   for(const id of ["dimW","dimD","dimH"]){
     const mn=dimMin(id);
     if(+ui[id].value<mn){
@@ -6620,7 +6648,7 @@ for(const idD of ["dimW","dimD","dimH","dimC","ringD","ringT"])
       const D=Math.max(RING_MIN, +ui.ringD.value||RING_MIN);
       const S=Math.round(2*(D/2+ringTOf(D)/2+60));
       state.boxPreview={w:S, d:S,
-                        h:Math.max(600, +ui.dimH.value||scene.box.h)};
+                        h:Math.max(RING_H_MIN, +ui.dimH.value||scene.box.h)};
     } else {
       state.boxPreview={w:Math.max(dimMin("dimW"), +ui.dimW.value||scene.box.w),
                         h:Math.max(dimMin("dimH"), +ui.dimH.value||scene.box.h),
