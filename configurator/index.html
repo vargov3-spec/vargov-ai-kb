@@ -6115,12 +6115,43 @@ function updateSpec(){
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
   // мощность — с расшифровкой в четыре строки
+  // числа стикера запоминаются целиком: бегунок «Сборка» пересчитывает
+  // их на долю построенного, не трогая геометрию
+  state.statFull={m, ribbonW:scene.params.ribbonW,
+    kg:(glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000, leds};
+  drawStat();
+}
+/* СТИКЕР ЖИВЁТ ВМЕСТЕ С БЕГУНКОМ «СБОРКА» (просьба пользователя): при
+   его движении длина, вес и мощность показывают ТО, ЧТО СЕЙЧАС В КАДРЕ, —
+   смонтированную часть композиции. Доля считается по станциям (лента
+   растёт станция за станцией), диоды — по их числу на построенном
+   участке. На 100% числа равны полным */
+function drawStat(){
   const stEl=document.getElementById("stat");
-  if(stEl) stEl.innerHTML =
-    `<span>Длина ленты:</span> ${m.toFixed(2)} пог. м<br>`
-    + `<span>Ширина ленты:</span> ${scene.params.ribbonW} мм<br>`
-    + `<span>Вес:</span> ${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг`
-    + (leds ? `<br><span>Мощность:</span> ${(leds*LED_W).toFixed(1)} Вт` : "");
+  const F=state.statFull;
+  if(!stEl || !F) return;
+  const t=(state.asm===undefined)?1:state.asm;
+  let k=1, leds=F.leds;
+  if(scene && t<1){
+    let tot=0, shown=0, ledTot=0, ledShown=0;
+    let pos=t*scene.ribbons.reduce((q,rb)=>q+rb.centers.length,0);
+    for(const rb of scene.ribbons){
+      const lim=Math.max(0, Math.round(pos));
+      pos-=rb.centers.length;
+      const n=rb.centers.length;
+      tot+=n; shown+=Math.max(0, Math.min(n, lim));
+      ledTot+=rb.leds.length;
+      if(rb.ledSt) for(let i=0;i<rb.leds.length;i++){ if(rb.ledSt[i]<lim) ledShown++; }
+      else if(lim>0) ledShown+=rb.leds.length;
+    }
+    k=tot? shown/tot : 1;
+    leds=ledShown;
+  }
+  stEl.innerHTML =
+    `<span>Длина ленты:</span> ${(F.m*k).toFixed(2)} пог. м<br>`
+    + `<span>Ширина ленты:</span> ${F.ribbonW} мм<br>`
+    + `<span>Вес:</span> ${Math.ceil(F.kg*k)} кг`
+    + (F.leds ? `<br><span>Мощность:</span> ${(leds*LED_W).toFixed(1)} Вт` : "");
 }
 
 /* ============================================================
@@ -6775,6 +6806,7 @@ ui.cables.addEventListener("change", ()=>rebuild(
 state.asm=1;
 ui.asm.addEventListener("input", ()=>{
   state.asm=+ui.asm.value/100;
+  drawStat();               // метраж в стикере — по построенной части
   needRedraw=true;
 });
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
