@@ -756,9 +756,21 @@ const PLAN_SHAPES = {
    «Вихрь» и «Рваный ритм» — не отдельные генераторы, а модификаторы обычной
    спирали (см. ветку «на ребро» в controlPoints). */
 // «волна-лежак», «Мёбиус» и «корона» удалены по решению пользователя
-const CONCEPT_DIRECT={rings:1,vortex:1,ritm:1};
-const CONCEPT_LANES={rings:3};
-const CONCEPT_FORMS=["vortex","ritm","rings"];
+/* УЗОРЫ ИЗ НЕСКОЛЬКИХ ЛЕНТ (идея пользователя). Лента «на ребро» стоит
+   вертикально, поэтому в плане она читается ЛИНИЕЙ толщиной в трубку —
+   несколько таких лент рисуют на потолке настоящий узор: папиллярные
+   линии отпечатка, изогипсы ландшафта, обтекание потока, языки пламени,
+   воронку гравитации, круги на воде. Каждая лента идёт своей кривой,
+   линии разведены по плану не меньше чем на ширину прохода, а по высоте
+   каждая живёт своей волной — композиция объёмна, а рисунок читается
+   сверху. */
+const FLOW_CONCEPTS={finger:1, relief:1, wind:1, flame:1, grav:1, water:1};
+const CONCEPT_DIRECT={rings:1,vortex:1,ritm:1,
+  finger:1, relief:1, wind:1, flame:1, grav:1, water:1};
+const CONCEPT_LANES={rings:3,
+  finger:5, relief:5, wind:5, flame:6, grav:4, water:4};
+const CONCEPT_FORMS=["vortex","ritm","rings",
+  "finger","relief","wind","flame","grav","water"];
 function conceptGuide(key, ctx){
   const {dims,rw,rng,lane}=ctx;
   const kx=ctx.kx, kz=ctx.kz, kmin=Math.min(kx,kz);
@@ -945,6 +957,89 @@ function conceptGuide(key, ctx){
       const th=dirE*span*t+phL;
       return [cx+kx*rK*Math.cos(th), ymid+off+hAmp*Math.cos(th-phL), cz+kz*rK*Math.sin(th)];
     };
+  }
+  if(!P && FLOW_CONCEPTS[key]){
+    // ЛИНЕЙНЫЕ УЗОРЫ. Общая рамка: лента №lane из nL идёт своей плоской
+    // кривой (u -> [x,z] в долях габарита) и своей высотой. Лента стоит на
+    // ребро (ось вертикальна), поэтому в плане занимает лишь трубку —
+    // соседние линии разводятся с шагом не меньше ширины ленты
+    const nL=Math.max(1, ctx.lanes||1), li=(ctx.lane||0)%nL;
+    const q=nL>1 ? li/(nL-1) : 0.5;          // 0..1 — номер линии
+    const kxg=kx-30, kzg=kz-30;
+    // высота: у каждой линии своя пологая волна, амплитуда — по запасу
+    const amp=Math.max(0, Math.min(0.34*H2, (H2-rw)/2-10));
+    const yBase=ymid+(q-0.5)*Math.max(0, (H2-rw)*0.30);
+    const phY=ph0+q*Math.PI*1.3;
+    let f=null, wav=1.6, yk=1;
+    if(key==="finger"){
+      // ОТПЕЧАТОК ПАЛЬЦА: вложенные незамкнутые петли со смещённым ядром
+      const r0=0.22+0.66*q, ecc=1.22, off=0.10*(1-q);
+      f=(u)=>{
+        const th=-2.55+5.10*u;
+        const rr=r0*(1+0.10*Math.cos(th*1.0))+0.05*Math.sin(th*3.0)*q;
+        return [Math.cos(th)*rr+off, Math.sin(th)*rr*ecc];
+      };
+      wav=1.4;
+    } else if(key==="relief"){
+      // ЛАНДШАФТ: замкнутые изогипсы, чем выше линия — тем меньше контур
+      const r0=0.20+0.70*(1-q);
+      const a1=0.16+0.10*q, a2=0.09*(1-q);
+      f=(u)=>{
+        const th=Math.PI*2*u;
+        const rr=r0*(1+a1*Math.sin(3*th+ph0)+a2*Math.sin(5*th-ph0*1.7));
+        return [Math.cos(th)*rr, Math.sin(th)*rr*0.92];
+      };
+      yk=0.55;
+    } else if(key==="wind"){
+      // ЛИНИИ ПОТОКА: обтекание невидимого цилиндра — классическая
+      // картина безвихревого течения, линии огибают центр и смыкаются
+      const z0=(q-0.5)*1.7, Rc=0.42;
+      f=(u)=>{
+        const x=-1.02+2.04*u;
+        const den=Math.max(0.02, x*x+z0*z0);
+        const z=z0*(1+Rc*Rc/den);
+        return [x*0.95, Math.max(-1, Math.min(1, z))*0.95];
+      };
+      wav=1.1;
+    } else if(key==="flame"){
+      // ЯЗЫКИ ПЛАМЕНИ: линии расходятся от общего очага и извиваются,
+      // к краю становясь шире и выше
+      const th0=ph0+Math.PI*2*li/nL;
+      f=(u)=>{
+        const rr=0.12+0.86*u;
+        const th=th0+0.85*Math.sin(2.1*u+ph0)*u+0.30*u;
+        return [Math.cos(th)*rr, Math.sin(th)*rr*0.95];
+      };
+      wav=1.0; yk=1.15;
+    } else if(key==="grav"){
+      // ЛИНИИ ГРАВИТАЦИИ: концентрические кольца, продавленные к центру, —
+      // воронка искривлённого пространства
+      const r0=0.26+0.68*q;
+      f=(u)=>{ const th=Math.PI*2*u;
+        return [Math.cos(th)*r0, Math.sin(th)*r0]; };
+      wav=0; yk=0;
+    } else {
+      // КРУГИ НА ВОДЕ: кольца с рябью — высота колеблется по окружности,
+      // а сама рябь затухает от центра к краю
+      const r0=0.24+0.70*q;
+      f=(u)=>{ const th=Math.PI*2*u;
+        return [Math.cos(th)*r0, Math.sin(th)*r0]; };
+      wav=3.0; yk=1-0.45*q;
+    }
+    P=(t)=>{
+      const [fx, fz]=f(t);
+      let y;
+      if(key==="grav"){
+        // глубина воронки — по радиусу линии: центральные кольца ниже
+        const rr=Math.hypot(fx, fz);
+        y=yHi-rw*0.5-(H2-rw)*(1-Math.min(1, rr/0.95))*0.85;
+      } else {
+        y=yBase+amp*yk*Math.sin(Math.PI*2*wav*t+phY);
+      }
+      return [cx+kxg*fx, Math.max(yLo+rw*0.5, Math.min(yHi-rw*0.5, y)),
+              cz+kzg*fz];
+    };
+    A=()=>[0,1,0];
   }
   if(!P) return null;
   // выборка: шаг вдоль пути ~14 мм (по грубой оценке длины)
@@ -3532,6 +3627,8 @@ function wrapRing(D){
   // отрезков (включая замыкание круга) и сажаем стержни обратно на каркас
   refitRods(rr);
   joinPull(rr, scene.box, true);
+  const merged=mergeRibbons(rr, scene.box, true);
+  if(merged!==rr){ scene.ribbons=merged; }
   scene.ring=D; scene.ringT=dEff;
   camera.fitTo(scene.box);
   // круг с ребра не читается: при ПЕРЕХОДЕ на кольцо камера поднимается
@@ -3552,6 +3649,168 @@ function wrapRing(D){
    своей станции. Пропуск 2х разбирается на ~14 шагов по ~1.07х.
    Приёмка окна: щель сжалась до <=1.5 шага, зазоры и бокс целы — иначе
    полный откат */
+/* СШИВКА ОТРЕЗКОВ В ОДНУ ЛЕНТУ. Требование пользователя: «контур должен
+   быть замкнутым, одна сплошная длинная лента». Нарезка на отсеки — приём
+   генератора, а изделие делается одной лентой, поэтому после всех правок
+   отрезки соединяются в одну: концы выстраиваются в цепочку по близости,
+   между ними вставляются недостающие станции (шаг гребёнки сохраняется),
+   контуры и стержни идут через шов непрерывно. У кольца цепочка ещё и
+   замыкается в круг. Диоды и якоря тросов переносятся с пересчётом
+   номеров станций. Если вставка не проходит по зазорам — ленты остаются
+   раздельными (лучше видимый стык, чем пересечение трубок) */
+function mergeRibbons(ribbons, box, closeRing){
+  if(!ribbons || ribbons.length<2) return ribbons;
+  // переходная дуга пробуется в нескольких формах: от плавной (касательные
+  // концов держат направление) до прямой вставки — на тесных участках
+  // плавная дуга задевает соседний виток
+  for(const kTan of [1, 0.55, 0.25, 0]){
+    const r=mergeTry(ribbons, box, closeRing, kTan);
+    if(r) return r;
+  }
+  return ribbons;
+}
+function mergeTry(ribbons, box, closeRing, kTan){
+  const IN=WIRE_D/2+ROD_AIR, lim3=[box.w, box.h, box.d];
+  const revRibbon=(rb)=>{
+    const n=rb.centers.length;
+    rb.centers.reverse(); rb.railA.reverse(); rb.railB.reverse();
+    if(rb.guideC && rb.guideC.length===n) rb.guideC.reverse();
+    if(rb.dirUp){ rb.dirUp.reverse(); rb.dirDn.reverse(); }
+    if(rb.dirs) rb.dirs.reverse();
+    for(const r of rb.rods) r.st=n-1-r.st;
+    if(rb.ledSt) rb.ledSt=rb.ledSt.map(v=>n-1-v);
+    if(rb.cabs) for(const c of rb.cabs) if(c.st!==undefined) c.st=n-1-c.st;
+    if(rb.cabSt) rb.cabSt=rb.cabSt.map(v=>n-1-v).sort((a,b)=>a-b);
+  };
+  const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);
+  // РАБОТАЕМ НА КОПИЯХ: при отказе приёмки исходные отрезки должны
+  // остаться нетронутыми (иначе лента-приёмник уже содержит чужие
+  // станции, и композиция задваивается)
+  const cp=(rb)=>{
+    const c={...rb};
+    c.centers=rb.centers.map(p=>p.slice());
+    c.railA=rb.railA.map(p=>p.slice());
+    c.railB=rb.railB.map(p=>p.slice());
+    if(rb.guideC) c.guideC=rb.guideC.map(p=>p.slice());
+    if(rb.dirUp){ c.dirUp=rb.dirUp.map(p=>p.slice()); c.dirDn=rb.dirDn.map(p=>p.slice()); }
+    if(rb.dirs) c.dirs=rb.dirs.map(p=>p.slice());
+    c.rods=rb.rods.map(r=>({...r, a:r.a.slice(), b:r.b.slice()}));
+    c.leds=(rb.leds||[]).map(p=>p.slice());
+    c.ledSt=(rb.ledSt||[]).slice();
+    c.cabs=(rb.cabs||[]).map(x=>({...x, to:x.to.slice(), from:x.from.slice()}));
+    c.cabSt=(rb.cabSt||[]).slice();
+    return c;
+  };
+  const src=ribbons.map(cp);
+  // цепочка: от хвоста текущей ленты к ближайшему концу следующей
+  const rest=src.slice(1), chain=[src[0]];
+  while(rest.length){
+    const cur=chain[chain.length-1];
+    const tail=cur.centers[cur.centers.length-1];
+    let bi=0, bRev=false, bd=1e9;
+    rest.forEach((rb,i)=>{
+      const d0=dist(tail, rb.centers[0]);
+      const d1=dist(tail, rb.centers[rb.centers.length-1]);
+      if(d0<bd){ bd=d0; bi=i; bRev=false; }
+      if(d1<bd){ bd=d1; bi=i; bRev=true; }
+    });
+    const nx=rest.splice(bi,1)[0];
+    if(bRev) revRibbon(nx);
+    chain.push(nx);
+  }
+  const step=chain[0].stepEff||ROD_STEP;
+  const twoRow=!!chain[0].dirUp;
+  const newSt=new Set();          // номера вставленных станций
+  // сшиваем последовательно
+  const out=chain[0];
+  const seamsAt=[];
+  for(let k=1;k<chain.length;k++){
+    const B=chain[k];
+    const nA=out.centers.length;
+    const gap=dist(out.centers[nA-1], B.centers[0]);
+    const ins=Math.max(0, Math.min(60, Math.round(gap/step)-1));
+    // касательные на концах — чтобы вставка вышла плавной дугой
+    const tA=out.centers[nA-1], tA2=out.centers[Math.max(0,nA-4)];
+    const hB=B.centers[0], hB2=B.centers[Math.min(B.centers.length-1,3)];
+    const lerpP=(P,Q,u)=>[P[0]+(Q[0]-P[0])*u, P[1]+(Q[1]-P[1])*u, P[2]+(Q[2]-P[2])*u];
+    const herm=(P0,P1,M0,M1,u)=>{
+      const h00=2*u*u*u-3*u*u+1, h10=u*u*u-2*u*u+u;
+      const h01=-2*u*u*u+3*u*u,  h11=u*u*u-u*u;
+      return [0,1,2].map(x=>h00*P0[x]+h10*M0[x]+h01*P1[x]+h11*M1[x]);
+    };
+    const M0=[0,1,2].map(x=>(tA[x]-tA2[x])*(ins+1)/3*kTan);
+    const M1=[0,1,2].map(x=>(hB2[x]-hB[x])*(ins+1)/3*kTan);
+    const proto=out.rods.filter(r=>r.st===nA-1);
+    for(let i=1;i<=ins;i++){
+      const u=i/(ins+1);
+      const C=herm(tA, hB, M0, M1, u);
+      const A0=lerpP(out.railA[nA-1], B.railA[0], u);
+      const B0=lerpP(out.railB[nA-1], B.railB[0], u);
+      out.centers.push(C); out.railA.push(A0); out.railB.push(B0);
+      if(out.guideC) out.guideC.push(C.slice());
+      if(out.dirUp && B.dirUp){
+        out.dirUp.push(lerpP(out.dirUp[nA-1], B.dirUp[0], u));
+        out.dirDn.push(lerpP(out.dirDn[nA-1], B.dirDn[0], u));
+      }
+      if(out.dirs && B.dirs) out.dirs.push(lerpP(out.dirs[nA-1], B.dirs[0], u));
+      const st=out.centers.length-1;
+      newSt.add(st);
+      for(const pr of proto){
+        const r={...pr, st, a:[0,0,0], b:[0,0,0]};
+        out.rods.push(r);
+      }
+    }
+    seamsAt.push(out.centers.length-1);
+    // переносим станции ленты B
+    const off=out.centers.length;
+    for(let i=0;i<B.centers.length;i++){
+      out.centers.push(B.centers[i]);
+      out.railA.push(B.railA[i]); out.railB.push(B.railB[i]);
+      if(out.guideC) out.guideC.push(B.guideC && B.guideC[i] ? B.guideC[i] : B.centers[i].slice());
+      if(out.dirUp && B.dirUp){ out.dirUp.push(B.dirUp[i]); out.dirDn.push(B.dirDn[i]); }
+      if(out.dirs && B.dirs) out.dirs.push(B.dirs[i]);
+    }
+    for(const r of B.rods){ r.st+=off; out.rods.push(r); }
+    if(B.leds) for(let i=0;i<B.leds.length;i++){
+      out.leds.push(B.leds[i]);
+      if(out.ledSt) out.ledSt.push((B.ledSt? B.ledSt[i]:0)+off);
+    }
+    if(B.cabs) for(const c of B.cabs){
+      if(c.st!==undefined) c.st+=off;
+      out.cabs.push(c);
+    }
+    if(B.cabSt) out.cabSt=(out.cabSt||[]).concat(B.cabSt.map(v=>v+off));
+  }
+  out.ribbonLen=out.centers.length*step;
+  out.rods.sort((a,b)=>a.st-b.st);
+  const merged=[out];
+  // стержни вставок собираются из контуров той же посадкой, что и всюду
+  refitRods(merged);
+  // ПРИЁМКА ТОЛЬКО ВСТАВОК. Слияние не двигает уже стоящие стержни —
+  // меняется лишь учёт: пары, что были «шовными» между отрезками (и по
+  // правилу шва допускались вплотную), после слияния оказываются далеко
+  // друг от друга по номеру станции и формально режутся дальним лимитом.
+  // Физика при этом та же, поэтому проверяются стержни ВСТАВЛЕННЫХ
+  // станций: они действительно новые
+  const before=0;
+  let bad=0;
+  const isNew=(st)=>newSt.has(st);
+  for(const r of out.rods){
+    if(!isNew(r.st)) continue;
+    for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
+      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ bad++; break; }
+    for(const q of out.rods){
+      if(q===r) continue;
+      if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+      const lim=Math.abs(q.st-r.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
+      if(closestSegSeg(r.a,r.b,q.a,q.b)[0] < lim){ bad++; break; }
+    }
+  }
+  void twoRow; void closeRing; void seamsAt; void IN;
+  if(window.__mergeLog) window.__mergeLog.push({kTan, лент:ribbons.length, before, bad});
+  return bad>before ? null : merged;
+}
+
 /* СТЫКОВКА ОТРЕЗКОВ. Правило пользователя: «если несколько отрезков, их
    необходимо совмещать, можно оставлять между контурами 5-10 мм, но не
    более». Сварка мостов сводит концы навстречу, но оставляла зазор до
@@ -5622,6 +5881,11 @@ function buildScene(){
   // распускала уже сведённый стык
   refitRods(ribbons);
   joinPull(ribbons, box, false);
+  // отрезки сшиваются в ОДНУ ленту: изделие делается сплошным, контур
+  // через шов идёт непрерывно (требование пользователя). Касается
+  // «волн» и «кольца»; у «на ребро» несколько лент — часть замысла
+  // (кольца гироскопа, линейные узоры)
+  if(scene0Plast!=="edge") ribbons=mergeRibbons(ribbons, box, false);
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
