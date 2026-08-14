@@ -2946,6 +2946,36 @@ function closestSegSeg(P1,Q1,P2,Q2){
    Замер (пластика «на ребро», 2400×2400×900, 6408 стержней, 37 пог. м):
    разведение занимало 147 с, стало 0.9 с — при том же результате
    (касаний нет, зазоры 1.36–1.9 мм). */
+/* ШОВ МЕЖДУ ОТРЕЗКАМИ. Соседние отрезки — это одна лента, разрезанная
+   для производства: у шва гребёнка обязана идти НЕПРЕРЫВНО, поэтому там
+   действует ближний лимит зазора (как между соседними станциями одной
+   ленты), а не полный дальний. Пока пары «конец A ↔ начало B» резались
+   дальним лимитом, стык нельзя было свести ближе 21 мм, и отрезки стояли
+   с разрывом (замер 4400: 107 мм). Швы регистрирует сварка мостов, а у
+   кольца — ещё и замыкание последнего отрезка с первым */
+const SEAM_WIN = 34;                   // станций от конца — зона шва
+function seamMark(rbA, headA, rbB, headB){
+  (rbA.seams=rbA.seams||[]).push({head:headA, peer:rbB});
+  (rbB.seams=rbB.seams||[]).push({head:headB, peer:rbA});
+}
+function inSeam(rb, st, peer){
+  if(!rb.seams) return false;
+  const n=rb.centers.length;
+  for(const s of rb.seams){
+    if(s.peer!==peer) continue;
+    if(s.head ? st<=SEAM_WIN : st>=n-1-SEAM_WIN) return true;
+  }
+  return false;
+}
+function seamPair(rbA, stA, rbB, stB){
+  return rbA!==rbB && inSeam(rbA, stA, rbB) && inSeam(rbB, stB, rbA);
+}
+/* лимит зазора для пары стержней: соседи по ленте и пары в шве — ближний,
+   остальные — дальний */
+function pairLim(rbA, rA, rbB, rB){
+  if(rbA===rbB) return Math.abs(rA.st-rB.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
+  return seamPair(rbA, rA.st, rbB, rB.st) ? CLEAR_NEAR : CLEAR_FAR;
+}
 function forEachClosePair(ribbons, radius, cb){
   const H = 110+radius;
   const grid = new Map();
@@ -3432,9 +3462,8 @@ function centerSag(ribbons){
   const viol=()=>{
     let v=0;
     forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
       if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
-         (near? CLEAR_NEAR : CLEAR_FAR)) v++;
+         pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
     });
     return v;
   };
@@ -3494,16 +3523,15 @@ function wrapRing(D){
   }
   let vio=0;
   forEachClosePair(rr, CLEAR_FAR, (A,B)=>{
-    const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
     if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
-       (near? CLEAR_NEAR : CLEAR_FAR)) vio++;
+       pairLim(rr[A.ri], A.r, rr[B.ri], B.r)) vio++;
   });
   const S=Math.round(2*C);
   scene.box={w:S, h:scene.box.h, d:S};
   // сворачивание искажает длины трубок (радиальное сжатие): сводим концы
   // отрезков (включая замыкание круга) и сажаем стержни обратно на каркас
-  joinPull(rr, scene.box, true);
   refitRods(rr);
+  joinPull(rr, scene.box, true);
   scene.ring=D; scene.ringT=dEff;
   camera.fitTo(scene.box);
   // круг с ребра не читается: при ПЕРЕХОДЕ на кольцо камера поднимается
@@ -3624,6 +3652,7 @@ function joinPull(ribbons, box, ringClose){
         if(rb===B) return hB? st<=JOIN_WIN : st>=n-1-JOIN_WIN;
         return false;
       };
+      void nearJoin;
       const inTouched=new Set(touched.map(t=>t.rb.__id=t.rb.__id||Math.random()));
       let ok=true, why='';
       chk:
@@ -3636,7 +3665,8 @@ function joinPull(ribbons, box, ringClose){
             if(q===r) continue;
             if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
             const sameSeam=(rb2===t.rb && Math.abs(q.st-r.st)<=NEAR_WIN)
-                         || (rb2!==t.rb && nearJoin(t.rb, r.st) && nearJoin(rb2, q.st));
+                         || (rb2!==t.rb && nearJoin(t.rb, r.st) && nearJoin(rb2, q.st))
+                         || seamPair(t.rb, r.st, rb2, q.st);
             const dd=closestSegSeg(r.a,r.b,q.a,q.b)[0];
             if(dd < (sameSeam? CLEAR_NEAR : CLEAR_FAR)){
               ok=false; why='зазор'+dd.toFixed(1)+(sameSeam?'бл':'дл');
@@ -3677,7 +3707,13 @@ function joinPull(ribbons, box, ringClose){
       if(ok){ moved=true; break; }
       for(const b of bak){ b.p[0]=b.v[0]; b.p[1]=b.v[1]; b.p[2]=b.v[2]; }
     }
-    if(moved) done++;
+    if(moved){
+      done++;
+      // подтянутая пара концов — тоже шов (у кольца так регистрируется
+      // замыкание последнего отрезка с первым)
+      if(!seamPair(A, hA?0:A.centers.length-1, B, hB?0:B.centers.length-1))
+        seamMark(A, hA, B, hB);
+    }
   }
   return done;
 }
@@ -3700,9 +3736,8 @@ function refitRods(ribbons){
   const viol=()=>{
     let v=0;
     forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
       if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
-         (near? CLEAR_NEAR : CLEAR_FAR)) v++;
+         pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
     });
     return v;
   };
@@ -3869,9 +3904,8 @@ function spreadGaps(ribbons, box){
             for(const rb2 of ribbons) for(const q of rb2.rods){
               if(q===r) continue;
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-              const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
               if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
-                 (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk; }
+                 pairLim(rb, r, rb2, q)){ ok=false; break chk; }
             }
           }
         }
@@ -3971,9 +4005,8 @@ function smoothRails(ribbons, box){
             for(const rb2 of ribbons) for(const q of rb2.rods){
               if(q===r) continue;
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-              const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
               if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
-                 (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk; }
+                 pairLim(rb, r, rb2, q)){ ok=false; break chk; }
             }
           }
         }
@@ -4059,9 +4092,8 @@ function smoothRails(ribbons, box){
               for(const rb2 of ribbons) for(const q of rb2.rods){
                 if(q===r) continue;
                 if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-                const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
                 if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
-                   (near? CLEAR_NEAR : CLEAR_FAR)){ ok=false; break chk2; }
+                   pairLim(rb, r, rb2, q)){ ok=false; break chk2; }
               }
             }
           }
@@ -4177,26 +4209,14 @@ function buildScene(){
     try{
       // оборачивание сжимает зазоры на внутренней стороне кольца — при
       // нарушениях полного скана вариант пересобирается с другим зерном
-      // ОТРЕЗОК НЕ КОРОЧЕ 5 ПОГ. М — по ФАКТУ, а не по оценке метража:
-      // у кольца оценка завышена (лента вьётся в узком поясе), и правило,
-      // применённое к оценке, оставляло куски по 3.8 м. Если отрезки
-      // вышли короткими — пересобираем с меньшим числом отсеков
       state.forceLanes=0;
       for(let tr=0;;tr++){
         buildScene();
-        const rr0=scene.ribbons;
-        const shortest=Math.min(...rr0.map(rb=>rb.ribbonLen||0));
-        if(rr0.length>1 && shortest<4800 && tr<3){
-          state.forceLanes=rr0.length-1;
-          if(state.forceLanes<=1) state.forceLanes=1;
-          continue;
-        }
         const vio=wrapRing(ringD);
         if(vio===0 || tr>=3) break;
         state.autoSeed=false;
         state.seed=(state.seed*1664525+1013904223)>>>0;
       }
-      state.forceLanes=0;
     } finally {
       ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
       RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
@@ -4695,6 +4715,20 @@ function buildScene(){
         }
         return mn;
       };
+      // текущий свариваемый шов: пара концов, которые сейчас сводятся.
+      // Задаётся перед проверкой кандидатов, чтобы rodsOk знал, какие
+      // стержни разных отрезков считать соседями по гребёнке
+      let seamCur=null;
+      const seamNow=(rbA, stA, rbB, stB)=>{
+        if(!seamCur) return false;
+        const near=(rb, st, head)=>{
+          const n=rb.centers.length;
+          return head ? st<=SEAM_WIN : st>=n-1-SEAM_WIN;
+        };
+        const {A:sa, hA, B:sb, hB}=seamCur;
+        return (rbA===sa && rbB===sb && near(sa,stA,hA) && near(sb,stB,hB))
+            || (rbA===sb && rbB===sa && near(sb,stA,hB) && near(sa,stB,hA));
+      };
       const rodsOk=(newRods, rbSelf)=>{
         const lim=[box.w,box.h,box.d];
         // допуск вылета торца моста за грань: радиус трубки + 6 мм (руль
@@ -4706,7 +4740,11 @@ function buildScene(){
           for(const rb of rrAll){
             for(const q of rb.rods){
               if(q===r) continue;
-              const near = rb===rbSelf && Math.abs(q.st-r.st)<=NEAR_WIN;
+              // ШОВ: отрезки продолжают друг друга, у стыка гребёнка
+              // непрерывна — там ближний лимит, а не полный дальний
+              const near = rb===rbSelf
+                ? Math.abs(q.st-r.st)<=NEAR_WIN
+                : (seamNow && seamNow(rbSelf, r.st, rb, q.st));
               const limD = near ? CLEAR_NEAR : CLEAR_FAR;
               const [d]=closestSegSeg(r.a,r.b,q.a,q.b);
               if(d<limD) return (near?'n':'f')+Math.round(d)+'@'+r.st+'/'+q.st+
@@ -4721,9 +4759,11 @@ function buildScene(){
       // верху бокса), уровень конца A, уровень конца B
       for(let j=0;j<rrAll.length-1;j++){
         const A=rrAll[j], B=rrAll[j+1];
+        seamCur=null;
         // у каждого отрезка берём конец, ближний к границе отсеков
         const aHead=(A.centers[0][AX] > A.centers[A.centers.length-1][AX]);
         const bHead=(B.centers[0][AX] < B.centers[B.centers.length-1][AX]);
+        seamCur={A, hA:aHead, B, hB:bHead};
         // выбор пары подрезок концов — по сонаправленности касательных
         // с линией между концами (мост тем прямее, чем лучше согласованы)
         const endInfo=(rb, head, nT)=>{
@@ -4840,7 +4880,10 @@ function buildScene(){
                 let dm=1e9;
                 for(const r of RA) for(const q of RB)
                   dm=Math.min(dm, closestSegSeg(r.a,r.b,q.a,q.b)[0]);
-                if(dm<23) continue;     // торцы ближе дальнего лимита
+                // стык обязан сойтись почти вплотную (правило
+                // пользователя: между контурами 5-10 мм), поэтому целимся
+                // в шаг гребёнки, а не в прежние 30 мм
+                if(dm<23) continue;
                 const tB2=(!brB.empty && j2>0)?
                   V.norm(V.sub(brB.pts[j2], brB.pts[Math.max(0,j2-1)])) : uLn;
                 tipPairs.push({i2, j2,
@@ -4876,6 +4919,9 @@ function buildScene(){
               done=!whyB;
               window.__ladder.push(['join'+j+'.'+pr.ta+'-'+pr.tb+'.'+ci+
                 '.'+tp.i2+'/'+tp.j2, done?0:1, whyB||''].concat(ovr()));
+              // шов состоялся — запоминаем его: дальше все проверки
+              // зазоров считают эти концы продолжением друг друга
+              if(done) seamMark(A, aHead, B, bHead);
               if(done) break;
               unweld(A,wA.bak); unweld(B,wB.bak);
             }
@@ -5569,11 +5615,13 @@ function buildScene(){
   // раздвижка гребёнки — после всех провисов и сглаживаний: пропуски у
   // швов разбираются скольжением станций вдоль ленты (для любой пластики)
   spreadGaps(ribbons, box);
-  // стыковка отрезков — концы соседних лент сводятся до 8 мм
-  joinPull(ribbons, box, false);
-  // посадка стержней на каркас — последней: после неё длины трубок
-  // ровно проектные, а торцы стоят в IN от проволоки
+  // ПОРЯДОК ВАЖЕН: сначала посадка стержней на каркас (длины трубок
+  // ровно проектные, торцы в IN от проволоки), потом стяжка стыков —
+  // она двигает станции целиком и посадку не рушит. При обратном порядке
+  // посадка возвращала канты на полширины от центров и частично
+  // распускала уже сведённый стык
   refitRods(ribbons);
+  joinPull(ribbons, box, false);
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
@@ -5601,9 +5649,9 @@ function buildScene(){
   if(ui.asm) ui.asm.value=100;
   state.boxPreview=null;
   // автоматика нарезки объясняет себя: плашка при появлении отрезков
-  if(ribbons.length>1 && state.lastRibN!==ribbons.length && typeof toast==="function")
-    toast("Лента длиннее ~5 пог. м — разбита на "+ribbons.length
-          +" отрезка с невидимым стыком (правило производства)");
+  // плашка про число отрезков убрана (решение пользователя): нарезка —
+  // внутренний приём генерации, изготавливается композиция одной лентой
+  // любой длины, а стык обязан быть незаметным
   state.lastRibN=ribbons.length;
   // ВЫРОЖДЕННЫЕ ВАРИАНТЫ НЕ ПОКАЗЫВАЮТСЯ. Иногда лестница и страховка
   // выходят с короткой лентой, висящей в углу габарита (замер: 3.14 пог. м
@@ -5666,20 +5714,11 @@ function buildScene(){
     // ЛЕСТНИЦЫ. Пересборка с другим зерном повторяет всю лестницу со
     // страховкой, и порог покрытия здесь давал 40-секундные сборки —
     // достаточно того, что лестница сама ищет вариант с покрытием выше порога
-    // ОТРЕЗОК КОРОЧЕ 5 ПОГ. М — ПЕРЕСБОРКА С МЕНЬШИМ ЧИСЛОМ ОТСЕКОВ.
-    // У кольца та же проверка живёт в его собственной обёртке (там мерить
-    // надо до сворачивания), здесь — все прямые композиции
-    if(!state.ringBuild && ribbons.length>1){
-      const shortest=Math.min(...ribbons.map(rb=>rb.ribbonLen||0));
-      const lt=state.laneTry||0;
-      if(shortest<4800 && lt<3){
-        state.laneTry=lt+1;
-        state.forceLanes=ribbons.length-1;
-        buildScene();
-        state.laneTry=0; state.forceLanes=0;
-        return;
-      }
-    }
+    // ПРАВИЛО «ОТРЕЗОК НЕ КОРОЧЕ 5 М» СНЯТО (уточнение пользователя:
+    // «изготовление в любом случае будет одной лентой любой длины, а
+    // разбивали мы на отрезки потому что генерация была проще»). Нарезка
+    // осталась внутренним приёмом генератора, её длины наружу не идут —
+    // важно только, чтобы стык был незаметным (joinPull + шов)
     if(!state.ringBuild){ state.laneTry=0; state.forceLanes=0; }
     const tries=state.reTry||0;
     if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
@@ -6209,10 +6248,10 @@ function updateSpec(){
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
-      <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
-        scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
-      ${scene.ribbons.length>1?`<tr><td>Отрезки ленты</td><td>${
-        scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(1)).join(" + ")} м</td></tr>`:""}
+      ${""/* число лент и длины отрезков в «Расчёте» не показываются
+           (решение пользователя): отрезки стыкуются незаметно, заказчику
+           важна общая длина ленты. Раскладка по кускам остаётся в
+           монтажной карте и спецификации CSV для производства */}
       <tr><td>${(ui.gradOn.checked ? (state.opaque1&&state.opaque2)
                   : state.opaque1)?"Непрозрачные стержни":"Стеклянные трубки"} Ø${ROD_D}</td><td>${rods} шт</td></tr>
       ${(()=>{
@@ -6337,7 +6376,14 @@ const DEFAULT_GLASS = GLASS_COLORS.find(c=>c.id==="RAL6001") || GLASS_COLORS[0];
 // №2308378654 (RAL6001, 2400×900×800, стержень 150), однорядный
 // №1936864557 (RAL3003, 1800×700×600, стержень 200) — габариты и
 // стержень рядности в ROWS_DEF
-const SEED_PINNED = {1: 1936864557, 2: 2308378654};
+const SEED_PINNED = {1: 1936864557, 2: 2308378654,
+  // КОМПОЗИЦИИ, УТВЕРЖДЁННЫЕ ПОЛЬЗОВАТЕЛЕМ ДЛЯ КАЖДОЙ ФОРМЫ «НА РЕБРО»:
+  // при выборе формы показывается именно этот вариант, пока не нажата
+  // кнопка генерации
+  edge_plan_star4: 2657391872, edge_plan_pear: 3171223043,
+  edge_plan_arc:   128223568,  edge_plan_blob: 769804676,
+  edge_plan_wave:  3006108847, edge_c_vortex:  514635733,
+  edge_c_ritm:     2870612509};
 const state = {seed: SEED_PINNED[2], color: DEFAULT_GLASS, lastSpec:null,
                autoSeed: true, frameRal: null, opaque1: false, opaque2: false};
 
@@ -6771,11 +6817,11 @@ const FORM_DEF = {
   plan_rhomb4:{w:1000, d:2000, h:1500, c:600},  // Форма-4 (ромб в плане)
   plan_bean:  {w:3000, d:2000, h:1500, c:600},  // Форма-5 (боб)
   plan_pear:  {w:3000, d:3000, h:1500, c:600},  // Форма-6 (груша)
-  plan_arc:   {w:2000, d:2000, h:2000, c:600},  // Форма-7 (подкова)
+  plan_arc:   {w:2000, d:2000, h:1500, c:600},  // Форма-7 (подкова)
   plan_blob:  {w:2000, d:2000, h:1000, c:600},  // Форма-8 (блоб)
-  plan_wave:  {w:2000, d:2000, h:1500, c:600},  // Форма-9 (волна в плане)
+  plan_wave:  {w:3000, d:1500, h:1500, c:600},  // Форма-9 (волна в плане)
   c_vortex:   {w:2000, d:2000, h:1500, c:600},  // вихрь
-  c_ritm:     {w:2500, d:2500, h:2500, c:600},  // рваный ритм
+  c_ritm:     {w:1500, d:1500, h:3000, c:600},  // рваный ритм
   c_rings:    {w:4500, d:4500, h:2000, c:600},  // гироскоп
 };
 function setDims(p){
@@ -7022,11 +7068,8 @@ document.getElementById("saveCsv").onclick = ()=>{
               [`Трубки цвета 2 — средний (${gm.name})`, `${cnt[1]} шт`],
               [`Трубки цвета 3 (${g2.name})`, `${cnt[2]} шт`]];
     })() : []),
-    ["Лент в композиции, шт", scene.ribbons.length],
-    ...(scene.ribbons.length>1
-      ? [["Отрезки ленты, пог. м",
-          scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(2)).join(" + ")]]
-      : []),
+
+
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     
