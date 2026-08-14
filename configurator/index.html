@@ -6359,9 +6359,11 @@ function renderPlastTiles(){
   const box=document.getElementById("plastTiles");
   if(!box) return;
   if(!box.childElementCount){
-    const defs=[["mix","Волны · «микс»",prevMix],
+    // подписи плиток короткие (решение пользователя): в две строки они
+    // разъезжались и мешали читать ряд
+    const defs=[["mix","Волны",prevMix],
                 ["ring","Кольцо",prevRing],
-                ["edge","Спираль · «на ребро»",prevEdgeCone]];
+                ["edge","Спираль",prevEdgeCone]];
     for(const df of defs){
       const t=document.createElement("div");
       t.className="tile"; t.dataset.val=df[0];
