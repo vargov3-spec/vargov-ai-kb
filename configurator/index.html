@@ -129,8 +129,8 @@
   input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
   input[type=number]{-moz-appearance:textfield; appearance:textfield}
   .tiles{display:flex; gap:8px; flex-wrap:wrap; margin:2px 0}
-  /* три плитки пластики в ряд: «микс», «кольцо», «на ребро» */
-  .tile{flex:1 1 30%; border:1px solid #33333c; border-radius:9px; background:#141418;
+  /* четыре плитки пластики: 2×2 («волны», «кольцо», «спираль», «узоры») */
+  .tile{flex:1 1 40%; border:1px solid #33333c; border-radius:9px; background:#141418;
     cursor:pointer; padding:8px 4px 6px; display:flex; flex-direction:column;
     align-items:center; gap:3px; color:var(--txt); font-size:11.5px; user-select:none}
   .tile:hover{border-color:#55555f}
@@ -6849,8 +6849,13 @@ for(const key in PLAN_SHAPES){
 ui.plan.value="circle";
 
 // КОНЦЕПТ-ФОРМЫ — в конец списка (Форма-11 … Форма-19), чтобы номера
-// существующих форм не сдвигались
+// существующих форм не сдвигались.
+// Из линейных узоров показываются ДОВЕДЁННЫЕ: пламя пока пересекается
+// в очаге, изогипсы и круги на воде теряют кольца в приёмке — эти три
+// доводятся и скрыты из списка
+const FLOW_READY={finger:1, wind:1, grav:1};
 for(const ck of CONCEPT_FORMS){
+  if(FLOW_CONCEPTS[ck] && !FLOW_READY[ck]) continue;
   const oc=document.createElement("option");
   oc.value="c_"+ck; oc.textContent=ck;
   ui.form.appendChild(oc);
@@ -6975,7 +6980,60 @@ function prevEdgeCone(){ return tilePrev(g=>{
     g.beginPath(); g.ellipse(52,y+6,rx,ry,0, Math.PI*0.06, Math.PI*0.94); g.stroke();
   }
 });}
+// ПРЕВЬЮ ЛИНЕЙНЫХ УЗОРОВ: те же семейства кривых, что строят геометрию
+// (вид сверху) — по 4-6 линий на миниатюре
+function prevFlow(key){ return tilePrev(g=>{
+  const C=52, S=40;
+  const line=(f, n0=64, closed=false)=>{
+    g.beginPath();
+    for(let i=0;i<=n0;i++){
+      const [x,z]=f(i/n0);
+      const px=C+x*S, py=C+z*S;
+      i? g.lineTo(px,py) : g.moveTo(px,py);
+    }
+    if(closed) g.closePath();
+    g.stroke();
+  };
+  g.lineWidth=1.5;
+  const nL=5;
+  for(let li=0;li<nL;li++){
+    const q=li/(nL-1);
+    if(key==="finger"){
+      const r0=0.22+0.66*q, ecc=1.22, off=0.10*(1-q);
+      line(u=>{ const th=-2.55+5.10*u;
+        const rr=r0*(1+0.10*Math.cos(th))+0.05*Math.sin(th*3)*q;
+        return [Math.cos(th)*rr+off, Math.sin(th)*rr*ecc*0.8]; });
+    } else if(key==="relief"){
+      const r0=0.20+0.70*(1-q), a1=0.16+0.10*q, a2=0.09*(1-q);
+      line(u=>{ const th=Math.PI*2*u;
+        const rr=r0*(1+a1*Math.sin(3*th+1)+a2*Math.sin(5*th-1.7));
+        return [Math.cos(th)*rr, Math.sin(th)*rr*0.92]; }, 64, true);
+    } else if(key==="wind"){
+      const z0=(q-0.5)*1.7, Rc=0.42;
+      line(u=>{ const x=-1.02+2.04*u;
+        const den=Math.max(0.02, x*x+z0*z0);
+        return [x*0.95, Math.max(-1,Math.min(1,z0*(1+Rc*Rc/den)))*0.95]; });
+    } else if(key==="flame"){
+      const th0=Math.PI*2*li/nL;
+      line(u=>{ const rr=0.12+0.86*u;
+        const th=th0+0.85*Math.sin(2.1*u+1)*u+0.30*u;
+        return [Math.cos(th)*rr, Math.sin(th)*rr*0.95]; });
+    } else if(key==="grav"){
+      // воронка сбоку: кольца-эллипсы, к центру ниже
+      const r0=0.26+0.68*q;
+      g.beginPath();
+      g.ellipse(C, C+18-28*(1-q)*(1-q), r0*S, r0*S*0.34, 0, 0, Math.PI*2);
+      g.stroke();
+    } else {
+      const r0=0.24+0.70*q;
+      line(u=>{ const th=Math.PI*2*u;
+        const w=0.05*Math.sin(th*8)*(1-0.45*q);
+        return [Math.cos(th)*(r0+w), Math.sin(th)*(r0+w)]; }, 72, true);
+    }
+  }
+});}
 function formPreview(v){
+  if(v.indexOf("c_")===0 && FLOW_CONCEPTS[v.slice(2)]) return prevFlow(v.slice(2));
   if(v.indexOf("plan_")===0) return prevPlan(v.slice(5));
   if(v==="cyl") return prevCyl();
   if(v==="rhomb") return prevRhomb();
@@ -6988,25 +7046,54 @@ function renderPlastTiles(){
   const box=document.getElementById("plastTiles");
   if(!box) return;
   if(!box.childElementCount){
-    // подписи плиток короткие (решение пользователя): в две строки они
-    // разъезжались и мешали читать ряд
+    // подписи плиток короткие (решение пользователя). «Узоры» — четвёртая
+    // плитка (идея пользователя): линейные узоры из нескольких лент на
+    // ребро; в генераторе это та же пластика edge, вкладку определяет
+    // выбранная форма
     const defs=[["mix","Волны",prevMix],
                 ["ring","Кольцо",prevRing],
-                ["edge","Спираль",prevEdgeCone]];
+                ["edge","Спираль",prevEdgeCone],
+                ["flow","Узоры",()=>prevFlow("finger")]];
     for(const df of defs){
       const t=document.createElement("div");
       t.className="tile"; t.dataset.val=df[0];
       t.appendChild(df[2]());
       const sp=document.createElement("span"); sp.textContent=df[1]; t.appendChild(sp);
       t.addEventListener("click", ()=>{
-        if(ui.plast.value===t.dataset.val) return;
-        ui.plast.value=t.dataset.val;
+        const v=t.dataset.val;
+        const isFlow=(f)=>f.indexOf("c_")===0 && FLOW_CONCEPTS[f.slice(2)];
+        if(v==="flow" || v==="edge"){
+          const wasEdge=(ui.plast.value==="edge");
+          const wasFlow=wasEdge && isFlow(ui.form.value);
+          if(wasEdge && wasFlow===(v==="flow")) return;   // уже тут
+          ui.plast.value="edge";
+          syncForms();
+          // форма ставится ПОСЛЕ пресета пластики: он выставляет
+          // форму «Спирали» по умолчанию и перетирал выбор вкладки
+          applyPreset("plast");
+          ui.form.value=(v==="flow") ? "c_finger" : "cyl";
+          applyPreset("form");
+          clampDims();
+          rebuild("Генерация варианта композиции…");
+          renderPlastTiles();
+          return;
+        }
+        if(ui.plast.value===v) return;
+        ui.plast.value=v;
         ui.plast.dispatchEvent(new Event("change"));
       });
       box.appendChild(t);
     }
   }
-  for(const t of box.children) t.classList.toggle("on", t.dataset.val===ui.plast.value);
+  const isFlowF=ui.plast.value==="edge"
+    && ui.form.value.indexOf("c_")===0 && FLOW_CONCEPTS[ui.form.value.slice(2)];
+  for(const t of box.children){
+    const v=t.dataset.val;
+    const on=(v==="flow") ? !!isFlowF
+           : (v==="edge") ? (ui.plast.value==="edge" && !isFlowF)
+           : ui.plast.value===v;
+    t.classList.toggle("on", on);
+  }
 }
 function renderFormTiles(){
   const box=document.getElementById("formTiles");
@@ -7029,8 +7116,13 @@ function renderFormTiles(){
   const lh=document.getElementById("labH");
   if(lh) lh.textContent = ring ? "Высота кольца" : "Высота (Z)";
   if(!edge) return;
-  const vis=[...ui.form.options].filter(o=>!o.hidden);
-  const key=vis.map(o=>o.value+"|"+o.textContent).join(",");
+  const flowTab=ui.form.value.indexOf("c_")===0 && FLOW_CONCEPTS[ui.form.value.slice(2)];
+  const vis=[...ui.form.options].filter(o=>!o.hidden)
+    .filter(o=>{
+      const fl=o.value.indexOf("c_")===0 && FLOW_CONCEPTS[o.value.slice(2)];
+      return flowTab ? fl : !fl;
+    });
+  const key=(flowTab?"F|":"S|")+vis.map(o=>o.value+"|"+o.textContent).join(",");
   if(box.dataset.key!==key){
     box.dataset.key=key;
     box.innerHTML="";
@@ -7087,6 +7179,14 @@ const FORM_DEF = {
   c_vortex:   {w:2000, d:2000, h:1500, c:600},  // вихрь
   c_ritm:     {w:1500, d:1500, h:3000, c:600},  // рваный ритм
   c_rings:    {w:4500, d:4500, h:2000, c:600},  // гироскоп
+  // линейные узоры из нескольких лент: рисунок читается в плане, поэтому
+  // габариты широкие и невысокие
+  c_finger:   {w:2600, d:2600, h:1000, c:600},  // отпечаток пальца
+  c_relief:   {w:2800, d:2800, h:1200, c:600},  // изогипсы ландшафта
+  c_wind:     {w:3200, d:2200, h:1000, c:600},  // линии потока
+  c_flame:    {w:2600, d:2600, h:1400, c:600},  // языки пламени
+  c_grav:     {w:2600, d:2600, h:1400, c:600},  // воронка гравитации
+  c_water:    {w:2600, d:2600, h:1000, c:600},  // круги на воде
 };
 function setDims(p){
   if(p.ringT && ui.ringT) ui.ringT.value=String(p.ringT);
