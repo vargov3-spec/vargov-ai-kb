@@ -3500,6 +3500,9 @@ function wrapRing(D){
   });
   const S=Math.round(2*C);
   scene.box={w:S, h:scene.box.h, d:S};
+  // сворачивание искажает длины трубок (радиальное сжатие): сажаем
+  // стержни обратно на каркас
+  refitRods(rr);
   scene.ring=D; scene.ringT=dEff;
   camera.fitTo(scene.box);
   // круг с ребра не читается: при ПЕРЕХОДЕ на кольцо камера поднимается
@@ -3520,6 +3523,100 @@ function wrapRing(D){
    своей станции. Пропуск 2х разбирается на ~14 шагов по ~1.07х.
    Приёмка окна: щель сжалась до <=1.5 шага, зазоры и бокс целы — иначе
    полный откат */
+/* ПОСАДКА СТЕРЖНЕЙ НА КАРКАС. Стекло не тянется: длина трубки задана
+   раскроем, а торцы стоят от проволоки на IN = радиус проволоки + воздух.
+   Поздние проходы (поперечный провис центра, сглаживание кантов, сварка
+   мостов, сворачивание в кольцо) двигали концы стержней порознь, и трубки
+   растягивались: замер 2400×900×800 — 270 стержней с отклонением до
+   +11 мм, кольцо Ø2000 — 1284 стержня до ±39 мм. На виде это читалось
+   как «трубки стали длиннее» и «стержни вылезают за контур» (замечания
+   пользователя).
+   Финальный проход: на каждой станции расстояние между контурами
+   приводится к ширине ряда (контуры разводятся/сводятся симметрично), а
+   стержни пересобираются из контуров — торец ровно в IN от проволоки,
+   длина ровно проектная. Приёмка: число нарушений зазоров не выросло,
+   иначе полный откат */
+function refitRods(ribbons){
+  const IN=WIRE_D/2+ROD_AIR;
+  const viol=()=>{
+    let v=0;
+    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
+      const near=A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=NEAR_WIN;
+      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+         (near? CLEAR_NEAR : CLEAR_FAR)) v++;
+    });
+    return v;
+  };
+  const before=viol();
+  const bak=ribbons.map(rb=>({
+    a:rb.railA.map(p=>p.slice()), b:rb.railB.map(p=>p.slice()),
+    c:rb.centers.map(p=>p.slice()),
+    r:rb.rods.map(r=>({a:r.a.slice(), b:r.b.slice()}))}));
+  let fixed=0;
+  for(let pass=0; pass<2; pass++)
+  for(const rb of ribbons){
+    const two=!!rb.dirUp, n=rb.centers.length;
+    const half=rb.halfW||150;
+    const byRow={};
+    for(const r of rb.rods){
+      const st=Math.max(0, Math.min(n-1, r.st));
+      const row=two ? (r.u2>0? 0 : 1) : 0;
+      (byRow[st]=byRow[st]||{})[row]=r;
+    }
+    for(let i=0;i<n;i++){
+      const set=byRow[i]; if(!set) continue;
+      if(two){
+        // ЦЕНТР ДЕРЖИМ (он несёт форму потока), канты выставляем ровно на
+        // полширины по СВОИМ направлениям — складка ленты сохраняется
+        const Cc=rb.centers[i];
+        const rows=[[rb.railA[i], set[0]], [rb.railB[i], set[1]]];
+        for(const [P, r] of rows){
+          if(!P || !r) continue;
+          const d=[P[0]-Cc[0], P[1]-Cc[1], P[2]-Cc[2]];
+          const L=Math.hypot(d[0],d[1],d[2]);
+          if(L<1) continue;
+          const u=[d[0]/L, d[1]/L, d[2]/L];
+          if(Math.abs(L-half)>0.5) fixed++;
+          for(let x=0;x<3;x++){
+            P[x]=Cc[x]+u[x]*half;       // кант на полширины от центра
+            r.a[x]=P[x]-u[x]*IN;        // торец: воздух до проволоки канта
+            r.b[x]=Cc[x]+u[x]*IN;       // крепление: воздух до центральной
+          }
+        }
+      } else {
+        // однорядная: стержень между кантами, середина остаётся на месте
+        const P=rb.railA[i], Q=rb.railB[i], r=set[0];
+        if(!P || !Q || !r) continue;
+        const d=[Q[0]-P[0], Q[1]-P[1], Q[2]-P[2]];
+        const L=Math.hypot(d[0],d[1],d[2]);
+        if(L<1) continue;
+        const u=[d[0]/L, d[1]/L, d[2]/L];
+        if(Math.abs(L-2*half)>0.5) fixed++;
+        for(let x=0;x<3;x++){
+          const m=(P[x]+Q[x])/2;
+          P[x]=m-u[x]*half; Q[x]=m+u[x]*half;
+          r.a[x]=P[x]+u[x]*IN;
+          r.b[x]=Q[x]-u[x]*IN;
+        }
+      }
+    }
+  }
+  if(viol()>before){
+    ribbons.forEach((rb,ri)=>{
+      const B=bak[ri];
+      rb.railA.forEach((p,i)=>{ p[0]=B.a[i][0]; p[1]=B.a[i][1]; p[2]=B.a[i][2]; });
+      rb.railB.forEach((p,i)=>{ p[0]=B.b[i][0]; p[1]=B.b[i][1]; p[2]=B.b[i][2]; });
+      rb.centers.forEach((p,i)=>{ p[0]=B.c[i][0]; p[1]=B.c[i][1]; p[2]=B.c[i][2]; });
+      rb.rods.forEach((r,i)=>{
+        r.a[0]=B.r[i].a[0]; r.a[1]=B.r[i].a[1]; r.a[2]=B.r[i].a[2];
+        r.b[0]=B.r[i].b[0]; r.b[1]=B.r[i].b[1]; r.b[2]=B.r[i].b[2];
+      });
+    });
+    return 0;
+  }
+  return fixed;
+}
+
 function spreadGaps(ribbons, box){
   const lim3=[box.w, box.h, box.d];
   let fixed=0;
@@ -5313,6 +5410,9 @@ function buildScene(){
   // раздвижка гребёнки — после всех провисов и сглаживаний: пропуски у
   // швов разбираются скольжением станций вдоль ленты (для любой пластики)
   spreadGaps(ribbons, box);
+  // посадка стержней на каркас — последней: после неё длины трубок
+  // ровно проектные, а торцы стоят в IN от проволоки
+  refitRods(ribbons);
   // ПУНКТИР ФОРМЫ ГАБАРИТА рисуем по выбору пользователя, а не по
   // построенной ленте: даже если композиция ушла на страховочный проход,
   // выбранная форма должна быть видна
