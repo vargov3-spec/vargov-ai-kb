@@ -5970,22 +5970,11 @@ function buildScene(){
     // важно только, чтобы стык был незаметным (joinPull + шов)
     if(!state.ringBuild){ state.laneTry=0; state.forceLanes=0; }
     const tries=state.reTry||0;
-    // ЕДИНСТВО ЛЕНТЫ НЕ ГОНЯЕТ ПЕРЕСБОРКУ: его гарантирует резерв с
-    // длинным мостом ниже, а реролл из-за кусков стоил до 300 с на
-    // глубокой нарезке 2400x2400 (три полных сборки по ~100 с)
-    if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
-      state.reTry=tries+1;
-      state.autoSeed=false;
-      state.seed=(state.seed*1664525+1013904223)>>>0;
-      buildScene();
-      state.reTry=0;
-      return;
-    }
-    state.reTry=0;
-    // ПОСЛЕДНИЙ РЕЗЕРВ ОДНОЙ ЛЕНТЫ для «волн» (скрин пользователя:
-    // 2400×2400 резался по глубине на слои, их концы далеко, и после
-    // ретраев лента оставалась из трёх кусков): сшивка с длинным мостом
-    // до 60 станций — как у кольца
+    // ПОРЯДОК: сначала дешёвый резерв единой ленты (стяжка + сшивка с
+    // длинным мостом до 60 станций), и только если он не справился —
+    // дорогая пересборка с другим зерном. На 4400 резерв срабатывает и
+    // сборка укладывается в ~17 с; глубокая нарезка 2400x2400 с далёкими
+    // концами слоёв уходит в реролл — медленно, но лента единая
     if(!params.concept && !state.ringBuild && ribbons.length>1){
       state.longBridge=1;
       joinPull(ribbons, box, false);
@@ -5997,6 +5986,16 @@ function buildScene(){
         scene.ribbons=ribbons;
       }
     }
+    const oneOk=state.ringBuild ? true : (ribbons.length===1);
+    if(!params.concept && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
+      state.reTry=tries+1;
+      state.autoSeed=false;
+      state.seed=(state.seed*1664525+1013904223)>>>0;
+      buildScene();
+      state.reTry=0;
+      return;
+    }
+    state.reTry=0;
   }
   updateSpec();
   camera.fitTo(box);
