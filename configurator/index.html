@@ -2940,6 +2940,29 @@ function closestSegSeg(P1,Q1,P2,Q2){
   return [V.len(V.sub(c1,c2)), c1, c2];
 }
 
+/* ДИСТАНЦИЯ МЕЖДУ ОТРЕЗКАМИ БЕЗ АЛЛОКАЦИЙ: то же ядро, только скаляры.
+   Сканы зазоров зовут его миллионы раз за сборку — векторная версия
+   создавала 8 массивов на вызов и грела сборщик мусора */
+function segSegD(P1,Q1,P2,Q2){
+  const d1x=Q1[0]-P1[0], d1y=Q1[1]-P1[1], d1z=Q1[2]-P1[2];
+  const d2x=Q2[0]-P2[0], d2y=Q2[1]-P2[1], d2z=Q2[2]-P2[2];
+  const rx=P1[0]-P2[0], ry=P1[1]-P2[1], rz=P1[2]-P2[2];
+  const a=d1x*d1x+d1y*d1y+d1z*d1z;
+  const e=d2x*d2x+d2y*d2y+d2z*d2z;
+  const f=d2x*rx+d2y*ry+d2z*rz;
+  const c=d1x*rx+d1y*ry+d1z*rz;
+  const b=d1x*d2x+d1y*d2y+d1z*d2z;
+  const denom=a*e-b*b;
+  let s2=denom!==0? Math.min(1,Math.max(0,(b*f-c*e)/denom)) : 0;
+  let t2=(b*s2+f)/e;
+  if(t2<0){ t2=0; s2=Math.min(1,Math.max(0,-c/a)); }
+  else if(t2>1){ t2=1; s2=Math.min(1,Math.max(0,(b-c)/a)); }
+  const gx=(P1[0]+d1x*s2)-(P2[0]+d2x*t2);
+  const gy=(P1[1]+d1y*s2)-(P2[1]+d2y*t2);
+  const gz=(P1[2]+d1z*s2)-(P2[2]+d2z*t2);
+  return Math.sqrt(gx*gx+gy*gy+gz*gz);
+}
+
 /* обход близких пар стержней через пространственный хэш */
 /* ПЕРЕБОР БЛИЗКИХ ПАР СТЕРЖНЕЙ — узкое место всей генерации: на плотной
    композиции стержней тысячи, пар — миллионы. Ускорено двумя вещами:
@@ -2980,11 +3003,15 @@ function pairLim(rbA, rA, rbB, rB){
   if(rbA===rbB) return Math.abs(rA.st-rB.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
   return seamPair(rbA, rA.st, rbB, rB.st) ? CLEAR_NEAR : CLEAR_FAR;
 }
-function forEachClosePair(ribbons, radius, cb){
+function forEachClosePair(ribbons, radius, cb, dirtyOf){
   const H = 110+radius;
   const grid = new Map();
   const items = [];
   ribbons.forEach((rb,ri)=>rb.rods.forEach((r,i)=>items.push({ri,i,r})));
+  // режим «грязных»: в сетку кладутся все стержни, но внешний обход идёт
+  // только по сдвинувшимся — пара «чистый×чистый» не могла ни сойтись,
+  // ни разойтись (ни один из двух не двигался), её не пересканируем
+  const dirtyArr = dirtyOf ? items.map(o=>dirtyOf(o.ri, o.r)) : null;
   const cellsOf = items.map(()=>null);
   // ключ ячейки — упакованное число (сдвиг +512, по 10 бит на ось):
   // строковые ключи со split съедали заметную долю всей сборки
@@ -3007,6 +3034,7 @@ function forEachClosePair(ribbons, radius, cb){
   });
   const stamp = new Int32Array(items.length);
   for(let oi=0; oi<items.length; oi++){
+    if(dirtyArr && !dirtyArr[oi]) continue;
     const A=items[oi], mark=oi+1;
     for(const key of cellsOf[oi]){
       const cx=((key>>20)&1023)-512, cy=((key>>10)&1023)-512, cz=(key&1023)-512;
@@ -3015,7 +3043,10 @@ function forEachClosePair(ribbons, radius, cb){
         if(!nb) continue;
         for(let t=0;t<nb.length;t++){
           const oj=nb[t];
-          if(oj<=oi || stamp[oj]===mark) continue;
+          if(oj===oi || stamp[oj]===mark) continue;
+          // дедупликация: пара двух грязных обходится один раз (oi<oj),
+          // пара грязный×чистый — только с грязной стороны
+          if(dirtyArr ? (dirtyArr[oj] && oj<oi) : oj<=oi) continue;
           stamp[oj]=mark;
           const B=items[oj];
           if(A.ri===B.ri && Math.abs(A.r.st-B.r.st)<=SKIP_NEAR) continue;
@@ -3030,19 +3061,55 @@ function resolveCollisions(ribbons, box){
   // Коллизии ищутся на ФАКТИЧЕСКОЙ (марш) геометрии, а разводятся
   // смещением НАПРАВЛЯЮЩЕЙ с повторным маршем: физические лимиты
   // ленты при этом не нарушаются никогда.
+  // ГРЯЗНЫЙ СКАН: полный проход — только на первой итерации. Дальше
+  // после каждого марша сравниваются кадры станций (центр и оба канта):
+  // не сдвинулась станция — не сдвинулись и её стержни, а пара двух
+  // неподвижных стержней не меняет дистанцию. Пересканируются только
+  // сдвинувшиеся против всех соседей по сетке — это точная локальность,
+  // а не эвристика (марш интегратор, правка хвоста может сдвинуть весь
+  // низ ленты — сравнение кадров это честно ловит)
   const KW=[];
   for(let k=-5;k<=5;k++) KW.push(0.5*(1+Math.cos(Math.PI*k/6)));
   let last={collisions:0, minClear:1e9, near:0, self:0, cross:0};
   let stagBest=1e9, stagCnt=0;
+  const snaps=ribbons.map(()=>null);
+  const dirtySt=ribbons.map(()=>null);
+  const snapshot=(ri)=>{
+    const rb=ribbons[ri], n=rb.centers.length;
+    const f=new Float64Array(n*9);
+    for(let i=0;i<n;i++){
+      const C=rb.centers[i], A=rb.railA[i], B=rb.railB[i];
+      const o=i*9;
+      f[o]=C[0]; f[o+1]=C[1]; f[o+2]=C[2];
+      f[o+3]=A[0]; f[o+4]=A[1]; f[o+5]=A[2];
+      f[o+6]=B[0]; f[o+7]=B[1]; f[o+8]=B[2];
+    }
+    return f;
+  };
+  const markDirty=(ri)=>{
+    const rb=ribbons[ri], n=rb.centers.length, old=snaps[ri];
+    const d=new Uint8Array(n);
+    if(!old || old.length!==n*9){ d.fill(1); }
+    else for(let i=0;i<n;i++){
+      const C=rb.centers[i], A=rb.railA[i], B=rb.railB[i];
+      const o=i*9;
+      if(Math.abs(C[0]-old[o])+Math.abs(C[1]-old[o+1])+Math.abs(C[2]-old[o+2])
+        +Math.abs(A[0]-old[o+3])+Math.abs(A[1]-old[o+4])+Math.abs(A[2]-old[o+5])
+        +Math.abs(B[0]-old[o+6])+Math.abs(B[1]-old[o+7])+Math.abs(B[2]-old[o+8])>1e-6)
+        d[i]=1;
+    }
+    dirtySt[ri]=d;
+    snaps[ri]=snapshot(ri);
+  };
   for(let it=0; it<90; it++){
     const disp = ribbons.map(rb=>rb.guideC.map(()=>null));
     const chords = [];
     let coll=0, minClear=1e9, nearC=0, selfC=0, crossC=0;
-    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
+    const process=(A,B)=>{
       const sa=A.r.st, sb=B.r.st;
       const near = A.ri===B.ri && Math.abs(sa-sb)<=NEAR_WIN;
       const limD = near ? CLEAR_NEAR : CLEAR_FAR;
-      const [d,c1,c2] = closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b);
+      const d = segSegD(A.r.a,A.r.b,B.r.a,B.r.b);
       if(d<minClear) minClear=d;
       if(d>=limD) return;
       coll++;
@@ -3055,6 +3122,7 @@ function resolveCollisions(ribbons, box){
       if(near){
         chords.push([A.ri, Math.min(giA,giB), Math.max(giA,giB)]);
       } else {
+        const [, c1, c2] = closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b);
         let nv=V.sub(c1,c2), L=V.len(nv);
         if(L<1e-6){
           nv=V.cross(ribbons[A.ri].dirs[sa], ribbons[B.ri].dirs[sb]); L=V.len(nv);
@@ -3076,7 +3144,19 @@ function resolveCollisions(ribbons, box){
           }
         }
       }
-    });
+    };
+    if(it===0){
+      ribbons.forEach((rb,ri)=>{ snaps[ri]=snapshot(ri); });
+      forEachClosePair(ribbons, CLEAR_FAR, process);
+    } else {
+      forEachClosePair(ribbons, CLEAR_FAR, process,
+        (ri,r)=>{
+          const d=dirtySt[ri];
+          if(!d) return true;
+          const st=r.st;
+          return st<0 || st>=d.length || d[st]===1;
+        });
+    }
     last={collisions:coll, minClear, near:nearC, self:selfC, cross:crossC};
     if(coll===0) break;
     if(coll>=stagBest){ if(++stagCnt>=18) break; } else { stagBest=coll; stagCnt=0; }
@@ -3099,6 +3179,10 @@ function resolveCollisions(ribbons, box){
     }
     // смещения направляющей (шаг ограничен 12 мм) + мягкий клэмп в слой
     ribbons.forEach((rb,ri)=>{
+      // ленту без смещений и без хорд не трогаем: марш интегрирует всю
+      // ленту заново (~мс на каждую), а без правок направляющей геометрия
+      // не меняется — и её стержни остаются «чистыми» для скана
+      if(!disp[ri].some(Boolean) && !chords.some(ch=>ch[0]===ri)) return;
       disp[ri].forEach((D,i)=>{
         if(!D) return;
         const l=V.len(D), sc=l>12 ? 12/l : 1;
@@ -3137,6 +3221,7 @@ function resolveCollisions(ribbons, box){
         }
       }
       marchRibbon(rb);
+      markDirty(ri);
     });
   }
   return last;
@@ -3145,7 +3230,7 @@ function resolveCollisions(ribbons, box){
 function measureClearance(ribbons){
   let minClear=1e9;
   forEachClosePair(ribbons, 40, (A,B)=>{
-    const [d] = closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b);
+    const d = segSegD(A.r.a,A.r.b,B.r.a,B.r.b);
     if(d<minClear) minClear=d;
   });
   return minClear;
@@ -3373,7 +3458,7 @@ function closeFans(ribbons, box){
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
               const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
               const lim=near? CLEAR_NEAR : CLEAR_FAR;
-              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] < lim){ ok=false; break outer2; }
+              if(segSegD(r.a,r.b,q.a,q.b) < lim){ ok=false; break outer2; }
             }
           }
         }
@@ -3468,7 +3553,7 @@ function centerSag(ribbons){
   const viol=()=>{
     let v=0;
     forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+      if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
          pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
     });
     return v;
@@ -3529,7 +3614,7 @@ function wrapRing(D){
   }
   let vio=0;
   forEachClosePair(rr, CLEAR_FAR, (A,B)=>{
-    if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+    if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
        pairLim(rr[A.ri], A.r, rr[B.ri], B.r)) vio++;
   });
   const S=Math.round(2*C);
@@ -3658,7 +3743,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
     // полноценный кусок ленты, а не голая проволока; дальше — не пара.
     // В режиме последнего резерва (state.longBridge) мост до 60 станций:
     // длинный переход лучше разрыва кольца
-    const capB=state.longBridge? 60 : 20;
+    const capB=state.longBridge===2? 160 : state.longBridge? 60 : 20;
     if(gap>step*(capB+1)) return null;
     const ins=Math.max(0, Math.min(capB, Math.round(gap/step)-1));
     // касательные на концах — чтобы вставка вышла плавной дугой
@@ -3804,7 +3889,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
       if(q===r) continue;
       if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
       const lim=Math.abs(q.st-r.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
-      if(closestSegSeg(r.a,r.b,q.a,q.b)[0] < lim){ bad++; break; }
+      if(segSegD(r.a,r.b,q.a,q.b) < lim){ bad++; break; }
     }
   }
   void twoRow; void closeRing; void IN;
@@ -3927,7 +4012,7 @@ function joinPull(ribbons, box, ringClose){
             const sameSeam=(rb2===t.rb && Math.abs(q.st-r.st)<=NEAR_WIN)
                          || (rb2!==t.rb && nearJoin(t.rb, r.st) && nearJoin(rb2, q.st))
                          || seamPair(t.rb, r.st, rb2, q.st);
-            const dd=closestSegSeg(r.a,r.b,q.a,q.b)[0];
+            const dd=segSegD(r.a,r.b,q.a,q.b);
             if(dd < (sameSeam? CLEAR_NEAR : CLEAR_FAR)){
               ok=false; why='зазор'+dd.toFixed(1)+(sameSeam?'бл':'дл');
               break chk; }
@@ -3996,7 +4081,7 @@ function refitRods(ribbons){
   const viol=()=>{
     let v=0;
     forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+      if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
          pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
     });
     return v;
@@ -4084,19 +4169,30 @@ function refitRods(ribbons){
 function seamRepair(ribbons, box){
   const IN=WIRE_D/2+ROD_AIR;
   const lim3=box? [box.w, box.h, box.d] : null;
-  const viol=()=>{
+  // приёмка зоны считает только пары, задевающие стержни зоны: остальные
+  // не двигались и их дистанции не менялись (точная локальность). Полный
+  // скан на 35 зонах съедал ~2 с — зонный держит весь проход в ~0.1 с
+  const viol=(zri, zi0, zi1)=>{
     let v=0;
+    const dirty=(zri===undefined)? undefined
+      : (ri,r)=>ri===zri && r.st>=zi0 && r.st<=zi1;
     forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+      if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
          pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
-    });
-    if(lim3) for(const rb of ribbons) for(const r of rb.rods)
-      for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
-        if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ v++; break; }
+    }, dirty);
+    if(lim3) for(let ri=0;ri<ribbons.length;ri++){
+      if(zri!==undefined && ri!==zri) continue;
+      for(const r of ribbons[ri].rods){
+        if(zri!==undefined && (r.st<zi0 || r.st>zi1)) continue;
+        for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
+          if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ v++; break; }
+      }
+    }
     return v;
   };
   let fixedAll=0;
-  for(const rb of ribbons){
+  for(let ri=0;ri<ribbons.length;ri++){
+    const rb=ribbons[ri];
     const n=rb.centers.length, half=rb.halfW||150, two=!!rb.dirUp;
     const bySt={};
     for(const r of rb.rods){
@@ -4162,7 +4258,7 @@ function seamRepair(ribbons, box){
         if(window.__seamLog) window.__seamLog.push({i0, i1, исход:'разворот'});
         continue;
       }
-      const before=viol();
+      const before=viol(ri, i0, i1);
       const bak=[], cur=[];
       for(let i=i0;i<=i1;i++){
         bak.push({
@@ -4242,7 +4338,7 @@ function seamRepair(ribbons, box){
       let doneZ=false, scUsed=0;
       for(const sc of [1, 0.6, 0.35]){
         apply(sc);
-        if(viol()<=before){ doneZ=true; scUsed=sc; break; }
+        if(viol(ri, i0, i1)<=before){ doneZ=true; scUsed=sc; break; }
         undo();
       }
       if(window.__seamLog){
@@ -4252,6 +4348,106 @@ function seamRepair(ribbons, box){
           исход:doneZ?('ок '+scUsed):'откат', шир:Math.round(wMin)});
       }
       if(doneZ) fixedAll++;
+    }
+    // ЭТАП «УГЛЫ». Сшивка в одну ленту идёт ПОСЛЕ сглаживаний конвейера
+    // (smoothRails/spreadGaps бегут до mergeRibbons), поэтому её швы никто
+    // не разглаживал: на станциях стыка канты ломались до 50-91° при
+    // дизайн-фоне <=15° (замер 4800 №1936864557: 91° на станции 733 = шов).
+    // Плюс шрамы сварки внутри лент. Зоны залома >20° сглаживаются
+    // лапласианом (центры и оба канта), затем канты и стержни
+    // перенормируются на ±полширины по оси — ширина и длины номинальные.
+    // Приёмка: зазоры не хуже И максимальный залом зоны строго упал
+    const angOf=(P,i)=>{
+      if(!P || i<1 || i+1>=P.length) return 0;
+      const v1=[P[i][0]-P[i-1][0], P[i][1]-P[i-1][1], P[i][2]-P[i-1][2]];
+      const v2=[P[i+1][0]-P[i][0], P[i+1][1]-P[i][1], P[i+1][2]-P[i][2]];
+      const l1=Math.hypot(v1[0],v1[1],v1[2])||1, l2=Math.hypot(v2[0],v2[1],v2[2])||1;
+      return Math.acos(Math.max(-1,Math.min(1,
+        (v1[0]*v2[0]+v1[1]*v2[1]+v1[2]*v2[2])/(l1*l2))))*180/Math.PI;
+    };
+    const maxAng=(i)=>Math.max(angOf(rb.centers,i), angOf(rb.railA,i), angOf(rb.railB,i));
+    const aMarks=[];
+    for(let i=1;i+1<n;i++) if(maxAng(i)>20) aMarks.push(i);
+    const aZones=[];
+    for(const m of aMarks){
+      const z=aZones[aZones.length-1];
+      if(z && m-z.hi<=8) z.hi=m; else aZones.push({lo:m, hi:m});
+    }
+    for(const z of aZones){
+      const i0=Math.max(1, z.lo-8), i1=Math.min(n-2, z.hi+8);
+      if(i1-i0<4) continue;
+      let angBefore=0;
+      for(let i=i0;i<=i1;i++) angBefore=Math.max(angBefore, maxAng(i));
+      const before=viol(ri, i0, i1);
+      const bak=[];
+      for(let i=i0;i<=i1;i++)
+        bak.push({
+          c:rb.centers[i].slice(),
+          a:rb.railA[i].slice(), b:rb.railB[i].slice(),
+          du:two&&rb.dirUp[i]? rb.dirUp[i].slice():null,
+          dd:two&&rb.dirDn[i]? rb.dirDn[i].slice():null,
+          d1:!two&&rb.dirs&&rb.dirs[i]? rb.dirs[i].slice():null,
+          r:(bySt[i]||[]).map(r=>({r, a:r.a.slice(), b:r.b.slice()}))});
+      const undoA=()=>{
+        for(let k=0;k<bak.length;k++){
+          const i=i0+k, B=bak[k];
+          for(let x=0;x<3;x++){
+            rb.centers[i][x]=B.c[x];
+            rb.railA[i][x]=B.a[x]; rb.railB[i][x]=B.b[x];
+          }
+          if(B.du){ rb.dirUp[i]=B.du; rb.dirDn[i]=B.dd; }
+          if(B.d1) rb.dirs[i]=B.d1;
+          for(const rr2 of B.r)
+            for(let x=0;x<3;x++){ rr2.r.a[x]=rr2.a[x]; rr2.r.b[x]=rr2.b[x]; }
+        }
+      };
+      let okA=false, itUsed=0;
+      for(const iters of [36, 16, 7]){
+        // сглаживание трёх полилиний, края окна закреплены
+        for(let it=0; it<iters; it++)
+          for(const P of [rb.centers, rb.railA, rb.railB])
+            for(let i=i0+1;i<i1;i++)
+              for(let x=0;x<3;x++)
+                P[i][x]+=0.25*(P[i-1][x]+P[i+1][x]-2*P[i][x]);
+        // перенормировка: канты на ±полширины от центра по оси ширины,
+        // стержни — штатной посадкой (длина номинальная)
+        for(let i=i0;i<=i1;i++){
+          const Cc=rb.centers[i];
+          const d=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
+                   rb.railA[i][2]-rb.railB[i][2]];
+          const L=Math.hypot(d[0],d[1],d[2])||1;
+          const u=[d[0]/L, d[1]/L, d[2]/L];
+          for(let x=0;x<3;x++){
+            rb.railA[i][x]=Cc[x]+u[x]*half;
+            rb.railB[i][x]=Cc[x]-u[x]*half;
+          }
+          if(two){
+            if(rb.dirUp[i]){ rb.dirUp[i]=[u[0],u[1],u[2]];
+                             rb.dirDn[i]=[-u[0],-u[1],-u[2]]; }
+            for(const r of bySt[i]||[]){
+              const sg=r.u2>0? 1 : -1;
+              for(let x=0;x<3;x++){
+                r.a[x]=Cc[x]+sg*u[x]*(half-IN);
+                r.b[x]=Cc[x]+sg*u[x]*IN;
+              }
+            }
+          } else {
+            if(rb.dirs && rb.dirs[i]) rb.dirs[i]=[u[0],u[1],u[2]];
+            for(const r of bySt[i]||[])
+              for(let x=0;x<3;x++){
+                r.a[x]=Cc[x]+u[x]*(half-IN);
+                r.b[x]=Cc[x]-u[x]*(half-IN);
+              }
+          }
+        }
+        let angAfter=0;
+        for(let i=i0;i<=i1;i++) angAfter=Math.max(angAfter, maxAng(i));
+        if(viol(ri, i0, i1)<=before && angAfter<angBefore-3){ okA=true; itUsed=iters; break; }
+        undoA();
+      }
+      if(window.__seamLog) window.__seamLog.push({углы:1, i0, i1,
+        было:Math.round(angBefore), исход:okA?('ок '+itUsed):'откат'});
+      if(okA) fixedAll++;
     }
   }
   return fixedAll;
@@ -4350,7 +4546,7 @@ function spreadGaps(ribbons, box){
             for(const rb2 of ribbons) for(const q of rb2.rods){
               if(q===r) continue;
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+              if(segSegD(r.a,r.b,q.a,q.b) <
                  pairLim(rb, r, rb2, q)){ ok=false; break chk; }
             }
           }
@@ -4451,7 +4647,7 @@ function smoothRails(ribbons, box){
             for(const rb2 of ribbons) for(const q of rb2.rods){
               if(q===r) continue;
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-              if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+              if(segSegD(r.a,r.b,q.a,q.b) <
                  pairLim(rb, r, rb2, q)){ ok=false; break chk; }
             }
           }
@@ -4538,7 +4734,7 @@ function smoothRails(ribbons, box){
               for(const rb2 of ribbons) for(const q of rb2.rods){
                 if(q===r) continue;
                 if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-                if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
+                if(segSegD(r.a,r.b,q.a,q.b) <
                    pairLim(rb, r, rb2, q)){ ok=false; break chk2; }
               }
             }
@@ -4611,7 +4807,7 @@ let scene = null;
    раньше. Теперь все перечисленные переборы ограничены только числом
    попыток, и номер варианта воспроизводится всюду одинаково */
 const perfNow = ()=> (window.performance && performance.now) ? performance.now() : Date.now();
-const BUILD_BUDGET = 9000;
+const BUILD_BUDGET = 3200;   // потолок поиска: пользователь ждёт <=5 с (хвост конвейера ~1-2 с)
 let buildDeadline = 0;
 // МИНИМАЛЬНОЕ ПОКРЫТИЕ ОБЪЁМА для «микса» (доля клеток сетки 5×3×3, через
 // которые прошла лента). Ниже этого порога вариант считается вырожденным:
@@ -4620,7 +4816,21 @@ const COV_MIN = 0.50;
 
 function buildScene(){
   const tStart = perfNow();
-  buildDeadline = tStart + BUILD_BUDGET;
+  // дедлайн ставит ТОЛЬКО внешняя сборка: суб-сборки отсеков, заготовка
+  // кольца и рероллы живут в бюджете родителя, иначе каждая вложенная
+  // сборка продлевала бы потолок и композиция собиралась минутами
+  state.buildDepth=state.buildDepth||0;
+  if(state.buildDepth===0){
+    // тяжёлым путям — больший потолок: кольцу нужна цельная заготовка с
+    // первой обёртки, очень широкой ленте — полные отсеки; при малом
+    // бюджете оба уходили в повторы и суммарно строились ДОЛЬШЕ
+    // (замер: кольцо 6.2 с при 4.6 против 16.2 с при 3.2)
+    const dwB=+ui.dimW.value||2400;
+    const heavy=(ui.plast.value==="ring") || dwB>=5000;
+    buildDeadline = tStart + (heavy? 4600 : BUILD_BUDGET);
+  }
+  state.buildDepth++;
+  try{
   // КОЛЬЦО — отдельная пластика (плитка «Кольцо»): лента идёт по кругу
   // произвольного диаметра от 2000 мм. Заготовка строится ПРЯМОЙ лентой
   // длиной πD со всей штатной механикой — нарезка на отрезки, невидимые
@@ -4663,7 +4873,8 @@ function buildScene(){
         buildScene();
         const vio=wrapRing(ringD);
         // кольцо тоже обязано быть одной сплошной лентой
-        if((vio===0 && scene.ribbons.length===1) || tr>=1) break;
+        if((vio===0 && scene.ribbons.length===1) || tr>=1
+           || perfNow()>buildDeadline) break;
         state.autoSeed=false;
         state.seed=(state.seed*1664525+1013904223)>>>0;
       }
@@ -4681,8 +4892,10 @@ function buildScene(){
       RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
     }
     // складки у замыкания круга и швов кольца — той же починкой,
-    // после оборачивания и резервной сшивки
+    // после оборачивания и резервной сшивки; затем раздвижка и посадка
     seamRepair(scene.ribbons, scene.box);
+    spreadGaps(scene.ribbons, scene.box);
+    refitRods(scene.ribbons);
     updateSpec();
     return;
   }
@@ -4886,7 +5099,8 @@ function buildScene(){
     state.subBuild=true;
     for(let i=0;i<nL && okAll;i++){
       let bestSl=null;
-      for(let tr=0; tr<3 && !(bestSl && bestSl.ok); tr++){
+      for(let tr=0; tr<3 && !(bestSl && bestSl.ok)
+              && (tr===0 || perfNow()<buildDeadline); tr++){
         uiDim.value=String(Math.round(sliceW-seamGap));
         state.autoSeed=false;
         state.seed=(seed0+i*104729+tr*7717)>>>0;
@@ -5018,7 +5232,7 @@ function buildScene(){
             for(const r of rbB.rods){
               if(r.st!==cut) continue;
               for(const q of endRods){
-                const [d2]=closestSegSeg(r.a,r.b,q.a,q.b);
+                const d2=segSegD(r.a,r.b,q.a,q.b);
                 if(d2<CLEAR_NEAR+0.3){ clear=false; break; }
               }
               if(!clear) break;
@@ -5206,13 +5420,16 @@ function buildScene(){
           for(const rb of rrAll){
             for(const q of rb.rods){
               if(q===r) continue;
+              // дешёвый префильтр по X (как в приёмке сшивки): дальние по
+              // оси пары не считаем — на 6000 это 6х меньше дистанций
+              if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
               // ШОВ: отрезки продолжают друг друга, у стыка гребёнка
               // непрерывна — там ближний лимит, а не полный дальний
               const near = rb===rbSelf
                 ? Math.abs(q.st-r.st)<=NEAR_WIN
                 : (seamNow && seamNow(rbSelf, r.st, rb, q.st));
               const limD = near ? CLEAR_NEAR : CLEAR_FAR;
-              const [d]=closestSegSeg(r.a,r.b,q.a,q.b);
+              const d=segSegD(r.a,r.b,q.a,q.b);
               if(d<limD) return (near?'n':'f')+Math.round(d)+'@'+r.st+'/'+q.st+
                                 (rb===rbSelf?'s':'x');
             }
@@ -5345,7 +5562,7 @@ function buildScene(){
                 const lat=V.len(V.sub(vx, V.mul(uLn, proj)));
                 let dm=1e9;
                 for(const r of RA) for(const q of RB)
-                  dm=Math.min(dm, closestSegSeg(r.a,r.b,q.a,q.b)[0]);
+                  dm=Math.min(dm, segSegD(r.a,r.b,q.a,q.b));
                 // стык обязан сойтись почти вплотную (правило
                 // пользователя: между контурами 5-10 мм), поэтому целимся
                 // в шаг гребёнки, а не в прежние 30 мм
@@ -5577,7 +5794,8 @@ function buildScene(){
     // 278, 415, 601) и чистый вариант только в страховке — 15 с на сборку
     const maxAtt = (params.plast==="edge") ? 2
                  : (effLanes>2 ? 3 : (effLanes>1 ? 4 : 5));
-    for(let attempt=0; attempt<maxAtt; attempt++){
+    for(let attempt=0; attempt<maxAtt
+            && (attempt===0 || perfNow()<buildDeadline); attempt++){
       // ЛЕСТНИЦА НЕ ОГРАНИЧЕНА ВРЕМЕНЕМ. Раньше она обрывалась по бюджету,
       // если что-то годное уже нашлось, — и один и тот же НОМЕР ВАРИАНТА
       // давал на разных машинах разные композиции: на медленной бюджет
@@ -5636,6 +5854,10 @@ function buildScene(){
       // (сжать направляющие по перебравшим осям + перемаршировать),
       // иначе годная пластика бракуется из-за пары сантиметров
       const shr=[1,1,1];
+      // утяжка сжимает направляющие БЕЗ разводки на каждом шаге: разводка —
+      // самая дорогая операция конвейера, а перебравшие оси видно по маршу.
+      // Одна общая разводка после цикла сжатий даёт тот же результат
+      let shrunk=false;
       for(let fx=0; fx<6; fx++){
         const mM2=[1e9,1e9,1e9], xM2=[-1e9,-1e9,-1e9];
         for(const rb of ribbons){
@@ -5654,6 +5876,9 @@ function buildScene(){
         }
         for(const rb of ribbons) if(rb.formClamp) for(const c of rb.guideC) rb.formClamp(c);
         for(const rb of ribbons) marchRibbon(rb);
+        shrunk=true;
+      }
+      if(shrunk){
         clear = resolveCollisions(ribbons, box);
         clear.attempt = attempt; clear.lanes = effLanes;
       }
@@ -5776,7 +6001,8 @@ function buildScene(){
   if(!directBuilt && (clear.collisions>0 || needRescue)){
     rescue:
     for(let rl=lanes; rl>=1; rl--){
-      for(let rs=0; rs<(rl>2?3:6); rs++){
+      for(let rs=0; rs<(rl>2?3:6)
+              && (rs===0 || perfNow()<buildDeadline+1500); rs++){
         // каждая следующая попытка короче и спокойнее: короткая плавная
         // лента разводится всегда — касания не показываются никогда
         const pS = Object.assign({}, params, {
@@ -6200,7 +6426,14 @@ function buildScene(){
     if(!params.concept && !state.ringBuild && ribbons.length>1){
       state.longBridge=1;
       joinPull(ribbons, box, false);
-      const m2=mergeRibbons(ribbons, box, false);
+      let m2=mergeRibbons(ribbons, box, false);
+      // лента ОБЯЗАНА быть одной: вторая ступень резерва — мост до 160
+      // станций (изготовление идёт одной лентой любой длины, длинный
+      // переход лучше двух кусков и лучше дорогой пересборки)
+      if(m2===ribbons){
+        state.longBridge=2;
+        m2=mergeRibbons(ribbons, box, false);
+      }
       state.longBridge=0;
       if(m2!==ribbons){
         ribbons=m2;
@@ -6209,7 +6442,13 @@ function buildScene(){
       }
     }
     const oneOk=state.ringBuild ? true : (ribbons.length===1);
-    if(!params.concept && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
+    const inTime=perfNow()<buildDeadline;
+    // ЕДИНСТВО ЛЕНТЫ — ЖЁСТКОЕ ТРЕБОВАНИЕ: ради него один реролл разрешён
+    // и за пределами бюджета; ворота качества (заполнение, радиусы) при
+    // просроченном дедлайне уступают — иначе сборка уходила в минуты
+    if(!params.concept && tries<2
+       && ((inTime && (fillMin<0.80 || railMin<28 || !oneOk))
+           || (!inTime && !oneOk))){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
@@ -6225,11 +6464,17 @@ function buildScene(){
   // отсеков и заготовка кольца — промежуточные, правка их геометрии
   // меняла входы сварки и весь ход генерации (замер 5400: метраж
   // падал 12.39 -> 5.82, 6000 собирался 343 с)
-  if(!params.concept && !state.subBuild && !state.ringBuild)
+  if(!params.concept && !state.subBuild && !state.ringBuild){
     seamRepair(scene.ribbons, scene.box||box);
+    // растянутые интервалы у швов сшивки (пропуски трубок): раздвижка
+    // станций и посадка — сшивка шла ПОСЛЕ конвейерных spreadGaps/refitRods
+    spreadGaps(scene.ribbons, scene.box||box);
+    refitRods(scene.ribbons);
+  }
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
+  } finally { state.buildDepth--; }
 }
 
 /* ============================================================
