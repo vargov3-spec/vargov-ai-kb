@@ -4513,6 +4513,10 @@ function buildScene(){
       lanes=state.forceLanes || Math.max(2, Math.min(4, Math.round(dimWv/2200)));
       sliceAxis=0;
     } else if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
+      // порог 5000 откатан: эксперимент дал 10.4 пог. м одной лентой на
+      // 4400, но штатный путь с тем же порогом принимал раннюю страховку
+      // (4.5-4.7 пог. м) — прежде надо укрепить лестницу одиночного марша
+      // метражными воротами, затем поднимать порог
       lanes=Math.max(2, Math.min(4, Math.round(dimWv/2200)));
       sliceAxis=0;
     } else if(dimDv>=1000 && dimHv<Math.max(dimWv,dimDv)){
