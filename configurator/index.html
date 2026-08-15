@@ -4422,12 +4422,8 @@ function buildScene(){
       for(let tr=0;;tr++){
         buildScene();
         const vio=wrapRing(ringD);
-        // кольцо тоже обязано быть одной сплошной лентой, а заготовка —
-        // пройти те же ворота качества (внутри они при кольце выключены)
-        const ok= vio===0 && scene.ribbons.length===1
-          && (scene.clear.fillMin===undefined || scene.clear.fillMin>=0.80)
-          && (scene.clear.railMin==null || scene.clear.railMin>=28);
-        if(ok || tr>=2) break;
+        // кольцо тоже обязано быть одной сплошной лентой
+        if((vio===0 && scene.ribbons.length===1) || tr>=1) break;
         state.autoSeed=false;
         state.seed=(state.seed*1664525+1013904223)>>>0;
       }
@@ -5943,11 +5939,7 @@ function buildScene(){
     // ЛЕНТА ОБЯЗАНА БЫТЬ ОДНОЙ СПЛОШНОЙ (требование пользователя): если
     // сшивка не смогла соединить куски, вариант пересобирается
     const oneOk=state.ringBuild ? true : (ribbons.length===1);
-    // у кольца внутренние ворота НЕ реролят заготовку: внешняя обёртка
-    // кольца сама пересобирает по fillMin/railMin/зазорам/одной ленте —
-    // два уровня ретраев перемножались в 6-12 полных сборок по 6-8 с
-    if(!params.concept && !state.ringBuild
-       && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
+    if(!params.concept && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
