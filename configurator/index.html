@@ -5970,10 +5970,10 @@ function buildScene(){
     // важно только, чтобы стык был незаметным (joinPull + шов)
     if(!state.ringBuild){ state.laneTry=0; state.forceLanes=0; }
     const tries=state.reTry||0;
-    // ЛЕНТА ОБЯЗАНА БЫТЬ ОДНОЙ СПЛОШНОЙ (требование пользователя): если
-    // сшивка не смогла соединить куски, вариант пересобирается
-    const oneOk=state.ringBuild ? true : (ribbons.length===1);
-    if(!params.concept && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
+    // ЕДИНСТВО ЛЕНТЫ НЕ ГОНЯЕТ ПЕРЕСБОРКУ: его гарантирует резерв с
+    // длинным мостом ниже, а реролл из-за кусков стоил до 300 с на
+    // глубокой нарезке 2400x2400 (три полных сборки по ~100 с)
+    if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
