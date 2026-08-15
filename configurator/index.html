@@ -3670,17 +3670,32 @@ function mergeTry(ribbons, box, closeRing, kTan){
     };
     const M0=[0,1,2].map(x=>(tA[x]-tA2[x])*(ins+1)/3*kTan);
     const M1=[0,1,2].map(x=>(hB2[x]-hB[x])*(ins+1)/3*kTan);
-    // прототипы стержней вставки: по одному НА КАЖДЫЙ РЯД (на последней
-    // станции бывает один ряд — тогда второй кант моста оставался голым),
-    // ищем назад до 8 станций
+    // прототипы стержней вставки: по одному НА КАЖДЫЙ РЯД. Поиск назад
+    // до 40 станций, а если ряда нет и там — стержень СИНТЕЗИРУЕТСЯ из
+    // констант сборки: на длинных мостах пропавший прототип оставлял
+    // голый контур без гребёнки (скрин пользователя, 4400 №2657391872)
     const proto=[];
     const two=!!out.dirUp;
+    const halfW0=out.halfW||150;
+    const anyN=(out.rods[out.rods.length-1]||{}).n||[0,1,0];
     for(const want of (two? [1, 0] : [1])){
-      for(let i=nA-1;i>=Math.max(0, nA-8) && proto.length<(two?2:1);i--){
-        const r=out.rods.find(r2=>r2.st===i
+      let found=null;
+      for(let i=nA-1;i>=Math.max(0, nA-40);i--){
+        found=out.rods.find(r2=>r2.st===i
           && (!two || (want? r2.u2>0 : r2.u2<=0)));
-        if(r && !proto.includes(r)){ proto.push(r); break; }
+        if(found) break;
       }
+      if(!found){
+        found = two
+          ? (want
+            ? {st:0, u1:IN, u2:halfW0-IN, len:halfW0-2*IN, nom:halfW0,
+               a:[0,0,0], b:[0,0,0], n:anyN.slice()}
+            : {st:0, u1:-(halfW0-IN), u2:-IN, len:halfW0-2*IN, nom:halfW0,
+               a:[0,0,0], b:[0,0,0], n:anyN.slice()})
+          : {st:0, u1:-(halfW0-IN), u2:halfW0-IN, len:2*(halfW0-IN),
+             nom:2*halfW0, a:[0,0,0], b:[0,0,0], n:anyN.slice()};
+      }
+      if(!proto.includes(found)) proto.push(found);
     }
     for(let i=1;i<=ins;i++){
       const u=i/(ins+1);
