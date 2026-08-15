@@ -3697,18 +3697,43 @@ function mergeTry(ribbons, box, closeRing, kTan){
       }
       if(!proto.includes(found)) proto.push(found);
     }
+    // ОРИЕНТАЦИИ ВСТАВКИ — С НОРМИРОВКОЙ, КАНТЫ — ОТ ЦЕНТРА И ОРИЕНТАЦИЙ.
+    // Линейная интерполяция направлений при развёрнутых концах вырождалась
+    // в ноль: мост выходил узким скрученным клином (скрин пользователя,
+    // 5400). Нормированный поворот держит полную ширину ленты по всей
+    // вставке, канты считаются как при сборке: центр ± направление×полуширина
+    const halfWm=out.halfW||150;
+    const nlerp=(P,Q,u)=>{
+      const v=[P[0]+(Q[0]-P[0])*u, P[1]+(Q[1]-P[1])*u, P[2]+(Q[2]-P[2])*u];
+      const L=Math.hypot(v[0],v[1],v[2]);
+      if(L>0.15) return [v[0]/L, v[1]/L, v[2]/L];
+      // концы почти противоположны — ведём поворот через вертикаль
+      const w=[P[0]+(Q[0]-P[0])*u, P[1]+(Q[1]-P[1])*u+1, P[2]+(Q[2]-P[2])*u];
+      const L2=Math.hypot(w[0],w[1],w[2])||1;
+      return [w[0]/L2, w[1]/L2, w[2]/L2];
+    };
     for(let i=1;i<=ins;i++){
       const u=i/(ins+1);
       const C=herm(tA, hB, M0, M1, u);
-      const A0=lerpP(out.railA[nA-1], B.railA[0], u);
-      const B0=lerpP(out.railB[nA-1], B.railB[0], u);
-      out.centers.push(C); out.railA.push(A0); out.railB.push(B0);
+      out.centers.push(C);
       if(out.guideC) out.guideC.push(C.slice());
+      let A0, B0;
       if(out.dirUp && B.dirUp){
-        out.dirUp.push(lerpP(out.dirUp[nA-1], B.dirUp[0], u));
-        out.dirDn.push(lerpP(out.dirDn[nA-1], B.dirDn[0], u));
+        const du=nlerp(out.dirUp[nA-1], B.dirUp[0], u);
+        const dd=nlerp(out.dirDn[nA-1], B.dirDn[0], u);
+        out.dirUp.push(du); out.dirDn.push(dd);
+        A0=[C[0]+du[0]*halfWm, C[1]+du[1]*halfWm, C[2]+du[2]*halfWm];
+        B0=[C[0]+dd[0]*halfWm, C[1]+dd[1]*halfWm, C[2]+dd[2]*halfWm];
+      } else if(out.dirs && B.dirs){
+        const d=nlerp(out.dirs[nA-1], B.dirs[0], u);
+        out.dirs.push(d);
+        A0=[C[0]+d[0]*halfWm, C[1]+d[1]*halfWm, C[2]+d[2]*halfWm];
+        B0=[C[0]-d[0]*halfWm, C[1]-d[1]*halfWm, C[2]-d[2]*halfWm];
+      } else {
+        A0=lerpP(out.railA[nA-1], B.railA[0], u);
+        B0=lerpP(out.railB[nA-1], B.railB[0], u);
       }
-      if(out.dirs && B.dirs) out.dirs.push(lerpP(out.dirs[nA-1], B.dirs[0], u));
+      out.railA.push(A0); out.railB.push(B0);
       const st=out.centers.length-1;
       newSt.add(st);
       for(const pr of proto){
