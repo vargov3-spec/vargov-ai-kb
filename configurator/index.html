@@ -3605,6 +3605,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
     if(rb.ledSt) rb.ledSt=rb.ledSt.map(v=>n-1-v);
     if(rb.cabs) for(const c of rb.cabs) if(c.st!==undefined) c.st=n-1-c.st;
     if(rb.cabSt) rb.cabSt=rb.cabSt.map(v=>n-1-v).sort((a,b)=>a-b);
+    if(rb.joinAt) rb.joinAt=rb.joinAt.map(v=>n-1-v);
   };
   const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);
   // РАБОТАЕМ НА КОПИЯХ: при отказе приёмки исходные отрезки должны
@@ -3623,6 +3624,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
     c.ledSt=(rb.ledSt||[]).slice();
     c.cabs=(rb.cabs||[]).map(x=>({...x, to:x.to.slice(), from:x.from.slice()}));
     c.cabSt=(rb.cabSt||[]).slice();
+    c.joinAt=(rb.joinAt||[]).slice();
     return c;
   };
   const src=ribbons.map(cp);
@@ -3761,8 +3763,10 @@ function mergeTry(ribbons, box, closeRing, kTan){
       out.cabs.push(c);
     }
     if(B.cabSt) out.cabSt=(out.cabSt||[]).concat(B.cabSt.map(v=>v+off));
+    if(B.joinAt && B.joinAt.length) out.joinAt=(out.joinAt||[]).concat(B.joinAt.map(v=>v+off));
   }
   out.ribbonLen=out.centers.length*step;
+  out.joinAt=(out.joinAt||[]).concat(seamsAt);
   out.rods.sort((a,b)=>a.st-b.st);
   // ШВЫ ПЕРЕЕЗЖАЮТ НА СЛИТУЮ ЛЕНТУ: у соседних лент seams указывали на
   // исчезнувшие куски цепочки — пары через уже сведённые стыки становились
@@ -3803,7 +3807,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
       if(closestSegSeg(r.a,r.b,q.a,q.b)[0] < lim){ bad++; break; }
     }
   }
-  void twoRow; void closeRing; void seamsAt; void IN;
+  void twoRow; void closeRing; void IN;
   if(window.__mergeLog) window.__mergeLog.push({kTan, лент:ribbons.length, before, bad});
   return bad>before ? null : merged;
 }
@@ -4065,6 +4069,192 @@ function refitRods(ribbons){
     return 0;
   }
   return fixed;
+}
+
+/* ШОВ КАК ОБЫЧНЫЙ ХОД ЛЕНТЫ. Подтяжка концов (сварка, joinPull) складывала
+   канты у стыка «домиком»: центр на месте, оба канта уходят в одну сторону,
+   и лента сужается клином (замер 4500×900×800: ширина 251 мм при номинале
+   299 — излом ~66° на станциях стыка). refitRods такую складку консервирует:
+   он ставит канты «по своим направлениям». Починка: в окне вокруг каждого
+   стыка (joinAt из сшивки) ось ширины railA−railB сглаживается лапласианом
+   с якорями за окном, канты ставятся строго на ±полширины от центра по этой
+   оси, стержни пересаживаются той же посадкой, что и refitRods (длина
+   номинальная — стекло не тянется). Приёмка: зазоры с шовным правилом и
+   бокс; стало хуже — откат окна */
+function seamRepair(ribbons, box){
+  const IN=WIRE_D/2+ROD_AIR;
+  const lim3=box? [box.w, box.h, box.d] : null;
+  const viol=()=>{
+    let v=0;
+    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
+      if(closestSegSeg(A.r.a,A.r.b,B.r.a,B.r.b)[0] <
+         pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
+    });
+    if(lim3) for(const rb of ribbons) for(const r of rb.rods)
+      for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
+        if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ v++; break; }
+    return v;
+  };
+  let fixedAll=0;
+  for(const rb of ribbons){
+    const n=rb.centers.length, half=rb.halfW||150, two=!!rb.dirUp;
+    const bySt={};
+    for(const r of rb.rods){
+      const st=Math.max(0, Math.min(n-1, r.st));
+      (bySt[st]=bySt[st]||[]).push(r);
+    }
+    const axis=(i)=>{
+      const d=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
+               rb.railA[i][2]-rb.railB[i][2]];
+      const L=Math.hypot(d[0],d[1],d[2])||1;
+      return [d[0]/L, d[1]/L, d[2]/L];
+    };
+    const width=(i)=>Math.hypot(
+      rb.railA[i][0]-rb.railB[i][0],
+      rb.railA[i][1]-rb.railB[i][1],
+      rb.railA[i][2]-rb.railB[i][2]);
+    // отмечаем и стыки сшивки, и любые места, где лента уже номинала:
+    // складку создаёт не только мост — канты двигают сварка и разбор
+    // шпилек, и клин может оказаться вдали от шва (замер 4500: станция 704)
+    const marks=new Set(rb.joinAt||[]);
+    let eP=null;
+    for(let i=0;i<n;i++){
+      const wi=width(i);
+      if(wi<2*half*0.97 || wi>2*half*1.03) marks.add(i);
+      // перекрёст кантов: ось ширины разворачивается между станциями,
+      // ширина при этом полная — клин «X» со скрина пользователя
+      const ei=axis(i);
+      if(eP && (eP[0]*ei[0]+eP[1]*ei[1]+eP[2]*ei[2])<0.5){ marks.add(i-1); marks.add(i); }
+      eP=ei;
+    }
+    if(!marks.size) continue;
+    const W=12;
+    const sorted=[...marks].sort((q,z)=>q-z);
+    const zones=[];
+    for(const m of sorted){
+      const z=zones[zones.length-1];
+      if(z && m-z.hi<=W) z.hi=m; else zones.push({lo:m, hi:m});
+    }
+    for(const z of zones){
+      const i0=Math.max(0, z.lo-W), i1=Math.min(n-1, z.hi+W);
+      if(i1-i0<4) continue;
+      let folded=false;
+      for(let i=i0;i<=i1 && !folded;i++){
+        const wi=width(i);
+        if(wi<2*half*0.97 || wi>2*half*1.03) folded=true;
+        if(!folded && i<i1){
+          const q=axis(i), r2=axis(i+1);
+          if(q[0]*r2[0]+q[1]*r2[1]+q[2]*r2[2]<0.5) folded=true;
+        }
+      }
+      if(!folded) continue;
+      // ось ширины по окну; знаки выравниваем по цепочке, чтобы
+      // перекрёст не вырождал лапласиан (средняя двух встречных осей — ноль).
+      // Нечётный разворот внутри окна локально не чинится — пропуск зоны
+      const e=[];
+      for(let i=i0;i<=i1;i++) e.push(axis(i));
+      let flip=false;
+      for(let k=1;k<e.length;k++){
+        const dd=e[k][0]*e[k-1][0]+e[k][1]*e[k-1][1]+e[k][2]*e[k-1][2];
+        if(dd<0){ e[k]=[-e[k][0],-e[k][1],-e[k][2]]; flip=!flip; }
+      }
+      if(flip){
+        if(window.__seamLog) window.__seamLog.push({i0, i1, исход:'разворот'});
+        continue;
+      }
+      const before=viol();
+      const bak=[], cur=[];
+      for(let i=i0;i<=i1;i++){
+        bak.push({
+          a:rb.railA[i].slice(), b:rb.railB[i].slice(),
+          du:two&&rb.dirUp[i]? rb.dirUp[i].slice():null,
+          dd:two&&rb.dirDn[i]? rb.dirDn[i].slice():null,
+          d1:!two&&rb.dirs&&rb.dirs[i]? rb.dirs[i].slice():null,
+          r:(bySt[i]||[]).map(r=>({r, a:r.a.slice(), b:r.b.slice()}))});
+        const Cc=rb.centers[i];
+        const nd=(P)=>{
+          const d=[P[0]-Cc[0], P[1]-Cc[1], P[2]-Cc[2]];
+          const L=Math.hypot(d[0],d[1],d[2])||1;
+          return [d[0]/L, d[1]/L, d[2]/L];
+        };
+        cur.push({up:nd(rb.railA[i]), dn:nd(rb.railB[i]), ax:axis(i)});
+      }
+      // лапласиан оси, якоря — крайние станции окна
+      for(let it=0; it<60; it++)
+        for(let k=1;k+1<e.length;k++){
+          const v=[0,1,2].map(x=>e[k][x]+0.5*(e[k-1][x]+e[k+1][x]-2*e[k][x]));
+          const L=Math.hypot(v[0],v[1],v[2])||1;
+          e[k]=[v[0]/L, v[1]/L, v[2]/L];
+        }
+      const nl3=(P,Q,t)=>{
+        const v=[P[0]+(Q[0]-P[0])*t, P[1]+(Q[1]-P[1])*t, P[2]+(Q[2]-P[2])*t];
+        const L=Math.hypot(v[0],v[1],v[2]);
+        if(L>0.15) return [v[0]/L, v[1]/L, v[2]/L];
+        return [Q[0], Q[1], Q[2]];
+      };
+      const apply=(sc)=>{
+        for(let k=0;k<e.length;k++){
+          const i=i0+k, Cc=rb.centers[i];
+          const eT=e[k], eN=[-eT[0],-eT[1],-eT[2]];
+          if(two){
+            const uU=nl3(cur[k].up, eT, sc), uD=nl3(cur[k].dn, eN, sc);
+            for(let x=0;x<3;x++){
+              rb.railA[i][x]=Cc[x]+uU[x]*half;
+              rb.railB[i][x]=Cc[x]+uD[x]*half;
+            }
+            if(rb.dirUp[i]){ rb.dirUp[i]=[uU[0],uU[1],uU[2]];
+                             rb.dirDn[i]=[uD[0],uD[1],uD[2]]; }
+            for(const r of bySt[i]||[]){
+              const u=r.u2>0? uU : uD;
+              for(let x=0;x<3;x++){
+                r.a[x]=Cc[x]+u[x]*(half-IN);
+                r.b[x]=Cc[x]+u[x]*IN;
+              }
+            }
+          } else {
+            const u=nl3(cur[k].ax, eT, sc);
+            for(let x=0;x<3;x++){
+              rb.railA[i][x]=Cc[x]+u[x]*half;
+              rb.railB[i][x]=Cc[x]-u[x]*half;
+            }
+            if(rb.dirs && rb.dirs[i]) rb.dirs[i]=[u[0],u[1],u[2]];
+            for(const r of bySt[i]||[])
+              for(let x=0;x<3;x++){
+                r.a[x]=Cc[x]+u[x]*(half-IN);
+                r.b[x]=Cc[x]-u[x]*(half-IN);
+              }
+          }
+        }
+      };
+      const undo=()=>{
+        for(let k=0;k<bak.length;k++){
+          const i=i0+k, B=bak[k];
+          for(let x=0;x<3;x++){ rb.railA[i][x]=B.a[x]; rb.railB[i][x]=B.b[x]; }
+          if(B.du){ rb.dirUp[i]=B.du; rb.dirDn[i]=B.dd; }
+          if(B.d1) rb.dirs[i]=B.d1;
+          for(const rr2 of B.r)
+            for(let x=0;x<3;x++){ rr2.r.a[x]=rr2.a[x]; rr2.r.b[x]=rr2.b[x]; }
+        }
+      };
+      // полная починка, а при конфликте зазоров — частичный разворот:
+      // направления рядов поворачиваются к общей оси лишь долей (складка
+      // уменьшается, длина стержней всегда номинальная — стекло не тянется)
+      let doneZ=false, scUsed=0;
+      for(const sc of [1, 0.6, 0.35]){
+        apply(sc);
+        if(viol()<=before){ doneZ=true; scUsed=sc; break; }
+        undo();
+      }
+      if(window.__seamLog){
+        let wMin=1e9;
+        for(let i=i0;i<=i1;i++) wMin=Math.min(wMin, width(i));
+        window.__seamLog.push({i0, i1, before,
+          исход:doneZ?('ок '+scUsed):'откат', шир:Math.round(wMin)});
+      }
+      if(doneZ) fixedAll++;
+    }
+  }
+  return fixedAll;
 }
 
 function spreadGaps(ribbons, box){
@@ -4490,6 +4680,9 @@ function buildScene(){
       ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
       RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
     }
+    // складки у замыкания круга и швов кольца — той же починкой,
+    // после оборачивания и резервной сшивки
+    seamRepair(scene.ribbons, scene.box);
     updateSpec();
     return;
   }
@@ -6026,6 +6219,14 @@ function buildScene(){
     }
     state.reTry=0;
   }
+  // ЛЕНТА ПОЛНОЙ ШИРИНЫ ВЕЗДЕ. Складки чинятся финальным проходом:
+  // сшивка покрывает только свои швы, а складку оставляют и сварка
+  // отсеков, и разбор шпилек. Только на ВНЕШНЕЙ сборке: суб-сборки
+  // отсеков и заготовка кольца — промежуточные, правка их геометрии
+  // меняла входы сварки и весь ход генерации (замер 5400: метраж
+  // падал 12.39 -> 5.82, 6000 собирался 343 с)
+  if(!params.concept && !state.subBuild && !state.ringBuild)
+    seamRepair(scene.ribbons, scene.box||box);
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
