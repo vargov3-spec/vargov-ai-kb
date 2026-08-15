@@ -5967,6 +5967,21 @@ function buildScene(){
       return;
     }
     state.reTry=0;
+    // ПОСЛЕДНИЙ РЕЗЕРВ ОДНОЙ ЛЕНТЫ для «волн» (скрин пользователя:
+    // 2400×2400 резался по глубине на слои, их концы далеко, и после
+    // ретраев лента оставалась из трёх кусков): сшивка с длинным мостом
+    // до 60 станций — как у кольца
+    if(!params.concept && !state.ringBuild && ribbons.length>1){
+      state.longBridge=1;
+      joinPull(ribbons, box, false);
+      const m2=mergeRibbons(ribbons, box, false);
+      state.longBridge=0;
+      if(m2!==ribbons){
+        ribbons=m2;
+        refitRods(ribbons);
+        scene.ribbons=ribbons;
+      }
+    }
   }
   updateSpec();
   camera.fitTo(box);
