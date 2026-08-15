@@ -2982,14 +2982,17 @@ function forEachClosePair(ribbons, radius, cb){
   const items = [];
   ribbons.forEach((rb,ri)=>rb.rods.forEach((r,i)=>items.push({ri,i,r})));
   const cellsOf = items.map(()=>null);
+  // ключ ячейки — упакованное число (сдвиг +512, по 10 бит на ось):
+  // строковые ключи со split съедали заметную долю всей сборки
+  const KEY=(x,y,z)=>(((x+512)&1023)<<20)|(((y+512)&1023)<<10)|((z+512)&1023);
   items.forEach((o,oi)=>{
     const {a,b} = o.r;
-    let prev = null;
+    let prev = -1;
     const list=[];
     for(let s=0;s<=7;s++){
-      const k = Math.floor((a[0]+(b[0]-a[0])*s/7)/H)+"|"
-              + Math.floor((a[1]+(b[1]-a[1])*s/7)/H)+"|"
-              + Math.floor((a[2]+(b[2]-a[2])*s/7)/H);
+      const k = KEY(Math.floor((a[0]+(b[0]-a[0])*s/7)/H),
+                    Math.floor((a[1]+(b[1]-a[1])*s/7)/H),
+                    Math.floor((a[2]+(b[2]-a[2])*s/7)/H));
       if(k!==prev){
         let cell = grid.get(k);
         if(!cell){ cell=[]; grid.set(k,cell); }
@@ -3002,10 +3005,9 @@ function forEachClosePair(ribbons, radius, cb){
   for(let oi=0; oi<items.length; oi++){
     const A=items[oi], mark=oi+1;
     for(const key of cellsOf[oi]){
-      const p=key.split("|");
-      const cx=+p[0], cy=+p[1], cz=+p[2];
+      const cx=((key>>20)&1023)-512, cy=((key>>10)&1023)-512, cz=(key&1023)-512;
       for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++)for(let dz=-1;dz<=1;dz++){
-        const nb = grid.get((cx+dx)+"|"+(cy+dy)+"|"+(cz+dz));
+        const nb = grid.get(((((cx+dx)+512)&1023)<<20)|((((cy+dy)+512)&1023)<<10)|(((cz+dz)+512)&1023));
         if(!nb) continue;
         for(let t=0;t<nb.length;t++){
           const oj=nb[t];
@@ -3646,11 +3648,10 @@ function mergeTry(ribbons, box, closeRing, kTan){
     const B=chain[k];
     const nA=out.centers.length;
     const gap=dist(out.centers[nA-1], B.centers[0]);
-    // МОСТ ТОЛЬКО КОРОТКИЙ: до 8 станций (~90 мм). Длинный прямой мост —
-    // голая проволока через полкомпозиции (скрин пользователя «это что
-    // за ерунда?»); далёкие концы остаются отдельными лентами
-    if(gap>step*9) return null;
-    const ins=Math.max(0, Math.min(8, Math.round(gap/step)-1));
+    // мост до 20 станций (~230 мм): с прототипами обоих рядов это
+    // полноценный кусок ленты, а не голая проволока; дальше — не пара
+    if(gap>step*21) return null;
+    const ins=Math.max(0, Math.min(20, Math.round(gap/step)-1));
     // касательные на концах — чтобы вставка вышла плавной дугой
     const tA=out.centers[nA-1], tA2=out.centers[Math.max(0,nA-4)];
     const hB=B.centers[0], hB2=B.centers[Math.min(B.centers.length-1,3)];
@@ -3716,6 +3717,22 @@ function mergeTry(ribbons, box, closeRing, kTan){
   }
   out.ribbonLen=out.centers.length*step;
   out.rods.sort((a,b)=>a.st-b.st);
+  // ШВЫ ПЕРЕЕЗЖАЮТ НА СЛИТУЮ ЛЕНТУ: у соседних лент seams указывали на
+  // исчезнувшие куски цепочки — пары через уже сведённые стыки становились
+  // «дальними» и ложно браковали следующее слияние
+  const chainSet=new Set(chain);
+  out.seams=[];
+  for(const rb of chain) for(const sm of (rb.seams||[])){
+    if(chainSet.has(sm.peer)) continue;        // внутренний шов — теперь одна лента
+    // конец шва в координатах слитой ленты: голова только у первой,
+    // хвост только у последней
+    if(rb===chain[0] && sm.head) out.seams.push({head:true, peer:sm.peer});
+    if(rb===chain[chain.length-1] && !sm.head) out.seams.push({head:false, peer:sm.peer});
+  }
+  for(const rb of ribbons){
+    if(chainSet.has(rb) || !rb.seams) continue;
+    for(const sm of rb.seams) if(chainSet.has(sm.peer)) sm.peer=out;
+  }
   const merged=[out];
   // стержни вставок собираются из контуров той же посадкой, что и всюду
   refitRods(merged);
@@ -4405,7 +4422,8 @@ function buildScene(){
       for(let tr=0;;tr++){
         buildScene();
         const vio=wrapRing(ringD);
-        if(vio===0 || tr>=3) break;
+        // кольцо тоже обязано быть одной сплошной лентой
+        if((vio===0 && scene.ribbons.length===1) || tr>=1) break;
         state.autoSeed=false;
         state.seed=(state.seed*1664525+1013904223)>>>0;
       }
@@ -5918,7 +5936,10 @@ function buildScene(){
     // важно только, чтобы стык был незаметным (joinPull + шов)
     if(!state.ringBuild){ state.laneTry=0; state.forceLanes=0; }
     const tries=state.reTry||0;
-    if(!params.concept && (fillMin<0.80 || railMin<28) && tries<2){
+    // ЛЕНТА ОБЯЗАНА БЫТЬ ОДНОЙ СПЛОШНОЙ (требование пользователя): если
+    // сшивка не смогла соединить куски, вариант пересобирается
+    const oneOk=state.ringBuild ? true : (ribbons.length===1);
+    if(!params.concept && (fillMin<0.80 || railMin<28 || !oneOk) && tries<2){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
