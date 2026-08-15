@@ -2995,7 +2995,20 @@ function inSeam(rb, st, peer){
   return false;
 }
 function seamPair(rbA, stA, rbB, stB){
-  return rbA!==rbB && inSeam(rbA, stA, rbB) && inSeam(rbB, stB, rbA);
+  if(rbA===rbB){
+    // ЗАМЫКАНИЕ КОЛЬЦА: лента сшита в одну, и шов «голова ↔ хвост» — это
+    // шов ленты с самой собой. Без этой ветки сомкнутые концы резались
+    // дальним лимитом, и кольцо не могло закрыться (концы разлетались)
+    if(!rbA.seams) return false;
+    let sh=false, st=false;
+    for(const s of rbA.seams) if(s.peer===rbA){ if(s.head) sh=true; else st=true; }
+    if(!sh || !st) return false;
+    const n=rbA.centers.length;
+    const aH=stA<=SEAM_WIN, aT=stA>=n-1-SEAM_WIN;
+    const bH=stB<=SEAM_WIN, bT=stB>=n-1-SEAM_WIN;
+    return (aH&&bT)||(aT&&bH);
+  }
+  return inSeam(rbA, stA, rbB) && inSeam(rbB, stB, rbA);
 }
 /* лимит зазора для пары стержней: соседи по ленте и пары в шве — ближний,
    остальные — дальний */
@@ -3961,6 +3974,24 @@ function mergeTry(ribbons, box, closeRing, kTan){
     if(rb===chain[0] && sm.head) out.seams.push({head:true, peer:sm.peer});
     if(rb===chain[chain.length-1] && !sm.head) out.seams.push({head:false, peer:sm.peer});
   }
+  // ЗАМЫКАНИЕ КОЛЬЦА ПЕРЕЖИВАЕТ СШИВКУ. Шов «голова первого ↔ хвост
+  // последнего» — не внутренний стык цепочки, а замыкание круга: раньше
+  // он отбрасывался вместе с внутренними, сомкнутые концы после сшивки
+  // резались дальним лимитом, и кольцо расходилось (скрин пользователя)
+  if(chain.length>1){
+    const first=chain[0], lastC=chain[chain.length-1];
+    // швы копий указывают на ОРИГИНАЛЫ кусков — сопоставляем через карту
+    const origOf=new Map(src.map((c,i)=>[c, ribbons[i]]));
+    const oF=origOf.get(first), oL=origOf.get(lastC);
+    const hadClose=(first.seams||[]).some(sm=>sm.peer===oL)
+                && (lastC.seams||[]).some(sm=>sm.peer===oF);
+    if(window.__seamLog) window.__seamLog.push({перенос:1, цепь:chain.length,
+      швПерв:(first.seams||[]).length, швПосл:(lastC.seams||[]).length, hadClose});
+    if(hadClose){
+      out.seams.push({head:true, peer:out});
+      out.seams.push({head:false, peer:out});
+    }
+  }
   for(const rb of ribbons){
     if(chainSet.has(rb) || !rb.seams) continue;
     for(const sm of rb.seams) if(chainSet.has(sm.peer)) sm.peer=out;
@@ -4005,7 +4036,8 @@ function mergeTry(ribbons, box, closeRing, kTan){
    БЛИЖНИЙ лимит зазора (гребёнка непрерывна), вне зоны — обычный; бокс
    соблюдён; иначе откат этого стыка */
 function joinPull(ribbons, box, ringClose){
-  if(!ribbons || ribbons.length<2) return 0;
+  if(!ribbons || (ribbons.length<2 && !ringClose)) return 0;
+  if(!ribbons.length) return 0;
   const lim3=[box.w, box.h, box.d];
   // цель — 10 мм между контурами (пользователь: «можно оставлять между
   // контурами 5-10 мм»); зона шва шире окна подтяжки, иначе подтянутые
@@ -4035,12 +4067,16 @@ function joinPull(ribbons, box, ringClose){
   const pairs=[];
   for(let i=0;i+1<ribbons.length;i++) pairs.push([i, i+1]);
   if(ringClose && ribbons.length>1) pairs.push([ribbons.length-1, 0]);
+  // кольцо уже сшито в одну ленту: замыкание — стяжка её собственных
+  // концов (хвост к голове); без этого зазор замыкания оставался 175 мм
+  if(ringClose && ribbons.length===1) pairs.push([0, 0]);
   let done=0;
   for(const [ia, ib] of pairs){
     const A=ribbons[ia], B=ribbons[ib];
     // какие концы стыкуются
     let bestD=1e9, hA=false, hB=true;
     for(const a of [false, true]) for(const b of [false, true]){
+      if(A===B && a===b) continue;   // конец сам с собой — не пара
       const d=dist(A,a,B,b);
       if(d<bestD){ bestD=d; hA=a; hB=b; }
     }
@@ -4443,22 +4479,42 @@ function seamRepair(ribbons, box){
       const follow=(k)=>{
         const i=i0+k, B=bak[k];
         if(!B) return;
-        const mv=(pt, src)=>{
-          const dA=(pt[0]-B.a[0])**2+(pt[1]-B.a[1])**2+(pt[2]-B.a[2])**2;
-          const dB=(pt[0]-B.b[0])**2+(pt[1]-B.b[1])**2+(pt[2]-B.b[2])**2;
+        const mvRail=(pt, src)=>{
+          const dA=(src[0]-B.a[0])**2+(src[1]-B.a[1])**2+(src[2]-B.a[2])**2;
+          const dB=(src[0]-B.b[0])**2+(src[1]-B.b[1])**2+(src[2]-B.b[2])**2;
           const old=dA<=dB? B.a : B.b;
           const now=dA<=dB? rb.railA[i] : rb.railB[i];
           for(let x=0;x<3;x++) pt[x]=src[x]+(now[x]-old[x]);
         };
-        for(const cb2 of B.cbs) mv(cb2.cb.to, cb2.to);
-        for(const ld of B.lds) mv(rb.leds[ld.j], ld.p);
+        for(const cb2 of B.cbs) mvRail(cb2.cb.to, cb2.to);
+        // ДИОД ЕДЕТ СО СВОЕЙ ЛИНИЕЙ: у двухрядной ленты гирлянда на
+        // центральной проволоке (она тут не двигается), у однорядной — на
+        // канте. Дельта — от ближайшей к диоду из трёх линий
+        const mvLed=(pt, src)=>{
+          const C=rb.centers[i];
+          const cand=[[B.a, rb.railA[i]], [B.b, rb.railB[i]], [C, C]];
+          let bi=0, bd=1e9;
+          for(let q=0;q<3;q++){
+            const o=cand[q][0];
+            const dd2=(src[0]-o[0])**2+(src[1]-o[1])**2+(src[2]-o[2])**2;
+            if(dd2<bd){ bd=dd2; bi=q; }
+          }
+          const [o2, n2]=cand[bi];
+          for(let x=0;x<3;x++) pt[x]=src[x]+(n2[x]-o2[x]);
+        };
+        for(const ld of B.lds) mvLed(rb.leds[ld.j], ld.p);
       };
       const apply=(sc)=>{
         for(let k=0;k<e.length;k++){
           const i=i0+k, Cc=rb.centers[i];
+          // РАМПА К КРАЯМ ОКНА: на границе коррекция сходит к нулю, иначе
+          // ровно выставленная ширина встречалась с нетронутой геометрией
+          // ступенькой — «неровности каркаса» на скрине пользователя
+          const rmp=Math.min(1, Math.min(k, e.length-1-k)/4);
+          const scK=sc*rmp;
           const eT=e[k], eN=[-eT[0],-eT[1],-eT[2]];
           if(two){
-            const uU=nl3(cur[k].up, eT, sc), uD=nl3(cur[k].dn, eN, sc);
+            const uU=nl3(cur[k].up, eT, scK), uD=nl3(cur[k].dn, eN, scK);
             for(let x=0;x<3;x++){
               rb.railA[i][x]=Cc[x]+uU[x]*half;
               rb.railB[i][x]=Cc[x]+uD[x]*half;
@@ -4473,7 +4529,7 @@ function seamRepair(ribbons, box){
               }
             }
           } else {
-            const u=nl3(cur[k].ax, eT, sc);
+            const u=nl3(cur[k].ax, eT, scK);
             for(let x=0;x<3;x++){
               rb.railA[i][x]=Cc[x]+u[x]*half;
               rb.railB[i][x]=Cc[x]-u[x]*half;
@@ -4590,39 +4646,69 @@ function seamRepair(ribbons, box){
                    rb.railA[i][2]-rb.railB[i][2]];
           const L=Math.hypot(d[0],d[1],d[2])||1;
           const u=[d[0]/L, d[1]/L, d[2]/L];
+          // рампа к краям окна: у границы канты остаются на бэкапе, к
+          // середине — ровная перенормировка; без этого на границе окна
+          // оставалась ступенька («неровности каркаса» на скрине)
+          const B0=bak[i-i0];
+          const rmp=Math.min(1, Math.min(i-i0, i1-i)/4);
           for(let x=0;x<3;x++){
-            rb.railA[i][x]=Cc[x]+u[x]*half;
-            rb.railB[i][x]=Cc[x]-u[x]*half;
+            const tA=Cc[x]+u[x]*half, tB=Cc[x]-u[x]*half;
+            rb.railA[i][x]=B0.a[x]+(tA-B0.a[x])*rmp;
+            rb.railB[i][x]=B0.b[x]+(tB-B0.b[x])*rmp;
           }
+          // направления — ОТ СМЕШАННЫХ кантов: на рампе стержни обязаны
+          // идти к фактическому канту, а не к идеальной цели (финальная
+          // посадка refitRods потом выровняет длины строго в номинал)
+          const nrm3=(vx,vy,vz)=>{
+            const L=Math.hypot(vx,vy,vz)||1; return [vx/L, vy/L, vz/L];
+          };
           if(two){
-            if(rb.dirUp[i]){ rb.dirUp[i]=[u[0],u[1],u[2]];
-                             rb.dirDn[i]=[-u[0],-u[1],-u[2]]; }
+            const uU=nrm3(rb.railA[i][0]-Cc[0], rb.railA[i][1]-Cc[1], rb.railA[i][2]-Cc[2]);
+            const uD=nrm3(rb.railB[i][0]-Cc[0], rb.railB[i][1]-Cc[1], rb.railB[i][2]-Cc[2]);
+            if(rb.dirUp[i]){ rb.dirUp[i]=uU; rb.dirDn[i]=uD; }
             for(const r of bySt[i]||[]){
-              const sg=r.u2>0? 1 : -1;
+              const uu=r.u2>0? uU : uD;
               for(let x=0;x<3;x++){
-                r.a[x]=Cc[x]+sg*u[x]*(half-IN);
-                r.b[x]=Cc[x]+sg*u[x]*IN;
+                r.a[x]=Cc[x]+uu[x]*(half-IN);
+                r.b[x]=Cc[x]+uu[x]*IN;
               }
             }
           } else {
-            if(rb.dirs && rb.dirs[i]) rb.dirs[i]=[u[0],u[1],u[2]];
-            for(const r of bySt[i]||[])
-              for(let x=0;x<3;x++){
-                r.a[x]=Cc[x]+u[x]*(half-IN);
-                r.b[x]=Cc[x]-u[x]*(half-IN);
-              }
+            const u1=nrm3(rb.railA[i][0]-rb.railB[i][0],
+                          rb.railA[i][1]-rb.railB[i][1],
+                          rb.railA[i][2]-rb.railB[i][2]);
+            if(rb.dirs && rb.dirs[i]) rb.dirs[i]=u1;
+            const mx=(rb.railA[i][0]+rb.railB[i][0])/2,
+                  my=(rb.railA[i][1]+rb.railB[i][1])/2,
+                  mz=(rb.railA[i][2]+rb.railB[i][2])/2;
+            for(const r of bySt[i]||[]){
+              r.a[0]=mx+u1[0]*(half-IN); r.a[1]=my+u1[1]*(half-IN); r.a[2]=mz+u1[2]*(half-IN);
+              r.b[0]=mx-u1[0]*(half-IN); r.b[1]=my-u1[1]*(half-IN); r.b[2]=mz-u1[2]*(half-IN);
+            }
           }
           {
             const B=bak[i-i0];
-            const mv=(pt, src)=>{
+            const mvRail=(pt, src)=>{
               const dA=(src[0]-B.a[0])**2+(src[1]-B.a[1])**2+(src[2]-B.a[2])**2;
               const dB=(src[0]-B.b[0])**2+(src[1]-B.b[1])**2+(src[2]-B.b[2])**2;
               const old=dA<=dB? B.a : B.b;
               const now=dA<=dB? rb.railA[i] : rb.railB[i];
               for(let x=0;x<3;x++) pt[x]=src[x]+(now[x]-old[x]);
             };
-            for(const cb2 of B.cbs) mv(cb2.cb.to, cb2.to);
-            for(const ld of B.lds) mv(rb.leds[ld.j], ld.p);
+            for(const cb2 of B.cbs) mvRail(cb2.cb.to, cb2.to);
+            const mvLed=(pt, src)=>{
+              const cand=[[B.a, rb.railA[i]], [B.b, rb.railB[i]],
+                          [B.c, rb.centers[i]]];
+              let bi=0, bd=1e9;
+              for(let q=0;q<3;q++){
+                const o=cand[q][0];
+                const dd2=(src[0]-o[0])**2+(src[1]-o[1])**2+(src[2]-o[2])**2;
+                if(dd2<bd){ bd=dd2; bi=q; }
+              }
+              const [o2, n2]=cand[bi];
+              for(let x=0;x<3;x++) pt[x]=src[x]+(n2[x]-o2[x]);
+            };
+            for(const ld of B.lds) mvLed(rb.leds[ld.j], ld.p);
           }
         }
         let angAfter=0;
@@ -4645,6 +4731,130 @@ function seamRepair(ribbons, box){
    от замыкания — ось каждой станции доворачивается вокруг касательной на
    плавно убывающий угол (≤5°/станцию). Пробуются оба направления вращения.
    Приёмка: зазоры с шовным правилом и бокс не хуже — иначе откат */
+/* МОСТ ЗАМЫКАНИЯ КОЛЬЦА. Силовая стяжка концов на большом зазоре (150 мм)
+   гнула канты шпильками и отвергалась приёмкой — кольцо оставалось со
+   щелью. Замыкание достраивается МОСТОМ: недостающие станции идут дугой
+   Эрмита от хвоста к голове с полной шириной ленты (ось — равномерный
+   поворот от оси хвоста к оси головы), стержни — по прототипам рядов.
+   Приёмка: стержни моста против всей сцены (самошов замыкания даёт
+   ближний лимит у концов) и бокс; при провале — полный откат */
+function ringCloseBridge(ribbons, box){
+  const rb=ribbons && ribbons[0];
+  if(!rb || ribbons.length!==1) return 0;
+  const n=rb.centers.length, step=rb.stepEff||ROD_STEP;
+  if(n<20) return 0;
+  const T=rb.centers[n-1], H=rb.centers[0];
+  const gap=Math.hypot(T[0]-H[0], T[1]-H[1], T[2]-H[2]);
+  if(gap<=step*1.5) return 0;
+  const ins=Math.max(1, Math.min(80, Math.round(gap/step)-1));
+  const IN=WIRE_D/2+ROD_AIR, half=rb.halfW||150, two=!!rb.dirUp;
+  const lim3=[box.w, box.h, box.d];
+  const T2=rb.centers[Math.max(0, n-4)], H2=rb.centers[Math.min(n-1, 3)];
+  const herm=(P0,P1,M0,M1,u)=>{
+    const h00=2*u*u*u-3*u*u+1, h10=u*u*u-2*u*u+u;
+    const h01=-2*u*u*u+3*u*u,  h11=u*u*u-u*u;
+    return [0,1,2].map(x=>h00*P0[x]+h10*M0[x]+h01*P1[x]+h11*M1[x]);
+  };
+  const M0=[0,1,2].map(x=>(T[x]-T2[x])*(ins+1)/3);
+  const M1=[0,1,2].map(x=>(H2[x]-H[x])*(ins+1)/3);
+  const axAt=(i)=>{
+    const v=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
+             rb.railA[i][2]-rb.railB[i][2]];
+    const L=Math.hypot(v[0],v[1],v[2])||1;
+    return [v[0]/L, v[1]/L, v[2]/L];
+  };
+  const eA=axAt(n-1), eB=axAt(0);
+  const d0=Math.max(-1, Math.min(1, eA[0]*eB[0]+eA[1]*eB[1]+eA[2]*eB[2]));
+  const th=Math.acos(d0), sn=Math.sin(th);
+  let b2;
+  if(sn>0.1){
+    b2=[(eB[0]-eA[0]*d0)/sn, (eB[1]-eA[1]*d0)/sn, (eB[2]-eA[2]*d0)/sn];
+  } else {
+    const tg=[H[0]-T[0], H[1]-T[1], H[2]-T[2]];
+    b2=[tg[1]*eA[2]-tg[2]*eA[1], tg[2]*eA[0]-tg[0]*eA[2],
+        tg[0]*eA[1]-tg[1]*eA[0]];
+    const L=Math.hypot(b2[0],b2[1],b2[2])||1;
+    b2=[b2[0]/L, b2[1]/L, b2[2]/L];
+  }
+  const thT=sn>0.1? th : Math.PI;
+  const rotE=(u)=>{
+    const c=Math.cos(thT*u), s2=Math.sin(thT*u);
+    return [eA[0]*c+b2[0]*s2, eA[1]*c+b2[1]*s2, eA[2]*c+b2[2]*s2];
+  };
+  // прототипы стержней рядов (поиск назад, при отсутствии — синтез)
+  const protos=[];
+  const anyN=(rb.rods[rb.rods.length-1]||{}).n||[0,1,0];
+  for(const want of (two? [1, 0] : [1])){
+    let found=null;
+    for(let i=n-1;i>=Math.max(0, n-40);i--){
+      found=rb.rods.find(r2=>r2.st===i && (!two || (want? r2.u2>0 : r2.u2<=0)));
+      if(found) break;
+    }
+    if(!found) found = two
+      ? (want? {st:0, u1:IN, u2:half-IN, len:half-2*IN, nom:half,
+                a:[0,0,0], b:[0,0,0], n:anyN.slice()}
+             : {st:0, u1:-(half-IN), u2:-IN, len:half-2*IN, nom:half,
+                a:[0,0,0], b:[0,0,0], n:anyN.slice()})
+      : {st:0, u1:-(half-IN), u2:half-IN, len:2*(half-IN), nom:2*half,
+         a:[0,0,0], b:[0,0,0], n:anyN.slice()};
+    protos.push(found);
+  }
+  const addedRods=[];
+  const n0=n;
+  for(let k=1;k<=ins;k++){
+    const u=k/(ins+1);
+    const C=herm(T, H, M0, M1, u);
+    const e=rotE(u);
+    rb.centers.push(C);
+    if(rb.guideC) rb.guideC.push(C.slice());
+    rb.railA.push([C[0]+e[0]*half, C[1]+e[1]*half, C[2]+e[2]*half]);
+    rb.railB.push([C[0]-e[0]*half, C[1]-e[1]*half, C[2]-e[2]*half]);
+    if(two && rb.dirUp){ rb.dirUp.push([e[0],e[1],e[2]]);
+                         rb.dirDn.push([-e[0],-e[1],-e[2]]); }
+    if(!two && rb.dirs) rb.dirs.push([e[0],e[1],e[2]]);
+    const st=rb.centers.length-1;
+    for(const pr of protos){
+      const sg=two? (pr.u2>0? 1 : -1) : 0;
+      const r=two
+        ? {...pr, st, a:[C[0]+sg*e[0]*(half-IN), C[1]+sg*e[1]*(half-IN), C[2]+sg*e[2]*(half-IN)],
+                   b:[C[0]+sg*e[0]*IN, C[1]+sg*e[1]*IN, C[2]+sg*e[2]*IN]}
+        : {...pr, st, a:[C[0]+e[0]*(half-IN), C[1]+e[1]*(half-IN), C[2]+e[2]*(half-IN)],
+                   b:[C[0]-e[0]*(half-IN), C[1]-e[1]*(half-IN), C[2]-e[2]*(half-IN)]};
+      rb.rods.push(r); addedRods.push(r);
+    }
+  }
+  rb.ribbonLen=rb.centers.length*step;
+  rb.joinAt=(rb.joinAt||[]).concat([rb.centers.length-1]);
+  // приёмка: стержни моста против всей сцены и бокса
+  let bad=0;
+  for(const r of addedRods){
+    for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
+      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ bad++; break; }
+    for(const q of rb.rods){
+      if(q===r) continue;
+      if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
+      // мосту замыкания достаточно ФИЗИЧЕСКОГО минимума (ближний лимит):
+      // сплошное кольцо важнее полного дальнего зазора в тесном месте —
+      // разрыв 175 мм хуже, чем виток в шаге гребёнки от моста
+      if(segSegD(r.a,r.b,q.a,q.b) < CLEAR_NEAR){ bad++; break; }
+    }
+  }
+  if(bad>0){
+    // откат: убрать вставленные станции и стержни
+    const cut=(A2)=>{ if(A2) A2.length=n0; };
+    cut(rb.centers); cut(rb.railA); cut(rb.railB); cut(rb.guideC);
+    if(rb.dirUp){ cut(rb.dirUp); cut(rb.dirDn); }
+    if(rb.dirs) cut(rb.dirs);
+    rb.rods=rb.rods.filter(r=>!addedRods.includes(r));
+    rb.ribbonLen=rb.centers.length*step;
+    rb.joinAt=rb.joinAt.filter(j=>j<n0);
+    if(window.__seamLog) window.__seamLog.push({мост:1, ins, bad, исход:'откат'});
+    return 0;
+  }
+  if(window.__seamLog) window.__seamLog.push({мост:1, ins, исход:'ок'});
+  return 1;
+}
+
 function ringUntwist(ribbons, box){
   const rb=ribbons && ribbons[0];
   if(!rb || ribbons.length!==1) return 0;
@@ -4746,15 +4956,27 @@ function ringUntwist(ribbons, box){
             r.b[x]=Cc[x]-u[x]*(half-IN);
           }
       }
-      const mv=(pt, src)=>{
+      const mvRail=(pt, src)=>{
         const dA=(src[0]-B.a[0])**2+(src[1]-B.a[1])**2+(src[2]-B.a[2])**2;
         const dB=(src[0]-B.b[0])**2+(src[1]-B.b[1])**2+(src[2]-B.b[2])**2;
         const old=dA<=dB? B.a : B.b;
         const now=dA<=dB? rb.railA[i] : rb.railB[i];
         for(let x=0;x<3;x++) pt[x]=src[x]+(now[x]-old[x]);
       };
-      for(const cb2 of B.cbs) mv(cb2.cb.to, cb2.to);
-      for(const ld of B.lds) mv(rb.leds[ld.j], ld.p);
+      for(const cb2 of B.cbs) mvRail(cb2.cb.to, cb2.to);
+      const mvLed=(pt, src)=>{
+        const C=rb.centers[i];
+        const cand=[[B.a, rb.railA[i]], [B.b, rb.railB[i]], [C, C]];
+        let bi=0, bd=1e9;
+        for(let q=0;q<3;q++){
+          const o=cand[q][0];
+          const dd2=(src[0]-o[0])**2+(src[1]-o[1])**2+(src[2]-o[2])**2;
+          if(dd2<bd){ bd=dd2; bi=q; }
+        }
+        const [o2, n2]=cand[bi];
+        for(let x=0;x<3;x++) pt[x]=src[x]+(n2[x]-o2[x]);
+      };
+      for(const ld of B.lds) mvLed(rb.leds[ld.j], ld.p);
     }
   };
   for(const sgn of [1, -1]){
@@ -5210,8 +5432,21 @@ function buildScene(){
       ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
       RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
     }
-    // полуоборот в замыкании (лист Мёбиуса) раскручивается первым,
-    // затем складки — той же починкой, затем раздвижка и посадка
+    // стяжка замыкания ПОСЛЕ слияния в одну ленту: joinPull до слияния
+    // тянул концы кусков, а концы готового кольца оставались с зазором
+    // (замер №4235507941: 175 мм); затем полуоборот замыкания, складки,
+    // раздвижка и посадка
+    // у ГОТОВОГО кольца голова и хвост — шов замыкания ПО ОПРЕДЕЛЕНИЮ:
+    // явная регистрация (перенос шва через все сшивки терялся), иначе
+    // ближний лимит не действует и ни стяжка, ни мост не принимаются
+    if(scene.ribbons.length===1){
+      const rb0=scene.ribbons[0];
+      if(!(rb0.seams||[]).some(sm=>sm.peer===rb0))
+        (rb0.seams=rb0.seams||[]).push({head:true, peer:rb0},
+                                       {head:false, peer:rb0});
+    }
+    joinPull(scene.ribbons, scene.box, true);
+    ringCloseBridge(scene.ribbons, scene.box);
     ringUntwist(scene.ribbons, scene.box);
     seamRepair(scene.ribbons, scene.box);
     spreadGaps(scene.ribbons, scene.box);
