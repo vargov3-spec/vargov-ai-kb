@@ -3664,8 +3664,8 @@ function wrapRing(D){
   // сворачивание искажает длины трубок (радиальное сжатие): сводим концы
   // отрезков (включая замыкание круга) и сажаем стержни обратно на каркас
   refitRods(rr);
-  joinPull(rr, scene.box, true);
-  const merged=mergeRibbons(rr, scene.box, true);
+  joinPull(rr, scene.box, false);
+  const merged=mergeRibbons(rr, scene.box, false);
   if(merged!==rr){ scene.ribbons=merged; }
   scene.ring=D; scene.ringT=dEff;
   camera.fitTo(scene.box);
@@ -5279,6 +5279,144 @@ function fillCombHoles(ribbons, box){
   return added;
 }
 
+/* ЕДИНЫЙ ОТРЕЗОК БЕЗ СОЕДИНЕНИЙ (правило пользователя: «убирай
+   соединения ленты, ленты должны состоять из единого отрезка»).
+   Гиды готовых отсеков сшиваются U-переходами в ОДИН маршрут ДО укладки
+   стержней, и лента марширует один раз по всей длине: гребёнка ложится
+   непрерывно, мостов из стержней не существует в принципе. Развороты
+   между отсеками — часть маршрута (плавные дуги Эрмита по касательным).
+   Не вышло (марш недоложился или касания) — null, зовущий путь уходит
+   в старую сборку как в страховку */
+function monoFromGuides(pieces, box, params){
+  if(!pieces || pieces.length<2) return null;
+  const tpl=pieces[0];
+  if(!tpl.guideC || tpl.guideC.length<8) return null;
+  const two=!!tpl.guideUp;
+  const dist=(P,Q)=>Math.hypot(P[0]-Q[0], P[1]-Q[1], P[2]-Q[2]);
+  const nrm=(v)=>{ const L=Math.hypot(v[0],v[1],v[2])||1;
+                   return [v[0]/L, v[1]/L, v[2]/L]; };
+  const gStep=Math.max(6, dist(tpl.guideC[0], tpl.guideC[1]));
+  const G=[], GD=[], GU=[], GN=[];
+  let prevEnd=null, prevTan=null;
+  for(let i=0;i<pieces.length;i++){
+    const pc=pieces[i];
+    if(!pc.guideC || pc.guideC.length<8) return null;
+    let g=pc.guideC.map(p=>p.slice());
+    let gd=pc.guideD? pc.guideD.map(v=>v.slice()) : null;
+    let gu=two&&pc.guideUp? pc.guideUp.map(v=>v.slice()) : null;
+    let gn=two&&pc.guideDn? pc.guideDn.map(v=>v.slice()) : null;
+    if(prevEnd){
+      const d0=dist(prevEnd, g[0]), d1=dist(prevEnd, g[g.length-1]);
+      if(d1<d0){
+        g.reverse();
+        if(gd){ gd.reverse(); for(const v of gd){ v[0]*=-1; v[1]*=-1; v[2]*=-1; } }
+        if(gu) gu.reverse();
+        if(gn) gn.reverse();
+      }
+      // U-переход: дуга Эрмита от конца прошлого гида к началу нового
+      const P0=prevEnd, P1=g[0];
+      const t1=nrm([g[Math.min(3,g.length-1)][0]-g[0][0],
+                    g[Math.min(3,g.length-1)][1]-g[0][1],
+                    g[Math.min(3,g.length-1)][2]-g[0][2]]);
+      const L=dist(P0,P1);
+      const nIns=Math.max(4, Math.min(120, Math.round(L*1.35/gStep)));
+      const M0=[prevTan[0]*L, prevTan[1]*L, prevTan[2]*L];
+      const M1=[t1[0]*L, t1[1]*L, t1[2]*L];
+      const lastU=GU.length? GU[GU.length-1] : null;
+      const lastN=GN.length? GN[GN.length-1] : null;
+      const lastD=GD.length? GD[GD.length-1] : null;
+      for(let k=1;k<=nIns;k++){
+        const u=k/(nIns+1);
+        const h00=2*u*u*u-3*u*u+1, h10=u*u*u-2*u*u+u;
+        const h01=-2*u*u*u+3*u*u,  h11=u*u*u-u*u;
+        G.push([0,1,2].map(x=>h00*P0[x]+h10*M0[x]+h01*P1[x]+h11*M1[x]));
+        if(gd&&lastD) GD.push(nrm([lastD[0]+(gd[0][0]-lastD[0])*u,
+                                   lastD[1]+(gd[0][1]-lastD[1])*u,
+                                   lastD[2]+(gd[0][2]-lastD[2])*u]));
+        else if(gd) GD.push(gd[0].slice());
+        if(gu&&lastU) GU.push(nrm([lastU[0]+(gu[0][0]-lastU[0])*u,
+                                   lastU[1]+(gu[0][1]-lastU[1])*u,
+                                   lastU[2]+(gu[0][2]-lastU[2])*u]));
+        else if(gu) GU.push(gu[0].slice());
+        if(gn&&lastN) GN.push(nrm([lastN[0]+(gn[0][0]-lastN[0])*u,
+                                   lastN[1]+(gn[0][1]-lastN[1])*u,
+                                   lastN[2]+(gn[0][2]-lastN[2])*u]));
+        else if(gn) GN.push(gn[0].slice());
+      }
+    }
+    for(const p2 of g) G.push(p2);
+    if(gd) for(const v of gd) GD.push(v);
+    if(gu) for(const v of gu) GU.push(v);
+    if(gn) for(const v of gn) GN.push(v);
+    prevEnd=g[g.length-1];
+    prevTan=nrm([g[g.length-1][0]-g[Math.max(0,g.length-4)][0],
+                 g[g.length-1][1]-g[Math.max(0,g.length-4)][1],
+                 g[g.length-1][2]-g[Math.max(0,g.length-4)][2]]);
+  }
+  const rb={...tpl};
+  rb.guideC=G;
+  if(GD.length===G.length) rb.guideD=GD;
+  if(two){ rb.guideUp=GU; rb.guideDn=GN; }
+  rb.clampMin=[0,0,0]; rb.clampMax=[box.w, box.h, box.d];
+  rb.seams=[]; rb.joinAt=[]; rb.leds=[]; rb.ledSt=[]; rb.cabs=[]; rb.cabSt=[];
+  // марш с утяжкой: вылет за бокс лечится сжатием маршрута по
+  // перебравшим осям и перемаршем (как в лестнице)
+  let fitted=false;
+  for(let tr=0; tr<4; tr++){
+    marchRibbon(rb);
+    // допуск сходов масштабируется с длиной маршрута: лимит «2» взят у
+    // короткой лестницы, у маршрута из трёх отсеков сходов естественно
+    // больше (замер 3400: покрытие 0.96 при 6 сходах)
+    const laid=!rb.giMap || (rb.giMap[rb.giMap.length-1]
+      / Math.max(1, rb.guideC.length-2) >= 0.9
+      && (rb.escapes||0) <= 3*pieces.length);
+    if(!laid){
+      if(window.__ladder) window.__ladder.push(['mono','undershot',
+        rb.giMap? +(rb.giMap[rb.giMap.length-1]
+          / Math.max(1, rb.guideC.length-2)).toFixed(2) : -1,
+        rb.escapes||0]);
+      return null;
+    }
+    const mn=[1e9,1e9,1e9], mx=[-1e9,-1e9,-1e9];
+    for(const r of rb.rods) for(const p2 of [r.a, r.b])
+      for(let x=0;x<3;x++){ mn[x]=Math.min(mn[x],p2[x]); mx[x]=Math.max(mx[x],p2[x]); }
+    const lim=[box.w, box.h, box.d];
+    let over=false;
+    const ovAmt=[0,0,0];
+    for(let x=0;x<3;x++){
+      ovAmt[x]=Math.round(Math.max(-ROD_R-8-mn[x], mx[x]-lim[x]-ROD_R-8, 0));
+      if(ovAmt[x]>0) over=true;
+    }
+    if(window.__ladder && over) window.__ladder.push(['monoOv'].concat(ovAmt));
+    if(!over){ fitted=true; break; }
+    // вылет лечится МЯГКИМ КЛЭМПОМ выпирающих точек маршрута (как в
+    // разводке): сжатие всего гида ломало марш (покрытие падало до 0.5)
+    const M=ROD_R+4;
+    for(let i=0;i<rb.guideC.length;i++){
+      const mi=Math.min(rb.centers.length-1, i);
+      for(let x=0;x<3;x++){
+        const kx = rb.dirUp
+          ? Math.max(Math.abs(rb.dirUp[mi][x]), Math.abs(rb.dirDn[mi][x]))
+          : Math.abs(rb.dirs[mi][x]);
+        const reach=kx*rb.halfW + M;
+        if(rb.guideC[i][x] < reach) rb.guideC[i][x]=reach;
+        else if(rb.guideC[i][x] > lim[x]-reach) rb.guideC[i][x]=lim[x]-reach;
+      }
+    }
+  }
+  if(!fitted){
+    if(window.__ladder) window.__ladder.push(['mono','overflow']);
+    return null;
+  }
+  const cl=resolveCollisions([rb], box);
+  if(cl.collisions>0){
+    if(window.__ladder) window.__ladder.push(['mono','coll'+cl.collisions]);
+    return null;
+  }
+  if(window.__ladder) window.__ladder.push(['mono','ok', rb.centers.length]);
+  return rb;
+}
+
 function spreadGaps(ribbons, box){
   const lim3=[box.w, box.h, box.d];
   let fixed=0;
@@ -5724,18 +5862,10 @@ function buildScene(){
     // тянул концы кусков, а концы готового кольца оставались с зазором
     // (замер №4235507941: 175 мм); затем полуоборот замыкания, складки,
     // раздвижка и посадка
-    // у ГОТОВОГО кольца голова и хвост — шов замыкания ПО ОПРЕДЕЛЕНИЮ:
-    // явная регистрация (перенос шва через все сшивки терялся), иначе
-    // ближний лимит не действует и ни стяжка, ни мост не принимаются
-    if(scene.ribbons.length===1){
-      const rb0=scene.ribbons[0];
-      if(!(rb0.seams||[]).some(sm=>sm.peer===rb0))
-        (rb0.seams=rb0.seams||[]).push({head:true, peer:rb0},
-                                       {head:false, peer:rb0});
-    }
-    joinPull(scene.ribbons, scene.box, true);
-    ringCloseBridge(scene.ribbons, scene.box);
-    ringUntwist(scene.ribbons, scene.box);
+    // КОНЦЫ КОЛЬЦА СВОБОДНЫ — КАК У СПИРАЛИ (решение пользователя:
+    // «у кольцо оставляй концы как у спираль»). Замыкание не строится:
+    // лента идёт по кругу единым отрезком, концы перекрываются свободно,
+    // как витки спирали — соединений нет вовсе
     seamRepair(scene.ribbons, scene.box);
     spreadGaps(scene.ribbons, scene.box);
     refitRods(scene.ribbons);
@@ -5994,7 +6124,26 @@ function buildScene(){
     // уложенные витки — то касания, то вылет за бокс до +191 мм («лента
     // выходит за контур»), ни один кандидат не проходил. Готовые станции
     // не трогают ленту вовсе: проверяются только стержни самого моста
-    if(okAll && rrAll.length===nL && rrAll.length>1){
+    // ПРАВИЛО: ЛЕНТА — ЕДИНЫЙ ОТРЕЗОК. Сначала пробуем сшить ГИДЫ отсеков
+    // и промаршировать один раз по всей длине (никаких соединений в
+    // стержнях); сварка и мосты — только страховка, если марш не прошёл
+    if(okAll && rrAll.length>1){
+      const mono=monoFromGuides(rrAll, box, params);
+      if(mono){
+        rrAll.length=0;
+        rrAll.push(mono);
+      }
+    }
+    // СВАРКА ОТСЕКОВ ОТКЛЮЧЕНА (решение пользователя: «убирай соединения
+    // ленты, ошибки повторяются из раза в раз»). Все «языки», веера и
+    // обрубленные носики с его скринов рождала именно сварка (подрезки
+    // cutTo + вклейки мостов в марш). Отсеки соединяет ТОЛЬКО финальная
+    // сшивка: мосты полной ширины по оси кантов, подрезка нахлёста,
+    // прореживание на повороте, диоды и доуплотнение — на 6400, где
+    // сварка не работала, стыки вышли чистыми (16.16 пог. м, зон
+    // дефектов 0). Код сварки остаётся мёртвым за флагом
+    const SKIP_WELD=true;
+    if(!SKIP_WELD && okAll && rrAll.length===nL && rrAll.length>1){
       // выход фактических стержней за грани бокса (макс по осям, мм)
       const ovr=()=>{
         let o=[0,0,0];
@@ -6610,7 +6759,7 @@ function buildScene(){
       if(!insAny) break;
       }
     }
-    if(okAll){
+    if(okAll && rrAll.length>=1){
       // стык: отсеки разведены зазором, проверка обычно чиста сразу.
       // Приёмка — НЕЗАВИСИМЫМ объективом pairLim (эталон всех приёмок):
       // счётчик разводки без правила швов давал ложные сотни нарушений
