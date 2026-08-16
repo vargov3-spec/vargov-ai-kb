@@ -4035,6 +4035,22 @@ function mergeTry(ribbons, box, closeRing, kTan, trimJ){
         out.rods.push(r);
       }
     }
+    // ДИОДЫ НА МОСТУ: гирлянда идёт по всей ленте — мост без диодов
+    // читался тёмной бедной полосой (скрин 3400). Шаг — медианный
+    // интервал гирлянды ленты (fallback 34 станции)
+    if(out.leds && out.ledSt && ins>0){
+      const iv=[];
+      for(let q2=1;q2<out.ledSt.length;q2++){
+        const dv=out.ledSt[q2]-out.ledSt[q2-1];
+        if(dv>0) iv.push(dv);
+      }
+      iv.sort((q,z)=>q-z);
+      const stepLed=iv.length? Math.max(6, iv[iv.length>>1]) : 34;
+      for(let st2=nA+Math.ceil(stepLed/2); st2<out.centers.length; st2+=stepLed){
+        out.leds.push(out.centers[st2].slice());
+        out.ledSt.push(st2);
+      }
+    }
     seamsAt.push(out.centers.length-1);
     // переносим станции ленты B
     const off=out.centers.length;
@@ -5005,6 +5021,20 @@ function ringCloseTry(ribbons, box, trim, kTan){
   }
   rb.ribbonLen=rb.centers.length*step;
   rb.joinAt=(rb.joinAt||[]).concat([rb.centers.length-1]);
+  // диоды на мосту замыкания — штатным шагом гирлянды
+  if(rb.leds && rb.ledSt && ins>0){
+    const iv=[];
+    for(let q2=1;q2<rb.ledSt.length;q2++){
+      const dv=rb.ledSt[q2]-rb.ledSt[q2-1];
+      if(dv>0) iv.push(dv);
+    }
+    iv.sort((q,z)=>q-z);
+    const stepLed=iv.length? Math.max(6, iv[iv.length>>1]) : 34;
+    for(let st2=n0+Math.ceil(stepLed/2); st2<rb.centers.length; st2+=stepLed){
+      rb.leds.push(rb.centers[st2].slice());
+      rb.ledSt.push(st2);
+    }
+  }
   // приёмка: стержни моста против всей сцены и бокса
   let bad=0;
   const toDropC=new Set();
@@ -5174,6 +5204,79 @@ function ringUntwist(ribbons, box){
   }
   if(window.__seamLog) window.__seamLog.push({мёбиус:1, исход:'откат'});
   return 0;
+}
+
+/* ДОУПЛОТНЕНИЕ ГРЕБЁНКИ. Мосты сшивки и развороты оставляют пустые
+   станции ряда (прореживание на повороте, приёмки) — на ленте читаются
+   пропуски трубок (скрин 3400: «лента в зоне соединения очень бедная»).
+   Финальный проход вставляет стержень в пустую станцию ряда, если по
+   зазорам он влезает (pairLim — единое правило), посадка штатная от
+   кантов. Не влезает — станция остаётся пустой (лучше пропуск, чем
+   пересечение) */
+function fillCombHoles(ribbons, box){
+  const IN=WIRE_D/2+ROD_AIR;
+  const lim3=box? [box.w, box.h, box.d] : null;
+  let added=0;
+  for(const rb of ribbons){
+    const n=rb.centers.length, half=rb.halfW||150, two=!!rb.dirUp;
+    const rows=two? [1, -1] : [0];
+    for(const sgn of rows){
+      const has=new Array(n).fill(null);
+      for(const r of rb.rods)
+        if(two? (sgn>0? r.u2>0 : r.u2<=0) : true)
+          has[Math.max(0, Math.min(n-1, r.st))]=r;
+      let proto=null;
+      for(const r of rb.rods)
+        if(two? (sgn>0? r.u2>0 : r.u2<=0) : true){ proto=r; break; }
+      if(!proto) continue;
+      for(let i=1;i+1<n;i++){
+        if(has[i]) continue;
+        // сосед хотя бы с одной стороны в 3 станциях — иначе это край
+        let near=false;
+        for(let k=1;k<=3 && !near;k++){
+          if(i-k>=0 && has[i-k]) near=true;
+          if(i+k<n && has[i+k]) near=true;
+        }
+        if(!near) continue;
+        const Cc=rb.centers[i];
+        let a2, b2;
+        if(two){
+          const P=sgn>0? rb.railA[i] : rb.railB[i];
+          const d=[P[0]-Cc[0], P[1]-Cc[1], P[2]-Cc[2]];
+          const L=Math.hypot(d[0],d[1],d[2]);
+          if(L<1) continue;
+          const u=[d[0]/L, d[1]/L, d[2]/L];
+          a2=[P[0]-u[0]*IN, P[1]-u[1]*IN, P[2]-u[2]*IN];
+          b2=[Cc[0]+u[0]*IN, Cc[1]+u[1]*IN, Cc[2]+u[2]*IN];
+        } else {
+          const P=rb.railA[i], Q=rb.railB[i];
+          const d=[Q[0]-P[0], Q[1]-P[1], Q[2]-P[2]];
+          const L=Math.hypot(d[0],d[1],d[2]);
+          if(L<1) continue;
+          const u=[d[0]/L, d[1]/L, d[2]/L];
+          a2=[P[0]+u[0]*IN, P[1]+u[1]*IN, P[2]+u[2]*IN];
+          b2=[Q[0]-u[0]*IN, Q[1]-u[1]*IN, Q[2]-u[2]*IN];
+        }
+        const cand={...proto, st:i, a:a2, b:b2};
+        let ok=true;
+        if(lim3) for(const pth of [a2, b2]){
+          for(let x=0;x<3;x++)
+            if(pth[x]<-ROD_R-6 || pth[x]>lim3[x]+ROD_R+6){ ok=false; break; }
+          if(!ok) break;
+        }
+        if(ok) for(const q of rb.rods){
+          if(Math.abs(q.a[0]-a2[0])>420 && Math.abs(q.b[0]-b2[0])>420) continue;
+          if(segSegD(a2,b2,q.a,q.b) < pairLim(rb, cand, rb, q)){ ok=false; break; }
+        }
+        if(!ok) continue;
+        rb.rods.push(cand);
+        has[i]=cand;
+        added++;
+      }
+    }
+    if(added) rb.rods.sort((q,z)=>q.st-z.st);
+  }
+  return added;
 }
 
 function spreadGaps(ribbons, box){
@@ -5636,6 +5739,7 @@ function buildScene(){
     seamRepair(scene.ribbons, scene.box);
     spreadGaps(scene.ribbons, scene.box);
     refitRods(scene.ribbons);
+    fillCombHoles(scene.ribbons, scene.box);
     updateSpec();
     return;
   }
@@ -7207,6 +7311,7 @@ function buildScene(){
     // станций и посадка — сшивка шла ПОСЛЕ конвейерных spreadGaps/refitRods
     spreadGaps(scene.ribbons, scene.box||box);
     refitRods(scene.ribbons);
+    fillCombHoles(scene.ribbons, scene.box||box);
   }
   updateSpec();
   camera.fitTo(box);
