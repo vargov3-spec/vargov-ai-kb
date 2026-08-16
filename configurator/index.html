@@ -2931,11 +2931,13 @@ function closestSegSeg(P1,Q1,P2,Q2){
   const d1=V.sub(Q1,P1), d2=V.sub(Q2,P2), r=V.sub(P1,P2);
   const a=V.dot(d1,d1), e=V.dot(d2,d2), f=V.dot(d2,r);
   const c=V.dot(d1,r), b=V.dot(d1,d2);
+  // вырожденный отрезок нулевой длины (a=0 или e=0) давал 0/0=NaN, и все
+  // приёмки «d < lim» молча пропускали пересечения с таким стержнем
   const denom=a*e-b*b;
   let s = denom!==0 ? Math.min(1,Math.max(0,(b*f-c*e)/denom)) : 0;
-  let t = (b*s+f)/e;
-  if(t<0){ t=0; s=Math.min(1,Math.max(0,-c/a)); }
-  else if(t>1){ t=1; s=Math.min(1,Math.max(0,(b-c)/a)); }
+  let t = e>0 ? (b*s+f)/e : 0;
+  if(t<0){ t=0; s=a>0? Math.min(1,Math.max(0,-c/a)) : 0; }
+  else if(t>1){ t=1; s=a>0? Math.min(1,Math.max(0,(b-c)/a)) : 0; }
   const c1=V.add(P1,V.mul(d1,s)), c2=V.add(P2,V.mul(d2,t));
   return [V.len(V.sub(c1,c2)), c1, c2];
 }
@@ -2952,11 +2954,13 @@ function segSegD(P1,Q1,P2,Q2){
   const f=d2x*rx+d2y*ry+d2z*rz;
   const c=d1x*rx+d1y*ry+d1z*rz;
   const b=d1x*d2x+d1y*d2y+d1z*d2z;
+  // те же guard'ы, что в closestSegSeg: вырожденный отрезок (a=0/e=0)
+  // давал NaN и «слепую» приёмку зазоров
   const denom=a*e-b*b;
   let s2=denom!==0? Math.min(1,Math.max(0,(b*f-c*e)/denom)) : 0;
-  let t2=(b*s2+f)/e;
-  if(t2<0){ t2=0; s2=Math.min(1,Math.max(0,-c/a)); }
-  else if(t2>1){ t2=1; s2=Math.min(1,Math.max(0,(b-c)/a)); }
+  let t2=e>0? (b*s2+f)/e : 0;
+  if(t2<0){ t2=0; s2=a>0? Math.min(1,Math.max(0,-c/a)) : 0; }
+  else if(t2>1){ t2=1; s2=a>0? Math.min(1,Math.max(0,(b-c)/a)) : 0; }
   const gx=(P1[0]+d1x*s2)-(P2[0]+d2x*t2);
   const gy=(P1[1]+d1y*s2)-(P2[1]+d2y*t2);
   const gz=(P1[2]+d1z*s2)-(P2[2]+d2z*t2);
@@ -3787,6 +3791,10 @@ function mergeTry(ribbons, box, closeRing, kTan, trimJ){
     if(rb.cabs) for(const c of rb.cabs) if(c.st!==undefined) c.st=n-1-c.st;
     if(rb.cabSt) rb.cabSt=rb.cabSt.map(v=>n-1-v).sort((a,b)=>a-b);
     if(rb.joinAt) rb.joinAt=rb.joinAt.map(v=>n-1-v);
+    // реверс меняет местами голову и хвост — флаги швов обязаны
+    // перевернуться тоже, иначе внешний шов развёрнутого куска теряется
+    // при переносе на слитую ленту (ревью структур, находка 2)
+    if(rb.seams) for(const s of rb.seams) s.head=!s.head;
   };
   const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);
   // РАБОТАЕМ НА КОПИЯХ: при отказе приёмки исходные отрезки должны
@@ -4102,8 +4110,15 @@ function mergeTry(ribbons, box, closeRing, kTan, trimJ){
   out.rods.sort((a,b)=>a.st-b.st);
   // ШВЫ ПЕРЕЕЗЖАЮТ НА СЛИТУЮ ЛЕНТУ: у соседних лент seams указывали на
   // исчезнувшие куски цепочки — пары через уже сведённые стыки становились
-  // «дальними» и ложно браковали следующее слияние
+  // «дальними» и ложно браковали следующее слияние.
+  // ВАЖНО: chain состоит из КОПИЙ (cp), а sm.peer указывает на ОРИГИНАЛЫ —
+  // без оригиналов в наборе оба фильтра ниже не срабатывали вовсе (ревью:
+  // «внутренний шов» не отбрасывался, ремап peer'ов не выполнялся)
   const chainSet=new Set(chain);
+  {
+    const orig0=new Map(src.map((c,i)=>[c, ribbons[i]]));
+    for(const c of chain){ const o=orig0.get(c); if(o) chainSet.add(o); }
+  }
   out.seams=[];
   for(const rb of chain) for(const sm of (rb.seams||[])){
     if(chainSet.has(sm.peer)) continue;        // внутренний шов — теперь одна лента
@@ -4440,6 +4455,10 @@ function ringsTopUp(ribbons){
       rb.giMap.push(rb.giMap[rb.giMap.length-1]||0);
     if(rb.dirs) while(rb.dirs.length<C.length)
       rb.dirs.push(rb.dirs[rb.dirs.length-1].slice());
+    if(rb.dirUp) while(rb.dirUp.length<C.length)
+      rb.dirUp.push(rb.dirUp[rb.dirUp.length-1].slice());
+    if(rb.dirDn) while(rb.dirDn.length<C.length)
+      rb.dirDn.push(rb.dirDn[rb.dirDn.length-1].slice());
     rb.ribbonLen=(rb.ribbonLen||0)+(C.length-n0)*step;
   }
 }
@@ -4539,7 +4558,8 @@ function joinPull(ribbons, box, ringClose){
         return false;
       };
       void nearJoin;
-      const inTouched=new Set(touched.map(t=>t.rb.__id=t.rb.__id||Math.random()));
+      // (мёртвый Math.random-код удалён: он навешивал недетерминированные
+      // __id на ленты и не использовался — детерминизм строго обязателен)
       let ok=true, why='';
       chk:
       for(const t of touched){
@@ -4560,7 +4580,6 @@ function joinPull(ribbons, box, ringClose){
           }
         }
       }
-      void inTouched;
       // и никаких шпилек на кантах от подтяжки
       if(ok){
         const radMin=(P)=>{
@@ -5757,7 +5776,8 @@ function thinStations(ribbons){
           rb.centers[i+1][2]-rb.centers[i-1][2]);
         if(d>step*1.3) continue;
         // удалить станцию i: массивы, номера станций, метки
-        for(const key of ['centers','railA','railB','guideC','dirUp','dirDn','dirs'])
+        for(const key of ['centers','railA','railB','guideC','dirUp','dirDn',
+                          'dirs','giMap'])
           if(rb[key] && rb[key].length>i) rb[key].splice(i,1);
         for(const r of rb.rods) if(r.st>i) r.st--;
         if(rb.ledSt) for(let q=0;q<rb.ledSt.length;q++)
@@ -6213,7 +6233,12 @@ function spreadGaps(ribbons, box){
             moved.push(r);
           }
           if(rb.cabs) for(const c of rb.cabs) if(c.st===k){
-            c.to[0]+=dv[0]; c.to[1]+=dv[1]; c.to[2]+=dv[2];
+            // якорь троса может БЫТЬ точкой канта (пушится ссылкой) — тогда
+            // он уже сдвинут вместе с кантом, второй сдвиг отрывал его от
+            // ленты на dv (ревью структур, находка 3)
+            if(c.to!==rb.railA[k] && c.to!==rb.railB[k]){
+              c.to[0]+=dv[0]; c.to[1]+=dv[1]; c.to[2]+=dv[2];
+            }
             c.from[0]+=dv[0]; c.from[2]+=dv[2];   // потолочная точка — над якорем
           }
         }
@@ -6261,7 +6286,18 @@ function snapAccessories(ribbons){
     const wirePts = rb.rows===2 ? rb.centers : rb.railA;
     if(rb.leds && rb.ledSt && wirePts)
       for(let j=0;j<rb.leds.length;j++){
-        const P=wirePts[Math.max(0,Math.min(wirePts.length-1, rb.ledSt[j]))];
+        const st=Math.max(0,Math.min(wirePts.length-1, rb.ledSt[j]));
+        let P=wirePts[st];
+        // однорядная: сшивка может свапнуть канты куска (swapSides), а
+        // принадлежность диода канту нигде не хранится — прищёлкиваем к
+        // БЛИЖНЕМУ канту станции, иначе гирлянда телепортируется через
+        // всю ширину ленты (ревью структур, находка 4)
+        if(rb.rows!==2 && rb.railB && rb.railB[st]){
+          const L2=rb.leds[j], A2=rb.railA[st], B2=rb.railB[st];
+          const dA=(L2[0]-A2[0])**2+(L2[1]-A2[1])**2+(L2[2]-A2[2])**2;
+          const dB=(L2[0]-B2[0])**2+(L2[1]-B2[1])**2+(L2[2]-B2[2])**2;
+          if(dB<dA) P=B2;
+        }
         if(P){ rb.leds[j][0]=P[0]; rb.leds[j][1]=P[1]; rb.leds[j][2]=P[2]; }
       }
     if(rb.cabs && rb.railA && rb.railB)
@@ -6551,6 +6587,10 @@ function buildScene(){
     // зависящей от него (см. комментарий у реролла) — иначе все сиды
     // сливались в один и тот же «первый проходной» вариант
     state.seedRoot = state.seed>>>0;
+    // закрепление (autoSeed) восстанавливается на выходе: внутренние
+    // рероллы гасят его, и правка габарита после этого строила уже не
+    // закреплённый вариант, а продолжение случайной орбиты (ревью UI)
+    state.__autoSeed0 = state.autoSeed;
   }
   state.buildDepth++;
   try{
@@ -6851,6 +6891,10 @@ function buildScene(){
     const keepW=uiDim.value, seed0=state.seed, keepAuto=state.autoSeed;
     const rrAll=[]; let okAll=true;
     state.subBuild=true;
+    // восстановление — в finally: исключение в рекурсивной сборке отсека
+    // раньше оставляло subBuild=true и чужую ширину в поле НАВСЕГДА — все
+    // следующие сборки шли без нарезки и финальных проходов (ревью UI)
+    try{
     for(let i=0;i<nL && okAll;i++){
       let bestSl=null;
       for(let tr=0; tr<3 && !(bestSl && bestSl.ok); tr++){
@@ -6890,9 +6934,11 @@ function buildScene(){
         rrAll.push(rb);
       }
     }
-    state.subBuild=false;
-    uiDim.value=keepW;
-    state.seed=seed0; state.autoSeed=keepAuto;
+    } finally {
+      state.subBuild=false;
+      uiDim.value=keepW;
+      state.seed=seed0; state.autoSeed=keepAuto;
+    }
     // СТЫК НЕВИДИМ: КОМПОЗИЦИЯ ЧИТАЕТСЯ ОДНОЙ ДЛИННОЙ ЛЕНТОЙ. Ближние концы
     // соседних отрезков ПРОДОЛЖАЮТСЯ гладкими мостами (кубика Эрмита) до
     // общей точки на границе отсеков (монтажный зазор 30 мм); оба моста
@@ -8239,8 +8285,8 @@ function buildScene(){
       // орбиты разных сидов не пересекаются
       state.seed=(Math.imul(state.seed,1664525)
         + ((1013904223 ^ Math.imul(state.seedRoot||1,2654435761))|1))>>>0;
-      buildScene();
-      state.reTry=0;
+      try{ buildScene(); }
+      finally { state.reTry=0; }   // исключение не должно залипать reTry
       return;
     }
     state.reTry=0;
@@ -8271,7 +8317,11 @@ function buildScene(){
   updateSpec();
   camera.fitTo(box);
   needRedraw = true;
-  } finally { state.buildDepth--; }
+  } finally {
+    state.buildDepth--;
+    if(state.buildDepth===0 && state.__autoSeed0!==undefined)
+      state.autoSeed=state.__autoSeed0;
+  }
 }
 
 /* ============================================================
@@ -8305,7 +8355,7 @@ let cw=0, chgt=0, dpr=1;
 function project(p, B, out){
   const d = V.sub(p, B.eye);
   const z = V.dot(d, B.fwd);
-  if(z<10) return false;
+  if(!(z>=10)) return false;   // NaN-координата не проходит в примитивы
   const f = (chgt/2)/Math.tan(camera.fov*Math.PI/360);
   out[0] = cw/2 + V.dot(d,B.right)*f/z;
   out[1] = chgt/2 - V.dot(d,B.up)*f/z;
@@ -8867,8 +8917,8 @@ function updateSpec(){
   // метраж из строки убран — он уже в мини-стикере слева внизу
   // (замечание пользователя: «дублируется информация»)
   document.getElementById("dims").textContent = scene.ring
-    ? `кольцо Ø${scene.ring} · пояс ${scene.ringT||""} × ${scene.box.h} мм · вариант №${state.seed}`
-    : `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seed}`;
+    ? `кольцо Ø${scene.ring} · пояс ${scene.ringT||""} × ${scene.box.h} мм · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`
+    : `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`;
   // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
@@ -9011,10 +9061,21 @@ function openRalPicker(title, curId, onPick, onClear, specials, opaqueOpt){
   };
   find.oninput=()=>rebuild(find.value);
   ov.onclick=(e)=>{ if(e.target===ov) document.body.removeChild(ov); };
-  document.addEventListener("keydown", function esc(e){
+  const esc=(e)=>{
     if(e.key==="Escape" && ov.parentNode){ document.body.removeChild(ov); }
     if(!ov.parentNode) document.removeEventListener("keydown", esc);
+  };
+  document.addEventListener("keydown", esc);
+  // слушатель снимается при ЛЮБОМ закрытии палитры (свотч, оверлей),
+  // а не только на следующем нажатии клавиши — иначе замыкания с
+  // DOM-деревом оверлея копились при повторных открытиях (ревью UI)
+  const moEsc=new MutationObserver(()=>{
+    if(!ov.parentNode){
+      document.removeEventListener("keydown", esc);
+      moEsc.disconnect();
+    }
   });
+  moEsc.observe(document.body, {childList:true});
   if(opaqueOpt){
     // НЕПРОЗРАЧНОСТЬ — НЕЗАВИСИМО ДЛЯ КАЖДОГО ЦВЕТА (уточнение
     // пользователя: растяжка может идти от прозрачного до непрозрачного).
@@ -9511,6 +9572,10 @@ const clampDims=()=>{
       toast("Минимальная высота кольца — "+RING_H_MIN+" мм (правило производства)");
     }
     if(+ui.dimH.value>MIX_H_MAX) ui.dimH.value=String(MIX_H_MAX);
+    // верхний предел: атрибут max набору с клавиатуры не мешает, а
+    // километровый габарит замораживает вкладку многоминутной сборкой
+    if(+ui.ringD.value>20000){ ui.ringD.value="20000";
+      toast("Максимальный диаметр — 20000 мм"); }
     return;
   }
   ui.dimW.min=String(dimMin("dimW"));
@@ -9521,6 +9586,11 @@ const clampDims=()=>{
     if(+ui[id].value<mn){
       ui[id].value=String(mn);
       toast("Минимум для этой пластики — "+mn+" мм (правило производства)");
+    }
+    // верхний предел (см. кольцо): ввод с клавиатуры обходит атрибут max
+    if(+ui[id].value>20000){
+      ui[id].value="20000";
+      toast("Максимум габарита — 20000 мм");
     }
   }
   if(ui.plast.value!=="edge" && +ui.dimH.value>MIX_H_MAX){
@@ -9631,7 +9701,7 @@ document.getElementById("saveCsv").onclick = ()=>{
     ...(s.runsBreak ? s.runsBreak.lens.map((v,i)=>[`Пробег ${i+1}, пог. м`, v.toFixed(2)]) : []),
     ...(s.runsBreak ? [["Развороты и подходы, пог. м", s.runsBreak.turns.toFixed(2)]] : []),
     [`Стеклянные трубки Ø${ROD_D}, всего шт`, s.rods],
-    ["Длина трубки (все одинаковые), мм", [...s.byLen.keys()][0]],
+    ["Длина трубки (все одинаковые), мм", [...s.byLen.keys()][0]||0],
     ["Ширина ленты, мм", scene.params.ribbonW+(scene.params.rows===2?" (2 ряда)":"")],
     ["Зазор между стержнями, мм", `${s.gaps.gmin.toFixed(1)} - ${s.gaps.gmax.toFixed(1)} (норма ${GAP_MIN}-${GAP_MAX})`],
     [`Масса стекла (трубки Ø${ROD_D}, стенка ${GLASS_WALL} мм), кг`, (s.glassMass/1000).toFixed(2)],
@@ -9786,7 +9856,7 @@ document.getElementById("saveMont").onclick = ()=>{
   R.push(["Пластика", scene.params.plast==="edge"?"на ребро":"микс"]);
   R.push(["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"]);
   R.push(["Ширина ленты, мм", scene.params.ribbonW]);
-  R.push([`Трубка`, `Ø${ROD_D} x ${GLASS_WALL} мм, длина ${[...s.byLen.keys()][0]} мм`]);
+  R.push([`Трубка`, `Ø${ROD_D} x ${GLASS_WALL} мм, длина ${[...s.byLen.keys()][0]||0} мм`]);
   R.push(["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)]);
   R.push(["Оси: X - ширина, Y - глубина, Z - высота (Z вверх); начало - нижний угол габарита; мм"]);
   R.push([]);
@@ -9924,14 +9994,28 @@ function drawSplash(msg){
 /* ИНДИКАТОР ГЕНЕРАЦИИ ГОВОРИТ, ЧТО ИМЕННО ИДЁТ. Генерация варианта композиции
    и «добавляем диоды на контур» — разные операции, и подпись обязана
    соответствовать нажатой галочке */
+let __bdSeq=0;
 function buildDeferred(msg){
+  // токен отменяет ХВОСТ предыдущего вызова (rAF+setTimeout не отменялись
+  // clearTimeout'ом rebuild — клик «Обновить» в 120-мс окне дебаунса
+  // запускал две полные сборки подряд; ревью UI)
+  const my=++__bdSeq;
+  const scenePrev=scene;
   drawSplash("");
   const busy=document.getElementById("busy");
   const txt=document.getElementById("busyTxt");
   if(txt) txt.textContent=msg||"Генерация варианта композиции…";
   if(busy) busy.classList.add("on");
   const run=()=>{
+    if(my!==__bdSeq) return;         // перекрыт более новым вызовом
     try { buildScene(); }
+    catch(err){
+      // упавшая сборка не оставляет заглушку: возвращается прежняя сцена,
+      // экспорт и избранное не получают пустую геометрию (ревью UI)
+      if(scenePrev) scene=scenePrev;
+      toast("Сборка не удалась — показан предыдущий вариант");
+      console.error(err);
+    }
     finally { if(busy) busy.classList.remove("on"); }
     needRedraw=true;
   };
@@ -9947,7 +10031,12 @@ function buildDeferred(msg){
    который утвердили (менеджер отправляет ссылку клиенту)
    ============================================================ */
 function variantState(){
-  return {v:state.seed>>>0, w:+ui.dimW.value, d:+ui.dimD.value,
+  // в ссылку идёт КОРНЕВОЕ зерно показанного варианта: state.seed после
+  // рероллов мутирует, и открытие ссылки с ним шло другим каскадом —
+  // клиент видел не тот вариант, что утвердил менеджер (ревью UI)
+  return {v:(state.seedRoot!==undefined? state.seedRoot : state.seed)>>>0,
+          ld:ui.leds.checked?1:0, cb:ui.cables.checked?1:0,
+          w:+ui.dimW.value, d:+ui.dimD.value,
           h:+ui.dimH.value, c:+ui.dimC.value, pl:ui.plast.value,
           f:ui.form.value, r:+ui.rows.value, rw:+ui.rWidth.value,
           rd:+ui.rodD.value, fr:ui.frame.value,
@@ -9982,9 +10071,17 @@ function applyVariant(o){
   state.opaque1=!!+(o.op||0);
   state.opaque2=!!+(o.op2!==undefined ? o.op2 : (o.op||0));
   // поле sg старых ссылок игнорируется: провис теперь всегда включён
+  // диоды и тросы раньше терялись при сериализации (ревью UI): вариант
+  // с выключенными открывался включёнными — расходились метраж и мощность
+  if(o.ld!==undefined) ui.leds.checked=!!+o.ld;
+  if(o.cb!==undefined) ui.cables.checked=!!+o.cb;
   state.autoSeed=false;
   state.seed=(+o.v||state.seed)>>>0;
   refreshLabels();
+  // ссылка/избранное могли нести недопустимые значения (старые записи,
+  // правленый hash) — клампы обязаны отработать и здесь, не только в
+  // change-обработчиках
+  clampDims();
 }
 const FAV_KEY="vargovFavs";
 const favLoad=()=>{ try{ return JSON.parse(localStorage.getItem(FAV_KEY)||"[]"); }
@@ -10077,7 +10174,7 @@ document.getElementById("savePat").onclick=()=>{
     +`p.note{color:#444;margin:0 0 8px;font-size:9.5px}`
     +`svg{display:block}.row{page-break-inside:avoid}`
     +`</style></head><body>`
-    +`<h2>Vargov&reg;Design — выкройка каркаса 1:1 · вариант №${state.seed}`
+    +`<h2>Vargov&reg;Design — выкройка каркаса 1:1 · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`
     +` · габарит ${ui.dimW.value}×${ui.dimD.value}×${ui.dimH.value} мм</h2>`
     +`<p class="note">Печатать в масштабе 100% (не «вписать в страницу»).`
     +` Полоса — центральный контур каркаса, развёрнутый в прямую.`
