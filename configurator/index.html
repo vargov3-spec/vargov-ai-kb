@@ -3013,7 +3013,17 @@ function seamPair(rbA, stA, rbB, stB){
 /* лимит зазора для пары стержней: соседи по ленте и пары в шве — ближний,
    остальные — дальний */
 function pairLim(rbA, rA, rbB, rB){
-  if(rbA===rbB) return Math.abs(rA.st-rB.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
+  if(rbA===rbB){
+    if(Math.abs(rA.st-rB.st)<=NEAR_WIN) return CLEAR_NEAR;
+    // ЗАМЫКАНИЕ КОЛЬЦА: пара «голова ↔ хвост» сомкнутой ленты — шов, ей
+    // положен ближний лимит (см. self-ветку seamPair). Предпроверка окон —
+    // чтобы не гонять разбор швов в горячем цикле на каждой паре
+    const n=rbA.centers.length;
+    if((rA.st<=SEAM_WIN || rA.st>=n-1-SEAM_WIN)
+       && (rB.st<=SEAM_WIN || rB.st>=n-1-SEAM_WIN)
+       && seamPair(rbA, rA.st, rbA, rB.st)) return CLEAR_NEAR;
+    return CLEAR_FAR;
+  }
   return seamPair(rbA, rA.st, rbB, rB.st) ? CLEAR_NEAR : CLEAR_FAR;
 }
 function forEachClosePair(ribbons, radius, cb, dirtyOf){
@@ -4186,6 +4196,253 @@ function mergeTry(ribbons, box, closeRing, kTan, trimJ){
    зоне стыка отрезки продолжают друг друга, поэтому там действует
    БЛИЖНИЙ лимит зазора (гребёнка непрерывна), вне зоны — обычный; бокс
    соблюдён; иначе откат этого стыка */
+/* ДОТЯЖКА КОЛЕЦ ГИРОСКОПА. Кольца концепта «rings» задуманы сомкнутыми:
+   зазор на стыке 25 мм читается как обычный шаг трубок. Марш же
+   останавливается с недолётом (срез поворотов, допуск схода), и конец
+   кольца не доходит до начала: у троса на конце ленты гребёнка обрывается
+   чёрным пропилом (скрин пользователя, гироскоп 4500×4500×2000
+   №4235507941 — зазоры 54–179 мм на пяти кольцах). Хвост достраивается
+   мостом Эрмита от фактического конца к точке в 25 мм перед началом:
+   станции штатным шагом, канты со смещениями последней станции, стержень
+   на каждой станции. Диоды и тросы считаются ПОСЛЕ дотяжки и сами ложатся
+   на новый хвост; посадку дошлифует refitRods. Приёмка: каждый новый
+   стержень против всех стержней сцены по pairLim; нарушение срезает
+   хвост до чистого места */
+function ringsTopUp(ribbons){
+  const GAP_R=25;
+  for(const rb of ribbons){
+    const C=rb.centers, n0=C.length;
+    if(n0<60 || !rb.railA || !rb.railB) continue;
+    const step=rb.stepEff||ROD_STEP;
+    const E=C[n0-1], S=C[0];
+    const gap=V.len(V.sub(S,E));
+    if(gap<=GAP_R+step*0.7) continue;      // уже сомкнуто
+    if(gap>step*60) continue;              // это не недолёт кольца
+    const dir0=V.norm(V.sub(C[1],S));
+    const P=[S[0]-dir0[0]*GAP_R, S[1]-dir0[1]*GAP_R, S[2]-dir0[2]*GAP_R];
+    // НЕВЯЗКА ГАСИТСЯ ДО МОСТА. Марш кольца-«вертолёта» кончает на
+    // 100-160 мм выше плоскости кольца (замер №4235507941), и мост от
+    // такого конца ныряет: вертикальные стержни на крутом участке сжимаются
+    // ГОРИЗОНТАЛЬНО (пары 8.9-9.7 мм при шаге центров 11.5). Хвост
+    // направляющей не помощник — guideC это путь предмарша, он обрывается
+    // там же (замер: хвост гида 3 точки у всех пяти колец). Поэтому:
+    // 1) поперечная к ходу часть вектора «конец → точка замыкания»
+    //    размазывается гладкой рампой по последним M станциям ленты —
+    //    конец приезжает в плоскость кольца уклоном ~12°;
+    // 2) мост Эрмита строится ПОСЛЕ рампы — он короткий и почти плоский
+    const Te0=V.norm(V.sub(E,C[n0-2]));
+    const toP=V.sub(P,E);
+    const dAlong=V.dot(toP,Te0);
+    if(dAlong<step*1.2) continue;      // конец переехал точку замыкания
+    const trans=[toP[0]-Te0[0]*dAlong, toP[1]-Te0[1]*dAlong,
+                 toP[2]-Te0[2]*dAlong];
+    if(window.__rtLog) window.__rtLog.push(
+      ['инфо', ribbons.indexOf(rb), n0, Math.round(gap),
+       Math.round(dAlong), Math.round(V.len(trans)), Math.round(trans[1])]);
+    const M=Math.min(90, n0>>2);
+    const wOf=(u)=>{ const v=Math.max(0,Math.min(1,u)); return v*v*(3-2*v); };
+    // снимок хвоста — для полного отката, если сдвиг кому-то помешал
+    const bak={c:[], a:[], b:[], rods:[]};
+    for(let i=n0-M;i<n0;i++){
+      bak.c.push(C[i].slice());
+      bak.a.push(rb.railA[i].slice());
+      bak.b.push(rb.railB[i].slice());
+    }
+    const movedRod=[];
+    for(const r of rb.rods) if(r.st>=n0-M && r.st<n0){
+      bak.rods.push({r, a:r.a.slice(), b:r.b.slice()});
+      movedRod.push(r);
+    }
+    if(V.len(trans)>1){
+      for(let i=n0-M;i<n0;i++){
+        const w=wOf(1-(n0-1-i)/M);
+        for(const A of [C[i], rb.railA[i], rb.railB[i]]){
+          A[0]+=trans[0]*w; A[1]+=trans[1]*w; A[2]+=trans[2]*w;
+        }
+      }
+      for(const q of bak.rods){
+        const w=wOf(1-(n0-1-q.r.st)/M);
+        q.r.a[0]+=trans[0]*w; q.r.a[1]+=trans[1]*w; q.r.a[2]+=trans[2]*w;
+        q.r.b[0]+=trans[0]*w; q.r.b[1]+=trans[1]*w; q.r.b[2]+=trans[2]*w;
+      }
+    }
+    // мост Эрмита от сдвинутого конца к точке замыкания
+    const E2=C[n0-1];
+    const Te=V.norm(V.sub(E2,C[n0-2]));
+    const L=V.len(V.sub(P,E2));
+    const W=[E2.slice()];
+    {
+      const h00=t=>2*t*t*t-3*t*t+1, h10=t=>t*t*t-2*t*t+t,
+            h01=t=>-2*t*t*t+3*t*t,  h11=t=>t*t*t-t*t;
+      const k=Math.max(2, Math.round(L/step));
+      for(let j=1;j<=k;j++){
+        const t=j/k;
+        W.push([0,1,2].map(x=> h00(t)*E2[x]+h10(t)*L*Te[x]
+                              +h01(t)*P[x]+h11(t)*L*dir0[x]));
+      }
+    }
+    // станции штатным шагом вдоль пути; канты и торцы — со смещениями
+    // последней станции (у «на ребро» они вертикальны и постоянны)
+    const vA=V.sub(rb.railA[n0-1],C[n0-1]), vB=V.sub(rb.railB[n0-1],C[n0-1]);
+    const lastRod=rb.rods.length
+      ? rb.rods.reduce((q,z)=>z.st>q.st?z:q) : null;
+    const aOff=lastRod? V.sub(lastRod.a, rb.railA[Math.min(n0-1,lastRod.st)])
+                      : [0,0,0];
+    const bOff=lastRod? V.sub(lastRod.b, rb.railB[Math.min(n0-1,lastRod.st)])
+                      : [0,0,0];
+    const added=[];
+    {
+      let j=1, s=step;
+      const total=(()=>{ let t2=0;
+        for(let q2=1;q2<W.length;q2++) t2+=V.len(V.sub(W[q2],W[q2-1]));
+        return t2; })();
+      let acc=0;
+      for(let q2=1;q2<W.length && s<=total+step*0.4;q2++){
+        const seg=V.len(V.sub(W[q2],W[q2-1]));
+        while(acc+seg>=s){
+          const t=(s-acc)/(seg||1);
+          const c=[0,1,2].map(x=>W[q2-1][x]+(W[q2][x]-W[q2-1][x])*t);
+          C.push(c);
+          rb.railA.push([c[0]+vA[0], c[1]+vA[1], c[2]+vA[2]]);
+          rb.railB.push([c[0]+vB[0], c[1]+vB[1], c[2]+vB[2]]);
+          if(lastRod){
+            const rod={...lastRod,
+              a:[c[0]+vA[0]+aOff[0], c[1]+vA[1]+aOff[1], c[2]+vA[2]+aOff[2]],
+              b:[c[0]+vB[0]+bOff[0], c[1]+vB[1]+bOff[1], c[2]+vB[2]+bOff[2]],
+              st:C.length-1};
+            rb.rods.push(rod); added.push(rod);
+          }
+          j++; s=j*step;
+        }
+        acc+=seg;
+      }
+      // последняя станция — точно в точке замыкания: без неё резка по
+      // целым шагам оставляла зазор до 25+шаг (замер: 32-33 мм)
+      const lastC=C[C.length-1], dP=V.len(V.sub(P,lastC));
+      if(dP>step*0.45 && dP<step*1.6){
+        const c=P.slice();
+        C.push(c);
+        rb.railA.push([c[0]+vA[0], c[1]+vA[1], c[2]+vA[2]]);
+        rb.railB.push([c[0]+vB[0], c[1]+vB[1], c[2]+vB[2]]);
+        if(lastRod){
+          const rod={...lastRod,
+            a:[c[0]+vA[0]+aOff[0], c[1]+vA[1]+aOff[1], c[2]+vA[2]+aOff[2]],
+            b:[c[0]+vB[0]+bOff[0], c[1]+vB[1]+bOff[1], c[2]+vB[2]+bOff[2]],
+            st:C.length-1};
+          rb.rods.push(rod); added.push(rod);
+        }
+      }
+    }
+    // РАЗГЛАЖИВАНИЕ ТОЧКИ ПРИСАДКИ. На кольцах-«вертолётах» стык
+    // марш→мост давал излом, и соседние через одну станции сжимались до
+    // 8.9 мм (лог приёмки). Лёгкий лапласиан по окну ±8 станций вокруг
+    // стыка растягивает залом; торцы стержней окна пересаживаются на
+    // сглаженные канты (финальную посадку всё равно делает refitRods)
+    if(added.length){
+      const i0=Math.max(1, n0-12), i1=Math.min(C.length-2, n0+12);
+      // короткий лапласиан расправляет угол…
+      for(let it=0; it<3; it++)
+        for(let i=i0;i<=i1;i++)
+          for(const A2 of [C, rb.railA, rb.railB]){
+            const p=A2[i];
+            for(let x=0;x<3;x++)
+              p[x]+=0.30*((A2[i-1][x]+A2[i+1][x])/2 - p[x]);
+          }
+      // …а перераскладка окна равными дугами возвращает шаг: лапласиан
+      // стягивает дугу и сам сжимал соседние станции (замер: 9.4 мм)
+      if(i1-i0>=3){
+        const pts=[];
+        for(let i=i0-1;i<=i1+1;i++) pts.push(C[i].slice());
+        const cum=[0];
+        for(let j=1;j<pts.length;j++)
+          cum.push(cum[j-1]+V.len(V.sub(pts[j],pts[j-1])));
+        const total=cum[cum.length-1];
+        for(let i=i0;i<=i1;i++){
+          const s=(i-(i0-1))*total/(pts.length-1);
+          let j=1; while(j<cum.length-1 && cum[j]<s) j++;
+          const t=(s-cum[j-1])/((cum[j]-cum[j-1])||1);
+          const c=[0,1,2].map(x=>pts[j-1][x]+(pts[j][x]-pts[j-1][x])*t);
+          C[i]=c;
+          rb.railA[i]=[c[0]+vA[0], c[1]+vA[1], c[2]+vA[2]];
+          rb.railB[i]=[c[0]+vB[0], c[1]+vB[1], c[2]+vB[2]];
+        }
+      }
+      for(const r of rb.rods) if(r.st>=i0 && r.st<=i1){
+        const i=r.st;
+        r.a=[rb.railA[i][0]+aOff[0], rb.railA[i][1]+aOff[1],
+             rb.railA[i][2]+aOff[2]];
+        r.b=[rb.railB[i][0]+bOff[0], rb.railB[i][1]+bOff[1],
+             rb.railB[i][2]+bOff[2]];
+      }
+    }
+    // ШОВ ЗАМЫКАНИЯ РЕГИСТРИРУЕТСЯ ДО ПРИЁМКИ: паре «хвост ↔ голова»
+    // сомкнутого кольца положен ближний лимит (кольцо 4 резалось парой
+    // 20.6 мм при дальнем лимите 21 — это штатный шов, не конфликт)
+    let regged=false;
+    {
+      let sh=false, st2=false;
+      for(const s of (rb.seams||[])) if(s.peer===rb){ if(s.head) sh=true; else st2=true; }
+      if(!sh || !st2){
+        rb.seams=rb.seams||[];
+        if(!sh) rb.seams.push({head:true, peer:rb});
+        if(!st2) rb.seams.push({head:false, peer:rb});
+        regged=true;
+      }
+    }
+    const unreg=()=>{ if(regged){
+      rb.seams=rb.seams.filter(s=>s.peer!==rb); regged=false; } };
+    // приёмка двумя ярусами: конфликт СДВИНУТОГО стержня — полный откат
+    // (рампа не имела права никого трогать), конфликт НОВОГО — хвост
+    // режется до чистого места
+    const conflict=(r, stSelf)=>{
+      for(const rb2 of ribbons){
+        for(const r2 of rb2.rods){
+          if(r2===r) continue;
+          if(rb2===rb && Math.abs(r2.st-stSelf)<=1) continue;
+          const d=segSegD(r.a,r.b,r2.a,r2.b);
+          const lim=pairLim(rb, r, rb2, r2);
+          if(d < lim-0.05){
+            (window.__rtLog=window.__rtLog||[]).push(
+              [ribbons.indexOf(rb), stSelf, ribbons.indexOf(rb2), r2.st,
+               +d.toFixed(1), lim]);
+            return true;
+          }
+        }
+      }
+      return false;
+    };
+    let revert=false;
+    for(const r of movedRod) if(conflict(r, r.st)){ revert=true; break; }
+    if(revert){
+      C.length=n0; rb.railA.length=n0; rb.railB.length=n0;
+      rb.rods=rb.rods.filter(r=>r.st<n0);
+      for(let i=n0-M;i<n0;i++){
+        C[i]=bak.c[i-(n0-M)]; rb.railA[i]=bak.a[i-(n0-M)];
+        rb.railB[i]=bak.b[i-(n0-M)];
+      }
+      for(const q of bak.rods){ q.r.a=q.a; q.r.b=q.b; }
+      unreg();
+      continue;
+    }
+    let keepLen=C.length;
+    for(let j=0;j<added.length;j++)
+      if(conflict(added[j], added[j].st)){ keepLen=n0+j; break; }
+    if(keepLen<C.length){
+      C.length=keepLen; rb.railA.length=keepLen; rb.railB.length=keepLen;
+      rb.rods=rb.rods.filter(r=>r.st<keepLen);
+    }
+    // кольцо так и осталось разомкнутым — шов замыкания снимается
+    if(V.len(V.sub(C[0], C[C.length-1]))>GAP_R+step*1.3) unreg();
+    // служебные постанционные массивы — добить копией последнего, чтобы
+    // индексация станций не разъехалась с центрами
+    if(rb.giMap) while(rb.giMap.length<C.length)
+      rb.giMap.push(rb.giMap[rb.giMap.length-1]||0);
+    if(rb.dirs) while(rb.dirs.length<C.length)
+      rb.dirs.push(rb.dirs[rb.dirs.length-1].slice());
+    rb.ribbonLen=(rb.ribbonLen||0)+(C.length-n0)*step;
+  }
+}
+
 function joinPull(ribbons, box, ringClose){
   if(!ribbons || (ribbons.length<2 && !ringClose)) return 0;
   if(!ribbons.length) return 0;
@@ -7420,6 +7677,9 @@ function buildScene(){
   // на ребре стержни вертикальны и веером не расходятся). Поперечный
   // провис центра — ниже, после расстановки тросов (ему нужны якоря)
   if(scene0Plast!=="edge") closeFans(ribbons, box);
+  // дотяжка колец гироскопа — ДО расстановки диодов и тросов: они
+  // считаются по готовой геометрии и сами ложатся на достроенный хвост
+  if(scene0Plast==="edge" && params.concept==="rings") ringsTopUp(ribbons);
   // высота до потолка: на столько потолок выше верха габарита
   const ceilH=Math.max(0, Math.min(10000, +ui.dimC.value||0));
   ribbons.forEach((rb, ri)=>{
@@ -7582,7 +7842,11 @@ function buildScene(){
   // посадка возвращала канты на полширины от центров и частично
   // распускала уже сведённый стык
   refitRods(ribbons);
-  joinPull(ribbons, box, false);
+  // стяжка стыков — только «микс»/«кольцо»: там ленты — отрезки одного
+  // изделия. У «на ребро» несколько лент раздельны ПО ЗАМЫСЛУ (кольца
+  // гироскопа, линейные узоры), а joinPull стягивал концы РАЗНЫХ колец
+  // друг к другу, если они оказывались ближе 1200 мм
+  if(scene0Plast!=="edge") joinPull(ribbons, box, false);
   // отрезки сшиваются в ОДНУ ленту: изделие делается сплошным, контур
   // через шов идёт непрерывно (требование пользователя). Касается
   // «волн» и «кольца»; у «на ребро» несколько лент — часть замысла
@@ -8049,11 +8313,26 @@ function draw(){
     const lim=(asmT>=1)?Infinity:Math.max(0, Math.round(asmPos));
     asmPos-=rb.centers.length;
     // тросы (появляются, когда построена станция их якоря)
+    // ТРОС РЕЖЕТСЯ НА КУСКИ ПО ГЛУБИНЕ. Одна линия на весь пролёт несла
+    // СРЕДНЮЮ глубину, и кусок троса, реально идущий за лентой, рисовался
+    // поверх неё — на лицевой стороне читался тёмной «щелью в гребёнке»
+    // (скрин пользователя: гироскоп, «смещение трубочек у крепления
+    // троса»). Куски по ~180 мм сортируются каждый своей глубиной:
+    // трос за лентой честно прячется за трубками
     for(const c of rb.cabs){
       if(c.st!==undefined && c.st>=lim) continue;
-      if(project(c.from,B,p1) && project(c.to,B,p2)){
-        prims.push({z:(p1[2]+p2[2])/2+200, kind:0,
-          x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1]});
+      const segN=Math.max(1, Math.min(24,
+        Math.round(Math.abs(c.from[1]-c.to[1])/180)));
+      const q0=[0,0,0], q1=[0,0,0];
+      for(let s=0;s<segN;s++){
+        for(let x=0;x<3;x++){
+          q0[x]=c.from[x]+(c.to[x]-c.from[x])*s/segN;
+          q1[x]=c.from[x]+(c.to[x]-c.from[x])*(s+1)/segN;
+        }
+        if(project(q0,B,p1) && project(q1,B,p2)){
+          prims.push({z:(p1[2]+p2[2])/2+40, kind:0,
+            x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1]});
+        }
       }
     }
     // стержни (альфа своя у каждого конца растяжки: прозрачный ↔
@@ -8125,7 +8404,9 @@ function draw(){
              : (ui.frame.value==="chrome" ? [126,132,140] : [201,162,39]);
   for(const pr of prims){
     if(pr.kind===0){ // подвес
-      ctx.strokeStyle=LB ? "rgba(110,110,120,.55)" : "rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
+      // трос Ø1.5 на фоне ленты не должен читаться «щелью»: линия тоньше
+      // и деликатнее прежней (на чёрном фоне остаётся различимой)
+      ctx.strokeStyle=LB ? "rgba(110,110,120,.46)" : "rgba(150,150,160,.34)"; ctx.lineWidth=0.85;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else if(pr.kind===1){ // стержень
       ctx.lineCap="round";
