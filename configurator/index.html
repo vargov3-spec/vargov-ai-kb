@@ -3698,9 +3698,11 @@ function mergeRibbons(ribbons, box, closeRing){
   // переходная дуга пробуется в нескольких формах: от плавной (касательные
   // концов держат направление) до прямой вставки — на тесных участках
   // плавная дуга задевает соседний виток
-  for(const kTan of [1, 0.55, 0.25, 0]){
-    const r=mergeTry(ribbons, box, closeRing, kTan);
-    if(r) return r;
+  for(const trimJ of [0, 10, 22, 36]){
+    for(const kTan of [1, 0.55, 0.25, 0]){
+      const r=mergeTry(ribbons, box, closeRing, kTan, trimJ);
+      if(r) return r;
+    }
   }
   // не срослось целиком (далёкие или тесные пары) — пробуем попарно:
   // сшиваются только близкие соседи, остальные остаются как есть
@@ -3717,8 +3719,50 @@ function mergeRibbons(ribbons, box, closeRing){
   }
   return ribbons;
 }
-function mergeTry(ribbons, box, closeRing, kTan){
+function mergeTry(ribbons, box, closeRing, kTan, trimJ){
   const IN=WIRE_D/2+ROD_AIR, lim3=[box.w, box.h, box.d];
+  // ПОДРЕЗКА ВСТРЕЧНЫХ КОНЦОВ. Концы кусков могут идти внахлёст
+  // (параллельно с перехлёстом) — мост между ними режет обе гребёнки
+  // (замер кольца №2504164914: 15 пересечений при любой форме дуги).
+  // Соскабливание trimJ станций с обоих концов отводит стык от нахлёста.
+  // Работаем на копиях — при отказе приёмки оригиналы не тронуты
+  const cutTailC=(rb, k)=>{
+    const n2=rb.centers.length-k; if(n2<10) return false;
+    for(const arr of [rb.centers, rb.railA, rb.railB]) arr.length=n2;
+    if(rb.guideC) rb.guideC.length=Math.min(rb.guideC.length, n2);
+    if(rb.dirUp){ rb.dirUp.length=n2; rb.dirDn.length=n2; }
+    if(rb.dirs) rb.dirs.length=n2;
+    rb.rods=rb.rods.filter(r=>r.st<n2);
+    if(rb.ledSt){
+      const keep=rb.ledSt.map((st,j)=>st<n2? j : -1).filter(j=>j>=0);
+      rb.leds=keep.map(j=>rb.leds[j]); rb.ledSt=keep.map(j=>rb.ledSt[j]);
+    }
+    if(rb.cabs) rb.cabs=rb.cabs.filter(c=>c.st===undefined || c.st<n2);
+    if(rb.cabSt) rb.cabSt=rb.cabSt.filter(st=>st<n2);
+    if(rb.joinAt) rb.joinAt=rb.joinAt.filter(j=>j<n2);
+    return true;
+  };
+  const cutHeadC=(rb, k)=>{
+    if(rb.centers.length-k<10) return false;
+    rb.centers=rb.centers.slice(k);
+    rb.railA=rb.railA.slice(k); rb.railB=rb.railB.slice(k);
+    if(rb.guideC) rb.guideC=rb.guideC.slice(Math.min(k, rb.guideC.length));
+    if(rb.dirUp){ rb.dirUp=rb.dirUp.slice(k); rb.dirDn=rb.dirDn.slice(k); }
+    if(rb.dirs) rb.dirs=rb.dirs.slice(k);
+    rb.rods=rb.rods.filter(r=>r.st>=k);
+    for(const r of rb.rods) r.st-=k;
+    if(rb.ledSt){
+      const keep=rb.ledSt.map((st,j)=>st>=k? j : -1).filter(j=>j>=0);
+      rb.leds=keep.map(j=>rb.leds[j]); rb.ledSt=keep.map(j=>rb.ledSt[j]-k);
+    }
+    if(rb.cabs){
+      rb.cabs=rb.cabs.filter(c=>c.st===undefined || c.st>=k);
+      for(const c of rb.cabs) if(c.st!==undefined) c.st-=k;
+    }
+    if(rb.cabSt) rb.cabSt=rb.cabSt.filter(st=>st>=k).map(st=>st-k);
+    if(rb.joinAt) rb.joinAt=rb.joinAt.filter(j=>j>=k).map(j=>j-k);
+    return true;
+  };
   const revRibbon=(rb)=>{
     const n=rb.centers.length;
     rb.centers.reverse(); rb.railA.reverse(); rb.railB.reverse();
@@ -3794,6 +3838,7 @@ function mergeTry(ribbons, box, closeRing, kTan){
   const seamsAt=[];
   for(let k=1;k<chain.length;k++){
     const B=chain[k];
+    if(trimJ){ cutTailC(out, trimJ); cutHeadC(B, trimJ); }
     const nA=out.centers.length;
     {
       const eT=axOf(out, nA-1), eH=axOf(B, 0);
@@ -3805,8 +3850,27 @@ function mergeTry(ribbons, box, closeRing, kTan){
     // В режиме последнего резерва (state.longBridge) мост до 60 станций:
     // длинный переход лучше разрыва кольца
     const capB=state.longBridge===2? 160 : state.longBridge? 60 : 20;
-    if(gap>step*(capB+1)) return null;
-    const ins=Math.max(0, Math.min(capB, Math.round(gap/step)-1));
+    // В КОЛЬЦЕ мост идёт ПО ДУГЕ ПОЯСА, а не по хорде: концы кусков могут
+    // стоять на противоположных сторонах круга, и хорда резала тело
+    // (замер №2504164914: 14-16 пересечений на любой форме дуги). Центры
+    // моста интерполируются в цилиндрических координатах вокруг оси кольца
+    const ringArc=state.ringBuild? (()=>{
+      const RCx=box.w/2, RCz=box.d/2;
+      const cyl=(p)=>[Math.atan2(p[2]-RCz, p[0]-RCx),
+                      Math.hypot(p[0]-RCx, p[2]-RCz), p[1]];
+      const a0=cyl(out.centers[nA-1]), a1=cyl(B.centers[0]);
+      let dth=a1[0]-a0[0];
+      while(dth>Math.PI) dth-=2*Math.PI;
+      while(dth<-Math.PI) dth+=2*Math.PI;
+      const arcLen=Math.hypot(dth*(a0[1]+a1[1])/2, a1[2]-a0[2], a1[1]-a0[1]);
+      return {at:(u)=>{
+        const th=a0[0]+dth*u, rr=a0[1]+(a1[1]-a0[1])*u, y=a0[2]+(a1[2]-a0[2])*u;
+        return [RCx+rr*Math.cos(th), y, RCz+rr*Math.sin(th)];
+      }, len:arcLen};
+    })() : null;
+    const effLen=ringArc? Math.max(gap, ringArc.len) : gap;
+    if(effLen>step*(capB+1)) return null;
+    const ins=Math.max(0, Math.min(capB, Math.round(effLen/step)-1));
     // касательные на концах — чтобы вставка вышла плавной дугой
     const tA=out.centers[nA-1], tA2=out.centers[Math.max(0,nA-4)];
     const hB=B.centers[0], hB2=B.centers[Math.min(B.centers.length-1,3)];
@@ -3907,22 +3971,26 @@ function mergeTry(ribbons, box, closeRing, kTan){
         };
       }
     }
+    const lastBridgeRod={u:null, d:null};
     for(let i=1;i<=ins;i++){
       const u=i/(ins+1);
-      const C=herm(tA, hB, M0, M1, u);
+      const C=ringArc? ringArc.at(u) : herm(tA, hB, M0, M1, u);
       out.centers.push(C);
       if(out.guideC) out.guideC.push(C.slice());
       let A0, B0;
+      let axU=null, axD=null;
       if(out.dirUp && B.dirUp){
         const du=rotE? rotE(u) : nlerp(out.dirUp[nA-1], B.dirUp[0], u);
         const dd=rotE? [-du[0],-du[1],-du[2]]
                      : nlerp(out.dirDn[nA-1], B.dirDn[0], u);
         out.dirUp.push(du); out.dirDn.push(dd);
+        axU=du; axD=dd;
         A0=[C[0]+du[0]*halfWm, C[1]+du[1]*halfWm, C[2]+du[2]*halfWm];
         B0=[C[0]+dd[0]*halfWm, C[1]+dd[1]*halfWm, C[2]+dd[2]*halfWm];
       } else if(out.dirs && B.dirs){
         const d=rotE? rotE(u) : nlerp(out.dirs[nA-1], B.dirs[0], u);
         out.dirs.push(d);
+        axU=d; axD=[-d[0],-d[1],-d[2]];
         A0=[C[0]+d[0]*halfWm, C[1]+d[1]*halfWm, C[2]+d[2]*halfWm];
         B0=[C[0]-d[0]*halfWm, C[1]-d[1]*halfWm, C[2]-d[2]*halfWm];
       } else {
@@ -3932,8 +4000,35 @@ function mergeTry(ribbons, box, closeRing, kTan){
       out.railA.push(A0); out.railB.push(B0);
       const st=out.centers.length-1;
       newSt.add(st);
+      // СТЕРЖНИ МОСТА САЖАЮТСЯ СРАЗУ. Заготовки в нуле ждали посадки от
+      // refitRods, а он при ухудшении зазоров откатывает ВСЁ целиком —
+      // на стыках оставались невидимые стержни нулевой длины и чёрные
+      // прорехи в гребёнке (замер кольца №4235507941: 36 нулевых на
+      // станциях 356-362 и 783-793 — ровно у стыков сшивки)
+      if(!axU){
+        const v=[A0[0]-B0[0], A0[1]-B0[1], A0[2]-B0[2]];
+        const L=Math.hypot(v[0],v[1],v[2])||1;
+        axU=[v[0]/L, v[1]/L, v[2]/L]; axD=[-axU[0],-axU[1],-axU[2]];
+      }
       for(const pr of proto){
-        const r={...pr, st, a:[0,0,0], b:[0,0,0]};
+        const two2=!!out.dirUp;
+        const dir=two2? (pr.u2>0? axU : axD) : axU;
+        const r=two2
+          ? {...pr, st,
+             a:[C[0]+dir[0]*(halfWm-IN), C[1]+dir[1]*(halfWm-IN), C[2]+dir[2]*(halfWm-IN)],
+             b:[C[0]+dir[0]*IN, C[1]+dir[1]*IN, C[2]+dir[2]*IN]}
+          : {...pr, st,
+             a:[C[0]+axU[0]*(halfWm-IN), C[1]+axU[1]*(halfWm-IN), C[2]+axU[2]*(halfWm-IN)],
+             b:[C[0]-axU[0]*(halfWm-IN), C[1]-axU[1]*(halfWm-IN), C[2]-axU[2]*(halfWm-IN)]};
+        // ГРЕБЁНКА НА КРУТОМ ПОВОРОТЕ РАЗРЕЖАЕТСЯ (как на производстве):
+        // на развороте моста стержни соседних станций сходятся на
+        // внутренней стороне до 5-9 мм и мост резал сам себя (замер
+        // №2504164914). Стержень пропускается, если он ближе минимума
+        // к предыдущему стержню своего ряда на мосту
+        const rowKey=two2? (pr.u2>0? 'u' : 'd') : 'u';
+        const last=lastBridgeRod[rowKey];
+        if(last && segSegD(r.a,r.b,last.a,last.b) < CLEAR_NEAR+0.3) continue;
+        lastBridgeRod[rowKey]=r;
         out.rods.push(r);
       }
     }
@@ -4008,16 +4103,39 @@ function mergeTry(ribbons, box, closeRing, kTan){
   const before=0;
   let bad=0;
   const isNew=(st)=>newSt.has(st);
+  // В КОЛЬЦЕ конфликтный стержень моста ВЫБЫВАЕТ, а не валит сшивку:
+  // на развороте стыка мостовая гребёнка неизбежно теснит концы — по
+  // производственной физике гребёнка на повороте разрежается. Кап: мост
+  // не может потерять больше 60% стержней (иначе он голый — отказ)
+  const toDrop=new Set();
+  let newCnt=0;
   for(const r of out.rods){
     if(!isNew(r.st)) continue;
+    newCnt++;
+    let hit=false;
     for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
-      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ bad++; break; }
-    for(const q of out.rods){
-      if(q===r) continue;
+      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ hit=true; break; }
+    if(!hit) for(const q of out.rods){
+      if(q===r || toDrop.has(q)) continue;
       if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-      const lim=Math.abs(q.st-r.st)<=NEAR_WIN ? CLEAR_NEAR : CLEAR_FAR;
-      if(segSegD(r.a,r.b,q.a,q.b) < lim){ bad++; break; }
+      const lim=(state.ringBuild || Math.abs(q.st-r.st)<=NEAR_WIN)
+        ? CLEAR_NEAR : CLEAR_FAR;
+      const dq=segSegD(r.a,r.b,q.a,q.b);
+      if(dq < lim){
+        if(window.__mergeBad) window.__mergeBad.push(
+          [r.st, q.st, +dq.toFixed(1), +lim.toFixed(1)]);
+        hit=true;
+        break;
+      }
     }
+    if(hit){
+      if(state.ringBuild) toDrop.add(r);
+      else bad++;
+    }
+  }
+  if(toDrop.size){
+    if(newCnt && toDrop.size>newCnt*0.6) bad+=toDrop.size;
+    else out.rods=out.rods.filter(r=>!toDrop.has(r));
   }
   void twoRow; void closeRing; void IN;
   if(window.__mergeLog) window.__mergeLog.push({kTan, лент:ribbons.length, before, bad});
@@ -4739,24 +4857,78 @@ function seamRepair(ribbons, box){
    Приёмка: стержни моста против всей сцены (самошов замыкания даёт
    ближний лимит у концов) и бокс; при провале — полный откат */
 function ringCloseBridge(ribbons, box){
+  // упрямые замыкания (концы разъехались на сотни мм и смотрят вбок):
+  // прямая дуга режет тело кольца — пробуем ПОДРЕЗКИ хвоста (стык уходит
+  // от тесного места) и разные натяжения касательных
+  for(const trim of [0, 10, 22, 36]){
+    for(const kT of [1, 0.55, 0.25]){
+      if(ringCloseTry(ribbons, box, trim, kT)) return 1;
+    }
+  }
+  if(window.__seamLog) window.__seamLog.push({мост:1, исход:'все варианты откачены'});
+  return 0;
+}
+function ringCloseTry(ribbons, box, trim, kTan){
   const rb=ribbons && ribbons[0];
   if(!rb || ribbons.length!==1) return 0;
-  const n=rb.centers.length, step=rb.stepEff||ROD_STEP;
-  if(n<20) return 0;
+  let n=rb.centers.length;
+  const step=rb.stepEff||ROD_STEP;
+  if(n<20+trim) return 0;
+  // подрезка хвоста: соскоблить trim станций (бэкап для отката)
+  let trimBak=null;
+  if(trim>0){
+    const n2=n-trim;
+    trimBak={
+      c:rb.centers.splice(n2), a:rb.railA.splice(n2), b:rb.railB.splice(n2),
+      g:rb.guideC? rb.guideC.splice(Math.min(n2, rb.guideC.length)) : null,
+      du:rb.dirUp? rb.dirUp.splice(n2) : null,
+      dd:rb.dirDn? rb.dirDn.splice(n2) : null,
+      d1:rb.dirs? rb.dirs.splice(n2) : null,
+      rods:rb.rods.filter(r=>r.st>=n2)};
+    rb.rods=rb.rods.filter(r=>r.st<n2);
+    trimBak.joins=(rb.joinAt||[]).filter(j=>j>=n2);
+    if(rb.joinAt) rb.joinAt=rb.joinAt.filter(j=>j<n2);
+    rb.ribbonLen=rb.centers.length*step;
+    n=n2;
+  }
+  const restoreTrim=()=>{
+    if(!trimBak) return;
+    rb.centers.push(...trimBak.c); rb.railA.push(...trimBak.a); rb.railB.push(...trimBak.b);
+    if(trimBak.g && rb.guideC) rb.guideC.push(...trimBak.g);
+    if(trimBak.du) rb.dirUp.push(...trimBak.du);
+    if(trimBak.dd) rb.dirDn.push(...trimBak.dd);
+    if(trimBak.d1) rb.dirs.push(...trimBak.d1);
+    rb.rods.push(...trimBak.rods);
+    if(trimBak.joins && trimBak.joins.length)
+      rb.joinAt=(rb.joinAt||[]).concat(trimBak.joins);
+    rb.ribbonLen=rb.centers.length*step;
+  };
   const T=rb.centers[n-1], H=rb.centers[0];
   const gap=Math.hypot(T[0]-H[0], T[1]-H[1], T[2]-H[2]);
-  if(gap<=step*1.5) return 0;
-  const ins=Math.max(1, Math.min(80, Math.round(gap/step)-1));
+  if(gap<=step*1.5){ restoreTrim(); return 0; }
+  const cylG=(p)=>[Math.atan2(p[2]-(box.d/2), p[0]-(box.w/2)),
+                   Math.hypot(p[0]-(box.w/2), p[2]-(box.d/2)), p[1]];
+  const g0=cylG(T), g1=cylG(H);
+  let dthG=g1[0]-g0[0];
+  while(dthG>Math.PI) dthG-=2*Math.PI;
+  while(dthG<-Math.PI) dthG+=2*Math.PI;
+  const arcLen=Math.max(gap,
+    Math.hypot(dthG*(g0[1]+g1[1])/2, g1[2]-g0[2], g1[1]-g0[1]));
+  const ins=Math.max(1, Math.min(160, Math.round(arcLen/step)-1));
   const IN=WIRE_D/2+ROD_AIR, half=rb.halfW||150, two=!!rb.dirUp;
   const lim3=[box.w, box.h, box.d];
-  const T2=rb.centers[Math.max(0, n-4)], H2=rb.centers[Math.min(n-1, 3)];
-  const herm=(P0,P1,M0,M1,u)=>{
-    const h00=2*u*u*u-3*u*u+1, h10=u*u*u-2*u*u+u;
-    const h01=-2*u*u*u+3*u*u,  h11=u*u*u-u*u;
-    return [0,1,2].map(x=>h00*P0[x]+h10*M0[x]+h01*P1[x]+h11*M1[x]);
+  const RCx=box.w/2, RCz=box.d/2;
+  const cylC=(p)=>[Math.atan2(p[2]-RCz, p[0]-RCx),
+                   Math.hypot(p[0]-RCx, p[2]-RCz), p[1]];
+  const c0=cylC(T), c1=cylC(H);
+  let dth=c1[0]-c0[0];
+  while(dth>Math.PI) dth-=2*Math.PI;
+  while(dth<-Math.PI) dth+=2*Math.PI;
+  const arcAt=(u)=>{
+    const th=c0[0]+dth*u, rr=c0[1]+(c1[1]-c0[1])*u, y=c0[2]+(c1[2]-c0[2])*u;
+    return [RCx+rr*Math.cos(th), y, RCz+rr*Math.sin(th)];
   };
-  const M0=[0,1,2].map(x=>(T[x]-T2[x])*(ins+1)/3);
-  const M1=[0,1,2].map(x=>(H2[x]-H[x])*(ins+1)/3);
+  void kTan;
   const axAt=(i)=>{
     const v=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
              rb.railA[i][2]-rb.railB[i][2]];
@@ -4800,10 +4972,11 @@ function ringCloseBridge(ribbons, box){
     protos.push(found);
   }
   const addedRods=[];
+  const lastRowRod={u:null, d:null};
   const n0=n;
   for(let k=1;k<=ins;k++){
     const u=k/(ins+1);
-    const C=herm(T, H, M0, M1, u);
+    const C=arcAt(u);
     const e=rotE(u);
     rb.centers.push(C);
     if(rb.guideC) rb.guideC.push(C.slice());
@@ -4820,6 +4993,10 @@ function ringCloseBridge(ribbons, box){
                    b:[C[0]+sg*e[0]*IN, C[1]+sg*e[1]*IN, C[2]+sg*e[2]*IN]}
         : {...pr, st, a:[C[0]+e[0]*(half-IN), C[1]+e[1]*(half-IN), C[2]+e[2]*(half-IN)],
                    b:[C[0]-e[0]*(half-IN), C[1]-e[1]*(half-IN), C[2]-e[2]*(half-IN)]};
+      const rowKey=two? (pr.u2>0? 'u' : 'd') : 'u';
+      const lastR=lastRowRod[rowKey];
+      if(lastR && segSegD(r.a,r.b,lastR.a,lastR.b) < CLEAR_NEAR+0.3) continue;
+      lastRowRod[rowKey]=r;
       rb.rods.push(r); addedRods.push(r);
     }
   }
@@ -4827,18 +5004,22 @@ function ringCloseBridge(ribbons, box){
   rb.joinAt=(rb.joinAt||[]).concat([rb.centers.length-1]);
   // приёмка: стержни моста против всей сцены и бокса
   let bad=0;
+  const toDropC=new Set();
   for(const r of addedRods){
+    let hit=false;
     for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
-      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ bad++; break; }
-    for(const q of rb.rods){
-      if(q===r) continue;
+      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ hit=true; break; }
+    if(!hit) for(const q of rb.rods){
+      if(q===r || toDropC.has(q)) continue;
       if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-      // мосту замыкания достаточно ФИЗИЧЕСКОГО минимума (ближний лимит):
-      // сплошное кольцо важнее полного дальнего зазора в тесном месте —
-      // разрыв 175 мм хуже, чем виток в шаге гребёнки от моста
-      if(segSegD(r.a,r.b,q.a,q.b) < CLEAR_NEAR){ bad++; break; }
+      if(segSegD(r.a,r.b,q.a,q.b) < CLEAR_NEAR){ hit=true; break; }
     }
+    // конфликтный стержень моста выбывает (гребёнка на повороте реже),
+    // отказ — только если мост теряет больше 60% стержней
+    if(hit) toDropC.add(r);
   }
+  if(toDropC.size>addedRods.length*0.6) bad=toDropC.size;
+  else if(toDropC.size) rb.rods=rb.rods.filter(r=>!toDropC.has(r));
   if(bad>0){
     // откат: убрать вставленные станции и стержни
     const cut=(A2)=>{ if(A2) A2.length=n0; };
@@ -4848,10 +5029,11 @@ function ringCloseBridge(ribbons, box){
     rb.rods=rb.rods.filter(r=>!addedRods.includes(r));
     rb.ribbonLen=rb.centers.length*step;
     rb.joinAt=rb.joinAt.filter(j=>j<n0);
-    if(window.__seamLog) window.__seamLog.push({мост:1, ins, bad, исход:'откат'});
+    restoreTrim();
+    if(window.__seamLog) window.__seamLog.push({мост:1, trim, kTan, ins, bad, исход:'откат'});
     return 0;
   }
-  if(window.__seamLog) window.__seamLog.push({мост:1, ins, исход:'ок'});
+  if(window.__seamLog) window.__seamLog.push({мост:1, trim, kTan, ins, исход:'ок'});
   return 1;
 }
 
