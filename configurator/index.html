@@ -3122,7 +3122,10 @@ function resolveCollisions(ribbons, box){
     const process=(A,B)=>{
       const sa=A.r.st, sb=B.r.st;
       const near = A.ri===B.ri && Math.abs(sa-sb)<=NEAR_WIN;
-      const limD = near ? CLEAR_NEAR : CLEAR_FAR;
+      // лимит пары — ЕДИНЫМ правилом pairLim (ближний у швов сварки и
+      // замыкания): разводка без правила швов считала шовные пары
+      // «нарушениями» и рубила годные нарезки (6400: 331 ложная пара)
+      const limD = pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r);
       const d = segSegD(A.r.a,A.r.b,B.r.a,B.r.b);
       if(d<minClear) minClear=d;
       if(d>=limD) return;
@@ -6504,9 +6507,17 @@ function buildScene(){
       }
     }
     if(okAll){
-      // стык: отсеки разведены зазором 120 мм, проверка обычно чиста сразу
+      // стык: отсеки разведены зазором, проверка обычно чиста сразу.
+      // Приёмка — НЕЗАВИСИМЫМ объективом pairLim (эталон всех приёмок):
+      // счётчик разводки без правила швов давал ложные сотни нарушений
       const clS=resolveCollisions(rrAll, box);
-      window.__ladder.push(['seam', clS.collisions, clS.self, 0]);
+      let vioS=0;
+      forEachClosePair(rrAll, CLEAR_FAR, (A,B)=>{
+        if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
+           pairLim(rrAll[A.ri], A.r, rrAll[B.ri], B.r)) vioS++;
+      });
+      window.__ladder.push(['seam', clS.collisions, vioS, rrAll.length]);
+      clS.collisions=vioS;
       if(clS.collisions===0){
         clS.attempt=0; clS.lanes=nL;
         bestClean={ribbons:rrAll, clear:clS,
