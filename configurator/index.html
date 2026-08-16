@@ -3981,17 +3981,31 @@ function mergeTry(ribbons, box, closeRing, kTan, trimJ){
       out.centers.push(C);
       if(out.guideC) out.guideC.push(C.slice());
       let A0, B0;
+      // СТЕРЖНИ СТРОГО ПОПЕРЁК ЛЕНТЫ (замечание пользователя: «стержни
+      // валятся под углом»): ось ширины моста ортогонализуется к
+      // локальному ходу — интерполяция концов наследовала их скрутку
+      const eps=1/(ins+1)/2;
+      const Cn=ringArc? ringArc.at(Math.min(1,u+eps)) : herm(tA, hB, M0, M1, Math.min(1,u+eps));
+      const Cp=ringArc? ringArc.at(Math.max(0,u-eps)) : herm(tA, hB, M0, M1, Math.max(0,u-eps));
+      const tv=[Cn[0]-Cp[0], Cn[1]-Cp[1], Cn[2]-Cp[2]];
+      const tL=Math.hypot(tv[0],tv[1],tv[2])||1;
+      const tHat=[tv[0]/tL, tv[1]/tL, tv[2]/tL];
+      const ortho=(v)=>{
+        const dp=v[0]*tHat[0]+v[1]*tHat[1]+v[2]*tHat[2];
+        const w=[v[0]-tHat[0]*dp, v[1]-tHat[1]*dp, v[2]-tHat[2]*dp];
+        const L=Math.hypot(w[0],w[1],w[2]);
+        return L>0.05? [w[0]/L, w[1]/L, w[2]/L] : v;
+      };
       let axU=null, axD=null;
       if(out.dirUp && B.dirUp){
-        const du=rotE? rotE(u) : nlerp(out.dirUp[nA-1], B.dirUp[0], u);
-        const dd=rotE? [-du[0],-du[1],-du[2]]
-                     : nlerp(out.dirDn[nA-1], B.dirDn[0], u);
+        const du=ortho(rotE? rotE(u) : nlerp(out.dirUp[nA-1], B.dirUp[0], u));
+        const dd=[-du[0],-du[1],-du[2]];
         out.dirUp.push(du); out.dirDn.push(dd);
         axU=du; axD=dd;
         A0=[C[0]+du[0]*halfWm, C[1]+du[1]*halfWm, C[2]+du[2]*halfWm];
         B0=[C[0]+dd[0]*halfWm, C[1]+dd[1]*halfWm, C[2]+dd[2]*halfWm];
       } else if(out.dirs && B.dirs){
-        const d=rotE? rotE(u) : nlerp(out.dirs[nA-1], B.dirs[0], u);
+        const d=ortho(rotE? rotE(u) : nlerp(out.dirs[nA-1], B.dirs[0], u));
         out.dirs.push(d);
         axU=d; axD=[-d[0],-d[1],-d[2]];
         A0=[C[0]+d[0]*halfWm, C[1]+d[1]*halfWm, C[2]+d[2]*halfWm];
@@ -4373,6 +4387,21 @@ function refitRods(ribbons){
     }
     for(let i=0;i<n;i++){
       const set=byRow[i]; if(!set) continue;
+      // СТЕРЖНИ СТРОГО ПОПЕРЁК ХОДА (правило пользователя: «стержни должны
+      // быть строго перпендикулярно к каркасу, не должны заваливаться»):
+      // направление посадки ортогонализуется к локальному ходу центров —
+      // раздвижка станций и подтяжки наклоняли стержни (скрин 3400)
+      const iP=Math.max(0,i-1), iN=Math.min(n-1,i+1);
+      const tv=[rb.centers[iN][0]-rb.centers[iP][0],
+                rb.centers[iN][1]-rb.centers[iP][1],
+                rb.centers[iN][2]-rb.centers[iP][2]];
+      const tvL=Math.hypot(tv[0],tv[1],tv[2])||1;
+      const perp=(u)=>{
+        const dp=(u[0]*tv[0]+u[1]*tv[1]+u[2]*tv[2])/tvL;
+        const w=[u[0]-tv[0]/tvL*dp, u[1]-tv[1]/tvL*dp, u[2]-tv[2]/tvL*dp];
+        const L=Math.hypot(w[0],w[1],w[2]);
+        return L>0.05? [w[0]/L, w[1]/L, w[2]/L] : u;
+      };
       if(two){
         // ЦЕНТР ДЕРЖИМ (он несёт форму потока), канты выставляем ровно на
         // полширины по СВОИМ направлениям — складка ленты сохраняется
@@ -4383,7 +4412,7 @@ function refitRods(ribbons){
           const d=[P[0]-Cc[0], P[1]-Cc[1], P[2]-Cc[2]];
           const L=Math.hypot(d[0],d[1],d[2]);
           if(L<1) continue;
-          const u=[d[0]/L, d[1]/L, d[2]/L];
+          const u=perp([d[0]/L, d[1]/L, d[2]/L]);
           if(Math.abs(L-half)>0.5) fixed++;
           for(let x=0;x<3;x++){
             P[x]=Cc[x]+u[x]*half;       // кант на полширины от центра
@@ -4398,7 +4427,7 @@ function refitRods(ribbons){
         const d=[Q[0]-P[0], Q[1]-P[1], Q[2]-P[2]];
         const L=Math.hypot(d[0],d[1],d[2]);
         if(L<1) continue;
-        const u=[d[0]/L, d[1]/L, d[2]/L];
+        const u=perp([d[0]/L, d[1]/L, d[2]/L]);
         if(Math.abs(L-2*half)>0.5) fixed++;
         for(let x=0;x<3;x++){
           const m=(P[x]+Q[x])/2;
@@ -4641,6 +4670,17 @@ function seamRepair(ribbons, box){
         };
         for(const ld of B.lds) mvLed(rb.leds[ld.j], ld.p);
       };
+      const orthoT=(v,i)=>{
+        const iP=Math.max(0,i-1), iN=Math.min(n-1,i+1);
+        const t=[rb.centers[iN][0]-rb.centers[iP][0],
+                 rb.centers[iN][1]-rb.centers[iP][1],
+                 rb.centers[iN][2]-rb.centers[iP][2]];
+        const tL=Math.hypot(t[0],t[1],t[2])||1;
+        const dp=(v[0]*t[0]+v[1]*t[1]+v[2]*t[2])/tL;
+        const w=[v[0]-t[0]/tL*dp, v[1]-t[1]/tL*dp, v[2]-t[2]/tL*dp];
+        const L=Math.hypot(w[0],w[1],w[2]);
+        return L>0.05? [w[0]/L, w[1]/L, w[2]/L] : v;
+      };
       const apply=(sc)=>{
         for(let k=0;k<e.length;k++){
           const i=i0+k, Cc=rb.centers[i];
@@ -4651,7 +4691,9 @@ function seamRepair(ribbons, box){
           const scK=sc*rmp;
           const eT=e[k], eN=[-eT[0],-eT[1],-eT[2]];
           if(two){
-            const uU=nl3(cur[k].up, eT, scK), uD=nl3(cur[k].dn, eN, scK);
+            const uU=orthoT(nl3(cur[k].up, eT, scK), i);
+            const uD=[-uU[0],-uU[1],-uU[2]];
+            void eN;
             for(let x=0;x<3;x++){
               rb.railA[i][x]=Cc[x]+uU[x]*half;
               rb.railB[i][x]=Cc[x]+uD[x]*half;
@@ -4666,7 +4708,7 @@ function seamRepair(ribbons, box){
               }
             }
           } else {
-            const u=nl3(cur[k].ax, eT, scK);
+            const u=orthoT(nl3(cur[k].ax, eT, scK), i);
             for(let x=0;x<3;x++){
               rb.railA[i][x]=Cc[x]+u[x]*half;
               rb.railB[i][x]=Cc[x]-u[x]*half;
@@ -4782,7 +4824,18 @@ function seamRepair(ribbons, box){
           const d=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
                    rb.railA[i][2]-rb.railB[i][2]];
           const L=Math.hypot(d[0],d[1],d[2])||1;
-          const u=[d[0]/L, d[1]/L, d[2]/L];
+          let u=[d[0]/L, d[1]/L, d[2]/L];
+          {
+            const iP=Math.max(0,i-1), iN=Math.min(n-1,i+1);
+            const t=[rb.centers[iN][0]-rb.centers[iP][0],
+                     rb.centers[iN][1]-rb.centers[iP][1],
+                     rb.centers[iN][2]-rb.centers[iP][2]];
+            const tL=Math.hypot(t[0],t[1],t[2])||1;
+            const dp=(u[0]*t[0]+u[1]*t[1]+u[2]*t[2])/tL;
+            const w=[u[0]-t[0]/tL*dp, u[1]-t[1]/tL*dp, u[2]-t[2]/tL*dp];
+            const Lw=Math.hypot(w[0],w[1],w[2]);
+            if(Lw>0.05) u=[w[0]/Lw, w[1]/Lw, w[2]/Lw];
+          }
           // рампа к краям окна: у границы канты остаются на бэкапе, к
           // середине — ровная перенормировка; без этого на границе окна
           // оставалась ступенька («неровности каркаса» на скрине)
@@ -4996,7 +5049,17 @@ function ringCloseTry(ribbons, box, trim, kTan){
   for(let k=1;k<=ins;k++){
     const u=k/(ins+1);
     const C=arcAt(u);
-    const e=rotE(u);
+    let e=rotE(u);
+    {
+      const eps=1/(ins+1)/2;
+      const Cn=arcAt(Math.min(1,u+eps)), Cp=arcAt(Math.max(0,u-eps));
+      const tv=[Cn[0]-Cp[0], Cn[1]-Cp[1], Cn[2]-Cp[2]];
+      const tL=Math.hypot(tv[0],tv[1],tv[2])||1;
+      const dp=(e[0]*tv[0]+e[1]*tv[1]+e[2]*tv[2])/tL;
+      const w=[e[0]-tv[0]/tL*dp, e[1]-tv[1]/tL*dp, e[2]-tv[2]/tL*dp];
+      const L=Math.hypot(w[0],w[1],w[2]);
+      if(L>0.05) e=[w[0]/L, w[1]/L, w[2]/L];
+    }
     rb.centers.push(C);
     if(rb.guideC) rb.guideC.push(C.slice());
     rb.railA.push([C[0]+e[0]*half, C[1]+e[1]*half, C[2]+e[2]*half]);
@@ -5273,6 +5336,53 @@ function fillCombHoles(ribbons, box){
         has[i]=cand;
         added++;
       }
+    }
+    // ФАЗА 2: стержень МЕЖДУ станциями. Растянутый интервал (все станции
+    // заняты, но зазор между соседними стержнями ряда больше 1.6 шага)
+    // читается чёрной щелью (скрин 3400). Трубки скользят по леске —
+    // добавляем стержень на полпути: середина между соседями, направление
+    // усреднённое, длина строго номинальная. До двух проходов
+    const step=rb.stepEff||11.6;
+    for(let pass=0; pass<2; pass++){
+      let ins=0;
+      for(const sgn of rows){
+        const row=rb.rods
+          .filter(r=>two? (sgn>0? r.u2>0 : r.u2<=0) : true)
+          .sort((q,z)=>q.st-z.st);
+        for(let k=1;k<row.length;k++){
+          const r1=row[k-1], r2=row[k];
+          if(r2.st-r1.st>4) continue;
+          const am=[(r1.a[0]+r2.a[0])/2, (r1.a[1]+r2.a[1])/2, (r1.a[2]+r2.a[2])/2];
+          const bm=[(r1.b[0]+r2.b[0])/2, (r1.b[1]+r2.b[1])/2, (r1.b[2]+r2.b[2])/2];
+          const gap=Math.hypot(
+            (r1.a[0]+r1.b[0])/2-(r2.a[0]+r2.b[0])/2,
+            (r1.a[1]+r1.b[1])/2-(r2.a[1]+r2.b[1])/2,
+            (r1.a[2]+r1.b[2])/2-(r2.a[2]+r2.b[2])/2);
+          if(gap<=step*1.6) continue;
+          // длина — номинальная: середина держится, направление среднее
+          const L0=Math.hypot(r1.a[0]-r1.b[0], r1.a[1]-r1.b[1], r1.a[2]-r1.b[2]);
+          const d=[am[0]-bm[0], am[1]-bm[1], am[2]-bm[2]];
+          const Ld=Math.hypot(d[0],d[1],d[2])||1;
+          const mid=[(am[0]+bm[0])/2, (am[1]+bm[1])/2, (am[2]+bm[2])/2];
+          const a2=[mid[0]+d[0]/Ld*L0/2, mid[1]+d[1]/Ld*L0/2, mid[2]+d[2]/Ld*L0/2];
+          const b2=[mid[0]-d[0]/Ld*L0/2, mid[1]-d[1]/Ld*L0/2, mid[2]-d[2]/Ld*L0/2];
+          const cand={...r1, st:r1.st, a:a2, b:b2};
+          let ok=true;
+          if(lim3) for(const pth of [a2, b2]){
+            for(let x=0;x<3;x++)
+              if(pth[x]<-ROD_R-6 || pth[x]>lim3[x]+ROD_R+6){ ok=false; break; }
+            if(!ok) break;
+          }
+          if(ok) for(const q of rb.rods){
+            if(Math.abs(q.a[0]-a2[0])>420 && Math.abs(q.b[0]-b2[0])>420) continue;
+            if(segSegD(a2,b2,q.a,q.b) < pairLim(rb, cand, rb, q)){ ok=false; break; }
+          }
+          if(!ok) continue;
+          rb.rods.push(cand);
+          ins++; added++;
+        }
+      }
+      if(!ins) break;
     }
     if(added) rb.rods.sort((q,z)=>q.st-z.st);
   }
