@@ -3458,9 +3458,22 @@ function spreadGaps(ribbons, box){
     for(const r of rb.rods)(bySt[r.st]=bySt[r.st]||[]).push(r);
     for(let i=1;i<n;i++){
       const d0=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1],C[i][2]-C[i-1][2]);
-      if(d0<=step*1.7) continue;
-      const W=7;
-      const i0=Math.max(0,i-W), i1=Math.min(n-1,i+W-1);
+      // ПРАВИЛО 5 ММ (пользователь): трубки стоят почти вплотную, местами
+      // могут расходиться максимум на 5 мм между стёклами — межцентровое
+      // расстояние не больше Ø+5. Прежний порог 1.7 шага (19.7 мм)
+      // оставлял растяжки 15-19 мм «нормой» (скрины: тёмные полосы на
+      // 4400/5400 №4194952124)
+      if(d0<=ROD_D+4.5) continue;
+      // ДЛИННАЯ РАСТЯЖКА НЕ ЛЕЧИТСЯ УЗКИМ ОКНОМ: участок из 10+ станций
+      // по 15-18 мм внутри равномерен, и перекладка окна ±7 ничего не
+      // меняет — окно захватывает участок целиком и по 16 плотных
+      // станций с обеих сторон, лишняя дуга размазывается ниже Ø+5
+      const dAt=(k)=>Math.hypot(C[k][0]-C[k-1][0],
+        C[k][1]-C[k-1][1], C[k][2]-C[k-1][2]);
+      let rL=i, rR=i;
+      while(rL>1 && dAt(rL-1)>ROD_D+3.2) rL--;
+      while(rR<n-1 && dAt(rR+1)>ROD_D+3.2) rR++;
+      const i0=Math.max(0,rL-16), i1=Math.min(n-1,rR+16);
       if(i1-i0<4) continue;
       const bakC=[], bakA=[], bakB=[], bakR=[], bakCab=[];
       for(let k=i0;k<=i1;k++){
@@ -3526,12 +3539,21 @@ function spreadGaps(ribbons, box){
             moved.push(r);
           }
           if(rb.cabs) for(const c of rb.cabs) if(c.st===k){
-            c.to[0]+=dv[0]; c.to[1]+=dv[1]; c.to[2]+=dv[2];
+            // якорь троса может БЫТЬ точкой канта (пушится ссылкой) —
+            // тогда он уже сдвинут с кантом, второй сдвиг отрывал его
+            if(c.to!==(rb.railA&&rb.railA[k]) && c.to!==(rb.railB&&rb.railB[k])){
+              c.to[0]+=dv[0]; c.to[1]+=dv[1]; c.to[2]+=dv[2];
+            }
             c.from[0]+=dv[0]; c.from[2]+=dv[2];   // потолочная точка — над якорем
           }
         }
-        const d1=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1],C[i][2]-C[i-1][2]);
-        let ok=d1<=d0-3;   // осмысленное улучшение (полный масштаб: <=1.1 шага)
+        // критерий — МАКСИМАЛЬНЫЙ интервал окна, а не центральная пара:
+        // равномерная перераскладка растяжки снижает максимум с 18 к ~14,
+        // а центральная пара падает лишь на ~2.9 мм — прежний порог
+        // «−3 мм» откатывал честную починку, не дотянув 0.1 мм
+        let wm1=0;
+        for(let k=i0+1;k<=i1;k++) wm1=Math.max(wm1, dAt(k));
+        let ok=wm1<=Math.max(ROD_D+4.6, d0-1.5);
         if(ok){
           chk:
           for(const r of moved){
@@ -3539,6 +3561,9 @@ function spreadGaps(ribbons, box){
               if(p2[x]<-ROD_R-6 || p2[x]>lim3[x]+ROD_R+6){ ok=false; break chk; }
             for(const rb2 of ribbons) for(const q of rb2.rods){
               if(q===r) continue;
+              // соседи по каркасу (SKIP_NEAR) не проверяются — как в
+              // штатном скане: гребёнка стоит трубка к трубке
+              if(rb2===rb && Math.abs(q.st-r.st)<=SKIP_NEAR) continue;
               if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
               const near=(rb2===rb) && Math.abs(q.st-r.st)<=NEAR_WIN;
               if(closestSegSeg(r.a,r.b,q.a,q.b)[0] <
@@ -3851,16 +3876,13 @@ function buildScene(){
   // вертикальная композиция «микс» — всегда один отрезок
   const dimWv=+ui.dimW.value||2400, dimDv=+ui.dimD.value||900,
         dimHv=+ui.dimH.value||800;
+  // ОДИН ДЛИННЫЙ ОТРЕЗОК ВСЕГДА (правило пользователя: «не надо делать
+  // три отрезка, нужно заполнять форму одним длинным отрезком»).
+  // Нарезка «Волн» на пряди по ширине и слои по глубине отключена —
+  // форму заполняет один марш; у «на ребро» несколько лент остаются
+  // частью замысла (кольца гироскопа, жилы винта)
   let lanes=1, sliceAxis=0;
-  if(ui.plast.value!=="edge"){
-    if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
-      lanes=Math.max(2, Math.min(4, Math.round(dimWv/2200)));
-      sliceAxis=0;
-    } else if(dimDv>=1000 && dimHv<Math.max(dimWv,dimDv)){
-      lanes=Math.max(2, Math.min(3, Math.round(dimDv/580)));
-      sliceAxis=2;
-    }
-  }
+  void dimWv; void dimDv; void dimHv;
   // ЗАКРЕПЛЁННАЯ КОМПОЗИЦИЯ ПО УМОЛЧАНИЮ: своё зерно на каждую рядность
   // «микса» и своё — на каждую форму «на ребро» (ключ «edge_<форма>»).
   // Закрепление действует, пока не нажата кнопка генерации: после неё идут
@@ -5738,10 +5760,6 @@ function updateSpec(){
   document.getElementById("spec").innerHTML = `
     <table>
       <tr class="hl"><td>Длина ленты</td><td>${m.toFixed(2)} пог. м</td></tr>
-      <tr><td>Лент в композиции</td><td>${scene.ribbons.length} шт${
-        scene.ribbons.length<scene.params.lanes ? " (запрошено "+scene.params.lanes+"; больше не помещается в габарит)" : ""}</td></tr>
-      ${scene.ribbons.length>1?`<tr><td>Отрезки ленты</td><td>${
-        scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(1)).join(" + ")} м</td></tr>`:""}
       <tr><td>${(ui.gradOn.checked ? (state.opaque1&&state.opaque2)
                   : state.opaque1)?"Непрозрачные стержни":"Стеклянные трубки"} Ø${ROD_D}</td><td>${rods} шт</td></tr>
       ${(()=>{
@@ -6434,11 +6452,6 @@ document.getElementById("saveCsv").onclick = ()=>{
               [`Трубки цвета 2 — средний (${gm.name})`, `${cnt[1]} шт`],
               [`Трубки цвета 3 (${g2.name})`, `${cnt[2]} шт`]];
     })() : []),
-    ["Лент в композиции, шт", scene.ribbons.length],
-    ...(scene.ribbons.length>1
-      ? [["Отрезки ленты, пог. м",
-          scene.ribbons.map(rb=>(rb.ribbonLen/1000).toFixed(2)).join(" + ")]]
-      : []),
     ["Рядность", scene.params.rows===2?"2 ряда":"1 ряд"],
     ["Длина ленты, пог. м", (s.totalLen/1000).toFixed(2)],
     
