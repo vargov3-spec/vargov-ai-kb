@@ -208,10 +208,6 @@
   <div id="panel">
     <fieldset>
       <legend>Габариты композиции, мм</legend>
-      <div class="row" id="ringRow"><label for="ringD" title="Диаметр кольца по средней линии ленты">Диаметр кольца</label>
-        <input id="ringD" type="number" min="2000" max="20000" step="50" value="2000"></div>
-      <div class="row" id="ringTRow"><label for="ringT" title="Радиальная толщина кольца — ширина пояса, в котором вьётся лента. Чем толще, тем больше перекатов и свитков (как в «миксе»)">Толщина кольца</label>
-        <input id="ringT" type="number" min="800" max="4000" step="50" value="900"></div>
       <div class="row" id="rowW"><label for="dimW">Ширина (X)</label><input id="dimW" type="number" min="1500" max="20000" step="50" value="2400"></div>
       <div class="row" id="rowD"><label for="dimD">Глубина (Y)</label><input id="dimD" type="number" min="600" max="20000" step="50" value="900"></div>
       <div class="row"><label for="dimH" id="labH">Высота (Z)</label><input id="dimH" type="number" min="600" max="20000" step="50" value="800"></div>
@@ -237,7 +233,6 @@
       <div class="tiles" id="plastTiles"></div>
       <select id="plast" style="display:none">
         <option value="mix" selected>Микс</option>
-        <option value="ring">Кольцо</option>
         <option value="edge">На ребро</option>
       </select>
       <div class="tiles form" id="formTiles"></div>
@@ -3622,76 +3617,6 @@ function centerSag(ribbons){
   return 0;
 }
 
-/* ОБОРАЧИВАНИЕ ЛЕНТЫ В КОЛЬЦО. Прямая заготовка длиной πD оборачивается
-   вокруг вертикальной оси: x → угол по фактическому спану заготовки
-   (плюс один шаг станций, чтобы конец не налезал на начало — стык
-   замыкается тем же примыканием, что и между отрезками), z → радиус.
-   Провисы вертикальны (y не трогаем), стержни остаются хордами — при
-   шаге станций ~12 мм на радиусе 1000+ искажения меньше миллиметра.
-   Возвращает число нарушений зазоров после оборачивания (внутренняя
-   сторона кольца сжимает гребёнку — сжатие ограничено глубиной D/5) */
-function wrapRing(D){
-  if(!scene || !scene.ribbons.length) return 0;
-  const rr=scene.ribbons;
-  let x0=1e9, x1=-1e9;
-  for(const rb of rr) for(const p of rb.centers){
-    x0=Math.min(x0, p[0]); x1=Math.max(x1, p[0]); }
-  const stepM=rr[0].stepEff||11.6;
-  const dEff=scene.box.d||Math.round(D/5), R=D/2;
-  const zMid=dEff/2;
-  const C=R+dEff/2+60;
-  // Сворачивание равномерное: угол пропорционален длине заготовки. Шаг
-  // гребёнки при этом меняется по радиусу (внутри пояса гуще, снаружи
-  // реже) — это физический веер стержней, стоящих поперёк кольца. Чтобы
-  // внутри трубки не смыкались, заготовка строится с УВЕЛИЧЕННЫМ шагом
-  // (RING_PITCH_K, см. setRodD): после сворачивания у внутреннего края
-  // пояса он приходит к норме
-  const W=Math.max(1, x1-x0)+stepM;
-  const thOf=(x)=>(x-x0)/W*Math.PI*2;
-  // одна точка может числиться в нескольких списках (guideC делит объекты
-  // с centers, якоря тросов — с верхами станций) — оборачиваем каждую
-  // ровно один раз
-  const seen=new Set();
-  const tf=(p)=>{
-    if(seen.has(p)) return;
-    seen.add(p);
-    const th=thOf(p[0]);
-    const rad=R+(p[2]-zMid);
-    p[0]=C+rad*Math.sin(th);
-    p[2]=C-rad*Math.cos(th);
-  };
-  for(const rb of rr){
-    for(const arr of [rb.centers, rb.railA, rb.railB, rb.guideC])
-      if(arr) for(const p of arr) tf(p);
-    for(const r of rb.rods){ tf(r.a); tf(r.b); }
-    if(rb.leds) for(const p of rb.leds) tf(p);
-    if(rb.cabs) for(const c of rb.cabs){ tf(c.to); tf(c.from); }
-    rb.__gradMask=null;
-  }
-  let vio=0;
-  forEachClosePair(rr, CLEAR_FAR, (A,B)=>{
-    if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
-       pairLim(rr[A.ri], A.r, rr[B.ri], B.r)) vio++;
-  });
-  const S=Math.round(2*C);
-  scene.box={w:S, h:scene.box.h, d:S};
-  // сворачивание искажает длины трубок (радиальное сжатие): сводим концы
-  // отрезков (включая замыкание круга) и сажаем стержни обратно на каркас
-  refitRods(rr);
-  joinPull(rr, scene.box, false);
-  const merged=mergeRibbons(rr, scene.box, false);
-  if(merged!==rr){ scene.ribbons=merged; }
-  scene.ring=D; scene.ringT=dEff;
-  camera.fitTo(scene.box);
-  // круг с ребра не читается: при ПЕРЕХОДЕ на кольцо камера поднимается
-  // над композицией. Дальше ракурс пользовательский — при смене диаметра
-  // его уже не трогаем
-  if(!state.lastRing) camera.pitch=-0.5;
-  state.lastRing=D;
-  needRedraw=true;
-  return vio;
-}
-
 /* РАЗДВИЖКА ГРЕБЁНКИ. У швов сварки слоёв станции местами разрежены
    вдвое-втрое против шага (замер 4400/6000: щели 23-35 мм при шаге 11.6)
    — в гребёнке стержней читается пропуск. Стержни крепятся к контурам
@@ -5382,361 +5307,6 @@ function seamRepair(ribbons, box){
   return fixedAll;
 }
 
-/* ПОЛУОБОРОТ В ЗАМЫКАНИИ КОЛЬЦА («лист Мёбиуса»). Если суммарное кручение
-   ленты по кругу нечётное, в точке замыкания ось ширины перевёрнута: канты
-   меняются местами «X»-ом на одной станции (замер №4235507941: ширина 191,
-   ось −0.43). Правка: поворот на ~180° раскладывается по дуге из 60 станций
-   от замыкания — ось каждой станции доворачивается вокруг касательной на
-   плавно убывающий угол (≤5°/станцию). Пробуются оба направления вращения.
-   Приёмка: зазоры с шовным правилом и бокс не хуже — иначе откат */
-/* МОСТ ЗАМЫКАНИЯ КОЛЬЦА. Силовая стяжка концов на большом зазоре (150 мм)
-   гнула канты шпильками и отвергалась приёмкой — кольцо оставалось со
-   щелью. Замыкание достраивается МОСТОМ: недостающие станции идут дугой
-   Эрмита от хвоста к голове с полной шириной ленты (ось — равномерный
-   поворот от оси хвоста к оси головы), стержни — по прототипам рядов.
-   Приёмка: стержни моста против всей сцены (самошов замыкания даёт
-   ближний лимит у концов) и бокс; при провале — полный откат */
-function ringCloseBridge(ribbons, box){
-  // упрямые замыкания (концы разъехались на сотни мм и смотрят вбок):
-  // прямая дуга режет тело кольца — пробуем ПОДРЕЗКИ хвоста (стык уходит
-  // от тесного места) и разные натяжения касательных
-  for(const trim of [0, 10, 22, 36]){
-    for(const kT of [1, 0.55, 0.25]){
-      if(ringCloseTry(ribbons, box, trim, kT)) return 1;
-    }
-  }
-  if(window.__seamLog) window.__seamLog.push({мост:1, исход:'все варианты откачены'});
-  return 0;
-}
-function ringCloseTry(ribbons, box, trim, kTan){
-  const rb=ribbons && ribbons[0];
-  if(!rb || ribbons.length!==1) return 0;
-  let n=rb.centers.length;
-  const step=rb.stepEff||ROD_STEP;
-  if(n<20+trim) return 0;
-  // подрезка хвоста: соскоблить trim станций (бэкап для отката)
-  let trimBak=null;
-  if(trim>0){
-    const n2=n-trim;
-    trimBak={
-      c:rb.centers.splice(n2), a:rb.railA.splice(n2), b:rb.railB.splice(n2),
-      g:rb.guideC? rb.guideC.splice(Math.min(n2, rb.guideC.length)) : null,
-      du:rb.dirUp? rb.dirUp.splice(n2) : null,
-      dd:rb.dirDn? rb.dirDn.splice(n2) : null,
-      d1:rb.dirs? rb.dirs.splice(n2) : null,
-      rods:rb.rods.filter(r=>r.st>=n2)};
-    rb.rods=rb.rods.filter(r=>r.st<n2);
-    trimBak.joins=(rb.joinAt||[]).filter(j=>j>=n2);
-    if(rb.joinAt) rb.joinAt=rb.joinAt.filter(j=>j<n2);
-    rb.ribbonLen=rb.centers.length*step;
-    n=n2;
-  }
-  const restoreTrim=()=>{
-    if(!trimBak) return;
-    rb.centers.push(...trimBak.c); rb.railA.push(...trimBak.a); rb.railB.push(...trimBak.b);
-    if(trimBak.g && rb.guideC) rb.guideC.push(...trimBak.g);
-    if(trimBak.du) rb.dirUp.push(...trimBak.du);
-    if(trimBak.dd) rb.dirDn.push(...trimBak.dd);
-    if(trimBak.d1) rb.dirs.push(...trimBak.d1);
-    rb.rods.push(...trimBak.rods);
-    if(trimBak.joins && trimBak.joins.length)
-      rb.joinAt=(rb.joinAt||[]).concat(trimBak.joins);
-    rb.ribbonLen=rb.centers.length*step;
-  };
-  const T=rb.centers[n-1], H=rb.centers[0];
-  const gap=Math.hypot(T[0]-H[0], T[1]-H[1], T[2]-H[2]);
-  if(gap<=step*1.5){ restoreTrim(); return 0; }
-  const cylG=(p)=>[Math.atan2(p[2]-(box.d/2), p[0]-(box.w/2)),
-                   Math.hypot(p[0]-(box.w/2), p[2]-(box.d/2)), p[1]];
-  const g0=cylG(T), g1=cylG(H);
-  let dthG=g1[0]-g0[0];
-  while(dthG>Math.PI) dthG-=2*Math.PI;
-  while(dthG<-Math.PI) dthG+=2*Math.PI;
-  const arcLen=Math.max(gap,
-    Math.hypot(dthG*(g0[1]+g1[1])/2, g1[2]-g0[2], g1[1]-g0[1]));
-  const ins=Math.max(1, Math.min(160, Math.round(arcLen/step)-1));
-  const IN=WIRE_D/2+ROD_AIR, half=rb.halfW||150, two=!!rb.dirUp;
-  const lim3=[box.w, box.h, box.d];
-  const RCx=box.w/2, RCz=box.d/2;
-  const cylC=(p)=>[Math.atan2(p[2]-RCz, p[0]-RCx),
-                   Math.hypot(p[0]-RCx, p[2]-RCz), p[1]];
-  const c0=cylC(T), c1=cylC(H);
-  let dth=c1[0]-c0[0];
-  while(dth>Math.PI) dth-=2*Math.PI;
-  while(dth<-Math.PI) dth+=2*Math.PI;
-  const arcAt=(u)=>{
-    const th=c0[0]+dth*u, rr=c0[1]+(c1[1]-c0[1])*u, y=c0[2]+(c1[2]-c0[2])*u;
-    return [RCx+rr*Math.cos(th), y, RCz+rr*Math.sin(th)];
-  };
-  void kTan;
-  const axAt=(i)=>{
-    const v=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
-             rb.railA[i][2]-rb.railB[i][2]];
-    const L=Math.hypot(v[0],v[1],v[2])||1;
-    return [v[0]/L, v[1]/L, v[2]/L];
-  };
-  const eA=axAt(n-1), eB=axAt(0);
-  const d0=Math.max(-1, Math.min(1, eA[0]*eB[0]+eA[1]*eB[1]+eA[2]*eB[2]));
-  const th=Math.acos(d0), sn=Math.sin(th);
-  let b2;
-  if(sn>0.1){
-    b2=[(eB[0]-eA[0]*d0)/sn, (eB[1]-eA[1]*d0)/sn, (eB[2]-eA[2]*d0)/sn];
-  } else {
-    const tg=[H[0]-T[0], H[1]-T[1], H[2]-T[2]];
-    b2=[tg[1]*eA[2]-tg[2]*eA[1], tg[2]*eA[0]-tg[0]*eA[2],
-        tg[0]*eA[1]-tg[1]*eA[0]];
-    const L=Math.hypot(b2[0],b2[1],b2[2])||1;
-    b2=[b2[0]/L, b2[1]/L, b2[2]/L];
-  }
-  const thT=sn>0.1? th : Math.PI;
-  const rotE=(u)=>{
-    const c=Math.cos(thT*u), s2=Math.sin(thT*u);
-    return [eA[0]*c+b2[0]*s2, eA[1]*c+b2[1]*s2, eA[2]*c+b2[2]*s2];
-  };
-  // прототипы стержней рядов (поиск назад, при отсутствии — синтез)
-  const protos=[];
-  const anyN=(rb.rods[rb.rods.length-1]||{}).n||[0,1,0];
-  for(const want of (two? [1, 0] : [1])){
-    let found=null;
-    for(let i=n-1;i>=Math.max(0, n-40);i--){
-      found=rb.rods.find(r2=>r2.st===i && (!two || (want? r2.u2>0 : r2.u2<=0)));
-      if(found) break;
-    }
-    if(!found) found = two
-      ? (want? {st:0, u1:IN, u2:half-IN, len:half-2*IN, nom:half,
-                a:[0,0,0], b:[0,0,0], n:anyN.slice()}
-             : {st:0, u1:-(half-IN), u2:-IN, len:half-2*IN, nom:half,
-                a:[0,0,0], b:[0,0,0], n:anyN.slice()})
-      : {st:0, u1:-(half-IN), u2:half-IN, len:2*(half-IN), nom:2*half,
-         a:[0,0,0], b:[0,0,0], n:anyN.slice()};
-    protos.push(found);
-  }
-  const addedRods=[];
-  const lastRowRod={u:null, d:null};
-  const n0=n;
-  for(let k=1;k<=ins;k++){
-    const u=k/(ins+1);
-    const C=arcAt(u);
-    let e=rotE(u);
-    {
-      const eps=1/(ins+1)/2;
-      const Cn=arcAt(Math.min(1,u+eps)), Cp=arcAt(Math.max(0,u-eps));
-      const tv=[Cn[0]-Cp[0], Cn[1]-Cp[1], Cn[2]-Cp[2]];
-      const tL=Math.hypot(tv[0],tv[1],tv[2])||1;
-      const dp=(e[0]*tv[0]+e[1]*tv[1]+e[2]*tv[2])/tL;
-      const w=[e[0]-tv[0]/tL*dp, e[1]-tv[1]/tL*dp, e[2]-tv[2]/tL*dp];
-      const L=Math.hypot(w[0],w[1],w[2]);
-      if(L>0.05) e=[w[0]/L, w[1]/L, w[2]/L];
-    }
-    rb.centers.push(C);
-    if(rb.guideC) rb.guideC.push(C.slice());
-    rb.railA.push([C[0]+e[0]*half, C[1]+e[1]*half, C[2]+e[2]*half]);
-    rb.railB.push([C[0]-e[0]*half, C[1]-e[1]*half, C[2]-e[2]*half]);
-    if(two && rb.dirUp){ rb.dirUp.push([e[0],e[1],e[2]]);
-                         rb.dirDn.push([-e[0],-e[1],-e[2]]); }
-    if(!two && rb.dirs) rb.dirs.push([e[0],e[1],e[2]]);
-    const st=rb.centers.length-1;
-    for(const pr of protos){
-      const sg=two? (pr.u2>0? 1 : -1) : 0;
-      const r=two
-        ? {...pr, st, a:[C[0]+sg*e[0]*(half-IN), C[1]+sg*e[1]*(half-IN), C[2]+sg*e[2]*(half-IN)],
-                   b:[C[0]+sg*e[0]*IN, C[1]+sg*e[1]*IN, C[2]+sg*e[2]*IN]}
-        : {...pr, st, a:[C[0]+e[0]*(half-IN), C[1]+e[1]*(half-IN), C[2]+e[2]*(half-IN)],
-                   b:[C[0]-e[0]*(half-IN), C[1]-e[1]*(half-IN), C[2]-e[2]*(half-IN)]};
-      const rowKey=two? (pr.u2>0? 'u' : 'd') : 'u';
-      const lastR=lastRowRod[rowKey];
-      if(lastR && segSegD(r.a,r.b,lastR.a,lastR.b) < CLEAR_NEAR+0.3) continue;
-      lastRowRod[rowKey]=r;
-      rb.rods.push(r); addedRods.push(r);
-    }
-  }
-  rb.ribbonLen=rb.centers.length*step;
-  rb.joinAt=(rb.joinAt||[]).concat([rb.centers.length-1]);
-  // диоды на мосту замыкания — штатным шагом гирлянды
-  if(rb.leds && rb.ledSt && ins>0){
-    const iv=[];
-    for(let q2=1;q2<rb.ledSt.length;q2++){
-      const dv=rb.ledSt[q2]-rb.ledSt[q2-1];
-      if(dv>0) iv.push(dv);
-    }
-    iv.sort((q,z)=>q-z);
-    const stepLed=iv.length? Math.max(6, iv[iv.length>>1]) : 34;
-    for(let st2=n0+Math.ceil(stepLed/2); st2<rb.centers.length; st2+=stepLed){
-      rb.leds.push(rb.centers[st2].slice());
-      rb.ledSt.push(st2);
-    }
-  }
-  // приёмка: стержни моста против всей сцены и бокса
-  let bad=0;
-  const toDropC=new Set();
-  for(const r of addedRods){
-    let hit=false;
-    for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
-      if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ hit=true; break; }
-    if(!hit) for(const q of rb.rods){
-      if(q===r || toDropC.has(q)) continue;
-      if(Math.abs(q.a[0]-r.a[0])>420 && Math.abs(q.b[0]-r.b[0])>420) continue;
-      if(segSegD(r.a,r.b,q.a,q.b) < CLEAR_NEAR){ hit=true; break; }
-    }
-    // конфликтный стержень моста выбывает (гребёнка на повороте реже),
-    // отказ — только если мост теряет больше 60% стержней
-    if(hit) toDropC.add(r);
-  }
-  if(toDropC.size>addedRods.length*0.6) bad=toDropC.size;
-  else if(toDropC.size) rb.rods=rb.rods.filter(r=>!toDropC.has(r));
-  if(bad>0){
-    // откат: убрать вставленные станции и стержни
-    const cut=(A2)=>{ if(A2) A2.length=n0; };
-    cut(rb.centers); cut(rb.railA); cut(rb.railB); cut(rb.guideC);
-    if(rb.dirUp){ cut(rb.dirUp); cut(rb.dirDn); }
-    if(rb.dirs) cut(rb.dirs);
-    rb.rods=rb.rods.filter(r=>!addedRods.includes(r));
-    rb.ribbonLen=rb.centers.length*step;
-    rb.joinAt=rb.joinAt.filter(j=>j<n0);
-    restoreTrim();
-    if(window.__seamLog) window.__seamLog.push({мост:1, trim, kTan, ins, bad, исход:'откат'});
-    return 0;
-  }
-  if(window.__seamLog) window.__seamLog.push({мост:1, trim, kTan, ins, исход:'ок'});
-  return 1;
-}
-
-function ringUntwist(ribbons, box){
-  const rb=ribbons && ribbons[0];
-  if(!rb || ribbons.length!==1) return 0;
-  const n=rb.centers.length;
-  if(n<140) return 0;
-  const IN=WIRE_D/2+ROD_AIR, half=rb.halfW||150, two=!!rb.dirUp;
-  const lim3=box? [box.w, box.h, box.d] : null;
-  const ax=(i)=>{
-    const v=[rb.railA[i][0]-rb.railB[i][0], rb.railA[i][1]-rb.railB[i][1],
-             rb.railA[i][2]-rb.railB[i][2]];
-    const L=Math.hypot(v[0],v[1],v[2])||1;
-    return [v[0]/L, v[1]/L, v[2]/L];
-  };
-  const e0=ax(0), eN=ax(n-1);
-  const dNC=e0[0]*eN[0]+e0[1]*eN[1]+e0[2]*eN[2];
-  if(dNC>=-0.2) return 0;                 // переворота в замыкании нет
-  const W2=Math.min(60, n>>2);
-  const bySt={};
-  for(const r of rb.rods){
-    const st=Math.max(0, Math.min(n-1, r.st));
-    (bySt[st]=bySt[st]||[]).push(r);
-  }
-  const viol=()=>{
-    let v=0;
-    forEachClosePair(ribbons, CLEAR_FAR, (A,B)=>{
-      if(segSegD(A.r.a,A.r.b,B.r.a,B.r.b) <
-         pairLim(ribbons[A.ri], A.r, ribbons[B.ri], B.r)) v++;
-    });
-    if(lim3) for(const r of rb.rods)
-      for(const p of [r.a, r.b]) for(let x=0;x<3;x++)
-        if(p[x]<-ROD_R-6 || p[x]>lim3[x]+ROD_R+6){ v++; break; }
-    return v;
-  };
-  const before=viol();
-  const bak=[];
-  for(let i=0;i<=W2;i++)
-    bak.push({
-      a:rb.railA[i].slice(), b:rb.railB[i].slice(),
-      du:two&&rb.dirUp[i]? rb.dirUp[i].slice():null,
-      dd:two&&rb.dirDn[i]? rb.dirDn[i].slice():null,
-      d1:!two&&rb.dirs&&rb.dirs[i]? rb.dirs[i].slice():null,
-      r:(bySt[i]||[]).map(r=>({r, a:r.a.slice(), b:r.b.slice()})),
-      cbs:(rb.cabs||[]).filter(cb=>cb.st===i).map(cb=>({cb, to:cb.to.slice()})),
-      lds:(rb.ledSt||[]).map((st,j)=>st===i? {j, p:rb.leds[j].slice()} : null)
-          .filter(Boolean)});
-  const undo=()=>{
-    for(let i=0;i<=W2;i++){
-      const B=bak[i];
-      for(let x=0;x<3;x++){ rb.railA[i][x]=B.a[x]; rb.railB[i][x]=B.b[x]; }
-      if(B.du){ rb.dirUp[i]=B.du.slice(); rb.dirDn[i]=B.dd.slice(); }
-      if(B.d1) rb.dirs[i]=B.d1.slice();
-      for(const rr2 of B.r)
-        for(let x=0;x<3;x++){ rr2.r.a[x]=rr2.a[x]; rr2.r.b[x]=rr2.b[x]; }
-      for(const cb2 of B.cbs) for(let x=0;x<3;x++) cb2.cb.to[x]=cb2.to[x];
-      for(const ld of B.lds) for(let x=0;x<3;x++) rb.leds[ld.j][x]=ld.p[x];
-    }
-  };
-  const rot=(v,t,phi)=>{      // Родригес: поворот v вокруг единичной t
-    const c=Math.cos(phi), s2=Math.sin(phi);
-    const cx=t[1]*v[2]-t[2]*v[1], cy=t[2]*v[0]-t[0]*v[2], cz=t[0]*v[1]-t[1]*v[0];
-    const dt=t[0]*v[0]+t[1]*v[1]+t[2]*v[2];
-    return [v[0]*c+cx*s2+t[0]*dt*(1-c),
-            v[1]*c+cy*s2+t[1]*dt*(1-c),
-            v[2]*c+cz*s2+t[2]*dt*(1-c)];
-  };
-  const apply=(sgn)=>{
-    for(let i=0;i<=W2;i++){
-      const B=bak[i], Cc=rb.centers[i];
-      const eOld=[(B.a[0]-B.b[0]), (B.a[1]-B.b[1]), (B.a[2]-B.b[2])];
-      const L0=Math.hypot(eOld[0],eOld[1],eOld[2])||1;
-      const e1=[eOld[0]/L0, eOld[1]/L0, eOld[2]/L0];
-      const iP=Math.max(0,i-1), iN=Math.min(n-1,i+1);
-      const tg=[rb.centers[iN][0]-rb.centers[iP][0],
-                rb.centers[iN][1]-rb.centers[iP][1],
-                rb.centers[iN][2]-rb.centers[iP][2]];
-      const Lt=Math.hypot(tg[0],tg[1],tg[2])||1;
-      const t=[tg[0]/Lt, tg[1]/Lt, tg[2]/Lt];
-      const phi=sgn*Math.PI*(1-i/W2);
-      const u=rot(e1, t, phi);
-      for(let x=0;x<3;x++){
-        rb.railA[i][x]=Cc[x]+u[x]*half;
-        rb.railB[i][x]=Cc[x]-u[x]*half;
-      }
-      if(two){
-        if(rb.dirUp[i]){ rb.dirUp[i]=[u[0],u[1],u[2]];
-                         rb.dirDn[i]=[-u[0],-u[1],-u[2]]; }
-        for(const r of bySt[i]||[]){
-          const sg=r.u2>0? 1 : -1;
-          for(let x=0;x<3;x++){
-            r.a[x]=Cc[x]+sg*u[x]*(half-IN);
-            r.b[x]=Cc[x]+sg*u[x]*IN;
-          }
-        }
-      } else {
-        if(rb.dirs && rb.dirs[i]) rb.dirs[i]=[u[0],u[1],u[2]];
-        for(const r of bySt[i]||[])
-          for(let x=0;x<3;x++){
-            r.a[x]=Cc[x]+u[x]*(half-IN);
-            r.b[x]=Cc[x]-u[x]*(half-IN);
-          }
-      }
-      const mvRail=(pt, src)=>{
-        const dA=(src[0]-B.a[0])**2+(src[1]-B.a[1])**2+(src[2]-B.a[2])**2;
-        const dB=(src[0]-B.b[0])**2+(src[1]-B.b[1])**2+(src[2]-B.b[2])**2;
-        const old=dA<=dB? B.a : B.b;
-        const now=dA<=dB? rb.railA[i] : rb.railB[i];
-        for(let x=0;x<3;x++) pt[x]=src[x]+(now[x]-old[x]);
-      };
-      for(const cb2 of B.cbs) mvRail(cb2.cb.to, cb2.to);
-      const mvLed=(pt, src)=>{
-        const C=rb.centers[i];
-        const cand=[[B.a, rb.railA[i]], [B.b, rb.railB[i]], [C, C]];
-        let bi=0, bd=1e9;
-        for(let q=0;q<3;q++){
-          const o=cand[q][0];
-          const dd2=(src[0]-o[0])**2+(src[1]-o[1])**2+(src[2]-o[2])**2;
-          if(dd2<bd){ bd=dd2; bi=q; }
-        }
-        const [o2, n2]=cand[bi];
-        for(let x=0;x<3;x++) pt[x]=src[x]+(n2[x]-o2[x]);
-      };
-      for(const ld of B.lds) mvLed(rb.leds[ld.j], ld.p);
-    }
-  };
-  for(const sgn of [1, -1]){
-    apply(sgn);
-    if(viol()<=before){
-      if(window.__seamLog) window.__seamLog.push({мёбиус:1, знак:sgn, исход:'ок'});
-      return 1;
-    }
-    undo();
-  }
-  if(window.__seamLog) window.__seamLog.push({мёбиус:1, исход:'откат'});
-  return 0;
-}
-
 /* ДОУПЛОТНЕНИЕ ГРЕБЁНКИ. Мосты сшивки и развороты оставляют пустые
    станции ряда (прореживание на повороте, приёмки) — на ленте читаются
    пропуски трубок (скрин 3400: «лента в зоне соединения очень бедная»).
@@ -6165,7 +5735,16 @@ function spreadGaps(ribbons, box){
       // порог 1.45: щели 1.3-1.6 шага в зоне мостов читались тёмными
       // полосами (скрин 3900 №900296679: 16-37 мм при шаге 12.8), а
       // вставкой они не лечатся — двум трубкам ближе 20 мм тесно
-      if(d0<=step*1.45) continue;
+      // ПРАВИЛО 5 ММ (пользователь): трубки стоят почти вплотную, местами
+      // могут расходиться максимум на 5 мм между стёклами — межцентровое
+      // расстояние не больше Ø+5. Прежний порог 1.45 шага (16.8 мм)
+      // оставлял растяжки 15-16.8 мм «нормой» — теперь раздвижка
+      // разбирает всё, что шире Ø+5 с полумиллиметровым запасом
+      if(d0<=ROD_D+4.5) continue;
+      // ЗАМЕТКА ПО ПРАВИЛУ 5 ММ: длинные растяжки у якорей тросов
+      // (замер 3400 №2308378654: ст. 460-475 по 15-18 мм) создаются
+      // ПОСЛЕ этого прохода — расширение окна здесь не помогает
+      // (проверено), их разберёт отдельный финальный проход
       const W=7;
       const i0=Math.max(0,i-W), i1=Math.min(n-1,i+W-1);
       if(i1-i0<4) continue;
@@ -6594,98 +6173,6 @@ function buildScene(){
   }
   state.buildDepth++;
   try{
-  // КОЛЬЦО — отдельная пластика (плитка «Кольцо»): лента идёт по кругу
-  // произвольного диаметра от 2000 мм. Заготовка строится ПРЯМОЙ лентой
-  // длиной πD со всей штатной механикой — нарезка на отрезки, невидимые
-  // стыки, провисы, раздвижка, ворота качества, — затем оборачивается
-  // вокруг вертикальной оси (wrapRing). Стык начала и конца замыкает круг
-  // тем же примыканием, что и между отрезками. Радиальная глубина кольца —
-  // пятая часть диаметра: глубже внутренняя сторона кольца сжимала бы
-  // гребёнку сильнее допуска зазоров
-  const ringD=(ui.plast.value==="ring")
-    ? Math.max(RING_MIN, +ui.ringD.value||RING_MIN) : 0;
-  if(ringD && !state.ringBuild){
-    state.ringBuild=1;
-    const sw=ui.dimW.value, sd=ui.dimD.value;
-    // ТОЛЩИНА КОЛЬЦА ЗАДАЁТСЯ ПОЛЬЗОВАТЕЛЕМ. Она же — глубина заготовки:
-    // в узком поясе (400 мм при ленте 300) генератор укладывал ленту
-    // тремя полосами и она шла плашмя, без перекатов (замечание «плохо,
-    // нужно как в миксе»). При толщине от 900 пропорции заготовки те же,
-    // что у эталонного микса, — возвращаются свитки и постановка на ребро
-    const ringT=ringTOf(ringD);
-    ui.dimW.value=String(Math.round(Math.PI*ringD));
-    ui.dimD.value=String(ringT);
-    // шаг заготовки: внутренняя сторона пояса сожмётся в (1 - T/D) раз,
-    // и там шаг обязан остаться не меньше «касания» трубок с запасом
-    const baseStep=(+ui.rodD.value===8?8:10)+1.6;
-    const tgtIn=((+ui.rodD.value===8?8:10)+0.1)+0.6;
-    // центры станций не доходят до краёв пояса (у краёв стоят торцы
-    // стержней), фактический радиальный разброс центров — около половины
-    // заявленной толщины: по нему и считается разрежение, иначе гребёнка
-    // выходит вдвое реже нужного и лента встаёт на ребро вместо перекатов
-    RING_PITCH_K=Math.max(1, Math.min(1.45,
-      tgtIn/(baseStep*Math.max(0.5, 1-0.5*ringT/ringD))));
-    try{
-      // оборачивание сжимает зазоры на внутренней стороне кольца — при
-      // нарушениях полного скана вариант пересобирается с другим зерном
-      state.forceLanes=0;
-      // направленный bump шага откатан по замеру: он разреживал гребёнку,
-      // метраж падал вдвое (Ø3000: 24.1 -> 9.7 пог. м), а большие кольца
-      // собирались по 130-150 с. Целостность обеспечивает длинный мост ниже
-      for(let tr=0;;tr++){
-        buildScene();
-        const vio=wrapRing(ringD);
-        // кольцо тоже обязано быть одной сплошной лентой
-        if((vio===0 && scene.ribbons.length===1) || tr>=1) break;
-        state.autoSeed=false;
-        // реролл по орбите, зависящей от корневого зерна (см. ниже)
-        state.seed=(Math.imul(state.seed,1664525)
-          + ((1013904223 ^ Math.imul(state.seedRoot||1,2654435761))|1))>>>0;
-      }
-      // ПОСЛЕДНИЙ РЕЗЕРВ ПРОТИВ РАЗРЫВОВ (скрин пользователя: кольцо из
-      // кусков): если ленты так и не срослись — сшивка с длинным мостом,
-      // мост теперь полноценный кусок ленты с обоими рядами стержней
-      if(scene.ribbons.length>1){
-        try{
-          state.longBridge=1;
-          let m2=mergeRibbons(scene.ribbons, scene.box, true);
-          if(m2!==scene.ribbons){ scene.ribbons=m2; refitRods(scene.ribbons); }
-          // вторая ступень по ЧИСЛУ ЛЕНТ: кольцо с разрывом недопустимо
-          if(scene.ribbons.length>1){
-            state.longBridge=2;
-            m2=mergeRibbons(scene.ribbons, scene.box, true);
-            if(m2!==scene.ribbons){ scene.ribbons=m2; refitRods(scene.ribbons); }
-          }
-        } finally { state.longBridge=0; }
-      }
-    } finally {
-      ui.dimW.value=sw; ui.dimD.value=sd; state.ringBuild=0;
-      RING_PITCH_K=1; setRodD(+ui.rodD.value===8 ? 8 : 10);
-    }
-    // стяжка замыкания ПОСЛЕ слияния в одну ленту: joinPull до слияния
-    // тянул концы кусков, а концы готового кольца оставались с зазором
-    // (замер №4235507941: 175 мм); затем полуоборот замыкания, складки,
-    // раздвижка и посадка
-    // КОНЦЫ КОЛЬЦА СВОБОДНЫ — КАК У СПИРАЛИ (решение пользователя:
-    // «у кольцо оставляй концы как у спираль»). Замыкание не строится:
-    // лента идёт по кругу единым отрезком, концы перекрываются свободно,
-    // как витки спирали — соединений нет вовсе
-    unfoldFlips(scene.ribbons, scene.box);
-    seamRepair(scene.ribbons, scene.box);
-    spreadGaps(scene.ribbons, scene.box);
-    refitRods(scene.ribbons);
-    thinStations(scene.ribbons);
-    evenComb(scene.ribbons, scene.box);
-    refitRods(scene.ribbons);
-    fillCombHoles(scene.ribbons, scene.box);
-    // острые места на каркасе недопустимы НИГДЕ (правило пользователя:
-    // «везде надо плавно и мягко») — сглаживание кантов идёт ПОСЛЕДНИМ:
-    // стяжка, слияние и доуплотнение выше могли оставить новые заломы
-    smoothRails(scene.ribbons, scene.box);
-    snapAccessories(scene.ribbons);
-    updateSpec();
-    return;
-  }
   const box = {
     w:+ui.dimW.value || 2400,
     h:+ui.dimH.value || 800,
@@ -6725,12 +6212,7 @@ function buildScene(){
         dimHv=+ui.dimH.value||800;
   let lanes=1, sliceAxis=0;
   if(ui.plast.value!=="edge"){
-    if(state.ringBuild){
-      // кольцо режется ТОЛЬКО по длине: «глубина» заготовки — это
-      // радиальная толщина кольца, слоями её делить нельзя
-      lanes=state.forceLanes || Math.max(2, Math.min(4, Math.round(dimWv/2200)));
-      sliceAxis=0;
-    } else if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
+    if(dimWv>3000 && dimWv>=dimsSrt[0] && targetEst>6500){
       // порог 5000 откатан: эксперимент дал 10.4 пог. м одной лентой на
       // 4400, но штатный путь с тем же порогом принимал раннюю страховку
       // (4.5-4.7 пог. м) — прежде надо укрепить лестницу одиночного марша
@@ -6770,7 +6252,7 @@ function buildScene(){
   setRodD(+ui.rodD.value===8 ? 8 : 10);   // диаметр трубки → шаг и допуски
   // отладочная метка зерна (только при включённом __ladder)
   if(window.__ladder) window.__ladder.push(
-    ['seed', state.seed, state.subBuild?1:0, state.ringBuild?1:0]);
+    ['seed', state.seed, state.subBuild?1:0]);
   const params = {
     style: "chaos", // единственный стиль: хаотичное заполнение объёма
     box,
@@ -8166,7 +7648,6 @@ function buildScene(){
   }
   // сцена собрана не кольцом — следующий переход на кольцо снова поднимет
   // камеру над кругом
-  if(!state.ringBuild) state.lastRing=0;
   // кэш раскладки градиента мог быть насчитан по старой сцене (нарезка
   // собирает отсеки рекурсивно и подменяет scene) — сбрасываем всегда:
   // замер 4400: у ленты 2 кэш расходился со свежей маской в 650 из 970
@@ -8471,45 +7952,7 @@ function draw(){
   const boxV = state.boxPreview || scene.box;
   // ГАБАРИТ КОЛЬЦА — ОКРУЖНОСТЬ, А НЕ КОРОБКА: у кольцевой композиции
   // задан диаметр, и квадрат вокруг него с подписью стороны только сбивал
-  // бы с толку. Рисуются два пунктирных круга (низ и верх по высоте
-  // композиции) и подписи Ø и высоты. Диаметр берётся прямо из поля —
-  // пунктир меняется сразу при наборе, как и у прямоугольного габарита
-  if(ui.showBox.checked && ui.plast.value==="ring"){
-    const D=Math.max(RING_MIN, +ui.ringD.value||RING_MIN);
-    const T=ringTOf(D);
-    const h=boxV.h, C=boxV.w/2, R=D/2;
-    ctx.strokeStyle = LB ? "rgba(90,90,110,.45)" : "rgba(120,120,140,.35)";
-    ctx.lineWidth=1; ctx.setLineDash([5,6]);
-    // пояс кольца: внешний и внутренний диаметры на низу и верху — видно
-    // и диаметр, и толщину, которую задаёт пользователь
-    for(const rad of [R-T/2, R+T/2]) for(const y of [0, h]){
-      const P=[];
-      for(let i=0;i<=72;i++){
-        const a=i/72*Math.PI*2;
-        P.push([C+rad*Math.sin(a), y, C-rad*Math.cos(a)]);
-      }
-      for(let i=1;i<P.length;i++){
-        if(project(P[i-1],B,p1) && project(P[i],B,p2)){
-          ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
-        }
-      }
-    }
-    // четыре вертикальные образующие по внешнему краю — читается высота
-    for(let k=0;k<4;k++){
-      const a=k/4*Math.PI*2, rad=R+T/2;
-      const q0=[C+rad*Math.sin(a), 0, C-rad*Math.cos(a)];
-      const q1=[C+rad*Math.sin(a), h, C-rad*Math.cos(a)];
-      if(project(q0,B,p1) && project(q1,B,p2)){
-        ctx.beginPath(); ctx.moveTo(p1[0],p1[1]); ctx.lineTo(p2[0],p2[1]); ctx.stroke();
-      }
-    }
-    ctx.setLineDash([]);
-    ctx.fillStyle=LB ? "rgba(90,80,50,.85)" : "rgba(200,190,160,.8)";
-    ctx.font="12px system-ui";
-    if(project([C, 0, C-R-T/2],B,p1)) ctx.fillText(`Ø${D} мм`, p1[0]+6, p1[1]-4);
-    if(project([C+R+T/2, h/2, C],B,p1)) ctx.fillText(`${h} мм`, p1[0]+6, p1[1]-4);
-    if(project([C-R, 0, C],B,p1)) ctx.fillText(`пояс ${T} мм`, p1[0]+6, p1[1]-4);
-  } else if(ui.showBox.checked){
+  if(ui.showBox.checked){
     const {w,h,d} = boxV;
     const cor = [[0,0,0],[w,0,0],[w,0,d],[0,0,d],[0,h,0],[w,h,0],[w,h,d],[0,h,d]];
     const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
@@ -8916,9 +8359,8 @@ function updateSpec(){
   // или закрепить его по умолчанию — по картинке вариант не опознать
   // метраж из строки убран — он уже в мини-стикере слева внизу
   // (замечание пользователя: «дублируется информация»)
-  document.getElementById("dims").textContent = scene.ring
-    ? `кольцо Ø${scene.ring} · пояс ${scene.ringT||""} × ${scene.box.h} мм · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`
-    : `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`;
+  document.getElementById("dims").textContent =
+    `${scene.box.w} × ${scene.box.d} × ${scene.box.h} мм · вариант №${state.seedRoot!==undefined?state.seedRoot:state.seed}`;
   // МИНИ-СТИКЕР В СЦЕНЕ: главные числа всегда на виду, без прокрутки
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
@@ -8966,7 +8408,7 @@ function drawStat(){
    UI, события, экспорт
    ============================================================ */
 const ui = {};
-for(const id of ["dimW","dimD","dimH","dimC","ringD","ringT","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
+for(const id of ["dimW","dimD","dimH","dimC","form","plan","plast","rows","frame","rWidth","rodD","leds","cables","showBox","asm","gradOn","gradC"]){
   ui[id] = document.getElementById(id);
 }
 // цвет по умолчанию — зелёный RAL6001 (утверждённое состояние двухрядной
@@ -9301,23 +8743,6 @@ function prevMix(){ return tilePrev(g=>{
 });}
 // «кольцо» — та же лента с перекатами, но замкнутая в круг: вид сверху
 // в лёгкой перспективе, стержни поперёк по всей окружности
-function prevRing(){ return tilePrev(g=>{
-  const N=96, RX=38, RY=21, out=[], inn=[];
-  for(let i=0;i<=N;i++){
-    const a=i/N*Math.PI*2;
-    // ширина ленты гуляет: два переката по кругу, как в генерации
-    const w=3.5+5.5*Math.abs(Math.cos(a*1.5-0.4));
-    out.push([52+(RX+w)*Math.cos(a), 52+(RY+w*0.55)*Math.sin(a)]);
-    inn.push([52+(RX-w)*Math.cos(a), 52+(RY-w*0.55)*Math.sin(a)]);
-  }
-  g.lineWidth=2.0;
-  g.beginPath(); out.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
-  g.beginPath(); inn.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])); g.stroke();
-  g.lineWidth=1.05;
-  for(let i=0;i<N;i+=3){
-    g.beginPath(); g.moveTo(out[i][0],out[i][1]); g.lineTo(inn[i][0],inn[i][1]); g.stroke();
-  }
-});}
 function prevEdgeCone(){ return tilePrev(g=>{
   g.lineWidth=2.4;
   for(const q of [[44,22],[36,40],[28,58],[19,74],[11,88]]){
@@ -9343,7 +8768,6 @@ function renderPlastTiles(){
     // подписи плиток короткие (решение пользователя): в две строки они
     // разъезжались и мешали читать ряд
     const defs=[["mix","Волны",prevMix],
-                ["ring","Кольцо",prevRing],
                 ["edge","Спираль",prevEdgeCone]];
     for(const df of defs){
       const t=document.createElement("div");
@@ -9369,17 +8793,6 @@ function renderFormTiles(){
   // пластике сверху появляется поле диаметра, а ширина и глубина уходят
   // — они считаются от диаметра; высота остаётся и подписана «Высота
   // кольца»
-  const ring=(ui.plast.value==="ring");
-  for(const id of ["ringRow","ringTRow"]){
-    const el=document.getElementById(id);
-    if(el) el.style.display = ring ? "" : "none";
-  }
-  for(const id of ["rowW","rowD"]){
-    const el=document.getElementById(id);
-    if(el) el.style.display = ring ? "none" : "";
-  }
-  const lh=document.getElementById("labH");
-  if(lh) lh.textContent = ring ? "Высота кольца" : "Высота (Z)";
   if(!edge) return;
   const vis=[...ui.form.options].filter(o=>!o.hidden);
   const key=vis.map(o=>o.value+"|"+o.textContent).join(",");
@@ -9415,11 +8828,6 @@ const EDGE_DEF = {form:"cyl", w:1500, d:1500, h:1000, c:600};
 // ставит её обратно (замечание пользователя: после «на ребро» размеры
 // оставались от спирали)
 const MIX_DEF = {w:2400, d:900, h:800, c:600};
-// кольцо: минимальный диаметр, минимальная толщина и состояние по умолчанию
-const RING_MIN = 2000;
-const RING_T_MIN = 800;   // минимальная толщина пояса (правило пользователя)
-const RING_H_MIN = 800;   // минимальная высота кольца
-const RING_DEF = {ring:2000, ringT:900, h:800, c:600};
 // утверждённые состояния по рядности (скрины пользователя): габариты и
 // длина стержня, зерно — в SEED_PINNED. Применяются при переключении
 // рядности, пока не нажата ручная генерация
@@ -9441,7 +8849,6 @@ const FORM_DEF = {
   c_rings:    {w:4500, d:4500, h:2000, c:600},  // гироскоп
 };
 function setDims(p){
-  if(p.ringT && ui.ringT) ui.ringT.value=String(p.ringT);
   if(p.w) ui.dimW.value=String(p.w);
   if(p.d) ui.dimD.value=String(p.d);
   if(p.h) ui.dimH.value=String(p.h);
@@ -9453,9 +8860,6 @@ function applyPreset(which){
   state.autoSeed=true;
   if(which==="plast"){
     if(ui.plast.value==="edge"){ ui.form.value=EDGE_DEF.form; setDims(EDGE_DEF); }
-    else if(ui.plast.value==="ring"){
-      ui.ringD.value=String(RING_DEF.ring); setDims(RING_DEF);
-    }
     else setDims(MIX_DEF);
     return;
   }
@@ -9531,12 +8935,6 @@ function toast(msg){
 //   «на ребро» — ширина 1000, глубина 1000, высота 600;
 //   «кольцо»   — диаметр от 2000 (любое значение), высота 600
 const MIX_H_MAX=3500;
-// толщина кольца: задана пользователем, но не тоньше RING_T_MIN и не
-// толще 45% диаметра — на большей толщине внутренняя сторона кольца
-// сходится к оси, и веер стержней там смыкается плотнее допуска
-const RING_T_MAX_K = 0.45;
-const ringTOf=(D)=>Math.round(Math.max(RING_T_MIN,
-  Math.min(+ui.ringT.value||RING_DEF.ringT, D*RING_T_MAX_K)));
 const dimMin=(id)=>{
   const edge=ui.plast.value==="edge";
   if(id==="dimW") return edge? 1000 : 1500;
@@ -9545,39 +8943,8 @@ const dimMin=(id)=>{
 };
 // ГАБАРИТ ОДНОЙ СТРОКОЙ ДЛЯ ВЫГРУЗОК: у кольца это диаметр и высота,
 // у остальных — Ш x Г x В
-const dimsLine=()=> (ui.plast.value==="ring")
-  ? `Ø${ui.ringD.value} x толщина ${ui.ringT.value} x ${ui.dimH.value} (кольцо)`
-  : `${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`;
+const dimsLine=()=>`${ui.dimW.value} x ${ui.dimD.value} x ${ui.dimH.value}`;
 const clampDims=()=>{
-  // у кольца ширина и глубина считаются от диаметра — их поля скрыты
-  // (syncForms), проверяются только диаметр и высота
-  if(ui.plast.value==="ring"){
-    if(+ui.ringD.value<RING_MIN){
-      ui.ringD.value=String(RING_MIN);
-      toast("Минимальный диаметр кольца — "+RING_MIN+" мм (правило производства)");
-    }
-    const D=+ui.ringD.value;
-    const tMax=Math.round(D*RING_T_MAX_K);
-    if(+ui.ringT.value<RING_T_MIN){
-      ui.ringT.value=String(RING_T_MIN);
-      toast("Минимальная толщина кольца — "+RING_T_MIN+" мм: в более узком поясе ленте негде вить перекаты");
-    } else if(+ui.ringT.value>tMax){
-      ui.ringT.value=String(tMax);
-      toast("Толщина ограничена "+tMax+" мм — не больше 45% диаметра, иначе гребёнка смыкается у внутреннего края");
-    }
-    ui.ringT.max=String(tMax);
-    ui.dimH.min=String(RING_H_MIN);
-    if(+ui.dimH.value<RING_H_MIN){
-      ui.dimH.value=String(RING_H_MIN);
-      toast("Минимальная высота кольца — "+RING_H_MIN+" мм (правило производства)");
-    }
-    if(+ui.dimH.value>MIX_H_MAX) ui.dimH.value=String(MIX_H_MAX);
-    // верхний предел: атрибут max набору с клавиатуры не мешает, а
-    // километровый габарит замораживает вкладку многоминутной сборкой
-    if(+ui.ringD.value>20000){ ui.ringD.value="20000";
-      toast("Максимальный диаметр — 20000 мм"); }
-    return;
-  }
   ui.dimW.min=String(dimMin("dimW"));
   ui.dimD.min=String(dimMin("dimD"));
   ui.dimH.min=String(dimMin("dimH"));
@@ -9598,31 +8965,21 @@ const clampDims=()=>{
     toast("Высота ограничена "+MIX_H_MAX+" мм — правило производства для лент «микс»");
   }
 };
-for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD","ringD","ringT"])
+for(const id of ["dimW","dimD","dimH","form","plast","rows","rWidth","rodD"])
   ui[id].addEventListener("change", ()=>{
     if(id==="plast" || id==="form" || id==="rows") applyPreset(id);
     clampDims();
-    rebuild(ui.plast.value==="ring"
-      ? "Укладываем ленту по кольцу…" : "Генерация варианта композиции…");
+    rebuild("Генерация варианта композиции…");
   });
 // ЖИВОЙ ГАБАРИТНЫЙ БОКС: пунктир меняет размер сразу при наборе цифр,
 // не дожидаясь пересборки ленты — видно, что ввод принят (пересборка
 // придёт по change, а до неё сцена показывает старую ленту в новом боксе)
-for(const idD of ["dimW","dimD","dimH","dimC","ringD","ringT"])
+for(const idD of ["dimW","dimD","dimH","dimC"])
   ui[idD].addEventListener("input", ()=>{
     if(!scene) return;
-    if(ui.plast.value==="ring"){
-      // у кольца пунктир — квадрат по внешнему диаметру (та же формула,
-      // что в wrapRing: радиус + половина радиальной глубины + запас)
-      const D=Math.max(RING_MIN, +ui.ringD.value||RING_MIN);
-      const S=Math.round(2*(D/2+ringTOf(D)/2+60));
-      state.boxPreview={w:S, d:S,
-                        h:Math.max(RING_H_MIN, +ui.dimH.value||scene.box.h)};
-    } else {
-      state.boxPreview={w:Math.max(dimMin("dimW"), +ui.dimW.value||scene.box.w),
-                        h:Math.max(dimMin("dimH"), +ui.dimH.value||scene.box.h),
-                        d:Math.max(dimMin("dimD"), +ui.dimD.value||scene.box.d)};
-    }
+    state.boxPreview={w:Math.max(dimMin("dimW"), +ui.dimW.value||scene.box.w),
+                      h:Math.max(dimMin("dimH"), +ui.dimH.value||scene.box.h),
+                      d:Math.max(dimMin("dimD"), +ui.dimD.value||scene.box.d)};
     needRedraw=true;
   });
 ui.frame.addEventListener("change", ()=>{needRedraw=true;});
@@ -9748,10 +9105,8 @@ const EXP = {
   // конфигуратор: [x=ширина, y=высота, z=глубина] → CAD: [x, y=глубина, z=высота]
   p: (q)=>[q[0], q[2], q[1]],
   f: (v)=>v.toFixed(1),
-  name: (ext)=>(scene.ring
-      ? `vargov-ribbon-ring${scene.ring}x${ui.dimH.value}.${ext}`
-      : `vargov-ribbon-${ui.dimW.value}x${ui.dimD.value}x${ui.dimH.value}-`
-        +`${scene.params.plast==="edge"?"na-rebro":"mix"}.${ext}`),
+  name: (ext)=>`vargov-ribbon-${ui.dimW.value}x${ui.dimD.value}x${ui.dimH.value}-`
+        +`${scene.params.plast==="edge"?"na-rebro":"mix"}.${ext}`,
   // BOM нужен только CSV (иначе Excel ломает кириллицу); в OBJ и DXF он
   // мешает парсерам
   save: (fname, text, mime)=>{
@@ -10043,10 +9398,12 @@ function variantState(){
           frc:state.frameRal?state.frameRal.id:"", col:state.color.id,
           op:state.opaque1?1:0, op2:state.opaque2?1:0,
           g:ui.gradOn.checked?1:0, gc:ui.gradC.value,
-          rg:ui.ringD? +ui.ringD.value : 0,
-          rt:ui.ringT? +ui.ringT.value : 0};
+          };
 }
 function applyVariant(o){
+  // пластика «кольцо» удалена (решение пользователя: слишком долгая
+  // генерация) — старые ссылки и избранное открываются «миксом»
+  if(o.pl==="ring") o.pl="mix";
   if(o.pl) ui.plast.value=o.pl;
   syncForms();
   if(o.f) ui.form.value=o.f;
@@ -10058,9 +9415,6 @@ function applyVariant(o){
   if(o.rw) ui.rWidth.value=String(o.rw);
   if(o.rd) ui.rodD.value=String(o.rd);
   if(o.fr) ui.frame.value=o.fr;
-  // старые ссылки без поля rg открываются прямой лентой (там и pl не «ring»)
-  if(ui.ringD) ui.ringD.value=String(+o.rg||RING_MIN);
-  if(ui.ringT) ui.ringT.value=String(+o.rt||RING_DEF.ringT);
   if(o.col){ state.color=ralOf(o.col);
              setBtnColor("colorDot","colorName",state.color); }
   ui.gradOn.checked=!!+(o.g||0);
