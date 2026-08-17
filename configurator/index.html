@@ -135,7 +135,13 @@
   .tile:hover{border-color:#55555f}
   .tile.on{border-color:var(--gold2); color:var(--gold2);
     box-shadow:inset 0 0 0 1px var(--gold2), 0 2px 10px rgba(0,0,0,.35)}
-  .tiles.form .tile{flex:0 0 calc(25% - 6px); padding:6px 2px 5px; font-size:10.5px}
+  .tiles.form .tile{flex:0 0 calc(25% - 7px); min-width:0; aspect-ratio:1/1; padding:4px;
+    display:flex; align-items:center; justify-content:center}
+  /* формы чуть отделены от плиток пластики и идут по 4 в ряд (просьба
+     пользователя): раньше сумма ширин с зазорами выходила ровно 100% и
+     четвёртая плитка перескакивала на новую строку */
+  .tiles.form{margin-top:10px}
+  .tiles.form .tile canvas{width:100%; height:100%; object-fit:contain}
   .tile canvas{display:block}
   details.adv{margin:10px 0; border:1px solid #26262c; border-radius:10px; padding:7px 12px}
   details.adv summary{cursor:pointer; color:var(--dim); font-size:12px;
@@ -5598,7 +5604,9 @@ function draw(){
   // хром — серый металл, не белый: прежние 198-212 после осветления канта
   // (x1.15) уходили в белизну
   const gold = state.frameRal ? hexRgb(state.frameRal.c)
-             : (ui.frame.value==="chrome" ? [150,156,164] : [201,162,39]);
+             // хром — серый металл, чуть темнее прежнего (замечание
+             // пользователя: светлый хром выглядел белёсым на тёмном фоне)
+             : (ui.frame.value==="chrome" ? [126,132,140] : [201,162,39]);
   for(const pr of prims){
     if(pr.kind===0){ // подвес
       ctx.strokeStyle=LB ? "rgba(110,110,120,.55)" : "rgba(150,150,160,.45)"; ctx.lineWidth=Math.max(0.6, 1);
@@ -5615,7 +5623,8 @@ function draw(){
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else if(pr.kind===2){ // золотой кант
       ctx.lineCap="round";
-      ctx.strokeStyle = shadeCss(gold, 1.15, 0.95);
+      // каркас непрозрачен: металл не просвечивает (решение пользователя)
+      ctx.strokeStyle = shadeCss(gold, 1.15, 1);
       ctx.lineWidth = pr.wpx;
       ctx.beginPath(); ctx.moveTo(pr.x1,pr.y1); ctx.lineTo(pr.x2,pr.y2); ctx.stroke();
     } else { // диод Ø4 — тёплое свечение 3000 K
@@ -5798,12 +5807,42 @@ function updateSpec(){
   // к «Расчёту» — разговор с клиентом сразу предметный
   // состав стикера — по решению пользователя: длина, ширина, вес,
   // мощность — с расшифровкой в четыре строки
+  // числа стикера запоминаются целиком: бегунок «Сборка» пересчитывает
+  // их на долю построенного, не трогая геометрию
+  state.statFull={m, ribbonW:scene.params.ribbonW,
+    kg:(glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000, leds};
+  drawStat();
+}
+/* СТИКЕР ЖИВЁТ ВМЕСТЕ С БЕГУНКОМ «СБОРКА» (просьба пользователя): при
+   его движении длина, вес и мощность показывают ТО, ЧТО СЕЙЧАС В КАДРЕ, —
+   смонтированную часть композиции. Доля считается по станциям (лента
+   растёт станция за станцией), диоды — по их числу на построенном
+   участке. На 100% числа равны полным */
+function drawStat(){
   const stEl=document.getElementById("stat");
-  if(stEl) stEl.innerHTML =
-    `<span>Длина ленты:</span> ${m.toFixed(2)} пог. м<br>`
-    + `<span>Ширина ленты:</span> ${scene.params.ribbonW} мм<br>`
-    + `<span>Вес:</span> ${Math.ceil((glassMass+wire*WIRE_AREA*STEEL_DENSITY)/1000)} кг`
-    + (leds ? `<br><span>Мощность:</span> ${(leds*LED_W).toFixed(1)} Вт` : "");
+  const F=state.statFull;
+  if(!stEl || !F) return;
+  const t=(state.asm===undefined)?1:state.asm;
+  let k=1, leds=F.leds;
+  if(scene && t<1){
+    let tot=0, shown=0, ledShown=0;
+    let pos=t*scene.ribbons.reduce((q,rb)=>q+rb.centers.length,0);
+    for(const rb of scene.ribbons){
+      const lim=Math.max(0, Math.round(pos));
+      pos-=rb.centers.length;
+      const n=rb.centers.length;
+      tot+=n; shown+=Math.max(0, Math.min(n, lim));
+      if(rb.ledSt) for(let i=0;i<rb.leds.length;i++){ if(rb.ledSt[i]<lim) ledShown++; }
+      else if(lim>0) ledShown+=rb.leds.length;
+    }
+    k=tot? shown/tot : 1;
+    leds=ledShown;
+  }
+  stEl.innerHTML =
+    `<span>Длина ленты:</span> ${(F.m*k).toFixed(2)} пог. м<br>`
+    + `<span>Ширина ленты:</span> ${F.ribbonW} мм<br>`
+    + `<span>Вес:</span> ${Math.ceil(F.kg*k)} кг`
+    + (F.leds ? `<br><span>Мощность:</span> ${(leds*LED_W).toFixed(1)} Вт` : "");
 }
 
 /* ============================================================
@@ -5971,7 +6010,7 @@ document.getElementById("gradBtn").onclick=()=>
 // работает переключателем, палитры для каркаса нет
 const FRAME_SPECIALS=[
   {id:"gold",   name:"Золото (штатная отделка)", c:"#C9A227"},
-  {id:"chrome", name:"Хром (штатная отделка)",   c:"#969CA4"},
+  {id:"chrome", name:"Хром (штатная отделка)",   c:"#7E848C"},
 ];
 function updateFrameBtn(){
   const btn=document.getElementById("frameBtn");
@@ -6143,7 +6182,9 @@ function renderPlastTiles(){
   const box=document.getElementById("plastTiles");
   if(!box) return;
   if(!box.childElementCount){
-    const defs=[["mix","Волны · «микс»",prevMix],["edge","Спираль · «на ребро»",prevEdgeCone]];
+    // подписи плиток короткие (решение пользователя): в две строки они
+    // разъезжались и мешали читать ряд
+    const defs=[["mix","Волны",prevMix],["edge","Спираль",prevEdgeCone]];
     for(const df of defs){
       const t=document.createElement("div");
       t.className="tile"; t.dataset.val=df[0];
@@ -6174,7 +6215,8 @@ function renderFormTiles(){
       const t=document.createElement("div");
       t.className="tile"; t.dataset.val=o.value; t.title=o.textContent;
       t.appendChild(formPreview(o.value));
-      const sp=document.createElement("span"); sp.textContent=o.textContent; t.appendChild(sp);
+      // плитки форм — квадратные, без подписей (решение пользователя):
+      // рисунок силуэта говорит сам за себя, название остаётся в подсказке
       t.addEventListener("click", ()=>{
         if(ui.form.value===t.dataset.val) return;
         ui.form.value=t.dataset.val;
@@ -6340,6 +6382,7 @@ ui.cables.addEventListener("change", ()=>rebuild(
 state.asm=1;
 ui.asm.addEventListener("input", ()=>{
   state.asm=+ui.asm.value/100;
+  drawStat();               // метраж в стикере — по построенной части
   needRedraw=true;
 });
 ui.showBox.addEventListener("change", ()=>{needRedraw=true;});
