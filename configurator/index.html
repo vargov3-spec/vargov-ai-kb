@@ -3840,35 +3840,17 @@ let buildDeadline = 0;
 // лента идёт одной прядью, объём пустой. Значение — по замеру (см. README)
 const COV_MIN = 0.50;
 
-/* ЖИВАЯ ГЕНЕРАЦИЯ (просьба пользователя): создание композиции видно в
-   реальном времени — между попытками лестницы кадр отдаётся браузеру,
-   в окне рисуется текущий пробный вариант, а подпись индикатора говорит,
-   что именно происходит. Геометрию это не меняет — только показ:
-   лестница детерминирована, номер варианта воспроизводится как прежде */
-async function liveFrame(box, ribbons, params, note){
+/* ИНДИКАТОР ГЕНЕРАЦИИ С ПРОЦЕНТАМИ (решение пользователя: превью пробных
+   вариантов убрано — «оставь только кружок загрузки в процентах»).
+   Сборка асинхронна: между попытками лестницы кадр отдаётся браузеру,
+   и кружок обновляет процент. Геометрия не меняется: лестница
+   детерминирована, номер варианта воспроизводится как прежде */
+async function liveFrame(pct){
   if(state.subBuild) return;
   const txt=document.getElementById("busyTxt");
-  if(txt && note) txt.textContent=note;
-  if(ribbons && ribbons.length){
-    scene={box, ribbons, params, clear:{collisions:0}, env:null};
-    camera.fitTo(box);
-  }
-  needRedraw=true;
+  if(txt) txt.textContent="Генерация варианта композиции… "
+    +Math.max(1, Math.min(99, Math.round(pct)))+"%";
   await new Promise(r=>requestAnimationFrame(()=>setTimeout(r,0)));
-}
-/* автопрокрутка сборки: принятый вариант дособирается на глазах — лента
-   растёт станция за станцией (тот же механизм, что бегунок «Сборка») */
-function playAssembly(){
-  const t0=performance.now(), DUR=1500;
-  state.asm=0; if(ui.asm) ui.asm.value=0;
-  const step=()=>{
-    const u=Math.min(1,(performance.now()-t0)/DUR);
-    state.asm=u; if(ui.asm) ui.asm.value=Math.round(u*100);
-    if(typeof drawStat==="function") drawStat();
-    needRedraw=true;
-    if(u<1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
 }
 async function buildScene(){
   const tStart = perfNow();
@@ -4774,11 +4756,8 @@ async function buildScene(){
       }
       clear = resolveCollisions(ribbons, box);
       clear.attempt = attempt; clear.lanes = effLanes;
-      // живой кадр: пробный вариант виден сразу после разведения
-      await liveFrame(box, ribbons, params,
-        "Вариант "+(attempt+1)+" из "+maxAtt+
-        (clear.collisions? " — разводим касания ("+clear.collisions+")…"
-                         : " — проверяем заполнение…"));
+      // процент — по пройденной доле лестницы
+      await liveFrame((attempt+1)/maxAtt*90);
       // вылет за габарит после разведения лечится утяжкой сцены
       // (сжать направляющие по перебравшим осям + перемаршировать),
       // иначе годная пластика бракуется из-за пары сантиметров
@@ -4950,7 +4929,7 @@ async function buildScene(){
         }
         if(rr.some(rb=>!rb.fitScale)) continue;
         const cl2 = resolveCollisions(rr, box);
-        await liveFrame(box, rr, params, "Подбираем спокойный вариант…");
+        await liveFrame(95);
         let fits=true, fillR=1;
         {
           const mM=[1e9,1e9,1e9], xM=[-1e9,-1e9,-1e9];
@@ -5330,8 +5309,6 @@ async function buildScene(){
   }
   updateSpec();
   camera.fitTo(box);
-  // принятый вариант дособирается на глазах (живая генерация)
-  if(!state.subBuild && !state.reTry) playAssembly();
   needRedraw = true;
 }
 
