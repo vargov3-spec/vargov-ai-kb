@@ -1060,6 +1060,54 @@ function envelopeSpine(dims, rw, form){
   const run=fo ? Math.max(rw+60, 2*Rax*0.96)
                : Math.max(rw+60, dims[ax]-rw-60);
   const s0=(dims[ax]-run)/2;
+  // ГЛУБОКИЕ И ВЫСОКИЕ ФОРМЫ — ОСЕВАЯ ЗМЕЙКОЙ. Прямая осевая с сечением
+  // на весь поперечный габарит (глубина 2200 → полуось 1080) маршем не
+  // проходится: лента шла одной диагональной прядью на треть правила
+  // (скрин пользователя 2600×2200×800 — 3.70 пог. м, «это никуда не
+  // годится»). Если больший поперечный размер шире ~1.5 м, осевая идёт
+  // S-ходами по нему ОДНИМ непрерывным путём: ряды вдоль длинной оси,
+  // между ними плавные U-развороты радиусом в полшага ряда; сечение
+  // навивки становится нормальных пропорций на каждый ряд, и вся
+  // механика волн/витков работает как в эталонном габарите
+  const cBig=Math.max(dims[u1], dims[u2]);
+  if(cBig>1500){
+    const axDeep=(dims[u1]>=dims[u2]) ? u1 : u2;
+    const axFlat=(axDeep===u1) ? u2 : u1;
+    const nR=Math.max(2, Math.round(cBig/820));
+    const pitch=(cBig-rw-40)/nR;
+    const p0=(cBig-pitch*(nR-1))/2;
+    const runS=Math.max(rw+60, run-pitch);   // запас на дуги разворотов
+    const sS=(dims[ax]-runS)/2;
+    const put=(sAx, sDeep)=>{
+      const q=[dims[0]/2, dims[1]/2, dims[2]/2];
+      q[ax]=sAx; q[axDeep]=sDeep;
+      P.push(q);
+    };
+    const mRow=Math.max(24, Math.round(M/nR));
+    for(let k=0;k<nR;k++){
+      const z0=p0+pitch*k;
+      const fwd=(k%2===0);
+      for(let i=0;i<=mRow;i++){
+        const t=i/mRow;
+        put(sS+runS*(fwd? t : 1-t), z0);
+      }
+      if(k<nR-1){
+        // полукруг разворота радиусом в полшага ряда
+        const cx=fwd? sS+runS : sS;
+        for(let i=1;i<12;i++){
+          const a2=i/12*Math.PI;
+          put(cx+(fwd?1:-1)*Math.sin(a2)*pitch/2,
+              z0+pitch/2-Math.cos(a2)*pitch/2);
+        }
+      }
+    }
+    const ref=[0,0,0]; ref[axFlat]=1;
+    return {P, ref, ax, Rax, snake:true,
+            r1:(u1===axFlat)? rBox(dims[axFlat])
+                            : Math.max(90, pitch/2-ROD_R-16),
+            r2:(u2===axFlat)? rBox(dims[axFlat])
+                            : Math.max(90, pitch/2-ROD_R-16)};
+  }
   for(let i=0;i<=M;i++){
     const q=[dims[0]/2, dims[1]/2, dims[2]/2];
     q[ax]=s0+run*(i/M);
@@ -1624,7 +1672,7 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
     // ФОРМА ДОЛЖНА ЧИТАТЬСЯ: у шара лента обязана заполнить силуэт целиком,
     // поэтому витков берём столько, сколько физически влезает (шаг витка —
     // ширина ленты с зазором), а не сколько просит правило метража
-    if(isSphere) turns=Math.max(turns, S/(rw+60)*0.70);
+    if(isSphere && !sp.snake) turns=Math.max(turns, S/(rw+60)*0.70);
     // РАЗРЕЖЕНИЕ ЛЕСТНИЦЕЙ: попытки с fillRelax реально раздвигают витки.
     // Раньше relax раздувал только бюджеты болтанки при неизменных витках —
     // каждая следующая попытка была ХУЖЕ предыдущей (замер 900×900×3500:
@@ -1754,14 +1802,17 @@ function controlPoints(style, rng, box, lane, lanes, ampl, lengthK){
         const v=g.p[x2]+e1[x2]*R1+e2[x2]*R2;
         q[x2]=dims[x2]/2+softLim((v-dims[x2]/2)*sK[x2], dims[x2]/2-25);
       }
-      // ЛЕНТА НЕ ДОЛЖНА ВЫХОДИТЬ ЗА ФОРМУ: точка поджимается к силуэту
-      if(fo) fo.clampTo(q, 1.0, rw*0.15);
+      // ЛЕНТА НЕ ДОЛЖНА ВЫХОДИТЬ ЗА ФОРМУ: точка поджимается к силуэту.
+      // У змеевидной осевой (глубокие/высокие боксы) силуэт-кламп отключён:
+      // служебный «Шар» срезал углы рядов змейки — направляющая не
+      // вписывалась, и лестница шла в nofit (замер 2600×2200×800)
+      if(fo && !sp.snake) fo.clampTo(q, 1.0, rw*0.15);
       pts.push(q);
       axisAt.push(T);   // стержни — вдоль осевой линии формы
     }
     pts.__axisAt=axisAt;
     pts.__target=target;   // цель метража по правилу производства
-    if(fo){
+    if(fo && !sp.snake){
       pts.__formIn=fo.inside;
       pts.__formAx={ax:fo.ax, c:fo.c.slice(), s0:fo.c[fo.ax]-fo.Rax, s1:fo.c[fo.ax]+fo.Rax};
       pts.__formDraw={c:fo.c.slice(), R:fo.R.slice(), form:box.form};
@@ -4700,7 +4751,7 @@ async function buildScene(){
     // 14 — перебор детерминирован, времени боится только страховка
     const maxAtt = (params.plast==="edge") ? 2
                  : (effLanes>2 ? 3 : (effLanes>1 ? 4
-                    : (box.w>3000 ? 14 : 5)));
+                    : ((box.w>3000 || Math.max(box.h,box.d)>1500) ? 14 : 5)));
     for(let attempt=0; attempt<maxAtt; attempt++){
       // ЛЕСТНИЦА НЕ ОГРАНИЧЕНА ВРЕМЕНЕМ. Раньше она обрывалась по бюджету,
       // если что-то годное уже нашлось, — и один и тот же НОМЕР ВАРИАНТА
