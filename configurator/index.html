@@ -3840,7 +3840,37 @@ let buildDeadline = 0;
 // лента идёт одной прядью, объём пустой. Значение — по замеру (см. README)
 const COV_MIN = 0.50;
 
-function buildScene(){
+/* ЖИВАЯ ГЕНЕРАЦИЯ (просьба пользователя): создание композиции видно в
+   реальном времени — между попытками лестницы кадр отдаётся браузеру,
+   в окне рисуется текущий пробный вариант, а подпись индикатора говорит,
+   что именно происходит. Геометрию это не меняет — только показ:
+   лестница детерминирована, номер варианта воспроизводится как прежде */
+async function liveFrame(box, ribbons, params, note){
+  if(state.subBuild) return;
+  const txt=document.getElementById("busyTxt");
+  if(txt && note) txt.textContent=note;
+  if(ribbons && ribbons.length){
+    scene={box, ribbons, params, clear:{collisions:0}, env:null};
+    camera.fitTo(box);
+  }
+  needRedraw=true;
+  await new Promise(r=>requestAnimationFrame(()=>setTimeout(r,0)));
+}
+/* автопрокрутка сборки: принятый вариант дособирается на глазах — лента
+   растёт станция за станцией (тот же механизм, что бегунок «Сборка») */
+function playAssembly(){
+  const t0=performance.now(), DUR=1500;
+  state.asm=0; if(ui.asm) ui.asm.value=0;
+  const step=()=>{
+    const u=Math.min(1,(performance.now()-t0)/DUR);
+    state.asm=u; if(ui.asm) ui.asm.value=Math.round(u*100);
+    if(typeof drawStat==="function") drawStat();
+    needRedraw=true;
+    if(u<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+async function buildScene(){
   const tStart = perfNow();
   buildDeadline = tStart + BUILD_BUDGET;
   const box = {
@@ -4022,7 +4052,7 @@ function buildScene(){
         uiDim.value=String(Math.round(sliceW-seamGap));
         state.autoSeed=false;
         state.seed=(seed0+i*104729+tr*7717)>>>0;
-        buildScene();
+        await buildScene();
         if(!scene || !scene.ribbons.length || scene.clear.collisions>0) continue;
         let x0=1e9, x1=-1e9;
         for(const rb of scene.ribbons){
@@ -4744,6 +4774,11 @@ function buildScene(){
       }
       clear = resolveCollisions(ribbons, box);
       clear.attempt = attempt; clear.lanes = effLanes;
+      // живой кадр: пробный вариант виден сразу после разведения
+      await liveFrame(box, ribbons, params,
+        "Вариант "+(attempt+1)+" из "+maxAtt+
+        (clear.collisions? " — разводим касания ("+clear.collisions+")…"
+                         : " — проверяем заполнение…"));
       // вылет за габарит после разведения лечится утяжкой сцены
       // (сжать направляющие по перебравшим осям + перемаршировать),
       // иначе годная пластика бракуется из-за пары сантиметров
@@ -4915,6 +4950,7 @@ function buildScene(){
         }
         if(rr.some(rb=>!rb.fitScale)) continue;
         const cl2 = resolveCollisions(rr, box);
+        await liveFrame(box, rr, params, "Подбираем спокойный вариант…");
         let fits=true, fillR=1;
         {
           const mM=[1e9,1e9,1e9], xM=[-1e9,-1e9,-1e9];
@@ -5287,14 +5323,15 @@ function buildScene(){
       state.reTry=tries+1;
       state.autoSeed=false;
       state.seed=(state.seed*1664525+1013904223)>>>0;
-      buildScene();
-      state.reTry=0;
+      try{ await buildScene(); } finally { state.reTry=0; }
       return;
     }
     state.reTry=0;
   }
   updateSpec();
   camera.fitTo(box);
+  // принятый вариант дособирается на глазах (живая генерация)
+  if(!state.subBuild && !state.reTry) playAssembly();
   needRedraw = true;
 }
 
@@ -5565,7 +5602,7 @@ function draw(){
     const lim=(asmT>=1)?Infinity:Math.max(0, Math.round(asmPos));
     asmPos-=rb.centers.length;
     // тросы (появляются, когда построена станция их якоря)
-    for(const c of rb.cabs){
+    for(const c of (rb.cabs||[])){
       if(c.st!==undefined && c.st>=lim) continue;
       if(project(c.from,B,p1) && project(c.to,B,p2)){
         prims.push({z:(p1[2]+p2[2])/2+200, kind:0,
@@ -5622,7 +5659,7 @@ function draw(){
     // LED — светящиеся шарики Ø4 на проволоке каркаса, в общей глубинной
     // сортировке: сквозь непрозрачные стержни диоды не просвечивают
     let ledIdx=-1;
-    for(const l of rb.leds){
+    for(const l of (rb.leds||[])){
       ledIdx++;
       if(rb.ledSt && rb.ledSt[ledIdx]>=lim) continue;
       if(!project(l,B,p1)) continue;
@@ -5703,9 +5740,9 @@ function updateSpec(){
   for(const rb of scene.ribbons){
     totalLen += rb.ribbonLen;
     rods += rb.rods.length;
-    leds += rb.leds.length;
+    leds += (rb.leds||[]).length;
     cabs += rb.cabs.length;
-    for(const cb of rb.cabs) cabLen += Math.abs(cb.from[1]-cb.to[1]);
+    for(const cb of (rb.cabs||[])) cabLen += Math.abs(cb.from[1]-cb.to[1]);
     cabSpan = Math.max(cabSpan, rb.cabSpan||0);
     wire += rb.ribbonLen*(rb.rows===2?3:2); // контуры каркаса
     for(const r of rb.rods){
@@ -5860,8 +5897,8 @@ function drawStat(){
       pos-=rb.centers.length;
       const n=rb.centers.length;
       tot+=n; shown+=Math.max(0, Math.min(n, lim));
-      if(rb.ledSt) for(let i=0;i<rb.leds.length;i++){ if(rb.ledSt[i]<lim) ledShown++; }
-      else if(lim>0) ledShown+=rb.leds.length;
+      if(rb.ledSt && rb.leds) for(let i=0;i<rb.leds.length;i++){ if(rb.ledSt[i]<lim) ledShown++; }
+      else if(lim>0) ledShown+=(rb.leds||[]).length;
     }
     k=tot? shown/tot : 1;
     leds=ledShown;
@@ -6765,8 +6802,8 @@ function buildDeferred(msg){
   const txt=document.getElementById("busyTxt");
   if(txt) txt.textContent=msg||"Генерация варианта композиции…";
   if(busy) busy.classList.add("on");
-  const run=()=>{
-    try { buildScene(); }
+  const run=async ()=>{
+    try { await buildScene(); }
     finally { if(busy) busy.classList.remove("on"); }
     needRedraw=true;
   };
@@ -7035,9 +7072,9 @@ window.__vargov = {
     out.sort((a,b)=>a.gap-b.gap);
     return {worst:out.slice(0,10), count:out.length};
   },
-  set: (id,v)=>{ if(ui[id]) ui[id].value=v; refreshLabels(); buildScene(); },
-  apply: (o)=>{ for(const k in o){ if(ui[k]) ui[k].value=o[k]; } refreshLabels(); buildScene(); },
-  regen: ()=>{ state.autoSeed=false; state.seed=(state.seed*1664525+1013904223)>>>0; buildScene(); needRedraw=true; },
+  set: async (id,v)=>{ if(ui[id]) ui[id].value=v; refreshLabels(); await buildScene(); },
+  apply: async (o)=>{ for(const k in o){ if(ui[k]) ui[k].value=o[k]; } refreshLabels(); await buildScene(); },
+  regen: async ()=>{ state.autoSeed=false; state.seed=(state.seed*1664525+1013904223)>>>0; await buildScene(); needRedraw=true; },
   raw: ()=>scene,
 };
 </script>
