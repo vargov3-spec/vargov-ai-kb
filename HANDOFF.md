@@ -10,6 +10,15 @@
 git clone -b claude/configurator-continuation-3n0vib https://github.com/vargov3-spec/vargov-ai-kb.git
 ```
 
+**Если git clone / curl в твоей сессии блокируются** («Failed to run»: режим Auto при недоступном классификаторе безопасности), есть два обхода:
+
+1. Владелец переключает режим разрешений с Auto на обычный (селектор слева внизу у поля ввода, или Shift+Tab) и подтверждает команды вручную — это сбой классификатора, а не запрет сети.
+2. Совсем без git: владелец скачивает ветку ZIP-архивом в браузере и распаковывает рядом с сайтом:
+   `https://github.com/vargov3-spec/vargov-ai-kb/archive/refs/heads/claude/configurator-continuation-3n0vib.zip`
+   (~10 МБ; корневая папка внутри архива — `vargov-ai-kb-claude-configurator-continuation-3n0vib`). Дальше работай с локальными файлами.
+
+Проверка, что данные те: в `integration/products.json` — 605 SKU × 8 языков; в `content/journal/` — 8 папок по 22 статьи. Если видишь 594 текста и 47 батчей — это устаревший `main`, возьми ветку выше.
+
 ---
 
 ## 1. Что появилось нового
