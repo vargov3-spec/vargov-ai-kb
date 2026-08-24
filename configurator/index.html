@@ -7105,6 +7105,74 @@ window.__vargov = {
   regen: async ()=>{ state.autoSeed=false; state.seed=(state.seed*1664525+1013904223)>>>0; await buildScene(); needRedraw=true; },
   raw: ()=>scene,
 };
+
+/* ============================================================
+   МОСТ ИНТЕГРАЦИИ (postMessage) — для встраивания в внешний конфигуратор
+   (configurator.vargov.ru) через iframe. Родительская страница шлёт
+   команды, страница отвечает событиями. Протокол — в INTEGRATION.md.
+   Команды (event.data = {type, ...}):
+     vargov:apply   {params:{w,d,h,c, plast:"mix"|"edge", form, rows,
+                     rod, rodD, seed, leds, cables, color, frame}}
+                    — выставить параметры и собрать вариант
+     vargov:regen   {} — следующий вариант (шаг зерна)
+     vargov:variant {} — запросить текущее состояние варианта
+     vargov:spec    {} — запросить спецификацию (как CSV, объектом)
+   Ответы (postMessage родителю):
+     vargov:ready   {} — страница загружена и собрала первый вариант
+     vargov:built   {variant, lenM, box, rods, ok} — после каждой сборки
+     vargov:variant {variant} — состояние (тот же формат, что hash ссылки)
+     vargov:spec    {spec}
+   Безопасность: принимаются только перечисленные команды; ответ идёт
+   отправителю (event.source) с его origin. */
+(function(){
+  if(window.parent===window) return;    // не в iframe — мост не нужен
+  const post=(src, origin, msg)=>{ try{ src.postMessage(msg, origin); }catch(e){} };
+  const variantOut=()=>Object.assign({}, variantState());
+  window.addEventListener("message", async (ev)=>{
+    const d=ev.data||{};
+    if(typeof d.type!=="string" || d.type.indexOf("vargov:")!==0) return;
+    // при file:// origin приходит строкой "null" — тогда шлём на "*"
+    const org=(ev.origin && ev.origin!=="null") ? ev.origin : "*";
+    const reply=(msg)=>post(ev.source, org, msg);
+    try{
+      if(d.type==="vargov:apply"){
+        const p=d.params||{};
+        applyVariant({
+          pl:p.plast, f:p.form, w:p.w, d:p.d, h:p.h, c:p.c,
+          r:p.rows, rw:p.rod, rd:p.rodD, v:p.seed,
+          col:p.color, fr:p.frame});
+        if(p.leds!==undefined)   ui.leds.checked=!!p.leds;
+        if(p.cables!==undefined) ui.cables.checked=!!p.cables;
+        await buildScene();
+        reply({type:"vargov:built", variant:variantOut(),
+               lenM:state.lastSpec? state.lastSpec.totalLen/1000 : 0,
+               box:scene&&scene.box, rods:state.lastSpec&&state.lastSpec.rods,
+               ok:!!(scene&&scene.ribbons.length)});
+      } else if(d.type==="vargov:regen"){
+        state.autoSeed=false;
+        state.seed=(state.seed*1664525+1013904223)>>>0;
+        await buildScene();
+        reply({type:"vargov:built", variant:variantOut(),
+               lenM:state.lastSpec? state.lastSpec.totalLen/1000 : 0,
+               box:scene&&scene.box, rods:state.lastSpec&&state.lastSpec.rods,
+               ok:!!(scene&&scene.ribbons.length)});
+      } else if(d.type==="vargov:variant"){
+        reply({type:"vargov:variant", variant:variantOut()});
+      } else if(d.type==="vargov:spec"){
+        reply({type:"vargov:spec", spec:state.lastSpec||null});
+      }
+    }catch(e){
+      reply({type:"vargov:error", error:String(e).slice(0,200)});
+    }
+  });
+  // сигнал готовности — после первой сборки
+  const t0=setInterval(()=>{
+    if(scene && scene.ribbons && scene.ribbons.length){
+      clearInterval(t0);
+      post(window.parent, "*", {type:"vargov:ready"});
+    }
+  }, 250);
+})();
 </script>
 </body>
 </html>
