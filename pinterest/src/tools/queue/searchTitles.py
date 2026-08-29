@@ -91,7 +91,10 @@ TONES = [
     # Дымчатое семейство собрано широко: у этих вещей «серый дым», «графит» и
     # «стальные блики» описывают один и тот же оттенок, и по отдельности каждое
     # слово встречается реже, чем проходное «белый» из соседнего предложения.
-    (r"\bдымчат\w*|\bдым\w*|\bграфит\w*|\bстальн\w*|\bсер[ыаоуи]\w*", "дымчатое стекло", "Smoked Glass"),
+    # «серый» перечислен точными формами: широкое \bсер[ыаоуи]\w* ловит ещё и
+    # «серия», а это слово стоит в описаниях чаще самого цвета.
+    (r"\bдымчат\w*|\bдым\w*|\bграфит\w*|\bстальн\w*"
+     r"|\bсер(?:ый|ая|ое|ые|ого|ому|ым|ыми|ых|ой|ую)\b", "дымчатое стекло", "Smoked Glass"),
     (r"\bянтарн\w*", "янтарное стекло", "Amber Glass"),
     (r"\bмолочн\w*|\bопалов\w*", "молочное стекло", "Opal Glass"),
     (r"\bлатун\w*", "латунь и стекло", "Brass"),
@@ -224,8 +227,13 @@ def main():
             "en2": title_en(ing, sku, i + 1, wave2=True),
         })
 
-    Path("data/search-titles.json").write_text(
-        json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+    payload = json.dumps(rows, ensure_ascii=False, indent=1)
+    Path("data/search-titles.json").write_text(payload, encoding="utf-8")
+    # Вторая копия — в отслеживаемой папке: data/ лежит в .gitignore, а этот
+    # файл нужен облачной рутине, которая клонирует репозиторий и переписывает
+    # заголовки в очереди без участия компьютера.
+    Path("titles").mkdir(exist_ok=True)
+    Path("titles/search-titles.json").write_text(payload, encoding="utf-8")
 
     n = len(rows)
     out = io.open("search-titles-report.txt", "w", encoding="utf-8")
