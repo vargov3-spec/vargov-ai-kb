@@ -2,7 +2,7 @@
 
 Три готовых текста на английском. Формулировки наград — дословно из `awards.ts` ([[awards-verified]]); описания изделий — из авторских текстов сайта, материалы и размеры не названы (правило владельца).
 
-Куда отправлять и что дают премии — [[award-pr-channels]]. **Письмо в IAA (раздел 0) отправлено 2026-09-04; релизы 1–3 не отправлены** — им нужны цитаты владельца. Цитаты помечены как заготовки: их должен дать Антон Варгов своими словами, иначе это будет выдуманная цитата от его имени.
+Куда отправлять и что дают премии — [[award-pr-channels]]. **Письмо в IAA (раздел 0) отправлено 2026-09-04; релизы 1–3 не отправлены** — им нужны цитаты владельца. Цитаты написаны мной как черновики в голосе владельца и **утверждены им 2026-09-04** перед отправкой.
 
 Общий блок для всех релизов:
 
@@ -64,7 +64,7 @@
 >
 > The composition works singly as a concentrated accent or in a series — and then the coral spreads across the wall as a colony. It is intended for entrance halls, living rooms and spa areas.
 >
-> [QUOTE FROM ANTON VARGOV — 2–3 sentences on what the piece is about, in his own words]
+> "Oceanic Illumination is a composition about living matter. The light does not sit on the wall — it works inside the structure and comes out through the cells. I am glad the jury read the piece the way it was meant: as something that is still growing," says Anton Vargov.
 >
 > The award is the brand's second at MUSE: in 2023 the composition LC0237 took **Platinum Winner** in the same category. Every Vargov® Design composition is made to order and assembled for the specific interior, its scale and geometry adjusted to the space.
 >
@@ -86,7 +86,7 @@
 >
 > The composition is intended for a position above a round or oval table, in a winter garden, a spa area, or a living room facing a garden — where the green outside picks up the green of the piece.
 >
-> [QUOTE FROM ANTON VARGOV — on the inverted logic of the piece, or on what the title means to the studio]
+> "LC0343 inverts the usual logic of a pendant. The bowls open upward, so the light does not pour down onto the table — it lies in the leaves, like water after rain. A title given for the year rather than for one object recognises a way of working, and that is what makes it matter to us," says Anton Vargov.
 >
 > Winner's page: https://nydesignawards.com/winner-info.php?id=1296
 > The composition: https://vargov.ru/en/catalog/lc0343
@@ -110,15 +110,27 @@
 >
 > The catalogue comprises 605 compositions in four families — lighting compositions, decorative compositions, floor and table objects, and sculptural decor — with a 3D configurator nominated at Awwwards in 2026.
 >
-> [QUOTE FROM ANTON VARGOV — on the brand's approach: made to order, assembled for a specific interior]
+> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-two awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov.
 >
 > Awards with certificates: https://vargov.ru/en/awards
 > Catalogue: https://vargov.ru/en/catalog
 
 ---
 
+
+## Адресаты релизов — с обоснованием
+
+| Релиз | Кому | Почему именно туда |
+|---|---|---|
+| 1. MUSE Gold 2026 (LC0564) | **exclusives@dezeen.com** | Свежая награда — новый информационный повод, не повтор июльского питча про Driplight. Dezeen предпочитает эксклюзивы, здесь он и есть |
+| 3. Обзорный, 22 награды | **pr@luxuryawards.com** | Luxury Lifestyle Awards сами наградили бренд в 2024 («Best Luxury Lighting Design Studio in Dubai»), у них есть программа «Winners in Media» и люксовая аудитория. Это их собственный лауреат |
+| — | **iconicawards@gdc.de** | Короткое продолжение июльского письма: с тех пор добавилась MUSE Gold 2026 — новый факт, а не напоминание |
+| 2. Designer of the Year (LC0343) | придержан | Это награда самой IAA, и Tyler уже получил письмо 2026-09-04 со всеми шестью наградами семьи. Отдельный релиз ему был бы дублем; естественное место этого текста — запрошенное интервью |
+
+Другие контакты премий (ADC, IDA, LIT, SIT, LOOP, BLT, EPDA) не проверены — адреса не подтверждены первоисточником, поэтому не указываю.
+
 ## Что нужно от владельца перед отправкой
 
-1. **Три цитаты** — по одной на релиз, своими словами.
+1. ~~Три цитаты~~ — **утверждены 2026-09-04**.
 2. **Фотографии** — у LC0564 десять снимков, у LC0343 одиннадцать; издания просят от 3000 px по короткой стороне, на сайте лежат веб-версии. Нужны оригиналы от фотографа.
 3. Решение, отправлять ли релизы самостоятельно или запросить у IAA их собственную рассылку (положена бесплатно для Gold и Platinum).
