@@ -1,44 +1,66 @@
-name: Update Vargov Design knowledge base
+name: Канарейка базы знаний
+
+# ЧТО ЭТО. Проверка целостности опубликованной базы знаний. Ничего не собирает
+# и ничего не коммитит — только смотрит и падает, если данные испортились.
+#
+# ЗАЧЕМ ИМЕННО ТАК. Здесь стоял сборщик, который ходил по живому сайту. После
+# переезда с Tilda 27.07.2026 он получил 404 на sitemap-store.xml, собрал ноль
+# товаров и закоммитил пустые файлы — минус 109 936 строк. Отчитался «success»
+# три прогона подряд, и два месяца никто не знал. Поэтому:
+#   - никаких git add / commit / push и никаких прав на запись;
+#   - сайт не сканируется вовсе (nginx: 20 запросов/с с адреса, дальше fail2ban,
+#     а лимит соединений задевает живых посетителей);
+#   - датасеты пересобираются ЛОКАЛЬНО из репозитория сайта, он приватный и
+#     отсюда недоступен: python scripts/build_from_site.py
+#
+# Если эта проверка упала — данные пересобрать локально и запушить руками.
 
 on:
   schedule:
-    - cron: "0 4 * * 1"  # every Monday 04:00 UTC
+    - cron: "0 4 * * 1" # понедельник, 04:00 UTC
   workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  update:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Run scrape + build pipeline
-        run: python scripts/run_all.py
-
-      - name: Commit and push if anything changed
+      - name: Датасет не пуст и содержит описания
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes detected in the catalog — nothing to commit."
-          else
-            git commit -m "Automated catalog refresh from vargov.ru [skip ci]"
-            git push
-          fi
+          python - <<'PY'
+          import json, sys
+          items = json.load(open("datasets/products.json", encoding="utf-8"))
+          if len(items) < 500:
+              sys.exit(f"датасет обнулён или обрезан: {len(items)} позиций")
+          no_desc = [i["code"] for i in items if not (i.get("description") or {}).get("en")]
+          if len(no_desc) > 20:
+              sys.exit(f"без английского описания {len(no_desc)} позиций, например {no_desc[:5]}")
+          graph = json.load(open("references/catalog.jsonld", encoding="utf-8"))["@graph"]
+          if len(graph) != len(items):
+              sys.exit(f"узлов JSON-LD {len(graph)} против {len(items)} позиций")
+          bad = sorted({k for n in graph for k in ("offers", "price", "material", "size") if k in n})
+          if bad:
+              sys.exit(f"в JSON-LD поля, запрещённые правилами владельца: {bad}")
+          print(f"датасет: {len(items)} позиций, JSON-LD: {len(graph)} узлов — в порядке")
+          PY
 
-      - name: Upload scan logs as artifact (for debugging failed/unresolved items)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: scan-logs
-          path: |
-            scan/failed_urls.txt
-            scan/en_unresolved.txt
-          if-no-files-found: ignore
+      - name: Нет адресов эпохи Tilda
+        run: |
+          if grep -rlE "_vargovdesign_ru|tproduct|tildacdn" \
+               datasets references collections products en llms.txt llms-full.txt 2>/dev/null; then
+            echo "::error::найдены мёртвые адреса эпохи Tilda (файлы выше)"
+            exit 1
+          fi
+          echo "мёртвых адресов нет"
+
+      - name: Карта сайта для ИИ жива
+        run: |
+          code=$(curl -sS -o /tmp/llms.txt -w '%{http_code}' --max-time 30 \
+                 -A "vargov-ai-kb canary" https://vargov.ru/llms.txt)
+          [ "$code" = "200" ] || { echo "::error::vargov.ru/llms.txt отдал $code"; exit 1; }
+          grep -q "compositions" /tmp/llms.txt || { echo "::error::llms.txt не похож на карту сайта"; exit 1; }
+          echo "vargov.ru/llms.txt: 200, $(wc -c < /tmp/llms.txt) байт"
