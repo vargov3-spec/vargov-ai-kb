@@ -1,234 +1,132 @@
 # Vargov Design — llms-full.txt
 
-Полная версия базы знаний для LLM. Составлено из реально просканированных данных vargov.ru (2026-07-06). Ссылки на первоисточники указаны в каждом разделе.
+Полная карта на двух языках. Собрано 2026-09-04 по данным репозитория сайта
+(catalog.generated.json, product-copy на 8 языках, awards.ts, seo.ts).
+
+Канонический источник фактов — https://vargov.ru/llms.txt, он генерируется
+самим сайтом. Проверенные награды со ссылками на страницы премий и сертификаты —
+knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
+
+Пер-товарные датасеты (605 позиций x 8 языков) пересобираются локальным
+сборщиком scripts/build_from_site.py; до его прогона ссылок на них здесь нет
+намеренно — пустой файл под ссылкой хуже отсутствия ссылки.
 
 ---
 
-# Vargov® Design — Brand Facts
+# Vargov Design
 
-Источник: [vargov.ru](https://vargov.ru), [vargov.design](https://vargov.design) (проверено 2026-07-06).
-Ниже — только подтверждённые сайтом факты. Ничего не додумано.
+> Vargov® Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
 
-## Кто это
-- Бренд: **Vargov® Design** — авторские световые и декоративные композиции.
-- Позиционирование (дословно с сайта): «Russian design. World scale. Made in Vargov®».
-- Компания описывает себя как «a Russian brand, international company, creating unique author's light and decorative compositions», работающую на стыке искусства, инженерной точности и философии современного российского дизайна.
-- Основатель и главный дизайнер: **Антон Варгов** (Варгов Антон Геннадьевич). Эксперт и член жюри российских и международных премий в области дизайна и архитектуры.
-- Все концепции и разработки создаются в России, производство — на собственной фабрике в Китае.
+Каталог — 605 композиций с артикулами LC0001…LC0602 в четырёх семействах. 22 международные награды.
 
-## Товарный знак
-- Товарный знак **VARGOV**, регистрационный № 896936.
-- Дата подачи заявки: 29.04.2022. Дата регистрации: 06.10.2022. Действует до 29.04.2032.
-- Правообладатель: Антон Варгов.
+## Канонический источник
 
-## Продуктовые категории (4 основных)
-1. Световые композиции (Lighting compositions)
-2. Декоративные композиции (Decorative compositions)
-3. Торшеры, бра, настольные арт-объекты (Floor lamps, wall sconces, tabletop art objects)
-4. Скульптурные композиции, декор (Sculptural compositions & decor)
+Основная машиночитаемая карта бренда живёт на самом сайте и собирается из его данных:
 
-Плюс отдельные разделы: Branded products (фирменная продукция/сертификация подлинности), Installation & connection (монтаж), Elements in stock (программа готовых элементов), Official showroom.
+- [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — полная карта: факты, разделы, контакты, языковые версии.
 
-## Программа "Elements in stock"
-- Срок производства при использовании программы: 15–20 рабочих дней (обычное производство — 40–60 дней).
-- Стоимость — примерно на 10% ниже.
-- Кастомизация: длина подвеса, цвет кабеля, крепёж, цвет стекла.
-- Важно: это НЕ готовые изделия на складе, а базовые элементы, из которых собирается изделие под проект — с индивидуальной монтажной схемой 1:1.
+Этот репозиторий — вспомогательная база знаний: проверенные факты, награды со ссылками на первоисточники, PR-материалы.
 
-## Процесс заказа (7 этапов)
-1. Заказ — связь через WhatsApp, расчёт стоимости, сроков, договор-спецификация.
-2. Предоплата — 50%.
-3. Производство — 40–60 рабочих дней (3D-модель, монтажная схема, изготовление элементов).
-4. Подтверждение — фото/видео готового изделия.
-5. Окончательная оплата — оставшиеся 50%.
-6. Доставка — 14–25 дней в зависимости от региона.
-7. Монтаж — опционально, услуга доступна в России и ОАЭ.
+## Каталог
 
-## Награды (упомянуты на сайте, без полной хронологии)
-iDesign Awards, Lit Awards, Loop Design Awards, SIT Award, Product Design Award (EU), Luxury Lifestyle Awards, ADD Awards (2023), New York Design Awards, BLT Awards (2023), The London Design Awards, Architecture Collection, Muse Award, RLDC (2022).
-Полный список с годами и категориями — см. [[awards-todo]] (требуется точная сверка вручную по разделу "Награды" сайта, так как автоизвлечение не даёт годы для всех позиций).
+- [Каталог, 605 композиций](https://vargov.ru/catalog) — поиск по артикулу, фильтр по типу, поиск по фотографии
+- [Световые композиции](https://vargov.ru/lighting) — 352 позиции
+- [Декоративные композиции](https://vargov.ru/decorative) — 114 позиций
+- [Скульптурные композиции и декор](https://vargov.ru/sculptural-decor) — 83 позиции
+- [Торшеры, бра, настольные арт-объекты](https://vargov.ru/floor-table-lamps) — 56 позиций
+- [Элементы в наличии](https://vargov.ru/in-stock) — обновляется четыре раза в день
+- Карточка композиции: `https://vargov.ru/catalog/<артикул строчными>`, например [lc0602](https://vargov.ru/catalog/lc0602)
+- [PDF-каталог](https://vargov.ru/pdf/vargov-catalog-ru.pdf)
 
-## Выставки
-- Октябрь 2025 — первое участие бренда в российской выставке **Interlight**; стенд отмечен как один из самых обсуждаемых.
+## Подборки по пространству
 
-## Шоурум и дилеры
-- Официальный шоурум: Москва, Нахимовский проспект 24, павильон 2, стенд 212.
-- Россия/СНГ: **XPROJECTLIGHT**, Москва (стенд 211), +7 925 888 77 44, xprojectlight@yandex.ru.
-- Ближний Восток/Персидский залив/Америка/Европа/Азия/Африка: **Vargov Design International**, Дубай, ОАЭ, +971 56 787 8789, sales@vargovdesign.com.
-- Юго-Восточная Азия (Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия, Сингапур): **VITRILUX SPACE CO., LTD**, Ханой, +84 901 153 999, vitrilux.vn@gmail.com.
-- Прочие регионы: WhatsApp +7 916 537 33 52, info@vargov.ru.
+- [Холл отеля и общественные пространства](https://vargov.ru/for/hotel-lobby)
+- [Двусветная гостиная](https://vargov.ru/for/double-height)
+- [Лестничный пролёт](https://vargov.ru/for/stairwell)
+- [Ресторан и бар](https://vargov.ru/for/restaurant)
+- [Столовая](https://vargov.ru/for/dining) · [Спальня](https://vargov.ru/for/bedroom) · [Бутик и шоурум](https://vargov.ru/for/retail) · [Спа и бассейн](https://vargov.ru/for/spa)
+
+## Архитекторам и проектировщикам
+
+- [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
+- [Монтаж и подключение](https://vargov.ru/installation) · [PDF-инструкция](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Сертификация](https://vargov.ru/certification) — серийные сертификаты ТР ЕАЭС 004/2011 и 020/2011, знак EAC, более 300 артикулов
+- [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
+
+## О бренде
+
+- [О бренде](https://vargov.ru/about) · [Антон Варгов](https://vargov.ru/designer) · [Награды](https://vargov.ru/awards) · [Проекты](https://vargov.ru/projects) · [Журнал](https://vargov.ru/journal) · [Пресс-кит](https://vargov.ru/press) · [Шоурум](https://vargov.ru/showroom) · [Официальные дилеры](https://vargov.ru/official-dealers)
+
+Награды — 22, в 15 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
+
+Среди них: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 («Oceanic Illumination»), NY Product Design Awards 2023, ADC 2023 («Drapery»), Houzee Awards 2023.
+
+В 2022 году бренд получил специальный приз конкурса «Российский светодизайн» на Interlight; в октябре 2025 года выставился на Interlight Moscow с первым собственным стендом.
+
+## Языковые версии
+
+Русский — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar)
 
 ## Контакты
-- Email: info@vargov.ru
-- Telegram: @AntonVargov
-- WhatsApp: wa.me/message/SAC5LWOV5QMXC1
-- WeChat: Vargov_Design
 
-## Упаковка/защита при доставке
-Плёнка, плотный поролон, фирменные картонные вкладыши, фирменный скотч, деревянный каркас, фанерные ящики (от $200/м³), джутовая обёртка, финальный защитный слой плёнки.
-
-## Монтаж и подключение (кратко)
-- При получении — проверить упаковку, сфотографировать повреждения. Монтажная схема 1:1 печатается на баннерной ткани внутри одной из коробок.
-- Гипсокартонные потолки — закладные из фанеры от 9 мм в точках крепления, отверстия 8–14 мм по схеме 1:1.
-- Есть версии на 12V (LED-драйвер) и 220V.
-- Каждый провод промаркирован номером, соответствующим монтажной схеме; бирки также служат ограничителями высоты.
-- Перед началом работ — обесточить линию. Рекомендован монтаж силами официальных специалистов Vargov®Design.
-
-## Домены
-- [vargov.ru](https://vargov.ru) — основной сайт (Tilda), каталог, RU.
-- [vargov.design](https://vargov.design) — промо/имиджевая версия сайта, больше деталей о наградах и выставке.
-- Соцсети: Telegram, Pinterest, YouTube, RuTube, Max, Instagram, Luxuriti.
-
-## Важное ограничение для контент-команды
-Описания большинства товаров в каталоге — **не индивидуальные технические характеристики**, а типовой шаблонный текст («изготовление композиций любого размера из любого количества элементов на заказ», цена по запросу). Детальных пер-товарных характеристик (материалы/цвет/температура света/вес) на сайте в явном виде почти нет — это подтверждено выгрузкой по 651 карточке товара (см. [[product-scan-report]]). Значит: нельзя выдумывать характеристики "для LLM" — надо либо помечать их как "уточняется у бренда", либо запрашивать у Vargov Design структурированные данные напрямую.
+Email: info@vargov.ru · Телефон и WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Шоурум: Москва, Нахимовский проспект 24, павильон 2, стенд 212, ежедневно 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)
 
 ---
 
-# Vargov® Design — шоурумы и дилерская сеть
+# Vargov Design
 
-Источник: [vargov.ru/official_showroom_vargovdesign](https://vargov.ru/official_showroom_vargovdesign) (проверено 2026-07-06).
+> Vargov® Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. Founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
 
-## Официальный шоурум
-- Москва, Нахимовский проспект 24, павильон 2, стенд 212.
+The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 22 international awards.
 
-## Прямые контакты бренда
-- Telegram: @AntonVargov
-- WhatsApp: https://wa.me/message/SAC5LWOV5QMXC1
-- WeChat: Vargov_Design
-- Email: info@vargov.ru
-- Max: Vargov Design
+## Canonical source
 
-## Дилерская сеть
+The brand's primary machine-readable map lives on the site itself and is generated from its data:
 
-### Россия и страны СНГ
-- **XPROJECTLIGHT**, Москва (тот же адрес, стенд 211)
-- Тел.: +7 925 888 77 44
-- Email: xprojectlight@yandex.ru
+- [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — full map: facts, sections, contacts, language versions.
 
-### Ближний Восток, страны Персидского залива, Америка, Европа, Азия, Африка
-- **Vargov Design International**, Дубай, ОАЭ
-- Адрес: Showroom 1, Al Asmawi Building, Sheikh Zayed Road, PO Box 24710
-- Тел.: +971 56 787 8789
-- Email: sales@vargovdesign.com
+This repository is a supporting knowledge base: verified facts, awards with links to primary sources, press materials.
 
-### Юго-Восточная Азия (Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия, Сингапур)
-- **VITRILUX SPACE CO., LTD**, Ханой
-- Адрес: 4th Floor, No. 2 Thang Long Avenue, Tu Liem Ward
-- Zalo/WhatsApp: +84 901 153 999
-- Email: vitrilux.vn@gmail.com
+## Catalogue
 
-### Прочие регионы
-- WhatsApp: +7 916 537 33 52
-- Email: info@vargov.ru
+- [Catalogue, 605 compositions](https://vargov.ru/en/catalog) — searchable by LC code, filterable by type, search by photograph
+- [Lighting compositions](https://vargov.ru/en/lighting) — 352 items
+- [Decorative compositions](https://vargov.ru/en/decorative) — 114 items
+- [Sculptural compositions & decor](https://vargov.ru/en/sculptural-decor) — 83 items
+- [Floor lamps, sconces & tabletop objects](https://vargov.ru/en/floor-table-lamps) — 56 items
+- [Elements in stock](https://vargov.ru/en/in-stock) — updated four times a day
+- Product page: `https://vargov.ru/en/catalog/<lowercase article code>`, e.g. [lc0602](https://vargov.ru/en/catalog/lc0602)
+- [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf)
 
-См. также [[brand]].
+## By space
 
----
+- [Hotel lobby and public spaces](https://vargov.ru/en/for/hotel-lobby)
+- [Double-height living room](https://vargov.ru/en/for/double-height)
+- [Stairwell](https://vargov.ru/en/for/stairwell)
+- [Restaurant and bar](https://vargov.ru/en/for/restaurant)
+- [Dining room](https://vargov.ru/en/for/dining) · [Bedroom](https://vargov.ru/en/for/bedroom) · [Boutique and showroom](https://vargov.ru/en/for/retail) · [Spa and pool](https://vargov.ru/en/for/spa)
 
-# Vargov® Design — монтаж и подключение
+## For architects and specifiers
 
-Источник: [vargov.ru/installation_and_connection_vargovdesign_ru](https://vargov.ru/installation_and_connection_vargovdesign_ru) (проверено 2026-07-06).
+- [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
+- [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Certification](https://vargov.ru/en/certification) — EAEU serial certificates of conformity to TR CU 004/2011 and 020/2011, EAC mark, more than 300 LC pieces
+- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design)
 
-## Приёмка
-- При получении проверить упаковку на повреждения, сфотографировать дефекты.
-- Монтажная схема в масштабе 1:1 печатается на баннерной ткани и вкладывается в одну из коробок.
+## About
 
-## Подготовка поверхности (гипсокартонный потолок)
-- Установить закладные из фанеры толщиной от 9 мм в точках крепления.
-- Просверлить отверстия диаметром 8–14 мм по монтажной схеме 1:1.
+- [About the brand](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [Awards](https://vargov.ru/en/awards) · [Projects](https://vargov.ru/en/projects) · [Journal](https://vargov.ru/en/journal) · [Press kit](https://vargov.ru/en/press) · [Showroom](https://vargov.ru/en/showroom) · [Official dealers](https://vargov.ru/en/official-dealers)
 
-## Электрическое подключение — системы 12V (LED)
-- Зарезервировать место для драйвера в электрощите или потолочной нише.
-- Проложить низковольтную проводку от драйвера к месту установки композиции (количество линий соответствует числу элементов).
-- Протянуть провода через подготовленные отверстия.
-- Соединить с помощью клеммников из комплекта, соблюдая полярность.
+22 awards across 15 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
 
-## Электрическое подключение — системы 220V
-- Проложить кабель 220V к месту установки.
-- Разветвить проводку по числу элементов.
-- Протянуть через подготовленные отверстия.
-- Соединить провода с элементами с помощью клемм из комплекта.
+Among them: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 ("Oceanic Illumination"), NY Product Design Awards 2023, ADC 2023 ("Drapery"), Houzee Awards 2023.
 
-## Маркировка проводов
-- Каждый провод промаркирован номером, соответствующим монтажной схеме.
-- Бирки также служат ограничителями высоты, предотвращая ошибки монтажа и обеспечивая правильное выравнивание элементов.
+In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand.
 
-## Безопасность
-- Перед началом работ обязательно обесточить линию электропитания.
-- Использовать качественные клеммники и термоусадочные трубки.
-- Соблюдать все технические нормы.
+## Language versions
 
-## Рекомендация
-Ввиду сложности монтажа настоятельно рекомендуется привлекать официальных монтажников Vargov®Design (услуга доступна в России и ОАЭ).
+Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar)
 
-См. также [[brand]].
+## Contact
 
----
-
-# Световая vs декоративная композиция — в чём разница (по материалам Vargov® Design)
-
-Источник: [vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya](https://vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya)
-
-## Световая композиция
-Основная функция — освещение: основное, акцентное или декоративное. Акцент на выборе источников света, их расположении и управлении светом для достижения нужного визуального эффекта (LED-панели, светильники, световые ленты, нужная яркость).
-
-## Декоративная композиция
-Приоритет — эстетика и визуальное обогащение интерьера: дизайн, форма, цвет и текстура элементов, а не функциональное освещение. Может включать статичные и динамичные элементы (скульптуры, панно, текстиль), которые могут подсвечиваться, но служат прежде всего визуальным украшением.
-
-## Пересечение категорий
-Vargov Design прямо признаёт, что категории могут пересекаться: световые элементы нередко выполняют декоративную функцию, объединяя освещение и дизайн в одном изделии.
-
-Это разделение — основа категоризации каталога сайта (см. [[brand]], разделы «Световые композиции» и «Декоративные композиции»).
-
----
-
-# Streetlight — уличные световые инсталляции Vargov® Design
-
-Источник: [vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign](https://vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign)
-
-## Суть направления
-Инициатива Vargov Design по созданию иммерсивных городских световых инсталляций на стыке искусства, технологий и архитектуры — «световые решения, которые становятся неотъемлемой частью городской идентичности».
-
-## Назначение
-- Улучшение эстетики улиц и площадей.
-- Повышение безопасности и комфорта общественных пространств.
-- Интерактивный опыт — реакция на движение людей и погодные изменения.
-- Создание запоминающихся визуальных ориентиров города.
-
-## Ключевые характеристики
-- Интерактивность: композиции динамически реагируют на внешние стимулы.
-- Адаптивное освещение: «динамичное, живое освещение».
-- Символическая функция: подчёркивание уникальной городской идентичности, привлечение жителей и туристов.
-
-## Технологии и материалы
-Smart LED-системы, динамические световые инсталляции, интерактивные технологии, энергоэффективные решения, экологичные материалы.
-
-## Устойчивое развитие
-Компания подчёркивает экологическую ответственность: возобновляемые источники энергии и безопасные для окружающей среды материалы.
-
-Связано с [[brand]] и категорией «Скульптурные композиции, декор».
-
----
-
-## Сводка по коллекциям
-
-# Vargov Design — сводная таблица товаров
-
-Всего товаров собрано: 645 (из 651 обнаруженных в sitemap, покрытие ~99%)
-
-| Категория | Кол-во |
-|---|---|
-| Световые композиции | 348 |
-| Декоративные композиции | 116 |
-| Скульптурные композиции, декор | 83 |
-| Торшеры, бра, настольные арт-объекты | 55 |
-| Товары шоурума | 41 |
-| Элементы в наличии | 2 |
-
-## Полный список
-
-| SKU | Категория | URL |
-|---|---|---|
-| LC0001 | Декоративные композиции | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-766916353081-dekorativnaya-kompozitsiya |
-| LC0002 | Декоративные композиции | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-549038027891-dekorativnaya-kompozitsiya |
-| LC0003 | Декоративные композиции | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-393862307791-dekorativnaya-kompozitsiya |
+Email: info@vargov.ru · Phone and WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Showroom: 24 Nakhimovsky Prospekt, Pavilion 2, Stand 212, Moscow, daily 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)
