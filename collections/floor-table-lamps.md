@@ -1,63 +1,64 @@
-# Торшеры, бра, настольные арт-объекты / Floor lamps, sconces & tabletop art objects
+# Торшеры и арт-объекты
 
-Источник категории: https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru
+Раздел на сайте: https://vargov.ru/floor-table-lamps
 
-Товаров в коллекции: 56
+Позиций: 56
 
-## Список товаров
-- [LC0023](../products/floor-table-lamps/LC0023.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-850569515171-torsher
-- [LC0161](../products/floor-table-lamps/LC0161.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-175800421121-torsher
-- [LC0166-2](../products/floor-table-lamps/LC0166-2.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-547602893102-bra
-- [LC0180](../products/floor-table-lamps/LC0180.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-563749864091-torsher
-- [LC0181](../products/floor-table-lamps/LC0181.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-866552003831-torsher
-- [LC0182](../products/floor-table-lamps/LC0182.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-377819888211-torsher
-- [LC0186](../products/floor-table-lamps/LC0186.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-757044495871-torsher
-- [LC0187](../products/floor-table-lamps/LC0187.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-340340503471-torsher
-- [LC0188](../products/floor-table-lamps/LC0188.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-770736466471-torsher
-- [LC0194](../products/floor-table-lamps/LC0194.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-630143611671-torsher-svetovaya-skulptura-lc0194
-- [LC0195](../products/floor-table-lamps/LC0195.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-717027072401-torsher
-- [LC0196](../products/floor-table-lamps/LC0196.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-816003562461-torsher
-- [LC0197](../products/floor-table-lamps/LC0197.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-537084684021-torsher
-- [LC0198](../products/floor-table-lamps/LC0198.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-687557720981-torsher
-- [LC0199](../products/floor-table-lamps/LC0199.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-205531379371-torsher
-- [LC0200](../products/floor-table-lamps/LC0200.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-532196552651-torsher
-- [LC0205](../products/floor-table-lamps/LC0205.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-993025935831-torsher
-- [LC0206](../products/floor-table-lamps/LC0206.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-751996642221-torsher
-- [LC0207](../products/floor-table-lamps/LC0207.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-984339511691-torsher
-- [LC0208](../products/floor-table-lamps/LC0208.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-262475173311-torsher
-- [LC0209](../products/floor-table-lamps/LC0209.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-822955532321-torsher
-- [LC0210](../products/floor-table-lamps/LC0210.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-578259881561-torsher
-- [LC0211](../products/floor-table-lamps/LC0211.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-153801125371-torsher
-- [LC0212](../products/floor-table-lamps/LC0212.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-617264795671-torsher
-- [LC0213](../products/floor-table-lamps/LC0213.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-349459070621-napolnii-art-obekt
-- [LC0214](../products/floor-table-lamps/LC0214.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-808578040091-napolnii-art-obekt
-- [LC0215](../products/floor-table-lamps/LC0215.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-777771437151-napolnii-art-obekt
-- [LC0332-1](../products/floor-table-lamps/LC0332-1.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-836461314732-bra
-- [LC0340](../products/floor-table-lamps/LC0340.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-975869162791-torsher
-- [LC0357](../products/floor-table-lamps/LC0357.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-186117676611-nastolnii-art-obekt
-- [LC0374](../products/floor-table-lamps/LC0374.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-216846526381-torsher
-- [LC0377](../products/floor-table-lamps/LC0377.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-630544177141-torsher
-- [LC0378](../products/floor-table-lamps/LC0378.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-214236802141-torsher
-- [LC0379](../products/floor-table-lamps/LC0379.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-254537523461-torsher
-- [LC0380](../products/floor-table-lamps/LC0380.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-589690360961-torsher
-- [LC0406-1](../products/floor-table-lamps/LC0406-1.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-506334676872-bra
-- [LC0420](../products/floor-table-lamps/LC0420.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-201611581391-torsher
-- [LC0437](../products/floor-table-lamps/LC0437.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-864753211642-bra
-- [LC0484](../products/floor-table-lamps/LC0484.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-536490255752-torsher
-- [LC0543-1](../products/floor-table-lamps/LC0543-1.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-316557207452-bra
-- [LC0558](../products/floor-table-lamps/LC0558.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-293916801302-torsher
-- [LC0559](../products/floor-table-lamps/LC0559.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-197978030122-torsher
-- [LC0560](../products/floor-table-lamps/LC0560.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-998713425152-torsher
-- [LC0562](../products/floor-table-lamps/LC0562.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-800679276732-torsher
-- [LC0563](../products/floor-table-lamps/LC0563.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-948004218212-bra-nastennaya-skulptura
-- [LC0564](../products/floor-table-lamps/LC0564.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-841648678372-bra-nastennaya-skulptura
-- [LC0565](../products/floor-table-lamps/LC0565.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-935840569182-bra-nastennaya-svetovaya-kompozitsiya
-- [LC0567](../products/floor-table-lamps/LC0567.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-610840687692-bra
-- [LC0569](../products/floor-table-lamps/LC0569.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-185649609872-nastolnii-art-obekt
-- [LC0583](../products/floor-table-lamps/LC0583.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-647521537732-bra
-- [LC0586](../products/floor-table-lamps/LC0586.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-176715272222-torsher-driplight
-- [LC0593](../products/floor-table-lamps/LC0593.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-789365745292-torsher
-- [LC0593-1](../products/floor-table-lamps/LC0593-1.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-703064580592-torsher
-- [LC0593-2](../products/floor-table-lamps/LC0593-2.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-545674545882-torsher
-- [LC0595](../products/floor-table-lamps/LC0595.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-968008192182-nastolnii-art-obekt
-- [LC0602](../products/floor-table-lamps/LC0602.md) — https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-705421266343-torsher
+## Состав
+
+- [LC0023](../products/floor-table-lamps/LC0023.md) — Напольный торшер — https://vargov.ru/catalog/lc0023
+- [LC0161](../products/floor-table-lamps/LC0161.md) — Напольный торшер — https://vargov.ru/catalog/lc0161
+- [LC0166-2](../products/floor-table-lamps/LC0166-2.md) — Бра — https://vargov.ru/catalog/lc0166-2
+- [LC0180](../products/floor-table-lamps/LC0180.md) — Напольный торшер — https://vargov.ru/catalog/lc0180
+- [LC0181](../products/floor-table-lamps/LC0181.md) — Напольный торшер — https://vargov.ru/catalog/lc0181
+- [LC0182](../products/floor-table-lamps/LC0182.md) — Напольный торшер — https://vargov.ru/catalog/lc0182
+- [LC0186](../products/floor-table-lamps/LC0186.md) — Напольный торшер — https://vargov.ru/catalog/lc0186
+- [LC0187](../products/floor-table-lamps/LC0187.md) — Напольный торшер — https://vargov.ru/catalog/lc0187
+- [LC0188](../products/floor-table-lamps/LC0188.md) — Напольный торшер — https://vargov.ru/catalog/lc0188
+- [LC0194](../products/floor-table-lamps/LC0194.md) — Напольный торшер — https://vargov.ru/catalog/lc0194
+- [LC0195](../products/floor-table-lamps/LC0195.md) — Напольный торшер — https://vargov.ru/catalog/lc0195
+- [LC0196](../products/floor-table-lamps/LC0196.md) — Напольный торшер — https://vargov.ru/catalog/lc0196
+- [LC0197](../products/floor-table-lamps/LC0197.md) — Напольный торшер — https://vargov.ru/catalog/lc0197
+- [LC0198](../products/floor-table-lamps/LC0198.md) — Напольный торшер — https://vargov.ru/catalog/lc0198
+- [LC0199](../products/floor-table-lamps/LC0199.md) — Напольный торшер — https://vargov.ru/catalog/lc0199
+- [LC0200](../products/floor-table-lamps/LC0200.md) — Напольный торшер — https://vargov.ru/catalog/lc0200
+- [LC0205](../products/floor-table-lamps/LC0205.md) — Напольный торшер — https://vargov.ru/catalog/lc0205
+- [LC0206](../products/floor-table-lamps/LC0206.md) — Напольный торшер — https://vargov.ru/catalog/lc0206
+- [LC0207](../products/floor-table-lamps/LC0207.md) — Напольный торшер — https://vargov.ru/catalog/lc0207
+- [LC0208](../products/floor-table-lamps/LC0208.md) — Напольный торшер — https://vargov.ru/catalog/lc0208
+- [LC0209](../products/floor-table-lamps/LC0209.md) — Напольный торшер — https://vargov.ru/catalog/lc0209
+- [LC0210](../products/floor-table-lamps/LC0210.md) — Напольный торшер — https://vargov.ru/catalog/lc0210
+- [LC0211](../products/floor-table-lamps/LC0211.md) — Напольный торшер — https://vargov.ru/catalog/lc0211
+- [LC0212](../products/floor-table-lamps/LC0212.md) — Напольный торшер — https://vargov.ru/catalog/lc0212
+- [LC0213](../products/floor-table-lamps/LC0213.md) — Напольный торшер — https://vargov.ru/catalog/lc0213
+- [LC0214](../products/floor-table-lamps/LC0214.md) — Напольный торшер — https://vargov.ru/catalog/lc0214
+- [LC0215](../products/floor-table-lamps/LC0215.md) — Напольный торшер — https://vargov.ru/catalog/lc0215
+- [LC0332-1](../products/floor-table-lamps/LC0332-1.md) — Бра — https://vargov.ru/catalog/lc0332-1
+- [LC0340](../products/floor-table-lamps/LC0340.md) — Торшер — https://vargov.ru/catalog/lc0340
+- [LC0357](../products/floor-table-lamps/LC0357.md) — Бра — https://vargov.ru/catalog/lc0357
+- [LC0374](../products/floor-table-lamps/LC0374.md) — Световая композиция — https://vargov.ru/catalog/lc0374
+- [LC0377](../products/floor-table-lamps/LC0377.md) — Торшер — https://vargov.ru/catalog/lc0377
+- [LC0378](../products/floor-table-lamps/LC0378.md) — Торшер — https://vargov.ru/catalog/lc0378
+- [LC0379](../products/floor-table-lamps/LC0379.md) — Торшер — https://vargov.ru/catalog/lc0379
+- [LC0380](../products/floor-table-lamps/LC0380.md) — Торшер — https://vargov.ru/catalog/lc0380
+- [LC0406-1](../products/floor-table-lamps/LC0406-1.md) — Бра — https://vargov.ru/catalog/lc0406-1
+- [LC0420](../products/floor-table-lamps/LC0420.md) — Торшер — световая скульптура — https://vargov.ru/catalog/lc0420
+- [LC0437](../products/floor-table-lamps/LC0437.md) — Бра — скульптурный арт-объект — https://vargov.ru/catalog/lc0437
+- [LC0484](../products/floor-table-lamps/LC0484.md) — Торшер — световая скульптура — https://vargov.ru/catalog/lc0484
+- [LC0543-1](../products/floor-table-lamps/LC0543-1.md) — Бра — https://vargov.ru/catalog/lc0543-1
+- [LC0558](../products/floor-table-lamps/LC0558.md) — Торшер — вертикальная световая скульптура — https://vargov.ru/catalog/lc0558
+- [LC0559](../products/floor-table-lamps/LC0559.md) — Торшер — вертикальная световая скульптура — https://vargov.ru/catalog/lc0559
+- [LC0560](../products/floor-table-lamps/LC0560.md) — Торшер — вертикальная световая скульптура — https://vargov.ru/catalog/lc0560
+- [LC0562](../products/floor-table-lamps/LC0562.md) — Торшер pop-art — https://vargov.ru/catalog/lc0562
+- [LC0563](../products/floor-table-lamps/LC0563.md) — Бра-скульптурная композиция — https://vargov.ru/catalog/lc0563
+- [LC0564](../products/floor-table-lamps/LC0564.md) — Бра-скульптурная композиция — https://vargov.ru/catalog/lc0564
+- [LC0565](../products/floor-table-lamps/LC0565.md) — Бра — https://vargov.ru/catalog/lc0565
+- [LC0567](../products/floor-table-lamps/LC0567.md) — Бра — https://vargov.ru/catalog/lc0567
+- [LC0569](../products/floor-table-lamps/LC0569.md) — Настольный арт-объект — https://vargov.ru/catalog/lc0569
+- [LC0583](../products/floor-table-lamps/LC0583.md) — Бра — https://vargov.ru/catalog/lc0583
+- [LC0586](../products/floor-table-lamps/LC0586.md) — Торшер Driplight — https://vargov.ru/catalog/lc0586
+- [LC0593](../products/floor-table-lamps/LC0593.md) — Торшер — https://vargov.ru/catalog/lc0593
+- [LC0593-1](../products/floor-table-lamps/LC0593-1.md) — Торшер — https://vargov.ru/catalog/lc0593-1
+- [LC0593-2](../products/floor-table-lamps/LC0593-2.md) — Торшер — https://vargov.ru/catalog/lc0593-2
+- [LC0595](../products/floor-table-lamps/LC0595.md) — Настольный арт-объект — https://vargov.ru/catalog/lc0595
+- [LC0602](../products/floor-table-lamps/LC0602.md) — Торшер — https://vargov.ru/catalog/lc0602

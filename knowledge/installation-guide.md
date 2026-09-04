@@ -1,6 +1,6 @@
 # Vargov® Design — монтаж и подключение
 
-Источник: [vargov.ru/installation_and_connection_vargovdesign_ru](https://vargov.ru/installation_and_connection_vargovdesign_ru) (проверено 2026-07-06).
+Источник: страница монтажа прежней (Tilda) версии сайта, снята 2026-07-06. Актуальная страница нового сайта — [vargov.ru/installation](https://vargov.ru/installation) (EN: [/en/installation](https://vargov.ru/en/installation)), PDF-инструкция — [vargov.ru/pdf/vargov-installation.pdf](https://vargov.ru/pdf/vargov-installation.pdf). Текст ниже с новым сайтом не сверялся.
 
 ## Приёмка
 - При получении проверить упаковку на повреждения, сфотографировать дефекты.

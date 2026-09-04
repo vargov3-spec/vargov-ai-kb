@@ -1,90 +1,91 @@
 # Sculptural compositions & decor
 
-Source category: https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru
+Section: https://vargov.ru/en/sculptural-decor
 
-Items in this collection: 83
+Items: 83
 
-## Item list
-- [LC0011](../products/sculptural-decor/LC0011.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-616457691041-nastennaya-kompozitsiya
-- [LC0019](../products/sculptural-decor/LC0019.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-753129988171-nastennaya-kompozitsiya
-- [LC0020](../products/sculptural-decor/LC0020.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-785103412361-dekorativnaya-kompozitsiya
-- [LC0022](../products/sculptural-decor/LC0022.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-800086666181-dekorativnaya-kompozitsiya
-- [LC0035](../products/sculptural-decor/LC0035.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-322984893621-nastennaya-kompozitsiya
-- [LC0053](../products/sculptural-decor/LC0053.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-849114274881-dekorativnaya-kompozitsiya
-- [LC0061](../products/sculptural-decor/LC0061.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-287237212701-nastolnii-art-obekt
-- [LC0066](../products/sculptural-decor/LC0066.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-875215621341-nastennaya-skulptura
-- [LC0067](../products/sculptural-decor/LC0067.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-990080704901-nastennaya-skulptura
-- [LC0068](../products/sculptural-decor/LC0068.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-472540814041-nastennaya-skulptura
-- [LC0069](../products/sculptural-decor/LC0069.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-128361622401-nastennaya-skulptura
-- [LC0070](../products/sculptural-decor/LC0070.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-143727868191-nastennaya-skulptura
-- [LC0071](../products/sculptural-decor/LC0071.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-728501514701-nastennaya-svetovaya-skulptura-bra-lc007
-- [LC0072](../products/sculptural-decor/LC0072.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-783667658321-nastennaya-skulptura
-- [LC0073](../products/sculptural-decor/LC0073.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-968502240341-nastennaya-skulptura
-- [LC0074](../products/sculptural-decor/LC0074.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-615440019961-nastennaya-skulptura
-- [LC0075](../products/sculptural-decor/LC0075.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-910128133011-podvesnaya-skulptura
-- [LC0076](../products/sculptural-decor/LC0076.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-873371959961-podvesnaya-skulptura
-- [LC0077](../products/sculptural-decor/LC0077.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-469940986241-dekorativnaya-kompozitsiya
-- [LC0079](../products/sculptural-decor/LC0079.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-235566976831-dekorativnaya-kompozitsiya
-- [LC0080](../products/sculptural-decor/LC0080.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-437995272711-zerkala
-- [LC0081](../products/sculptural-decor/LC0081.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-613661541781-zerkala
-- [LC0082](../products/sculptural-decor/LC0082.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-660502508001-zerkala
-- [LC0083](../products/sculptural-decor/LC0083.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-104125797831-zerkala
-- [LC0110](../products/sculptural-decor/LC0110.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-971238338451-nastennaya-kompozitsiya
-- [LC0111](../products/sculptural-decor/LC0111.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-911945514001-nastennaya-kompozitsiya
-- [LC0112](../products/sculptural-decor/LC0112.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-531459320461-nastennaya-kompozitsiya
-- [LC0116](../products/sculptural-decor/LC0116.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-571771816531-nastennaya-kompozitsiya
-- [LC0120](../products/sculptural-decor/LC0120.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-540882162301-nastennaya-kompozitsiya
-- [LC0121](../products/sculptural-decor/LC0121.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-953217908721-nastennaya-kompozitsiya
-- [LC0122](../products/sculptural-decor/LC0122.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-766735405951-nastennaya-kompozitsiya
-- [LC0123](../products/sculptural-decor/LC0123.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-618928208251-nastennaya-kompozitsiya
-- [LC0148](../products/sculptural-decor/LC0148.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-699170613781-dekorativnaya-kompozitsiya
-- [LC0149](../products/sculptural-decor/LC0149.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-981036273381-dekor-kamina
-- [LC0150](../products/sculptural-decor/LC0150.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-495691389001-dekorativnaya-kompozitsiya
-- [LC0151](../products/sculptural-decor/LC0151.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-184542892081-dekorativnaya-kompozitsiya
-- [LC0157](../products/sculptural-decor/LC0157.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-749438334751-dekorativnaya-kompozitsiya
-- [LC0158](../products/sculptural-decor/LC0158.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-177804163861-dekorativnaya-kompozitsiya
-- [LC0159](../products/sculptural-decor/LC0159.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-643270617701-dekorativnaya-kompozitsiya
-- [LC0160](../products/sculptural-decor/LC0160.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-341771890891-dekorativnaya-kompozitsiya
-- [LC0162](../products/sculptural-decor/LC0162.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-777440122481-nastennaya-kompozitsiya
-- [LC0163](../products/sculptural-decor/LC0163.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-230740181971-nastennaya-kompozitsiya
-- [LC0230](../products/sculptural-decor/LC0230.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-411523144751-nastennaya-kompozitsiya
-- [LC0241](../products/sculptural-decor/LC0241.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-517454527351-dekorativnaya-kompozitsiya
-- [LC0243](../products/sculptural-decor/LC0243.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-846408791491-dekorativnaya-kompozitsiya
-- [LC0244](../products/sculptural-decor/LC0244.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-278499525171-nastennaya-kompozitsiya
-- [LC0245](../products/sculptural-decor/LC0245.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-679637785211-nastennaya-kompozitsiya
-- [LC0246](../products/sculptural-decor/LC0246.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-191087640981-nastennaya-kompozitsiya
-- [LC0247](../products/sculptural-decor/LC0247.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-284761937631-skulptura
-- [LC0248](../products/sculptural-decor/LC0248.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-135152216161-dekor-kamina
-- [LC0249](../products/sculptural-decor/LC0249.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-204316146721-dekor-kamina
-- [LC0250](../products/sculptural-decor/LC0250.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-561430957101-landshaftnaya-skulptura
-- [LC0251](../products/sculptural-decor/LC0251.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-169675734191-dekorativnaya-kompozitsiya
-- [LC0252](../products/sculptural-decor/LC0252.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-713841232971-dekorativnaya-kompozitsiya
-- [LC0253](../products/sculptural-decor/LC0253.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-969443647261-skulptura
-- [LC0255](../products/sculptural-decor/LC0255.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-564514097241-svetovaya-kompozitsiya
-- [LC0257](../products/sculptural-decor/LC0257.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-860573454561-svetovaya-kompozitsiya
-- [LC0258](../products/sculptural-decor/LC0258.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-757105914501-nastennaya-kompozitsiya
-- [LC0261](../products/sculptural-decor/LC0261.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-459883944251-dekorativnaya-kompozitsiya
-- [LC0266](../products/sculptural-decor/LC0266.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-428582712701-dekorativnaya-kompozitsiya
-- [LC0268](../products/sculptural-decor/LC0268.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-893048132061-dekor
-- [LC0269](../products/sculptural-decor/LC0269.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-765305180751-zerkala-i-dekor
-- [LC0309](../products/sculptural-decor/LC0309.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-198230172131-dekorativnaya-kompozitsiya
-- [LC0315](../products/sculptural-decor/LC0315.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-536178978841-nastennaya-kompozitsiya
-- [LC0316](../products/sculptural-decor/LC0316.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-128924893291-zerkala
-- [LC0321](../products/sculptural-decor/LC0321.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-829190899541-dekor-dlya-lestnitsi
-- [LC0324](../products/sculptural-decor/LC0324.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-313259692781-zerkala
-- [LC0325](../products/sculptural-decor/LC0325.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-625635949581-landshaftnaya-skulptura
-- [LC0330](../products/sculptural-decor/LC0330.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-587174826231-dekorativnaya-kompozitsiya
-- [LC0331](../products/sculptural-decor/LC0331.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-940854869021-dekorativnaya-kompozitsiya
-- [LC0356](../products/sculptural-decor/LC0356.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-287648521911-dekorativnaya-kompozitsiya
-- [LC0366](../products/sculptural-decor/LC0366.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-211654887361-dekorativnaya-kompozitsiya
-- [LC0370](../products/sculptural-decor/LC0370.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-540007809101-dekorativnaya-kompozitsiya
-- [LC0373](../products/sculptural-decor/LC0373.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-963454394101-nastennaya-kompozitsiya
-- [LC0417](../products/sculptural-decor/LC0417.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-761055896921-dekorativnaya-kompozitsiya
-- [LC0495](../products/sculptural-decor/LC0495.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-334727520632-nastennaya-kompozitsiya
-- [LC0506](../products/sculptural-decor/LC0506.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-423225058202-nastennaya-kompozitsiya
-- [LC0543](../products/sculptural-decor/LC0543.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-469700312312-nastennii-art-obekt
-- [LC0561](../products/sculptural-decor/LC0561.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-389896492292-nastennii-art-obekt
-- [LC0575](../products/sculptural-decor/LC0575.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-575497931052-nastennie-svetovie-kompozitsii
-- [LC0582](../products/sculptural-decor/LC0582.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-345497527662-mezhkomnatnaya-peregorodka
-- [LC0594](../products/sculptural-decor/LC0594.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-961607348842-nastennie-svetovie-kompozitsii
-- [LC0600](../products/sculptural-decor/LC0600.md) — https://vargov.ru/decor_and_sculptural_compositions_vargovdesign_ru/tproduct/727172771-499797017883-nastenno-potolochnaya-dekorativnaya-komp
+## Contents
+
+- [LC0011](../products/sculptural-decor/LC0011.md) — Wall composition — https://vargov.ru/en/catalog/lc0011
+- [LC0019](../products/sculptural-decor/LC0019.md) — Wall panel — https://vargov.ru/en/catalog/lc0019
+- [LC0020](../products/sculptural-decor/LC0020.md) — Light composition — https://vargov.ru/en/catalog/lc0020
+- [LC0022](../products/sculptural-decor/LC0022.md) — Decorative screen-curtain — https://vargov.ru/en/catalog/lc0022
+- [LC0035](../products/sculptural-decor/LC0035.md) — Wall composition — https://vargov.ru/en/catalog/lc0035
+- [LC0053](../products/sculptural-decor/LC0053.md) — Backlit wall panel — https://vargov.ru/en/catalog/lc0053
+- [LC0061](../products/sculptural-decor/LC0061.md) — Floor light-sculpture — https://vargov.ru/en/catalog/lc0061
+- [LC0066](../products/sculptural-decor/LC0066.md) — Mirror — https://vargov.ru/en/catalog/lc0066
+- [LC0067](../products/sculptural-decor/LC0067.md) — Wall light-ring — https://vargov.ru/en/catalog/lc0067
+- [LC0068](../products/sculptural-decor/LC0068.md) — Mirror — https://vargov.ru/en/catalog/lc0068
+- [LC0069](../products/sculptural-decor/LC0069.md) — Mirror — https://vargov.ru/en/catalog/lc0069
+- [LC0070](../products/sculptural-decor/LC0070.md) — Backlit mirror — https://vargov.ru/en/catalog/lc0070
+- [LC0071](../products/sculptural-decor/LC0071.md) — Wall light-ring — https://vargov.ru/en/catalog/lc0071
+- [LC0072](../products/sculptural-decor/LC0072.md) — Wall light-ring — https://vargov.ru/en/catalog/lc0072
+- [LC0073](../products/sculptural-decor/LC0073.md) — Wall light — https://vargov.ru/en/catalog/lc0073
+- [LC0074](../products/sculptural-decor/LC0074.md) — Wall light — https://vargov.ru/en/catalog/lc0074
+- [LC0075](../products/sculptural-decor/LC0075.md) — Light composition — https://vargov.ru/en/catalog/lc0075
+- [LC0076](../products/sculptural-decor/LC0076.md) — Light composition — https://vargov.ru/en/catalog/lc0076
+- [LC0077](../products/sculptural-decor/LC0077.md) — Light composition — https://vargov.ru/en/catalog/lc0077
+- [LC0079](../products/sculptural-decor/LC0079.md) — Art object — https://vargov.ru/en/catalog/lc0079
+- [LC0080](../products/sculptural-decor/LC0080.md) — Mirror — https://vargov.ru/en/catalog/lc0080
+- [LC0081](../products/sculptural-decor/LC0081.md) — Mirror — https://vargov.ru/en/catalog/lc0081
+- [LC0082](../products/sculptural-decor/LC0082.md) — Mirror — https://vargov.ru/en/catalog/lc0082
+- [LC0083](../products/sculptural-decor/LC0083.md) — Mirror — https://vargov.ru/en/catalog/lc0083
+- [LC0110](../products/sculptural-decor/LC0110.md) — Wall composition — https://vargov.ru/en/catalog/lc0110
+- [LC0111](../products/sculptural-decor/LC0111.md) — Wall composition — https://vargov.ru/en/catalog/lc0111
+- [LC0112](../products/sculptural-decor/LC0112.md) — Wall composition — https://vargov.ru/en/catalog/lc0112
+- [LC0116](../products/sculptural-decor/LC0116.md) — Wall composition with mirror — https://vargov.ru/en/catalog/lc0116
+- [LC0120](../products/sculptural-decor/LC0120.md) — Wall panel — https://vargov.ru/en/catalog/lc0120
+- [LC0121](../products/sculptural-decor/LC0121.md) — Wall panel — https://vargov.ru/en/catalog/lc0121
+- [LC0122](../products/sculptural-decor/LC0122.md) — Wall panel — https://vargov.ru/en/catalog/lc0122
+- [LC0123](../products/sculptural-decor/LC0123.md) — Wall panel — https://vargov.ru/en/catalog/lc0123
+- [LC0148](../products/sculptural-decor/LC0148.md) — Decorative screen — https://vargov.ru/en/catalog/lc0148
+- [LC0149](../products/sculptural-decor/LC0149.md) — Bio-fireplace — https://vargov.ru/en/catalog/lc0149
+- [LC0150](../products/sculptural-decor/LC0150.md) — Decorative screen — https://vargov.ru/en/catalog/lc0150
+- [LC0151](../products/sculptural-decor/LC0151.md) — Decorative screen — https://vargov.ru/en/catalog/lc0151
+- [LC0157](../products/sculptural-decor/LC0157.md) — Decorative screen — https://vargov.ru/en/catalog/lc0157
+- [LC0158](../products/sculptural-decor/LC0158.md) — Decorative screen — https://vargov.ru/en/catalog/lc0158
+- [LC0159](../products/sculptural-decor/LC0159.md) — Decorative screen — https://vargov.ru/en/catalog/lc0159
+- [LC0160](../products/sculptural-decor/LC0160.md) — Decorative screen — https://vargov.ru/en/catalog/lc0160
+- [LC0162](../products/sculptural-decor/LC0162.md) — Decorative screen — https://vargov.ru/en/catalog/lc0162
+- [LC0163](../products/sculptural-decor/LC0163.md) — Decorative screen — https://vargov.ru/en/catalog/lc0163
+- [LC0230](../products/sculptural-decor/LC0230.md) — Wall composition — https://vargov.ru/en/catalog/lc0230
+- [LC0241](../products/sculptural-decor/LC0241.md) — Light composition — https://vargov.ru/en/catalog/lc0241
+- [LC0243](../products/sculptural-decor/LC0243.md) — Light composition — https://vargov.ru/en/catalog/lc0243
+- [LC0244](../products/sculptural-decor/LC0244.md) — Wall panel — https://vargov.ru/en/catalog/lc0244
+- [LC0245](../products/sculptural-decor/LC0245.md) — Wall composition — https://vargov.ru/en/catalog/lc0245
+- [LC0246](../products/sculptural-decor/LC0246.md) — Wall composition — https://vargov.ru/en/catalog/lc0246
+- [LC0247](../products/sculptural-decor/LC0247.md) — Art object — https://vargov.ru/en/catalog/lc0247
+- [LC0248](../products/sculptural-decor/LC0248.md) — Bio-fireplace — https://vargov.ru/en/catalog/lc0248
+- [LC0249](../products/sculptural-decor/LC0249.md) — Bio-fireplace — https://vargov.ru/en/catalog/lc0249
+- [LC0250](../products/sculptural-decor/LC0250.md) — Park sculpture — https://vargov.ru/en/catalog/lc0250
+- [LC0251](../products/sculptural-decor/LC0251.md) — Backlit decorative panel — https://vargov.ru/en/catalog/lc0251
+- [LC0252](../products/sculptural-decor/LC0252.md) — Backlit decorative panel — https://vargov.ru/en/catalog/lc0252
+- [LC0253](../products/sculptural-decor/LC0253.md) — Art object — https://vargov.ru/en/catalog/lc0253
+- [LC0255](../products/sculptural-decor/LC0255.md) — Light composition — https://vargov.ru/en/catalog/lc0255
+- [LC0257](../products/sculptural-decor/LC0257.md) — Light composition — https://vargov.ru/en/catalog/lc0257
+- [LC0258](../products/sculptural-decor/LC0258.md) — Light composition — https://vargov.ru/en/catalog/lc0258
+- [LC0261](../products/sculptural-decor/LC0261.md) — Decorative screen — https://vargov.ru/en/catalog/lc0261
+- [LC0266](../products/sculptural-decor/LC0266.md) — Decorative screen — https://vargov.ru/en/catalog/lc0266
+- [LC0268](../products/sculptural-decor/LC0268.md) — Decorative panel — https://vargov.ru/en/catalog/lc0268
+- [LC0269](../products/sculptural-decor/LC0269.md) — Backlit wall mirror — https://vargov.ru/en/catalog/lc0269
+- [LC0309](../products/sculptural-decor/LC0309.md) — Light composition — https://vargov.ru/en/catalog/lc0309
+- [LC0315](../products/sculptural-decor/LC0315.md) — Light composition — https://vargov.ru/en/catalog/lc0315
+- [LC0316](../products/sculptural-decor/LC0316.md) — Wall light-sculpture — https://vargov.ru/en/catalog/lc0316
+- [LC0321](../products/sculptural-decor/LC0321.md) — Staircase balustrade — https://vargov.ru/en/catalog/lc0321
+- [LC0324](../products/sculptural-decor/LC0324.md) — Wall lights — https://vargov.ru/en/catalog/lc0324
+- [LC0325](../products/sculptural-decor/LC0325.md) — Light sculpture — https://vargov.ru/en/catalog/lc0325
+- [LC0330](../products/sculptural-decor/LC0330.md) — Decorative screen — https://vargov.ru/en/catalog/lc0330
+- [LC0331](../products/sculptural-decor/LC0331.md) — Decorative screen — https://vargov.ru/en/catalog/lc0331
+- [LC0356](../products/sculptural-decor/LC0356.md) — Floor lamp — https://vargov.ru/en/catalog/lc0356
+- [LC0366](../products/sculptural-decor/LC0366.md) — Light composition — https://vargov.ru/en/catalog/lc0366
+- [LC0370](../products/sculptural-decor/LC0370.md) — Light composition — https://vargov.ru/en/catalog/lc0370
+- [LC0373](../products/sculptural-decor/LC0373.md) — Light composition — https://vargov.ru/en/catalog/lc0373
+- [LC0417](../products/sculptural-decor/LC0417.md) — Light composition — https://vargov.ru/en/catalog/lc0417
+- [LC0495](../products/sculptural-decor/LC0495.md) — Sculptural composition — https://vargov.ru/en/catalog/lc0495
+- [LC0506](../products/sculptural-decor/LC0506.md) — Sculptural composition — https://vargov.ru/en/catalog/lc0506
+- [LC0543](../products/sculptural-decor/LC0543.md) — Wall art object — https://vargov.ru/en/catalog/lc0543
+- [LC0561](../products/sculptural-decor/LC0561.md) — Wall art object — https://vargov.ru/en/catalog/lc0561
+- [LC0575](../products/sculptural-decor/LC0575.md) — Wall light compositions — https://vargov.ru/en/catalog/lc0575
+- [LC0582](../products/sculptural-decor/LC0582.md) — Room divider — https://vargov.ru/en/catalog/lc0582
+- [LC0594](../products/sculptural-decor/LC0594.md) — Wall light compositions — https://vargov.ru/en/catalog/lc0594
+- [LC0600](../products/sculptural-decor/LC0600.md) — Wall and ceiling decorative composition — https://vargov.ru/en/catalog/lc0600

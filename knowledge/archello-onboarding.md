@@ -21,7 +21,7 @@ Archello — это не питч-письмо, а **самостоятельн�
 **Category tags:** Lighting / Decorative lighting / Chandeliers / Wall lights / Floor lamps / Sculptural & decorative objects
 
 **Profile text (EN):**
-Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov is an expert and jury member for several Russian and international design and architecture awards, including the ADD Awards Grand Jury. The brand's work has been recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025. Every piece is custom-manufactured to order at the brand's dedicated factory, with a global dealer network spanning Russia/CIS, the UAE and Middle East, and Southeast Asia.
+Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand's compositions are Platinum Winners at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026 — 22 international awards in total. Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury. Every piece is made to order at the brand's own production, with official dealers in Moscow, Dubai and Hanoi.
 
 **Logo:** взять с vargov.ru (иконка/лого бренда в шапке сайта) — Archello попросит загрузить файлом.
 
@@ -33,15 +33,15 @@ Vargov® Design is a Russian brand and international company producing unique, a
 
 | Приоритет | SKU | Что | Ссылка на карточку |
 |---|---|---|---|
-| Награда IDA | LC0236 | Декоративная композиция | https://vargov.ru/decorative_compositions_vargovdesign_ru/tproduct/727030675-188510271031-dekorativnaya-kompozitsiya |
-| Награда NYPDA | LC0343 | Световая композиция | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-978476161481-svetovaya-kompozitsiya |
-| Награда RLDC 2022 | LC0217 | Световая композиция | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-371033491511-svetovaya-kompozitsiya |
-| Награда RLDC 2023 | LC0342 | Световая композиция | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-997617925181-svetovaya-kompozitsiya |
-| Hero / PR | LC0586 | Torsher "Driplight" | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-176715272222-torsher-driplight |
-| Hero / PR | LC0487 | Световая композиция "подводный мир" (23 фото) | https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-245470522762-svetovaya-kompozitsiya |
-| Hero | LC0194 | Торшер-световая скульптура | https://vargov.ru/floorlamps_and_tablelamps_vargovdesign_ru/tproduct/727178542-630143611671-torsher-svetovaya-skulptura-lc0194 |
+| Награда IDA | LC0236 | Декоративная композиция | https://vargov.ru/catalog/lc0236 |
+| Designer of the Year | LC0343 | Световая композиция | https://vargov.ru/catalog/lc0343 |
+| Interlight 2022 | LC0217 | Световая композиция | https://vargov.ru/catalog/lc0217 |
+| ADD Awards 2023 | LC0342 | Световая композиция | https://vargov.ru/catalog/lc0342 |
+| Hero / PR | LC0586 | Torsher "Driplight" | https://vargov.ru/catalog/lc0586 |
+| Hero / PR | LC0487 | Световая композиция "подводный мир" (23 фото) | https://vargov.ru/catalog/lc0487 |
+| Hero | LC0194 | Торшер-световая скульптура | https://vargov.ru/catalog/lc0194 |
 
-Изображения каждого товара — в галерее на его карточке (и в нашем датасете [datasets/products.json](../datasets/products.json), поле `gallery`). Английские описания к ним — в [en/products/](../en/products/) по SKU.
+Изображения каждого товара — в галерее на его карточке (и в датасете [datasets/products.json](../datasets/products.json), поле `gallery`). Английские описания к ним — в [en/products/](../en/products/) по SKU.
 
 ---
 
