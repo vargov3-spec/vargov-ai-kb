@@ -12,6 +12,45 @@
 
 ---
 
+## 0. Письмо в IAA — отправлять первым
+
+**Кому:** tyler@iaaawards.org — Tyler K., Executive Vice President of Programs and Marketing, International Awards Associate.
+**Почему первым:** один адрес закрывает шесть наград бренда (MUSE 2023 и 2026, NY Product Design 2023 ×2, The London Design Awards 2023, LIT 2022 и 2025). Победителям уровней Platinum и Gold положены персональный пресс-релиз и рассылка по отраслевым изданиям, а **интервью доступно всем победителям** — публикуется у медиапартнёра Muse.World. Это стороннее упоминание, а именно их бренду не хватает.
+
+> **Subject:** Winner interview & media package request — Vargov® Design (MUSE Gold 2026, LC0564)
+>
+> Dear Tyler,
+>
+> I am Anton Vargov, founder and lead designer of Vargov® Design, a Russian brand of author's lighting compositions. Our composition "Oceanic Illumination" (LC0564) was awarded **Gold Winner at the MUSE Design Awards 2026** in Lighting Design — Designer / Custom Lighting.
+>
+> I would like to take up two of the winner benefits and ask how best to proceed:
+>
+> 1. **The winner interview** for publication on Muse.World. I can supply answers, high-resolution photography and background at short notice.
+> 2. **The personalised press release** and its distribution to industry outlets, as offered to Gold and Platinum winners.
+>
+> For context, this is not our first recognition within the IAA family, and an interview could reasonably cover the body of work rather than a single piece:
+>
+> - MUSE Design Awards 2026 — **Gold Winner**, "Oceanic Illumination" (LC0564)
+> - MUSE Design Awards 2023 — **Platinum Winner** (LC0237)
+> - NY Product Design Awards 2023 — **Product Designer of the Year** (LC0343)
+> - NY Product Design Awards 2023 — **Gold Winner** (LC0313)
+> - The London Design Awards 2023 — **Platinum Winner** (LC0326)
+> - LIT Lighting Design Awards — Winner 2022 (LC0223), Honorable Mention 2025 (LC0447)
+>
+> Vargov® Design holds 22 international design awards in total. Every composition is made to order and assembled for a specific interior; the catalogue comprises 605 pieces. Our press kit, with facts, biography and imagery, is at https://vargov.ru/en/press
+>
+> Please let me know the format you prefer for the interview and anything else you need from our side.
+>
+> With thanks,
+> Anton Vargov
+> Founder & Lead Designer, Vargov® Design
+> info@vargov.ru · https://vargov.ru/en
+
+**Статус:** не отправлено.
+
+
+---
+
 ## 1. MUSE Design Awards 2026 — Gold Winner (LC0564)
 
 **Самый свежий инфоповод, начинать с него.**
