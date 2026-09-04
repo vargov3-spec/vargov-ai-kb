@@ -1,38 +1,31 @@
-# Vargov® Design — шоурумы и дилерская сеть
+# Vargov® Design — шоурум и дилеры
 
-Источник: [vargov.ru/official_showroom_vargovdesign](https://vargov.ru/official_showroom_vargovdesign) (проверено 2026-07-06).
+Источник: `src/lib/data/collections.ts` (`DEALER_VENUES`, `PROJECTS`) и `src/lib/seo.ts` репозитория сайта, сверено 2026-09-04. Публичные страницы: [vargov.ru/official-dealers](https://vargov.ru/official-dealers) · [/en/official-dealers](https://vargov.ru/en/official-dealers) · [vargov.ru/showroom](https://vargov.ru/showroom).
 
 ## Официальный шоурум
-- Москва, Нахимовский проспект 24, павильон 2, стенд 212.
+
+**Москва, Нахимовский проспект 24, павильон 2, стенд 212.** Ежедневно 12:00–20:00, телефон [+7 925 888 77 44](tel:+79258887744).
+
+Постоянная экспозиция: композиции показаны собранными и включёнными, рядом — элементы-образцы (художественное стекло, хрусталь, керамика, металл), которые можно рассмотреть вблизи. После Interlight Moscow 2025 выставочная экспозиция целиком переехала сюда. Часть позиций доступна со стенда.
+
+## Дилеры
+
+| Компания | Город | Регион ответственности | Адрес | Контакты |
+|---|---|---|---|---|
+| **XPROJECTLIGHT** | Москва, Россия | Россия, страны СНГ | Нахимовский проспект 24, павильон 2, стенд 211 | [+7 925 888 77 44](tel:+79258887744) · xprojectlight@yandex.ru |
+| **Vargov Design International** | Дубай, ОАЭ | Ближний Восток, Европа, Азия, Африка, Америка | Showroom 1, Al Asmawi Building, Sheikh Zayed Road, PO Box 24710 | [+971 56 787 8789](tel:+971567878789) · sales@vargovdesign.com |
+| **VITRILUX SPACE CO., LTD** | Ханой, Вьетнам | Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия, Сингапур | 4th Floor, No. 2 Thang Long Avenue, Tu Liem Ward | [WhatsApp +84 901 153 999](https://wa.me/84901153999) · vitrilux.vn@gmail.com |
+
+Дилер XPROJECTLIGHT занимает соседний стенд с фирменным шоурумом — 211 против 212 по одному адресу.
 
 ## Прямые контакты бренда
-- Telegram: @AntonVargov
-- WhatsApp: https://wa.me/message/SAC5LWOV5QMXC1
-- WeChat: Vargov_Design
-- Email: info@vargov.ru
-- Max: Vargov Design
 
-## Дилерская сеть
+Email: info@vargov.ru · Телефон и WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram бренда: [@vargov_design](https://t.me/vargov_design) · Telegram основателя: @AntonVargov · WeChat: Vargov_Design
 
-### Россия и страны СНГ
-- **XPROJECTLIGHT**, Москва (тот же адрес, стенд 211)
-- Тел.: +7 925 888 77 44
-- Email: xprojectlight@yandex.ru
+Доставка — по всему миру, в фирменной обрешётке.
 
-### Ближний Восток, страны Персидского залива, Америка, Европа, Азия, Африка
-- **Vargov Design International**, Дубай, ОАЭ
-- Адрес: Showroom 1, Al Asmawi Building, Sheikh Zayed Road, PO Box 24710
-- Тел.: +971 56 787 8789
-- Email: sales@vargovdesign.com
+## Что изменилось с июльской версии этого файла
 
-### Юго-Восточная Азия (Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия, Сингапур)
-- **VITRILUX SPACE CO., LTD**, Ханой
-- Адрес: 4th Floor, No. 2 Thang Long Avenue, Tu Liem Ward
-- Zalo/WhatsApp: +84 901 153 999
-- Email: vitrilux.vn@gmail.com
-
-### Прочие регионы
-- WhatsApp: +7 916 537 33 52
-- Email: info@vargov.ru
+Прежняя версия описывала контакты по сайту на Tilda: старая ссылка WhatsApp вида `wa.me/message/SAC5…` больше не используется, региональная разбивка у дилера в Дубае была шире («Ближний Восток, страны Персидского залива, Америка, Европа, Азия, Африка») — здесь она приведена дословно по данным сайта.
 
 См. также [[brand]].

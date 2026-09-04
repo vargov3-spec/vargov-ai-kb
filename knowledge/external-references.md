@@ -32,3 +32,28 @@
 - Прямых упоминаний бренда в дизайн-медиа (Dezeen, ArchDaily, Archello, Houzz и т.п.) поиском не найдено — это главный пробел для PR-работы (Приоритет 3).
 - Реальные независимые верифицируемые источники ЕСТЬ (базы наград, справочник ICONIC, жюри ADD Awards) — этого достаточно как отправная точка для черновика Wikidata-сущности (see [[wikidata-draft]]), хотя Wikipedia-уровня notability (значимые независимые публикации в СМИ) пока не хватает.
 - Реальное видео-интервью с Interlight 2025 существует — можно использовать как VideoObject в Schema.org (см. [[brand]] и references/schema-organization.jsonld).
+
+## Обновление 2026-09-04
+
+Полный список независимых источников по наградам — 22 награды со ссылками на
+страницы победителей и сертификаты — теперь ведётся в [[awards-verified]]
+(источник `awards.ts` репозитория сайта). Программ пятнадцать: MUSE Design
+Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards,
+SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European
+Product Design Award, NY Product Design Awards, BLT Built Design Awards,
+The London Design Awards, International Architecture & Design Awards · ADC,
+Houzee Awards, Interlight Russia · Российский светодизайн, Awwwards.
+
+Сентябрьский аудит видимости — [[ai-visibility-audit-2026-09]]. Кратко: по
+имени бренда выдача полностью своя, по категорийным запросам («посоветуй бренд
+освещения») бренда нет ни на английском, ни на русском; в Wikidata сущностей
+по-прежнему нет.
+
+## Упоминания со знаком минус
+
+- **Alibaba**, поставщик поставщик A: листинг «Custom Vargov Design LED
+  Chandelier for Hotel Lobby …» использует зарегистрированный знак VARGOV
+  (№ 896936). Для ИИ это ядовитая связка: модель, обученная на этой странице,
+  свяжет бренд с оптовой китайской люстрой. Пакет жалобы — [[brand-protection-2026-09]].
+- **Два аккаунта Instagram** в выдаче: `@vargov_design` и `@vargovdesign`.
+  Какой из них не принадлежит бренду — уточняется у владельца.
