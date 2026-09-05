@@ -16,6 +16,16 @@
 | 2026-09-05 | D5 MAG — Tina King | editor@d5mag.com | исправление фактической ошибки в статье о LC0358 («makes in China») | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | vamvidnee.ru | info@vamvidnee.ru | дополнение к статье «Российские бренды освещения переживают ренессанс» | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Wescover | community@wescover.com | очередь на онбординг создателя | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | darc — Sarah Cullen, cc Helen Ankers | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: Сара в декрете с января 2026, письма читают Helen, Matt, Ellie — Helen в копии | автоответ | напоминание не раньше 16.09 |
+| 2026-09-05 | arc — Matt Waring, cc Helen Ankers | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | Interior Design (US) — Market Director, cc News | редакция interiordesign.net | новые продукты: Oceanic Illumination, Depth of Water | отправлено; **основной адрес отскочил (550, ящик не существует)**, копия News-редактору доставлена | bounce | найти актуальный адрес Market Director, переслать |
+| 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09 | автоответ | напоминание не раньше 23.09 |
+| 2026-09-05 | Dwell — Design News Editor, cc Market Editor | редакция dwell.com | design news: три композиции | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | Frame | editorial@frameweb.com | editorial review: композиции как пространственные объекты, ссылка на эссе | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | Yatzer | info@yatzer.com | **эксклюзив на Driplight**, первая публикация | отправлено; автоответ «редакция рассмотрит» | автоответ | до ответа Driplight другим не предлагать; напоминание не раньше 19.09 |
+| 2026-09-05 | Hospitality Design — EIC, cc Managing Editor | редакция hospitalitydesign.com | свет для лобби, ресторанов и спа | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | Design Mate | hi@design-mate.ru | история об эссе о русском световом дизайне, интервью | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | SALON-interior — предметный редактор, cc editor@salon.ru | редакция salon.ru | предметы: Oceanic Illumination, Driplight | отправлено основному адресату; **editor@salon.ru отскочил (550)** | bounce копии | напоминание не раньше 16.09 |
 
 ## Очередь — не отправлено
 
@@ -28,11 +38,6 @@
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
 | Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). В кабинете остался пустой черновик «Sea Lace» (id 127279, загрузчик фото на нём сломался) — удалить владельцу | я; проверить статус модерации ~12.09 |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
-| darc, arc (Mondiale) | редакционная почта | product news / brand feature о декоративном и архитектурном свете | письма готовы (приватная папка PR), отправка — владелец |
-| Interior Design (US) | редакционная почта, Market Director | новые продукты, JPEG 350 dpi, не старше 6 месяцев | письмо готово |
-| Sight Unseen | submissions@ | коллекционные объекты; нужна папка Dropbox с hi-res | письмо готово, папку собирает владелец |
-| Dwell, Frame, Yatzer, Hospitality Design | редакционная почта | продуктовые новости; Yatzer — эксклюзив на Driplight | письма готовы |
-| Design Mate, SALON-interior | редакционная почта | история об эссе / предметный раздел | письма готовы (RU) |
 | Wallpaper*, Elle Decor US, AD US, INMYROOM | — | холодные питчи не принимают или только проекты/реклама | не отправлять |
 | Interior+Design, Elle Decoration RU, AD Russia, Проект Россия | — | сайты недоступны или закрыты (AD Russia — 410), адреса не подтверждены | отложено |
 
