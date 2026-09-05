@@ -26,7 +26,7 @@
 | Galerie Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | Azure Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
-| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); товары: Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236) опубликованы; View from the Bottom of a Pond (LC0237) и Pure Plasticity of Line (LC0217) заполнены, публикация упёрлась в проверку Cloudflare; остальные четыре (LC0342, LC0586, LC0487, LC0194) — в очереди | я; клик по Cloudflare — владелец |
+| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). В кабинете остался пустой черновик «Sea Lace» (id 127279, загрузчик фото на нём сломался) — удалить владельцу | я; проверить статус модерации ~12.09 |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
 
 ---
