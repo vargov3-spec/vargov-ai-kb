@@ -19,7 +19,7 @@
 | 2026-09-05 | darc — Sarah Cullen, cc Helen Ankers | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: Сара в декрете с января 2026, письма читают Helen, Matt, Ellie — Helen в копии | автоответ | напоминание не раньше 16.09 |
 | 2026-09-05 | arc — Matt Waring, cc Helen Ankers | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Interior Design (US) — Market Director, cc News | редакция interiordesign.net | новые продукты: Oceanic Illumination, Depth of Water | отправлено; **основной адрес отскочил (550, ящик не существует)**, копия News-редактору доставлена | bounce | найти актуальный адрес Market Director, переслать |
-| 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09 | автоответ | напоминание не раньше 23.09 |
+| 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09. **Вечером 05.09 ушло второе письмо** с бессрочной ссылкой на hi-res (vargov.ru/press/…zip + press/ в репозитории), как требуют правила подачи | автоответ | напоминание не раньше 23.09 |
 | 2026-09-05 | Dwell — Design News Editor, cc Market Editor | редакция dwell.com | design news: три композиции | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Frame | editorial@frameweb.com | editorial review: композиции как пространственные объекты, ссылка на эссе | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Yatzer | info@yatzer.com | **эксклюзив на Driplight**, первая публикация | отправлено; автоответ «редакция рассмотрит» | автоответ | до ответа Driplight другим не предлагать; напоминание не раньше 19.09 |
@@ -31,8 +31,8 @@
 
 | Адресат | Канал | Что нужно | Кто |
 |---|---|---|---|
-| Design Milk | форма design-milk.com/submit/ | один проект с историей (LC0487 или LC0586), фото ≥3000 px | заполняю я, кнопку — владелец |
-| Adorno | adorno.design/apply | 5–7 работ, био, куратор по региону | заполняю я, кнопку — владелец |
+| Design Milk | форма design-milk.com/submit/ (ClickUp) | **отправлено 05.09.2026**: «A design-forward product or collection» / Home Furnishings, «Sea Lace — light composition LC0487 by Vargov® Design», описание без материалов и размеров, 8 фото 1680 px, ссылка на карточку и Instagram, контакт Anton Vargov / info@vargov.ru; редакция ответа не гарантирует | проверить публикации Design Milk ~20.09 |
+| Adorno | adorno.design/apply | **анкета отправлена 05.09.2026** (4 шага: контакты, практика «Brand, Moscow, 5–10 people, продажи регулярно», дисциплина Other, всё производство in-house, стиль Experimental, High-end, 6 фото из пресс-кита); ответ кураторов 3–4 недели | ждать до ~03.10 |
 | Galerie Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | Azure Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
