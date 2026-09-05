@@ -65,6 +65,9 @@ ORG_SAME_AS = [
     "https://www.instagram.com/vargov_design/",
     "https://www.facebook.com/vargovdesign",
     "https://www.wikidata.org/wiki/Q141301076",
+    "https://www.pinterest.com/Vargov_Design/",
+    "https://www.google.com/maps?cid=2970420474499935128",
+    "https://yandex.ru/maps/org/vargov_design/199433674369/",
     REPO_URL,
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
