@@ -13,6 +13,9 @@ name: Канарейка базы знаний
 #   - датасеты пересобираются ЛОКАЛЬНО из репозитория сайта, он приватный и
 #     отсюда недоступен: python scripts/build_from_site.py
 #
+# 05.09.2026 проверка расширена: прежняя версия пропустила пустой английский граф
+# (54 байта) и групповые ссылки на 3D-модели — она смотрела только на число узлов.
+#
 # Если эта проверка упала — данные пересобрать локально и запушить руками.
 
 on:
@@ -27,35 +30,65 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Датасет не пуст и содержит описания
+      - name: Датасеты полны и совпадают между языками
+        run: |
+          python - <<'PY'
+          import json, sys
+          ru = json.load(open("datasets/products.json", encoding="utf-8"))
+          en = json.load(open("en/datasets/products.json", encoding="utf-8"))
+          if len(ru) < 500:
+              sys.exit(f"датасет обнулён или обрезан: {len(ru)} позиций")
+          if len(en) != len(ru):
+              sys.exit(f"английский датасет {len(en)} против {len(ru)} — ветки разошлись")
+          no_desc = [i["code"] for i in ru if not (i.get("description") or {}).get("en")]
+          if len(no_desc) > 20:
+              sys.exit(f"без английского описания {len(no_desc)} позиций, например {no_desc[:5]}")
+          jsonl = sum(1 for _ in open("datasets/products.jsonl", encoding="utf-8"))
+          if jsonl != len(ru):
+              sys.exit(f"products.jsonl {jsonl} строк против {len(ru)} в products.json")
+          print(f"датасеты: RU {len(ru)}, EN {len(en)}, JSONL {jsonl} — совпадают")
+          PY
+
+      - name: Граф schema.org самодостаточен
         run: |
           python - <<'PY'
           import json, sys
           items = json.load(open("datasets/products.json", encoding="utf-8"))
-          if len(items) < 500:
-              sys.exit(f"датасет обнулён или обрезан: {len(items)} позиций")
-          no_desc = [i["code"] for i in items if not (i.get("description") or {}).get("en")]
-          if len(no_desc) > 20:
-              sys.exit(f"без английского описания {len(no_desc)} позиций, например {no_desc[:5]}")
           graph = json.load(open("references/catalog.jsonld", encoding="utf-8"))["@graph"]
-          if len(graph) != len(items):
-              sys.exit(f"узлов JSON-LD {len(graph)} против {len(items)} позиций")
+          types = [n.get("@type") for n in graph]
+          products = [n for n in graph if n.get("@type") == "Product"]
+          if len(products) != len(items):
+              sys.exit(f"узлов Product {len(products)} против {len(items)} позиций")
+          for t in ("Organization", "Person", "Dataset"):
+              if t not in types:
+                  sys.exit(f"в графе нет узла {t} — товары ссылаются на пустоту")
+          ids = {n.get("@id") for n in graph}
+          dangling = {p["brand"]["@id"] for p in products if p["brand"]["@id"] not in ids}
+          if dangling:
+              sys.exit(f"brand/@id не разрешается внутри графа: {sorted(dangling)}")
           bad = sorted({k for n in graph for k in ("offers", "price", "material", "size") if k in n})
           if bad:
               sys.exit(f"в JSON-LD поля, запрещённые правилами владельца: {bad}")
-          print(f"датасет: {len(items)} позиций, JSON-LD: {len(graph)} узлов — в порядке")
+          org = next(n for n in graph if n.get("@type") == "Organization")
+          if len(org.get("award", [])) < 20:
+              sys.exit(f"у Organization {len(org.get('award', []))} наград — ожидается 22")
+          print(f"граф: {len(products)} Product + Organization ({len(org['award'])} наград), Person, Dataset — в порядке")
           PY
 
-      - name: Нет адресов эпохи Tilda
+      - name: Нет мёртвых и групповых адресов
         run: |
           if grep -rlE "_vargovdesign_ru|tproduct|tildacdn" \
                datasets references collections products en llms.txt llms-full.txt 2>/dev/null; then
             echo "::error::найдены мёртвые адреса эпохи Tilda (файлы выше)"
             exit 1
           fi
-          echo "мёртвых адресов нет"
+          if grep -rl "models?tag=" datasets references products en 2>/dev/null; then
+            echo "::error::групповые ссылки 3ddd ?tag= — показывают чужие модели (файлы выше)"
+            exit 1
+          fi
+          echo "мёртвых и групповых адресов нет"
 
       - name: Карта сайта для ИИ жива
         run: |

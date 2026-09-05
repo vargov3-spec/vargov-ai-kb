@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://github.com/vargov3-spec/vargov-ai-kb#dataset",
+  "name": "Vargov®Design — catalogue of lighting and decorative compositions",
+  "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials, dimensions and prices are intentionally not included.",
+  "url": "https://github.com/vargov3-spec/vargov-ai-kb",
+  "isBasedOn": "https://vargov.ru",
+  "creator": {
+    "@id": "https://vargov.ru#organization"
+  },
+  "publisher": {
+    "@id": "https://vargov.ru#organization"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "inLanguage": [
+    "ru",
+    "en",
+    "de",
+    "it",
+    "fr",
+    "es",
+    "vi",
+    "ar"
+  ],
+  "keywords": [
+    "lighting design",
+    "chandeliers",
+    "light sculptures",
+    "decorative compositions",
+    "Vargov Design",
+    "Anton Vargov",
+    "Russian design",
+    "made to order"
+  ],
+  "dateModified": "2026-09-05",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl",
+      "encodingFormat": "application/x-ndjson"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld",
+      "encodingFormat": "application/ld+json"
+    }
+  ]
+}

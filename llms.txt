@@ -10,7 +10,19 @@
 
 - [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — полная карта: факты, разделы, контакты, языковые версии.
 
-Этот репозиторий — вспомогательная база знаний: проверенные факты, награды со ссылками на первоисточники, PR-материалы.
+Этот репозиторий — вспомогательная база знаний: проверенные факты, награды со ссылками на первоисточники, PR-материалы, открытые датасеты.
+
+## Открытые данные (CC BY 4.0)
+
+Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы, размеры и цены в данных отсутствуют намеренно.
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 композиций, описания на восьми языках, снимки, награды, ссылки на 3D-модели
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — граф schema.org: Organization, Person, Dataset и 605 Product
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+- Карточки: `products/<раздел>/<артикул>.md` (RU) и `en/products/<раздел>/<артикул>.md` (EN)
+
+Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
 
 ## Каталог
 

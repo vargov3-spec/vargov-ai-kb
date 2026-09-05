@@ -12,7 +12,7 @@
 | `datasets/`, `en/datasets/` | 605 композиций: JSON, JSONL, CSV, Markdown. RU-версия многоязычная (8 языков), EN — одноязычная |
 | `products/`, `en/products/` | Карточка на композицию: описание, где уместна, стилистика, награды, снимки |
 | `collections/`, `en/collections/` | Четыре раздела каталога со списком артикулов |
-| `references/` | `catalog.jsonld` и `schema-products.jsonld` — граф schema.org Product на 605 узлов |
+| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 22 награды, реестровые номера знака), Person (основатель), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld` и `3ddd-models.json` — артикул → своя карточка 3D-модели |
 | `guides/`, `en/guides/` | Тематические материалы |
 | `scripts/` | `build_from_site.py` — сборщик; `security_scan.py` — ежедневный монитор целостности сайта |
 | `scan/` | Служебное: дамп наград, список удалённого при пересборке |

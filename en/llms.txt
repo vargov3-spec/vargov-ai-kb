@@ -12,6 +12,17 @@ The brand's primary machine-readable map lives on the site itself and is generat
 
 This repository is a supporting knowledge base: verified facts, awards with links to primary sources, press materials.
 
+## Open data (CC BY 4.0)
+
+Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials, dimensions and prices are intentionally absent from the data.
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 compositions, descriptions in eight languages, images, awards, links to the brand's own 3D models
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Dataset and 605 Product nodes
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+
+VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
+
 ## Catalogue
 
 - [Catalogue, 605 compositions](https://vargov.ru/en/catalog) — searchable by LC code, filterable by type, search by photograph

@@ -31,6 +31,7 @@ import re
 import shutil
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
@@ -39,6 +40,33 @@ DEFAULT_SITE = Path("V:/new site Vargov Design/web")
 LOCALES = ["ru", "en", "de", "it", "fr", "es", "vi", "ar"]
 SITE_URL = "https://vargov.ru"
 ORG_ID = f"{SITE_URL}#organization"
+PERSON_ID = f"{SITE_URL}#person"
+REPO_URL = "https://github.com/vargov3-spec/vargov-ai-kb"
+REPO_RAW = "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main"
+DATASET_ID = f"{REPO_URL}#dataset"
+
+# 3D-модели. Групповые адреса 3ddd.ru/users/vargov/models?tag=lcXXXX запрещены
+# владельцем (01.09.2026): по тегу выдаются и чужие карточки с тем же артикулом.
+# Источник своих карточек — выгрузка конфигуратора через API 3ddd
+# (POST /api/models {user_slug, tag}); её слепок хранится в репозитории.
+MODELS_3D = KB / "references" / "3ddd-models.json"
+CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sources/3ddd-own.json")
+DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
+
+# Публичные каналы бренда — только подтверждённые владельцем или его сайтом.
+ORG_SAME_AS = [
+    "https://vargov.design",
+    "https://t.me/vargov_design",
+    "https://t.me/AntonVargov",
+    "https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA",
+    "https://rutube.ru/channel/38329605/",
+    "https://3ddd.ru/users/vargov",
+    "https://3dsky.org/users/vargov",
+    "https://www.instagram.com/vargov_design/",
+    "https://www.facebook.com/vargovdesign",
+    REPO_URL,
+]
+PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://addawards.ru/jury/293063/"]
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
 CATEGORIES = {
@@ -84,7 +112,31 @@ def load_site(site: Path) -> dict:
         for rec in json.loads(f.read_text(encoding="utf-8")):
             instock.setdefault(rec["code"], []).append(rec)
 
-    return {"catalog": catalog, "copy": copy, "instock": instock, "awards": dump_awards(site)}
+    return {"catalog": catalog, "copy": copy, "instock": instock,
+            "awards": dump_awards(site), "models": load_models_3d()}
+
+
+def load_models_3d() -> dict[str, str]:
+    """Артикул -> слаг своей карточки на 3ddd. Свежая выгрузка конфигуратора,
+    если она есть на этой машине, обновляет слепок в репозитории; иначе слепок."""
+    if CONFIGURATOR_OWN.is_file():
+        raw = json.loads(CONFIGURATOR_OWN.read_text(encoding="utf-8")).get("items", {})
+        models = {code: rec["slug"] for code, rec in raw.items()
+                  if rec.get("slug") and rec.get("own")}
+        MODELS_3D.parent.mkdir(exist_ok=True)
+        MODELS_3D.write_text(json.dumps({
+            "source": "конфигуратор, data-sources/3ddd-own.json — свои карточки аккаунта vargov по API 3ddd",
+            "url_ru": DDD_RU + "<slug>", "url_en": DDD_EN + "<slug>",
+            "items": dict(sorted(models.items())),
+        }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+        print(f"  3D-модели: {len(models)} своих карточек (выгрузка конфигуратора)")
+        return models
+    if MODELS_3D.is_file():
+        models = json.loads(MODELS_3D.read_text(encoding="utf-8"))["items"]
+        print(f"  3D-модели: {len(models)} своих карточек (слепок в репозитории)")
+        return models
+    print("  3D-модели: источника нет, ссылки не проставлены")
+    return {}
 
 
 def dump_awards(site: Path) -> list:
@@ -158,8 +210,9 @@ def urls_for(slug: str) -> dict[str, str]:
 
 
 def build_records(site_data: dict) -> list[dict]:
-    catalog, copy, instock, awards = (
-        site_data["catalog"], site_data["copy"], site_data["instock"], site_data["awards"],
+    catalog, copy, instock, awards, models = (
+        site_data["catalog"], site_data["copy"], site_data["instock"],
+        site_data["awards"], site_data["models"],
     )
     records = []
     for p in catalog:
@@ -183,7 +236,9 @@ def build_records(site_data: dict) -> list[dict]:
             "image": gallery[0] if gallery else None,
             "gallery": gallery,
             "gallery_total": p.get("galleryTotal", len(gallery)),
-            "model3d": p.get("model3d") or None,
+            # только своя карточка; групповой ?tag= из данных сайта не берём
+            "model3d": f"{DDD_RU}{models[code]}" if code in models else None,
+            "model3d_en": f"{DDD_EN}{models[code]}" if code in models else None,
             "award_winning": bool((per_lang["ru"] or {}).get("awardWinning")),
             "awards": awards_for(code, awards),
             "in_stock_elements": [
@@ -240,8 +295,9 @@ def product_page(rec: dict, lang: str) -> str:
         f"- {L['art']}: {rec['code']}",
         f"- {L['page']}: {rec['urls'][lang]}",
     ]
-    if rec["model3d"]:
-        out.append(f"- {L['m3d']}: {rec['model3d']}")
+    m3d = rec["model3d"] if ru else rec["model3d_en"]
+    if m3d:
+        out.append(f"- {L['m3d']}: {m3d}")
     out.append("")
 
     if rec["description"].get(lang):
@@ -297,7 +353,103 @@ def product_node(rec: dict) -> dict:
         node["description"] = rec["snippet"]["en"]
     if rec["awards"]:
         node["award"] = [f"{a['program']} {a['year']} — {a['level_en']}" for a in rec["awards"]]
+    if rec["model3d_en"]:
+        node["subjectOf"] = {"@type": "3DModel", "url": rec["model3d_en"], "sameAs": rec["model3d"]}
     return node
+
+
+def award_strings(awards: list) -> list[str]:
+    """22 награды дословно из awards.ts: «Программа Год — уровень». Поздравления жюри не считаются."""
+    return [f"{p['name']} {it['year']} — {it['en']}"
+            for p in awards for it in p["items"] if not it.get("commendation")]
+
+
+def organization_node(awards: list) -> dict:
+    """Узел бренда: без него 605 Product ссылаются на пустоту. Материалы, цены,
+    год основания — не указываем: первое запрещено правилами, второе неизвестно точно."""
+    hrefs = [it["href"] for p in awards for it in p["items"]
+             if it.get("href") and not it.get("commendation")]
+    return {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        "name": "Vargov®Design",
+        "alternateName": ["Vargov Design", "VARGOV"],
+        "url": SITE_URL,
+        "description": (
+            "Russian brand of author's lighting and decorative compositions — collectible "
+            "light sculptures made to order, each assembled for a specific interior. "
+            "Founded and led by designer Anton Vargov."
+        ),
+        "founder": {"@id": PERSON_ID},
+        "email": "info@vargov.ru",
+        "telephone": "+7 916 537 33 52",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Nakhimovsky Prospekt 24, Pavilion 2, Stand 212",
+            "addressLocality": "Moscow",
+            "addressCountry": "RU",
+        },
+        "knowsAbout": ["lighting design", "sculptural chandeliers", "light art installations",
+                       "decorative compositions", "made-to-order lighting"],
+        "identifier": [
+            {"@type": "PropertyValue", "propertyID": "Rospatent trademark registration",
+             "value": "896936", "url": "https://fips.ru/EGD/48e090a1-18da-4368-8a30-775b99bcb814"},
+            {"@type": "PropertyValue", "propertyID": "WIPO Madrid international trademark registration",
+             "value": "1795801", "url": "https://www3.wipo.int/madrid/monitor/en/showData.jsp?ID=ROM.1795801"},
+        ],
+        "award": award_strings(awards),
+        "sameAs": list(dict.fromkeys(ORG_SAME_AS + hrefs)),
+    }
+
+
+def person_node(awards: list) -> dict:
+    personal = [s for s in award_strings(awards) if "Designer of the Year" in s]
+    return {
+        "@type": "Person",
+        "@id": PERSON_ID,
+        "name": "Anton Vargov",
+        "alternateName": "Антон Варгов",
+        "jobTitle": "Founder & Lead Designer",
+        "worksFor": {"@id": ORG_ID},
+        "url": f"{SITE_URL}/en/designer",
+        "nationality": {"@type": "Country", "name": "Russia"},
+        "award": personal,
+        "sameAs": PERSON_SAME_AS,
+    }
+
+
+def dataset_node(n_products: int, today: str) -> dict:
+    """Описание самого датасета — без него открытые данные не попадают в Google Dataset Search."""
+    def dl(path: str, fmt: str) -> dict:
+        return {"@type": "DataDownload", "contentUrl": f"{REPO_RAW}/{path}", "encodingFormat": fmt}
+    return {
+        "@type": "Dataset",
+        "@id": DATASET_ID,
+        "name": "Vargov®Design — catalogue of lighting and decorative compositions",
+        "description": (
+            f"Open dataset of {n_products} author-designed lighting and decorative compositions by "
+            "Vargov®Design: article codes, categories, descriptions in eight languages, images, "
+            "awards and links to the brand's own 3D models. Materials, dimensions and prices are "
+            "intentionally not included."
+        ),
+        "url": REPO_URL,
+        "isBasedOn": SITE_URL,
+        "creator": {"@id": ORG_ID},
+        "publisher": {"@id": ORG_ID},
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "isAccessibleForFree": True,
+        "inLanguage": LOCALES,
+        "keywords": ["lighting design", "chandeliers", "light sculptures", "decorative compositions",
+                     "Vargov Design", "Anton Vargov", "Russian design", "made to order"],
+        "dateModified": today,
+        "distribution": [
+            dl("datasets/products.json", "application/json"),
+            dl("datasets/products.jsonl", "application/x-ndjson"),
+            dl("datasets/products.csv", "text/csv"),
+            dl("en/datasets/products.json", "application/json"),
+            dl("references/catalog.jsonld", "application/ld+json"),
+        ],
+    }
 
 
 def en_view(rec: dict) -> dict:
@@ -307,7 +459,8 @@ def en_view(rec: dict) -> dict:
         "category_label": rec["category_label"]["en"], "type": rec["type"].get("en"),
         "url": rec["urls"]["en"], "urls": rec["urls"], "image": rec["image"],
         "gallery": rec["gallery"], "gallery_total": rec["gallery_total"],
-        "model3d": rec["model3d"], "award_winning": rec["award_winning"],
+        "model3d": rec["model3d_en"], "model3d_ru": rec["model3d"],
+        "award_winning": rec["award_winning"],
         "awards": [{"program": a["program"], "year": a["year"], "level": a["level_en"],
                     "href": a["href"], "series": a["series"]} for a in rec["awards"]],
         "in_stock_elements": rec["in_stock_elements"],
@@ -325,7 +478,11 @@ def write_datasets(recs: list[dict], base: Path, english: bool) -> None:
     write(base / "products.jsonl",
           "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
 
-    with (base / "products.csv").open("w", encoding="utf-8", newline="") as f:
+    # CSV один на репозиторий (колонки и так английские): en/datasets/products.csv
+    # был побайтовой копией и только путал, какой файл канонический.
+    if english:
+        (base / "products.csv").unlink(missing_ok=True)
+    with (KB / "datasets" / "products.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["code", "category", "type_en", "url_en", "url_ru", "image",
                     "gallery_count", "award_winning", "awards", "snippet_en", "description_en"])
@@ -399,6 +556,19 @@ def prune_stale(recs: list[dict]) -> list[str]:
         if dead.exists():
             removed.append(str(dead.relative_to(KB)) + " (артефакт старого сканера)")
             dead.unlink()
+    # Дубли: один канонический файл на каждую сущность. Оставлены catalog.jsonld,
+    # datasets/products.csv и en/datasets/products.json; их копии под другими
+    # именами только путали, какой из файлов актуален.
+    for dup in (KB / "references" / "schema-products.jsonld",
+                KB / "en" / "references" / "schema-products.jsonld",
+                KB / "vargov-products.json", KB / "publish" / "llms.txt",
+                KB / "en" / "datasets" / "products.csv"):
+        if dup.exists():
+            removed.append(str(dup.relative_to(KB)) + " (побайтовый дубль)")
+            dup.unlink()
+    for empty_dir in (KB / "publish", KB / "en" / "references"):
+        if empty_dir.is_dir() and not any(empty_dir.iterdir()):
+            empty_dir.rmdir()
     return removed
 
 
@@ -424,12 +594,18 @@ def main() -> None:
         write(KB / "products" / r["category"] / f"{r['code']}.md", product_page(r, "ru"))
         write(KB / "en" / "products" / r["category"] / f"{r['code']}.md", product_page(r, "en"))
 
-    graph = {"@context": "https://schema.org", "@graph": [product_node(r) for r in recs]}
-    for p in (KB / "references" / "schema-products.jsonld", KB / "references" / "catalog.jsonld"):
-        write(p, json.dumps(graph, ensure_ascii=False, indent=2) + "\n")
-
-    write(KB / "vargov-products.json",
-          json.dumps([en_view(r) for r in recs], ensure_ascii=False, indent=2) + "\n")
+    # Граф самодостаточен: бренд, основатель и описание датасета идут первыми,
+    # затем 605 Product, ссылающихся на #organization. Один канонический файл.
+    today = date.today().isoformat()
+    org, person, dataset = (organization_node(site_data["awards"]),
+                            person_node(site_data["awards"]), dataset_node(len(recs), today))
+    products = [product_node(r) for r in recs]
+    graph = {"@context": "https://schema.org", "@graph": [org, person, dataset, *products]}
+    write(KB / "references" / "catalog.jsonld", json.dumps(graph, ensure_ascii=False, indent=2) + "\n")
+    write(KB / "references" / "organization.jsonld",
+          json.dumps({"@context": "https://schema.org", "@graph": [org, person]}, ensure_ascii=False, indent=2) + "\n")
+    write(KB / "references" / "dataset.jsonld",
+          json.dumps({"@context": "https://schema.org", **dataset}, ensure_ascii=False, indent=2) + "\n")
 
     removed = prune_stale(recs)
     write(KB / "scan" / "removed-stale.txt",
@@ -451,15 +627,24 @@ def main() -> None:
     bad = [k for n in graph["@graph"] for k in ("offers", "price", "material", "size") if k in n]
     if bad:
         problems.append(f"в JSON-LD запрещённые поля: {sorted(set(bad))}")
+    types = [n["@type"] for n in graph["@graph"]]
+    if types.count("Product") != len(recs) or "Organization" not in types or "Person" not in types:
+        problems.append(f"состав графа: {types.count('Product')} Product, "
+                        f"Organization {'есть' if 'Organization' in types else 'НЕТ'}, "
+                        f"Person {'есть' if 'Person' in types else 'НЕТ'}")
     stale = subprocess.run(
-        ["grep", "-rl", "-e", "tildacdn", "-e", "_vargovdesign_ru", "-e", "tproduct",
+        ["grep", "-rl", "--exclude=vargov-elements-*", "-e", "tildacdn", "-e", "_vargovdesign_ru",
+         "-e", "tproduct", "-e", "models?tag=",
          "datasets", "en", "products", "collections", "references", "llms.txt", "llms-full.txt"],
         cwd=KB, capture_output=True, text=True,
     ).stdout.strip()
     if stale:
-        problems.append("остались тильдовские адреса в: " + stale.replace("\n", ", ")[:300])
+        problems.append("мёртвые или групповые адреса в: " + stale.replace("\n", ", ")[:300])
+    n_models = sum(1 for r in recs if r["model3d"])
 
-    print(f"  карточек: {len(recs) * 2} (RU+EN), узлов JSON-LD: {len(graph['@graph'])}")
+    print(f"  карточек: {len(recs) * 2} (RU+EN), узлов JSON-LD: {len(graph['@graph'])} "
+          f"(Product {types.count('Product')} + Organization, Person, Dataset)")
+    print(f"  ссылок на свои 3D-модели: {n_models} из {len(recs)}")
     print(f"  наград привязано: {sum(len(r['awards']) for r in recs)}")
     print(f"  удалено устаревшего: {len(removed)}")
     if problems:

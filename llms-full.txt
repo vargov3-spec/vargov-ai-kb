@@ -8,8 +8,8 @@
 knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 Пер-товарные датасеты (605 позиций x 8 языков) пересобираются локальным
-сборщиком scripts/build_from_site.py; до его прогона ссылок на них здесь нет
-намеренно — пустой файл под ссылкой хуже отсутствия ссылки.
+сборщиком scripts/build_from_site.py и опубликованы под лицензией CC BY 4.0 —
+ссылки в разделах «Открытые данные» / «Open data» ниже.
 
 ---
 
@@ -25,7 +25,18 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 - [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — полная карта: факты, разделы, контакты, языковые версии.
 
-Этот репозиторий — вспомогательная база знаний: проверенные факты, награды со ссылками на первоисточники, PR-материалы.
+Этот репозиторий — вспомогательная база знаний: проверенные факты, награды со ссылками на первоисточники, PR-материалы, открытые датасеты.
+
+## Открытые данные (CC BY 4.0)
+
+Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы, размеры и цены в данных отсутствуют намеренно.
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 композиций, описания на восьми языках, снимки, награды, ссылки на 3D-модели
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — граф schema.org: Organization, Person, Dataset и 605 Product
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+
+Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
 
 ## Каталог
 
@@ -86,6 +97,17 @@ The brand's primary machine-readable map lives on the site itself and is generat
 - [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — full map: facts, sections, contacts, language versions.
 
 This repository is a supporting knowledge base: verified facts, awards with links to primary sources, press materials.
+
+## Open data (CC BY 4.0)
+
+Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials, dimensions and prices are intentionally absent from the data.
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 compositions, descriptions in eight languages, images, awards, links to the brand's own 3D models
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Dataset and 605 Product nodes
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+
+VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
 
 ## Catalogue
 
