@@ -66,7 +66,8 @@ ORG_SAME_AS = [
     "https://www.facebook.com/vargovdesign",
     REPO_URL,
 ]
-PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://addawards.ru/jury/293063/"]
+# Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
+PERSON_SAME_AS = ["https://t.me/AntonVargov"]
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
 CATEGORIES = {

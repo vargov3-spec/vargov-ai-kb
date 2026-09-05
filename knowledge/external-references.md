@@ -9,7 +9,7 @@
 - [New York Product Design Awards — LC0343](https://nydesignawards.com/winner-info.php?id=1296) — победитель, официальная страница NYPDA.
 - [Конкурс «Российский светодизайн» 2022 — LC0217](https://online.gefera.ru/contest/rldc-2022/works/?work_id=14012747) — конкурсная площадка gefera.ru. В `awards.ts` премия называется «Interlight Russia · Российский светодизайн» (специальный приз 2022); «RLDC» — обозначение площадки, отдельной премией не является.
 - [Конкурс «Российский светодизайн» 2023 — LC0342](https://online.gefera.ru/contest/rldc-2023/works/?work_id=14119182) — конкурсная работа на gefera.ru. Награда за LC0342 в `awards.ts` — 2-е место IX сезона ADD Awards.
-- [ADD Awards — Антон Варгов, жюри](https://addawards.ru/jury/293063/) — официальный сайт премии ADDAWARDS.RU.
+- ~~ADD Awards — Антон Варгов, жюри (addawards.ru/jury/293063/)~~ — **страница мертва, 404** (агент по сайту, 05.09.2026); с сайта ссылка снята, сертификат остался. Для Wikidata как источник не годится, пока не найден новый адрес.
 - [LOOP Design Awards 2025](https://vargov.design/tpost/ryfpbm1yy1-loop-design-awards-2025) — упоминание на своём сайте, но сама премия LOOP — независимая организация (нужна отдельная проверка страницы победителя на loopdesignawards.com).
 
 ## Профили и справочники дизайнеров
