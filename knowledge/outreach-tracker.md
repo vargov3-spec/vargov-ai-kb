@@ -26,7 +26,7 @@
 | Galerie Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | Azure Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
-| Archello | кабинет производителя | аккаунт + пакет из archello-onboarding.md | владелец (аккаунт), дальше я |
+| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); товары: Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236) опубликованы; View from the Bottom of a Pond (LC0237) и Pure Plasticity of Line (LC0217) заполнены, публикация упёрлась в проверку Cloudflare; остальные четыре (LC0342, LC0586, LC0487, LC0194) — в очереди | я; клик по Cloudflare — владелец |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
 
 ---
