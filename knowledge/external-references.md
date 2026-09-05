@@ -13,7 +13,12 @@
 - [LOOP Design Awards 2025](https://vargov.design/tpost/ryfpbm1yy1-loop-design-awards-2025) — упоминание на своём сайте, но сама премия LOOP — независимая организация (нужна отдельная проверка страницы победителя на loopdesignawards.com).
 
 ## Профили и справочники дизайнеров
-- [ICONIC World — Anton Vargov, directory profile](https://www.iconic-world.com/directory/anton-vargov) — независимый международный дизайн-справочник.
+- ~~ICONIC World — Anton Vargov, directory profile~~ — **ссылка мертва с 2026-09-04**: iconic-world.com отдаёт 301 на битый адрес без слэша, iconic-awards.com/directory/anton-vargov → 404. Домен принадлежит German Design Council, источник был авторитетным; искать новый адрес профиля или снять из аргументации.
+
+## Редакционные публикации
+
+- [D5 MAG — «This Lighting Piece Looks Different Every Time You Walk Past It»](https://d5mag.com/this-lighting-piece-looks-different-every-time-you-walk-past-it/) — 21.06.2025, автор Tina King (Deputy Editor), о композиции LC0358 и победе на SIT Furniture Design Awards. **Первая независимая редакционная публикация о бренде** (найдена 2026-09-04). Уровень источника средний: у D5 MAG названная редакция и отбор материалов, но есть опция платного спонсирования уже принятой статьи — не Dezeen.
+  ⚠️ **Фактическая ошибка в тексте:** «Registered in 2022, the company designs and makes its lighting and decor in China». Это противоречит позиционированию и совпадает по смыслу с ядовитыми листингами на Alibaba ([[brand-protection-2026-09]]). Нужен запрос редакции на исправление — черновик в [[gap-list-2026-09]].
 
 ## Партнёрства / коллаборации
 - [Fabli.pro — Design by Vargov, "Фабрика блестящих идей"](https://fabli.pro/design-by-vargov/) — независимая страница партнёра/производителя, подтверждает коллаборацию (см. также цветочные бутоны LC0071/similar в каталоге).

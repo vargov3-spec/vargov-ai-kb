@@ -2,7 +2,7 @@ name: Security scan vargov.ru
 
 on:
   schedule:
-    - cron: "0 5 * * *"  # ежедневно 05:00 UTC (08:00 МСК)
+    - cron: "0 5 * * 1"  # еженедельно по понедельникам 05:00 UTC; ежедневный прогон в 8 потоков падал 8 дней подряд — сам же попадал под fail2ban
   workflow_dispatch: {}
 
 permissions:

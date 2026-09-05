@@ -41,9 +41,9 @@
 | Свойство | Значение | Источник |
 |---|---|---|
 | instance of (P31) | human (Q5) | — |
-| occupation (P106) | designer (Q1281618) | vargov.ru, iconic-world.com |
+| occupation (P106) | industrial designer (**Q11287574**); дополнительно designer (Q5322166) | vargov.ru. ⚠️ В прежней версии стоял Q1281618 — это **sculptor**, скульптор; ошибка найдена и исправлена 2026-09-04, QID сверены через API Wikidata. Не брать Q1823479 «lighting designer» — это театральный художник по свету |
 | country of citizenship (P27) | Russia (Q159) | **подтверждено** — страна «Russia / Russian Federation» указана в анкетах победителя трёх независимых премий (IDA, NYPDA, AD-C), см. [[awards-verified]] |
-| official website / sameAs | https://www.iconic-world.com/directory/anton-vargov | независимый справочник |
+| official website / sameAs | ~~https://www.iconic-world.com/directory/anton-vargov~~ | **источник мёртв** (проверено 2026-09-04: 301 на битый адрес, конечная страница iconic-awards.com/directory/anton-vargov отдаёт 404). В заявку не вносить, пока не найден новый адрес профиля |
 | award received (P166) | International Architecture & Design Awards · ADC 2023 — **Platinum Winner**, Lighting Product Design Built / Professional (LC0303) | https://ad-c.org/winner/light-composition-vargov-design-lc0303/ |
 | award received (P166) | MUSE Design Awards 2023 — **Platinum Winner**, Lighting Design — Designer / Custom Lighting (LC0237) | https://design.museaward.com/winners-info.php?id=13101 |
 | award received (P166) | The London Design Awards 2023 — **Platinum Winner**, Product Design — Lighting (LC0326) | https://thelondondesignawards.com/winner-info.php?id=538 |

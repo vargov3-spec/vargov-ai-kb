@@ -15,7 +15,7 @@
 Output: scan/security_report.md. Exit code 1 при любом нарушении — чтобы
 GitHub Action упал и владелец получил уведомление.
 """
-import re, subprocess, sys
+import re, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -26,8 +26,8 @@ REPORT = SCAN_DIR / "security_report.md"
 
 SITEMAP_URL = "https://vargov.ru/sitemap.xml"
 EXTRA_PAGES = ["https://configurator.vargov.ru/"]
-MAX_PAGES = 40
-MAX_JS_PER_HOST = 40
+MAX_PAGES = 8   # было 40: вместе с 8 потоками это профиль нагрузки, который банит fail2ban на vargov.ru
+MAX_JS_PER_HOST = 10
 
 # Домены, которым разрешено отдавать скрипты/фреймы/preconnect.
 SCRIPT_ALLOWLIST = {
@@ -56,6 +56,7 @@ METRIKA_ID_RE = re.compile(r'(?:tag\.js\?id=|ym\(\s*)(\d{6,})')
 
 
 def curl(url, max_time=30):
+    time.sleep(1.5)  # пауза между обращениями: vargov.ru банит частые запросы с одного адреса
     r = subprocess.run(
         ["curl", "-sS", "-L", "--max-time", str(max_time), "-A", "Mozilla/5.0", url],
         capture_output=True, timeout=max_time + 10)
@@ -76,7 +77,7 @@ def main():
     script_hosts, all_hosts, metrika_ids = {}, {}, {}
     fetched_pages = 0
 
-    with ThreadPoolExecutor(max_workers=8) as pool:
+    with ThreadPoolExecutor(max_workers=1) as pool:  # последовательно: сайт держит 20 rps с адреса и банит
         page_bodies = list(zip(pages, pool.map(curl, pages)))
 
         js_urls = set()
