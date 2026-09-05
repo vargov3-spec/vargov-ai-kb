@@ -88,7 +88,7 @@ Vargov Design отсутствует **во всех** таких списках
 ## Новые находки (не было в базе знаний)
 
 Поиск обнаружил две награды, которых нет в [[external-references]] и [[brand]]:
-1. **International Design Awards — LC0516** (сезон 2025): https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25
+1. **International Design Awards — LC0516** (сезон 2025): https://www.idesignawards.com/social/zoom.php?eid=9-61165-25
 2. **International Architecture & Design Awards 2026 (ad-c.org) — LC0303**: https://ad-c.org/winner/light-composition-vargov-design-lc0303/
 
 Обе — независимые верифицируемые источники, усиливают кейс для Wikidata.

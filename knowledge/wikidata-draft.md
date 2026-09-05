@@ -50,8 +50,8 @@
 | award received (P166) | NY Product Design Awards 2023 — **Product Designer of the Year**, Lamps & Luminaires — Pendant Luminaires (LC0343) | https://nydesignawards.com/winner-info.php?id=1296 |
 | award received (P166) | MUSE Design Awards 2026 — **Gold Winner**, «Oceanic Illumination» (LC0564) | https://design.museaward.com/winners-info.php?id=40265 |
 | award received (P166) | International Architecture & Design Awards · ADC 2023 — **Gold Winner**, «Drapery» (LC0323) | https://ad-c.org/winner/vargov-design-lc0323-drapery/ |
-| award received (P166) | IDA Design Awards 2022 — Silver, Illumination — Designer Lighting (LC0236) | https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22 |
-| award received (P166) | IDA Design Awards 2025 — Honorable Mention, Home & Living / Lighting (LC0516) | https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25 |
+| award received (P166) | IDA Design Awards 2022 — Silver, Illumination — Designer Lighting (LC0236) | https://www.idesignawards.com/social/zoom.php?eid=9-46057-22 |
+| award received (P166) | IDA Design Awards 2025 — Honorable Mention, Home & Living / Lighting (LC0516) | https://www.idesignawards.com/social/zoom.php?eid=9-61165-25 |
 | award received (P166) | Luxury Lifestyle Awards 2024 — Winner, Best Luxury Lighting Design Studio in Dubai, UAE | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design |
 | position held / jury member | ADD Awards Grand Jury, 10th season | https://addawards.ru/jury/293063/ |
 

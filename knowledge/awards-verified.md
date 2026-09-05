@@ -17,8 +17,8 @@
 | 1 | MUSE Design Awards (IAA, Нью-Йорк) | 2026 | Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», composition LC0564 | LC0564 | https://design.museaward.com/winners-info.php?id=40265 | `muse-gold-2026-cert.jpg`, знак `muse-trophy-2026.png` | ✔ 2026-09-04 |
 | 2 | MUSE Design Awards | 2023 | Platinum Winner · Lighting Design — Designer / Custom Lighting · composition LC0237 | LC0237 | https://design.museaward.com/winners-info.php?id=13101 | `cert-17.jpg` | — |
 | 3 | Awwwards | 2026 | Nominee · Vargov®Design 3D Configurator | — (конфигуратор) | https://www.awwwards.com/sites/generative-3d-configurator | нет (номинанту не выдаётся) | — |
-| 4 | IDA Design Awards (Лос-Анджелес) | 2025 | Honorable Mention · Home & Living / Lighting · light composition LC0516 | LC0516 | https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25 | `cert-01.png` | ✔ 2026-09-04 |
-| 5 | IDA Design Awards | 2022 | Silver · Illumination — Designer Lighting · composition LC0236 | LC0236 | https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22 | `cert-18.png` | ✔ 2026-09-04 |
+| 4 | IDA Design Awards (Лос-Анджелес) | 2025 | Honorable Mention · Home & Living / Lighting · light composition LC0516 | LC0516 | https://www.idesignawards.com/social/zoom.php?eid=9-61165-25 | `cert-01.png` | ✔ 2026-09-04 |
+| 5 | IDA Design Awards | 2022 | Silver · Illumination — Designer Lighting · composition LC0236 | LC0236 | https://www.idesignawards.com/social/zoom.php?eid=9-46057-22 | `cert-18.png` | ✔ 2026-09-04 |
 | 6 | LIT Lighting Design Awards (Швейцария) | 2025 | Honorable Mention · Designer / Custom Lighting · composition LC0447 | LC0447 | https://litawards.com/winners/winner.php?id=2414&mode=hm | `cert-02.png` | — |
 | 7 | LIT Lighting Design Awards | 2022 | Winner · Designer and Custom Lighting · composition LC0223 | LC0223 | https://litawards.com/winners/winner.php?id=3395&mode=win | `cert-19.png` | — |
 | 8 | LOOP Design Awards (Португалия) | 2025 | Winner · Products \| Lighting Design · composition LC0458 | LC0458 | https://loopdesignawards.com/project/lighting-composition-lc0458 | `cert-03.png` | — |

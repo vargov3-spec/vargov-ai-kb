@@ -1,14 +1,3 @@
 Удалено при пересборке (карточки и артефакты эпохи Tilda):
 
-products\decorative-compositions/ (раздел эпохи Tilda)
-products\lighting-compositions/ (раздел эпохи Tilda)
-products\showroom-items/ (раздел эпохи Tilda)
-products\stock-elements/ (раздел эпохи Tilda)
-en\products\decorative-compositions/ (раздел эпохи Tilda)
-en\products\lighting-compositions/ (раздел эпохи Tilda)
-en\products\showroom-items/ (раздел эпохи Tilda)
-en\products\stock-elements/ (раздел эпохи Tilda)
-vargov-schema-by-path.json (артефакт старого сканера)
-scan\products.jsonl (артефакт старого сканера)
-scan\product_urls.txt (артефакт старого сканера)
-scan\failed_urls.txt (артефакт старого сканера)
+

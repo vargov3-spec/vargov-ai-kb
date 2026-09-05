@@ -3,8 +3,8 @@
 Найдено веб-поиском 2026-07-06 — это реальные, проверяемые сторонние источники (не сам vargov.ru/vargov.design). Важно для Wikidata-нотабильности, PR и понимания текущего состояния видимости бренда в открытом вебе.
 
 ## Базы данных наград (независимые площадки)
-- [International Design Awards — LC0236, Vargov Anton, Vargov® Design-Lighting studio](https://www.idesignawards.com/winners/zoom.php?eid=9-46057-22) — победитель, официальная страница IDA.
-- [International Design Awards — LC0516](https://www.idesignawards.com/winners/zoom.php?eid=9-61165-25) — победитель, сезон 2025 (найдено при аудите 2026-07-07).
+- [International Design Awards — LC0236, Vargov Anton, Vargov® Design-Lighting studio](https://www.idesignawards.com/social/zoom.php?eid=9-46057-22) — победитель, официальная страница IDA.
+- [International Design Awards — LC0516](https://www.idesignawards.com/social/zoom.php?eid=9-61165-25) — победитель, сезон 2025 (найдено при аудите 2026-07-07).
 - [International Architecture & Design Awards 2026 (ad-c.org) — LC0303](https://ad-c.org/winner/light-composition-vargov-design-lc0303/) — победитель, Architecture & Design Community (найдено при аудите 2026-07-07).
 - [New York Product Design Awards — LC0343](https://nydesignawards.com/winner-info.php?id=1296) — победитель, официальная страница NYPDA.
 - [Конкурс «Российский светодизайн» 2022 — LC0217](https://online.gefera.ru/contest/rldc-2022/works/?work_id=14012747) — конкурсная площадка gefera.ru. В `awards.ts` премия называется «Interlight Russia · Российский светодизайн» (специальный приз 2022); «RLDC» — обозначение площадки, отдельной премией не является.
