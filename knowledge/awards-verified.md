@@ -25,7 +25,7 @@
 | 9 | SIT Furniture Design Award | 2025 | Winner · Designer & Custom Lighting · composition LC0358 | LC0358 | https://www.sitaward.com/winners/sit/2025/571/0/ | `cert-04.png` | — |
 | 10 | SIT Furniture Design Award | 2023 | Winner · Designer & Custom Lighting · composition LC0292 | LC0292 | https://www.sitaward.com/winners/sit/2023/301/0/ | `cert-16.png` | — |
 | 11 | Luxury Lifestyle Awards (Нью-Йорк) | 2024 | Winner · Best Luxury Lighting Design Studio in Dubai, UAE | — (студия) | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design | `cert-06.png` | — |
-| 12 | ADD Awards (addawards.ru) | 2024 | High Jury member of the award's 10th season — Anton Vargov | — (персона) | https://addawards.ru/jury/293063/ | `cert-07.jpg` | — |
+| 12 | ADD Awards (addawards.ru) | 2024 | High Jury member of the award's 10th season — Anton Vargov | — (персона) | ~~https://addawards.ru/jury/293063/~~ — страница отдаёт 404 с 05.09.2026, подтверждение только сертификатом | `cert-07.jpg` | — |
 | 13 | ADD Awards | 2023 | 2nd place, 9th season · Interior & exterior objects · built project, composition LC0342 | LC0342 | нет (в `awards.ts` без `href`) | `cert-08.jpg` | — |
 | 14 | European Product Design Award (EPDA) | 2023 | Winner · Home Lighting: Hanging / Pendant · composition LC0339 | LC0339 | https://www.productdesignaward.eu/winners/hm/2024/22549323/ | `cert-05.png` | — |
 | 15 | NY Product Design Awards (IAA) | 2023 | Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343 | LC0343 | https://nydesignawards.com/winner-info.php?id=1296 | нет; знак `ny-designer-2023.png` | ✔ 2026-09-04 |

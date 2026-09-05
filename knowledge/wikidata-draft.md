@@ -53,7 +53,7 @@
 | award received (P166) | IDA Design Awards 2022 — Silver, Illumination — Designer Lighting (LC0236) | https://www.idesignawards.com/social/zoom.php?eid=9-46057-22 |
 | award received (P166) | IDA Design Awards 2025 — Honorable Mention, Home & Living / Lighting (LC0516) | https://www.idesignawards.com/social/zoom.php?eid=9-61165-25 |
 | award received (P166) | Luxury Lifestyle Awards 2024 — Winner, Best Luxury Lighting Design Studio in Dubai, UAE | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design |
-| position held / jury member | ADD Awards Grand Jury, 10th season | https://addawards.ru/jury/293063/ |
+| position held / jury member | ADD Awards Grand Jury, 10th season | ~~https://addawards.ru/jury/293063/~~ — 404 с 05.09.2026, в Wikidata не внесено (нет живого источника) |
 
 ---
 
