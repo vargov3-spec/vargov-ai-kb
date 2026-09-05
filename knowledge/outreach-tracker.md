@@ -28,6 +28,13 @@
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
 | Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). В кабинете остался пустой черновик «Sea Lace» (id 127279, загрузчик фото на нём сломался) — удалить владельцу | я; проверить статус модерации ~12.09 |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
+| darc, arc (Mondiale) | редакционная почта | product news / brand feature о декоративном и архитектурном свете | письма готовы (приватная папка PR), отправка — владелец |
+| Interior Design (US) | редакционная почта, Market Director | новые продукты, JPEG 350 dpi, не старше 6 месяцев | письмо готово |
+| Sight Unseen | submissions@ | коллекционные объекты; нужна папка Dropbox с hi-res | письмо готово, папку собирает владелец |
+| Dwell, Frame, Yatzer, Hospitality Design | редакционная почта | продуктовые новости; Yatzer — эксклюзив на Driplight | письма готовы |
+| Design Mate, SALON-interior | редакционная почта | история об эссе / предметный раздел | письма готовы (RU) |
+| Wallpaper*, Elle Decor US, AD US, INMYROOM | — | холодные питчи не принимают или только проекты/реклама | не отправлять |
+| Interior+Design, Elle Decoration RU, AD Russia, Проект Россия | — | сайты недоступны или закрыты (AD Russia — 410), адреса не подтверждены | отложено |
 
 ---
 
