@@ -9,7 +9,7 @@ English layer of the [Vargov® Design](https://vargov.ru) knowledge base. The Ru
 - `datasets/` — 605 compositions as JSON, JSONL, CSV and Markdown (English texts)
 - `products/` — one page per composition: description, where it works, style, awards, images
 - `collections/` — the four catalogue sections
-- `guides/` — thematic material
+- `guides/` — thematic material; `russian-lighting-design.md` — essay on Russian lighting design (source for eight languages: `datasets/journal/`)
 - `llms.txt` — English entry point
 
 Product descriptions come from the brand's own approved copy in eight languages, not from machine translation.

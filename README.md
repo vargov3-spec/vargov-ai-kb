@@ -13,7 +13,7 @@
 | `products/`, `en/products/` | Карточка на композицию: описание, где уместна, стилистика, награды, снимки |
 | `collections/`, `en/collections/` | Четыре раздела каталога со списком артикулов |
 | `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 22 награды, реестровые номера знака), Person (основатель), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld` и `3ddd-models.json` — артикул → своя карточка 3D-модели |
-| `guides/`, `en/guides/` | Тематические материалы |
+| `guides/`, `en/guides/` | Тематические материалы; `russian-lighting-design.md` — эссе о русском световом дизайне (RU/EN), исходник восьми языков в `datasets/journal/` |
 | `scripts/` | `build_from_site.py` — сборщик; `security_scan.py` — ежедневный монитор целостности сайта |
 | `scan/` | Служебное: дамп наград, список удалённого при пересборке |
 
