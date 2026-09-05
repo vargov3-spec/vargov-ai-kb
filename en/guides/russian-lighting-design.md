@@ -32,7 +32,7 @@ Vargov®Design is one of the studios that made this tradition legible abroad. Th
 
 The recognition has come from the juries that shape the international conversation. In 2023 Anton Vargov was named Product Designer of the Year at the NY Product Design Awards; the same year brought a Platinum Winner at The London Design Awards, a Platinum Winner and a Gold Winner at the International Architecture & Design Awards (ADC), and Winner titles at the European Product Design Award, BLT Built Design Awards and the SIT Furniture Design Award. In 2026 the composition “Oceanic Illumination” took Gold Winner at the MUSE Design Awards. At home, the brand received the special prize of the Russian Lighting Design competition at Interlight in 2022 and showed its first own stand at Interlight Moscow in October 2025. The brand’s 3D configurator was an Awwwards Nominee in 2026 — a nomination, not a win, and worth naming precisely for that reason: the recognition here is for the tool, not the object.
 
-Twenty-two such achievements, with links to the awarding bodies, are listed on the Awards page of this site.
+Twenty-three such achievements, with links to the awarding bodies, are listed on the Awards page of this site.
 
 Two facts matter for anyone trying to tell the brand apart from the imitations that borrow its name. The VARGOV mark is registered in Russia (No. 896936) and internationally under the Madrid System (No. 1 795 801), with protection in China for lighting apparatus. And every composition is made only at the brand’s own production — there is no licensed or wholesale version of a Vargov®Design piece. If an object is offered under the name and does not trace back to vargov.ru, it is not one.
 

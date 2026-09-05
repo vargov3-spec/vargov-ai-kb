@@ -326,7 +326,7 @@
 | LC0310 | Световая композиция | https://vargov.ru/catalog/lc0310 |  |
 | LC0311 | Световая композиция | https://vargov.ru/catalog/lc0311 |  |
 | LC0312 | Световая композиция | https://vargov.ru/catalog/lc0312 |  |
-| LC0313 | Световая композиция | https://vargov.ru/catalog/lc0313 | 1 |
+| LC0313 | Световая композиция | https://vargov.ru/catalog/lc0313 | 2 |
 | LC0315 | Световая композиция | https://vargov.ru/catalog/lc0315 |  |
 | LC0316 | Настенный светильник-скульптура | https://vargov.ru/catalog/lc0316 |  |
 | LC0317 | Световая композиция | https://vargov.ru/catalog/lc0317 |  |

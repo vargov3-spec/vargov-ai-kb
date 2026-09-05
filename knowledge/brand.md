@@ -43,7 +43,7 @@
 ## Процесс заказа (текст прежней версии сайта, июль 2026 — на новом сайте не сверено)
 1. Заказ — связь через WhatsApp, расчёт стоимости и сроков, договор-спецификация. 2. Предоплата 50%. 3. Производство 40–60 рабочих дней (3D-модель, монтажная схема, изготовление). 4. Подтверждение фото/видео. 5. Окончательная оплата 50%. 6. Доставка 14–25 дней по региону. 7. Монтаж — опционально (Россия, ОАЭ). Подтверждённое llms.txt: доставка по всему миру в фирменной обрешётке; для архитекторов — https://vargov.ru/en/architects (как идёт проект от эскиза до монтажа).
 
-## Награды — 22
+## Награды — 23
 Полный верифицированный список с официальными формулировками, ссылками на страницы премий и сертификатами — [[awards-verified]] (источник `awards.ts`, `awardsCount()` = 22; два «Официальных поздравления жюри» — документы, в счёт не идут). Программы: MUSE Design Awards (Platinum 2023, Gold 2026), International Architecture & Design Awards · ADC (Platinum, Gold 2023), The London Design Awards (Platinum 2023), NY Product Design Awards (Product Designer of the Year, Gold 2023), Houzee Awards (Gold 2023), IDA Design Awards (Silver 2022, Honorable Mention 2025), LIT Lighting Design Awards (Winner 2022, Honorable Mention 2025), European Product Design Award 2023, BLT Built Design Awards 2023, SIT Furniture Design Award (2023, 2025), LOOP Design Awards 2025, Luxury Lifestyle Awards 2024, ADD Awards (2-е место 2023; жюри 2024), Interlight Russia · Российский светодизайн (специальный приз 2022), Awwwards (Nominee 2026). Страница: https://vargov.ru/awards · https://vargov.ru/en/awards. В Organization JSON-LD: «Более 20 международных премий в области дизайна и света».
 
 ## Выставки

@@ -12,7 +12,7 @@
 | `datasets/`, `en/datasets/` | 605 композиций: JSON, JSONL, CSV, Markdown. RU-версия многоязычная (8 языков), EN — одноязычная |
 | `products/`, `en/products/` | Карточка на композицию: описание, где уместна, стилистика, награды, снимки |
 | `collections/`, `en/collections/` | Четыре раздела каталога со списком артикулов |
-| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 22 награды, реестровые номера знака), Person (основатель), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld` и `3ddd-models.json` — артикул → своя карточка 3D-модели |
+| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 23 награды, реестровые номера знака), Person (основатель), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld` и `3ddd-models.json` — артикул → своя карточка 3D-модели |
 | `guides/`, `en/guides/` | Тематические материалы; `russian-lighting-design.md` — эссе о русском световом дизайне (RU/EN), исходник восьми языков в `datasets/journal/` |
 | `scripts/` | `build_from_site.py` — сборщик; `security_scan.py` — ежедневный монитор целостности сайта |
 | `scan/` | Служебное: дамп наград, список удалённого при пересборке |
@@ -35,7 +35,7 @@ python scripts/build_from_site.py
 
 - в текстах о конкретных изделиях **не называются материалы и размеры**, цены не публикуются — поэтому в Product-узлах нет `material`, `size` и `offers`;
 - страна производства не называется: «собственное производство»;
-- формулировки наград — дословно из `awards.ts`: 22 награды, «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; два поздравления жюри в счёт не идут;
+- формулировки наград — дословно из `awards.ts`: 23 награды, «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; два поздравления жюри в счёт не идут;
 - Interlight: специальный приз конкурса 2022 года и **первый собственный стенд** в октябре 2025.
 
 Ничего не выдумано: где данных нет, это сказано прямо, а не заполнено правдоподобным текстом.

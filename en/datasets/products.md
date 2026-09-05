@@ -326,7 +326,7 @@ Compositions: 605
 | LC0310 | Light composition | https://vargov.ru/en/catalog/lc0310 |  |
 | LC0311 | Light composition | https://vargov.ru/en/catalog/lc0311 |  |
 | LC0312 | Light composition | https://vargov.ru/en/catalog/lc0312 |  |
-| LC0313 | Light composition | https://vargov.ru/en/catalog/lc0313 | 1 |
+| LC0313 | Light composition | https://vargov.ru/en/catalog/lc0313 | 2 |
 | LC0315 | Light composition | https://vargov.ru/en/catalog/lc0315 |  |
 | LC0316 | Wall light-sculpture | https://vargov.ru/en/catalog/lc0316 |  |
 | LC0317 | Light composition | https://vargov.ru/en/catalog/lc0317 |  |

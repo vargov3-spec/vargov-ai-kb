@@ -64,10 +64,11 @@ ORG_SAME_AS = [
     "https://3dsky.org/users/vargov",
     "https://www.instagram.com/vargov_design/",
     "https://www.facebook.com/vargovdesign",
+    "https://www.wikidata.org/wiki/Q141301076",
     REPO_URL,
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
-PERSON_SAME_AS = ["https://t.me/AntonVargov"]
+PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942"]
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
 CATEGORIES = {

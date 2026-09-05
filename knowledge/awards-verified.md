@@ -8,7 +8,7 @@
 - Awwwards 2026 — только **«Nominee»**; никаких «award-winning» / «winner» про конфигуратор;
 - IDA: LC0236 Silver = **2022**, LC0516 Honorable Mention = **2025** (в июльской версии этого файла у обеих стоял 2026 — исправлено).
 
-## 22 награды
+## 23 награды
 
 Колонка «Первоисточник» — страница премии открыта и сверена в ходе этого проекта; отметка «✔ 2026-09-04» = подтверждено первоисточником на дату пересборки. Остальные строки взяты из `awards.ts` (данные владельца, сертификаты на сайте), их публичные страницы отдельно не открывались.
 
@@ -36,6 +36,7 @@
 | 20 | International Architecture & Design Awards · ADC | 2023 | Gold Winner · Lighting Product Design Concept / Professional · «Drapery», composition LC0323 | LC0323 | https://ad-c.org/winner/vargov-design-lc0323-drapery/ | `cert-13.jpg` | ✔ 2026-09-04 |
 | 21 | Houzee Awards (Architecture Collection / ADC) | 2023 | Gold Winner · Lighting Design · composition LC0335 | LC0335 | https://architecture-collection.com/winner/ha2301053/ | `cert-14.jpg` | — |
 | 22 | Interlight Russia · Российский светодизайн (Gefera Media, ВНИСИ) | 2022 | Special prize · Best luminaire design 2021–2022 · composition LC0217 | LC0217 — приз за всю серию лент: LC0104, LC0217, LC0217-1, LC0228, LC0279, LC0280, LC0326, LC0327, LC0328, LC0329 (`codes`) | https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html | `cert-20.jpg` | — |
+| 23 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313 — третья награда 2023 года, отдельная заявка; найдена в кабинете участника 05.09.2026 | LC0313 | https://nydesignawards.com/winner-info.php?id=1005 | `cert-23.jpg` | ✔ 2026-09-05 |
 
 Сводка по уровням: Platinum Winner — 3 (MUSE 2023, ADC 2023, London 2023); Product Designer of the Year — 1; Gold Winner — 4 (MUSE 2026, NYPDA 2023, ADC 2023, Houzee 2023); Silver — 1; Winner — 7; Honorable Mention — 2; специальный приз — 1; 2-е место — 1; членство в жюри — 1; Nominee — 1. Итого 22.
 
@@ -48,7 +49,7 @@
 | NY Product Design Awards | 2023 | Official jury commendation — Gold Winner | `/img/awards/cert-09.png` | `commendation: true` |
 | MUSE Design Awards | 2026 | Official jury commendation — Gold Winner | `/img/awards/muse-gold-2026-letter.jpg` | `commendation: true` |
 
-Это письма жюри к уже посчитанным наградам (№ 15/16 и № 1). На странице наград они показаны рядом с дипломами, но `awardsCount()` их исключает — «иначе цифра на главной росла бы от бумаг, а не от призов» (комментарий в `awards.ts`). В любом тексте писать «22 награды», не «24».
+Это письма жюри к уже посчитанным наградам (№ 15/16 и № 1). На странице наград они показаны рядом с дипломами, но `awardsCount()` их исключает — «иначе цифра на главной росла бы от бумаг, а не от призов» (комментарий в `awards.ts`). В любом тексте писать «23 награды», не «24».
 
 ## Индекс по артикулам
 
@@ -89,3 +90,5 @@
 - «RLDC 2022/2023» из старых материалов: RLDC 2022 = награда № 22 (Interlight Russia · Российский светодизайн); «RLDC 2023 — LC0342» в `awards.ts` отсутствует, у LC0342 есть 2-е место ADD Awards 2023 (№ 13). Страницы конкурсных работ на gefera.ru остаются как вторичные источники в [[external-references]].
 
 См. также [[pr-kit]], [[brand]], [[external-references]], [[wikidata-draft]].
+
+**Не считается наградой:** страница nydesignawards.com/winner-info.php?id=1297 (LC0326, Decorative Lighting, 2023) — степень на странице пустая, в кабинете участника карточки нет; в базу и в счёт не вносится, пока премия не покажет степень (агент сайта, 05.09.2026).

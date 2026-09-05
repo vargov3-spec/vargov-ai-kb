@@ -60,6 +60,7 @@
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339",
         "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
         "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
+        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313",
         "BLT Built Design Awards 2023 — Winner · Electrical & Lighting Systems · composition LC0343",
         "The London Design Awards 2023 — Platinum Winner · Product Design — Lighting · light composition LC0326",
         "International Architecture & Design Awards · ADC 2023 — Platinum Winner · Lighting Product Design Built / Professional · light composition LC0303",
@@ -77,6 +78,7 @@
         "https://3dsky.org/users/vargov",
         "https://www.instagram.com/vargov_design/",
         "https://www.facebook.com/vargovdesign",
+        "https://www.wikidata.org/wiki/Q141301076",
         "https://github.com/vargov3-spec/vargov-ai-kb",
         "https://design.museaward.com/winners-info.php?id=40265",
         "https://design.museaward.com/winners-info.php?id=13101",
@@ -92,6 +94,7 @@
         "https://www.productdesignaward.eu/winners/hm/2024/22549323/",
         "https://nydesignawards.com/winner-info.php?id=1296",
         "https://nydesignawards.com/winner-info.php?id=1004",
+        "https://nydesignawards.com/winner-info.php?id=1005",
         "https://bltawards.com/winner/blt/2023/21559/0/",
         "https://thelondondesignawards.com/winner-info.php?id=538",
         "https://ad-c.org/winner/light-composition-vargov-design-lc0303/",
@@ -118,7 +121,8 @@
         "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343"
       ],
       "sameAs": [
-        "https://t.me/AntonVargov"
+        "https://t.me/AntonVargov",
+        "https://www.wikidata.org/wiki/Q141300942"
       ]
     },
     {
@@ -13220,7 +13224,8 @@
       "inLanguage": "en",
       "description": "A soap film stretched on a frame and never burst. The membranes sag and pull taut between the rods, forming concave surfaces — a form that in nature lives for…",
       "award": [
-        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313"
+        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
+        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313"
       ],
       "subjectOf": {
         "@type": "3DModel",
