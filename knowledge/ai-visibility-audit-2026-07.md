@@ -15,7 +15,7 @@
 Запрос: *"Russian lighting design brand glass compositions Vargov"*
 
 **Результат: отлично.** Выдача полностью «наша», 10 из 10 результатов о бренде:
-- vargov.design (главная, категории, карточки товаров)
+- vargov.design (главная, категории, карточки товаров) — *на июль 2026 vargov.design был англоязычным сайтом каталога; с редизайна это адрес 3D-конфигуратора, каталог живёт на vargov.ru/en (см. [[brand]])*
 - YouTube-канал @VargovDesign
 - Страницы победителей: International Design Awards (LC0236, LC0516), NY Product Design Awards (LC0343), Architecture & Design Community (LC0303)
 
