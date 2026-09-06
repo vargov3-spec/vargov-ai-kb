@@ -43513,6 +43513,12 @@
       ],
       "subjectOf": [
         {
+          "@type": "3DModel",
+          "name": "3D model — LC0004",
+          "url": "https://3dsky.org/3dmodels/show/avtorskii_svetilnik_vargov_design_15",
+          "sameAs": "https://3ddd.ru/3dmodels/show/avtorskii_svetilnik_vargov_design_15"
+        },
+        {
           "@type": "CollectionPage",
           "name": "All 3D models — LC0004",
           "url": "https://3dsky.org/users/vargov/models?tag=lc0004",
