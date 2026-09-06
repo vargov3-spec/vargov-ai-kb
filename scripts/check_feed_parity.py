@@ -7,8 +7,7 @@
 Поэтому обе стороны приводятся к канонической строке (как JSON.stringify) и
 сравниваются посимвольно — совет агента сайта от 06.09.2026.
 
-Один запрос к vargov.ru, сжатый (--compressed): фид отдаётся brotli,
-1,1 МБ превращаются в 137 КБ. Сайт запрещено сканировать, поэтому здесь
+Один запрос к vargov.ru, сжатый (gzip): 1,1 МБ превращаются примерно в 140 КБ. Сайт запрещено сканировать, поэтому здесь
 ровно один адрес и никаких обходов.
 
 Запуск: python scripts/check_feed_parity.py [--feed URL]
@@ -18,8 +17,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
+import gzip
 import sys
+import urllib.request
 from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
@@ -39,13 +39,25 @@ def canon(value) -> str:
 
 
 def fetch(url: str) -> dict:
-    r = subprocess.run(
-        ["curl", "-sS", "--compressed", "--max-time", "60", "-A", "vargov-ai-kb parity check", url],
-        capture_output=True,
-    )
-    if r.returncode != 0:
-        sys.exit(f"не удалось получить фид: {r.stderr.decode('utf-8', 'replace')[:300]}")
-    return json.loads(r.stdout.decode("utf-8"))
+    """Один запрос средствами Python, без curl.
+
+    07.09.2026 curl из этой оболочки перестал доходить куда бы то ни было —
+    висел и на vargov.ru, и на github.com, тогда как PowerShell и git ходили
+    нормально. Диагноз «площадка недоступна» по одному только curl больше не
+    ставим: инструмент отказал раньше сети.
+    """
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "vargov-ai-kb parity check",
+        "Accept-Encoding": "gzip",     # фид 1,1 МБ, сжатый — около 140 КБ
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            raw = r.read()
+            if r.headers.get("Content-Encoding") == "gzip":
+                raw = gzip.decompress(raw)
+    except Exception as e:                       # noqa: BLE001 — причина в тексте
+        sys.exit(f"не удалось получить фид: {type(e).__name__}: {e}")
+    return json.loads(raw.decode("utf-8"))
 
 
 def products(graph: list) -> dict:

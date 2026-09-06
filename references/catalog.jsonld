@@ -1001,8 +1001,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0593-2",
-          "url": "https://3dsky.org/3dmodels/show/torsher-vargov-r-design-lc0593-2",
-          "sameAs": "https://3ddd.ru/3dmodels/show/torsher-vargov-r-design-lc0593-2"
+          "url": "https://3dsky.org/3dmodels/show/torsher-vargov-r-design-lc0593-2-1",
+          "sameAs": "https://3ddd.ru/3dmodels/show/torsher-vargov-r-design-lc0593-2-1"
         },
         {
           "@type": "CollectionPage",
@@ -4826,8 +4826,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0545-1",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1-10",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1-10"
         }
       ]
     },
@@ -4924,8 +4924,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0545",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-18",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-18"
         },
         {
           "@type": "CollectionPage",
@@ -5108,8 +5108,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0543-2",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2-9",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2-9"
         }
       ]
     },
@@ -5148,7 +5148,15 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "The same fracture at intimate size. One element, taken from the mass and hung on the wall at eye level — where the texture is seen close to and the slit of light…"
+      "description": "The same fracture at intimate size. One element, taken from the mass and hung on the wall at eye level — where the texture is seen close to and the slit of light…",
+      "subjectOf": [
+        {
+          "@type": "3DModel",
+          "name": "3D model — LC0543-1",
+          "url": "https://3dsky.org/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543",
+          "sameAs": "https://3ddd.ru/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543"
+        }
+      ]
     },
     {
       "@type": "Product",
@@ -5186,8 +5194,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0543",
-          "url": "https://3dsky.org/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543",
-          "sameAs": "https://3ddd.ru/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543"
+          "url": "https://3dsky.org/3dmodels/show/bra-nastennyi-art-obekt-vargov-r-design-lc0543",
+          "sameAs": "https://3ddd.ru/3dmodels/show/bra-nastennyi-art-obekt-vargov-r-design-lc0543"
         },
         {
           "@type": "CollectionPage",
@@ -16145,8 +16153,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0406",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406_5",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406_5"
         },
         {
           "@type": "CollectionPage",
@@ -21312,8 +21320,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0332",
-          "url": "https://3dsky.org/3dmodels/show/bra_vargov_r_design_lc0332_1",
-          "sameAs": "https://3ddd.ru/3dmodels/show/bra_vargov_r_design_lc0332_1"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-steklo-vargov-r-design-lc0332",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-steklo-vargov-r-design-lc0332"
         },
         {
           "@type": "CollectionPage",
@@ -29696,8 +29704,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0199",
-          "url": "https://3dsky.org/3dmodels/show/torsher-vargov-r-design-lc0199",
-          "sameAs": "https://3ddd.ru/3dmodels/show/torsher-vargov-r-design-lc0199"
+          "url": "https://3dsky.org/3dmodels/show/dekorativnaia_peregorodka_shirma_vargov_design_radiusnaia_4",
+          "sameAs": "https://3ddd.ru/3dmodels/show/dekorativnaia_peregorodka_shirma_vargov_design_radiusnaia_4"
         },
         {
           "@type": "CollectionPage",
@@ -31443,8 +31451,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0172",
-          "url": "https://3dsky.org/3dmodels/show/liustra_light_vargov_154",
-          "sameAs": "https://3ddd.ru/3dmodels/show/liustra_light_vargov_154"
+          "url": "https://3dsky.org/3dmodels/show/liustra_light_vargov_156",
+          "sameAs": "https://3ddd.ru/3dmodels/show/liustra_light_vargov_156"
         },
         {
           "@type": "CollectionPage",
@@ -31661,8 +31669,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0166-2",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-limon-vargov-r-design-lc0166-2",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-limon-vargov-r-design-lc0166-2"
+          "url": "https://3dsky.org/3dmodels/show/bra_vargov_r_design_lc0166_2",
+          "sameAs": "https://3ddd.ru/3dmodels/show/bra_vargov_r_design_lc0166_2"
         },
         {
           "@type": "CollectionPage",
@@ -31732,8 +31740,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0166-1",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-limon-vargov-r-design-lc0166-1",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-limon-vargov-r-design-lc0166-1"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-voda-tsvetok-vargov-r-design-lc0166-1",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-voda-tsvetok-vargov-r-design-lc0166-1"
         },
         {
           "@type": "CollectionPage",
@@ -33061,8 +33069,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0145",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-keramika-vargov-r-design-lc0145",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-keramika-vargov-r-design-lc0145"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_260",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_260"
         },
         {
           "@type": "CollectionPage",
@@ -33242,8 +33250,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0143",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0143",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0143"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_249",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_249"
         },
         {
           "@type": "CollectionPage",
@@ -35298,8 +35306,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0118",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-khrustal-sterzhen-vargov-r-design-lc0118",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-khrustal-sterzhen-vargov-r-design-lc0118"
+          "url": "https://3dsky.org/3dmodels/show/podvesnaia_installiatsiia_vargov_design_reflex",
+          "sameAs": "https://3ddd.ru/3dmodels/show/podvesnaia_installiatsiia_vargov_design_reflex"
         },
         {
           "@type": "CollectionPage",
@@ -36416,8 +36424,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0102",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0102",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0102"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_186",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_186"
         },
         {
           "@type": "CollectionPage",
@@ -36593,8 +36601,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0100",
-          "url": "https://3dsky.org/3dmodels/show/dekorativnaia-kompozitsiia-vargov-r-design-lc0100",
-          "sameAs": "https://3ddd.ru/3dmodels/show/dekorativnaia-kompozitsiia-vargov-r-design-lc0100"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_176",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_176"
         },
         {
           "@type": "CollectionPage",
@@ -36681,8 +36689,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0099",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-list-vargov-r-design-lc0099",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-list-vargov-r-design-lc0099"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_171",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_171"
         },
         {
           "@type": "CollectionPage",
@@ -37259,8 +37267,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0090",
-          "url": "https://3dsky.org/3dmodels/show/dekorativnaia-kompozitsiia-list-klen-vargov-r-design-lc0090",
-          "sameAs": "https://3ddd.ru/3dmodels/show/dekorativnaia-kompozitsiia-list-klen-vargov-r-design-lc0090"
+          "url": "https://3dsky.org/3dmodels/show/light_stained_glass_vargov_design_golden_autumn_7",
+          "sameAs": "https://3ddd.ru/3dmodels/show/light_stained_glass_vargov_design_golden_autumn_7"
         },
         {
           "@type": "CollectionPage",
@@ -37534,8 +37542,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0086",
-          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_129",
-          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_129"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_145",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_145"
         },
         {
           "@type": "CollectionPage",
@@ -37624,8 +37632,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0085",
-          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_130",
-          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_130"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_152",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_152"
         },
         {
           "@type": "CollectionPage",
@@ -38880,8 +38888,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0062",
-          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_100",
-          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_100"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_84",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_84"
         },
         {
           "@type": "CollectionPage",
@@ -39118,8 +39126,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0059",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-bulava-kaplia-vargov-r-design-lc0059",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-bulava-kaplia-vargov-r-design-lc0059"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_80",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_80"
         },
         {
           "@type": "CollectionPage",
@@ -39465,8 +39473,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0055",
-          "url": "https://3dsky.org/3dmodels/show/dekorativnaia-kompozitsiia-disk-tarelka-vargov-r-design-lc0055",
-          "sameAs": "https://3ddd.ru/3dmodels/show/dekorativnaia-kompozitsiia-disk-tarelka-vargov-r-design-lc0055"
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_65",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_65"
         },
         {
           "@type": "CollectionPage",
@@ -39996,8 +40004,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0049",
-          "url": "https://3dsky.org/3dmodels/show/liustra_light_vargov_33",
-          "sameAs": "https://3ddd.ru/3dmodels/show/liustra_light_vargov_33"
+          "url": "https://3dsky.org/3dmodels/show/hover_stone_collection_mardin_shine",
+          "sameAs": "https://3ddd.ru/3dmodels/show/hover_stone_collection_mardin_shine"
         },
         {
           "@type": "CollectionPage",
@@ -43507,8 +43515,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0004",
-          "url": "https://3dsky.org/3dmodels/show/avtorskii_svetilnik_vargov_design_15",
-          "sameAs": "https://3ddd.ru/3dmodels/show/avtorskii_svetilnik_vargov_design_15"
+          "url": "https://3dsky.org/3dmodels/show/podvesnaia_kompozitsiia_asteroid_vargov_r_design_10",
+          "sameAs": "https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_asteroid_vargov_r_design_10"
         },
         {
           "@type": "CollectionPage",

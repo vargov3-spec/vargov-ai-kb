@@ -1,14 +1,50 @@
 {
- "source": "агент конфигуратора, 06–07.09.2026 (data-sources/3ddd-empty-tags.json, 3ddd-account-slugs.json) + сверка со списком 5047 слагов аккаунта от 01.09.2026",
- "why": "Выгрузка своих карточек собирается ПО ТЕГУ артикула. Когда тег пуст, в выгрузку попадает слаг соседнего артикула — так LC0406-1 получал карточку LC0406. Ошибка не видна обходом ссылок: чужая карточка жива и отвечает 200.",
+ "source": "1) реестр ссылок владельца (model3d_links.json, 01.09.2026) — 43 прямые карточки, выбранные им вручную; 2) агент конфигуратора 06–07.09.2026 — слаги четырёх артикулов и обход тегов через API аккаунта",
+ "why": "Выгрузка своих карточек собирается ПО ТЕГУ и даёт одного представителя автоматически: при пустом теге — слаг соседнего артикула (LC0406-1 вёл на карточку LC0406), а где карточек много — не ту, что выбрал бы владелец. Обходом ссылок ни то, ни другое не ловится: чужая карточка жива и отвечает 200. Поэтому там, где владелец указал карточку сам, берём его.",
  "slug_overrides": {
+  "LC0004": "podvesnaia_kompozitsiia_asteroid_vargov_r_design_10",
+  "LC0024": "podvesnoi_svetilnik_vargov_design_stained_glass",
+  "LC0031": "podvesnoi_svetilnik_vargov_design_nexus",
+  "LC0035": "nastennyi_dekor_droplight_vargov_design",
+  "LC0049": "hover_stone_collection_mardin_shine",
+  "LC0055": "droplight_vargov_design_65",
+  "LC0059": "droplight_vargov_design_80",
+  "LC0062": "droplight_vargov_design_84",
+  "LC0071": "svetovaia_skulptura_vargov_design_ribbon_nastennaia_1",
+  "LC0072": "svetovaia_skulptura_vargov_design_ribbon_nastennaia_2",
+  "LC0085": "droplight_vargov_design_152",
+  "LC0086": "droplight_vargov_design_145",
+  "LC0087": "droplight_vargov_design_118",
+  "LC0090": "light_stained_glass_vargov_design_golden_autumn_7",
+  "LC0099": "droplight_vargov_design_171",
+  "LC0100": "droplight_vargov_design_176",
+  "LC0102": "droplight_vargov_design_186",
+  "LC0117": "podvesnaia_installiatsiia_vargov_design_umbrellas",
+  "LC0118": "podvesnaia_installiatsiia_vargov_design_reflex",
+  "LC0137": "droplight_vargov_design_228",
+  "LC0143": "droplight_vargov_design_249",
+  "LC0145": "droplight_vargov_design_260",
+  "LC0164": "droplight_vargov_r_design_1",
+  "LC0166": "svetovaia-kompozitsiia-limon-vargov-r-design-lc0166",
+  "LC0166-1": "svetovaia-kompozitsiia-voda-tsvetok-vargov-r-design-lc0166-1",
+  "LC0166-2": "bra_vargov_r_design_lc0166_2",
+  "LC0172": "liustra_light_vargov_156",
+  "LC0192": "svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192",
   "LC0192-1": "svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192-1",
+  "LC0199": "dekorativnaia_peregorodka_shirma_vargov_design_radiusnaia_4",
+  "LC0332": "svetovaia-kompozitsiia-steklo-vargov-r-design-lc0332",
   "LC0332-1": "bra_vargov_r_design_lc0332_1",
+  "LC0406": "svetovaia_kompozitsiia_vargov_r_design_lc0406_5",
   "LC0406-1": "svetovaia_kompozitsiia_vargov_r_design_lc0406_1",
-  "LC0593-1": "torsher-vargov-r-design-lc0593-1"
- },
- "no_own_card": {
-  "LC0543-1": "В списке 5047 слагов аккаунта (01.09.2026) нет ни одной карточки с этим артикулом; выгрузка подставила карточку LC0543. Ссылку не даём — лучше молчание, чем указание на чужой артикул."
+  "LC0529": "svetovaia-kompozitsiia-meduza-shchupaltsa-vargov-r-design-lc0528-3",
+  "LC0543": "bra-nastennyi-art-obekt-vargov-r-design-lc0543",
+  "LC0543-1": "bra-art-obekt-vargov-r-design-lc0543",
+  "LC0543-2": "svetovaia-kompozitsiia-vargov-r-design-lc0543-2-9",
+  "LC0545": "svetovaia-kompozitsiia-vargov-r-design-lc0545-18",
+  "LC0545-1": "svetovaia-kompozitsiia-vargov-r-design-lc0545-1-10",
+  "LC0593": "torsher-vargov-r-design-lc0593",
+  "LC0593-1": "torsher-vargov-r-design-lc0593-1",
+  "LC0593-2": "torsher-vargov-r-design-lc0593-2-1"
  },
  "empty_tags_checked": "07.09.2026, POST 3ddd.ru/api/models {user_slug, tag} с VPS конфигуратора: 608 тегов, пустых 8",
  "empty_tags": [
@@ -21,5 +57,6 @@
   "LC0545-1",
   "LC0593-1"
  ],
- "empty_tags_note": "Тег пуст не значит, что моделей нет: у LC0217-1 в аккаунте 6 карточек, у LC0543-2 — 10, у LC0545-1 — 11, тег с них просто снят. Пусты по-настоящему только LC0255, LC0257, LC0543-1. CollectionPage не ставим всем восьми, пока теги не восстановлены."
+ "empty_tags_note": "Тег пуст не значит, что моделей нет: у LC0217-1 в аккаунте 6 карточек, у LC0543-2 — 10, у LC0545-1 — 11, тег с них просто снят. Пусты по-настоящему только LC0255 и LC0257. CollectionPage не ставим всем восьми, пока теги не восстановлены; прямые карточки у них остаются.",
+ "lc0543_note": "LC0543-1 не ошибка выгрузки, а выбор владельца: в аккаунте две карточки под кодом LC0543 — bra-nastennyi-art-obekt-…-lc0543 (её владелец дал LC0543) и bra-art-obekt-…-lc0543 (её дал LC0543-1). Различить это по данным нельзя, видно только в реестре владельца; поднято агентом сайта 07.09.2026."
 }
