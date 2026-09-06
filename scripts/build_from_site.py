@@ -14,6 +14,7 @@ nginx держит 20 запросов/с с адреса, fail2ban банит, 
   catalog.generated.json          605 композиций: артикул, тип, раздел, снимки
   product-copy/products.<lang>.json  описания на 8 языках, согласованы владельцем
   awards.ts                       23 награды (число берётся из awardsCount(), дампится через node --experimental-strip-types)
+  element-specs.generated.json    параметры ЭЛЕМЕНТА у 336 артикулов: габариты, вес, мощность (см. product_node)
   instock.generated.json          элементы в наличии
 
 ПРАВИЛА ВЛАДЕЛЬЦА, зашитые в вывод: не называть материалы и размеры
@@ -27,6 +28,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -102,6 +104,9 @@ def load_site(site: Path) -> dict:
         die(f"нет каталога данных сайта: {data_dir}")
 
     catalog = json.loads((data_dir / "catalog.generated.json").read_text(encoding="utf-8"))
+    global ELEMENT_SPECS
+    specs_file = data_dir / "element-specs.generated.json"
+    ELEMENT_SPECS = json.loads(specs_file.read_text(encoding="utf-8")) if specs_file.exists() else {}
     if not isinstance(catalog, list) or len(catalog) < 500:
         die(f"catalog.generated.json пуст или подозрительно мал: {len(catalog) if isinstance(catalog, list) else '?'}")
 
@@ -342,8 +347,44 @@ def product_page(rec: dict, lang: str) -> str:
     return "\n".join(out).rstrip() + "\n"
 
 
+ELEMENT_SPECS: dict = {}
+
+
+def _range(a, b) -> str:
+    return f"{a}–{b}" if b is not None and b != a else f"{a}"
+
+
+def element_props(code: str) -> list[dict]:
+    """Параметры ЭЛЕМЕНТА, из которого набрана композиция, — зеркало фида сайта
+    (src/app/catalog.jsonld/route.ts, с 06.09.2026). Габариты строкой с «mm»,
+    вес и мощность числами с кодами UN/CEFACT (KGM, WTT); округление веса — как
+    Math.round в JS (половина вверх), иначе значения разойдутся с фидом сайта; целые
+    веса пишем целыми (1, а не 1.0) — тоже ради побайтового совпадения. Это additionalProperty,
+    а НЕ width/height/size/weight у Product: размер композиции считается под
+    помещение и не публикуется. material из источника намеренно не берём."""
+    rec = ELEMENT_SPECS.get(code) or {}
+    rows = rec.get("sizes") or []
+    out: list[dict] = []
+    for row in rows:
+        out.append({
+            "@type": "PropertyValue",
+            "name": f"Element size {row['size']}",
+            "value": (f"L{_range(row['l'], row.get('lMax'))} × "
+                      f"W{_range(row['w'], row.get('wMax'))} × "
+                      f"H{_range(row['h'], row.get('hMax'))} mm"),
+        })
+        if row.get("kg") is not None:
+            kg = math.floor(row["kg"] * 100 + 0.5) / 100
+            out.append({"@type": "PropertyValue", "name": f"Element weight {row['size']}",
+                        "value": int(kg) if kg == int(kg) else kg, "unitCode": "KGM"})
+    if rec.get("powerW") is not None:
+        out.append({"@type": "PropertyValue", "name": "Power per element",
+                    "value": rec["powerW"], "unitCode": "WTT"})
+    return out
+
+
 def product_node(rec: dict) -> dict:
-    """Product для schema.org. Без offers, material и размеров — правила владельца."""
+    """Product для schema.org. Без offers, material и размеров изделия — правила владельца; параметры элемента — в additionalProperty."""
     node = {
         "@type": "Product",
         "@id": f"{SITE_URL}/catalog/{rec['slug']}#product",
@@ -361,6 +402,9 @@ def product_node(rec: dict) -> dict:
         node["description"] = rec["snippet"]["en"]
     if rec["awards"]:
         node["award"] = [f"{a['program']} {a['year']} — {a['level_en']}" for a in rec["awards"]]
+    props = element_props(rec["code"])
+    if props:
+        node["additionalProperty"] = props
     if rec["model3d_en"]:
         node["subjectOf"] = {"@type": "3DModel", "url": rec["model3d_en"], "sameAs": rec["model3d"]}
     return node
