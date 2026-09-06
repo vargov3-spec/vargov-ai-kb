@@ -1,3 +1,49 @@
 .claude/
 __pycache__/
 *.pyc
+
+# Репозиторий публичный, а рабочий каталог общий: рядом с базой знаний лежат
+# другие проекты владельца — конфигуратор, каталог PDF, Pinterest, ролики,
+# юридические материалы, кампании, черновые выгрузки. Одна команда `git add -A`
+# опубликовала бы всё это разом (07.09.2026 такая команда была запущена и
+# остановлена до коммита). Поэтому по умолчанию не публикуется НИЧЕГО, кроме
+# перечисленного ниже. Добавляя новую часть базы, впишите её сюда явно.
+/*
+!/.gitignore
+!/.github/
+!/LICENSE
+!/README.md
+!/llms.txt
+!/llms-full.txt
+!/knowledge/
+!/references/
+!/collections/
+!/datasets/
+!/guides/
+!/products/
+!/en/
+!/press/
+!/scan/
+!/scripts/
+
+# Из чужих папок опубликованы отдельные файлы — только они и остаются.
+!/awards/
+/awards/*
+!/awards/configurator-free-publications.md
+!/catalog/
+/catalog/*
+!/catalog/data/
+/catalog/data/*
+!/catalog/data/in_stock.json
+!/pinterest/
+/pinterest/**
+!/pinterest/reports/baseline-2026-08-29.txt
+!/pinterest/reports/growth-june-to-august-2026.txt
+!/pinterest/src/tools/pin_baseline.py
+!/pinterest/src/tools/queue/probeSearch.py
+!/pinterest/src/tools/queue/searchTitles.py
+!/pinterest/titles/search-titles.json
+!/promo-video/
+/promo-video/**
+!/promo-video/scripts/*.mjs
+!/promo-video/scripts/build-promo-en.py
