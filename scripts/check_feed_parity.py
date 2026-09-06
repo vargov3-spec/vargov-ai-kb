@@ -79,6 +79,18 @@ def main() -> int:
             print(f"{'subjectOf':>20}: у {c} узел 3D-модели есть только с одной стороны")
             problems += 1
             continue
+        # У базы subjectOf — список: карточка-представитель плюс CollectionPage
+        # со всеми моделями артикула (их у 85 % артикулов несколько). У сайта —
+        # один узел со списком по тегу. Сверяем узел 3DModel с узлом сайта.
+        mine_model = next((x for x in (a if isinstance(a, list) else [a])
+                           if x.get("@type") == "3DModel"), None)
+        site_model = b if isinstance(b, dict) else next(
+            (x for x in b if x.get("@type") == "3DModel"), None)
+        if not mine_model or not site_model:
+            print(f"{'subjectOf':>20}: у {c} нет узла 3DModel с одной из сторон")
+            problems += 1
+            continue
+        a, b = mine_model, site_model
         if a.get("@type") != b.get("@type") or a.get("name") != b.get("name"):
             print(f"{'subjectOf':>20}: расхождение по существу у {c}")
             problems += 1

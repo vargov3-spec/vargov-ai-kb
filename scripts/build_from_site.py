@@ -50,8 +50,13 @@ REPO_URL = "https://github.com/vargov3-spec/vargov-ai-kb"
 REPO_RAW = "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main"
 DATASET_ID = f"{REPO_URL}#dataset"
 
-# 3D-модели. Групповые адреса 3ddd.ru/users/vargov/models?tag=lcXXXX запрещены
-# владельцем (01.09.2026): по тегу выдаются и чужие карточки с тем же артикулом.
+# 3D-модели. Запрещён общий поиск 3ddd.ru/3dmodels?tag=lcXXXX: по тегу выдаются
+# и чужие карточки с тем же артикулом (правило владельца, 01.09.2026).
+# Аккаунтный список 3ddd.ru/users/vargov/models?tag= разрешён (уточнение 05.09.2026):
+# он показывает только свои карточки — и, в отличие от прямой ссылки, ВСЕ модели
+# артикула. По переписи агента сайта 06.09.2026 у 605 артикулов 4152 модели, больше
+# одной — у 517 (85 %), максимум 51 у LC0023. Поэтому в графе рядом с прямой
+# карточкой-представителем стоит CollectionPage со списком всех.
 # Источник своих карточек — выгрузка конфигуратора через API 3ddd
 # (POST /api/models {user_slug, tag}); её слепок хранится в репозитории.
 MODELS_3D = KB / "references" / "3ddd-models.json"
@@ -269,6 +274,12 @@ def build_records(site_data: dict) -> list[dict]:
             # только своя карточка; групповой ?tag= из данных сайта не берём
             "model3d": f"{DDD_RU}{models[code]}" if code in models else None,
             "model3d_en": f"{DDD_EN}{models[code]}" if code in models else None,
+            # Полный список моделей артикула: у 85 % артикулов моделей несколько
+            # (перепись агента сайта 06.09.2026: 4152 модели на 605 артикулов,
+            # максимум 51 у LC0023), поэтому одна прямая карточка — представитель,
+            # а не «модель артикула». Аккаунтный список показывает все и только свои.
+            "models_all": f"https://3ddd.ru/users/vargov/models?tag={code.lower()}" if code in models else None,
+            "models_all_en": f"https://3dsky.org/users/vargov/models?tag={code.lower()}" if code in models else None,
             "award_winning": bool((per_lang["ru"] or {}).get("awardWinning")),
             "awards": awards_for(code, awards),
             "in_stock_elements": [
@@ -423,8 +434,14 @@ def product_node(rec: dict) -> dict:
     if props:
         node["additionalProperty"] = props
     if rec["model3d_en"]:
-        node["subjectOf"] = {"@type": "3DModel", "name": f"3D model — {rec['code']}",
-                             "url": rec["model3d_en"], "sameAs": rec["model3d"]}
+        node["subjectOf"] = [
+            # Одна карточка как представитель: у неё есть имя, автор и превью.
+            {"@type": "3DModel", "name": f"3D model — {rec['code']}",
+             "url": rec["model3d_en"], "sameAs": rec["model3d"]},
+            # И страница со всеми моделями артикула — их обычно несколько.
+            {"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
+             "url": rec["models_all_en"], "sameAs": rec["models_all"]},
+        ]
     return node
 
 
@@ -740,7 +757,8 @@ def main() -> None:
                         f"Person {'есть' if 'Person' in types else 'НЕТ'}")
     stale = subprocess.run(
         ["grep", "-rl", "--exclude=vargov-elements-*", "-e", "tildacdn", "-e", "_vargovdesign_ru",
-         "-e", "tproduct", "-e", "models?tag=",
+         # запрещён только общий поиск по тегу; аккаунтный список разрешён
+         "-e", "tproduct", "-e", "3dmodels?tag=",
          "datasets", "en", "products", "collections", "references", "llms.txt", "llms-full.txt"],
         cwd=KB, capture_output=True, text=True,
     ).stdout.strip()
