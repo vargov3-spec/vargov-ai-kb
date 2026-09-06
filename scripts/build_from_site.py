@@ -65,6 +65,9 @@ MODELS_3D = KB / "references" / "3ddd-models.json"
 # получал карточку LC0406. Плюс список артикулов с пустым тегом — им не ставится
 # CollectionPage, иначе читатель уходит на пустую страницу.
 MODELS_FIX = KB / "references" / "3ddd-corrections.json"
+# Перепись «слаг → артикулы, под чьими тегами карточка найдена» (агент сайта).
+# Нужна, чтобы выбор представителя не зависел от порядка чужой выгрузки.
+TAGS_INDEX = KB / "references" / "3ddd-slug-tags.json"
 CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sources/3ddd-own.json")
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
@@ -140,6 +143,9 @@ def load_site(site: Path) -> dict:
 
 
 EMPTY_TAGS: set[str] = set()
+# Артикулы, где карточку выбрали руками (реестр владельца или разбор спора).
+# Правило выбора их не трогает: решение человека главнее любой сортировки.
+MANUAL: set[str] = set()
 # Артикулы, которым представителя не назначаем: кандидатки неразличимы (см.
 # no_representative в файле поправок). Список моделей по тегу у них остаётся.
 NO_REPRESENTATIVE: set[str] = set()
@@ -171,10 +177,55 @@ def apply_model_fixes(models: dict[str, str]) -> dict[str, str]:
             changed += 1
     NO_REPRESENTATIVE.clear()
     NO_REPRESENTATIVE.update(fix.get("no_representative") or {})
+    MANUAL.clear()
+    MANUAL.update(fix.get("slug_overrides") or {})
+    MANUAL.update(fix.get("tag_wins") or [])
     EMPTY_TAGS.clear()
     EMPTY_TAGS.update(fix.get("empty_tags") or [])
     print(f"  поправки: слагов исправлено {changed}, ссылок снято {len(gone)}, "
           f"без представителя {len(NO_REPRESENTATIVE)}, пустых тегов {len(EMPTY_TAGS)}")
+    return models
+
+
+def pick_representative(models: dict[str, str]) -> dict[str, str]:
+    """Из карточек с тегом артикула выбираем представителя ВОСПРОИЗВОДИМО.
+
+    Зачем. Выгрузка аккаунта отдаёт карточки в своём порядке, и «первая
+    подходящая» менялась при каждой пересборке выгрузки: у агента конфигуратора
+    07.09.2026 обновление списка молча переставило шесть артикулов на другие
+    карточки, хотя на площадке ничего не менялось. Ссылка не должна зависеть от
+    порядка строк в чужом файле.
+
+    Правило (то же, что у конфигуратора): берём карточки, помеченные тегом этого
+    артикула и оканчивающиеся его кодом; предпочитаем новый описательный адрес —
+    через дефис и с названием вещи (владелец переименовывает карточки именно
+    так), затем более подробный, затем по алфавиту. Ручные решения не трогаем.
+    """
+    if not TAGS_INDEX.is_file():
+        return models
+    idx = json.loads(TAGS_INDEX.read_text(encoding="utf-8"))["items"]
+    by: dict[str, list[str]] = {}
+    for slug, skus in idx.items():
+        for sku in skus:
+            by.setdefault(sku, []).append(slug)
+
+    def ends_with_code(slug: str, code: str) -> bool:
+        return re.search(r"[-_]" + code.lower().replace("-", "[-_]") + r"$", slug.lower()) is not None
+
+    def rank(slug: str) -> tuple:
+        # старые карточки названы через подчёркивание и без описания вещи
+        return (0 if "_" not in slug else 1, -len(slug.split("-")), slug)
+
+    changed = 0
+    for code, cur in list(models.items()):
+        if code in MANUAL:
+            continue
+        cands = [s for s in by.get(code, []) if ends_with_code(s, code)]
+        if cands and (best := sorted(cands, key=rank)[0]) != cur:
+            models[code] = best
+            changed += 1
+    if changed:
+        print(f"  представитель выбран заново у {changed} артикулов (описательный адрес)")
     return models
 
 
@@ -185,7 +236,7 @@ def load_models_3d() -> dict[str, str]:
         raw = json.loads(CONFIGURATOR_OWN.read_text(encoding="utf-8")).get("items", {})
         models = {code: rec["slug"] for code, rec in raw.items()
                   if rec.get("slug") and rec.get("own")}
-        models = apply_model_fixes(models)
+        models = pick_representative(apply_model_fixes(models))
         MODELS_3D.parent.mkdir(exist_ok=True)
         MODELS_3D.write_text(json.dumps({
             "source": "конфигуратор, data-sources/3ddd-own.json — свои карточки аккаунта vargov по API 3ddd",
@@ -196,7 +247,7 @@ def load_models_3d() -> dict[str, str]:
         return models
     if MODELS_3D.is_file():
         models = json.loads(MODELS_3D.read_text(encoding="utf-8"))["items"]
-        models = apply_model_fixes(models)
+        models = pick_representative(apply_model_fixes(models))
         print(f"  3D-модели: {len(models)} своих карточек (слепок в репозитории)")
         return models
     print("  3D-модели: источника нет, ссылки не проставлены")
