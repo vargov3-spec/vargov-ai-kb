@@ -58,6 +58,11 @@ def links_from_graph() -> list[tuple[str, str]]:
         if node.get("@type") != "Product":
             continue
         for sub in node.get("subjectOf") or []:
+            # Только 3DModel. CollectionPage (аккаунтный список по тегу) в обход
+            # НЕ берём намеренно: он отвечает 200 всегда, даже когда моделей по
+            # тегу не осталось, и дал бы ложное «всё живо» ровно в том случае,
+            # который и надо ловить. Пустой тег виден только через API аккаунта
+            # (POST /api/models, user_slug + tag) — это делает агент конфигуратора.
             if isinstance(sub, dict) and sub.get("@type") == "3DModel" and sub.get("sameAs"):
                 # \r, пробелы и переводы строк уезжают в конец адреса и делают
                 # его нерезолвимым — чистим до запроса, а не гадаем по коду 000.
