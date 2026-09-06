@@ -13,7 +13,7 @@ nginx держит 20 запросов/с с адреса, fail2ban банит, 
 Поэтому источник — файлы репозитория сайта, только на чтение:
   catalog.generated.json          605 композиций: артикул, тип, раздел, снимки
   product-copy/products.<lang>.json  описания на 8 языках, согласованы владельцем
-  awards.ts                       22 награды (дампится через node --experimental-strip-types)
+  awards.ts                       23 награды (число берётся из awardsCount(), дампится через node --experimental-strip-types)
   instock.generated.json          элементы в наличии
 
 ПРАВИЛА ВЛАДЕЛЬЦА, зашитые в вывод: не называть материалы и размеры
@@ -41,6 +41,9 @@ LOCALES = ["ru", "en", "de", "it", "fr", "es", "vi", "ar"]
 SITE_URL = "https://vargov.ru"
 ORG_ID = f"{SITE_URL}#organization"
 PERSON_ID = f"{SITE_URL}#person"
+SHOWROOM_ID = f"{SITE_URL}/#showroom"
+GOOGLE_MAPS = "https://www.google.com/maps?cid=2970420474499935128"
+YANDEX_MAPS = "https://yandex.ru/maps/org/vargov_design/199433674369/"
 REPO_URL = "https://github.com/vargov3-spec/vargov-ai-kb"
 REPO_RAW = "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main"
 DATASET_ID = f"{REPO_URL}#dataset"
@@ -55,7 +58,7 @@ DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/s
 
 # Публичные каналы бренда — только подтверждённые владельцем или его сайтом.
 ORG_SAME_AS = [
-    "https://vargov.design",
+    "https://vargov.design/",
     "https://t.me/vargov_design",
     "https://t.me/AntonVargov",
     "https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA",
@@ -66,8 +69,8 @@ ORG_SAME_AS = [
     "https://www.facebook.com/vargovdesign",
     "https://www.wikidata.org/wiki/Q141301076",
     "https://www.pinterest.com/Vargov_Design/",
-    "https://www.google.com/maps?cid=2970420474499935128",
-    "https://yandex.ru/maps/org/vargov_design/199433674369/",
+    GOOGLE_MAPS,
+    YANDEX_MAPS,
     REPO_URL,
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
@@ -364,7 +367,7 @@ def product_node(rec: dict) -> dict:
 
 
 def award_strings(awards: list) -> list[str]:
-    """22 награды дословно из awards.ts: «Программа Год — уровень». Поздравления жюри не считаются."""
+    """Награды дословно из awards.ts (23 на 05.09.2026): «Программа Год — уровень». Поздравления жюри не считаются."""
     return [f"{p['name']} {it['year']} — {it['en']}"
             for p in awards for it in p["items"] if not it.get("commendation")]
 
@@ -390,10 +393,12 @@ def organization_node(awards: list) -> dict:
         "telephone": "+7 916 537 33 52",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Nakhimovsky Prospekt 24, Pavilion 2, Stand 212",
+            "streetAddress": "Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212",
             "addressLocality": "Moscow",
+            "postalCode": "117218",
             "addressCountry": "RU",
         },
+        "location": {"@id": SHOWROOM_ID},
         "knowsAbout": ["lighting design", "sculptural chandeliers", "light art installations",
                        "decorative compositions", "made-to-order lighting"],
         "identifier": [
@@ -403,12 +408,14 @@ def organization_node(awards: list) -> dict:
              "value": "1795801", "url": "https://www3.wipo.int/madrid/monitor/en/showData.jsp?ID=ROM.1795801"},
         ],
         "award": award_strings(awards),
+        "logo": {"@type": "ImageObject", "url": f"{REPO_URL}/raw/main/press/vargov-design-logo-512.png", "width": 512, "height": 512},
         "sameAs": list(dict.fromkeys(ORG_SAME_AS + hrefs)),
     }
 
 
 def person_node(awards: list) -> dict:
-    personal = [s for s in award_strings(awards) if "Designer of the Year" in s]
+    # Персональные награды основателя — как в узле Person на сайте (ADD Awards 2024 жюри + NY 2023).
+    personal = [s for s in award_strings(awards) if "Designer of the Year" in s or "Anton Vargov" in s]
     return {
         "@type": "Person",
         "@id": PERSON_ID,
@@ -420,6 +427,36 @@ def person_node(awards: list) -> dict:
         "nationality": {"@type": "Country", "name": "Russia"},
         "award": personal,
         "sameAs": PERSON_SAME_AS,
+    }
+
+
+def store_node() -> dict:
+    """Шоурум — зеркало узла Store с vargov.ru/showroom (часы и карточки карт подтверждены 05.09.2026)."""
+    return {
+        "@type": "Store",
+        "@id": SHOWROOM_ID,
+        "name": "Vargov®Design Showroom",
+        "url": f"{SITE_URL}/en/showroom",
+        "image": f"{REPO_RAW}/press/vargov-design-showroom-cover.jpg",
+        "parentOrganization": {"@id": ORG_ID},
+        "telephone": ["+7 925 888-77-44", "+7 916 537-33-52"],
+        "email": "info@vargov.ru",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
+            "addressLocality": "Москва",
+            "postalCode": "117218",
+            "addressCountry": "RU",
+        },
+        "geo": {"@type": "GeoCoordinates", "latitude": 55.67266, "longitude": 37.58210},
+        "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "12:00",
+            "closes": "20:00",
+        }],
+        "hasMap": [GOOGLE_MAPS, YANDEX_MAPS],
+        "sameAs": [GOOGLE_MAPS, YANDEX_MAPS],
     }
 
 
@@ -599,16 +636,16 @@ def main() -> None:
         write(KB / "products" / r["category"] / f"{r['code']}.md", product_page(r, "ru"))
         write(KB / "en" / "products" / r["category"] / f"{r['code']}.md", product_page(r, "en"))
 
-    # Граф самодостаточен: бренд, основатель и описание датасета идут первыми,
+    # Граф самодостаточен: бренд, основатель, шоурум и описание датасета идут первыми,
     # затем 605 Product, ссылающихся на #organization. Один канонический файл.
     today = date.today().isoformat()
-    org, person, dataset = (organization_node(site_data["awards"]),
-                            person_node(site_data["awards"]), dataset_node(len(recs), today))
+    org, person, store, dataset = (organization_node(site_data["awards"]), person_node(site_data["awards"]),
+                                   store_node(), dataset_node(len(recs), today))
     products = [product_node(r) for r in recs]
-    graph = {"@context": "https://schema.org", "@graph": [org, person, dataset, *products]}
+    graph = {"@context": "https://schema.org", "@graph": [org, person, store, dataset, *products]}
     write(KB / "references" / "catalog.jsonld", json.dumps(graph, ensure_ascii=False, indent=2) + "\n")
     write(KB / "references" / "organization.jsonld",
-          json.dumps({"@context": "https://schema.org", "@graph": [org, person]}, ensure_ascii=False, indent=2) + "\n")
+          json.dumps({"@context": "https://schema.org", "@graph": [org, person, store]}, ensure_ascii=False, indent=2) + "\n")
     write(KB / "references" / "dataset.jsonld",
           json.dumps({"@context": "https://schema.org", **dataset}, ensure_ascii=False, indent=2) + "\n")
 
@@ -648,7 +685,7 @@ def main() -> None:
     n_models = sum(1 for r in recs if r["model3d"])
 
     print(f"  карточек: {len(recs) * 2} (RU+EN), узлов JSON-LD: {len(graph['@graph'])} "
-          f"(Product {types.count('Product')} + Organization, Person, Dataset)")
+          f"(Product {types.count('Product')} + Organization, Person, Store, Dataset)")
     print(f"  ссылок на свои 3D-модели: {n_models} из {len(recs)}")
     print(f"  наград привязано: {sum(len(r['awards']) for r in recs)}")
     print(f"  удалено устаревшего: {len(removed)}")

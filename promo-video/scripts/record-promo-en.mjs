@@ -5,10 +5,10 @@
 // Post (ffmpeg) adds: real-ceiling photography, end card, music.
 import { createRequire } from 'node:module';
 import { mkdirSync, writeFileSync } from 'node:fs';
-const require = createRequire('V:/Vargov Design в ИИ/proposal-generator/package.json');
+const require = createRequire(process.env.PROMO_REQUIRE_FROM || import.meta.url);
 const { chromium } = require('playwright');
 
-const OUT = 'V:/Vargov Design в ИИ/promo-video/out/promo-rec-en';
+const OUT = process.env.PROMO_REC || new URL('../out/promo-rec-en', import.meta.url).pathname;
 mkdirSync(OUT, { recursive: true });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const HOST = 'http://localhost:5177';

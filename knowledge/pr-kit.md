@@ -5,20 +5,20 @@
 Обновлено 2026-09-04: все упоминания наград приведены к официальным формулировкам из `awards.ts` (см. [[awards-verified]]), адреса — к новому сайту. Правила владельца для любых текстов: материалы и размеры конкретных изделий не называть, цены не публиковать, NYPDA 2023 — «Product Designer of the Year», Awwwards 2026 — «Nominee», Interlight — «первый собственный стенд, октябрь 2025».
 
 ## Company boilerplate — short (EN, ~50 words)
-Vargov® Design is a Russian brand creating author's lighting and decorative compositions — a synthesis of art, engineering precision and contemporary Russian design philosophy. Founded and led by designer Anton Vargov, every composition is made to order and assembled for a specific interior. 22 international design awards. Trademark VARGOV No. 896936.
+Vargov® Design is a Russian brand creating author's lighting and decorative compositions — a synthesis of art, engineering precision and contemporary Russian design philosophy. Founded and led by designer Anton Vargov, every composition is made to order and assembled for a specific interior. 23 international design awards. Trademark VARGOV No. 896936.
 
 ## Company boilerplate — long (EN, ~160 words)
-Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand's compositions are Platinum Winners at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026 — 22 international awards in total, including IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award and the European Product Design Award. Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury (10th season). In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. Every piece is made to order, with official dealers in Moscow, Dubai and Hanoi. The catalogue holds 605 compositions, each with its own LC code.
+Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand's compositions are Platinum Winners at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026 — 23 international awards in total, including IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award and the European Product Design Award. Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury (10th season). In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. Every piece is made to order, with official dealers in Moscow, Dubai and Hanoi. The catalogue holds 605 compositions, each with its own LC code.
 
 ## Founder bio — short (EN)
 Anton Vargov is the founder and chief designer of Vargov® Design, based in Moscow. Named **Product Designer of the Year** at the NY Product Design Awards 2023, he is the author of compositions recognised as **Platinum Winner** at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and **Gold Winner** at the MUSE Design Awards 2026. He also serves as a jury member for leading Russian and international design and architecture awards, including the ADD Awards High Jury.
 
 ## Awards line — verified (используйте ЭТУ формулировку, не общий список)
-Источник — `awards.ts` сайта, 22 награды, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
+Источник — `awards.ts` сайта, 23 награды, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
 
 - **Platinum Winner** — MUSE Design Awards 2023 (LC0237); International Architecture & Design Awards · ADC 2023 (LC0303); The London Design Awards 2023 (LC0326)
 - **Product Designer of the Year** — NY Product Design Awards 2023 (LC0343)
-- **Gold Winner** — MUSE Design Awards 2026, «Oceanic Illumination» (LC0564); NY Product Design Awards 2023 (LC0313); International Architecture & Design Awards · ADC 2023, «Drapery» (LC0323); Houzee Awards 2023 (LC0335)
+- **Gold Winner** — MUSE Design Awards 2026, «Oceanic Illumination» (LC0564); NY Product Design Awards 2023 ×2 — Decorative Lighting и Hanging Lamps, две награды (LC0313); International Architecture & Design Awards · ADC 2023, «Drapery» (LC0323); Houzee Awards 2023 (LC0335)
 - **Silver** — IDA Design Awards 2022 (LC0236)
 - **Winner** — LIT Lighting Design Awards 2022 (LC0223); European Product Design Award 2023 (LC0339); BLT Built Design Awards 2023 (LC0343); SIT Furniture Design Award 2023 (LC0292) и 2025 (LC0358); LOOP Design Awards 2025 (LC0458); Luxury Lifestyle Awards 2024 — Best Luxury Lighting Design Studio in Dubai, UAE
 - **Honorable Mention** — IDA Design Awards 2025 (LC0516); LIT Lighting Design Awards 2025 (LC0447)
@@ -27,14 +27,14 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 - **Jury** — ADD Awards 2024, High Jury of the 10th season — Anton Vargov
 - **Nominee** — Awwwards 2026, Vargov®Design 3D Configurator (номинация, не победа)
 
-Короткая строка для писем (EN): *22 international design awards, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026.*
+Короткая строка для писем (EN): *23 international design awards, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026.*
 
 Не писать: «IDA 2026» (годы 2022 и 2025), «Designer of the Year (Gold)», «RLDC» как отдельную премию (это конкурс «Российский светодизайн» на Interlight 2022), «award-winning configurator», «24 награды».
 
 ## Готовые PR-хуки (зацепки для журналистов)
 1. **"Driplight" (LC0194 / LC0586)** — торшер в форме капельницы с ироничным описанием. Сильный визуальный + текстовый хук для дизайн-медиа, любящих необычные объекты. Карточки: https://vargov.ru/en/catalog/lc0586 · https://vargov.ru/en/catalog/lc0194.
 2. **LC0487, «коралловое кружево»** — световая композиция с органической перфорацией и цветными бабочками между слоями; авторское описание на 8 языках. Материал для питча про арт-объекты, вдохновлённые природой: https://vargov.ru/en/catalog/lc0487.
-3. **Первый собственный стенд на Interlight Moscow 2025** — «российский бренд с 22 международными наградами впервые показал композиции собранными и включёнными на своём стенде»; есть видео-интервью на YouTube (https://www.youtube.com/watch?v=_HBECagnlDI). Не писать «дебют/первое участие»: приз конкурса Interlight у бренда с 2022 года.
+3. **Первый собственный стенд на Interlight Moscow 2025** — «российский бренд с 23 международными наградами впервые показал композиции собранными и включёнными на своём стенде»; есть видео-интервью на YouTube (https://www.youtube.com/watch?v=_HBECagnlDI). Не писать «дебют/первое участие»: приз конкурса Interlight у бренда с 2022 года.
 4. **Международные награды без международного медиа-присутствия** — бренд с тремя Platinum и титулом Product Designer of the Year, о котором почти не написала дизайн-пресса; готовый угол для статьи «необнаруженный талант».
 5. **Генеративный 3D-конфигуратор** (https://vargov.design/) — Awwwards Nominee 2026; хук для tech/design-медиа.
 
@@ -45,9 +45,9 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
   - **exclusives@dezeen.com** — эксклюзивные редакционные истории (предпочитают публиковать первыми).
   - **china.submissions@dezeen.com** — для WeChat-канала (шанхайская редакция).
   - Требования: JPEG минимум 3000px по короткой стороне, текст о проекте, ссылки, чёткая пометка "exclusive" если эксклюзив, credits для фотографов. Видео тоже приветствуются. Ответ не гарантирован и может занять время — уместно вежливое напоминание.
-- **Archello** — не питч-письмо, а самостоятельная регистрация: [archello.com/archello-for-manufacturers](https://archello.com/archello-for-manufacturers) → кнопка "add brand" → профиль → загрузка товаров. Контент-пакет: [[archello-onboarding]]. Регистрировать должен сам бренд (нужны реквизиты компании).
+- **Archello** — не питч-письмо, а самостоятельная регистрация: [archello.com/archello-for-manufacturers](https://archello.com/archello-for-manufacturers) → кнопка "add brand" → профиль → загрузка товаров. Контент-пакет: [[archello-onboarding]]. ~~Регистрировать должен сам бренд (нужны реквизиты компании).~~ **Сделано 05.09.2026**: профиль https://archello.com/brand/vargov-design заполнен, 9 композиций на модерации (Pending); после модерации исправить в описании «22 награды» на 23.
 - **ArchDaily** — обычно публикует завершённые интерьерные/архитектурные проекты, а не отдельные продукты — нужны реальные кейсы установки композиций Vargov в конкретных объектах с фото и данными архитектора. Пока таких подтверждённых кейсов в базе знаний нет (раздел сайта /projects показывает выставку, шоурум и дилерские площадки).
-- **ICONIC World** — у Антона Варгова уже есть профиль в их справочнике ([iconic-world.com/directory/anton-vargov](https://www.iconic-world.com/directory/anton-vargov)). Площадку курирует German Design Council — общий контакт: **iconicawards@gdc.de**, +49 69 24 74 48-600.
+- **ICONIC World** — профиль Антона Варгова в справочнике (iconic-world.com/directory/anton-vargov) **недоступен с 2026-09-04 (404)**: 301 на битый адрес, конечная страница iconic-awards.com/directory/anton-vargov отдаёт 404 (см. [[external-references]]). Ссылку в письмах и питчах не использовать, пока не найден новый адрес. Площадку курирует German Design Council — общий контакт: **iconicawards@gdc.de**, +49 69 24 74 48-600; продолжение письма ушло 04.09 (см. [[outreach-tracker]]).
 
 ## Материалы для отправки (актуальные адреса)
 - Пресс-кит на сайте: **https://vargov.ru/en/press** (факты, биография, фото в высоком разрешении, логотип, награды, пресс-контакт); RU — https://vargov.ru/press.
@@ -76,7 +76,7 @@ Anton Vargov
 Founder & Chief Designer, Vargov® Design
 info@vargov.ru · vargov.ru · vargov.design
 
-**Статус:** отправлено на showroom@dezeen.com — 2026-07-06. Ждём ответа, повторно не питчить.
+**Статус:** отправлено на showroom@dezeen.com — 2026-07-06; без ответа, **закрыто 04.09.2026**. Повторно не писать.
 
 ---
 
@@ -107,7 +107,7 @@ info@vargov.ru · vargov.ru · vargov.design
 2. https://d8j0ntlcm91z4.cloudfront.net/user_3FgGgz6wweMw2KB5noOUH5JhcbS/hf_20260706_190408_56d8e30d-51a5-4249-b5a1-f3da7d4ac849.png — 4096×4096, апскейлено до печатного разрешения из оригинала с сайта
 3. https://static.tildacdn.com/stor3037-3137-4134-a436-366532643331/cbae37d6b524bdcc3a17fcf731f53bc3.jpg — 1680×1680, оригинал с сайта (не апскейлено)
 
-**Статус:** отправлено на exclusives@dezeen.com — 2026-07-06. Ждём ответа, повторно не питчить.
+**Статус:** отправлено на exclusives@dezeen.com — 2026-07-06, без ответа, закрыто. 04.09.2026 ушёл новый повод — эксклюзив MUSE Gold 2026 (LC0564), автоответ о приёме; напоминание не раньше 15.09 ([[outreach-tracker]]).
 
 ---
 
@@ -135,24 +135,25 @@ info@vargov.ru · vargov.ru · vargov.design
 
 **Проверьте перед отправкой:** это письмо написано от первого лица (Антона Варгова) — если отправлять будете не вы лично или не от его имени, поправьте подпись/тон.
 
-**Статус:** отправлено на iconicawards@gdc.de — 2026-07-06. Ждём ответа, повторно не питчить.
+**Статус:** отправлено на iconicawards@gdc.de — 2026-07-06, без ответа; продолжение с MUSE Gold 2026 отправлено 04.09.2026, напоминание не раньше 15.09 ([[outreach-tracker]]).
 
 ## Исправления для следующих писем (вместо устаревших фраз в архиве)
 
-- Вместо *«recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025»* → *«22 international design awards, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026»*.
+- Вместо *«recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025»* → *«23 international design awards, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026»*.
 - Вместо *«In October 2025 we made our first appearance at a Russian trade show, Interlight»* → *«In October 2025 we exhibited at Interlight Moscow with our first own stand; the brand had taken the special prize of the Russian Lighting Design competition at Interlight back in 2022»*.
 - Вместо *«manufactured at our own factory»* — допустимо *«own production, made to order»* (формулировка llms.txt сайта); страну производства в письмах не подчёркивать.
 - Ссылки: только `https://vargov.ru/en/…` и пресс-кит `https://vargov.ru/en/press`; `vargov.design` — адрес конфигуратора, не сайта.
 - Статус ответов на 2026-09-04: ни по одному из трёх писем ответ в базе не зафиксирован (два месяца). Напоминание — по вашему решению, с исправленным текстом.
+- Статус на 05.09.2026: июльские письма без ответа. Dezeen Showroom — закрыто, повторно не писать; Dezeen Exclusives — новый повод (MUSE Gold 2026, LC0564) отправлен 04.09, автоответ о приёме; ICONIC — продолжение отправлено 04.09. Напоминания не раньше 15.09 — см. [[outreach-tracker]].
 
 ## Факт-лист для журналистов (сверено с сайтом 2026-09-04)
 - Основатель и главный дизайнер: Антон Варгов (Москва)
 - Товарный знак VARGOV № 896936, зарегистрирован 06.10.2022
 - Каталог: 605 композиций (LC0001…LC0602) в 4 категориях; описания на 8 языках (RU, EN, DE, IT, FR, ES, VI, AR)
-- Награды: 22 международные (см. «Awards line»); полный список с сертификатами — https://vargov.ru/en/awards
+- Награды: 23 международные (см. «Awards line»); полный список с сертификатами — https://vargov.ru/en/awards
 - Interlight: специальный приз конкурса «Российский светодизайн» 2022 (серия лент LC0217); первый собственный стенд — Interlight Moscow, октябрь 2025
 - Сертификация: серийные сертификаты соответствия ТР ТС 004/2011 и ТР ТС 020/2011 (ЕАЭС), испытания по ГОСТ IEC 60598-1, знак EAC, более 300 артикулов LC — https://vargov.ru/en/certification
-- Официальные дилеры: Москва (XPROJECTLIGHT), Дубай (Vargov Design International), Ханой (VITRILUX SPACE) — https://vargov.ru/en/official-dealers
+- Официальные дилеры: Москва, Дубай, Ханой — https://vargov.ru/en/official-dealers (названия дилеров — в приватной папке PR владельца)
 - Шоурум: 24 Nakhimovsky Prospekt, Pavilion 2, Stand 212, Moscow; ежедневно 12:00–20:00; +7 (925) 888-77-44
 - Контакты: info@vargov.ru · +7 916 537 33 52 · WhatsApp https://wa.me/79165373352 · Telegram https://t.me/vargov_design
 - Сайт: https://vargov.ru (EN — https://vargov.ru/en); llms.txt — https://vargov.ru/llms.txt; конфигуратор — https://vargov.design/ (EN), https://configurator.vargov.ru/ (RU)

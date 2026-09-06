@@ -11,4 +11,4 @@ The priority is aesthetics and the visual enrichment of an interior: the design,
 ## Overlap between categories
 Vargov Design explicitly acknowledges that these categories can overlap: lighting elements often perform a decorative function, merging illumination and design into a single piece.
 
-This distinction is the basis for how the site's catalog is organized (see [[brand]], the "Lighting compositions" and "Decorative compositions" sections).
+This distinction is the basis for how the site's catalog is organized (see [brand](../../knowledge/brand.md), the "Lighting compositions" and "Decorative compositions" sections).

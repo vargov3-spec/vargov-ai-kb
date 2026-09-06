@@ -22,4 +22,4 @@ Smart LED systems, dynamic lighting installations, interactive technologies, ene
 ## Sustainability
 The company emphasizes environmental responsibility, incorporating renewable energy sources and eco-safe materials.
 
-Related to [[brand]] and the "Sculptural compositions & decor" category.
+Related to [brand](../../knowledge/brand.md) and the "Sculptural compositions & decor" category.

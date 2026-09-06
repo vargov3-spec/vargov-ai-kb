@@ -20,7 +20,16 @@
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — граф schema.org: Organization, Person, Dataset и 605 Product
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — артикул → собственная карточка 3D-модели (604 записи; в каталоге 603 из 605 композиций со ссылкой)
 - Карточки: `products/<раздел>/<артикул>.md` (RU) и `en/products/<раздел>/<артикул>.md` (EN)
+
+## База знаний и пресс-материалы
+
+- [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — проверенные факты о бренде
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 23 награды со ссылками на страницы премий
+- [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — PR-кит
+- [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov® Design»
 
 Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
 
@@ -53,7 +62,7 @@
 ## О бренде
 
 - [О бренде](https://vargov.ru/about) · [Антон Варгов](https://vargov.ru/designer) · [Награды](https://vargov.ru/awards) · [Проекты](https://vargov.ru/projects) · [Журнал](https://vargov.ru/journal) · [Пресс-кит](https://vargov.ru/press) · [Шоурум](https://vargov.ru/showroom) · [Официальные дилеры](https://vargov.ru/official-dealers)
-- [Русский световой дизайн: откуда он вырос и как выглядит сегодня](https://vargov.ru/journal/russian-lighting-design) — эссе в журнале сайта (05.09.2026), восемь языков; копия текста в базе: guides/russian-lighting-design.md
+- [Русский световой дизайн: откуда он вырос и как выглядит сегодня](https://vargov.ru/journal/russian-lighting-design) — эссе в журнале сайта (05.09.2026), восемь языков; копия текста в базе — [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md)
 
 Награды — 23, в 15 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
 

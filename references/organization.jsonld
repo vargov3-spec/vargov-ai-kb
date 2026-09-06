@@ -18,9 +18,13 @@
       "telephone": "+7 916 537 33 52",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Nakhimovsky Prospekt 24, Pavilion 2, Stand 212",
+        "streetAddress": "Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212",
         "addressLocality": "Moscow",
+        "postalCode": "117218",
         "addressCountry": "RU"
+      },
+      "location": {
+        "@id": "https://vargov.ru/#showroom"
       },
       "knowsAbout": [
         "lighting design",
@@ -68,8 +72,14 @@
         "Houzee Awards 2023 — Gold Winner · Lighting Design · composition LC0335",
         "Interlight Russia · Российский светодизайн 2022 — Special prize · Best luminaire design 2021–2022 · composition LC0217"
       ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://github.com/vargov3-spec/vargov-ai-kb/raw/main/press/vargov-design-logo-512.png",
+        "width": 512,
+        "height": 512
+      },
       "sameAs": [
-        "https://vargov.design",
+        "https://vargov.design/",
         "https://t.me/vargov_design",
         "https://t.me/AntonVargov",
         "https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA",
@@ -121,11 +131,63 @@
         "name": "Russia"
       },
       "award": [
+        "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov",
         "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343"
       ],
       "sameAs": [
         "https://t.me/AntonVargov",
         "https://www.wikidata.org/wiki/Q141300942"
+      ]
+    },
+    {
+      "@type": "Store",
+      "@id": "https://vargov.ru/#showroom",
+      "name": "Vargov®Design Showroom",
+      "url": "https://vargov.ru/en/showroom",
+      "image": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/press/vargov-design-showroom-cover.jpg",
+      "parentOrganization": {
+        "@id": "https://vargov.ru#organization"
+      },
+      "telephone": [
+        "+7 925 888-77-44",
+        "+7 916 537-33-52"
+      ],
+      "email": "info@vargov.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
+        "addressLocality": "Москва",
+        "postalCode": "117218",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.67266,
+        "longitude": 37.5821
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "12:00",
+          "closes": "20:00"
+        }
+      ],
+      "hasMap": [
+        "https://www.google.com/maps?cid=2970420474499935128",
+        "https://yandex.ru/maps/org/vargov_design/199433674369/"
+      ],
+      "sameAs": [
+        "https://www.google.com/maps?cid=2970420474499935128",
+        "https://yandex.ru/maps/org/vargov_design/199433674369/"
       ]
     }
   ]

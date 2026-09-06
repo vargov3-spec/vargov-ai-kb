@@ -3,13 +3,16 @@
 import json, os, subprocess, sys
 from PIL import Image
 
-REC = 'V:/Vargov Design в ИИ/promo-video/out/promo-rec-en'
-WORK = 'C:/Users/PC/AppData/Local/Temp/claude/V--Vargov-Design-----/42630be1-02bb-43ed-bd05-f305fb27839a/scratchpad/promo-build'
-OUT = 'V:/Vargov Design в ИИ/promo-video/out/configurator-promo-en-1080p.mp4'
-PHOTOS_DIR = 'V:/vargov.design/фото с выставки 2025'
-FONT = 'V:/Vargov Design в ИИ/promo-video/public/fonts/Montserrat-Light.ttf'
-FONT_MED = 'V:/Vargov Design в ИИ/promo-video/public/fonts/Montserrat-Medium.ttf'
-LOGO = 'V:/Vargov Design в ИИ/video-studio/backend/var/storage/brand/logo_white.png'
+import os, tempfile
+
+ROOT = os.environ.get('PROMO_ROOT', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+REC = os.environ.get('PROMO_REC', os.path.join(ROOT, 'out', 'promo-rec-en'))
+WORK = os.environ.get('PROMO_WORK', os.path.join(tempfile.gettempdir(), 'promo-build'))
+OUT = os.environ.get('PROMO_OUT', os.path.join(ROOT, 'out', 'configurator-promo-en-1080p.mp4'))
+PHOTOS_DIR = os.environ.get('PROMO_PHOTOS', os.path.join(ROOT, 'public', 'photos'))  # выставочные фото — вне репозитория
+FONT = os.environ.get('PROMO_FONT', os.path.join(ROOT, 'public', 'fonts', 'Montserrat-Light.ttf'))
+FONT_MED = os.environ.get('PROMO_FONT_MED', os.path.join(ROOT, 'public', 'fonts', 'Montserrat-Medium.ttf'))
+LOGO = os.environ.get('PROMO_LOGO', os.path.join(ROOT, 'public', 'logo_white.png'))
 os.makedirs(WORK, exist_ok=True)
 
 

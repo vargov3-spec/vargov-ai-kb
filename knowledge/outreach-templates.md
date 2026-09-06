@@ -4,7 +4,7 @@
 
 ## 1. Просьба о кредите в публикации проекта (архитектору / студии)
 
-Кому: студии и дизайнеры, у которых стоят композиции Vargov Design и которые публикуют проекты (Archello, ArchDaily, Houzz, Instagram, свой сайт, журналы). Нужен список объектов с контактами — [[gap-list-2026-09]], п. «кредиты».
+Кому: студии и дизайнеры, у которых стоят композиции Vargov Design и которые публикуют проекты (Archello, ArchDaily, Houzz, Instagram, свой сайт, журналы). Нужен список объектов с контактами — ведёт владелец (раздел «Проекты» сайта и переписка с архитекторами); в базе знаний такого списка нет.
 
 **RU — тема:** «<Объект>» — просьба указать свет в публикации
 
@@ -38,7 +38,7 @@
 
 ## 2. Просьба об отзыве (клиенту / архитектору)
 
-Где нужны отзывы: карточка шоурума в Google Business Profile и Яндекс Бизнесе, профиль в Houzz (после создания). Отзыв с именем и названием объекта весит больше анонимного; просить у тех, кто доволен и готов подписаться.
+Где нужны отзывы: карточка шоурума в Google Business Profile (https://www.google.com/maps?cid=2970420474499935128) и Яндекс Бизнесе (https://yandex.ru/maps/org/vargov_design/199433674369/). Houzz не используется (Houzz Pro платный, российский раздел закрыт). Отзыв с именем и названием объекта весит больше анонимного; просить у тех, кто доволен и готов подписаться.
 
 **RU — тема:** Два слова о композиции — просьба
 
@@ -55,7 +55,7 @@
 
 > Hello <name>,
 >
-> It has been <time> since composition <LC0xxx> was installed at <project>. If it is serving you well, may we ask a small favour: two or three sentences of feedback on our showroom card on Google (<link>) or Houzz (<link>) — how it looks in the interior, how the installation went, and what you would tell someone choosing lighting for a project.
+> It has been <time> since composition <LC0xxx> was installed at <project>. If it is serving you well, may we ask a small favour: two or three sentences of feedback on our showroom card on Google (<link>) or Yandex Maps (<link>) — how it looks in the interior, how the installation went, and what you would tell someone choosing lighting for a project.
 >
 > If e-mail is easier, send the text and we will post it with your consent and the signature you prefer.
 >

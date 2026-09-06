@@ -8,7 +8,7 @@
 - Описание организации (seo.ts, ORG_TEXT): «Авторский бренд коллекционных световых и декоративных композиций из художественного стекла, хрусталя, керамики и металла» — это описание бренда; в текстах о конкретных изделиях материалы не называются (правило владельца).
 - Основатель и главный дизайнер: **Антон Варгов** (Anton Vargov, «Founder and lead designer»). Член жюри премий в области дизайна и архитектуры (ADD Awards, Высокое жюри X сезона, 2024).
 - Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство (llms.txt).
-- Organization JSON-LD: `@id` = `https://vargov.ru#organization` (ORG_ID в seo.ts) — использовать для `brand`/`manufacturer` в любой внешней разметке; `areaServed`: RU, AE, VN; логотип `https://vargov.ru/apple-icon.png`.
+- Organization JSON-LD: `@id` = `https://vargov.ru#organization` (ORG_ID в seo.ts) — использовать для `brand`/`manufacturer` в любой внешней разметке; `areaServed`: RU, AE, VN; логотип — ImageObject 512×512 из `/press-assets/` (файл `vargov-design-logo-512.png`, см. [[gap-list-2026-09]] п. 8), не `apple-icon.png`. В сборщике базы (`references/organization.jsonld`) поле `logo` не задано — добавить тот же ImageObject.
 
 ## Платформа сайта
 - vargov.ru — собственный сайт на **Next.js** на собственном VPS (nginx), не Tilda; переезд завершён к 27.07.2026. Старые адреса Tilda (`/…_vargovdesign_ru/tproduct/…`) редиректят, печатать только канонические.
@@ -44,7 +44,7 @@
 1. Заказ — связь через WhatsApp, расчёт стоимости и сроков, договор-спецификация. 2. Предоплата 50%. 3. Производство 40–60 рабочих дней (3D-модель, монтажная схема, изготовление). 4. Подтверждение фото/видео. 5. Окончательная оплата 50%. 6. Доставка 14–25 дней по региону. 7. Монтаж — опционально (Россия, ОАЭ). Подтверждённое llms.txt: доставка по всему миру в фирменной обрешётке; для архитекторов — https://vargov.ru/en/architects (как идёт проект от эскиза до монтажа).
 
 ## Награды — 23
-Полный верифицированный список с официальными формулировками, ссылками на страницы премий и сертификатами — [[awards-verified]] (источник `awards.ts`, `awardsCount()` = 22; два «Официальных поздравления жюри» — документы, в счёт не идут). Программы: MUSE Design Awards (Platinum 2023, Gold 2026), International Architecture & Design Awards · ADC (Platinum, Gold 2023), The London Design Awards (Platinum 2023), NY Product Design Awards (Product Designer of the Year, Gold 2023), Houzee Awards (Gold 2023), IDA Design Awards (Silver 2022, Honorable Mention 2025), LIT Lighting Design Awards (Winner 2022, Honorable Mention 2025), European Product Design Award 2023, BLT Built Design Awards 2023, SIT Furniture Design Award (2023, 2025), LOOP Design Awards 2025, Luxury Lifestyle Awards 2024, ADD Awards (2-е место 2023; жюри 2024), Interlight Russia · Российский светодизайн (специальный приз 2022), Awwwards (Nominee 2026). Страница: https://vargov.ru/awards · https://vargov.ru/en/awards. В Organization JSON-LD: «Более 20 международных премий в области дизайна и света».
+Полный верифицированный список с официальными формулировками, ссылками на страницы премий и сертификатами — [[awards-verified]] (источник `awards.ts`, `awardsCount()` = 23; два «Официальных поздравления жюри» — документы, в счёт не идут). Программы: MUSE Design Awards (Platinum 2023, Gold 2026), International Architecture & Design Awards · ADC (Platinum, Gold 2023), The London Design Awards (Platinum 2023), NY Product Design Awards (Product Designer of the Year, Gold ×2 2023), Houzee Awards (Gold 2023), IDA Design Awards (Silver 2022, Honorable Mention 2025), LIT Lighting Design Awards (Winner 2022, Honorable Mention 2025), European Product Design Award 2023, BLT Built Design Awards 2023, SIT Furniture Design Award (2023, 2025), LOOP Design Awards 2025, Luxury Lifestyle Awards 2024, ADD Awards (2-е место 2023; жюри 2024), Interlight Russia · Российский светодизайн (специальный приз 2022), Awwwards (Nominee 2026). Страница: https://vargov.ru/awards · https://vargov.ru/en/awards. В Organization JSON-LD: «Более 20 международных премий в области дизайна и света».
 
 ## Выставки
 - **2022** — специальный приз конкурса «Российский светодизайн» на Interlight за серию ленточных композиций LC0217 (награда № 22 в [[awards-verified]]).
@@ -58,7 +58,7 @@
 
 ## Шоурум и дилеры
 - Официальный шоурум: Москва, Нахимовский проспект 24, павильон 2, стенд 212 (латиницей: 24 Nakhimovsky Prospekt, Pavilion 2, Stand 212, Moscow). Открыт ежедневно 12:00–20:00; телефон шоурума +7 (925) 888-77-44. Страница https://vargov.ru/showroom.
-- Дилеры (https://vargov.ru/official-dealers): XPROJECTLIGHT (Москва, стенд 211; Россия и СНГ), Vargov Design International (Дубай; Ближний Восток, Европа, Азия, Африка, Америка), VITRILUX SPACE CO., LTD (Ханой; Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия, Сингапур). Подробно — [[dealers-showrooms]].
+- Официальные дилеры: список и контакты — https://vargov.ru/official-dealers (в базе знаний не дублируются; перечень — в приватной папке PR владельца). Шоурум подробно — [[dealers-showrooms]].
 
 ## Контакты (seo.ts CONTACTS)
 - Email: info@vargov.ru
@@ -67,7 +67,7 @@
 - Telegram бренда: https://t.me/vargov_design (@vargov_design); личный: https://t.me/AntonVargov
 - WeChat: Vargov_Design
 - YouTube: https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA · RuTube: https://rutube.ru/channel/38329605/
-- `sameAs` в Organization JSON-LD: оба Telegram, YouTube, RuTube, https://vargov.design/. Instagram и MAX на новом сайте не публикуются.
+- `sameAs` в Organization JSON-LD — 35 адресов (сверено 05.09.2026): оба Telegram, YouTube, RuTube, https://vargov.design/, 3ddd/3dsky, Instagram https://www.instagram.com/vargov_design/, Pinterest https://www.pinterest.com/Vargov_Design/ (7e9a8e5; видимая ссылка в подвале), Facebook https://www.facebook.com/vargovdesign (2ff2d36, только sameAs), Wikidata https://www.wikidata.org/wiki/Q141301076, Google Карты https://www.google.com/maps?cid=2970420474499935128 и Яндекс Карты https://yandex.ru/maps/org/vargov_design/199433674369/ (59a3ef6), GitHub vargov-ai-kb и страницы победителей премий. Видимой ссылки на Instagram в подвале нет (решение владельца); MAX на новом сайте не публикуется.
 
 ## Упаковка/защита при доставке (текст прежней версии сайта — на новом не сверено)
 Плёнка, плотный поролон, фирменные картонные вкладыши, фирменный скотч, деревянный каркас, фанерные ящики, джутовая обёртка, финальный защитный слой плёнки. Подтверждено llms.txt: «Delivery: worldwide, in branded crating».

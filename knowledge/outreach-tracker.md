@@ -9,15 +9,15 @@
 | 2026-07-06 | Dezeen Showroom | showroom@dezeen.com | питч Driplight | без ответа, закрыто | — | повторно не писать; новый повод ушёл 04.09 |
 | 2026-07-06 | Dezeen Exclusives | exclusives@dezeen.com | питч Driplight | без ответа, закрыто | — | — |
 | 2026-07-06 | ICONIC World / German Design Council | iconicawards@gdc.de | профиль в директории | без ответа | — | продолжение ушло 04.09 |
-| 2026-09-04 | International Awards Associate — Tyler K. | tyler@iaaawards.org | интервью для Muse.World + персональный релиз, MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
+| 2026-09-04 | International Awards Associate — контакт IAA по работе с победителями | IAA (адрес — в приватной папке PR владельца) | интервью для Muse.World + персональный релиз, MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-04 | Dezeen Exclusives | exclusives@dezeen.com | эксклюзив: MUSE Gold 2026, LC0564 | отправлено, автоответ о приёме | «Thanks for submitting your project to Dezeen» | напоминание не раньше 15.09 |
-| 2026-09-04 | Luxury Lifestyle Awards | pr@luxuryawards.com | обзорный релиз, 22 награды, Winners in Media | отправлено | — | напоминание не раньше 15.09 |
+| 2026-09-04 | Luxury Lifestyle Awards | pr@luxuryawards.com | обзорный релиз (в отправленной версии — 22 награды; с 05.09 — 23, учесть в напоминании), Winners in Media | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-04 | ICONIC World | iconicawards@gdc.de | продолжение июльского письма: MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-05 | D5 MAG — Tina King | editor@d5mag.com | исправление фактической ошибки в статье о LC0358 («makes in China») | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | vamvidnee.ru | info@vamvidnee.ru | дополнение к статье «Российские бренды освещения переживают ренессанс» | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Wescover | community@wescover.com | очередь на онбординг создателя | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | darc — Sarah Cullen, cc Helen Ankers | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: Сара в декрете с января 2026, письма читают Helen, Matt, Ellie — Helen в копии | автоответ | напоминание не раньше 16.09 |
-| 2026-09-05 | arc — Matt Waring, cc Helen Ankers | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | darc (Mondiale) — редакция | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: основной адресат недоступен, письмо читает дежурная редакция (копия доставлена) | автоответ | напоминание не раньше 16.09 |
+| 2026-09-05 | arc (Mondiale) — редакция | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Interior Design (US) — Market Director, cc News | редакция interiordesign.net | новые продукты: Oceanic Illumination, Depth of Water | отправлено; **основной адрес отскочил (550, ящик не существует)**, копия News-редактору доставлена | bounce | найти актуальный адрес Market Director, переслать |
 | 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09. **Вечером 05.09 ушло второе письмо** с бессрочной ссылкой на hi-res (vargov.ru/press/…zip + press/ в репозитории), как требуют правила подачи | автоответ | напоминание не раньше 23.09 |
 | 2026-09-05 | Dwell — Design News Editor, cc Market Editor | редакция dwell.com | design news: три композиции | отправлено | — | напоминание не раньше 16.09 |
@@ -26,22 +26,32 @@
 | 2026-09-05 | Hospitality Design — EIC, cc Managing Editor | редакция hospitalitydesign.com | свет для лобби, ресторанов и спа | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | Design Mate | hi@design-mate.ru | история об эссе о русском световом дизайне, интервью | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | SALON-interior — предметный редактор, cc editor@salon.ru | редакция salon.ru | предметы: Oceanic Illumination, Driplight | отправлено основному адресату; **editor@salon.ru отскочил (550)** | bounce копии | напоминание не раньше 16.09 |
+| 2026-09-05 | Design Milk | форма submit (ClickUp) | Sea Lace LC0487 | отправлено | — | следить за публикациями ~20.09 |
+| 2026-09-05 | Adorno | adorno.design/apply | анкета | отправлено | — | ответ ~03.10 |
+| 2026-09-05 | Archello | archello.com/brand/vargov-design | профиль + 9 композиций | Pending | — | проверить ~12.09 |
+
+### Что отправлено на площадки 05.09.2026 (детали заявок)
+
+| Адресат | Канал | Что отправлено | Кто |
+|---|---|---|---|
+| Design Milk | форма design-milk.com/submit/ (ClickUp) | **отправлено 05.09.2026**: «A design-forward product or collection» / Home Furnishings, «Sea Lace — light composition LC0487 by Vargov® Design», описание без материалов и размеров, 8 фото 1680 px, ссылка на карточку и Instagram, контакт Anton Vargov / info@vargov.ru; редакция ответа не гарантирует | проверить публикации Design Milk ~20.09 |
+| Adorno | adorno.design/apply | **анкета отправлена 05.09.2026** (4 шага: контакты, практика «Brand, Moscow, 5–10 people, продажи регулярно», дисциплина Other, всё производство in-house, стиль Experimental, High-end, 6 фото из пресс-кита); ответ кураторов 3–4 недели | ждать до ~03.10 |
+| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). Пустой черновик «Sea Lace» (id 127279) удалён владельцем 05.09.2026. После модерации исправить в описании профиля «22 награды» → 23 | я; проверить статус модерации ~12.09 |
 
 ## Очередь — не отправлено
 
 | Адресат | Канал | Что нужно | Кто |
 |---|---|---|---|
-| Design Milk | форма design-milk.com/submit/ (ClickUp) | **отправлено 05.09.2026**: «A design-forward product or collection» / Home Furnishings, «Sea Lace — light composition LC0487 by Vargov® Design», описание без материалов и размеров, 8 фото 1680 px, ссылка на карточку и Instagram, контакт Anton Vargov / info@vargov.ru; редакция ответа не гарантирует | проверить публикации Design Milk ~20.09 |
-| Adorno | adorno.design/apply | **анкета отправлена 05.09.2026** (4 шага: контакты, практика «Brand, Moscow, 5–10 people, продажи регулярно», дисциплина Other, всё производство in-house, стиль Experimental, High-end, 6 фото из пресс-кита); ответ кураторов 3–4 недели | ждать до ~03.10 |
 | Galerie Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | Azure Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
-| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). В кабинете остался пустой черновик «Sea Lace» (id 127279, загрузчик фото на нём сломался) — удалить владельцу | я; проверить статус модерации ~12.09 |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
 | Wallpaper*, Elle Decor US, AD US, INMYROOM | — | холодные питчи не принимают или только проекты/реклама | не отправлять |
 | Interior+Design, Elle Decoration RU, AD Russia, Проект Россия | — | сайты недоступны или закрыты (AD Russia — 410), адреса не подтверждены | отложено |
 
 ---
+
+Архив: тексты в том виде, в каком ушли. В следующих письмах: «на собственном производстве» без указания города/страны; наград — 23.
 
 ## Тексты писем 05.09.2026
 
@@ -64,6 +74,8 @@
 > основатель и главный дизайнер Vargov®Design
 > info@vargov.ru · +7 916 537 33 52 · https://vargov.ru
 
+Примечание: в письме названо 22 награды; с 05.09 их 23 (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) — в напоминании писать 23.
+
 ### Wescover — community@wescover.com
 
 **Subject:** Creator onboarding request — Vargov®Design (sculptural lighting, Moscow)
@@ -83,6 +95,8 @@
 > Anton Vargov
 > Founder & Lead Designer, Vargov®Design
 > info@vargov.ru · https://vargov.ru/en
+
+Note: the letter says 22 awards; since 05.09 the count is 23 (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) — use 23 in the follow-up.
 
 ## Сторонние упоминания (страницы на чужих доменах)
 

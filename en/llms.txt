@@ -20,6 +20,15 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Dataset and 605 Product nodes
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (604 entries; 603 of the 605 compositions in the catalogue carry a link)
+
+## Knowledge base and press materials
+
+- [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — verified brand facts (Russian)
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 23 awards with links to the award pages
+- [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
+- [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov® Design”
 
 VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
 
@@ -52,7 +61,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 ## About
 
 - [About the brand](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [Awards](https://vargov.ru/en/awards) · [Projects](https://vargov.ru/en/projects) · [Journal](https://vargov.ru/en/journal) · [Press kit](https://vargov.ru/en/press) · [Showroom](https://vargov.ru/en/showroom) · [Official dealers](https://vargov.ru/en/official-dealers)
-- [Russian Lighting Design: Where It Comes From and What It Looks Like Today](https://vargov.ru/en/journal/russian-lighting-design) — essay in the site journal (5 September 2026), eight languages; text copy in this base: en/guides/russian-lighting-design.md
+- [Russian Lighting Design: Where It Comes From and What It Looks Like Today](https://vargov.ru/en/journal/russian-lighting-design) — essay in the site journal (5 September 2026), eight languages; text copy in this base — [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md)
 
 23 awards across 15 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
 

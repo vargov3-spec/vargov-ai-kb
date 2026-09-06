@@ -6,20 +6,22 @@
 
 Общий блок для всех релизов:
 
-> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 22 international design awards and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
+> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 23 international design awards and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
 >
 > **Media contact:** info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en
+
+Примечание: в письмах 04.09 ушла цифра 22 — 23-я награда (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) найдена 05.09.
 
 ---
 
 ## 0. Письмо в IAA — отправлять первым
 
-**Кому:** tyler@iaaawards.org — Tyler K., Executive Vice President of Programs and Marketing, International Awards Associate.
-**Почему первым:** один адрес закрывает шесть наград бренда (MUSE 2023 и 2026, NY Product Design 2023 ×2, The London Design Awards 2023, LIT 2022 и 2025). Победителям уровней Platinum и Gold положены персональный пресс-релиз и рассылка по отраслевым изданиям, а **интервью доступно всем победителям** — публикуется у медиапартнёра Muse.World. Это стороннее упоминание, а именно их бренду не хватает.
+**Кому:** представитель IAA по работе с победителями (Executive Vice President of Programs and Marketing, International Awards Associate); персональный адрес — в приватной папке PR владельца.
+**Почему первым:** один адрес закрывает шесть наград бренда (MUSE 2023 и 2026, NY Product Design 2023 ×3, The London Design Awards 2023); LIT Lighting Design Awards (2022, 2025) к IAA не относится — это 3C Awards (Farmani Group), в письме 04.09 указана в семье IAA ошибочно. Победителям уровней Platinum и Gold положены персональный пресс-релиз и рассылка по отраслевым изданиям, а **интервью доступно всем победителям** — публикуется у медиапартнёра Muse.World. Это стороннее упоминание, а именно их бренду не хватает.
 
 > **Subject:** Winner interview & media package request — Vargov® Design (MUSE Gold 2026, LC0564)
 >
-> Dear Tyler,
+> Dear [first name],
 >
 > I am Anton Vargov, founder and lead designer of Vargov® Design, a Russian brand of author's lighting compositions. Our composition "Oceanic Illumination" (LC0564) was awarded **Gold Winner at the MUSE Design Awards 2026** in Lighting Design — Designer / Custom Lighting.
 >
@@ -46,7 +48,7 @@
 > Founder & Lead Designer, Vargov® Design
 > info@vargov.ru · https://vargov.ru/en
 
-**Статус: ОТПРАВЛЕНО 2026-09-04** на tyler@iaaawards.org с vargov3@gmail.com (отображаемое имя «Vargov Design»; алиаса info@vargov.ru в Gmail не настроено, контакт бренда указан в подписи). Повторно не писать — ждём ответа. Если ответа не будет через 10–14 дней, уместно вежливое напоминание.
+**Статус: ОТПРАВЛЕНО 2026-09-04** представителю IAA (адрес — в приватной папке PR) с vargov3@gmail.com (отображаемое имя «Vargov Design»; алиаса info@vargov.ru в Gmail не настроено, контакт бренда указан в подписи). Повторно не писать — ждём ответа. Если ответа не будет через 10–14 дней, уместно вежливое напоминание. В письме названо 22 награды — на 04.09 это соответствовало awards.ts; 23-я (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) найдена 05.09 — в напоминании назвать 23 и добавить её в список IAA. В напоминании не повторять ошибку письма: LIT Lighting Design Awards — не премия IAA (3C Awards, Farmani Group).
 
 
 ---
@@ -93,14 +95,14 @@
 
 ---
 
-## 3. Итоговый релиз: 22 награды
+## 3. Итоговый релиз: 23 награды
 
 **Для площадок, которым нужен портрет бренда, а не одна новость.**
 
-> **Vargov® Design: 22 International Design Awards for Author's Lighting Compositions**
+> **Vargov® Design: 23 International Design Awards for Author's Lighting Compositions**
 > *Three Platinum titles, a Designer of the Year title and a catalogue of 605 made-to-order compositions*
 >
-> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **22 international design awards** across fifteen programmes.
+> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **23 international design awards** across fifteen programmes.
 >
 > Among them are three **Platinum Winner** titles — at the **MUSE Design Awards 2023** (LC0237), the **International Architecture & Design Awards 2023** (LC0303) and **The London Design Awards 2023** (LC0326) — as well as the title of **Product Designer of the Year** at the **NY Product Design Awards 2023** and a **Gold Winner** at the **MUSE Design Awards 2026** for "Oceanic Illumination" (LC0564). Further recognition comes from the IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, the European Product Design Award, the BLT Built Design Awards, Houzee Awards and the Luxury Lifestyle Awards, where the studio was named **Best Luxury Lighting Design Studio in Dubai, UAE** in 2024.
 >
@@ -110,10 +112,12 @@
 >
 > The catalogue comprises 605 compositions in four families — lighting compositions, decorative compositions, floor and table objects, and sculptural decor — with a 3D configurator nominated at Awwwards in 2026.
 >
-> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-two awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov.
+> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-three awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov.
 >
 > Awards with certificates: https://vargov.ru/en/awards
 > Catalogue: https://vargov.ru/en/catalog
+
+Примечание: в версии, отправленной 04.09 в Luxury Lifestyle Awards, — 22 (заголовок, лид и цитата). Цитата утверждалась владельцем 04.09 с прежней цифрой — новую формулировку «Twenty-three» согласовать с ним перед следующей рассылкой.
 
 ---
 
@@ -123,15 +127,15 @@
 | Релиз | Кому | Статус | Почему именно туда |
 |---|---|---|---|
 | 1. MUSE Gold 2026 (LC0564) | **exclusives@dezeen.com** | ✅ отправлено 04.09 | Свежая награда — новый информационный повод, не повтор июльского питча про Driplight. Dezeen предпочитает эксклюзивы, здесь он и есть |
-| 3. Обзорный, 22 награды | **pr@luxuryawards.com** | ✅ отправлено 04.09 | Luxury Lifestyle Awards сами наградили бренд в 2024 («Best Luxury Lighting Design Studio in Dubai»), у них есть программа «Winners in Media» и люксовая аудитория. Это их собственный лауреат |
+| 3. Обзорный, 23 награды (в отправленной 04.09 версии — 22) | **pr@luxuryawards.com** | ✅ отправлено 04.09 | Luxury Lifestyle Awards сами наградили бренд в 2024 («Best Luxury Lighting Design Studio in Dubai»), у них есть программа «Winners in Media» и люксовая аудитория. Это их собственный лауреат |
 | Продолжение июльского письма | **iconicawards@gdc.de** | ✅ отправлено 04.09 | Короткое продолжение июльского письма: с тех пор добавилась MUSE Gold 2026 — новый факт, а не напоминание |
 | Запрос на исправление статьи о LC0358 | **editor@d5mag.com** | ✅ отправлено 05.09 | В единственной редакционной публикации о бренде (D5 MAG, июнь 2025) сказано «makes its lighting in China». Попросили заменить формулировку — см. [[external-references]] |
-| 2. Designer of the Year (LC0343) | — | придержан | Это награда самой IAA, и Tyler уже получил письмо 2026-09-04 со всеми шестью наградами семьи. Отдельный релиз ему был бы дублем; естественное место этого текста — запрошенное интервью |
+| 2. Designer of the Year (LC0343) | — | придержан | Это награда самой IAA, и Tyler уже получил письмо 2026-09-04 с наградами семьи, известными на 04.09 (в письме семь позиций, включая LIT, которая к IAA не относится — это 3C Awards; собственно IAA-наград на 04.09 пять, шестая — NYPDA 2023 Gold Winner, Hanging Lamps, LC0313 — найдена 05.09 и в письмо не вошла). Отдельный релиз ему был бы дублем; естественное место этого текста — запрошенное интервью |
 
 Другие контакты премий (ADC, IDA, LIT, SIT, LOOP, BLT, EPDA) не проверены — адреса не подтверждены первоисточником, поэтому не указываю.
 
-## Что нужно от владельца перед отправкой
+## Что осталось после отправки (04.09)
 
-1. ~~Три цитаты~~ — **утверждены 2026-09-04**.
-2. **Фотографии** — у LC0564 десять снимков, у LC0343 одиннадцать; издания просят от 3000 px по короткой стороне, на сайте лежат веб-версии. Нужны оригиналы от фотографа.
-3. Решение, отправлять ли релизы самостоятельно или запросить у IAA их собственную рассылку (положена бесплатно для Gold и Platinum).
+1. ~~Три цитаты~~ — утверждены 2026-09-04.
+2. **Фотографии от 3000 px** — понадобятся при ответе редакций; у LC0564 десять снимков, у LC0343 одиннадцать, на сайте лежат веб-версии; оригиналы от фотографа у владельца.
+3. Рассылка IAA — запрошена письмом 04.09, ждём ответа представителя IAA.
