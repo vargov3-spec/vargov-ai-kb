@@ -140,6 +140,9 @@ def load_site(site: Path) -> dict:
 
 
 EMPTY_TAGS: set[str] = set()
+# Артикулы, которым представителя не назначаем: кандидатки неразличимы (см.
+# no_representative в файле поправок). Список моделей по тегу у них остаётся.
+NO_REPRESENTATIVE: set[str] = set()
 
 
 def apply_model_fixes(models: dict[str, str]) -> dict[str, str]:
@@ -165,10 +168,12 @@ def apply_model_fixes(models: dict[str, str]) -> dict[str, str]:
         if code in models and models[code] != slug:
             models[code] = slug
             changed += 1
+    NO_REPRESENTATIVE.clear()
+    NO_REPRESENTATIVE.update(fix.get("no_representative") or {})
     EMPTY_TAGS.clear()
     EMPTY_TAGS.update(fix.get("empty_tags") or [])
     print(f"  поправки: слагов исправлено {changed}, ссылок снято {len(gone)}, "
-          f"пустых тегов {len(EMPTY_TAGS)}")
+          f"без представителя {len(NO_REPRESENTATIVE)}, пустых тегов {len(EMPTY_TAGS)}")
     return models
 
 
@@ -312,8 +317,10 @@ def build_records(site_data: dict) -> list[dict]:
             "gallery": gallery,
             "gallery_total": p.get("galleryTotal", len(gallery)),
             # только своя карточка; групповой ?tag= из данных сайта не берём
-            "model3d": f"{DDD_RU}{models[code]}" if code in models else None,
-            "model3d_en": f"{DDD_EN}{models[code]}" if code in models else None,
+            "model3d": (f"{DDD_RU}{models[code]}"
+                        if code in models and code not in NO_REPRESENTATIVE else None),
+            "model3d_en": (f"{DDD_EN}{models[code]}"
+                           if code in models and code not in NO_REPRESENTATIVE else None),
             # Полный список моделей артикула: у 85 % артикулов моделей несколько
             # (перепись агента сайта 06.09.2026: 4152 модели на 605 артикулов,
             # максимум 51 у LC0023), поэтому одна прямая карточка — представитель,
@@ -475,17 +482,18 @@ def product_node(rec: dict) -> dict:
     props = element_props(rec["code"])
     if props:
         node["additionalProperty"] = props
+    subject = []
     if rec["model3d_en"]:
-        node["subjectOf"] = [
-            # Одна карточка как представитель: у неё есть имя, автор и превью.
-            {"@type": "3DModel", "name": f"3D model — {rec['code']}",
-             "url": rec["model3d_en"], "sameAs": rec["model3d"]},
-            # И страница со всеми моделями артикула — их обычно несколько.
-        ]
-        if rec["models_all_en"]:
-            node["subjectOf"].append(
-                {"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
-                 "url": rec["models_all_en"], "sameAs": rec["models_all"]})
+        # Одна карточка как представитель: у неё есть имя, автор и превью.
+        subject.append({"@type": "3DModel", "name": f"3D model — {rec['code']}",
+                        "url": rec["model3d_en"], "sameAs": rec["model3d"]})
+    if rec["models_all_en"]:
+        # И страница со всеми моделями артикула — их обычно несколько. Она
+        # остаётся и там, где представителя назначить не из чего.
+        subject.append({"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
+                        "url": rec["models_all_en"], "sameAs": rec["models_all"]})
+    if subject:
+        node["subjectOf"] = subject
     return node
 
 
