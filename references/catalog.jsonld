@@ -31449,6 +31449,12 @@
       ],
       "subjectOf": [
         {
+          "@type": "3DModel",
+          "name": "3D model — LC0172",
+          "url": "https://3dsky.org/3dmodels/show/liustra_light_vargov_156",
+          "sameAs": "https://3ddd.ru/3dmodels/show/liustra_light_vargov_156"
+        },
+        {
           "@type": "CollectionPage",
           "name": "All 3D models — LC0172",
           "url": "https://3dsky.org/users/vargov/models?tag=lc0172",
@@ -37534,6 +37540,12 @@
       ],
       "subjectOf": [
         {
+          "@type": "3DModel",
+          "name": "3D model — LC0086",
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_145",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_145"
+        },
+        {
           "@type": "CollectionPage",
           "name": "All 3D models — LC0086",
           "url": "https://3dsky.org/users/vargov/models?tag=lc0086",
@@ -37617,6 +37629,12 @@
         }
       ],
       "subjectOf": [
+        {
+          "@type": "3DModel",
+          "name": "3D model — LC0085",
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_152",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_152"
+        },
         {
           "@type": "CollectionPage",
           "name": "All 3D models — LC0085",
@@ -38867,6 +38885,12 @@
         }
       ],
       "subjectOf": [
+        {
+          "@type": "3DModel",
+          "name": "3D model — LC0062",
+          "url": "https://3dsky.org/3dmodels/show/droplight_vargov_design_84",
+          "sameAs": "https://3ddd.ru/3dmodels/show/droplight_vargov_design_84"
+        },
         {
           "@type": "CollectionPage",
           "name": "All 3D models — LC0062",
