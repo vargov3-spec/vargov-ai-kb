@@ -164,6 +164,7 @@ def apply_model_fixes(models: dict[str, str]) -> dict[str, str]:
     fix = json.loads(MODELS_FIX.read_text(encoding="utf-8"))
     changed = 0
     gone = [c for c in (fix.get("no_own_card") or {}) if models.pop(c, None)]
+    gone += [c for c in (fix.get("dead_slugs") or {}) if models.pop(c, None)]
     for code, slug in (fix.get("slug_overrides") or {}).items():
         if code in models and models[code] != slug:
             models[code] = slug

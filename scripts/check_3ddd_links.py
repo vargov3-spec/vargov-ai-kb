@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 """Проверка ссылок на свои 3D-модели: живы ли слаги из выгрузки аккаунта.
 
+ГЛАВНОЕ (07.09.2026, нашёл агент конфигуратора): по коду ответа СТРАНИЦЫ живость
+не проверяется вовсе. 3ddd.ru — Angular-приложение и отдаёт 200 с оболочкой сайта
+на любой адрес карточки, включая заведомо несуществующий. Прежний вердикт этого
+скрипта «466 из 466 живы» был сравнением двухсоток, которые площадка раздаёт
+всем подряд. Живость показывает только API:
+
+    GET https://3ddd.ru/api/models/<slug>   → status 200 — карточка есть
+                                              status 500 — карточки нет
+
+(единственное число в пути отдаёт 500 всегда, множественное — правильное).
+Скрипт спрашивает API и разбирает поле status в теле ответа, а не код HTTP.
+
 Зачем. Слаги на 3ddd переименовываются, а выгрузка аккаунта у конфигуратора
 пересобирается вручную. При массовом переименовании первой ломается его
 разметка /sku/: там остаются старые адреса и 404. Массовое переименование
@@ -41,14 +53,27 @@ UA = "vargov-ai-kb link check (own account cards)"
 URL_OK = re.compile(r"^https://(3ddd\.ru|3dsky\.org)/3dmodels/show/[\w-]+$")
 
 
-def status(url: str, timeout: int = 20) -> str:
-    """Код ответа строкой; 000 — запрос не дошёл (сеть, DNS, таймаут)."""
+API = "https://3ddd.ru/api/models/"
+
+
+def status(slug: str, timeout: int = 20) -> str:
+    """«200» — карточка есть, «500» — нет, «000» — запрос не дошёл.
+
+    Спрашиваем API и читаем status ИЗ ТЕЛА ответа: HTTP-код здесь тоже мало что
+    значит, а тело говорит прямо. Пустой ответ — это не мёртвая карточка, а
+    недошедший запрос, и путать их нельзя.
+    """
     r = subprocess.run(
-        ["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "-I", "-L",
-         "--max-time", str(timeout), "-A", UA, url],
+        ["curl", "-sS", "--max-time", str(timeout), "-A", UA, API + slug],
         capture_output=True, text=True,
     )
-    return (r.stdout or "000").strip()
+    body = (r.stdout or "").strip()
+    if not body:
+        return "000"
+    try:
+        return str(json.loads(body).get("status", "000"))
+    except json.JSONDecodeError:
+        return "000"
 
 
 def links_from_graph() -> list[tuple[str, str]]:
@@ -93,22 +118,22 @@ def main() -> int:
 
     # Проба: один заведомо правильный адрес. Не прошла — обход бессмыслен.
     probe_sku, probe_url = links[0]
-    probe = status(probe_url)
+    probe = status(probe_url.rsplit("/", 1)[-1])
     if probe == "000":
         print(f"\nПроба не дошла ({probe_sku}): площадка недоступна с этой машины.")
         print("Это НЕ значит, что ссылки мертвы. Запускать оттуда, где 3ddd.ru "
               "открывается (VPS конфигуратора), либо просить проверку у агента "
               "конфигуратора — у него работает API аккаунта.")
         return 2
-    print(f"проба {probe_sku}: {probe} — площадка отвечает, идём дальше")
+    print(f"проба {probe_sku}: status {probe} — API отвечает, идём дальше")
 
     dead: list[tuple[str, str, str]] = []
     no_answer = 0
     for i, (sku, url) in enumerate(links, 1):
-        code = probe if i == 1 else status(url)
+        code = probe if i == 1 else status(url.rsplit("/", 1)[-1])
         if code == "000":
             no_answer += 1
-        elif code not in ("200", "301", "302"):
+        elif code != "200":
             dead.append((sku, url, code))
             print(f"  [{code}] {sku} → {url}")
         if i < len(links):
