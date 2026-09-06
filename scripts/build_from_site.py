@@ -60,6 +60,11 @@ DATASET_ID = f"{REPO_URL}#dataset"
 # Источник своих карточек — выгрузка конфигуратора через API 3ddd
 # (POST /api/models {user_slug, tag}); её слепок хранится в репозитории.
 MODELS_3D = KB / "references" / "3ddd-models.json"
+# Поправки к выгрузке (references/3ddd-corrections.json). Выгрузка собирается ПО
+# ТЕГУ, и когда тег пуст, в неё попадает слаг соседнего артикула: так LC0406-1
+# получал карточку LC0406. Плюс список артикулов с пустым тегом — им не ставится
+# CollectionPage, иначе читатель уходит на пустую страницу.
+MODELS_FIX = KB / "references" / "3ddd-corrections.json"
 CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sources/3ddd-own.json")
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
@@ -134,6 +139,39 @@ def load_site(site: Path) -> dict:
             "awards": dump_awards(site), "models": load_models_3d()}
 
 
+EMPTY_TAGS: set[str] = set()
+
+
+def apply_model_fixes(models: dict[str, str]) -> dict[str, str]:
+    """Слаги из фактических ссылок реестра владельца вместо слагов выгрузки.
+
+    Выгрузка аккаунта собирается по тегу артикула. У восьми артикулов тег пуст
+    (проверка API аккаунта с VPS конфигуратора 06.09.2026: POST /api/models,
+    608 тегов), и на их место в выгрузку попадал слаг соседа — LC0406-1 вёл на
+    карточку LC0406. Правильные слаги проверены агентом конфигуратора, все 200.
+
+    no_own_card — артикулы, у которых своей карточки нет вовсе (проверено по
+    списку 5047 слагов аккаунта): ссылку снимаем совсем, лучше промолчать, чем
+    отправить читателя на карточку соседнего артикула.
+
+    Побочно заполняет EMPTY_TAGS: у этих артикулов аккаунтный список пуст.
+    Обходом ссылок это не ловится — список отвечает 200 всегда.""" 
+    if not MODELS_FIX.is_file():
+        return models
+    fix = json.loads(MODELS_FIX.read_text(encoding="utf-8"))
+    changed = 0
+    gone = [c for c in (fix.get("no_own_card") or {}) if models.pop(c, None)]
+    for code, slug in (fix.get("slug_overrides") or {}).items():
+        if code in models and models[code] != slug:
+            models[code] = slug
+            changed += 1
+    EMPTY_TAGS.clear()
+    EMPTY_TAGS.update(fix.get("empty_tags") or [])
+    print(f"  поправки: слагов исправлено {changed}, ссылок снято {len(gone)}, "
+          f"пустых тегов {len(EMPTY_TAGS)}")
+    return models
+
+
 def load_models_3d() -> dict[str, str]:
     """Артикул -> слаг своей карточки на 3ddd. Свежая выгрузка конфигуратора,
     если она есть на этой машине, обновляет слепок в репозитории; иначе слепок."""
@@ -141,6 +179,7 @@ def load_models_3d() -> dict[str, str]:
         raw = json.loads(CONFIGURATOR_OWN.read_text(encoding="utf-8")).get("items", {})
         models = {code: rec["slug"] for code, rec in raw.items()
                   if rec.get("slug") and rec.get("own")}
+        models = apply_model_fixes(models)
         MODELS_3D.parent.mkdir(exist_ok=True)
         MODELS_3D.write_text(json.dumps({
             "source": "конфигуратор, data-sources/3ddd-own.json — свои карточки аккаунта vargov по API 3ddd",
@@ -151,6 +190,7 @@ def load_models_3d() -> dict[str, str]:
         return models
     if MODELS_3D.is_file():
         models = json.loads(MODELS_3D.read_text(encoding="utf-8"))["items"]
+        models = apply_model_fixes(models)
         print(f"  3D-модели: {len(models)} своих карточек (слепок в репозитории)")
         return models
     print("  3D-модели: источника нет, ссылки не проставлены")
@@ -278,8 +318,10 @@ def build_records(site_data: dict) -> list[dict]:
             # (перепись агента сайта 06.09.2026: 4152 модели на 605 артикулов,
             # максимум 51 у LC0023), поэтому одна прямая карточка — представитель,
             # а не «модель артикула». Аккаунтный список показывает все и только свои.
-            "models_all": f"https://3ddd.ru/users/vargov/models?tag={code.lower()}" if code in models else None,
-            "models_all_en": f"https://3dsky.org/users/vargov/models?tag={code.lower()}" if code in models else None,
+            "models_all": (f"https://3ddd.ru/users/vargov/models?tag={code.lower()}"
+                           if code in models and code not in EMPTY_TAGS else None),
+            "models_all_en": (f"https://3dsky.org/users/vargov/models?tag={code.lower()}"
+                              if code in models and code not in EMPTY_TAGS else None),
             "award_winning": bool((per_lang["ru"] or {}).get("awardWinning")),
             "awards": awards_for(code, awards),
             "in_stock_elements": [
@@ -439,9 +481,11 @@ def product_node(rec: dict) -> dict:
             {"@type": "3DModel", "name": f"3D model — {rec['code']}",
              "url": rec["model3d_en"], "sameAs": rec["model3d"]},
             # И страница со всеми моделями артикула — их обычно несколько.
-            {"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
-             "url": rec["models_all_en"], "sameAs": rec["models_all"]},
         ]
+        if rec["models_all_en"]:
+            node["subjectOf"].append(
+                {"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
+                 "url": rec["models_all_en"], "sameAs": rec["models_all"]})
     return node
 
 

@@ -225,7 +225,7 @@
         "Russian design",
         "made to order"
       ],
-      "dateModified": "2026-09-06",
+      "dateModified": "2026-09-07",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -1053,12 +1053,6 @@
           "name": "3D model — LC0593-1",
           "url": "https://3dsky.org/3dmodels/show/torsher-vargov-r-design-lc0593-1",
           "sameAs": "https://3ddd.ru/3dmodels/show/torsher-vargov-r-design-lc0593-1"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0593-1",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0593-1",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0593-1"
         }
       ]
     },
@@ -4834,12 +4828,6 @@
           "name": "3D model — LC0545-1",
           "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1",
           "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0545-1",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0545-1",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0545-1"
         }
       ]
     },
@@ -5122,12 +5110,6 @@
           "name": "3D model — LC0543-2",
           "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2",
           "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0543-2"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0543-2",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0543-2",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0543-2"
         }
       ]
     },
@@ -5166,21 +5148,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "The same fracture at intimate size. One element, taken from the mass and hung on the wall at eye level — where the texture is seen close to and the slit of light…",
-      "subjectOf": [
-        {
-          "@type": "3DModel",
-          "name": "3D model — LC0543-1",
-          "url": "https://3dsky.org/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543",
-          "sameAs": "https://3ddd.ru/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0543-1",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0543-1",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0543-1"
-        }
-      ]
+      "description": "The same fracture at intimate size. One element, taken from the mass and hung on the wall at eye level — where the texture is seen close to and the slit of light…"
     },
     {
       "@type": "Product",
@@ -16137,14 +16105,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0406-1",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0406-1",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0406-1",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0406-1"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406_1",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0406_1"
         }
       ]
     },
@@ -28735,12 +28697,6 @@
           "name": "3D model — LC0217-1",
           "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-sterzhen-polotno-vargov-r-design-lc0217-1",
           "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-sterzhen-polotno-vargov-r-design-lc0217-1"
-        },
-        {
-          "@type": "CollectionPage",
-          "name": "All 3D models — LC0217-1",
-          "url": "https://3dsky.org/users/vargov/models?tag=lc0217-1",
-          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0217-1"
         }
       ]
     },
@@ -30058,8 +30014,8 @@
         {
           "@type": "3DModel",
           "name": "3D model — LC0192-1",
-          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192",
-          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192"
+          "url": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192-1",
+          "sameAs": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-tsvetok-buket-vargov-r-design-lc0192-1"
         },
         {
           "@type": "CollectionPage",
