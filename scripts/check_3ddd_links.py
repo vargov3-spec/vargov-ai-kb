@@ -2,22 +2,26 @@
 """Проверка ссылок на свои 3D-модели: живы ли слаги из выгрузки аккаунта.
 
 Зачем. Слаги на 3ddd переименовываются, а выгрузка аккаунта у конфигуратора
-пересобирается вручную (последняя — 01.09.2026). При массовом переименовании
-первым ломается он: в разметке /sku/ останутся старые адреса и 404, и заметить
-это некому. Поэтому базе достаточно выборочной проверки: массовое
-переименование задевает десятки карточек сразу, и выборка в 25 адресов ловит
-его почти наверняка.
+пересобирается вручную. При массовом переименовании первой ломается его
+разметка /sku/: там остаются старые адреса и 404. Массовое переименование
+задевает десятки карточек сразу, поэтому даже выборка в 25 адресов ловит его
+почти наверняка.
 
-Вежливость к чужому сайту: по одному запросу с паузой, HEAD, свой User-Agent.
-Полный обход (--all, 603 адреса) запускать только по поводу.
+Откуда запускать. С машины владельца 3ddd.ru и 3dsky.org НЕ открываются —
+код 000, таймаут на любом адресе (проверено 06.09.2026 двумя агентами
+независимо; дело в канале машины). С VPS конфигуратора обе площадки отвечают
+за 0,15 с. По договорённости от 06.09.2026 обход ведёт агент конфигуратора
+оттуда, раз в месяц и после каждого обновления выгрузки.
 
-ВАЖНО, ПРОВЕРЕНО 06.09.2026: с машины владельца ни 3ddd.ru, ни зеркало
-3dsky.org не открываются — соединение отваливается по таймауту на любом
-адресе (та же беда мешала выкачивать модели раньше). Значит проверка отсюда
-не работает и молчание скрипта ничего не доказывает: 000 — это «не дошли»,
-а не «ссылка мертва». Запускать там, где площадка доступна (например, с VPS
-конфигуратора), либо просить проверку у агента конфигуратора, у которого
-есть доступ к API аккаунта.
+Три причины кода 000, которые нельзя путать (случай агента конфигуратора,
+06.09.2026: 250 нулей подряд оказались не баном площадки, а символом \\r в
+конце каждого адреса — список готовили на Windows):
+  1) канал не доходит до площадки;
+  2) адреса битые — пробел, перевод строки, \\r;
+  3) площадка действительно молчит.
+Поэтому: адреса чистятся от пробельных символов, перед обходом делается
+одиночная проба, и если она не прошла — обход не запускается вовсе. Код 000
+никогда не попадает в счётчик битых ссылок.
 
     python scripts/check_3ddd_links.py            # выборка 25
     python scripts/check_3ddd_links.py --all      # все, с паузой
@@ -27,21 +31,38 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import re
 import subprocess
 import time
 from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
 UA = "vargov-ai-kb link check (own account cards)"
+URL_OK = re.compile(r"^https://(3ddd\.ru|3dsky\.org)/3dmodels/show/[\w-]+$")
 
 
 def status(url: str, timeout: int = 20) -> str:
+    """Код ответа строкой; 000 — запрос не дошёл (сеть, DNS, таймаут)."""
     r = subprocess.run(
         ["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "-I", "-L",
          "--max-time", str(timeout), "-A", UA, url],
         capture_output=True, text=True,
     )
     return (r.stdout or "000").strip()
+
+
+def links_from_graph() -> list[tuple[str, str]]:
+    graph = json.loads((KB / "references" / "catalog.jsonld").read_text(encoding="utf-8"))["@graph"]
+    out: list[tuple[str, str]] = []
+    for node in graph:
+        if node.get("@type") != "Product":
+            continue
+        for sub in node.get("subjectOf") or []:
+            if isinstance(sub, dict) and sub.get("@type") == "3DModel" and sub.get("sameAs"):
+                # \r, пробелы и переводы строк уезжают в конец адреса и делают
+                # его нерезолвимым — чистим до запроса, а не гадаем по коду 000.
+                out.append((node["sku"], sub["sameAs"].strip()))
+    return out
 
 
 def main() -> int:
@@ -52,42 +73,52 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=None, help="фиксировать выборку")
     args = ap.parse_args()
 
-    graph = json.loads((KB / "references" / "catalog.jsonld").read_text(encoding="utf-8"))["@graph"]
-    links = [(n["sku"], n["subjectOf"]["sameAs"]) for n in graph
-             if n.get("@type") == "Product" and n.get("subjectOf")]
+    links = links_from_graph()
     print(f"карточек с 3D-моделью: {len(links)}")
 
+    malformed = [(sku, url) for sku, url in links if not URL_OK.match(url)]
+    if malformed:
+        print(f"адреса неправильной формы: {len(malformed)} → {malformed[:3]}")
+        print("Это ошибка данных, а не площадки: чинить реестр, а не обходить сеть.")
+        return 3
+
     if not args.all:
-        rnd = random.Random(args.seed)
-        links = rnd.sample(links, min(args.sample, len(links)))
+        links = random.Random(args.seed).sample(links, min(args.sample, len(links)))
         print(f"проверяем выборку: {len(links)}")
 
-    dead = []
-    unreachable = 0
+    # Проба: один заведомо правильный адрес. Не прошла — обход бессмыслен.
+    probe_sku, probe_url = links[0]
+    probe = status(probe_url)
+    if probe == "000":
+        print(f"\nПроба не дошла ({probe_sku}): площадка недоступна с этой машины.")
+        print("Это НЕ значит, что ссылки мертвы. Запускать оттуда, где 3ddd.ru "
+              "открывается (VPS конфигуратора), либо просить проверку у агента "
+              "конфигуратора — у него работает API аккаунта.")
+        return 2
+    print(f"проба {probe_sku}: {probe} — площадка отвечает, идём дальше")
+
+    dead: list[tuple[str, str, str]] = []
+    no_answer = 0
     for i, (sku, url) in enumerate(links, 1):
-        code = status(url)
+        code = probe if i == 1 else status(url)
         if code == "000":
-            unreachable += 1
+            no_answer += 1
         elif code not in ("200", "301", "302"):
             dead.append((sku, url, code))
             print(f"  [{code}] {sku} → {url}")
         if i < len(links):
             time.sleep(args.pause)
 
-    if unreachable:
-        print("")
-        print(f"Площадка не отвечает на {unreachable} из {len(links)} адресов "
-              f"(код 000 — соединение не дошло, а не «ссылка мертва»).")
-        print("С машины владельца 3ddd.ru и 3dsky.org недоступны — проверять надо "
-              "оттуда, где площадка открывается, или просить агента конфигуратора.")
-        return 2
-
+    print(f"\nпроверено {len(links)}: живых {len(links) - len(dead) - no_answer}, "
+          f"не дошли {no_answer}, битых {len(dead)}")
     if dead:
-        print(f"\nМёртвых адресов: {len(dead)} из {len(links)}.")
         print("Похоже на переименование слагов — попросить у конфигуратора свежую")
         print("выгрузку аккаунта (POST /api/models, user_slug=vargov) и пересобрать базу.")
         return 1
-    print(f"\nВсе {len(links)} адресов живы: выгрузка аккаунта актуальна.")
+    if no_answer:
+        print("Часть запросов не дошла — результат неполный, повторить позже.")
+        return 2
+    print("Выгрузка аккаунта актуальна.")
     return 0
 
 
