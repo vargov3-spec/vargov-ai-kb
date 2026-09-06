@@ -95,8 +95,15 @@ def main() -> int:
         # со всеми моделями артикула (их у 85 % артикулов несколько). У сайта —
         # один узел со списком по тегу. Сверяем узел 3DModel с узлом сайта.
         def is_list(node) -> bool:
-            """Узел ведёт на аккаунтный список моделей, а не на карточку."""
-            return "/users/vargov/models?tag=" in (node.get("url") or "")
+            """Узел ведёт на список моделей аккаунта, а не на одну карточку.
+
+            Списки бывают двух видов: по тегу артикула (?tag=) и поиском по
+            словам внутри аккаунта (?subquery=) — второй владелец выбрал для
+            десяти лент, у которых артикул в тегах не выражен. Оба — перечень,
+            а не карточка, поэтому для сверки это одна форма.
+            """
+            url = node.get("url") or ""
+            return "/users/vargov/models" in url and "/3dmodels/show/" not in url
 
         nodes_mine = a if isinstance(a, list) else [a]
         nodes_site = b if isinstance(b, list) else [b]
@@ -109,8 +116,11 @@ def main() -> int:
         site_list = next((x for x in nodes_site if is_list(x)), None)
         if mine_list and site_list and mine_list.get("@type") != site_list.get("@type"):
             type_form += 1
-        if (mine_card is None) != (site_card is None) and not (mine_list and site_list):
-            print(f"{'subjectOf':>20}: у {c} нет узла 3D-модели с одной из сторон")
+        # Форма ссылки различается намеренно, и стороны могут выбрать разное:
+        # база — карточку-представителя, сайт — перечень. Расхождением считаем
+        # только молчание одной из сторон: у неё моделей нет, у другой есть.
+        if not nodes_mine or not nodes_site:
+            print(f"{'subjectOf':>20}: у {c} узла 3D-модели нет с одной из сторон")
             problems += 1
             continue
         if mine_card and site_card and mine_card.get("name") != site_card.get("name"):
