@@ -193,6 +193,17 @@ def snippet(text: str) -> str:
     return (head[:space] if space > SNIPPET_MIN else head).strip() + "…"
 
 
+SERIES_SEG = re.compile(r"[^·]*LC\d{4}[^·]*")
+
+
+def series_label(text: str, label: str) -> str:
+    """Приз всей серии лент назван артикулом, с которым подавались (LC0217).
+    На карточке другой ленты этот номер читается как чужой, поэтому сайт
+    подменяет сегмент пометкой «награда серии» (ProductAwards.tsx, фид) —
+    база обязана говорить то же самое."""
+    return SERIES_SEG.sub(label, text, count=1)
+
+
 def awards_for(code: str, awards: list) -> list[dict]:
     """Награды артикула: код назван в строке достижения либо перечислен в codes.
     Поздравления жюри (commendation) — документы, а не призы: пропускаем."""
@@ -204,13 +215,19 @@ def awards_for(code: str, awards: list) -> list[dict]:
             named = code in CODE_RE.findall(item.get("ru", ""))
             in_series = code in (item.get("codes") or [])
             if named or in_series:
+                series = not named and in_series
+                name_t = program.get("nameT") or {}
                 out.append({
-                    "program": program["name"],
+                    # awardName на сайте: nameT[locale] ?? name. Без этого
+                    # «Interlight Russia · Российский светодизайн» уезжало
+                    # кириллицей в английский граф и английские карточки.
+                    "program": name_t.get("ru") or program["name"],
+                    "program_en": name_t.get("en") or program["name"],
                     "year": item["year"],
-                    "level_en": item["en"],
-                    "level_ru": item["ru"],
+                    "level_en": series_label(item["en"], " series award") if series else item["en"],
+                    "level_ru": series_label(item["ru"], " награда серии") if series else item["ru"],
                     "href": item.get("href"),
-                    "series": not named and in_series,
+                    "series": series,
                 })
     return out
 
@@ -325,7 +342,7 @@ def product_page(rec: dict, lang: str) -> str:
     if rec["awards"]:
         out += [f"## {L['aw']}", ""]
         for a in rec["awards"]:
-            line = f"- {a['program']} {a['year']} — {a['level_en'] if not ru else a['level_ru']}"
+            line = f"- {a['program'] if ru else a['program_en']} {a['year']} — {a['level_ru'] if ru else a['level_en']}"
             if a["series"]:
                 line += f" ({L['series']})"
             if a["href"]:
@@ -401,18 +418,21 @@ def product_node(rec: dict) -> dict:
     if rec["snippet"].get("en"):
         node["description"] = rec["snippet"]["en"]
     if rec["awards"]:
-        node["award"] = [f"{a['program']} {a['year']} — {a['level_en']}" for a in rec["awards"]]
+        node["award"] = [f"{a['program_en']} {a['year']} — {a['level_en']}" for a in rec["awards"]]
     props = element_props(rec["code"])
     if props:
         node["additionalProperty"] = props
     if rec["model3d_en"]:
-        node["subjectOf"] = {"@type": "3DModel", "url": rec["model3d_en"], "sameAs": rec["model3d"]}
+        node["subjectOf"] = {"@type": "3DModel", "name": f"3D model — {rec['code']}",
+                             "url": rec["model3d_en"], "sameAs": rec["model3d"]}
     return node
 
 
 def award_strings(awards: list) -> list[str]:
-    """Награды дословно из awards.ts (23 на 05.09.2026): «Программа Год — уровень». Поздравления жюри не считаются."""
-    return [f"{p['name']} {it['year']} — {it['en']}"
+    """Награды дословно из awards.ts (23 на 05.09.2026): «Программа Год — уровень».
+    Имя программы — английское (nameT.en, как awardName на сайте): граф англоязычный.
+    Поздравления жюри не считаются."""
+    return [f"{(p.get('nameT') or {}).get('en') or p['name']} {it['year']} — {it['en']}"
             for p in awards for it in p["items"] if not it.get("commendation")]
 
 
@@ -547,7 +567,7 @@ def en_view(rec: dict) -> dict:
         "gallery": rec["gallery"], "gallery_total": rec["gallery_total"],
         "model3d": rec["model3d_en"], "model3d_ru": rec["model3d"],
         "award_winning": rec["award_winning"],
-        "awards": [{"program": a["program"], "year": a["year"], "level": a["level_en"],
+        "awards": [{"program": a["program_en"], "year": a["year"], "level": a["level_en"],
                     "href": a["href"], "series": a["series"]} for a in rec["awards"]],
         "in_stock_elements": rec["in_stock_elements"],
         "description": rec["description"].get("en"),
@@ -577,7 +597,7 @@ def write_datasets(recs: list[dict], base: Path, english: bool) -> None:
                 r["code"], r["category"], r["type"].get("en") or "",
                 r["urls"]["en"], r["urls"]["ru"], r["image"] or "",
                 len(r["gallery"]), "yes" if r["award_winning"] else "",
-                "; ".join(f"{a['program']} {a['year']} — {a['level_en']}" for a in r["awards"]),
+                "; ".join(f"{a['program_en']} {a['year']} — {a['level_en']}" for a in r["awards"]),
                 r["snippet"].get("en") or "", (r["description"].get("en") or "").replace("\n", " "),
             ])
 

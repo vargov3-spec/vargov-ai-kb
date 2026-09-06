@@ -4168,6 +4168,7 @@
     "awards": [
       {
         "program": "MUSE Design Awards",
+        "program_en": "MUSE Design Awards",
         "year": "2026",
         "level_en": "Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», composition LC0564",
         "level_ru": "Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», композиция LC0564",
@@ -9159,6 +9160,7 @@
     "awards": [
       {
         "program": "IDA Design Awards",
+        "program_en": "IDA Design Awards",
         "year": "2025",
         "level_en": "Honorable Mention · Home & Living / Lighting · light composition LC0516",
         "level_ru": "Honorable Mention · Home & Living / Lighting · световая композиция LC0516",
@@ -15025,6 +15027,7 @@
     "awards": [
       {
         "program": "LOOP Design Awards",
+        "program_en": "LOOP Design Awards",
         "year": "2025",
         "level_en": "Winner · Products | Lighting Design · composition LC0458",
         "level_ru": "Winner · Products | Lighting Design · композиция LC0458",
@@ -16155,6 +16158,7 @@
     "awards": [
       {
         "program": "LIT Lighting Design Awards",
+        "program_en": "LIT Lighting Design Awards",
         "year": "2025",
         "level_en": "Honorable Mention · Designer / Custom Lighting · composition LC0447",
         "level_ru": "Honorable Mention · Designer / Custom Lighting · композиция LC0447",
@@ -25043,6 +25047,7 @@
     "awards": [
       {
         "program": "SIT Furniture Design Award",
+        "program_en": "SIT Furniture Design Award",
         "year": "2025",
         "level_en": "Winner · Designer & Custom Lighting · composition LC0358",
         "level_ru": "Winner · Designer & Custom Lighting · композиция LC0358",
@@ -26494,6 +26499,7 @@
     "awards": [
       {
         "program": "NY Product Design Awards",
+        "program_en": "NY Product Design Awards",
         "year": "2023",
         "level_en": "Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
         "level_ru": "Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · композиция LC0343",
@@ -26502,6 +26508,7 @@
       },
       {
         "program": "BLT Built Design Awards",
+        "program_en": "BLT Built Design Awards",
         "year": "2023",
         "level_en": "Winner · Electrical & Lighting Systems · composition LC0343",
         "level_ru": "Winner · Electrical & Lighting Systems · композиция LC0343",
@@ -26604,6 +26611,7 @@
     "awards": [
       {
         "program": "ADD Awards",
+        "program_en": "ADD Awards",
         "year": "2023",
         "level_en": "2nd place, 9th season · Interior & exterior objects · built project, composition LC0342",
         "level_ru": "2 место IX сезона · «Предметы интерьера и экстерьера» · реализованный проект, композиция LC0342",
@@ -26903,6 +26911,7 @@
     "awards": [
       {
         "program": "European Product Design Award",
+        "program_en": "European Product Design Award",
         "year": "2023",
         "level_en": "Winner · Home Lighting: Hanging / Pendant · composition LC0339",
         "level_ru": "Winner · Home Lighting: Hanging / Pendant · композиция LC0339",
@@ -27311,6 +27320,7 @@
     "awards": [
       {
         "program": "Houzee Awards",
+        "program_en": "Houzee Awards",
         "year": "2023",
         "level_en": "Gold Winner · Lighting Design · composition LC0335",
         "level_ru": "Gold Winner · Lighting Design · композиция LC0335",
@@ -27998,9 +28008,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -28104,9 +28115,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -28206,9 +28218,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -28307,6 +28320,7 @@
     "awards": [
       {
         "program": "The London Design Awards",
+        "program_en": "The London Design Awards",
         "year": "2023",
         "level_en": "Platinum Winner · Product Design — Lighting · light composition LC0326",
         "level_ru": "Platinum Winner · Product Design — Lighting · световая композиция LC0326",
@@ -28315,9 +28329,10 @@
       },
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -28621,6 +28636,7 @@
     "awards": [
       {
         "program": "International Architecture & Design Awards · ADC",
+        "program_en": "International Architecture & Design Awards · ADC",
         "year": "2023",
         "level_en": "Gold Winner · Lighting Product Design Concept / Professional · «Drapery», composition LC0323",
         "level_ru": "Gold Winner · Lighting Product Design Concept / Professional · «Drapery», композиция LC0323",
@@ -29500,6 +29516,7 @@
     "awards": [
       {
         "program": "NY Product Design Awards",
+        "program_en": "NY Product Design Awards",
         "year": "2023",
         "level_en": "Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
         "level_ru": "Gold Winner · Lamps & Luminaires — Decorative Lighting · композиция LC0313",
@@ -29508,6 +29525,7 @@
       },
       {
         "program": "NY Product Design Awards",
+        "program_en": "NY Product Design Awards",
         "year": "2023",
         "level_en": "Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313",
         "level_ru": "Gold Winner · Lamps & Luminaires — Hanging Lamps · композиция LC0313",
@@ -30457,6 +30475,7 @@
     "awards": [
       {
         "program": "International Architecture & Design Awards · ADC",
+        "program_en": "International Architecture & Design Awards · ADC",
         "year": "2023",
         "level_en": "Platinum Winner · Lighting Product Design Built / Professional · light composition LC0303",
         "level_ru": "Platinum Winner · Lighting Product Design Built / Professional · световая композиция LC0303",
@@ -31569,6 +31588,7 @@
     "awards": [
       {
         "program": "SIT Furniture Design Award",
+        "program_en": "SIT Furniture Design Award",
         "year": "2023",
         "level_en": "Winner · Designer & Custom Lighting · composition LC0292",
         "level_ru": "Winner · Designer & Custom Lighting · композиция LC0292",
@@ -32740,9 +32760,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -32841,9 +32862,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -36815,6 +36837,7 @@
     "awards": [
       {
         "program": "MUSE Design Awards",
+        "program_en": "MUSE Design Awards",
         "year": "2023",
         "level_en": "Platinum Winner · Lighting Design — Designer / Custom Lighting · composition LC0237",
         "level_ru": "Platinum Winner · Lighting Design — Designer / Custom Lighting · композиция LC0237",
@@ -36922,6 +36945,7 @@
     "awards": [
       {
         "program": "IDA Design Awards",
+        "program_en": "IDA Design Awards",
         "year": "2022",
         "level_en": "Silver · Illumination — Designer Lighting · composition LC0236",
         "level_ru": "Silver · Illumination — Designer Lighting · композиция LC0236",
@@ -37737,9 +37761,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -38231,6 +38256,7 @@
     "awards": [
       {
         "program": "LIT Lighting Design Awards",
+        "program_en": "LIT Lighting Design Awards",
         "year": "2022",
         "level_en": "Winner · Designer and Custom Lighting · composition LC0223",
         "level_ru": "Winner · Designer and Custom Lighting · композиция LC0223",
@@ -38825,9 +38851,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
@@ -38929,6 +38956,7 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
         "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
         "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
@@ -49767,9 +49795,10 @@
     "awards": [
       {
         "program": "Interlight Russia · Российский светодизайн",
+        "program_en": "Interlight Russia · Russian Lighting Design",
         "year": "2022",
-        "level_en": "Special prize · Best luminaire design 2021–2022 · composition LC0217",
-        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · композиция LC0217",
+        "level_en": "Special prize · Best luminaire design 2021–2022 · series award",
+        "level_ru": "Специальный приз · «Лучший дизайн светильника 2021–2022» · награда серии",
         "href": "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "series": true
       }
