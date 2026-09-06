@@ -82,7 +82,7 @@ def main() -> int:
 
     problems = 0
     both = sorted(set(mine) & set(site))
-    link_form = 0
+    link_form = type_form = 0
     for c in both:
         a, b = mine[c].get("subjectOf"), site[c].get("subjectOf")
         if canon(a) == canon(b):
@@ -94,22 +94,35 @@ def main() -> int:
         # У базы subjectOf — список: карточка-представитель плюс CollectionPage
         # со всеми моделями артикула (их у 85 % артикулов несколько). У сайта —
         # один узел со списком по тегу. Сверяем узел 3DModel с узлом сайта.
-        mine_model = next((x for x in (a if isinstance(a, list) else [a])
-                           if x.get("@type") == "3DModel"), None)
-        site_model = b if isinstance(b, dict) else next(
-            (x for x in b if x.get("@type") == "3DModel"), None)
-        if not mine_model or not site_model:
-            print(f"{'subjectOf':>20}: у {c} нет узла 3DModel с одной из сторон")
+        def is_list(node) -> bool:
+            """Узел ведёт на аккаунтный список моделей, а не на карточку."""
+            return "/users/vargov/models?tag=" in (node.get("url") or "")
+
+        nodes_mine = a if isinstance(a, list) else [a]
+        nodes_site = b if isinstance(b, list) else [b]
+        # Сравниваем по СМЫСЛУ адреса, а не по @type: сайт публикует список
+        # моделей под типом 3DModel, база — под CollectionPage. Это расхождение
+        # схемы, а не данных; отмечаем отдельным счётчиком и говорим о нём вслух.
+        mine_card = next((x for x in nodes_mine if not is_list(x)), None)
+        site_card = next((x for x in nodes_site if not is_list(x)), None)
+        mine_list = next((x for x in nodes_mine if is_list(x)), None)
+        site_list = next((x for x in nodes_site if is_list(x)), None)
+        if mine_list and site_list and mine_list.get("@type") != site_list.get("@type"):
+            type_form += 1
+        if (mine_card is None) != (site_card is None) and not (mine_list and site_list):
+            print(f"{'subjectOf':>20}: у {c} нет узла 3D-модели с одной из сторон")
             problems += 1
             continue
-        a, b = mine_model, site_model
-        if a.get("@type") != b.get("@type") or a.get("name") != b.get("name"):
+        if mine_card and site_card and mine_card.get("name") != site_card.get("name"):
             print(f"{'subjectOf':>20}: расхождение по существу у {c}")
             problems += 1
         else:
             link_form += 1
     print(f"{'subjectOf':>20}: ок" + (f" (вид ссылки различается намеренно у {link_form} артикулов: "
           f"у базы прямые карточки, у сайта аккаунтные списки)" if link_form else ""))
+    if type_form:
+        print(f"{'':>20}  внимание: у {type_form} артикулов сайт помечает список моделей типом 3DModel — "
+              "узел обещает модель, а ведёт на перечень; в базе это CollectionPage")
 
     for field in FIELDS:
         diff = [c for c in sorted(set(mine) & set(site))
