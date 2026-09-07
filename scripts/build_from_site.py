@@ -542,8 +542,16 @@ def product_node(rec: dict) -> dict:
     if rec["models_all_en"]:
         # И страница со всеми моделями артикула — их обычно несколько. Она
         # остаётся и там, где представителя назначить не из чего.
-        subject.append({"@type": "CollectionPage", "name": f"All 3D models — {rec['code']}",
-                        "url": rec["models_all_en"], "sameAs": rec["models_all"]})
+        # Не «все модели артикула», а «модели с этим тегом»: у 55 артикулов из
+        # 597 список содержит и карточки соседей (замер агента сайта 07.09.2026;
+        # у 36 таких больше половины, у LC0023 — три четверти из 51). Тег
+        # означает, что владелец СВЯЗАЛ карточку с артикулом — по составу, серии
+        # или общему элементу, — поэтому обещать «полный перечень изделия» нельзя.
+        subject.append({
+            "@type": "CollectionPage", "name": f"3D models tagged {rec['code']}",
+            "description": ("Account listing by tag. May also include models of related items "
+                            "from the same series."),
+            "url": rec["models_all_en"], "sameAs": rec["models_all"]})
     if subject:
         node["subjectOf"] = subject
     return node
