@@ -68,6 +68,10 @@ MODELS_FIX = KB / "references" / "3ddd-corrections.json"
 # Перепись «слаг → артикулы, под чьими тегами карточка найдена» (агент сайта).
 # Нужна, чтобы выбор представителя не зависел от порядка чужой выгрузки.
 TAGS_INDEX = KB / "references" / "3ddd-slug-tags.json"
+# Полная перепись аккаунта: слаг → живость и артикулы из тегов. Кандидатов в
+# представители берём отсюда, а не из переписи по тегам: карточка может быть
+# названа кодом артикула и при этом не нести его тега (LC0337, LC0049).
+CARDS = KB / "references" / "3ddd-cards.json"
 CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sources/3ddd-own.json")
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
@@ -201,13 +205,16 @@ def pick_representative(models: dict[str, str]) -> dict[str, str]:
     через дефис и с названием вещи (владелец переименовывает карточки именно
     так), затем более подробный, затем по алфавиту. Ручные решения не трогаем.
     """
-    if not TAGS_INDEX.is_file():
+    cards = (json.loads(CARDS.read_text(encoding="utf-8"))["items"]
+             if CARDS.is_file() else {})
+    idx = (json.loads(TAGS_INDEX.read_text(encoding="utf-8"))["items"]
+           if TAGS_INDEX.is_file() else {})
+    if not cards and not idx:
         return models
-    idx = json.loads(TAGS_INDEX.read_text(encoding="utf-8"))["items"]
-    by: dict[str, list[str]] = {}
-    for slug, skus in idx.items():
-        for sku in skus:
-            by.setdefault(sku, []).append(slug)
+    # Кандидаты: все живые карточки аккаунта. Перепись по тегам — запасной
+    # источник, если полной переписи ещё нет.
+    pool = ([s for s, v in cards.items() if v.get("status") == 200]
+            if cards else list(idx))
 
     def ends_with_code(slug: str, code: str) -> bool:
         return re.search(r"[-_]" + code.lower().replace("-", "[-_]") + r"$", slug.lower()) is not None
@@ -220,7 +227,7 @@ def pick_representative(models: dict[str, str]) -> dict[str, str]:
     for code, cur in list(models.items()):
         if code in MANUAL:
             continue
-        cands = [s for s in by.get(code, []) if ends_with_code(s, code)]
+        cands = [s for s in pool if ends_with_code(s, code)]
         if cands and (best := sorted(cands, key=rank)[0]) != cur:
             models[code] = best
             changed += 1
