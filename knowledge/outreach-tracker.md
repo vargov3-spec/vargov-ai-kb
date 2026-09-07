@@ -18,6 +18,8 @@
 | 2026-09-05 | Wescover | community@wescover.com | очередь на онбординг создателя | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | darc (Mondiale) — редакция | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: основной адресат недоступен, письмо читает дежурная редакция (копия доставлена) | автоответ | напоминание не раньше 16.09 |
 | 2026-09-05 | arc (Mondiale) — редакция | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-07 | ICONIC World / German Design Council | iconicawards@gdc.de | сломанный редирект директории и фраза «makes in China» в проиндексированном профиле | **черновик готов, не отправлен** | — | отправить вместе с напоминанием от 15.09 или раньше по слову владельца |
+| 2026-09-07 | International Awards Associate | адрес в приватной папке PR | просьба выводить уровень награды (Gold/Platinum) текстом на странице победителя | **черновик готов, не отправлен** | — | добавить к напоминанию от 15.09, отдельным письмом не слать |
 | 2026-09-05 | Interior Design (US) — Market Director, cc News | редакция interiordesign.net | новые продукты: Oceanic Illumination, Depth of Water | отправлено; **основной адрес отскочил (550, ящик не существует)**, копия News-редактору доставлена | bounce | найти актуальный адрес Market Director, переслать |
 | 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09. **Вечером 05.09 ушло второе письмо** с бессрочной ссылкой на hi-res (vargov.ru/press/…zip + press/ в репозитории), как требуют правила подачи | автоответ | напоминание не раньше 23.09 |
 | 2026-09-05 | Dwell — Design News Editor, cc Market Editor | редакция dwell.com | design news: три композиции | отправлено | — | напоминание не раньше 16.09 |
@@ -110,3 +112,25 @@ Note: the letter says 22 awards; since 05.09 the count is 23 (NYPDA 2023 Gold Wi
 ## Черновики напоминаний
 
 *(заполняется автоматической проверкой 1-го и 15-го числа)*
+
+## Черновики от 07.09.2026
+
+### German Design Council (ICONIC), iconicawards@gdc.de
+Повод не «где мой профиль», а сломанная механика их сайта — так письмо полезно им самим.
+
+> Subject: Broken redirect on iconic-world.com/directory (all profiles) + factual correction request
+>
+> Dear ICONIC AWARDS team,
+>
+> Two related issues on the ICONIC World directory, one technical and one factual.
+>
+> 1. Every directory URL on iconic-world.com now returns a 301 to an address with a missing slash — for example `https://www.iconic-world.com/directory/anton-vargov` redirects to `https://www.iconic-awards.comdirectory/anton-vargov`, which is not a resolvable host. The same happens for other profiles (Artemide, Vibia Lighting), and `iconic-awards.com/directory/…` returns 404, so the section appears to be missing on the new domain entirely. The pages are still indexed by search engines.
+>
+> 2. The indexed text of my profile states that the company designs and manufactures its lighting and decor in China. That is not correct: Vargov®Design is a Russian brand based in Moscow, and its compositions are designed and assembled at the brand's own production. Since the page can no longer be opened or corrected by us, I would be grateful if you could either restore the directory with this sentence amended, or remove the outdated page so that it stops being served in search results.
+>
+> Thank you for looking into this.
+
+### IAA — дополнение к напоминанию 15.09
+Отдельным письмом не слать: у нас уже висит без ответа письмо от 04.09.
+
+> One small request about the winners' pages. On `design.museaward.com/winner-info.php?id=40265` (and the 2023 entry, id 13101) the award level — Gold, Platinum — is not present as text on the page: it appears only in the certificate. As a result the page does not confirm the level to search engines or AI assistants that read it. Would it be possible to include the level in the page text?
