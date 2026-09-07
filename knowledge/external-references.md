@@ -13,7 +13,28 @@
 - [LOOP Design Awards 2025 — Lighting Composition LC0458](https://loopdesignawards.com/project/lighting-composition-lc0458) — страница победителя на сайте премии (независимая организация). Прежняя ссылка на vargov.design/tpost/ryfpbm1yy1-loop-design-awards-2025 отдаёт 404 с 2026-09-06 и снята.
 
 ## Профили и справочники дизайнеров
-- ~~ICONIC World — Anton Vargov, directory profile~~ — **ссылка мертва с 2026-09-04**: iconic-world.com отдаёт 301 на битый адрес без слэша, iconic-awards.com/directory/anton-vargov → 404. Домен принадлежит German Design Council, источник был авторитетным; искать новый адрес профиля или снять из аргументации.
+
+### Страницы жюри IAA (проверены 07.09.2026, все отвечают 200)
+Независимые подтверждения членства в жюри — одна и та же карточка «Vargov Anton · CEO, Vargov Design · Russia» на пяти площадках International Awards Associate:
+- [MUSE Design Awards — Grand Jury Panel](https://design.museaward.com/our-judge.php)
+- [NY Product Design Awards — Grand Jury Panel](https://nydesignawards.com/our-judge.php)
+- [Rome Design Awards — Grand Jury Panel](https://romedesignawards.com/our-judge.php)
+- [French Design Awards — Grand Jury Panel](https://frenchdesignawards.com/our-judge.php)
+- [TITAN Property Awards — Grand Jury Panel](https://thepropertyawards.com/our-judge.php) (домен `thepropertyawards.com`, не `titanpropertyawards.com` — тот не резолвится)
+
+Сама карточка перечисляет шесть программ, включая **Noble World Hotel Awards** — её страницу жюри найти не удалось: `nobleworldawards.com`, `nobleworldhotelawards.com` не резолвятся, `thehotelawards.com/our-judge.php` → 404. Ссылаться на неё нельзя, пока адрес не подтверждён.
+
+⚠️ Текст карточки написан IAA и содержит формулировки, которых владелец избегает: «international brand», «global leader in designing, producing, and selling». Страницы чужие, править нельзя; для наших материалов это не источник формулировок, а подтверждение факта «член жюри пяти программ».
+
+- ~~ICONIC World — Anton Vargov, directory profile~~ (`https://www.iconic-world.com/directory/anton-vargov`) — **страница не открывается, но дело не в профиле: раздел директории потерян при переезде домена** (диагноз уточнён 07.09.2026). German Design Council перевёл `iconic-world.com` на `iconic-awards.com`, и редирект собран с ошибкой — теряется слэш: любой адрес ведёт на `www.iconic-awards.comdirectory/…`, несуществующее имя. Проверено на посторонних профилях: Artemide и Vibia Lighting ломаются точно так же, а на новом домене `/directory/artemide` тоже отдаёт 404 — то есть раздела там нет ни у кого. Живут только `/en/winner` и `/en/the-catalogue` (200). **Искать «новый адрес профиля» бессмысленно — его нет ни у одного участника.**
+  ⚠️ **Профиль остаётся в поисковом индексе вместе с фактической ошибкой.** Поиск по домену выдаёт карточку Anton Vargov с текстом про «design and manufacture of lighting and decor in China» — третье место, где живёт та же ложная связка (после D5 MAG и описания Facebook, исправленного 05.09). Страница мертва, но языковые модели читают индекс, а не код ответа. Поэтому задача не «восстановить ссылку», а либо добиться восстановления раздела с исправленным текстом, либо просить об удалении страницы из индекса — письмо в German Design Council готово к отправке, см. [[outreach-tracker]].
+
+### Страницы победителя MUSE (проверены 07.09.2026)
+- LC0564 «Oceanic Illumination», 2026 · Professional · Lighting Design — Designer / Custom Lighting · Entrant Vargov Design · Country Russia: [winner-info.php?id=40265](https://design.museaward.com/winner-info.php?id=40265) (тот же материал отдаёт и `winners-info.php` — в поисковом индексе живёт вариант **без «s»**, его и стоит указывать).
+- LC0237, 2023, та же категория: [winner-info.php?id=13101](https://design.museaward.com/winner-info.php?id=13101).
+- **Уровень награды на странице не выведен текстом** — ни «Gold», ни «Platinum»; для машины страница подтверждает участие и категорию, но не уровень. Уровень остаётся подтверждён только сертификатом (см. [[awards-verified]]).
+- По названию работы страницы не находятся: поиск «Oceanic Illumination MUSE Design Awards Vargov» их не возвращает. Это и был вопрос из [[gap-list-2026-09]] — страницы живы, но в категорийную выдачу не попадают.
+- ⚠️ На странице LC0237 (2023) опубликованы размер элемента и материал — их владелец в своих материалах не публикует. Это его собственная давняя анкета на чужой площадке; менять нам нечего, но знать стоит: данные открыты и индексируются.
 
 ## Редакционные публикации
 
