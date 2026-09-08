@@ -1,0 +1,1837 @@
+{
+ "source": "Карта сессии Pinterest, собрана 08.09.2026 после правки имён: pool/sketchfab/karta-artikul-adres.json. Артикул берётся из нынешних текстов модели, а не из записи о заливке.",
+ "what": "Артикул → представитель на Sketchfab: uid, адрес и сколько всего моделей артикула на витрине.",
+ "caveats": [
+  "Только ОПУБЛИКОВАННЫЕ модели: черновик по своему адресу постороннему не открывается.",
+  "uid неизменен, адрес — нет: он собран из имени и меняется при переименовании. Храним оба.",
+  "Варианты представлены не все: на витрине пока LC0166-2, LC0192-1, LC0217-1, LC0332-1.",
+  "На витрине 3170 моделей, под артикулами 2172, без артикула 997 — «модель в аккаунте» не равно «модель изделия»."
+ ],
+ "items": {
+  "LC0001": {
+   "uid": "3f3985671fb24eaa99d19a266e131d42",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0001-2-3f3985671fb24eaa99d19a266e131d42",
+   "count": 2
+  },
+  "LC0002": {
+   "uid": "786884cd6d59423db25320e062aca088",
+   "url": "https://sketchfab.com/3d-models/authors-lamp-vargov-lc0002-2-786884cd6d59423db25320e062aca088",
+   "count": 15
+  },
+  "LC0003": {
+   "uid": "2e7473f62fa14f63bfd6dfa565115fa7",
+   "url": "https://sketchfab.com/3d-models/authors-lamp-vargov-lc0003-2e7473f62fa14f63bfd6dfa565115fa7",
+   "count": 3
+  },
+  "LC0004": {
+   "uid": "0ebad45ec5d44bada9c1535beb5e1c4e",
+   "url": "https://sketchfab.com/3d-models/authors-lamp-vargov-lc0004-0ebad45ec5d44bada9c1535beb5e1c4e",
+   "count": 5
+  },
+  "LC0005": {
+   "uid": "29fdacc36263448494e5bb4dcad88d49",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-wave-vargov-lc0005-2-29fdacc36263448494e5bb4dcad88d49",
+   "count": 6
+  },
+  "LC0006": {
+   "uid": "df8e179ddfe142f0b2a6e85c8e63f259",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-shee-vargov-lc0006-2-df8e179ddfe142f0b2a6e85c8e63f259",
+   "count": 13
+  },
+  "LC0007": {
+   "uid": "07b98248ec5c4c98aa9f28fe47e51235",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-shee-vargov-lc0007-2-07b98248ec5c4c98aa9f28fe47e51235",
+   "count": 17
+  },
+  "LC0008": {
+   "uid": "8b8d0095c0a044b19fb52dee8b76843a",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0008-2-8b8d0095c0a044b19fb52dee8b76843a",
+   "count": 4
+  },
+  "LC0009": {
+   "uid": "5533038cd9c14e18b877683135d1f223",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0009-2-5533038cd9c14e18b877683135d1f223",
+   "count": 6
+  },
+  "LC0010": {
+   "uid": "59241b20fb5a48b5a15f16fdb2b0ad89",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-mix-vargov-lc0010-2-59241b20fb5a48b5a15f16fdb2b0ad89",
+   "count": 4
+  },
+  "LC0011": {
+   "uid": "0dc255bc0a424170853871c138f22430",
+   "url": "https://sketchfab.com/3d-models/wall-composition-mix-tape-vargov-lc0011-2-0dc255bc0a424170853871c138f22430",
+   "count": 3
+  },
+  "LC0012": {
+   "uid": "d0c2db6f766247128ea87c5075aaa805",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0012-2-d0c2db6f766247128ea87c5075aaa805",
+   "count": 6
+  },
+  "LC0013": {
+   "uid": "29ccf6d6a3e94204bc9af9c02472a730",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-airy-vargov-lc0013-2-29ccf6d6a3e94204bc9af9c02472a730",
+   "count": 12
+  },
+  "LC0014": {
+   "uid": "9f9c6116fd384d44815960f9f7a4c0d1",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-fibe-vargov-lc0014-2-9f9c6116fd384d44815960f9f7a4c0d1",
+   "count": 15
+  },
+  "LC0015": {
+   "uid": "00826b09e9674d4e83049ce41c36e30f",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-baik-vargov-lc0015-2-00826b09e9674d4e83049ce41c36e30f",
+   "count": 3
+  },
+  "LC0016": {
+   "uid": "0efdb7cd205948d1acea9ad17d957c44",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-peta-vargov-lc0016-2-0efdb7cd205948d1acea9ad17d957c44",
+   "count": 4
+  },
+  "LC0017": {
+   "uid": "185b729f9d974044844585814edfad7d",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-peta-vargov-lc0017-2-185b729f9d974044844585814edfad7d",
+   "count": 4
+  },
+  "LC0018": {
+   "uid": "9f72686b6e8d4ed18c4e5e98d9670d1c",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-geom-vargov-lc0018-2-9f72686b6e8d4ed18c4e5e98d9670d1c",
+   "count": 7
+  },
+  "LC0019": {
+   "uid": "dd6b561c873648beb3135109cc87afde",
+   "url": "https://sketchfab.com/3d-models/wall-composition-butterfly-vargov-lc0019-2-dd6b561c873648beb3135109cc87afde",
+   "count": 2
+  },
+  "LC0020": {
+   "uid": "e93fc0d2c4ab44b69336188327cfd8e5",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-butt-vargov-lc0020-2-e93fc0d2c4ab44b69336188327cfd8e5",
+   "count": 3
+  },
+  "LC0021": {
+   "uid": "d7bd2598202a420598f752adf2819c64",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-mix-vargov-lc0021-2-d7bd2598202a420598f752adf2819c64",
+   "count": 4
+  },
+  "LC0022": {
+   "uid": "62244c457d72449d9de6a08566c6dc6a",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-scal-vargov-lc0022-2-62244c457d72449d9de6a08566c6dc6a",
+   "count": 1
+  },
+  "LC0024": {
+   "uid": "51e501f5580746d382ddca3f1193920f",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-stained-glass-vargov-lc0024-51e501f5580746d382ddca3f1193920f",
+   "count": 4
+  },
+  "LC0025": {
+   "uid": "d9c7c264777847dc986789f054c9d124",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0025-2-d9c7c264777847dc986789f054c9d124",
+   "count": 1
+  },
+  "LC0026": {
+   "uid": "cf0714c7f72347769e75db6379b819c3",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0026-2-cf0714c7f72347769e75db6379b819c3",
+   "count": 1
+  },
+  "LC0027": {
+   "uid": "29db14a532d6428fb8811ca02a470468",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0027-2-29db14a532d6428fb8811ca02a470468",
+   "count": 7
+  },
+  "LC0028": {
+   "uid": "6770b67b02374df0bc6d8a7f9d5be633",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0028-2-6770b67b02374df0bc6d8a7f9d5be633",
+   "count": 3
+  },
+  "LC0029": {
+   "uid": "a77a58a49e4c450b9f6e43a4f500a05a",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-cloth-vargov-lc0029-a77a58a49e4c450b9f6e43a4f500a05a",
+   "count": 4
+  },
+  "LC0030": {
+   "uid": "6c582056d5a047a8a95b1aef7f222c9a",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-clot-vargov-lc0030-2-6c582056d5a047a8a95b1aef7f222c9a",
+   "count": 10
+  },
+  "LC0031": {
+   "uid": "eba2ff10151d48b98eb49b44cd3a97fe",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-nexus-vargov-lc0031-eba2ff10151d48b98eb49b44cd3a97fe",
+   "count": 1
+  },
+  "LC0032": {
+   "uid": "50f321a2033a406b9a9898fcc0aba759",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-torus-vargov-lc0032-2-50f321a2033a406b9a9898fcc0aba759",
+   "count": 5
+  },
+  "LC0033": {
+   "uid": "0630d7ebbb65490e8efc5200dc9add2b",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-square-vargov-lc0033-2-0630d7ebbb65490e8efc5200dc9add2b",
+   "count": 5
+  },
+  "LC0034": {
+   "uid": "0b65fc2cad1a42af97d4f1de35f574e8",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-meta-vargov-lc0034-2-0b65fc2cad1a42af97d4f1de35f574e8",
+   "count": 16
+  },
+  "LC0035": {
+   "uid": "d6cf031261ec4cba94a04c0cb03da228",
+   "url": "https://sketchfab.com/3d-models/droplight-wall-decor-vargov-lc0035-d6cf031261ec4cba94a04c0cb03da228",
+   "count": 1
+  },
+  "LC0036": {
+   "uid": "30f54ea2ac3d4b7c9a0a8713e9f452bf",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0036-2-30f54ea2ac3d4b7c9a0a8713e9f452bf",
+   "count": 8
+  },
+  "LC0037": {
+   "uid": "e79ae21860504f0fa4cefdb8039d0f84",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-meta-vargov-lc0037-2-e79ae21860504f0fa4cefdb8039d0f84",
+   "count": 4
+  },
+  "LC0038": {
+   "uid": "aff0176c2a134b48a6ddc67e8be7a584",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0038-2-aff0176c2a134b48a6ddc67e8be7a584",
+   "count": 6
+  },
+  "LC0039": {
+   "uid": "9cb97a514ada4db0be7f61eaa413327b",
+   "url": "https://sketchfab.com/3d-models/interflow-vargov-lc0039-2-9cb97a514ada4db0be7f61eaa413327b",
+   "count": 5
+  },
+  "LC0040": {
+   "uid": "09c962b220cb419688482b4946a10391",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0040-2-09c962b220cb419688482b4946a10391",
+   "count": 5
+  },
+  "LC0041": {
+   "uid": "3181c7aa008d41258a7c315ee1fe4077",
+   "url": "https://sketchfab.com/3d-models/interflow-vargov-lc0041-3-3181c7aa008d41258a7c315ee1fe4077",
+   "count": 3
+  },
+  "LC0042": {
+   "uid": "cf990a458a714a368de9c0e0c3a6ec2c",
+   "url": "https://sketchfab.com/3d-models/interflow-vargov-lc0042-2-cf990a458a714a368de9c0e0c3a6ec2c",
+   "count": 5
+  },
+  "LC0043": {
+   "uid": "5a0fc83a2b9f465c9dadc0d568743f88",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-bud-vargov-lc0043-2-5a0fc83a2b9f465c9dadc0d568743f88",
+   "count": 4
+  },
+  "LC0044": {
+   "uid": "07bd9786dd6a46fb8c7191aaeda118f8",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0044-2-07bd9786dd6a46fb8c7191aaeda118f8",
+   "count": 4
+  },
+  "LC0045": {
+   "uid": "e5cb6e1c236441ca985f4b3c967ac9ee",
+   "url": "https://sketchfab.com/3d-models/interflow-haberdashery-vargov-lc0045-2-e5cb6e1c236441ca985f4b3c967ac9ee",
+   "count": 10
+  },
+  "LC0046": {
+   "uid": "9768e77573174bf1b77fdb9532176e33",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-bud-vargov-lc0046-2-9768e77573174bf1b77fdb9532176e33",
+   "count": 4
+  },
+  "LC0047": {
+   "uid": "875adfcc72954f58985bf2af2236021c",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-mapl-vargov-lc0047-2-875adfcc72954f58985bf2af2236021c",
+   "count": 2
+  },
+  "LC0048": {
+   "uid": "3bd621511f65419fbe1312c6cde60dcc",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0048-2-3bd621511f65419fbe1312c6cde60dcc",
+   "count": 3
+  },
+  "LC0049": {
+   "uid": "a201be5409d44f26a7c83df38477f3f6",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0049-a201be5409d44f26a7c83df38477f3f6",
+   "count": 1
+  },
+  "LC0050": {
+   "uid": "5a4ab277d10a4f99ad50c919000cd566",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-shee-vargov-lc0050-2-5a4ab277d10a4f99ad50c919000cd566",
+   "count": 5
+  },
+  "LC0051": {
+   "uid": "ebe0d0d6e87a4909b7b66ded5df4328f",
+   "url": "https://sketchfab.com/3d-models/hanging-elements-firefly-vargov-lc0051-ebe0d0d6e87a4909b7b66ded5df4328f",
+   "count": 1
+  },
+  "LC0052": {
+   "uid": "1bc0a280c0e444a1836dd3a7fb9b676b",
+   "url": "https://sketchfab.com/3d-models/greenbox-backlit-hanging-vargov-lc0052-2-1bc0a280c0e444a1836dd3a7fb9b676b",
+   "count": 10
+  },
+  "LC0053": {
+   "uid": "30529aed1d26442cb525f17644cf4ed8",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-phyt-vargov-lc0053-2-30529aed1d26442cb525f17644cf4ed8",
+   "count": 5
+  },
+  "LC0054": {
+   "uid": "4773dfb50cf647d39b66323e859cc482",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-glass-vargov-lc0054-2-4773dfb50cf647d39b66323e859cc482",
+   "count": 4
+  },
+  "LC0055": {
+   "uid": "dce235d497fa49a38f04f501f0478cce",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-disk-vargov-lc0055-2-dce235d497fa49a38f04f501f0478cce",
+   "count": 6
+  },
+  "LC0056": {
+   "uid": "813a109791384342a762c1e514b1b4a7",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0056-2-813a109791384342a762c1e514b1b4a7",
+   "count": 6
+  },
+  "LC0057": {
+   "uid": "d629c85c670d437c956b55a9a4c9f7f7",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-bud-vargov-lc0057-2-d629c85c670d437c956b55a9a4c9f7f7",
+   "count": 4
+  },
+  "LC0058": {
+   "uid": "5324c6b786ca45fdbaee22833e4a6143",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0058-2-5324c6b786ca45fdbaee22833e4a6143",
+   "count": 5
+  },
+  "LC0059": {
+   "uid": "9cb1cdeeb892411c9eb86b3c97ff571c",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0059-2-9cb1cdeeb892411c9eb86b3c97ff571c",
+   "count": 6
+  },
+  "LC0060": {
+   "uid": "e1c247a7163544beb2cc12b242c8c9ae",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0060-2-e1c247a7163544beb2cc12b242c8c9ae",
+   "count": 7
+  },
+  "LC0061": {
+   "uid": "e51b09f6ca9c4c308aea72deb088d46f",
+   "url": "https://sketchfab.com/3d-models/table-art-object-vargov-lc0061-2-e51b09f6ca9c4c308aea72deb088d46f",
+   "count": 2
+  },
+  "LC0062": {
+   "uid": "be09c76bcc6242f99edafb72d1b43a85",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0062-be09c76bcc6242f99edafb72d1b43a85",
+   "count": 16
+  },
+  "LC0063": {
+   "uid": "5a10657d9a534775839510b2beaebb55",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-garn-vargov-lc0063-2-5a10657d9a534775839510b2beaebb55",
+   "count": 8
+  },
+  "LC0064": {
+   "uid": "3fcf6981d0e54531912a1c980ea195e8",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0064-2-3fcf6981d0e54531912a1c980ea195e8",
+   "count": 3
+  },
+  "LC0065": {
+   "uid": "11be54d0de1841c798bff0856af91080",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-window-vargov-lc0065-2-11be54d0de1841c798bff0856af91080",
+   "count": 4
+  },
+  "LC0066": {
+   "uid": "f60095718e514ae6ae94e8da82327440",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0066-2-f60095718e514ae6ae94e8da82327440",
+   "count": 1
+  },
+  "LC0067": {
+   "uid": "e8d61139b96d416e861d826552c249d5",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0067-2-e8d61139b96d416e861d826552c249d5",
+   "count": 1
+  },
+  "LC0068": {
+   "uid": "3062c58b7411427dadecfbc9a4eb708f",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0068-2-3062c58b7411427dadecfbc9a4eb708f",
+   "count": 1
+  },
+  "LC0069": {
+   "uid": "a4e2ba030bb64b3fa5c66798800f2112",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0069-2-a4e2ba030bb64b3fa5c66798800f2112",
+   "count": 1
+  },
+  "LC0070": {
+   "uid": "9c036692dd094c5ab2691a0b4928d6aa",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0070-2-9c036692dd094c5ab2691a0b4928d6aa",
+   "count": 1
+  },
+  "LC0073": {
+   "uid": "bef82853fbc74d5dab17de722c4c084d",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0073-2-bef82853fbc74d5dab17de722c4c084d",
+   "count": 1
+  },
+  "LC0074": {
+   "uid": "591b70bf5bf44525be2154e35929bb4d",
+   "url": "https://sketchfab.com/3d-models/wall-sculpture-vargov-lc0074-2-591b70bf5bf44525be2154e35929bb4d",
+   "count": 1
+  },
+  "LC0075": {
+   "uid": "a3c9a1250e3f44d3a878a63ca31a75cf",
+   "url": "https://sketchfab.com/3d-models/suspended-sculpture-vargov-lc0075-2-a3c9a1250e3f44d3a878a63ca31a75cf",
+   "count": 2
+  },
+  "LC0076": {
+   "uid": "a15cf56ed7cc4010a0ec06dce8304ab4",
+   "url": "https://sketchfab.com/3d-models/suspended-sculpture-vargov-lc0076-2-a15cf56ed7cc4010a0ec06dce8304ab4",
+   "count": 2
+  },
+  "LC0077": {
+   "uid": "fbdaa15f8ada4e23b659eecf1f26fe96",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-phyt-vargov-lc0077-2-fbdaa15f8ada4e23b659eecf1f26fe96",
+   "count": 8
+  },
+  "LC0078": {
+   "uid": "9017188658444bfe98cd192beeba3a32",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0078-2-9017188658444bfe98cd192beeba3a32",
+   "count": 1
+  },
+  "LC0079": {
+   "uid": "7f692a4dfa124f0fad64738e36436a57",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0079-2-7f692a4dfa124f0fad64738e36436a57",
+   "count": 3
+  },
+  "LC0084": {
+   "uid": "724f0237364546e2b9fdb3c8ec9b8057",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-drift-vargov-lc0084-2-724f0237364546e2b9fdb3c8ec9b8057",
+   "count": 4
+  },
+  "LC0085": {
+   "uid": "cf8f234cc26b4042a9eb66b8d3c735d2",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0085-cf8f234cc26b4042a9eb66b8d3c735d2",
+   "count": 7
+  },
+  "LC0086": {
+   "uid": "8cc7eac30c9e49d59763a4ad9c831919",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0086-8cc7eac30c9e49d59763a4ad9c831919",
+   "count": 6
+  },
+  "LC0087": {
+   "uid": "9c11bb4cecbc41a78a2efa9f60a2b3a8",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0087-9c11bb4cecbc41a78a2efa9f60a2b3a8",
+   "count": 1
+  },
+  "LC0088": {
+   "uid": "345c3355114c41c0a8f2b2c101df5374",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-oude-vargov-lc0088-2-345c3355114c41c0a8f2b2c101df5374",
+   "count": 4
+  },
+  "LC0089": {
+   "uid": "4024310be76e42ff897b51178462dee0",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-reef-vargov-lc0089-2-4024310be76e42ff897b51178462dee0",
+   "count": 4
+  },
+  "LC0090": {
+   "uid": "9ec8bc95861843eaa27fdef94f5f9b18",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-stai-vargov-lc0090-2-9ec8bc95861843eaa27fdef94f5f9b18",
+   "count": 8
+  },
+  "LC0091": {
+   "uid": "5ee5f7ebbfba442a95227502390c2e36",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-stai-vargov-lc0091-2-5ee5f7ebbfba442a95227502390c2e36",
+   "count": 8
+  },
+  "LC0092": {
+   "uid": "499583d5f67e4b1585e5146bd0db2d45",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-stai-vargov-lc0092-2-499583d5f67e4b1585e5146bd0db2d45",
+   "count": 8
+  },
+  "LC0093": {
+   "uid": "0847bfc0dadc4ec394650994d7b93403",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0093-2-0847bfc0dadc4ec394650994d7b93403",
+   "count": 2
+  },
+  "LC0094": {
+   "uid": "bca52b6a8df7410890e1c09feea9edfd",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-ston-vargov-lc0094-2-bca52b6a8df7410890e1c09feea9edfd",
+   "count": 6
+  },
+  "LC0095": {
+   "uid": "91716eef4d544da1a8ecf7b682051dfb",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-ston-vargov-lc0095-2-91716eef4d544da1a8ecf7b682051dfb",
+   "count": 4
+  },
+  "LC0096": {
+   "uid": "ae4384e660c645dbac809516bb84c490",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-meta-vargov-lc0096-2-ae4384e660c645dbac809516bb84c490",
+   "count": 3
+  },
+  "LC0097": {
+   "uid": "0a40ef3844d84790a33ef55d47ab69ce",
+   "url": "https://sketchfab.com/3d-models/chandelier-poppy-vargov-lc0097-2-0a40ef3844d84790a33ef55d47ab69ce",
+   "count": 2
+  },
+  "LC0098": {
+   "uid": "db942f9c0adf4963b061b243812a1881",
+   "url": "https://sketchfab.com/3d-models/chandelier-monstera-vargov-lc0098-2-db942f9c0adf4963b061b243812a1881",
+   "count": 4
+  },
+  "LC0099": {
+   "uid": "132208dd7ab74e9bb3f4bc1be4b86338",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0099-2-132208dd7ab74e9bb3f4bc1be4b86338",
+   "count": 5
+  },
+  "LC0100": {
+   "uid": "eed7c8e118fd47deb7253167f3ae57ac",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0100-2-eed7c8e118fd47deb7253167f3ae57ac",
+   "count": 5
+  },
+  "LC0101": {
+   "uid": "03ec492acd5842699fed26127691c873",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0101-2-03ec492acd5842699fed26127691c873",
+   "count": 4
+  },
+  "LC0102": {
+   "uid": "e039d5753f1444e5a89623f13ace1b5c",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0102-2-e039d5753f1444e5a89623f13ace1b5c",
+   "count": 1
+  },
+  "LC0103": {
+   "uid": "6db0f25dccbf43bca3834809d662a86c",
+   "url": "https://sketchfab.com/3d-models/droplight-spin-vargov-lc0103-2-6db0f25dccbf43bca3834809d662a86c",
+   "count": 1
+  },
+  "LC0105": {
+   "uid": "5392cdc79b02474582497b7cf3bd0554",
+   "url": "https://sketchfab.com/3d-models/light-stained-glass-vargov-lc0105-2-5392cdc79b02474582497b7cf3bd0554",
+   "count": 8
+  },
+  "LC0106": {
+   "uid": "eb92a8dbb5f145f79c27a3685c1980a7",
+   "url": "https://sketchfab.com/3d-models/hanging-composition-medusa-vargov-lc0106-2-eb92a8dbb5f145f79c27a3685c1980a7",
+   "count": 6
+  },
+  "LC0107": {
+   "uid": "02343a9755c549688404d870e796a130",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-phys-vargov-lc0107-2-02343a9755c549688404d870e796a130",
+   "count": 10
+  },
+  "LC0108": {
+   "uid": "2dede6a4254b47f796f62a493ccf450e",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-ball-vargov-lc0108-2-2dede6a4254b47f796f62a493ccf450e",
+   "count": 4
+  },
+  "LC0109": {
+   "uid": "fbcedd94eeb9493683284544813631fe",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0109-2-fbcedd94eeb9493683284544813631fe",
+   "count": 8
+  },
+  "LC0110": {
+   "uid": "3a0cce3afe7442a0b8ce321c8d8cffa3",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0110-2-3a0cce3afe7442a0b8ce321c8d8cffa3",
+   "count": 3
+  },
+  "LC0111": {
+   "uid": "2f706b6b951b4e79951b5342e3c4f7c5",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0111-2-2f706b6b951b4e79951b5342e3c4f7c5",
+   "count": 2
+  },
+  "LC0112": {
+   "uid": "6b29a814cc3747f385973e63fc469b7a",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0112-2-6b29a814cc3747f385973e63fc469b7a",
+   "count": 1
+  },
+  "LC0113": {
+   "uid": "b2ebc4c5061e4b57919714f97a22d756",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0113-2-b2ebc4c5061e4b57919714f97a22d756",
+   "count": 4
+  },
+  "LC0114": {
+   "uid": "dcbb4ad87dd644d98dbd3ada7b9a6f32",
+   "url": "https://sketchfab.com/3d-models/suspended-installation-vargov-lc0114-2-dcbb4ad87dd644d98dbd3ada7b9a6f32",
+   "count": 5
+  },
+  "LC0115": {
+   "uid": "df3f1bfd52e5447eb3a2c105d37852b3",
+   "url": "https://sketchfab.com/3d-models/suspended-installation-vargov-lc0115-2-df3f1bfd52e5447eb3a2c105d37852b3",
+   "count": 12
+  },
+  "LC0116": {
+   "uid": "a63acb0f76e8461f996e71f465f1249d",
+   "url": "https://sketchfab.com/3d-models/wall-composition-porcelain-vargov-lc0116-2-a63acb0f76e8461f996e71f465f1249d",
+   "count": 2
+  },
+  "LC0117": {
+   "uid": "7aeb91452f774ebf9d9524675f0dfd39",
+   "url": "https://sketchfab.com/3d-models/suspended-installation-umbrellas-vargov-lc0117-7aeb91452f774ebf9d9524675f0dfd39",
+   "count": 2
+  },
+  "LC0118": {
+   "uid": "cf159ea5489d45008770fa993f3504fb",
+   "url": "https://sketchfab.com/3d-models/suspended-installation-reflex-vargov-lc0118-2-cf159ea5489d45008770fa993f3504fb",
+   "count": 8
+  },
+  "LC0119": {
+   "uid": "ac359d27faac454096a922ed46b22741",
+   "url": "https://sketchfab.com/3d-models/suspended-installation-spritz-vargov-lc0119-2-ac359d27faac454096a922ed46b22741",
+   "count": 3
+  },
+  "LC0120": {
+   "uid": "ed5a64966a0b4eada1e276075592e53f",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0120-2-ed5a64966a0b4eada1e276075592e53f",
+   "count": 2
+  },
+  "LC0121": {
+   "uid": "ba2523c4e1094534bce47bf0ada27cdf",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0121-2-ba2523c4e1094534bce47bf0ada27cdf",
+   "count": 2
+  },
+  "LC0122": {
+   "uid": "1c3ee94788324ee5a7f8ecc99ccf8379",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0122-2-1c3ee94788324ee5a7f8ecc99ccf8379",
+   "count": 2
+  },
+  "LC0123": {
+   "uid": "9ce04e7c47214b1ba61d8d6b3704c256",
+   "url": "https://sketchfab.com/3d-models/wall-composition-feather-vargov-lc0123-2-9ce04e7c47214b1ba61d8d6b3704c256",
+   "count": 2
+  },
+  "LC0124": {
+   "uid": "14c51ad3d8494d7faebf8326fa0e2744",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0124-2-14c51ad3d8494d7faebf8326fa0e2744",
+   "count": 8
+  },
+  "LC0125": {
+   "uid": "1669958414354d718c2b1271603847b8",
+   "url": "https://sketchfab.com/3d-models/authors-lamp-flapjack-vargov-lc0125-2-1669958414354d718c2b1271603847b8",
+   "count": 7
+  },
+  "LC0126": {
+   "uid": "3303b16a5902464981dd4799fb430e0b",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0126-2-3303b16a5902464981dd4799fb430e0b",
+   "count": 4
+  },
+  "LC0127": {
+   "uid": "3dabadae535842659ffba5d532adf68b",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0127-2-3dabadae535842659ffba5d532adf68b",
+   "count": 3
+  },
+  "LC0128": {
+   "uid": "58cdddcc39c14667b31ff406b283d072",
+   "url": "https://sketchfab.com/3d-models/pendant-chandelier-anthurium-vargov-lc0128-2-58cdddcc39c14667b31ff406b283d072",
+   "count": 9
+  },
+  "LC0129": {
+   "uid": "2343b472430047c1a60c6c70093336b4",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0129-2-2343b472430047c1a60c6c70093336b4",
+   "count": 8
+  },
+  "LC0130": {
+   "uid": "e888774e879045daa28856c3078a9a70",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0130-2-e888774e879045daa28856c3078a9a70",
+   "count": 9
+  },
+  "LC0131": {
+   "uid": "ed05b5fc863a482aab3a779a35bdb628",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-fish-vargov-lc0131-2-ed05b5fc863a482aab3a779a35bdb628",
+   "count": 5
+  },
+  "LC0132": {
+   "uid": "d3775658b18b4863be3452029424d984",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0132-2-d3775658b18b4863be3452029424d984",
+   "count": 3
+  },
+  "LC0133": {
+   "uid": "3cee5bf39e06458783d76b67f229c1ca",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-simanta-vargov-lc0133-2-3cee5bf39e06458783d76b67f229c1ca",
+   "count": 7
+  },
+  "LC0134": {
+   "uid": "f74c2478019a440b8b8d8578ca9708c7",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-galaxy-vargov-lc0134-2-f74c2478019a440b8b8d8578ca9708c7",
+   "count": 5
+  },
+  "LC0135": {
+   "uid": "02158ae9089f40f5a8f711807deecfd7",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-pasta-vargov-lc0135-2-02158ae9089f40f5a8f711807deecfd7",
+   "count": 4
+  },
+  "LC0136": {
+   "uid": "9b1944b588fe402eb3a245657c5068ce",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-swar-vargov-lc0136-2-9b1944b588fe402eb3a245657c5068ce",
+   "count": 5
+  },
+  "LC0137": {
+   "uid": "d987a2868de9477fa6b2d7dff124b826",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0137-d987a2868de9477fa6b2d7dff124b826",
+   "count": 1
+  },
+  "LC0138": {
+   "uid": "ac118413fddb4fa793e1ee4605fa5160",
+   "url": "https://sketchfab.com/3d-models/hanging-arrangement-avocado-vargov-lc0138-2-ac118413fddb4fa793e1ee4605fa5160",
+   "count": 4
+  },
+  "LC0139": {
+   "uid": "275ccf24133a47619360dd665a46cea1",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0139-2-275ccf24133a47619360dd665a46cea1",
+   "count": 4
+  },
+  "LC0141": {
+   "uid": "8800f044a91e420ea229b42c077d1a01",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0141-2-8800f044a91e420ea229b42c077d1a01",
+   "count": 4
+  },
+  "LC0142": {
+   "uid": "e9f478b35149446cb09146017e741ab9",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0142-2-e9f478b35149446cb09146017e741ab9",
+   "count": 10
+  },
+  "LC0143": {
+   "uid": "02d592960105400e8572250e6035024f",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0143-2-02d592960105400e8572250e6035024f",
+   "count": 8
+  },
+  "LC0144": {
+   "uid": "bbd71dfc6ace4b80a2fb8d36213a0a1a",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-free-vargov-lc0144-2-bbd71dfc6ace4b80a2fb8d36213a0a1a",
+   "count": 10
+  },
+  "LC0145": {
+   "uid": "9ab5455c5d3447899073889e996cbf88",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0145-2-9ab5455c5d3447899073889e996cbf88",
+   "count": 11
+  },
+  "LC0146": {
+   "uid": "4d1c2d4c98be402b8aaec2c4e55156f5",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-free-vargov-lc0146-2-4d1c2d4c98be402b8aaec2c4e55156f5",
+   "count": 10
+  },
+  "LC0147": {
+   "uid": "03e5d1db288a4580a24fe10a11052e50",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-hear-vargov-lc0147-2-03e5d1db288a4580a24fe10a11052e50",
+   "count": 8
+  },
+  "LC0148": {
+   "uid": "d2ec0fa4d36a459b969458067f6f072d",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0148-2-d2ec0fa4d36a459b969458067f6f072d",
+   "count": 6
+  },
+  "LC0149": {
+   "uid": "c25a3d397e394737953e1024eaae8f03",
+   "url": "https://sketchfab.com/3d-models/fireplace-decor-hearth-flame-vargov-lc0149-c25a3d397e394737953e1024eaae8f03",
+   "count": 2
+  },
+  "LC0150": {
+   "uid": "afb3a48c2a074e05aff8d042b7ad51bf",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0150-2-afb3a48c2a074e05aff8d042b7ad51bf",
+   "count": 10
+  },
+  "LC0151": {
+   "uid": "e801e75c7bb742f395d19c5a0bb28bb6",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0151-2-e801e75c7bb742f395d19c5a0bb28bb6",
+   "count": 7
+  },
+  "LC0152": {
+   "uid": "8aaf1f9778c54930a7d41d8f4ac87433",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-glas-vargov-lc0152-2-8aaf1f9778c54930a7d41d8f4ac87433",
+   "count": 8
+  },
+  "LC0153": {
+   "uid": "62ab3f57f934423a846648f75d261857",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0153-2-62ab3f57f934423a846648f75d261857",
+   "count": 5
+  },
+  "LC0154": {
+   "uid": "79a470447c044ede9b195d04c16627a7",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0154-2-79a470447c044ede9b195d04c16627a7",
+   "count": 8
+  },
+  "LC0155": {
+   "uid": "e6248c7de1c14370b804b07b697dc9f3",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0155-2-e6248c7de1c14370b804b07b697dc9f3",
+   "count": 5
+  },
+  "LC0156": {
+   "uid": "8fe76859ed134819bfc158cbaa48939a",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0156-2-8fe76859ed134819bfc158cbaa48939a",
+   "count": 8
+  },
+  "LC0157": {
+   "uid": "78dc13ce167a4509bf111e2803342f21",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0157-2-78dc13ce167a4509bf111e2803342f21",
+   "count": 1
+  },
+  "LC0158": {
+   "uid": "9c6552cfa6554e719792bca7f0367d6d",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0158-2-9c6552cfa6554e719792bca7f0367d6d",
+   "count": 1
+  },
+  "LC0159": {
+   "uid": "17331c58cc3c4416993aed2b4df23e6c",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0159-2-17331c58cc3c4416993aed2b4df23e6c",
+   "count": 1
+  },
+  "LC0160": {
+   "uid": "5ea3594df0db433e839a3ef00f1408af",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-part-vargov-lc0160-2-5ea3594df0db433e839a3ef00f1408af",
+   "count": 1
+  },
+  "LC0162": {
+   "uid": "98c07398ead844a1954c8c76970b5003",
+   "url": "https://sketchfab.com/3d-models/wall-composition-vargov-lc0162-2-98c07398ead844a1954c8c76970b5003",
+   "count": 3
+  },
+  "LC0163": {
+   "uid": "d4e9fed90d76431bad47849a088e5fcb",
+   "url": "https://sketchfab.com/3d-models/wall-composition-the-form-vargov-lc0163-2-d4e9fed90d76431bad47849a088e5fcb",
+   "count": 3
+  },
+  "LC0164": {
+   "uid": "6463139635224c0c99c900127a7140b6",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0164-6463139635224c0c99c900127a7140b6",
+   "count": 1
+  },
+  "LC0165": {
+   "uid": "becb1c8dc86e4a568e3a0056ec5a9e4e",
+   "url": "https://sketchfab.com/3d-models/interflow-vargov-lc0165-2-becb1c8dc86e4a568e3a0056ec5a9e4e",
+   "count": 3
+  },
+  "LC0166": {
+   "uid": "30b031f7fcac49a4b0601132307dbf08",
+   "url": "https://sketchfab.com/3d-models/hanging-installation-nelumbo-vargov-lc0166-2-30b031f7fcac49a4b0601132307dbf08",
+   "count": 9
+  },
+  "LC0166-2": {
+   "uid": "4d193982434a4b768f787f140f13a698",
+   "url": "https://sketchfab.com/3d-models/sconce-vargov-lc0166-2-4d193982434a4b768f787f140f13a698",
+   "count": 1
+  },
+  "LC0167": {
+   "uid": "b126d3c7402f44399bdfd56176d67e43",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-peta-vargov-lc0167-2-b126d3c7402f44399bdfd56176d67e43",
+   "count": 9
+  },
+  "LC0169": {
+   "uid": "9a42150ea2b54bfd9d971d0c6eeba08b",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0169-2-9a42150ea2b54bfd9d971d0c6eeba08b",
+   "count": 18
+  },
+  "LC0170": {
+   "uid": "5877dab55ef24ad4a16132318c91ae20",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0170-2-5877dab55ef24ad4a16132318c91ae20",
+   "count": 3
+  },
+  "LC0172": {
+   "uid": "10e2260283ae424fad72ef49c3215998",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0172-10e2260283ae424fad72ef49c3215998",
+   "count": 4
+  },
+  "LC0173": {
+   "uid": "2f4d45e699384f0a905574e627d58a26",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0173-2-2f4d45e699384f0a905574e627d58a26",
+   "count": 2
+  },
+  "LC0174": {
+   "uid": "99b997daedf14176a3c0d361c2a47d3c",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0174-2-99b997daedf14176a3c0d361c2a47d3c",
+   "count": 6
+  },
+  "LC0176": {
+   "uid": "e0e3ee1b63734fda896deb722dc0b86b",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-aste-vargov-lc0176-2-e0e3ee1b63734fda896deb722dc0b86b",
+   "count": 11
+  },
+  "LC0177": {
+   "uid": "2154401eb6654feebfbff918973cec38",
+   "url": "https://sketchfab.com/3d-models/suspended-light-composition-vargov-lc0177-2-2154401eb6654feebfbff918973cec38",
+   "count": 7
+  },
+  "LC0178": {
+   "uid": "3323596f9f17401591156f38d1da634c",
+   "url": "https://sketchfab.com/3d-models/suspended-light-composition-vargov-lc0178-2-3323596f9f17401591156f38d1da634c",
+   "count": 10
+  },
+  "LC0179": {
+   "uid": "859472ffafbf4483887b487020daf230",
+   "url": "https://sketchfab.com/3d-models/suspended-light-composition-vargov-lc0179-2-859472ffafbf4483887b487020daf230",
+   "count": 7
+  },
+  "LC0183": {
+   "uid": "814d1cc262344a9f9aa52e5dafbdcf26",
+   "url": "https://sketchfab.com/3d-models/suspended-light-decorative-vargov-lc0183-2-814d1cc262344a9f9aa52e5dafbdcf26",
+   "count": 11
+  },
+  "LC0185": {
+   "uid": "39e6b7f737ac40d5adde49176dd02933",
+   "url": "https://sketchfab.com/3d-models/light-composition-vargov-lc0185-2-39e6b7f737ac40d5adde49176dd02933",
+   "count": 4
+  },
+  "LC0189": {
+   "uid": "0dcc33a9e1584ebb86bdd6bf007c54f2",
+   "url": "https://sketchfab.com/3d-models/hanging-decorative-vargov-lc0189-2-0dcc33a9e1584ebb86bdd6bf007c54f2",
+   "count": 5
+  },
+  "LC0190": {
+   "uid": "8be9abe055034ac59db7391b0728377e",
+   "url": "https://sketchfab.com/3d-models/pendant-lighting-arrangement-vargov-lc0190-2-8be9abe055034ac59db7391b0728377e",
+   "count": 5
+  },
+  "LC0191": {
+   "uid": "d17451c1a4714c6bb11f9357102ac95f",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0191-2-d17451c1a4714c6bb11f9357102ac95f",
+   "count": 5
+  },
+  "LC0192": {
+   "uid": "d27396616212498da2fa1f49f065d712",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0192-2-d27396616212498da2fa1f49f065d712",
+   "count": 5
+  },
+  "LC0192-1": {
+   "uid": "152d4feb0e9145e795fc3fc40c9299bd",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0192-1-152d4feb0e9145e795fc3fc40c9299bd",
+   "count": 5
+  },
+  "LC0193": {
+   "uid": "7d13ae8ac2a04ef9a771907484aa63b2",
+   "url": "https://sketchfab.com/3d-models/light-composition-porcelain-vargov-lc0193-2-7d13ae8ac2a04ef9a771907484aa63b2",
+   "count": 12
+  },
+  "LC0201": {
+   "uid": "c76c87213d89499b84285dac95a671c0",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-cera-vargov-lc0201-2-c76c87213d89499b84285dac95a671c0",
+   "count": 5
+  },
+  "LC0202": {
+   "uid": "d2b8bcf6e5ce46a5b0364335b46e7681",
+   "url": "https://sketchfab.com/3d-models/light-composition-drop-vargov-lc0202-2-d2b8bcf6e5ce46a5b0364335b46e7681",
+   "count": 8
+  },
+  "LC0203": {
+   "uid": "81cb4d3f86364b4f8c9c565fc57cbd78",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0203-2-81cb4d3f86364b4f8c9c565fc57cbd78",
+   "count": 3
+  },
+  "LC0204": {
+   "uid": "5f38bbceb25044719586c9ce43b2f5df",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-glas-vargov-lc0204-2-5f38bbceb25044719586c9ce43b2f5df",
+   "count": 9
+  },
+  "LC0213": {
+   "uid": "4c23b0c3e52346c0841e9bdeeb7b7b71",
+   "url": "https://sketchfab.com/3d-models/floor-art-object-vargov-lc0213-2-4c23b0c3e52346c0841e9bdeeb7b7b71",
+   "count": 1
+  },
+  "LC0214": {
+   "uid": "09b3c97508e341378311b488a94efdc2",
+   "url": "https://sketchfab.com/3d-models/floor-art-object-vargov-lc0214-2-09b3c97508e341378311b488a94efdc2",
+   "count": 1
+  },
+  "LC0215": {
+   "uid": "7f3cfd4b0b134cd3894277daf08ffbb5",
+   "url": "https://sketchfab.com/3d-models/floor-art-object-vargov-lc0215-2-7f3cfd4b0b134cd3894277daf08ffbb5",
+   "count": 1
+  },
+  "LC0216": {
+   "uid": "58403b5f22574cdbbd4b0028d139f136",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0216-2-58403b5f22574cdbbd4b0028d139f136",
+   "count": 9
+  },
+  "LC0217": {
+   "uid": "4c6a9ce4681949778de6c8322cfd4886",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0217-2-4c6a9ce4681949778de6c8322cfd4886",
+   "count": 6
+  },
+  "LC0217-1": {
+   "uid": "e2bbf5cf416540debe2b230b5fe4ebb0",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0217-1-e2bbf5cf416540debe2b230b5fe4ebb0",
+   "count": 6
+  },
+  "LC0218": {
+   "uid": "d102b9d8971a49a6b9a4b1d254248876",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0218-2-d102b9d8971a49a6b9a4b1d254248876",
+   "count": 10
+  },
+  "LC0219": {
+   "uid": "56af645f6fe940e1af2e74185348e6b2",
+   "url": "https://sketchfab.com/3d-models/light-composition-fish-fin-vargov-lc0219-2-56af645f6fe940e1af2e74185348e6b2",
+   "count": 7
+  },
+  "LC0220": {
+   "uid": "4e824b7700a8467f8842629579639df9",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0220-2-4e824b7700a8467f8842629579639df9",
+   "count": 6
+  },
+  "LC0221": {
+   "uid": "a4d5673be658443a96db0491fdbf4286",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0221-2-a4d5673be658443a96db0491fdbf4286",
+   "count": 7
+  },
+  "LC0223": {
+   "uid": "070d6cde5baf4746926f0f5af9d0a867",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0223-2-070d6cde5baf4746926f0f5af9d0a867",
+   "count": 5
+  },
+  "LC0224": {
+   "uid": "4471a803cf194c45b5826fb97905b0b2",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0224-2-4471a803cf194c45b5826fb97905b0b2",
+   "count": 8
+  },
+  "LC0225": {
+   "uid": "f8b179fb6f584d4fbbc72e53f1a2057a",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0225-2-f8b179fb6f584d4fbbc72e53f1a2057a",
+   "count": 3
+  },
+  "LC0226": {
+   "uid": "04dc23cc56b44501a3951f6db4086352",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0226-2-04dc23cc56b44501a3951f6db4086352",
+   "count": 10
+  },
+  "LC0227": {
+   "uid": "bcae0c4c9a3048929075a2ee2deaf5c0",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0227-2-bcae0c4c9a3048929075a2ee2deaf5c0",
+   "count": 8
+  },
+  "LC0228": {
+   "uid": "33c08293b1784a88871997da3967b25a",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0228-2-33c08293b1784a88871997da3967b25a",
+   "count": 10
+  },
+  "LC0229": {
+   "uid": "29c3dfb738b64c4db6be16bc95f83ee0",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0229-2-29c3dfb738b64c4db6be16bc95f83ee0",
+   "count": 7
+  },
+  "LC0231": {
+   "uid": "cacff422c56043a197ff3b9049e47b50",
+   "url": "https://sketchfab.com/3d-models/light-composition-piece-vargov-lc0231-2-cacff422c56043a197ff3b9049e47b50",
+   "count": 11
+  },
+  "LC0232": {
+   "uid": "eee0acec6b2647d78b6a86d1a80ccc77",
+   "url": "https://sketchfab.com/3d-models/light-composition-ribbon-vargov-lc0232-2-eee0acec6b2647d78b6a86d1a80ccc77",
+   "count": 10
+  },
+  "LC0233": {
+   "uid": "07e902257c134fb0b70e9ec3fc453fc4",
+   "url": "https://sketchfab.com/3d-models/light-composition-ribbon-vargov-lc0233-2-07e902257c134fb0b70e9ec3fc453fc4",
+   "count": 9
+  },
+  "LC0235": {
+   "uid": "62e31dfacb4941d8a236ef2af7f49ccc",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0235-2-62e31dfacb4941d8a236ef2af7f49ccc",
+   "count": 7
+  },
+  "LC0236": {
+   "uid": "061e2cde11ce4d4b9a473b7e773bddc3",
+   "url": "https://sketchfab.com/3d-models/light-composition-bird-vargov-lc0236-2-061e2cde11ce4d4b9a473b7e773bddc3",
+   "count": 4
+  },
+  "LC0237": {
+   "uid": "c6bb8dee3fa944609c4b0d3df19e507b",
+   "url": "https://sketchfab.com/3d-models/light-composition-frame-vargov-lc0237-2-c6bb8dee3fa944609c4b0d3df19e507b",
+   "count": 6
+  },
+  "LC0239": {
+   "uid": "e1c4b805a4fa49df85859166743ec6d6",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-bead-vargov-lc0239-2-e1c4b805a4fa49df85859166743ec6d6",
+   "count": 6
+  },
+  "LC0240": {
+   "uid": "5d2302e765fd40b7bc415aeb8b32cbe4",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0240-2-5d2302e765fd40b7bc415aeb8b32cbe4",
+   "count": 4
+  },
+  "LC0241": {
+   "uid": "58738a9c2631480685ed6e4a87ae5042",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-mete-vargov-lc0241-2-58738a9c2631480685ed6e4a87ae5042",
+   "count": 1
+  },
+  "LC0242": {
+   "uid": "29070dff3dcf40fcaa04de44367494bd",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-pape-vargov-lc0242-2-29070dff3dcf40fcaa04de44367494bd",
+   "count": 4
+  },
+  "LC0243": {
+   "uid": "ec6b37d9e2a941caaa5460df13d9ba21",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-mush-vargov-lc0243-2-ec6b37d9e2a941caaa5460df13d9ba21",
+   "count": 6
+  },
+  "LC0244": {
+   "uid": "600bc37ecc6942f98fc9753a2ffad76d",
+   "url": "https://sketchfab.com/3d-models/wall-composition-fish-wave-vargov-lc0244-2-600bc37ecc6942f98fc9753a2ffad76d",
+   "count": 2
+  },
+  "LC0245": {
+   "uid": "87cd5b4d16914969bb12993283b46471",
+   "url": "https://sketchfab.com/3d-models/wall-composition-metal-vargov-lc0245-2-87cd5b4d16914969bb12993283b46471",
+   "count": 3
+  },
+  "LC0246": {
+   "uid": "c9815edc94384825be1f4be3fafeaa95",
+   "url": "https://sketchfab.com/3d-models/ceramic-wall-sculpture-reef-vargov-lc0246-2-c9815edc94384825be1f4be3fafeaa95",
+   "count": 7
+  },
+  "LC0247": {
+   "uid": "f7947950d0d245f0aa106fff880ede13",
+   "url": "https://sketchfab.com/3d-models/floor-sculpture-mummy-vargov-lc0247-2-f7947950d0d245f0aa106fff880ede13",
+   "count": 3
+  },
+  "LC0248": {
+   "uid": "86e7f611f5e449d6a515a5417f5cca35",
+   "url": "https://sketchfab.com/3d-models/fireplace-decor-hearth-flame-vargov-lc0248-86e7f611f5e449d6a515a5417f5cca35",
+   "count": 2
+  },
+  "LC0249": {
+   "uid": "0561beffaf414bedbb801c139c704dad",
+   "url": "https://sketchfab.com/3d-models/fireplace-decor-rock-heart-vargov-lc0249-2-0561beffaf414bedbb801c139c704dad",
+   "count": 2
+  },
+  "LC0250": {
+   "uid": "cf8ea6b020b24eaaa1491bbbc37357f1",
+   "url": "https://sketchfab.com/3d-models/landscape-sculpture-vargov-lc0250-2-cf8ea6b020b24eaaa1491bbbc37357f1",
+   "count": 6
+  },
+  "LC0251": {
+   "uid": "2338409108de4247bebad81c8dc26571",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-ethn-vargov-lc0251-2-2338409108de4247bebad81c8dc26571",
+   "count": 2
+  },
+  "LC0252": {
+   "uid": "d49660dedad24e9f967d86bda1af778d",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-ethn-vargov-lc0252-2-d49660dedad24e9f967d86bda1af778d",
+   "count": 1
+  },
+  "LC0253": {
+   "uid": "02ea3d8f14f243fcb1931afbed35a9ac",
+   "url": "https://sketchfab.com/3d-models/sculpture-outdoor-eastwind-vargov-lc0253-2-02ea3d8f14f243fcb1931afbed35a9ac",
+   "count": 3
+  },
+  "LC0254": {
+   "uid": "893bf432e6204f7cb01dbf11025bf223",
+   "url": "https://sketchfab.com/3d-models/light-composition-frame-vargov-lc0254-2-893bf432e6204f7cb01dbf11025bf223",
+   "count": 6
+  },
+  "LC0256": {
+   "uid": "903b5bd3f32a498a990fb8907442be6f",
+   "url": "https://sketchfab.com/3d-models/light-composition-frame-vargov-lc0256-2-903b5bd3f32a498a990fb8907442be6f",
+   "count": 7
+  },
+  "LC0258": {
+   "uid": "c486fd1820cf4d2cb52a0004db5818c3",
+   "url": "https://sketchfab.com/3d-models/wall-composition-petrol-vargov-lc0258-2-c486fd1820cf4d2cb52a0004db5818c3",
+   "count": 4
+  },
+  "LC0261": {
+   "uid": "c53d4fb6ab3940eab456f84071ed61e5",
+   "url": "https://sketchfab.com/3d-models/decorative-screen-vargov-lc0261-2-c53d4fb6ab3940eab456f84071ed61e5",
+   "count": 9
+  },
+  "LC0264": {
+   "uid": "6ccccbee4f4742778d41db8b0aec2b8a",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0264-2-6ccccbee4f4742778d41db8b0aec2b8a",
+   "count": 10
+  },
+  "LC0265": {
+   "uid": "7c405e71495f46e59d9551daf09ad7fa",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-plat-vargov-lc0265-2-7c405e71495f46e59d9551daf09ad7fa",
+   "count": 9
+  },
+  "LC0266": {
+   "uid": "27e2bd1aca83484a839c80715865c393",
+   "url": "https://sketchfab.com/3d-models/decorative-screen-partition-vargov-lc0266-2-27e2bd1aca83484a839c80715865c393",
+   "count": 3
+  },
+  "LC0268": {
+   "uid": "82fdcaaecb1f4b62ad9d57ed11165a91",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-pane-vargov-lc0268-2-82fdcaaecb1f4b62ad9d57ed11165a91",
+   "count": 8
+  },
+  "LC0269": {
+   "uid": "10b25c6c96024282a946f88036251d3c",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-pane-vargov-lc0269-2-10b25c6c96024282a946f88036251d3c",
+   "count": 9
+  },
+  "LC0270": {
+   "uid": "2d42c2811f9e4cd7b919c367f7ac06ca",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0270-2-2d42c2811f9e4cd7b919c367f7ac06ca",
+   "count": 8
+  },
+  "LC0279": {
+   "uid": "4ea1af9afd5b4b3e89424f2c03eacb9f",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-kern-vargov-lc0279-2-4ea1af9afd5b4b3e89424f2c03eacb9f",
+   "count": 4
+  },
+  "LC0280": {
+   "uid": "ddc35c80daf64f079367c4f3267e62ee",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-kern-vargov-lc0280-2-ddc35c80daf64f079367c4f3267e62ee",
+   "count": 4
+  },
+  "LC0281": {
+   "uid": "b993133c31f54f62aff3a7da64c4eea8",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0281-2-b993133c31f54f62aff3a7da64c4eea8",
+   "count": 2
+  },
+  "LC0285": {
+   "uid": "ea507183b4d9429a8c519d6210391300",
+   "url": "https://sketchfab.com/3d-models/light-composition-ceramics-vargov-lc0285-2-ea507183b4d9429a8c519d6210391300",
+   "count": 7
+  },
+  "LC0287": {
+   "uid": "adae21700c004695a16904c5a7493c66",
+   "url": "https://sketchfab.com/3d-models/light-composition-butterfly-vargov-lc0287-2-adae21700c004695a16904c5a7493c66",
+   "count": 6
+  },
+  "LC0288": {
+   "uid": "8df9a772b96f48908c8295ced60a20bd",
+   "url": "https://sketchfab.com/3d-models/light-composition-butterfly-vargov-lc0288-2-8df9a772b96f48908c8295ced60a20bd",
+   "count": 7
+  },
+  "LC0294": {
+   "uid": "ae5c936213d14d5ca39956e7b1801ed4",
+   "url": "https://sketchfab.com/3d-models/light-composition-feather-vargov-lc0294-2-ae5c936213d14d5ca39956e7b1801ed4",
+   "count": 4
+  },
+  "LC0295": {
+   "uid": "780a333533de49f09f0ddbacdd316ba6",
+   "url": "https://sketchfab.com/3d-models/light-composition-feather-vargov-lc0295-2-780a333533de49f09f0ddbacdd316ba6",
+   "count": 6
+  },
+  "LC0296": {
+   "uid": "cc65599f8ee347929afa83d45da39190",
+   "url": "https://sketchfab.com/3d-models/light-composition-petal-vargov-lc0296-2-cc65599f8ee347929afa83d45da39190",
+   "count": 22
+  },
+  "LC0297": {
+   "uid": "862ca37b0b8341428138f9f209da81d3",
+   "url": "https://sketchfab.com/3d-models/light-composition-stone-vargov-lc0297-2-862ca37b0b8341428138f9f209da81d3",
+   "count": 6
+  },
+  "LC0298": {
+   "uid": "8185995a329f4e1fa5bba0757a16b963",
+   "url": "https://sketchfab.com/3d-models/light-composition-petal-vargov-lc0298-2-8185995a329f4e1fa5bba0757a16b963",
+   "count": 20
+  },
+  "LC0299": {
+   "uid": "527b02acef17447fa93fa64a34f01218",
+   "url": "https://sketchfab.com/3d-models/authors-lamp-vargov-lc0299-2-527b02acef17447fa93fa64a34f01218",
+   "count": 10
+  },
+  "LC0300": {
+   "uid": "6e9a3d64eb334db2862cc1cf7f837a52",
+   "url": "https://sketchfab.com/3d-models/light-composition-drop-vargov-lc0300-2-6e9a3d64eb334db2862cc1cf7f837a52",
+   "count": 5
+  },
+  "LC0301": {
+   "uid": "ab98fcea7db24d4f84e27f9fd9351ef2",
+   "url": "https://sketchfab.com/3d-models/concept-vargov-lc0301-2-ab98fcea7db24d4f84e27f9fd9351ef2",
+   "count": 3
+  },
+  "LC0302": {
+   "uid": "7fc2fc2185354df0a7e3e42f30f2bbae",
+   "url": "https://sketchfab.com/3d-models/light-composition-crystal-vargov-lc0302-2-7fc2fc2185354df0a7e3e42f30f2bbae",
+   "count": 9
+  },
+  "LC0304": {
+   "uid": "8598e8d0fb294614ae92480569d2c645",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0304-2-8598e8d0fb294614ae92480569d2c645",
+   "count": 3
+  },
+  "LC0310": {
+   "uid": "e00824fedd0b47d1a4fb6c49adc2b785",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0310-2-e00824fedd0b47d1a4fb6c49adc2b785",
+   "count": 6
+  },
+  "LC0315": {
+   "uid": "c8691dcb5f314a55a97e6c7ce19ed106",
+   "url": "https://sketchfab.com/3d-models/wall-arrangement-vargov-lc0315-2-c8691dcb5f314a55a97e6c7ce19ed106",
+   "count": 1
+  },
+  "LC0316": {
+   "uid": "21c499e094ff46d59b629071ab459e78",
+   "url": "https://sketchfab.com/3d-models/concept-vargov-lc0316-2-21c499e094ff46d59b629071ab459e78",
+   "count": 1
+  },
+  "LC0321": {
+   "uid": "441aa9c431bd4ab6994b25de42f7507d",
+   "url": "https://sketchfab.com/3d-models/decorative-interior-elements-vargov-lc0321-2-441aa9c431bd4ab6994b25de42f7507d",
+   "count": 6
+  },
+  "LC0322": {
+   "uid": "9ef64dd4cde8474c95e2fd2c769a8f2c",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0322-2-9ef64dd4cde8474c95e2fd2c769a8f2c",
+   "count": 13
+  },
+  "LC0323": {
+   "uid": "d2e9b0c19dd943bca65414d7d6c2a400",
+   "url": "https://sketchfab.com/3d-models/concept-drapery-vargov-lc0323-2-d2e9b0c19dd943bca65414d7d6c2a400",
+   "count": 9
+  },
+  "LC0324": {
+   "uid": "a7e0fcd0ada340d38a038d52dc71d558",
+   "url": "https://sketchfab.com/3d-models/concept-bamboo-potal-vargov-lc0324-2-a7e0fcd0ada340d38a038d52dc71d558",
+   "count": 6
+  },
+  "LC0325": {
+   "uid": "ff291091dbbd4cd3be0bc3e6e43be283",
+   "url": "https://sketchfab.com/3d-models/light-composition-for-a-pond-vargov-lc0325-2-ff291091dbbd4cd3be0bc3e6e43be283",
+   "count": 5
+  },
+  "LC0326": {
+   "uid": "a9049534fcee4601a52857b3e11bd5b9",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0326-2-a9049534fcee4601a52857b3e11bd5b9",
+   "count": 4
+  },
+  "LC0327": {
+   "uid": "14f1149fed1649bc835df3f05a51eff7",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0327-2-14f1149fed1649bc835df3f05a51eff7",
+   "count": 5
+  },
+  "LC0328": {
+   "uid": "5efbe7d44d524570ba8303b9a9072691",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0328-2-5efbe7d44d524570ba8303b9a9072691",
+   "count": 9
+  },
+  "LC0329": {
+   "uid": "3e7d928b80c5482eb89bd996ab77e6f9",
+   "url": "https://sketchfab.com/3d-models/light-composition-kernel-vargov-lc0329-2-3e7d928b80c5482eb89bd996ab77e6f9",
+   "count": 7
+  },
+  "LC0330": {
+   "uid": "21c49ae63b7d4aa184d480e00f007eaa",
+   "url": "https://sketchfab.com/3d-models/decorative-screen-partition-vargov-lc0330-2-21c49ae63b7d4aa184d480e00f007eaa",
+   "count": 2
+  },
+  "LC0332": {
+   "uid": "8662662fcfb94053b77fd186debfd38e",
+   "url": "https://sketchfab.com/3d-models/light-composition-glass-vargov-lc0332-3-8662662fcfb94053b77fd186debfd38e",
+   "count": 8
+  },
+  "LC0332-1": {
+   "uid": "8e4fa12302df4ba0899e7fade7e116b3",
+   "url": "https://sketchfab.com/3d-models/sconce-vargov-lc0332-1-8e4fa12302df4ba0899e7fade7e116b3",
+   "count": 3
+  },
+  "LC0334": {
+   "uid": "c181e08d775b4b2bad998edf61b83d65",
+   "url": "https://sketchfab.com/3d-models/light-composition-sheet-vargov-lc0334-2-c181e08d775b4b2bad998edf61b83d65",
+   "count": 8
+  },
+  "LC0335": {
+   "uid": "984e6e01e3ac4ceba5f095f1b6a84522",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0335-2-984e6e01e3ac4ceba5f095f1b6a84522",
+   "count": 8
+  },
+  "LC0336": {
+   "uid": "66d3c515266c4d29a1dbd16f648c6310",
+   "url": "https://sketchfab.com/3d-models/geosphere-vargov-lc0336-2-66d3c515266c4d29a1dbd16f648c6310",
+   "count": 5
+  },
+  "LC0338": {
+   "uid": "5808625b52354f8a918a272f183d9162",
+   "url": "https://sketchfab.com/3d-models/light-composition-rain-tube-vargov-lc0338-5808625b52354f8a918a272f183d9162",
+   "count": 8
+  },
+  "LC0339": {
+   "uid": "407f57aa3acc4e7c8f442d884a67bf0c",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0339-2-407f57aa3acc4e7c8f442d884a67bf0c",
+   "count": 3
+  },
+  "LC0341": {
+   "uid": "c00a920c3cbb4f04833cec16aa2094b7",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0341-2-c00a920c3cbb4f04833cec16aa2094b7",
+   "count": 1
+  },
+  "LC0342": {
+   "uid": "65ede88c1b944460aa51f7b65369ada4",
+   "url": "https://sketchfab.com/3d-models/light-composition-tube-vargov-lc0342-2-65ede88c1b944460aa51f7b65369ada4",
+   "count": 7
+  },
+  "LC0345": {
+   "uid": "16b22376819c42008f70f8334a1e8428",
+   "url": "https://sketchfab.com/3d-models/light-composition-stone-vargov-lc0345-2-16b22376819c42008f70f8334a1e8428",
+   "count": 10
+  },
+  "LC0346": {
+   "uid": "e00dbb84634341cb9e6abb36a1afcff7",
+   "url": "https://sketchfab.com/3d-models/light-composition-tassel-vargov-lc0346-2-e00dbb84634341cb9e6abb36a1afcff7",
+   "count": 8
+  },
+  "LC0347": {
+   "uid": "32ec4eb336d64bf19188a15670fd5bd8",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0347-2-32ec4eb336d64bf19188a15670fd5bd8",
+   "count": 3
+  },
+  "LC0348": {
+   "uid": "a937c5a55bcf447a873f2e2f8013abf2",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0348-2-a937c5a55bcf447a873f2e2f8013abf2",
+   "count": 2
+  },
+  "LC0349": {
+   "uid": "301559b2ab4e4b939d1c1eff768eef3a",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0349-2-301559b2ab4e4b939d1c1eff768eef3a",
+   "count": 17
+  },
+  "LC0350": {
+   "uid": "74e41c23d3c546cfab00362ca138376e",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0350-2-74e41c23d3c546cfab00362ca138376e",
+   "count": 3
+  },
+  "LC0351": {
+   "uid": "bd20b214bd00402f826c1fd50bda9dbd",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0351-3-bd20b214bd00402f826c1fd50bda9dbd",
+   "count": 4
+  },
+  "LC0352": {
+   "uid": "c2353d46f5a341eda6bac2e02dd3a729",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0352-2-c2353d46f5a341eda6bac2e02dd3a729",
+   "count": 4
+  },
+  "LC0353": {
+   "uid": "663bc3972a7f4e599b9177c571e17445",
+   "url": "https://sketchfab.com/3d-models/light-composition-nature-vargov-lc0353-2-663bc3972a7f4e599b9177c571e17445",
+   "count": 4
+  },
+  "LC0356": {
+   "uid": "e1597a4aee62498e82a342dfd187627e",
+   "url": "https://sketchfab.com/3d-models/decorative-screen-partition-vargov-lc0356-2-e1597a4aee62498e82a342dfd187627e",
+   "count": 1
+  },
+  "LC0357": {
+   "uid": "29a8f74eb39149538e3ea1ceb209540d",
+   "url": "https://sketchfab.com/3d-models/table-lamp-desktop-disk-vargov-lc0357-2-29a8f74eb39149538e3ea1ceb209540d",
+   "count": 1
+  },
+  "LC0359": {
+   "uid": "efad78b0f05d49559179efbebd541146",
+   "url": "https://sketchfab.com/3d-models/light-composition-petal-vargov-lc0359-2-efad78b0f05d49559179efbebd541146",
+   "count": 4
+  },
+  "LC0360": {
+   "uid": "8819528979574927a338bc848de14f88",
+   "url": "https://sketchfab.com/3d-models/hanging-chandelier-olive-vargov-lc0360-2-8819528979574927a338bc848de14f88",
+   "count": 10
+  },
+  "LC0361": {
+   "uid": "1912dc85c93f416bb9e31aad2a7a47a0",
+   "url": "https://sketchfab.com/3d-models/hanging-chandelier-olive-vargov-lc0361-2-1912dc85c93f416bb9e31aad2a7a47a0",
+   "count": 8
+  },
+  "LC0362": {
+   "uid": "2e1304918f8040dfb5b44da96ec606d8",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0362-2-2e1304918f8040dfb5b44da96ec606d8",
+   "count": 20
+  },
+  "LC0363": {
+   "uid": "77d7c81f9a6b4822aec680dbef6170db",
+   "url": "https://sketchfab.com/3d-models/light-composition-flower-vargov-lc0363-2-77d7c81f9a6b4822aec680dbef6170db",
+   "count": 9
+  },
+  "LC0364": {
+   "uid": "3ff72d30099c4ef9b2517ab9d2422228",
+   "url": "https://sketchfab.com/3d-models/light-composition-ribbon-vargov-lc0364-2-3ff72d30099c4ef9b2517ab9d2422228",
+   "count": 4
+  },
+  "LC0365": {
+   "uid": "60a0366714bf4514a595dcf8607c9d23",
+   "url": "https://sketchfab.com/3d-models/light-composition-bud-vargov-lc0365-2-60a0366714bf4514a595dcf8607c9d23",
+   "count": 19
+  },
+  "LC0366": {
+   "uid": "256168b1ea764a6d9107cbc1e8e3c2fe",
+   "url": "https://sketchfab.com/3d-models/decorative-interior-partition-vargov-lc0366-2-256168b1ea764a6d9107cbc1e8e3c2fe",
+   "count": 3
+  },
+  "LC0368": {
+   "uid": "bd4148527d80430ab4c227ce658dcec7",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0368-2-bd4148527d80430ab4c227ce658dcec7",
+   "count": 2
+  },
+  "LC0369": {
+   "uid": "44de1c597e034cd8aabd082a272c263f",
+   "url": "https://sketchfab.com/3d-models/light-composition-ceramics-vargov-lc0369-2-44de1c597e034cd8aabd082a272c263f",
+   "count": 8
+  },
+  "LC0370": {
+   "uid": "3f82faae80d14e80a51393a2b28d3de3",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0370-2-3f82faae80d14e80a51393a2b28d3de3",
+   "count": 1
+  },
+  "LC0371": {
+   "uid": "c1210cbe8af849199f26b83b8d9342cd",
+   "url": "https://sketchfab.com/3d-models/light-composition-ceramics-vargov-lc0371-2-c1210cbe8af849199f26b83b8d9342cd",
+   "count": 8
+  },
+  "LC0383": {
+   "uid": "16d17b1fccae4dbbb6c581081810b17c",
+   "url": "https://sketchfab.com/3d-models/droplight-vargov-lc0383-2-16d17b1fccae4dbbb6c581081810b17c",
+   "count": 3
+  },
+  "LC0384": {
+   "uid": "68b40f4d5dcb4a8b99f033431ef54aa0",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0384-2-68b40f4d5dcb4a8b99f033431ef54aa0",
+   "count": 1
+  },
+  "LC0397": {
+   "uid": "7229bc185e8847228b73b4e7223ca84c",
+   "url": "https://sketchfab.com/3d-models/light-composition-feather-vargov-lc0397-2-7229bc185e8847228b73b4e7223ca84c",
+   "count": 6
+  },
+  "LC0409": {
+   "uid": "8913835b5fd74436b4a599eac4792d41",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0409-2-8913835b5fd74436b4a599eac4792d41",
+   "count": 1
+  },
+  "LC0414": {
+   "uid": "c073d8ebb2864ad0b3a0388b7d1eef8b",
+   "url": "https://sketchfab.com/3d-models/pendant-lamp-nexus-vargov-lc0414-2-c073d8ebb2864ad0b3a0388b7d1eef8b",
+   "count": 3
+  },
+  "LC0423": {
+   "uid": "4dc88e08b0ad4bb58e269893419c2b26",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0423-2-4dc88e08b0ad4bb58e269893419c2b26",
+   "count": 8
+  },
+  "LC0437": {
+   "uid": "13c22fe6106146f9bf46a7ee2eb98371",
+   "url": "https://sketchfab.com/3d-models/sconce-vargov-lc0437-2-13c22fe6106146f9bf46a7ee2eb98371",
+   "count": 2
+  },
+  "LC0451": {
+   "uid": "f2964e0958b24454bc0a1bdf47272098",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wargs-vargov-lc0451-2-f2964e0958b24454bc0a1bdf47272098",
+   "count": 10
+  },
+  "LC0454": {
+   "uid": "f8d78d7048b44e0fbbd14a1d0498802f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wargs-vargov-lc0454-2-f8d78d7048b44e0fbbd14a1d0498802f",
+   "count": 16
+  },
+  "LC0460": {
+   "uid": "00474b5184a84d75a23a92b38f0a5323",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wargs-vargov-lc0460-2-00474b5184a84d75a23a92b38f0a5323",
+   "count": 19
+  },
+  "LC0461": {
+   "uid": "62dfb9600b20461ea3cf817585f4fd87",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wargs-vargov-lc0461-2-62dfb9600b20461ea3cf817585f4fd87",
+   "count": 6
+  },
+  "LC0463": {
+   "uid": "020ea7aa26524d83869577415de01954",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wargs-vargov-lc0463-2-020ea7aa26524d83869577415de01954",
+   "count": 6
+  },
+  "LC0466": {
+   "uid": "6011b2d3197a4c6192cfe9388ac7d947",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0466-2-6011b2d3197a4c6192cfe9388ac7d947",
+   "count": 18
+  },
+  "LC0467": {
+   "uid": "0944a6589455463592fadb139aff2a65",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-clover-vargov-lc0467-2-0944a6589455463592fadb139aff2a65",
+   "count": 8
+  },
+  "LC0468": {
+   "uid": "e90523301e26465889f35b8b87b2fcce",
+   "url": "https://sketchfab.com/3d-models/light-composition-clover-vargov-lc0468-e90523301e26465889f35b8b87b2fcce",
+   "count": 3
+  },
+  "LC0470": {
+   "uid": "cb10bbad6f174b25a2ab4ecd88f311e0",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-stone-vargov-lc0470-2-cb10bbad6f174b25a2ab4ecd88f311e0",
+   "count": 20
+  },
+  "LC0473": {
+   "uid": "266eee15aac8410b8b5e70f206bb8d21",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-sheet-vargov-lc0473-2-266eee15aac8410b8b5e70f206bb8d21",
+   "count": 9
+  },
+  "LC0474": {
+   "uid": "af53fba134d64d77826344c5180d20ea",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-sheet-vargov-lc0474-2-af53fba134d64d77826344c5180d20ea",
+   "count": 8
+  },
+  "LC0475": {
+   "uid": "c09e74baa61841ebaa3d22c5c9793b8c",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-sheet-vargov-lc0475-2-c09e74baa61841ebaa3d22c5c9793b8c",
+   "count": 9
+  },
+  "LC0481": {
+   "uid": "b7803431c8bc4013bd7fa05c4a9c2f84",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-stone-vargov-lc0481-2-b7803431c8bc4013bd7fa05c4a9c2f84",
+   "count": 3
+  },
+  "LC0482": {
+   "uid": "bf76f9ca815341e99cba73de443d5fc2",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0482-2-bf76f9ca815341e99cba73de443d5fc2",
+   "count": 20
+  },
+  "LC0483": {
+   "uid": "70dfb5da5aa94f2f8ee44d254d051a59",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-fish-vargov-lc0483-2-70dfb5da5aa94f2f8ee44d254d051a59",
+   "count": 10
+  },
+  "LC0487": {
+   "uid": "cc518d6b21434b7f98535f6626a865a5",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-coral-vargov-lc0487-cc518d6b21434b7f98535f6626a865a5",
+   "count": 1
+  },
+  "LC0488": {
+   "uid": "9d6da6f9b7bc4d3389e49969cdde11d7",
+   "url": "https://sketchfab.com/3d-models/chandelier-light-vargov-vargov-lc0488-2-9d6da6f9b7bc4d3389e49969cdde11d7",
+   "count": 7
+  },
+  "LC0489": {
+   "uid": "fa0b0e77066842319b6a3f3d38877c72",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-bed-vargov-lc0489-2-fa0b0e77066842319b6a3f3d38877c72",
+   "count": 1
+  },
+  "LC0491": {
+   "uid": "008c00bf19544e098781c0cea591a80f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-rope-vargov-lc0491-2-008c00bf19544e098781c0cea591a80f",
+   "count": 3
+  },
+  "LC0492": {
+   "uid": "c7cee738de904fc98aaa72861584661f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0492-2-c7cee738de904fc98aaa72861584661f",
+   "count": 6
+  },
+  "LC0493": {
+   "uid": "831e38004ad54dd8a8f139469d4b6f81",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-flower-vargov-lc0493-2-831e38004ad54dd8a8f139469d4b6f81",
+   "count": 10
+  },
+  "LC0502": {
+   "uid": "a8b5698466b94b3bb0be7b01de574205",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0502-2-a8b5698466b94b3bb0be7b01de574205",
+   "count": 7
+  },
+  "LC0503": {
+   "uid": "72c31c8d7ecd4dcba747e85f6c14d623",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0503-2-72c31c8d7ecd4dcba747e85f6c14d623",
+   "count": 5
+  },
+  "LC0504": {
+   "uid": "88daa905a2cf46799ed516a87384fa03",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0504-2-88daa905a2cf46799ed516a87384fa03",
+   "count": 5
+  },
+  "LC0505": {
+   "uid": "13616226f0b94ccdbe0402c1af6de81f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-shark-vargov-lc0505-2-13616226f0b94ccdbe0402c1af6de81f",
+   "count": 6
+  },
+  "LC0506": {
+   "uid": "1fbcd0b7f2cf4b4aaefa38491d74c61f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-shark-vargov-lc0506-2-1fbcd0b7f2cf4b4aaefa38491d74c61f",
+   "count": 7
+  },
+  "LC0507": {
+   "uid": "e96333b3faf244d1b9a4868bf9702100",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0507-2-e96333b3faf244d1b9a4868bf9702100",
+   "count": 7
+  },
+  "LC0508": {
+   "uid": "e9abf9d392f14cd699528595e479bae5",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0508-2-e9abf9d392f14cd699528595e479bae5",
+   "count": 7
+  },
+  "LC0509": {
+   "uid": "d77e6f43281240a59ae50e4bf644ca42",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0509-2-d77e6f43281240a59ae50e4bf644ca42",
+   "count": 7
+  },
+  "LC0510": {
+   "uid": "7484a8af3e104f138eb8e88b83cd268e",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-wing-vargov-lc0510-2-7484a8af3e104f138eb8e88b83cd268e",
+   "count": 7
+  },
+  "LC0512": {
+   "uid": "1326239d71cf441b82a0e8e88fb2e508",
+   "url": "https://sketchfab.com/3d-models/light-composition-chain-vargov-lc0512-2-1326239d71cf441b82a0e8e88fb2e508",
+   "count": 12
+  },
+  "LC0517": {
+   "uid": "4b8e924dddbb4cada15ca12806c18b3e",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-stone-vargov-lc0517-2-4b8e924dddbb4cada15ca12806c18b3e",
+   "count": 2
+  },
+  "LC0518": {
+   "uid": "e296a1e6f7a947778bac3d57bf24347a",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-stone-vargov-lc0518-2-e296a1e6f7a947778bac3d57bf24347a",
+   "count": 1
+  },
+  "LC0521": {
+   "uid": "e3fa12047b944e5aadba89c48cc9e8a1",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0521-2-e3fa12047b944e5aadba89c48cc9e8a1",
+   "count": 24
+  },
+  "LC0522": {
+   "uid": "ef3c2cf060c64689867ba66609aafad4",
+   "url": "https://sketchfab.com/3d-models/light-composition-stingray-vargov-lc0522-2-ef3c2cf060c64689867ba66609aafad4",
+   "count": 24
+  },
+  "LC0526": {
+   "uid": "c5d8ffcca59b44caa2b9486039cb4233",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0526-2-c5d8ffcca59b44caa2b9486039cb4233",
+   "count": 11
+  },
+  "LC0527": {
+   "uid": "10b7f5b415424a4ca9c0caeae15faea7",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0527-2-10b7f5b415424a4ca9c0caeae15faea7",
+   "count": 1
+  },
+  "LC0528": {
+   "uid": "a1465f4bc084405e838a7d06db41af5b",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0528-2-a1465f4bc084405e838a7d06db41af5b",
+   "count": 12
+  },
+  "LC0530": {
+   "uid": "815769c544214a45aa6e5b8caf4c19fd",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0530-2-815769c544214a45aa6e5b8caf4c19fd",
+   "count": 4
+  },
+  "LC0541": {
+   "uid": "75acf8b4d1fc46c4a6ca4df2ac54840b",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-vargov-lc0541-2-75acf8b4d1fc46c4a6ca4df2ac54840b",
+   "count": 10
+  },
+  "LC0542": {
+   "uid": "c050745e2a36419fa8ae549c66f16308",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-coral-vargov-lc0542-2-c050745e2a36419fa8ae549c66f16308",
+   "count": 10
+  },
+  "LC0543": {
+   "uid": "eaaa6dcea4b74c908f963528ab1c1475",
+   "url": "https://sketchfab.com/3d-models/sconce-wargs-vargov-lc0543-2-eaaa6dcea4b74c908f963528ab1c1475",
+   "count": 2
+  },
+  "LC0544": {
+   "uid": "71bfc0b2ce83458aa0aaf82508219261",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-stone-vargov-lc0544-2-71bfc0b2ce83458aa0aaf82508219261",
+   "count": 10
+  },
+  "LC0547": {
+   "uid": "e6e42059516a45739687963aaa1b7353",
+   "url": "https://sketchfab.com/3d-models/light-composition-coral-vargov-lc0547-2-e6e42059516a45739687963aaa1b7353",
+   "count": 8
+  },
+  "LC0548": {
+   "uid": "5967bd213f8940ffb783a722b5173334",
+   "url": "https://sketchfab.com/3d-models/light-composition-vargov-lc0548-2-5967bd213f8940ffb783a722b5173334",
+   "count": 6
+  },
+  "LC0549": {
+   "uid": "27be98f6fb2d4d0daca3035036ed38f7",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-slope-vargov-lc0549-2-27be98f6fb2d4d0daca3035036ed38f7",
+   "count": 17
+  },
+  "LC0550": {
+   "uid": "6754433234894562bda2fb477465968f",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-phyto-vargov-lc0550-2-6754433234894562bda2fb477465968f",
+   "count": 9
+  },
+  "LC0552": {
+   "uid": "ed0603f554834161b3f164ebf83f6fb6",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-vargov-lc0552-2-ed0603f554834161b3f164ebf83f6fb6",
+   "count": 18
+  },
+  "LC0556": {
+   "uid": "e77401dee02c495d973997210e760401",
+   "url": "https://sketchfab.com/3d-models/authors-thematic-composition-vargov-lc0556-2-e77401dee02c495d973997210e760401",
+   "count": 1
+  },
+  "LC0561": {
+   "uid": "482bb8b1a5fc4832a695c94708d028e5",
+   "url": "https://sketchfab.com/3d-models/wall-art-object-vargov-lc0561-2-482bb8b1a5fc4832a695c94708d028e5",
+   "count": 5
+  },
+  "LC0563": {
+   "uid": "0a72ecfc85aa4124b127ad06dc58dc80",
+   "url": "https://sketchfab.com/3d-models/wall-lamp-sculpture-bra-vargov-lc0563-2-0a72ecfc85aa4124b127ad06dc58dc80",
+   "count": 6
+  },
+  "LC0564": {
+   "uid": "a1f84f53ef7c476782fde7aa7a758a59",
+   "url": "https://sketchfab.com/3d-models/wall-lamp-vargov-lc0564-2-a1f84f53ef7c476782fde7aa7a758a59",
+   "count": 1
+  },
+  "LC0565": {
+   "uid": "9b910108d5f2446295f8944cb66dce64",
+   "url": "https://sketchfab.com/3d-models/wall-mounted-light-compositio-vargov-lc0565-2-9b910108d5f2446295f8944cb66dce64",
+   "count": 1
+  },
+  "LC0567": {
+   "uid": "eb1c843e7bed4892a151fcb7fc02fe40",
+   "url": "https://sketchfab.com/3d-models/wall-lamp-vargov-lc0567-2-eb1c843e7bed4892a151fcb7fc02fe40",
+   "count": 1
+  },
+  "LC0569": {
+   "uid": "30995b50aec4412980b36c87624807f9",
+   "url": "https://sketchfab.com/3d-models/table-art-object-vargov-lc0569-2-30995b50aec4412980b36c87624807f9",
+   "count": 1
+  },
+  "LC0574": {
+   "uid": "2eb30b86d80f49958a66e77fdacb31d8",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-marble-vargov-lc0574-2-2eb30b86d80f49958a66e77fdacb31d8",
+   "count": 10
+  },
+  "LC0575": {
+   "uid": "c8429f4111f9420e971243588a6a0249",
+   "url": "https://sketchfab.com/3d-models/wall-light-composition-vargov-lc0575-2-c8429f4111f9420e971243588a6a0249",
+   "count": 2
+  },
+  "LC0582": {
+   "uid": "55649904185644adbf1a10ca9c2a10fd",
+   "url": "https://sketchfab.com/3d-models/interior-partition-vargov-lc0582-2-55649904185644adbf1a10ca9c2a10fd",
+   "count": 1
+  },
+  "LC0583": {
+   "uid": "f24a5728c1554621b20b092d0a97578d",
+   "url": "https://sketchfab.com/3d-models/wall-lamp-vargov-lc0583-2-f24a5728c1554621b20b092d0a97578d",
+   "count": 1
+  },
+  "LC0587": {
+   "uid": "4ebf8d9a889d4f8bad9a688bf2a805d4",
+   "url": "https://sketchfab.com/3d-models/light-composition-cord-vargov-lc0587-2-4ebf8d9a889d4f8bad9a688bf2a805d4",
+   "count": 16
+  },
+  "LC0588": {
+   "uid": "a46e45a21c0c41f89af2594f324ec647",
+   "url": "https://sketchfab.com/3d-models/lighting-composition-moon-vargov-lc0588-2-a46e45a21c0c41f89af2594f324ec647",
+   "count": 8
+  },
+  "LC0590": {
+   "uid": "5d62195617b84fa68a2befdff360af27",
+   "url": "https://sketchfab.com/3d-models/light-composition-honey-vargov-lc0590-2-5d62195617b84fa68a2befdff360af27",
+   "count": 4
+  },
+  "LC0592": {
+   "uid": "aa215eb1d654470182ab19cb20f77ee3",
+   "url": "https://sketchfab.com/3d-models/decorative-composition-laby-vargov-lc0592-2-aa215eb1d654470182ab19cb20f77ee3",
+   "count": 9
+  },
+  "LC0594": {
+   "uid": "3c98ebebff3147cab64855da14236535",
+   "url": "https://sketchfab.com/3d-models/wall-light-composition-vargov-lc0594-2-3c98ebebff3147cab64855da14236535",
+   "count": 4
+  },
+  "LC0595": {
+   "uid": "5907626d6fc74604ae496f8f96ad66c8",
+   "url": "https://sketchfab.com/3d-models/table-art-object-stone-nature-vargov-lc0595-5907626d6fc74604ae496f8f96ad66c8",
+   "count": 1
+  },
+  "LC0596": {
+   "uid": "eac9ef0127c3462991ddfd9e90fbb20a",
+   "url": "https://sketchfab.com/3d-models/light-composition-disk-vargov-lc0596-2-eac9ef0127c3462991ddfd9e90fbb20a",
+   "count": 10
+  },
+  "LC0597": {
+   "uid": "0431e4bf1e40420b98ad449696831b51",
+   "url": "https://sketchfab.com/3d-models/light-composition-vargov-lc0597-2-0431e4bf1e40420b98ad449696831b51",
+   "count": 1
+  },
+  "LC0599": {
+   "uid": "a9f249eb1e534914978e7a91ea280c7b",
+   "url": "https://sketchfab.com/3d-models/light-composition-gothic-vargov-lc0599-2-a9f249eb1e534914978e7a91ea280c7b",
+   "count": 11
+  },
+  "LC0600": {
+   "uid": "915d9a635abd4183a9e09090951bc960",
+   "url": "https://sketchfab.com/3d-models/wall-ceiling-decorative-vargov-lc0600-2-915d9a635abd4183a9e09090951bc960",
+   "count": 12
+  },
+  "LC0601": {
+   "uid": "8745b09cb6f84f7493006ec04e9f99f3",
+   "url": "https://sketchfab.com/3d-models/light-composition-bird-vargov-lc0601-2-8745b09cb6f84f7493006ec04e9f99f3",
+   "count": 4
+  }
+ }
+}

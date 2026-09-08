@@ -72,6 +72,9 @@ TAGS_INDEX = KB / "references" / "3ddd-slug-tags.json"
 # представители берём отсюда, а не из переписи по тегам: карточка может быть
 # названа кодом артикула и при этом не нести его тега (LC0337, LC0049).
 CARDS = KB / "references" / "3ddd-cards.json"
+# Второй канал моделей: Sketchfab. В отличие от 3ddd открыт отовсюду, даёт встраивание
+# и AR-просмотр. Карта — от сессии Pinterest, артикул в ней взят из текстов модели.
+SKETCHFAB = KB / "references" / "sketchfab-models.json"
 CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sources/3ddd-own.json")
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
@@ -91,6 +94,7 @@ ORG_SAME_AS = [
     GOOGLE_MAPS,
     YANDEX_MAPS,
     REPO_URL,
+    "https://sketchfab.com/vargov",
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
 PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942"]
@@ -121,7 +125,9 @@ def load_site(site: Path) -> dict:
         die(f"нет каталога данных сайта: {data_dir}")
 
     catalog = json.loads((data_dir / "catalog.generated.json").read_text(encoding="utf-8"))
-    global ELEMENT_SPECS
+    global ELEMENT_SPECS, SKETCHFAB_MAP
+    SKETCHFAB_MAP = (json.loads(SKETCHFAB.read_text(encoding="utf-8"))["items"]
+                     if SKETCHFAB.is_file() else {})
     specs_file = data_dir / "element-specs.generated.json"
     ELEMENT_SPECS = json.loads(specs_file.read_text(encoding="utf-8")) if specs_file.exists() else {}
     if not isinstance(catalog, list) or len(catalog) < 500:
@@ -513,6 +519,7 @@ def product_page(rec: dict, lang: str) -> str:
 
 
 ELEMENT_SPECS: dict = {}
+SKETCHFAB_MAP: dict = {}
 
 
 def _range(a, b) -> str:
@@ -605,6 +612,12 @@ def product_node(rec: dict) -> dict:
             "description": ("Account listing by tag. May also include models of related items "
                             "from the same series."),
             "url": rec["models_all_en"], "sameAs": rec["models_all"]})
+    sk = SKETCHFAB_MAP.get(rec["code"])
+    if sk:
+        # Вторая площадка: та же вещь, другой канал. Держим и uid — адрес
+        # собран из имени модели и меняется при переименовании, uid не меняется.
+        subject.append({"@type": "3DModel", "name": f"3D model on Sketchfab — {rec['code']}",
+                        "url": sk["url"], "identifier": sk["uid"]})
     if subject:
         node["subjectOf"] = subject
     return node

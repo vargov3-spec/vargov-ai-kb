@@ -105,7 +105,9 @@ def main() -> int:
             url = node.get("url") or ""
             return "/users/vargov/models" in url and "/3dmodels/show/" not in url
 
-        nodes_mine = a if isinstance(a, list) else [a]
+        # Узлы Sketchfab в сверку не идут: это наш второй канал, у сайта его нет.
+        nodes_mine = [x for x in (a if isinstance(a, list) else [a])
+                      if "sketchfab.com" not in (x.get("url") or "")]
         nodes_site = b if isinstance(b, list) else [b]
         # Сравниваем по СМЫСЛУ адреса, а не по @type: сайт публикует список
         # моделей под типом 3DModel, база — под CollectionPage. Это расхождение
