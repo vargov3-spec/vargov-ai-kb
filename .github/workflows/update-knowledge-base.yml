@@ -84,8 +84,13 @@ jobs:
             echo "::error::найдены мёртвые адреса эпохи Tilda (файлы выше)"
             exit 1
           fi
-          if grep -rl "models?tag=" datasets references products en 2>/dev/null; then
-            echo "::error::групповые ссылки 3ddd ?tag= — показывают чужие модели (файлы выше)"
+          # Запрещён ТОЛЬКО общий поиск 3ddd.ru/3dmodels?tag= — он показывает и
+          # чужие карточки. Аккаунтный список /users/vargov/models?tag= разрешён
+          # с 05.09.2026 и стоит в графе узлом CollectionPage: там только свои
+          # модели. Прежнее правило ловило и его — канарейка падала с 06.09 на
+          # собственных данных, а не на ошибке.
+          if grep -rl "3dmodels?tag=" datasets references products en 2>/dev/null; then
+            echo "::error::общий поиск 3ddd 3dmodels?tag= — показывает чужие модели (файлы выше)"
             exit 1
           fi
           echo "мёртвых и групповых адресов нет"
