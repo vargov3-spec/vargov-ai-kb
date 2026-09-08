@@ -37,14 +37,40 @@ SCRIPT_ALLOWLIST = {
 }
 
 # Домены, на которые разрешены обычные ссылки (href) и упоминания в JS.
+#
+# Список пополнен 08.09.2026. Проверка падала не на взломе: 05.09 на сайте
+# появились страница наград со ссылками на первоисточники и расширенный узел
+# sameAs, и два десятка законных доменов оказались «новыми». Еженедельная ложная
+# тревога хуже отсутствия тревоги — к ней привыкают и перестают читать.
+# Все домены ниже проверены одиночными запросами к живым страницам 08.09.2026.
 DOMAIN_ALLOWLIST = SCRIPT_ALLOWLIST | {
     "vargov.design",
     "t.me", "wa.me", "www.youtube.com", "rutube.ru", "i.ytimg.com",
     "schema.org", "www.w3.org", "nextjs.org", "react.dev", "reactjs.org", "github.com",
-    "3ddd.ru",
+    # Свои площадки 3D-моделей: 3ddd и 3dsky — аккаунты владельца (подтверждено 08.09.2026).
+    "3ddd.ru", "3dsky.org",
+    # Страницы премий, на которые ссылается /awards как на первоисточник.
+    "design.museaward.com", "nydesignawards.com", "thelondondesignawards.com",
+    "www.idesignawards.com", "litawards.com", "loopdesignawards.com",
+    "bltawards.com", "www.sitaward.com", "www.productdesignaward.eu",
+    "luxurylifestyleawards.com", "ad-c.org", "architecture-collection.com",
+    "www.awwwards.com",
+    # Реестры и справочники, которыми подтверждаются факты о бренде.
+    "fips.ru", "www3.wipo.int", "www.wikidata.org", "vnisi.ru",
+    # Соцсети бренда из sameAs.
+    "www.facebook.com", "www.instagram.com", "www.pinterest.com",
+    # Карточки на картах (hasMap на /showroom).
+    "www.google.com", "yandex.ru",
 }
 
 # Ожидаемые счётчики Метрики: 111091941 — vargov.ru, 89943818 — конфигуратор.
+#
+# ОТКРЫТЫЙ ВОПРОС с 08.09.2026: на configurator.vargov.ru стоит счётчик
+# 110741646, а не 89943818. Число здесь НЕ меняется, пока владелец или агент
+# конфигуратора не подтвердит, что счётчик сменили они: подменённый счётчик
+# отдаёт поведение посетителей, включая вебвизор, постороннему аккаунту, и
+# смысл этой проверки ровно в том, чтобы такая замена не прошла молча.
+# Пока вопрос открыт, проверка обоснованно падает — это не поломка.
 EXPECTED_METRIKA_IDS = {"111091941", "89943818"}
 
 URL_RE = re.compile(r'https?:(?:\\/\\/|//)([a-zA-Z0-9.-]+\.[a-z]{2,})')
