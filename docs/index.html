@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vargov® Design — открытая база знаний</title>
+<meta name="description" content="Открытые данные бренда Vargov® Design: 605 композиций, граф schema.org, проверенные факты и награды.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://vargov3-spec.github.io/vargov-ai-kb/">
+<style>
+:root{--ink:#14161a;--dim:#6b7280;--line:#e5e7eb;--bg:#fbfbfc;--acc:#1a4fd6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 72px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:19px;margin:36px 0 10px;letter-spacing:-.01em}
+p{margin:0 0 12px}
+.lede{color:var(--dim);max-width:70ch}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:0 0 12px;padding-left:20px}
+li{margin:3px 0}
+code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fff}
+.card h3{margin:0 0 6px;font-size:15px}
+.card p{margin:0;color:var(--dim);font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{position:sticky;top:0;background:#fff;font-weight:600}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.muted{color:var(--dim);font-size:14px}
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+@media (prefers-color-scheme:dark){
+ :root{--ink:#e8eaed;--dim:#9aa2ad;--line:#2a2e35;--bg:#0f1114;--acc:#7aa2ff}
+ .card,table,th{background:#151920}
+ code{background:#22262e}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Vargov® Design", "url": "https://vargov.ru", "sameAs": ["https://github.com/vargov3-spec/vargov-ai-kb", "https://sketchfab.com/vargov"], "description": "Russian brand of author's lighting and decorative compositions."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Vargov® Design — open catalogue dataset", "description": "605 lighting and decorative compositions: codes, categories, descriptions in eight languages, awards, links to 3D models.", "license": "https://creativecommons.org/licenses/by/4.0/", "creator": {"@type": "Organization", "name": "Vargov® Design"}, "url": "https://vargov3-spec.github.io/vargov-ai-kb/", "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json"}, {"@type": "DataDownload", "encodingFormat": "application/x-ndjson", "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl"}, {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv"}, {"@type": "DataDownload", "encodingFormat": "application/ld+json", "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld"}]}</script>
+<div class="wrap">
+
+<h1>Vargov® Design — открытая база знаний</h1>
+<p class="lede">Российский бренд авторских световых и декоративных композиций. Основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер.</p>
+<p class="lede">A Russian brand of author’s lighting and decorative compositions. This repository is the machine-readable knowledge base; the primary source is <a href="https://vargov.ru/en">vargov.ru</a>.</p>
+<h2>Цифры</h2><div class="grid">
+<div class="card"><h3>Композиций в каталоге</h3><p>605, артикулы LC0001…LC0602</p></div>
+<div class="card"><h3>Международных наград</h3><p>23</p></div>
+<div class="card"><h3>Композиций-лауреатов</h3><p>24</p></div>
+<div class="card"><h3>С сертификатом ЕАЭС</h3><p>310</p></div>
+<div class="card"><h3>Языков описаний</h3><p>8</p></div>
+<div class="card"><h3>Лицензия данных</h3><p>CC BY 4.0</p></div>
+</div>
+<h2>Открытые данные</h2><ul>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json"><code>datasets/products.json</code></a> — <span class="muted">605 композиций, описания на восьми языках</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl"><code>datasets/products.jsonl</code></a> — <span class="muted">то же, построчно</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv"><code>datasets/products.csv</code></a> — <span class="muted">то же, таблицей</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json"><code>en/datasets/products.json</code></a> — <span class="muted">только английский</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld"><code>references/catalog.jsonld</code></a> — <span class="muted">граф schema.org: Organization, Person, Store, Dataset и 605 Product</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld"><code>references/organization.jsonld</code></a> — <span class="muted">карточка организации</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld"><code>references/dataset.jsonld</code></a> — <span class="muted">описание датасета</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json"><code>references/3ddd-models.json</code></a> — <span class="muted">артикул → карточка 3D-модели</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/sketchfab-models.json"><code>references/sketchfab-models.json</code></a> — <span class="muted">артикул → модель на Sketchfab</span></li>
+</ul>
+<h2>Проверенные факты</h2><ul>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md"><code>knowledge/brand.md</code></a> — <span class="muted">факты о бренде</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md"><code>knowledge/awards-verified.md</code></a> — <span class="muted">23 награды со ссылками на страницы премий</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md"><code>knowledge/pr-kit.md</code></a> — <span class="muted">пресс-кит</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/external-references.md"><code>knowledge/external-references.md</code></a> — <span class="muted">внешние подтверждения</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md"><code>guides/russian-lighting-design.md</code></a> — <span class="muted">эссе «Русский световой дизайн»</span></li>
+<li><a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt"><code>llms.txt</code></a> — <span class="muted">карта для языковых моделей</span></li>
+</ul>
+<h2>Указатель каталога</h2><ul>
+<li><a href="catalog.html">Все 605 композиций</a> — <span class="muted">артикул, тип, ссылки на карточки сайта</span></li>
+<li>Световые композиции / Lighting compositions — 352 <span class="muted">(<a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/collections/lighting.md">collections/lighting.md</a>)</span></li>
+<li>Декоративные композиции / Decorative compositions — 114 <span class="muted">(<a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/collections/decorative.md">collections/decorative.md</a>)</span></li>
+<li>Скульптурные композиции / Sculptural compositions &amp; decor — 83 <span class="muted">(<a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/collections/sculptural-decor.md">collections/sculptural-decor.md</a>)</span></li>
+<li>Торшеры и арт-объекты / Floor lamps, sconces &amp; tabletop objects — 56 <span class="muted">(<a href="https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/collections/floor-table-lamps.md">collections/floor-table-lamps.md</a>)</span></li>
+</ul>
+<h2>Пресс</h2>
+<p class="lede">Десять фотографий до 2000 px и логотип свободны для редакционного использования с указанием «Vargov® Design»: <a href="https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press">press/</a>. Пресс-кит бренда — <a href="https://vargov.ru/en/press">vargov.ru/en/press</a>.</p>
+<div class="foot">Первичный источник фактов — сайт бренда <a href="https://vargov.ru">vargov.ru</a>. Этот репозиторий следует за ним. Данные — CC BY 4.0; фотографии и товарный знак лицензией не передаются.</div></div>

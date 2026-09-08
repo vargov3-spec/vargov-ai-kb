@@ -1,0 +1,67 @@
+name: GitHub Pages
+
+# ЧТО ЭТО. Публикует папку docs/ как обычный сайт по адресу
+# https://vargov3-spec.github.io/vargov-ai-kb/
+#
+# ЗАЧЕМ. github.com закрывает /tree/ от краулеров, поэтому содержимое этого
+# репозитория для поисковиков и языковых моделей невидимо: датасеты и проверенные
+# факты лежат мёртвым грузом. Pages отдаёт обычные HTML-страницы с sitemap и
+# robots.txt — это единственная дверь внутрь.
+#
+# ЧЕГО ЗДЕСЬ НЕТ. Страниц отдельных изделий. Первичен сайт vargov.ru, и 605 копий
+# карточек на github.io конкурировали бы с ним в выдаче. docs/ содержит только
+# хаб и указатель, ведущий на канонические адреса сайта.
+#
+# Содержимое docs/ собирается локально: python scripts/build_pages.py
+# Этот процесс ничего не собирает и в репозиторий не пишет — только выкладывает.
+#
+# enablement: true просит GitHub включить Pages, если они ещё не включены, — тогда
+# ручной переключатель в настройках не нужен. Если прав не хватит, шаг упадёт с
+# понятной ошибкой, и Pages включаются один раз руками: Settings → Pages → Source:
+# GitHub Actions.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Одновременно идёт только одна выкладка; лишние в очереди отменяются.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Проверить, что docs/ на месте
+        run: |
+          test -f docs/index.html
+          test -f docs/catalog.html
+          test -f docs/sitemap.xml
+          test -f docs/robots.txt
+          echo "строк в указателе каталога: $(grep -c '<tr><td><b>' docs/catalog.html)"
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
