@@ -5786,6 +5786,13 @@
           "name": "3D model — LC0543-1",
           "url": "https://3dsky.org/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543",
           "sameAs": "https://3ddd.ru/3dmodels/show/bra-art-obekt-vargov-r-design-lc0543"
+        },
+        {
+          "@type": "CollectionPage",
+          "name": "3D models tagged LC0543-1",
+          "description": "Account listing by tag. May also include models of related items from the same series.",
+          "url": "https://3dsky.org/users/vargov/models?tag=lc0543-1",
+          "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0543-1"
         }
       ]
     },
