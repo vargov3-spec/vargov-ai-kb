@@ -73,7 +73,7 @@ jobs:
               sys.exit(f"в JSON-LD поля, запрещённые правилами владельца: {bad}")
           org = next(n for n in graph if n.get("@type") == "Organization")
           if len(org.get("award", [])) < 20:
-              sys.exit(f"у Organization {len(org.get('award', []))} наград — ожидается 22")
+              sys.exit(f"у Organization {len(org.get('award', []))} наград — ожидается 23")
           print(f"граф: {len(products)} Product + Organization ({len(org['award'])} наград), Person, Dataset — в порядке")
           PY
 
