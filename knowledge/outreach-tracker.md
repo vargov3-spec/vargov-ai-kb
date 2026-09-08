@@ -31,6 +31,8 @@
 | 2026-09-05 | Design Milk | форма submit (ClickUp) | Sea Lace LC0487 | отправлено | — | следить за публикациями ~20.09 |
 | 2026-09-05 | Adorno | adorno.design/apply | анкета | отправлено | — | ответ ~03.10 |
 | 2026-09-05 | Archello | archello.com/brand/vargov-design | профиль + 9 композиций | Pending | — | проверить ~12.09 |
+| 2026-09-08 | Galerie Magazine — редакция | editor@galeriemagazine.com | питч под подборки «7 Sculptural Lighting Options» и «12 Wondrous Lighting Designs Inspired by Nature» | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
+| 2026-09-08 | Azure Magazine — автор подборки «5 Sculptural Lighting Fixtures That Marry Light and Form», копия — старшему редактору | редакция azuremagazine.com (адреса — в приватной папке PR) | питч под будущую подборку + предложение spec sheet | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
 
 ### Что отправлено на площадки 05.09.2026 (детали заявок)
 
@@ -44,8 +46,6 @@
 
 | Адресат | Канал | Что нужно | Кто |
 |---|---|---|---|
-| Galerie Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
-| Azure Magazine | редакционная почта — уточнить | питч под «Sculptural Lighting» | я |
 | 1stDibs | dealer application | юрлицо, адрес шоурума, два рекомендателя | владелец |
 | productcenter.ru, dexigner.com | справочники | регистрация бренда | оба |
 | Wallpaper*, Elle Decor US, AD US, INMYROOM | — | холодные питчи не принимают или только проекты/реклама | не отправлять |
