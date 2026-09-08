@@ -56,7 +56,7 @@
 
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
 - [Монтаж и подключение](https://vargov.ru/installation) · [PDF-инструкция](https://vargov.ru/pdf/vargov-installation.pdf)
-- [Сертификация](https://vargov.ru/certification) — серийные сертификаты ТР ЕАЭС 004/2011 и 020/2011, знак EAC, более 300 артикулов
+- [Сертификация](https://vargov.ru/certification) — два серийных сертификата ТР ЕАЭС (ТР ТС 004/2011, 020/2011) и две декларации ТР ЕАЭС 037/2016 на 310 артикулов LC, знак EAC, действуют до 2031 года; сертификат серийный — покрывает каждое изделие артикула, а не партию
 - [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
 
 ## О бренде
