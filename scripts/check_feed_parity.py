@@ -24,7 +24,7 @@ from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
 FEED = "https://vargov.ru/catalog.jsonld"
-FIELDS = ("additionalProperty", "award", "category", "brand", "manufacturer")
+FIELDS = ("additionalProperty", "award", "category", "brand", "manufacturer", "hasCertification")
 
 # subjectOf сверяем отдельно: вид ссылки на 3D-модель различается намеренно.
 # У сайта на кнопке и в фиде стоит аккаунтный список ?tag= (устойчив к

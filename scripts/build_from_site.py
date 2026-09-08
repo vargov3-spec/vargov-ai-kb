@@ -143,7 +143,8 @@ def load_site(site: Path) -> dict:
             instock.setdefault(rec["code"], []).append(rec)
 
     return {"catalog": catalog, "copy": copy, "instock": instock,
-            "awards": dump_awards(site), "models": load_models_3d()}
+            "awards": dump_awards(site), "models": load_models_3d(),
+            "cert": dump_certification(site)}
 
 
 EMPTY_TAGS: set[str] = set()
@@ -261,6 +262,32 @@ def load_models_3d() -> dict[str, str]:
     return {}
 
 
+def dump_certification(site: Path) -> dict:
+    """Артикул -> его сертификат. Источник — certifiedCodes.ts репозитория сайта.
+
+    Раньше общая фраза о сертификации стояла бы у всех артикулов; так нельзя:
+    в перечнях 310 из 605, и утверждение делается о конкретной вещи, а не о
+    бренде. Артикулов вне перечня узел не получает вовсе.
+    """
+    out = KB / "scan" / "cert.dump.json"
+    out.parent.mkdir(exist_ok=True)
+    script = (
+        "import('./src/lib/data/certifiedCodes.ts').then(m=>{"
+        "const o={};for(const c of new Set([...m.CERTIFIED_EMC,...m.CERTIFIED_LVD]))"
+        "o[c]=m.certScope(c);"
+        "require('fs').writeFileSync(process.argv[1],JSON.stringify(o));});"
+    )
+    r = subprocess.run(
+        ["node", "--experimental-strip-types", "-e", script, str(out)],
+        cwd=site, capture_output=True, text=True, timeout=120,
+    )
+    if r.returncode != 0 or not out.is_file():
+        die(f"не удалось выгрузить certifiedCodes.ts: {r.stderr[:400]}")
+    data = json.loads(out.read_text(encoding="utf-8"))
+    print(f"  сертификация: {len(data)} артикулов в области действия")
+    return data
+
+
 def dump_awards(site: Path) -> list:
     """awards.ts — TypeScript; исполняем его самим Node вместо разбора текста."""
     out = KB / "scan" / "awards.dump.json"
@@ -353,6 +380,7 @@ def build_records(site_data: dict) -> list[dict]:
         site_data["catalog"], site_data["copy"], site_data["instock"],
         site_data["awards"], site_data["models"],
     )
+    cert = site_data.get("cert") or {}
     records = []
     for p in catalog:
         code, slug = p["code"], p["slug"]
@@ -389,6 +417,7 @@ def build_records(site_data: dict) -> list[dict]:
             "models_all_en": (f"https://3dsky.org/users/vargov/models?tag={code.lower()}"
                               if code in models and code not in EMPTY_TAGS else None),
             "award_winning": bool((per_lang["ru"] or {}).get("awardWinning")),
+            "cert": cert.get(code),
             "awards": awards_for(code, awards),
             "in_stock_elements": [
                 {"size": r.get("size"), "material_en": (r.get("material") or {}).get("en"),
@@ -541,6 +570,23 @@ def product_node(rec: dict) -> dict:
     props = element_props(rec["code"])
     if props:
         node["additionalProperty"] = props
+    # Сертификат — только у артикулов из перечня (310 из 605). Общей фразы «бренд
+    # сертифицирован» в карточке изделия быть не должно: это утверждение о
+    # конкретной вещи, а не о бренде. Форма узла — как в фиде сайта.
+    c = rec.get("cert")
+    if c:
+        node["hasCertification"] = {
+            "@type": "Certification",
+            "name": f"EAC — {c['certificate']}",
+            "certificationIdentification": c["certificate"],
+            "certificationStatus": "https://schema.org/CertificationStatusActive",
+            "issuedBy": {"@type": "Organization", "name": "Test-St. Petersburg LLC",
+                         "identifier": "ROSS RU.0001.10SP28"},
+            "validIn": {"@type": "AdministrativeArea", "name": "Eurasian Economic Union"},
+            "datePublished": c["fromIso"],
+            "expires": c["untilIso"],
+            "about": ", ".join(c["regulationsEn"]),
+        }
     subject = []
     if rec["model3d_en"]:
         # Одна карточка как представитель: у неё есть имя, автор и превью.
