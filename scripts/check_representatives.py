@@ -27,6 +27,7 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
@@ -38,6 +39,15 @@ def main() -> int:
     live = json.loads(live_file.read_text(encoding="utf-8"))["items"] if live_file.is_file() else {}
     models = json.loads((KB / "references" / "3ddd-models.json").read_text(encoding="utf-8"))["items"]
     corr = json.loads((KB / "references" / "3ddd-corrections.json").read_text(encoding="utf-8"))
+    # Список слагов аккаунта — выгрузка сессии Pinterest на диске владельца.
+    # Позволяет ловить исчезнувшие слаги вообще без запросов к площадке: она с
+    # этой машины недоступна. Своей отметки времени в файле нет, поэтому берём
+    # mtime и печатаем — снимок без даты читается как состояние мира.
+    dump = Path("V:/Vargov Design в ИИ/catalog/data/3ddd_vargov_models_full.json")
+    account, dump_age = set(), None
+    if dump.is_file():
+        account = {r.get("slug") for r in json.loads(dump.read_text(encoding="utf-8")) if r.get("slug")}
+        dump_age = time.strftime("%d.%m.%Y %H:%M", time.localtime(dump.stat().st_mtime))
     empty, known = set(corr["empty_tags"]), set(corr.get("tag_wins", [])) | set(corr["slug_overrides"])
 
     unmarked, base_tag, absent = [], [], []
@@ -53,6 +63,16 @@ def main() -> int:
     # Код ответа СТРАНИЦЫ для этого не годится: 3ddd отдаёт 200 на любой адрес.
     dead = [c for c, s in live.items() if c in models and s.get("status") != 200]
     stale = [c for c in models if c not in live]
+    if account:
+        missing = sorted(s for s in models.values() if s not in account)
+        print(f"список аккаунта (выгрузка от {dump_age}): {len(account)} слагов; "
+              f"наших нет в нём: {len(missing)}")
+        for slug in missing[:10]:
+            code = next(c for c, v in models.items() if v == slug)
+            print(f"    {code}: {slug}")
+        if missing:
+            print("    Это НЕ значит «карточки нет»: слаг мог появиться после выгрузки "
+                  "(так было с LC0104 после переименования серии). Проверять через API.")
     print(f"представителей: {len(models)}")
     if live:
         print(f"  живость (снимок {len(live)} адресов): мёртвых {len(dead)}" +
