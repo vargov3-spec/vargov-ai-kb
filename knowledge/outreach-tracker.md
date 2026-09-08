@@ -8,14 +8,14 @@
 |---|---|---|---|---|---|---|
 | 2026-07-06 | Dezeen Showroom | showroom@dezeen.com | питч Driplight | без ответа, закрыто | — | повторно не писать; новый повод ушёл 04.09 |
 | 2026-07-06 | Dezeen Exclusives | exclusives@dezeen.com | питч Driplight | без ответа, закрыто | — | — |
-| 2026-07-06 | ICONIC World / German Design Council | iconicawards@gdc.de | профиль в директории | без ответа | — | продолжение ушло 04.09 |
+| 2026-07-06 | ICONIC World / German Design Council | iconicawards@gdc.de | профиль в директории | без ответа | — | продолжение 04.09 и 07.09 (сломанный редирект + фраза про Китай) |
 | 2026-09-04 | International Awards Associate — контакт IAA по работе с победителями | IAA (адрес — в приватной папке PR владельца) | интервью для Muse.World + персональный релиз, MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-04 | Dezeen Exclusives | exclusives@dezeen.com | эксклюзив: MUSE Gold 2026, LC0564 | отправлено, автоответ о приёме | «Thanks for submitting your project to Dezeen» | напоминание не раньше 15.09 |
 | 2026-09-04 | Luxury Lifestyle Awards | pr@luxuryawards.com | обзорный релиз (в отправленной версии — 22 награды; с 05.09 — 23, учесть в напоминании), Winners in Media | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-04 | ICONIC World | iconicawards@gdc.de | продолжение июльского письма: MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
 | 2026-09-05 | D5 MAG — Tina King | editor@d5mag.com | исправление фактической ошибки в статье о LC0358 («makes in China») | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-05 | vamvidnee.ru | info@vamvidnee.ru | дополнение к статье «Российские бренды освещения переживают ренессанс» | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | Wescover | community@wescover.com | очередь на онбординг создателя | отправлено | — | напоминание не раньше 16.09 |
+| 2026-09-05 | Wescover | community@wescover.com | очередь на онбординг создателя | **ОТВЕТ 07.09** | Megan K: «Your work looks beautiful», просят создать профиль через страницу Apply as a Creator | **действие владельца:** регистрация создателя (аккаунт создаём не мы) |
 | 2026-09-05 | darc (Mondiale) — редакция | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: основной адресат недоступен, письмо читает дежурная редакция (копия доставлена) | автоответ | напоминание не раньше 16.09 |
 | 2026-09-05 | arc (Mondiale) — редакция | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
 | 2026-09-07 | ICONIC World / German Design Council | iconicawards@gdc.de | сломанный редирект директории и фраза «makes in China» в проиндексированном профиле | **отправлено 07.09.2026** (подтверждено в «Отправленных») | — | напоминание не раньше 18.09 |
@@ -134,3 +134,13 @@ Note: the letter says 22 awards; since 05.09 the count is 23 (NYPDA 2023 Gold Wi
 Отдельным письмом не слать: у нас уже висит без ответа письмо от 04.09.
 
 > One small request about the winners' pages. On `design.museaward.com/winner-info.php?id=40265` (and the 2023 entry, id 13101) the award level — Gold, Platinum — is not present as text on the page: it appears only in the certificate. As a result the page does not confirm the level to search engines or AI assistants that read it. Would it be possible to include the level in the page text?
+
+## Проверка почты
+
+С 08.09.2026 входящие проверяются **ежедневно в 11:07** — задача `daily-inbox-vargov`. Она читает письма за двое суток, отбирает относящиеся к бренду, обновляет строки этого трекера и докладывает владельцу; ничего не отправляет от его имени, кроме продолжения переписок, где разрешение уже дано.
+
+**Найдено при первой проверке 08.09.2026:**
+- **Alibaba IPP — товарный знак VARGOV подтверждён** (07.09, ippnotice@aidcgroup.net): «Your submitted proof of intellectual property right VARGOV商标权 has been successfully authenticated». Кабинет: https://ipp.aidcgroup.net — теперь можно подавать жалобы на нарушителей;
+- **Wescover ответил** (07.09): работы понравились, просят зарегистрировать профиль создателя;
+- **GitHub Support закрыл тикет 4730691**, сообщив, что очистка кэша выполнена. Проверено в тот же день: адрес удалённого файла по старому коммиту db71878 по-прежнему отдаёт 200. Отправлен ответ в тикет с этим фактом — переписка продолжается;
+- Dezeen, Archello и IAA прислали служебные письма (подтверждения, автоответы), содержательных ответов нет.
