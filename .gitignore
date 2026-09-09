@@ -51,3 +51,13 @@ __pycache__/
 /promo-video/**
 !/promo-video/scripts/*.mjs
 !/promo-video/scripts/build-promo-en.py
+
+# Журнал сайта — исходники статей и сводка для сборщика. Публикуются только
+# они: рядом в content/ лежат описания карточек, а в integration/ — выгрузка
+# каталога на 8,6 МБ, и то и другое переносится отдельно и осознанно.
+!/content/
+/content/*
+!/content/journal/
+!/integration/
+/integration/*
+!/integration/journal.json
