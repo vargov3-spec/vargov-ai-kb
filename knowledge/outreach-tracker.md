@@ -30,7 +30,7 @@
 | 2026-09-05 | SALON-interior — предметный редактор, cc editor@salon.ru | редакция salon.ru | предметы: Oceanic Illumination, Driplight | отправлено основному адресату; **editor@salon.ru отскочил (550)** | bounce копии | напоминание не раньше 16.09 |
 | 2026-09-05 | Design Milk | форма submit (ClickUp) | Sea Lace LC0487 | отправлено | — | следить за публикациями ~20.09 |
 | 2026-09-05 | Adorno | adorno.design/apply | анкета | отправлено | — | ответ ~03.10 |
-| 2026-09-05 | Archello | archello.com/brand/vargov-design | профиль + 9 композиций | Pending | — | проверить ~12.09 |
+| 2026-09-05 | Archello | archello.com/brand/vargov-design | профиль + 9 композиций | **профиль опубликован, товары не показаны** | — | 09.09: описание исправлено (23 награды), рубрики бренда проставлены; композиции публично не видны — проверить ещё раз ~16.09 |
 | 2026-09-08 | Galerie Magazine — редакция | editor@galeriemagazine.com | питч под подборки «7 Sculptural Lighting Options» и «12 Wondrous Lighting Designs Inspired by Nature» | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
 | 2026-09-08 | Azure Magazine — автор подборки «5 Sculptural Lighting Fixtures That Marry Light and Form», копия — старшему редактору | редакция azuremagazine.com (адреса — в приватной папке PR) | питч под будущую подборку + предложение spec sheet | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
 
