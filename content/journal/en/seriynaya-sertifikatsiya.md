@@ -1,6 +1,6 @@
 # Serial certification: what stands behind it and what it gives a project
 
-Рубрика: Production · Дата: 9 September 2026 · Slug: seriynaya-sertifikatsiya
+Category: Production · Date: 9 September 2026 · Slug: seriynaya-sertifikatsiya
 
 Vargov®Design products have passed serial certification under the requirements of the Eurasian Economic Union. For a private buyer that is one line. For an architect, a specifier and a tender department it is a set of verifiable documents, without which an author-designed piece never reaches the specification.
 
