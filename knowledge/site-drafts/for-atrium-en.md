@@ -37,6 +37,5 @@ backlight: sparse above and denser below, or the reverse — decided for the spe
 
 **Access is resolved before installation.**
 Where there is no floor beneath, maintenance is planned in advance: a lowering assembly, a
-technical platform, or an agreed procedure with a lift. The weight of the composition and
-the number of suspension points are known before the order — they determine what is
-possible here.
+technical platform, or an agreed procedure with a lift. The calculated mass of the composition is
+known before the order — it determines what is possible here.

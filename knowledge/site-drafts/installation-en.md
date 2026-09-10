@@ -70,13 +70,15 @@ a composition is chosen for the task, not for the norm.
 
 ### What is issued before installation
 
-The configurator calculates from the composition itself and returns:
+The configurator calculates from the composition itself and shows in the specification:
 
-- **weight** — for choosing the fixing;
-- **number of suspension points** and their layout;
+- **calculated mass** — for choosing the fixing;
 - **total power** — for the driver and the cable;
-- **DXF drawing** — for the designer and the installer;
-- **PDF specification** — parts, dimensions, suspension diagram.
+- **overall dimensions** — footprint, depth of the element cloud, distance to the ceiling;
+- **the make-up** — element type and count, form, density.
+
+The specification can be saved or printed. **The AutoCAD drawing is sent by the brand bot
+on Telegram** — the button for it sits in the configurator itself.
 
 A composition is assembled for the room, so these figures differ for each one and are
 calculated before the order, not after.

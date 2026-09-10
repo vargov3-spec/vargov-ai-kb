@@ -34,7 +34,6 @@ of a table.
 
 **The mounting plate goes in before the finishes.**
 In banquet halls the slab is almost always concealed by a suspended ceiling, and the fixing
-goes to the structural slab only — nothing fixes to the lining. A mounting plate rated for
-the weight, and the layout of the suspension points, are needed before the ceiling goes up:
-after the finishes this becomes an opening-up, not an installation. Weight and point count
-are known in advance and are passed into the project.
+goes to the structural slab only — nothing fixes to the lining. A mounting plate rated for the weight is
+needed before the ceiling goes up: after the finishes this becomes an opening-up, not an
+installation. The calculated mass is known in advance and is passed into the project.
