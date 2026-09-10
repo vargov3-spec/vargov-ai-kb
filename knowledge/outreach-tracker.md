@@ -139,6 +139,69 @@ Note: the letter says 22 awards; since 05.09 the count is 23 (NYPDA 2023 Gold Wi
 
 Подробности замера — [[ai-visibility-serp-log]], раздел 2026-09-09.
 
+**Цепочка перепроверена 10.09.2026**, HTTP-запросами без автоперехода. Она длиннее,
+чем записано выше, и это стоит привести полностью — так виднее, что дело в их
+механике, а не в одной странице:
+
+1. `https://www.iconic-world.com/directory/anton-vargov` → **301** →
+   `https://www.iconic-awards.comdirectory/anton-vargov` — в адресе потерян слэш,
+   получается несуществующий хост;
+2. `https://www.iconic-awards.com/directory/anton-vargov` → **301** →
+   `https://iconic-awards.com/directory/anton-vargov` (снимается www);
+3. `https://iconic-awards.com/directory/anton-vargov` → **404**.
+
+### Готовый текст напоминания ICONIC — отправлять 18.09.2026
+
+Отправлять ответом в ту же цепочку (письмо от 07.09), не отдельным письмом.
+
+> Subject: Re: Broken redirect on iconic-world.com/directory + a factual correction
+>
+> Dear ICONIC AWARDS team,
+>
+> Following up on my message of 7 September. I have re-checked everything today,
+> 10 September 2026, and would like to restate the request more precisely, because
+> what I asked for first is no longer the right ask.
+>
+> The redirect chain for a directory profile currently ends nowhere:
+>
+> 1. https://www.iconic-world.com/directory/anton-vargov returns 301 to
+>    https://www.iconic-awards.comdirectory/anton-vargov — the slash after the
+>    domain is missing, so the target host does not exist;
+> 2. https://www.iconic-awards.com/directory/anton-vargov returns 301 to
+>    https://iconic-awards.com/directory/anton-vargov;
+> 3. https://iconic-awards.com/directory/anton-vargov returns 404.
+>
+> The first of these affects every profile in the directory, not only ours — the
+> rule that builds the redirect drops the slash for all of them. That seemed worth
+> reporting on its own.
+>
+> The second point is why I am persistent about it. The profile page is gone, but
+> its text is still held in search indexes and is being served by language models
+> as current fact about our company. Asked "Anton Vargov lighting designer", a model
+> answers, among other things: "The company's production capacities are in China,
+> and they deliver products worldwide." That is not accurate — Vargov®Design designs
+> and produces in-house in Moscow — and the sentence traces back to the ICONIC
+> directory profile.
+>
+> So the request is no longer "please correct the wording". There is nothing left
+> to correct on a page that does not exist. It is one of two things, whichever suits
+> you better:
+>
+> - remove the dead profile from search indexes (a 410 response instead of the
+>   current redirect chain would do it), or
+> - restore the profile at a working address with the production location corrected.
+>
+> And separately, the missing slash in the redirect rule — that one costs you every
+> inbound link to the directory.
+>
+> I am happy to supply anything you need: award confirmations, certification
+> documents, press materials.
+>
+> With kind regards,
+> Anton Vargov
+> Vargov®Design — vargov.ru
+
+
 ### German Design Council (ICONIC), iconicawards@gdc.de
 Повод не «где мой профиль», а сломанная механика их сайта — так письмо полезно им самим.
 
