@@ -226,7 +226,7 @@
         "Russian design",
         "made to order"
       ],
-      "dateModified": "2026-09-08",
+      "dateModified": "2026-09-12",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -486,7 +486,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition in two layers. The first is the hemispheres themselves with their engraved coral pattern: branching, cellular, radial structures, no two drawings…",
+      "description": "A composition in two layers. The first is the hemispheres themselves with their engraved pattern of corals and jellyfish: branching, cellular, radial structures,…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -682,6 +682,47 @@
       },
       "inLanguage": "en",
       "description": "A composition about an evening horizon. Hundreds of narrow plates on cables of differing length form the silhouette of a city: setbacks, towers, gaps, light in the…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H400",
+          "value": "L120 × W6 × H400 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H400",
+          "value": 0.88,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H500",
+          "value": "L120 × W6 × H500 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H500",
+          "value": 0.98,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H600",
+          "value": "L120 × W6 × H600 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H600",
+          "value": 1.08,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -751,6 +792,47 @@
       },
       "inLanguage": "en",
       "description": "A composition about the elements. A soft undulating lower edge makes the silhouette alive: at the bottom the composition does not break off, it runs down — banners…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H400",
+          "value": "L120 × W6 × H400 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H400",
+          "value": 0.88,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H500",
+          "value": "L120 × W6 × H500 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H500",
+          "value": 0.98,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H600",
+          "value": "L120 × W6 × H600 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H600",
+          "value": 1.08,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -4217,7 +4299,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition with a plot. Out of a wave a flock of birds flies — the moment when the sea lets the sky go.",
+      "description": "A composition with a plot. Out of a wave a school of manta rays emerges — the moment when the sea begins to move.",
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -4412,7 +4494,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a stroke of the brush. Fine drawn-out forms read as feathers or as the traces of quick movements — a gesture rather than an object.",
+      "description": "A composition about seagulls. Fine drawn-out forms read as birds in the turn of a wing — flight rather than an object. Each with its own curve and its own character.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -5027,7 +5109,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a form between three things. The matte mantle reads as a calla flower, as a sail and as the wing of a ray — the author does not specify,…",
+      "description": "A composition about stingrays. A flat body, wings spread wide, a long wavy tail — there is not a single straight line in the silhouette, and so the figure does not…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -5837,7 +5919,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "The same fracture, taken off the wall. The wings with their split-rock texture are released into the air and repeated — not one object but a mass: dozens of…",
+      "description": "The same motif, taken off the wall. The meteor bodies are released into the air and repeated — not one object but a mass: dozens of bodies at different heights,…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -5996,7 +6078,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a fracture. Two black relief wings — the texture of split rock or the bark of an ancient tree, with gold veining along the edges of the breaks…",
+      "description": "A composition about a fracture. Two black relief plates — the texture of a cooled celestial body, with gold veining along the edges of the craters — open up the…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -6413,7 +6495,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a storm. Fan-shaped wings twist through space in swift spirals — the feathers of a firebird, or petals caught by the wind.",
+      "description": "A composition about an abstract ribbon. Fan-shaped segments twist through space in swift spirals — the ribbon folds onto itself.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -7454,7 +7536,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition as a scene. One piece contains a whole underwater episode: a ribbed dome the colour of a sea wave, clear tentacles arrested like jets, and a shoal of…",
+      "description": "A composition as a scene. One piece contains a whole underwater episode: a jellyfish with a ribbed dome the colour of a sea wave, its clear tentacles arrested like…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -7947,6 +8029,52 @@
       },
       "inLanguage": "en",
       "description": "A composition in two tempos. The strict architecture of rings — and the weightless, melting dust of rain around it: the piece is a draft drawing and a cloud at once.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H400",
+          "value": "L35 × W10 × H400 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H400",
+          "value": 0.42,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H500",
+          "value": "L35 × W10 × H500 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H500",
+          "value": 0.47,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H600",
+          "value": "L35 × W10 × H600 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H600",
+          "value": 0.52,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H700",
+          "value": "L35 × W10 × H700 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H700",
+          "value": 0.56,
+          "unitCode": "KGM"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -8030,7 +8158,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a dive. A wing with a bubbled mass flows into a long gold tail-spike — the form of a swallow at the moment it folds its wings and drops.",
+      "description": "A composition about gliding. A wing with a bubbled mass flows into a long gold tail-spike — the form of a ray slipping through water.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -8445,6 +8573,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a rising seam. The eye reads a movement from the bottom up: a large nugget below, and above it a scattering of shards rising on invisible…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -8519,6 +8655,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about sparks over a coal. Below, a large core of deep red; above it a plume of crystals rises — what flies up at the moment a white-hot thing is…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -8732,6 +8876,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about two layers. Outside, a full flower head of dozens of curved petals — from honey to cognac; inside, a white branching frame, a bone coral that…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -9661,7 +9813,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a runway. The ribbing on a broad single wing turns it in the evening into a strip of light — the same marking that rules an airfield runway,…",
+      "description": "A composition about orcas. The ribbing on a broad single body turns it in the evening into a strip of light.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -10248,6 +10400,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a game stopped on the winning move. Cubes assemble into a structure with setbacks, cantilevers and towers — a construction set with no final…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10424,6 +10584,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a formula written in the air. Hexagonal honeycomb frames are linked into a horizontal chain — a structure out of a chemistry textbook carried…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10496,6 +10664,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch found in a forest. The composition spreads horizontally, repeating the curve of a real branch — not straightened and not symmetrical,…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10974,6 +11150,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a vine on a column. The branches climb the wall from bottom to top, and the composition turns a plane into a flowering relief — a gardener's…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -11050,7 +11234,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L55 × W55 × H500 mm"
+          "value": "L52 × W52 × H500 mm"
         },
         {
           "@type": "PropertyValue",
@@ -11061,7 +11245,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H600",
-          "value": "L55 × W55 × H600 mm"
+          "value": "L52 × W52 × H600 mm"
         },
         {
           "@type": "PropertyValue",
@@ -11072,7 +11256,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H700",
-          "value": "L55 × W55 × H700 mm"
+          "value": "L52 × W52 × H700 mm"
         },
         {
           "@type": "PropertyValue",
@@ -11753,6 +11937,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about water in a frame. A strict contour and free plasticity within — a formula that makes the object architectural and alive at once: the frame…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -13141,7 +13333,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.37,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -13152,7 +13344,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.72,
+          "value": 0.59,
           "unitCode": "KGM"
         },
         {
@@ -13163,7 +13355,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.24,
+          "value": 0.85,
           "unitCode": "KGM"
         },
         {
@@ -13708,7 +13900,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L30 × W30 × H350 mm"
+          "value": "L27 × W27 × H350 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13719,7 +13911,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H400",
-          "value": "L30 × W30 × H400 mm"
+          "value": "L27 × W27 × H400 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13730,7 +13922,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H450",
-          "value": "L30 × W30 × H450 mm"
+          "value": "L27 × W27 × H450 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13741,7 +13933,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L30 × W30 × H500 mm"
+          "value": "L27 × W27 × H500 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13840,6 +14032,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a nest woven out of gold. An oval wreath of interlaced branches carries clusters of drop-flowers — the form reads both as an upturned basket…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -13912,6 +14112,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cut fruit. The scaled shell is built petal by petal, and in the cut a milky interior glows — the piece shows what on a real lychee is visible…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -13984,6 +14192,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a whirlpool. Faceted plates of differing length descend in a spiral cascade along a frame — a vortex twisted from ceiling to floor.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -14383,6 +14599,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about laundry in the wind. Every leaf is bent twice — not once, as in a static form, but with a second fold of the kind only cloth gets when a…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -14548,7 +14772,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.69,
+          "value": 1.44,
           "unitCode": "KGM"
         },
         {
@@ -14559,7 +14783,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.35,
+          "value": 2.25,
           "unitCode": "KGM"
         },
         {
@@ -14570,7 +14794,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 2.33,
+          "value": 3.24,
           "unitCode": "KGM"
         },
         {
@@ -14581,7 +14805,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 3.69,
+          "value": 4.41,
           "unitCode": "KGM"
         },
         {
@@ -14592,7 +14816,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 5.51,
+          "value": 5.76,
           "unitCode": "KGM"
         },
         {
@@ -15344,7 +15568,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a fan. The pleated disc reads both as a scallop shell and as the cap of a mushroom — what they have in common is that the folds radiate from…",
+      "description": "A composition about the underside of a mushroom. The pleated disc reads as the gills beneath the cap — the folds radiate from one point: a structural principle…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -15771,6 +15995,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a garland that stayed for good. The branch spreads above the table as one continuous line — a festive gesture stripped of its occasion and…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -15837,6 +16069,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about the spiral of life. The axis grows dozens of tendrils, each ending in a drop: the form reads both as a molecule and as a flower head turning…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -15909,6 +16149,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a firework held in the act of opening. Bundles of tubes sit as stars on a branch — these are both fir boughs in hoarfrost and a firework caught…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -15981,6 +16229,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about an explosion in slow motion. Ribbon-strips — bent, twisted, alive — sit as dense crowns on rings descending in a vertical spiral.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16053,6 +16309,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a frost star on a window. Sharp faceted spindles are gathered into burrs — a prickly, radiant form, exactly what hoarfrost draws: from a point…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16119,6 +16383,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a liana. The spiral grows from the top down, putting out large leaves — the way a plant reaches in a conservatory when it has nothing to catch…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16325,7 +16597,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.42,
+          "value": 0.92,
           "unitCode": "KGM"
         },
         {
@@ -16336,7 +16608,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 0.67,
+          "value": 1.25,
           "unitCode": "KGM"
         },
         {
@@ -16347,7 +16619,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H800",
-          "value": 1,
+          "value": 1.63,
           "unitCode": "KGM"
         },
         {
@@ -17083,6 +17355,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a banking turn. The dynamics are built into the structure: the lines of the frame draw the movement and the elements pick it up.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17151,6 +17431,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a wave that has passed through an organ. A strict vertical of elements and a free curve of suspension — the whole piece rests on that contrast:…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17467,6 +17755,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about passion and restraint. The white flowers burn, the burgundy ones keep silent: the light lives only in the pale bowls while the dark ones hold…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17760,6 +18056,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about kelp in a column of light. The ribbons wind around a vertical frame — they do not wrap it decoratively, they reach upward, as weed reaches for…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17936,6 +18240,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a flare. Curved tusks break out in every direction from a mirrored core — the sun at the moment of a prominence, a dandelion enlarged to a…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18200,6 +18512,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a rising vortex. Crescent ribbons wind around a vertical axis like petals caught in a current — the movement is directed upward rather than…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18364,6 +18684,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch under the weight of a harvest. The sprigs bend into crescents — not for beauty but because they carry a load: the form follows the…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18676,6 +19004,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a flowering branch above a path. The vine reaches out horizontally and the flowers look down — exactly as a real magnolia branch leans over a…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18739,7 +19075,15 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a constellation. The stars are scattered along the branches rather than set on a grid: the branches gather them into a figure the way…",
+      "description": "An abstraction, not an image. The elements are scattered along the branches rather than set on a grid, and each is turned its own way.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18919,6 +19263,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a crown. Thick hoops with an inner bubbled texture catch on one another through gold collars — dozens of rings entered into each other like the…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18992,6 +19344,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about the moment between botany and fireworks. Hundreds of fine stems break out from a single centre and fall away into a full sphere — the form can…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -19175,6 +19535,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a night garden. The flowers read as silhouettes and the light as their core: a dark register is rare in light compositions, and the piece looks…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19283,6 +19651,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a staircase of light. The arcs twist into a spiral from top to bottom, and on each hangs a dense fringe of faceted rods.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19575,6 +19951,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about an explosion stopped at its best moment. From a vertical axis, stem-rays break out in every direction, and at the end of each a bud opens with…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19639,6 +20023,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch above a bench. The vine winds as a horizontal line and reaches out above the table exactly as a real branch reaches out above a garden…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20173,7 +20565,15 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a dragonfly's wing. The finest longitudinal hatching on every leaf is not decor but structure: on a real wing these are the veins that hold the…",
+      "description": "A composition about the feathers of a bird. The finest longitudinal hatching on every feather is not decor but structure: on a real feather these are the barbs…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -20406,6 +20806,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about different phases of flowering. The buds are turned in different directions, some open, some only just parted — a thicket rather than a bouquet:…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20474,6 +20882,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about the sky before a storm. The lilac tone fills from within — the colour the air takes on a few minutes before rain.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20542,6 +20958,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about an orchestra before a concert. Trumpets of differing calibre look up, down and sideways — that is how a brass section looks while the players…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20614,6 +21038,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about opening. Some flowers are fully open, some are only beginning — the cascade shows the process rather than the result.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -20668,6 +21100,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about autumn. Colour decides everything: burnt ochre, ash, warm bronze — a muted autumnal register, rare in light compositions, where white and gold…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -20722,6 +21162,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about wisteria on a pergola. The flowers are set densely and turned every way, the cascade descending as a dense vertical cluster — the way an…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -20780,6 +21228,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about April. The flowers vary in size — fully open, half-opened, tight buds — as on a real magnolia branch, which flowers before the leaves and does…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -21860,6 +22316,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cob. The leaves sit in layers, overlapping, by the dozen — a dense vertical where every row covers the one before.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 4,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -22298,7 +22762,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a shoal going round an obstacle. The shoal moves diagonally, deeper and lower — not as a formation and not as a cloud but as a trajectory: the…",
+      "description": "A composition about manta rays going round an obstacle. The shoal moves diagonally, deeper and lower — not as a formation and not as a cloud but as a trajectory:…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -22513,7 +22977,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L55 × W55 × H400 mm"
+          "value": "L50 × W50 × H400 mm"
         },
         {
           "@type": "PropertyValue",
@@ -22524,7 +22988,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H400",
-          "value": "L55 × W55 × H500 mm"
+          "value": "L50 × W50 × H500 mm"
         },
         {
           "@type": "PropertyValue",
@@ -22535,7 +22999,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L55 × W55 × H600 mm"
+          "value": "L50 × W50 × H600 mm"
         },
         {
           "@type": "PropertyValue",
@@ -22546,7 +23010,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H600",
-          "value": "L55 × W55 × H700 mm"
+          "value": "L50 × W50 × H700 mm"
         },
         {
           "@type": "PropertyValue",
@@ -22704,7 +23168,46 @@
         "https://vargov.ru/img/catalog/8cf682a344066d1e.jpg",
         "https://vargov.ru/img/catalog/f3e449b1bf74f96d.jpg",
         "https://vargov.ru/img/catalog/286e3a7d23d4f366.jpg",
-        "https://vargov.ru/img/catalog/67b82c5c768842af.jpg"
+        "https://vargov.ru/img/catalog/67b82c5c768842af.jpg",
+        "https://vargov.ru/img/catalog/da4e060163557bba.jpg",
+        "https://vargov.ru/img/catalog/a07e001c5b5a761a.jpg",
+        "https://vargov.ru/img/catalog/d1078b1bcc14e0ef.jpg",
+        "https://vargov.ru/img/catalog/7090b35d7b18bcd7.jpg",
+        "https://vargov.ru/img/catalog/de5d57dd7006ffa0.jpg",
+        "https://vargov.ru/img/catalog/9c4e15f6bc1a45c2.jpg",
+        "https://vargov.ru/img/catalog/091b6225e590859f.jpg",
+        "https://vargov.ru/img/catalog/b8e2c7c0e557aa75.jpg",
+        "https://vargov.ru/img/catalog/beabeb1a230a55f4.jpg",
+        "https://vargov.ru/img/catalog/6e70e514947c436b.jpg",
+        "https://vargov.ru/img/catalog/75bed54332e9c336.jpg",
+        "https://vargov.ru/img/catalog/772633fe94b370fc.jpg",
+        "https://vargov.ru/img/catalog/4e44eb932f40ec74.jpg",
+        "https://vargov.ru/img/catalog/50e626eda25f9b7b.jpg",
+        "https://vargov.ru/img/catalog/b17e214ab0f20961.jpg",
+        "https://vargov.ru/img/catalog/72f5a514ca23b26e.jpg",
+        "https://vargov.ru/img/catalog/bf752c8abafe67fc.jpg",
+        "https://vargov.ru/img/catalog/f887822d0aeedb01.jpg",
+        "https://vargov.ru/img/catalog/629c2bbf16a6561f.jpg",
+        "https://vargov.ru/img/catalog/8bf061835117451a.jpg",
+        "https://vargov.ru/img/catalog/4457d559c47c3f90.jpg",
+        "https://vargov.ru/img/catalog/88252187b6817690.jpg",
+        "https://vargov.ru/img/catalog/2298e562ec2dc6db.jpg",
+        "https://vargov.ru/img/catalog/45c58255285fe343.jpg",
+        "https://vargov.ru/img/catalog/89b16b3a73894bdf.jpg",
+        "https://vargov.ru/img/catalog/7c5d107a1e4b862a.jpg",
+        "https://vargov.ru/img/catalog/9dc798e0fe3209ab.jpg",
+        "https://vargov.ru/img/catalog/7e96cfa59089cd50.jpg",
+        "https://vargov.ru/img/catalog/c2bd42cd5ac801ae.jpg",
+        "https://vargov.ru/img/catalog/e951b4f7d73aa9a5.jpg",
+        "https://vargov.ru/img/catalog/01e5ac1aaa73428e.jpg",
+        "https://vargov.ru/img/catalog/36398cefb79e677d.jpg",
+        "https://vargov.ru/img/catalog/5b569142ff2281a8.jpg",
+        "https://vargov.ru/img/catalog/b654f7f0c74ecc13.jpg",
+        "https://vargov.ru/img/catalog/2e47f0097084706a.jpg",
+        "https://vargov.ru/img/catalog/3b3a232f2d076e7b.jpg",
+        "https://vargov.ru/img/catalog/75908f297b25ccd2.jpg",
+        "https://vargov.ru/img/catalog/912c2bca541ad59f.jpg",
+        "https://vargov.ru/img/catalog/7d65127f9d752202.jpg"
       ],
       "category": "Lighting compositions",
       "brand": {
@@ -22899,6 +23402,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a bush in bloom. Fine rods spread in every direction, interlacing into a volumetric sphere, and on each tip sits a pointed flower with a gold…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23076,6 +23587,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cluster. The branches hang down in a dense cone, narrowing toward the bottom and ending in a few solitary sprigs — like a real cluster pulled…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23146,6 +23665,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about rain through foliage. Two tiers work toward one image: above, a dense ring of leaves with the sources hidden between them; below, dozens of…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23290,6 +23817,12 @@
           "name": "Element weight Ø300",
           "value": 2.51,
           "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
         }
       ],
       "hasCertification": {
@@ -23556,6 +24089,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a dandelion. Hundreds of tubular elements radiate in every direction from a central sphere, and at the end of each is a gold ball, like a seed…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -23620,6 +24161,14 @@
       },
       "inLanguage": "en",
       "description": "A composition with a plot of its own. The birds here are not decoration but participants in a scene: one dives, another hovers, a third is only approaching, and…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -23690,6 +24239,14 @@
       },
       "inLanguage": "en",
       "description": "The same scene in a green register. Flowers of two kinds — clear olive-green and milky white — open as wide bowls; between them hover chrome hummingbirds with…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -23760,6 +24317,14 @@
       },
       "inLanguage": "en",
       "description": "The same story in white. The absence of colour shifts the accent onto plasticity: you can see how each flower is coiled along a spiral, how the edge turns, how…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -23830,6 +24395,14 @@
       },
       "inLanguage": "en",
       "description": "A composition with a plot — the rare case of an object that does not decorate a space but tells a story.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -23997,7 +24570,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "An object about a shell being a house built along a spiral. The form is coiled so that it has neither a beginning nor an end: the gaze is drawn inside and finds no…",
+      "description": "An object about a hummingbird never landing on a flower: it drinks hovering in the air. The petals are coiled into a funnel, the edge going inward — the gaze is…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -24339,6 +24912,14 @@
       },
       "inLanguage": "en",
       "description": "The man-made pretending to have been found. The crystals are split irregularly, the facets meet at random angles, and the object looks lifted out of rock rather…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24413,6 +24994,14 @@
       },
       "inLanguage": "en",
       "description": "A branch that was not cut but grown again. The leaves are twisted and turned out of step with each other — there is no garland rhythm here, there is the disorder…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24586,6 +25175,47 @@
       "award": [
         "ADD Awards 2023 — 2nd place, 9th season · Interior & exterior objects · built project, composition LC0342"
       ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H400",
+          "value": "L25 × W25 × H480 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H400",
+          "value": 0.31,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H500",
+          "value": "L25 × W25 × H580 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H500",
+          "value": 0.34,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H600",
+          "value": "L25 × W25 × H680 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H600",
+          "value": 0.37,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -24643,6 +25273,14 @@
       },
       "inLanguage": "en",
       "description": "A flower caught at the moment of opening. The petals are not fully unfurled — the movement is stopped a little before it finished, and the whole life of the object…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -24752,6 +25390,14 @@
       "description": "White on white — the hardest task in product design: with the colour taken away, form has nothing left to hide behind. Here it holds.",
       "award": [
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339"
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
       ],
       "subjectOf": [
         {
@@ -26191,6 +26837,14 @@
       "award": [
         "International Architecture & Design Awards · ADC 2023 — Gold Winner · Lighting Product Design Concept / Professional · «Drapery», composition LC0323"
       ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -26271,6 +26925,14 @@
       },
       "inLanguage": "en",
       "description": "A tropical plant cast whole. The leaves are twisted helically, with a sharp tip and a deep lens in the body — a form taken from nature and carried through to an…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -26465,6 +27127,14 @@
       },
       "inLanguage": "en",
       "description": "The same branch with the sign reversed. Where the neighbouring model reflects light, this one lets it through — and the result is the opposite character from…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -26533,6 +27203,14 @@
       },
       "inLanguage": "en",
       "description": "A flowering with half the blooms still closed. Some corollas glow from within, others stay blind and merely reflect their neighbours — a garden caught halfway…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -26674,7 +27352,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A bird's tail at the moment of opening. The bands are angled and overlap one another — the movement is stopped halfway and the eye completes what it cannot see.",
+      "description": "A stylised flower at the moment of opening. The bands are angled and overlap one another — the movement is stopped halfway and the eye completes what it cannot see.",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -26734,6 +27412,14 @@
       "award": [
         "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
         "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313"
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
       ],
       "subjectOf": [
         {
@@ -27319,6 +28005,14 @@
       },
       "inLanguage": "en",
       "description": "A net sagging under its own weight. The form is set not by a designer but by physics — the mesh falls the way any net stretched between fixed points will fall.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -27382,6 +28076,14 @@
       },
       "inLanguage": "en",
       "description": "A thicket seen from below — the way a fish sees it. The rods vary in length and are slightly curved; they sway to the eye even in complete stillness.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 0.5,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -27427,6 +28129,14 @@
       },
       "inLanguage": "en",
       "description": "Light hidden inside something that absorbs light. The surface is matte, downy, almost textile — it kills highlights completely, and that is the whole calculation.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 0.5,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -27480,9 +28190,17 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A surface that flows into itself. The form folds and unfolds without a single corner — the tail of a fish, the wing of an insect, a wave at the moment it turns…",
+      "description": "A surface that flows into itself. The form folds and unfolds without a single corner — a bend, an overlap, a wave at the moment it turns over: movement is…",
       "award": [
         "International Architecture & Design Awards · ADC 2023 — Platinum Winner · Lighting Product Design Built / Professional · light composition LC0303"
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
       ],
       "hasCertification": {
         "@type": "Certification",
@@ -28576,6 +29294,14 @@
       "award": [
         "SIT Furniture Design Award 2023 — Winner · Designer & Custom Lighting · composition LC0292"
       ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -28937,7 +29663,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A bird simplified to two strokes. A forked tail, sharp wings — a silhouette in a dive with everything removed except recognisability.",
+      "description": "A butterfly simplified to two strokes. Raised wings, a sharp edge — a silhouette mid-wingbeat with everything removed except recognisability.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -29301,6 +30027,14 @@
       },
       "inLanguage": "en",
       "description": "A whirlwind coiled around a spiral staircase. The composition does not hang in the shaft, it passes through it — from the top floor to the bottom, accompanying…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -31573,6 +32307,14 @@
       },
       "inLanguage": "en",
       "description": "Metal caught in the act of flowing. The form has run and crumpled — it looks not made but happened, as though it had been stopped a second before it flowed further.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -31686,7 +32428,15 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "Black outside, sun within. The whole object is built on a single device: the sphere stays dark and matte on the outside while the light lives deep inside and…"
+      "description": "Black outside, sun within. The whole object is built on a single device: the sphere stays dark and matte on the outside while the light lives deep inside and…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
+      ]
     },
     {
       "@type": "Product",
@@ -31841,7 +32591,15 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A horn with light pouring out of it. The form is taken from a wind instrument: a bell rolled from a sheet, its rim crumpled differently on every element."
+      "description": "A horn with light pouring out of it. The form is taken from a wind instrument: a bell rolled from a sheet, its rim crumpled differently on every element.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 5,
+          "unitCode": "WTT"
+        }
+      ]
     },
     {
       "@type": "Product",
@@ -32685,6 +33443,14 @@
       },
       "inLanguage": "en",
       "description": "A vortex pressed to the ceiling. The tiers are offset from one another around the circle, and the mass winds into a spiral, forming a shallow funnel — movement…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -32818,6 +33584,14 @@
       "description": "Marked Award Winning — the badge appears on the brand photography for this item. A view from the bottom of a pond.",
       "award": [
         "MUSE Design Awards 2023 — Platinum Winner · Lighting Design — Designer / Custom Lighting · composition LC0237"
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
       ],
       "hasCertification": {
         "@type": "Certification",
@@ -33060,6 +33834,14 @@
       },
       "inLanguage": "en",
       "description": "The birds do not glow — the flowers do. The division of roles is strict: source below, reflector above, and the whole scene rests on the hunter being lit by its…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -33130,6 +33912,14 @@
       },
       "inLanguage": "en",
       "description": "A branch that has wound itself around a space. The base is curved into a broad loop in the horizontal plane — it reads not as a structure but as something that…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -33970,6 +34760,14 @@
       "award": [
         "LIT Lighting Design Awards 2022 — Winner · Designer and Custom Lighting · composition LC0223"
       ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -34039,6 +34837,14 @@
       },
       "inLanguage": "en",
       "description": "Water striking an invisible obstacle. Above, the ribbons run strictly vertical in a tight bundle; lower down they separate and curve gently outward — a jet that…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -34109,6 +34915,28 @@
           "@type": "PropertyValue",
           "name": "Element weight Ø100",
           "value": 0.26,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size Ø120",
+          "value": "L110 × W110 × H120 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight Ø120",
+          "value": 0.37,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size Ø170",
+          "value": "L160 × W160 × H170 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight Ø170",
+          "value": 0.77,
           "unitCode": "KGM"
         }
       ],
@@ -35854,6 +36682,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about weightlessness. The manta is the only large creature that does not swim but flies: its movement is closer to a bird's gliding than to a fish.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 0.5,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -35908,6 +36744,14 @@
       },
       "inLanguage": "en",
       "description": "The same magnolia at another hour. The crown is loosened, the branches are drawn apart, and the garden turns from a dense sphere into a spreading branch — the…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -35980,6 +36824,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about dusk. The magnolia flowers before its leaves — a bare branch on which large cups open straight away.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -36052,6 +36904,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about morning. The same device as the dark version, read in full light: gold cast branches woven into a sphere, and on them large flowers with a…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -36126,7 +36986,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about the upstroke. A narrow curved sickle with sharp ends and a slight twist on its axis — the form reads both as a wing at the moment of lift and…",
+      "description": "A composition about foliage. A narrow curved sickle with sharp ends and a slight twist on its axis — a leaf of an exotic island plant, caught by wind.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -36242,7 +37102,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a flock that has already scattered. The same sickle form — a narrow wing with sharp ends and a twist — but read quietly: a white matte mass…",
+      "description": "A composition about foliage that the air has already scattered. The same sickle form — a narrow leaf of an exotic island plant, with sharp ends and a twist — but…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -36464,6 +37324,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about shedding. The garland sags at the centre and opens upward — the form of something stretched between two points, alive, with a sag from its own…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -37813,6 +38681,30 @@
       },
       "inLanguage": "en",
       "description": "A composition about a ribbon of fire. Boats with sharp raised prows stand close and overlap, so the line reads as a continuous mass rather than a row of separate…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H200",
+          "value": "L65 × W35 × H200 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H200",
+          "value": 0.08,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H250",
+          "value": "L80 × W45 × H250 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H250",
+          "value": 0.16,
+          "unitCode": "KGM"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -38115,6 +39007,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about the crack as ornament. Crazing is usually counted a defect: a net of fine cracks across a surface.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -39584,7 +40484,16 @@
         "https://vargov.ru/img/catalog/19ec4f89e64802ec.jpg",
         "https://vargov.ru/img/catalog/54a085fb81367ad2.jpg",
         "https://vargov.ru/img/catalog/6e42d2efb928cf0a.jpg",
-        "https://vargov.ru/img/catalog/5c8684c8f46e4903.jpg"
+        "https://vargov.ru/img/catalog/5c8684c8f46e4903.jpg",
+        "https://vargov.ru/img/catalog/ecf43910975c42ee.jpg",
+        "https://vargov.ru/img/catalog/b4b9dd1e878def68.jpg",
+        "https://vargov.ru/img/catalog/c6602fd0e37f4fad.jpg",
+        "https://vargov.ru/img/catalog/f6b75d2e0f021734.jpg",
+        "https://vargov.ru/img/catalog/af0819e0a52cba03.jpg",
+        "https://vargov.ru/img/catalog/70303d4a16ec825d.jpg",
+        "https://vargov.ru/img/catalog/9e54f526c74e5794.jpg",
+        "https://vargov.ru/img/catalog/32c9de08dbe0aab1.jpg",
+        "https://vargov.ru/img/catalog/af6072ecc3d814d1.jpg"
       ],
       "category": "Decorative compositions",
       "brand": {
@@ -40005,6 +40914,14 @@
       },
       "inLanguage": "en",
       "description": "The same colony, but with something to hold on to. The anemones are set not on cables but on a tubular branch curved into a broad loop in the horizontal plane: the…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -41152,7 +42069,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L35 × W35 × H360 mm"
+          "value": "L30 × W30 × H360 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41163,7 +42080,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H400",
-          "value": "L35 × W35 × H460 mm"
+          "value": "L30 × W30 × H460 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41174,7 +42091,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L35 × W35 × H560 mm"
+          "value": "L30 × W30 × H560 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41185,7 +42102,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H600",
-          "value": "L35 × W35 × H660 mm"
+          "value": "L30 × W30 × H660 mm"
         },
         {
           "@type": "PropertyValue",
@@ -42432,6 +43349,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about something grown rather than assembled. The branches curve in a broad loop in the horizontal plane, divide, and on every stalk sits its own…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -42503,7 +43428,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about soft and hard. Rounded scaled buds — and straight rods set obliquely between them.",
+      "description": "A composition about round and hard. Asteroids covered in small chips — and straight rods set obliquely between them.",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -42957,6 +43882,74 @@
       },
       "inLanguage": "en",
       "description": "A composition about a rain of stones. The curtain is not regular: some strands descend deep, others break off high, and the spacing of the beads differs on each.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H500",
+          "value": "L500 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H500",
+          "value": 0.26,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H700",
+          "value": "L700 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H700",
+          "value": 0.31,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H900",
+          "value": "L900 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H900",
+          "value": 0.35,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H1100",
+          "value": "L1100 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H1100",
+          "value": 0.39,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H1300",
+          "value": "L1300 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H1300",
+          "value": 0.43,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H1500",
+          "value": "L1500 × W20–40 × H20–40 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H1500",
+          "value": 0.46,
+          "unitCode": "KGM"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -43897,6 +44890,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a thicket growing downward. From a round mirrored base runs a dense fringe of fine rods, and monstera leaves sit along its lower edge, forming…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -43970,6 +44971,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about an armful. The stems spread from a round base outward and downward, each bending its own way: not a bouquet set in a vase but an armful thrown…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -45252,7 +46261,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a shell enlarged many times over. The form curls in two opposing waves with a deep hollow between them, and close linear hatching runs across…",
+      "description": "A composition about Antelope Canyon — a narrow slot washed out of the rock by water. The form curls in two opposing waves with a deep hollow between them, and…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -45310,6 +46319,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a drawing carried into space. The frame of fine ties joined into an irregular polyhedral net is not concealed — it is the principal form.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 0.5,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -45519,7 +46536,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about the pearl in the shell. A shell grows in annual accretions — several nested layers with wavy edges, spiralling toward an off-centre core, with…",
+      "description": "A composition about the oyster: the pearl in its shell. A shell grows in annual accretions — several nested layers with wavy edges, spiralling toward an off-centre…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -45570,7 +46587,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "The same shell set upright. The layers no longer run in circles but converge upward toward a pointed apex, with the pearl shifted into the upper third: the form…",
+      "description": "The same oyster set upright. The layers no longer run in circles but converge upward toward a pointed apex, with the pearl shifted into the upper third: the form…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -45764,7 +46781,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a whirlpool. The folds run in coils around an off-centre opening, welling over one another and narrowing toward the middle: a funnel, fabric…",
+      "description": "A composition about an oyster and a pearl. The folds run in coils around an off-centre opening, welling over one another and narrowing toward the middle: this is…",
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -47726,6 +48743,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about tension released. Each plate sags in an arc between two fixing points — the form fabric takes when you stop pulling it.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -47795,7 +48820,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a bird drawn in a single stroke. The simple tick — two blades diverging at an angle, with uneven edges — is how a child draws a bird and how a…",
+      "description": "A composition about a tree seed drawn in a single stroke. The simple tick — two blades diverging at an angle, with uneven edges — is the samara itself: the wing on…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -48000,6 +49025,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about full bloom. The flowers sit close, in whole clusters, with gaps between them — the crown reads as grown rather than set out on a grid.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -48296,6 +49329,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about the vine. The branches curl freely and interweave into a vertical spiral — a vine grows by clinging, and its form always follows a support.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -48367,6 +49408,14 @@
       },
       "inLanguage": "en",
       "description": "The same spiral, with flowers instead of fruit. White cups with two or three reflexed petals, opaque outside and glowing within — closer to bindweed or calla,…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -48438,6 +49487,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a thicket. The rods are woven freely, with no geometry at all: they bend, cross and separate like branches in undergrowth.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -48512,6 +49569,14 @@
       },
       "inLanguage": "en",
       "description": "A composition about a wreath drawn out into a spiral. The laurel is a symbol whose form has always been closed: wreath, ring, circle.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Power per element",
+          "value": 1,
+          "unitCode": "WTT"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -48701,9 +49766,15 @@
         "https://vargov.ru/img/catalog/62583d940a35ce7c.jpg",
         "https://vargov.ru/img/catalog/a5a69cf1f36a2c4c.jpg",
         "https://vargov.ru/img/catalog/eccc1789e79a1a3b.jpg",
-        "https://vargov.ru/img/catalog/00065549c9092536.jpg",
-        "https://vargov.ru/img/catalog/9a989f0fd53f60a8.jpg",
-        "https://vargov.ru/img/catalog/1af8117926195f58.jpg"
+        "https://vargov.ru/img/catalog/39c2d65a09ad757f.jpg",
+        "https://vargov.ru/img/catalog/c6d53f360750d982.jpg",
+        "https://vargov.ru/img/catalog/b2d00aed21e7d1e8.jpg",
+        "https://vargov.ru/img/catalog/2f342de9e50bc27b.jpg",
+        "https://vargov.ru/img/catalog/4beab4d8e662e933.jpg",
+        "https://vargov.ru/img/catalog/3a2db87138feff16.jpg",
+        "https://vargov.ru/img/catalog/88dd4794beeedc37.jpg",
+        "https://vargov.ru/img/catalog/f8bf9b7d920e3476.jpg",
+        "https://vargov.ru/img/catalog/4640c824ae656d4d.jpg"
       ],
       "category": "Decorative compositions",
       "brand": {
@@ -49766,7 +50837,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L30 × W30 × H350 mm"
+          "value": "L27 × W27 × H350 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49777,7 +50848,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H400",
-          "value": "L30 × W30 × H400 mm"
+          "value": "L27 × W27 × H400 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49788,7 +50859,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H450",
-          "value": "L30 × W30 × H450 mm"
+          "value": "L27 × W27 × H450 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49799,7 +50870,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L30 × W30 × H500 mm"
+          "value": "L27 × W27 × H500 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49891,7 +50962,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H700",
-          "value": "L30 × W30 × H700 mm"
+          "value": "L27 × W27 × H700 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49902,7 +50973,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H800",
-          "value": "L30 × W30 × H800 mm"
+          "value": "L27 × W27 × H800 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49913,7 +50984,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H900",
-          "value": "L30 × W30 × H900 mm"
+          "value": "L27 × W27 × H900 mm"
         },
         {
           "@type": "PropertyValue",
@@ -49924,7 +50995,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H1000",
-          "value": "L30 × W30 × H1000 mm"
+          "value": "L27 × W27 × H1000 mm"
         },
         {
           "@type": "PropertyValue",
@@ -50778,10 +51849,7 @@
         "https://vargov.ru/img/catalog/bea5c42ce1a07193.jpg",
         "https://vargov.ru/img/catalog/93b17fb2d2b997f0.jpg",
         "https://vargov.ru/img/catalog/5e91d444357c224a.jpg",
-        "https://vargov.ru/img/catalog/ce6ad19c803ec26d.jpg",
-        "https://vargov.ru/img/catalog/fcb9fbf6a4414ea7.jpg",
-        "https://vargov.ru/img/catalog/1d610068978fb86e.jpg",
-        "https://vargov.ru/img/catalog/87d566724d94b884.jpg"
+        "https://vargov.ru/img/catalog/ce6ad19c803ec26d.jpg"
       ],
       "category": "Decorative compositions",
       "brand": {
@@ -50791,7 +51859,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a body that is barely there. The moon jellyfish shows only its ribs: everything else is transparent enough to read as emptiness.",
+      "description": "A composition about a body that is barely there. An air bubble frozen into Baikal ice is visible only by its rim: everything else is transparent enough to read as…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -51840,7 +52908,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L85 × W85 × H300 mm"
+          "value": "L80 × W80 × H300 mm"
         },
         {
           "@type": "PropertyValue",
@@ -51851,7 +52919,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H400",
-          "value": "L85 × W85 × H400 mm"
+          "value": "L80 × W80 × H400 mm"
         },
         {
           "@type": "PropertyValue",
@@ -51862,7 +52930,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H500",
-          "value": "L85 × W85 × H500 mm"
+          "value": "L80 × W80 × H500 mm"
         },
         {
           "@type": "PropertyValue",
@@ -51873,7 +52941,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H600",
-          "value": "L85 × W85 × H600 mm"
+          "value": "L80 × W80 × H600 mm"
         },
         {
           "@type": "PropertyValue",
