@@ -72,14 +72,14 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
 - [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Сертификация](https://vargov.ru/certification) — серийные сертификаты ТР ЕАЭС 004/2011 и 020/2011, знак EAC, более 300 артикулов
-- [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
+- [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru) — собирает композицию под помещение и отдаёт три документа под проект: чертёж DXF, спецификацию и **модель IFC4 (BIM)**. Светящиеся артикулы выгружаются классом IfcLightFixture, декоративные — IfcFurnishingElement; точки крепления к потолку идут отдельными объектами с нагрузкой на каждую. Библиотечного семейства Revit (.rfa) у бренда нет — формат закрытый, мы его не выпускаем.
 
 ## О бренде
 
 - [О бренде](https://vargov.ru/about) · [Антон Варгов](https://vargov.ru/designer) · [Награды](https://vargov.ru/awards) · [Проекты](https://vargov.ru/projects) · [Журнал](https://vargov.ru/journal) · [Пресс-кит](https://vargov.ru/press) · [Шоурум](https://vargov.ru/showroom) · [Официальные дилеры](https://vargov.ru/official-dealers)
 - [Русский световой дизайн: откуда он вырос и как выглядит сегодня](https://vargov.ru/journal/russian-lighting-design) — эссе в журнале сайта (05.09.2026), восемь языков; копия текста в базе — [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md)
 
-Награды — 23, в 15 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
+Награды — 24, в 16 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
 
 Среди них: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 («Oceanic Illumination»), NY Product Design Awards 2023, ADC 2023 («Drapery»), Houzee Awards 2023.
 
@@ -153,7 +153,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
 - [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Certification](https://vargov.ru/en/certification) — EAEU serial certificates of conformity to TR CU 004/2011 and 020/2011, EAC mark, more than 300 LC pieces
-- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design)
+- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design) — builds a composition for the room and returns three documents for the project: a DXF drawing, a specification and an **IFC4 (BIM) model**. Lit articles are exported as IfcLightFixture, decorative ones as IfcFurnishingElement; ceiling fixing points come as separate objects, each with its own load. There is no Revit family (.rfa) — the format is proprietary and the brand does not issue one.
 
 ## About
 

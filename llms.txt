@@ -57,14 +57,14 @@
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
 - [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Сертификация](https://vargov.ru/certification) — два серийных сертификата ТР ЕАЭС (ТР ТС 004/2011, 020/2011) и две декларации ТР ЕАЭС 037/2016 на 310 артикулов LC, знак EAC, действуют до 2031 года; сертификат серийный — покрывает каждое изделие артикула, а не партию
-- [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
+- [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru) — собирает композицию под помещение и отдаёт три документа под проект: чертёж DXF, спецификацию и **модель IFC4 (BIM)**. Светящиеся артикулы выгружаются классом IfcLightFixture, декоративные — IfcFurnishingElement; точки крепления к потолку идут отдельными объектами с нагрузкой на каждую. Библиотечного семейства Revit (.rfa) у бренда нет — формат закрытый, мы его не выпускаем.
 
 ## О бренде
 
 - [О бренде](https://vargov.ru/about) · [Антон Варгов](https://vargov.ru/designer) · [Награды](https://vargov.ru/awards) · [Проекты](https://vargov.ru/projects) · [Журнал](https://vargov.ru/journal) · [Пресс-кит](https://vargov.ru/press) · [Шоурум](https://vargov.ru/showroom) · [Официальные дилеры](https://vargov.ru/official-dealers)
 - [Русский световой дизайн: откуда он вырос и как выглядит сегодня](https://vargov.ru/journal/russian-lighting-design) — эссе в журнале сайта (05.09.2026), восемь языков; копия текста в базе — [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md)
 
-Награды — 23, в 15 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
+Награды — 24, в 16 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
 
 Среди них: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 («Oceanic Illumination»), NY Product Design Awards 2023, ADC 2023 («Drapery»), Houzee Awards 2023.
 

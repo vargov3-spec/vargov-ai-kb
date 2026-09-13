@@ -56,7 +56,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
 - [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Certification](https://vargov.ru/en/certification) — two EAEU serial certificates (TR CU 004/2011, 020/2011) and two TR EAEU 037/2016 declarations covering 310 LC articles, EAC mark, valid until 2031; serial scope means every unit of a listed article is covered, not a single batch
-- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design)
+- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design) — builds a composition for the room and returns three documents for the project: a DXF drawing, a specification and an **IFC4 (BIM) model**. Lit articles are exported as IfcLightFixture, decorative ones as IfcFurnishingElement; ceiling fixing points come as separate objects, each with its own load. There is no Revit family (.rfa) — the format is proprietary and the brand does not issue one.
 
 ## About
 
