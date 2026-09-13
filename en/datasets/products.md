@@ -331,8 +331,8 @@ Compositions: 605
 | LC0316 | Wall light-sculpture | https://vargov.ru/en/catalog/lc0316 |  |
 | LC0317 | Light composition | https://vargov.ru/en/catalog/lc0317 |  |
 | LC0318 | Light composition | https://vargov.ru/en/catalog/lc0318 |  |
-| LC0319 | Light composition | https://vargov.ru/en/catalog/lc0319 |  |
-| LC0320 | Light composition | https://vargov.ru/en/catalog/lc0320 |  |
+| LC0319 | Light composition | https://vargov.ru/en/catalog/lc0319 | 1 |
+| LC0320 | Light composition | https://vargov.ru/en/catalog/lc0320 | 1 |
 | LC0321 | Staircase balustrade | https://vargov.ru/en/catalog/lc0321 |  |
 | LC0322 | Light composition | https://vargov.ru/en/catalog/lc0322 |  |
 | LC0323 | Light composition | https://vargov.ru/en/catalog/lc0323 | 1 |

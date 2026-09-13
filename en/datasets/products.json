@@ -6894,7 +6894,7 @@
         "program": "LOOP Design Awards",
         "year": "2025",
         "level": "Winner · Products | Lighting Design · composition LC0458",
-        "href": "https://loopdesignawards.com/project/lighting-composition-lc0458",
+        "href": null,
         "series": false
       }
     ],
@@ -11983,11 +11983,10 @@
       "vi": "https://vargov.ru/vi/catalog/lc0341",
       "ar": "https://vargov.ru/ar/catalog/lc0341"
     },
-    "image": "https://vargov.ru/img/catalog/ace8cc23df339287.jpg",
+    "image": "https://vargov.ru/img/catalog/fbd203146d9de0f8.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/ace8cc23df339287.jpg",
-      "https://vargov.ru/img/catalog/87b99bd7cf74e6b3.jpg",
       "https://vargov.ru/img/catalog/fbd203146d9de0f8.jpg",
+      "https://vargov.ru/img/catalog/87b99bd7cf74e6b3.jpg",
       "https://vargov.ru/img/catalog/9132522025372fef.jpg",
       "https://vargov.ru/img/catalog/d3911b9badc32a63.jpg",
       "https://vargov.ru/img/catalog/9b7407aeb3bff3f2.jpg",
@@ -11995,7 +11994,7 @@
       "https://vargov.ru/img/catalog/38aa899c96ce69ee.jpg",
       "https://vargov.ru/img/catalog/10a02d878678e8e6.jpg"
     ],
-    "gallery_total": 9,
+    "gallery_total": 8,
     "model3d": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-tsvetok-keramika-vargov-r-design-lc0341",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-tsvetok-keramika-vargov-r-design-lc0341",
     "award_winning": true,
@@ -12024,9 +12023,8 @@
       "vi": "https://vargov.ru/vi/catalog/lc0340",
       "ar": "https://vargov.ru/ar/catalog/lc0340"
     },
-    "image": "https://vargov.ru/img/catalog/f34fa80f8d7a2881.jpg",
+    "image": "https://vargov.ru/img/catalog/2b2a7a6401d361a6.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/f34fa80f8d7a2881.jpg",
       "https://vargov.ru/img/catalog/2b2a7a6401d361a6.jpg",
       "https://vargov.ru/img/catalog/ad5f42f9ffb31f1d.jpg",
       "https://vargov.ru/img/catalog/9132522025372fef.jpg",
@@ -12034,7 +12032,7 @@
       "https://vargov.ru/img/catalog/5c6e56afcb25176b.jpg",
       "https://vargov.ru/img/catalog/b14f23b9a56da6d7.jpg"
     ],
-    "gallery_total": 7,
+    "gallery_total": 6,
     "model3d": "https://3dsky.org/3dmodels/show/torsher-tsvetok-keramika-vargov-r-design-lc0340",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/torsher-tsvetok-keramika-vargov-r-design-lc0340",
     "award_winning": true,
@@ -12113,9 +12111,9 @@
       "vi": "https://vargov.ru/vi/catalog/lc0338",
       "ar": "https://vargov.ru/ar/catalog/lc0338"
     },
-    "image": "https://vargov.ru/img/catalog/714be21656d570f7.jpg",
+    "image": "https://vargov.ru/img/catalog/5c74e19ffc8dacb9.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/714be21656d570f7.jpg",
+      "https://vargov.ru/img/catalog/5c74e19ffc8dacb9.jpg",
       "https://vargov.ru/img/catalog/c6fa6ec778d8cc59.jpg",
       "https://vargov.ru/img/catalog/e1416b2466a7fba8.jpg",
       "https://vargov.ru/img/catalog/c7201206302a3eb7.jpg",
@@ -12968,21 +12966,28 @@
       "vi": "https://vargov.ru/vi/catalog/lc0320",
       "ar": "https://vargov.ru/ar/catalog/lc0320"
     },
-    "image": "https://vargov.ru/img/catalog/b405de7496bc11fa.jpg",
+    "image": "https://vargov.ru/img/catalog/54e6023e96fa7243.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/b405de7496bc11fa.jpg",
-      "https://vargov.ru/img/catalog/11cc5265f2724092.jpg",
       "https://vargov.ru/img/catalog/54e6023e96fa7243.jpg",
+      "https://vargov.ru/img/catalog/11cc5265f2724092.jpg",
       "https://vargov.ru/img/catalog/2df2acfdb712390b.jpg",
       "https://vargov.ru/img/catalog/cc1e7d656d64aa3b.jpg",
       "https://vargov.ru/img/catalog/5f45887140f88e0a.jpg",
       "https://vargov.ru/img/catalog/f8033e4855393085.jpg"
     ],
-    "gallery_total": 7,
+    "gallery_total": 6,
     "model3d": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0320",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0320",
     "award_winning": true,
-    "awards": [],
+    "awards": [
+      {
+        "program": "ICONIC AWARDS · Innovative Interior",
+        "year": "2023",
+        "level": "Selection · Lighting design · series award",
+        "href": null,
+        "series": true
+      }
+    ],
     "in_stock_elements": [],
     "description": "An object with no colour of its own. The composition shows nothing that belongs to it — it gathers up the interior around it and gives it back distorted, the way a drop of water gives back a room.\n\nBecause of that the piece never looks the same twice: in the morning it holds the reflection of the window, in the evening the warm light of the lamps; in winter it is grey, in summer green from the garden outside. The owner acquires not an object but a mirror of their own space.\n\nThe light is hidden in the joints and strikes the underside of the leaves — only reflected glow escapes, without a single direct beam. By day it is a sculpture in arrested metal; in the evening it is a glowing canopy with not one lamp in sight. The model holds an international award.",
     "where_it_works": "A horizontal format — above a long table, in an entrance hall, over a reception desk, in a meeting room, in a showroom.",
@@ -13007,11 +13012,10 @@
       "vi": "https://vargov.ru/vi/catalog/lc0319",
       "ar": "https://vargov.ru/ar/catalog/lc0319"
     },
-    "image": "https://vargov.ru/img/catalog/61866f42bfe79325.jpg",
+    "image": "https://vargov.ru/img/catalog/dc7d659404873cee.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/61866f42bfe79325.jpg",
-      "https://vargov.ru/img/catalog/9acd23221cc5bfed.jpg",
       "https://vargov.ru/img/catalog/dc7d659404873cee.jpg",
+      "https://vargov.ru/img/catalog/9acd23221cc5bfed.jpg",
       "https://vargov.ru/img/catalog/5b8ad7dd061daff8.jpg",
       "https://vargov.ru/img/catalog/2c73cc1ff7af05ff.jpg",
       "https://vargov.ru/img/catalog/cda6e05184d84554.jpg",
@@ -13023,11 +13027,19 @@
       "https://vargov.ru/img/catalog/6cfcf176ac8d4d2d.jpg",
       "https://vargov.ru/img/catalog/6376ca10f0414dfe.jpg"
     ],
-    "gallery_total": 13,
+    "gallery_total": 12,
     "model3d": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0319",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0319",
     "award_winning": true,
-    "awards": [],
+    "awards": [
+      {
+        "program": "ICONIC AWARDS · Innovative Interior",
+        "year": "2023",
+        "level": "Selection · Lighting design · composition LC0319",
+        "href": null,
+        "series": false
+      }
+    ],
     "in_stock_elements": [],
     "description": "The same branch with the sign reversed. Where the neighbouring model reflects light, this one lets it through — and the result is the opposite character from identical geometry.\n\nThe light enters at the stalk and spreads through the body of the leaf, igniting it entire; highlights flare at the bends and a green shadow holds in the depth. The composition reads as underwater — weed in the body of the water, swaying with the current.\n\nBy day the branch is almost transparent and visible only as a contour; in the evening it fills with turquoise and becomes the principal patch of colour in the room. The composition holds an international award.",
     "where_it_works": "A horizontal format for large spaces with a quiet background: above a table, in a lobby, in a spa area, beside a pool, in a winter garden.",
@@ -13253,11 +13265,10 @@
       "vi": "https://vargov.ru/vi/catalog/lc0312",
       "ar": "https://vargov.ru/ar/catalog/lc0312"
     },
-    "image": "https://vargov.ru/img/catalog/953b2c2227a701eb.jpg",
+    "image": "https://vargov.ru/img/catalog/dad9520b5f43f94f.jpg",
     "gallery": [
-      "https://vargov.ru/img/catalog/953b2c2227a701eb.jpg",
-      "https://vargov.ru/img/catalog/16542e68807b5de9.jpg",
       "https://vargov.ru/img/catalog/dad9520b5f43f94f.jpg",
+      "https://vargov.ru/img/catalog/16542e68807b5de9.jpg",
       "https://vargov.ru/img/catalog/bd786e31f60bcc70.jpg",
       "https://vargov.ru/img/catalog/c4edb7bd03dd04b6.jpg",
       "https://vargov.ru/img/catalog/67471e275bfda8dd.jpg",
@@ -13265,7 +13276,7 @@
       "https://vargov.ru/img/catalog/cda17b279125b87f.jpg",
       "https://vargov.ru/img/catalog/d18febf93520593a.jpg"
     ],
-    "gallery_total": 9,
+    "gallery_total": 8,
     "model3d": "https://3dsky.org/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0312",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0312",
     "award_winning": true,

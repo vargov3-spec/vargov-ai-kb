@@ -2,7 +2,7 @@
 
 > Vargov® Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
 
-Каталог — 605 композиций с артикулами LC0001…LC0602 в четырёх семействах. 23 международные награды.
+Каталог — 605 композиций с артикулами LC0001…LC0602 в четырёх семействах. 24 международные награды.
 
 ## Канонический источник
 
@@ -26,7 +26,7 @@
 ## База знаний и пресс-материалы
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — проверенные факты о бренде
-- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 23 награды со ссылками на страницы премий
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 24 награды со ссылками на страницы премий
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — PR-кит
 - [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
 - [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov® Design»

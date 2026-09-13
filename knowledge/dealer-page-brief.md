@@ -14,7 +14,7 @@
 
 ## Готовый текст (EN, копировать как есть)
 
-> Vargov® Design is a Russian brand of author-designed lighting and decorative compositions — collectible light sculptures at the intersection of art, engineering precision and contemporary Russian design. Founder and lead designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023. The brand holds 23 international design awards, including Platinum at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold at the MUSE Design Awards 2026. Every composition is made to order at the brand's own production and assembled for a specific interior; scale and geometry are adjusted to the space. The catalogue comprises 605 compositions.
+> Vargov® Design is a Russian brand of author-designed lighting and decorative compositions — collectible light sculptures at the intersection of art, engineering precision and contemporary Russian design. Founder and lead designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023. The brand holds 24 international design awards, including Platinum at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold at the MUSE Design Awards 2026. Every composition is made to order at the brand's own production and assembled for a specific interior; scale and geometry are adjusted to the space. The catalogue comprises 605 compositions.
 >
 > <Dealer name> is the official dealer of Vargov Design in <City>: showroom presentation, selection of compositions for a project, ordering, delivery and installation support.
 

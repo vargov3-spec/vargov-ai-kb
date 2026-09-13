@@ -331,8 +331,8 @@
 | LC0316 | Настенный светильник-скульптура | https://vargov.ru/catalog/lc0316 |  |
 | LC0317 | Световая композиция | https://vargov.ru/catalog/lc0317 |  |
 | LC0318 | Световая композиция | https://vargov.ru/catalog/lc0318 |  |
-| LC0319 | Световая композиция | https://vargov.ru/catalog/lc0319 |  |
-| LC0320 | Световая композиция | https://vargov.ru/catalog/lc0320 |  |
+| LC0319 | Световая композиция | https://vargov.ru/catalog/lc0319 | 1 |
+| LC0320 | Световая композиция | https://vargov.ru/catalog/lc0320 | 1 |
 | LC0321 | Лестничное ограждение | https://vargov.ru/catalog/lc0321 |  |
 | LC0322 | Световая композиция | https://vargov.ru/catalog/lc0322 |  |
 | LC0323 | Световая композиция | https://vargov.ru/catalog/lc0323 | 1 |
