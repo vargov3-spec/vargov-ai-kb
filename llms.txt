@@ -55,7 +55,7 @@
 ## Архитекторам и проектировщикам
 
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
-- [Монтаж и подключение](https://vargov.ru/installation) · [PDF-инструкция](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Сертификация](https://vargov.ru/certification) — два серийных сертификата ТР ЕАЭС (ТР ТС 004/2011, 020/2011) и две декларации ТР ЕАЭС 037/2016 на 310 артикулов LC, знак EAC, действуют до 2031 года; сертификат серийный — покрывает каждое изделие артикула, а не партию
 - [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
 

@@ -70,7 +70,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 ## Архитекторам и проектировщикам
 
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
-- [Монтаж и подключение](https://vargov.ru/installation) · [PDF-инструкция](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Сертификация](https://vargov.ru/certification) — серийные сертификаты ТР ЕАЭС 004/2011 и 020/2011, знак EAC, более 300 артикулов
 - [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru)
 
@@ -151,7 +151,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 ## For architects and specifiers
 
 - [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
-- [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [Certification](https://vargov.ru/en/certification) — EAEU serial certificates of conformity to TR CU 004/2011 and 020/2011, EAC mark, more than 300 LC pieces
 - [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design)
 

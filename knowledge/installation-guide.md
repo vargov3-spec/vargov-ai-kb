@@ -1,6 +1,8 @@
 # Vargov® Design — монтаж и подключение
 
-Источник: страница монтажа прежней (Tilda) версии сайта, снята 2026-07-06. Актуальная страница нового сайта — [vargov.ru/installation](https://vargov.ru/installation) (EN: [/en/installation](https://vargov.ru/en/installation)), PDF-инструкция — [vargov.ru/pdf/vargov-installation.pdf](https://vargov.ru/pdf/vargov-installation.pdf). Текст ниже с новым сайтом не сверялся.
+Источник: страница монтажа прежней (Tilda) версии сайта, снята 2026-07-06. Актуальная страница нового сайта — [vargov.ru/installation](https://vargov.ru/installation) (EN: [/en/installation](https://vargov.ru/en/installation)), PDF-инструкции — по одной на язык: `vargov.ru/pdf/vargov-installation-<lang>.pdf`, lang = ru, en, de, it, fr, es, vi, ar. Прежний общий адрес [vargov-installation.pdf](https://vargov.ru/pdf/vargov-installation.pdf) оставлен живым. Отдельно есть **инструкция по подключению** — [ru](https://vargov.ru/pdf/vargov-connection-ru.pdf) и [en](https://vargov.ru/pdf/vargov-connection-en.pdf), про электрику, которой в монтажной нет. Все одиннадцать адресов проверены запросом 13.09.2026, отдаются.
+
+Текст ниже снят со страницы Tilda и с новым сайтом не сверялся.
 
 ## Приёмка
 - При получении проверить упаковку на повреждения, сфотографировать дефекты.
