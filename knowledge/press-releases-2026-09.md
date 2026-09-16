@@ -6,7 +6,7 @@
 
 Общий блок для всех релизов:
 
-> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 23 international design awards and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
+> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 24 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
 >
 > **Media contact:** info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en
 
@@ -102,7 +102,7 @@
 > **Vargov® Design: 23 International Design Awards for Author's Lighting Compositions**
 > *Three Platinum titles, a Designer of the Year title and a catalogue of 605 made-to-order compositions*
 >
-> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **23 international design awards** across fifteen programmes.
+> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **24 awards from international juries** across fifteen programmes.
 >
 > Among them are three **Platinum Winner** titles — at the **MUSE Design Awards 2023** (LC0237), the **International Architecture & Design Awards 2023** (LC0303) and **The London Design Awards 2023** (LC0326) — as well as the title of **Product Designer of the Year** at the **NY Product Design Awards 2023** and a **Gold Winner** at the **MUSE Design Awards 2026** for "Oceanic Illumination" (LC0564). Further recognition comes from the IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, the European Product Design Award, the BLT Built Design Awards, Houzee Awards and the Luxury Lifestyle Awards, where the studio was named **Best Luxury Lighting Design Studio in Dubai, UAE** in 2024.
 >

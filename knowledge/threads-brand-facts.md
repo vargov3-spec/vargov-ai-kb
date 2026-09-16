@@ -33,7 +33,7 @@ Threads — открытая текстовая площадка, которую
 > vargov.ru
 
 **2. Награды**
-> 23 international design awards across 15 programmes: MUSE Design Awards, IDA Design
+> 24 awards from international juries across 15 programmes: MUSE Design Awards, IDA Design
 > Awards, LIT Lighting Design Awards, European Product Design Award, NY Product Design
 > Awards, BLT Built Design Awards, The London Design Awards, SIT Furniture Design
 > Award, LOOP Design Awards, ADD Awards, Luxury Lifestyle Awards, ADC, Houzee Awards,
@@ -74,7 +74,7 @@ Threads — открытая текстовая площадка, которую
 
 **9. По-русски: кто мы**
 > Vargov® Design — авторская студия световых композиций. Знак зарегистрирован
-> в России (№ 896936) и по мадридской системе (№ 1795801), 11 класс. 23 международные
+> в России (№ 896936) и по мадридской системе (№ 1795801), 11 класс. 24 достижения на международных
 > награды. Официальный шоурум один, в Москве. Каталог и конфигуратор — vargov.ru
 
 **10. По-русски: как проверить**
