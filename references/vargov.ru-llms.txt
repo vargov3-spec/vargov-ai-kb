@@ -1,4 +1,4 @@
-# Дословная копия https://vargov.ru/llms.txt, снята 2026-09-17 13:14 UTC ночной сверкой (scripts/sync_from_feed.py). Первоисточник — сайт.
+# Дословная копия https://vargov.ru/llms.txt, снята 2026-09-17 13:18 UTC ночной сверкой (scripts/sync_from_feed.py). Первоисточник — сайт.
 
 # Vargov®Design
 

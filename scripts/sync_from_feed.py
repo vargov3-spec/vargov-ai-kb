@@ -4,7 +4,8 @@
 
 ЧТО ДЕЛАЕТ. Один раз скачивает https://vargov.ru/catalog.jsonld и
 https://vargov.ru/llms.txt (два запроса, не чаще раза в сутки — сервер общий) и
-переносит в базу знаний ТОЛЬКО то, чем владеет фид:
+переносит в базу знаний ТОЛЬКО то, чем владеет фид (снимки и ссылки на 3D-модели
+в базе богаче фида и остаются как есть):
 
   references/catalog.jsonld       — у каждого Product поля фида (описание-сниппет,
                                     снимки, награды, параметры элементов, сертификат,
@@ -12,7 +13,7 @@ https://vargov.ru/llms.txt (два запроса, не чаще раза в с�
                                     новые артикулы добавляются; узлы Organization/
                                     Person в графе получают награды и sameAs фида
   references/organization.jsonld  — те же награды и sameAs у Organization
-  en/datasets/*                   — английский сниппет и галерея по каждому артикулу
+  en/datasets/*                   — английский сниппет по каждому артикулу
   references/vargov.ru-llms.txt   — дословная копия llms.txt сайта с датой снятия
 
 ЧЕГО НЕ ДЕЛАЕТ. Тексты на восьми языках (описание, «где уместна», стилистика) в
@@ -46,8 +47,10 @@ LLMS_URL = "https://vargov.ru/llms.txt"
 UA = "vargov-ai-kb nightly sync (+https://github.com/vargov3-spec/vargov-ai-kb)"
 MIN_PRODUCTS = 500
 # Поля Product, которыми владеет фид. Всё остальное в узле базы остаётся как есть.
-FEED_OWNED = ("name", "sku", "url", "sameAs", "image", "category", "description",
-              "award", "additionalProperty", "hasCertification", "subjectOf",
+# image и subjectOf НЕ входят: в базе они богаче фида (полная галерея, Sketchfab и
+# страница всех моделей артикула) — первый автопрогон 17.09.2026 их затёр, откачено.
+FEED_OWNED = ("name", "sku", "url", "sameAs", "category", "description",
+              "award", "additionalProperty", "hasCertification",
               "brand", "manufacturer", "inLanguage")
 
 
@@ -190,11 +193,8 @@ def main() -> int:
         if p.get("description") and p["description"] != r.get("snippet"):
             snippet_diff += 1
             r["snippet"] = p["description"]
-        imgs = p.get("image") or []
-        if isinstance(imgs, list) and imgs:
-            r["gallery"] = imgs
-            r["image"] = imgs[0]
-            r["gallery_total"] = len(imgs)
+        # Галерею из фида не берём: в базе она полнее (первый прогон 17.09.2026
+        # укоротил её у 240 артикулов, откачено).
     if dump_json(en_path, en_rows, dry):
         changed.append(f"en/datasets/products.json (сниппетов обновлено {snippet_diff})")
     jsonl = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in en_rows)
