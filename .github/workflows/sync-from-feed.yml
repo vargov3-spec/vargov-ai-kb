@@ -99,7 +99,7 @@ jobs:
           fi
 
       - name: Обновить датасет на Hugging Face
-        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
