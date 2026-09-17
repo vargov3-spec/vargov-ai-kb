@@ -197,8 +197,8 @@ def main() -> int:
     # 4. Тексты на восьми языках — из products.jsonl сайта (третий и последний
     #    запрос за ночь; файл выложен сайтом 17.09.2026, коммит ba3676a). Одна
     #    строка — артикул: code, slug, category, awardWinning, url{lang}, text{lang}
-    #    = {type, paragraphs, whereItWorks, style, madeToOrder?}; пустые поля
-    #    опущены. Тексты кладутся в канонические записи datasets/products.json,
+    #    = {type, paragraphs, whereItWorks, style[, madeToOrder]}; пустые поля
+    #    опущены, а ключ, которого нет ни у кого, файл не несёт (см. carried). Тексты кладутся в канонические записи datasets/products.json,
     #    и из них тем же сборщиком печатаются все производные файлы: датасеты RU/EN,
     #    CSV, оглавления разделов и 605 × 2 страниц карточек. Пока файл не отдаётся
     #    (выкладка сайта идёт кроном), сценарий говорит об этом и тексты не трогает.
@@ -222,11 +222,26 @@ def main() -> int:
         from build_from_site import (CATEGORIES, snippet, write_datasets,  # noqa: E402
                                      write_collections, product_page, write)
         site_codes = {r["code"] for r in rows}
+        # Какие ключи файл вообще несёт. Ключ, которого нет ни у одной записи, файл
+        # не экспортирует — это не «пусто у всех». Прогон 17.09.2026 (6ec9540) принял
+        # отсутствующий madeToOrder за пустоту и стёр «Изготовление» у 605 артикулов
+        # на восьми языках; откачено (00ac50a). Ключ, который есть хоть у кого-то, но
+        # опущен у записи, — пустое значение у этой записи (так файл кодирует пустоту).
+        carried = {k for r in rows for c in (r.get("text") or {}).values()
+                   if isinstance(c, dict) for k in c}
+        carried_row = {k for r in rows for k in r}
         if site_codes - set(by_code):
             drift.append(f"на сайте новые артикулы, которых нет в базе (нужна локальная пересборка — "
                          f"галерея и модели берутся из репозитория сайта): {sorted(site_codes - set(by_code))[:10]}")
         if set(by_code) - site_codes:
             drift.append(f"в базе артикулы, которых больше нет на сайте: {sorted(set(by_code) - site_codes)[:10]}")
+        TEXT_FIELDS = ("type", "description", "where_it_works", "style", "made_to_order")
+
+        def filled(rec: dict) -> set:
+            return {(f, lang) for f in TEXT_FIELDS
+                    for lang, v in (rec.get(f) or {}).items() if v}
+
+        filled_before = {code: filled(rec) for code, rec in by_code.items()}
         for row in rows:
             rec = by_code.get(row["code"])
             if not rec:
@@ -238,19 +253,35 @@ def main() -> int:
                 rec["category_label"] = {"ru": CATEGORIES[cat][0], "en": CATEGORIES[cat][1]}
             if isinstance(row.get("url"), dict) and row["url"]:
                 rec["urls"] = row["url"]
-            rec["award_winning"] = bool(row.get("awardWinning"))
+            if "awardWinning" in carried_row:
+                rec["award_winning"] = bool(row.get("awardWinning"))
             for lang, c in (row.get("text") or {}).items():
                 if not isinstance(c, dict):
                     continue
-                body = "\n\n".join(c.get("paragraphs") or [])
-                rec["type"][lang] = c.get("type")
-                rec["description"][lang] = body
-                rec["where_it_works"][lang] = c.get("whereItWorks")
-                rec["style"][lang] = c.get("style")
-                rec["made_to_order"][lang] = c.get("madeToOrder")
-                rec["snippet"][lang] = snippet(body) if body else None
+                if "type" in carried:
+                    rec["type"][lang] = c.get("type")
+                if "paragraphs" in carried:
+                    body = "\n\n".join(c.get("paragraphs") or [])
+                    rec["description"][lang] = body
+                    rec["snippet"][lang] = snippet(body) if body else None
+                if "whereItWorks" in carried:
+                    rec["where_it_works"][lang] = c.get("whereItWorks")
+                if "style" in carried:
+                    rec["style"][lang] = c.get("style")
+                if "madeToOrder" in carried:
+                    rec["made_to_order"][lang] = c.get("madeToOrder")
             if json.dumps(rec, ensure_ascii=False, sort_keys=True) != before:
                 text_changed += 1
+        # Страховка от массового опустошения: сайт может убрать текст у одного
+        # артикула, но не у сотен разом. Если поле пропадает больше чем у 5 %
+        # записей — это дефект источника или сценария (как 6ec9540), а не правка:
+        # тексты не пишутся, прогон завершается кодом 3 с описанием.
+        blanked = {code for code, rec in by_code.items() if filled_before[code] - filled(rec)}
+        if len(blanked) > len(by_code) * 0.05:
+            drift.append(f"сверка хотела опустошить текстовые поля у {len(blanked)} артикулов "
+                         f"из {len(by_code)} (например {sorted(blanked)[:5]}) — отказ, тексты не тронуты")
+            recs = load_json(ds_path)
+            text_changed = 0
         if text_changed and not dry:
             write_datasets(recs, KB / "datasets", english=False)
             write_datasets(recs, KB / "en" / "datasets", english=True)
