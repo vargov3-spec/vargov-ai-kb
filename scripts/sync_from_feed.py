@@ -38,6 +38,7 @@ import argparse
 import datetime as dt
 import json
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -56,12 +57,24 @@ FEED_OWNED = ("name", "sku", "url", "sameAs", "category", "description",
               "brand", "manufacturer", "inLanguage")
 
 
-def fetch(url: str, timeout: int = 60) -> bytes:
+def fetch(url: str, timeout: int = 60, attempts: int = 3, pause: int = 90) -> bytes:
+    """Один запрос; при сбое ещё до двух повторов с паузой. Сайт тянет сборку по
+    крону каждые 5 минут, и прогон #7 (17.09.2026 14:28 UTC) попал в окно выкладки:
+    источник «недоступен», хотя через семь минут отдавался. Пауза 90 с покрывает окно."""
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Encoding": "identity"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        if r.status != 200:
-            raise RuntimeError(f"{url}: HTTP {r.status}")
-        return r.read()
+    last: Exception | None = None
+    for n in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                if r.status != 200:
+                    raise RuntimeError(f"{url}: HTTP {r.status}")
+                return r.read()
+        except Exception as e:  # noqa: BLE001 — любой сетевой сбой: ждём и повторяем
+            last = e
+            if n < attempts:
+                print(f"[сверка] {url}: попытка {n} не удалась ({e}); повтор через {pause} с", file=sys.stderr)
+                time.sleep(pause)
+    raise RuntimeError(f"{url}: {last}")
 
 
 def load_json(path: Path) -> dict:
