@@ -1,0 +1,123 @@
+name: Ночная сверка с фидом vargov.ru
+
+# ЧТО ЭТО. Раз в сутки база знаний сверяется с первоисточником — фидом сайта
+# https://vargov.ru/catalog.jsonld и https://vargov.ru/llms.txt. Два запроса за
+# ночь, не больше (сервер общий; прежний сборщик, ходивший по сайту, сам попадал
+# под ограничитель). Всё, чем владеет фид, переносится в references/ и в
+# английские датасеты; копия llms.txt сайта кладётся в references/.
+#
+# ЧЕГО ЗДЕСЬ НЕТ. Текстов на восьми языках — их в фиде нет, они пересобираются
+# локально из приватного репозитория сайта. Если сверка видит, что фид разошёлся
+# с датасетами (новые артикулы, изменившиеся английские сниппеты), сценарий
+# завершается кодом 3, изменения фида всё равно записываются, а workflow заводит
+# issue «нужна локальная пересборка». Это сигнал, а не сбой.
+#
+# ЗАЩИТА ОТ 27.07.2026. Сценарий ничего не пишет при недоступном источнике,
+# невалидном JSON, < 500 Product или отсутствии Organization (код 1); файлы не
+# удаляет, артикулы из базы не выбрасывает. Коммит делается только если что-то
+# действительно изменилось. Поверх — канарейка update-knowledge-base.yml.
+#
+# Hugging Face. Датасет vargov-design/vargov-design-catalog обновляется тем же
+# прогоном, если в секретах репозитория лежит HF_TOKEN (права write на датасет).
+# Секрет заводит владелец: Settings → Secrets and variables → Actions → HF_TOKEN.
+# Без секрета шаг пропускается и пишет об этом в сводку — молча не «успешно».
+
+on:
+  schedule:
+    - cron: "40 2 * * *" # ежедневно 02:40 UTC (05:40 МСК) — до утренних проверок
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sync-from-feed
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Сверить с фидом (два запроса к vargov.ru)
+        id: sync
+        run: |
+          set +e
+          python scripts/sync_from_feed.py
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "1" ]; then
+            echo "::error::Источник недоступен или подозрителен — ничего не записано"
+            exit 1
+          fi
+          cat scan/feed-drift.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Закоммитить изменения фида
+        id: commit
+        run: |
+          git config user.name "vargov-ai-kb sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add references/catalog.jsonld references/organization.jsonld \
+                  references/vargov.ru-llms.txt en/datasets/products.json en/datasets/products.jsonl \
+                  scan/feed-drift.md
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Изменений нет — коммита нет." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Ночная сверка с фидом vargov.ru: $(date -u +%Y-%m-%d)" \
+                       -m "Автоматически: scripts/sync_from_feed.py. Тексты на восьми языках пересобираются локально."
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Завести issue о расхождении (если его ещё нет)
+        if: steps.sync.outputs.code == '3'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Фид разошёлся с датасетами — нужна локальная пересборка"
+          if gh issue list --state open --search "\"$title\" in:title" --json number --jq 'length' | grep -q '^0$'; then
+            gh issue create --title "$title" --body-file scan/feed-drift.md
+          else
+            echo "issue уже открыт — не дублирую" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Обновить датасет на Hugging Face
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN не задан — датасет на Hugging Face НЕ обновлён. Секрет заводит владелец." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          pip -q install huggingface_hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          repo = "vargov-design/vargov-design-catalog"
+          pairs = [("datasets/products.json", "products.json"),
+                   ("datasets/products.jsonl", "products.jsonl"),
+                   ("datasets/products.csv", "products_en.csv"),
+                   ("en/datasets/products.json", "products_en.json"),
+                   ("en/datasets/products.jsonl", "products_en.jsonl")]
+          # Раскладка датасета плоская + копии в data/ и raw/ — как загружено 09.09.2026.
+          ops = []
+          from huggingface_hub import CommitOperationAdd
+          for src, dst in pairs:
+              for name in {dst, "data/" + dst, "raw/" + dst}:
+                  ops.append(CommitOperationAdd(path_in_repo=name, path_or_fileobj=src))
+          api.create_commit(repo_id=repo, repo_type="dataset", operations=ops,
+                            commit_message="Nightly sync from vargov.ru feed")
+          print("Hugging Face: обновлено", len(ops), "файлов")
+          PY
+          echo "Hugging Face: датасет обновлён." >> "$GITHUB_STEP_SUMMARY"
