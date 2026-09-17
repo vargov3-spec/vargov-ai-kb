@@ -205,8 +205,12 @@ def main() -> int:
                      f"языках в базе могли устареть, нужна локальная пересборка")
 
     # 5. Копия llms.txt сайта.
-    mirror = (f"# Дословная копия https://vargov.ru/llms.txt, снята {today} ночной сверкой "
-              f"(scripts/sync_from_feed.py). Первоисточник — сайт.\n\n" + llms_text)
+    # Без отметки времени в шапке: иначе файл «менялся» бы каждую ночь и плодил
+    # пустые коммиты. Дату снятия показывает история git.
+    mirror = ("# Дословная копия https://vargov.ru/llms.txt, снимается ночной сверкой "
+              "(scripts/sync_from_feed.py). Первоисточник — сайт.
+
+" + llms_text)
     if write_text(KB / "references" / "vargov.ru-llms.txt", mirror, dry):
         changed.append("references/vargov.ru-llms.txt")
 
