@@ -26,6 +26,13 @@ on:
   schedule:
     - cron: "40 2 * * *" # ежедневно 02:40 UTC (05:40 МСК) — до утренних проверок
   workflow_dispatch: {}
+  # Правка самого сценария или workflow — тоже повод прогнать сверку сразу,
+  # чтобы ошибка всплыла в тот же час, а не следующей ночью.
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_from_feed.py"
+      - ".github/workflows/sync-from-feed.yml"
 
 permissions:
   contents: write
