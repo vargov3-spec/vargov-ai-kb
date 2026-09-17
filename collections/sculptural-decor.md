@@ -2,7 +2,7 @@
 
 Раздел на сайте: https://vargov.ru/sculptural-decor
 
-Позиций: 83
+Позиций: 82
 
 ## Состав
 
@@ -24,7 +24,7 @@
 - [LC0074](../products/sculptural-decor/LC0074.md) — Настенный светильник — https://vargov.ru/catalog/lc0074
 - [LC0075](../products/sculptural-decor/LC0075.md) — Световая композиция — https://vargov.ru/catalog/lc0075
 - [LC0076](../products/sculptural-decor/LC0076.md) — Световая композиция — https://vargov.ru/catalog/lc0076
-- [LC0077](../products/sculptural-decor/LC0077.md) — Световая композиция — https://vargov.ru/catalog/lc0077
+- [LC0077](../products/sculptural-decor/LC0077.md) — Декоративная композиция — https://vargov.ru/catalog/lc0077
 - [LC0079](../products/sculptural-decor/LC0079.md) — Арт-объект — https://vargov.ru/catalog/lc0079
 - [LC0080](../products/sculptural-decor/LC0080.md) — Зеркало — https://vargov.ru/catalog/lc0080
 - [LC0081](../products/sculptural-decor/LC0081.md) — Зеркало — https://vargov.ru/catalog/lc0081
@@ -49,7 +49,7 @@
 - [LC0162](../products/sculptural-decor/LC0162.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0162
 - [LC0163](../products/sculptural-decor/LC0163.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0163
 - [LC0230](../products/sculptural-decor/LC0230.md) — Настенная композиция — https://vargov.ru/catalog/lc0230
-- [LC0241](../products/sculptural-decor/LC0241.md) — Световая композиция — https://vargov.ru/catalog/lc0241
+- [LC0241](../products/sculptural-decor/LC0241.md) — Декоративная композиция — https://vargov.ru/catalog/lc0241
 - [LC0243](../products/sculptural-decor/LC0243.md) — Световая композиция — https://vargov.ru/catalog/lc0243
 - [LC0244](../products/sculptural-decor/LC0244.md) — Настенное панно — https://vargov.ru/catalog/lc0244
 - [LC0245](../products/sculptural-decor/LC0245.md) — Настенная композиция — https://vargov.ru/catalog/lc0245
@@ -68,7 +68,7 @@
 - [LC0266](../products/sculptural-decor/LC0266.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0266
 - [LC0268](../products/sculptural-decor/LC0268.md) — Декоративное панно — https://vargov.ru/catalog/lc0268
 - [LC0269](../products/sculptural-decor/LC0269.md) — Настенное зеркало с подсветкой — https://vargov.ru/catalog/lc0269
-- [LC0309](../products/sculptural-decor/LC0309.md) — Световая композиция — https://vargov.ru/catalog/lc0309
+- [LC0309](../products/sculptural-decor/LC0309.md) — Декоративная композиция — https://vargov.ru/catalog/lc0309
 - [LC0315](../products/sculptural-decor/LC0315.md) — Световая композиция — https://vargov.ru/catalog/lc0315
 - [LC0316](../products/sculptural-decor/LC0316.md) — Настенный светильник-скульптура — https://vargov.ru/catalog/lc0316
 - [LC0321](../products/sculptural-decor/LC0321.md) — Лестничное ограждение — https://vargov.ru/catalog/lc0321
@@ -78,9 +78,8 @@
 - [LC0331](../products/sculptural-decor/LC0331.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0331
 - [LC0356](../products/sculptural-decor/LC0356.md) — Торшер — https://vargov.ru/catalog/lc0356
 - [LC0366](../products/sculptural-decor/LC0366.md) — Световая композиция — https://vargov.ru/catalog/lc0366
-- [LC0370](../products/sculptural-decor/LC0370.md) — Световая композиция — https://vargov.ru/catalog/lc0370
+- [LC0370](../products/sculptural-decor/LC0370.md) — Декоративная композиция — https://vargov.ru/catalog/lc0370
 - [LC0373](../products/sculptural-decor/LC0373.md) — Световая композиция — https://vargov.ru/catalog/lc0373
-- [LC0417](../products/sculptural-decor/LC0417.md) — Световая композиция — https://vargov.ru/catalog/lc0417
 - [LC0495](../products/sculptural-decor/LC0495.md) — Скульптурная композиция — https://vargov.ru/catalog/lc0495
 - [LC0506](../products/sculptural-decor/LC0506.md) — Скульптурная композиция — https://vargov.ru/catalog/lc0506
 - [LC0543](../products/sculptural-decor/LC0543.md) — Настенный арт-объект — https://vargov.ru/catalog/lc0543

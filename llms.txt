@@ -14,7 +14,7 @@
 
 ## Открытые данные (CC BY 4.0)
 
-Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы, размеры и цены в данных отсутствуют намеренно.
+Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы и цены в данных отсутствуют намеренно; размеров композиций нет, а параметры элементов (размер, вес, мощность) приведены там, где бренд их публикует.
 
 - [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 композиций, описания на восьми языках, снимки, награды, ссылки на 3D-модели
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
@@ -78,4 +78,4 @@
 
 ## Контакты
 
-Email: info@vargov.ru · Телефон и WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Шоурум: Москва, Нахимовский проспект 24, павильон 2, стенд 212, ежедневно 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)
+Email: info@vargov.ru · Телефон и WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Шоурум: Москва, Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212, ежедневно 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)

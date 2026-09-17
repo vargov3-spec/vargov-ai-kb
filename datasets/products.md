@@ -4,36 +4,36 @@
 
 | Раздел | Позиций |
 |---|---|
-| Световые композиции | 352 |
-| Декоративные композиции | 114 |
-| Скульптурные композиции | 83 |
+| Световые композиции | 354 |
+| Декоративные композиции | 113 |
+| Скульптурные композиции | 82 |
 | Торшеры и арт-объекты | 56 |
 
 ## Полный список
 
 | Артикул | Тип | URL | Награды |
 |---|---|---|---|
-| LC0001 | Световая композиция | https://vargov.ru/catalog/lc0001 |  |
-| LC0002 | Световая композиция | https://vargov.ru/catalog/lc0002 |  |
-| LC0003 | Световая композиция | https://vargov.ru/catalog/lc0003 |  |
+| LC0001 | Декоративная композиция | https://vargov.ru/catalog/lc0001 |  |
+| LC0002 | Декоративная композиция | https://vargov.ru/catalog/lc0002 |  |
+| LC0003 | Декоративная композиция | https://vargov.ru/catalog/lc0003 |  |
 | LC0004 | Световая композиция | https://vargov.ru/catalog/lc0004 |  |
-| LC0005 | Световая композиция | https://vargov.ru/catalog/lc0005 |  |
-| LC0006 | Световая композиция | https://vargov.ru/catalog/lc0006 |  |
-| LC0007 | Световая композиция | https://vargov.ru/catalog/lc0007 |  |
+| LC0005 | Декоративная композиция | https://vargov.ru/catalog/lc0005 |  |
+| LC0006 | Декоративная композиция | https://vargov.ru/catalog/lc0006 |  |
+| LC0007 | Декоративная композиция | https://vargov.ru/catalog/lc0007 |  |
 | LC0008 | Световая композиция | https://vargov.ru/catalog/lc0008 |  |
 | LC0009 | Световая композиция | https://vargov.ru/catalog/lc0009 |  |
-| LC0010 | Световая композиция | https://vargov.ru/catalog/lc0010 |  |
+| LC0010 | Декоративная композиция | https://vargov.ru/catalog/lc0010 |  |
 | LC0011 | Настенная композиция | https://vargov.ru/catalog/lc0011 |  |
 | LC0012 | Световая композиция | https://vargov.ru/catalog/lc0012 |  |
-| LC0013 | Световая композиция | https://vargov.ru/catalog/lc0013 |  |
-| LC0014 | Световая композиция | https://vargov.ru/catalog/lc0014 |  |
-| LC0015 | Световая композиция | https://vargov.ru/catalog/lc0015 |  |
-| LC0016 | Световая композиция | https://vargov.ru/catalog/lc0016 |  |
-| LC0017 | Световая композиция | https://vargov.ru/catalog/lc0017 |  |
-| LC0018 | Световая композиция | https://vargov.ru/catalog/lc0018 |  |
+| LC0013 | Декоративная композиция | https://vargov.ru/catalog/lc0013 |  |
+| LC0014 | Декоративная композиция | https://vargov.ru/catalog/lc0014 |  |
+| LC0015 | Декоративная композиция | https://vargov.ru/catalog/lc0015 |  |
+| LC0016 | Декоративная композиция | https://vargov.ru/catalog/lc0016 |  |
+| LC0017 | Декоративная композиция | https://vargov.ru/catalog/lc0017 |  |
+| LC0018 | Декоративная композиция | https://vargov.ru/catalog/lc0018 |  |
 | LC0019 | Настенное панно | https://vargov.ru/catalog/lc0019 |  |
 | LC0020 | Световая композиция | https://vargov.ru/catalog/lc0020 |  |
-| LC0021 | Световая композиция | https://vargov.ru/catalog/lc0021 |  |
+| LC0021 | Декоративная композиция | https://vargov.ru/catalog/lc0021 |  |
 | LC0022 | Декоративный занавес-экран | https://vargov.ru/catalog/lc0022 |  |
 | LC0023 | Напольный торшер | https://vargov.ru/catalog/lc0023 |  |
 | LC0024 | Световая композиция | https://vargov.ru/catalog/lc0024 |  |
@@ -42,14 +42,14 @@
 | LC0027 | Световая композиция | https://vargov.ru/catalog/lc0027 |  |
 | LC0028 | Световая композиция | https://vargov.ru/catalog/lc0028 |  |
 | LC0029 | Световая композиция | https://vargov.ru/catalog/lc0029 |  |
-| LC0030 | Световая композиция | https://vargov.ru/catalog/lc0030 |  |
+| LC0030 | Декоративная композиция | https://vargov.ru/catalog/lc0030 |  |
 | LC0031 | Световая композиция | https://vargov.ru/catalog/lc0031 |  |
 | LC0032 | Световая композиция | https://vargov.ru/catalog/lc0032 |  |
 | LC0033 | Световая композиция | https://vargov.ru/catalog/lc0033 |  |
-| LC0034 | Световая композиция | https://vargov.ru/catalog/lc0034 |  |
+| LC0034 | Декоративная композиция | https://vargov.ru/catalog/lc0034 |  |
 | LC0035 | Настенная композиция | https://vargov.ru/catalog/lc0035 |  |
 | LC0036 | Световая композиция | https://vargov.ru/catalog/lc0036 |  |
-| LC0037 | Световая композиция | https://vargov.ru/catalog/lc0037 |  |
+| LC0037 | Декоративная композиция | https://vargov.ru/catalog/lc0037 |  |
 | LC0038 | Световая композиция | https://vargov.ru/catalog/lc0038 |  |
 | LC0039 | Световая композиция | https://vargov.ru/catalog/lc0039 |  |
 | LC0040 | Световая композиция | https://vargov.ru/catalog/lc0040 |  |
@@ -59,23 +59,23 @@
 | LC0044 | Световая композиция | https://vargov.ru/catalog/lc0044 |  |
 | LC0045 | Световая композиция | https://vargov.ru/catalog/lc0045 |  |
 | LC0046 | Световая композиция | https://vargov.ru/catalog/lc0046 |  |
-| LC0047 | Световая композиция | https://vargov.ru/catalog/lc0047 |  |
+| LC0047 | Декоративная композиция | https://vargov.ru/catalog/lc0047 |  |
 | LC0048 | Световая композиция | https://vargov.ru/catalog/lc0048 |  |
-| LC0049 | Световая композиция | https://vargov.ru/catalog/lc0049 |  |
-| LC0050 | Световая композиция | https://vargov.ru/catalog/lc0050 |  |
+| LC0049 | Декоративная композиция | https://vargov.ru/catalog/lc0049 |  |
+| LC0050 | Декоративная композиция | https://vargov.ru/catalog/lc0050 |  |
 | LC0051 | Световая композиция | https://vargov.ru/catalog/lc0051 |  |
 | LC0052 | Световая композиция | https://vargov.ru/catalog/lc0052 |  |
 | LC0053 | Настенное панно с подсветкой | https://vargov.ru/catalog/lc0053 |  |
 | LC0054 | Световая композиция | https://vargov.ru/catalog/lc0054 |  |
-| LC0055 | Световая композиция | https://vargov.ru/catalog/lc0055 |  |
+| LC0055 | Декоративная композиция | https://vargov.ru/catalog/lc0055 |  |
 | LC0056 | Световая композиция | https://vargov.ru/catalog/lc0056 |  |
 | LC0057 | Световая композиция | https://vargov.ru/catalog/lc0057 |  |
 | LC0058 | Световая композиция | https://vargov.ru/catalog/lc0058 |  |
 | LC0059 | Световая композиция | https://vargov.ru/catalog/lc0059 |  |
-| LC0060 | Световая композиция | https://vargov.ru/catalog/lc0060 |  |
+| LC0060 | Декоративная композиция | https://vargov.ru/catalog/lc0060 |  |
 | LC0061 | Напольный светильник-скульптура | https://vargov.ru/catalog/lc0061 |  |
 | LC0062 | Световая композиция | https://vargov.ru/catalog/lc0062 |  |
-| LC0063 | Световая композиция | https://vargov.ru/catalog/lc0063 |  |
+| LC0063 | Декоративная композиция | https://vargov.ru/catalog/lc0063 |  |
 | LC0064 | Световая композиция | https://vargov.ru/catalog/lc0064 |  |
 | LC0065 | Световая композиция | https://vargov.ru/catalog/lc0065 |  |
 | LC0066 | Зеркало | https://vargov.ru/catalog/lc0066 |  |
@@ -89,7 +89,7 @@
 | LC0074 | Настенный светильник | https://vargov.ru/catalog/lc0074 |  |
 | LC0075 | Световая композиция | https://vargov.ru/catalog/lc0075 |  |
 | LC0076 | Световая композиция | https://vargov.ru/catalog/lc0076 |  |
-| LC0077 | Световая композиция | https://vargov.ru/catalog/lc0077 |  |
+| LC0077 | Декоративная композиция | https://vargov.ru/catalog/lc0077 |  |
 | LC0078 | Световая композиция | https://vargov.ru/catalog/lc0078 |  |
 | LC0079 | Арт-объект | https://vargov.ru/catalog/lc0079 |  |
 | LC0080 | Зеркало | https://vargov.ru/catalog/lc0080 |  |
@@ -97,31 +97,31 @@
 | LC0082 | Зеркало | https://vargov.ru/catalog/lc0082 |  |
 | LC0083 | Зеркало | https://vargov.ru/catalog/lc0083 |  |
 | LC0084 | Световая композиция | https://vargov.ru/catalog/lc0084 |  |
-| LC0085 | Световая композиция | https://vargov.ru/catalog/lc0085 |  |
-| LC0086 | Световая композиция | https://vargov.ru/catalog/lc0086 |  |
-| LC0087 | Световая композиция | https://vargov.ru/catalog/lc0087 |  |
+| LC0085 | Декоративная композиция | https://vargov.ru/catalog/lc0085 |  |
+| LC0086 | Декоративная композиция | https://vargov.ru/catalog/lc0086 |  |
+| LC0087 | Декоративная композиция | https://vargov.ru/catalog/lc0087 |  |
 | LC0088 | Световая композиция | https://vargov.ru/catalog/lc0088 |  |
-| LC0089 | Световая композиция | https://vargov.ru/catalog/lc0089 |  |
-| LC0090 | Световая композиция | https://vargov.ru/catalog/lc0090 |  |
-| LC0091 | Световая композиция | https://vargov.ru/catalog/lc0091 |  |
-| LC0092 | Световая композиция | https://vargov.ru/catalog/lc0092 |  |
+| LC0089 | Декоративная композиция | https://vargov.ru/catalog/lc0089 |  |
+| LC0090 | Декоративная композиция | https://vargov.ru/catalog/lc0090 |  |
+| LC0091 | Декоративная композиция | https://vargov.ru/catalog/lc0091 |  |
+| LC0092 | Декоративная композиция | https://vargov.ru/catalog/lc0092 |  |
 | LC0093 | Световая композиция | https://vargov.ru/catalog/lc0093 |  |
-| LC0094 | Световая композиция | https://vargov.ru/catalog/lc0094 |  |
-| LC0095 | Световая композиция | https://vargov.ru/catalog/lc0095 |  |
-| LC0096 | Световая композиция | https://vargov.ru/catalog/lc0096 |  |
+| LC0094 | Декоративная композиция | https://vargov.ru/catalog/lc0094 |  |
+| LC0095 | Декоративная композиция | https://vargov.ru/catalog/lc0095 |  |
+| LC0096 | Декоративная композиция | https://vargov.ru/catalog/lc0096 |  |
 | LC0097 | Потолочная композиция | https://vargov.ru/catalog/lc0097 |  |
 | LC0098 | Потолочная композиция | https://vargov.ru/catalog/lc0098 |  |
 | LC0099 | Световая композиция | https://vargov.ru/catalog/lc0099 |  |
-| LC0100 | Световая композиция | https://vargov.ru/catalog/lc0100 |  |
+| LC0100 | Декоративная композиция | https://vargov.ru/catalog/lc0100 |  |
 | LC0101 | Световая композиция | https://vargov.ru/catalog/lc0101 |  |
 | LC0102 | Световая композиция | https://vargov.ru/catalog/lc0102 |  |
 | LC0103 | Световая композиция | https://vargov.ru/catalog/lc0103 |  |
-| LC0104 | Световая композиция | https://vargov.ru/catalog/lc0104 | 1 |
+| LC0104 | Декоративная композиция | https://vargov.ru/catalog/lc0104 | 1 |
 | LC0105 | Световая композиция | https://vargov.ru/catalog/lc0105 |  |
 | LC0106 | Световая композиция | https://vargov.ru/catalog/lc0106 |  |
-| LC0107 | Световая композиция | https://vargov.ru/catalog/lc0107 |  |
+| LC0107 | Декоративная композиция | https://vargov.ru/catalog/lc0107 |  |
 | LC0108 | Световая композиция-занавес | https://vargov.ru/catalog/lc0108 |  |
-| LC0109 | Световая композиция | https://vargov.ru/catalog/lc0109 |  |
+| LC0109 | Декоративная композиция | https://vargov.ru/catalog/lc0109 |  |
 | LC0110 | Настенная композиция | https://vargov.ru/catalog/lc0110 |  |
 | LC0111 | Настенная композиция | https://vargov.ru/catalog/lc0111 |  |
 | LC0112 | Настенная композиция | https://vargov.ru/catalog/lc0112 |  |
@@ -136,35 +136,35 @@
 | LC0121 | Настенное панно | https://vargov.ru/catalog/lc0121 |  |
 | LC0122 | Настенное панно | https://vargov.ru/catalog/lc0122 |  |
 | LC0123 | Настенное панно | https://vargov.ru/catalog/lc0123 |  |
-| LC0124 | Световая композиция | https://vargov.ru/catalog/lc0124 |  |
+| LC0124 | Декоративная композиция | https://vargov.ru/catalog/lc0124 |  |
 | LC0125 | Световая композиция | https://vargov.ru/catalog/lc0125 |  |
 | LC0126 | Световая композиция-занавес | https://vargov.ru/catalog/lc0126 |  |
 | LC0127 | Световая композиция | https://vargov.ru/catalog/lc0127 |  |
 | LC0128 | Световая композиция | https://vargov.ru/catalog/lc0128 |  |
 | LC0129 | Световая композиция | https://vargov.ru/catalog/lc0129 |  |
-| LC0130 | Световая композиция | https://vargov.ru/catalog/lc0130 |  |
-| LC0131 | Световая композиция | https://vargov.ru/catalog/lc0131 |  |
+| LC0130 | Декоративная композиция | https://vargov.ru/catalog/lc0130 |  |
+| LC0131 | Декоративная композиция | https://vargov.ru/catalog/lc0131 |  |
 | LC0132 | Световая композиция | https://vargov.ru/catalog/lc0132 |  |
 | LC0133 | Световая композиция | https://vargov.ru/catalog/lc0133 |  |
 | LC0134 | Световая композиция | https://vargov.ru/catalog/lc0134 |  |
 | LC0135 | Световая композиция | https://vargov.ru/catalog/lc0135 |  |
-| LC0136 | Световая композиция | https://vargov.ru/catalog/lc0136 |  |
+| LC0136 | Декоративная композиция | https://vargov.ru/catalog/lc0136 |  |
 | LC0137 | Световая композиция | https://vargov.ru/catalog/lc0137 |  |
 | LC0138 | Световая композиция | https://vargov.ru/catalog/lc0138 |  |
 | LC0139 | Световая композиция | https://vargov.ru/catalog/lc0139 |  |
 | LC0140 | Световая композиция | https://vargov.ru/catalog/lc0140 |  |
-| LC0141 | Световая композиция | https://vargov.ru/catalog/lc0141 |  |
+| LC0141 | Декоративная композиция | https://vargov.ru/catalog/lc0141 |  |
 | LC0142 | Световая композиция | https://vargov.ru/catalog/lc0142 |  |
 | LC0143 | Световая композиция | https://vargov.ru/catalog/lc0143 |  |
-| LC0144 | Световая композиция | https://vargov.ru/catalog/lc0144 |  |
+| LC0144 | Декоративная композиция | https://vargov.ru/catalog/lc0144 |  |
 | LC0145 | Световая композиция | https://vargov.ru/catalog/lc0145 |  |
-| LC0146 | Световая композиция | https://vargov.ru/catalog/lc0146 |  |
-| LC0147 | Световая композиция | https://vargov.ru/catalog/lc0147 |  |
+| LC0146 | Декоративная композиция | https://vargov.ru/catalog/lc0146 |  |
+| LC0147 | Декоративная композиция | https://vargov.ru/catalog/lc0147 |  |
 | LC0148 | Декоративная перегородка | https://vargov.ru/catalog/lc0148 |  |
 | LC0149 | Биокамин | https://vargov.ru/catalog/lc0149 |  |
 | LC0150 | Декоративная перегородка | https://vargov.ru/catalog/lc0150 |  |
 | LC0151 | Декоративная перегородка | https://vargov.ru/catalog/lc0151 |  |
-| LC0152 | Световая композиция | https://vargov.ru/catalog/lc0152 |  |
+| LC0152 | Декоративная композиция | https://vargov.ru/catalog/lc0152 |  |
 | LC0153 | Световая композиция | https://vargov.ru/catalog/lc0153 |  |
 | LC0154 | Световая композиция | https://vargov.ru/catalog/lc0154 |  |
 | LC0155 | Световая композиция | https://vargov.ru/catalog/lc0155 |  |
@@ -181,27 +181,27 @@
 | LC0166 | Световая композиция | https://vargov.ru/catalog/lc0166 |  |
 | LC0166-1 | Световая композиция | https://vargov.ru/catalog/lc0166-1 |  |
 | LC0166-2 | Бра | https://vargov.ru/catalog/lc0166-2 |  |
-| LC0167 | Световая композиция | https://vargov.ru/catalog/lc0167 |  |
-| LC0169 | Световая композиция | https://vargov.ru/catalog/lc0169 |  |
-| LC0170 | Световая композиция | https://vargov.ru/catalog/lc0170 |  |
+| LC0167 | Декоративная композиция | https://vargov.ru/catalog/lc0167 |  |
+| LC0169 | Декоративная композиция | https://vargov.ru/catalog/lc0169 |  |
+| LC0170 | Декоративная композиция | https://vargov.ru/catalog/lc0170 |  |
 | LC0172 | Световая композиция | https://vargov.ru/catalog/lc0172 |  |
 | LC0173 | Световая композиция | https://vargov.ru/catalog/lc0173 |  |
-| LC0174 | Световая композиция | https://vargov.ru/catalog/lc0174 |  |
+| LC0174 | Декоративная композиция | https://vargov.ru/catalog/lc0174 |  |
 | LC0175 | Световая композиция | https://vargov.ru/catalog/lc0175 |  |
-| LC0176 | Световая композиция | https://vargov.ru/catalog/lc0176 |  |
-| LC0177 | Световая композиция | https://vargov.ru/catalog/lc0177 |  |
+| LC0176 | Декоративная композиция | https://vargov.ru/catalog/lc0176 |  |
+| LC0177 | Декоративная композиция | https://vargov.ru/catalog/lc0177 |  |
 | LC0178 | Световая композиция | https://vargov.ru/catalog/lc0178 |  |
-| LC0179 | Световая композиция | https://vargov.ru/catalog/lc0179 |  |
+| LC0179 | Декоративная композиция | https://vargov.ru/catalog/lc0179 |  |
 | LC0180 | Напольный торшер | https://vargov.ru/catalog/lc0180 |  |
 | LC0181 | Напольный торшер | https://vargov.ru/catalog/lc0181 |  |
 | LC0182 | Напольный торшер | https://vargov.ru/catalog/lc0182 |  |
-| LC0183 | Световая композиция | https://vargov.ru/catalog/lc0183 |  |
+| LC0183 | Декоративная композиция | https://vargov.ru/catalog/lc0183 |  |
 | LC0184 | Световая композиция | https://vargov.ru/catalog/lc0184 |  |
 | LC0185 | Световая композиция | https://vargov.ru/catalog/lc0185 |  |
 | LC0186 | Напольный торшер | https://vargov.ru/catalog/lc0186 |  |
 | LC0187 | Напольный торшер | https://vargov.ru/catalog/lc0187 |  |
 | LC0188 | Напольный торшер | https://vargov.ru/catalog/lc0188 |  |
-| LC0189 | Световая композиция | https://vargov.ru/catalog/lc0189 |  |
+| LC0189 | Декоративная композиция | https://vargov.ru/catalog/lc0189 |  |
 | LC0190 | Световая композиция | https://vargov.ru/catalog/lc0190 |  |
 | LC0191 | Световая композиция | https://vargov.ru/catalog/lc0191 |  |
 | LC0192 | Световая композиция | https://vargov.ru/catalog/lc0192 |  |
@@ -214,10 +214,10 @@
 | LC0198 | Напольный торшер | https://vargov.ru/catalog/lc0198 |  |
 | LC0199 | Напольный торшер | https://vargov.ru/catalog/lc0199 |  |
 | LC0200 | Напольный торшер | https://vargov.ru/catalog/lc0200 |  |
-| LC0201 | Световая композиция | https://vargov.ru/catalog/lc0201 |  |
+| LC0201 | Декоративная композиция | https://vargov.ru/catalog/lc0201 |  |
 | LC0202 | Световая композиция | https://vargov.ru/catalog/lc0202 |  |
 | LC0203 | Световая композиция | https://vargov.ru/catalog/lc0203 |  |
-| LC0204 | Световая композиция | https://vargov.ru/catalog/lc0204 |  |
+| LC0204 | Декоративная композиция | https://vargov.ru/catalog/lc0204 |  |
 | LC0205 | Напольный торшер | https://vargov.ru/catalog/lc0205 |  |
 | LC0206 | Напольный торшер | https://vargov.ru/catalog/lc0206 |  |
 | LC0207 | Напольный торшер | https://vargov.ru/catalog/lc0207 |  |
@@ -233,29 +233,29 @@
 | LC0217 | Световая композиция | https://vargov.ru/catalog/lc0217 | 1 |
 | LC0217-1 | Световая композиция | https://vargov.ru/catalog/lc0217-1 | 1 |
 | LC0218 | Световая композиция | https://vargov.ru/catalog/lc0218 |  |
-| LC0219 | Световая композиция | https://vargov.ru/catalog/lc0219 |  |
-| LC0220 | Световая композиция | https://vargov.ru/catalog/lc0220 |  |
+| LC0219 | Декоративная композиция | https://vargov.ru/catalog/lc0219 |  |
+| LC0220 | Декоративная композиция | https://vargov.ru/catalog/lc0220 |  |
 | LC0221 | Световая композиция | https://vargov.ru/catalog/lc0221 |  |
 | LC0222 | Световая композиция | https://vargov.ru/catalog/lc0222 |  |
 | LC0223 | Световая композиция | https://vargov.ru/catalog/lc0223 | 1 |
-| LC0224 | Световая композиция | https://vargov.ru/catalog/lc0224 |  |
+| LC0224 | Декоративная композиция | https://vargov.ru/catalog/lc0224 |  |
 | LC0225 | Световая композиция | https://vargov.ru/catalog/lc0225 |  |
 | LC0226 | Световая композиция | https://vargov.ru/catalog/lc0226 |  |
-| LC0227 | Световая композиция | https://vargov.ru/catalog/lc0227 |  |
+| LC0227 | Декоративная композиция | https://vargov.ru/catalog/lc0227 |  |
 | LC0228 | Световая композиция | https://vargov.ru/catalog/lc0228 | 1 |
-| LC0229 | Световая композиция | https://vargov.ru/catalog/lc0229 |  |
+| LC0229 | Декоративная композиция | https://vargov.ru/catalog/lc0229 |  |
 | LC0230 | Настенная композиция | https://vargov.ru/catalog/lc0230 |  |
-| LC0231 | Световая композиция | https://vargov.ru/catalog/lc0231 |  |
-| LC0232 | Световая композиция | https://vargov.ru/catalog/lc0232 |  |
+| LC0231 | Декоративная композиция | https://vargov.ru/catalog/lc0231 |  |
+| LC0232 | Декоративная композиция | https://vargov.ru/catalog/lc0232 |  |
 | LC0233 | Световая композиция | https://vargov.ru/catalog/lc0233 |  |
 | LC0234 | Световая композиция | https://vargov.ru/catalog/lc0234 |  |
 | LC0235 | Световая композиция | https://vargov.ru/catalog/lc0235 |  |
-| LC0236 | Световая композиция | https://vargov.ru/catalog/lc0236 | 1 |
+| LC0236 | Декоративная композиция | https://vargov.ru/catalog/lc0236 | 1 |
 | LC0237 | Световая композиция | https://vargov.ru/catalog/lc0237 | 1 |
 | LC0239 | Световая композиция | https://vargov.ru/catalog/lc0239 |  |
 | LC0240 | Потолочная композиция | https://vargov.ru/catalog/lc0240 |  |
-| LC0241 | Световая композиция | https://vargov.ru/catalog/lc0241 |  |
-| LC0242 | Световая композиция | https://vargov.ru/catalog/lc0242 |  |
+| LC0241 | Декоративная композиция | https://vargov.ru/catalog/lc0241 |  |
+| LC0242 | Декоративная композиция | https://vargov.ru/catalog/lc0242 |  |
 | LC0243 | Световая композиция | https://vargov.ru/catalog/lc0243 |  |
 | LC0244 | Настенное панно | https://vargov.ru/catalog/lc0244 |  |
 | LC0245 | Настенная композиция | https://vargov.ru/catalog/lc0245 |  |
@@ -273,12 +273,12 @@
 | LC0257 | Световая композиция | https://vargov.ru/catalog/lc0257 |  |
 | LC0258 | Световая композиция | https://vargov.ru/catalog/lc0258 |  |
 | LC0259 | Световая композиция | https://vargov.ru/catalog/lc0259 |  |
-| LC0260 | Световая композиция | https://vargov.ru/catalog/lc0260 |  |
+| LC0260 | Декоративная композиция | https://vargov.ru/catalog/lc0260 |  |
 | LC0261 | Декоративная перегородка | https://vargov.ru/catalog/lc0261 |  |
 | LC0262 | Световая композиция | https://vargov.ru/catalog/lc0262 |  |
-| LC0263 | Световая композиция | https://vargov.ru/catalog/lc0263 |  |
+| LC0263 | Декоративная композиция | https://vargov.ru/catalog/lc0263 |  |
 | LC0264 | Световая композиция | https://vargov.ru/catalog/lc0264 |  |
-| LC0265 | Световая композиция | https://vargov.ru/catalog/lc0265 |  |
+| LC0265 | Декоративная композиция | https://vargov.ru/catalog/lc0265 |  |
 | LC0266 | Декоративная перегородка | https://vargov.ru/catalog/lc0266 |  |
 | LC0267 | Световая композиция | https://vargov.ru/catalog/lc0267 |  |
 | LC0268 | Декоративное панно | https://vargov.ru/catalog/lc0268 |  |
@@ -292,27 +292,27 @@
 | LC0276 | Световая композиция | https://vargov.ru/catalog/lc0276 |  |
 | LC0277 | Световая композиция | https://vargov.ru/catalog/lc0277 |  |
 | LC0278 | Световая композиция | https://vargov.ru/catalog/lc0278 |  |
-| LC0279 | Световая композиция | https://vargov.ru/catalog/lc0279 | 1 |
-| LC0280 | Световая композиция | https://vargov.ru/catalog/lc0280 | 1 |
+| LC0279 | Декоративная композиция | https://vargov.ru/catalog/lc0279 | 1 |
+| LC0280 | Декоративная композиция | https://vargov.ru/catalog/lc0280 | 1 |
 | LC0281 | Световая композиция | https://vargov.ru/catalog/lc0281 |  |
-| LC0282 | Световая композиция | https://vargov.ru/catalog/lc0282 |  |
+| LC0282 | Декоративная композиция | https://vargov.ru/catalog/lc0282 |  |
 | LC0283 | Световая композиция | https://vargov.ru/catalog/lc0283 |  |
 | LC0284 | Световая композиция | https://vargov.ru/catalog/lc0284 |  |
 | LC0285 | Световая композиция | https://vargov.ru/catalog/lc0285 |  |
-| LC0286 | Световая композиция | https://vargov.ru/catalog/lc0286 |  |
+| LC0286 | Декоративная композиция | https://vargov.ru/catalog/lc0286 |  |
 | LC0287 | Световая композиция | https://vargov.ru/catalog/lc0287 |  |
-| LC0288 | Световая композиция | https://vargov.ru/catalog/lc0288 |  |
+| LC0288 | Декоративная композиция | https://vargov.ru/catalog/lc0288 |  |
 | LC0289 | Световая композиция | https://vargov.ru/catalog/lc0289 |  |
 | LC0290 | Световая композиция | https://vargov.ru/catalog/lc0290 |  |
-| LC0291 | Световая композиция | https://vargov.ru/catalog/lc0291 |  |
+| LC0291 | Декоративная композиция | https://vargov.ru/catalog/lc0291 |  |
 | LC0292 | Световая композиция | https://vargov.ru/catalog/lc0292 | 1 |
 | LC0293 | Световая композиция | https://vargov.ru/catalog/lc0293 |  |
-| LC0294 | Световая композиция | https://vargov.ru/catalog/lc0294 |  |
+| LC0294 | Декоративная композиция | https://vargov.ru/catalog/lc0294 |  |
 | LC0295 | Световая композиция | https://vargov.ru/catalog/lc0295 |  |
-| LC0296 | Световая композиция | https://vargov.ru/catalog/lc0296 |  |
+| LC0296 | Декоративная композиция | https://vargov.ru/catalog/lc0296 |  |
 | LC0297 | Световая композиция | https://vargov.ru/catalog/lc0297 |  |
-| LC0298 | Световая композиция | https://vargov.ru/catalog/lc0298 |  |
-| LC0299 | Световая композиция | https://vargov.ru/catalog/lc0299 |  |
+| LC0298 | Декоративная композиция | https://vargov.ru/catalog/lc0298 |  |
+| LC0299 | Декоративная композиция | https://vargov.ru/catalog/lc0299 |  |
 | LC0300 | Световая композиция | https://vargov.ru/catalog/lc0300 |  |
 | LC0301 | Световая композиция | https://vargov.ru/catalog/lc0301 |  |
 | LC0302 | Световая композиция | https://vargov.ru/catalog/lc0302 |  |
@@ -322,17 +322,17 @@
 | LC0306 | Световая композиция | https://vargov.ru/catalog/lc0306 |  |
 | LC0307 | Световая композиция | https://vargov.ru/catalog/lc0307 |  |
 | LC0308 | Световая композиция | https://vargov.ru/catalog/lc0308 |  |
-| LC0309 | Световая композиция | https://vargov.ru/catalog/lc0309 |  |
+| LC0309 | Декоративная композиция | https://vargov.ru/catalog/lc0309 |  |
 | LC0310 | Световая композиция | https://vargov.ru/catalog/lc0310 |  |
 | LC0311 | Световая композиция | https://vargov.ru/catalog/lc0311 |  |
-| LC0312 | Световая композиция | https://vargov.ru/catalog/lc0312 |  |
+| LC0312 | Декоративная композиция | https://vargov.ru/catalog/lc0312 |  |
 | LC0313 | Световая композиция | https://vargov.ru/catalog/lc0313 | 2 |
 | LC0315 | Световая композиция | https://vargov.ru/catalog/lc0315 |  |
 | LC0316 | Настенный светильник-скульптура | https://vargov.ru/catalog/lc0316 |  |
-| LC0317 | Световая композиция | https://vargov.ru/catalog/lc0317 |  |
+| LC0317 | Декоративная композиция | https://vargov.ru/catalog/lc0317 |  |
 | LC0318 | Световая композиция | https://vargov.ru/catalog/lc0318 |  |
 | LC0319 | Световая композиция | https://vargov.ru/catalog/lc0319 | 1 |
-| LC0320 | Световая композиция | https://vargov.ru/catalog/lc0320 | 1 |
+| LC0320 | Декоративная композиция | https://vargov.ru/catalog/lc0320 | 1 |
 | LC0321 | Лестничное ограждение | https://vargov.ru/catalog/lc0321 |  |
 | LC0322 | Световая композиция | https://vargov.ru/catalog/lc0322 |  |
 | LC0323 | Световая композиция | https://vargov.ru/catalog/lc0323 | 1 |
@@ -362,7 +362,7 @@
 | LC0346 | Световая композиция | https://vargov.ru/catalog/lc0346 |  |
 | LC0347 | Световая композиция | https://vargov.ru/catalog/lc0347 |  |
 | LC0348 | Световая композиция | https://vargov.ru/catalog/lc0348 |  |
-| LC0349 | Световая композиция | https://vargov.ru/catalog/lc0349 |  |
+| LC0349 | Декоративная композиция | https://vargov.ru/catalog/lc0349 |  |
 | LC0350 | Световая композиция | https://vargov.ru/catalog/lc0350 |  |
 | LC0351 | Световая композиция | https://vargov.ru/catalog/lc0351 |  |
 | LC0352 | Световая композиция | https://vargov.ru/catalog/lc0352 |  |
@@ -372,7 +372,7 @@
 | LC0356 | Торшер | https://vargov.ru/catalog/lc0356 |  |
 | LC0357 | Бра | https://vargov.ru/catalog/lc0357 |  |
 | LC0358 | Световая композиция | https://vargov.ru/catalog/lc0358 | 1 |
-| LC0359 | Световая композиция | https://vargov.ru/catalog/lc0359 |  |
+| LC0359 | Декоративная композиция | https://vargov.ru/catalog/lc0359 |  |
 | LC0360 | Световая композиция | https://vargov.ru/catalog/lc0360 |  |
 | LC0361 | Световая композиция | https://vargov.ru/catalog/lc0361 |  |
 | LC0362 | Световая композиция | https://vargov.ru/catalog/lc0362 |  |
@@ -382,8 +382,8 @@
 | LC0366 | Световая композиция | https://vargov.ru/catalog/lc0366 |  |
 | LC0367 | Световая композиция | https://vargov.ru/catalog/lc0367 |  |
 | LC0368 | Скульптурная композиция | https://vargov.ru/catalog/lc0368 |  |
-| LC0369 | Световая композиция | https://vargov.ru/catalog/lc0369 |  |
-| LC0370 | Световая композиция | https://vargov.ru/catalog/lc0370 |  |
+| LC0369 | Декоративная композиция | https://vargov.ru/catalog/lc0369 |  |
+| LC0370 | Декоративная композиция | https://vargov.ru/catalog/lc0370 |  |
 | LC0371 | Световая композиция | https://vargov.ru/catalog/lc0371 |  |
 | LC0372 | Торшер | https://vargov.ru/catalog/lc0372 |  |
 | LC0373 | Световая композиция | https://vargov.ru/catalog/lc0373 |  |
@@ -473,7 +473,7 @@
 | LC0456 | Световая композиция | https://vargov.ru/catalog/lc0456 |  |
 | LC0457 | Световая композиция | https://vargov.ru/catalog/lc0457 |  |
 | LC0458 | Световая композиция | https://vargov.ru/catalog/lc0458 | 1 |
-| LC0459 | Декоративная композиция | https://vargov.ru/catalog/lc0459 |  |
+| LC0459 | Световая композиция | https://vargov.ru/catalog/lc0459 |  |
 | LC0460 | Декоративная композиция | https://vargov.ru/catalog/lc0460 |  |
 | LC0461 | Световая композиция | https://vargov.ru/catalog/lc0461 |  |
 | LC0462 | Световая композиция | https://vargov.ru/catalog/lc0462 |  |
@@ -535,11 +535,11 @@
 | LC0518 | Световая композиция | https://vargov.ru/catalog/lc0518 |  |
 | LC0519 | Световая композиция | https://vargov.ru/catalog/lc0519 |  |
 | LC0520 | Световая композиция | https://vargov.ru/catalog/lc0520 |  |
-| LC0521 | Световая композиция | https://vargov.ru/catalog/lc0521 |  |
+| LC0521 | Декоративная композиция | https://vargov.ru/catalog/lc0521 |  |
 | LC0522 | Световая композиция | https://vargov.ru/catalog/lc0522 |  |
 | LC0523 | Световая композиция | https://vargov.ru/catalog/lc0523 |  |
 | LC0524 | Световая композиция | https://vargov.ru/catalog/lc0524 |  |
-| LC0525 | Декоративная композиция | https://vargov.ru/catalog/lc0525 |  |
+| LC0525 | Световая композиция | https://vargov.ru/catalog/lc0525 |  |
 | LC0526 | Декоративная композиция | https://vargov.ru/catalog/lc0526 |  |
 | LC0527 | Декоративная композиция | https://vargov.ru/catalog/lc0527 |  |
 | LC0528 | Декоративная композиция | https://vargov.ru/catalog/lc0528 |  |

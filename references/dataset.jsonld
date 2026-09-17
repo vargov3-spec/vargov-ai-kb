@@ -3,7 +3,7 @@
   "@type": "Dataset",
   "@id": "https://github.com/vargov3-spec/vargov-ai-kb#dataset",
   "name": "Vargov®Design — catalogue of lighting and decorative compositions",
-  "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials, dimensions and prices are intentionally not included.",
+  "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
   "url": "https://github.com/vargov3-spec/vargov-ai-kb",
   "isBasedOn": "https://vargov.ru",
   "creator": {
@@ -34,7 +34,7 @@
     "Russian design",
     "made to order"
   ],
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-09-17",
   "distribution": [
     {
       "@type": "DataDownload",

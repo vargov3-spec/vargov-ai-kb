@@ -2,7 +2,7 @@
 
 Section: https://vargov.ru/en/sculptural-decor
 
-Items: 83
+Items: 82
 
 ## Contents
 
@@ -24,7 +24,7 @@ Items: 83
 - [LC0074](../products/sculptural-decor/LC0074.md) — Wall light — https://vargov.ru/en/catalog/lc0074
 - [LC0075](../products/sculptural-decor/LC0075.md) — Light composition — https://vargov.ru/en/catalog/lc0075
 - [LC0076](../products/sculptural-decor/LC0076.md) — Light composition — https://vargov.ru/en/catalog/lc0076
-- [LC0077](../products/sculptural-decor/LC0077.md) — Light composition — https://vargov.ru/en/catalog/lc0077
+- [LC0077](../products/sculptural-decor/LC0077.md) — Decorative composition — https://vargov.ru/en/catalog/lc0077
 - [LC0079](../products/sculptural-decor/LC0079.md) — Art object — https://vargov.ru/en/catalog/lc0079
 - [LC0080](../products/sculptural-decor/LC0080.md) — Mirror — https://vargov.ru/en/catalog/lc0080
 - [LC0081](../products/sculptural-decor/LC0081.md) — Mirror — https://vargov.ru/en/catalog/lc0081
@@ -49,7 +49,7 @@ Items: 83
 - [LC0162](../products/sculptural-decor/LC0162.md) — Decorative screen — https://vargov.ru/en/catalog/lc0162
 - [LC0163](../products/sculptural-decor/LC0163.md) — Decorative screen — https://vargov.ru/en/catalog/lc0163
 - [LC0230](../products/sculptural-decor/LC0230.md) — Wall composition — https://vargov.ru/en/catalog/lc0230
-- [LC0241](../products/sculptural-decor/LC0241.md) — Light composition — https://vargov.ru/en/catalog/lc0241
+- [LC0241](../products/sculptural-decor/LC0241.md) — Decorative composition — https://vargov.ru/en/catalog/lc0241
 - [LC0243](../products/sculptural-decor/LC0243.md) — Light composition — https://vargov.ru/en/catalog/lc0243
 - [LC0244](../products/sculptural-decor/LC0244.md) — Wall panel — https://vargov.ru/en/catalog/lc0244
 - [LC0245](../products/sculptural-decor/LC0245.md) — Wall composition — https://vargov.ru/en/catalog/lc0245
@@ -68,7 +68,7 @@ Items: 83
 - [LC0266](../products/sculptural-decor/LC0266.md) — Decorative screen — https://vargov.ru/en/catalog/lc0266
 - [LC0268](../products/sculptural-decor/LC0268.md) — Decorative panel — https://vargov.ru/en/catalog/lc0268
 - [LC0269](../products/sculptural-decor/LC0269.md) — Backlit wall mirror — https://vargov.ru/en/catalog/lc0269
-- [LC0309](../products/sculptural-decor/LC0309.md) — Light composition — https://vargov.ru/en/catalog/lc0309
+- [LC0309](../products/sculptural-decor/LC0309.md) — Decorative composition — https://vargov.ru/en/catalog/lc0309
 - [LC0315](../products/sculptural-decor/LC0315.md) — Light composition — https://vargov.ru/en/catalog/lc0315
 - [LC0316](../products/sculptural-decor/LC0316.md) — Wall light-sculpture — https://vargov.ru/en/catalog/lc0316
 - [LC0321](../products/sculptural-decor/LC0321.md) — Staircase balustrade — https://vargov.ru/en/catalog/lc0321
@@ -78,9 +78,8 @@ Items: 83
 - [LC0331](../products/sculptural-decor/LC0331.md) — Decorative screen — https://vargov.ru/en/catalog/lc0331
 - [LC0356](../products/sculptural-decor/LC0356.md) — Floor lamp — https://vargov.ru/en/catalog/lc0356
 - [LC0366](../products/sculptural-decor/LC0366.md) — Light composition — https://vargov.ru/en/catalog/lc0366
-- [LC0370](../products/sculptural-decor/LC0370.md) — Light composition — https://vargov.ru/en/catalog/lc0370
+- [LC0370](../products/sculptural-decor/LC0370.md) — Decorative composition — https://vargov.ru/en/catalog/lc0370
 - [LC0373](../products/sculptural-decor/LC0373.md) — Light composition — https://vargov.ru/en/catalog/lc0373
-- [LC0417](../products/sculptural-decor/LC0417.md) — Light composition — https://vargov.ru/en/catalog/lc0417
 - [LC0495](../products/sculptural-decor/LC0495.md) — Sculptural composition — https://vargov.ru/en/catalog/lc0495
 - [LC0506](../products/sculptural-decor/LC0506.md) — Sculptural composition — https://vargov.ru/en/catalog/lc0506
 - [LC0543](../products/sculptural-decor/LC0543.md) — Wall art object — https://vargov.ru/en/catalog/lc0543

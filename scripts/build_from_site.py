@@ -526,32 +526,85 @@ def _range(a, b) -> str:
     return f"{a}–{b}" if b is not None and b != a else f"{a}"
 
 
+_POWER_SCOPE: dict | None = None
+_WEIGHT_WITHHELD: set | None = None
+
+
+def _site_power_rules() -> tuple[dict, set]:
+    """power-scope.json и weightWithheld.ts сайта — те же источники, что у
+    src/app/catalog.jsonld/route.ts. Читаются лениво из DEFAULT_SITE: сборщик и
+    так работает только против локального репозитория сайта."""
+    global _POWER_SCOPE, _WEIGHT_WITHHELD
+    if _POWER_SCOPE is None:
+        _POWER_SCOPE = json.loads((DEFAULT_SITE / "src/lib/data/power-scope.json").read_text(encoding="utf-8"))
+        ts = (DEFAULT_SITE / "src/lib/data/weightWithheld.ts").read_text(encoding="utf-8")
+        m = re.search(r"new Set\(\[(.*?)\]\)", ts, re.S)
+        _WEIGHT_WITHHELD = set(re.findall(r'"([^"]+)"', m.group(1))) if m else set()
+    return _POWER_SCOPE, _WEIGHT_WITHHELD
+
+
+def _carrier_size(rec: dict) -> str:
+    own = (rec.get("powerPerSize") or "").strip()
+    if own:
+        return own
+    tail = " ".join((rec.get("powerPerLabel") or "").strip().split()[1:])
+    return tail if re.match(r"^[A-Za-zØ]?\d", tail) else ""
+
+
+def _power_carrier(code: str, rec: dict, scope_file: dict) -> str | None:
+    """Зеркало powerCarrier(code, 'en') из src/components/catalog/ElementSpecs.tsx:
+    носитель мощности — по коду powerPerKind, запасной путь по первому слову
+    русской подписи; без носителя и без подписи — carrierGeneric только если
+    power-scope говорит carrier."""
+    if rec.get("powerW") is None:
+        return None
+    raw = (rec.get("powerPerLabel") or "").strip()
+    kind = (rec.get("powerPerKind") or "").strip().lower() or None
+    if not kind and raw:
+        kind = scope_file.get("carrierByRuWord", {}).get(raw.split()[0].lower())
+    if not kind and not raw:
+        return scope_file["carrierGeneric"]["en"] if scope_file["items"].get(code) == "carrier" else None
+    word = scope_file.get("carriers", {}).get(kind, {}).get("en") if kind else None
+    return " ".join(x for x in [word or scope_file["carrierGeneric"]["en"], _carrier_size(rec)] if x)
+
+
 def element_props(code: str) -> list[dict]:
     """Параметры ЭЛЕМЕНТА, из которого набрана композиция, — зеркало фида сайта
-    (src/app/catalog.jsonld/route.ts, с 06.09.2026). Габариты строкой с «mm»,
-    вес и мощность числами с кодами UN/CEFACT (KGM, WTT); округление веса — как
-    Math.round в JS (половина вверх), иначе значения разойдутся с фидом сайта; целые
-    веса пишем целыми (1, а не 1.0) — тоже ради побайтового совпадения. Это additionalProperty,
-    а НЕ width/height/size/weight у Product: размер композиции считается под
-    помещение и не публикуется. material из источника намеренно не берём."""
+    (src/app/catalog.jsonld/route.ts, elementProps). Габариты строкой с «mm»
+    (у круглых — «Ø… × H…», признак dimsDH ставит конфигуратор), вес и мощность
+    числами с кодами UN/CEFACT (KGM, WTT); округление веса — как Math.round в JS.
+    Мощность подписывается тем же тремя случаями, что у сайта: «Power per diode»,
+    «Power per element», «Power per <носитель>», плюс «(D80 elements only)», когда
+    диод стоит не в каждом размере ряда. Свойства отдаются только при наличии ряда
+    размеров — как у сайта; вес удержан у артикулов из weightWithheld.ts.
+    Это additionalProperty, а НЕ width/height/size/weight у Product: размер
+    композиции считается под помещение и не публикуется. material не берём."""
     rec = ELEMENT_SPECS.get(code) or {}
     rows = rec.get("sizes") or []
+    if not rows:
+        return []
+    scope_file, withheld = _site_power_rules()
     out: list[dict] = []
     for row in rows:
-        out.append({
-            "@type": "PropertyValue",
-            "name": f"Element size {row['size']}",
-            "value": (f"L{_range(row['l'], row.get('lMax'))} × "
-                      f"W{_range(row['w'], row.get('wMax'))} × "
-                      f"H{_range(row['h'], row.get('hMax'))} mm"),
-        })
-        if row.get("kg") is not None:
+        if rec.get("dimsDH"):
+            value = (f"Ø{_range(row['l'], row.get('lMax'))} × "
+                     f"H{_range(row['h'], row.get('hMax'))} mm")
+        else:
+            value = (f"L{_range(row['l'], row.get('lMax'))} × "
+                     f"W{_range(row['w'], row.get('wMax'))} × "
+                     f"H{_range(row['h'], row.get('hMax'))} mm")
+        out.append({"@type": "PropertyValue", "name": f"Element size {row['size']}", "value": value})
+        if row.get("kg") is not None and code not in withheld:
             kg = math.floor(row["kg"] * 100 + 0.5) / 100
             out.append({"@type": "PropertyValue", "name": f"Element weight {row['size']}",
                         "value": int(kg) if kg == int(kg) else kg, "unitCode": "KGM"})
     if rec.get("powerW") is not None:
-        out.append({"@type": "PropertyValue", "name": "Power per element",
-                    "value": rec["powerW"], "unitCode": "WTT"})
+        carrier = _power_carrier(code, rec, scope_file)
+        only = f" ({rec['powerOnlySize']} elements only)" if rec.get("powerOnlySize") else ""
+        name = (f"Power per {carrier}" if carrier
+                else "Power per diode" if scope_file["items"].get(code) == "diode"
+                else "Power per element") + only
+        out.append({"@type": "PropertyValue", "name": name, "value": rec["powerW"], "unitCode": "WTT"})
     return out
 
 
@@ -730,8 +783,9 @@ def dataset_node(n_products: int, today: str) -> dict:
         "description": (
             f"Open dataset of {n_products} author-designed lighting and decorative compositions by "
             "Vargov®Design: article codes, categories, descriptions in eight languages, images, "
-            "awards and links to the brand's own 3D models. Materials, dimensions and prices are "
-            "intentionally not included."
+            "awards and links to the brand's own 3D models. Materials and prices are intentionally "
+            "not included; composition dimensions are not published — element parameters "
+            "(size, weight, power) are given where the brand publishes them."
         ),
         "url": REPO_URL,
         "isBasedOn": SITE_URL,

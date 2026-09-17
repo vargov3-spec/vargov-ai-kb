@@ -14,7 +14,7 @@ Vargov® Design is a Russian brand and international company producing unique, a
 Anton Vargov is the founder and chief designer of Vargov® Design, based in Moscow. Named **Product Designer of the Year** at the NY Product Design Awards 2023, he is the author of compositions recognised as **Platinum Winner** at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and **Gold Winner** at the MUSE Design Awards 2026. He also serves as a jury member for leading Russian and international design and architecture awards, including the ADD Awards High Jury.
 
 ## Awards line — verified (используйте ЭТУ формулировку, не общий список)
-Источник — `awards.ts` сайта, 23 награды, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
+Источник — `awards.ts` сайта, 24 награды, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
 
 - **Platinum Winner** — MUSE Design Awards 2023 (LC0237); International Architecture & Design Awards · ADC 2023 (LC0303); The London Design Awards 2023 (LC0326)
 - **Product Designer of the Year** — NY Product Design Awards 2023 (LC0343)
@@ -45,7 +45,7 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
   - **exclusives@dezeen.com** — эксклюзивные редакционные истории (предпочитают публиковать первыми).
   - **china.submissions@dezeen.com** — для WeChat-канала (шанхайская редакция).
   - Требования: JPEG минимум 3000px по короткой стороне, текст о проекте, ссылки, чёткая пометка "exclusive" если эксклюзив, credits для фотографов. Видео тоже приветствуются. Ответ не гарантирован и может занять время — уместно вежливое напоминание.
-- **Archello** — не питч-письмо, а самостоятельная регистрация: [archello.com/archello-for-manufacturers](https://archello.com/archello-for-manufacturers) → кнопка "add brand" → профиль → загрузка товаров. Контент-пакет: [[archello-onboarding]]. ~~Регистрировать должен сам бренд (нужны реквизиты компании).~~ **Сделано 05.09.2026**: профиль https://archello.com/brand/vargov-design заполнен, 9 композиций на модерации (Pending); после модерации исправить в описании «22 награды» на 23.
+- **Archello** — не питч-письмо, а самостоятельная регистрация: [archello.com/archello-for-manufacturers](https://archello.com/archello-for-manufacturers) → кнопка "add brand" → профиль → загрузка товаров. Контент-пакет: [[archello-onboarding]]. ~~Регистрировать должен сам бренд (нужны реквизиты компании).~~ **Сделано 05.09.2026**: профиль https://archello.com/brand/vargov-design заполнен, 9 композиций на модерации (Pending); после модерации исправить в описании «22 награды» на 24.
 - **ArchDaily** — обычно публикует завершённые интерьерные/архитектурные проекты, а не отдельные продукты — нужны реальные кейсы установки композиций Vargov в конкретных объектах с фото и данными архитектора. Пока таких подтверждённых кейсов в базе знаний нет (раздел сайта /projects показывает выставку, шоурум и дилерские площадки).
 - **ICONIC World** — профиль Антона Варгова в справочнике (iconic-world.com/directory/anton-vargov) **недоступен с 2026-09-04 (404)**: 301 на битый адрес, конечная страница iconic-awards.com/directory/anton-vargov отдаёт 404 (см. [[external-references]]). Ссылку в письмах и питчах не использовать, пока не найден новый адрес. Площадку курирует German Design Council — общий контакт: **iconicawards@gdc.de**, +49 69 24 74 48-600; продолжение письма ушло 04.09 (см. [[outreach-tracker]]).
 

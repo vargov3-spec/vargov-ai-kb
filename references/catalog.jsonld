@@ -195,7 +195,7 @@
       "@type": "Dataset",
       "@id": "https://github.com/vargov3-spec/vargov-ai-kb#dataset",
       "name": "Vargov®Design — catalogue of lighting and decorative compositions",
-      "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials, dimensions and prices are intentionally not included.",
+      "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
       "url": "https://github.com/vargov3-spec/vargov-ai-kb",
       "isBasedOn": "https://vargov.ru",
       "creator": {
@@ -226,7 +226,7 @@
         "Russian design",
         "made to order"
       ],
-      "dateModified": "2026-09-13",
+      "dateModified": "2026-09-17",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -394,7 +394,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -618,7 +618,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -697,7 +697,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.88,
+          "value": 0.71,
           "unitCode": "KGM"
         },
         {
@@ -708,7 +708,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.98,
+          "value": 0.89,
           "unitCode": "KGM"
         },
         {
@@ -719,12 +719,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.08,
+          "value": 1.07,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -807,7 +807,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.88,
+          "value": 0.71,
           "unitCode": "KGM"
         },
         {
@@ -818,7 +818,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.98,
+          "value": 0.89,
           "unitCode": "KGM"
         },
         {
@@ -829,12 +829,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.08,
+          "value": 1.07,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -953,7 +953,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -1303,45 +1303,45 @@
         {
           "@type": "PropertyValue",
           "name": "Element size L250",
-          "value": "L250 × W240 × H10 mm"
+          "value": "L250 × W200 × H10 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.61,
+          "value": 0.66,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size L300",
-          "value": "L300 × W290 × H10 mm"
+          "value": "L300 × W240 × H10 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.05,
+          "value": 1.14,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size L350",
-          "value": "L350 × W330 × H15 mm"
+          "value": "L350 × W280 × H15 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 1.67,
+          "value": 1.81,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size L400",
-          "value": "L400 × W380 × H15 mm"
+          "value": "L400 × W320 × H15 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 2.5,
+          "value": 2.7,
           "unitCode": "KGM"
         }
       ],
@@ -1461,7 +1461,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -1558,7 +1558,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.54,
+          "value": 1.72,
           "unitCode": "KGM"
         },
         {
@@ -1569,12 +1569,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.68,
+          "value": 2.06,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -1784,7 +1784,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -1927,7 +1927,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2101,7 +2101,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2188,7 +2188,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2409,7 +2409,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2541,7 +2541,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -2665,7 +2665,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2782,7 +2782,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -2887,7 +2887,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -3012,7 +3012,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -3155,7 +3155,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H480",
-          "value": 1.65,
+          "value": 1.39,
           "unitCode": "KGM"
         },
         {
@@ -3166,7 +3166,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H580",
-          "value": 1.82,
+          "value": 1.68,
           "unitCode": "KGM"
         },
         {
@@ -3182,7 +3182,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -3303,7 +3303,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -3412,7 +3412,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -3584,7 +3584,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -3763,7 +3763,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H650",
-          "value": 0.98,
+          "value": 1.03,
           "unitCode": "KGM"
         },
         {
@@ -3774,7 +3774,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 1.02,
+          "value": 1.11,
           "unitCode": "KGM"
         },
         {
@@ -3785,12 +3785,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H750",
-          "value": 1.06,
+          "value": 1.18,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -4428,7 +4428,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -4543,7 +4543,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -4671,7 +4671,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -4887,7 +4887,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5010,7 +5010,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5147,7 +5147,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5261,7 +5261,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5374,7 +5374,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5462,7 +5462,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about suspension. This is not a chandelier in the usual sense but a light environment: the movement of air, an accumulation of particles, a…",
+      "description": "A composition about suspension. What hangs here is not a single body but a light environment: the movement of air, an accumulation of particles, a suspension that…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -5617,7 +5617,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5740,7 +5740,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -5968,7 +5968,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -6187,7 +6187,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -6388,7 +6388,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 1.12,
+          "value": 1.1,
           "unitCode": "KGM"
         },
         {
@@ -6399,7 +6399,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H550",
-          "value": 1.24,
+          "value": 1.34,
           "unitCode": "KGM"
         },
         {
@@ -6410,12 +6410,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H650",
-          "value": 1.34,
+          "value": 1.59,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -6533,7 +6533,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 10,
           "unitCode": "WTT"
         }
@@ -6644,7 +6644,18 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Element size L450",
+          "value": "L450 × W260 × H390 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight L450",
+          "value": 3.36,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per diode",
           "value": 10,
           "unitCode": "WTT"
         }
@@ -6741,7 +6752,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -6838,7 +6849,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -6961,7 +6972,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -7066,7 +7077,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -7174,7 +7185,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -7294,7 +7305,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -7792,7 +7803,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0525#product",
-      "name": "Decorative composition LC0525",
+      "name": "Light composition LC0525",
       "sku": "LC0525",
       "url": "https://vargov.ru/en/catalog/lc0525",
       "sameAs": [
@@ -7814,7 +7825,7 @@
         "https://vargov.ru/img/catalog/19cfd115241ceb2a.jpg",
         "https://vargov.ru/img/catalog/c1c32f772ca0491f.jpg"
       ],
-      "category": "Decorative compositions",
+      "category": "Lighting compositions",
       "brand": {
         "@id": "https://vargov.ru#organization"
       },
@@ -7881,7 +7892,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -7971,7 +7982,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -8050,7 +8061,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.42,
+          "value": 0.35,
           "unitCode": "KGM"
         },
         {
@@ -8061,7 +8072,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.47,
+          "value": 0.43,
           "unitCode": "KGM"
         },
         {
@@ -8083,7 +8094,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 0.56,
+          "value": 0.6,
           "unitCode": "KGM"
         }
       ],
@@ -8207,7 +8218,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -8255,7 +8266,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0521#product",
-      "name": "Light composition LC0521",
+      "name": "Decorative composition LC0521",
       "sku": "LC0521",
       "url": "https://vargov.ru/en/catalog/lc0521",
       "sameAs": [
@@ -8404,7 +8415,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -8512,7 +8523,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -8585,14 +8596,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a rising seam. The eye reads a movement from the bottom up: a large nugget below, and above it a scattering of shards rising on invisible…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -8667,14 +8670,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about sparks over a coal. Below, a large core of deep red; above it a plume of crystals rises — what flies up at the moment a white-hot thing is…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -8815,7 +8810,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -8888,14 +8883,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about two layers. Outside, a full flower head of dozens of curved petals — from honey to cognac; inside, a white branching frame, a bone coral that…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -8993,7 +8980,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9100,7 +9087,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9216,7 +9203,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9318,7 +9305,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9408,7 +9395,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9522,7 +9509,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9862,7 +9849,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -9974,7 +9961,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -10187,7 +10174,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -10335,7 +10322,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -10412,14 +10399,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a game stopped on the winning move. Cubes assemble into a structure with setbacks, cantilevers and towers — a construction set with no final…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10525,7 +10504,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -10596,14 +10575,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a formula written in the air. Hexagonal honeycomb frames are linked into a horizontal chain — a structure out of a chemistry textbook carried…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10676,14 +10647,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch found in a forest. The composition spreads horizontally, repeating the curve of a real branch — not straightened and not symmetrical,…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -10802,7 +10765,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -10967,7 +10930,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -11077,7 +11040,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -11162,14 +11125,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a vine on a column. The branches climb the wall from bottom to top, and the composition turns a plane into a flowering relief — a gardener's…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -11251,7 +11206,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.08,
+          "value": 0.92,
           "unitCode": "KGM"
         },
         {
@@ -11262,7 +11217,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.18,
+          "value": 1.1,
           "unitCode": "KGM"
         },
         {
@@ -11273,12 +11228,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 1.28,
+          "value": 1.29,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -11397,7 +11352,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -11534,7 +11489,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -11949,14 +11904,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about water in a frame. A strict contour and free plasticity within — a formula that makes the object architectural and alive at once: the frame…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -12109,7 +12056,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12215,7 +12162,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12321,7 +12268,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12426,7 +12373,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12500,7 +12447,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about lily of the valley at the scale of a chandelier. A small woodland flower is enlarged to the size of a formal piece — a device that changes the…",
+      "description": "A composition about lily of the valley at ceiling scale. A small woodland flower is enlarged many times over — a device that changes the relationship: what used to…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -12537,7 +12484,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12626,7 +12573,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12737,7 +12684,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -12844,7 +12791,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -13048,7 +12995,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -13261,7 +13208,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -13372,7 +13319,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -13504,7 +13451,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -13688,7 +13635,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø100",
-          "value": "L100 × W100 × H75 mm"
+          "value": "Ø100 × H75 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13699,7 +13646,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø150",
-          "value": "L150 × W150 × H110 mm"
+          "value": "Ø150 × H110 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13710,7 +13657,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø200",
-          "value": "L200 × W200 × H150 mm"
+          "value": "Ø200 × H150 mm"
         },
         {
           "@type": "PropertyValue",
@@ -13822,7 +13769,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -13906,7 +13853,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.3,
+          "value": 0.42,
           "unitCode": "KGM"
         },
         {
@@ -13917,7 +13864,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.32,
+          "value": 0.48,
           "unitCode": "KGM"
         },
         {
@@ -13928,7 +13875,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 0.34,
+          "value": 0.53,
           "unitCode": "KGM"
         },
         {
@@ -13939,12 +13886,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.36,
+          "value": 0.59,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -14033,14 +13980,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a nest woven out of gold. An oval wreath of interlaced branches carries clusters of drop-flowers — the form reads both as an upturned basket…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -14113,14 +14052,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cut fruit. The scaled shell is built petal by petal, and in the cut a milky interior glows — the piece shows what on a real lychee is visible…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -14196,9 +14127,36 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
+          "name": "Element size H300",
+          "value": "L40 × W40 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.5,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H350",
+          "value": "L40 × W40 × H350 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H350",
+          "value": 0.58,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H400",
+          "value": "L40 × W40 × H400 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H400",
+          "value": 0.66,
+          "unitCode": "KGM"
         }
       ],
       "hasCertification": {
@@ -14310,7 +14268,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -14417,7 +14375,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -14567,7 +14525,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0459#product",
-      "name": "Decorative composition LC0459",
+      "name": "Light composition LC0459",
       "sku": "LC0459",
       "url": "https://vargov.ru/en/catalog/lc0459",
       "sameAs": [
@@ -14600,14 +14558,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about laundry in the wind. Every leaf is bent twice — not once, as in a static form, but with a second fold of the kind only cloth gets when a…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -14679,7 +14629,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -14822,7 +14772,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -14944,7 +14894,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15054,7 +15004,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15262,7 +15212,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15372,7 +15322,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15491,7 +15441,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15606,7 +15556,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15725,7 +15675,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15844,7 +15794,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -15996,14 +15946,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a garland that stayed for good. The branch spreads above the table as one continuous line — a festive gesture stripped of its occasion and…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16070,14 +16012,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the spiral of life. The axis grows dozens of tendrils, each ending in a drop: the form reads both as a molecule and as a flower head turning…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16150,14 +16084,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a firework held in the act of opening. Bundles of tubes sit as stars on a branch — these are both fir boughs in hoarfrost and a firework caught…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16230,14 +16156,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about an explosion in slow motion. Ribbon-strips — bent, twisted, alive — sit as dense crowns on rings descending in a vertical spiral.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16310,14 +16228,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a frost star on a window. Sharp faceted spindles are gathered into burrs — a prickly, radiant form, exactly what hoarfrost draws: from a point…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16384,14 +16294,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a liana. The spiral grows from the top down, putting out large leaves — the way a plant reaches in a conservatory when it has nothing to catch…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -16510,7 +16412,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -16625,7 +16527,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -16754,7 +16656,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -16915,7 +16817,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17004,7 +16906,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17081,6 +16983,19 @@
       },
       "inLanguage": "en",
       "description": "A composition about an element caught and made to shine. Ribbons of thousands of vertical rods twist into a giant spiral narrowing toward the bottom — the form of…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H300",
+          "value": "L15 × W15 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.06,
+          "unitCode": "KGM"
+        }
+      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17165,7 +17080,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17262,7 +17177,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.58,
+          "value": 0.67,
           "unitCode": "KGM"
         },
         {
@@ -17273,7 +17188,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.65,
+          "value": 0.83,
           "unitCode": "KGM"
         },
         {
@@ -17284,12 +17199,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.71,
+          "value": 1,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -17356,14 +17271,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a banking turn. The dynamics are built into the structure: the lines of the frame draw the movement and the elements pick it up.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17432,14 +17339,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a wave that has passed through an organ. A strict vertical of elements and a free curve of suspension — the whole piece rests on that contrast:…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17557,7 +17456,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17679,7 +17578,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17756,14 +17655,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about passion and restraint. The white flowers burn, the burgundy ones keep silent: the light lives only in the pale bowls while the dark ones hold…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -17881,7 +17772,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -17992,7 +17883,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -18063,14 +17954,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about kelp in a column of light. The ribbons wind around a vertical frame — they do not wrap it decoratively, they reach upward, as weed reaches for…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18193,7 +18076,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -18252,15 +18135,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition about a flare. Curved tusks break out in every direction from a mirrored core — the sun at the moment of a prominence, a dandelion enlarged to a…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
+      "description": "A composition about a flare. Curved tusks break out in every direction from a mirrored core — the sun at the moment of a prominence, a dandelion grown to the size…",
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18356,7 +18231,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -18525,14 +18400,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a rising vortex. Crescent ribbons wind around a vertical axis like petals caught in a current — the movement is directed upward rather than…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18600,7 +18467,7 @@
         "https://vargov.ru/img/catalog/4980cd2738bedf26.jpg",
         "https://vargov.ru/img/catalog/dd4f884ef6501697.jpg"
       ],
-      "category": "Sculptural compositions & decor",
+      "category": "Lighting compositions",
       "brand": {
         "@id": "https://vargov.ru#organization"
       },
@@ -18642,12 +18509,6 @@
           "name": "Element weight H450",
           "value": 1.48,
           "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
         }
       ],
       "subjectOf": [
@@ -18697,14 +18558,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch under the weight of a harvest. The sprigs bend into crescents — not for beauty but because they carry a load: the form follows the…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -18822,7 +18675,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -18942,7 +18795,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -19017,14 +18870,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a flowering branch above a path. The vine reaches out horizontally and the flowers look down — exactly as a real magnolia branch leans over a…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19089,14 +18934,6 @@
       },
       "inLanguage": "en",
       "description": "An abstraction, not an image. The elements are scattered along the branches rather than set on a grid, and each is turned its own way.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19199,7 +19036,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -19276,14 +19113,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a crown. Thick hoops with an inner bubbled texture catch on one another through gold collars — dozens of rings entered into each other like the…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19357,14 +19186,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the moment between botany and fireworks. Hundreds of fine stems break out from a single centre and fall away into a full sphere — the form can…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -19473,7 +19294,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -19548,14 +19369,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a night garden. The flowers read as silhouettes and the light as their core: a dark register is rare in light compositions, and the piece looks…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -19617,6 +19430,25 @@
       },
       "inLanguage": "en",
       "description": "One turn of the spiral, taken off the staircase. An arc with its dense fringe of faceted rods is lifted out of the great vertical and hung on the wall — a fragment…",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H350",
+          "value": "Ø30 × H350 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H350",
+          "value": 0.26,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per diode",
+          "value": 2,
+          "unitCode": "WTT"
+        }
+      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -19667,7 +19499,40 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Element size H250",
+          "value": "L30 × W30 × H250 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H250",
+          "value": 0.16,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H300",
+          "value": "L30 × W30 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.19,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H350",
+          "value": "L30 × W30 × H350 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H350",
+          "value": 0.22,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -19781,7 +19646,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -19895,7 +19760,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -19964,14 +19829,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about an explosion stopped at its best moment. From a vertical axis, stem-rays break out in every direction, and at the end of each a bud opens with…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20036,14 +19893,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a branch above a bench. The vine winds as a horizontal line and reaches out above the table exactly as a real branch reaches out above a garden…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20127,7 +19976,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 1.28,
+          "value": 1.03,
           "unitCode": "KGM"
         },
         {
@@ -20138,7 +19987,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.34,
+          "value": 1.13,
           "unitCode": "KGM"
         },
         {
@@ -20149,7 +19998,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 1.4,
+          "value": 1.23,
           "unitCode": "KGM"
         },
         {
@@ -20160,12 +20009,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.45,
+          "value": 1.33,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -20254,7 +20103,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -20366,7 +20215,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -20463,7 +20312,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.88,
+          "value": 1.02,
           "unitCode": "KGM"
         },
         {
@@ -20474,7 +20323,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.99,
+          "value": 1.27,
           "unitCode": "KGM"
         },
         {
@@ -20485,12 +20334,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.08,
+          "value": 1.53,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -20579,14 +20428,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the feathers of a bird. The finest longitudinal hatching on every feather is not decor but structure: on a real feather these are the barbs…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -20682,7 +20523,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -20776,7 +20617,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -20831,14 +20672,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about different phases of flowering. The buds are turned in different directions, some open, some only just parted — a thicket rather than a bouquet:…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20907,14 +20740,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the sky before a storm. The lilac tone fills from within — the colour the air takes on a few minutes before rain.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -20983,14 +20808,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about an orchestra before a concert. Trumpets of differing calibre look up, down and sideways — that is how a brass section looks while the players…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -21063,14 +20880,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about opening. Some flowers are fully open, some are only beginning — the cascade shows the process rather than the result.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -21125,14 +20934,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about autumn. Colour decides everything: burnt ochre, ash, warm bronze — a muted autumnal register, rare in light compositions, where white and gold…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -21187,14 +20988,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about wisteria on a pergola. The flowers are set densely and turned every way, the cascade descending as a dense vertical cluster — the way an…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -21253,14 +21046,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about April. The flowers vary in size — fully open, half-opened, tight buds — as on a real magnolia branch, which flowers before the leaves and does…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -21343,7 +21128,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -21468,7 +21253,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -21582,7 +21367,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -21693,7 +21478,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -21768,7 +21553,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A composition as quotation. The silhouette of an old chandelier pendant is enlarged and cleared of everything surplus: the shaped, almost lacework contour remains…",
+      "description": "A composition as quotation. The silhouette of an old crystal pendant is enlarged and cleared of everything surplus: the shaped, almost lacework contour remains and…",
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -21794,7 +21579,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -21889,7 +21674,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -21991,7 +21776,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -22272,7 +22057,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -22341,14 +22126,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cob. The leaves sit in layers, overlapping, by the dozen — a dense vertical where every row covers the one before.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 4,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -22558,7 +22335,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -22649,12 +22426,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.36,
+          "value": 0.31,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -22702,7 +22479,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0370#product",
-      "name": "Light composition LC0370",
+      "name": "Decorative composition LC0370",
       "sku": "LC0370",
       "url": "https://vargov.ru/en/catalog/lc0370",
       "sameAs": [
@@ -22753,7 +22530,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0369#product",
-      "name": "Light composition LC0369",
+      "name": "Decorative composition LC0369",
       "sku": "LC0369",
       "url": "https://vargov.ru/en/catalog/lc0369",
       "sameAs": [
@@ -22890,7 +22667,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.44,
+          "value": 0.5,
           "unitCode": "KGM"
         },
         {
@@ -22901,7 +22678,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.49,
+          "value": 0.61,
           "unitCode": "KGM"
         },
         {
@@ -22912,12 +22689,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.53,
+          "value": 0.71,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -23007,7 +22784,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.91,
+          "value": 0.92,
           "unitCode": "KGM"
         },
         {
@@ -23018,7 +22795,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.01,
+          "value": 1.16,
           "unitCode": "KGM"
         },
         {
@@ -23029,7 +22806,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.11,
+          "value": 1.39,
           "unitCode": "KGM"
         },
         {
@@ -23040,12 +22817,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.2,
+          "value": 1.62,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -23268,7 +23045,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -23427,14 +23204,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a bush in bloom. Fine rods spread in every direction, interlacing into a volumetric sphere, and on each tip sits a pointed flower with a gold…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23525,7 +23294,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -23612,14 +23381,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a cluster. The branches hang down in a dense cone, narrowing toward the bottom and ending in a few solitary sprigs — like a real cluster pulled…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23690,14 +23451,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about rain through foliage. Two tiers work toward one image: above, a dense ring of leaves with the sources hidden between them; below, dozens of…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -23723,7 +23476,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0359#product",
-      "name": "Light composition LC0359",
+      "name": "Decorative composition LC0359",
       "sku": "LC0359",
       "url": "https://vargov.ru/en/catalog/lc0359",
       "sameAs": [
@@ -23845,7 +23598,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per disc D300",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -24047,7 +23800,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -24120,14 +23873,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a dandelion. Hundreds of tubular elements radiate in every direction from a central sphere, and at the end of each is a gold ball, like a seed…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -24192,14 +23937,6 @@
       },
       "inLanguage": "en",
       "description": "A composition with a plot of its own. The birds here are not decoration but participants in a scene: one dives, another hovers, a third is only approaching, and…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24270,14 +24007,6 @@
       },
       "inLanguage": "en",
       "description": "The same scene in a green register. Flowers of two kinds — clear olive-green and milky white — open as wide bowls; between them hover chrome hummingbirds with…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24348,14 +24077,6 @@
       },
       "inLanguage": "en",
       "description": "The same story in white. The absence of colour shifts the accent onto plasticity: you can see how each flower is coiled along a spiral, how the edge turns, how…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24426,14 +24147,6 @@
       },
       "inLanguage": "en",
       "description": "A composition with a plot — the rare case of an object that does not decorate a space but tells a story.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -24477,7 +24190,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0349#product",
-      "name": "Light composition LC0349",
+      "name": "Decorative composition LC0349",
       "sku": "LC0349",
       "url": "https://vargov.ru/en/catalog/lc0349",
       "sameAs": [
@@ -24638,7 +24351,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -24773,7 +24486,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -24866,7 +24579,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -24949,14 +24662,6 @@
       },
       "inLanguage": "en",
       "description": "The man-made pretending to have been found. The crystals are split irregularly, the facets meet at random angles, and the object looks lifted out of rock rather…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -25031,14 +24736,6 @@
       },
       "inLanguage": "en",
       "description": "A branch that was not cut but grown again. The leaves are twisted and turned out of step with each other — there is no garland rhythm here, there is the disorder…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -25139,7 +24836,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -25221,7 +24918,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.31,
+          "value": 0.32,
           "unitCode": "KGM"
         },
         {
@@ -25232,7 +24929,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.34,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -25243,12 +24940,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.37,
+          "value": 0.45,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -25309,14 +25006,6 @@
       },
       "inLanguage": "en",
       "description": "A flower caught at the moment of opening. The petals are not fully unfurled — the movement is stopped a little before it finished, and the whole life of the object…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -25425,14 +25114,6 @@
       "description": "White on white — the hardest task in product design: with the colour taken away, form has nothing left to hide behind. Here it holds.",
       "award": [
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339"
-      ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
       ],
       "subjectOf": [
         {
@@ -25978,7 +25659,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -26100,7 +25781,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -26269,7 +25950,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -26872,14 +26553,6 @@
       "award": [
         "International Architecture & Design Awards · ADC 2023 — Gold Winner · Lighting Product Design Concept / Professional · «Drapery», composition LC0323"
       ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -26960,14 +26633,6 @@
       },
       "inLanguage": "en",
       "description": "A tropical plant cast whole. The leaves are twisted helically, with a sharp tip and a deep lens in the body — a form taken from nature and carried through to an…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -27077,7 +26742,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0320#product",
-      "name": "Light composition LC0320",
+      "name": "Decorative composition LC0320",
       "sku": "LC0320",
       "url": "https://vargov.ru/en/catalog/lc0320",
       "sameAs": [
@@ -27259,7 +26924,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -27332,14 +26997,6 @@
       },
       "inLanguage": "en",
       "description": "A flowering with half the blooms still closed. Some corollas glow from within, others stay blind and merely reflect their neighbours — a garden caught halfway…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -27359,7 +27016,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0317#product",
-      "name": "Light composition LC0317",
+      "name": "Decorative composition LC0317",
       "sku": "LC0317",
       "url": "https://vargov.ru/en/catalog/lc0317",
       "sameAs": [
@@ -27542,14 +27199,6 @@
         "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
         "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313"
       ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -27569,7 +27218,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0312#product",
-      "name": "Light composition LC0312",
+      "name": "Decorative composition LC0312",
       "sku": "LC0312",
       "url": "https://vargov.ru/en/catalog/lc0312",
       "sameAs": [
@@ -27686,7 +27335,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -27773,7 +27422,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -27821,7 +27470,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0309#product",
-      "name": "Light composition LC0309",
+      "name": "Decorative composition LC0309",
       "sku": "LC0309",
       "url": "https://vargov.ru/en/catalog/lc0309",
       "sameAs": [
@@ -27943,7 +27592,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -28065,7 +27714,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -28133,14 +27782,6 @@
       },
       "inLanguage": "en",
       "description": "A net sagging under its own weight. The form is set not by a designer but by physics — the mesh falls the way any net stretched between fixed points will fall.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -28204,14 +27845,6 @@
       },
       "inLanguage": "en",
       "description": "A thicket seen from below — the way a fish sees it. The rods vary in length and are slightly curved; they sway to the eye even in complete stillness.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 0.5,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -28257,14 +27890,6 @@
       },
       "inLanguage": "en",
       "description": "Light hidden inside something that absorbs light. The surface is matte, downy, almost textile — it kills highlights completely, and that is the whole calculation.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 0.5,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -28321,14 +27946,6 @@
       "description": "A surface that flows into itself. The form folds and unfolds without a single corner — a bend, an overlap, a wave at the moment it turns over: movement is…",
       "award": [
         "International Architecture & Design Awards · ADC 2023 — Platinum Winner · Lighting Product Design Built / Professional · light composition LC0303"
-      ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
       ],
       "hasCertification": {
         "@type": "Certification",
@@ -28463,7 +28080,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -28598,7 +28215,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø120",
-          "value": "L120 × W120 × H45 mm"
+          "value": "Ø120 × H45 mm"
         },
         {
           "@type": "PropertyValue",
@@ -28609,7 +28226,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø270",
-          "value": "L270 × W270 × H50 mm"
+          "value": "Ø270 × H50 mm"
         },
         {
           "@type": "PropertyValue",
@@ -28620,7 +28237,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø350",
-          "value": "L350 × W350 × H45 mm"
+          "value": "Ø350 × H45 mm"
         },
         {
           "@type": "PropertyValue",
@@ -28630,7 +28247,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per rosette D350",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -28678,7 +28295,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0299#product",
-      "name": "Light composition LC0299",
+      "name": "Decorative composition LC0299",
       "sku": "LC0299",
       "url": "https://vargov.ru/en/catalog/lc0299",
       "sameAs": [
@@ -28780,7 +28397,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0298#product",
-      "name": "Light composition LC0298",
+      "name": "Decorative composition LC0298",
       "sku": "LC0298",
       "url": "https://vargov.ru/en/catalog/lc0298",
       "sameAs": [
@@ -28929,7 +28546,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -28977,7 +28594,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0296#product",
-      "name": "Light composition LC0296",
+      "name": "Decorative composition LC0296",
       "sku": "LC0296",
       "url": "https://vargov.ru/en/catalog/lc0296",
       "sameAs": [
@@ -29151,7 +28768,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -29199,7 +28816,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0294#product",
-      "name": "Light composition LC0294",
+      "name": "Decorative composition LC0294",
       "sku": "LC0294",
       "url": "https://vargov.ru/en/catalog/lc0294",
       "sameAs": [
@@ -29362,7 +28979,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -29434,14 +29051,6 @@
       "award": [
         "SIT Furniture Design Award 2023 — Winner · Designer & Custom Lighting · composition LC0292"
       ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -29479,7 +29088,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0291#product",
-      "name": "Light composition LC0291",
+      "name": "Decorative composition LC0291",
       "sku": "LC0291",
       "url": "https://vargov.ru/en/catalog/lc0291",
       "sameAs": [
@@ -29632,7 +29241,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -29732,7 +29341,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -29774,7 +29383,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0288#product",
-      "name": "Light composition LC0288",
+      "name": "Decorative composition LC0288",
       "sku": "LC0288",
       "url": "https://vargov.ru/en/catalog/lc0288",
       "sameAs": [
@@ -29907,7 +29516,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -29955,7 +29564,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0286#product",
-      "name": "Light composition LC0286",
+      "name": "Decorative composition LC0286",
       "sku": "LC0286",
       "url": "https://vargov.ru/en/catalog/lc0286",
       "sameAs": [
@@ -30087,7 +29696,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30171,39 +29780,39 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H250",
-          "value": "L20 × W20 × H250 mm"
+          "value": "L30 × W30 × H250 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.1,
+          "value": 0.16,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L20 × W20 × H300 mm"
+          "value": "L30 × W30 × H300 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.12,
+          "value": 0.19,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L20 × W20 × H350 mm"
+          "value": "L30 × W30 × H350 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.14,
+          "value": 0.22,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -30314,7 +29923,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30356,7 +29965,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0282#product",
-      "name": "Light composition LC0282",
+      "name": "Decorative composition LC0282",
       "sku": "LC0282",
       "url": "https://vargov.ru/en/catalog/lc0282",
       "sameAs": [
@@ -30494,7 +30103,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30542,7 +30151,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0280#product",
-      "name": "Light composition LC0280",
+      "name": "Decorative composition LC0280",
       "sku": "LC0280",
       "url": "https://vargov.ru/en/catalog/lc0280",
       "sameAs": [
@@ -30598,7 +30207,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0279#product",
-      "name": "Light composition LC0279",
+      "name": "Decorative composition LC0279",
       "sku": "LC0279",
       "url": "https://vargov.ru/en/catalog/lc0279",
       "sameAs": [
@@ -30706,7 +30315,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30801,7 +30410,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30896,7 +30505,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -30992,7 +30601,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31088,7 +30697,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31199,7 +30808,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31305,7 +30914,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31403,7 +31012,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31485,7 +31094,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.89,
+          "value": 0.78,
           "unitCode": "KGM"
         },
         {
@@ -31496,7 +31105,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.93,
+          "value": 0.86,
           "unitCode": "KGM"
         },
         {
@@ -31507,7 +31116,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 0.97,
+          "value": 0.93,
           "unitCode": "KGM"
         },
         {
@@ -31523,7 +31132,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -31742,7 +31351,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -31835,7 +31444,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0265#product",
-      "name": "Light composition LC0265",
+      "name": "Decorative composition LC0265",
       "sku": "LC0265",
       "url": "https://vargov.ru/en/catalog/lc0265",
       "sameAs": [
@@ -32040,7 +31649,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -32088,7 +31697,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0263#product",
-      "name": "Light composition LC0263",
+      "name": "Decorative composition LC0263",
       "sku": "LC0263",
       "url": "https://vargov.ru/en/catalog/lc0263",
       "sameAs": [
@@ -32269,7 +31878,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -32369,7 +31978,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0260#product",
-      "name": "Light composition LC0260",
+      "name": "Decorative composition LC0260",
       "sku": "LC0260",
       "url": "https://vargov.ru/en/catalog/lc0260",
       "sameAs": [
@@ -32486,14 +32095,6 @@
       },
       "inLanguage": "en",
       "description": "Metal caught in the act of flowing. The form has run and crumpled — it looks not made but happened, as though it had been stopped a second before it flowed further.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -32607,15 +32208,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "Black outside, sun within. The whole object is built on a single device: the sphere stays dark and matte on the outside while the light lives deep inside and…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
-      ]
+      "description": "Black outside, sun within. The whole object is built on a single device: the sphere stays dark and matte on the outside while the light lives deep inside and…"
     },
     {
       "@type": "Product",
@@ -32698,7 +32291,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -32770,15 +32363,7 @@
         "@id": "https://vargov.ru#organization"
       },
       "inLanguage": "en",
-      "description": "A horn with light pouring out of it. The form is taken from a wind instrument: a bell rolled from a sheet, its rim crumpled differently on every element.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 5,
-          "unitCode": "WTT"
-        }
-      ]
+      "description": "A horn with light pouring out of it. The form is taken from a wind instrument: a bell rolled from a sheet, its rim crumpled differently on every element."
     },
     {
       "@type": "Product",
@@ -32853,7 +32438,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -33490,7 +33075,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0242#product",
-      "name": "Light composition LC0242",
+      "name": "Decorative composition LC0242",
       "sku": "LC0242",
       "url": "https://vargov.ru/en/catalog/lc0242",
       "sameAs": [
@@ -33542,7 +33127,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0241#product",
-      "name": "Light composition LC0241",
+      "name": "Decorative composition LC0241",
       "sku": "LC0241",
       "url": "https://vargov.ru/en/catalog/lc0241",
       "sameAs": [
@@ -33622,14 +33207,6 @@
       },
       "inLanguage": "en",
       "description": "A vortex pressed to the ceiling. The tiers are offset from one another around the circle, and the mass winds into a spiral, forming a shallow funnel — movement…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -33764,14 +33341,6 @@
       "award": [
         "MUSE Design Awards 2023 — Platinum Winner · Lighting Design — Designer / Custom Lighting · composition LC0237"
       ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -33815,7 +33384,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0236#product",
-      "name": "Light composition LC0236",
+      "name": "Decorative composition LC0236",
       "sku": "LC0236",
       "url": "https://vargov.ru/en/catalog/lc0236",
       "sameAs": [
@@ -33934,7 +33503,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -34013,14 +33582,6 @@
       },
       "inLanguage": "en",
       "description": "The birds do not glow — the flowers do. The division of roles is strict: source below, reflector above, and the whole scene rests on the hunter being lit by its…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -34091,14 +33652,6 @@
       },
       "inLanguage": "en",
       "description": "A branch that has wound itself around a space. The base is curved into a broad loop in the horizontal plane — it reads not as a structure but as something that…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -34142,7 +33695,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0232#product",
-      "name": "Light composition LC0232",
+      "name": "Decorative composition LC0232",
       "sku": "LC0232",
       "url": "https://vargov.ru/en/catalog/lc0232",
       "sameAs": [
@@ -34243,7 +33796,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0231#product",
-      "name": "Light composition LC0231",
+      "name": "Decorative composition LC0231",
       "sku": "LC0231",
       "url": "https://vargov.ru/en/catalog/lc0231",
       "sameAs": [
@@ -34287,7 +33840,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø60",
-          "value": "L60 × W60 × H10 mm"
+          "value": "Ø60 × H10 mm"
         },
         {
           "@type": "PropertyValue",
@@ -34298,7 +33851,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø80",
-          "value": "L80 × W80 × H10 mm"
+          "value": "Ø80 × H10 mm"
         },
         {
           "@type": "PropertyValue",
@@ -34309,7 +33862,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø100",
-          "value": "L100 × W100 × H10 mm"
+          "value": "Ø100 × H10 mm"
         },
         {
           "@type": "PropertyValue",
@@ -34320,7 +33873,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø120",
-          "value": "L120 × W120 × H10 mm"
+          "value": "Ø120 × H10 mm"
         },
         {
           "@type": "PropertyValue",
@@ -34413,7 +33966,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0229#product",
-      "name": "Light composition LC0229",
+      "name": "Decorative composition LC0229",
       "sku": "LC0229",
       "url": "https://vargov.ru/en/catalog/lc0229",
       "sameAs": [
@@ -34571,7 +34124,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0227#product",
-      "name": "Light composition LC0227",
+      "name": "Decorative composition LC0227",
       "sku": "LC0227",
       "url": "https://vargov.ru/en/catalog/lc0227",
       "sameAs": [
@@ -34735,7 +34288,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -34819,7 +34372,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0224#product",
-      "name": "Light composition LC0224",
+      "name": "Decorative composition LC0224",
       "sku": "LC0224",
       "url": "https://vargov.ru/en/catalog/lc0224",
       "sameAs": [
@@ -34945,14 +34498,6 @@
       "award": [
         "LIT Lighting Design Awards 2022 — Winner · Designer and Custom Lighting · composition LC0223"
       ],
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -35022,14 +34567,6 @@
       },
       "inLanguage": "en",
       "description": "Water striking an invisible obstacle. Above, the ribbons run strictly vertical in a tight bundle; lower down they separate and curve gently outward — a jet that…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -35126,7 +34663,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -35156,7 +34693,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0220#product",
-      "name": "Light composition LC0220",
+      "name": "Decorative composition LC0220",
       "sku": "LC0220",
       "url": "https://vargov.ru/en/catalog/lc0220",
       "sameAs": [
@@ -35246,7 +34783,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0219#product",
-      "name": "Light composition LC0219",
+      "name": "Decorative composition LC0219",
       "sku": "LC0219",
       "url": "https://vargov.ru/en/catalog/lc0219",
       "sameAs": [
@@ -35346,18 +34883,29 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H350",
-          "value": "L85 × W35 × H350 mm"
+          "name": "Element size H300",
+          "value": "L90 × W40 × H300 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H350",
-          "value": 0.26,
+          "name": "Element weight H300",
+          "value": 0.37,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Element size H350",
+          "value": "L90 × W40 × H350 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H350",
+          "value": 0.39,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -35628,7 +35176,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -36151,7 +35699,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0204#product",
-      "name": "Light composition LC0204",
+      "name": "Decorative composition LC0204",
       "sku": "LC0204",
       "url": "https://vargov.ru/en/catalog/lc0204",
       "sameAs": [
@@ -36287,7 +35835,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -36380,7 +35928,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.24,
+          "value": 0.25,
           "unitCode": "KGM"
         },
         {
@@ -36391,7 +35939,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.27,
+          "value": 0.31,
           "unitCode": "KGM"
         },
         {
@@ -36402,7 +35950,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.3,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -36413,12 +35961,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.33,
+          "value": 0.45,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -36466,7 +36014,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0201#product",
-      "name": "Light composition LC0201",
+      "name": "Decorative composition LC0201",
       "sku": "LC0201",
       "url": "https://vargov.ru/en/catalog/lc0201",
       "sameAs": [
@@ -36873,14 +36421,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about weightlessness. The manta is the only large creature that does not swim but flies: its movement is closer to a bird's gliding than to a fish.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 0.5,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -36935,14 +36475,6 @@
       },
       "inLanguage": "en",
       "description": "The same magnolia at another hour. The crown is loosened, the branches are drawn apart, and the garden turns from a dense sphere into a spreading branch — the…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -37015,14 +36547,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about dusk. The magnolia flowers before its leaves — a bare branch on which large cups open straight away.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -37095,14 +36619,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about morning. The same device as the dark version, read in full light: gold cast branches woven into a sphere, and on them large flowers with a…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -37214,7 +36730,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -37262,7 +36778,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0189#product",
-      "name": "Light composition LC0189",
+      "name": "Decorative composition LC0189",
       "sku": "LC0189",
       "url": "https://vargov.ru/en/catalog/lc0189",
       "sameAs": [
@@ -37515,14 +37031,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about shedding. The garland sags at the centre and opens upward — the form of something stretched between two points, alive, with a sag from its own…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -37617,7 +37125,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.01,
+          "value": 1.11,
           "unitCode": "KGM"
         },
         {
@@ -37628,12 +37136,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 1.09,
+          "value": 1.29,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -37675,7 +37183,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0183#product",
-      "name": "Light composition LC0183",
+      "name": "Decorative composition LC0183",
       "sku": "LC0183",
       "url": "https://vargov.ru/en/catalog/lc0183",
       "sameAs": [
@@ -37901,7 +37409,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0179#product",
-      "name": "Light composition LC0179",
+      "name": "Decorative composition LC0179",
       "sku": "LC0179",
       "url": "https://vargov.ru/en/catalog/lc0179",
       "sameAs": [
@@ -38051,7 +37559,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -38099,7 +37607,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0177#product",
-      "name": "Light composition LC0177",
+      "name": "Decorative composition LC0177",
       "sku": "LC0177",
       "url": "https://vargov.ru/en/catalog/lc0177",
       "sameAs": [
@@ -38190,7 +37698,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0176#product",
-      "name": "Light composition LC0176",
+      "name": "Decorative composition LC0176",
       "sku": "LC0176",
       "url": "https://vargov.ru/en/catalog/lc0176",
       "sameAs": [
@@ -38358,7 +37866,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -38400,7 +37908,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0174#product",
-      "name": "Light composition LC0174",
+      "name": "Decorative composition LC0174",
       "sku": "LC0174",
       "url": "https://vargov.ru/en/catalog/lc0174",
       "sameAs": [
@@ -38542,7 +38050,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -38652,7 +38160,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -38700,7 +38208,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0170#product",
-      "name": "Light composition LC0170",
+      "name": "Decorative composition LC0170",
       "sku": "LC0170",
       "url": "https://vargov.ru/en/catalog/lc0170",
       "sameAs": [
@@ -38751,7 +38259,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0169#product",
-      "name": "Light composition LC0169",
+      "name": "Decorative composition LC0169",
       "sku": "LC0169",
       "url": "https://vargov.ru/en/catalog/lc0169",
       "sameAs": [
@@ -38841,7 +38349,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0167#product",
-      "name": "Light composition LC0167",
+      "name": "Decorative composition LC0167",
       "sku": "LC0167",
       "url": "https://vargov.ru/en/catalog/lc0167",
       "sameAs": [
@@ -39003,7 +38511,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø180",
-          "value": "L180 × W180 × H90 mm"
+          "value": "Ø180 × H90 mm"
         },
         {
           "@type": "PropertyValue",
@@ -39014,7 +38522,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø270",
-          "value": "L270 × W270 × H220 mm"
+          "value": "Ø270 × H220 mm"
         },
         {
           "@type": "PropertyValue",
@@ -39024,7 +38532,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -39134,7 +38642,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -39210,14 +38718,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the crack as ornament. Crazing is usually counted a defect: a net of fine cracks across a surface.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -39298,23 +38798,23 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø100",
-          "value": "L100 × W100 × H45 mm"
+          "value": "Ø100 × H45 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø100",
-          "value": 0.08,
+          "value": 0.06,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size Ø180",
-          "value": "L180 × W180 × H45 mm"
+          "value": "Ø180 × H45 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø180",
-          "value": 0.21,
+          "value": 0.2,
           "unitCode": "KGM"
         }
       ],
@@ -39822,7 +39322,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -39920,7 +39420,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -40015,7 +39515,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -40063,7 +39563,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0152#product",
-      "name": "Light composition LC0152",
+      "name": "Decorative composition LC0152",
       "sku": "LC0152",
       "url": "https://vargov.ru/en/catalog/lc0152",
       "sameAs": [
@@ -40369,7 +39869,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0147#product",
-      "name": "Light composition LC0147",
+      "name": "Decorative composition LC0147",
       "sku": "LC0147",
       "url": "https://vargov.ru/en/catalog/lc0147",
       "sameAs": [
@@ -40426,7 +39926,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0146#product",
-      "name": "Light composition LC0146",
+      "name": "Decorative composition LC0146",
       "sku": "LC0146",
       "url": "https://vargov.ru/en/catalog/lc0146",
       "sameAs": [
@@ -40595,7 +40095,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -40643,7 +40143,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0144#product",
-      "name": "Light composition LC0144",
+      "name": "Decorative composition LC0144",
       "sku": "LC0144",
       "url": "https://vargov.ru/en/catalog/lc0144",
       "sameAs": [
@@ -40817,7 +40317,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -40946,7 +40446,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0141#product",
-      "name": "Light composition LC0141",
+      "name": "Decorative composition LC0141",
       "sku": "LC0141",
       "url": "https://vargov.ru/en/catalog/lc0141",
       "sameAs": [
@@ -41073,14 +40573,6 @@
       },
       "inLanguage": "en",
       "description": "The same colony, but with something to hold on to. The anemones are set not on cables but on a tubular branch curved into a broad loop in the horizontal plane: the…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -41174,7 +40666,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41268,7 +40760,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41384,7 +40876,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -41432,7 +40924,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0136#product",
-      "name": "Light composition LC0136",
+      "name": "Decorative composition LC0136",
       "sku": "LC0136",
       "url": "https://vargov.ru/en/catalog/lc0136",
       "sameAs": [
@@ -41584,7 +41076,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41707,7 +41199,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41794,7 +41286,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø200",
-          "value": "L200 × W200 × H150 mm"
+          "value": "Ø200 × H150 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41805,7 +41297,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø250",
-          "value": "L250 × W250 × H190 mm"
+          "value": "Ø250 × H190 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41816,7 +41308,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø300",
-          "value": "L300 × W300 × H220 mm"
+          "value": "Ø300 × H220 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41827,7 +41319,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø350",
-          "value": "L350 × W350 × H260 mm"
+          "value": "Ø350 × H260 mm"
         },
         {
           "@type": "PropertyValue",
@@ -41837,7 +41329,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41951,7 +41443,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -41999,7 +41491,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0131#product",
-      "name": "Light composition LC0131",
+      "name": "Decorative composition LC0131",
       "sku": "LC0131",
       "url": "https://vargov.ru/en/catalog/lc0131",
       "sameAs": [
@@ -42092,7 +41584,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0130#product",
-      "name": "Light composition LC0130",
+      "name": "Decorative composition LC0130",
       "sku": "LC0130",
       "url": "https://vargov.ru/en/catalog/lc0130",
       "sameAs": [
@@ -42239,7 +41731,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.21,
+          "value": 0.25,
           "unitCode": "KGM"
         },
         {
@@ -42250,7 +41742,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.23,
+          "value": 0.31,
           "unitCode": "KGM"
         },
         {
@@ -42261,7 +41753,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.26,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -42272,12 +41764,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.28,
+          "value": 0.45,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -42397,7 +41889,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -42588,7 +42080,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size D40",
-          "value": "L40 × W40 × H43 mm"
+          "value": "Ø40 × H43 mm"
         },
         {
           "@type": "PropertyValue",
@@ -42599,7 +42091,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size D80",
-          "value": "L80 × W80 × H80 mm"
+          "value": "Ø80 × H80 mm"
         },
         {
           "@type": "PropertyValue",
@@ -42610,7 +42102,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size 80×125",
-          "value": "L80 × W80 × H125 mm"
+          "value": "Ø80 × H125 mm"
         },
         {
           "@type": "PropertyValue",
@@ -42621,7 +42113,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size 130×90",
-          "value": "L130 × W130 × H90 mm"
+          "value": "Ø130 × H90 mm"
         },
         {
           "@type": "PropertyValue",
@@ -42743,7 +42235,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -42791,7 +42283,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0124#product",
-      "name": "Light composition LC0124",
+      "name": "Decorative composition LC0124",
       "sku": "LC0124",
       "url": "https://vargov.ru/en/catalog/lc0124",
       "sameAs": [
@@ -43140,7 +42632,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -43268,7 +42760,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -43354,7 +42846,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø200",
-          "value": "L200 × W200 × H70 mm"
+          "value": "Ø200 × H70 mm"
         },
         {
           "@type": "PropertyValue",
@@ -43365,7 +42857,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø250",
-          "value": "L250 × W250 × H90 mm"
+          "value": "Ø250 × H90 mm"
         },
         {
           "@type": "PropertyValue",
@@ -43376,7 +42868,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø300",
-          "value": "L300 × W300 × H110 mm"
+          "value": "Ø300 × H110 mm"
         },
         {
           "@type": "PropertyValue",
@@ -43387,7 +42879,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø350",
-          "value": "L350 × W350 × H130 mm"
+          "value": "Ø350 × H130 mm"
         },
         {
           "@type": "PropertyValue",
@@ -43397,7 +42889,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -43514,14 +43006,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about something grown rather than assembled. The branches curve in a broad loop in the horizontal plane, divide, and on every stalk sits its own…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -43619,7 +43103,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -43714,7 +43198,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -43921,7 +43405,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0109#product",
-      "name": "Light composition LC0109",
+      "name": "Decorative composition LC0109",
       "sku": "LC0109",
       "url": "https://vargov.ru/en/catalog/lc0109",
       "sameAs": [
@@ -44056,7 +43540,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.26,
+          "value": 0.17,
           "unitCode": "KGM"
         },
         {
@@ -44067,7 +43551,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 0.31,
+          "value": 0.24,
           "unitCode": "KGM"
         },
         {
@@ -44078,7 +43562,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H900",
-          "value": 0.35,
+          "value": 0.31,
           "unitCode": "KGM"
         },
         {
@@ -44089,7 +43573,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H1100",
-          "value": 0.39,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -44100,7 +43584,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H1300",
-          "value": 0.43,
+          "value": 0.45,
           "unitCode": "KGM"
         },
         {
@@ -44111,7 +43595,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H1500",
-          "value": 0.46,
+          "value": 0.52,
           "unitCode": "KGM"
         }
       ],
@@ -44140,7 +43624,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0107#product",
-      "name": "Light composition LC0107",
+      "name": "Decorative composition LC0107",
       "sku": "LC0107",
       "url": "https://vargov.ru/en/catalog/lc0107",
       "sameAs": [
@@ -44279,20 +43763,8 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H1000",
-          "value": 17.52,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
           "name": "Element size H1200",
           "value": "L10–330 × W10–290 × H10–1210 mm"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Element weight H1200",
-          "value": 30.27,
-          "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
@@ -44301,24 +43773,12 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H1400",
-          "value": 48.07,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
           "name": "Element size H1600",
           "value": "L10–440 × W10–390 × H10–1610 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H1600",
-          "value": 71.76,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per jellyfish",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -44406,24 +43866,12 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H350",
-          "value": 0.15,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
           "name": "Element size H400",
           "value": "L10–400 × W10–310 × H280–410 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H400",
-          "value": 0.22,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -44453,7 +43901,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0104#product",
-      "name": "Light composition LC0104",
+      "name": "Decorative composition LC0104",
       "sku": "LC0104",
       "url": "https://vargov.ru/en/catalog/lc0104",
       "sameAs": [
@@ -44569,7 +44017,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -44650,7 +44098,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size D60",
-          "value": "L60 × W60 × H310 mm"
+          "value": "Ø60 × H310 mm"
         },
         {
           "@type": "PropertyValue",
@@ -44661,7 +44109,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size D80",
-          "value": "L80 × W80 × H414 mm"
+          "value": "Ø80 × H414 mm"
         },
         {
           "@type": "PropertyValue",
@@ -44671,7 +44119,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode (D80 elements only)",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -44759,28 +44207,28 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L75 × W30 × H300 mm"
+          "value": "L90 × W40 × H300 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.18,
+          "value": 0.37,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L85 × W35 × H350 mm"
+          "value": "L90 × W40 × H350 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.26,
+          "value": 0.39,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -44828,7 +44276,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0100#product",
-      "name": "Light composition LC0100",
+      "name": "Decorative composition LC0100",
       "sku": "LC0100",
       "url": "https://vargov.ru/en/catalog/lc0100",
       "sameAs": [
@@ -44993,7 +44441,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -45050,14 +44498,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a thicket growing downward. From a round mirrored base runs a dense fringe of fine rods, and monstera leaves sit along its lower edge, forming…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -45131,14 +44571,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about an armful. The stems spread from a round base outward and downward, each bending its own way: not a bouquet set in a vase but an armful thrown…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -45182,7 +44614,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0096#product",
-      "name": "Light composition LC0096",
+      "name": "Decorative composition LC0096",
       "sku": "LC0096",
       "url": "https://vargov.ru/en/catalog/lc0096",
       "sameAs": [
@@ -45269,7 +44701,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0095#product",
-      "name": "Light composition LC0095",
+      "name": "Decorative composition LC0095",
       "sku": "LC0095",
       "url": "https://vargov.ru/en/catalog/lc0095",
       "sameAs": [
@@ -45356,7 +44788,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0094#product",
-      "name": "Light composition LC0094",
+      "name": "Decorative composition LC0094",
       "sku": "LC0094",
       "url": "https://vargov.ru/en/catalog/lc0094",
       "sameAs": [
@@ -45521,7 +44953,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 1,
           "unitCode": "WTT"
         }
@@ -45551,7 +44983,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0092#product",
-      "name": "Light composition LC0092",
+      "name": "Decorative composition LC0092",
       "sku": "LC0092",
       "url": "https://vargov.ru/en/catalog/lc0092",
       "sameAs": [
@@ -45608,7 +45040,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0091#product",
-      "name": "Light composition LC0091",
+      "name": "Decorative composition LC0091",
       "sku": "LC0091",
       "url": "https://vargov.ru/en/catalog/lc0091",
       "sameAs": [
@@ -45665,7 +45097,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0090#product",
-      "name": "Light composition LC0090",
+      "name": "Decorative composition LC0090",
       "sku": "LC0090",
       "url": "https://vargov.ru/en/catalog/lc0090",
       "sameAs": [
@@ -45722,7 +45154,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0089#product",
-      "name": "Light composition LC0089",
+      "name": "Decorative composition LC0089",
       "sku": "LC0089",
       "url": "https://vargov.ru/en/catalog/lc0089",
       "sameAs": [
@@ -45831,7 +45263,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0087#product",
-      "name": "Light composition LC0087",
+      "name": "Decorative composition LC0087",
       "sku": "LC0087",
       "url": "https://vargov.ru/en/catalog/lc0087",
       "sameAs": [
@@ -45924,7 +45356,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0086#product",
-      "name": "Light composition LC0086",
+      "name": "Decorative composition LC0086",
       "sku": "LC0086",
       "url": "https://vargov.ru/en/catalog/lc0086",
       "sameAs": [
@@ -46025,7 +45457,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0085#product",
-      "name": "Light composition LC0085",
+      "name": "Decorative composition LC0085",
       "sku": "LC0085",
       "url": "https://vargov.ru/en/catalog/lc0085",
       "sameAs": [
@@ -46179,7 +45611,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -46485,14 +45917,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a drawing carried into space. The frame of fine ties joined into an irregular polyhedral net is not concealed — it is the principal form.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 0.5,
-          "unitCode": "WTT"
-        }
-      ],
       "subjectOf": [
         {
           "@type": "3DModel",
@@ -46518,7 +45942,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0077#product",
-      "name": "Light composition LC0077",
+      "name": "Decorative composition LC0077",
       "sku": "LC0077",
       "url": "https://vargov.ru/en/catalog/lc0077",
       "sameAs": [
@@ -47223,7 +46647,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -47327,7 +46751,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -47375,7 +46799,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0063#product",
-      "name": "Light composition LC0063",
+      "name": "Decorative composition LC0063",
       "sku": "LC0063",
       "url": "https://vargov.ru/en/catalog/lc0063",
       "sameAs": [
@@ -47535,7 +46959,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -47634,7 +47058,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0060#product",
-      "name": "Light composition LC0060",
+      "name": "Decorative composition LC0060",
       "sku": "LC0060",
       "url": "https://vargov.ru/en/catalog/lc0060",
       "sameAs": [
@@ -47774,7 +47198,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.24,
+          "value": 0.25,
           "unitCode": "KGM"
         },
         {
@@ -47785,7 +47209,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.27,
+          "value": 0.31,
           "unitCode": "KGM"
         },
         {
@@ -47796,7 +47220,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.3,
+          "value": 0.38,
           "unitCode": "KGM"
         },
         {
@@ -47807,12 +47231,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.33,
+          "value": 0.45,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -47914,7 +47338,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -48026,7 +47450,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -48140,7 +47564,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -48188,7 +47612,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0055#product",
-      "name": "Light composition LC0055",
+      "name": "Decorative composition LC0055",
       "sku": "LC0055",
       "url": "https://vargov.ru/en/catalog/lc0055",
       "sameAs": [
@@ -48363,7 +47787,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -48568,7 +47992,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -48687,7 +48111,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0050#product",
-      "name": "Light composition LC0050",
+      "name": "Decorative composition LC0050",
       "sku": "LC0050",
       "url": "https://vargov.ru/en/catalog/lc0050",
       "sameAs": [
@@ -48775,7 +48199,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0049#product",
-      "name": "Light composition LC0049",
+      "name": "Decorative composition LC0049",
       "sku": "LC0049",
       "url": "https://vargov.ru/en/catalog/lc0049",
       "sameAs": [
@@ -48909,14 +48333,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about tension released. Each plate sags in an arc between two fixing points — the form fabric takes when you stop pulling it.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05272/26",
@@ -48960,7 +48376,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0047#product",
-      "name": "Light composition LC0047",
+      "name": "Decorative composition LC0047",
       "sku": "LC0047",
       "url": "https://vargov.ru/en/catalog/lc0047",
       "sameAs": [
@@ -49110,7 +48526,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -49191,14 +48607,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about full bloom. The flowers sit close, in whole clusters, with gaps between them — the crown reads as grown rather than set out on a grid.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -49305,7 +48713,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -49416,7 +48824,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -49495,14 +48903,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about the vine. The branches curl freely and interweave into a vertical spiral — a vine grows by clinging, and its form always follows a support.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -49574,14 +48974,6 @@
       },
       "inLanguage": "en",
       "description": "The same spiral, with flowers instead of fruit. White cups with two or three reflexed petals, opaque outside and glowing within — closer to bindweed or calla,…",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -49653,14 +49045,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a thicket. The rods are woven freely, with no geometry at all: they bend, cross and separate like branches in undergrowth.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 2,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -49735,14 +49119,6 @@
       },
       "inLanguage": "en",
       "description": "A composition about a wreath drawn out into a spiral. The laurel is a symbol whose form has always been closed: wreath, ring, circle.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Power per element",
-          "value": 1,
-          "unitCode": "WTT"
-        }
-      ],
       "hasCertification": {
         "@type": "Certification",
         "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
@@ -49853,7 +49229,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -49901,7 +49277,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0037#product",
-      "name": "Light composition LC0037",
+      "name": "Decorative composition LC0037",
       "sku": "LC0037",
       "url": "https://vargov.ru/en/catalog/lc0037",
       "sameAs": [
@@ -50067,7 +49443,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -50175,7 +49551,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0034#product",
-      "name": "Light composition LC0034",
+      "name": "Decorative composition LC0034",
       "sku": "LC0034",
       "url": "https://vargov.ru/en/catalog/lc0034",
       "sameAs": [
@@ -50331,7 +49707,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -50444,7 +49820,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -50543,7 +49919,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.46,
+          "value": 1.64,
           "unitCode": "KGM"
         },
         {
@@ -50554,12 +49930,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.6,
+          "value": 1.96,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -50607,7 +49983,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0030#product",
-      "name": "Light composition LC0030",
+      "name": "Decorative composition LC0030",
       "sku": "LC0030",
       "url": "https://vargov.ru/en/catalog/lc0030",
       "sameAs": [
@@ -50779,7 +50155,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -50879,7 +50255,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 2.25,
+          "value": 2.52,
           "unitCode": "KGM"
         },
         {
@@ -50890,7 +50266,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 2.47,
+          "value": 3.02,
           "unitCode": "KGM"
         },
         {
@@ -50901,12 +50277,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 2.66,
+          "value": 3.52,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -51008,7 +50384,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.3,
+          "value": 0.42,
           "unitCode": "KGM"
         },
         {
@@ -51019,7 +50395,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.32,
+          "value": 0.48,
           "unitCode": "KGM"
         },
         {
@@ -51030,7 +50406,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 0.34,
+          "value": 0.53,
           "unitCode": "KGM"
         },
         {
@@ -51041,12 +50417,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.36,
+          "value": 0.59,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -51133,7 +50509,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 0.49,
+          "value": 0.46,
           "unitCode": "KGM"
         },
         {
@@ -51155,7 +50531,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H900",
-          "value": 0.56,
+          "value": 0.59,
           "unitCode": "KGM"
         },
         {
@@ -51166,12 +50542,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H1000",
-          "value": 0.59,
+          "value": 0.66,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 4,
           "unitCode": "WTT"
         }
@@ -51270,7 +50646,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 2.25,
+          "value": 2.52,
           "unitCode": "KGM"
         },
         {
@@ -51281,7 +50657,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 2.47,
+          "value": 3.02,
           "unitCode": "KGM"
         },
         {
@@ -51292,12 +50668,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 2.66,
+          "value": 3.52,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -51552,7 +50928,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0021#product",
-      "name": "Light composition LC0021",
+      "name": "Decorative composition LC0021",
       "sku": "LC0021",
       "url": "https://vargov.ru/en/catalog/lc0021",
       "sameAs": [
@@ -51743,7 +51119,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0018#product",
-      "name": "Light composition LC0018",
+      "name": "Decorative composition LC0018",
       "sku": "LC0018",
       "url": "https://vargov.ru/en/catalog/lc0018",
       "sameAs": [
@@ -51833,7 +51209,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0017#product",
-      "name": "Light composition LC0017",
+      "name": "Decorative composition LC0017",
       "sku": "LC0017",
       "url": "https://vargov.ru/en/catalog/lc0017",
       "sameAs": [
@@ -51909,7 +51285,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0016#product",
-      "name": "Light composition LC0016",
+      "name": "Decorative composition LC0016",
       "sku": "LC0016",
       "url": "https://vargov.ru/en/catalog/lc0016",
       "sameAs": [
@@ -51999,7 +51375,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0015#product",
-      "name": "Light composition LC0015",
+      "name": "Decorative composition LC0015",
       "sku": "LC0015",
       "url": "https://vargov.ru/en/catalog/lc0015",
       "sameAs": [
@@ -52030,7 +51406,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø30",
-          "value": "L30 × W30 × H15 mm"
+          "value": "Ø30 × H15 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52041,7 +51417,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø50",
-          "value": "L50 × W50 × H20 mm"
+          "value": "Ø50 × H20 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52052,7 +51428,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø60",
-          "value": "L60 × W60 × H20 mm"
+          "value": "Ø60 × H20 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52063,7 +51439,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø120",
-          "value": "L120 × W120 × H25 mm"
+          "value": "Ø120 × H25 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52097,7 +51473,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0014#product",
-      "name": "Light composition LC0014",
+      "name": "Decorative composition LC0014",
       "sku": "LC0014",
       "url": "https://vargov.ru/en/catalog/lc0014",
       "sameAs": [
@@ -52140,7 +51516,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø10",
-          "value": "L10 × W10 × H10 mm"
+          "value": "Ø10 × H10 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52151,7 +51527,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø40",
-          "value": "L40 × W40 × H20 mm"
+          "value": "Ø40 × H20 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52162,7 +51538,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø50",
-          "value": "L50 × W50 × H15 mm"
+          "value": "Ø50 × H15 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52173,7 +51549,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø60",
-          "value": "L60 × W60 × H35 mm"
+          "value": "Ø60 × H35 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52184,7 +51560,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø70",
-          "value": "L70 × W65 × H40 mm"
+          "value": "Ø70 × H40 mm"
         },
         {
           "@type": "PropertyValue",
@@ -52218,7 +51594,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0013#product",
-      "name": "Light composition LC0013",
+      "name": "Decorative composition LC0013",
       "sku": "LC0013",
       "url": "https://vargov.ru/en/catalog/lc0013",
       "sameAs": [
@@ -52361,7 +51737,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 0.5,
           "unitCode": "WTT"
         }
@@ -52460,7 +51836,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0010#product",
-      "name": "Light composition LC0010",
+      "name": "Decorative composition LC0010",
       "sku": "LC0010",
       "url": "https://vargov.ru/en/catalog/lc0010",
       "sameAs": [
@@ -52633,7 +52009,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 5,
           "unitCode": "WTT"
         }
@@ -52755,7 +52131,7 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -52803,7 +52179,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0007#product",
-      "name": "Light composition LC0007",
+      "name": "Decorative composition LC0007",
       "sku": "LC0007",
       "url": "https://vargov.ru/en/catalog/lc0007",
       "sameAs": [
@@ -52909,7 +52285,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0006#product",
-      "name": "Light composition LC0006",
+      "name": "Decorative composition LC0006",
       "sku": "LC0006",
       "url": "https://vargov.ru/en/catalog/lc0006",
       "sameAs": [
@@ -53010,7 +52386,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0005#product",
-      "name": "Light composition LC0005",
+      "name": "Decorative composition LC0005",
       "sku": "LC0005",
       "url": "https://vargov.ru/en/catalog/lc0005",
       "sameAs": [
@@ -53101,7 +52477,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.19,
+          "value": 0.12,
           "unitCode": "KGM"
         },
         {
@@ -53112,7 +52488,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.22,
+          "value": 0.16,
           "unitCode": "KGM"
         },
         {
@@ -53123,7 +52499,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.24,
+          "value": 0.2,
           "unitCode": "KGM"
         },
         {
@@ -53134,12 +52510,12 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.27,
+          "value": 0.24,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per element",
+          "name": "Power per diode",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -53187,7 +52563,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0003#product",
-      "name": "Light composition LC0003",
+      "name": "Decorative composition LC0003",
       "sku": "LC0003",
       "url": "https://vargov.ru/en/catalog/lc0003",
       "sameAs": [
@@ -53285,7 +52661,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0002#product",
-      "name": "Light composition LC0002",
+      "name": "Decorative composition LC0002",
       "sku": "LC0002",
       "url": "https://vargov.ru/en/catalog/lc0002",
       "sameAs": [
@@ -53372,7 +52748,7 @@
     {
       "@type": "Product",
       "@id": "https://vargov.ru/catalog/lc0001#product",
-      "name": "Light composition LC0001",
+      "name": "Decorative composition LC0001",
       "sku": "LC0001",
       "url": "https://vargov.ru/en/catalog/lc0001",
       "sameAs": [

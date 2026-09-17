@@ -4,36 +4,36 @@ Compositions: 605
 
 | Section | Items |
 |---|---|
-| Lighting compositions | 352 |
-| Decorative compositions | 114 |
-| Sculptural compositions & decor | 83 |
+| Lighting compositions | 354 |
+| Decorative compositions | 113 |
+| Sculptural compositions & decor | 82 |
 | Floor lamps, sconces & tabletop objects | 56 |
 
 ## Full list
 
 | Code | Type | URL | Awards |
 |---|---|---|---|
-| LC0001 | Light composition | https://vargov.ru/en/catalog/lc0001 |  |
-| LC0002 | Light composition | https://vargov.ru/en/catalog/lc0002 |  |
-| LC0003 | Light composition | https://vargov.ru/en/catalog/lc0003 |  |
+| LC0001 | Decorative composition | https://vargov.ru/en/catalog/lc0001 |  |
+| LC0002 | Decorative composition | https://vargov.ru/en/catalog/lc0002 |  |
+| LC0003 | Decorative composition | https://vargov.ru/en/catalog/lc0003 |  |
 | LC0004 | Light composition | https://vargov.ru/en/catalog/lc0004 |  |
-| LC0005 | Light composition | https://vargov.ru/en/catalog/lc0005 |  |
-| LC0006 | Light composition | https://vargov.ru/en/catalog/lc0006 |  |
-| LC0007 | Light composition | https://vargov.ru/en/catalog/lc0007 |  |
+| LC0005 | Decorative composition | https://vargov.ru/en/catalog/lc0005 |  |
+| LC0006 | Decorative composition | https://vargov.ru/en/catalog/lc0006 |  |
+| LC0007 | Decorative composition | https://vargov.ru/en/catalog/lc0007 |  |
 | LC0008 | Light composition | https://vargov.ru/en/catalog/lc0008 |  |
 | LC0009 | Light composition | https://vargov.ru/en/catalog/lc0009 |  |
-| LC0010 | Light composition | https://vargov.ru/en/catalog/lc0010 |  |
+| LC0010 | Decorative composition | https://vargov.ru/en/catalog/lc0010 |  |
 | LC0011 | Wall composition | https://vargov.ru/en/catalog/lc0011 |  |
 | LC0012 | Light composition | https://vargov.ru/en/catalog/lc0012 |  |
-| LC0013 | Light composition | https://vargov.ru/en/catalog/lc0013 |  |
-| LC0014 | Light composition | https://vargov.ru/en/catalog/lc0014 |  |
-| LC0015 | Light composition | https://vargov.ru/en/catalog/lc0015 |  |
-| LC0016 | Light composition | https://vargov.ru/en/catalog/lc0016 |  |
-| LC0017 | Light composition | https://vargov.ru/en/catalog/lc0017 |  |
-| LC0018 | Light composition | https://vargov.ru/en/catalog/lc0018 |  |
+| LC0013 | Decorative composition | https://vargov.ru/en/catalog/lc0013 |  |
+| LC0014 | Decorative composition | https://vargov.ru/en/catalog/lc0014 |  |
+| LC0015 | Decorative composition | https://vargov.ru/en/catalog/lc0015 |  |
+| LC0016 | Decorative composition | https://vargov.ru/en/catalog/lc0016 |  |
+| LC0017 | Decorative composition | https://vargov.ru/en/catalog/lc0017 |  |
+| LC0018 | Decorative composition | https://vargov.ru/en/catalog/lc0018 |  |
 | LC0019 | Wall panel | https://vargov.ru/en/catalog/lc0019 |  |
 | LC0020 | Light composition | https://vargov.ru/en/catalog/lc0020 |  |
-| LC0021 | Light composition | https://vargov.ru/en/catalog/lc0021 |  |
+| LC0021 | Decorative composition | https://vargov.ru/en/catalog/lc0021 |  |
 | LC0022 | Decorative screen-curtain | https://vargov.ru/en/catalog/lc0022 |  |
 | LC0023 | Floor lamp | https://vargov.ru/en/catalog/lc0023 |  |
 | LC0024 | Light composition | https://vargov.ru/en/catalog/lc0024 |  |
@@ -42,14 +42,14 @@ Compositions: 605
 | LC0027 | Light composition | https://vargov.ru/en/catalog/lc0027 |  |
 | LC0028 | Light composition | https://vargov.ru/en/catalog/lc0028 |  |
 | LC0029 | Light composition | https://vargov.ru/en/catalog/lc0029 |  |
-| LC0030 | Light composition | https://vargov.ru/en/catalog/lc0030 |  |
+| LC0030 | Decorative composition | https://vargov.ru/en/catalog/lc0030 |  |
 | LC0031 | Light composition | https://vargov.ru/en/catalog/lc0031 |  |
 | LC0032 | Light composition | https://vargov.ru/en/catalog/lc0032 |  |
 | LC0033 | Light composition | https://vargov.ru/en/catalog/lc0033 |  |
-| LC0034 | Light composition | https://vargov.ru/en/catalog/lc0034 |  |
+| LC0034 | Decorative composition | https://vargov.ru/en/catalog/lc0034 |  |
 | LC0035 | Wall composition | https://vargov.ru/en/catalog/lc0035 |  |
 | LC0036 | Light composition | https://vargov.ru/en/catalog/lc0036 |  |
-| LC0037 | Light composition | https://vargov.ru/en/catalog/lc0037 |  |
+| LC0037 | Decorative composition | https://vargov.ru/en/catalog/lc0037 |  |
 | LC0038 | Light composition | https://vargov.ru/en/catalog/lc0038 |  |
 | LC0039 | Light composition | https://vargov.ru/en/catalog/lc0039 |  |
 | LC0040 | Light composition | https://vargov.ru/en/catalog/lc0040 |  |
@@ -59,23 +59,23 @@ Compositions: 605
 | LC0044 | Light composition | https://vargov.ru/en/catalog/lc0044 |  |
 | LC0045 | Light composition | https://vargov.ru/en/catalog/lc0045 |  |
 | LC0046 | Light composition | https://vargov.ru/en/catalog/lc0046 |  |
-| LC0047 | Light composition | https://vargov.ru/en/catalog/lc0047 |  |
+| LC0047 | Decorative composition | https://vargov.ru/en/catalog/lc0047 |  |
 | LC0048 | Light composition | https://vargov.ru/en/catalog/lc0048 |  |
-| LC0049 | Light composition | https://vargov.ru/en/catalog/lc0049 |  |
-| LC0050 | Light composition | https://vargov.ru/en/catalog/lc0050 |  |
+| LC0049 | Decorative composition | https://vargov.ru/en/catalog/lc0049 |  |
+| LC0050 | Decorative composition | https://vargov.ru/en/catalog/lc0050 |  |
 | LC0051 | Light composition | https://vargov.ru/en/catalog/lc0051 |  |
 | LC0052 | Light composition | https://vargov.ru/en/catalog/lc0052 |  |
 | LC0053 | Backlit wall panel | https://vargov.ru/en/catalog/lc0053 |  |
 | LC0054 | Light composition | https://vargov.ru/en/catalog/lc0054 |  |
-| LC0055 | Light composition | https://vargov.ru/en/catalog/lc0055 |  |
+| LC0055 | Decorative composition | https://vargov.ru/en/catalog/lc0055 |  |
 | LC0056 | Light composition | https://vargov.ru/en/catalog/lc0056 |  |
 | LC0057 | Light composition | https://vargov.ru/en/catalog/lc0057 |  |
 | LC0058 | Light composition | https://vargov.ru/en/catalog/lc0058 |  |
 | LC0059 | Light composition | https://vargov.ru/en/catalog/lc0059 |  |
-| LC0060 | Light composition | https://vargov.ru/en/catalog/lc0060 |  |
+| LC0060 | Decorative composition | https://vargov.ru/en/catalog/lc0060 |  |
 | LC0061 | Floor light-sculpture | https://vargov.ru/en/catalog/lc0061 |  |
 | LC0062 | Light composition | https://vargov.ru/en/catalog/lc0062 |  |
-| LC0063 | Light composition | https://vargov.ru/en/catalog/lc0063 |  |
+| LC0063 | Decorative composition | https://vargov.ru/en/catalog/lc0063 |  |
 | LC0064 | Light composition | https://vargov.ru/en/catalog/lc0064 |  |
 | LC0065 | Light composition | https://vargov.ru/en/catalog/lc0065 |  |
 | LC0066 | Mirror | https://vargov.ru/en/catalog/lc0066 |  |
@@ -89,7 +89,7 @@ Compositions: 605
 | LC0074 | Wall light | https://vargov.ru/en/catalog/lc0074 |  |
 | LC0075 | Light composition | https://vargov.ru/en/catalog/lc0075 |  |
 | LC0076 | Light composition | https://vargov.ru/en/catalog/lc0076 |  |
-| LC0077 | Light composition | https://vargov.ru/en/catalog/lc0077 |  |
+| LC0077 | Decorative composition | https://vargov.ru/en/catalog/lc0077 |  |
 | LC0078 | Light composition | https://vargov.ru/en/catalog/lc0078 |  |
 | LC0079 | Art object | https://vargov.ru/en/catalog/lc0079 |  |
 | LC0080 | Mirror | https://vargov.ru/en/catalog/lc0080 |  |
@@ -97,31 +97,31 @@ Compositions: 605
 | LC0082 | Mirror | https://vargov.ru/en/catalog/lc0082 |  |
 | LC0083 | Mirror | https://vargov.ru/en/catalog/lc0083 |  |
 | LC0084 | Light composition | https://vargov.ru/en/catalog/lc0084 |  |
-| LC0085 | Light composition | https://vargov.ru/en/catalog/lc0085 |  |
-| LC0086 | Light composition | https://vargov.ru/en/catalog/lc0086 |  |
-| LC0087 | Light composition | https://vargov.ru/en/catalog/lc0087 |  |
+| LC0085 | Decorative composition | https://vargov.ru/en/catalog/lc0085 |  |
+| LC0086 | Decorative composition | https://vargov.ru/en/catalog/lc0086 |  |
+| LC0087 | Decorative composition | https://vargov.ru/en/catalog/lc0087 |  |
 | LC0088 | Light composition | https://vargov.ru/en/catalog/lc0088 |  |
-| LC0089 | Light composition | https://vargov.ru/en/catalog/lc0089 |  |
-| LC0090 | Light composition | https://vargov.ru/en/catalog/lc0090 |  |
-| LC0091 | Light composition | https://vargov.ru/en/catalog/lc0091 |  |
-| LC0092 | Light composition | https://vargov.ru/en/catalog/lc0092 |  |
+| LC0089 | Decorative composition | https://vargov.ru/en/catalog/lc0089 |  |
+| LC0090 | Decorative composition | https://vargov.ru/en/catalog/lc0090 |  |
+| LC0091 | Decorative composition | https://vargov.ru/en/catalog/lc0091 |  |
+| LC0092 | Decorative composition | https://vargov.ru/en/catalog/lc0092 |  |
 | LC0093 | Light composition | https://vargov.ru/en/catalog/lc0093 |  |
-| LC0094 | Light composition | https://vargov.ru/en/catalog/lc0094 |  |
-| LC0095 | Light composition | https://vargov.ru/en/catalog/lc0095 |  |
-| LC0096 | Light composition | https://vargov.ru/en/catalog/lc0096 |  |
+| LC0094 | Decorative composition | https://vargov.ru/en/catalog/lc0094 |  |
+| LC0095 | Decorative composition | https://vargov.ru/en/catalog/lc0095 |  |
+| LC0096 | Decorative composition | https://vargov.ru/en/catalog/lc0096 |  |
 | LC0097 | Ceiling composition | https://vargov.ru/en/catalog/lc0097 |  |
 | LC0098 | Ceiling composition | https://vargov.ru/en/catalog/lc0098 |  |
 | LC0099 | Light composition | https://vargov.ru/en/catalog/lc0099 |  |
-| LC0100 | Light composition | https://vargov.ru/en/catalog/lc0100 |  |
+| LC0100 | Decorative composition | https://vargov.ru/en/catalog/lc0100 |  |
 | LC0101 | Light composition | https://vargov.ru/en/catalog/lc0101 |  |
 | LC0102 | Light composition | https://vargov.ru/en/catalog/lc0102 |  |
 | LC0103 | Light composition | https://vargov.ru/en/catalog/lc0103 |  |
-| LC0104 | Light composition | https://vargov.ru/en/catalog/lc0104 | 1 |
+| LC0104 | Decorative composition | https://vargov.ru/en/catalog/lc0104 | 1 |
 | LC0105 | Light composition | https://vargov.ru/en/catalog/lc0105 |  |
 | LC0106 | Light composition | https://vargov.ru/en/catalog/lc0106 |  |
-| LC0107 | Light composition | https://vargov.ru/en/catalog/lc0107 |  |
+| LC0107 | Decorative composition | https://vargov.ru/en/catalog/lc0107 |  |
 | LC0108 | Light curtain composition | https://vargov.ru/en/catalog/lc0108 |  |
-| LC0109 | Light composition | https://vargov.ru/en/catalog/lc0109 |  |
+| LC0109 | Decorative composition | https://vargov.ru/en/catalog/lc0109 |  |
 | LC0110 | Wall composition | https://vargov.ru/en/catalog/lc0110 |  |
 | LC0111 | Wall composition | https://vargov.ru/en/catalog/lc0111 |  |
 | LC0112 | Wall composition | https://vargov.ru/en/catalog/lc0112 |  |
@@ -136,35 +136,35 @@ Compositions: 605
 | LC0121 | Wall panel | https://vargov.ru/en/catalog/lc0121 |  |
 | LC0122 | Wall panel | https://vargov.ru/en/catalog/lc0122 |  |
 | LC0123 | Wall panel | https://vargov.ru/en/catalog/lc0123 |  |
-| LC0124 | Light composition | https://vargov.ru/en/catalog/lc0124 |  |
+| LC0124 | Decorative composition | https://vargov.ru/en/catalog/lc0124 |  |
 | LC0125 | Light composition | https://vargov.ru/en/catalog/lc0125 |  |
 | LC0126 | Light curtain composition | https://vargov.ru/en/catalog/lc0126 |  |
 | LC0127 | Light composition | https://vargov.ru/en/catalog/lc0127 |  |
 | LC0128 | Light composition | https://vargov.ru/en/catalog/lc0128 |  |
 | LC0129 | Light composition | https://vargov.ru/en/catalog/lc0129 |  |
-| LC0130 | Light composition | https://vargov.ru/en/catalog/lc0130 |  |
-| LC0131 | Light composition | https://vargov.ru/en/catalog/lc0131 |  |
+| LC0130 | Decorative composition | https://vargov.ru/en/catalog/lc0130 |  |
+| LC0131 | Decorative composition | https://vargov.ru/en/catalog/lc0131 |  |
 | LC0132 | Light composition | https://vargov.ru/en/catalog/lc0132 |  |
 | LC0133 | Light composition | https://vargov.ru/en/catalog/lc0133 |  |
 | LC0134 | Light composition | https://vargov.ru/en/catalog/lc0134 |  |
 | LC0135 | Light composition | https://vargov.ru/en/catalog/lc0135 |  |
-| LC0136 | Light composition | https://vargov.ru/en/catalog/lc0136 |  |
+| LC0136 | Decorative composition | https://vargov.ru/en/catalog/lc0136 |  |
 | LC0137 | Light composition | https://vargov.ru/en/catalog/lc0137 |  |
 | LC0138 | Light composition | https://vargov.ru/en/catalog/lc0138 |  |
 | LC0139 | Light composition | https://vargov.ru/en/catalog/lc0139 |  |
 | LC0140 | Light composition | https://vargov.ru/en/catalog/lc0140 |  |
-| LC0141 | Light composition | https://vargov.ru/en/catalog/lc0141 |  |
+| LC0141 | Decorative composition | https://vargov.ru/en/catalog/lc0141 |  |
 | LC0142 | Light composition | https://vargov.ru/en/catalog/lc0142 |  |
 | LC0143 | Light composition | https://vargov.ru/en/catalog/lc0143 |  |
-| LC0144 | Light composition | https://vargov.ru/en/catalog/lc0144 |  |
+| LC0144 | Decorative composition | https://vargov.ru/en/catalog/lc0144 |  |
 | LC0145 | Light composition | https://vargov.ru/en/catalog/lc0145 |  |
-| LC0146 | Light composition | https://vargov.ru/en/catalog/lc0146 |  |
-| LC0147 | Light composition | https://vargov.ru/en/catalog/lc0147 |  |
+| LC0146 | Decorative composition | https://vargov.ru/en/catalog/lc0146 |  |
+| LC0147 | Decorative composition | https://vargov.ru/en/catalog/lc0147 |  |
 | LC0148 | Decorative screen | https://vargov.ru/en/catalog/lc0148 |  |
 | LC0149 | Bio-fireplace | https://vargov.ru/en/catalog/lc0149 |  |
 | LC0150 | Decorative screen | https://vargov.ru/en/catalog/lc0150 |  |
 | LC0151 | Decorative screen | https://vargov.ru/en/catalog/lc0151 |  |
-| LC0152 | Light composition | https://vargov.ru/en/catalog/lc0152 |  |
+| LC0152 | Decorative composition | https://vargov.ru/en/catalog/lc0152 |  |
 | LC0153 | Light composition | https://vargov.ru/en/catalog/lc0153 |  |
 | LC0154 | Light composition | https://vargov.ru/en/catalog/lc0154 |  |
 | LC0155 | Light composition | https://vargov.ru/en/catalog/lc0155 |  |
@@ -181,27 +181,27 @@ Compositions: 605
 | LC0166 | Light composition | https://vargov.ru/en/catalog/lc0166 |  |
 | LC0166-1 | Light composition | https://vargov.ru/en/catalog/lc0166-1 |  |
 | LC0166-2 | Wall light | https://vargov.ru/en/catalog/lc0166-2 |  |
-| LC0167 | Light composition | https://vargov.ru/en/catalog/lc0167 |  |
-| LC0169 | Light composition | https://vargov.ru/en/catalog/lc0169 |  |
-| LC0170 | Light composition | https://vargov.ru/en/catalog/lc0170 |  |
+| LC0167 | Decorative composition | https://vargov.ru/en/catalog/lc0167 |  |
+| LC0169 | Decorative composition | https://vargov.ru/en/catalog/lc0169 |  |
+| LC0170 | Decorative composition | https://vargov.ru/en/catalog/lc0170 |  |
 | LC0172 | Light composition | https://vargov.ru/en/catalog/lc0172 |  |
 | LC0173 | Light composition | https://vargov.ru/en/catalog/lc0173 |  |
-| LC0174 | Light composition | https://vargov.ru/en/catalog/lc0174 |  |
+| LC0174 | Decorative composition | https://vargov.ru/en/catalog/lc0174 |  |
 | LC0175 | Light composition | https://vargov.ru/en/catalog/lc0175 |  |
-| LC0176 | Light composition | https://vargov.ru/en/catalog/lc0176 |  |
-| LC0177 | Light composition | https://vargov.ru/en/catalog/lc0177 |  |
+| LC0176 | Decorative composition | https://vargov.ru/en/catalog/lc0176 |  |
+| LC0177 | Decorative composition | https://vargov.ru/en/catalog/lc0177 |  |
 | LC0178 | Light composition | https://vargov.ru/en/catalog/lc0178 |  |
-| LC0179 | Light composition | https://vargov.ru/en/catalog/lc0179 |  |
+| LC0179 | Decorative composition | https://vargov.ru/en/catalog/lc0179 |  |
 | LC0180 | Floor lamp | https://vargov.ru/en/catalog/lc0180 |  |
 | LC0181 | Floor lamp | https://vargov.ru/en/catalog/lc0181 |  |
 | LC0182 | Floor lamp | https://vargov.ru/en/catalog/lc0182 |  |
-| LC0183 | Light composition | https://vargov.ru/en/catalog/lc0183 |  |
+| LC0183 | Decorative composition | https://vargov.ru/en/catalog/lc0183 |  |
 | LC0184 | Light composition | https://vargov.ru/en/catalog/lc0184 |  |
 | LC0185 | Light composition | https://vargov.ru/en/catalog/lc0185 |  |
 | LC0186 | Floor lamp | https://vargov.ru/en/catalog/lc0186 |  |
 | LC0187 | Floor lamp | https://vargov.ru/en/catalog/lc0187 |  |
 | LC0188 | Floor lamp | https://vargov.ru/en/catalog/lc0188 |  |
-| LC0189 | Light composition | https://vargov.ru/en/catalog/lc0189 |  |
+| LC0189 | Decorative composition | https://vargov.ru/en/catalog/lc0189 |  |
 | LC0190 | Light composition | https://vargov.ru/en/catalog/lc0190 |  |
 | LC0191 | Light composition | https://vargov.ru/en/catalog/lc0191 |  |
 | LC0192 | Light composition | https://vargov.ru/en/catalog/lc0192 |  |
@@ -214,10 +214,10 @@ Compositions: 605
 | LC0198 | Floor lamp | https://vargov.ru/en/catalog/lc0198 |  |
 | LC0199 | Floor lamp | https://vargov.ru/en/catalog/lc0199 |  |
 | LC0200 | Floor lamp | https://vargov.ru/en/catalog/lc0200 |  |
-| LC0201 | Light composition | https://vargov.ru/en/catalog/lc0201 |  |
+| LC0201 | Decorative composition | https://vargov.ru/en/catalog/lc0201 |  |
 | LC0202 | Light composition | https://vargov.ru/en/catalog/lc0202 |  |
 | LC0203 | Light composition | https://vargov.ru/en/catalog/lc0203 |  |
-| LC0204 | Light composition | https://vargov.ru/en/catalog/lc0204 |  |
+| LC0204 | Decorative composition | https://vargov.ru/en/catalog/lc0204 |  |
 | LC0205 | Floor lamp | https://vargov.ru/en/catalog/lc0205 |  |
 | LC0206 | Floor lamp | https://vargov.ru/en/catalog/lc0206 |  |
 | LC0207 | Floor lamp | https://vargov.ru/en/catalog/lc0207 |  |
@@ -233,29 +233,29 @@ Compositions: 605
 | LC0217 | Light composition | https://vargov.ru/en/catalog/lc0217 | 1 |
 | LC0217-1 | Light composition | https://vargov.ru/en/catalog/lc0217-1 | 1 |
 | LC0218 | Light composition | https://vargov.ru/en/catalog/lc0218 |  |
-| LC0219 | Light composition | https://vargov.ru/en/catalog/lc0219 |  |
-| LC0220 | Light composition | https://vargov.ru/en/catalog/lc0220 |  |
+| LC0219 | Decorative composition | https://vargov.ru/en/catalog/lc0219 |  |
+| LC0220 | Decorative composition | https://vargov.ru/en/catalog/lc0220 |  |
 | LC0221 | Light composition | https://vargov.ru/en/catalog/lc0221 |  |
 | LC0222 | Light composition | https://vargov.ru/en/catalog/lc0222 |  |
 | LC0223 | Light composition | https://vargov.ru/en/catalog/lc0223 | 1 |
-| LC0224 | Light composition | https://vargov.ru/en/catalog/lc0224 |  |
+| LC0224 | Decorative composition | https://vargov.ru/en/catalog/lc0224 |  |
 | LC0225 | Light composition | https://vargov.ru/en/catalog/lc0225 |  |
 | LC0226 | Light composition | https://vargov.ru/en/catalog/lc0226 |  |
-| LC0227 | Light composition | https://vargov.ru/en/catalog/lc0227 |  |
+| LC0227 | Decorative composition | https://vargov.ru/en/catalog/lc0227 |  |
 | LC0228 | Light composition | https://vargov.ru/en/catalog/lc0228 | 1 |
-| LC0229 | Light composition | https://vargov.ru/en/catalog/lc0229 |  |
+| LC0229 | Decorative composition | https://vargov.ru/en/catalog/lc0229 |  |
 | LC0230 | Wall composition | https://vargov.ru/en/catalog/lc0230 |  |
-| LC0231 | Light composition | https://vargov.ru/en/catalog/lc0231 |  |
-| LC0232 | Light composition | https://vargov.ru/en/catalog/lc0232 |  |
+| LC0231 | Decorative composition | https://vargov.ru/en/catalog/lc0231 |  |
+| LC0232 | Decorative composition | https://vargov.ru/en/catalog/lc0232 |  |
 | LC0233 | Light composition | https://vargov.ru/en/catalog/lc0233 |  |
 | LC0234 | Light composition | https://vargov.ru/en/catalog/lc0234 |  |
 | LC0235 | Light composition | https://vargov.ru/en/catalog/lc0235 |  |
-| LC0236 | Light composition | https://vargov.ru/en/catalog/lc0236 | 1 |
+| LC0236 | Decorative composition | https://vargov.ru/en/catalog/lc0236 | 1 |
 | LC0237 | Light composition | https://vargov.ru/en/catalog/lc0237 | 1 |
 | LC0239 | Light composition | https://vargov.ru/en/catalog/lc0239 |  |
 | LC0240 | Ceiling composition | https://vargov.ru/en/catalog/lc0240 |  |
-| LC0241 | Light composition | https://vargov.ru/en/catalog/lc0241 |  |
-| LC0242 | Light composition | https://vargov.ru/en/catalog/lc0242 |  |
+| LC0241 | Decorative composition | https://vargov.ru/en/catalog/lc0241 |  |
+| LC0242 | Decorative composition | https://vargov.ru/en/catalog/lc0242 |  |
 | LC0243 | Light composition | https://vargov.ru/en/catalog/lc0243 |  |
 | LC0244 | Wall panel | https://vargov.ru/en/catalog/lc0244 |  |
 | LC0245 | Wall composition | https://vargov.ru/en/catalog/lc0245 |  |
@@ -273,12 +273,12 @@ Compositions: 605
 | LC0257 | Light composition | https://vargov.ru/en/catalog/lc0257 |  |
 | LC0258 | Light composition | https://vargov.ru/en/catalog/lc0258 |  |
 | LC0259 | Light composition | https://vargov.ru/en/catalog/lc0259 |  |
-| LC0260 | Light composition | https://vargov.ru/en/catalog/lc0260 |  |
+| LC0260 | Decorative composition | https://vargov.ru/en/catalog/lc0260 |  |
 | LC0261 | Decorative screen | https://vargov.ru/en/catalog/lc0261 |  |
 | LC0262 | Light composition | https://vargov.ru/en/catalog/lc0262 |  |
-| LC0263 | Light composition | https://vargov.ru/en/catalog/lc0263 |  |
+| LC0263 | Decorative composition | https://vargov.ru/en/catalog/lc0263 |  |
 | LC0264 | Light composition | https://vargov.ru/en/catalog/lc0264 |  |
-| LC0265 | Light composition | https://vargov.ru/en/catalog/lc0265 |  |
+| LC0265 | Decorative composition | https://vargov.ru/en/catalog/lc0265 |  |
 | LC0266 | Decorative screen | https://vargov.ru/en/catalog/lc0266 |  |
 | LC0267 | Light composition | https://vargov.ru/en/catalog/lc0267 |  |
 | LC0268 | Decorative panel | https://vargov.ru/en/catalog/lc0268 |  |
@@ -292,27 +292,27 @@ Compositions: 605
 | LC0276 | Light composition | https://vargov.ru/en/catalog/lc0276 |  |
 | LC0277 | Light composition | https://vargov.ru/en/catalog/lc0277 |  |
 | LC0278 | Light composition | https://vargov.ru/en/catalog/lc0278 |  |
-| LC0279 | Light composition | https://vargov.ru/en/catalog/lc0279 | 1 |
-| LC0280 | Light composition | https://vargov.ru/en/catalog/lc0280 | 1 |
+| LC0279 | Decorative composition | https://vargov.ru/en/catalog/lc0279 | 1 |
+| LC0280 | Decorative composition | https://vargov.ru/en/catalog/lc0280 | 1 |
 | LC0281 | Light composition | https://vargov.ru/en/catalog/lc0281 |  |
-| LC0282 | Light composition | https://vargov.ru/en/catalog/lc0282 |  |
+| LC0282 | Decorative composition | https://vargov.ru/en/catalog/lc0282 |  |
 | LC0283 | Light composition | https://vargov.ru/en/catalog/lc0283 |  |
 | LC0284 | Light composition | https://vargov.ru/en/catalog/lc0284 |  |
 | LC0285 | Light composition | https://vargov.ru/en/catalog/lc0285 |  |
-| LC0286 | Light composition | https://vargov.ru/en/catalog/lc0286 |  |
+| LC0286 | Decorative composition | https://vargov.ru/en/catalog/lc0286 |  |
 | LC0287 | Light composition | https://vargov.ru/en/catalog/lc0287 |  |
-| LC0288 | Light composition | https://vargov.ru/en/catalog/lc0288 |  |
+| LC0288 | Decorative composition | https://vargov.ru/en/catalog/lc0288 |  |
 | LC0289 | Light composition | https://vargov.ru/en/catalog/lc0289 |  |
 | LC0290 | Light composition | https://vargov.ru/en/catalog/lc0290 |  |
-| LC0291 | Light composition | https://vargov.ru/en/catalog/lc0291 |  |
+| LC0291 | Decorative composition | https://vargov.ru/en/catalog/lc0291 |  |
 | LC0292 | Light composition | https://vargov.ru/en/catalog/lc0292 | 1 |
 | LC0293 | Light composition | https://vargov.ru/en/catalog/lc0293 |  |
-| LC0294 | Light composition | https://vargov.ru/en/catalog/lc0294 |  |
+| LC0294 | Decorative composition | https://vargov.ru/en/catalog/lc0294 |  |
 | LC0295 | Light composition | https://vargov.ru/en/catalog/lc0295 |  |
-| LC0296 | Light composition | https://vargov.ru/en/catalog/lc0296 |  |
+| LC0296 | Decorative composition | https://vargov.ru/en/catalog/lc0296 |  |
 | LC0297 | Light composition | https://vargov.ru/en/catalog/lc0297 |  |
-| LC0298 | Light composition | https://vargov.ru/en/catalog/lc0298 |  |
-| LC0299 | Light composition | https://vargov.ru/en/catalog/lc0299 |  |
+| LC0298 | Decorative composition | https://vargov.ru/en/catalog/lc0298 |  |
+| LC0299 | Decorative composition | https://vargov.ru/en/catalog/lc0299 |  |
 | LC0300 | Light composition | https://vargov.ru/en/catalog/lc0300 |  |
 | LC0301 | Light composition | https://vargov.ru/en/catalog/lc0301 |  |
 | LC0302 | Light composition | https://vargov.ru/en/catalog/lc0302 |  |
@@ -322,17 +322,17 @@ Compositions: 605
 | LC0306 | Light composition | https://vargov.ru/en/catalog/lc0306 |  |
 | LC0307 | Light composition | https://vargov.ru/en/catalog/lc0307 |  |
 | LC0308 | Light composition | https://vargov.ru/en/catalog/lc0308 |  |
-| LC0309 | Light composition | https://vargov.ru/en/catalog/lc0309 |  |
+| LC0309 | Decorative composition | https://vargov.ru/en/catalog/lc0309 |  |
 | LC0310 | Light composition | https://vargov.ru/en/catalog/lc0310 |  |
 | LC0311 | Light composition | https://vargov.ru/en/catalog/lc0311 |  |
-| LC0312 | Light composition | https://vargov.ru/en/catalog/lc0312 |  |
+| LC0312 | Decorative composition | https://vargov.ru/en/catalog/lc0312 |  |
 | LC0313 | Light composition | https://vargov.ru/en/catalog/lc0313 | 2 |
 | LC0315 | Light composition | https://vargov.ru/en/catalog/lc0315 |  |
 | LC0316 | Wall light-sculpture | https://vargov.ru/en/catalog/lc0316 |  |
-| LC0317 | Light composition | https://vargov.ru/en/catalog/lc0317 |  |
+| LC0317 | Decorative composition | https://vargov.ru/en/catalog/lc0317 |  |
 | LC0318 | Light composition | https://vargov.ru/en/catalog/lc0318 |  |
 | LC0319 | Light composition | https://vargov.ru/en/catalog/lc0319 | 1 |
-| LC0320 | Light composition | https://vargov.ru/en/catalog/lc0320 | 1 |
+| LC0320 | Decorative composition | https://vargov.ru/en/catalog/lc0320 | 1 |
 | LC0321 | Staircase balustrade | https://vargov.ru/en/catalog/lc0321 |  |
 | LC0322 | Light composition | https://vargov.ru/en/catalog/lc0322 |  |
 | LC0323 | Light composition | https://vargov.ru/en/catalog/lc0323 | 1 |
@@ -362,7 +362,7 @@ Compositions: 605
 | LC0346 | Light composition | https://vargov.ru/en/catalog/lc0346 |  |
 | LC0347 | Light composition | https://vargov.ru/en/catalog/lc0347 |  |
 | LC0348 | Light composition | https://vargov.ru/en/catalog/lc0348 |  |
-| LC0349 | Light composition | https://vargov.ru/en/catalog/lc0349 |  |
+| LC0349 | Decorative composition | https://vargov.ru/en/catalog/lc0349 |  |
 | LC0350 | Light composition | https://vargov.ru/en/catalog/lc0350 |  |
 | LC0351 | Light composition | https://vargov.ru/en/catalog/lc0351 |  |
 | LC0352 | Light composition | https://vargov.ru/en/catalog/lc0352 |  |
@@ -372,7 +372,7 @@ Compositions: 605
 | LC0356 | Floor lamp | https://vargov.ru/en/catalog/lc0356 |  |
 | LC0357 | Wall light | https://vargov.ru/en/catalog/lc0357 |  |
 | LC0358 | Light composition | https://vargov.ru/en/catalog/lc0358 | 1 |
-| LC0359 | Light composition | https://vargov.ru/en/catalog/lc0359 |  |
+| LC0359 | Decorative composition | https://vargov.ru/en/catalog/lc0359 |  |
 | LC0360 | Light composition | https://vargov.ru/en/catalog/lc0360 |  |
 | LC0361 | Light composition | https://vargov.ru/en/catalog/lc0361 |  |
 | LC0362 | Light composition | https://vargov.ru/en/catalog/lc0362 |  |
@@ -382,8 +382,8 @@ Compositions: 605
 | LC0366 | Light composition | https://vargov.ru/en/catalog/lc0366 |  |
 | LC0367 | Light composition | https://vargov.ru/en/catalog/lc0367 |  |
 | LC0368 | Sculptural composition | https://vargov.ru/en/catalog/lc0368 |  |
-| LC0369 | Light composition | https://vargov.ru/en/catalog/lc0369 |  |
-| LC0370 | Light composition | https://vargov.ru/en/catalog/lc0370 |  |
+| LC0369 | Decorative composition | https://vargov.ru/en/catalog/lc0369 |  |
+| LC0370 | Decorative composition | https://vargov.ru/en/catalog/lc0370 |  |
 | LC0371 | Light composition | https://vargov.ru/en/catalog/lc0371 |  |
 | LC0372 | Floor lamp | https://vargov.ru/en/catalog/lc0372 |  |
 | LC0373 | Light composition | https://vargov.ru/en/catalog/lc0373 |  |
@@ -473,7 +473,7 @@ Compositions: 605
 | LC0456 | Light composition | https://vargov.ru/en/catalog/lc0456 |  |
 | LC0457 | Light composition | https://vargov.ru/en/catalog/lc0457 |  |
 | LC0458 | Light composition | https://vargov.ru/en/catalog/lc0458 | 1 |
-| LC0459 | Decorative composition | https://vargov.ru/en/catalog/lc0459 |  |
+| LC0459 | Light composition | https://vargov.ru/en/catalog/lc0459 |  |
 | LC0460 | Decorative composition | https://vargov.ru/en/catalog/lc0460 |  |
 | LC0461 | Light composition | https://vargov.ru/en/catalog/lc0461 |  |
 | LC0462 | Light composition | https://vargov.ru/en/catalog/lc0462 |  |
@@ -535,11 +535,11 @@ Compositions: 605
 | LC0518 | Light composition | https://vargov.ru/en/catalog/lc0518 |  |
 | LC0519 | Light composition | https://vargov.ru/en/catalog/lc0519 |  |
 | LC0520 | Light composition | https://vargov.ru/en/catalog/lc0520 |  |
-| LC0521 | Light composition | https://vargov.ru/en/catalog/lc0521 |  |
+| LC0521 | Decorative composition | https://vargov.ru/en/catalog/lc0521 |  |
 | LC0522 | Light composition | https://vargov.ru/en/catalog/lc0522 |  |
 | LC0523 | Light composition | https://vargov.ru/en/catalog/lc0523 |  |
 | LC0524 | Light composition | https://vargov.ru/en/catalog/lc0524 |  |
-| LC0525 | Decorative composition | https://vargov.ru/en/catalog/lc0525 |  |
+| LC0525 | Light composition | https://vargov.ru/en/catalog/lc0525 |  |
 | LC0526 | Decorative composition | https://vargov.ru/en/catalog/lc0526 |  |
 | LC0527 | Decorative composition | https://vargov.ru/en/catalog/lc0527 |  |
 | LC0528 | Decorative composition | https://vargov.ru/en/catalog/lc0528 |  |

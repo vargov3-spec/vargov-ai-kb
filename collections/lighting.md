@@ -2,7 +2,7 @@
 
 Раздел на сайте: https://vargov.ru/lighting
 
-Позиций: 352
+Позиций: 354
 
 ## Состав
 
@@ -222,6 +222,7 @@
 - [LC0414](../products/lighting/LC0414.md) — Световая композиция — https://vargov.ru/catalog/lc0414
 - [LC0415](../products/lighting/LC0415.md) — Световая композиция — https://vargov.ru/catalog/lc0415
 - [LC0416](../products/lighting/LC0416.md) — Световая композиция — https://vargov.ru/catalog/lc0416
+- [LC0417](../products/lighting/LC0417.md) — Световая композиция — https://vargov.ru/catalog/lc0417
 - [LC0418](../products/lighting/LC0418.md) — Световая композиция — https://vargov.ru/catalog/lc0418
 - [LC0421](../products/lighting/LC0421.md) — Световая скульптура — https://vargov.ru/catalog/lc0421
 - [LC0422](../products/lighting/LC0422.md) — Световая композиция — https://vargov.ru/catalog/lc0422
@@ -310,6 +311,7 @@
 - [LC0522](../products/lighting/LC0522.md) — Световая композиция — https://vargov.ru/catalog/lc0522
 - [LC0523](../products/lighting/LC0523.md) — Световая композиция — https://vargov.ru/catalog/lc0523
 - [LC0524](../products/lighting/LC0524.md) — Световая композиция — https://vargov.ru/catalog/lc0524
+- [LC0525](../products/lighting/LC0525.md) — Световая композиция — https://vargov.ru/catalog/lc0525
 - [LC0531](../products/lighting/LC0531.md) — Световая композиция — https://vargov.ru/catalog/lc0531
 - [LC0532](../products/lighting/LC0532.md) — Световая композиция — https://vargov.ru/catalog/lc0532
 - [LC0533](../products/lighting/LC0533.md) — Световая композиция — https://vargov.ru/catalog/lc0533
