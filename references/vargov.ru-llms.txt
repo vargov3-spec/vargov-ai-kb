@@ -1,0 +1,107 @@
+# Дословная копия https://vargov.ru/llms.txt, снята 2026-09-17 13:14 UTC ночной сверкой (scripts/sync_from_feed.py). Первоисточник — сайт.
+
+# Vargov®Design
+
+> Author's lighting brand: collectible light sculptures and decorative
+> compositions. Founded and led by designer Anton Vargov. Own production,
+> made to order — every composition is assembled for a specific interior,
+> its scale and geometry adjusted to the space.
+
+Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
+605 compositions in four families: light compositions, decorative
+compositions, floor and table objects, sculptural decor.
+
+## Facts
+
+- Catalogue: 605 compositions, each with photography and an LC code; element dimensions, weight and power for 350 of them (see the machine-readable feed)
+- Source of record for element dimensions, weight, power and mounting is the brand's own 3D configurator — configurator.vargov.ru (RU) and vargov.design (EN); this site republishes those figures unchanged
+- Awards: 24, among them IDA Design Awards, LIT Lighting Design Awards, MUSE
+  Design Awards, European Product Design Award, NY Product Design Awards,
+  BLT Built Design Awards, The London Design Awards, LOOP Design Awards,
+  SIT Furniture Design Award
+- MUSE Design Awards 2026 — Gold Winner, Lighting Design / Designer & Custom
+  Lighting, for «Oceanic Illumination» LC0564:
+  design.museaward.com/winners-info.php?id=40265
+- MUSE Design Awards 2023 — Platinum Winner, same category, for LC0237
+- Awwwards Nominee 2026 for the Vargov®Design 3D Configurator — a nomination,
+  not a win: awwwards.com/sites/generative-3d-configurator
+- Anton Vargov serves as a jury member for design and architecture awards
+- Certification: EAEU serial certificates of conformity to TR CU 004/2011 and
+  TR CU 020/2011, tested to GOST IEC 60598-1, EAC mark; more than 300 LC pieces
+- Trademark: VARGOV — Rospatent registration No. 896936 (Russia, 2022) and
+  Madrid System international registration No. 1795801 (WIPO, 2024; protection
+  in China for lighting apparatus, in force until 2034). Compositions are made
+  only at the brand's own production
+- Showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow
+- Delivery: worldwide, in branded crating
+- Website languages: Russian, English, German, Italian, French, Spanish,
+  Vietnamese, Arabic
+
+## Machine-readable data
+
+- [Product catalogue, JSON-LD (Product graph, 605 items)](https://vargov.ru/catalog.jsonld): machine-readable product data — names, images, awards, canonical URLs in 8 languages
+- [Open knowledge base (datasets, entity graph, press kit)](https://github.com/vargov3-spec/vargov-ai-kb): the same facts as a public repository, mirrored from this site — plain text at https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt. This site is the primary source; the repository follows it
+
+## Catalogue
+
+- [Composition catalogue](https://vargov.ru/en/catalog): all 605 pieces, searchable by LC code, filterable by type; search by photograph included
+- [Light compositions](https://vargov.ru/en/lighting): ceiling compositions and light installations
+- [Decorative compositions](https://vargov.ru/en/decorative): objects at the meeting of sculpture and light
+- [Floor and table objects](https://vargov.ru/en/floor-table-lamps): floor lamps, sconces, table pieces
+- [Sculptural decor](https://vargov.ru/en/sculptural-decor): wall and free-standing sculpture
+- [In stock](https://vargov.ru/en/in-stock): pieces available for immediate shipment, updated four times a day
+- [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf): full catalogue for download
+
+## By space
+
+Compositions grouped by the task rather than by the article code, each page
+covering what gets decided at the design stage — height, load, suspension,
+access for maintenance.
+
+- [Hotel lobby and public spaces](https://vargov.ru/en/for/hotel-lobby)
+- [Double-height living room](https://vargov.ru/en/for/double-height)
+- [Stairwell](https://vargov.ru/en/for/stairwell)
+- [Restaurant and bar](https://vargov.ru/en/for/restaurant)
+- [Dining room](https://vargov.ru/en/for/dining)
+- [Bedroom](https://vargov.ru/en/for/bedroom)
+- [Boutique and showroom](https://vargov.ru/en/for/retail)
+- [Spa and pool](https://vargov.ru/en/for/spa)
+
+## For architects and specifiers
+
+- [For architects](https://vargov.ru/en/architects): how bespoke projects run, from sketch to installation
+- [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
+- [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 225.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg; the first weighed elements against the calculation
+- [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
+- [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
+- [Certification](https://vargov.ru/en/certification): documents, standards, EAC
+- [Warranty](https://vargov.ru/en/warranty): what is covered, how originals are identified
+- [Configurator](https://vargov.ru/en/configurator): assemble a composition and get a quote
+
+## About
+
+- [About the brand](https://vargov.ru/en/about)
+- [Anton Vargov](https://vargov.ru/en/designer): founder and lead designer
+- [Awards](https://vargov.ru/en/awards): full list with certificates
+- [Projects](https://vargov.ru/en/projects): completed installations and exhibitions
+- [Journal](https://vargov.ru/en/journal): how compositions are made, installed and certified
+- [Press kit](https://vargov.ru/en/press): photographs and facts for publication
+- [Showroom](https://vargov.ru/en/showroom): visiting, address, opening hours
+
+## Contact
+
+- Email: info@vargov.ru
+- Phone: +7 916 537 33 52
+- Showroom: +7 (925) 888-77-44
+- Telegram: https://t.me/vargov_design
+- WhatsApp: https://wa.me/79165373352
+
+## Other languages
+
+- Russian: https://vargov.ru
+- German: https://vargov.ru/de
+- Italian: https://vargov.ru/it
+- French: https://vargov.ru/fr
+- Spanish: https://vargov.ru/es
+- Vietnamese: https://vargov.ru/vi
+- Arabic: https://vargov.ru/ar
