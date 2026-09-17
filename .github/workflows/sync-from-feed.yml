@@ -73,8 +73,9 @@ jobs:
           git config user.name "vargov-ai-kb sync"
           git config user.email "actions@users.noreply.github.com"
           # scan/ намеренно не публикуется (.gitignore); отчёт уходит в сводку шага и в issue.
-          git add references/catalog.jsonld references/organization.jsonld \
-                  references/vargov.ru-llms.txt en/datasets/products.json en/datasets/products.jsonl
+          git add references/catalog.jsonld references/organization.jsonld references/vargov.ru-llms.txt \
+                  datasets/products.json datasets/products.jsonl datasets/products.csv datasets/products.md \
+                  en/datasets collections en/collections products en/products
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Изменений нет — коммита нет." >> "$GITHUB_STEP_SUMMARY"

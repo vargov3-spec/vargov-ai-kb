@@ -44,6 +44,8 @@ from pathlib import Path
 KB = Path(__file__).resolve().parent.parent
 FEED_URL = "https://vargov.ru/catalog.jsonld"
 LLMS_URL = "https://vargov.ru/llms.txt"
+# Тексты карточек на восьми языках — публичный файл сайта с 17.09.2026 (ba3676a).
+PRODUCTS_URL = "https://vargov.ru/datasets/products.jsonl"
 UA = "vargov-ai-kb nightly sync (+https://github.com/vargov3-spec/vargov-ai-kb)"
 MIN_PRODUCTS = 500
 # Поля Product, которыми владеет фид. Всё остальное в узле базы остаётся как есть.
@@ -91,6 +93,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--feed-file", type=Path, help="локальная копия фида вместо загрузки (для проверки)")
     ap.add_argument("--llms-file", type=Path, help="локальная копия llms.txt вместо загрузки")
+    ap.add_argument("--products-file", type=Path, help="локальная копия products.jsonl вместо загрузки")
     ap.add_argument("--dry-run", action="store_true", help="ничего не записывать, только отчитаться")
     a = ap.parse_args()
     dry = a.dry_run
@@ -178,31 +181,76 @@ def main() -> int:
     if dump_json(org_path, org_doc, dry):
         changed.append("references/organization.jsonld")
 
-    # 4. Английские датасеты: сниппет и галерея по артикулу; расхождения по составу — сигнал.
-    en_path = KB / "en" / "datasets" / "products.json"
-    en_rows = load_json(en_path)
-    feed_by_sku = {p.get("sku"): p for p in products}
-    en_skus = {r["code"] for r in en_rows}
-    if feed_skus - en_skus:
-        drift.append(f"в фиде новые артикулы, которых нет в датасетах: {sorted(feed_skus - en_skus)[:10]}")
-    snippet_diff = 0
-    for r in en_rows:
-        p = feed_by_sku.get(r["code"])
-        if not p:
-            continue
-        if p.get("description") and p["description"] != r.get("snippet"):
-            snippet_diff += 1
-            r["snippet"] = p["description"]
-        # Галерею из фида не берём: в базе она полнее (первый прогон 17.09.2026
-        # укоротил её у 240 артикулов, откачено).
-    if dump_json(en_path, en_rows, dry):
-        changed.append(f"en/datasets/products.json (сниппетов обновлено {snippet_diff})")
-    jsonl = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in en_rows)
-    if write_text(KB / "en" / "datasets" / "products.jsonl", jsonl, dry):
-        changed.append("en/datasets/products.jsonl")
-    if snippet_diff:
-        drift.append(f"английские сниппеты изменились у {snippet_diff} артикулов — тексты на остальных "
-                     f"языках в базе могли устареть, нужна локальная пересборка")
+    # 4. Тексты на восьми языках — из products.jsonl сайта (третий и последний
+    #    запрос за ночь; файл выложен сайтом 17.09.2026, коммит ba3676a). Одна
+    #    строка — артикул: code, slug, category, awardWinning, url{lang}, text{lang}
+    #    = {type, paragraphs, whereItWorks, style, madeToOrder?}; пустые поля
+    #    опущены. Тексты кладутся в канонические записи datasets/products.json,
+    #    и из них тем же сборщиком печатаются все производные файлы: датасеты RU/EN,
+    #    CSV, оглавления разделов и 605 × 2 страниц карточек. Пока файл не отдаётся
+    #    (выкладка сайта идёт кроном), сценарий говорит об этом и тексты не трогает.
+    ds_path = KB / "datasets" / "products.json"
+    recs = load_json(ds_path)
+    by_code = {r["code"]: r for r in recs}
+    text_changed = 0
+    try:
+        rows_raw = (a.products_file.read_bytes() if a.products_file else fetch(PRODUCTS_URL)).decode("utf-8")
+        rows = [json.loads(line) for line in rows_raw.splitlines() if line.strip()]
+    except Exception as e:  # noqa: BLE001
+        # Не расхождение, а недоступность источника: тексты остаются прежними,
+        # issue не заводится — это попадёт только в сводку прогона.
+        rows = []
+        changed.append(f"(products.jsonl сайта не получен: {str(e)[:80]} — тексты на восьми языках не обновлялись)")
+    if rows and (len(rows) < MIN_PRODUCTS or not all(r.get("code") and isinstance(r.get("text"), dict) for r in rows)):
+        drift.append(f"products.jsonl подозрителен: строк {len(rows)} — тексты не обновлялись")
+        rows = []
+    if rows:
+        sys.path.insert(0, str(KB / "scripts"))
+        from build_from_site import (CATEGORIES, snippet, write_datasets,  # noqa: E402
+                                     write_collections, product_page, write)
+        site_codes = {r["code"] for r in rows}
+        if site_codes - set(by_code):
+            drift.append(f"на сайте новые артикулы, которых нет в базе (нужна локальная пересборка — "
+                         f"галерея и модели берутся из репозитория сайта): {sorted(site_codes - set(by_code))[:10]}")
+        if set(by_code) - site_codes:
+            drift.append(f"в базе артикулы, которых больше нет на сайте: {sorted(set(by_code) - site_codes)[:10]}")
+        for row in rows:
+            rec = by_code.get(row["code"])
+            if not rec:
+                continue
+            before = json.dumps(rec, ensure_ascii=False, sort_keys=True)
+            cat = row.get("category") or rec["category"]
+            if cat in CATEGORIES:
+                rec["category"] = cat
+                rec["category_label"] = {"ru": CATEGORIES[cat][0], "en": CATEGORIES[cat][1]}
+            if isinstance(row.get("url"), dict) and row["url"]:
+                rec["urls"] = row["url"]
+            rec["award_winning"] = bool(row.get("awardWinning"))
+            for lang, c in (row.get("text") or {}).items():
+                if not isinstance(c, dict):
+                    continue
+                body = "\n\n".join(c.get("paragraphs") or [])
+                rec["type"][lang] = c.get("type")
+                rec["description"][lang] = body
+                rec["where_it_works"][lang] = c.get("whereItWorks")
+                rec["style"][lang] = c.get("style")
+                rec["made_to_order"][lang] = c.get("madeToOrder")
+                rec["snippet"][lang] = snippet(body) if body else None
+            if json.dumps(rec, ensure_ascii=False, sort_keys=True) != before:
+                text_changed += 1
+        if text_changed and not dry:
+            write_datasets(recs, KB / "datasets", english=False)
+            write_datasets(recs, KB / "en" / "datasets", english=True)
+            write_collections(recs, KB / "collections", english=False)
+            write_collections(recs, KB / "en" / "collections", english=True)
+            for rec in recs:
+                write(KB / "products" / rec["category"] / f"{rec['code']}.md", product_page(rec, "ru"))
+                write(KB / "en" / "products" / rec["category"] / f"{rec['code']}.md", product_page(rec, "en"))
+        if text_changed:
+            changed.append(f"тексты на восьми языках обновлены у {text_changed} артикулов "
+                           f"(datasets, en/datasets, collections, products — из products.jsonl сайта)")
+        else:
+            print("products.jsonl: тексты совпадают с базой, изменений нет")
 
     # 5. Копия llms.txt сайта.
     # Без отметки времени в шапке: иначе файл «менялся» бы каждую ночь и плодил
