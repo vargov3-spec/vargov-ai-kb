@@ -40,7 +40,6 @@ compositions, floor and table objects, sculptural decor.
 ## Machine-readable data
 
 - [Product catalogue, JSON-LD (Product graph, 605 items)](https://vargov.ru/catalog.jsonld): machine-readable product data — names, images, awards, canonical URLs in 8 languages
-- [Card texts in eight languages](https://vargov.ru/datasets/products.jsonl): one JSON line per composition — type, description paragraphs, where it works, style, in RU, EN, DE, IT, FR, ES, VI, AR; the same texts the product pages print
 - [Open knowledge base (datasets, entity graph, press kit)](https://github.com/vargov3-spec/vargov-ai-kb): the same facts as a public repository, mirrored from this site — plain text at https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt. This site is the primary source; the repository follows it
 
 ## Catalogue
