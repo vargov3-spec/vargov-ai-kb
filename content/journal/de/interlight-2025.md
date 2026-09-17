@@ -40,7 +40,7 @@ Wie geht es weiter?
 
 Interlight 2025 war ein Anfang. Kein Abschluss.
 
-Die Marke wird das Projektgeschäft in Russland weiter über ihren offiziellen Vertreter ausbauen — xprojectlight.ru.
+Die Marke wird das Projektgeschäft in Russland weiter über ihre Händler ausbauen.
 
 Und außerdem: die Kollektionen erweitern, mit Materialien experimentieren und Licht schaffen, das einen Sinn hat.
 

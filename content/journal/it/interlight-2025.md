@@ -40,7 +40,7 @@ E adesso?
 
 Interlight 2025 è stato un punto di partenza. Non un traguardo.
 
-Il marchio continuerà a sviluppare le forniture per progetti in Russia attraverso il proprio rappresentante ufficiale — xprojectlight.ru.
+Il marchio continuerà a sviluppare le forniture per progetti in Russia attraverso i propri rivenditori.
 
 E continuerà ad ampliare le collezioni, a sperimentare con i materiali e a creare una luce che abbia un senso.
 

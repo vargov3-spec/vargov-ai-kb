@@ -40,7 +40,7 @@ What comes next?
 
 Interlight 2025 was a point of entry. Not a conclusion.
 
-The brand will go on developing project supply in Russia through its official representative — xprojectlight.ru.
+The brand will go on developing project supply in Russia through its dealers.
 
 And it will go on expanding the collections, experimenting with materials and making light that means something.
 

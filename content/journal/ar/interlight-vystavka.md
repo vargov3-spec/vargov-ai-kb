@@ -28,7 +28,7 @@ Interlight 2025 | موسكو، مركز المعارض الدولي «كروكو
 
 الرمز الترويجي للدخول المجاني: IL25-XSPDY
 
-الموزّع الرسمي في روسيا — xprojectlight.ru
+الوكلاء في روسيا — vargov.ru/dealers
 
 Vargov®Design — لمن يرى الفرق.
 

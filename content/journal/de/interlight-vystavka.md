@@ -28,7 +28,7 @@ Interlight 2025 | Moskau, Crocus Expo, 21.–24. Oktober
 
 Promocode für den kostenlosen Eintritt: IL25-XSPDY
 
-Offizieller Distributor in Russland — xprojectlight.ru
+Händler in Russland — vargov.ru/dealers
 
 Vargov®Design — für alle, die den Unterschied sehen.
 

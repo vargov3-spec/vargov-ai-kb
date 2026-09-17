@@ -40,7 +40,7 @@ Tiếp theo là gì?
 
 Interlight 2025 là điểm khởi đầu. Nhưng không phải điểm kết.
 
-Thương hiệu sẽ tiếp tục phát triển hướng cung ứng theo dự án tại Nga thông qua đại diện chính thức — xprojectlight.ru.
+Thương hiệu sẽ tiếp tục phát triển hướng cung ứng theo dự án tại Nga thông qua các đại lý.
 
 Đồng thời — mở rộng các bộ sưu tập, thử nghiệm với vật liệu và tạo ra thứ ánh sáng mang trong mình ý nghĩa.
 

@@ -40,7 +40,7 @@ Y esa fue exactamente la reacción que recibimos.
 
 Interlight 2025 fue un punto de partida. No una meta.
 
-La marca seguirá desarrollando el suministro para proyectos en Rusia a través de su representante oficial — xprojectlight.ru.
+La marca seguirá desarrollando el suministro para proyectos en Rusia a través de sus distribuidores.
 
 Y también: ampliar las colecciones, experimentar con los materiales y crear una luz que tenga sentido.
 
