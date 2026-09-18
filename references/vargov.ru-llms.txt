@@ -72,7 +72,7 @@ access for maintenance.
 
 - [For architects](https://vargov.ru/en/architects): how bespoke projects run, from sketch to installation
 - [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
-- [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 225.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg; the first weighed elements against the calculation
+- [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 225.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg
 - [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
 - [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
 - [Certification](https://vargov.ru/en/certification): documents, standards, EAC
