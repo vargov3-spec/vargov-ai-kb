@@ -930,35 +930,35 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size L200",
+          "name": "Element size Ø200",
           "value": "L200 × W45 × H200 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight L200",
-          "value": 0.91,
+          "name": "Element weight Ø200",
+          "value": 0.7,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element size L250",
+          "name": "Element size Ø250",
           "value": "L250 × W55 × H250 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight L250",
-          "value": 1.42,
+          "name": "Element weight Ø250",
+          "value": 1.16,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element size L300",
+          "name": "Element size Ø300",
           "value": "L300 × W65 × H300 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight L300",
-          "value": 2.05,
+          "name": "Element weight Ø300",
+          "value": 1.74,
           "unitCode": "KGM"
         },
         {
@@ -1563,7 +1563,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.38,
+          "value": 0.86,
           "unitCode": "KGM"
         },
         {
@@ -1574,7 +1574,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.72,
+          "value": 1.07,
           "unitCode": "KGM"
         },
         {
@@ -1585,7 +1585,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 2.06,
+          "value": 1.29,
           "unitCode": "KGM"
         },
         {
@@ -1760,46 +1760,46 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H200",
-          "value": "L140 × W75 × H200 mm"
+          "name": "Element size Ø200",
+          "value": "L200 × W10 × H200 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H200",
-          "value": 0.24,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Element size H250",
-          "value": "L170 × W95 × H250 mm"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Element weight H250",
-          "value": 0.47,
-          "unitCode": "KGM"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Element size H300",
-          "value": "L210 × W110 × H300 mm"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Element weight H300",
+          "name": "Element weight Ø200",
           "value": 0.82,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element size H350",
-          "value": "L240 × W130 × H350 mm"
+          "name": "Element size Ø250",
+          "value": "L250 × W13 × H250 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H350",
-          "value": 1.3,
+          "name": "Element weight Ø250",
+          "value": 1.6,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size Ø300",
+          "value": "L300 × W15 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight Ø300",
+          "value": 2.76,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size Ø350",
+          "value": "L350 × W18 × H350 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight Ø350",
+          "value": 4.39,
           "unitCode": "KGM"
         },
         {
@@ -2098,7 +2098,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.21,
+          "value": 0.96,
           "unitCode": "KGM"
         },
         {
@@ -2109,7 +2109,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.89,
+          "value": 1.46,
           "unitCode": "KGM"
         },
         {
@@ -2120,7 +2120,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 2.58,
+          "value": 2.08,
           "unitCode": "KGM"
         },
         {
@@ -2209,7 +2209,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.16,
+          "value": 2.48,
           "unitCode": "KGM"
         },
         {
@@ -2432,7 +2432,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 1.25,
+          "value": 0.96,
           "unitCode": "KGM"
         },
         {
@@ -3429,7 +3429,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H650",
-          "value": 1.1,
+          "value": 0.86,
           "unitCode": "KGM"
         },
         {
@@ -3440,7 +3440,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 1.27,
+          "value": 1.02,
           "unitCode": "KGM"
         },
         {
@@ -3451,7 +3451,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H750",
-          "value": 1.46,
+          "value": 1.19,
           "unitCode": "KGM"
         },
         {
@@ -3603,7 +3603,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 2.15,
+          "value": 1.79,
           "unitCode": "KGM"
         },
         {
@@ -3614,7 +3614,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 3.09,
+          "value": 2.66,
           "unitCode": "KGM"
         },
         {
@@ -3625,7 +3625,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 4.21,
+          "value": 3.71,
           "unitCode": "KGM"
         },
         {
@@ -4920,7 +4920,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 1.12,
+          "value": 0.91,
           "unitCode": "KGM"
         },
         {
@@ -4931,7 +4931,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.61,
+          "value": 1.36,
           "unitCode": "KGM"
         },
         {
@@ -4942,7 +4942,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 2.19,
+          "value": 1.9,
           "unitCode": "KGM"
         },
         {
@@ -5564,7 +5564,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.35,
+          "value": 0.31,
           "unitCode": "KGM"
         }
       ],
@@ -5913,7 +5913,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø160",
-          "value": 0.66,
+          "value": 0.61,
           "unitCode": "KGM"
         }
       ],
@@ -6019,7 +6019,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.46,
+          "value": 1.24,
           "unitCode": "KGM"
         },
         {
@@ -6030,7 +6030,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 2.28,
+          "value": 2.01,
           "unitCode": "KGM"
         },
         {
@@ -6041,7 +6041,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 3.28,
+          "value": 2.95,
           "unitCode": "KGM"
         },
         {
@@ -6235,7 +6235,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H250",
-          "value": "L60 × W55 × H430 mm"
+          "value": "Ø60 × H250 mm"
         },
         {
           "@type": "PropertyValue",
@@ -6246,23 +6246,23 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L70 × W70 × H520 mm"
+          "value": "Ø70 × H300 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.66,
+          "value": 0.64,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L80 × W80 × H600 mm"
+          "value": "Ø80 × H350 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.92,
+          "value": 0.86,
           "unitCode": "KGM"
         },
         {
@@ -6603,7 +6603,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.43,
+          "value": 1.1,
           "unitCode": "KGM"
         },
         {
@@ -6614,7 +6614,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 2.66,
+          "value": 2.13,
           "unitCode": "KGM"
         },
         {
@@ -6716,7 +6716,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.43,
+          "value": 1.1,
           "unitCode": "KGM"
         },
         {
@@ -6727,7 +6727,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 2.66,
+          "value": 2.13,
           "unitCode": "KGM"
         },
         {
@@ -6738,7 +6738,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L450",
-          "value": 3.36,
+          "value": 2.78,
           "unitCode": "KGM"
         },
         {
@@ -7851,7 +7851,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 9.21,
+          "value": 7.92,
           "unitCode": "KGM"
         },
         {
@@ -7862,7 +7862,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 13.26,
+          "value": 11.71,
           "unitCode": "KGM"
         },
         {
@@ -7873,7 +7873,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H700",
-          "value": 18.04,
+          "value": 16.24,
           "unitCode": "KGM"
         },
         {
@@ -7884,7 +7884,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H800",
-          "value": 23.57,
+          "value": 21.51,
           "unitCode": "KGM"
         }
       ],
@@ -7955,7 +7955,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H150",
-          "value": 0.42,
+          "value": 0.36,
           "unitCode": "KGM"
         },
         {
@@ -7966,7 +7966,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H220",
-          "value": 0.96,
+          "value": 0.79,
           "unitCode": "KGM"
         },
         {
@@ -9093,7 +9093,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø200",
-          "value": "L200 × W200 × H220 mm"
+          "value": "Ø200 × H220 mm"
         },
         {
           "@type": "PropertyValue",
@@ -9104,7 +9104,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø250",
-          "value": "L250 × W250 × H275 mm"
+          "value": "Ø250 × H275 mm"
         },
         {
           "@type": "PropertyValue",
@@ -9115,7 +9115,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element size Ø300",
-          "value": "L300 × W300 × H330 mm"
+          "value": "Ø300 × H330 mm"
         },
         {
           "@type": "PropertyValue",
@@ -9983,7 +9983,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.44,
+          "value": 0.37,
           "unitCode": "KGM"
         },
         {
@@ -9994,7 +9994,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 0.63,
+          "value": 0.55,
           "unitCode": "KGM"
         },
         {
@@ -10005,7 +10005,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 0.86,
+          "value": 0.76,
           "unitCode": "KGM"
         },
         {
@@ -12457,7 +12457,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø200",
-          "value": 1.03,
+          "value": 0.97,
           "unitCode": "KGM"
         },
         {
@@ -12468,7 +12468,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø250",
-          "value": 1.61,
+          "value": 1.54,
           "unitCode": "KGM"
         },
         {
@@ -12564,7 +12564,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 1.18,
+          "value": 0.99,
           "unitCode": "KGM"
         },
         {
@@ -12575,7 +12575,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 2.03,
+          "value": 1.53,
           "unitCode": "KGM"
         },
         {
@@ -12677,7 +12677,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.61,
+          "value": 0.54,
           "unitCode": "KGM"
         },
         {
@@ -12688,7 +12688,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.05,
+          "value": 0.85,
           "unitCode": "KGM"
         },
         {
@@ -12979,7 +12979,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.42,
+          "value": 0.37,
           "unitCode": "KGM"
         },
         {
@@ -12990,7 +12990,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.66,
+          "value": 0.59,
           "unitCode": "KGM"
         },
         {
@@ -13001,7 +13001,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.95,
+          "value": 0.87,
           "unitCode": "KGM"
         },
         {
@@ -13651,7 +13651,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø120",
-          "value": 0.09,
+          "value": 0.1,
           "unitCode": "KGM"
         },
         {
@@ -13662,7 +13662,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø140",
-          "value": 0.14,
+          "value": 0.16,
           "unitCode": "KGM"
         },
         {
@@ -13673,7 +13673,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø160",
-          "value": 0.21,
+          "value": 0.23,
           "unitCode": "KGM"
         },
         {
@@ -13893,7 +13893,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø200",
-          "value": 0.74,
+          "value": 0.68,
           "unitCode": "KGM"
         }
       ],
@@ -14875,7 +14875,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 0.77,
+          "value": 0.7,
           "unitCode": "KGM"
         },
         {
@@ -15364,7 +15364,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L170",
-          "value": 0.5,
+          "value": 0.42,
           "unitCode": "KGM"
         },
         {
@@ -15375,7 +15375,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.81,
+          "value": 0.63,
           "unitCode": "KGM"
         }
       ],
@@ -15446,7 +15446,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.5,
+          "value": 0.47,
           "unitCode": "KGM"
         },
         {
@@ -15457,7 +15457,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.86,
+          "value": 0.74,
           "unitCode": "KGM"
         },
         {
@@ -15468,7 +15468,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 1.36,
+          "value": 1.07,
           "unitCode": "KGM"
         },
         {
@@ -15558,7 +15558,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 1.18,
+          "value": 0.99,
           "unitCode": "KGM"
         },
         {
@@ -15569,7 +15569,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 2.03,
+          "value": 1.53,
           "unitCode": "KGM"
         },
         {
@@ -15580,7 +15580,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 2.76,
+          "value": 2.17,
           "unitCode": "KGM"
         },
         {
@@ -15679,7 +15679,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.84,
+          "value": 0.77,
           "unitCode": "KGM"
         },
         {
@@ -15690,7 +15690,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 1.45,
+          "value": 1.21,
           "unitCode": "KGM"
         },
         {
@@ -15701,7 +15701,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 2.31,
+          "value": 1.75,
           "unitCode": "KGM"
         },
         {
@@ -16038,7 +16038,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 1.43,
+          "value": 1.11,
           "unitCode": "KGM"
         },
         {
@@ -16049,7 +16049,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 2.37,
+          "value": 1.86,
           "unitCode": "KGM"
         },
         {
@@ -16060,7 +16060,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 3.41,
+          "value": 2.8,
           "unitCode": "KGM"
         },
         {
@@ -17196,7 +17196,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.7,
+          "value": 1.44,
           "unitCode": "KGM"
         },
         {
@@ -17374,7 +17374,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.7,
+          "value": 1.44,
           "unitCode": "KGM"
         },
         {
@@ -17849,7 +17849,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 1.18,
+          "value": 1.06,
           "unitCode": "KGM"
         },
         {
@@ -17860,7 +17860,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.85,
+          "value": 1.69,
           "unitCode": "KGM"
         },
         {
@@ -17871,7 +17871,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 2.67,
+          "value": 2.47,
           "unitCode": "KGM"
         },
         {
@@ -17882,7 +17882,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 3.63,
+          "value": 3.4,
           "unitCode": "KGM"
         },
         {
@@ -18379,7 +18379,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø130",
-          "value": 0.44,
+          "value": 0.4,
           "unitCode": "KGM"
         },
         {
@@ -18390,7 +18390,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø160",
-          "value": 0.66,
+          "value": 0.61,
           "unitCode": "KGM"
         },
         {
@@ -19858,7 +19858,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.16,
+          "value": 0.12,
           "unitCode": "KGM"
         },
         {
@@ -19869,7 +19869,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.19,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -19880,7 +19880,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.22,
+          "value": 0.16,
           "unitCode": "KGM"
         },
         {
@@ -20339,7 +20339,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 1.03,
+          "value": 0.91,
           "unitCode": "KGM"
         },
         {
@@ -20350,7 +20350,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.13,
+          "value": 1,
           "unitCode": "KGM"
         },
         {
@@ -20361,7 +20361,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H450",
-          "value": 1.23,
+          "value": 1.09,
           "unitCode": "KGM"
         },
         {
@@ -20372,7 +20372,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.33,
+          "value": 1.18,
           "unitCode": "KGM"
         },
         {
@@ -20891,7 +20891,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.91,
+          "value": 0.84,
           "unitCode": "KGM"
         },
         {
@@ -21492,7 +21492,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.81,
+          "value": 1.42,
           "unitCode": "KGM"
         },
         {
@@ -21503,7 +21503,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 2.47,
+          "value": 2.01,
           "unitCode": "KGM"
         },
         {
@@ -21514,7 +21514,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 3.22,
+          "value": 2.7,
           "unitCode": "KGM"
         },
         {
@@ -23203,7 +23203,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.92,
+          "value": 0.8,
           "unitCode": "KGM"
         },
         {
@@ -23214,7 +23214,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 1.16,
+          "value": 1,
           "unitCode": "KGM"
         },
         {
@@ -23225,7 +23225,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 1.39,
+          "value": 1.21,
           "unitCode": "KGM"
         },
         {
@@ -23236,7 +23236,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 1.62,
+          "value": 1.41,
           "unitCode": "KGM"
         },
         {
@@ -23707,7 +23707,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.63,
+          "value": 0.5,
           "unitCode": "KGM"
         },
         {
@@ -23718,7 +23718,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.38,
+          "value": 0.41,
           "unitCode": "KGM"
         },
         {
@@ -23958,7 +23958,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H150",
-          "value": 0.21,
+          "value": 0.19,
           "unitCode": "KGM"
         }
       ],
@@ -25033,7 +25033,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.79,
+          "value": 0.71,
           "unitCode": "KGM"
         },
         {
@@ -28591,7 +28591,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø150",
-          "value": 0.58,
+          "value": 0.54,
           "unitCode": "KGM"
         },
         {
@@ -28602,7 +28602,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø180",
-          "value": 0.83,
+          "value": 0.78,
           "unitCode": "KGM"
         },
         {
@@ -29198,7 +29198,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.23,
+          "value": 0.21,
           "unitCode": "KGM"
         },
         {
@@ -29209,7 +29209,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.45,
+          "value": 0.36,
           "unitCode": "KGM"
         }
       ],
@@ -29677,7 +29677,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 0.4,
+          "value": 0.3,
           "unitCode": "KGM"
         },
         {
@@ -29688,7 +29688,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 0.53,
+          "value": 0.41,
           "unitCode": "KGM"
         },
         {
@@ -29699,7 +29699,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L450",
-          "value": 0.67,
+          "value": 0.54,
           "unitCode": "KGM"
         }
       ],
@@ -29765,7 +29765,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 0.4,
+          "value": 0.3,
           "unitCode": "KGM"
         },
         {
@@ -29776,7 +29776,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L400",
-          "value": 0.53,
+          "value": 0.41,
           "unitCode": "KGM"
         },
         {
@@ -29787,7 +29787,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L450",
-          "value": 0.67,
+          "value": 0.54,
           "unitCode": "KGM"
         },
         {
@@ -30348,7 +30348,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.16,
+          "value": 0.12,
           "unitCode": "KGM"
         },
         {
@@ -30359,7 +30359,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.19,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -30370,7 +30370,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.22,
+          "value": 0.16,
           "unitCode": "KGM"
         },
         {
@@ -30461,7 +30461,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 1.5,
+          "value": 1.16,
           "unitCode": "KGM"
         },
         {
@@ -30472,7 +30472,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 2.27,
+          "value": 1.77,
           "unitCode": "KGM"
         },
         {
@@ -30483,7 +30483,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 3.09,
+          "value": 2.51,
           "unitCode": "KGM"
         },
         {
@@ -31939,7 +31939,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L160",
-          "value": 0.55,
+          "value": 0.43,
           "unitCode": "KGM"
         },
         {
@@ -32219,7 +32219,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.47,
+          "value": 0.44,
           "unitCode": "KGM"
         },
         {
@@ -32230,7 +32230,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.92,
+          "value": 0.77,
           "unitCode": "KGM"
         },
         {
@@ -32241,7 +32241,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.57,
+          "value": 1.19,
           "unitCode": "KGM"
         },
         {
@@ -35821,7 +35821,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.13,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -35832,7 +35832,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.26,
+          "value": 0.28,
           "unitCode": "KGM"
         },
         {
@@ -38536,7 +38536,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.76,
+          "value": 0.6,
           "unitCode": "KGM"
         },
         {
@@ -38547,7 +38547,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.18,
+          "value": 0.99,
           "unitCode": "KGM"
         },
         {
@@ -38558,7 +38558,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.7,
+          "value": 1.47,
           "unitCode": "KGM"
         },
         {
@@ -38658,7 +38658,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H150",
-          "value": 0.18,
+          "value": 0.19,
           "unitCode": "KGM"
         },
         {
@@ -38669,7 +38669,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.4,
+          "value": 0.43,
           "unitCode": "KGM"
         }
       ],
@@ -40713,7 +40713,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.3,
+          "value": 0.28,
           "unitCode": "KGM"
         },
         {
@@ -40724,7 +40724,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.59,
+          "value": 0.5,
           "unitCode": "KGM"
         }
       ],
@@ -40940,7 +40940,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.3,
+          "value": 0.28,
           "unitCode": "KGM"
         },
         {
@@ -40951,7 +40951,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 0.59,
+          "value": 0.5,
           "unitCode": "KGM"
         }
       ],
@@ -41223,7 +41223,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.77,
+          "value": 0.67,
           "unitCode": "KGM"
         },
         {
@@ -41234,7 +41234,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.5,
+          "value": 1.14,
           "unitCode": "KGM"
         },
         {
@@ -41245,7 +41245,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 2.21,
+          "value": 1.74,
           "unitCode": "KGM"
         },
         {
@@ -41256,7 +41256,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L350",
-          "value": 3.01,
+          "value": 2.46,
           "unitCode": "KGM"
         }
       ],
@@ -41395,7 +41395,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.47,
+          "value": 0.37,
           "unitCode": "KGM"
         },
         {
@@ -41406,7 +41406,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.68,
+          "value": 0.53,
           "unitCode": "KGM"
         },
         {
@@ -42856,7 +42856,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight D40",
-          "value": 0.11,
+          "value": 0.12,
           "unitCode": "KGM"
         },
         {
@@ -43099,7 +43099,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.19,
+          "value": 0.18,
           "unitCode": "KGM"
         },
         {
@@ -43110,7 +43110,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.36,
+          "value": 0.32,
           "unitCode": "KGM"
         },
         {
@@ -43121,7 +43121,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.63,
+          "value": 0.5,
           "unitCode": "KGM"
         }
       ],
@@ -45270,7 +45270,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.13,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -45281,7 +45281,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.26,
+          "value": 0.28,
           "unitCode": "KGM"
         },
         {
@@ -45501,7 +45501,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø150",
-          "value": 0.13,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -45512,7 +45512,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø200",
-          "value": 0.31,
+          "value": 0.33,
           "unitCode": "KGM"
         },
         {
@@ -45523,7 +45523,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight Ø250",
-          "value": 0.6,
+          "value": 0.65,
           "unitCode": "KGM"
         }
       ],
@@ -45601,7 +45601,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H150",
-          "value": 0.18,
+          "value": 0.19,
           "unitCode": "KGM"
         },
         {
@@ -45612,7 +45612,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H200",
-          "value": 0.4,
+          "value": 0.43,
           "unitCode": "KGM"
         }
       ],
@@ -48559,7 +48559,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L200",
-          "value": 0.63,
+          "value": 0.55,
           "unitCode": "KGM"
         },
         {
@@ -48570,7 +48570,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L250",
-          "value": 1.23,
+          "value": 0.93,
           "unitCode": "KGM"
         },
         {
@@ -48581,7 +48581,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight L300",
-          "value": 1.8,
+          "value": 1.42,
           "unitCode": "KGM"
         }
       ],
@@ -53462,7 +53462,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.12,
+          "value": 0.11,
           "unitCode": "KGM"
         },
         {
@@ -53473,7 +53473,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H400",
-          "value": 0.16,
+          "value": 0.14,
           "unitCode": "KGM"
         },
         {
@@ -53484,7 +53484,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H500",
-          "value": 0.2,
+          "value": 0.18,
           "unitCode": "KGM"
         },
         {
@@ -53495,7 +53495,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H600",
-          "value": 0.24,
+          "value": 0.21,
           "unitCode": "KGM"
         },
         {
@@ -53708,7 +53708,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H150",
-          "value": 0.21,
+          "value": 0.19,
           "unitCode": "KGM"
         }
       ],
