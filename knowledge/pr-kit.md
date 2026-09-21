@@ -5,16 +5,16 @@
 Обновлено 2026-09-04: все упоминания наград приведены к официальным формулировкам из `awards.ts` (см. [[awards-verified]]), адреса — к новому сайту. Правила владельца для любых текстов: материалы и размеры конкретных изделий не называть, цены не публиковать, NYPDA 2023 — «Product Designer of the Year», Awwwards 2026 — «Nominee», Interlight — «первый собственный стенд, октябрь 2025».
 
 ## Company boilerplate — short (EN, ~50 words)
-Vargov® Design is a Russian brand creating author's lighting and decorative compositions — a synthesis of art, engineering precision and contemporary Russian design philosophy. Founded and led by designer Anton Vargov, every composition is made to order and assembled for a specific interior. 24 awards from international juries. Trademark VARGOV No. 896936.
+Vargov® Design is a Russian brand creating author's lighting and decorative compositions — a synthesis of art, engineering precision and contemporary Russian design philosophy. Founded and led by designer Anton Vargov, every composition is made to order and assembled for a specific interior. 25 awards from international juries. Trademark VARGOV No. 896936.
 
 ## Company boilerplate — long (EN, ~160 words)
-Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand's compositions are Platinum Winners at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026 — 24 awards from international juries in total, including IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award and the European Product Design Award. Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury (10th season). In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. Every piece is made to order, with official dealers in Moscow, Dubai and Hanoi. The catalogue holds 605 compositions, each with its own LC code.
+Vargov® Design is a Russian brand and international company producing unique, author-designed lighting and decorative compositions — sculptural pieces that sit at the intersection of art, engineering precision and contemporary Russian design. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand's compositions are Platinum Winners at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026 — 25 awards from international juries in total, including IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award and the European Product Design Award. Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury (10th season). In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. Every piece is made to order, with official dealers in Moscow, Dubai and Hanoi. The catalogue holds 605 compositions, each with its own LC code.
 
 ## Founder bio — short (EN)
 Anton Vargov is the founder and chief designer of Vargov® Design, based in Moscow. Named **Product Designer of the Year** at the NY Product Design Awards 2023, he is the author of compositions recognised as **Platinum Winner** at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, and **Gold Winner** at the MUSE Design Awards 2026. He also serves as a jury member for leading Russian and international design and architecture awards, including the ADD Awards High Jury.
 
 ## Awards line — verified (используйте ЭТУ формулировку, не общий список)
-Источник — `awards.ts` сайта, 24 награды, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
+Источник — `awards.ts` сайта, 25 наград, полная таблица со ссылками и сертификатами в [[awards-verified]]. Уровни — дословно:
 
 - **Platinum Winner** — MUSE Design Awards 2023 (LC0237); International Architecture & Design Awards · ADC 2023 (LC0303); The London Design Awards 2023 (LC0326)
 - **Product Designer of the Year** — NY Product Design Awards 2023 (LC0343)
@@ -27,7 +27,7 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 - **Jury** — ADD Awards 2024, High Jury of the 10th season — Anton Vargov
 - **Nominee** — Awwwards 2026, Vargov®Design 3D Configurator (номинация, не победа)
 
-Короткая строка для писем (EN): *24 awards from international juries, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026.*
+Короткая строка для писем (EN): *25 awards from international juries, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026.*
 
 Не писать: «IDA 2026» (годы 2022 и 2025), «Designer of the Year (Gold)», «RLDC» как отдельную премию (это конкурс «Российский светодизайн» на Interlight 2022), «award-winning configurator», «24 награды».
 
@@ -139,7 +139,7 @@ info@vargov.ru · vargov.ru · vargov.design
 
 ## Исправления для следующих писем (вместо устаревших фраз в архиве)
 
-- Вместо *«recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025»* → *«24 awards from international juries, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026»*.
+- Вместо *«recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025»* → *«25 awards from international juries, including Platinum Winner at the MUSE Design Awards 2023, the International Architecture & Design Awards 2023 and The London Design Awards 2023, Product Designer of the Year at the NY Product Design Awards 2023, and Gold Winner at the MUSE Design Awards 2026»*.
 - Вместо *«In October 2025 we made our first appearance at a Russian trade show, Interlight»* → *«In October 2025 we exhibited at Interlight Moscow with our first own stand; the brand had taken the special prize of the Russian Lighting Design competition at Interlight back in 2022»*.
 - Вместо *«manufactured at our own factory»* — допустимо *«own production, made to order»* (формулировка llms.txt сайта); страну производства в письмах не подчёркивать.
 - Ссылки: только `https://vargov.ru/en/…` и пресс-кит `https://vargov.ru/en/press`; `vargov.design` — адрес конфигуратора, не сайта.
