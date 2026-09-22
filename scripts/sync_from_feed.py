@@ -289,6 +289,15 @@ def main() -> int:
                          f"из {len(by_code)} (например {sorted(blanked)[:5]}) — отказ, тексты не тронуты")
             recs = load_json(ds_path)
             text_changed = 0
+        # Флаг награды приходит из products.jsonl ночью, а строки наград (раздел
+        # «Награды» карточки) собирает только локальный сборщик из awards.ts сайта.
+        # Пока пересборки не было, снаружи это выглядит как недоделанная карточка —
+        # поэтому такое расхождение поднимаем как drift (код 3 → issue), а не молчим.
+        orphan = sorted(r["code"] for r in recs if r.get("award_winning") and not r.get("awards"))
+        if orphan:
+            drift.append(f"флаг награды есть, а строк наград нет у {len(orphan)} артикулов "
+                         f"({', '.join(orphan[:8])}{'…' if len(orphan) > 8 else ''}) — "
+                         f"нужна локальная пересборка build_from_site.py")
         if text_changed and not dry:
             write_datasets(recs, KB / "datasets", english=False)
             write_datasets(recs, KB / "en" / "datasets", english=True)
