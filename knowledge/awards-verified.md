@@ -27,20 +27,29 @@
 | 11 | Luxury Lifestyle Awards (Нью-Йорк) | 2024 | Winner · Best Luxury Lighting Design Studio in Dubai, UAE | — (студия) | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design | `cert-06.png` | — |
 | 12 | ADD Awards (addawards.ru) | 2024 | High Jury member of the award's 10th season — Anton Vargov | — (персона) | ~~https://addawards.ru/jury/293063/~~ — страница отдаёт 404 с 05.09.2026, подтверждение только сертификатом | `cert-07.jpg` | — |
 | 13 | ADD Awards | 2023 | 2nd place, 9th season · Interior & exterior objects · built project, composition LC0342 | LC0342 | нет (в `awards.ts` без `href`) | `cert-08.jpg` | — |
-| 14 | European Product Design Award (EPDA) | 2023 | Winner · Home Lighting: Hanging / Pendant · composition LC0339 | LC0339 | https://www.productdesignaward.eu/winners/hm/2024/22549323/ | `cert-05.png` | — |
+| 14 | European Product Design Award (EPDA) | 2023 | Winner · Home Lighting: Hanging / Pendant · composition LC0339 | LC0339; награда распространяется на LC0340 и LC0341 — слово владельца 22.09.2026, «это те же элементы» | https://www.productdesignaward.eu/winners/hm/2024/22549323/ | `cert-05.png` | — |
 | 15 | NY Product Design Awards (IAA) | 2023 | Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343 | LC0343 | https://nydesignawards.com/winner-info.php?id=1296 | нет; знак `ny-designer-2023.png` | ✔ 2026-09-04 |
-| 16 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313 | LC0313 | https://nydesignawards.com/winner-info.php?id=1004 | `cert-15.jpg` | — |
+| 16 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313 | LC0313; награда распространяется на LC0312 — слово владельца 22.09.2026 | https://nydesignawards.com/winner-info.php?id=1004 | `cert-15.jpg` | — |
 | 17 | BLT Built Design Awards (Швейцария) | 2023 | Winner · Electrical & Lighting Systems · composition LC0343 | LC0343 | https://bltawards.com/winner/blt/2023/21559/0/ | `cert-10.png` | — |
 | 18 | The London Design Awards (IAA) | 2023 | Platinum Winner · Product Design — Lighting · light composition LC0326 | LC0326 | https://thelondondesignawards.com/winner-info.php?id=538 | `cert-11.png` | — |
 | 19 | International Architecture & Design Awards · ADC | 2023 | Platinum Winner · Lighting Product Design Built / Professional · light composition LC0303 | LC0303 | https://ad-c.org/winner/light-composition-vargov-design-lc0303/ | `cert-12.jpg` | ✔ 2026-09-04 |
 | 20 | International Architecture & Design Awards · ADC | 2023 | Gold Winner · Lighting Product Design Concept / Professional · «Drapery», composition LC0323 | LC0323 | https://ad-c.org/winner/vargov-design-lc0323-drapery/ | `cert-13.jpg` | ✔ 2026-09-04 |
-| 21 | Houzee Awards (Architecture Collection / ADC) | 2023 | Gold Winner · Lighting Design · composition LC0335 | LC0335 | https://architecture-collection.com/winner/ha2301053/ | `cert-14.jpg` | — |
+| 21 | Houzee Awards (Architecture Collection / ADC) | 2023 | Gold Winner · Lighting Design · composition LC0335 | LC0335; награда распространяется на LC0338 — слово владельца 22.09.2026 | https://architecture-collection.com/winner/ha2301053/ | `cert-14.jpg` | — |
 | 22 | Interlight Russia · Российский светодизайн (Gefera Media, ВНИСИ) | 2022 | Special prize · Best luminaire design 2021–2022 · composition LC0217 | LC0217 — приз за всю серию лент: LC0104, LC0217, LC0217-1, LC0228, LC0279, LC0280, LC0326, LC0327, LC0328, LC0329 (`codes`) | https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html | `cert-20.jpg` | — |
-| 23 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313 — третья награда 2023 года, отдельная заявка; найдена в кабинете участника 05.09.2026 | LC0313 | https://nydesignawards.com/winner-info.php?id=1005 | `cert-23.jpg` | ✔ 2026-09-05 |
+| 23 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313 — третья награда 2023 года, отдельная заявка; найдена в кабинете участника 05.09.2026 | LC0313; награда распространяется на LC0312 — слово владельца 22.09.2026 | https://nydesignawards.com/winner-info.php?id=1005 | `cert-23.jpg` | ✔ 2026-09-05 |
 | 24 | ICONIC AWARDS · Innovative Interior (German Design Council) | 2023 | Selection · Lighting design · композиции LC0319 и LC0320 | LC0319, LC0320 | публичной страницы нет: домен iconic-world.com отдаёт 301 на несуществующий хост, раздел directory переехал и отдаёт 404 | знак организатора и ролик победителя, заявка 2366 | — |
 | 25 | European Product Design Award (EPDA) | 2026 | Winner · HOME (Household Products)/Home Lighting: Designer/Custom Lighting · «Crystal Breakthrough», composition LC0543-2 | LC0543-2 | https://www.productdesignaward.eu/winners/epda/2026/12910/ | `epda-2026-cert.jpg`, знак `epda-winner-2026.png` | ✔ 2026-09-22 |
 
 Сводка по уровням: Platinum Winner — 3 (MUSE 2023, ADC 2023, London 2023); Product Designer of the Year — 1; Gold Winner — 5 (MUSE 2026, NYPDA 2023 ×2 — Decorative Lighting и Hanging Lamps, ADC 2023, Houzee 2023); Silver — 1; Winner — 8 (в том числе EPDA 2026); Honorable Mention — 2; специальный приз — 1; 2-е место — 1; членство в жюри — 1; Nominee — 1; Selection — 1 (ICONIC 2023). Итого 25.
+
+**Пара разделяет премию — правило от 22.09.2026.** Сертификат выдаётся на
+заявочный артикул, но награда бывает шире: владелец подтвердил тремя сообщениями,
+что EPDA 2023 распространяется на LC0340 и LC0341 (заявка LC0339), Houzee 2023 —
+на LC0338 (заявка LC0335), обе золотые NY Product Design Awards 2023 — на LC0312
+(заявка LC0313), «это те же элементы». Поэтому **число награждённых артикулов
+больше числа премий и больше числа сертификатов**: премий 25, артикулов с
+наградой 33. Сверять награждённость по наличию сертификата нельзя — только по
+столбцу артикулов этой таблицы, где парные перечислены явно.
 
 **25-я награда — EPDA 2026, записана 22.09.2026.** Основания: письмо жюри mail@productdesignaward.eu на info@vargov.ru от 21.09.2026 13:26 («Congratulations — You're an EPDA 2026 Winner!»), публичная страница победителя и именной сертификат за подписью Hossein Farmani, President EPDA. Правка сайта (`awards.ts`, картинки в `public/img/awards/`) внесена в рабочую копию 22.09 и ждёт выкладки: до неё `vargov.ru/llms.txt` и `awardsCount()` на бою отдают 24. **Числа в наших `llms.txt`, `en/llms.txt`, `llms-full.txt`, `pr-kit.md` и `brand.md` правятся руками и обновлены тем же заходом — если сайт по какой-то причине не выложат, здесь число окажется впереди боевого.**
 

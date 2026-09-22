@@ -107,7 +107,10 @@ CATEGORIES = {
     "sculptural-decor": ("Скульптурные композиции", "Sculptural compositions & decor", "/sculptural-decor", "/en/sculptural-decor"),
 }
 
-CODE_RE = re.compile(r"LC\d{4}(?:-\d)?")
+# Суффикс варианта берём целиком: у LC0543-2 он один знак, но правило
+# «-\d» молча отрезало бы второй, а на паре LC0543 / LC0543-2 это уже
+# стоило сайту ссылки не на тот артикул (22.09.2026).
+CODE_RE = re.compile(r"LC\d{4}(?:-\d+)?")
 SENTENCE_END = re.compile(r"[.!?…؟](?=\s|$)", re.UNICODE)
 SNIPPET_MAX, SNIPPET_MIN = 165, 100
 
