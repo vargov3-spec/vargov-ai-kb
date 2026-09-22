@@ -325,7 +325,7 @@ Compositions: 605
 | LC0309 | Decorative composition | https://vargov.ru/en/catalog/lc0309 |  |
 | LC0310 | Light composition | https://vargov.ru/en/catalog/lc0310 |  |
 | LC0311 | Light composition | https://vargov.ru/en/catalog/lc0311 |  |
-| LC0312 | Decorative composition | https://vargov.ru/en/catalog/lc0312 |  |
+| LC0312 | Decorative composition | https://vargov.ru/en/catalog/lc0312 | 2 |
 | LC0313 | Light composition | https://vargov.ru/en/catalog/lc0313 | 2 |
 | LC0315 | Light composition | https://vargov.ru/en/catalog/lc0315 |  |
 | LC0316 | Wall light-sculpture | https://vargov.ru/en/catalog/lc0316 |  |
@@ -351,10 +351,10 @@ Compositions: 605
 | LC0335 | Light composition | https://vargov.ru/en/catalog/lc0335 | 1 |
 | LC0336 | Light composition | https://vargov.ru/en/catalog/lc0336 |  |
 | LC0337 | Light composition | https://vargov.ru/en/catalog/lc0337 |  |
-| LC0338 | Light composition | https://vargov.ru/en/catalog/lc0338 |  |
+| LC0338 | Light composition | https://vargov.ru/en/catalog/lc0338 | 1 |
 | LC0339 | Light composition | https://vargov.ru/en/catalog/lc0339 | 1 |
-| LC0340 | Floor lamp | https://vargov.ru/en/catalog/lc0340 |  |
-| LC0341 | Light composition | https://vargov.ru/en/catalog/lc0341 |  |
+| LC0340 | Floor lamp | https://vargov.ru/en/catalog/lc0340 | 1 |
+| LC0341 | Light composition | https://vargov.ru/en/catalog/lc0341 | 1 |
 | LC0342 | Light composition | https://vargov.ru/en/catalog/lc0342 | 1 |
 | LC0343 | Light composition | https://vargov.ru/en/catalog/lc0343 | 2 |
 | LC0344 | Light composition | https://vargov.ru/en/catalog/lc0344 |  |
@@ -558,7 +558,7 @@ Compositions: 605
 | LC0542 | Light composition | https://vargov.ru/en/catalog/lc0542 |  |
 | LC0543 | Wall art object | https://vargov.ru/en/catalog/lc0543 |  |
 | LC0543-1 | Wall light | https://vargov.ru/en/catalog/lc0543-1 |  |
-| LC0543-2 | Light composition | https://vargov.ru/en/catalog/lc0543-2 |  |
+| LC0543-2 | Light composition | https://vargov.ru/en/catalog/lc0543-2 | 1 |
 | LC0544 | Light composition | https://vargov.ru/en/catalog/lc0544 |  |
 | LC0545 | Light composition | https://vargov.ru/en/catalog/lc0545 |  |
 | LC0545-1 | Light composition | https://vargov.ru/en/catalog/lc0545-1 |  |

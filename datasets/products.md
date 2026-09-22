@@ -325,7 +325,7 @@
 | LC0309 | Декоративная композиция | https://vargov.ru/catalog/lc0309 |  |
 | LC0310 | Световая композиция | https://vargov.ru/catalog/lc0310 |  |
 | LC0311 | Световая композиция | https://vargov.ru/catalog/lc0311 |  |
-| LC0312 | Декоративная композиция | https://vargov.ru/catalog/lc0312 |  |
+| LC0312 | Декоративная композиция | https://vargov.ru/catalog/lc0312 | 2 |
 | LC0313 | Световая композиция | https://vargov.ru/catalog/lc0313 | 2 |
 | LC0315 | Световая композиция | https://vargov.ru/catalog/lc0315 |  |
 | LC0316 | Настенный светильник-скульптура | https://vargov.ru/catalog/lc0316 |  |
@@ -351,10 +351,10 @@
 | LC0335 | Световая композиция | https://vargov.ru/catalog/lc0335 | 1 |
 | LC0336 | Световая композиция | https://vargov.ru/catalog/lc0336 |  |
 | LC0337 | Световая композиция | https://vargov.ru/catalog/lc0337 |  |
-| LC0338 | Световая композиция | https://vargov.ru/catalog/lc0338 |  |
+| LC0338 | Световая композиция | https://vargov.ru/catalog/lc0338 | 1 |
 | LC0339 | Световая композиция | https://vargov.ru/catalog/lc0339 | 1 |
-| LC0340 | Торшер | https://vargov.ru/catalog/lc0340 |  |
-| LC0341 | Световая композиция | https://vargov.ru/catalog/lc0341 |  |
+| LC0340 | Торшер | https://vargov.ru/catalog/lc0340 | 1 |
+| LC0341 | Световая композиция | https://vargov.ru/catalog/lc0341 | 1 |
 | LC0342 | Световая композиция | https://vargov.ru/catalog/lc0342 | 1 |
 | LC0343 | Световая композиция | https://vargov.ru/catalog/lc0343 | 2 |
 | LC0344 | Световая композиция | https://vargov.ru/catalog/lc0344 |  |
@@ -558,7 +558,7 @@
 | LC0542 | Световая композиция | https://vargov.ru/catalog/lc0542 |  |
 | LC0543 | Настенный арт-объект | https://vargov.ru/catalog/lc0543 |  |
 | LC0543-1 | Бра | https://vargov.ru/catalog/lc0543-1 |  |
-| LC0543-2 | Световая композиция | https://vargov.ru/catalog/lc0543-2 |  |
+| LC0543-2 | Световая композиция | https://vargov.ru/catalog/lc0543-2 | 1 |
 | LC0544 | Световая композиция | https://vargov.ru/catalog/lc0544 |  |
 | LC0545 | Световая композиция | https://vargov.ru/catalog/lc0545 |  |
 | LC0545-1 | Световая композиция | https://vargov.ru/catalog/lc0545-1 |  |
