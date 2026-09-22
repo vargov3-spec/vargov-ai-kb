@@ -2,7 +2,7 @@
 
 > Vargov® Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. Founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
 
-The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 24 international awards.
+The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 25 international awards.
 
 ## Canonical source
 
@@ -73,7 +73,7 @@ In 2022 the brand took the special prize of the Russian Lighting Design competit
 
 ## Language versions
 
-Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar)
+Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar) · 中文 (knowledge base only) — [zh/llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/zh/llms.txt)
 
 ## Contact
 

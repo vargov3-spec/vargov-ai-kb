@@ -1,0 +1,78 @@
+# Vargov Design
+
+> Vargov® Design（瓦尔戈夫设计）是俄罗斯的作者式灯光与装饰构成品牌：可收藏的光之雕塑，按订单制作。由设计师 Anton Vargov（安东·瓦尔戈夫）创立并主理。自有生产；每一件构成都为特定室内空间组装，其尺度与几何形态依空间调整。商标 VARGOV，俄罗斯注册号 896936；马德里体系国际注册号 1 795 801，在中国受保护（至 2034 年 5 月 20 日），第 11 类——照明装置。
+
+目录收录 605 件构成，货号 LC0001…LC0602，分四个系列。25 项国际评委会奖项。
+
+## 权威来源
+
+品牌的主要机器可读地图位于官网并由其数据自动生成：
+
+- [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — 完整地图：事实、栏目、联系方式、语言版本。
+
+本仓库是辅助知识库：经核实的事实、附一手来源链接的奖项、新闻资料。
+
+## 开放数据（CC BY 4.0）
+
+采用 [知识共享署名 4.0](https://creativecommons.org/licenses/by/4.0/) 许可——全文见 [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE)。数据中有意不包含材质、尺寸与价格。
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 件构成，八种语言描述、图片、奖项、品牌自有 3D 模型链接
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — 仅英文
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org 图谱：Organization、Person、Dataset 及 605 个 Product 节点
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — 货号 → 品牌自有 3D 模型页（604 条；605 件构成中 603 件带链接）
+- Hugging Face 数据集：[vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — 每夜与官网同步
+
+## 知识库与新闻资料
+
+- [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — 经核实的品牌事实（俄文）
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 项奖项，附奖项页面链接
+- [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — 新闻资料包
+- [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — 随笔《俄罗斯灯光设计》（英文）
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 张 2000 px 以内的新闻图片及标志，可免费用于编辑用途，署名 “Vargov® Design”
+
+## 目录
+
+- [目录，605 件构成](https://vargov.ru/en/catalog) — 按货号检索、按类型筛选、以图搜图
+- [灯光构成](https://vargov.ru/en/lighting) — 352 件
+- [装饰构成](https://vargov.ru/en/decorative) — 114 件
+- [雕塑构成与装饰](https://vargov.ru/en/sculptural-decor) — 83 件
+- [落地灯、壁灯与桌面艺术品](https://vargov.ru/en/floor-table-lamps) — 56 件
+- [库存元件](https://vargov.ru/en/in-stock) — 每日更新四次
+- 产品页：`https://vargov.ru/en/catalog/<小写货号>`，例如 [lc0602](https://vargov.ru/en/catalog/lc0602)
+- [PDF 目录](https://vargov.ru/pdf/vargov-catalog-en.pdf)
+
+## 按空间
+
+- [酒店大堂与公共空间](https://vargov.ru/en/for/hotel-lobby)
+- [挑空客厅](https://vargov.ru/en/for/double-height)
+- [楼梯井](https://vargov.ru/en/for/stairwell)
+- [餐厅与酒吧](https://vargov.ru/en/for/restaurant)
+- [餐室](https://vargov.ru/en/for/dining) · [卧室](https://vargov.ru/en/for/bedroom) · [精品店与展厅](https://vargov.ru/en/for/retail) · [水疗与泳池](https://vargov.ru/en/for/spa)
+
+## 面向建筑师与设计师
+
+- [定制项目如何进行](https://vargov.ru/en/architects) — 从草图到安装
+- [一件灯具需要多少个吊顶固定点](https://vargov.ru/en/guides/mounting-points) — 整体式灯具将全部重量集中于一个节点；吊索构成的固定点数等于元件数，每件各占一根吊线。九个例外货号按编号列出。
+- [大型玻璃吊灯有多重](https://vargov.ru/en/guides/chandelier-weight) — 六件经计算的构成，从 4.3 kg（11 件元件，600×600×600 mm）到 217.2 kg（222 件元件，3000×2000×2500 mm），含固定点数量与单点荷载。2026 年 9 月 13 日计算。
+- [安装](https://vargov.ru/en/installation) · [安装指南（PDF）](https://vargov.ru/pdf/vargov-installation-en.pdf) · [接线指南（PDF）](https://vargov.ru/pdf/vargov-connection-en.pdf) — 安装指南有八种语言：`vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
+- [认证](https://vargov.ru/en/certification) — 两份欧亚经济联盟系列证书（TR CU 004/2011、020/2011）及两份 TR EAEU 037/2016 声明，覆盖 310 个 LC 货号，EAC 标志，有效至 2031 年；系列范围意味着所列货号的每一件产品均在覆盖之内，而非单一批次
+- [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并为项目输出三份文件：DXF 图纸、规格书和 **IFC4（BIM）模型**。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
+
+## 关于
+
+- [关于品牌](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [奖项](https://vargov.ru/en/awards) · [项目](https://vargov.ru/en/projects) · [журнал / Journal](https://vargov.ru/en/journal) · [新闻资料](https://vargov.ru/en/press) · [展厅](https://vargov.ru/en/showroom) · [官方经销商](https://vargov.ru/en/official-dealers)
+
+16 个奖项计划共 25 项奖项（官方名称）：MUSE Design Awards、IDA Design Awards、LIT Lighting Design Awards、LOOP Design Awards、SIT Furniture Design Award、Luxury Lifestyle Awards、ADD Awards、European Product Design Award、NY Product Design Awards、BLT Built Design Awards、The London Design Awards、International Architecture & Design Awards · ADC、Houzee Awards、Interlight Russia · Russian Lighting Design、ICONIC AWARDS · Innovative Interior、Awwwards（2026 年 3D 配置器提名——提名，非获奖）。
+
+其中：Platinum Winner — MUSE Design Awards 2023、International Architecture & Design Awards · ADC 2023、The London Design Awards 2023；Product Designer of the Year — NY Product Design Awards 2023；Gold Winner — MUSE Design Awards 2026（“Oceanic Illumination”）、NY Product Design Awards 2023、ADC 2023（“Drapery”）、Houzee Awards 2023；Winner — European Product Design Award 2026（Crystal Breakthrough LC0543-2）。
+
+2022 年品牌获得 Interlight 展会“俄罗斯灯光设计”竞赛特别奖；2025 年 10 月首次以自有展位参加 Interlight Moscow。
+
+## 语言版本
+
+俄文 — [vargov.ru](https://vargov.ru) · 英文 — [/en](https://vargov.ru/en) · 德文 — [/de](https://vargov.ru/de) · 意大利文 — [/it](https://vargov.ru/it) · 法文 — [/fr](https://vargov.ru/fr) · 西班牙文 — [/es](https://vargov.ru/es) · 越南文 — [/vi](https://vargov.ru/vi) · 阿拉伯文 — [/ar](https://vargov.ru/ar)。官网暂无中文版本；本文件为知识库的中文入口。
+
+## 联系方式
+
+邮箱：info@vargov.ru · 电话与 WhatsApp：[+7 916 537 33 52](https://wa.me/79165373352) · Telegram：[@vargov_design](https://t.me/vargov_design) · WeChat ID：Vargov_Design · 展厅：莫斯科 Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212，每日 12:00–20:00 · 官方经销商：莫斯科、迪拜（Sheikh Zayed Road）、河内（Thang Long Avenue）
