@@ -6,7 +6,7 @@
 
 Общий блок для всех релизов:
 
-> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 24 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
+> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 25 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
 >
 > **Media contact:** info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en
 

@@ -84,7 +84,7 @@ Moscow, октябрь 2025: `public/img/interlight/gallery/il-01…il-52.jpg`
 ## Что править в профиле до подачи
 
 В описании бренда на Archello стоит «24 awards from international juries». Верно —
-**24 награды в 16 программах, без слова international**: среди шестнадцати есть
+**25 наград в 16 программах, без слова international** (с 22.09.2026, EPDA 2026): среди шестнадцати есть
 российские (Interlight Russia 2022, ADD Awards 2023). Те же строки лежат в
 `pr-kit.md`, `maps-cards.md`, `dealer-page-brief.md` — чинить все, иначе площадки
 разойдутся.
@@ -107,7 +107,7 @@ Moscow, октябрь 2025: `public/img/interlight/gallery/il-01…il-52.jpg`
 ## Что из этой работы остаётся полезным и бесплатным
 
 1. **Правка профиля бренда на Archello** — «24 awards from international juries» на
-   **24 награды в 16 программах, без слова international**. Денег не стоит,
+   **25 наград в 16 программах, без слова international**. Денег не стоит,
    делается в кабинете. Те же строки чинить в `pr-kit.md`, `maps-cards.md`,
    `dealer-page-brief.md`.
 2. **Знание про фотографии** ([[catalog-shots-are-renders]]): у бренда нет живой
