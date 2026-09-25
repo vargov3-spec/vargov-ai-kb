@@ -57,7 +57,7 @@
 - [大型玻璃吊灯有多重](https://vargov.ru/en/guides/chandelier-weight) — 六件经计算的构成，从 4.3 kg（11 件元件，600×600×600 mm）到 217.2 kg（222 件元件，3000×2000×2500 mm），含固定点数量与单点荷载。2026 年 9 月 13 日计算。
 - [安装](https://vargov.ru/en/installation) · [安装指南（PDF）](https://vargov.ru/pdf/vargov-installation-en.pdf) · [接线指南（PDF）](https://vargov.ru/pdf/vargov-connection-en.pdf) — 安装指南有八种语言：`vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [认证](https://vargov.ru/en/certification) — 两份欧亚经济联盟系列证书（TR CU 004/2011、020/2011）及两份 TR EAEU 037/2016 声明，覆盖 310 个 LC 货号，EAC 标志，有效至 2031 年；系列范围意味着所列货号的每一件产品均在覆盖之内，而非单一批次
-- [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并为项目输出三份文件：DXF 图纸、规格书和 **IFC4（BIM）模型**。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
+- [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并访客可自行导出 **IFC4（BIM）模型**、PDF 规格书和招标清单；DXF 图纸仅提供给品牌的生产部门、经销商和合作伙伴。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
 
 ## 关于
 
