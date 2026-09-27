@@ -1,9 +1,9 @@
 # Награды Vargov® Design — верифицированный список
 
-Пересобрано 2026-09-04 из единственного источника истины — `src/lib/data/awards.ts` репозитория сайта (`V:/new site Vargov Design/web`), функция `awardsCount()` = **24** (пересчитано 2026-09-13 после добавления награды № 24 — ICONIC AWARDS 2023 · Innovative Interior · Selection, LC0319 и LC0320). Формулировки уровней взяты дословно из поля `item.en`, сертификаты — из `item.cert` (абсолютный адрес: `https://vargov.ru` + путь). Публичная страница: [vargov.ru/awards](https://vargov.ru/awards) · [vargov.ru/en/awards](https://vargov.ru/en/awards).
+Пересобрано 2026-09-04 из единственного источника истины — `src/lib/data/awards.ts` репозитория сайта (`V:/new site Vargov Design/web`), функция `awardsCount()` = **25** (пересчитано 2026-09-27 исполнением `awards.ts` из origin/main сайта 19b34fb: 16 программ, 28 записей, 3 вне счёта; до этого 24 — 2026-09-13, после добавления награды № 24 — ICONIC AWARDS 2023 · Innovative Interior · Selection, LC0319 и LC0320). Формулировки уровней взяты дословно из поля `item.en`, сертификаты — из `item.cert` (абсолютный адрес: `https://vargov.ru` + путь). Публичная страница: [vargov.ru/awards](https://vargov.ru/awards) · [vargov.ru/en/awards](https://vargov.ru/en/awards).
 
 Правила владельца (из комментариев `awards.ts`, действуют для всех текстов о наградах — KB, PR, Wikidata, Pinterest):
-- наград **24**; два «Официальных поздравления жюри — Gold Winner» (NYPDA 2023, MUSE 2026) — документы к награде, в счёт **не идут**;
+- наград **25**; три «Официальных поздравления жюри» (NYPDA 2023 — две записи, MUSE 2026 — одна) — документы к награде, в счёт **не идут**;
 - NY Product Design Awards 2023, LC0343 — формулировка **«Product Designer of the Year»** (титул), не «Winner»;
 - Awwwards 2026 — только **«Nominee»**; никаких «award-winning» / «winner» про конфигуратор;
 - IDA: LC0236 Silver = **2022**, LC0516 Honorable Mention = **2025** (в июльской версии этого файла у обеих стоял 2026 — исправлено).
@@ -51,7 +51,7 @@
 наградой 33. Сверять награждённость по наличию сертификата нельзя — только по
 столбцу артикулов этой таблицы, где парные перечислены явно.
 
-**25-я награда — EPDA 2026, записана 22.09.2026.** Основания: письмо жюри mail@productdesignaward.eu на info@vargov.ru от 21.09.2026 13:26 («Congratulations — You're an EPDA 2026 Winner!»), публичная страница победителя и именной сертификат за подписью Hossein Farmani, President EPDA. Правка сайта (`awards.ts`, картинки в `public/img/awards/`) внесена в рабочую копию 22.09 и ждёт выкладки: до неё `vargov.ru/llms.txt` и `awardsCount()` на бою отдают 24. **Числа в наших `llms.txt`, `en/llms.txt`, `llms-full.txt`, `pr-kit.md` и `brand.md` правятся руками и обновлены тем же заходом — если сайт по какой-то причине не выложат, здесь число окажется впереди боевого.**
+**25-я награда — EPDA 2026, записана 22.09.2026.** Основания: письмо жюри mail@productdesignaward.eu на info@vargov.ru от 21.09.2026 13:26 («Congratulations — You're an EPDA 2026 Winner!»), публичная страница победителя и именной сертификат за подписью Hossein Farmani, President EPDA. Правка сайта (`awards.ts`, картинки в `public/img/awards/`) внесена в рабочую копию 22.09 и выложена: 27.09 она есть в origin/main сайта (19b34fb), а push сайта — это выкладка; `awardsCount()` там = 25 (проверено исполнением `awards.ts` 27.09.2026). **Числа в наших `llms.txt`, `en/llms.txt`, `llms-full.txt`, `pr-kit.md` и `brand.md` правятся руками и обновлены тем же заходом — если сайт по какой-то причине не выложат, здесь число окажется впереди боевого.**
 
 Примечание к строке 14: адрес страницы EPDA содержит сегменты `hm/2024`, тогда как в `awards.ts` стоит «Winner» и 2023 — страница в этом проекте не открывалась, расхождение не подтверждено и не опровергнуто.
 

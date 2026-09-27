@@ -22,7 +22,7 @@ Duck.ai цитирует sk-glass.ru, romatti.ru, svetholl.ru — их стра�
    проёма, где стоит зритель, что видно с верхних уровней.
 2. **3D-модель до изготовления.** Композиция собирается в конфигураторе бренда: число и
    размер элементов, форма облака, высота подвесов, узлы крепления. Дизайнер получает
-   ссылку на модель, спецификацию в PDF, чертёж DXF и модель IFC4 для проекта.
+   ссылку на модель, спецификацию в PDF, тендерный лист и модель IFC4 для проекта.
 3. **Согласование.** Правки вносятся в модель, а не в готовую вещь; масса композиции и
    нагрузка на точки подвеса считаются по составу — это нужно конструктору потолка.
 4. **Изготовление.** Каждый элемент делается под эту композицию на собственном
@@ -30,7 +30,7 @@ Duck.ai цитирует sk-glass.ru, romatti.ru, svetholl.ru — их стра�
 5. **Монтаж.** К композиции идёт инструкция по монтажу и схема узлов; в Москве монтаж
    выполняет шоурум, у дилеров в Дубае и Ханое — их бригады.
 
-**Что получает дизайнер:** 3D-модель и ссылку на неё, PDF-спецификацию, DXF, IFC4, схему
+**Что получает дизайнер:** 3D-модель и ссылку на неё, PDF-спецификацию, тендерный лист, IFC4, схему
 подвеса, снимки композиции для презентации заказчику. Всё это можно показать в шоуруме в
 Москве (Нахимовский пр., 24) или у дилеров.
 
@@ -43,7 +43,7 @@ Duck.ai цитирует sk-glass.ru, romatti.ru, svetholl.ru — их стра�
    most is the height of the void, where the viewer stands and what is seen from above.
 2. **A 3D model before production.** The composition is assembled in the brand's
    configurator: number and size of elements, cloud shape, drop lengths, fixing points. The
-   designer receives a link to the model, a PDF specification, a DXF drawing and an IFC4
+   designer receives a link to the model, a PDF specification, a tender sheet and an IFC4
    model for the project.
 3. **Approval.** Changes are made to the model, not to a finished piece; the weight of the
    composition and the load per suspension point are calculated from its composition —
@@ -53,7 +53,7 @@ Duck.ai цитирует sk-glass.ru, romatti.ru, svetholl.ru — их стра�
 5. **Installation.** Each composition comes with installation instructions and a node
    diagram; in Moscow the showroom team installs, in Dubai and Hanoi — the dealers' crews.
 
-**What the designer gets:** the 3D model and a link to it, a PDF specification, DXF, IFC4,
+**What the designer gets:** the 3D model and a link to it, a PDF specification, a tender sheet, IFC4,
 a suspension diagram, images of the composition for the client presentation. All of it can
 be seen at the showroom in Moscow (Nakhimovsky Prospekt 24) or at the dealers.
 

@@ -33,7 +33,7 @@ Threads — открытая текстовая площадка, которую
 > vargov.ru
 
 **2. Награды**
-> 24 awards from international juries across 15 programmes: MUSE Design Awards, IDA Design
+> 25 awards from international juries across 15 programmes: MUSE Design Awards, IDA Design
 > Awards, LIT Lighting Design Awards, European Product Design Award, NY Product Design
 > Awards, BLT Built Design Awards, The London Design Awards, SIT Furniture Design
 > Award, LOOP Design Awards, ADD Awards, Luxury Lifestyle Awards, ADC, Houzee Awards,

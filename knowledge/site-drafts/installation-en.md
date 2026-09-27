@@ -89,6 +89,6 @@ calculated before the order, not after.
 
 - **from the designer** — ceiling height, slab type, finished floor level, whether there
   is a suspended ceiling;
-- **from the installer** — specification and DXF, point layout, load per point;
+- **from the installer** — specification, point layout, load per point;
 - **from us** — the calculation, the drawing, the suspension diagram, supervised
   installation by arrangement.

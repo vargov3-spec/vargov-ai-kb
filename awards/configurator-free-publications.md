@@ -38,20 +38,22 @@
 
 ## 3. Готовые тексты для быстрой подачи
 
+*Тексты этого раздела приведены к правилам владельца 27.09.2026: без материалов и без «выдувного» стекла (стекло бренда — горячее литьё); DXF посетителю не обещается — по словам владельца 21.09 он «для внутреннего пользования мной, дилерами и фабрикой»; посетитель сам выгружает IFC4, PDF-спецификацию и тендерный лист.*
+
 **Одна строка (для галерей):**
-> A generative 3D configurator that turns hand-blown glass into buildable light installations — in the browser, in real time, in AR.
+> A generative 3D configurator that turns handcrafted light elements into buildable light installations — in the browser, in real time, in AR.
 
 **Абзац (для Siteinspire / Godly / Land-book):**
-> Vargov®Design's configurator turns artisan glass lighting into a real-time design tool. Architects set the ceiling dimensions, pick one of twenty cloud shapes and a density — a generative engine arranges up to 1500 hand-blown glass elements, guarantees that no element or suspension cable ever intersects another piece of glass, and exports AutoCAD drawings, a spec sheet and an AR model that hangs the composition from the client's own ceiling.
+> Vargov®Design's configurator turns author's lighting compositions into a real-time design tool. Architects set the ceiling dimensions, pick one of twenty cloud shapes and a density — a generative engine arranges up to 1500 handcrafted elements, guarantees that no element or suspension cable ever intersects another element, and exports an IFC4 (BIM) model, a PDF specification, a tender sheet and an AR model that hangs the composition from the client's own ceiling.
 
 **Заголовок для Show HN:**
-> Show HN: A browser configurator that packs 1500 hand-blown glass elements without collisions
+> Show HN: A browser configurator that packs 1500 handcrafted light elements without collisions
 
 **Первый комментарий для Show HN / Reddit (техническая аудитория ценит именно это):**
-> I build lighting installations from hand-blown glass. Every composition used to be laid out manually by our engineer. This tool does it in the browser: a packing engine places up to 1500 elements under a hard manufacturing constraint — no two pieces of glass may intersect, and no suspension cable may pass through another element. Placement is calibrated against 436 archived factory orders, so the on-screen result is manufacturable as drawn. Exports go out as DXF, a PDF spec with a QR code, a shareable URL and an AR model (USDZ/GLB). Happy to answer questions about the packing math.
+> I build lighting installations from handcrafted light elements. Every composition used to be laid out manually by our engineer. This tool does it in the browser: a packing engine places up to 1500 elements under a hard manufacturing constraint — no two elements may intersect, and no suspension cable may pass through another element. Placement is calibrated against 436 archived factory orders, so the on-screen result is manufacturable as drawn. Exports go out as an IFC4 (BIM) model with every fixing point as a separate object, a PDF spec with a QR code, a tender sheet, a shareable URL and an AR model (USDZ/GLB). Happy to answer questions about the packing math.
 
 **Product Hunt tagline (60 знаков):**
-> Design a glass light installation for your ceiling in 60 seconds
+> Design a light installation for your ceiling in 60 seconds
 
 ---
 
