@@ -57,7 +57,7 @@ We do not issue a Revit family. The .rfa format is proprietary, and I would rath
 
 Today 360 of our 605 compositions open with a full calculation and therefore with the export. The rest — some pendant articles that are calculated individually, plus sconces, floor and wall pieces — we configure with you directly.
 
-The DXF drawing exists but stays with production, dealers and partners of the brand. The visitor's three files are the IFC4 model, the PDF specification and the tender sheet.
+The DXF drawing exists but is for internal use only: the brand's production and dealers. The visitor's three files are the IFC4 model, the PDF specification and the tender sheet.
 
 ## Two things from the launch week
 
