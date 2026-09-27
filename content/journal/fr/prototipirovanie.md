@@ -20,4 +20,4 @@ Le prototypage fait partie intégrante du travail de Vargov®Design. Grâce à l
 
 Quand le résultat nous satisfait pleinement, nous confions le prototype à notre propre production Vargov®Design, où l'élément est réalisé dans les « vrais » matériaux : céramique, cristal, verre ou métal. Le prototypage devient ainsi le lien entre l'idée et l'œuvre achevée. C'est notre outil pour rendre le processus plus rapide, plus propre, plus économe et plus inventif. Là où d'autres se contentent de « deviner », nous connaissons le résultat avec exactitude.
 
-On peut contrefaire une forme. Pas une idée. Vous nous suivez ?
+On peut contrefaire une forme. Pas une idée. Vous tenez le rythme ?

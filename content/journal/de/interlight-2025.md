@@ -8,11 +8,11 @@ Die erste Messe der Marke in Russland: Vargov®Design-Licht live, der Dialog mit
 
 Für uns war es die erste Messe in Russland. Und sie wurde zu weit mehr als nur einem Stand mit Lichtkompositionen.
 
-Zum ersten Mal haben wir das Licht von Vargov®Design live gezeigt — und unbezahlbare Reaktionen, Gespräche und Unterstützung erhalten. Architekten, Designer, Projekteinkäufer, Partner — danke, dass Sie gekommen sind, geschaut, gefragt, gefühlt haben.
+Zum ersten Mal haben wir das Licht von Vargov®Design live gezeigt — und unschätzbar wertvolle Reaktionen, Gespräche und Unterstützung erhalten. Architekten, Designer, Projekteinkäufer, Partner — danke, dass Sie gekommen sind, geschaut, gefragt, gefühlt haben.
 
 Wir schaffen kein Massenprodukt — sondern ein Objekt, in dem eine Idee steckt, eine Stille und eine Form. Und es war besonders wichtig zu sehen, dass das Resonanz findet.
 
-Der Messestand zog die Aufmerksamkeit von Architekten, Designern, Projekteinkäufern und Medienvertretern auf sich — nicht allein durch sein visuelles Erscheinungsbild, sondern durch die besondere Atmosphäre, die die Lichtkompositionen der Marke schufen.
+Der Messestand zog die Aufmerksamkeit von Architekten, Designern, Projekteinkäufern und Medienvertretern auf sich — nicht allein durch sein visuelles Erscheinungsbild, sondern auch durch die besondere Atmosphäre, die die Lichtkompositionen der Marke schufen.
 
 Die Architektur des Standes:
 

@@ -20,15 +20,15 @@ So schützen wir unsere Produkte:
 
 2. Der Verpackungsprozess
 
-Eine sichere Lieferung in einwandfreiem Zustand gehört zu unserer Beziehung zu den Kunden. Genau deshalb haben wir ein Verpackungssystem entwickelt, das die Ware auf allen Transportetappen bestmöglich schützt.
+Eine sichere Lieferung in einwandfreiem Zustand ist ein wichtiger Teil unserer Zusammenarbeit mit den Kunden. Genau deshalb haben wir ein Verpackungssystem entwickelt, das die Ware auf allen Transportetappen bestmöglich schützt.
 
-Die Etappen der Verpackung:
+Die Verpackungsschritte:
 
 - Schutz der Elemente. Jedes Autorenelement von Vargov®Design wird in eine spezielle Schutzfolie eingeschlagen. Das verhindert Kratzer, Scheuerstellen und andere Beschädigungen während des Transports.
 
 - Schaumstoff-Einlagen. Im Inneren der Kiste sorgen dichte Schaumstoff-Einlagen für sicheren Halt und schützen die Objekte vor Stößen und Erschütterungen.
 
-- Welcome-Karte. In jeder Kiste erwartet Sie eine Welcome-Karte aus Karton mit dem markant gesetzten Logo von Vargov®Design. Darauf stehen Informationen zum Warenzeichen und zur Marke, die die Echtheit Ihrer Bestellung bestätigen.
+- Begrüßungskarte. In jeder Kiste erwartet Sie eine Begrüßungskarte aus Karton mit dem markant gesetzten Logo von Vargov®Design. Darauf stehen Informationen zum Warenzeichen und zur Marke, die die Echtheit Ihrer Bestellung bestätigen.
 
 3. Markenverpackung und Branding
 
@@ -46,7 +46,7 @@ Uns ist bewusst, dass eine Lieferung — gerade über weite Strecken — mit Ris
 
 - Sperrholzkiste. Bei Bedarf können die Objekte in Sperrholzkisten verpackt werden, die maximalen Schutz bieten. Eine solche Verpackung kostet ab 80 $ pro 1 m³.
 
-- Nylonsackleinen. Eine weitere Schutzschicht ist das Nylonsackleinen, das die Kiste nach dem Verschlag umhüllt. Diese Schicht hält Feuchtigkeit und Staub fern — besonders wichtig bei langen Transporten oder bei Lagerung.
+- Nylongewebe. Eine weitere Schutzschicht ist das Nylongewebe, das die Kiste nach dem Verschlag umhüllt. Diese Schicht hält Feuchtigkeit und Staub fern — besonders wichtig bei langen Transporten oder bei Lagerung.
 
 5. Der letzte Schutz
 
@@ -54,7 +54,7 @@ Um mechanische Beschädigungen vollständig auszuschließen, wird die Kiste mit 
 
 6. Empfehlungen zur Montage
 
-Angesichts der Komplexität und Einzigartigkeit unserer Lichtkompositionen empfehlen wir Ihnen die offiziellen Vargov®Design-Monteure. Unsere Spezialisten haben Wissen und Erfahrung für eine professionelle Installation — die Garantie dafür, dass jedes Element korrekt arbeitet und unversehrt bleibt.
+Angesichts der Komplexität und Einzigartigkeit unserer Lichtkompositionen empfehlen wir Ihnen die offiziellen Vargov®Design-Monteure. Unsere Spezialisten haben Wissen und Erfahrung für eine professionelle Installation — die Garantie dafür, dass jedes Element korrekt funktioniert und unversehrt bleibt.
 
 7. Was tun beim Erhalt der Ware?
 

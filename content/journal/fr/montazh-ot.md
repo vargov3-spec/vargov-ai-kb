@@ -20,10 +20,10 @@ Que faire à la réception de la commande ?
 
 - Vérifiez l'emballage. À la réception, examinez attentivement l'emballage afin de détecter d'éventuels dommages. Si vous constatez un défaut, photographiez-le et contactez notre service client.
 
-- Installation et montage. Nous recommandons vivement de confier la pose à des professionnels. C'est la garantie d'un fonctionnement correct et l'assurance d'éviter des problèmes à l'usage.
+- Installation et montage. Nous recommandons vivement de confier la pose à des professionnels. Cela assure un fonctionnement correct et évite des problèmes à l'usage.
 
 Pour conclure
 
-Chez Vargov®Design, nous mettons tout en œuvre pour que chaque étape — de la conception à la livraison — soit irréprochable. Nous sommes convaincus que notre pièce vous accompagnera de longues années, et nous vous remercions de votre confiance.
+Chez Vargov®Design, nous mettons tout en œuvre pour que chaque étape — de la conception à la livraison — soit irréprochable. Nous sommes convaincus que nos pièces vous accompagneront de longues années, et nous vous remercions de votre confiance.
 
 Si vous avez encore des questions sur l'emballage ou la livraison, n'hésitez pas à contacter notre service client. Nous sommes toujours là pour vous aider !

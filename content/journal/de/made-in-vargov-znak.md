@@ -2,9 +2,9 @@
 
 Rubrik: Philosophie · Datum: 19. April 2026 · Slug: made-in-vargov-znak
 
-Das Logo auf der Diodenfassung ist keine dekorative Geste, sondern ein Prinzip: Ein Objekt muss seine Identität auf allen Ebenen tragen — auch dort, wo man sie nicht sofort sieht.
+Das Logo auf der LED-Fassung ist keine dekorative Geste, sondern ein Prinzip: Ein Objekt muss seine Identität auf allen Ebenen tragen — auch dort, wo man sie nicht sofort sieht.
 
-Das Logo von Vargov®Design auf der Diodenfassung ist keine dekorative Geste, sondern die Fortsetzung eines Prinzips: Ein Objekt muss seine Identität auf allen Ebenen tragen — nicht nur dort, wo man sie sofort sieht.
+Das Logo von Vargov®Design auf der LED-Fassung ist keine dekorative Geste, sondern die Fortsetzung eines Prinzips: Ein Objekt muss seine Identität auf allen Ebenen tragen — nicht nur dort, wo man sie sofort sieht.
 
 Nach diesem Prinzip entsteht das gesamte Objekt.
 

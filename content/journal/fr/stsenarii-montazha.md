@@ -12,7 +12,7 @@ Le scénario de pose des compositions lumineuses Vargov®Design doit être déta
 
 - À la livraison, vérifiez l'intégrité des caisses.
 
-- Le dessus de la caisse est marqué du ruban adhésif au logo.
+- Le dessus de la caisse est signalé par le ruban adhésif à logo.
 
 - Repérez la caisse contenant le plan de pose (imprimé sur toile de bâche à l'échelle 1:1).
 
@@ -44,7 +44,7 @@ Pour des LED en 12 V :
 
 - Prévoir un emplacement pour le driver dans le tableau électrique.
 
-- Tirer les câbles basse tension du tableau jusqu'à l'emplacement de la composition, un par élément.
+- Tirer les câbles très basse tension du tableau jusqu'à l'emplacement de la composition, un par élément.
 
 - Renforcer le plafond au contreplaqué, percer les trous selon le plan de pose et passer les câbles.
 
@@ -94,7 +94,7 @@ Que faire à la réception de la marchandise ?
 
 - Contrôle de l'emballage. À la réception de la commande, inspectez soigneusement l'emballage à la recherche de dommages. Si vous constatez un défaut, photographiez-le et contactez notre support.
 
-- Installation et pose. Nous recommandons vivement de confier la pose à des professionnels : cela garantit le bon fonctionnement du produit et évite d'éventuels problèmes à l'usage.
+- Installation et pose. Nous recommandons vivement de confier la pose à des professionnels : cela assure le bon fonctionnement du produit et évite d'éventuels problèmes à l'usage.
 
 Conclusion
 

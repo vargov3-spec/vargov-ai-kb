@@ -8,9 +8,9 @@ La primera feria de la marca en Rusia: la luz de Vargov®Design en vivo, el diá
 
 Para nosotros fue la primera feria en Rusia. Y se convirtió en mucho más que un estand con composiciones luminosas.
 
-Por primera vez mostramos la luz de Vargov®Design en persona — y recibimos reacciones, diálogo y apoyo de un valor incalculable. Arquitectos, diseñadores, responsables de compras, socios — gracias por venir, por mirar, por preguntar, por sentir.
+Por primera vez mostramos la luz de Vargov®Design en vivo — y recibimos reacciones, diálogo y apoyo de un valor incalculable. Arquitectos, diseñadores, responsables de compras, socios — gracias por venir, por mirar, por preguntar, por sentir.
 
-No fabricamos un producto de masas — sino un objeto que contiene una idea, un silencio y una forma. Y fue especialmente importante ver que eso encuentra eco.
+No creamos un producto de masas, sino un objeto que contiene una idea, un silencio y una forma. Y fue especialmente importante ver que eso encuentra eco.
 
 El estand de la firma atrajo la atención de arquitectos, diseñadores, responsables de compras y medios de comunicación no solo por su imagen visual, sino también por la atmósfera particular que creaban las composiciones luminosas de la marca.
 

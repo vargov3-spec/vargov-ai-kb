@@ -2,7 +2,7 @@
 
 Rubrik: Montage · Datum: 2. Oktober 2024 · Slug: kakoi-montazh
 
-Vor- und Nachteile jeder Montageart: vorbereitete Decke mit Einbauteilen, Montage mit Revisionsklappe oder Montage auf einer Grundplatte.
+Vor- und Nachteile jeder Montageart: vorbereitete Decke mit Sperrholzverstärkung, Montage mit Revisionsklappe oder Montage auf einer Basisplatte.
 
 Es gibt mehrere Möglichkeiten, Lichtkompositionen von Vargov®Design zu montieren, und jede hat ihre Eigenheiten. Sehen wir uns die Vor- und Nachteile der einzelnen Varianten an: die Montage an einer vorbereiteten Decke mit Sperrholzverstärkung, die Montage mit Revisionsklappe und die Montage auf einer Basisplatte.
 
@@ -52,7 +52,7 @@ Nachteile:
 
 - Platzbedarf: Die Basis ist ab 80 mm hoch und nimmt zusätzlichen Raum an der Decke ein, was bei niedrigen Decken unerwünscht sein kann.
 
-- Optisches Volumen: Die Basis kann auffallen und trägt auf — nicht immer passend für minimalistische oder betont leichte Interieurs.
+- Optisches Volumen: Die Basis kann auffallen und wuchtig wirken — nicht immer passend für minimalistische oder betont leichte Interieurs.
 
 Fazit
 
@@ -66,7 +66,7 @@ Die Wahl der Montageart hängt vom Interieur, von der Deckenhöhe und vom künft
 
 Empfehlungen zur Montage
 
-Angesichts der Komplexität und Einzigartigkeit unserer Lichtkompositionen empfehlen wir Ihnen die offiziellen Vargov®Design-Monteure. Unsere Spezialisten haben Wissen und Erfahrung für eine professionelle Installation — die Garantie dafür, dass jedes Element korrekt arbeitet und unversehrt bleibt.
+Angesichts der Komplexität und Einzigartigkeit unserer Lichtkompositionen empfehlen wir Ihnen die offiziellen Vargov®Design-Monteure. Unsere Spezialisten haben Wissen und Erfahrung für eine professionelle Installation — die Garantie dafür, dass jedes Element korrekt funktioniert und unversehrt bleibt.
 
 Was tun beim Erhalt der Ware?
 

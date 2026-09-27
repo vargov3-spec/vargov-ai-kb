@@ -2,7 +2,7 @@
 
 Rubrique: Fabrication · Date: 9 septembre 2026 · Slug: seriynaya-sertifikatsiya
 
-Les produits Vargov®Design ont passé la certification de série selon les exigences de l’Union économique eurasiatique. Pour l’acheteur, c’est une ligne. Pour l’architecte, le prescripteur et le service des appels d’offres, c’est un ensemble de documents vérifiables, sans lesquels une pièce d’auteur n’entre pas dans le cahier des charges.
+Les produits Vargov®Design ont obtenu la certification de série selon les exigences de l’Union économique eurasiatique. Pour l’acheteur, c’est une ligne. Pour l’architecte, le prescripteur et le service des appels d’offres, c’est un ensemble de documents vérifiables, sans lesquels une pièce d’auteur n’entre pas dans la spécification.
 
 On peut l’écrire en une ligne : « nous sommes certifiés ». Mais la ligne seule ne dit rien — les certificats diffèrent beaucoup, et cette différence décide si une composition entre dans le projet ou si elle est rayée au moment de la validation. Voici donc ce qui a été fait.
 
@@ -10,7 +10,7 @@ Un lot et une série, ce n’est pas la même chose
 
 On peut certifier de plusieurs manières. La plus simple est le lot : une livraison arrive, elle est testée, et un papier est délivré pour ces pièces précises. Le lot épuisé, le document l’est aussi.
 
-La certification de série fonctionne autrement. Elle ne porte pas sur les cartons mais sur la production elle-même : tout ce qui a été fabriqué et le sera pendant la durée de validité. Le schéma porte ce nom — 1s, production en série. Des échantillons ne suffisent pas : l’organisme de certification inspecte la production elle-même, pour voir si elle sait répéter le résultat. Cette inspection fait l’objet d’un document distinct, le rapport d’analyse de l’état de la production.
+La certification de série fonctionne autrement. Elle ne porte pas sur les cartons mais sur la production elle-même : tout ce qui a été fabriqué et le sera pendant la durée de validité. C’est d’ailleurs le nom du schéma : 1s, production en série. Des échantillons ne suffisent pas : l’organisme de certification inspecte la production elle-même, pour vérifier qu’elle est capable de reproduire le résultat. Cette inspection fait l’objet d’un document distinct, le rapport d’analyse de l’état de la production.
 
 C’est pourquoi les appels d’offres demandent un certificat de série et presque jamais un certificat de lot.
 
@@ -20,11 +20,11 @@ Deux certificats de conformité aux règlements techniques de l’Union douaniè
 
 Le premier couvre 53 références au titre de deux règlements à la fois : TR CU 004/2011 « Sur la sécurité des équipements basse tension » et TR CU 020/2011 « Compatibilité électromagnétique des dispositifs techniques ». Le second couvre 266 références au titre du règlement basse tension.
 
-Deux déclarations de conformité au TR UEEA 037/2016 — sur la limitation des substances dangereuses dans les produits électriques — sont enregistrées séparément. Ce sont les exigences connues dans le monde sous le nom de RoHS : on y vérifie la composition, non la sécurité de fonctionnement. Un certificat ne remplace pas ce contrôle, et l’inverse est vrai aussi : deux documents différents sur des sujets différents.
+Deux déclarations de conformité au TR EAEU 037/2016 — sur la limitation des substances dangereuses dans les produits électriques — sont enregistrées séparément. Ce sont les exigences connues dans le monde sous le nom de RoHS : on y vérifie la composition des matériaux, non la sécurité de fonctionnement. Un certificat ne remplace pas ce contrôle, et l’inverse est vrai aussi : deux documents différents sur des sujets différents.
 
 Ce qui a réellement été testé
 
-Derrière « essais réussis » se tiennent des normes précises. Le domaine couvre huit normes GOST ; trois méritent d’être citées, car elles répondent aux questions les plus fréquentes en projet.
+Derrière les mots « essais réussis », il y a des normes précises. Le champ de la certification couvre huit normes GOST ; trois méritent d’être citées, car elles répondent aux questions les plus fréquentes en projet.
 
 GOST IEC 60598-1 — exigences générales pour les luminaires : isolation, échauffement, fixation, protection contre les chocs électriques. GOST IEC 62471 — sécurité photobiologique : le rayonnement nuit-il aux yeux et à la peau en usage normal. Question peu évidente, mais essentielle pour les espaces publics. GOST CISPR 15 — limites de perturbations radioélectriques : le luminaire gênera-t-il les autres équipements du bâtiment.
 
@@ -34,7 +34,7 @@ L’organisme et le laboratoire sont deux parties distinctes
 
 Une subtilité connue des services d’appels d’offres et presque nulle part ailleurs : le certificat est délivré par un organisme de certification, tandis que les essais sont réalisés par un laboratoire indépendant. Ce sont des organisations différentes avec des accréditations différentes, et les dossiers demandent les deux.
 
-Notre organisme est Test-Saint-Pétersbourg, accréditation ROSS RU.0001.10SP28. Les essais ont été menés par le centre d’essais réunis « EvrazesTest », accréditation ROSS RU.0001.10TR01. Les rapports d’essai portent des numéros et des dates et font partie du dossier.
+Notre organisme est Test-Saint-Pétersbourg, accréditation ROSS RU.0001.10SP28. Les essais ont été menés par le centre d’essais unifié « EvrazesTest », accréditation ROSS RU.0001.10TR01. Les rapports d’essai portent des numéros et des dates et font partie du dossier.
 
 Vérifier plutôt que croire
 
@@ -46,6 +46,6 @@ Pourquoi la lumière d’auteur en a besoin
 
 Une idée tenace veut que la pièce d’auteur et le document vérifiable appartiennent à deux mondes. Que l’unique n’ait par définition pas de papiers, et que la série n’ait par définition pas de visage.
 
-C’est une erreur commode, et elle gêne le travail. Une composition assemblée pour un plafond précis est suspendue au-dessus des gens, chauffe et se raccorde au réseau électrique du bâtiment comme n’importe quel luminaire, et doit être tout aussi sûre. La différence entre « c’est beau » et « on peut l’installer dans un espace public », c’est précisément ce dossier.
+C’est une erreur commode, et elle gêne le travail. Une composition assemblée pour un plafond précis est suspendue au-dessus des gens, chauffe et se raccorde au réseau électrique du bâtiment comme n’importe quel produit de série, et doit être tout aussi sûre. La différence entre « c’est beau » et « on peut l’installer dans un espace public », c’est précisément ce dossier.
 
-La certification de série n’est pas pour nous une ligne marketing, mais une étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification.
+La certification de série n’est pas pour nous une ligne marketing, mais une nouvelle étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification.

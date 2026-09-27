@@ -14,7 +14,7 @@ Que le nom d'un pays puisse remplacer une conversation honnête sur qui fabrique
 
 Vargov®Design n'a jamais été une affaire de géographie.
 
-Nous parlons de forme, d'idée et de responsabilité du résultat.
+Notre affaire, c'est la forme, l'idée et la responsabilité du résultat.
 
 Nous créons des éléments que l'on reconnaît sans signature. C'est précisément pour cela que l'on tente parfois de les rebaptiser, de les « traduire » dans un autre registre culturel et de les faire passer pour autre chose.
 
@@ -30,7 +30,7 @@ Il n'a pas été conçu comme un produit commercial, ni dessiné pour répondre 
 
 Il était le fruit d'une recherche d'auteur : sur la forme, sur les proportions, sur le dialogue avec la lumière.
 
-Ce moment rare où un élément ne naît pas d'une commande, mais comme le prolongement logique du travail intérieur du designer.
+Ce moment rare où un élément ne naît pas comme une tâche, mais comme le prolongement logique du travail intérieur du designer.
 
 Le 23 février 2022, cet élément a été publié pour la première fois sur notre site et dans des sources publiques ouvertes — avec une date établie, des visuels et une description.
 
@@ -38,7 +38,7 @@ Dans le milieu professionnel, c'est une pratique courante : non pas de l'autopro
 
 Jusqu'ici, l'histoire était parfaitement ordinaire.
 
-Exactement jusqu'au moment où l'élément s'est mis à vivre sa propre vie.
+Jusqu'au jour où l'élément s'est mis à vivre sa propre vie.
 
 Premier contact
 
@@ -76,7 +76,7 @@ Les clients finaux comme les professionnels ont été induits en erreur.
 
 Une expérience que personne n'a remarquée
 
-Le moment le plus révélateur de cette histoire est d'une précision presque de laboratoire.
+Le moment le plus révélateur de cette histoire est d'une précision presque digne d'un laboratoire.
 
 Une composition fabriquée dans notre unité de production Vargov®Design en Chine a été perçue par le marché, sans la moindre réserve, comme italienne.
 
@@ -104,7 +104,7 @@ Résultat : des objets réalisés par des spécialistes chinois arrivent sur le 
 
 D'un système, et non d'une seule histoire
 
-Ce cas n'a rien d'unique : il ne fait que fixer avec précision un problème systémique.
+Ce cas n'a rien d'unique : il ne fait que révéler avec précision un problème systémique.
 
 Il ne s'agit pas de la nationalité du design ni d'une comparaison entre pays.
 

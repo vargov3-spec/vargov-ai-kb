@@ -2,7 +2,7 @@
 
 Rubrica: Produzione · Data: 26 dicembre 2025 · Slug: istoriya-elementa
 
-La parola «qualità» ha perso da tempo il legame con la geografia: tecnologia e competenza hanno superato i vecchi miti — la storia di un elemento in vetro lo dimostra.
+La parola «qualità» ha perso da tempo il legame con la geografia: tecnologia e competenza hanno superato i miti geografici — la storia di un elemento in vetro lo dimostra.
 
 Viviamo in un mondo in cui la parola «qualità» ha perso da tempo ogni legame con un Paese preciso.
 
@@ -34,7 +34,7 @@ Quel raro momento in cui un elemento non nasce come compito, ma come naturale pr
 
 Il 23 febbraio 2022 questo elemento è stato pubblicato per la prima volta sul nostro sito e su fonti pubbliche aperte, con data certa, materiali visivi e descrizione.
 
-Nell'ambiente professionale è prassi corrente: non è autopromozione, ma la registrazione della paternità. Là dove la paternità non è una dichiarazione, ma un fatto.
+Nell'ambiente professionale è prassi corrente: non per autopromozione, ma per attestare la paternità. Là dove la paternità non è una dichiarazione, ma un fatto.
 
 Fino a questo punto la storia era del tutto ordinaria.
 
@@ -48,7 +48,7 @@ La richiesta riguardava la realizzazione di alcune composizioni luminose LC0372.
 
 Non c'era nulla di insolito.
 
-L'industria vive da tempo di produzione globale: i marchi europei ordinano in Cina, le fabbriche asiatiche lavorano con designer occidentali e la logistica ha smesso da un pezzo di essere un argomento di qualità.
+L'industria vive da tempo di produzione globale: i marchi europei ordinano in Cina, le fabbriche asiatiche lavorano con designer occidentali e la logistica ha smesso da un pezzo di essere un argomento quando si parla di qualità.
 
 Abbiamo accettato l'ordine e l'abbiamo evaso in tempi brevissimi: in modo professionale, trasparente e senza condizioni nascoste.
 
@@ -88,7 +88,7 @@ Di fatto il mercato ha condotto un esperimento in cieco e non si è accorto dell
 
 Di chi resta nell'ombra
 
-Le produzioni cinesi di oggi hanno smesso da tempo di essere la periferia dell'industria.
+Le manifatture cinesi di oggi hanno smesso da tempo di essere la periferia dell'industria.
 
 Sono professionisti, ingegneri, artigiani la cui maestria dà forma oggi al mercato globale del design.
 
@@ -110,7 +110,7 @@ Non si tratta della nazionalità del design né di un confronto fra Paesi.
 
 Si tratta di trasparenza, di rispetto per la paternità del progetto e di responsabilità verso il mercato.
 
-Quando una forma ideata da un autore preciso e realizzata in una produzione precisa viene ribattezzata e riconfezionata secondo una geografia più comoda, non è soltanto l'autore a rimetterci.
+Quando una forma ideata da un autore preciso e realizzata da una manifattura precisa viene ribattezzata e riconfezionata secondo una geografia più comoda, non è soltanto l'autore a rimetterci.
 
 Ci rimette la fiducia, che è il fondamento stesso dell'ambiente professionale.
 

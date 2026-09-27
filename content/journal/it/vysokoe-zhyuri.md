@@ -20,9 +20,9 @@ Il vetro offre uno spazio infinito per sperimentare con la forma, il colore e la
 
 – Ho iniziato come interior designer: mi ha dato una base ampia sullo spazio, sui materiali e sul modo in cui dialogano tra loro. Quando ho spostato il fuoco sul design di prodotto, ho continuato a studiare e a cercare il mio stile.
 
-Seguo con attenzione le tendenze internazionali del design, vado alle fiere e ai seminari: allarga lo sguardo e mi permette di portare soluzioni all'avanguardia nei miei lavori.
+Seguo con attenzione le tendenze internazionali del design, vado a fiere e seminari: questo mi allarga lo sguardo e mi permette di portare soluzioni all'avanguardia nei miei lavori.
 
-– Come è arrivato a una produzione propria e a un marchio suo? Aveva collaborato con altre produzioni?
+– Come è arrivato a una produzione propria e a un marchio suo? Aveva collaborato con altri produttori?
 
 – Creare una produzione propria è stata una tappa naturale del mio percorso professionale. A un certo punto ho capito che volevo realizzare le mie idee senza limiti né compromessi. All'inizio le difficoltà non sono mancate, ma grazie al sostegno della squadra e dei partner siamo riusciti a costruire il marchio Vargov®Design, oggi conosciuto ben oltre il suo mercato d'origine.
 
@@ -32,13 +32,13 @@ Abbiamo scelto quella regione per l'infrastruttura sviluppata e per le possibili
 
 – Fino a poco tempo fa ero concentrato soprattutto sullo sviluppo e sulla produzione delle mie composizioni. Partecipare ai concorsi è stata una nuova tappa della mia carriera: ci ha permesso di farci conoscere sulla scena internazionale e di ottenere riconoscimento tra i professionisti. Non ha soltanto aumentato la visibilità del marchio e inciso sulla sua crescita: ci ha anche spinto a creare progetti nuovi e ancora più ambiziosi.
 
-– Ha esperienza di ADD AWARDS.RU. In che cosa questo premio è diverso dagli altri?
+– Lei ha già partecipato ad ADD AWARDS.RU. In che cosa questo premio è diverso dagli altri?
 
 – ADDAWARDS è una piattaforma unica: unisce standard di valutazione elevati alla possibilità di fare rete con i professionisti del settore. È un concorso democratico e aperto alle idee nuove, il che è particolarmente prezioso per i giovani designer.
 
 – Come descriverebbe la situazione del design di prodotto nel Paese? Come possono i giovani designer trovare il proprio posto in questo mercato?
 
-– In questo momento l'interesse per il design di prodotto sta crescendo, ed è una bella notizia. Cresce però anche la concorrenza. Per i giovani designer è importante non solo affinare le proprie capacità, ma trovare la propria nicchia e lavorare sulla riconoscibilità del proprio stile. Partecipare a concorsi e fiere, collaborare con colleghi esperti, perfezionare di continuo i propri lavori: è tutto questo che aiuta a trovare il proprio posto nel mercato.
+– In questo momento l'interesse per il design di prodotto sta crescendo, ed è una bella notizia. Cresce però anche la concorrenza. Per i giovani designer è importante non solo affinare le proprie capacità, ma anche trovare la propria nicchia e lavorare sulla riconoscibilità del proprio stile. Partecipare a concorsi e fiere, collaborare con colleghi esperti, perfezionare di continuo i propri lavori: è tutto questo che aiuta a trovare il proprio posto nel mercato.
 
 – Che cosa si aspetta dalla stagione dell'anniversario?
 

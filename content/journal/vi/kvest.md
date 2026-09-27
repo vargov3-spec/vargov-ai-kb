@@ -12,7 +12,7 @@ Thay vì buồn bã, tôi quyết định biến chuyện này thành một cu�
 
 Chúng tôi biết tọa độ chính xác của địa điểm 📍
 
-Và tôi muốn công bố một cuộc thi: ai tìm thấy chi tiết này đầu tiên — sẽ nhận được một bố cục ánh sáng nguyên bản gồm 100 chi tiết như vậy 💡
+Và tôi muốn công bố một cuộc thi: ai tìm thấy chi tiết này đầu tiên — sẽ nhận được một tác phẩm ánh sáng nguyên bản gồm 100 chi tiết như vậy 💡
 
 Tôi đoán trước sẽ có những bình luận kiểu: «sao các anh không giấu luôn trên Mặt Trăng» 😅
 

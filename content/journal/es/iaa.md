@@ -2,7 +2,7 @@
 
 Sección: Reconocimiento · Fecha: 4 de septiembre de 2024 · Slug: iaa
 
-La IAA anunció a Anton Vargov como jurado de los NY Product Design Awards, MUSE Design Awards, Rome Design Awards, London Design Awards, French Design Awards y otros premios.
+La IAA anunció la incorporación de Anton Vargov al jurado de los NY Product Design Awards, MUSE Design Awards, Rome Design Awards, London Design Awards, French Design Awards y otros premios.
 
 La International Awards Associate (IAA) ha anunciado el nombramiento de Anton Vargov como jurado de los prestigiosos NY Product Design Awards, MUSE Design Awards, Rome Design Awards, London Design Awards, French Design Awards, TITAN Property Awards y Noble World Hotel Awards
 

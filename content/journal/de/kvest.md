@@ -2,7 +2,7 @@
 
 Rubrik: Geschichten · Datum: 20. August 2025 · Slug: kvest
 
-Beim Dreh im Hotel Hurawalhi Malediven wurde das Glaselement LC0371 direkt im Wasser an einem Riff des Indischen Ozeans gefilmt — und nicht alles lief nach Plan.
+Beim Dreh im Hotel Hurawalhi Maldives wurde das Glaselement LC0371 direkt im Wasser an einem Riff des Indischen Ozeans gefilmt — und nicht alles lief nach Plan.
 
 Manchmal entstehen die ungewöhnlichsten Geschichten ganz zufällig ✨
 

@@ -2,7 +2,7 @@
 
 Sección: Historias · Fecha: 20 de agosto de 2025 · Slug: kvest
 
-Durante una sesión en el hotel Hurawalhi Maldivas, el elemento de vidrio LC0371 se filmó dentro del agua, en un arrecife del océano Índico — y no todo salió según lo previsto.
+Durante una sesión en el hotel Hurawalhi Maldives, el elemento de vidrio LC0371 se filmó dentro del agua, en un arrecife del océano Índico — y no todo salió según lo previsto.
 
 A veces las historias más insólitas ocurren por casualidad ✨
 
@@ -12,7 +12,7 @@ En lugar de lamentarme, decidí convertirlo en una búsqueda 🎯: un experiment
 
 Conocemos las coordenadas exactas del lugar 📍
 
-Y quiero anunciar un concurso: quien encuentre primero ese elemento recibirá una composición lumínica de autor formada por 100 elementos como ese 💡
+Y quiero anunciar un concurso: quien encuentre primero ese elemento recibirá una composición luminosa de autor formada por 100 elementos como ese 💡
 
 Ya me imagino los comentarios: «puestos a esconderlo, mejor en la Luna» 😅
 

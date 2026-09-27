@@ -8,7 +8,7 @@ En Vargov®Design cuidamos con especial atención cada aspecto de la creación y
 
 1. Protección de la marca frente a las falsificaciones
 
-Una de las principales prioridades de nuestra casa es proteger el producto original de las falsificaciones. Sabemos lo que vale la confianza de nuestros clientes y velamos con cuidado por que cada composición lumínica y cada elemento de Vargov®Design responda a estándares de calidad exigentes.
+Una de las principales prioridades de nuestra casa es proteger el producto original de las falsificaciones. Sabemos lo que vale la confianza de nuestros clientes y velamos con cuidado por que cada composición luminosa y cada elemento de Vargov®Design responda a estándares de calidad exigentes.
 
 Así protegemos nuestros productos:
 
@@ -28,7 +28,7 @@ Las etapas del embalaje:
 
 - Inserciones de espuma. Dentro de la caja, unas inserciones de espuma densa sujetan firmemente las piezas y las protegen de golpes y vibraciones.
 
-- Welcome card. En cada caja le espera una welcome card de cartón con el logotipo de Vargov®Design bien visible. En ella figura la información sobre la marca registrada y la casa, que confirma la autenticidad de su pedido.
+- Tarjeta de bienvenida. En cada caja le espera una tarjeta de bienvenida de cartón con el logotipo de Vargov®Design bien visible. En ella figura la información sobre la marca registrada y la casa, que confirma la autenticidad de su pedido.
 
 3. Embalaje de marca y branding
 
@@ -54,11 +54,11 @@ Para descartar por completo cualquier daño mecánico, la caja se recubre con un
 
 6. Recomendaciones de montaje
 
-Dada la complejidad y singularidad de nuestras composiciones lumínicas, le recomendamos recurrir a los montadores oficiales Vargov®Design. Nuestros especialistas tienen los conocimientos y la experiencia para una instalación profesional — la garantía de que cada elemento funcione correctamente y permanezca intacto.
+Dada la complejidad y singularidad de nuestras composiciones luminosas, le recomendamos recurrir a los montadores oficiales Vargov®Design. Nuestros especialistas tienen los conocimientos y la experiencia para una instalación profesional — la garantía de que cada elemento funcione correctamente y permanezca intacto.
 
 7. ¿Qué hacer al recibir el producto?
 
-- Inspeccione el embalaje. Cuando llegue su pedido, examine cuidadosamente el embalaje en busca de daños. Si nota defectos, fotografíelos y contacte con nuestro soporte.
+- Inspeccione el embalaje. Cuando llegue su pedido, examine cuidadosamente el embalaje en busca de daños. Si nota defectos, fotografíelos y contacte con nuestro servicio de atención al cliente.
 
 - Instalación y montaje. Le recomendamos encarecidamente confiar el montaje a profesionales. Así el producto funcionará correctamente y se evitarán posibles problemas de uso.
 
@@ -66,4 +66,4 @@ Para terminar
 
 En Vargov®Design hacemos todo lo posible para que cada elemento de la marca — desde el desarrollo hasta la entrega — sea impecable. Estamos convencidos de que nuestro producto le acompañará durante muchos años, y agradecemos su confianza.
 
-Si le quedan dudas sobre el embalaje o la entrega de los productos, póngase en contacto con nuestro soporte. ¡Siempre estamos dispuestos a ayudarle!
+Si le quedan dudas sobre el embalaje o la entrega de los productos, póngase en contacto con nuestro servicio de atención al cliente. ¡Siempre estamos dispuestos a ayudarle!

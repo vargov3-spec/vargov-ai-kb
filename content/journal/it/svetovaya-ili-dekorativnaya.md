@@ -8,7 +8,7 @@ Le composizioni luminose e quelle decorative si distinguono per funzione e final
 
 Composizioni luminose
 
-- La loro funzione principale è illuminare. Nascono per svolgere un compito luminoso: luce generale, d'accento o decorativa.
+- La loro funzione principale è illuminare. Nascono per svolgere funzioni di illuminazione: generale, d'accento o decorativa.
 
 - L'attenzione si concentra sulla scelta delle sorgenti luminose, sulla loro disposizione e sul controllo della luce, per ottenere un determinato effetto visivo o l'atmosfera desiderata.
 

@@ -2,7 +2,7 @@
 
 Rubrique: Fabrication · Date: 16 septembre 2024 · Slug: fabrika
 
-La production propre de la marque ne fabrique que des produits originaux : chaque élément lumineux incarne réellement les standards de qualité et de design Vargov®Design.
+La manufacture de la marque ne fabrique que des produits originaux : chaque élément lumineux incarne réellement les standards de qualité et de design Vargov®Design.
 
 Notre propre manufacture Vargov®Design ne fabrique que des produits originaux. C'est la garantie que chaque élément lumineux qui franchit ses portes incarne réellement nos standards de qualité et de design. On n'y réalise que des projets uniques, contrôlés avec rigueur à chaque étape de la fabrication. Tout ce qui sort de la manufacture porte notre marque et reflète notre philosophie : aucune copie, uniquement des solutions originales et innovantes, disponibles seulement auprès de Vargov®Design et de nos partenaires officiels.
 

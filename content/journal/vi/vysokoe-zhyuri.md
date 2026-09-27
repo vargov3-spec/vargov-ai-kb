@@ -12,9 +12,9 @@ Phỏng vấn với biên tập viên trang addawards.ru Olga Voronina.
 
 – «Thủy tinh là ánh sáng đông đặc». Tôi tìm thấy trong vật liệu này tiềm năng vô tận cho sáng tạo.
 
-Công việc của tôi với thủy tinh bắt đầu từ một niềm đam mê cá nhân. Ban đầu đó là sở thích — tạo những chi tiết trang trí nhỏ cho ngôi nhà. Theo thời gian, tôi hiểu rằng thủy tinh là vật liệu độc nhất, có thể dùng để tạo nên những bố cục ánh sáng và trang trí kỳ diệu. Tôi bắt đầu nghiên cứu các tính chất của nó, công nghệ gia công và khả năng ứng dụng trong thiết kế.
+Công việc của tôi với thủy tinh bắt đầu từ một niềm đam mê cá nhân. Ban đầu đó là sở thích — tạo những chi tiết trang trí nhỏ cho ngôi nhà. Theo thời gian, tôi hiểu rằng thủy tinh là vật liệu độc nhất, có thể dùng để tạo nên những tác phẩm ánh sáng và trang trí kỳ diệu. Tôi bắt đầu nghiên cứu các tính chất của nó, công nghệ gia công và khả năng ứng dụng trong thiết kế.
 
-Thủy tinh mở ra những khả năng vô tận để thử nghiệm với hình khối, màu sắc và bề mặt. Chính vì thế tôi chọn nó làm vật liệu chính cho các bố cục của mình.
+Thủy tinh mở ra những khả năng vô tận để thử nghiệm với hình khối, màu sắc và bề mặt. Chính vì thế tôi chọn nó làm vật liệu chính cho các tác phẩm của mình.
 
 – Anh tích lũy kinh nghiệm thực tế bằng cách nào?
 
@@ -30,7 +30,7 @@ Chúng tôi chọn khu vực đó vì hạ tầng phát triển và khả năng 
 
 – Trên trang web của anh có ghi các giải thưởng từ nhiều cuộc thi trong hai năm gần đây. Trước đây anh không tham gia các cuộc thi sao?
 
-– Cho đến gần đây, tôi tập trung nhiều hơn vào việc phát triển và sản xuất các bố cục của mình. Việc tham gia các cuộc thi là chặng mới trong sự nghiệp, cho phép chúng tôi khẳng định mình trên trường quốc tế và nhận được sự ghi nhận trong giới chuyên môn. Điều đó không chỉ tăng độ nhận diện của thương hiệu, ảnh hưởng đến sự phát triển của nó, mà còn thúc đẩy việc tạo ra những dự án mới, tham vọng hơn nữa.
+– Cho đến gần đây, tôi tập trung nhiều hơn vào việc phát triển và sản xuất các tác phẩm của mình. Việc tham gia các cuộc thi là chặng mới trong sự nghiệp, cho phép chúng tôi khẳng định mình trên trường quốc tế và nhận được sự ghi nhận trong giới chuyên môn. Điều đó không chỉ tăng độ nhận diện của thương hiệu, ảnh hưởng đến sự phát triển của nó, mà còn thúc đẩy việc tạo ra những dự án mới, tham vọng hơn nữa.
 
 – Anh có kinh nghiệm tham gia ADD AWARDS.RU. Giải này khác các giải khác ở điểm gì?
 

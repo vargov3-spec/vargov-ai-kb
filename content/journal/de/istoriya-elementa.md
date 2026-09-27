@@ -62,7 +62,7 @@ Die Entdeckung
 
 Am 13. März 2025 entdeckte ich beim Rundgang durch den Showroom Casaricca an der Rubljowskoje-Chaussee zu meiner Überraschung zwischen italienischen Möbeln und Leuchten unsere Komposition — genau jene, die zuvor für den italienischen Kunden gefertigt worden war.
 
-Es war exakt diese Komposition und exakt diese Elemente LC0372.
+Es war exakt diese Komposition mit exakt diesen Elementen LC0372.
 
 Der Mitarbeiter von Casaricca versicherte mir, es handle sich um italienische Fertigung höchster Qualität, präsentiert unter der Marke der italienischen Manufaktur Jago.
 
@@ -84,7 +84,7 @@ Niemand zweifelte an der Qualität, am Material oder an der Ausführung.
 
 Es kamen keine Fragen auf, es entstanden keine Zweifel.
 
-Faktisch hat der Markt ein stilles Experiment durchgeführt — und die Vertauschung nicht bemerkt.
+Faktisch hat der Markt ein stilles Experiment durchgeführt — und die Täuschung nicht bemerkt.
 
 Über jene, die im Schatten bleiben
 
@@ -92,7 +92,7 @@ Die chinesischen Fertigungsbetriebe von heute sind längst nicht mehr die Periph
 
 Dort arbeiten Fachleute, Ingenieure und Handwerker, deren Können heute den globalen Designmarkt prägt.
 
-Es sind Fabriken mit hoher technologischer Kultur, engen Toleranzen und starken Spezialisten, deren Arbeit einen erheblichen Teil des weltweiten Produktdesigns ausmacht.
+Es sind Fabriken mit hoher technologischer Kultur, engen Toleranzen und versierten Spezialisten, deren Arbeit einen erheblichen Teil des weltweiten Produktdesigns ausmacht.
 
 Wir halten es für falsch, diese Menschen im Schatten zu lassen, während im Schaufenster eine schöne Legende verkauft wird.
 

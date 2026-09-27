@@ -52,7 +52,7 @@ Per LED a 12 V:
 
 Per LED a 220 V:
 
-- Posare un cavo a 220 V fino al punto di montaggio ed eseguire la derivazione sul numero di elementi.
+- Posare un cavo a 220 V fino al punto di montaggio ed eseguire le derivazioni per ciascun elemento.
 
 - Rinforzare il soffitto con il compensato, praticare i fori e far passare i cavi.
 
@@ -62,7 +62,7 @@ Per LED a 220 V:
 
 - Se il soffitto è già predisposto ed è presente un'unica uscita a 220 V, si può:
 
-- utilizzare la base portante della composizione, che ospita tutti i collegamenti e gli alimentatori (altezza della base da 80 mm);
+- utilizzare la base portante della composizione, che ospita tutti i collegamenti e gli alimentatori (altezza della base a partire da 80 mm);
 
 - utilizzare una botola d'ispezione per il collegamento e alloggiare l'alimentatore nel vano sopra il controsoffitto.
 
@@ -94,7 +94,7 @@ Che cosa fare al ricevimento della merce?
 
 - Controllo dell'imballo. Al ricevimento dell'ordine esaminare con attenzione l'imballo per verificare l'assenza di danni. In caso di difetti, fotografarli e contattare il nostro servizio di assistenza.
 
-- Installazione e montaggio. Consigliamo vivamente di affidare il montaggio a professionisti: garantisce il corretto funzionamento del prodotto ed evita possibili problemi in esercizio.
+- Installazione e montaggio. Consigliamo vivamente di affidare il montaggio a professionisti: così si garantisce il corretto funzionamento del prodotto e si evitano possibili problemi in esercizio.
 
 Conclusione
 

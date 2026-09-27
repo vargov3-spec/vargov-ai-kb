@@ -10,7 +10,7 @@ L'objectif : assister et contrôler l'installation d'une composition lumineuse o
 
 À qui cela s'adresse :
 
-— À ceux qui montent eux-mêmes ou font appel à des professionnels extérieurs.
+— À ceux qui réalisent le montage eux-mêmes ou font appel à des professionnels extérieurs.
 
 — À ceux qui veulent éviter les erreurs, conserver la garantie et obtenir un résultat impeccable.
 

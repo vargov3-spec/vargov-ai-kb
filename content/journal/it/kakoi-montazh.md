@@ -12,7 +12,7 @@ Pregi:
 
 - Fissaggi quasi invisibili: a montaggio concluso la composizione appare pulitissima ed elegante, perché tutti gli elementi di fissaggio restano nascosti sopra il soffitto.
 
-- Risparmio di spazio: la composizione occupa il minimo ingombro, aspetto importante negli ambienti con soffitti bassi.
+- Risparmio di spazio: la composizione ha un ingombro minimo, aspetto importante negli ambienti con soffitti bassi.
 
 - Libertà nella disposizione degli elementi: possono essere montati ad altezze diverse e fissati con precisione secondo il disegno di montaggio.
 

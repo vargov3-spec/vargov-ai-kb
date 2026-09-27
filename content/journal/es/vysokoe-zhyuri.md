@@ -12,7 +12,7 @@ Entrevista con Olga Voronina, redactora del sitio addawards.ru.
 
 – «El vidrio es luz solidificada». En este material encontré un potencial creativo infinito.
 
-Mi trabajo con el vidrio empezó por una pasión personal. Al principio era una afición: pequeños objetos decorativos para la casa. Con el tiempo entendí que el vidrio es un material único, con el que se pueden construir composiciones lumínicas y decorativas asombrosas. Me puse a estudiar sus propiedades, las tecnologías de elaboración y sus posibilidades de uso en el diseño.
+Mi trabajo con el vidrio empezó por una pasión personal. Al principio era una afición: pequeños objetos decorativos para la casa. Con el tiempo entendí que el vidrio es un material único, con el que se pueden construir composiciones luminosas y decorativas asombrosas. Me puse a estudiar sus propiedades, las tecnologías de elaboración y sus posibilidades de uso en el diseño.
 
 El vidrio ofrece un campo infinito para experimentar con la forma, el color y la textura. Precisamente por eso lo elegí como material principal de mis composiciones.
 
@@ -34,11 +34,11 @@ Elegimos esa región por su infraestructura desarrollada y sus posibilidades de 
 
 – Tiene experiencia en ADD AWARDS.RU. ¿En qué se diferencia este premio de los demás?
 
-– ADDAWARDS es una plataforma singular: combina un alto nivel de evaluación con la oportunidad de crear red entre los profesionales del sector. Es un concurso democrático y abierto a las ideas nuevas, algo especialmente valioso para los diseñadores jóvenes.
+– ADDAWARDS es una plataforma singular: combina un alto nivel de evaluación con la oportunidad de hacer contactos entre los profesionales del sector. Es un concurso democrático y abierto a las ideas nuevas, algo especialmente valioso para los diseñadores jóvenes.
 
 – ¿Cómo describiría la situación del diseño de producto en el país? ¿Cómo pueden los diseñadores jóvenes encontrar su lugar en este mercado?
 
-– Ahora mismo crece el interés por el diseño de producto, y eso alegra. Pero la competencia también se intensifica. Para los diseñadores jóvenes es importante no solo desarrollar sus destrezas, sino encontrar su propio nicho y trabajar la identidad reconocible de su estilo. Participar en concursos y ferias, colaborar con colegas con oficio y perfeccionar continuamente las propias piezas: todo eso ayuda a encontrar un lugar en el mercado.
+– Ahora mismo crece el interés por el diseño de producto, y es una buena noticia. Pero la competencia también se intensifica. Para los diseñadores jóvenes es importante no solo desarrollar sus destrezas, sino encontrar su propio nicho y trabajar la identidad reconocible de su estilo. Participar en concursos y ferias, colaborar con colegas con oficio y perfeccionar continuamente las propias piezas: todo eso ayuda a encontrar un lugar en el mercado.
 
 – ¿Qué espera de esta edición de aniversario?
 

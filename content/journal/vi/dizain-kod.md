@@ -22,7 +22,7 @@ Nó sinh ra từ sự quan sát:
 
 — cách ánh sáng ứng xử bên trong vật liệu
 
-— cách một đường nét có thể giữ được sức căng của cả bố cục.
+— cách một đường nét có thể giữ được sức căng của cả tác phẩm.
 
 Mỗi tác phẩm đều đi qua vòng chọn lọc của tác giả, nơi chỉ giữ lại những gì thực sự cần thiết.
 
@@ -34,7 +34,7 @@ Không có hình khối chỉ vì hình khối.
 
 “Sự nhận diện đích thực bắt đầu ở nơi hình khối không còn có thể bị lặp lại một cách tình cờ.
 
-Đường bao bên ngoài có thể cố sao chép.
+Người ta có thể cố sao chép đường bao bên ngoài.
 
 Nhưng logic bên trong của hình khối thì gần như không thể. Chính vì vậy một ngôn ngữ tác giả mạnh tự bảo vệ được mình ngay cả khi không có chữ ký”
 

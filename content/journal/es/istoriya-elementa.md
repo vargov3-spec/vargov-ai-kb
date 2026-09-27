@@ -24,7 +24,7 @@ Es la historia de cómo funciona el mercado del diseño actual, donde la autorí
 
 El nacimiento de una forma
 
-En la primavera de 2022 creé un elemento que se convirtió en la base de las composiciones decorativas LC0138 y de las composiciones lumínicas LC0372.
+En la primavera de 2022 creé un elemento que se convirtió en la base de las composiciones decorativas LC0138 y de las composiciones luminosas LC0372.
 
 No se concibió como producto comercial, no se diseñó para responder a una demanda del mercado ni se ajustó a las colecciones existentes.
 
@@ -34,7 +34,7 @@ Ese raro momento en el que un elemento no surge como encargo, sino como continua
 
 El 23 de febrero de 2022 este elemento se publicó por primera vez en nuestra web y en fuentes públicas abiertas, con fecha registrada, material visual y descripción.
 
-En el ámbito profesional es una práctica habitual: no es autopromoción, sino dejar constancia de la autoría. Allí donde la autoría no es una declaración, sino un hecho.
+En el ámbito profesional es una práctica habitual: no para autopromocionarse, sino para dejar constancia de la autoría. Allí donde la autoría no es una declaración, sino un hecho.
 
 Hasta aquí la historia era absolutamente corriente.
 
@@ -44,11 +44,11 @@ El primer contacto
 
 A finales de agosto de 2023, la producción de Vargov®Design en China recibió una solicitud de un representante italiano que prefirió permanecer en el anonimato.
 
-La solicitud se refería a la fabricación de varias composiciones lumínicas LC0372.
+La solicitud se refería a la fabricación de varias composiciones luminosas LC0372.
 
 No había en ello nada inusual.
 
-La industria vive desde hace tiempo con la producción global: las marcas europeas encargan en China, las fábricas asiáticas trabajan con diseñadores occidentales y la logística dejó hace mucho de ser un argumento de calidad.
+La industria vive desde hace tiempo con la producción global: las marcas europeas hacen sus pedidos en China, las fábricas asiáticas trabajan con diseñadores occidentales y la logística dejó hace mucho de ser un argumento de calidad.
 
 Aceptamos el pedido y lo ejecutamos en el plazo más breve posible: con profesionalidad, con transparencia y sin condiciones ocultas.
 
@@ -92,7 +92,7 @@ Las fábricas chinas de hoy dejaron hace tiempo de ser la periferia de la indust
 
 Son profesionales, ingenieros y artesanos cuya maestría configura hoy el mercado global del diseño.
 
-Son fábricas con una alta cultura tecnológica, tolerancias exigentes y especialistas sólidos, cuyo trabajo constituye una parte considerable del diseño de producto mundial.
+Son fábricas con una alta cultura tecnológica, tolerancias exigentes y grandes especialistas, cuyo trabajo constituye una parte considerable del diseño de producto mundial.
 
 Nos parece injusto mantener a estas personas en la sombra mientras en el escaparate se vende una bonita leyenda.
 
@@ -104,7 +104,7 @@ El resultado es que piezas creadas por especialistas chinos llegan al mercado ba
 
 Sobre un sistema, no sobre un caso aislado
 
-Este caso no es único: se limita a fijar con precisión un problema sistémico.
+Este caso no es único: se limita a reflejar con precisión un problema sistémico.
 
 No se trata de la nacionalidad del diseño ni de comparar países.
 

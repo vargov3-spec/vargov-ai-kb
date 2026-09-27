@@ -28,7 +28,7 @@ Les étapes de l'emballage :
 
 - Calages en mousse. À l'intérieur de la caisse, des calages en mousse dense assurent un maintien ferme et protègent les pièces des chocs et des vibrations.
 
-- Welcome card. Dans chaque caisse vous attend une welcome card en carton, frappée du logo Vargov®Design bien visible. Elle porte les informations sur la marque déposée et sur la maison, qui confirment l'authenticité de votre commande.
+- Carte de bienvenue. Dans chaque caisse vous attend une carte de bienvenue en carton, frappée du logo Vargov®Design bien visible. Elle porte les informations sur la marque déposée et sur la maison, qui confirment l'authenticité de votre commande.
 
 3. Emballage de marque et identité
 
@@ -42,11 +42,11 @@ Chaque pièce Vargov®Design est soigneusement emballée dans des caisses aux co
 
 Nous savons que la livraison, en particulier sur de longues distances, peut comporter des risques ; c'est pourquoi nous proposons une protection complète de nos produits à chaque étape :
 
-- Caisse bois. Pour plus de sûreté, la caisse est placée dans une caisse bois à claire-voie qui réduit au minimum le risque de dommages. Elle forme une ossature solide autour du colis et le protège des agressions extérieures.
+- Caisse bois. Pour plus de sûreté, le colis est placé dans une caisse bois à claire-voie qui réduit au minimum le risque de dommages. Elle forme une ossature solide autour du colis et le protège des agressions extérieures.
 
 - Caisse en contreplaqué. Si nécessaire, les pièces peuvent être emballées dans des caisses en contreplaqué, qui garantissent une protection maximale. Le prix de cet emballage démarre à 80 $ le m³.
 
-- Toile de nylon. Dernière couche de protection : une toile de nylon enveloppe le colis une fois celui-ci mis en caisse. Cette couche empêche l'humidité et la poussière de pénétrer, ce qui est particulièrement important lors des transports longs ou du stockage.
+- Toile de nylon. Couche de protection supplémentaire : une toile de nylon enveloppe le colis une fois celui-ci mis en caisse. Cette couche empêche l'humidité et la poussière de pénétrer, ce qui est particulièrement important lors des transports longs ou du stockage.
 
 5. La protection finale
 
@@ -54,13 +54,13 @@ Pour écarter tout risque de dommage mécanique, le colis est recouvert d'un fil
 
 6. Recommandations de pose
 
-Vu la complexité et l'unicité de nos compositions lumineuses, nous vous recommandons de faire appel aux installateurs officiels Vargov®Design. Nos spécialistes ont les connaissances et l'expérience d'une installation professionnelle — la garantie que chaque élément fonctionne correctement et reste intact.
+Vu la complexité et l'unicité de nos compositions lumineuses, nous vous recommandons de faire appel aux installateurs officiels Vargov®Design. Nos spécialistes ont les connaissances et l'expérience nécessaires à une installation professionnelle — la garantie que chaque élément fonctionne correctement et reste intact.
 
 7. Que faire à la réception de la marchandise ?
 
 - Inspectez l'emballage. À l'arrivée de votre commande, examinez soigneusement l'emballage. Si vous remarquez des défauts, photographiez-les et contactez notre support.
 
-- Installation et pose. Nous vous recommandons vivement de confier la pose à des professionnels. C'est la garantie d'un fonctionnement correct du produit et d'une utilisation sans mauvaise surprise.
+- Installation et pose. Nous vous recommandons vivement de confier la pose à des professionnels. Cela assure un fonctionnement correct du produit et une utilisation sans mauvaise surprise.
 
 Pour finir
 

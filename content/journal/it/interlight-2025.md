@@ -10,7 +10,7 @@ Per noi è stata la prima fiera in Russia. Ed è diventata molto più di uno sta
 
 Per la prima volta abbiamo mostrato dal vivo la luce di Vargov®Design — e abbiamo ricevuto reazioni, dialogo e sostegno di valore inestimabile. Architetti, progettisti, responsabili acquisti, partner — grazie per essere venuti, per aver guardato, chiesto, sentito.
 
-Non produciamo un prodotto di massa — ma un oggetto in cui vivono un'idea, un silenzio e una forma. Ed è stato particolarmente importante vedere che tutto questo trova risonanza.
+Non creiamo un prodotto di massa, ma un oggetto in cui vivono un'idea, un silenzio e una forma. Ed è stato particolarmente importante vedere che tutto questo trova risonanza.
 
 Lo stand dell'azienda ha attirato l'attenzione di architetti, progettisti, responsabili acquisti e rappresentanti dei media non solo per la sua immagine visiva, ma anche per l'atmosfera particolare creata dalle composizioni luminose del marchio.
 
@@ -18,9 +18,9 @@ L'architettura dello stand:
 
 Una struttura nera essenziale ha fatto da sfondo a oltre dieci composizioni d'autore, assemblate a mano in vetro, cristallo, porcellana e metallo.
 
-Forme sospese, la geometria complessa dei pendenti, riflessi e rifrazioni — ogni modello faceva venire voglia non semplicemente di fotografarlo, ma di fermarsi e guardarlo davvero.
+Forme sospese, la geometria complessa delle sospensioni, riflessi e rifrazioni — ogni modello faceva venire voglia non semplicemente di fotografarlo, ma di fermarsi e guardarlo davvero.
 
-Qui la luce non svolgeva una funzione — creava uno stato.
+Qui la luce non svolgeva una funzione — creava uno stato d'animo.
 
 Esattamente come volevamo:
 
@@ -30,7 +30,7 @@ Incontri veri e interesse autentico:
 
 Centinaia di contatti professionali, decine di incontri, discussioni, riscontri.
 
-Per molti visitatori è stato il primo incontro con Vargov®Design — e si è impresso subito.
+Per molti visitatori è stato il primo incontro con Vargov®Design — e si è impresso subito nella memoria.
 
 Per noi conta che la luce venga percepita non come una merce, ma come un oggetto che ha profondità.
 

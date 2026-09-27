@@ -2,7 +2,7 @@
 
 Rubrique: À la première personne · Date: 13 août 2024 · Slug: svetloe-buduschee
 
-Anton Vargov sur le développement de la marque et l'avenir des compositions lumineuses sur mesure.
+Anton Vargov sur le développement de la marque et l'avenir des compositions lumineuses d'auteur.
 
 Je suis Anton Vargov, fondateur et directeur du design de Vargov®Design, et j'ai toujours regardé devant moi, cherchant à pressentir les tendances et à créer quelque chose de neuf, capable de surprendre le monde du design. Dans ce texte, « L'avenir lumineux », je souhaite partager mes réflexions sur l'avenir de la maison et sur les directions qui façonneront les compositions lumineuses dans les années à venir.
 

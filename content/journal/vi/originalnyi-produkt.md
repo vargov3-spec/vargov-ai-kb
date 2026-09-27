@@ -8,7 +8,7 @@ Hệ thống bảo vệ tính nguyên bản toàn diện: sự chú tâm đến 
 
 1. Bảo vệ thương hiệu khỏi hàng nhái
 
-Một trong những ưu tiên hàng đầu của công ty chúng tôi là bảo vệ sản phẩm nguyên bản khỏi hàng giả. Chúng tôi ý thức được tầm quan trọng của niềm tin từ khách hàng và theo dõi cẩn thận để mỗi bố cục ánh sáng hay chi tiết Vargov®Design đều đáp ứng các chuẩn mực chất lượng cao.
+Một trong những ưu tiên hàng đầu của công ty chúng tôi là bảo vệ sản phẩm nguyên bản khỏi hàng giả. Chúng tôi ý thức được tầm quan trọng của niềm tin từ khách hàng và theo dõi cẩn thận để mỗi tác phẩm ánh sáng hay chi tiết Vargov®Design đều đáp ứng các chuẩn mực chất lượng cao.
 
 Cách chúng tôi bảo vệ sản phẩm của mình:
 
@@ -28,7 +28,7 @@ Các công đoạn đóng gói:
 
 - Sử dụng xốp. Bên trong hộp dùng các miếng chèn xốp dày, giữ chặt và bảo vệ sản phẩm khỏi va đập và rung lắc.
 
-- Thư chào mừng. Trong mỗi hộp có một tấm thiệp chào mừng bằng bìa cứng mang logo nổi bật của Vargov®Design. Trên đó là thông tin về nhãn hiệu và thương hiệu, xác nhận tính nguyên bản cho đơn hàng của bạn.
+- Thiệp chào mừng. Trong mỗi hộp có một tấm thiệp chào mừng bằng bìa cứng mang logo nổi bật của Vargov®Design. Trên đó là thông tin về nhãn hiệu và thương hiệu, xác nhận tính nguyên bản cho đơn hàng của bạn.
 
 3. Bao bì thương hiệu và nhận diện
 
@@ -42,7 +42,7 @@ Mỗi sản phẩm Vargov®Design được đóng gói cẩn thận trong hộp 
 
 Chúng tôi hiểu rằng việc giao hàng, nhất là trên quãng đường xa, có thể đi kèm rủi ro, vì vậy chúng tôi cung cấp sự bảo vệ toàn diện cho sản phẩm ở mọi công đoạn:
 
-- Khung gỗ chèn. Để tăng độ chắc chắn, hộp được đặt trong khung gỗ chèn, giúp giảm thiểu nguy cơ hư hỏng. Khung tạo thành bộ khung vững chắc quanh hộp, bảo vệ nó khỏi các tác động bên ngoài.
+- Đóng khung gỗ. Để tăng độ chắc chắn, hộp được đặt trong khung gỗ, giúp giảm thiểu nguy cơ hư hỏng. Khung gỗ tạo thành lớp vỏ vững chắc quanh hộp, bảo vệ nó khỏi các tác động bên ngoài.
 
 - Thùng gỗ dán. Khi cần, sản phẩm có thể được đóng trong thùng gỗ dán, bảo đảm sự bảo vệ tối đa. Chi phí loại bao bì này từ 80$ cho 1 m³.
 
@@ -54,7 +54,7 @@ Chúng tôi hiểu rằng việc giao hàng, nhất là trên quãng đường x
 
 6. Khuyến nghị về lắp đặt
 
-Xét đến độ phức tạp và tính độc đáo của các bố cục ánh sáng của chúng tôi, chúng tôi khuyên bạn nên sử dụng dịch vụ của các đội lắp đặt chính thức Vargov®Design. Các chuyên gia của chúng tôi có kiến thức và kinh nghiệm cần thiết để lắp đặt chuyên nghiệp, đảm bảo mọi chi tiết hoạt động đúng và giữ được sự nguyên vẹn.
+Xét đến độ phức tạp và tính độc đáo của các tác phẩm ánh sáng của chúng tôi, chúng tôi khuyên bạn nên sử dụng dịch vụ của các đội lắp đặt chính thức Vargov®Design. Các chuyên gia của chúng tôi có kiến thức và kinh nghiệm cần thiết để lắp đặt chuyên nghiệp, đảm bảo mọi chi tiết hoạt động đúng và giữ được sự nguyên vẹn.
 
 7. Cần làm gì khi nhận sản phẩm?
 

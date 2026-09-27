@@ -6,7 +6,7 @@ Cómo nacen los elementos de las composiciones: cada idea pasa del concepto al o
 
 El prototipado, o cómo nacen los elementos de las composiciones Vargov®Design
 
-En la filosofía de Vargov®Design, cada composición lumínica no es solo una fuente de luz, sino una obra de arte que exige una precisión de orfebre. Para alcanzar ese nivel incorporamos al proceso de creación el prototipado de los futuros elementos. Es una de las etapas clave de nuestro trabajo, donde la creatividad se encuentra con la técnica.
+En la filosofía de Vargov®Design, cada composición luminosa no es solo una fuente de luz, sino una obra de arte que exige una precisión de orfebre. Para alcanzar ese nivel incorporamos al proceso de creación el prototipado de los futuros elementos. Es una de las etapas clave de nuestro trabajo, donde la creatividad se encuentra con la técnica.
 
 El prototipado es parte inseparable del trabajo de Vargov®Design. Gracias a él, cada idea recorre el camino del concepto al objeto real con la máxima precisión.
 

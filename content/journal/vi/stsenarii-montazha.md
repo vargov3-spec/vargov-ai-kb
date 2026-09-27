@@ -2,11 +2,11 @@
 
 Chuyên mục: Lắp đặt · Ngày: 2 tháng 10 năm 2024 · Slug: stsenarii-montazha
 
-Kịch bản lắp đặt tối ưu là sự cân bằng giữa thẩm mỹ, sự thuận tiện bảo trì và các yêu cầu kỹ thuật của bố cục và nội thất.
+Kịch bản lắp đặt tối ưu là sự cân bằng giữa thẩm mỹ, sự thuận tiện bảo trì và các yêu cầu kỹ thuật của tác phẩm và nội thất.
 
-Kịch bản lắp đặt tối ưu là sự cân bằng giữa thẩm mỹ, sự thuận tiện bảo trì và các yêu cầu kỹ thuật của bố cục ánh sáng cụ thể cùng nội thất.
+Kịch bản lắp đặt tối ưu là sự cân bằng giữa thẩm mỹ, sự thuận tiện bảo trì và các yêu cầu kỹ thuật của tác phẩm ánh sáng cụ thể cùng nội thất.
 
-Kịch bản lắp đặt các bố cục ánh sáng Vargov®Design cần chi tiết và tuần tự để bảo đảm độ chính xác khi thi công. Dưới đây là các bước chính:
+Kịch bản lắp đặt các tác phẩm ánh sáng Vargov®Design cần chi tiết và tuần tự để bảo đảm độ chính xác khi thi công. Dưới đây là các bước chính:
 
 1. Kiểm tra hàng hóa
 
@@ -18,13 +18,13 @@ Kịch bản lắp đặt các bố cục ánh sáng Vargov®Design cần chi ti
 
 2. Chuẩn bị bề mặt
 
-- Bảo đảm trần đã được chuẩn bị: trần có thể làm bằng thạch cao (GKL) với tấm chờ gỗ dán, có đế kim loại hoặc đế chuyên dụng Vargov®Design được chế tạo cùng bố cục.
+- Bảo đảm trần đã được chuẩn bị: trần có thể làm bằng tấm thạch cao với tấm chờ gỗ dán, có đế kim loại hoặc đế chuyên dụng Vargov®Design được chế tạo cùng tác phẩm.
 
-- Trên trần phải có lỗ kỹ thuật để đấu nối bố cục và đặt driver trong khoảng không sau trần, hoặc trong tủ điện phân phối.
+- Trên trần phải có lỗ kỹ thuật để đấu nối tác phẩm và đặt driver trong khoảng không sau trần, hoặc trong tủ điện phân phối.
 
 3. Lắp dây dẫn và cáp treo
 
-Thẻ đánh dấu trên dây dẫn hoặc cáp treo đảm nhiệm một số chức năng quan trọng trong quá trình lắp đặt bố cục ánh sáng Vargov®Design:
+Thẻ đánh dấu trên dây dẫn hoặc cáp treo đảm nhiệm một số chức năng quan trọng trong quá trình lắp đặt tác phẩm ánh sáng Vargov®Design:
 
 - Nhận diện các chi tiết
 
@@ -32,11 +32,11 @@ Mỗi thẻ có một số hiệu duy nhất, tương ứng với một vị tr�
 
 - Giới hạn độ cao
 
-Thẻ còn đóng vai trò cữ chặn độ cao cho từng chi tiết. Khi lắp, thẻ phải tì vào chi tiết lắp đặt trên trần, bảo đảm định vị và căn chỉnh đúng các chi tiết của bố cục.
+Thẻ còn đóng vai trò cữ chặn độ cao cho từng chi tiết. Khi lắp, thẻ phải tì vào chi tiết lắp đặt trên trần, bảo đảm định vị và căn chỉnh đúng các chi tiết của tác phẩm.
 
 - Đơn giản hóa quá trình lắp đặt
 
-Sự hiện diện của thẻ giúp quá trình lắp đặt đơn giản hơn đáng kể, cho phép thợ lắp làm việc nhanh hơn và tránh sai sót. Vì mỗi dây dẫn hay cáp treo đã được đánh dấu sẵn, thợ lắp có thể dễ dàng làm theo hướng dẫn và tránh nhầm lẫn.
+Có thẻ đánh dấu, quá trình lắp đặt đơn giản hơn đáng kể, cho phép thợ lắp làm việc nhanh hơn và tránh sai sót. Vì mỗi dây dẫn hay cáp treo đã được đánh dấu sẵn, thợ lắp có thể dễ dàng làm theo hướng dẫn và tránh nhầm lẫn.
 
 4. Đấu nối vào lưới điện
 
@@ -44,11 +44,11 @@ Với diode 12V:
 
 - Dự trù chỗ cho driver trong tủ điện phân phối.
 
-- Kéo dây điện áp thấp từ tủ điện đến vị trí bố cục, theo số lượng chi tiết.
+- Kéo dây điện áp thấp từ tủ điện đến vị trí tác phẩm, theo số lượng chi tiết.
 
 - Gia cố trần bằng gỗ dán, khoan lỗ theo sơ đồ lắp đặt và luồn dây.
 
-- Nối dây với các chi tiết của bố cục bằng cầu đấu có trong bộ.
+- Nối dây với các chi tiết của tác phẩm bằng cầu đấu có trong bộ.
 
 Với diode 220V:
 
@@ -60,9 +60,9 @@ Với diode 220V:
 
 5. Các phương án đấu nối
 
-- Nếu trần đã được chuẩn bị và có một đầu ra 220V, bạn có thể:
+- Nếu trần đã được chuẩn bị và có một đầu chờ điện 220V, bạn có thể:
 
-- Sử dụng đế (base) của bố cục, nơi đặt toàn bộ các mối nối và driver (chiều cao đế từ 80 mm).
+- Sử dụng đế của tác phẩm, nơi đặt toàn bộ các mối nối và driver (chiều cao đế từ 80 mm).
 
 - Sử dụng cửa thăm kỹ thuật để đấu nối và đặt driver trong khoảng không sau trần.
 
@@ -88,7 +88,7 @@ Khuyến nghị chọn kịch bản:
 
 Khuyến nghị về lắp đặt
 
-Xét đến độ phức tạp và tính độc đáo của các bố cục ánh sáng của chúng tôi, chúng tôi khuyên bạn nên sử dụng dịch vụ của các đội lắp đặt chính thức Vargov®Design. Các chuyên gia của chúng tôi có kiến thức và kinh nghiệm cần thiết để lắp đặt chuyên nghiệp, đảm bảo mọi chi tiết hoạt động đúng và giữ được sự nguyên vẹn.
+Xét đến độ phức tạp và tính độc đáo của các tác phẩm ánh sáng của chúng tôi, chúng tôi khuyên bạn nên sử dụng dịch vụ của các đội lắp đặt chính thức Vargov®Design. Các chuyên gia của chúng tôi có kiến thức và kinh nghiệm cần thiết để lắp đặt chuyên nghiệp, đảm bảo mọi chi tiết hoạt động đúng và giữ được sự nguyên vẹn.
 
 Cần làm gì khi nhận sản phẩm?
 

@@ -6,17 +6,17 @@ Triển lãm đầu tiên của thương hiệu tại Nga: trình diễn trực 
 
 ✨ INTERLIGHT 2025 — cảm ơn vì đã ở bên chúng tôi
 
-Với chúng tôi, đây là triển lãm đầu tiên tại Nga. Và nó đã trở thành điều gì đó lớn hơn một gian hàng với các bố cục.
+Với chúng tôi, đây là triển lãm đầu tiên tại Nga. Và nó đã trở thành điều gì đó lớn hơn một gian hàng với các tác phẩm.
 
 Lần đầu tiên chúng tôi trình diễn ánh sáng Vargov®Design một cách trực tiếp — và nhận được phản hồi, sự đối thoại và ủng hộ vô giá. Các kiến trúc sư, nhà thiết kế, đơn vị cung ứng, đối tác — cảm ơn các bạn đã đến, đã ngắm nhìn, đã hỏi, đã cảm nhận.
 
 Chúng tôi không tạo ra sản phẩm đại trà — mà tạo ra vật thể trong đó có ý tưởng, sự tĩnh lặng và hình khối. Và điều đặc biệt quan trọng là được thấy điều đó tìm được sự đồng vọng.
 
-Gian trưng bày của công ty thu hút sự chú ý của kiến trúc sư, nhà thiết kế, đơn vị cung ứng và đại diện truyền thông không chỉ nhờ hình ảnh thị giác, mà còn nhờ bầu không khí đặc biệt do các bố cục ánh sáng của thương hiệu tạo nên.
+Gian trưng bày của công ty thu hút sự chú ý của kiến trúc sư, nhà thiết kế, đơn vị cung ứng và đại diện truyền thông không chỉ nhờ hình ảnh thị giác, mà còn nhờ bầu không khí đặc biệt do các tác phẩm ánh sáng của thương hiệu tạo nên.
 
 Kiến trúc gian trưng bày:
 
-Bộ khung đen tối giản trở thành phông nền cho hơn mười bố cục nguyên bản, được lắp ráp thủ công từ thủy tinh, pha lê, sứ và kim loại.
+Bộ khung đen tối giản trở thành phông nền cho hơn mười tác phẩm nguyên bản, được lắp ráp thủ công từ thủy tinh, pha lê, sứ và kim loại.
 
 Những hình khối lơ lửng, hình học phức tạp của hệ treo, các phản chiếu và khúc xạ — mỗi mẫu đều khơi lên mong muốn không chỉ chụp ảnh, mà ở lại và ngắm nhìn thật kỹ.
 
@@ -34,7 +34,7 @@ Với nhiều khách tham quan triển lãm, đây là lần đầu làm quen v�
 
 Điều quan trọng với chúng tôi là ánh sáng được cảm nhận không phải như một món hàng, mà như một vật thể có chiều sâu.
 
-Và chính phản ứng như vậy là điều chúng tôi đã nhận được.
+Và chúng tôi đã nhận được đúng phản ứng như thế.
 
 Tiếp theo là gì?
 

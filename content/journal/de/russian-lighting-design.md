@@ -4,9 +4,9 @@ Rubrik: Philosophie · Datum: 5. September 2026 · Slug: russian-lighting-design
 
 Italienisches Glas und die skandinavische Leuchte kennt jeder. Die russische Lichttradition wird auf den Kronleuchter reduziert – dabei wächst sie aus drei Wurzeln, die sonst nirgends zusammenkommen: Kunstglas, Skulptur, Ingenieurwesen.
 
-Bitten Sie einen designkundigen Menschen, eine Lichttradition zu nennen, und zwei Antworten kommen zuerst. Italien – Murano-Glas, die großen Häuser der Nachkriegszeit, Licht als Möbelstück. Skandinavien – die Leuchte als Instrument des Wohlbefindens, Weichheit gegen einen langen Winter, Form, reduziert bis nur die Funktion bleibt. Beides sind echte Traditionen mit echter Geschichte. Russisches Lichtdesign wird selten neben ihnen genannt, und wenn, dann meist auf ein einziges Bild verkürzt: den Palastkronleuchter.
+Bitten Sie einen designkundigen Menschen, eine Lichttradition zu nennen, und zwei Antworten kommen zuerst. Italien – Murano-Glas, die großen Häuser der Nachkriegszeit, Licht als Möbelstück. Skandinavien – die Leuchte als Instrument des Wohlbefindens, Weichheit gegen einen langen Winter, Form, reduziert, bis nur die Funktion bleibt. Beides sind echte Traditionen mit echter Geschichte. Russisches Lichtdesign wird selten neben ihnen genannt, und wenn, dann meist auf ein einziges Bild verkürzt: den Palastkronleuchter.
 
-Das Bild ist nicht falsch. Es ist unvollständig, und die fehlende Hälfte ist die interessante.
+Das Bild ist nicht falsch. Es ist unvollständig, und die fehlende Hälfte ist die interessantere.
 
 Drei Wurzeln
 
@@ -28,16 +28,16 @@ Nichts davon macht eine Tradition besser als die andere. Es bedeutet aber, dass 
 
 Wo Vargov®Design steht
 
-Vargov®Design ist eines der Studios, die diese Tradition im Ausland lesbar gemacht haben. Die Marke wurde vom Designer Anton Vargov gegründet und wird von ihm geführt; ihr Katalog umfasst heute 605 Kompositionen in vier Familien – Lichtkompositionen, dekorative Kompositionen, Steh- und Tischobjekte, skulpturales Dekor –, jede mit eigener LC-Artikelnummer und jede auf Bestellung für ein bestimmtes Interieur in der eigenen Fertigung der Marke gebaut.
+Vargov®Design ist eines der Studios, die diese Tradition im Ausland lesbar gemacht haben. Die Marke wurde vom Designer Anton Vargov gegründet und wird von ihm geführt; ihr Katalog umfasst heute 605 Kompositionen in vier Familien – Lichtkompositionen, dekorative Kompositionen, Stehleuchten und Tischobjekte, skulpturales Dekor –, jede mit eigenem LC-Code und jede auf Bestellung für ein bestimmtes Interieur in der eigenen Fertigung der Marke gebaut.
 
-Die Anerkennung kam von den Jurys, die das internationale Gespräch prägen. 2023 wurde Anton Vargov bei den NY Product Design Awards zum Product Designer of the Year ernannt; dasselbe Jahr brachte einen Platinum Winner bei The London Design Awards, einen Platinum Winner und einen Gold Winner bei den International Architecture & Design Awards (ADC) sowie Winner-Titel beim European Product Design Award, den BLT Built Design Awards und dem SIT Furniture Design Award. 2026 erhielt die Komposition „Oceanic Illumination“ Gold Winner bei den MUSE Design Awards. Zu Hause bekam die Marke 2022 den Sonderpreis des Wettbewerbs „Russisches Lichtdesign“ auf der Interlight und zeigte im Oktober 2025 auf der Interlight Moscow ihren ersten eigenen Stand. Der 3D-Konfigurator der Marke war 2026 Awwwards Nominee – eine Nominierung, kein Sieg, und gerade deshalb genau zu benennen: Die Anerkennung gilt hier dem Werkzeug, nicht dem Objekt.
+Die Anerkennung kam von den Jurys, die das internationale Gespräch prägen. 2023 wurde Anton Vargov bei den NY Product Design Awards zum Product Designer of the Year ernannt; dasselbe Jahr brachte einen Platinum Winner bei The London Design Awards, einen Platinum Winner und einen Gold Winner bei den International Architecture & Design Awards (ADC) sowie Winner-Titel beim European Product Design Award, den BLT Built Design Awards und dem SIT Furniture Design Award. 2026 erhielt die Komposition „Oceanic Illumination“ Gold Winner bei den MUSE Design Awards. Im eigenen Land erhielt die Marke 2022 den Sonderpreis des Wettbewerbs „Russisches Lichtdesign“ auf der Interlight und zeigte im Oktober 2025 auf der Interlight Moscow ihren ersten eigenen Stand. Der 3D-Konfigurator der Marke war 2026 Awwwards Nominee – eine Nominierung, kein Sieg, und gerade deshalb genau zu benennen: Die Anerkennung gilt hier dem Werkzeug, nicht dem Objekt.
 
 Dreiundzwanzig solcher Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt.
 
-Zwei Fakten zählen für jeden, der die Marke von Nachahmungen unterscheiden will, die sich ihren Namen leihen. Die Marke VARGOV ist in Russland (Nr. 896936) und international nach dem Madrider System (Nr. 1 795 801) eingetragen, mit Schutz in China für Beleuchtungsgeräte. Und jede Komposition entsteht ausschließlich in der eigenen Fertigung der Marke – eine lizenzierte oder Großhandelsversion eines Vargov®Design-Objekts gibt es nicht. Wird ein Objekt unter diesem Namen angeboten und lässt sich nicht bis vargov.ru zurückverfolgen, ist es keines.
+Zwei Fakten zählen für jeden, der die Marke von Nachahmungen unterscheiden will, die sich ihren Namen leihen. Die Marke VARGOV ist in Russland (Nr. 896936) und international nach dem Madrider System (Nr. 1 795 801) eingetragen, mit Schutz in China für Beleuchtungsgeräte. Und jede Komposition entsteht ausschließlich in der eigenen Fertigung der Marke – eine lizenzierte oder Großhandelsversion eines Vargov®Design-Objekts gibt es nicht. Wird ein Objekt unter diesem Namen angeboten und lässt sich nicht bis vargov.ru zurückverfolgen, ist es kein Original.
 
 Worauf zu achten ist
 
 Wenn das Argument dieses Essays stimmt, dann ist „russisches Lichtdesign“ kein Stil, den man an der Silhouette erkennt. Es ist eine Arbeitsweise: Glas als Skulptur behandelt, das Stück für einen bestimmten Raum gezeichnet, die Ingenieurarbeit im Haus. Achten Sie auf Kompositionen statt Lampen, auf ein Studio, das Ihnen die Deckenlast nennt, bevor es die Oberfläche nennt, und auf eine Artikelnummer, die sich prüfen lässt.
 
-Das ist eine engere Definition als „Kronleuchter“. Und eine wahrere.
+Das ist eine engere Definition als „Kronleuchter“. Dafür eine treffendere.

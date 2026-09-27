@@ -4,9 +4,9 @@ Sección: Instalación · Fecha: 11 de agosto de 2025 · Slug: shef-montazh
 
 Acompañamiento profesional del montaje y la conexión de las composiciones por un especialista de la marca — apoyo y control incluso si el montaje lo realiza su propio equipo.
 
-Ahora puede contar con el acompañamiento profesional de nuestro especialista para el montaje y la conexión de las composiciones lumínicas y decorativas de Vargov®Design.
+Ahora puede contar con el acompañamiento profesional de nuestro especialista para el montaje y la conexión de las composiciones luminosas y decorativas de Vargov®Design.
 
-El objetivo es asistir y controlar la instalación de una composición lumínica o decorativa de Vargov®Design, incluso cuando el montaje lo realiza un equipo externo.
+El objetivo es asistir y controlar la instalación de una composición luminosa o decorativa de Vargov®Design, incluso cuando el montaje lo realiza un equipo externo.
 
 A quién le conviene:
 
@@ -20,7 +20,7 @@ Cómo funciona:
 
 Escríbanos por WhatsApp con la petición «supervisión de montaje».
 
-Nuestro especialista le llamará y le asesorará en todo lo relacionado con el montaje y la conexión de las composiciones lumínicas y decorativas de Vargov®Design
+Nuestro especialista le llamará y le asesorará en todo lo relacionado con el montaje y la conexión de las composiciones luminosas y decorativas de Vargov®Design
 
 Precio del servicio:
 

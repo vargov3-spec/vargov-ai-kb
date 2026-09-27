@@ -32,7 +32,7 @@ Sans bruit visuel.
 
 Sans forme pour la forme.
 
-« La véritable reconnaissance commence là où une forme ne peut plus être répétée par hasard.
+« Une forme devient vraiment reconnaissable là où on ne peut plus la répéter par hasard.
 
 On peut tenter de copier une silhouette.
 

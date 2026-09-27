@@ -2,7 +2,7 @@
 
 Rubrique: Salons · Date: 26 octobre 2025 · Slug: interlight-2025
 
-Le premier salon de la marque en Russie : la lumière Vargov®Design en direct, le dialogue avec architectes, designers et prescripteurs — et l'un des stands les plus commentés du salon.
+Le premier salon de la marque en Russie : la lumière Vargov®Design en direct, le dialogue avec architectes, designers et acheteurs projet — et l'un des stands les plus commentés du salon.
 
 ✨ INTERLIGHT 2025 — merci d'avoir été là avec nous
 
@@ -18,7 +18,7 @@ L'architecture du stand :
 
 Une ossature noire minimaliste a servi de toile de fond à plus de dix compositions d'auteur, assemblées à la main en verre, cristal, porcelaine et métal.
 
-Des formes en suspension, la géométrie complexe des suspensions, reflets et réfractions — chaque modèle donnait envie non pas simplement de le photographier, mais de rester et de le regarder vraiment.
+Des formes flottantes, la géométrie complexe des suspensions, reflets et réfractions — chaque modèle donnait envie non pas simplement de le photographier, mais de rester et de le regarder vraiment.
 
 Ici, la lumière ne remplissait pas une fonction — elle créait un état.
 
@@ -40,7 +40,7 @@ Et ensuite ?
 
 Interlight 2025 a été un point d'entrée. Pas un aboutissement.
 
-La marque continuera de développer les fournitures de projet en Russie via ses revendeurs.
+La marque continuera de développer l'approvisionnement des projets en Russie via ses revendeurs.
 
 Et aussi : élargir les collections, expérimenter avec les matières et créer une lumière qui a du sens.
 

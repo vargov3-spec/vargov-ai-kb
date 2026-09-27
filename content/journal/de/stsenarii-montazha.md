@@ -12,7 +12,7 @@ Das Montageszenario für Lichtkompositionen von Vargov®Design muss detailliert 
 
 - Prüfen Sie die Kisten bei der Anlieferung auf Unversehrtheit.
 
-- Die Oberseite der Kiste ist mit dem Klebeband mit Logo gekennzeichnet.
+- Die Oberseite der Kiste ist mit dem Logo-Klebeband gekennzeichnet.
 
 - Suchen Sie die Kiste mit dem Montageplan (auf Bannerstoff im Maßstab 1:1 gedruckt).
 
@@ -44,7 +44,7 @@ Für 12-V-LEDs:
 
 - Im Verteilerkasten Platz für das Netzteil vorsehen.
 
-- Niederspannungsleitungen vom Verteilerkasten zum Ort der Komposition verlegen, eine je Element.
+- Kleinspannungsleitungen vom Verteilerkasten zum Ort der Komposition verlegen, eine je Element.
 
 - Die Decke mit Sperrholz verstärken, die Bohrungen nach dem Montageplan setzen und die Leitungen durchführen.
 

@@ -1,16 +1,16 @@
 # Streetlight par Vargov®Design
 
-Rubrique: Directions · Date: 13 août 2024 · Slug: streetlight
+Rubrique: Orientations · Date: 13 août 2024 · Slug: streetlight
 
-Une direction de compositions lumineuses immersives d'extérieur : des installations qui façonnent l'atmosphère et l'identité de l'espace urbain — jusqu'aux scénarios interactifs.
+Une orientation consacrée aux compositions lumineuses immersives d'extérieur : des installations qui façonnent l'atmosphère et l'identité de l'espace urbain — jusqu'aux scénarios interactifs.
 
-Streetlight, c'est la création de compositions lumineuses immersives en extérieur qui ne se contentent pas d'éclairer : elles façonnent l'atmosphère singulière d'un espace urbain. Cette direction réunit l'art, la technologie et l'architecture dans des installations lumineuses saisissantes, capables de modifier la perception de l'environnement.
+Streetlight, c'est la création de compositions lumineuses immersives en extérieur qui ne se contentent pas d'éclairer : elles façonnent l'atmosphère singulière d'un espace urbain. Cette orientation réunit l'art, la technologie et l'architecture dans des installations lumineuses saisissantes, capables de modifier la perception de l'environnement.
 
 Streetlight englobe des solutions d'éclairage qui deviennent une part indissociable de l'identité d'une ville et participent à son image visuelle. Ces compositions peuvent être interactives : elles réagissent au mouvement des passants ou aux changements de météo, créant une lumière dynamique, « vivante ».
 
-Les objectifs premiers de Streetlight sont d'améliorer l'esthétique des rues, d'accroître la sécurité et le confort, et d'ouvrir de nouvelles façons pour les habitants d'interagir avec leur ville. À l'avenir, cette direction deviendra un élément important de la planification urbaine et contribuera à des villes intelligentes et écologiquement durables.
+Les objectifs premiers de Streetlight sont d'améliorer l'esthétique des rues, d'accroître la sécurité et le confort, et d'ouvrir de nouvelles façons pour les habitants d'interagir avec leur ville. À l'avenir, cette orientation deviendra un élément important de la planification urbaine et contribuera à des villes intelligentes et écologiquement durables.
 
-De telles compositions lumineuses savent souligner ce que chaque ville a d'unique, en créant des images qui marquent la mémoire et s'attachent à des lieux précis. Elles n'éclaireront pas seulement les rues et les places : elles joueront le rôle de véritables symboles, attirant l'attention des habitants comme des visiteurs.
+De telles compositions lumineuses sauront souligner ce que chaque ville a d'unique, en créant des images qui marquent la mémoire et s'attachent à des lieux précis. Elles n'éclaireront pas seulement les rues et les places : elles joueront le rôle de véritables symboles, attirant l'attention des habitants comme des visiteurs.
 
 Chez Vargov®Design, nous voyons dans les compositions lumineuses immersives un moyen d'offrir aux citadins une expérience unique. Les installations de lumière peuvent transformer l'atmosphère d'un lieu et plonger les gens dans des réalités nouvelles et captivantes. Elles nouent un lien affectif entre l'habitant et sa ville, et rendent inoubliable chaque promenade nocturne.
 
@@ -18,7 +18,7 @@ Vargov®Design est attentif à la dimension écologique. Dans les villes de dema
 
 Notre vision du rôle des compositions lumineuses urbaines et immersives dans les villes de demain, c'est celle de la lumière comme part indissociable de la vie urbaine : une lumière capable d'inspirer, de surprendre et d'améliorer le cadre de vie. Nous croyons qu'elle deviendra un élément essentiel de villes intelligentes, propres et riches d'émotion, où chacun pourra trouver sa place et se sentir relié au monde qui l'entoure.
 
-L'une des futures directions de Vargov®Design sera la conception de compositions lumineuses en extérieur. Nous voyons un potentiel considérable dans des solutions d'éclairage innovantes pour les espaces urbains, à la fois fonctionnelles et esthétiquement fortes. Nos projets viseront à transformer le visage nocturne des villes, à les rendre plus sûres, plus accueillantes et plus inspirantes.
+L'une des futures orientations de Vargov®Design sera la conception de compositions lumineuses en extérieur. Nous voyons un potentiel considérable dans des solutions d'éclairage innovantes pour les espaces urbains, à la fois fonctionnelles et esthétiquement fortes. Nos projets viseront à transformer le visage nocturne des villes, à les rendre plus sûres, plus accueillantes et plus inspirantes.
 
 Nous entendons mobiliser des technologies de pointe et des approches contemporaines du design pour créer des compositions lumineuses singulières, qui s'inscrivent avec harmonie dans l'architecture de la ville et en soulignent la personnalité. Chaque composition sera conçue en fonction des spécificités de son espace, afin de le rendre aussi attirant et aussi agréable que possible pour les habitants et les visiteurs.
 

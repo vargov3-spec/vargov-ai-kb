@@ -2,7 +2,7 @@
 
 Rubrik: Philosophie · Datum: 15. Mai 2026 · Slug: dizain-kod
 
-Im Kern der Marke steht kein visueller Stil, sondern die Sichtweise des Autors auf Form, Licht und Raum. Die Form entsteht aus Beobachtung: natürlicher Plastizität, architektonischem Rhythmus und dem Verhalten des Lichts im Material.
+Im Kern der Marke steht kein visueller Stil, sondern die Sichtweise des Autors auf Form, Licht und Raum. Die Form entsteht aus der Beobachtung natürlicher Plastizität, des architektonischen Rhythmus und des Verhaltens von Licht im Material.
 
 Der Design-Code von Vargov®Design lässt sich nicht getrennt von der Person des Autors betrachten.
 

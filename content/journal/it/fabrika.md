@@ -12,7 +12,7 @@ Abbiamo scelto consapevolmente la strategia di far crescere un'unica realtà —
 
 Nel prossimo futuro sono previsti alla manifattura Vargov®Design alcuni passi importanti per lo sviluppo e l'ampliamento:
 
-Ampliamento degli spazi produttivi: le capacità saranno aumentate per rispondere alla domanda crescente. La manifattura potrà così realizzare più composizioni luminose e affrontare progetti di scala maggiore.
+Ampliamento degli spazi produttivi: la capacità produttiva sarà aumentata per rispondere alla domanda crescente. La manifattura potrà così realizzare più composizioni luminose e affrontare progetti di scala maggiore.
 
 Ammodernamento degli impianti: le linee di produzione saranno presto rinnovate, introducendo nuove tecnologie e automatizzando i processi chiave, con benefici su efficienza e qualità.
 

@@ -2,11 +2,11 @@
 
 Sección: Ferias · Fecha: 4 de agosto de 2025 · Slug: interlight-vystavka
 
-Por primera vez en Rusia: una presentación en vivo de las composiciones lumínicas — sin filtros ni renders, solo materiales, texturas y luz reales.
+Por primera vez en Rusia: una presentación en vivo de las composiciones luminosas — sin filtros ni renders, solo materiales, texturas y luz reales.
 
-Por primera vez en Rusia, Vargov®Design —empresa internacional de composiciones lumínicas y decorativas— participará en la feria Interlight 2025.
+Por primera vez en Rusia, Vargov®Design —empresa internacional de composiciones luminosas y decorativas— participará en la feria Interlight 2025.
 
-Mostraremos nuestras composiciones lumínicas en vivo.
+Mostraremos nuestras composiciones luminosas en vivo.
 
 Sin filtros, sin renders: solo materiales, texturas y luz reales.
 

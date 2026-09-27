@@ -12,11 +12,11 @@ El fundador y diseñador principal de la marca es Anton Vargov.
 
 Es su pensamiento artístico el que da forma a ese sistema interno por el que los objetos de Vargov®Design se reconocen sin firma.
 
-Para Anton Vargov la forma nunca existe por el efecto exterior.
+Para Anton Vargov la forma nunca existe solo para causar efecto.
 
 Nace de la observación:
 
-— de la plástica de la naturaleza
+— de la plasticidad de la naturaleza
 
 — del ritmo de la arquitectura
 
@@ -32,7 +32,7 @@ Sin ruido visual.
 
 Sin forma por la forma.
 
-«La verdadera identidad empieza donde una forma ya no se puede repetir por casualidad.
+«Lo verdaderamente reconocible empieza donde una forma ya no se puede repetir por casualidad.
 
 La silueta exterior se puede intentar copiar.
 

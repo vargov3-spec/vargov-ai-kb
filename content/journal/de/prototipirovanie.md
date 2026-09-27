@@ -20,4 +20,4 @@ Prototyping ist ein untrennbarer Teil der Arbeit von Vargov®Design. Dadurch leg
 
 Wenn uns das Ergebnis vollständig überzeugt, geben wir den Prototyp an die eigene Fertigung von Vargov®Design, wo das Element aus den „echten“ Materialien entsteht — aus Keramik, Kristall, Glas oder Metall. So wird das Prototyping zum Bindeglied zwischen Idee und fertigem Werk. Es ist unser Werkzeug, das den Prozess schneller, sauberer, sparsamer und innovativer macht. Wo andere noch raten, kennen wir das Ergebnis genau.
 
-Eine Form lässt sich fälschen. Eine Idee nicht. Kommen Sie mit?
+Eine Form lässt sich fälschen. Eine Idee nicht. Können Sie mithalten?

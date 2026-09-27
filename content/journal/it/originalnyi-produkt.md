@@ -26,31 +26,31 @@ Le fasi dell'imballaggio:
 
 - Protezione degli elementi. Ogni elemento d'autore Vargov®Design viene avvolto in una speciale pellicola protettiva. Questo previene graffi, abrasioni e altri danni durante il trasporto.
 
-- Inserti in polistirolo. All'interno della cassa, inserti in polistirolo ad alta densità assicurano un fissaggio saldo e proteggono i pezzi da urti e vibrazioni.
+- Inserti in polistirolo. All'interno della scatola, inserti in polistirolo ad alta densità assicurano un fissaggio saldo e proteggono i pezzi da urti e vibrazioni.
 
-- Welcome card. In ogni cassa vi attende una welcome card di cartone con il logo Vargov®Design in evidenza. Riporta le informazioni sul marchio registrato e sul brand, a conferma dell'autenticità del vostro ordine.
+- Biglietto di benvenuto. In ogni scatola vi attende un biglietto di benvenuto in cartoncino con il logo Vargov®Design in evidenza. Riporta le informazioni sul marchio registrato e sul brand, a conferma dell'autenticità del vostro ordine.
 
 3. Imballo di marca e branding
 
-Ogni pezzo Vargov®Design viene confezionato con cura in casse con la nostra identità visiva, che ne preservano l'aspetto impeccabile lungo tutto il tragitto.
+Ogni pezzo Vargov®Design viene confezionato con cura in scatole con la nostra identità visiva, che ne preservano l'aspetto impeccabile lungo tutto il tragitto.
 
-- Nastro adesivo di marca. La cassa è sigillata con nastro trasparente recante il logo dell'azienda nei colori del marchio. Un'ulteriore conferma di aver ricevuto un prodotto originale.
+- Nastro adesivo di marca. La scatola è sigillata con nastro trasparente recante il logo dell'azienda nei colori del marchio. Un'ulteriore conferma di aver ricevuto un prodotto originale.
 
-- Cassa di marca. Ogni cassa è realizzata nel rigoroso rispetto dei nostri standard, il che ne garantisce la robustezza e l'affidabilità.
+- Scatola di marca. Ogni scatola è realizzata nel rigoroso rispetto dei nostri standard, il che ne garantisce la robustezza e l'affidabilità.
 
 4. Protezione supplementare durante il trasporto
 
 Sappiamo che la spedizione, soprattutto sulle lunghe distanze, può comportare dei rischi: per questo offriamo una protezione completa dei nostri prodotti in ogni fase:
 
-- Gabbia di legno. Per maggiore sicurezza la cassa viene inserita in una gabbia di legno che riduce al minimo il rischio di danni. La gabbia forma un telaio robusto attorno alla cassa e la difende dalle sollecitazioni esterne.
+- Gabbia di legno. Per maggiore sicurezza la scatola viene inserita in una gabbia di legno che riduce al minimo il rischio di danni. La gabbia forma un telaio robusto attorno alla scatola e la difende dalle sollecitazioni esterne.
 
 - Cassa di compensato. Se necessario, i pezzi possono essere imballati in casse di compensato, che garantiscono la massima protezione. Il costo di questo imballo parte da 80 $ per 1 m³.
 
-- Tela di nylon. Un ulteriore strato di protezione è la tela di nylon che avvolge la cassa dopo l'ingabbiatura. Questo strato impedisce l'ingresso di umidità e polvere, aspetto particolarmente importante nei trasporti lunghi o in caso di stoccaggio.
+- Tela di nylon. Un ulteriore strato di protezione è la tela di nylon che avvolge la scatola dopo l'ingabbiatura. Questo strato impedisce l'ingresso di umidità e polvere, aspetto particolarmente importante nei trasporti lunghi o in caso di stoccaggio.
 
 5. La protezione finale
 
-Per escludere del tutto la possibilità di danni meccanici, la cassa viene rivestita con una pellicola protettiva ad alta densità che la difende dalle sollecitazioni esterne. Questa pellicola non solo attutisce gli urti, ma conserva anche l'aspetto estetico dell'imballo, persino dopo trasporti prolungati.
+Per escludere del tutto la possibilità di danni meccanici, la scatola viene rivestita con una pellicola protettiva ad alta densità che la difende dalle sollecitazioni esterne. Questa pellicola non solo attutisce gli urti, ma conserva anche l'aspetto estetico dell'imballo, persino dopo trasporti prolungati.
 
 6. Consigli per il montaggio
 

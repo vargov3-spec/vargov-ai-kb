@@ -16,7 +16,7 @@ La prototipazione è parte integrante del lavoro di Vargov®Design. Grazie a ess
 
 🔹 Ci concediamo la libertà di sperimentare e di trovare la soluzione ideale.
 
-🔹 Mostriamo ai clienti il pezzo futuro ancora prima che venga realizzato in cristallo, vetro o ceramica.
+🔹 Mostriamo ai clienti il futuro pezzo ancora prima che venga realizzato in cristallo, vetro o ceramica.
 
 Quando il risultato ci convince del tutto, passiamo il prototipo alla nostra produzione Vargov®Design, dove l'elemento nasce con i materiali «veri»: ceramica, cristallo, vetro o metallo. La prototipazione diventa così l'anello di congiunzione tra l'idea e l'opera finita. È lo strumento che rende il processo più rapido, più pulito, più economico e più innovativo. Dove gli altri ancora «tirano a indovinare», noi conosciamo già il risultato.
 

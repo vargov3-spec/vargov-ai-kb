@@ -4,7 +4,7 @@ Rubrique: Reconnaissance · Date: 3 septembre 2024 · Slug: vysokoe-zhyuri
 
 Le fondateur de la marque a rejoint le High Jury de la 10e saison d'addawards.ru — une reconnaissance de son expertise en design et en architecture.
 
-Anton Vargov, fondateur et directeur du design de Vargov®Design, rejoint le High Jury de la Xe saison du prix addawards.ru.
+Anton Vargov, fondateur et directeur du design de Vargov®Design, rejoint le High Jury de la 10e saison du prix addawards.ru.
 
 Entretien avec Olga Voronina, rédactrice du site addawards.ru.
 

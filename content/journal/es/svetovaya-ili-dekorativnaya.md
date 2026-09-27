@@ -2,7 +2,7 @@
 
 Sección: Filosofía · Fecha: 3 de septiembre de 2024 · Slug: svetovaya-ili-dekorativnaya
 
-En qué se diferencian las composiciones lumínicas y las decorativas: funciones, objetivos y atención a la distribución de la luz — explicado por la marca.
+En qué se diferencian las composiciones luminosas y las decorativas: funciones, objetivos y atención a la distribución de la luz — explicado por la marca.
 
 Las composiciones luminosas y las decorativas se diferencian por su función principal y su finalidad:
 

@@ -2,7 +2,7 @@
 
 Rubrica: Storie · Data: 20 agosto 2025 · Slug: kvest
 
-Durante le riprese all'hotel Hurawalhi Maldive l'elemento in vetro LC0371 è stato filmato direttamente in acqua su una barriera dell'Oceano Indiano — e non tutto è andato secondo i piani.
+Durante le riprese all'hotel Hurawalhi Maldives l'elemento in vetro LC0371 è stato filmato direttamente in acqua su una barriera corallina dell'Oceano Indiano — e non tutto è andato secondo i piani.
 
 A volte le storie più insolite nascono per caso ✨
 

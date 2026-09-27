@@ -4,15 +4,15 @@ Sección: Instalación · Fecha: 2 de octubre de 2024 · Slug: stsenarii-montazh
 
 El escenario de montaje óptimo es un equilibrio entre estética, facilidad de mantenimiento y requisitos técnicos de la composición y del interior.
 
-El mejor escenario de montaje es un equilibrio entre la estética, la facilidad de mantenimiento y los requisitos técnicos de cada composición lumínica y de cada interior.
+El mejor escenario de montaje es un equilibrio entre la estética, la facilidad de mantenimiento y los requisitos técnicos de cada composición luminosa y de cada interior.
 
-El escenario de montaje de las composiciones lumínicas Vargov®Design debe ser detallado y coherente para garantizar la precisión de la instalación. Estos son los pasos principales:
+El procedimiento de montaje de las composiciones luminosas Vargov®Design debe ser detallado y secuencial para garantizar la precisión de la instalación. Estos son los pasos principales:
 
 1. Inspección del envío
 
 - Al recibir el envío, compruebe la integridad de las cajas.
 
-- La parte superior de la caja va marcada con la cinta con el logotipo.
+- La parte superior de la caja se identifica por la cinta adhesiva con el logotipo.
 
 - Localice la caja con el plano de montaje (impreso en lona a escala 1:1).
 
@@ -22,9 +22,9 @@ El escenario de montaje de las composiciones lumínicas Vargov®Design debe ser 
 
 - En el techo debe preverse una abertura técnica para conectar la composición y alojar el driver en el espacio sobre el techo o en el cuadro eléctrico.
 
-3. Montaje de los cables eléctricos y de acero
+3. Montaje de los cables eléctricos y de suspensión
 
-La etiqueta del cable eléctrico o del cable de acero cumple varias funciones importantes durante el montaje de una composición lumínica Vargov®Design:
+La etiqueta del cable eléctrico o del cable de suspensión cumple varias funciones importantes durante el montaje de una composición luminosa Vargov®Design:
 
 - Identificación de los elementos
 
@@ -84,11 +84,11 @@ Recomendaciones para elegir el escenario:
 
 - En interiores minimalistas y techos bajos, lo óptimo es el montaje directamente sobre los refuerzos, sin placa base: se gana altura y el diseño se mantiene limpio.
 
-- En proyectos con techos altos es preferible la placa base, que oculta todos los elementos técnicos y simplifica el montaje y la conexión.
+- En proyectos con techos altos, para simplificar el montaje y el mantenimiento, es preferible la placa base, que oculta todos los elementos técnicos y facilita la conexión.
 
 Recomendaciones de montaje
 
-Dada la complejidad y la singularidad de nuestras composiciones lumínicas, le recomendamos recurrir a los montadores oficiales de Vargov®Design. Nuestros especialistas cuentan con los conocimientos y la experiencia necesarios para una instalación profesional, lo que garantiza el funcionamiento correcto de todos los elementos y su integridad.
+Dada la complejidad y la singularidad de nuestras composiciones luminosas, le recomendamos recurrir a los montadores oficiales de Vargov®Design. Nuestros especialistas cuentan con los conocimientos y la experiencia necesarios para una instalación profesional, lo que garantiza el funcionamiento correcto de todos los elementos y su integridad.
 
 ¿Qué hacer al recibir el producto?
 
