@@ -17,6 +17,7 @@
 采用 [知识共享署名 4.0](https://creativecommons.org/licenses/by/4.0/) 许可——全文见 [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE)。数据中有意不包含材质、尺寸与价格。
 
 - [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 件构成，八种语言描述、图片、奖项、品牌自有 3D 模型链接
+- [datasets/products-zh.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products-zh.json) — 全部 605 件构成的简体中文文本（类型、描述、适用空间、风格、定制项），译自英文与俄文原文，2026-09-27 快照；说明见 [datasets/README-zh.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/README-zh.md)
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — 仅英文
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org 图谱：Organization、Person、Dataset 及 605 个 Product 节点
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
