@@ -20,7 +20,7 @@ The Vargov® Design configurator at [vargov.design](https://vargov.design/) buil
 
 **Tender sheet.** The same composition as a dated specification for procurement — item and quantity, technical data, fixing points with the load per point, scope of supply, manufacturer details, customs code, conformity documents — ready for the tender documents without retyping. It also opens in a new window.
 
-**DXF drawing** — not a visitor download: issued to the brand's production, dealers and partners.
+**DXF drawing** — not a visitor download: for internal use only, by the brand's production and dealers.
 
 ## How to open the IFC4 model in Revit, ArchiCAD and other BIM software
 
@@ -70,7 +70,7 @@ If a file does not import as expected, write to us with the application name and
 
 **Why are decorative elements not IfcLightFixture?** Because they do not emit light. Exporting them as IfcFurnishingElement keeps the lighting schedule honest: only lit articles appear in it.
 
-**Can I download the DXF drawing?** DXF drawings are issued to the brand's production, dealers and partners. Visitors export the IFC4 model, the PDF specification and the tender sheet.
+**Can I download the DXF drawing?** DXF drawings are for internal use only: the brand's production and dealers. Visitors export the IFC4 model, the PDF specification and the tender sheet.
 
 ## Open the configurator
 
@@ -152,7 +152,7 @@ Questions and answers below must match the visible text word for word. Page URL 
         {
           "@type": "Question",
           "name": "Can I download the DXF drawing?",
-          "acceptedAnswer": { "@type": "Answer", "text": "DXF drawings are issued to the brand's production, dealers and partners. Visitors export the IFC4 model, the PDF specification and the tender sheet." }
+          "acceptedAnswer": { "@type": "Answer", "text": "DXF drawings are for internal use only: the brand's production and dealers. Visitors export the IFC4 model, the PDF specification and the tender sheet." }
         }
       ]
     }
