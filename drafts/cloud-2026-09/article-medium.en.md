@@ -4,7 +4,7 @@ subtitle: "What an architect gets from our configurator, scene by scene — and 
 author: Anton Vargov, founder and lead designer, Vargov® Design
 channel: Medium (long version of the LinkedIn article)
 target_length: 1000–1300 words
-status: draft — first-person text, owner must read and approve every sentence; resolve [уточнить …] marks first (see README.md)
+status: draft — first-person text, owner must read and approve every sentence; not before the configurator release of 1 October 2026 (see README.md)
 ---
 
 # Why a lighting studio exports IFC4 before you place an order
@@ -23,21 +23,21 @@ In September 2026 we moved that step to the front. The configurator at vargov.de
 
 The IFC4 file is assembled per composition, not per article. It is not a catalogue object; it is the exact set of elements you configured for this room, with its own fixing points and its own loads. Configure the same article twice for two rooms and you get two different files.
 
-Inside, lit articles are IfcLightFixture and decorative articles are IfcFurnishingElement. Ceiling fixing points are separate objects, one per point, each with its own load value. The properties — article code, number of elements and suspension points, mass, power, a link back to the configuration — sit in two property sets, Vargov_Design and Vargov_Mount, which a BIM application shows in its property panel after an IFC import.
+Inside, lit articles are IfcLightFixture and decorative articles are IfcFurnishingElement. Ceiling fixing points are separate objects, one per point, each with its own load value. The properties — article code, elements and suspension points, mass, power, a link back to the configuration — sit in two property sets, Vargov_Design and Vargov_Mount.
 
 Here are the scenes that convinced me it was worth doing.
 
 ## Scene one: the ceiling section
 
-An architect is working on a stairwell. The composition she wants is a cloud of elements, each hanging on its own cable. Her ceiling section already has a beam, a duct and two sprinkler lines. Her question is not whether the composition will look good — she can see that — but where exactly the cables land and which of them meet the duct.
+An architect is working on a stairwell. The composition she wants is a cloud of elements, each hanging on its own cable. Her ceiling section already has a beam, a duct and two sprinkler lines. Her question is not how the composition looks but where exactly the cables land and which of them meet the duct.
 
-A rendering cannot answer that. A model in which every fixing point is a separate object can, in her own file, with her own clash check, on the day she asks. A composition of twenty-seven elements exports as twenty-seven light fixtures and twenty-seven fixing points; we opened an exported file and counted them, because a claim about a file should be checked in the file.
+A rendering cannot answer that. A model in which every fixing point is a separate object can, in her own file, with her own clash check, on the day she asks. When we checked the export in September, a composition of twenty-seven elements came out as twenty-seven light fixtures and twenty-seven fixing points; we opened the file and counted them, because a claim about a file should be checked in the file.
 
 ## Scene two: the engineer's e-mail
 
 It always says the same thing: "What is the load on the ceiling?"
 
-With a single-body fitting the answer is easy: the whole mass arrives at one node. A composition on cables is different. Each element hangs on its own line, so the load is spread across as many points as there are elements — a few articles are exceptions, and we list them by code in a guide on the site. In the export each fixing point carries its own load, and the documents state the number of points with the average and the highest load [уточнить у агента конфигуратора: в каком документе]. The engineer receives numbers to check rather than a request to "have a look at the ceiling".
+With a single-body fitting the answer is easy: the whole mass arrives at one node. A composition on cables is different. The load is spread across many points, and a lit element hangs on a wire while a decorative one hangs on a cable. In the export each fixing point carries its suspension type and its own load in kilograms, and the specification — in the configurator, the PDF and the tender sheet — states the number of points with the average and the highest load. The engineer receives numbers to check rather than a request to "have a look at the ceiling".
 
 ## Scene three: the bill of quantities
 
@@ -45,15 +45,15 @@ A quantity surveyor needs a schedule, and a schedule needs categories. Because l
 
 ## Scene four: Thursday's change
 
-The reception desk moves, and the space above it that the composition may occupy changes with it. In the old order that meant a call to us, a wait and a new drawing. Now it means reopening the configuration, adjusting the composition to the new space and exporting again. The change is cheap because it happens before anything has been ordered, and that is the whole point of moving the export to the front.
+The reception desk moves, and the space above it that the composition may occupy changes with it. In the old order that meant a call to us, a wait and a new drawing. Now it means reopening the configuration, adjusting it and exporting again. The change is cheap because nothing has been ordered yet — the whole point of moving the export to the front.
 
 ## What the file does not do
 
 I would rather list the limits myself than have you find them.
 
-The numbers in the export are a concept-level calculation [уточнить у агента конфигуратора: формулировка]; the final specification for a project is confirmed by our engineer [уточнить у агента конфигуратора]. Treat the file as coordination data, not as a signed shop drawing.
+The numbers are a concept-level calculation, and every PDF and tender sheet says so in its footer: "Calculations are conceptual; the final specification is confirmed by the brand engineer." Treat the file as coordination data, not as a signed shop drawing.
 
-We do not issue a Revit family. The .rfa format is proprietary, and I would rather hand over an open format that Revit, ArchiCAD, Allplan, Tekla and Navisworks read through their IFC import than promise something we cannot make properly.
+We do not issue a Revit family. The .rfa format is proprietary, and I would rather hand over an open format that Revit, ArchiCAD, Allplan, Tekla and Navisworks read through their IFC import than promise what we cannot make properly.
 
 Today 360 of our 605 compositions open with a full calculation and therefore with the export. The rest — some pendant articles that are calculated individually, plus sconces, floor and wall pieces — we configure with you directly.
 
@@ -63,7 +63,7 @@ The DXF drawing exists but stays with production, dealers and partners of the br
 
 Every number in the file is computed from the 3D model and checked automatically before each release of the configurator.
 
-First, one of those checks flagged thirty-four decorative articles whose cable load was above the limit we publish [уточнить у агента конфигуратора: чем это закончилось для 34 артикулов — исправлены или закрыты от расчёта]. A studio would rather not mention such a finding; a check that catches its own product is the only kind worth having.
+First, one of those checks flagged thirty-four decorative articles whose cable load was above the limit we publish. We did not raise the limit: since 17 September a heavy element gets several lines of the same type instead of one line beyond its limit. A studio would rather not mention such a finding; a check that catches its own product is the only kind worth having.
 
 Second, the first version of the export named its property sets with the Pset_ prefix, which the IFC standard reserves for its own sets. A validator rejected the file, and some applications would have hidden exactly the properties that make the export useful. We renamed the sets to Vargov_Design and Vargov_Mount the same day and added that validator to the checks that run before every release. I mention it because "we export IFC4" is easy to say and easy to get subtly wrong.
 
@@ -75,6 +75,6 @@ The architect's interest is that the fixing points are in the model before the c
 
 ## How to try it
 
-Open any composition in the configurator — for example vargov.design/?sku=LC0173 [уточнить у агента конфигуратора: LC0173 входит в 360 открытых с расчётом] — build it for your room, open Documents and download the IFC4 model. Import it into your BIM application with the IFC import or link command, place it at its ceiling position and run your clash check. If the article you need does not open with a calculation yet, write to us at info@vargov.ru and we will configure it with you.
+Open any composition in the configurator — for example vargov.design/?sku=LC0173 — build it for your room, open Documents and download the IFC4 model. Import it into your BIM application with the IFC import or link command, place it at its ceiling position and run your clash check. If the article you need does not open with a calculation yet, write to info@vargov.ru and we will configure it with you.
 
 *Anton Vargov is the founder and lead designer of Vargov® Design — author's lighting and decorative compositions, own production, made to order; 605 compositions in the catalogue, 25 international awards.*
