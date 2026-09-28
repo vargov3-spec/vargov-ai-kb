@@ -5,7 +5,7 @@ meta_description: "Online lighting configurator with IFC4 export: build a compos
 suggested_url: "https://vargov.ru/en/configurator/ifc4"
 lang: en
 alternate: ifc4-page.ru.md
-status: draft — owner approval required before publication; not before the configurator release of 1 October 2026, when the list of 360 calculated articles goes live (see README.md)
+status: approved by the owner 28.09.2026 ("норм") — goes to the site agent; publish not before the configurator release of 1 October 2026, when the list of 360 calculated articles goes live (see README.md)
 ---
 
 # IFC4 from the configurator: what an architect gets and how to use it

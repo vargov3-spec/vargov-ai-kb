@@ -3,7 +3,7 @@ title: "Why a lighting studio exports IFC4 before you place an order"
 author: Anton Vargov, founder and lead designer, Vargov® Design
 channel: LinkedIn article (founder's profile)
 target_length: 600–800 words
-status: draft — first-person text, owner must read and approve every sentence; not before the configurator release of 1 October 2026 (see README.md)
+status: approved by the owner 28.09.2026 ("норм") — publish not before the configurator release of 1 October 2026; who posts on the founder's LinkedIn is the owner's call (see README.md)
 ---
 
 # Why a lighting studio exports IFC4 before you place an order

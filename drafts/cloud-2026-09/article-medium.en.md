@@ -4,7 +4,7 @@ subtitle: "What an architect gets from our configurator, scene by scene — and 
 author: Anton Vargov, founder and lead designer, Vargov® Design
 channel: Medium (long version of the LinkedIn article)
 target_length: 1000–1300 words
-status: draft — first-person text, owner must read and approve every sentence; not before the configurator release of 1 October 2026 (see README.md)
+status: approved by the owner 28.09.2026 ("норм") — publish not before the configurator release of 1 October 2026; who posts on Medium is the owner's call (see README.md)
 ---
 
 # Why a lighting studio exports IFC4 before you place an order
