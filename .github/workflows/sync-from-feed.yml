@@ -117,13 +117,19 @@ jobs:
                    ("datasets/products.jsonl", "products.jsonl"),
                    ("datasets/products.csv", "products_en.csv"),
                    ("en/datasets/products.json", "products_en.json"),
-                   ("en/datasets/products.jsonl", "products_en.jsonl")]
+                   ("en/datasets/products.jsonl", "products_en.jsonl"),
+                   # Китайский — снимок 27.09.2026 (слово владельца «да» 27.09), ночью не пересобирается.
+                   ("datasets/products-zh.jsonl", "products_zh.jsonl"),
+                   ("datasets/products-zh.json", "products_zh.json")]
           # Раскладка датасета плоская + копии в data/ и raw/ — как загружено 09.09.2026.
           ops = []
           from huggingface_hub import CommitOperationAdd
           for src, dst in pairs:
               for name in {dst, "data/" + dst, "raw/" + dst}:
                   ops.append(CommitOperationAdd(path_in_repo=name, path_or_fileobj=src))
+          # Карточка датасета с 27.09.2026 ведётся здесь (datasets/hf-README.md): правка
+          # прямо на Hugging Face будет перезаписана ближайшим прогоном.
+          ops.append(CommitOperationAdd(path_in_repo="README.md", path_or_fileobj="datasets/hf-README.md"))
           api.create_commit(repo_id=repo, repo_type="dataset", operations=ops,
                             commit_message="Nightly sync from vargov.ru feed")
           print("Hugging Face: обновлено", len(ops), "файлов")
