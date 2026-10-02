@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Vargov® Design — Distribution Agreement (Romania)</title>
+<link rel="stylesheet" href="mont-embedded.css">
+<style>
+  :root{
+    --ink:#0c0c0e; --ivory:#f2efe9; --paper:#fff; --brass:#d28200;
+    --gold-soft:#e39b2e; --stone:#6b6862; --mist:#a6a19a; --hair:#ddd8d0;
+  }
+  @page{ size:A4; margin:18mm 15mm 19mm 15mm; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:"Montserrat","Segoe UI",system-ui,sans-serif;
+    font-size:9.2pt; line-height:1.58; color:var(--ink); background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  p{ margin:0 0 4.5pt; text-align:justify; }
+  strong{ font-weight:600; }
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--ivory); height:297mm; padding:26mm 22mm 20mm;
+    display:flex; flex-direction:column; break-after:page; position:relative;
+    margin:-18mm -15mm 0; width:210mm;
+  }
+  .cover::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:6mm;
+    background:linear-gradient(90deg,var(--brass) 0%,var(--gold-soft) 55%,var(--brass) 100%);
+  }
+  .wordmark{ font-size:19pt; font-weight:700; letter-spacing:.30em; text-transform:uppercase; line-height:1.1; }
+  .wordmark sup{ font-size:8pt; letter-spacing:0; top:-.9em; }
+  .tagline{ margin-top:7pt; font-size:7.6pt; letter-spacing:.22em; text-transform:uppercase; color:var(--stone); }
+  .cover-rule{ height:1px; background:var(--brass); margin:16mm 0 0; width:34mm; }
+  .doc-kicker{ margin-top:9mm; font-size:8pt; letter-spacing:.26em; text-transform:uppercase; color:var(--brass); font-weight:600; }
+  .doc-title{ margin-top:6mm; font-size:23pt; font-weight:300; line-height:1.24; max-width:134mm; }
+  .doc-title b{ font-weight:600; }
+  .doc-sub{ margin-top:8mm; font-size:10pt; font-weight:500; }
+  .doc-sub span{ color:var(--brass); }
+  .doc-parties{ margin-top:5mm; font-size:8.6pt; color:var(--stone); line-height:1.75; }
+  .doc-parties b{ color:var(--ink); font-weight:500; }
+  .cover-spacer{ flex:1 1 auto; }
+  .cover-facts{ display:flex; border-top:1px solid var(--hair); padding-top:6mm; margin-bottom:9mm; }
+  .cover-facts div{ flex:1; padding-right:6mm; }
+  .cover-facts .v{ font-size:15pt; font-weight:600; color:var(--brass); line-height:1.1; }
+  .cover-facts .k{ font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--stone); margin-top:3pt; }
+  .cover-meta{ font-size:8pt; line-height:1.85; color:var(--stone); border-top:1px solid var(--hair); padding-top:5mm; }
+  .cover-meta b{ color:var(--ink); font-weight:500; }
+
+  /* ---------- SUMMARY ---------- */
+  .lead{ font-size:9.4pt; font-weight:300; line-height:1.62; margin-bottom:8pt; }
+  h1.sec{ font-size:10.5pt; font-weight:600; letter-spacing:.10em; text-transform:uppercase;
+    margin:0 0 7pt; padding-bottom:4pt; border-bottom:1px solid var(--brass); break-after:avoid; }
+  h1.sec .num{ color:var(--brass); margin-right:7pt; }
+  h3{ font-size:8.8pt; font-weight:600; margin:10pt 0 4pt; break-after:avoid; }
+  ul.brand{ margin:4pt 0 8pt; padding-left:0; list-style:none; font-size:8.6pt; }
+  ul.brand li{ position:relative; padding-left:6mm; margin-bottom:3.5pt; text-align:justify; }
+  ul.brand li::before{ content:""; position:absolute; left:0; top:.62em; width:3mm; height:1px; background:var(--brass); }
+  .intro-grid{ display:flex; gap:5mm; margin:9pt 0 4pt; }
+  .card{ flex:1; border:1px solid var(--hair); border-top:2px solid var(--brass); padding:6pt 7pt; break-inside:avoid; }
+  .card .v{ font-size:12.5pt; font-weight:600; color:var(--brass); line-height:1.15; }
+  .card .k{ font-size:6.8pt; letter-spacing:.13em; text-transform:uppercase; color:var(--stone); margin-top:3pt; }
+  table.terms{ width:100%; border-collapse:collapse; font-size:8.2pt; margin:6pt 0 10pt; }
+  table.terms td{ border:1px solid var(--hair); padding:4.5pt 5pt; vertical-align:top; }
+  table.terms td:first-child{ width:42mm; font-weight:500; background:var(--ivory); }
+  .note{ background:var(--ivory); border-left:2px solid var(--brass); padding:6pt 9pt;
+    font-size:8.2pt; color:var(--stone); margin:8pt 0 10pt; break-inside:avoid; }
+  .note b{ color:var(--ink); }
+
+  /* ---------- BILINGUAL BODY ---------- */
+  .agr-head{ break-before:page; text-align:center; margin-bottom:9pt; }
+  .agr-head .ttl{ font-size:13pt; font-weight:600; letter-spacing:.04em; line-height:1.35; }
+  .agr-head .ttl-en{ font-size:9.4pt; font-weight:400; color:var(--stone); letter-spacing:.04em; margin-top:3pt; }
+  .agr-head .place{ font-size:8.2pt; color:var(--stone); margin-top:6pt;
+    border-top:1px solid var(--brass); padding-top:5pt; display:flex; justify-content:space-between; }
+
+  .row{ display:flex; gap:7mm; break-inside:avoid; margin-bottom:2pt; }
+  .row > div{ flex:1 1 0; min-width:0; }
+  .row .en{ color:#26262b; }
+  h2.sec{
+    font-size:9pt; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    margin:11pt 0 6pt; padding-bottom:3.5pt; border-bottom:1px solid var(--brass); break-after:avoid;
+  }
+  h2.sec .num{ color:var(--brass); margin-right:6pt; }
+  h2.sec .en{ font-weight:400; color:var(--stone); text-transform:none; letter-spacing:.03em; }
+  .cn{ font-weight:600; }
+  .fill{ color:var(--mist); letter-spacing:.06em; }
+  .sig-block{ break-inside:avoid; border:1px solid var(--hair); border-top:2px solid var(--brass);
+    padding:7pt 9pt; margin-bottom:7pt; font-size:8pt; line-height:1.7; }
+  .sig-block .role{ font-size:7.4pt; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); font-weight:600; margin-bottom:4pt; }
+  .sig-line{ margin-top:9pt; padding-top:13pt; border-top:1px solid var(--ink); font-size:7.2pt; color:var(--stone); letter-spacing:.05em; }
+  .end-mark{ margin-top:10pt; text-align:center; font-size:7.2pt; letter-spacing:.3em; text-transform:uppercase; color:var(--mist); }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="wordmark">Vargov<sup>®</sup> Design</div>
+  <div class="tagline">Russian design. World scale. Made in Vargov<sup>®</sup></div>
+
+  <div class="cover-rule"></div>
+  <div class="doc-kicker">Distribution proposal</div>
+  <div class="doc-title">Distribution <b>partnership</b></div>
+  <div class="doc-sub">Territory — <span>Romania</span>, exclusive</div>
+  <div class="doc-parties">
+    A trilateral agreement:<br>
+    <b>IE Anton G. Vargov</b> — Supplier / Brand Owner<br>
+    <b>_________________________</b> — Distributor<br>
+    <b>Vargov®Design China Factory</b> — Manufacturer
+  </div>
+
+  <div class="cover-spacer"></div>
+
+  <div class="cover-facts">
+    <div><div class="v">600+</div><div class="k">author’s compositions</div></div>
+    <div><div class="v">$50,000</div><div class="k">opening display</div></div>
+    <div><div class="v">10&nbsp;%</div><div class="k">brand fee</div></div>
+    <div><div class="v">$100,000</div><div class="k">annual order volume</div></div>
+  </div>
+
+  <div class="cover-meta">
+    <b>Vargov® Design</b> · trademark VARGOV No. 896936 dated 06.10.2022<br>
+    info@vargov.ru · +7 916 537 33 52 · Telegram @AntonVargov · WeChat Vargov_Design<br>
+    vargov.ru · vargov.design<br>
+    <b>Date:</b> ___ ______________ 20___ · <b>To:</b> _____________________________
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section>
+  <h1 class="sec"><span class="num">I</span>The Offer in Brief</h1>
+
+  <p class="lead">Vargov® Design invites your company to become the <strong>exclusive distributor of the brand in Romania</strong>. Below is the full text of the agreement, ready for discussion and signature. The agreement is trilateral: alongside you, it is signed by the brand owner and by the manufacturing factory — giving you direct access to production and to factory prices with no intermediary markup.</p>
+
+  <div class="intro-grid">
+    <div class="card"><div class="v">Exclusive</div><div class="k">Romania — one distributor</div></div>
+    <div class="card"><div class="v">from $50,000</div><div class="k">showroom display</div></div>
+    <div class="card"><div class="v">10 %</div><div class="k">brand fee</div></div>
+  </div>
+
+  <h3>What the distributor receives</h3>
+  <ul class="brand">
+    <li>The status of the official and <strong>exclusive</strong> representative of Vargov® Design in Romania: the exclusive right to sell, display and promote the brand’s products within the territory.</li>
+    <li>Supply <strong>at factory prices</strong> with no markup by the brand owner or third parties; direct communication with the factory manager on pricing and lead times — opened once the display order is placed. The distributor sets end-customer prices independently.</li>
+    <li>Freedom of sales within the territory: selling to any buyers — end customers, designers, architects, procurement companies, retail and project organisations — in its own name and on its own commercial terms. Only the brand owner may confer dealer, agent or brand-representative status on third parties.</li>
+    <li>The official brand guide, 3D models, photographs and video materials of the products and of production.</li>
+    <li>Publication on vargov.ru as an official partner — within 7–10 days of signing.</li>
+    <li>A 12-month factory warranty; defective items replaced at the manufacturer’s expense, including re-shipment.</li>
+    <li>Real protection of exclusivity: a ban on direct supplies into the territory, a duty on the brand and the factory to establish the final site of incoming enquiries and refer them to you, a ban on supplies into your territory through the brand’s other partners, a USD 20,000 penalty per breach and a clear claim procedure.</li>
+  </ul>
+
+  <h3>What the brand expects from the distributor</h3>
+  <ul class="brand">
+    <li><strong>A purchase of products worth at least USD 50,000</strong> to create a permanent display — you choose the range and sizes to suit your premises.</li>
+    <li><strong>An operating showroom</strong>, designed in the brand’s corporate style and maintained in proper aesthetic and technical condition.</li>
+    <li><strong>Selling from the display with subsequent renewal</strong> — display items may be sold without separate consent, provided the brand owner is notified, the fee is paid and the sold item is replaced with a new model.</li>
+    <li><strong>An annual order volume of at least USD 100,000</strong> in production value — the condition for keeping exclusivity. The display order counts towards the first year.</li>
+    <li><strong>A brand fee of 10 % of the contract value</strong> agreed with the end customer — paid to the factory’s account together with the payment for the order itself. Installation, delivery and your project services are excluded from the fee base.</li>
+    <li>Compliance with the brand guide, confidentiality, and the ban on copies and analogues.</li>
+  </ul>
+
+  <div class="note">
+    <b>Why the display is mandatory.</b> A lighting composition does not sell from a photograph: its scale, its light and its build quality register only in person. A distributor with a live display closes the sale on the spot — without waiting out a production cycle. That is the core commercial advantage this partnership is built around.
+  </div>
+
+  <h1 class="sec" style="margin-top:12pt"><span class="num">II</span>Key Terms at a Glance</h1>
+  <table class="terms">
+    <tr><td>Parties</td><td>A trilateral agreement: IE Anton G. Vargov (Supplier / Brand Owner), the Distributor, Vargov®Design China Factory (Manufacturer)</td></tr>
+    <tr><td>Territory</td><td>Romania — exclusive</td></tr>
+    <tr><td>Exclusivity protection</td><td>No direct sales within the territory; a duty to establish the final site of enquiries and refer them to the distributor; no supplies into Romanian projects through the brand’s other partners; a USD 20,000 penalty with a claim procedure and a reply within 15 days</td></tr>
+    <tr><td>Annual volume</td><td>At least USD 100,000 in production value per contract year; the display order counts towards the first year. Shortfall — conversion to a non-exclusive regime or termination</td></tr>
+    <tr><td>Display</td><td>A purchase of at least USD 50,000 of products for a permanent display; the range is the distributor’s choice</td></tr>
+    <tr><td>Display renewal</td><td>A sold or dismantled item is replaced with a new model within 6 months of its removal from the display</td></tr>
+    <tr><td>Prices</td><td>The manufacturer’s factory prices, with no brand-owner markup. No general price list applies — each order is priced individually</td></tr>
+    <tr><td>Brand fee</td><td>10 % of the contract value with the end customer (excluding installation, delivery and the distributor’s services), paid together with the payment for the order — as a single payment obligation. For orders into the distributor’s own display — within 10 days of the item being sold off the display</td></tr>
+    <tr><td>Deal disclosure</td><td>The distributor reports the contract value and provides a copy of the customer agreement; audit no more than once a year; understatement — a penalty of 100 % of the understated amount</td></tr>
+    <tr><td>Factory price access</td><td>Factory prices, calculations and direct contact with the factory manager open once the display order is placed. Until then the brand owner provides the display-order calculation</td></tr>
+    <tr><td>Payments</td><td>In US dollars to the Manufacturer’s bank account. 50 % to start production, 50 % before shipment; shipment after 100 % payment</td></tr>
+    <tr><td>Delivery and risk</td><td>Incoterms 2020 basis agreed in the invoice; FCA — factory by default. Risk passes under the delivery basis, title — after 100 % payment. Insurance — on the distributor</td></tr>
+    <tr><td>Acceptance</td><td>Packaging damage recorded before opening; acceptance by quantity and for evident defects — 10 calendar days</td></tr>
+    <tr><td>Production time</td><td>Up to 90 calendar days; up to 120 calendar days allowing for possible delays. Logistics not included</td></tr>
+    <tr><td>Delivery options</td><td>Three options: from the manufacturer to the final recipient, to the distributor’s warehouse, or arranged by the distributor</td></tr>
+    <tr><td>Warranty</td><td>12 months for hidden manufacturing defects; replacement at the manufacturer’s expense</td></tr>
+    <tr><td>Term</td><td>5 years from signature by all Parties</td></tr>
+    <tr><td>Termination</td><td>On notice — 6 months, not earlier than one year after signing. After termination — 6 months to sell off remaining stock</td></tr>
+    <tr><td>EU conformity</td><td>No CE documentation exists at the date of the agreement: the technical file, testing and the declaration of conformity are prepared by the brand and the factory at their cost before the first shipment; a delay beyond 60 days after production — withdrawal from the order with a full refund. The distributor is the importer and the GPSR responsible person; WEEE and packaging registration sit with it</td></tr>
+    <tr><td>Competition law</td><td>The distributor sets its own resale prices; passive sales across the EU are unrestricted — the agreement is built within Regulation (EU) 2022/720</td></tr>
+    <tr><td>Law and disputes</td><td>CISG 1980, subsidiarily Austrian law; VIAC arbitration, seat — Vienna, language — English. The agreement is drawn up in English</td></tr>
+  </table>
+</section>
+
+<!-- ============ AGREEMENT ============ -->
+<section class="agr-head">
+  <div class="ttl">DISTRIBUTION AGREEMENT No. _______</div>
+  <div class="place"><span>Moscow</span><span>___ ______________ 20___</span></div>
+</section>
+
+<div class="row">
+  <div class="en">
+    <p><strong>Individual Entrepreneur Anton Gennadievich Vargov</strong>, OGRNIP 322508100200337, INN 531003545938, registered with the Interdistrict Inspectorate of the Federal Tax Service No. 23 for the Moscow Region, address: <span class="fill">______________________________________</span>, acting on the basis of state registration as an individual entrepreneur dated 12 April 2022, hereinafter referred to as the <strong>“Supplier / Brand Owner”</strong>, on the first side, and</p>
+    <p><strong><span class="fill">_______________________________________</span></strong>, Trade Register number <span class="fill">_______________</span>, fiscal code (CUI) <span class="fill">____________</span>, VAT number <span class="fill">RO____________</span>, EORI number <span class="fill">____________</span>, address: <span class="fill">_______________________________________</span>, Romania, represented by <span class="fill">___________________________</span>, acting under <span class="fill">______________</span>, hereinafter referred to as the <strong>“Distributor”</strong>, on the second side, and</p>
+    <p><strong>Vargov®Design China Factory</strong>, People’s Republic of China, address: <span class="fill">_______________________________________________</span>, hereinafter referred to as the <strong>“Manufacturer”</strong>, on the third side,</p>
+    <p>collectively referred to as the “Parties”, have entered into this Agreement as follows:</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">1.</span>Subject of the Agreement</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.1. Territory and Distributor Status.</span> The Supplier / Brand Owner grants the Distributor the right to sell original products under the registered trademark Vargov® (Certificate No. 896936 dated October 6, 2022, issued by the Federal Service for Intellectual Property of the Russian Federation) exclusively within the territory of <strong>Romania</strong>.</p>
+    <p>Within the above-mentioned territory, the Distributor is appointed as the official and exclusive representative of the Vargov® brand and is granted the exclusive right to sell, display, market and promote the products, as well as to use the Vargov®Design brand identity, strictly in accordance with the terms and conditions of this Agreement.</p>
+    <p>Exclusivity is granted subject to the Distributor’s compliance with its obligations to create and renew the display (Clauses 2.7, 2.10) and with the minimum annual order volume (Clause 2.17).</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.2.</span> The supply of products shall be carried out at factory prices established by the Manufacturer. Payment of the product cost and the distributor’s remuneration shall be made by the Distributor directly to the Manufacturer’s bank account. Settlements under this Agreement shall be made in United States dollars (USD) by bank transfer to the Manufacturer’s account specified in the section “Details of the Parties” of this Agreement.</p>
+    <p>The price of each item shall be determined individually at the time the order is agreed in the commercial offer, invoice or order agreement approved by the Parties. No general price list shall apply; pricing is formed by the Manufacturer based on the model, volume, complexity of execution and current production conditions.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p>To commence production, the Distributor shall pay 50 % of the order value, with the remaining 50 % payable upon completion of production and prior to shipment. Shipment of the products shall be carried out only after the Manufacturer has received 100 % payment.</p>
+    <p>Delivery to the final recipient may be arranged by the Distributor in one of the following three ways: from the Manufacturer directly to the final recipient; from the Manufacturer to the Distributor’s warehouse; delivery organised independently by the Distributor. The cost of delivery is calculated individually for each order, depending on the chosen delivery method.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.3.</span> The Distributor undertakes to pay the Supplier / Brand Owner a distributor fee in the amount of <strong>10 % (ten percent) of the Contract Value</strong>.</p>
+    <p><strong>Contract Value</strong> means the total value of Vargov® Design products under the agreement (specification, invoice) concluded by the Distributor with the end customer, excluding the cost of installation, transport, design and other services of the Distributor where such services are itemised separately in that agreement, and excluding customs duties and taxes payable by the Distributor within the territory.</p>
+    <p>The fee is paid simultaneously with the payment for the order to the Manufacturer and in the same proportion as the payments under Clause 1.2 (50 % / 50 %). Payment of the fee and payment for the order shall be considered a single payment obligation of the Distributor for each order.</p>
+    <p>If the Contract Value is unknown at the time the order is placed, or there is no end customer (an order for the Distributor’s own display — Clauses 2.7, 2.10), the Distributor shall pay only the order value to the Manufacturer when placing the order, and shall pay the fee within 10 (ten) calendar days from the date of conclusion of the agreement with the end customer or from the date the item is sold from the display — calculated on the Contract Value of that sale.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.3.1. Disclosure of the Contract Value.</span> Simultaneously with placing the order (or, in the cases set out in the fourth paragraph of Clause 1.3, simultaneously with payment of the fee), the Distributor shall inform the Supplier / Brand Owner in writing of the Contract Value and provide a copy of the relevant agreement, specification or invoice, or an extract from it listing the products and their value. Commercial terms not related to Vargov® Design products may be redacted.</p>
+    <p><span class="cn">1.3.2.</span> The Distributor undertakes not to understate the declared Contract Value, including by shifting part of the product value into the cost of accompanying services, arranging part of the supply through third parties, or concluding with the end customer any supplementary agreements not disclosed to the Supplier / Brand Owner.</p>
+    <p><span class="cn">1.3.3.</span> The Supplier / Brand Owner may, no more than once per calendar year, request supporting documents from the Distributor for orders completed in the preceding period, to the extent they relate to Vargov® Design products. The Distributor shall provide them within 15 (fifteen) calendar days. Documents so received constitute confidential information and are protected under Section 5.</p>
+    <p><span class="cn">1.3.4.</span> If an understatement of the Contract Value is identified, the Distributor shall pay the underpaid fee and a penalty in accordance with Clause 6.3.3.</p>
+    <p><span class="cn">1.3.5.</span> The brand fee shall be shown as a separate line in the Manufacturer’s invoice and recorded separately from the production value. The tax treatment of the fee, including the application of double taxation treaties and any withholding tax within the Territory, shall be determined by the Parties in accordance with the law of the Territory; at the Distributor’s request the Supplier / Brand Owner shall provide a tax residency certificate and other documents required to apply a reduced rate.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.4.</span> The Distributor is recognised as the official representative of the Vargov® Design brand within the territory specified in Clause 1.1 of this Agreement. The Distributor shall have the right to present and promote the brand’s products at exhibitions, in showrooms, in print and digital media, and to sell directly to end clients.</p>
+    <p>The Distributor acts in its own name and at its own expense, and is not an agent, branch or structural subdivision of the Supplier / Brand Owner.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">1.5. Delivery Basis, Transfer of Risk and Title.</span></p>
+    <p><span class="cn">1.5.1.</span> The delivery basis for each order shall be agreed by the Parties in the invoice or order agreement in accordance with Incoterms 2020. If no basis is expressly agreed, delivery shall be made <strong>FCA — the Manufacturer’s factory (Incoterms 2020)</strong>.</p>
+    <p><span class="cn">1.5.2.</span> The risk of accidental loss of or damage to the products passes to the Distributor at the moment determined by the agreed delivery basis, regardless of the delivery option chosen under Clause 1.2, including delivery directly to the final recipient.</p>
+    <p><span class="cn">1.5.3.</span> Title to the products passes to the Distributor once the Manufacturer has received 100 % payment for the relevant order, but not earlier than the transfer of risk.</p>
+    <p><span class="cn">1.5.4.</span> Cargo insurance is arranged by the Distributor at its own expense unless the agreed delivery basis places this obligation on the Manufacturer.</p>
+    <p><span class="cn">1.5.5.</span> Where delivery is made directly to the final recipient, the Distributor remains the party responsible to the Manufacturer for payment, acceptance of the order and the making of claims.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">2.</span>Obligations of the Parties</h2>
+
+<div class="row">
+  <div class="en"><p><strong>The Supplier / Brand Owner undertakes to:</strong></p></div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.1.</span> Ensure the production and delivery of original Vargov® Design products in accordance with approved specifications and factory quality standards.</p>
+    <p><span class="cn">2.2.</span> Guarantee the authenticity and originality of all manufactured items.</p>
+    <p><span class="cn">2.3.</span> Provide consulting support on showroom design and branding of the retail space, and supply official brand visual materials (logo, graphic identity elements), as well as 3D models of the products, product photographs and video materials about the products and production — for the purposes of presentation, promotion and communication with clients within the Distributor’s market.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.4.</span> Maintain the image of the Vargov® Design brand and provide informational support when the Distributor participates in exhibitions and other promotional events.</p>
+    <p><span class="cn">2.5.</span> Assist, where possible, in the coordination of production and logistics matters with the Manufacturer in China.</p>
+    <p><span class="cn">2.6.</span> Publish information about the Distributor as an official partner on the official Vargov® Design website, including the company name, operating region and contact information provided by the Distributor. The publication shall be made within 7–10 (seven to ten) calendar days after signing this Agreement and receiving the necessary documents from the Distributor.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en"><p><strong>The Distributor undertakes to:</strong></p></div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.7.</span> Purchase Vargov® Design products in the amount of <strong>at least USD 50,000 (fifty thousand U.S. dollars)</strong> for the creation of a permanent exhibition (showroom).</p>
+    <p><span class="cn">2.8.</span> Independently determine the range, size and number of lighting compositions for the showroom, taking into account the characteristics of the space and the concept of brand presentation.</p>
+    <p><span class="cn">2.9.</span> Maintain an operating display area (the Showroom) suitable for the full presentation of the purchased products, with the following parameters: address — <span class="fill">___________________________________________</span>; showroom floor area — no less than <span class="fill">______</span> sq. m; ceiling height in the area where suspended compositions are displayed — no less than <span class="fill">______</span> m; opening hours — no fewer than <span class="fill">___</span> days per week with public access. The premises shall have a power supply allowing 12V and 220V versions to be connected, and lighting conditions allowing the lighting effect of the items to be assessed. A change of the Showroom address or a material change to these parameters requires written notice to the Supplier / Brand Owner at least 30 (thirty) calendar days in advance.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.10.</span> The products purchased for the showroom may be used both for display and for subsequent sale to end customers.</p>
+    <p>The Distributor shall ensure the timely renewal of the showroom display — replacing any sold or dismantled items — no later than <strong>6 (six) months</strong> from the date the item is removed from the display (dismantled).</p>
+    <p>Sale of display items is permitted without separate written consent of the Supplier / Brand Owner, provided that: the Supplier / Brand Owner is informed of the sale and receives the distributor fee as stipulated in this Agreement; and a new Vargov® Design item is installed to replace the dismantled or sold product within 6 months from the date of its removal from the exhibition area.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.11.</span> The Distributor is responsible for the preservation and integrity of the products displayed in the showroom, including any damages that may occur during the dismantling of items intended for subsequent sale.</p>
+    <p>If the Distributor decides to sell an item from the showroom display, the Distributor assumes all risks related to possible deterioration of the product, including damage to composition elements, structural components or mounting systems that may occur during dismantling, transportation or reinstallation. The Supplier / Brand Owner and the Manufacturer shall not be liable for such damages and are not obliged to replace or repair any elements damaged as a result of dismantling showroom display items.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.12.</span> Design the showroom in accordance with the brand’s corporate style and maintain it in proper aesthetic and technical condition.</p>
+    <p><span class="cn">2.13.</span> Use logos, texts and visual materials of Vargov® Design solely for the promotion of the original brand products.</p>
+    <p><span class="cn">2.14.</span> Not alter the design, structure, packaging, visual identity or technical characteristics of the products without the Supplier / Brand Owner’s written consent.</p>
+    <p><span class="cn">2.15.</span> Maintain the brand’s reputation and ensure accurate presentation and communication to clients regarding the originality of the products.</p>
+    <p><span class="cn">2.16.</span> Observe the established channels of communication with the Supplier / Brand Owner and the Manufacturer.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">2.17. Minimum Annual Order Volume.</span></p>
+    <p><span class="cn">2.17.1.</span> The Distributor undertakes to place with and pay to the Manufacturer’s factory orders totalling <strong>no less than USD 100,000 (one hundred thousand U.S. dollars) in production value</strong> for each year of this Agreement.</p>
+    <p><span class="cn">2.17.2.</span> A year of the Agreement is counted from the date it is signed by all Parties and thereafter every subsequent 12 (twelve) months.</p>
+    <p><span class="cn">2.17.3.</span> The annual volume is calculated on the production value of orders (the amounts of the Manufacturer’s invoices) paid by the Distributor during the relevant year, excluding the brand fee, delivery costs, customs duties and taxes. Partially paid orders count to the extent paid.</p>
+    <p><span class="cn">2.17.4.</span> The order for the creation of the display under Clause 2.7 counts towards the volume of the first year of the Agreement.</p>
+    <p><span class="cn">2.17.5.</span> If the annual volume is not met, the Distributor may make up the shortfall by placing and paying for an additional order within <strong>30 (thirty) calendar days</strong> of the end of the relevant year. The amount so made up counts towards the expired year and is not counted again towards the following year.</p>
+    <p><span class="cn">2.17.6.</span> If the annual volume is not met and not made up under Clause 2.17.5, the Supplier / Brand Owner may, within 60 (sixty) calendar days of the end of the relevant year, at its option: (a) give the Distributor written notice of <strong>conversion to a non-exclusive regime</strong> — from that moment the Distributor retains official distributor status but loses the exclusivity of rights under Clause 1.1 and the protection under Clause 6.4, and the Supplier / Brand Owner may appoint other distributors within the Territory and make direct sales; or (b) terminate the Agreement in accordance with Clause 8.3.2.</p>
+    <p><span class="cn">2.17.7.</span> The Supplier / Brand Owner’s failure to exercise the rights under Clause 2.17.6 within the stated period means exclusivity continues for the following year and does not deprive it of the right to apply those measures in respect of subsequent years.</p>
+    <p><span class="cn">2.17.8.</span> The minimum annual volume obligation is suspended for the duration of force majeure (Section 7) and for any period during which the Supplier / Brand Owner suspends acceptance of the Distributor’s orders for reasons not caused by the Distributor’s breach.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><strong>The Manufacturer undertakes to:</strong></p>
+    <p><span class="cn">2.18.1.</span> Manufacture the products in accordance with the agreed specifications and the factory’s quality standards, and guarantee their authenticity.</p>
+    <p><span class="cn">2.18.2.</span> Observe the production timeframes set out in Clause 6.5.2 and keep the Distributor informed of the progress of each order.</p>
+    <p><span class="cn">2.18.3.</span> Provide the Distributor, upon request, with photo and video materials of the finished item before shipment.</p>
+    <p><span class="cn">2.18.4.</span> Manufacture and supply, at its own expense, replacements for defective items and components and bear the related costs, including re-shipment (Clause 6.2).</p>
+    <p><span class="cn">2.18.5.</span> Accept payment for the Distributor’s orders to the account specified in this Agreement and keep separate records of receipts for each order, recording the production value and the brand fee separately.</p>
+    <p><span class="cn">2.18.6.</span> Refund amounts paid in the cases provided for in Clause 6.5.2.</p>
+    <p><span class="cn">2.18.7.</span> Observe the obligations protecting the Distributor’s exclusivity (Clause 6.4) and the confidentiality obligations (Section 5).</p>
+    <p><span class="cn">2.18.8.</span> Ensure communication with the Distributor through the designated factory manager from the moment determined by Clause 3.5.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">3.</span>Prices and Payment Procedure</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">3.1.</span> The cost of the products shall be determined based on the factory prices of the Vargov® Design manufacturer located in the People’s Republic of China, without any additional markup by the Supplier / Brand Owner or third parties.</p>
+    <p><span class="cn">3.2.</span> Payment for the products shall be made in United States Dollars (USD) by bank transfer to the Manufacturer’s bank account. The Manufacturer’s banking details are specified in the “Details of the Parties” section of this Agreement.</p>
+    <p>This account is managed and controlled by the Manufacturer, while the Supplier / Brand Owner guarantees that all funds received to this account are properly recorded as payment for the Distributor’s order under this Agreement. In the payment reference, the Distributor shall indicate the number of this Agreement and/or the relevant invoice or order number (Invoice/Order No.).</p>
+    <p><span class="cn">3.3.</span> The factory shall determine the current price of the products at the time of order confirmation, taking into account the model, volume, complexity and current production conditions. The Distributor shall be provided with the contact information of the factory manager in China, through whom all communications, price calculations, production timelines and payment-related matters shall be coordinated — in the manner and from the moment established by Clause 3.5.</p>
+    <p><span class="cn">3.4.</span> The Distributor acts as the importer of the products into the customs territory of the European Union and carries out customs clearance under its own EORI number. Customs duties, import VAT and any other mandatory payments arising in connection with the import and sale of the products shall be borne by the Distributor and are not included in the order value. The Manufacturer and the Supplier / Brand Owner shall provide the documents required for customs clearance and proof of origin (invoice, packing list, export declaration, origin information). Bank charges and payment-processing costs on the Distributor’s side shall be borne by the Distributor.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">3.5. Access to Financial Information.</span></p>
+    <p><span class="cn">3.5.1.</span> Access to factory prices, cost calculations, price quotations, production terms and direct communication with the factory manager is granted to the Distributor <strong>after placing the order for the creation of the display provided for in Clause 2.7 of this Agreement</strong> (that is, after the Parties have signed the relevant invoice or order agreement).</p>
+    <p><span class="cn">3.5.2.</span> Prior to the moment specified in Clause 3.5.1, the cost calculation required to compose the display order shall be provided to the Distributor by the Supplier / Brand Owner to the extent necessary and sufficient to agree the composition and the amount of that order, without disclosing the general structure of factory prices and without granting direct access to the factory.</p>
+    <p><span class="cn">3.5.3.</span> All information received under this Clause is confidential and protected in accordance with Section 5 of this Agreement. The obligation to protect it survives regardless of whether the order under Clause 2.7 was subsequently performed.</p>
+    <p><span class="cn">3.5.4.</span> Upon termination of the Agreement, or if the order under Clause 2.7 is not placed, access to financial information and direct communication with the factory shall cease.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">3.6. Order Confirmation Procedure.</span></p>
+    <p><span class="cn">3.6.1.</span> An order is deemed placed once it has been confirmed in the agreed communication channel by the Distributor’s director or a person authorised by them and by the Manufacturer. Orders not confirmed in this manner are not deemed placed and give rise to no obligations of the Parties.</p>
+    <p><span class="cn">3.6.2.</span> The Parties conduct order correspondence in a shared group channel involving representatives of the Distributor, the Manufacturer and the Supplier / Brand Owner. The Parties agree the list of authorised persons and communication channels in writing and keep it up to date.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">3.7. Conformity of the Products with European Union Requirements.</span></p>
+    <p><span class="cn">3.7.1.</span> Products imported and sold within the Territory must bear the CE marking and comply with the applicable EU instruments, including Directive 2014/35/EU (low voltage), Directive 2014/30/EU (electromagnetic compatibility), Directive 2011/65/EU (RoHS), Regulation (EU) 2019/2020 (ecodesign of light sources) and Regulation (EU) 2019/2015 (energy labelling).</p>
+    <p><span class="cn">3.7.2.</span> The Distributor, acting as importer within the meaning of EU law, shall discharge the importer’s obligations: verifying that the EU declaration of conformity and the technical documentation exist, indicating its details on the product or packaging, ensuring instructions and safety information in Romanian, and keeping the declaration of conformity for 10 years.</p>
+    <p><span class="cn">3.7.3.</span> The Parties acknowledge that as at the date of this Agreement no EU conformity documentation has been drawn up for the products. Before shipment of the first order into the Territory (including the display order), the Manufacturer and the Supplier / Brand Owner shall: prepare the technical documentation for the product types ordered; arrange testing of representative samples or of the base element families from which the compositions are assembled; and issue the EU declaration of conformity and affix the CE marking. As the products are placed on the market under the Vargov® trademark, the manufacturer's obligations within the meaning of EU law rest with the Supplier / Brand Owner.</p>
+    <p><span class="cn">3.7.3.1.</span> The costs of preparing the technical documentation, testing and issuing the declaration are borne by the Manufacturer and the Supplier / Brand Owner, unless the Parties agree otherwise in writing. The Distributor shall provide reasonable assistance: information on national requirements, language and registration formalities within the Territory.</p>
+    <p><span class="cn">3.7.3.2.</span> No order shall be shipped into the Territory before a declaration of conformity covering the items in that order has been issued. If the declaration is not issued within 60 (sixty) calendar days from completion of production of the order, the Distributor may withdraw from the order with a refund of all amounts paid under it, including the brand fee; such withdrawal is not a breach of the Distributor's display or annual-volume obligations, and the related deadlines are extended by the period of the delay.</p>
+    <p><span class="cn">3.7.4.</span> The Parties shall agree the responsible person within the meaning of Regulation (EU) 2023/988 (GPSR); absent other agreement, the Distributor acts as that person and its details are shown on the product or in the accompanying information.</p>
+    <p><span class="cn">3.7.5.</span> Registration in the national registers for waste electrical and electronic equipment (Directive 2012/19/EU, WEEE) and for packaging, together with the related extended producer responsibility fees, shall be arranged by the Distributor at its own expense.</p>
+    <p><span class="cn">3.7.6.</span> The Distributor may not sell the products within the Territory before the mandatory conformity assessment and registration procedures are completed.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">3.8. Compliance with European Union Competition Law.</span></p>
+    <p><span class="cn">3.8.1.</span> The Distributor determines its resale prices independently and freely. The Supplier / Brand Owner may communicate recommended prices only, which are not binding; minimum or fixed resale prices may not be imposed.</p>
+    <p><span class="cn">3.8.2.</span> This Agreement does not restrict the Distributor’s right to respond to unsolicited enquiries from customers in any country, including outside the Territory (passive sales), nor the right of its customers to resell the products freely.</p>
+    <p><span class="cn">3.8.3.</span> Restrictions on active sales into territories exclusively allocated to other distributors apply only to the extent permitted by Regulation (EU) 2022/720 and Article 101 of the Treaty on the Functioning of the European Union.</p>
+    <p><span class="cn">3.8.4.</span> If any provision of this Agreement goes beyond what EU competition law permits, it shall apply to the maximum permissible extent and shall otherwise be replaced by a valid provision closest in meaning; the invalidity of such a provision shall not affect the validity of the Agreement as a whole.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">4.</span>Intellectual Property Rights</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">4.1. Ownership of Rights.</span></p>
+    <p><span class="cn">4.1.1.</span> The exclusive rights to trademarks, trade names, logos, design developments, constructions, artistic and technical solutions, photo and video materials, texts, installation/operation manuals, drawings and any other materials related to Vargov® Design belong to the Supplier / Brand Owner.</p>
+    <p><span class="cn">4.1.2.</span> All registrations of trademarks, patent applications and industrial designs (if any) are the property of the Supplier / Brand Owner.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">4.2. License to Use the Brand.</span></p>
+    <p><span class="cn">4.2.1.</span> The Supplier / Brand Owner grants the Distributor a non-exclusive license to use the Vargov®Design trademark, brand elements and visual materials solely for the purposes of promoting and selling the products in accordance with this Agreement. At the same time, the Distributor is granted exclusive sales rights within the territory defined in Clause 1.1 of this Agreement.</p>
+    <p><span class="cn">4.2.2.</span> The license shall be valid for the duration of this Agreement and shall terminate simultaneously upon its expiration or termination.</p>
+    <p><span class="cn">4.2.3.</span> Any use of the brand beyond the purposes and territory established by this Agreement is strictly prohibited.</p>
+    <p><span class="cn">4.2.4.</span> The license does not grant the Distributor the right to register, deposit or independently file trademarks, designations or design elements in its own name or in the name of third parties.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">4.3. Sales to Third Parties and Prohibition on Appointing Representatives.</span></p>
+    <p><span class="cn">4.3.1.</span> The Distributor may sell the products within the Territory to any buyers — end customers, designers, architects, procurement companies, retail and project organisations — in its own name and at its own expense, on commercial terms it determines itself.</p>
+    <p><span class="cn">4.3.2.</span> The Distributor <strong>may not grant any third party the status of dealer, sub-dealer, agent, representative or partner of the Vargov® Design brand</strong>, nor use in relation to such persons any designation creating the impression that they hold such status. Only the Supplier / Brand Owner may confer official representative status of the brand on any person.</p>
+    <p><span class="cn">4.3.3.</span> The Distributor may not transfer to third parties any rights under this Agreement, including the license to use the trademark and brand identity (Clause 4.2), exclusive sales rights within the Territory, or distributor status.</p>
+    <p><span class="cn">4.3.4.</span> Providing a buyer with photographs, renders, specifications and other brand materials to the extent required for a specific project is permitted and does not in itself confer on that buyer the status referred to in Clause 4.3.2.</p>
+    <p><span class="cn">4.3.5.</span> All orders, regardless of whose initiative gave rise to the transaction, shall be processed exclusively through the Distributor, who places the order directly with the Manufacturer. Direct approaches to the Manufacturer by the Distributor’s buyers are not permitted.</p>
+    <p><span class="cn">4.3.6.</span> The Distributor shall take reasonable steps to ensure that its buyers do not present themselves as official dealers, agents or representatives of the brand, and upon discovering such cases shall notify the Supplier / Brand Owner and pursue cessation of the breach.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">4.4. Brand Quality Control.</span></p>
+    <p><span class="cn">4.4.1.</span> After signing this Agreement, the Supplier / Brand Owner shall provide the Distributor with the official Vargov®Design Brand Guide, which includes the rules for the use of the logo, corporate colours, graphic elements, visual presentation of the products, photo and video materials. The Distributor agrees to use the Vargov®Design brand in advertising materials, showrooms, websites, social networks and commercial proposals in accordance with the Brand Guide. Non-compliance with the brand identity does not incur penalties; however, if inconsistencies are identified, the Supplier / Brand Owner has the right to request correction of materials to bring them into alignment with the Brand Guide.</p>
+    <p><span class="cn">4.4.2.</span> The Supplier / Brand Owner shall have the right to request photos and videos of the exhibition, promotional materials and publications for the purpose of verifying compliance with the Brand Guide.</p>
+    <p><span class="cn">4.4.3.</span> Upon the Supplier / Brand Owner’s justified request, the Distributor must make the required corrections to materials within a reasonable timeframe.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">4.5. Prohibition on Copying and Analogues.</span></p>
+    <p><span class="cn">4.5.1.</span> It is strictly prohibited to produce, order, sell or otherwise distribute products that are copies, modifications, adaptations or visually/functionally similar analogues of Vargov® Design products. This clause constitutes a material term of the Agreement.</p>
+    <p><span class="cn">4.5.2.</span> The Distributor is prohibited from registering trademarks, industrial designs, patents or domain names that are identical or confusingly similar to those of the Supplier / Brand Owner.</p>
+    <p><span class="cn">4.6. Third-Party Infringements.</span></p>
+    <p><span class="cn">4.6.1.</span> The Distributor shall immediately notify the Supplier / Brand Owner of any identified infringements of intellectual property rights within the territory.</p>
+    <p><span class="cn">4.6.2.</span> All measures to respond (claims, lawsuits, public statements) shall be coordinated with the Supplier / Brand Owner; expenses and compensation shall be allocated in accordance with a separate agreement or applicable law.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">5.</span>Confidentiality and Non-Compete</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">5.1. Confidential Information.</span> This includes, without limitation: factory prices and calculations, contact details of factory managers, technical drawings, specifications, photos and videos of production, collection plans, client and lead data, supply and logistics terms, contract terms, internal policies and correspondence.</p>
+    <p><span class="cn">5.2. Non-Disclosure Obligations.</span></p>
+    <p><span class="cn">5.2.1.</span> The Parties shall not disclose, share, publish or use any confidential information beyond the purposes of this Agreement and shall ensure the “need-to-know” principle of access control.</p>
+    <p><span class="cn">5.2.2.</span> The confidentiality obligation remains in effect throughout the term of this Agreement and for five (5) years after its termination, and thereafter until such information becomes publicly available without breach of this Agreement.</p>
+    <p><span class="cn">5.2.3.</span> Personal data of the Parties’ representatives and of end customers is processed by each Party as an independent controller in accordance with Regulation (EU) 2016/679 (GDPR) and applicable national law. Transfers of personal data between the Parties are limited to what is necessary and require a lawful basis.</p>
+    <p><span class="cn">5.3. Exceptions.</span> Information must be disclosed pursuant to law or court order or at the request of a state authority, with prior notification to the Supplier / Brand Owner if permitted.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">5.4. Non-Compete / Non-Copy Obligations.</span></p>
+    <p><span class="cn">5.4.1.</span> The Distributor undertakes not to produce, order the production of, or sell items that are copies, modifications, adaptations or functionally or visually similar analogues of Vargov® Design products, and not to engage in transactions intended to bypass the Supplier / Brand Owner’s intellectual property rights. This Clause does not restrict the Distributor’s right to trade in lighting and decorative products of other manufacturers that are not such copies or analogues.</p>
+    <p><span class="cn">5.4.2.</span> The Distributor shall not use privileged access to factory contacts and prices to bring competing products to market.</p>
+    <p><span class="cn">5.5. Non-Solicitation (Personnel and Contractors).</span> During the term of the Agreement and for twelve (12) months after its termination, the Distributor shall not, directly or indirectly, solicit or hire key employees, contractors, engineers, designers or manufacturing companies working with the Supplier / Brand Owner without prior written consent.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">6.</span>Warranties and Liability</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">6.1. Supplier / Brand Owner’s Warranties.</span></p>
+    <p><span class="cn">6.1.1.</span> The Supplier / Brand Owner warrants the originality of the products and their conformity with the approved specifications.</p>
+    <p><span class="cn">6.1.2.</span> Factory warranty for hidden manufacturing defects: 12 months from the date of delivery (unless otherwise agreed). This warranty governs the relationship between the Parties and does not affect the rights of the Distributor’s customers under European Union and Romanian law, including those under Directive (EU) 2019/771; the Distributor’s satisfaction of such claims does not create obligations for the Manufacturer beyond this Section unless the Parties agree otherwise in writing.</p>
+    <p><span class="cn">6.1.3.</span> The warranty shall not cover damage caused by improper installation, misuse, unauthorised intervention, force majeure or voltage fluctuations.</p>
+    <p><span class="cn">6.2. Warranty Cases and Replacement of Damaged Products.</span> The Distributor receives the products from the Manufacturer in proper condition. If any damage, manufacturing defect or missing components are identified — caused by the Manufacturer or during transportation to the Distributor’s territory — the Distributor shall document such defects by photo and video and submit this evidence to the Manufacturer.</p>
+    <p>Return of the defective product to the Manufacturer is not required, unless otherwise agreed by the Parties. The Manufacturer shall, at its own expense, produce and supply replacement items or components and cover all warranty-related and re-shipment costs. The Distributor shall ensure safe storage of the defective items until the replacement is received or written instructions are provided by the Manufacturer.</p>
+    <p>Damage to packaging and shipping units shall be recorded by the Distributor by photograph <strong>before opening</strong> and noted in the transport documents. Acceptance of the products by quantity and for evident defects shall take place within <strong>10 (ten) calendar days</strong> of receipt; after that period the products are deemed accepted without objections as to quantity and evident defects. Claims for hidden manufacturing defects may be made throughout the warranty period (Clause 6.1.2).</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">6.3. Liability.</span></p>
+    <p><span class="cn">6.3.1.</span> For violation of IP rights or the Non-Copy clauses (Clauses 4.5 and 5.4), a contractual penalty of <strong>USD 100,000 (one hundred thousand U.S. dollars)</strong> shall be imposed per confirmed violation, in addition to compensation for actual damages exceeding this amount.</p>
+    <p><span class="cn">6.3.2.</span> A breach of confidentiality (NDA) shall be deemed to have occurred if the Distributor, its employees or any engaged third parties perform any of the following actions without the prior written consent of the Supplier / Brand Owner or the Manufacturer: transferring, distributing or publishing commercial information related to pricing, cost structure, factory price lists or terms of cooperation; disclosing technical documentation, 3D models, production drawings, installation schemes, manufacturing technologies or structural design solutions of Vargov®Design products; providing third parties with photographs, video materials or drawings of exclusive lighting compositions prior to their official publication by the Supplier / Brand Owner; copying, reproducing or transferring product samples, glass or crystal elements, or components of the mounting system to third parties for the purpose of creating analogues; providing third parties with information about clients, orders or the Manufacturer (contacts, bank accounts, terms), if this may lead to bypassing the Distributor or the Supplier / Brand Owner.</p>
+    <p>A penalty of <strong>USD 20,000 (twenty thousand)</strong> shall be applied for each confirmed breach. The penalty shall not apply if the Distributor did not know and could not reasonably have known that an employee interacted with the Manufacturer or a third party without notifying the Distributor.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">6.3.3. Understatement of the Contract Value.</span> For understating the declared Contract Value (Clause 1.3.2), the Distributor shall pay the Supplier / Brand Owner the underpaid fee and a penalty of <strong>100 % of the understated amount</strong>. Upon a repeated confirmed breach, the Supplier / Brand Owner may terminate the Agreement in accordance with Clause 8.3.2.</p>
+    <p>For failure to provide information on the Contract Value or supporting documents within the periods set out in Clauses 1.3.1 and 1.3.3, the Distributor shall pay a penalty of <strong>USD 2,000 (two thousand)</strong> for each such case, and the Supplier / Brand Owner may suspend the processing of the Distributor’s new orders until the breach is remedied.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">6.4. Protection of the Distributor’s Exclusivity.</span></p>
+    <p><span class="cn">6.4.1.</span> The Supplier / Brand Owner and the Manufacturer shall not supply products directly to third parties within the Territory granted to the Distributor on an exclusive basis under Clause 1.1 of this Agreement.</p>
+    <p><span class="cn">6.4.2. Duty to establish the destination of a supply.</span> Upon receiving an enquiry bearing indications of connection with the Territory (a delivery or installation address within the Territory, the location of the site, or registration or contact details of the enquirer within the Territory), the Supplier / Brand Owner and the Manufacturer shall ask the enquirer for the delivery address and the location of the final site. If the final site is within the Territory, the enquiry shall be referred to the Distributor and the transaction concluded through the Distributor.</p>
+    <p><span class="cn">6.4.3. Supplies through other partners of the brand.</span> The Supplier / Brand Owner and the Manufacturer shall not make or approve supplies of products to other distributors, dealers or partners of the brand where they know, or under Clause 6.4.2 ought to know, that the final site is within the Territory. When concluding new agreements or renewing existing agreements with other distributors, the Supplier / Brand Owner shall include in them an obligation to give notice of supplies whose final site is within the Territory.</p>
+    <p><span class="cn">6.4.4.</span> Supplying products to a third party while aware that they are intended for a final site within the Territory, as well as failure to perform the duties under Clauses 6.4.2 and 6.4.3, shall be deemed a breach of the Distributor’s exclusive rights.</p>
+    <p><span class="cn">6.4.5.</span> For each confirmed breach, the Supplier / Brand Owner or the Manufacturer shall pay the Distributor a penalty of <strong>USD 20,000 (twenty thousand)</strong>.</p>
+    <p><span class="cn">6.4.6. Exceptions.</span> The penalty shall not apply if: the Supplier / Brand Owner and the Manufacturer performed the duty under Clause 6.4.2 and the enquirer provided false information about the place of delivery or the final site; or the customer purchased the products outside the Territory in the absence of the indications listed in Clause 6.4.2 and subsequently imported them into the Territory independently. The operation of the brand’s official showroom and of the Supplier / Brand Owner’s other partners outside the Territory is not in itself a breach, provided they comply with Clause 6.4.2.</p>
+    <p><span class="cn">6.4.7. Procedure for establishing a breach.</span> The Distributor shall send the Supplier / Brand Owner a written claim describing the circumstances and enclosing evidence (correspondence, quotations, shipping documents, photographs of the installed piece, information about the site). The Supplier / Brand Owner shall consider the claim and give a reasoned reply within <strong>15 (fifteen) calendar days</strong>. If the breach is confirmed, the penalty shall be paid within 15 calendar days of the reply. If the claim is rejected, the Parties shall negotiate, and failing agreement the dispute shall be resolved under Section 9.</p>
+    <p><span class="cn">6.4.8.</span> This Clause ceases to apply from the moment the relationship is converted to a non-exclusive regime under Clause 2.17.6(a).</p>
+    <p><span class="cn">6.4.9.</span> The aggregate liability of the Supplier / Brand Owner for any claims (except in cases of intent, gross negligence or intellectual property infringement) shall be limited to the amount actually paid for the respective batch of products.</p>
+    <p><span class="cn">6.4.10.</span> None of the Parties shall be liable for any indirect or consequential losses, loss of profit, loss of reputation or similar damages, except in cases of intent, IP infringement, Non-copy violations or breaches of confidentiality (NDA).</p>
+  </div>
+</div>
+<div class="row">
+  <div class="en">
+    <p><span class="cn">6.5. Right of Suspension.</span></p>
+    <p><span class="cn">6.5.1.</span> In case of the Distributor’s payment debt, the Supplier / Brand Owner shall have the right to suspend the processing of new orders and shipments until full payment is made.</p>
+    <p><span class="cn">6.5.2. Production Timeframes, Delays and No-Refund Policy.</span> The production of Vargov®Design products, including custom-made and technically complex items, usually takes up to <strong>90 (ninety) calendar days</strong>, excluding official holidays of the People’s Republic of China.</p>
+    <p>Distributors may inform their customers that the production time could extend up to <strong>120 (one hundred twenty) calendar days</strong> to account for potential delays related to technology and manufacturing. This timeframe applies only to the production process and does not include logistics, shipping, customs clearance or delivery time.</p>
+    <p>If production is completed within 120 calendar days, it is not considered a delay and does not constitute grounds for claims, penalties or refunds. If the production time exceeds 120 calendar days, the Distributor has the right to request a refund of the amount paid for the order.</p>
+    <p>Before processing a refund, the Parties may, through a written agreement, determine the next steps, including: extending the production timeline; modifying the order; replacing the product; any other mutually agreed solutions to avoid order cancellation. If the Parties do not reach an agreement on the next steps, the Manufacturer shall fully refund the amount paid at the Distributor’s request.</p>
+    <p>Logistics and delivery times are not governed by this Agreement and are not grounds for claims, penalties or refunds against the Manufacturer or the Supplier / Brand Owner.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">7.</span>Force Majeure</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">7.1. Circumstances.</span> Force majeure circumstances include natural disasters, fires, floods, earthquakes; acts of war, terrorism, embargoes, sanctions, epidemics or pandemics and measures imposed by governmental authorities; widespread power outages; strikes; and other events beyond the reasonable control of the Parties.</p>
+    <p><span class="cn">7.2. Notification and Confirmation.</span> The Party invoking force majeure shall notify the other Parties within five (5) calendar days from the occurrence of such circumstances, describing the nature of the event and its expected duration. The fact of force majeure shall be confirmed by a certificate issued by a competent authority (including the Chamber of Commerce and Industry of the relevant country).</p>
+    <p><span class="cn">7.3. Consequences.</span> Performance of obligations shall be suspended for the duration of the force majeure event without penalties. If the force majeure continues for more than 30 consecutive calendar days, either Party may initiate negotiations to adjust the timelines and conditions of performance or to terminate the Agreement without penalties for the unfulfilled portion.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">8.</span>Term and Termination</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">8.1. Term.</span></p>
+    <p><span class="cn">8.1.1.</span> This Agreement enters into force on the date it is signed by all Parties and remains valid for a period of <strong>five (5) years</strong>.</p>
+    <p><span class="cn">8.1.2.</span> Upon expiration of this period, the Agreement shall automatically terminate unless the Parties enter into a new agreement or sign an additional agreement to extend its validity.</p>
+    <p><span class="cn">8.2. Termination by Notice.</span></p>
+    <p><span class="cn">8.2.1.</span> Either Party has the right to terminate this Agreement by sending the other Parties a written notice at least 6 (six) months prior to the intended termination date. Termination under this Clause is not available during the first year of the Agreement. This Clause does not limit the right to terminate on the grounds set out in Clause 8.3. Such notice may be sent by email (with delivery confirmation).</p>
+    <p><span class="cn">8.2.2.</span> Before issuing a termination notice, the Parties shall conduct good-faith negotiations aimed at resolving the reasons that may lead to termination. If the Parties fail to reach an agreement within 30 (thirty) calendar days from the start of such negotiations, termination shall proceed in accordance with Clause 8.2.1.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">8.3. Termination for Breach.</span></p>
+    <p><span class="cn">8.3.1.</span> In the event of a breach of this Agreement, the Parties shall first conduct negotiations and take reasonable measures to resolve the situation and remedy the breach voluntarily.</p>
+    <p><span class="cn">8.3.2.</span> If the breach is not remedied, the Supplier / Brand Owner may unilaterally terminate the Agreement with immediate effect in the following cases: (a) infringement of intellectual property rights or breach of the Non-copy provisions (Clauses 4.5, 5.4); (b) disclosure of confidential information (Clause 5.2); (c) unauthorised use of the brand, trademarks or brand identity elements outside the license terms; (d) failure to create the display (Clause 2.7) or to renew it (Clause 2.10); (e) repeated understatement of the Contract Value (Clause 1.3.2); (f) granting third parties the status of dealer, agent or representative of the brand in breach of Clause 4.3.2; (g) failure to meet the minimum annual order volume (Clause 2.17) where the Supplier / Brand Owner elects termination under Clause 2.17.6(b).</p>
+    <p><span class="cn">8.4. Survival of Obligations.</span> Termination of the Agreement does not relieve the Parties from their obligations to pay for already agreed deliveries, nor does it terminate the provisions governing intellectual property, confidentiality, liability, applicable law and dispute resolution. These provisions shall remain in force after termination of the Agreement.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">8.5. Sell-off of Remaining Stock after Termination.</span> After termination of the Agreement the Distributor may, for <strong>6 (six) months</strong>, sell products purchased before the termination date, including display items, using the brand designations to the extent necessary to indicate the origin of the goods and observing Clause 4.4 and the obligation to pay the brand fee (Clause 1.3). After that period the use of the brand designations ceases in accordance with Clause 4.2.2. This Clause does not apply where the Agreement is terminated on the grounds set out in Clause 8.3.2 (a)–(c).</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">9.</span>Governing Law and Dispute Resolution</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">9.1. Governing Law.</span> This Agreement shall be governed by the United Nations Convention on Contracts for the International Sale of Goods (CISG, Vienna, 1980) and by the principles of international commercial law. For matters not governed by the CISG, the substantive law of the Republic of Austria shall apply, excluding its conflict-of-laws rules. The arbitration procedure shall be governed by the law of the seat of arbitration.</p>
+    <p><span class="cn">9.2. Negotiations and Mediation.</span> The Parties shall make all reasonable efforts to resolve any disputes through negotiation in good faith. If agreed upon, the Parties may resort to mediation before submitting the case to arbitration.</p>
+    <p><span class="cn">9.3. Arbitration.</span> Any disputes not settled amicably shall be finally settled under the Rules of the Vienna International Arbitral Centre (VIAC) of the Austrian Federal Economic Chamber. The seat of arbitration shall be Vienna, Austria. The number of arbitrators shall be one. The language of arbitration shall be English. The arbitral award shall be final and binding on the Parties and enforceable in accordance with applicable international treaties.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">10.</span>Final Provisions</h2>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">10.1. Entire Agreement.</span> This Agreement, together with its appendices, specifications, invoices and related correspondence, constitutes the entire agreement between the Parties and supersedes all prior arrangements, communications or understandings related to its subject matter.</p>
+    <p><span class="cn">10.2. Amendments and Assignment.</span> Any amendments or supplements to this Agreement shall be valid only if made in writing and signed by the Parties, including via exchange of signed electronic copies. No Party may assign or transfer its rights or obligations under this Agreement without the prior written consent of the other Parties, except for the Supplier / Brand Owner’s right to assign monetary claims.</p>
+    <p><span class="cn">10.3. Electronic Communication.</span> The Parties agree that electronic correspondence (via the email addresses specified in the Parties’ details) shall have the same legal effect as written correspondence, provided that the sender can be identified and the integrity of the content is maintained.</p>
+    <p><span class="cn">10.4. Validity of Provisions.</span> The invalidity of any particular provision shall not affect the validity of the remaining provisions. Any invalid provision shall be replaced by a valid one that best reflects the original intent of the Parties.</p>
+    <p><span class="cn">10.5. Languages and Copies.</span> This Agreement is drawn up in English in three counterparts of equal legal force, one for each Party. Any translation into another language is for convenience only and has no legal force.</p>
+    <p><span class="cn">10.6. Electronic Execution and Exchange of Scanned Copies.</span> The Parties agree that this Agreement may be executed by means of electronic signature, facsimile signature and/or by exchange of duly signed and scanned copies of this Agreement, including via electronic mail. The Parties acknowledge that this Agreement executed in the above manner shall have the same legal force and effect as an agreement executed with handwritten signatures on paper. This provision is agreed due to the Parties’ inability to meet in person for physical execution of the Agreement and shall not affect its validity, binding force or enforceability.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="en">
+    <p><span class="cn">10.7. Export Control, Restrictive Measures and Payments.</span></p>
+    <p><span class="cn">10.7.1.</span> Each Party represents that neither it nor its beneficial owners are listed under the restrictive measures of the European Union, the United States or the United Nations, and undertakes to notify the other Parties immediately should this change.</p>
+    <p><span class="cn">10.7.2.</span> The Parties shall perform this Agreement in compliance with applicable export control and restrictive measures. No Party is obliged to take any action that would breach such measures.</p>
+    <p><span class="cn">10.7.3.</span> The products are manufactured and shipped from the Manufacturer’s factory in the People’s Republic of China; settlements under this Agreement are made to the Manufacturer’s account.</p>
+    <p><span class="cn">10.7.4.</span> If performance of a payment obligation becomes impossible due to restrictive measures, refusal by a correspondent bank or other circumstances beyond the Parties’ control, the Parties shall agree a lawful alternative payment route within 30 (thirty) calendar days. Pending such agreement, performance of the affected obligations is suspended without sanctions, and after 90 (ninety) calendar days either Party may withdraw from the unperformed order with a refund of amounts received under it.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="num">11.</span>Details and Signatures</h2>
+
+<div class="sig-block">
+  <div class="role">Supplier / Brand Owner</div>
+  Individual Entrepreneur Anton G. Vargov<br>
+  OGRNIP: 322508100200337 · INN: 531003545938<br>
+  Address: <span class="fill">_______________________________________________________</span><br>
+  E-mail: info@vargov.ru · Phone: +7 (916) 537-33-52<br>
+  
+  Owner of the registered trademark Vargov®, Certificate No. 896936 dated 06 October 2022
+  <div class="sig-line">signature &nbsp;·&nbsp; /A. G. Vargov/</div>
+</div>
+
+<div class="sig-block">
+  <div class="role">Distributor</div>
+  Company: <span class="fill">_________________________________________________</span><br>
+  Trade Register No.: <span class="fill">____________________</span> · CUI: <span class="fill">____________</span> · VAT: <span class="fill">RO____________</span> · EORI: <span class="fill">____________</span><br>
+  Address: <span class="fill">_______________________________________________________</span>, Romania<br>
+  Representative: <span class="fill">_______________________________________</span><br>
+  E-mail: <span class="fill">_____________________</span> · Mobile / WhatsApp / WeChat: <span class="fill">_____________________</span>
+  <div class="sig-line">signature</div>
+</div>
+
+<div class="sig-block">
+  <div class="role">Manufacturer</div>
+  Vargov®Design China Factory<br>
+  People’s Republic of China<br>
+  Address: <span class="fill">_______________________________________________________</span><br>
+  WeChat / WhatsApp: <span class="fill">___________________</span><br>
+  Bank details: <span class="fill">provided upon execution</span><br>
+  Bank name: <span class="fill">__________________________</span> · SWIFT BIC: <span class="fill">______________</span><br>
+  Beneficiary: <span class="fill">__________________________</span> · Account No.: <span class="fill">___________________</span>
+  <div class="sig-line">signature</div>
+</div>
+
+<div class="end-mark">Vargov® Design · info@vargov.ru · vargov.ru</div>
+
+</body>
+</html>
