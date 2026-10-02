@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 26,
-  "checksum": "4684af24bf92e12e",
+  "checksum": "cc33f2c3445722dc",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-02T10:21:48+00:00",
+  "generated": "2026-10-02T11:17:51+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -16454,7 +16454,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 для BIM: композиция встаёт в модель здания без ручного сдвига, а каждая точка подвеса — отдельный объект со своим типом и нагрузкой. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Трёхмерная модель композиции в max и fbx для собственной визуализации. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
+      "text": "IFC4 для BIM: длины в миллиметрах, точки подвеса — отдельными объектами, у каждой свой тип и нагрузка. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Трёхмерная модель композиции в max и fbx для собственной визуализации. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
      },
      {
       "type": "p",
@@ -16586,7 +16586,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 for BIM: the composition lands in the building model with no manual offset, and every suspension point is a separate object carrying its own type and load. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A procurement sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
+      "text": "IFC4 for BIM: lengths in millimetres, every suspension point a separate object carrying its own type and load. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A procurement sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
      },
      {
       "type": "p",
@@ -16718,7 +16718,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 für BIM: Die Komposition sitzt ohne manuelle Verschiebung im Gebäudemodell, und jeder Befestigungspunkt ist ein eigenes Objekt mit Typ und Last. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
+      "text": "IFC4 für BIM: Längen in Millimetern, jeder Aufhängepunkt ein eigenes Objekt mit eigenem Typ und eigener Last. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
      },
      {
       "type": "p",
@@ -16850,7 +16850,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 pour le BIM : la composition se place dans la maquette du bâtiment sans décalage manuel, et chaque point de suspension est un objet distinct portant son type et sa charge. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Un modèle 3D en max et fbx pour votre propre visualisation. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
+      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de suspension est un objet distinct portant son type et sa charge. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Un modèle 3D en max et fbx pour votre propre visualisation. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
      },
      {
       "type": "p",
@@ -16982,7 +16982,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 per il BIM: la composizione entra nel modello dell'edificio senza spostamenti manuali e ogni punto di fissaggio è un oggetto a sé, con il proprio tipo e carico. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
+      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di sospensione è un oggetto a sé, con il proprio tipo e carico. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
      },
      {
       "type": "p",
@@ -17114,7 +17114,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 para BIM: la composición encaja en el modelo del edificio sin desplazamiento manual y cada punto de suspensión es un objeto propio, con su tipo y su carga. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
+      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de suspensión es un objeto propio, con su tipo y su carga. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
      },
      {
       "type": "p",
@@ -17246,7 +17246,7 @@
      },
      {
       "type": "p",
-      "text": "Tệp IFC4 cho BIM: tác phẩm vào đúng vị trí trong mô hình công trình mà không cần dịch chuyển thủ công, và mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
+      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
      },
      {
       "type": "p",
@@ -17378,7 +17378,7 @@
      },
      {
       "type": "p",
-      "text": "ملف IFC4 لنمذجة BIM: تستقرّ التركيبة في نموذج المبنى دون إزاحة يدوية، وكلّ نقطة تعليق كائن مستقلّ يحمل نوعه وحمله. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونموذج ثلاثي الأبعاد بصيغتَي max وfbx لإعداد صورك التصوّرية بنفسك. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
+      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تعليق كائن مستقلّ يحمل نوعه وحمله. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونموذج ثلاثي الأبعاد بصيغتَي max وfbx لإعداد صورك التصوّرية بنفسك. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
      },
      {
       "type": "p",
