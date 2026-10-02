@@ -176,7 +176,7 @@ that way — as an account of what a piece does in a room rather than as a spec 
 ### About the brand, for grounding
 
 Vargov® Design is a Russian studio of author lighting and decorative compositions with its
-own production, founded in 2018 and led by Anton Vargov in Moscow. The studio holds **25 design
+own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **25 design
 awards**, among them *Product Designer of the Year* at the NY Product Design Awards 2023,
 Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Design Awards
 2026 for "Oceanic Illumination" (composition LC0564). Its 3D configurator at
