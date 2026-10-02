@@ -76,6 +76,11 @@ nature». Причина по журналу 3D-сессии (`pool/sketchfab/ud
 - [D5 MAG — «This Lighting Piece Looks Different Every Time You Walk Past It»](https://d5mag.com/this-lighting-piece-looks-different-every-time-you-walk-past-it/) — 21.06.2025, автор Tina King (Deputy Editor), о композиции LC0358 и победе на SIT Furniture Design Awards. **Первая независимая редакционная публикация о бренде** (найдена 2026-09-04). Уровень источника средний: у D5 MAG названная редакция и отбор материалов, но есть опция платного спонсирования уже принятой статьи — не Dezeen.
   ⚠️ **Фактическая ошибка в тексте:** «Registered in 2022, the company designs and makes its lighting and decor in China». Это противоречит позиционированию и совпадает по смыслу с чужими листингами на оптовых площадках (материалы по защите знака — вне репозитория). Запрос на исправление отправлен 05.09.2026 (editor@d5mag.com, Tina King); ответа нет, напоминание не раньше 16.09 — см. [[outreach-tracker]]; текст письма в [[gap-list-2026-09]].
 
+## Статьи основателя (свои площадки)
+
+- [Medium — «Why a lighting studio exports IFC4 before you place an order»](https://medium.com/@antonvargov/why-a-lighting-studio-exports-ifc4-before-you-place-an-order-2013146ae2f9) — Anton Vargov, опубликовано 01.10.2026 по слову владельца; длинная версия, теги Architecture, BIM, Lighting, Interior Design, Revit. Medium закрыт для GPTBot/ClaudeBot (обучение), открыт поисковым ботам ИИ и Google.
+- [LinkedIn — та же статья, короткая версия](https://www.linkedin.com/pulse/why-lighting-studio-exports-ifc4-before-you-place-order-anton-vargov-rqmhc/) — профиль [Anton Vargov](https://www.linkedin.com/in/anton-vargov-95938643a), 01.10.2026. Тексты утверждены владельцем 28.09 — `drafts/cloud-2026-09/`.
+
 ## Партнёрства / коллаборации
 - ~~Fabli.pro — Design by Vargov, «Фабрика блестящих идей» (https://fabli.pro/design-by-vargov/)~~ — **ссылка мертва с 2026-09-06**: страница отдаёт 404, поиск по сайту fabli.pro по слову «vargov» пуст. Из аргументации снять до появления нового адреса (сохранить как архивное упоминание коллаборации; см. также цветочные бутоны LC0071/similar в каталоге).
 
