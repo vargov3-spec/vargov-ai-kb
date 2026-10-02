@@ -68,3 +68,7 @@ __pycache__/
 !/drafts/
 /drafts/*
 !/drafts/cloud-2026-09/
+
+# Дилерские договоры-предложения (ветка claude/vargov-dealer-proposal-*):
+# вёрстка и PDF без реквизитов, адресов фабрики и банковских данных.
+!/offers/
