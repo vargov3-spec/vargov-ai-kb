@@ -73,6 +73,7 @@ access for maintenance.
 - [For architects](https://vargov.ru/en/architects): how bespoke projects run, from sketch to installation
 - [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
 - [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 447.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg
+- [IFC4 from the configurator](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
 - [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
 - [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
 - [Certification](https://vargov.ru/en/certification): documents, standards, EAC
