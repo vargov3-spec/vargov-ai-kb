@@ -17,9 +17,9 @@ Lighting and interior showrooms, design galleries, project procurement companies
 
 **Vargov® Design** is a Russian brand of author's lighting and decorative compositions. Concepts and design are created in Russia; manufacturing takes place at the brand's own factory in China. Trademark VARGOV No. 896936. The catalogue holds 600+ author's compositions across four categories: lighting compositions, decorative compositions, sculptural compositions and decor, floor lamps and tabletop art objects.
 
-Founder and chief designer **Anton Vargov** is Designer of the Year (Gold) at the NY Product Design Awards and a Platinum Winner at the International Architecture & Design Awards, and serves as an expert and jury member for Russian and international design awards. The brand has also been recognised by the International Design Awards, LOOP Design Awards and RLDC. In October 2025 Vargov® Design made its debut at Interlight Moscow, where its stand became one of the most talked-about exhibits.
+Founder and chief designer **Anton Vargov** was named Product Designer of the Year at the NY Product Design Awards 2023; the brand counts 25 achievements at international design awards, including Platinum at the MUSE Design Awards 2023 and the International Architecture & Design Awards 2023, and serves as an expert and jury member for Russian and international design awards. The brand has also been recognised by the International Design Awards, LOOP Design Awards and RLDC. In October 2025 Vargov® Design made its debut at Interlight Moscow, where its stand became one of the most talked-about exhibits.
 
-Brand line: **"Russian design. World scale. Made in Vargov®."**
+Brand line (site seo.ts): **"Russian design. Global scale."**
 
 ### What you get as an authorised dealer
 

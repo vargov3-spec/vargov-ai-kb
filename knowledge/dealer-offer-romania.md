@@ -56,7 +56,7 @@ Thank you for your interest in Vargov® Design.
 
 We are ready to discuss **exclusive distribution rights for Romania**. For the term of the agreement we will not appoint another distributor in your territory and will not sell directly to end customers whose projects are located there; a breach carries a USD 20,000 penalty in your favour with a defined claim procedure.
 
-About the brand: author's lighting and decorative compositions, 600+ items in the catalogue, designed in Russia and manufactured at our own factory. Founder and chief designer Anton Vargov is Designer of the Year (Gold) at the NY Product Design Awards and a Platinum Winner at the International Architecture & Design Awards. Distributors in Moscow, Dubai and Hanoi.
+About the brand: author's lighting and decorative compositions, 600+ items in the catalogue, designed in Russia and manufactured at our own factory. Founder and chief designer Anton Vargov was named Product Designer of the Year at the NY Product Design Awards 2023; the brand counts 25 achievements at international design awards, including Platinum at the MUSE Design Awards 2023 and the International Architecture & Design Awards 2023. Distributors in Moscow, Dubai and Hanoi.
 
 **How the agreement works.** It is trilateral — the brand owner, you and the factory. You place orders directly with the factory and work with its manager on pricing and lead times. Supply is at factory prices with no brand markup, and you set your own resale prices: the agreement expressly confirms your pricing freedom and unrestricted passive sales across the EU, in line with Regulation (EU) 2022/720.
 
