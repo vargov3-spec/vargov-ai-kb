@@ -27,10 +27,10 @@
 
 | Категория (ключ) | RU (навигация) | EN | Позиций | RU | EN |
 |---|---|---|---|---|---|
-| `lighting` | Световые композиции | Lighting compositions | 352 | https://vargov.ru/lighting | https://vargov.ru/en/lighting |
-| `decorative` | Декоративные композиции | Decorative compositions | 114 | https://vargov.ru/decorative | https://vargov.ru/en/decorative |
+| `lighting` | Световые композиции | Lighting compositions | 354 | https://vargov.ru/lighting | https://vargov.ru/en/lighting |
+| `decorative` | Декоративные композиции | Decorative compositions | 113 | https://vargov.ru/decorative | https://vargov.ru/en/decorative |
 | `floor-table-lamps` | Торшеры и арт-объекты | Floor lamps, sconces & tabletop objects | 56 | https://vargov.ru/floor-table-lamps | https://vargov.ru/en/floor-table-lamps |
-| `sculptural-decor` | Скульптурные композиции | Sculptural compositions & decor | 83 | https://vargov.ru/sculptural-decor | https://vargov.ru/en/sculptural-decor |
+| `sculptural-decor` | Скульптурные композиции | Sculptural compositions & decor | 82 | https://vargov.ru/sculptural-decor | https://vargov.ru/en/sculptural-decor |
 
 - Общий каталог: https://vargov.ru/catalog (EN https://vargov.ru/en/catalog) — поиск по артикулу, фильтр по типу, поиск по фотографии. PDF-каталог: https://vargov.ru/pdf/vargov-catalog-ru.pdf, https://vargov.ru/pdf/vargov-catalog-en.pdf.
 - Подборки «по пространству» (`/for/<key>`, EN `/en/for/<key>`): hotel-lobby, double-height, stairwell, restaurant, dining, bedroom, retail, spa.
@@ -104,7 +104,7 @@
 - Telegram бренда: https://t.me/vargov_design (@vargov_design); личный: https://t.me/AntonVargov
 - WeChat: Vargov_Design
 - YouTube: https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA · RuTube: https://rutube.ru/channel/38329605/
-- `sameAs` в Organization JSON-LD — 35 адресов (сверено 05.09.2026): оба Telegram, YouTube, RuTube, https://vargov.design/, 3ddd/3dsky, Instagram https://www.instagram.com/vargov_design/, Pinterest https://www.pinterest.com/Vargov_Design/ (7e9a8e5; видимая ссылка в подвале), Facebook https://www.facebook.com/vargovdesign (2ff2d36, только sameAs), Wikidata https://www.wikidata.org/wiki/Q141301076, Google Карты https://www.google.com/maps?cid=2970420474499935128 и Яндекс Карты https://yandex.ru/maps/org/vargov_design/199433674369/ (59a3ef6), GitHub vargov-ai-kb и страницы победителей премий. Видимой ссылки на Instagram в подвале нет (решение владельца); MAX на новом сайте не публикуется.
+- `sameAs` в Organization JSON-LD — 35 адресов (сверено 05.09.2026): оба Telegram, YouTube, RuTube, https://vargov.design/, 3ddd/3dsky, Instagram https://www.instagram.com/vargov_design/, Pinterest https://www.pinterest.com/Vargov_Design/ (7e9a8e5; видимая ссылка в подвале), Facebook https://www.facebook.com/vargovdesign (2ff2d36, только sameAs), Wikidata https://www.wikidata.org/wiki/Q141301076, Google Карты https://www.google.com/maps?cid=2970420474499935128 и Яндекс Карты https://yandex.ru/maps/org/vargov_design/102611426185/ (59a3ef6), GitHub vargov-ai-kb и страницы победителей премий. Видимой ссылки на Instagram в подвале нет (решение владельца); MAX на новом сайте не публикуется.
 
 ## Упаковка/защита при доставке (текст прежней версии сайта — на новом не сверено)
 Плёнка, плотный поролон, фирменные картонные вкладыши, фирменный скотч, деревянный каркас, фанерные ящики, джутовая обёртка, финальный защитный слой плёнки. Подтверждено llms.txt: «Delivery: worldwide, in branded crating».
@@ -301,7 +301,7 @@
 - https://vargov.ru — сайт (RU + 7 языков), каталог, llms.txt.
 - https://vargov.design/ — генеративный 3D-конфигуратор (EN); https://configurator.vargov.ru/ — RU.
   - **Политика конфигуратора обратна политике сайта и базы знаний (подтверждено агентом конфигуратора 06.09.2026):** логика композиций и данные проприетарные, поэтому в `robots.txt` конфигуратора поимённо закрыты все ИИ-краулеры (GPTBot, ClaudeBot, anthropic-ai, CCBot, Google-Extended, PerplexityBot, Bytespider, Meta-External*, cohere-ai, Diffbot и другие), ~~`llms.txt` там намеренно нет.~~ **С 23.09.2026 изменилось:** у конфигуратора есть `llms.txt` (заголовок `index, follow, noarchive`, на vargov.design и на RU-копии), а в `robots.txt` у поимённых ИИ-ботов открыты `/`, `/llms.txt`, `/sku/`, `/en/sku/` и карты сайта; остальное по-прежнему закрыто. Проверено 24.09.2026. Закрыты именно модели и краулеры данных, а не индексация: страницы артикулов `/sku/<sku>/` (934 адреса, RU и EN) открыты обычным поисковикам и несут Product-разметку, то есть в органическом поиске бренд ими представлен. Для ИИ-видимости конфигуратор источником не считается — в корпуса языковых моделей его страницы не попадают. Единственная точка правды о бренде — сайт и эта база.
-  - В разметке страниц `/sku/<sku>/` конфигуратора производитель указан ссылкой на ту же сущность, что и на сайте: `"brand": {"@id": "https://vargov.ru/#organization"}` (правка агента конфигуратора 06.09.2026, коммит 0856dcb3; выкладка — по слову владельца). Отдельной Organization у конфигуратора нет и не должно быть.
+  - В разметке страниц `/sku/<sku>/` конфигуратора производитель указан ссылкой на ту же сущность, что и на сайте: `"brand": {"@id": "https://vargov.ru#organization"}` (правка агента конфигуратора 06.09.2026, коммит 0856dcb3; выкладка — по слову владельца). Отдельной Organization у конфигуратора нет и не должно быть.
   - В открытых текстах о конфигураторе называем только результат и адреса страниц; внутреннее устройство (форматы данных, имена файлов, механика раскладки) не публикуем — просьба агента конфигуратора от 06.09.2026.
 - Каналы: Telegram, YouTube, RuTube, Pinterest (аккаунт Vargov_Design), 3ddd.ru (аккаунт vargov, 3D-модели).
 

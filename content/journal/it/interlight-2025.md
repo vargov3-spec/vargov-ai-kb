@@ -46,6 +46,6 @@ E continuerà ad ampliare le collezioni, a sperimentare con i materiali e a crea
 
 A presto. Il seguito è già in preparazione.
 
-P.S. — l'intera esposizione verrà trasferita nello showroom Vargov®Design: Mosca, Nakhimovsky Prospekt 24, padiglione 2, stand 211, «Expostroy»
+P.S. — l'intera esposizione verrà trasferita nello showroom Vargov®Design: Mosca, Nakhimovsky Prospekt 24, ed. 1, padiglione 2, stand 212, «Expostroy»
 
 Vargov®Design — per chi vede la differenza

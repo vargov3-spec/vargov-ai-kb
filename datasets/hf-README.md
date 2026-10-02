@@ -137,9 +137,9 @@ fields are plain strings.
 |---|---|---|
 | `code` | string | Article code, e.g. `LC0602`. Primary key. |
 | `slug` | string | Lowercase code used in URLs. |
-| `category` | string | One of `lighting` (352), `decorative` (114), `sculptural-decor` (83), `floor-table-lamps` (56). |
+| `category` | string | One of `lighting` (354), `decorative` (113), `sculptural-decor` (82), `floor-table-lamps` (56). |
 | `category_label` | *(i18n)* | Human-readable category name. |
-| `type` | *(i18n)* | Object type, e.g. *Floor lamp*, *Chandelier*. |
+| `type` | *(i18n)* | Object type, e.g. *Light composition*, *Decorative composition*, *Floor lamp*. |
 | `urls` | object | Canonical catalog URL per language. |
 | `image` | string | Primary photograph URL. |
 | `gallery` | list[string] | All photograph URLs for the composition. |

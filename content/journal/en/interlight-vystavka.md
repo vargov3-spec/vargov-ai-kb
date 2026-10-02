@@ -4,7 +4,7 @@ Category: Exhibitions · Date: 4 August 2025 · Slug: interlight-vystavka
 
 For the first time in Russia: a live show of the lighting compositions — no filters, no renders, only real materials, textures and light.
 
-For the first time in Russia, Vargov®Design — an international maker of light and decorative compositions — will take part in the Interlight 2025 exhibition.
+For the first time with its own stand, Vargov®Design — an international maker of light and decorative compositions — will take part in the Interlight 2025 exhibition.
 
 We will show our light compositions in the flesh.
 

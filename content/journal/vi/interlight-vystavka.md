@@ -4,7 +4,7 @@ Chuyên mục: Triển lãm · Ngày: 4 tháng 8 năm 2025 · Slug: interlight-v
 
 Lần đầu tiên tại Nga: trình diễn trực tiếp các tác phẩm ánh sáng — không bộ lọc, không ảnh dựng, chỉ có vật liệu thật, bề mặt thật và ánh sáng thật.
 
-Lần đầu tiên tại Nga, Vargov®Design — công ty quốc tế sản xuất các tác phẩm ánh sáng và trang trí — sẽ tham gia triển lãm Interlight 2025.
+Lần đầu tiên với gian hàng riêng, Vargov®Design — công ty quốc tế sản xuất các tác phẩm ánh sáng và trang trí — sẽ tham gia triển lãm Interlight 2025.
 
 Chúng tôi sẽ trình diễn các tác phẩm ánh sáng của mình một cách trực tiếp.
 

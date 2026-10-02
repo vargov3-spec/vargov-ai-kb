@@ -4,7 +4,7 @@ Rubrica: Fiere · Data: 4 agosto 2025 · Slug: interlight-vystavka
 
 Per la prima volta in Russia: una presentazione dal vivo delle composizioni luminose — senza filtri né render, solo materiali, texture e luce reali.
 
-Per la prima volta in Russia, Vargov®Design — azienda internazionale che realizza composizioni luminose e decorative — parteciperà alla fiera Interlight 2025.
+Per la prima volta con un proprio stand, Vargov®Design — azienda internazionale che realizza composizioni luminose e decorative — parteciperà alla fiera Interlight 2025.
 
 Mostreremo dal vivo le nostre composizioni luminose.
 

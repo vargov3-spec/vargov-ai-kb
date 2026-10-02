@@ -35,9 +35,9 @@
 ## 目录
 
 - [目录，605 件构成](https://vargov.ru/en/catalog) — 按货号检索、按类型筛选、以图搜图
-- [灯光构成](https://vargov.ru/en/lighting) — 352 件
-- [装饰构成](https://vargov.ru/en/decorative) — 114 件
-- [雕塑构成与装饰](https://vargov.ru/en/sculptural-decor) — 83 件
+- [灯光构成](https://vargov.ru/en/lighting) — 354 件
+- [装饰构成](https://vargov.ru/en/decorative) — 113 件
+- [雕塑构成与装饰](https://vargov.ru/en/sculptural-decor) — 82 件
 - [落地灯、壁灯与桌面艺术品](https://vargov.ru/en/floor-table-lamps) — 56 件
 - [库存元件](https://vargov.ru/en/in-stock) — 每日更新四次
 - 产品页：`https://vargov.ru/en/catalog/<小写货号>`，例如 [lc0602](https://vargov.ru/en/catalog/lc0602)
@@ -55,14 +55,14 @@
 
 - [定制项目如何进行](https://vargov.ru/en/architects) — 从草图到安装
 - [一件灯具需要多少个吊顶固定点](https://vargov.ru/en/guides/mounting-points) — 整体式灯具将全部重量集中于一个节点；吊索构成的固定点数等于元件数，每件各占一根吊线。九个例外货号按编号列出。
-- [大型玻璃吊灯有多重](https://vargov.ru/en/guides/chandelier-weight) — 六件经计算的构成，从 4.3 kg（11 件元件，600×600×600 mm）到 217.2 kg（222 件元件，3000×2000×2500 mm），含固定点数量与单点荷载。2026 年 9 月 13 日计算。
+- [大型玻璃构成有多重](https://vargov.ru/en/guides/chandelier-weight) — 八件经计算的构成，从 4.3 kg（11 件元件）到 447.7 kg（241 件元件），含固定点数量与单点荷载。2026 年 9 月 27 日按实心/空心玻璃标注计算，2026 年 10 月 2 日发布；页面上的数字来自配置器数据。
 - [安装](https://vargov.ru/en/installation) · [安装指南（PDF）](https://vargov.ru/pdf/vargov-installation-en.pdf) · [接线指南（PDF）](https://vargov.ru/pdf/vargov-connection-en.pdf) — 安装指南有八种语言：`vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [认证](https://vargov.ru/en/certification) — 两份欧亚经济联盟系列证书（TR CU 004/2011、020/2011）及两份 TR EAEU 037/2016 声明，覆盖 310 个 LC 货号，EAC 标志，有效至 2031 年；系列范围意味着所列货号的每一件产品均在覆盖之内，而非单一批次
 - [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并访客可自行导出 **IFC4（BIM）模型**、PDF 规格书和招标清单；DXF 图纸仅供内部使用：品牌的生产部门与经销商。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
 
 ## 关于
 
-- [关于品牌](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [奖项](https://vargov.ru/en/awards) · [项目](https://vargov.ru/en/projects) · [журнал / Journal](https://vargov.ru/en/journal) · [新闻资料](https://vargov.ru/en/press) · [展厅](https://vargov.ru/en/showroom) · [官方经销商](https://vargov.ru/en/official-dealers)
+- [关于品牌](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [奖项](https://vargov.ru/en/awards) · [项目](https://vargov.ru/en/projects) · [期刊 / Journal](https://vargov.ru/en/journal) · [新闻资料](https://vargov.ru/en/press) · [展厅](https://vargov.ru/en/showroom) · [官方经销商](https://vargov.ru/en/official-dealers)
 
 16 个奖项计划共 25 项奖项（官方名称）：MUSE Design Awards、IDA Design Awards、LIT Lighting Design Awards、LOOP Design Awards、SIT Furniture Design Award、Luxury Lifestyle Awards、ADD Awards、European Product Design Award、NY Product Design Awards、BLT Built Design Awards、The London Design Awards、International Architecture & Design Awards · ADC、Houzee Awards、Interlight Russia · Russian Lighting Design、ICONIC AWARDS · Innovative Interior、Awwwards（2026 年 3D 配置器提名——提名，非获奖）。
 

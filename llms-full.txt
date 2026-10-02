@@ -51,9 +51,9 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 ## Каталог
 
 - [Каталог, 605 композиций](https://vargov.ru/catalog) — поиск по артикулу, фильтр по типу, поиск по фотографии
-- [Световые композиции](https://vargov.ru/lighting) — 352 позиции
-- [Декоративные композиции](https://vargov.ru/decorative) — 114 позиций
-- [Скульптурные композиции и декор](https://vargov.ru/sculptural-decor) — 83 позиции
+- [Световые композиции](https://vargov.ru/lighting) — 354 позиции
+- [Декоративные композиции](https://vargov.ru/decorative) — 113 позиций
+- [Скульптурные композиции и декор](https://vargov.ru/sculptural-decor) — 82 позиции
 - [Торшеры, бра, настольные арт-объекты](https://vargov.ru/floor-table-lamps) — 56 позиций
 - [Элементы в наличии](https://vargov.ru/in-stock) — обновляется четыре раза в день
 - Карточка композиции: `https://vargov.ru/catalog/<артикул строчными>`, например [lc0602](https://vargov.ru/catalog/lc0602)
@@ -132,9 +132,9 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 ## Catalogue
 
 - [Catalogue, 605 compositions](https://vargov.ru/en/catalog) — searchable by LC code, filterable by type, search by photograph
-- [Lighting compositions](https://vargov.ru/en/lighting) — 352 items
-- [Decorative compositions](https://vargov.ru/en/decorative) — 114 items
-- [Sculptural compositions & decor](https://vargov.ru/en/sculptural-decor) — 83 items
+- [Lighting compositions](https://vargov.ru/en/lighting) — 354 items
+- [Decorative compositions](https://vargov.ru/en/decorative) — 113 items
+- [Sculptural compositions & decor](https://vargov.ru/en/sculptural-decor) — 82 items
 - [Floor lamps, sconces & tabletop objects](https://vargov.ru/en/floor-table-lamps) — 56 items
 - [Elements in stock](https://vargov.ru/en/in-stock) — updated four times a day
 - Product page: `https://vargov.ru/en/catalog/<lowercase article code>`, e.g. [lc0602](https://vargov.ru/en/catalog/lc0602)

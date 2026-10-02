@@ -46,6 +46,6 @@ Thương hiệu sẽ tiếp tục phát triển hướng cung ứng theo dự á
 
 Hẹn gặp lại. Chúng tôi đang chuẩn bị phần tiếp theo.
 
-P.S. — toàn bộ khu trưng bày sẽ được chuyển về showroom Vargov®Design tại địa chỉ: Moskva, đại lộ Nakhimovsky 24, sảnh 2, gian 211 «Expostroy»
+P.S. — toàn bộ khu trưng bày sẽ được chuyển về showroom Vargov®Design tại địa chỉ: Moskva, đại lộ Nakhimovsky 24, tòa 1, sảnh 2, gian 212 «Expostroy»
 
 Vargov®Design — dành cho những ai nhìn thấy sự khác biệt

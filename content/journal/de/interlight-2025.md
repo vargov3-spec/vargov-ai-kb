@@ -46,6 +46,6 @@ Und außerdem: die Kollektionen erweitern, mit Materialien experimentieren und L
 
 Bis bald. Die Fortsetzung ist bereits in Arbeit.
 
-P.S. — die gesamte Ausstellung zieht in den Showroom von Vargov®Design um: Moskau, Nakhimovsky Prospekt 24, Pavillon 2, Stand 211, „Expostroy“
+P.S. — die gesamte Ausstellung zieht in den Showroom von Vargov®Design um: Moskau, Nakhimovsky Prospekt 24, Geb. 1, Pavillon 2, Stand 212, „Expostroy“
 
 Vargov®Design — für alle, die den Unterschied sehen

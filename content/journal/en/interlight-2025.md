@@ -46,6 +46,6 @@ And it will go on expanding the collections, experimenting with materials and ma
 
 Until next time. We are already preparing what follows.
 
-P.S. — the entire display is moving to the Vargov®Design showroom at: Moscow, Nakhimovsky Prospekt 24, pavilion 2, stand 211, “Expostroy”
+P.S. — the entire display is moving to the Vargov®Design showroom at: Moscow, Nakhimovsky Prospekt 24, bldg. 1, pavilion 2, stand 212, “Expostroy”
 
 Vargov®Design — for those who see the difference

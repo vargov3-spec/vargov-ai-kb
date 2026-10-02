@@ -13,7 +13,7 @@ nginx держит 20 запросов/с с адреса, fail2ban банит, 
 Поэтому источник — файлы репозитория сайта, только на чтение:
   catalog.generated.json          605 композиций: артикул, тип, раздел, снимки
   product-copy/products.<lang>.json  описания на 8 языках, согласованы владельцем
-  awards.ts                       23 награды (число берётся из awardsCount(), дампится через node --experimental-strip-types)
+  awards.ts                       25 наград на 02.10.2026 (число берётся из awardsCount(), дампится через node --experimental-strip-types)
   element-specs.generated.json    параметры ЭЛЕМЕНТА у 336 артикулов: габариты, вес, мощность (см. product_node)
   instock.generated.json          элементы в наличии
 

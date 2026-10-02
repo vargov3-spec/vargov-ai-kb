@@ -21,7 +21,7 @@
 | 5 | IDA Design Awards | 2022 | Silver · Illumination — Designer Lighting · composition LC0236 | LC0236 | https://www.idesignawards.com/social/zoom.php?eid=9-46057-22 | `cert-18.png` | ✔ 2026-09-04 |
 | 6 | LIT Lighting Design Awards (Швейцария) | 2025 | Honorable Mention · Designer / Custom Lighting · composition LC0447 | LC0447 | https://litawards.com/winners/winner.php?id=2414&mode=hm | `cert-02.png` | — |
 | 7 | LIT Lighting Design Awards | 2022 | Winner · Designer and Custom Lighting · composition LC0223 | LC0223 | https://litawards.com/winners/winner.php?id=3395&mode=win | `cert-19.png` | — |
-| 8 | LOOP Design Awards (Португалия) | 2025 | Winner · Products \| Lighting Design · composition LC0458 | LC0458 | https://loopdesignawards.com/project/lighting-composition-lc0458 | `cert-03.png` | — |
+| 8 | LOOP Design Awards (Португалия) | 2025 | Winner · Products \| Lighting Design · composition LC0458 | LC0458 | https://loopdesignawards.com/projects/lighting-composition-lc0458 | `cert-03.png` | — |
 | 9 | SIT Furniture Design Award | 2025 | Winner · Designer & Custom Lighting · composition LC0358 | LC0358 | https://www.sitaward.com/winners/sit/2025/571/0/ | `cert-04.png` | — |
 | 10 | SIT Furniture Design Award | 2023 | Winner · Designer & Custom Lighting · composition LC0292 | LC0292 | https://www.sitaward.com/winners/sit/2023/301/0/ | `cert-16.png` | — |
 | 11 | Luxury Lifestyle Awards (Нью-Йорк) | 2024 | Winner · Best Luxury Lighting Design Studio in Dubai, UAE | — (студия) | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design | `cert-06.png` | — |

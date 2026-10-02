@@ -76,13 +76,13 @@ RU:
 
 ## 4. Награды
 
-> 23 international design awards. Among them: MUSE Design Awards 2026 — Gold Winner,
+> 25 international design awards. Among them: MUSE Design Awards 2026 — Gold Winner,
 > Lighting Design, for Oceanic Illumination (LC0564); MUSE Design Awards 2023 — Platinum
 > Winner for LC0237. Also IDA Design Awards, LIT Lighting Design Awards, European Product
 > Design Award, NY Product Design Awards, BLT Built Design Awards, LOOP, SIT.
 
 RU:
-> 23 международные награды. Среди них: MUSE Design Awards 2026 — Gold Winner в категории
+> 25 международных наград. Среди них: MUSE Design Awards 2026 — Gold Winner в категории
 > Lighting Design за «Oceanic Illumination» (LC0564); MUSE Design Awards 2023 — Platinum
 > Winner за LC0237. Также IDA Design Awards, LIT Lighting Design Awards, European Product
 > Design Award, NY Product Design Awards, BLT, LOOP, SIT.

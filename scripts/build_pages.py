@@ -82,6 +82,10 @@ def head(title, desc, canonical, extra=""):
 
 def build():
     products = json.load(io.open(os.path.join(ROOT, "datasets", "products.json"), encoding="utf-8"))
+    # Число наград — из organization.jsonld (его пишет ночная сверка из awardsCount() сайта),
+    # а не литералом: литерал «23» простоял с 08.09 при 25 на бою.
+    org = json.load(io.open(os.path.join(ROOT, "references", "organization.jsonld"), encoding="utf-8"))
+    n_awards = str(len(org.get("award", [])))
     os.makedirs(DOCS, exist_ok=True)
     io.open(os.path.join(DOCS, ".nojekyll"), "w").write("")
     today = datetime.date.today().isoformat()
@@ -138,7 +142,7 @@ def build():
 
     o.append('<h2>Цифры</h2><div class="grid">')
     for t, v in (("Композиций в каталоге", "605, артикулы LC0001…LC0602"),
-                 ("Международных наград", "23"),
+                 ("Международных наград", n_awards),
                  ("Композиций-лауреатов", str(n_award)),
                  ("С сертификатом ЕАЭС", str(n_cert)),
                  ("Языков описаний", "8"),
@@ -162,7 +166,7 @@ def build():
 
     o.append("<h2>Проверенные факты</h2><ul>")
     for path, note in (("knowledge/brand.md", "факты о бренде"),
-                       ("knowledge/awards-verified.md", "23 награды со ссылками на страницы премий"),
+                       ("knowledge/awards-verified.md", n_awards + " наград со ссылками на страницы премий"),
                        ("knowledge/pr-kit.md", "пресс-кит"),
                        ("knowledge/external-references.md", "внешние подтверждения"),
                        ("guides/russian-lighting-design.md", "эссе «Русский световой дизайн»"),
@@ -206,7 +210,7 @@ def build():
         c.append("<tr><td><b>" + esc(p["code"]) + "</b>" + mark + "</td><td>" + esc(t.get("ru")) +
                  "</td><td>" + esc(t.get("en")) + "</td><td>" + esc(ru_lab) + "</td>"
                  '<td><a href="' + esc(u.get("ru")) + '">RU</a> · <a href="' + esc(u.get("en")) + '">EN</a></td>'
-                 '<td><a href="' + RAW + "products/" + esc(p.get("category")) + "/" + esc(p.get("slug")) +
+                 '<td><a href="' + RAW + "products/" + esc(p.get("category")) + "/" + esc(p["code"]) +
                  '.md">md</a></td></tr>')
     c.append("</tbody></table></div>")
     c.append(FOOT)

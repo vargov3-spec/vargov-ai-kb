@@ -12,7 +12,7 @@
 - [Конкурс «Российский светодизайн» 2022 — LC0217](https://online.gefera.ru/contest/rldc-2022/works/?work_id=14012747) — конкурсная площадка gefera.ru. В `awards.ts` премия называется «Interlight Russia · Российский светодизайн» (специальный приз 2022); «RLDC» — обозначение площадки, отдельной премией не является.
 - [Конкурс «Российский светодизайн» 2023 — LC0342](https://online.gefera.ru/contest/rldc-2023/works/?work_id=14119182) — конкурсная работа на gefera.ru. Награда за LC0342 в `awards.ts` — 2-е место IX сезона ADD Awards.
 - ~~ADD Awards — Антон Варгов, жюри (addawards.ru/jury/293063/)~~ — **страница мертва, 404** (агент по сайту, 05.09.2026); с сайта ссылка снята, сертификат остался. Для Wikidata как источник не годится, пока не найден новый адрес.
-- [LOOP Design Awards 2025 — Lighting Composition LC0458](https://loopdesignawards.com/project/lighting-composition-lc0458) — страница победителя на сайте премии (независимая организация). Прежняя ссылка на vargov.design/tpost/ryfpbm1yy1-loop-design-awards-2025 отдаёт 404 с 2026-09-06 и снята.
+- [LOOP Design Awards 2025 — Lighting Composition LC0458](https://loopdesignawards.com/projects/lighting-composition-lc0458) — страница победителя на сайте премии (независимая организация). Прежняя ссылка на vargov.design/tpost/ryfpbm1yy1-loop-design-awards-2025 отдаёт 404 с 2026-09-06 и снята.
 
 ## Профили и справочники дизайнеров
 
@@ -92,7 +92,7 @@ nature». Причина по журналу 3D-сессии (`pool/sketchfab/ud
 - Facebook: facebook.com/vargovdesign — страница бренда «vargov_design» (1,2 тыс. подписчиков, телефон +7 916 537-33-52). **Внимание (проверено 05.09.2026):** в описании страницы написано «Производство осуществляется на эксклюзивной фабрике Vargov®Design в Китае», ссылка ведёт на vargov.design, а пост от 04.08.2025 называет xprojectlight.ru «official distributor in Russia» и перечисляет материалы. **Исправлено 05.09.2026 вечером:** краткая биография заменена на формулировку владельца (без страны производства, 24 награды); ссылка в разделе «Ссылки» — https://vargov.ru/; подпись к обложке от 04.12.2025 переписана (фраза про фабрику в Китае удалена, добавлены Product Designer of the Year и 24 награды). Пост от 04.08.2025 (Interlight, «official distributor in Russia — xprojectlight.ru», материалы) был опубликован через Metricool и не редактировался — **удалён владельцем 05.09 ~20:45**. Проверено после удаления: на странице нет ни xprojectlight, ни «Китае», ни «международная компания»; ссылка vargov.ru; подпись к обложке с новым текстом. В sameAs сайта с 05.09 (коммит сайта 2ff2d36), без видимой ссылки в подвале.
 - Pinterest: https://www.pinterest.com/Vargov_Design/ — домен vargov.ru подтверждён (p:domain_verify), в sameAs сайта и базы с 05.09.2026 (сайт 7e9a8e5, с видимой ссылкой в подвале на всех языках).
 - Google Карты (шоурум): https://www.google.com/maps?cid=2970420474499935128 — подтверждённый профиль, с 05.09.2026.
-- Яндекс Карты (шоурум): https://yandex.ru/maps/org/vargov_design/199433674369/ — владение подтверждено 05.09.2026, правки на модерации.
+- Яндекс Карты (шоурум): https://yandex.ru/maps/org/vargov_design/102611426185/ — действующая карточка (прежняя 199433674369 снята владельцем 17.09.2026); владение подтверждено 05.09.2026, правки на модерации.
 
 ## Обновление 2026-07-07
 Проведён полноценный аудит видимости в ИИ — результаты и приоритеты в [[ai-visibility-audit-2026-07]]. Кратко: находимость по имени бренда высокая, по категорийным запросам («посоветуй бренд освещения») — нулевая на английском и последняя позиция на русском. Vargov Design и Anton Vargov отсутствуют в Wikidata, тогда как Moooi, Flos, Ingo Maurer там есть.
@@ -106,7 +106,7 @@ nature». Причина по журналу 3D-сессии (`pool/sketchfab/ud
 
 Полный список независимых источников по наградам — 25 наград со ссылками на
 страницы победителей и сертификаты — теперь ведётся в [[awards-verified]]
-(источник `awards.ts` репозитория сайта). Программ пятнадцать: MUSE Design
+(источник `awards.ts` репозитория сайта). Программ шестнадцать (с 13.09.2026 добавлен ICONIC AWARDS · Innovative Interior): MUSE Design
 Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards,
 SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European
 Product Design Award, NY Product Design Awards, BLT Built Design Awards,

@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 26,
-  "checksum": "cc33f2c3445722dc",
+  "checksum": "710d74e34fb21c04",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-02T11:17:51+00:00",
+  "generated": "2026-10-02T11:39:17+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -1470,7 +1470,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. - вся экспозиция будет перемещена в showroom Vargov®Design по адресу: Москва, Нахимовский проспект 24, павильон 2, стенд 211 «Экспострой»"
+      "text": "P.S. - вся экспозиция будет перемещена в showroom Vargov®Design по адресу: Москва, Нахимовский проспект 24, стр. 1, павильон 2, стенд 212 «Экспострой»"
      },
      {
       "type": "h",
@@ -1574,7 +1574,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. — the entire display is moving to the Vargov®Design showroom at: Moscow, Nakhimovsky Prospekt 24, pavilion 2, stand 211, “Expostroy”"
+      "text": "P.S. — the entire display is moving to the Vargov®Design showroom at: Moscow, Nakhimovsky Prospekt 24, bldg. 1, pavilion 2, stand 212, “Expostroy”"
      },
      {
       "type": "h",
@@ -1678,7 +1678,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. — die gesamte Ausstellung zieht in den Showroom von Vargov®Design um: Moskau, Nakhimovsky Prospekt 24, Pavillon 2, Stand 211, „Expostroy“"
+      "text": "P.S. — die gesamte Ausstellung zieht in den Showroom von Vargov®Design um: Moskau, Nakhimovsky Prospekt 24, Geb. 1, Pavillon 2, Stand 212, „Expostroy“"
      },
      {
       "type": "h",
@@ -1782,7 +1782,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. — toute l'exposition sera transférée dans le showroom Vargov®Design : Moscou, Nakhimovsky Prospekt 24, pavillon 2, stand 211, « Expostroy »"
+      "text": "P.S. — toute l'exposition sera transférée dans le showroom Vargov®Design : Moscou, Nakhimovsky Prospekt 24, bât. 1, pavillon 2, stand 212, « Expostroy »"
      },
      {
       "type": "h",
@@ -1886,7 +1886,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. — l'intera esposizione verrà trasferita nello showroom Vargov®Design: Mosca, Nakhimovsky Prospekt 24, padiglione 2, stand 211, «Expostroy»"
+      "text": "P.S. — l'intera esposizione verrà trasferita nello showroom Vargov®Design: Mosca, Nakhimovsky Prospekt 24, ed. 1, padiglione 2, stand 212, «Expostroy»"
      },
      {
       "type": "h",
@@ -1990,7 +1990,7 @@
      },
      {
       "type": "p",
-      "text": "P.D. — toda la exposición se trasladará al showroom de Vargov®Design: Moscú, Nakhimovsky Prospekt 24, pabellón 2, estand 211, «Expostroy»"
+      "text": "P.D. — toda la exposición se trasladará al showroom de Vargov®Design: Moscú, Nakhimovsky Prospekt 24, edif. 1, pabellón 2, estand 212, «Expostroy»"
      },
      {
       "type": "h",
@@ -2094,7 +2094,7 @@
      },
      {
       "type": "p",
-      "text": "P.S. — toàn bộ khu trưng bày sẽ được chuyển về showroom Vargov®Design tại địa chỉ: Moskva, đại lộ Nakhimovsky 24, sảnh 2, gian 211 «Expostroy»"
+      "text": "P.S. — toàn bộ khu trưng bày sẽ được chuyển về showroom Vargov®Design tại địa chỉ: Moskva, đại lộ Nakhimovsky 24, tòa 1, sảnh 2, gian 212 «Expostroy»"
      },
      {
       "type": "h",
@@ -2198,7 +2198,7 @@
      },
      {
       "type": "p",
-      "text": "ملاحظة: ستُنقل المعروضات كلّها إلى صالة عرض Vargov®Design على العنوان: موسكو، جادة ناخيموفسكي 24، القاعة 2، الجناح 211 «إكسبوستروي»"
+      "text": "ملاحظة: ستُنقل المعروضات كلّها إلى صالة عرض Vargov®Design على العنوان: موسكو، جادة ناخيموفسكي 24، المبنى 1، القاعة 2، الجناح 212 «إكسبوستروي»"
      },
      {
       "type": "h",
@@ -2220,7 +2220,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Впервые в России Vargov®Design - международная компания по производству световых и декоративных композиций примет участие в выставке Interlight 2025."
+      "text": "Впервые со своим собственным стендом Vargov®Design - международная компания по производству световых и декоративных композиций примет участие в выставке Interlight 2025."
      },
      {
       "type": "p",
@@ -2292,7 +2292,7 @@
     "body": [
      {
       "type": "p",
-      "text": "For the first time in Russia, Vargov®Design — an international maker of light and decorative compositions — will take part in the Interlight 2025 exhibition."
+      "text": "For the first time with its own stand, Vargov®Design — an international maker of light and decorative compositions — will take part in the Interlight 2025 exhibition."
      },
      {
       "type": "p",
@@ -2364,7 +2364,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Zum ersten Mal in Russland nimmt Vargov®Design — ein internationales Unternehmen für Licht- und Dekorkompositionen — an der Messe Interlight 2025 teil."
+      "text": "Zum ersten Mal mit eigenem Stand nimmt Vargov®Design — ein internationales Unternehmen für Licht- und Dekorkompositionen — an der Messe Interlight 2025 teil."
      },
      {
       "type": "p",
@@ -2436,7 +2436,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Pour la première fois en Russie, Vargov®Design — fabricant international de compositions lumineuses et décoratives — participera au salon Interlight 2025."
+      "text": "Pour la première fois avec son propre stand, Vargov®Design — fabricant international de compositions lumineuses et décoratives — participera au salon Interlight 2025."
      },
      {
       "type": "p",
@@ -2508,7 +2508,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Per la prima volta in Russia, Vargov®Design — azienda internazionale che realizza composizioni luminose e decorative — parteciperà alla fiera Interlight 2025."
+      "text": "Per la prima volta con un proprio stand, Vargov®Design — azienda internazionale che realizza composizioni luminose e decorative — parteciperà alla fiera Interlight 2025."
      },
      {
       "type": "p",
@@ -2580,7 +2580,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Por primera vez en Rusia, Vargov®Design —empresa internacional de composiciones luminosas y decorativas— participará en la feria Interlight 2025."
+      "text": "Por primera vez con un estand propio, Vargov®Design —empresa internacional de composiciones luminosas y decorativas— participará en la feria Interlight 2025."
      },
      {
       "type": "p",
@@ -2652,7 +2652,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Lần đầu tiên tại Nga, Vargov®Design — công ty quốc tế sản xuất các tác phẩm ánh sáng và trang trí — sẽ tham gia triển lãm Interlight 2025."
+      "text": "Lần đầu tiên với gian hàng riêng, Vargov®Design — công ty quốc tế sản xuất các tác phẩm ánh sáng và trang trí — sẽ tham gia triển lãm Interlight 2025."
      },
      {
       "type": "p",
@@ -2724,7 +2724,7 @@
     "body": [
      {
       "type": "p",
-      "text": "للمرة الأولى في روسيا، تشارك Vargov®Design — الشركة الدولية لصناعة التركيبات الضوئية والزخرفية — في معرض Interlight 2025."
+      "text": "للمرة الأولى بجناح خاص بها، تشارك Vargov®Design — الشركة الدولية لصناعة التركيبات الضوئية والزخرفية — في معرض Interlight 2025."
      },
      {
       "type": "p",

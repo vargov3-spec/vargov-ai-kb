@@ -183,6 +183,8 @@
 > I am writing to ask for one factual correction. The article states that the company "designs and makes its lighting and decor in China". This is not accurate: Vargov®Design is a Russian brand, based in Moscow, and every composition is designed and assembled at the brand's own production. We would be grateful if the sentence could be amended to:
 >
 > "Founded in 2022 and based in Moscow, the company designs and produces its lighting and decorative compositions in-house and delivers them worldwide."
+
+**УСТАРЕЛО 02.10.2026:** «Founded in 2022» — неверно, 2022 — год регистрации знака; первые работы бренда — 2018 (слово владельца 02.10). D5 MAG напечатал эту фразу из нашего письма; нужно повторное письмо в редакцию (ждёт слова владельца).
 >
 > The distinction matters to us: unrelated wholesale suppliers have begun using the Vargov name on marketplace listings, and we are working to keep the record straight.
 >

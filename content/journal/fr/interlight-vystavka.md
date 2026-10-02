@@ -4,7 +4,7 @@ Rubrique: Salons · Date: 4 août 2025 · Slug: interlight-vystavka
 
 Pour la première fois en Russie : une présentation en direct des compositions lumineuses — sans filtres ni rendus, seulement des matériaux, des textures et une lumière réels.
 
-Pour la première fois en Russie, Vargov®Design — fabricant international de compositions lumineuses et décoratives — participera au salon Interlight 2025.
+Pour la première fois avec son propre stand, Vargov®Design — fabricant international de compositions lumineuses et décoratives — participera au salon Interlight 2025.
 
 Nous montrerons nos compositions lumineuses en vrai.
 
