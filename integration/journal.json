@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 26,
-  "checksum": "53eb06702cabcc84",
+  "checksum": "4684af24bf92e12e",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-09-27T15:12:51+00:00",
+  "generated": "2026-10-02T10:21:48+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -16466,7 +16466,7 @@
      },
      {
       "type": "p",
-      "text": "В сцене стоят настоящие изделия. 282 формы сняты с производственных моделей — с толщиной стекла, латунными патронами и точками, куда на производстве приходит трос. Не иконки и не условные шарики."
+      "text": "В сцене стоят настоящие изделия. Формы сняты с производственных моделей — с настоящей толщиной деталей, патронами и точками, куда на производстве приходит трос. Не иконки и не условные шарики."
      },
      {
       "type": "p",
@@ -16486,7 +16486,7 @@
      },
      {
       "type": "p",
-      "text": "В конфигураторе 495 артикулов: 341 световая композиция и 154 декоративные. У 315 из них стоит настоящая трёхмерная геометрия изделия, а каталог форм насчитывает 282 позиции. Плотность раскладки калибрована по 428 реальным заказам. Интерфейс работает на восьми языках, форм композиции — двадцать, а на конфигуратор приходится 934 страницы для поиска: 467 русских и 467 английских."
+      "text": "В конфигураторе — сотни артикулов световых и декоративных композиций. Те, что открываются с полным расчётом, сразу выгружают модель IFC4, PDF-спецификацию и тендерный лист. Плотность раскладки калибрована по реальным заказам. У каждого артикула в конфигураторе есть своя страница на русском и английском, а точные текущие числа — на странице конфигуратора на сайте: там они считаются из его данных."
      },
      {
       "type": "h",
@@ -16598,7 +16598,7 @@
      },
      {
       "type": "p",
-      "text": "Real products stand in the scene. 282 forms are taken from production models — with glass thickness, brass sockets and the points where the cable arrives on the shop floor. Not icons, not placeholder spheres."
+      "text": "Real products stand in the scene. The forms are taken from production models — with the real thickness of the parts, the sockets and the points where the cable arrives on the shop floor. Not icons, not placeholder spheres."
      },
      {
       "type": "p",
@@ -16618,7 +16618,7 @@
      },
      {
       "type": "p",
-      "text": "The configurator holds 495 articles: 341 lighting compositions and 154 decorative ones. 315 of them carry the product's real three-dimensional geometry, and the form catalogue counts 282 entries. Layout density is calibrated against 428 actual orders. The interface runs in eight languages, there are twenty composition shapes, and the configurator accounts for 934 indexable pages: 467 Russian and 467 English."
+      "text": "The configurator holds hundreds of lighting and decorative compositions. Those that open with a full calculation export an IFC4 model, a PDF specification and a procurement sheet straight away. Layout density is calibrated against actual orders. Every article in the configurator has its own page in Russian and English, and the exact current figures are on the configurator page of the site, where they are computed from its data."
      },
      {
       "type": "h",
@@ -16730,7 +16730,7 @@
      },
      {
       "type": "p",
-      "text": "In der Szene stehen echte Erzeugnisse. 282 Formen sind von Produktionsmodellen abgenommen — mit Glasstärke, Messingfassungen und den Punkten, an denen in der Fertigung das Seil befestigt wird. Keine Icons, keine Platzhalterkugeln."
+      "text": "In der Szene stehen echte Erzeugnisse. Die Formen sind von Produktionsmodellen abgenommen — mit der echten Stärke der Teile, den Fassungen und den Punkten, an denen in der Fertigung das Seil befestigt wird. Keine Icons, keine Platzhalterkugeln."
      },
      {
       "type": "p",
@@ -16750,7 +16750,7 @@
      },
      {
       "type": "p",
-      "text": "Im Konfigurator liegen 495 Artikel: 341 Lichtkompositionen und 154 dekorative. Für 315 davon ist die echte dreidimensionale Geometrie des Erzeugnisses hinterlegt, und der Formenkatalog zählt 282 Positionen. Die Verteilungsdichte ist an 428 realen Aufträgen kalibriert. Die Oberfläche läuft in acht Sprachen, es gibt zwanzig Kompositionsformen, und auf den Konfigurator entfallen 934 auffindbare Seiten: 467 russische und 467 englische."
+      "text": "Im Konfigurator liegen Hunderte von Licht- und dekorativen Kompositionen. Diejenigen, die sich mit vollständiger Berechnung öffnen, exportieren sofort ein IFC4-Modell, eine PDF-Spezifikation und ein Ausschreibungsblatt. Die Verteilungsdichte ist an realen Aufträgen kalibriert. Jeder Artikel im Konfigurator hat eine eigene Seite auf Russisch und Englisch; die genauen aktuellen Zahlen stehen auf der Konfigurator-Seite der Website, wo sie aus seinen Daten berechnet werden."
      },
      {
       "type": "h",
@@ -16862,7 +16862,7 @@
      },
      {
       "type": "p",
-      "text": "La scène présente de vrais produits. 282 formes sont relevées sur les modèles de production — épaisseur du verre, douilles en laiton et points où le câble se fixe en fabrication. Ni icônes ni sphères de substitution."
+      "text": "La scène présente de vrais produits. Les formes sont relevées sur les modèles de production — épaisseur réelle des pièces, douilles et points où le câble se fixe en fabrication. Ni icônes ni sphères de substitution."
      },
      {
       "type": "p",
@@ -16882,7 +16882,7 @@
      },
      {
       "type": "p",
-      "text": "Le configurateur compte 495 références : 341 compositions lumineuses et 154 décoratives. 315 d'entre elles portent la véritable géométrie tridimensionnelle du produit, et le catalogue de formes compte 282 entrées. La densité de répartition est calibrée sur 428 commandes réelles. L'interface fonctionne en huit langues, les formes de composition sont au nombre de vingt, et le configurateur représente 934 pages indexables : 467 russes et 467 anglaises."
+      "text": "Le configurateur compte des centaines de compositions lumineuses et décoratives. Celles qui s'ouvrent avec un calcul complet exportent aussitôt un modèle IFC4, une spécification PDF et une feuille d'appel d'offres. La densité de répartition est calibrée sur des commandes réelles. Chaque référence du configurateur a sa propre page en russe et en anglais ; les chiffres exacts à jour figurent sur la page du configurateur du site, où ils sont calculés à partir de ses données."
      },
      {
       "type": "h",
@@ -16994,7 +16994,7 @@
      },
      {
       "type": "p",
-      "text": "Nella scena ci sono prodotti veri. 282 forme sono rilevate dai modelli di produzione — con lo spessore del vetro, i portalampada in ottone e i punti in cui in fabbrica arriva il cavo. Non icone né sfere di comodo."
+      "text": "Nella scena ci sono prodotti veri. Le forme sono rilevate dai modelli di produzione — con lo spessore reale dei pezzi, i portalampada e i punti in cui in fabbrica arriva il cavo. Non icone né sfere di comodo."
      },
      {
       "type": "p",
@@ -17014,7 +17014,7 @@
      },
      {
       "type": "p",
-      "text": "Nel configuratore ci sono 495 articoli: 341 composizioni luminose e 154 decorative. Di questi, 315 portano la vera geometria tridimensionale del prodotto e il catalogo delle forme conta 282 voci. La densità di distribuzione è calibrata su 428 ordini reali. L'interfaccia funziona in otto lingue, le forme di composizione sono venti e al configuratore fanno capo 934 pagine indicizzabili: 467 russe e 467 inglesi."
+      "text": "Nel configuratore ci sono centinaia di composizioni luminose e decorative. Quelle che si aprono con il calcolo completo esportano subito un modello IFC4, una specifica PDF e una scheda di gara. La densità di distribuzione è calibrata su ordini reali. Ogni articolo del configuratore ha una propria pagina in russo e in inglese; i numeri esatti aggiornati sono nella pagina del configuratore sul sito, dove vengono calcolati dai suoi dati."
      },
      {
       "type": "h",
@@ -17126,7 +17126,7 @@
      },
      {
       "type": "p",
-      "text": "En la escena hay productos reales. 282 formas están tomadas de los modelos de producción — con el espesor del vidrio, los portalámparas de latón y los puntos a los que llega el cable en fábrica. Ni iconos ni esferas de relleno."
+      "text": "En la escena hay productos reales. Las formas están tomadas de los modelos de producción — con el espesor real de las piezas, los portalámparas y los puntos a los que llega el cable en fábrica. Ni iconos ni esferas de relleno."
      },
      {
       "type": "p",
@@ -17146,7 +17146,7 @@
      },
      {
       "type": "p",
-      "text": "En el configurador hay 495 referencias: 341 composiciones luminosas y 154 decorativas. De ellas, 315 llevan la geometría tridimensional real del producto, y el catálogo de formas suma 282 entradas. La densidad del reparto está calibrada con 428 pedidos reales. La interfaz funciona en ocho idiomas, las formas de composición son veinte, y al configurador le corresponden 934 páginas indexables: 467 en ruso y 467 en inglés."
+      "text": "En el configurador hay cientos de composiciones luminosas y decorativas. Las que se abren con el cálculo completo exportan de inmediato un modelo IFC4, una especificación en PDF y una hoja de licitación. La densidad del reparto está calibrada con pedidos reales. Cada referencia del configurador tiene su propia página en ruso y en inglés; las cifras exactas actualizadas están en la página del configurador del sitio, donde se calculan a partir de sus datos."
      },
      {
       "type": "h",
@@ -17258,7 +17258,7 @@
      },
      {
       "type": "p",
-      "text": "Trong cảnh là sản phẩm thật. 282 hình khối được lấy từ mô hình sản xuất — có độ dày thuỷ tinh, đui đồng thau và điểm mà ở xưởng dây treo được gắn vào. Không phải biểu tượng hay quả cầu tượng trưng."
+      "text": "Trong cảnh là sản phẩm thật. Các hình khối được lấy từ mô hình sản xuất — có độ dày thật của chi tiết, đui đèn và điểm mà ở xưởng dây treo được gắn vào. Không phải biểu tượng hay quả cầu tượng trưng."
      },
      {
       "type": "p",
@@ -17278,7 +17278,7 @@
      },
      {
       "type": "p",
-      "text": "Trong trình cấu hình có 495 mã: 341 tác phẩm ánh sáng và 154 tác phẩm trang trí. 315 trong số đó mang hình học ba chiều thật của sản phẩm, còn danh mục hình khối có 282 mục. Mật độ dàn được hiệu chỉnh theo 428 đơn hàng thực. Giao diện có tám ngôn ngữ, có hai mươi hình dạng tác phẩm, và trình cấu hình có 934 trang được lập chỉ mục cho công cụ tìm kiếm: 467 tiếng Nga và 467 tiếng Anh."
+      "text": "Trình cấu hình có hàng trăm tác phẩm ánh sáng và trang trí. Những mã mở được với phép tính đầy đủ sẽ xuất ngay mô hình IFC4, bảng kê PDF và bảng dự thầu. Mật độ dàn được hiệu chỉnh theo các đơn hàng thực. Mỗi mã trong trình cấu hình có trang riêng bằng tiếng Nga và tiếng Anh; các con số chính xác hiện tại nằm trên trang trình cấu hình của website, nơi chúng được tính từ dữ liệu của nó."
      },
      {
       "type": "h",
@@ -17390,7 +17390,7 @@
      },
      {
       "type": "p",
-      "text": "في المشهد منتجات حقيقية. 282 شكلًا مأخوذة من نماذج الإنتاج — بسُمك الزجاج وحوامل المصابيح من النحاس الأصفر والنقاط التي يصل إليها السلك في المصنع. ليست أيقونات ولا كرات تقريبية."
+      "text": "في المشهد منتجات حقيقية. الأشكال مأخوذة من نماذج الإنتاج — بالسُّمك الحقيقي للقطع وحوامل المصابيح والنقاط التي يصل إليها السلك في المصنع. ليست أيقونات ولا كرات تقريبية."
      },
      {
       "type": "p",
@@ -17410,7 +17410,7 @@
      },
      {
       "type": "p",
-      "text": "في أداة التكوين 495 صنفًا: 341 تركيبة ضوئية و154 تركيبة زخرفية. ويحمل 315 منها الهندسة ثلاثية الأبعاد الحقيقية للمنتج، ويضم كتالوج الأشكال 282 مدخلًا. وقد عُويِرت كثافة التوزيع استنادًا إلى 428 طلبًا حقيقيًا. وتعمل الواجهة بثماني لغات، وأشكال التركيبة عشرون، ولأداة التكوين 934 صفحة قابلة للفهرسة: 467 روسية و467 إنجليزية."
+      "text": "في أداة التكوين مئات التركيبات الضوئية والزخرفية. والتي تُفتح بحساب كامل تُصدِّر فورًا نموذج IFC4 ومواصفة PDF وورقة مناقصة. وقد عُويِرت كثافة التوزيع استنادًا إلى طلبات حقيقية. ولكل صنف في أداة التكوين صفحته الخاصة بالروسية والإنجليزية، أما الأرقام الدقيقة الحالية ففي صفحة أداة التكوين على الموقع، حيث تُحسب من بياناته."
      },
      {
       "type": "h",
