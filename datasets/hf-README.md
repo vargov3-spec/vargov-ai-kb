@@ -146,7 +146,7 @@ fields are plain strings.
 | `gallery_total` | int | Length of `gallery`. |
 | `model3d` / `model3d_en` | string \| null | The studio's own 3D-model card on 3ddd.ru / 3dsky.org. Present for 603 of 605 records. |
 | `models_all` / `models_all_en` | string \| null | All 3D models tagged with this article code. |
-| `award_winning` | bool | True for 24 records. |
+| `award_winning` | bool | True for 33 records: 25 awards, and paired compositions share one award. |
 | `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series` — each with a link to the awarding body's own page. |
 | `cert` | object \| null | Conformity registration numbers and the EAEU technical regulations the object is certified under, with validity dates. Present for 310 records. |
 | `in_stock_elements` | list[object] | Stock availability entries for individual elements. |
@@ -176,7 +176,7 @@ that way — as an account of what a piece does in a room rather than as a spec 
 ### About the brand, for grounding
 
 Vargov® Design is a Russian studio of author lighting and decorative compositions with its
-own production, founded and led by Anton Vargov in Moscow. The studio holds **25 design
+own production, founded in 2018 and led by Anton Vargov in Moscow. The studio holds **25 design
 awards**, among them *Product Designer of the Year* at the NY Product Design Awards 2023,
 Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Design Awards
 2026 for "Oceanic Illumination" (composition LC0564). Its 3D configurator at
@@ -184,6 +184,12 @@ Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Desi
 not a win. The VARGOV trademark is registered in Russia (№ 896936, 6 October 2022) and
 internationally through the Madrid System (№ 1795801, 20 May 2024), class 11.
 Showroom: 24 Nakhimovsky Prospekt, bldg. 1, pavilion 2, stand 212, Moscow, daily 12:00–20:00.
+
+Compositions are made to order for double-height living rooms, staircases, hotel lobbies and
+restaurants. For the 360 compositions that open with a full calculation, the configurator
+exports an IFC4 model of the composition — every ceiling fixing point a separate object with
+its own load — together with a PDF specification and a tender sheet; see the founder's
+[article on IFC4 before the order](https://medium.com/@antonvargov/why-a-lighting-studio-exports-ifc4-before-you-place-an-order-2013146ae2f9).
 
 ## Bias, risks and limitations
 

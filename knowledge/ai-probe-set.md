@@ -30,13 +30,25 @@
 1. Which award-winning studios make bespoke sculptural glass lighting for double-height rooms? Include studios from Russia and Eastern Europe. (EN, Perplexity)
 2. Кто в Москве делает световые инсталляции на заказ в лестничный проём частного дома — с проектом и 3D-моделью? (RU, Яндекс Алиса + Duck.ai)
 
+## Блок E — ниша IFC4 (добавлено 02.10.2026, цель ≥ 1 из 2 к 22.10)
+1. Is there an online lighting configurator that exports an IFC model of the composition for architects (BIM)? (EN)
+2. Конфигуратор светильников или световых композиций с выгрузкой IFC для Revit/ArchiCAD — кто такое даёт? (RU)
+*(ожидание: Vargov назван со ссылкой на vargov.design, статью Medium или страницу IFC4 сайта; 27.09 было 0 из 2, нишу держат DIALux, CYPE, ARCHLine)*
+
 ## Блок D — вместе с пробами
-- Журнал сервера по официальным спискам адресов (`crawler-report.sh`), 14 суток: настоящие
-  GPTBot / ClaudeBot / PerplexityBot / OAI-SearchBot; переходы по Referer из chatgpt.com,
+- Журнал сервера по официальным спискам адресов (`crawler-report.sh`, читает и `vargov.ru.access*`), 14 суток:
+  настоящие GPTBot / ClaudeBot / PerplexityBot / OAI-SearchBot; переходы по Referer из chatgpt.com,
   perplexity.ai, gemini, copilot, duck, ya.ru, bing.
+- **Метод с 02.10.2026 (замер 02.10 исправил прошлые числа):** переходы считать ВИЗИТАМИ, а не строками
+  журнала — адрес+день, причём адреса Apple Private Relay (172.224/12, 104.28/16, 146.75/16) склеивать
+  по User-Agent и дню; загрузку одного /favicon.ico с Referer ассистента считать показом ссылки, не
+  визитом; свои адреса (список — только в памяти сессии, не в базе) исключать. Главные показатели:
+  OAI-SearchBot — разных карточек в день; ChatGPT-User в день; ClaudeBot на /en/; Perplexity-User > 0;
+  доля категорийных ответов с брендом (блоки B, E). Точка 02.10: OAI-SearchBot 94 запроса/день и 327
+  разных карточек за 27.09–01.10; ChatGPT-User 21/день; визитов из ИИ 1,6/день (все из ChatGPT).
 - Метрика: сегменты «Из ИИ · реферер» 1008101534 и «Из ИИ · UTM» 1008101546 (вход
   info@vargov.ru).
 - Wikidata Q141301076: число премий в P166 (сейчас 2), описаний (8).
-- Hugging Face: скачивания за 30 дней (22.09 — 194). GitHub vargov-ai-kb: звёзды (0).
+- Hugging Face: скачивания за 30 дней (22.09 — 194, 27.09 — 348, 02.10 — 463). GitHub vargov-ai-kb: звёзды (0).
 - Страницы премий со словом «China» (22.09 — 6; цель 0).
 - Google «Vargov Design» (hl=en, gl=us): есть ли панель знаний; что стоит после наших сайтов.
