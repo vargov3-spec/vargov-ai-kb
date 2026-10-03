@@ -49,7 +49,8 @@ AI Mode, Perplexity, Алиса) — это другой метод, поэто�
 
 - «23 design awards» — во всех четырёх контролях. Источник найден: био на
   wescover.com/creator/vargov-design (написано 09.09, когда наград было 23). HF-карточка и
-  профиль productdesignaward.eu уже говорят 25. Правка био ждёт слова владельца.
+  профиль productdesignaward.eu уже говорят 25. Владелец 03.10 решил био Wescover не править
+  («забей на Wescover») — число 23 там остаётся; в следующих замерах это известный источник, не новая находка.
 - «exclusive Vargov®Design factory in China» с почтовым адресом — старая Tilda-страница
   `vargov.design/branded_products_vargovdesign` всё ещё в индексе; редиректы от 02.10 до индекса
   не дошли. Проверить 22.10, при повторе — просить удаление из индекса через Search Console.
