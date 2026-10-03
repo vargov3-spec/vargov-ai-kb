@@ -85,7 +85,13 @@ def build():
     # Число наград — из organization.jsonld (его пишет ночная сверка из awardsCount() сайта),
     # а не литералом: литерал «23» простоял с 08.09 при 25 на бою.
     org = json.load(io.open(os.path.join(ROOT, "references", "organization.jsonld"), encoding="utf-8"))
-    n_awards = str(len(org.get("award", [])))
+    # organization.jsonld — это {"@graph": [...]}, награды лежат у узла Organization (регрессия 02.10:
+    # org.get("award") давал 0, хаб печатал «0 наград»). Меньше 20 — сборку остановить, а не печатать.
+    org_node = next((n for n in org.get("@graph", [org]) if n.get("@type") == "Organization"), {})
+    n_awards_int = len(org_node.get("award", []))
+    if n_awards_int < 20:
+        raise SystemExit(f"build_pages: у Organization в organization.jsonld {n_awards_int} наград — меньше 20, хаб не собираю")
+    n_awards = str(n_awards_int)
     os.makedirs(DOCS, exist_ok=True)
     io.open(os.path.join(DOCS, ".nojekyll"), "w").write("")
     today = datetime.date.today().isoformat()

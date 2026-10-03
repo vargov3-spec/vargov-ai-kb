@@ -73,6 +73,7 @@ jobs:
               sys.exit(f"в JSON-LD поля, запрещённые правилами владельца: {bad}")
           org = next(n for n in graph if n.get("@type") == "Organization")
           org_ref = json.load(open("references/organization.jsonld", encoding="utf-8"))
+          org_ref = next((n for n in org_ref.get("@graph", [org_ref]) if n.get("@type") == "Organization"), {})
           n_ref = len(org_ref.get("award", []))
           if len(org.get("award", [])) != n_ref or n_ref < 20:
               sys.exit(f"у Organization в catalog.jsonld {len(org.get('award', []))} наград, в organization.jsonld {n_ref} — должны совпадать (25 на 02.10.2026)")
