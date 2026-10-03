@@ -4,6 +4,9 @@
 источникам — ~7 %). Метод и ловушки браузера — в памяти сессии («ai-probe-methods»).
 Базовые значения — [[ai-visibility-global-2026-09-22]] §1; предыдущая точка —
 [[ai-visibility-zamer-2026-09-17]] §3. Следующий замер — **22.10.2026**.
+Точка 03.10.2026 (веб-поиск, не ассистенты; блоки A, B без RU-запросов, C, E) — [[ai-visibility-serp-log]].
+При оценке ошибок помнить: MUSE 2026 Gold («Oceanic Illumination») и Awwwards Nominee 2026 — верные
+факты из [[awards-verified]], а не ошибки; число наград — только из awardsCount() (25 на 02.10).
 
 Ассистенты: Duck.ai · GPT (без входа) · Google AI Mode (`udm=50`) · Perplexity ·
 Яндекс Алиса AI (вкладка в выдаче) · при возможности Gemini, Copilot, Claude.
