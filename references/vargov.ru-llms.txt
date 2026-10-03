@@ -3,9 +3,10 @@
 # Vargov®Design
 
 > Author's lighting brand: collectible light sculptures and decorative
-> compositions. Founded and led by designer Anton Vargov. Own production,
-> made to order — every composition is assembled for a specific interior,
-> its scale and geometry adjusted to the space.
+> compositions. Founded and led by designer Anton Vargov. The brand's first
+> designs date from 2018. Own production, made to order — every composition
+> is assembled for a specific interior, its scale and geometry adjusted to
+> the space.
 
 Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 605 compositions in four families: light compositions, decorative
@@ -27,7 +28,7 @@ compositions, floor and table objects, sculptural decor.
   not a win: awwwards.com/sites/generative-3d-configurator
 - Anton Vargov serves as a jury member for design and architecture awards
 - Certification: EAEU serial certificates of conformity to TR CU 004/2011 and
-  TR CU 020/2011, tested to GOST IEC 60598-1, EAC mark; more than 300 LC pieces
+  TR CU 020/2011, tested to GOST IEC 60598-1, EAC mark; the certificates cover 310 LC pieces
 - Trademark: VARGOV — Rospatent registration No. 896936 (Russia, 2022) and
   Madrid System international registration No. 1795801 (WIPO, 2024; protection
   in China for lighting apparatus, in force until 2034). Compositions are made
@@ -42,6 +43,7 @@ compositions, floor and table objects, sculptural decor.
 - [Product catalogue, JSON-LD (Product graph, 605 items)](https://vargov.ru/catalog.jsonld): machine-readable product data — names, images, awards, canonical URLs in 8 languages
 - [Card texts in eight languages](https://vargov.ru/datasets/products.jsonl): one JSON line per composition — type, description paragraphs, where it works, style, in RU, EN, DE, IT, FR, ES, VI, AR; the same texts the product pages print
 - [Open knowledge base (datasets, entity graph, press kit)](https://github.com/vargov3-spec/vargov-ai-kb): the same facts as a public repository, mirrored from this site — plain text at https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt. This site is the primary source; the repository follows it
+- [Catalogue dataset on Hugging Face](https://huggingface.co/datasets/vargov-design/vargov-design-catalog): catalogue records and card texts as a public dataset (CC BY 4.0), built from this site's data; this site is the primary source, the dataset follows it
 
 ## Catalogue
 
@@ -55,9 +57,10 @@ compositions, floor and table objects, sculptural decor.
 
 ## By space
 
-Compositions grouped by the task rather than by the article code, each page
-covering what gets decided at the design stage — height, load, suspension,
-access for maintenance.
+10 pages by task rather than by article code, each covering what
+gets decided at the design stage — height, load, suspension, access for
+maintenance. Every composition is built for its space, so each page shows the
+whole catalogue; only the text and the order of display differ.
 
 - [Hotel lobby and public spaces](https://vargov.ru/en/for/hotel-lobby)
 - [Double-height living room](https://vargov.ru/en/for/double-height)
@@ -67,13 +70,15 @@ access for maintenance.
 - [Bedroom](https://vargov.ru/en/for/bedroom)
 - [Boutique and showroom](https://vargov.ru/en/for/retail)
 - [Spa and pool](https://vargov.ru/en/for/spa)
+- [Atrium](https://vargov.ru/en/for/atrium)
+- [Banquet hall](https://vargov.ru/en/for/banquet)
 
 ## For architects and specifiers
 
 - [For architects](https://vargov.ru/en/architects): how bespoke projects run, from sketch to installation
 - [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
 - [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 447.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg
-- [IFC4 from the configurator](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
+- [IFC4 from the configurator](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); the file drops into the model with no manual offset — built for the ceiling height set in the Ceiling height field next to the IFC button (2700 mm by default; property CeilingHeight in Vargov_Design on IfcBuilding), fixing points on the ceiling, origin on the floor; a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
 - [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
 - [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation.pdf)
 - [Certification](https://vargov.ru/en/certification): documents, standards, EAC
@@ -84,7 +89,7 @@ access for maintenance.
 
 - [About the brand](https://vargov.ru/en/about)
 - [Anton Vargov](https://vargov.ru/en/designer): founder and lead designer
-- [Awards](https://vargov.ru/en/awards): full list with certificates
+- [Awards](https://vargov.ru/en/awards): full list, with winner pages and certificates where the award body issued them
 - [Projects](https://vargov.ru/en/projects): completed installations and exhibitions
 - [Journal](https://vargov.ru/en/journal): how compositions are made, installed and certified
 - [Press kit](https://vargov.ru/en/press): photographs and facts for publication
