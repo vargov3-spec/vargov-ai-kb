@@ -48,7 +48,23 @@ Interlight Russia · Russian Lighting Design.
 | SIT Furniture Design Award | страница LC0292 | «design and manufacture of lighting and decor in China» | Био участника |
 | LOOP Design Awards | `project/lighting-composition-lc0458` и список winners-2025 | «Location: China» | Location → Moscow, Russia; если поле не редактируется — письмо организаторам |
 | EPDA · productdesignaward.eu | профиль `directory/user-profile.php?j=3261053` — уже актуален (25 наград, vargov.ru); страница победителя 2026/12910 | Bio с «production capacities are in China», Company «Thailand», Project Link на Tilda-адрес | Bio, Country → Russia, Project Link → https://vargov.ru/catalog/lc0543-2; индекс 143005 → 117218 |
-| NYPDA, London, LIT, BLT, Houzee, Luxury Lifestyle | страницы победителей | слова «China» нет (проверено curl 22.09) | Сверить био при случае, менять не обязательно |
+| NYPDA, London, LIT, BLT, Luxury Lifestyle | страницы победителей | слова «China» нет (проверено curl 22.09, повторно 03.10) | Сверить био при случае, менять не обязательно |
+
+**Сверка 03.10.2026** (45 публичных страниц, на каждую находку — два независимых опровергателя):
+
+- **Houzee Awards 2023** — `architecture-collection.com/winner/ha2301053/` (LC0335, Gold): в био то же
+  «Our production capacities are in China». 22.09 эту страницу не открывали — проверяли другой адрес.
+  Править через редакцию Architecture Collection.
+- **SIT** — страна стоит на обеих страницах победителя: LC0292 (2023, `winners/sit/2023/301/0/`) и
+  LC0358 (2025, `winners/sit/2025/571/0/`); у 2025 био к тому же начинается с регистрации знака в 2022.
+- **EPDA 2026** — страница победителя `winners/epda/2026/12910/` исправлена: «produced by Vargov Design»,
+  страна участника Russian Federation, «25 awards from international juries»; страны производства нет.
+- **LIT 2022** (`winner.php?id=3395`) — страны нет, но производство приписано партнёрам: «Our permanent
+  partners in Russia and abroad produce and sell…». При случае — «own production».
+- Итого страниц со страной производства на 03.10: **8** (IDA ×2, ADC ×2, SIT ×2, LOOP, Houzee).
+- Тексты заявок 2022–2023 (NYPDA, MUSE 2023, LIT, BLT, EPDA HM, SIT, ADC, IDA, LOOP) называют материалы
+  и размеры элементов. Это архив заявок; гоняться за ним не нужно, но в новые заявки материалы и размеры
+  не вписывать.
 
 После правок: через 3–4 недели повторить пробу «Anton Vargov» в Google AI Mode и Duck.ai;
 ожидание — «own production», без страны. Связано: [[ai-visibility-global-2026-09-22]],
