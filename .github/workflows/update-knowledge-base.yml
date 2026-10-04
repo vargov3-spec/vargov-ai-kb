@@ -98,6 +98,12 @@ jobs:
           fi
           echo "мёртвых и групповых адресов нет"
 
+      - name: llms-файлы, граф бренда и хаб не отстали от источников
+        # Только чтение: llms-full.txt содержит llms.txt и en/llms.txt дословно, число записей
+        # реестра 3D в трёх llms равно len(items) в 3ddd-models.json, подборки /for/ совпадают
+        # с зеркалом сайта, у хаба то же @id и имя организации и число наград из organization.jsonld.
+        run: python scripts/build_pages.py --check
+
       - name: Карта сайта для ИИ жива
         run: |
           code=$(curl -sS -o /tmp/llms.txt -w '%{http_code}' --max-time 30 \

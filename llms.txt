@@ -1,6 +1,6 @@
-# Vargov Design
+# Vargov®Design
 
-> Vargov® Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Первые работы — 2018 год; основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
+> Vargov®Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Первые работы — 2018 год; основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
 
 Каталог — 605 композиций с артикулами LC0001…LC0602 в четырёх семействах. 25 международных наград.
 
@@ -20,7 +20,7 @@
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — граф schema.org: Organization, Person, Dataset и 605 Product
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
-- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — артикул → собственная карточка 3D-модели (604 записи; в каталоге 603 из 605 композиций со ссылкой)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — артикул → собственная карточка 3D-модели (603 записи — по одной на каждую композицию со ссылкой: 603 из 605 композиций каталога)
 - Карточки: `products/<раздел>/<артикул>.md` (RU) и `en/products/<раздел>/<артикул>.md` (EN)
 
 ## База знаний и пресс-материалы
@@ -29,7 +29,7 @@
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 наград со ссылками на страницы премий
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — PR-кит
 - [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov® Design»
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov®Design»
 
 Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
 
@@ -51,6 +51,7 @@
 - [Лестничный пролёт](https://vargov.ru/for/stairwell)
 - [Ресторан и бар](https://vargov.ru/for/restaurant)
 - [Столовая](https://vargov.ru/for/dining) · [Спальня](https://vargov.ru/for/bedroom) · [Бутик и шоурум](https://vargov.ru/for/retail) · [Спа и бассейн](https://vargov.ru/for/spa)
+- [Атриум](https://vargov.ru/for/atrium) · [Банкетный зал](https://vargov.ru/for/banquet)
 
 ## Архитекторам и проектировщикам
 

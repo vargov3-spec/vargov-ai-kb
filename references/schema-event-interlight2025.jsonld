@@ -4,7 +4,7 @@
     {
       "@type": "Event",
       "name": "Interlight 2025",
-      "description": "First own stand of Vargov® Design at Interlight Moscow (October 2025); the brand took the special prize of the Russian Lighting Design competition at Interlight back in 2022. The stand was noted as one of the most talked-about at the fair.",
+      "description": "First own stand of Vargov®Design at Interlight Moscow (October 2025); the brand took the special prize of the Russian Lighting Design competition at Interlight back in 2022. The stand was noted as one of the most talked-about at the fair.",
       "startDate": "2025-10",
       "location": {
         "@type": "Place",
@@ -13,18 +13,18 @@
       },
       "performer": {
         "@type": "Person",
-        "name": "Anton Vargov",
-        "jobTitle": "Founder & Chief Designer, Vargov® Design"
+        "@id": "https://vargov.ru#person",
+        "name": "Anton Vargov"
       },
-      "organizer": {
+      "attendee": {
         "@type": "Organization",
-        "name": "Vargov Design",
-        "url": "https://vargov.ru"
+        "@id": "https://vargov.ru#organization",
+        "name": "Vargov®Design"
       },
       "subjectOf": {
         "@type": "VideoObject",
         "name": "Интервью Антона Варгова на INTERLIGHT 2025",
-        "description": "Interview with Anton Vargov, founder of Vargov® Design, recorded at the Interlight 2025 exhibition.",
+        "description": "Interview with Anton Vargov, founder of Vargov®Design, recorded at the Interlight 2025 exhibition.",
         "contentUrl": "https://www.youtube.com/watch?v=_HBECagnlDI",
         "embedUrl": "https://www.youtube.com/embed/_HBECagnlDI",
         "uploadDate": "2025-10",

@@ -95,9 +95,11 @@ ORG_SAME_AS = [
     YANDEX_MAPS,
     REPO_URL,
     "https://sketchfab.com/vargov",
+    "https://huggingface.co/vargov-design",
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
-PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942"]
+PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942",
+                  "https://medium.com/@antonvargov", "https://www.linkedin.com/in/anton-vargov-95938643a"]
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
 CATEGORIES = {
@@ -688,8 +690,9 @@ def award_strings(awards: list) -> list[str]:
 
 
 def organization_node(awards: list) -> dict:
-    """Узел бренда: без него 605 Product ссылаются на пустоту. Материалы, цены,
-    год основания — не указываем: первое запрещено правилами, второе неизвестно точно."""
+    """Узел бренда: без него 605 Product ссылаются на пустоту. Материалы и цены — не указываем
+    (правила владельца). foundingDate 2018 — «год появления первых дизайнов» (владелец 02.10.2026);
+    адрес — как на сайте (seo.ts) и в store_node, по-русски."""
     hrefs = [it["href"] for p in awards for it in p["items"]
              if it.get("href") and not it.get("commendation")]
     return {
@@ -708,11 +711,13 @@ def organization_node(awards: list) -> dict:
         "telephone": "+7 916 537 33 52",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212",
-            "addressLocality": "Moscow",
+            "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
+            "addressLocality": "Москва",
             "postalCode": "117218",
             "addressCountry": "RU",
         },
+        "foundingDate": "2018",
+        "areaServed": ["RU", "AE", "VN"],
         "location": {"@id": SHOWROOM_ID},
         "knowsAbout": ["lighting design", "sculptural chandeliers", "light art installations",
                        "decorative compositions", "made-to-order lighting"],
@@ -785,7 +790,8 @@ def dataset_node(n_products: int, today: str) -> dict:
         "name": "Vargov®Design — catalogue of lighting and decorative compositions",
         "description": (
             f"Open dataset of {n_products} author-designed lighting and decorative compositions by "
-            "Vargov®Design: article codes, categories, descriptions in eight languages, images, "
+            "Vargov®Design: article codes, categories, descriptions in eight languages (plus a "
+            "Simplified Chinese text snapshot of 27 September 2026 in datasets/products-zh.json), images, "
             "awards and links to the brand's own 3D models. Materials and prices are intentionally "
             "not included; composition dimensions are not published — element parameters "
             "(size, weight, power) are given where the brand publishes them."
@@ -796,7 +802,7 @@ def dataset_node(n_products: int, today: str) -> dict:
         "publisher": {"@id": ORG_ID},
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "isAccessibleForFree": True,
-        "inLanguage": LOCALES,
+        "inLanguage": LOCALES + ["zh"],
         "keywords": ["lighting design", "chandeliers", "light sculptures", "decorative compositions",
                      "Vargov Design", "Anton Vargov", "Russian design", "made to order"],
         "dateModified": today,
@@ -806,6 +812,8 @@ def dataset_node(n_products: int, today: str) -> dict:
             dl("datasets/products.csv", "text/csv"),
             dl("en/datasets/products.json", "application/json"),
             dl("references/catalog.jsonld", "application/ld+json"),
+            dl("datasets/products-zh.json", "application/json"),
+            dl("datasets/products-zh.jsonl", "application/x-ndjson"),
         ],
     }
 

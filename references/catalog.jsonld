@@ -10,6 +10,7 @@
         "VARGOV"
       ],
       "url": "https://vargov.ru",
+      "foundingDate": "2018",
       "description": "Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov.",
       "founder": {
         "@id": "https://vargov.ru#person"
@@ -18,8 +19,8 @@
       "telephone": "+7 916 537 33 52",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212",
-        "addressLocality": "Moscow",
+        "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
+        "addressLocality": "Москва",
         "postalCode": "117218",
         "addressCountry": "RU"
       },
@@ -118,6 +119,11 @@
         "https://architecture-collection.com/winner/ha2301053/",
         "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "https://sketchfab.com/vargov"
+      ],
+      "areaServed": [
+        "RU",
+        "AE",
+        "VN"
       ]
     },
     {
@@ -140,7 +146,9 @@
       ],
       "sameAs": [
         "https://t.me/AntonVargov",
-        "https://www.wikidata.org/wiki/Q141300942"
+        "https://www.wikidata.org/wiki/Q141300942",
+        "https://medium.com/@antonvargov",
+        "https://www.linkedin.com/in/anton-vargov-95938643a"
       ]
     },
     {
@@ -198,7 +206,7 @@
       "@type": "Dataset",
       "@id": "https://github.com/vargov3-spec/vargov-ai-kb#dataset",
       "name": "Vargov®Design — catalogue of lighting and decorative compositions",
-      "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
+      "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages (plus a Simplified Chinese text snapshot of 27 September 2026 in datasets/products-zh.json), images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
       "url": "https://github.com/vargov3-spec/vargov-ai-kb",
       "isBasedOn": "https://vargov.ru",
       "creator": {
@@ -217,7 +225,8 @@
         "fr",
         "es",
         "vi",
-        "ar"
+        "ar",
+        "zh"
       ],
       "keywords": [
         "lighting design",
@@ -229,7 +238,7 @@
         "Russian design",
         "made to order"
       ],
-      "dateModified": "2026-09-22",
+      "dateModified": "2026-10-03",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -255,6 +264,16 @@
           "@type": "DataDownload",
           "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld",
           "encodingFormat": "application/ld+json"
+        },
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products-zh.json",
+          "encodingFormat": "application/json"
+        },
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products-zh.jsonl",
+          "encodingFormat": "application/x-ndjson"
         }
       ]
     },
@@ -39298,6 +39317,12 @@
           "description": "Account listing by tag. May also include models of related items from the same series.",
           "url": "https://3dsky.org/users/vargov/models?tag=lc0166-1",
           "sameAs": "https://3ddd.ru/users/vargov/models?tag=lc0166-1"
+        },
+        {
+          "@type": "3DModel",
+          "name": "3D model on Sketchfab — LC0166-1",
+          "url": "https://sketchfab.com/3d-models/lighting-composition-nelumbo-vargov-lc0166-1-eea84bb243eb47feb190cb1df3320880",
+          "identifier": "eea84bb243eb47feb190cb1df3320880"
         }
       ]
     },
@@ -39414,8 +39439,8 @@
         {
           "@type": "3DModel",
           "name": "3D model on Sketchfab — LC0166",
-          "url": "https://sketchfab.com/3d-models/hanging-installation-vargov-lc0166-1-9-30b031f7fcac49a4b0601132307dbf08",
-          "identifier": "30b031f7fcac49a4b0601132307dbf08"
+          "url": "https://sketchfab.com/3d-models/lighting-composition-lemon-vargov-lc0166-3-3d88e4a7b8d647a2b8a58412ad436b49",
+          "identifier": "3d88e4a7b8d647a2b8a58412ad436b49"
         }
       ]
     },

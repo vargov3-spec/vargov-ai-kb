@@ -55,9 +55,9 @@ configs:
     path: products_zh.jsonl
 ---
 
-# Vargov® Design Catalog — 605 lighting and decorative compositions in 8 languages
+# Vargov®Design Catalog — 605 lighting and decorative compositions in 8 languages
 
-A machine-readable catalog of the full body of work of **Vargov® Design**, an author-driven
+A machine-readable catalog of the full body of work of **Vargov®Design**, an author-driven
 studio of lighting and decorative compositions founded by designer Anton Vargov (Moscow).
 Every record is one composition: its identifier, category, canonical URLs, image links,
 awards, links to its 3D model, and editorial copy written by the studio in **eight
@@ -69,8 +69,8 @@ answers about this brand in facts the brand itself maintains.
 
 ## Dataset details
 
-- **Curated by:** Vargov® Design (Anton Vargov, founder and lead designer)
-- **Language(s):** ru, en, de, it, fr, es, vi, ar
+- **Curated by:** Vargov®Design (Anton Vargov, founder and lead designer)
+- **Language(s):** ru, en, de, it, fr, es, vi, ar; Simplified Chinese (zh) as the separate `chinese` subset
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - **Records:** 605 compositions, article codes `LC0001`–`LC0602`
 - **Homepage:** https://vargov.ru/en
@@ -147,7 +147,7 @@ fields are plain strings.
 | `model3d` / `model3d_en` | string \| null | The studio's own 3D-model card on 3ddd.ru / 3dsky.org. Present for 603 of 605 records. |
 | `models_all` / `models_all_en` | string \| null | All 3D models tagged with this article code. |
 | `award_winning` | bool | True for 33 records: 25 awards, and paired compositions share one award. |
-| `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series` — each with a link to the awarding body's own page. |
+| `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series`. `href` is a link to the awarding body's own page where the programme publishes one; it is `null` where no working public winner page exists. |
 | `cert` | object \| null | Conformity registration numbers and the EAEU technical regulations the object is certified under, with validity dates. Present for 310 records. |
 | `in_stock_elements` | list[object] | Stock availability entries for individual elements. |
 | `description` | *(i18n)* | Long-form editorial description, several paragraphs. |
@@ -175,7 +175,7 @@ that way — as an account of what a piece does in a room rather than as a spec 
 
 ### About the brand, for grounding
 
-Vargov® Design is a Russian studio of author lighting and decorative compositions with its
+Vargov®Design is a Russian studio of author lighting and decorative compositions with its
 own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **25 design
 awards**, among them *Product Designer of the Year* at the NY Product Design Awards 2023,
 Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Design Awards
@@ -211,11 +211,11 @@ its own load — together with a PDF specification and a tender sheet; see the f
 
 ## Licensing
 
-The dataset files are released under **CC BY 4.0**. Attribute as *Vargov® Design* with a
+The dataset files are released under **CC BY 4.0**. Attribute as *Vargov®Design* with a
 link to https://vargov.ru.
 
 The **photographs are not included in this dataset** — only their URLs are. The images
-remain the copyright of Vargov® Design and are not licensed under CC BY 4.0 by this
+remain the copyright of Vargov®Design and are not licensed under CC BY 4.0 by this
 release. A separate set of press photographs is cleared for editorial use with attribution:
 see https://github.com/vargov3-spec/vargov-ai-kb/blob/main/press/README.md.
 

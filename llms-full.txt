@@ -1,7 +1,9 @@
-# Vargov Design — llms-full.txt
+# Vargov®Design — llms-full.txt
 
-Полная карта на двух языках. Собрано 2026-09-05 по данным репозитория сайта
-(catalog.generated.json, product-copy на 8 языках, awards.ts, seo.ts).
+Полная карта на двух языках: дословно llms.txt (RU) и en/llms.txt (EN) этого
+репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-03.
+Китайская версия — отдельный файл zh/llms.txt (ссылка — в разделах
+«Языковые версии» / «Language versions» ниже).
 
 Канонический источник фактов — https://vargov.ru/llms.txt, он генерируется
 самим сайтом. Проверенные награды со ссылками на страницы премий и сертификаты —
@@ -13,9 +15,9 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 ---
 
-# Vargov Design
+# Vargov®Design
 
-> Vargov® Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Первые работы — 2018 год; основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
+> Vargov®Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры из художественного стекла, хрусталя, керамики и металла. Первые работы — 2018 год; основатель и главный дизайнер — Антон Варгов. Собственное производство, изготовление под заказ: каждая композиция собирается под конкретный интерьер, масштаб и геометрия подстраиваются под пространство. Товарный знак VARGOV № 896936.
 
 Каталог — 605 композиций с артикулами LC0001…LC0602 в четырёх семействах. 25 международных наград.
 
@@ -29,13 +31,13 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 ## Открытые данные (CC BY 4.0)
 
-Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы, размеры и цены в данных отсутствуют намеренно.
+Лицензия — [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/), полный текст в [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Материалы и цены в данных отсутствуют намеренно; размеров композиций нет, а параметры элементов (размер, вес, мощность) приведены там, где бренд их публикует.
 
 - [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 композиций, описания на восьми языках, снимки, награды, ссылки на 3D-модели
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — только английский
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — граф schema.org: Organization, Person, Dataset и 605 Product
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
-- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — артикул → собственная карточка 3D-модели (604 записи; в каталоге 603 из 605 композиций со ссылкой)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — артикул → собственная карточка 3D-модели (603 записи — по одной на каждую композицию со ссылкой: 603 из 605 композиций каталога)
 - Карточки: `products/<раздел>/<артикул>.md` (RU) и `en/products/<раздел>/<артикул>.md` (EN)
 
 ## База знаний и пресс-материалы
@@ -44,7 +46,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 наград со ссылками на страницы премий
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — PR-кит
 - [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov® Design»
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov®Design»
 
 Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
 
@@ -66,12 +68,15 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [Лестничный пролёт](https://vargov.ru/for/stairwell)
 - [Ресторан и бар](https://vargov.ru/for/restaurant)
 - [Столовая](https://vargov.ru/for/dining) · [Спальня](https://vargov.ru/for/bedroom) · [Бутик и шоурум](https://vargov.ru/for/retail) · [Спа и бассейн](https://vargov.ru/for/spa)
+- [Атриум](https://vargov.ru/for/atrium) · [Банкетный зал](https://vargov.ru/for/banquet)
 
 ## Архитекторам и проектировщикам
 
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
+- [Сколько точек крепления нужно светильнику](https://vargov.ru/guides/tochki-krepleniya) — у цельного прибора вся масса приходит в один узел; у композиции на тросах точек столько, сколько элементов: каждый висит на своей нити. Девять артикулов-исключений названы поимённо.
+- [Сколько весит большая стеклянная композиция](https://vargov.ru/guides/ves-kompozitsii) — таблица восьми посчитанных композиций: от 4,3 кг (11 элементов) до 447,7 кг (241 элемент), с числом точек крепления и нагрузкой на точку. Прогон 27.09.2026 с разметкой стекла на цельное и полое, выложен 02.10.2026; числа на странице считаются из данных конфигуратора.
 - [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
-- [Сертификация](https://vargov.ru/certification) — серийные сертификаты ТР ЕАЭС 004/2011 и 020/2011, знак EAC, более 300 артикулов
+- [Сертификация](https://vargov.ru/certification) — два серийных сертификата ТР ЕАЭС (ТР ТС 004/2011, 020/2011) и две декларации ТР ЕАЭС 037/2016 на 310 артикулов LC, знак EAC, действуют до 2031 года; сертификат серийный — покрывает каждое изделие артикула, а не партию
 - [Гарантия](https://vargov.ru/warranty) · [Конфигуратор](https://configurator.vargov.ru) — собирает композицию под помещение; **модель IFC4 (BIM)**, PDF-спецификацию и тендерный лист посетитель выгружает сам, чертёж DXF — только для внутреннего пользования: производство и дилеры бренда. Светящиеся артикулы выгружаются классом IfcLightFixture, декоративные — IfcFurnishingElement; точки крепления к потолку идут отдельными объектами с нагрузкой на каждую. Библиотечного семейства Revit (.rfa) у бренда нет — формат закрытый, мы его не выпускаем.
 
 ## О бренде
@@ -87,7 +92,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 ## Языковые версии
 
-Русский — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar)
+Русский — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar) · 中文 (только база знаний) — [zh/llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/zh/llms.txt)
 
 ## Контакты
 
@@ -95,9 +100,9 @@ Email: info@vargov.ru · Телефон и WhatsApp: [+7 916 537 33 52](https://
 
 ---
 
-# Vargov Design
+# Vargov®Design
 
-> Vargov® Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
+> Vargov®Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
 
 The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 25 international awards.
 
@@ -111,13 +116,13 @@ This repository is a supporting knowledge base: verified facts, awards with link
 
 ## Open data (CC BY 4.0)
 
-Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials, dimensions and prices are intentionally absent from the data.
+Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials and prices are intentionally absent from the data; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.
 
 - [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 compositions, descriptions in eight languages, images, awards, links to the brand's own 3D models
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Dataset and 605 Product nodes
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
-- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (604 entries; 603 of the 605 compositions in the catalogue carry a link)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (603 entries — one for each composition that carries a link: 603 of the 605 in the catalogue)
 
 ## Knowledge base and press materials
 
@@ -125,7 +130,7 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 awards with links to the award pages
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov® Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov®Design”
 
 VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
 
@@ -147,12 +152,15 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [Stairwell](https://vargov.ru/en/for/stairwell)
 - [Restaurant and bar](https://vargov.ru/en/for/restaurant)
 - [Dining room](https://vargov.ru/en/for/dining) · [Bedroom](https://vargov.ru/en/for/bedroom) · [Boutique and showroom](https://vargov.ru/en/for/retail) · [Spa and pool](https://vargov.ru/en/for/spa)
+- [Atrium](https://vargov.ru/en/for/atrium) · [Banquet hall](https://vargov.ru/en/for/banquet)
 
 ## For architects and specifiers
 
 - [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
+- [How many ceiling mounting points a fitting needs](https://vargov.ru/en/guides/mounting-points) — a single-body fitting brings its whole mass to one node; a composition on cables needs as many points as it has elements, each on its own line. Nine exception SKUs are listed by code.
+- [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight) — eight calculated compositions, from 4.3 kg (11 elements) to 447.7 kg (241 elements), with fixing-point counts and load per point. Run of 27 September 2026 with the solid/hollow glass markup, published 2 October 2026; the numbers on the page come from the configurator data.
 - [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
-- [Certification](https://vargov.ru/en/certification) — EAEU serial certificates of conformity to TR CU 004/2011 and 020/2011, EAC mark, more than 300 LC pieces
+- [Certification](https://vargov.ru/en/certification) — two EAEU serial certificates (TR CU 004/2011, 020/2011) and two TR EAEU 037/2016 declarations covering 310 LC articles, EAC mark, valid until 2031; serial scope means every unit of a listed article is covered, not a single batch
 - [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design) — builds a composition for the room; the visitor exports an **IFC4 (BIM) model**, a PDF specification and a tender sheet directly; DXF drawings are for internal use only: the brand's production and dealers. Lit articles are exported as IfcLightFixture, decorative ones as IfcFurnishingElement; ceiling fixing points come as separate objects, each with its own load. There is no Revit family (.rfa) — the format is proprietary and the brand does not issue one.
 
 ## About
@@ -168,7 +176,7 @@ In 2022 the brand took the special prize of the Russian Lighting Design competit
 
 ## Language versions
 
-Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar)
+Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar) · 中文 (knowledge base only) — [zh/llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/zh/llms.txt)
 
 ## Contact
 

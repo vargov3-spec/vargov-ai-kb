@@ -1,30 +1,42 @@
-# Vargov® Design — база знаний для ИИ-видимости
+# Vargov®Design — база знаний для ИИ-видимости
 
-Вспомогательная база знаний бренда **Vargov® Design** (авторские световые и декоративные композиции): проверенные факты, награды со ссылками на первоисточники, PR-материалы и машиночитаемый каталог для генеративного поиска и языковых моделей.
+Вспомогательная база знаний бренда **Vargov®Design** (авторские световые и декоративные композиции): проверенные факты, награды со ссылками на первоисточники, PR-материалы и машиночитаемый каталог для генеративного поиска и языковых моделей.
 
 **Канонический источник фактов — сам сайт:** [vargov.ru/llms.txt](https://vargov.ru/llms.txt) собирается из данных сайта, числа в нём не вписаны руками. Этот репозиторий его дополняет, а не заменяет.
 
 ## Структура
 
-| Каталог | Что внутри |
+| Каталог / файл | Что внутри |
 |---|---|
+| `llms.txt`, `en/llms.txt`, `zh/llms.txt` | Карта бренда для языковых моделей: русская, английская и китайская. Китайская есть только в базе — китайской версии сайта нет |
+| `llms-full.txt` | Русская и английская карты одним файлом. Собирается `scripts/build_pages.py`, руками не правится |
 | `knowledge/` | Проверенные факты о бренде, награды с первоисточниками, аудиты видимости, PR-кит, черновик Wikidata, пакет для Archello |
-| `datasets/`, `en/datasets/` | 605 композиций: JSON, JSONL, CSV, Markdown. RU-версия многоязычная (8 языков), EN — одноязычная |
+| `datasets/`, `en/datasets/` | 605 композиций: JSON, JSONL, CSV, Markdown. RU-версия многоязычная (8 языков), EN — одноязычная. `products-zh.json` / `.jsonl` — китайский текст карточек (снимок 27.09.2026, пояснения — `datasets/README-zh.md`). `hf-README.md` — карточка датасета на Hugging Face |
 | `products/`, `en/products/` | Карточка на композицию: описание, где уместна, стилистика, награды, снимки |
 | `collections/`, `en/collections/` | Четыре раздела каталога со списком артикулов |
-| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 25 наград, реестровые номера знака), Person (основатель), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld` и `3ddd-models.json` — артикул → своя карточка 3D-модели |
+| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 25 наград, реестровые номера знака), Person (основатель), Store (шоурум), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld`, `3ddd-models.json` — артикул → своя карточка 3D-модели, `sketchfab-models.json` — артикул → модель на Sketchfab, `vargov.ru-llms.txt` — дословная копия llms.txt сайта (снимает ночная сверка) |
+| `content/journal/`, `integration/journal.json` | Статьи журнала сайта на восьми языках: по файлу на статью и язык, и они же одним пакетом |
 | `guides/`, `en/guides/` | Тематические материалы; `russian-lighting-design.md` — эссе о русском световом дизайне (RU/EN), исходник восьми языков в `datasets/journal/` |
-| `press/` | Пресс-фото: 10 снимков композиций и шоурума до 2000 px и логотип 512 px, свободны для редакционного использования с указанием «Vargov® Design» (`press/README.md`) |
-| `scripts/` | `build_from_site.py` — сборщик; `security_scan.py` — еженедельный монитор целостности сайта |
-| `scan/` | Служебное: дамп наград, список удалённого при пересборке, отчёт еженедельного монитора `security_report.md` |
+| `press/` | Пресс-фото: 10 снимков композиций и шоурума до 2000 px и логотип 512 px, свободны для редакционного использования с указанием «Vargov®Design» (`press/README.md`) |
+| `docs/` | GitHub Pages — хаб базы и указатель каталога: [vargov3-spec.github.io/vargov-ai-kb](https://vargov3-spec.github.io/vargov-ai-kb/). Собирается `scripts/build_pages.py` |
+| `scripts/` | `build_from_site.py` — сборщик из репозитория сайта; `sync_from_feed.py` — ночная сверка с фидом vargov.ru; `build_pages.py` — `docs/` и `llms-full.txt`; `check_feed_parity.py`, `check_3ddd_links.py`, `check_representatives.py` — проверки графа и ссылок на 3D-модели; `security_scan.py` — еженедельный монитор целостности сайта |
+| `.github/workflows/` | Ночная сверка с фидом и выгрузка на Hugging Face (`sync-from-feed.yml`), канарейка (`update-knowledge-base.yml`), выкладка Pages (`pages.yml`), монитор безопасности (`security-scan.yml`) |
+| прочее | `drafts/` — черновики статей об IFC4; `pinterest/` — отчёты и инструменты Pinterest; `promo-video/scripts/` — сборка промо-ролика; `awards/` — заметка о бесплатных площадках для конфигуратора; `catalog/data/in_stock.json` — снимок элементов в наличии |
+
+Открытый датасет на Hugging Face — [vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog): его обновляет ночная сверка из этого репозитория.
+
+Рабочая папка `scan/` (дампы, промежуточные выгрузки, отчёты монитора) в репозиторий не публикуется — она в `.gitignore`.
 
 ## Регенерация
 
 ```
-python scripts/build_from_site.py
+python scripts/build_from_site.py --site <путь к свежей копии репозитория сайта>
+python scripts/build_pages.py
 ```
 
-Сборщик читает **репозиторий сайта** (`V:/new site Vargov Design/web`, по умолчанию) — `catalog.generated.json`, описания `product-copy/*.json` на восьми языках, `awards.ts`, `instock.generated.json` — и пересобирает датасеты, карточки, коллекции и JSON-LD.
+Сборщик читает **репозиторий сайта** (по умолчанию `V:/new site Vargov Design/web`; перед сборкой копию обновить) — `catalog.generated.json`, описания `product-copy/*.json` на восьми языках, `awards.ts`, `instock.generated.json` — и пересобирает датасеты, карточки, коллекции и JSON-LD. `build_pages.py` после этого собирает `docs/` и `llms-full.txt` и сверяет числа llms-файлов с данными репозитория.
+
+Ночью то, чем владеет фид сайта (награды, ссылки, параметры элементов, сертификаты), переносит `scripts/sync_from_feed.py` в GitHub Actions — без локальной сборки.
 
 **Почему только локально.** Репозиторий сайта приватный, GitHub Actions его не видит. Сканировать живой сайт нельзя: nginx держит 20 запросов в секунду с адреса, fail2ban банит, а лимит соединений задевает живых посетителей.
 
@@ -34,7 +46,7 @@ python scripts/build_from_site.py
 
 Из комментариев кода сайта, действуют для любых материалов бренда:
 
-- в текстах о конкретных изделиях **не называются материалы и размеры**, цены не публикуются — поэтому в Product-узлах нет `material`, `size` и `offers`;
+- в текстах о конкретных изделиях **не называются материалы и размеры**, цены не публикуются — поэтому в Product-узлах нет `material`, `size` и `offers`; параметры элемента (размер, вес, мощность) публикуются там, где их публикует бренд;
 - страна производства не называется: «собственное производство»;
 - формулировки наград — дословно из `awards.ts`: 25 наград (`awardsCount()`), «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; три поздравления жюри в счёт не идут;
 - Interlight: специальный приз конкурса 2022 года и **первый собственный стенд** в октябре 2025.
@@ -43,5 +55,4 @@ python scripts/build_from_site.py
 
 ## Лицензия
 
-Данные и тексты репозитория распространяются по лицензии **Creative Commons Attribution 4.0 International (CC BY 4.0)** — полный текст в файле [LICENSE](LICENSE). Использование, копирование и включение в датасеты разрешены при указании источника: *Vargov® Design, https://vargov.ru*. Фотографии изделий остаются под правами бренда; товарный знак VARGOV® лицензией не передаётся.
-
+Данные и тексты репозитория распространяются по лицензии **Creative Commons Attribution 4.0 International (CC BY 4.0)** — полный текст в файле [LICENSE](LICENSE). Использование, копирование и включение в датасеты разрешены при указании источника: *Vargov®Design, https://vargov.ru*. Фотографии изделий остаются под правами бренда; товарный знак VARGOV® лицензией не передаётся.

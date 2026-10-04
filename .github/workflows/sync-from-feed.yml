@@ -36,6 +36,7 @@ on:
       # Карточка датасета на Hugging Face правится здесь — выгружать сразу, а не ночью.
       - "datasets/hf-README.md"
       - "datasets/products-zh.jsonl"
+      - "datasets/products-zh.json"
 
 permissions:
   contents: write

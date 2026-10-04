@@ -1,6 +1,6 @@
-# Vargov Design
+# Vargov®Design
 
-> Vargov® Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
+> Vargov®Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
 
 The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 25 international awards.
 
@@ -14,13 +14,13 @@ This repository is a supporting knowledge base: verified facts, awards with link
 
 ## Open data (CC BY 4.0)
 
-Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials, dimensions and prices are intentionally absent from the data.
+Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials and prices are intentionally absent from the data; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.
 
 - [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 compositions, descriptions in eight languages, images, awards, links to the brand's own 3D models
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Dataset and 605 Product nodes
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
-- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (604 entries; 603 of the 605 compositions in the catalogue carry a link)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (603 entries — one for each composition that carries a link: 603 of the 605 in the catalogue)
 
 ## Knowledge base and press materials
 
@@ -28,7 +28,7 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 awards with links to the award pages
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov® Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov®Design”
 
 VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
 
@@ -50,6 +50,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [Stairwell](https://vargov.ru/en/for/stairwell)
 - [Restaurant and bar](https://vargov.ru/en/for/restaurant)
 - [Dining room](https://vargov.ru/en/for/dining) · [Bedroom](https://vargov.ru/en/for/bedroom) · [Boutique and showroom](https://vargov.ru/en/for/retail) · [Spa and pool](https://vargov.ru/en/for/spa)
+- [Atrium](https://vargov.ru/en/for/atrium) · [Banquet hall](https://vargov.ru/en/for/banquet)
 
 ## For architects and specifiers
 

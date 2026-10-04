@@ -10,6 +10,7 @@
         "VARGOV"
       ],
       "url": "https://vargov.ru",
+      "foundingDate": "2018",
       "description": "Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov.",
       "founder": {
         "@id": "https://vargov.ru#person"
@@ -18,8 +19,8 @@
       "telephone": "+7 916 537 33 52",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212",
-        "addressLocality": "Moscow",
+        "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
+        "addressLocality": "Москва",
         "postalCode": "117218",
         "addressCountry": "RU"
       },
@@ -118,6 +119,11 @@
         "https://architecture-collection.com/winner/ha2301053/",
         "https://vnisi.ru/news/events/itogi-konkursa-rossiyskiy-svetodizayn.html",
         "https://sketchfab.com/vargov"
+      ],
+      "areaServed": [
+        "RU",
+        "AE",
+        "VN"
       ]
     },
     {
@@ -140,7 +146,9 @@
       ],
       "sameAs": [
         "https://t.me/AntonVargov",
-        "https://www.wikidata.org/wiki/Q141300942"
+        "https://www.wikidata.org/wiki/Q141300942",
+        "https://medium.com/@antonvargov",
+        "https://www.linkedin.com/in/anton-vargov-95938643a"
       ]
     },
     {

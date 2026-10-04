@@ -3,7 +3,7 @@
   "@type": "Dataset",
   "@id": "https://github.com/vargov3-spec/vargov-ai-kb#dataset",
   "name": "Vargov®Design — catalogue of lighting and decorative compositions",
-  "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages, images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
+  "description": "Open dataset of 605 author-designed lighting and decorative compositions by Vargov®Design: article codes, categories, descriptions in eight languages (plus a Simplified Chinese text snapshot of 27 September 2026 in datasets/products-zh.json), images, awards and links to the brand's own 3D models. Materials and prices are intentionally not included; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.",
   "url": "https://github.com/vargov3-spec/vargov-ai-kb",
   "isBasedOn": "https://vargov.ru",
   "creator": {
@@ -22,7 +22,8 @@
     "fr",
     "es",
     "vi",
-    "ar"
+    "ar",
+    "zh"
   ],
   "keywords": [
     "lighting design",
@@ -34,7 +35,7 @@
     "Russian design",
     "made to order"
   ],
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-10-03",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -60,6 +61,16 @@
       "@type": "DataDownload",
       "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld",
       "encodingFormat": "application/ld+json"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products-zh.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products-zh.jsonl",
+      "encodingFormat": "application/x-ndjson"
     }
   ]
 }
