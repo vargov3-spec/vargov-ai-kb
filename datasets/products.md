@@ -381,15 +381,15 @@
 | LC0365 | Световая композиция | https://vargov.ru/catalog/lc0365 |  |
 | LC0366 | Световая композиция | https://vargov.ru/catalog/lc0366 |  |
 | LC0367 | Световая композиция | https://vargov.ru/catalog/lc0367 |  |
-| LC0368 | Скульптурная композиция | https://vargov.ru/catalog/lc0368 |  |
+| LC0368 | Световая композиция | https://vargov.ru/catalog/lc0368 |  |
 | LC0369 | Декоративная композиция | https://vargov.ru/catalog/lc0369 |  |
 | LC0370 | Декоративная композиция | https://vargov.ru/catalog/lc0370 |  |
 | LC0371 | Световая композиция | https://vargov.ru/catalog/lc0371 |  |
-| LC0372 | Торшер | https://vargov.ru/catalog/lc0372 |  |
+| LC0372 | Световая композиция | https://vargov.ru/catalog/lc0372 |  |
 | LC0373 | Световая композиция | https://vargov.ru/catalog/lc0373 |  |
-| LC0374 | Световая композиция | https://vargov.ru/catalog/lc0374 |  |
-| LC0375 | Торшер | https://vargov.ru/catalog/lc0375 |  |
-| LC0376 | Торшер | https://vargov.ru/catalog/lc0376 |  |
+| LC0374 | Торшер | https://vargov.ru/catalog/lc0374 |  |
+| LC0375 | Световая композиция | https://vargov.ru/catalog/lc0375 |  |
+| LC0376 | Световая композиция | https://vargov.ru/catalog/lc0376 |  |
 | LC0377 | Торшер | https://vargov.ru/catalog/lc0377 |  |
 | LC0378 | Торшер | https://vargov.ru/catalog/lc0378 |  |
 | LC0379 | Торшер | https://vargov.ru/catalog/lc0379 |  |

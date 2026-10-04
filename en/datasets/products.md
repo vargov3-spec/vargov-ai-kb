@@ -6,8 +6,8 @@ Compositions: 605
 |---|---|
 | Lighting compositions | 354 |
 | Decorative compositions | 113 |
-| Sculptural compositions & decor | 82 |
-| Floor lamps, sconces & tabletop objects | 56 |
+| Sculptural compositions & décor | 82 |
+| Floor lamps, sconces, table art objects | 56 |
 
 ## Full list
 
@@ -381,15 +381,15 @@ Compositions: 605
 | LC0365 | Light composition | https://vargov.ru/en/catalog/lc0365 |  |
 | LC0366 | Light composition | https://vargov.ru/en/catalog/lc0366 |  |
 | LC0367 | Light composition | https://vargov.ru/en/catalog/lc0367 |  |
-| LC0368 | Sculptural composition | https://vargov.ru/en/catalog/lc0368 |  |
+| LC0368 | Light composition | https://vargov.ru/en/catalog/lc0368 |  |
 | LC0369 | Decorative composition | https://vargov.ru/en/catalog/lc0369 |  |
 | LC0370 | Decorative composition | https://vargov.ru/en/catalog/lc0370 |  |
 | LC0371 | Light composition | https://vargov.ru/en/catalog/lc0371 |  |
-| LC0372 | Floor lamp | https://vargov.ru/en/catalog/lc0372 |  |
+| LC0372 | Light composition | https://vargov.ru/en/catalog/lc0372 |  |
 | LC0373 | Light composition | https://vargov.ru/en/catalog/lc0373 |  |
-| LC0374 | Light composition | https://vargov.ru/en/catalog/lc0374 |  |
-| LC0375 | Floor lamp | https://vargov.ru/en/catalog/lc0375 |  |
-| LC0376 | Floor lamp | https://vargov.ru/en/catalog/lc0376 |  |
+| LC0374 | Floor lamp | https://vargov.ru/en/catalog/lc0374 |  |
+| LC0375 | Light composition | https://vargov.ru/en/catalog/lc0375 |  |
+| LC0376 | Light composition | https://vargov.ru/en/catalog/lc0376 |  |
 | LC0377 | Floor lamp | https://vargov.ru/en/catalog/lc0377 |  |
 | LC0378 | Floor lamp | https://vargov.ru/en/catalog/lc0378 |  |
 | LC0379 | Floor lamp | https://vargov.ru/en/catalog/lc0379 |  |

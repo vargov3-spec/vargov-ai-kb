@@ -181,11 +181,11 @@
 - [LC0364](../products/lighting/LC0364.md) — Световая композиция — https://vargov.ru/catalog/lc0364
 - [LC0365](../products/lighting/LC0365.md) — Световая композиция — https://vargov.ru/catalog/lc0365
 - [LC0367](../products/lighting/LC0367.md) — Световая композиция — https://vargov.ru/catalog/lc0367
-- [LC0368](../products/lighting/LC0368.md) — Скульптурная композиция — https://vargov.ru/catalog/lc0368
+- [LC0368](../products/lighting/LC0368.md) — Световая композиция — https://vargov.ru/catalog/lc0368
 - [LC0371](../products/lighting/LC0371.md) — Световая композиция — https://vargov.ru/catalog/lc0371
-- [LC0372](../products/lighting/LC0372.md) — Торшер — https://vargov.ru/catalog/lc0372
-- [LC0375](../products/lighting/LC0375.md) — Торшер — https://vargov.ru/catalog/lc0375
-- [LC0376](../products/lighting/LC0376.md) — Торшер — https://vargov.ru/catalog/lc0376
+- [LC0372](../products/lighting/LC0372.md) — Световая композиция — https://vargov.ru/catalog/lc0372
+- [LC0375](../products/lighting/LC0375.md) — Световая композиция — https://vargov.ru/catalog/lc0375
+- [LC0376](../products/lighting/LC0376.md) — Световая композиция — https://vargov.ru/catalog/lc0376
 - [LC0381](../products/lighting/LC0381.md) — Световая композиция — https://vargov.ru/catalog/lc0381
 - [LC0382](../products/lighting/LC0382.md) — Световая композиция — https://vargov.ru/catalog/lc0382
 - [LC0383](../products/lighting/LC0383.md) — Световая композиция — https://vargov.ru/catalog/lc0383

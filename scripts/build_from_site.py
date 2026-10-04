@@ -105,8 +105,8 @@ PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q14
 CATEGORIES = {
     "lighting": ("Световые композиции", "Lighting compositions", "/lighting", "/en/lighting"),
     "decorative": ("Декоративные композиции", "Decorative compositions", "/decorative", "/en/decorative"),
-    "floor-table-lamps": ("Торшеры и арт-объекты", "Floor lamps, sconces & tabletop objects", "/floor-table-lamps", "/en/floor-table-lamps"),
-    "sculptural-decor": ("Скульптурные композиции", "Sculptural compositions & decor", "/sculptural-decor", "/en/sculptural-decor"),
+    "floor-table-lamps": ("Торшеры и арт-объекты", "Floor lamps, sconces, table art objects", "/floor-table-lamps", "/en/floor-table-lamps"),
+    "sculptural-decor": ("Скульптурные композиции", "Sculptural compositions & décor", "/sculptural-decor", "/en/sculptural-decor"),
 }
 
 # Суффикс варианта берём целиком: у LC0543-2 он один знак, но правило

@@ -181,11 +181,11 @@ Items: 354
 - [LC0364](../products/lighting/LC0364.md) — Light composition — https://vargov.ru/en/catalog/lc0364
 - [LC0365](../products/lighting/LC0365.md) — Light composition — https://vargov.ru/en/catalog/lc0365
 - [LC0367](../products/lighting/LC0367.md) — Light composition — https://vargov.ru/en/catalog/lc0367
-- [LC0368](../products/lighting/LC0368.md) — Sculptural composition — https://vargov.ru/en/catalog/lc0368
+- [LC0368](../products/lighting/LC0368.md) — Light composition — https://vargov.ru/en/catalog/lc0368
 - [LC0371](../products/lighting/LC0371.md) — Light composition — https://vargov.ru/en/catalog/lc0371
-- [LC0372](../products/lighting/LC0372.md) — Floor lamp — https://vargov.ru/en/catalog/lc0372
-- [LC0375](../products/lighting/LC0375.md) — Floor lamp — https://vargov.ru/en/catalog/lc0375
-- [LC0376](../products/lighting/LC0376.md) — Floor lamp — https://vargov.ru/en/catalog/lc0376
+- [LC0372](../products/lighting/LC0372.md) — Light composition — https://vargov.ru/en/catalog/lc0372
+- [LC0375](../products/lighting/LC0375.md) — Light composition — https://vargov.ru/en/catalog/lc0375
+- [LC0376](../products/lighting/LC0376.md) — Light composition — https://vargov.ru/en/catalog/lc0376
 - [LC0381](../products/lighting/LC0381.md) — Light composition — https://vargov.ru/en/catalog/lc0381
 - [LC0382](../products/lighting/LC0382.md) — Light composition — https://vargov.ru/en/catalog/lc0382
 - [LC0383](../products/lighting/LC0383.md) — Light composition — https://vargov.ru/en/catalog/lc0383

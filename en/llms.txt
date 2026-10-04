@@ -37,8 +37,8 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [Catalogue, 605 compositions](https://vargov.ru/en/catalog) — searchable by LC code, filterable by type, search by photograph
 - [Lighting compositions](https://vargov.ru/en/lighting) — 354 items
 - [Decorative compositions](https://vargov.ru/en/decorative) — 113 items
-- [Sculptural compositions & decor](https://vargov.ru/en/sculptural-decor) — 82 items
-- [Floor lamps, sconces & tabletop objects](https://vargov.ru/en/floor-table-lamps) — 56 items
+- [Sculptural compositions & décor](https://vargov.ru/en/sculptural-decor) — 82 items
+- [Floor lamps, sconces, table art objects](https://vargov.ru/en/floor-table-lamps) — 56 items
 - [Elements in stock](https://vargov.ru/en/in-stock) — updated four times a day
 - Product page: `https://vargov.ru/en/catalog/<lowercase article code>`, e.g. [lc0602](https://vargov.ru/en/catalog/lc0602)
 - [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf)

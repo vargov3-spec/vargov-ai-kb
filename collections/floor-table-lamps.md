@@ -36,7 +36,7 @@
 - [LC0332-1](../products/floor-table-lamps/LC0332-1.md) — Бра — https://vargov.ru/catalog/lc0332-1
 - [LC0340](../products/floor-table-lamps/LC0340.md) — Торшер — https://vargov.ru/catalog/lc0340
 - [LC0357](../products/floor-table-lamps/LC0357.md) — Бра — https://vargov.ru/catalog/lc0357
-- [LC0374](../products/floor-table-lamps/LC0374.md) — Световая композиция — https://vargov.ru/catalog/lc0374
+- [LC0374](../products/floor-table-lamps/LC0374.md) — Торшер — https://vargov.ru/catalog/lc0374
 - [LC0377](../products/floor-table-lamps/LC0377.md) — Торшер — https://vargov.ru/catalog/lc0377
 - [LC0378](../products/floor-table-lamps/LC0378.md) — Торшер — https://vargov.ru/catalog/lc0378
 - [LC0379](../products/floor-table-lamps/LC0379.md) — Торшер — https://vargov.ru/catalog/lc0379

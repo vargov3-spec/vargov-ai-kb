@@ -1,4 +1,4 @@
-# Sculptural compositions & decor
+# Sculptural compositions & décor
 
 Section: https://vargov.ru/en/sculptural-decor
 

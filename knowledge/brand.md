@@ -29,8 +29,8 @@
 |---|---|---|---|---|---|
 | `lighting` | Световые композиции | Lighting compositions | 354 | https://vargov.ru/lighting | https://vargov.ru/en/lighting |
 | `decorative` | Декоративные композиции | Decorative compositions | 113 | https://vargov.ru/decorative | https://vargov.ru/en/decorative |
-| `floor-table-lamps` | Торшеры и арт-объекты | Floor lamps, sconces & tabletop objects | 56 | https://vargov.ru/floor-table-lamps | https://vargov.ru/en/floor-table-lamps |
-| `sculptural-decor` | Скульптурные композиции | Sculptural compositions & decor | 82 | https://vargov.ru/sculptural-decor | https://vargov.ru/en/sculptural-decor |
+| `floor-table-lamps` | Торшеры и арт-объекты | Floor lamps, sconces, table art objects | 56 | https://vargov.ru/floor-table-lamps | https://vargov.ru/en/floor-table-lamps |
+| `sculptural-decor` | Скульптурные композиции | Sculptural compositions & décor | 82 | https://vargov.ru/sculptural-decor | https://vargov.ru/en/sculptural-decor |
 
 - Общий каталог: https://vargov.ru/catalog (EN https://vargov.ru/en/catalog) — поиск по артикулу, фильтр по типу, поиск по фотографии. PDF-каталог: https://vargov.ru/pdf/vargov-catalog-ru.pdf, https://vargov.ru/pdf/vargov-catalog-en.pdf.
 - Подборки «по пространству» (`/for/<key>`, EN `/en/for/<key>`): hotel-lobby, double-height, stairwell, restaurant, dining, bedroom, retail, spa.
