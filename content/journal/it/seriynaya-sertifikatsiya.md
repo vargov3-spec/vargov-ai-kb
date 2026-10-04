@@ -16,7 +16,7 @@ Per questo nelle gare si chiede il certificato di serie e quasi mai quello di lo
 
 Che cosa è certificato esattamente
 
-Due certificati di conformità ai regolamenti tecnici dell’Unione doganale, rilasciati il 7 e l’8 settembre 2026 per cinque anni. Insieme coprono 310 codici LC di composizioni luminose.
+Due certificati di conformità ai regolamenti tecnici dell’Unione doganale, rilasciati il 7 e l’8 settembre 2026 per cinque anni. Insieme coprono 310 codici LC di composizioni luminose — nove di questi compaiono in entrambi i certificati.
 
 Il primo copre 53 codici secondo due regolamenti insieme: TR CU 004/2011 «Sulla sicurezza delle apparecchiature a bassa tensione» e TR CU 020/2011 «Compatibilità elettromagnetica dei dispositivi tecnici». Il secondo copre 266 codici secondo il regolamento sulla bassa tensione.
 
@@ -48,4 +48,4 @@ C’è una convinzione persistente: che il pezzo d’autore e il documento verif
 
 È un equivoco comodo, e ostacola il lavoro. Una composizione montata per un soffitto preciso è sospesa sopra le persone, si scalda e si collega alla rete elettrica dell’edificio come qualsiasi apparecchio, e deve essere altrettanto sicura. La differenza tra «è bello» e «si può installare in uno spazio pubblico» è esattamente questo pacchetto di documenti.
 
-Per noi la certificazione di serie non è una riga di marketing ma la tappa successiva della nostra crescita: il design d’autore deve essere non solo espressivo, ma pienamente pronto per i progetti professionali. Dettagli, numeri completi e scadenze sono sulla pagina di certificazione.
+Per noi la certificazione di serie non è una riga di marketing ma la tappa successiva della nostra crescita: il design d’autore deve essere non solo espressivo, ma pienamente pronto per i progetti professionali. Dettagli, numeri completi e scadenze sono sulla pagina di certificazione: https://vargov.ru/it/certification

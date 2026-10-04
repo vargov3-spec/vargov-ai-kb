@@ -4,7 +4,7 @@ Chuyên mục: Triết lý · Ngày: 3 tháng 9 năm 2024 · Slug: svetovaya-ili
 
 Tác phẩm ánh sáng và tác phẩm trang trí khác nhau ở điểm gì: chức năng, mục đích và sự chú trọng đến phân bố ánh sáng — phân tích từ thương hiệu.
 
-Tác phẩm ánh sáng và tác phẩm trang trí khác nhau ở chức năng và mục đích chính của chúng:
+Tác phẩm ánh sáng và tác phẩm trang trí khác nhau ở chức năng và mục đích chính của chúng
 
 Tác phẩm ánh sáng
 

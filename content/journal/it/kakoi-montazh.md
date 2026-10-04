@@ -8,7 +8,7 @@ Esistono diversi modi per montare le composizioni luminose Vargov®Design, e cia
 
 1. Montaggio su soffitto predisposto con rinforzo in compensato
 
-Pregi:
+Pregi
 
 - Fissaggi quasi invisibili: a montaggio concluso la composizione appare pulitissima ed elegante, perché tutti gli elementi di fissaggio restano nascosti sopra il soffitto.
 
@@ -16,7 +16,7 @@ Pregi:
 
 - Libertà nella disposizione degli elementi: possono essere montati ad altezze diverse e fissati con precisione secondo il disegno di montaggio.
 
-Difetti:
+Difetti
 
 - Preparazione impegnativa: il soffitto va predisposto in anticipo (rinforzo in compensato, fori praticati), il che può comportare costi e tempi aggiuntivi.
 
@@ -24,7 +24,7 @@ Difetti:
 
 2. Montaggio con botola d'ispezione
 
-Pregi:
+Pregi
 
 - Manutenzione comoda: la botola d'ispezione garantisce un accesso rapido e agevole ad alimentatori, cablaggi e componenti dell'impianto, semplificando la manutenzione o la sostituzione delle apparecchiature.
 
@@ -32,7 +32,7 @@ Pregi:
 
 - Sicurezza: in caso di interventi non programmati o riparazioni si raggiunge subito l'impianto senza intaccare la struttura del soffitto.
 
-Difetti:
+Difetti
 
 - Botola a vista: la botola d'ispezione può risultare visibile a soffitto e incidere sull'aspetto dell'ambiente, soprattutto negli interni minimalisti.
 
@@ -40,7 +40,7 @@ Difetti:
 
 3. Montaggio su base portante
 
-Pregi:
+Pregi
 
 - Impianto pienamente integrato: alimentatori e altri componenti della composizione trovano posto nella base, il che rende il collegamento compatto e del tutto autonomo.
 
@@ -48,7 +48,7 @@ Pregi:
 
 - Manutenzione agevole: tutti gli elementi tecnici sono facilmente accessibili nella base, quindi si possono controllare e sostituire senza intervenire sul soffitto.
 
-Difetti:
+Difetti
 
 - Ingombro: la base ha un'altezza a partire da 80 mm e occupa spazio in più a soffitto, cosa poco desiderabile nei locali con soffitti bassi.
 

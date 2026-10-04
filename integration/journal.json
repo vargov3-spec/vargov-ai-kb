@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 26,
-  "checksum": "710d74e34fb21c04",
+  "checksum": "3b9a94147072622a",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-02T11:39:17+00:00",
+  "generated": "2026-10-04T08:13:11+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -77,10 +77,6 @@
    "dateISO": "2024-09-03",
    "categoryId": "authenticity"
   },
-  "sezonnaya-aktsiya": {
-   "dateISO": "2025-10-29",
-   "categoryId": "news"
-  },
   "shef-montazh": {
    "dateISO": "2025-08-11",
    "categoryId": "installation"
@@ -124,6 +120,10 @@
   "seriynaya-sertifikatsiya": {
    "dateISO": "2026-09-09",
    "categoryId": "production"
+  },
+  "epda-2026": {
+   "dateISO": "2026-09-22",
+   "categoryId": "recognition"
   }
  },
  "articles": {
@@ -826,7 +826,19 @@
      },
      {
       "type": "p",
-      "text": "Расширение производственных площадей: Планируется увеличение производственных мощностей для удовлетворения растущего спроса на продукцию. Это позволит фабрике выпускать больше световых композиций и выполнять более масштабные проекты.Модернизация оборудования: В ближайшее время будет произведена модернизация производственных линий, что позволит внедрить новые технологии и автоматизировать ключевые процессы, улучшая эффективность и качество продукции.Увеличение числа сотрудников: В рамках расширения будет привлечено больше квалифицированных специалистов, которые будут работать над разработкой и производством инновационных световых решений.Запуск новых коллекций: Фабрика будет активно работать над созданием новых коллекций, которые включат в себя передовые световые композиции с использованием новейших материалов и технологий."
+      "text": "Расширение производственных площадей: Планируется увеличение производственных мощностей для удовлетворения растущего спроса на продукцию. Это позволит фабрике выпускать больше световых композиций и выполнять более масштабные проекты."
+     },
+     {
+      "type": "p",
+      "text": "Модернизация оборудования: В ближайшее время будет произведена модернизация производственных линий, что позволит внедрить новые технологии и автоматизировать ключевые процессы, улучшая эффективность и качество продукции."
+     },
+     {
+      "type": "p",
+      "text": "Увеличение числа сотрудников: В рамках расширения будет привлечено больше квалифицированных специалистов, которые будут работать над разработкой и производством инновационных световых решений."
+     },
+     {
+      "type": "p",
+      "text": "Запуск новых коллекций: Фабрика будет активно работать над созданием новых коллекций, которые включат в себя передовые световые композиции с использованием новейших материалов и технологий."
      },
      {
       "type": "p",
@@ -1150,7 +1162,19 @@
      },
      {
       "type": "p",
-      "text": "Mở rộng diện tích sản xuất: Dự kiến tăng công suất sản xuất để đáp ứng nhu cầu ngày càng lớn đối với sản phẩm. Điều này cho phép nhà máy sản xuất nhiều tác phẩm ánh sáng hơn và thực hiện các dự án quy mô lớn hơn. Hiện đại hóa thiết bị: Các dây chuyền sản xuất sẽ sớm được hiện đại hóa, cho phép áp dụng công nghệ mới và tự động hóa các quy trình then chốt, nâng cao hiệu quả và chất lượng sản phẩm. Tăng số lượng nhân sự: Trong khuôn khổ mở rộng, sẽ thu hút thêm nhiều chuyên gia lành nghề làm việc trong khâu phát triển và sản xuất các giải pháp ánh sáng sáng tạo. Ra mắt các bộ sưu tập mới: Nhà máy sẽ tích cực làm việc để tạo ra các bộ sưu tập mới, bao gồm những tác phẩm ánh sáng tiên tiến sử dụng vật liệu và công nghệ mới nhất."
+      "text": "Mở rộng diện tích sản xuất: Dự kiến tăng công suất sản xuất để đáp ứng nhu cầu ngày càng lớn đối với sản phẩm. Điều này cho phép nhà máy sản xuất nhiều tác phẩm ánh sáng hơn và thực hiện các dự án quy mô lớn hơn."
+     },
+     {
+      "type": "p",
+      "text": "Hiện đại hóa thiết bị: Các dây chuyền sản xuất sẽ sớm được hiện đại hóa, cho phép áp dụng công nghệ mới và tự động hóa các quy trình then chốt, nâng cao hiệu quả và chất lượng sản phẩm."
+     },
+     {
+      "type": "p",
+      "text": "Tăng số lượng nhân sự: Trong khuôn khổ mở rộng, sẽ thu hút thêm nhiều chuyên gia lành nghề làm việc trong khâu phát triển và sản xuất các giải pháp ánh sáng sáng tạo."
+     },
+     {
+      "type": "p",
+      "text": "Ra mắt các bộ sưu tập mới: Nhà máy sẽ tích cực làm việc để tạo ra các bộ sưu tập mới, bao gồm những tác phẩm ánh sáng tiên tiến sử dụng vật liệu và công nghệ mới nhất."
      },
      {
       "type": "p",
@@ -1189,12 +1213,24 @@
       "text": "اخترنا عن وعي استراتيجية تطوير منشأة واحدة — مصنعنا الخاص Vargov®Design، بدل توزيع الطلبات على مصانع خارجية صغيرة متفرّقة. يتيح لنا هذا القرار التحكّم الكامل في كل مرحلة من مراحل الإنتاج، من اختيار الخامات إلى التجميع النهائي للتركيبات الضوئية. وتطوير منشأة واحدة يمنحنا القدرة على التركيز على الابتكار، والحفاظ على استمرارية العمليات، وضمان حصرية كل تركيبة مبتكرة وتفرّدها."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "في المستقبل القريب يُعتزم في مصنع Vargov®Design اتخاذ عدّة خطوات مهمّة للتطوير والتوسّع:"
      },
      {
       "type": "p",
-      "text": "توسيع مساحات الإنتاج: يُعتزم زيادة الطاقات الإنتاجية لتلبية الطلب المتنامي على المنتجات. وهذا سيتيح للمصنع إنتاج مزيد من التركيبات الضوئية وتنفيذ مشاريع أوسع نطاقًا. تحديث المعدّات: ستُحدَّث خطوط الإنتاج قريبًا، ما يتيح إدخال تقنيات جديدة وأتمتة العمليات المفصلية، بما يحسّن الكفاءة وجودة المنتجات. زيادة عدد العاملين: في إطار التوسّع سيُستقطب مزيد من الاختصاصيين المهرة للعمل على تطوير حلول الإضاءة المبتكرة وإنتاجها. إطلاق مجموعات جديدة: سيعمل المصنع بنشاط على ابتكار مجموعات جديدة تضمّ تركيبات ضوئية متقدّمة باستخدام أحدث الخامات والتقنيات."
+      "text": "توسيع مساحات الإنتاج: يُعتزم زيادة الطاقات الإنتاجية لتلبية الطلب المتنامي على المنتجات. وهذا سيتيح للمصنع إنتاج مزيد من التركيبات الضوئية وتنفيذ مشاريع أوسع نطاقًا."
+     },
+     {
+      "type": "p",
+      "text": "تحديث المعدّات: ستُحدَّث خطوط الإنتاج قريبًا، ما يتيح إدخال تقنيات جديدة وأتمتة العمليات المفصلية، بما يحسّن الكفاءة وجودة المنتجات."
+     },
+     {
+      "type": "p",
+      "text": "زيادة عدد العاملين: في إطار التوسّع سيُستقطب مزيد من الاختصاصيين المهرة للعمل على تطوير حلول الإضاءة المبتكرة وإنتاجها."
+     },
+     {
+      "type": "p",
+      "text": "إطلاق مجموعات جديدة: سيعمل المصنع بنشاط على ابتكار مجموعات جديدة تضمّ تركيبات ضوئية متقدّمة باستخدام أحدث الخامات والتقنيات."
      },
      {
       "type": "p",
@@ -2177,7 +2213,7 @@
       "text": "وهذا بالضبط ما نلناه من ردود فعل."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "وماذا بعد؟"
      },
      {
@@ -2267,8 +2303,8 @@
       "text": "Промокод для бесплатного посещения: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Дилеры в России — vargov.ru/dealers"
+      "type": "p",
+      "text": "Дилеры в России — https://vargov.ru/dealers"
      },
      {
       "type": "p",
@@ -2339,8 +2375,8 @@
       "text": "Promo code for free entry: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Dealers in Russia — vargov.ru/dealers"
+      "type": "p",
+      "text": "Dealers in Russia — https://vargov.ru/en/dealers"
      },
      {
       "type": "p",
@@ -2411,8 +2447,8 @@
       "text": "Promocode für den kostenlosen Eintritt: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Händler in Russland — vargov.ru/dealers"
+      "type": "p",
+      "text": "Händler in Russland — https://vargov.ru/de/dealers"
      },
      {
       "type": "p",
@@ -2483,8 +2519,8 @@
       "text": "Code promo pour une entrée gratuite : IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Revendeurs en Russie — vargov.ru/dealers"
+      "type": "p",
+      "text": "Revendeurs en Russie — https://vargov.ru/fr/dealers"
      },
      {
       "type": "p",
@@ -2555,8 +2591,8 @@
       "text": "Codice promozionale per l'ingresso gratuito: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Rivenditori in Russia — vargov.ru/dealers"
+      "type": "p",
+      "text": "Rivenditori in Russia — https://vargov.ru/it/dealers"
      },
      {
       "type": "p",
@@ -2627,8 +2663,8 @@
       "text": "Código promocional para la entrada gratuita: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Distribuidores en Rusia — vargov.ru/dealers"
+      "type": "p",
+      "text": "Distribuidores en Rusia — https://vargov.ru/es/dealers"
      },
      {
       "type": "p",
@@ -2691,7 +2727,7 @@
       "text": "Sẽ là Vargov"
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Interlight 2025 | Moskva, Trung tâm triển lãm quốc tế «Crocus Expo», 21–24 tháng 10"
      },
      {
@@ -2699,8 +2735,8 @@
       "text": "Mã khuyến mãi để vào cửa miễn phí: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "Đại lý tại Nga — vargov.ru/dealers"
+      "type": "p",
+      "text": "Đại lý tại Nga — https://vargov.ru/vi/dealers"
      },
      {
       "type": "p",
@@ -2763,7 +2799,7 @@
       "text": "سيكون Vargov"
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Interlight 2025 | موسكو، مركز المعارض الدولي «كروكوس إكسبو»، 21–24 أكتوبر"
      },
      {
@@ -2771,8 +2807,8 @@
       "text": "الرمز الترويجي للدخول المجاني: IL25-XSPDY"
      },
      {
-      "type": "h",
-      "text": "الموزّعون في روسيا — vargov.ru/dealers"
+      "type": "p",
+      "text": "الموزّعون في روسيا — https://vargov.ru/ar/dealers"
      },
      {
       "type": "p",
@@ -3057,8 +3093,8 @@
       "text": "Видео заказанных композиций (3 декабря 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -3066,7 +3102,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -3074,7 +3110,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -3106,7 +3142,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -3381,8 +3417,8 @@
       "text": "Video of the commissioned compositions (3 December 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -3390,7 +3426,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -3398,7 +3434,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -3430,7 +3466,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -3689,7 +3725,7 @@
       "text": "Der Unterschied existiert nur in unseren Köpfen."
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Vielleicht ist es an der Zeit, Objekte nicht länger nach der Flagge zu beurteilen,"
      },
      {
@@ -3705,8 +3741,8 @@
       "text": "Video der bestellten Kompositionen (3. Dezember 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -3714,7 +3750,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -3722,7 +3758,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -3754,7 +3790,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -4013,7 +4049,7 @@
       "text": "la différence n'existe que dans nos têtes."
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Il est peut-être temps de cesser de juger les objets au drapeau"
      },
      {
@@ -4029,8 +4065,8 @@
       "text": "Vidéo des compositions commandées (3 décembre 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -4038,7 +4074,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -4046,7 +4082,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -4078,7 +4114,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -4337,7 +4373,7 @@
       "text": "la differenza esiste soltanto nelle nostre teste."
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Forse è arrivato il momento di smettere di giudicare gli oggetti dalla bandiera"
      },
      {
@@ -4353,8 +4389,8 @@
       "text": "Video delle composizioni ordinate (3 dicembre 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -4362,7 +4398,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -4370,7 +4406,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -4402,7 +4438,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -4661,7 +4697,7 @@
       "text": "la diferencia solo existe en nuestras cabezas."
      },
      {
-      "type": "p",
+      "type": "h",
       "text": "Quizá haya llegado el momento de dejar de juzgar los objetos por la bandera"
      },
      {
@@ -4677,8 +4713,8 @@
       "text": "Vídeo de las composiciones encargadas (3 de diciembre de 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -4686,7 +4722,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -4694,7 +4730,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -4726,7 +4762,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -5001,8 +5037,8 @@
       "text": "Video các tác phẩm được đặt hàng (3 tháng 12 năm 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -5010,7 +5046,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -5018,7 +5054,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -5050,7 +5086,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -5325,8 +5361,8 @@
       "text": "فيديو التركيبات المطلوبة (3 ديسمبر 2023)"
      },
      {
-      "type": "h",
-      "text": "https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7"
+      "type": "p",
+      "text": "https://youtube.com/shorts/zAzmjpXDlzQ"
      },
      {
       "type": "h",
@@ -5334,7 +5370,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0372"
      },
      {
       "type": "h",
@@ -5342,7 +5378,7 @@
      },
      {
       "type": "p",
-      "text": "https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya"
+      "text": "https://vargov.ru/catalog/lc0138"
      },
      {
       "type": "h",
@@ -5374,7 +5410,7 @@
      },
      {
       "type": "p",
-      "text": "https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA=="
+      "text": "https://www.instagram.com/p/C4P0XLDNVHk/"
      }
     ],
     "metaLabels": {
@@ -5683,7 +5719,7 @@
       "text": "Given the complexity and uniqueness of our light compositions, we recommend using the official Vargov®Design installers. Our specialists have the knowledge and the experience for a professional installation, which guarantees that every element works correctly and stays intact."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "What to do when your order arrives"
      },
      {
@@ -6643,7 +6679,7 @@
       "text": "الخلاصة"
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "يعتمد اختيار طريقة التركيب على خصائص الفضاء الداخلي وارتفاع الأسقف والحاجة إلى الصيانة لاحقًا:"
      },
      {
@@ -6667,7 +6703,7 @@
       "text": "نظرًا إلى تعقيد تركيباتنا الضوئية وتفرّدها، ننصحكم بالاستعانة بخدمات مركّبي Vargov®Design الرسميين. يمتلك اختصاصيّونا المعرفة والخبرة اللازمتين للتركيب الاحترافي، بما يضمن عمل جميع العناصر على نحوٍ صحيح والحفاظ على سلامتها."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "ماذا تفعلون عند استلام المنتجات؟"
      },
      {
@@ -7471,7 +7507,7 @@
     "lead": "La composition lumineuse LC0458 figure parmi les lauréats du prix international LOOP Design Awards 2025.",
     "body": [
      {
-      "type": "h",
+      "type": "p",
       "text": "Vargov®Design distingué par les LOOP Design Awards 2025"
      },
      {
@@ -7555,7 +7591,7 @@
     "lead": "La composizione luminosa LC0458 è tra i vincitori del premio internazionale LOOP Design Awards 2025.",
     "body": [
      {
-      "type": "h",
+      "type": "p",
       "text": "Vargov®Design premiato al LOOP Design Awards 2025"
      },
      {
@@ -7639,7 +7675,7 @@
     "lead": "La composición luminosa LC0458 está entre los ganadores del premio internacional LOOP Design Awards 2025.",
     "body": [
      {
-      "type": "h",
+      "type": "p",
       "text": "Vargov®Design, galardonado en los LOOP Design Awards 2025"
      },
      {
@@ -8595,7 +8631,7 @@
       "text": "نظرًا إلى تعقيد تركيباتنا الضوئية وتفرّدها، ننصحكم بالاستعانة بخدمات مركّبي Vargov®Design الرسميين. يمتلك اختصاصيّونا المعرفة والخبرة اللازمتين للتركيب الاحترافي، بما يضمن عمل جميع العناصر على نحوٍ صحيح والحفاظ على سلامتها."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "ماذا تفعلون عند استلام المنتجات؟"
      },
      {
@@ -10091,7 +10127,7 @@
     "lead": "كيف تولد عناصر التركيبات: كل فكرة تقطع الطريق من التصوّر إلى القطعة الحقيقية عبر نموذج أوّلي — اختبار للشكل والنِّسَب وتوزيع الضوء قبل الدفع إلى الإنتاج.",
     "body": [
      {
-      "type": "h",
+      "type": "p",
       "text": "النمذجة الأوّلية، أو كيف تولد عناصر تركيبات Vargov®Design"
      },
      {
@@ -10123,7 +10159,7 @@
       "text": "وحين ترضينا النتيجة تمامًا، ننقل النموذج الأوّلي إلى إنتاجنا الخاص Vargov®Design، حيث يُصنع العنصر من الخامات «الحقيقية» — الخزف أو الكريستال أو الزجاج أو المعدن. وهكذا تصير النمذجة الأوّلية حلقة الوصل بين الفكرة والعمل النهائي. إنها أداتنا التي تجعل العملية أسرع وأنظف وأوفر وأكثر ابتكارًا. فحيث يكتفي الآخرون بـ«التخمين»، نعرف نحن النتيجة على وجه الدقّة."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "يمكن تزييف الشكل. أمّا تزييف الفكرة فمستحيل. أتلحقون بنا؟"
      }
     ],
@@ -10383,424 +10419,6 @@
      {
       "type": "p",
       "text": "باختياركم منتجات Vargov®Design تختارون الجودة والتفرّد والإبداع الأصيل. شهادة الأصالة هي وسيلتكم للتيقّن من أنكم صرتم مالكي عملٍ فنّي حقيقي، سيسعدكم ويُبرز فرادة فضائكم الداخلي سنوات طويلة."
-     }
-    ],
-    "metaLabels": {
-     "category": "القسم",
-     "date": "التاريخ"
-    }
-   }
-  },
-  "sezonnaya-aktsiya": {
-   "ru": {
-    "title": "Сезонная акция",
-    "category": "Новости",
-    "date": "29 октября 2025",
-    "lead": "Ежегодная сезонная акция Vargov®Design с 1 ноября по 31 декабря: подарки к каждому заказу, оформленному в этот период.",
-    "body": [
-     {
-      "type": "p",
-      "text": "Ежегодная сезонная акция от Vargov®Design с 01 ноября по 31 декабря 2025 года включительно."
-     },
-     {
-      "type": "p",
-      "text": "В рамках акции мы подготовили подарки к каждому заказу, оформленному в этот период."
-     },
-     {
-      "type": "h",
-      "text": "Условия акции"
-     },
-     {
-      "type": "p",
-      "text": "При единовременном заказе от 5 000$ в подарок настольный светильник арт-объект LC0357- коллекционное изделие ручной сборки с выразительным силуэтом и архитектурной формой."
-     },
-     {
-      "type": "p",
-      "text": "При единовременном заказе до 5 000$ в подарок светильник арт-объект LC0433 - компактный, лаконичный, с характерным световым акцентом для интерьера."
-     },
-     {
-      "type": "h",
-      "text": "Подробности"
-     },
-     {
-      "type": "p",
-      "text": "Период действия: с 1 ноября по 31 декабря 2025 года."
-     },
-     {
-      "type": "p",
-      "text": "Один заказ - один подарок."
-     },
-     {
-      "type": "p",
-      "text": "Действует на оплаченные заказы, оформленные в период проведения акции."
-     },
-     {
-      "type": "p",
-      "text": "Уточнить детали вы можете у персонального менеджера или официального представителя Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Рубрика",
-     "date": "Дата"
-    }
-   },
-   "en": {
-    "title": "Seasonal offer",
-    "category": "News",
-    "date": "29 October 2025",
-    "lead": "The annual Vargov®Design seasonal offer from 1 November to 31 December: gifts with every order placed during the period.",
-    "body": [
-     {
-      "type": "p",
-      "text": "The annual seasonal offer from Vargov®Design runs from 1 November to 31 December 2025 inclusive."
-     },
-     {
-      "type": "p",
-      "text": "For its duration we have prepared a gift with every order placed."
-     },
-     {
-      "type": "h",
-      "text": "Terms of the offer"
-     },
-     {
-      "type": "p",
-      "text": "With a single order of $5,000 or more — the LC0357 table light as a gift: an art object and collector's piece, assembled by hand, with an expressive silhouette and an architectural form."
-     },
-     {
-      "type": "p",
-      "text": "With a single order under $5,000 — the LC0433 light object as a gift: compact, restrained, a distinctive accent of light for an interior."
-     },
-     {
-      "type": "h",
-      "text": "Details"
-     },
-     {
-      "type": "p",
-      "text": "Valid from 1 November to 31 December 2025."
-     },
-     {
-      "type": "p",
-      "text": "One order — one gift."
-     },
-     {
-      "type": "p",
-      "text": "Applies to paid orders placed within the period of the offer."
-     },
-     {
-      "type": "p",
-      "text": "For details, please ask your personal manager or an official Vargov®Design representative"
-     }
-    ],
-    "metaLabels": {
-     "category": "Category",
-     "date": "Date"
-    }
-   },
-   "de": {
-    "title": "Saisonale Aktion",
-    "category": "Aktuelles",
-    "date": "29. Oktober 2025",
-    "lead": "Die jährliche saisonale Aktion von Vargov®Design vom 1. November bis 31. Dezember: Geschenke zu jeder in diesem Zeitraum aufgegebenen Bestellung.",
-    "body": [
-     {
-      "type": "p",
-      "text": "Die jährliche Saisonaktion von Vargov®Design läuft vom 1. November bis einschließlich 31. Dezember 2025."
-     },
-     {
-      "type": "p",
-      "text": "Im Rahmen der Aktion haben wir zu jeder Bestellung in diesem Zeitraum ein Geschenk vorbereitet."
-     },
-     {
-      "type": "h",
-      "text": "Aktionsbedingungen"
-     },
-     {
-      "type": "p",
-      "text": "Bei einer einmaligen Bestellung ab 5 000 $ gibt es die Tischleuchte LC0357 als Geschenk — ein von Hand montiertes Sammlerstück und Kunstobjekt mit ausdrucksstarker Silhouette und architektonischer Form."
-     },
-     {
-      "type": "p",
-      "text": "Bei einer einmaligen Bestellung unter 5 000 $ gibt es das Leuchtobjekt LC0433 als Geschenk — kompakt, zurückhaltend, ein markanter Lichtakzent im Interieur."
-     },
-     {
-      "type": "h",
-      "text": "Details"
-     },
-     {
-      "type": "p",
-      "text": "Gültigkeitszeitraum: 1. November bis 31. Dezember 2025."
-     },
-     {
-      "type": "p",
-      "text": "Eine Bestellung — ein Geschenk."
-     },
-     {
-      "type": "p",
-      "text": "Gilt für bezahlte Bestellungen, die im Aktionszeitraum aufgegeben wurden."
-     },
-     {
-      "type": "p",
-      "text": "Details erfahren Sie bei Ihrem persönlichen Berater oder einem offiziellen Vertreter von Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Rubrik",
-     "date": "Datum"
-    }
-   },
-   "fr": {
-    "title": "Offre saisonnière",
-    "category": "Actualités",
-    "date": "29 octobre 2025",
-    "lead": "L'offre saisonnière annuelle de Vargov®Design du 1er novembre au 31 décembre : des cadeaux pour chaque commande passée durant cette période.",
-    "body": [
-     {
-      "type": "p",
-      "text": "L'offre saisonnière annuelle de Vargov®Design est valable du 1er novembre au 31 décembre 2025 inclus."
-     },
-     {
-      "type": "p",
-      "text": "Dans le cadre de cette offre, nous avons prévu un cadeau pour chaque commande passée pendant cette période."
-     },
-     {
-      "type": "h",
-      "text": "Conditions de l'offre"
-     },
-     {
-      "type": "p",
-      "text": "Pour toute commande unique à partir de 5 000 $, la lampe de table LC0357 est offerte — un objet d'art de collection, assemblé à la main, à la silhouette expressive et à la forme architecturale."
-     },
-     {
-      "type": "p",
-      "text": "Pour toute commande unique inférieure à 5 000 $, l'objet lumineux LC0433 est offert — compact, épuré, un accent de lumière qui marque l'intérieur."
-     },
-     {
-      "type": "h",
-      "text": "Détails"
-     },
-     {
-      "type": "p",
-      "text": "Période de validité : du 1er novembre au 31 décembre 2025."
-     },
-     {
-      "type": "p",
-      "text": "Une commande — un cadeau."
-     },
-     {
-      "type": "p",
-      "text": "Valable pour les commandes réglées et passées pendant la période de l'offre."
-     },
-     {
-      "type": "p",
-      "text": "Pour les détails, adressez-vous à votre conseiller personnel ou à un représentant officiel Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Rubrique",
-     "date": "Date"
-    }
-   },
-   "it": {
-    "title": "Promozione stagionale",
-    "category": "Novità",
-    "date": "29 ottobre 2025",
-    "lead": "La promozione stagionale annuale Vargov®Design dal 1º novembre al 31 dicembre: un regalo per ogni ordine effettuato nel periodo.",
-    "body": [
-     {
-      "type": "p",
-      "text": "La promozione stagionale annuale di Vargov®Design è valida dal 1° novembre al 31 dicembre 2025 compresi."
-     },
-     {
-      "type": "p",
-      "text": "Nell'ambito della promozione abbiamo previsto un omaggio per ogni ordine effettuato in questo periodo."
-     },
-     {
-      "type": "h",
-      "text": "Condizioni della promozione"
-     },
-     {
-      "type": "p",
-      "text": "Per un ordine unico a partire da 5.000 $, in omaggio la lampada da tavolo LC0357 — un oggetto d'arte da collezione, assemblato a mano, dalla silhouette espressiva e dalla forma architettonica."
-     },
-     {
-      "type": "p",
-      "text": "Per un ordine unico inferiore a 5.000 $, in omaggio l'oggetto luminoso LC0433 — compatto, essenziale, un accento di luce che caratterizza l'interno."
-     },
-     {
-      "type": "h",
-      "text": "Dettagli"
-     },
-     {
-      "type": "p",
-      "text": "Periodo di validità: dal 1° novembre al 31 dicembre 2025."
-     },
-     {
-      "type": "p",
-      "text": "Un ordine — un omaggio."
-     },
-     {
-      "type": "p",
-      "text": "Vale per gli ordini pagati ed effettuati nel periodo della promozione."
-     },
-     {
-      "type": "p",
-      "text": "Per i dettagli rivolgetevi al vostro referente personale o a un rappresentante ufficiale Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Rubrica",
-     "date": "Data"
-    }
-   },
-   "es": {
-    "title": "Promoción de temporada",
-    "category": "Novedades",
-    "date": "29 de octubre de 2025",
-    "lead": "La promoción de temporada anual de Vargov®Design del 1 de noviembre al 31 de diciembre: regalos con cada pedido realizado en ese periodo.",
-    "body": [
-     {
-      "type": "p",
-      "text": "La promoción de temporada anual de Vargov®Design es válida del 1 de noviembre al 31 de diciembre de 2025, ambos incluidos."
-     },
-     {
-      "type": "p",
-      "text": "Dentro de la promoción hemos preparado un regalo para cada pedido realizado en ese periodo."
-     },
-     {
-      "type": "h",
-      "text": "Condiciones de la promoción"
-     },
-     {
-      "type": "p",
-      "text": "Con un pedido único a partir de 5.000 $, de regalo la lámpara de mesa LC0357: un objeto de arte de colección, ensamblado a mano, de silueta expresiva y forma arquitectónica."
-     },
-     {
-      "type": "p",
-      "text": "Con un pedido único inferior a 5.000 $, de regalo el objeto luminoso LC0433: compacto, sobrio, un acento de luz con carácter para el interior."
-     },
-     {
-      "type": "h",
-      "text": "Detalles"
-     },
-     {
-      "type": "p",
-      "text": "Periodo de validez: del 1 de noviembre al 31 de diciembre de 2025."
-     },
-     {
-      "type": "p",
-      "text": "Un pedido — un regalo."
-     },
-     {
-      "type": "p",
-      "text": "Válido para pedidos pagados y realizados durante el periodo de la promoción."
-     },
-     {
-      "type": "p",
-      "text": "Para más detalles, consulte a su gestor personal o a un representante oficial de Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Sección",
-     "date": "Fecha"
-    }
-   },
-   "vi": {
-    "title": "Ưu đãi theo mùa",
-    "category": "Tin tức",
-    "date": "29 tháng 10 năm 2025",
-    "lead": "Chương trình ưu đãi theo mùa thường niên của Vargov®Design từ ngày 1 tháng 11 đến ngày 31 tháng 12: quà tặng cho mỗi đơn hàng đặt trong thời gian này.",
-    "body": [
-     {
-      "type": "p",
-      "text": "Chương trình ưu đãi theo mùa thường niên của Vargov®Design từ ngày 1 tháng 11 đến hết ngày 31 tháng 12 năm 2025."
-     },
-     {
-      "type": "p",
-      "text": "Trong khuôn khổ chương trình, chúng tôi chuẩn bị quà tặng cho mỗi đơn hàng đặt trong thời gian này."
-     },
-     {
-      "type": "h",
-      "text": "Điều kiện chương trình"
-     },
-     {
-      "type": "p",
-      "text": "Với đơn hàng một lần từ 5.000$ trở lên, quà tặng là đèn bàn nghệ thuật LC0357 — sản phẩm sưu tầm lắp ráp thủ công với hình bóng biểu cảm và hình khối kiến trúc."
-     },
-     {
-      "type": "p",
-      "text": "Với đơn hàng một lần dưới 5.000$, quà tặng là đèn nghệ thuật LC0433 — gọn gàng, tiết chế, với điểm nhấn ánh sáng đặc trưng cho nội thất."
-     },
-     {
-      "type": "h",
-      "text": "Chi tiết"
-     },
-     {
-      "type": "p",
-      "text": "Thời gian áp dụng: từ ngày 1 tháng 11 đến ngày 31 tháng 12 năm 2025."
-     },
-     {
-      "type": "p",
-      "text": "Một đơn hàng — một quà tặng."
-     },
-     {
-      "type": "p",
-      "text": "Áp dụng cho các đơn hàng đã thanh toán, đặt trong thời gian diễn ra chương trình."
-     },
-     {
-      "type": "p",
-      "text": "Bạn có thể hỏi thêm chi tiết từ quản lý cá nhân hoặc đại diện chính thức của Vargov®Design"
-     }
-    ],
-    "metaLabels": {
-     "category": "Chuyên mục",
-     "date": "Ngày"
-    }
-   },
-   "ar": {
-    "title": "العرض الموسمي",
-    "category": "الأخبار",
-    "date": "29 أكتوبر 2025",
-    "lead": "العرض الموسمي السنوي من Vargov®Design من 1 نوفمبر إلى 31 ديسمبر: هدايا مع كل طلب يُسجَّل في هذه الفترة.",
-    "body": [
-     {
-      "type": "p",
-      "text": "العرض الموسمي السنوي من Vargov®Design من 1 نوفمبر إلى 31 ديسمبر 2025 ضمنًا."
-     },
-     {
-      "type": "p",
-      "text": "في إطار العرض أعددنا هدايا مع كل طلب يُسجَّل في هذه الفترة."
-     },
-     {
-      "type": "h",
-      "text": "شروط العرض"
-     },
-     {
-      "type": "p",
-      "text": "عند طلبٍ واحد بقيمة 5,000$ فأكثر، الهدية مصباح طاولة فنّي LC0357 — قطعة مقتنيات مجمّعة يدويًا بظلٍّ معبّر وشكل معماري."
-     },
-     {
-      "type": "p",
-      "text": "عند طلبٍ واحد بقيمة أقل من 5,000$، الهدية مصباح فنّي LC0433 — مضغوط ومقتضب، بلمسة ضوئية مميّزة للداخل."
-     },
-     {
-      "type": "h",
-      "text": "التفاصيل"
-     },
-     {
-      "type": "p",
-      "text": "فترة السريان: من 1 نوفمبر إلى 31 ديسمبر 2025."
-     },
-     {
-      "type": "p",
-      "text": "طلبٌ واحد — هديّة واحدة."
-     },
-     {
-      "type": "p",
-      "text": "يسري على الطلبات المدفوعة المسجَّلة خلال فترة العرض."
-     },
-     {
-      "type": "p",
-      "text": "يمكنكم الاستفسار عن التفاصيل لدى المدير الشخصي أو الممثّل الرسمي لـ Vargov®Design"
      }
     ],
     "metaLabels": {
@@ -11332,7 +10950,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Моя световая композиция LC0358 удостоена призового места на премии SIT Design Award 2025!"
+      "text": "Моя световая композиция LC0358 — победитель (Winner) премии SIT Furniture Design Award 2025 в категории Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11344,7 +10962,7 @@
      },
      {
       "type": "p",
-      "text": "Благодарим команду SIT Design Award за высокую оценку и поддержку дизайнерского сообщества. А всем, кто следит за нашим творчеством - спасибо за вашу веру и вдохновение."
+      "text": "Благодарим команду SIT Furniture Design Award за высокую оценку и поддержку дизайнерского сообщества. А всем, кто следит за нашим творчеством - спасибо за вашу веру и вдохновение."
      },
      {
       "type": "p",
@@ -11352,23 +10970,43 @@
      },
      {
       "type": "h",
-      "text": "Описание"
-     },
-     {
-      "type": "h",
       "text": "Материалы и конструкция"
      },
      {
       "type": "p",
-      "text": "Стеклянные элементы: Текстурированное стекло с радужным эффектом, создающим утончённую игру света и тени.Металлический каркас: Прочный металл с элегантным золотым покрытием. Регулируемый каркас позволяет настраивать направление света и положение стеклянных элементов.Освещение:"
+      "text": "Стеклянные элементы: Текстурированное стекло с радужным эффектом, создающим утончённую игру света и тени."
      },
      {
       "type": "p",
-      "text": "Встроенные LED-источники обеспечивают мягкий рассеянный свет, подчёркивая текстуру стекла.Свет подчёркивает каждую деталь, создавая тёплую атмосферу и визуальную глубину.Динамичный и гибкий дизайн:"
+      "text": "Металлический каркас: Прочный металл с элегантным золотым покрытием. Регулируемый каркас позволяет настраивать направление света и положение стеклянных элементов."
+     },
+     {
+      "type": "h",
+      "text": "Освещение"
      },
      {
       "type": "p",
-      "text": "Регулируемый металлический каркас позволяет изменять угол и положение стеклянных дисков, адаптируя композицию под различные пространства и настроения.Доступна в вертикальной, горизонтальной и спиральной конфигурациях, что делает модель универсальной.Дизайн и эстетика:"
+      "text": "Встроенные LED-источники обеспечивают мягкий рассеянный свет, подчёркивая текстуру стекла."
+     },
+     {
+      "type": "p",
+      "text": "Свет подчёркивает каждую деталь, создавая тёплую атмосферу и визуальную глубину."
+     },
+     {
+      "type": "h",
+      "text": "Динамичный и гибкий дизайн"
+     },
+     {
+      "type": "p",
+      "text": "Регулируемый металлический каркас позволяет изменять угол и положение стеклянных дисков, адаптируя композицию под различные пространства и настроения."
+     },
+     {
+      "type": "p",
+      "text": "Доступна в вертикальной, горизонтальной и спиральной конфигурациях, что делает модель универсальной."
+     },
+     {
+      "type": "h",
+      "text": "Дизайн и эстетика"
      },
      {
       "type": "p",
@@ -11388,7 +11026,7 @@
     "body": [
      {
       "type": "p",
-      "text": "My light composition LC0358 has been awarded a prize at the SIT Design Award 2025!"
+      "text": "My light composition LC0358 is a Winner at the SIT Furniture Design Award 2025 in the Designer & Custom Lighting category!"
      },
      {
       "type": "p",
@@ -11400,15 +11038,11 @@
      },
      {
       "type": "p",
-      "text": "Thank you to the SIT Design Award team for this recognition and for the support they give the design community. And to everyone who follows what we do — thank you for your faith and your inspiration."
+      "text": "Thank you to the SIT Furniture Design Award team for this recognition and for the support they give the design community. And to everyone who follows what we do — thank you for your faith and your inspiration."
      },
      {
       "type": "p",
       "text": "The light composition LC0358 combines the delicacy of its glass elements with the dynamic functionality of an adjustable metal frame. Textured glass discs are its heart, complemented by integrated LED lighting."
-     },
-     {
-      "type": "h",
-      "text": "Description"
      },
      {
       "type": "h",
@@ -11468,7 +11102,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Meine Lichtkomposition LC0358 wurde beim SIT Design Award 2025 mit einem Preis ausgezeichnet!"
+      "text": "Meine Lichtkomposition LC0358 ist Winner beim SIT Furniture Design Award 2025 in der Kategorie Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11480,15 +11114,11 @@
      },
      {
       "type": "p",
-      "text": "Wir danken dem Team des SIT Design Award für die hohe Bewertung und für die Unterstützung der Designcommunity. Und allen, die unser Schaffen verfolgen: Danke für Ihr Vertrauen und Ihre Inspiration."
+      "text": "Wir danken dem Team des SIT Furniture Design Award für die hohe Bewertung und für die Unterstützung der Designcommunity. Und allen, die unser Schaffen verfolgen: Danke für Ihr Vertrauen und Ihre Inspiration."
      },
      {
       "type": "p",
       "text": "Die Lichtkomposition LC0358 verbindet die Zartheit der Glaselemente mit der dynamischen Funktionalität eines verstellbaren Metallrahmens. Strukturierte Glasscheiben bilden ihr Zentrum, ergänzt durch eine integrierte LED-Beleuchtung."
-     },
-     {
-      "type": "h",
-      "text": "Beschreibung"
      },
      {
       "type": "h",
@@ -11548,7 +11178,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Ma composition lumineuse LC0358 a été primée au SIT Design Award 2025 !"
+      "text": "Ma composition lumineuse LC0358 est lauréate (Winner) du SIT Furniture Design Award 2025 dans la catégorie Designer & Custom Lighting !"
      },
      {
       "type": "p",
@@ -11560,15 +11190,11 @@
      },
      {
       "type": "p",
-      "text": "Merci à l'équipe du SIT Design Award pour cette distinction et pour le soutien qu'elle apporte à la communauté du design. Et à tous ceux qui suivent notre travail : merci pour votre confiance et votre inspiration."
+      "text": "Merci à l'équipe du SIT Furniture Design Award pour cette distinction et pour le soutien qu'elle apporte à la communauté du design. Et à tous ceux qui suivent notre travail : merci pour votre confiance et votre inspiration."
      },
      {
       "type": "p",
       "text": "La composition lumineuse LC0358 associe la finesse des éléments en verre à la fonctionnalité dynamique d'une armature métallique réglable. Les disques de verre texturé en sont le cœur, complétés par un éclairage LED intégré."
-     },
-     {
-      "type": "h",
-      "text": "Description"
      },
      {
       "type": "h",
@@ -11628,7 +11254,7 @@
     "body": [
      {
       "type": "p",
-      "text": "La mia composizione luminosa LC0358 si è aggiudicata un premio al SIT Design Award 2025!"
+      "text": "La mia composizione luminosa LC0358 è Winner del SIT Furniture Design Award 2025 nella categoria Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11640,15 +11266,11 @@
      },
      {
       "type": "p",
-      "text": "Ringraziamo il team del SIT Design Award per l'apprezzamento e per il sostegno alla comunità del design. E a tutti coloro che seguono il nostro lavoro: grazie per la fiducia e per l'ispirazione."
+      "text": "Ringraziamo il team del SIT Furniture Design Award per l'apprezzamento e per il sostegno alla comunità del design. E a tutti coloro che seguono il nostro lavoro: grazie per la fiducia e per l'ispirazione."
      },
      {
       "type": "p",
       "text": "La composizione luminosa LC0358 unisce la delicatezza degli elementi in vetro alla funzionalità dinamica di una struttura metallica regolabile. I dischi di vetro materico ne sono il cuore, completati da un'illuminazione LED integrata."
-     },
-     {
-      "type": "h",
-      "text": "Descrizione"
      },
      {
       "type": "h",
@@ -11708,7 +11330,7 @@
     "body": [
      {
       "type": "p",
-      "text": "¡Mi composición luminosa LC0358 ha sido premiada en el SIT Design Award 2025!"
+      "text": "¡Mi composición luminosa LC0358 es Winner del SIT Furniture Design Award 2025 en la categoría Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11720,15 +11342,11 @@
      },
      {
       "type": "p",
-      "text": "Gracias al equipo del SIT Design Award por esta valoración y por el apoyo que brinda a la comunidad del diseño. Y a todos los que siguen nuestro trabajo: gracias por su confianza y por inspirarnos."
+      "text": "Gracias al equipo del SIT Furniture Design Award por esta valoración y por el apoyo que brinda a la comunidad del diseño. Y a todos los que siguen nuestro trabajo: gracias por su confianza y por inspirarnos."
      },
      {
       "type": "p",
       "text": "La composición luminosa LC0358 une la delicadeza de los elementos de vidrio con la funcionalidad dinámica de una estructura metálica regulable. Los discos de vidrio texturado son su centro y se completan con iluminación LED integrada."
-     },
-     {
-      "type": "h",
-      "text": "Descripción"
      },
      {
       "type": "h",
@@ -11788,7 +11406,7 @@
     "body": [
      {
       "type": "p",
-      "text": "Tác phẩm ánh sáng LC0358 của tôi đã được trao giải tại SIT Design Award 2025!"
+      "text": "Tác phẩm ánh sáng LC0358 của tôi đạt danh hiệu Winner tại SIT Furniture Design Award 2025 ở hạng mục Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11800,7 +11418,7 @@
      },
      {
       "type": "p",
-      "text": "Xin cảm ơn đội ngũ SIT Design Award vì sự đánh giá cao và sự ủng hộ dành cho cộng đồng thiết kế. Và với tất cả những ai dõi theo hành trình sáng tạo của chúng tôi — cảm ơn niềm tin và nguồn cảm hứng của các bạn."
+      "text": "Xin cảm ơn đội ngũ SIT Furniture Design Award vì sự đánh giá cao và sự ủng hộ dành cho cộng đồng thiết kế. Và với tất cả những ai dõi theo hành trình sáng tạo của chúng tôi — cảm ơn niềm tin và nguồn cảm hứng của các bạn."
      },
      {
       "type": "p",
@@ -11808,23 +11426,43 @@
      },
      {
       "type": "h",
-      "text": "Mô tả"
-     },
-     {
-      "type": "h",
       "text": "Vật liệu và kết cấu"
      },
      {
       "type": "p",
-      "text": "Chi tiết thủy tinh: Thủy tinh gân nổi với hiệu ứng ngũ sắc, tạo nên trò chơi tinh tế của ánh sáng và bóng đổ. Khung kim loại: Kim loại bền chắc với lớp phủ vàng thanh lịch. Khung điều chỉnh được cho phép điều chỉnh hướng sáng và vị trí các chi tiết thủy tinh. Chiếu sáng:"
+      "text": "Chi tiết thủy tinh: Thủy tinh gân nổi với hiệu ứng ngũ sắc, tạo nên trò chơi tinh tế của ánh sáng và bóng đổ."
      },
      {
       "type": "p",
-      "text": "Các nguồn LED tích hợp cho ánh sáng dịu, tán đều, tôn lên bề mặt của thủy tinh. Ánh sáng làm nổi bật từng chi tiết, tạo bầu không khí ấm áp và chiều sâu thị giác. Thiết kế năng động và linh hoạt:"
+      "text": "Khung kim loại: Kim loại bền chắc với lớp phủ vàng thanh lịch. Khung điều chỉnh được cho phép điều chỉnh hướng sáng và vị trí các chi tiết thủy tinh."
+     },
+     {
+      "type": "h",
+      "text": "Chiếu sáng"
      },
      {
       "type": "p",
-      "text": "Khung kim loại điều chỉnh được cho phép thay đổi góc và vị trí các đĩa thủy tinh, giúp tác phẩm thích ứng với những không gian và tâm trạng khác nhau. Có sẵn ở cấu hình dọc, ngang và xoắn ốc, khiến mẫu này trở nên đa dụng. Thiết kế và thẩm mỹ:"
+      "text": "Các nguồn LED tích hợp cho ánh sáng dịu, tán đều, tôn lên bề mặt của thủy tinh."
+     },
+     {
+      "type": "p",
+      "text": "Ánh sáng làm nổi bật từng chi tiết, tạo bầu không khí ấm áp và chiều sâu thị giác."
+     },
+     {
+      "type": "h",
+      "text": "Thiết kế năng động và linh hoạt"
+     },
+     {
+      "type": "p",
+      "text": "Khung kim loại điều chỉnh được cho phép thay đổi góc và vị trí các đĩa thủy tinh, giúp tác phẩm thích ứng với những không gian và tâm trạng khác nhau."
+     },
+     {
+      "type": "p",
+      "text": "Có sẵn ở cấu hình dọc, ngang và xoắn ốc, khiến mẫu này trở nên đa dụng."
+     },
+     {
+      "type": "h",
+      "text": "Thiết kế và thẩm mỹ"
      },
      {
       "type": "p",
@@ -11844,7 +11482,7 @@
     "body": [
      {
       "type": "p",
-      "text": "تركيبتي الضوئية LC0358 نالت أحد المراكز الفائزة في جائزة SIT Design Award 2025!"
+      "text": "تركيبتي الضوئية LC0358 فائزة (Winner) في جائزة SIT Furniture Design Award 2025 ضمن فئة Designer & Custom Lighting!"
      },
      {
       "type": "p",
@@ -11856,7 +11494,7 @@
      },
      {
       "type": "p",
-      "text": "نشكر فريق SIT Design Award على التقييم الرفيع ودعم مجتمع التصميم. ولكل من يتابع إبداعنا — شكرًا على إيمانكم وإلهامكم."
+      "text": "نشكر فريق SIT Furniture Design Award على التقييم الرفيع ودعم مجتمع التصميم. ولكل من يتابع إبداعنا — شكرًا على إيمانكم وإلهامكم."
      },
      {
       "type": "p",
@@ -11864,23 +11502,43 @@
      },
      {
       "type": "h",
-      "text": "الوصف"
-     },
-     {
-      "type": "h",
       "text": "الخامات والبنية"
      },
      {
       "type": "p",
-      "text": "العناصر الزجاجية: زجاج بملمس بارز وأثر قزحي يخلق لعبة رهيفة من الضوء والظل. الهيكل المعدني: معدن متين بطلاء ذهبي أنيق. الهيكل القابل للضبط يتيح ضبط اتجاه الضوء ووضع العناصر الزجاجية. الإضاءة:"
+      "text": "العناصر الزجاجية: زجاج بملمس بارز وأثر قزحي يخلق لعبة رهيفة من الضوء والظل."
      },
      {
       "type": "p",
-      "text": "مصادر LED مدمجة تمنح ضوءًا ليّنًا منتشرًا يُبرز ملمس الزجاج. الضوء يُبرز كل تفصيلة، خالقًا جوًّا دافئًا وعمقًا بصريًا. تصميم حركي ومرن:"
+      "text": "الهيكل المعدني: معدن متين بطلاء ذهبي أنيق. الهيكل القابل للضبط يتيح ضبط اتجاه الضوء ووضع العناصر الزجاجية."
+     },
+     {
+      "type": "h",
+      "text": "الإضاءة"
      },
      {
       "type": "p",
-      "text": "الهيكل المعدني القابل للضبط يتيح تغيير زاوية الأقراص الزجاجية ووضعها، بما يكيّف التركيبة مع فضاءات وأمزجة مختلفة. متوفّرة بتكوينات عمودية وأفقية ولولبية، ما يجعل الطراز متعدّد الاستعمالات. التصميم والجمالية:"
+      "text": "مصادر LED مدمجة تمنح ضوءًا ليّنًا منتشرًا يُبرز ملمس الزجاج."
+     },
+     {
+      "type": "p",
+      "text": "الضوء يُبرز كل تفصيلة، خالقًا جوًّا دافئًا وعمقًا بصريًا."
+     },
+     {
+      "type": "h",
+      "text": "تصميم حركي ومرن"
+     },
+     {
+      "type": "p",
+      "text": "الهيكل المعدني القابل للضبط يتيح تغيير زاوية الأقراص الزجاجية ووضعها، بما يكيّف التركيبة مع فضاءات وأمزجة مختلفة."
+     },
+     {
+      "type": "p",
+      "text": "متوفّرة بتكوينات عمودية وأفقية ولولبية، ما يجعل الطراز متعدّد الاستعمالات."
+     },
+     {
+      "type": "h",
+      "text": "التصميم والجمالية"
      },
      {
       "type": "p",
@@ -12763,7 +12421,7 @@
       "text": "Given how complex and how singular our lighting compositions are, we recommend calling on the official Vargov®Design installers. Our specialists have the knowledge and the experience for a professional job, which guarantees that every element works correctly and comes through intact."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "What to do when the delivery arrives"
      },
      {
@@ -14011,7 +13669,7 @@
       "text": "نظرًا إلى تعقيد تركيباتنا الضوئية وتفرّدها، ننصحكم بالاستعانة بخدمات مركّبي Vargov®Design الرسميين. يمتلك اختصاصيّونا المعرفة والخبرة اللازمتين للتركيب الاحترافي، بما يضمن عمل جميع العناصر على نحوٍ صحيح والحفاظ على سلامتها."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "ماذا تفعلون عند استلام المنتجات؟"
      },
      {
@@ -14455,7 +14113,7 @@
     "lead": "How lighting and decorative compositions differ: functions, purposes and the attention paid to light distribution — explained by the brand.",
     "body": [
      {
-      "type": "p",
+      "type": "h",
       "text": "Lighting compositions and decorative compositions differ in their primary function and purpose:"
      },
      {
@@ -14539,7 +14197,7 @@
     "lead": "Worin sich Licht- und Dekorkompositionen unterscheiden: Funktionen, Ziele und die Aufmerksamkeit für die Lichtverteilung — erklärt von der Marke.",
     "body": [
      {
-      "type": "p",
+      "type": "h",
       "text": "Lichtkompositionen und dekorative Kompositionen unterscheiden sich in ihrer Grundfunktion und in ihrem Zweck:"
      },
      {
@@ -14623,7 +14281,7 @@
     "lead": "Ce qui distingue les compositions lumineuses des compositions décoratives : fonctions, objectifs et attention portée à la distribution de la lumière — expliqué par la marque.",
     "body": [
      {
-      "type": "p",
+      "type": "h",
       "text": "Les compositions lumineuses et les compositions décoratives se distinguent par leur fonction et leur finalité :"
      },
      {
@@ -14791,7 +14449,7 @@
     "lead": "En qué se diferencian las composiciones luminosas y las decorativas: funciones, objetivos y atención a la distribución de la luz — explicado por la marca.",
     "body": [
      {
-      "type": "p",
+      "type": "h",
       "text": "Las composiciones luminosas y las decorativas se diferencian por su función principal y su finalidad:"
      },
      {
@@ -15007,7 +14665,7 @@
       "text": "نظرًا إلى تعقيد تركيباتنا الضوئية وتفرّدها، ننصحكم بالاستعانة بخدمات مركّبي Vargov®Design الرسميين. يمتلك اختصاصيّونا المعرفة والخبرة اللازمتين للتركيب الاحترافي، بما يضمن عمل جميع العناصر على نحوٍ صحيح والحفاظ على سلامتها."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "ماذا تفعلون عند استلام المنتجات؟"
      },
      {
@@ -15753,7 +15411,7 @@
       "text": "مقابلة مع محرّرة موقع addawards.ru أولغا فورونينا."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "– أنطون، أنت تعمل بالزجاج. كيف وجدت خامتك؟"
      },
      {
@@ -15769,7 +15427,7 @@
       "text": "يمنح الزجاج إمكانات لا تنفد للتجريب على الشكل واللون والملمس. ولهذا بالذات اخترته خامةً أساسية لتركيباتي."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "– كيف اكتسبت الخبرة العملية؟"
      },
      {
@@ -15817,7 +15475,7 @@
       "text": "– يُلاحظ الآن تنامي الاهتمام بتصميم المنتجات، وهذا مفرح. غير أن المنافسة تشتدّ أيضًا. من المهمّ للمصمّمين الشباب ألّا يطوّروا مهاراتهم فحسب، بل أن يجدوا أيضًا مكانتهم الفريدة ويعملوا على تميّز أسلوبهم. المشاركة في المسابقات والمعارض، والتعاون مع الزملاء ذوي الخبرة، والتحسين الدائم للأعمال — كل ذلك يساعد على إيجاد المكان في السوق."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "– ما توقّعاتك من الموسم اليوبيلي؟"
      },
      {
@@ -15825,7 +15483,7 @@
       "text": "– الموسم اليوبيلي فرصة رائعة لتلخيص الحصاد والاحتفاء بالإنجازات، وكذلك لرسم آفاق جديدة للتطوّر. أنا واثق أن هذا الموسم سيكون مميّزًا وسيُذكر بأحداثٍ واكتشافات باهرة."
      },
      {
-      "type": "h",
+      "type": "p",
       "text": "– ماذا تتمنّى للمشاركين هذا العام؟"
      },
      {
@@ -16410,7 +16068,7 @@
      },
      {
       "type": "p",
-      "text": "Вы задаёте артикул из каталога и габариты облака в миллиметрах — движок подтягивает реальные типоразмеры элемента, его мощность и трёхмерную форму. Дальше выбирается форма самой композиции: куб, шар, полусфера, конус, цилиндр, пирамида, кольцо, спираль, волна, воронка, капля, чаша, линза, купол, каскад, свод, винт, лента, нить или свободная форма — двадцать вариантов."
+      "text": "Вы задаёте артикул из каталога и габариты облака в миллиметрах — движок подтягивает реальные типоразмеры элемента, его мощность и трёхмерную форму. Дальше выбирается форма самой композиции: куб, шар, полусфера, конус, цилиндр, пирамида, каскад, кольцо, волна, спираль, капля, линза, воронка, рамка, дуга, змейка, винт, ярусы, чаша, клин или биоформа — двадцать один вариант."
      },
      {
       "type": "p",
@@ -16454,7 +16112,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 для BIM: длины в миллиметрах, точки подвеса — отдельными объектами, у каждой свой тип и нагрузка. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Трёхмерная модель композиции в max и fbx для собственной визуализации. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
+      "text": "IFC4 для BIM: длины в миллиметрах, точки крепления — отдельными объектами, у каждой свой тип и нагрузка. Модель собирается под потолок той высоты, что задана в поле «Высота потолка, мм» рядом с кнопкой IFC (по умолчанию 2700 мм): точки крепления на потолке, начало координат на полу. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Трёхмерная модель композиции в max и fbx для собственной визуализации. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
      },
      {
       "type": "p",
@@ -16520,7 +16178,7 @@
    },
    "en": {
     "title": "The Vargov®Design generative 3D configurator",
-    "category": "Recognition",
+    "category": "Production",
     "date": "31 August 2026",
     "lead": "The generative 3D configurator assembles a suspended composition from the brand's own elements, shows it in three dimensions and hands over the specification it will be made from.",
     "metaLabels": {
@@ -16542,7 +16200,7 @@
      },
      {
       "type": "p",
-      "text": "You set a catalogue article and the cloud's dimensions in millimetres — the engine pulls in the element's real sizes, its wattage and its three-dimensional form. Then comes the shape of the composition itself: cube, sphere, hemisphere, cone, cylinder, pyramid, ring, spiral, wave, funnel, drop, bowl, lens, dome, cascade, vault, screw, ribbon, thread or free form — twenty options."
+      "text": "You set a catalogue article and the cloud's dimensions in millimetres — the engine pulls in the element's real sizes, its wattage and its three-dimensional form. Then comes the shape of the composition itself: cube, sphere, dome, cone, cylinder, pyramid, cascade, ring, wave, spiral, drop, lens, funnel, frame, arc, serpentine, helix, tiers, bowl, wedge or bioform — twenty-one options."
      },
      {
       "type": "p",
@@ -16558,7 +16216,7 @@
      },
      {
       "type": "p",
-      "text": "What matters in generative assembly is not a pretty picture but physical honesty. Neither elements nor cables intersect. Each element's cable is checked against its real fixing point — a socket on some forms, a hole in the glass on others — and against the true silhouette of its neighbours, taken from the model itself. The rule is verified automatically before every layout."
+      "text": "What matters in generative assembly is not a pretty picture but physical honesty. Neither elements nor cables intersect. Each element's cable is checked against its real fixing point — a socket on some forms, a hole in the glass on others — and against the true silhouette of its neighbours, taken from the model itself. The rule is verified automatically before every release."
      },
      {
       "type": "p",
@@ -16586,7 +16244,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 for BIM: lengths in millimetres, every suspension point a separate object carrying its own type and load. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A procurement sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
+      "text": "IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying its own type and load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
      },
      {
       "type": "p",
@@ -16606,7 +16264,7 @@
      },
      {
       "type": "p",
-      "text": "The brand's rules are built in and checked automatically. The cable never crosses glass — a ray test against the mesh triangles; bodies never touch; the cone's slope runs straight from the top tier to the tip. Guards run these checks before every layout."
+      "text": "The brand's rules are built in and checked automatically. The cable never crosses glass — a ray test against the mesh triangles; bodies never touch; the cone's slope runs straight from the top tier to the tip. Guards run these checks before every release."
      },
      {
       "type": "p",
@@ -16618,7 +16276,7 @@
      },
      {
       "type": "p",
-      "text": "The configurator holds hundreds of lighting and decorative compositions. Those that open with a full calculation export an IFC4 model, a PDF specification and a procurement sheet straight away. Layout density is calibrated against actual orders. Every article in the configurator has its own page in Russian and English, and the exact current figures are on the configurator page of the site, where they are computed from its data."
+      "text": "The configurator holds hundreds of lighting and decorative compositions. Those that open with a full calculation export an IFC4 model, a PDF specification and a tender sheet straight away. Layout density is calibrated against actual orders. Every article in the configurator has its own page in Russian and English, and the exact current figures are on the configurator page of the site, where they are computed from its data."
      },
      {
       "type": "h",
@@ -16674,7 +16332,7 @@
      },
      {
       "type": "p",
-      "text": "Sie geben eine Katalogposition und die Maße der Wolke in Millimetern vor — die Engine zieht die realen Baugrößen des Elements, seine Leistung und seine 3D-Form heran. Dann folgt die Form der Komposition selbst: Würfel, Kugel, Halbkugel, Kegel, Zylinder, Pyramide, Ring, Spirale, Welle, Trichter, Tropfen, Schale, Linse, Kuppel, Kaskade, Gewölbe, Schraube, Band, Faden oder freie Form — zwanzig Varianten."
+      "text": "Sie geben eine Katalogposition und die Maße der Wolke in Millimetern vor — die Engine zieht die realen Baugrößen des Elements, seine Leistung und seine 3D-Form heran. Dann folgt die Form der Komposition selbst: Würfel, Kugel, Halbkugel, Kegel, Zylinder, Pyramide, Kaskade, Ring, Welle, Spirale, Tropfen, Linse, Trichter, Rahmen, Bogen, Schlangenlinie, Helix, Etagen, Schale, Keil oder Bioform — einundzwanzig Varianten."
      },
      {
       "type": "p",
@@ -16718,7 +16376,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 für BIM: Längen in Millimetern, jeder Aufhängepunkt ein eigenes Objekt mit eigenem Typ und eigener Last. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
+      "text": "IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit eigenem Typ und eigener Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
      },
      {
       "type": "p",
@@ -16806,7 +16464,7 @@
      },
      {
       "type": "p",
-      "text": "Vous indiquez une référence du catalogue et les dimensions du nuage en millimètres — le moteur récupère les tailles réelles de l'élément, sa puissance et sa forme tridimensionnelle. Vient ensuite la forme de la composition elle-même : cube, sphère, hémisphère, cône, cylindre, pyramide, anneau, spirale, vague, entonnoir, goutte, coupe, lentille, dôme, cascade, voûte, vis, ruban, fil ou forme libre — vingt possibilités."
+      "text": "Vous indiquez une référence du catalogue et les dimensions du nuage en millimètres — le moteur récupère les tailles réelles de l'élément, sa puissance et sa forme tridimensionnelle. Vient ensuite la forme de la composition elle-même : cube, sphère, demi-sphère, cône, cylindre, pyramide, cascade, anneau, vague, spirale, goutte, lentille, entonnoir, cadre, arc, serpentin, hélice, étages, coupe, coin ou bioforme — vingt et une possibilités."
      },
      {
       "type": "p",
@@ -16822,7 +16480,7 @@
      },
      {
       "type": "p",
-      "text": "L'essentiel d'un assemblage génératif n'est pas la belle image mais l'honnêteté physique. Ni les éléments ni les câbles ne se croisent. Le câble de chaque élément est vérifié par rapport à son vrai point de fixation — douille sur certaines formes, perçage dans le verre sur d'autres — et par rapport à la silhouette réelle de ses voisins, relevée sur le modèle lui-même. La règle est contrôlée automatiquement avant chaque répartition."
+      "text": "L'essentiel d'un assemblage génératif n'est pas la belle image mais l'honnêteté physique. Ni les éléments ni les câbles ne se croisent. Le câble de chaque élément est vérifié par rapport à son vrai point de fixation — douille sur certaines formes, perçage dans le verre sur d'autres — et par rapport à la silhouette réelle de ses voisins, relevée sur le modèle lui-même. La règle est contrôlée automatiquement avant chaque mise en production."
      },
      {
       "type": "p",
@@ -16850,7 +16508,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de suspension est un objet distinct portant son type et sa charge. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Un modèle 3D en max et fbx pour votre propre visualisation. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
+      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant son type et sa charge. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm », à côté du bouton IFC (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Un modèle 3D en max et fbx pour votre propre visualisation. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
      },
      {
       "type": "p",
@@ -16870,7 +16528,7 @@
      },
      {
       "type": "p",
-      "text": "Les règles de la maison sont intégrées et vérifiées automatiquement. Le câble ne traverse jamais le verre — test de rayon sur les triangles du maillage ; les corps ne se touchent pas ; la pente du cône file droit du rang supérieur à la pointe. Ces gardiens tournent avant chaque répartition."
+      "text": "Les règles de la maison sont intégrées et vérifiées automatiquement. Le câble ne traverse jamais le verre — test de rayon sur les triangles du maillage ; les corps ne se touchent pas ; la pente du cône file droit du rang supérieur à la pointe. Ces gardiens tournent avant chaque mise en production."
      },
      {
       "type": "p",
@@ -16938,7 +16596,7 @@
      },
      {
       "type": "p",
-      "text": "Si indica un articolo di catalogo e le misure della nuvola in millimetri — il motore richiama le dimensioni reali dell'elemento, la sua potenza e la sua forma tridimensionale. Poi si sceglie la forma della composizione: cubo, sfera, semisfera, cono, cilindro, piramide, anello, spirale, onda, imbuto, goccia, coppa, lente, cupola, cascata, volta, vite, nastro, filo o forma libera — venti varianti."
+      "text": "Si indica un articolo di catalogo e le misure della nuvola in millimetri — il motore richiama le dimensioni reali dell'elemento, la sua potenza e la sua forma tridimensionale. Poi si sceglie la forma della composizione: cubo, sfera, semisfera, cono, cilindro, piramide, cascata, anello, onda, spirale, goccia, lente, imbuto, cornice, arco, serpentina, elica, livelli, coppa, cuneo o bioforma — ventuno varianti."
      },
      {
       "type": "p",
@@ -16982,7 +16640,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di sospensione è un oggetto a sé, con il proprio tipo e carico. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
+      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il proprio tipo e carico. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
      },
      {
       "type": "p",
@@ -17070,7 +16728,7 @@
      },
      {
       "type": "p",
-      "text": "Se indica una referencia del catálogo y las medidas de la nube en milímetros — el motor carga los tamaños reales del elemento, su potencia y su forma tridimensional. Luego se elige la forma de la composición: cubo, esfera, semiesfera, cono, cilindro, pirámide, anillo, espiral, onda, embudo, gota, copa, lente, cúpula, cascada, bóveda, hélice, cinta, hilo o forma libre — veinte variantes."
+      "text": "Se indica una referencia del catálogo y las medidas de la nube en milímetros — el motor carga los tamaños reales del elemento, su potencia y su forma tridimensional. Luego se elige la forma de la composición: cubo, esfera, semiesfera, cono, cilindro, pirámide, cascada, anillo, onda, espiral, gota, lente, embudo, marco, arco, serpentina, hélice, niveles, cuenco, cuña o bioforma — veintiuna variantes."
      },
      {
       "type": "p",
@@ -17114,7 +16772,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de suspensión es un objeto propio, con su tipo y su carga. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
+      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con su tipo y su carga. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
      },
      {
       "type": "p",
@@ -17202,7 +16860,7 @@
      },
      {
       "type": "p",
-      "text": "Bạn chọn mã sản phẩm trong danh mục và kích thước cụm theo milimét — bộ xử lý tự lấy đúng kích cỡ thật của chi tiết, công suất và hình khối ba chiều của nó. Tiếp đó là hình dạng của cả tác phẩm: khối lập phương, cầu, bán cầu, nón, trụ, kim tự tháp, vòng, xoắn ốc, sóng, phễu, giọt, chén, thấu kính, vòm, thác, mái vòm, đinh ốc, dải, sợi hoặc dạng tự do — hai mươi lựa chọn."
+      "text": "Bạn chọn mã sản phẩm trong danh mục và kích thước cụm theo milimét — bộ xử lý tự lấy đúng kích cỡ thật của chi tiết, công suất và hình khối ba chiều của nó. Tiếp đó là hình dạng của cả tác phẩm: khối lập phương, hình cầu, bán cầu, hình nón, hình trụ, hình chóp, thác đổ, vòng tròn, sóng, xoắn ốc, giọt nước, thấu kính, phễu, khung, cung, uốn lượn, xoắn vít, tầng bậc, hình bát, hình nêm hoặc dạng sinh học — hai mươi mốt lựa chọn."
      },
      {
       "type": "p",
@@ -17218,7 +16876,7 @@
      },
      {
       "type": "p",
-      "text": "Điều quan trọng của dựng tạo sinh không phải bức hình đẹp mà là sự trung thực vật lý. Không chi tiết nào, không dây nào cắt nhau. Dây của từng chi tiết được kiểm tra theo điểm treo thật — chỗ này là đui đèn, chỗ kia là lỗ trên thuỷ tinh — và theo bóng dáng thật của các chi tiết lân cận, lấy từ chính mô hình. Quy tắc được kiểm tự động trước mỗi lần dàn."
+      "text": "Điều quan trọng của dựng tạo sinh không phải bức hình đẹp mà là sự trung thực vật lý. Không chi tiết nào, không dây nào cắt nhau. Dây của từng chi tiết được kiểm tra theo điểm treo thật — chỗ này là đui đèn, chỗ kia là lỗ trên thuỷ tinh — và theo bóng dáng thật của các chi tiết lân cận, lấy từ chính mô hình. Quy tắc được kiểm tự động trước mỗi lần phát hành."
      },
      {
       "type": "p",
@@ -17246,7 +16904,7 @@
      },
      {
       "type": "p",
-      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
+      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
      },
      {
       "type": "p",
@@ -17266,7 +16924,7 @@
      },
      {
       "type": "p",
-      "text": "Quy tắc của thương hiệu được cài sẵn và kiểm tự động. Dây không cắt qua thuỷ tinh — kiểm bằng tia trên các tam giác của lưới; các khối không chạm nhau; sườn nón chạy thẳng từ tầng trên xuống mũi. Các trình kiểm tra tự động chạy những bước này trước mỗi lần dàn."
+      "text": "Quy tắc của thương hiệu được cài sẵn và kiểm tự động. Dây không cắt qua thuỷ tinh — kiểm bằng tia trên các tam giác của lưới; các khối không chạm nhau; sườn nón chạy thẳng từ tầng trên xuống mũi. Các trình kiểm tra tự động chạy những bước này trước mỗi lần phát hành."
      },
      {
       "type": "p",
@@ -17334,7 +16992,7 @@
      },
      {
       "type": "p",
-      "text": "تحدّد رقم القطعة من الكتالوج وأبعاد السحابة بالمليمتر — فيستدعي المحرّك المقاسات الحقيقية للعنصر وقدرته وشكله الثلاثي الأبعاد. ثم يأتي شكل التركيبة نفسها: مكعّب، كرة، نصف كرة، مخروط، أسطوانة، هرم، حلقة، حلزون، موجة، قمع، قطرة، وعاء، عدسة، قبّة، شلال، قبو، لولب، شريط، خيط أو شكل حر — عشرون خيارًا."
+      "text": "تحدّد رقم القطعة من الكتالوج وأبعاد السحابة بالمليمتر — فيستدعي المحرّك المقاسات الحقيقية للعنصر وقدرته وشكله الثلاثي الأبعاد. ثم يأتي شكل التركيبة نفسها: مكعب، كرة، نصف كرة، مخروط، أسطوانة، هرم، شلال، حلقة، موجة، حلزون، قطرة، عدسة، قمع، إطار، قوس، متعرّج، لولب، طبقات، وعاء، إسفين أو شكل عضوي — واحد وعشرون خيارًا."
      },
      {
       "type": "p",
@@ -17378,7 +17036,7 @@
      },
      {
       "type": "p",
-      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تعليق كائن مستقلّ يحمل نوعه وحمله. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونموذج ثلاثي الأبعاد بصيغتَي max وfbx لإعداد صورك التصوّرية بنفسك. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
+      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تثبيت كائن مستقلّ يحمل نوعه وحمله. ويُبنى النموذج تحت سقف بالارتفاع المحدَّد في حقل «ارتفاع السقف، مم» (2700 مم افتراضيًا) بجوار زرّ IFC: نقاط التثبيت على السقف، ونقطة الأصل على الأرضية. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونموذج ثلاثي الأبعاد بصيغتَي max وfbx لإعداد صورك التصوّرية بنفسك. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
      },
      {
       "type": "p",
@@ -17508,7 +17166,7 @@
      },
      {
       "type": "p",
-      "text": "Двадцать три таких достижения со ссылками на присудившие их организации перечислены на странице «Награды» этого сайта."
+      "text": "Все такие достижения — со ссылками на присудившие их организации — перечислены на странице «Награды» этого сайта."
      },
      {
       "type": "p",
@@ -17596,7 +17254,7 @@
      },
      {
       "type": "p",
-      "text": "Twenty-three such achievements, with links to the awarding bodies, are listed on the Awards page of this site."
+      "text": "All such achievements, with links to the awarding bodies, are listed on the Awards page of this site."
      },
      {
       "type": "p",
@@ -17684,7 +17342,7 @@
      },
      {
       "type": "p",
-      "text": "Dreiundzwanzig solcher Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt."
+      "text": "Alle solchen Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt."
      },
      {
       "type": "p",
@@ -17772,7 +17430,7 @@
      },
      {
       "type": "p",
-      "text": "Vingt-trois distinctions de ce genre, avec les liens vers les organismes qui les ont décernées, sont réunies sur la page « Distinctions » de ce site."
+      "text": "Toutes les distinctions de ce genre, avec les liens vers les organismes qui les ont décernées, sont réunies sur la page « Distinctions » de ce site."
      },
      {
       "type": "p",
@@ -17860,7 +17518,7 @@
      },
      {
       "type": "p",
-      "text": "Ventitré risultati di questo tipo, con i link agli enti che li hanno assegnati, sono elencati nella pagina « Premi » di questo sito."
+      "text": "Tutti i risultati di questo tipo, con i link agli enti che li hanno assegnati, sono elencati nella pagina « Premi » di questo sito."
      },
      {
       "type": "p",
@@ -17948,7 +17606,7 @@
      },
      {
       "type": "p",
-      "text": "Veintitrés logros de este tipo, con enlaces a las entidades que los concedieron, están recogidos en la página «Premios» de este sitio."
+      "text": "Todos los logros de este tipo, con enlaces a las entidades que los concedieron, están recogidos en la página «Premios» de este sitio."
      },
      {
       "type": "p",
@@ -18036,7 +17694,7 @@
      },
      {
       "type": "p",
-      "text": "Hai mươi ba thành tựu như vậy, kèm liên kết đến các tổ chức trao giải, được liệt kê trên trang « Giải thưởng » của trang web này."
+      "text": "Tất cả những thành tựu như vậy, kèm liên kết đến các tổ chức trao giải, được liệt kê trên trang « Giải thưởng » của trang web này."
      },
      {
       "type": "p",
@@ -18124,7 +17782,7 @@
      },
      {
       "type": "p",
-      "text": "ثلاثة وعشرون إنجازاً من هذا النوع، مع روابط إلى الجهات المانحة، مدرجة في صفحة «الجوائز» في هذا الموقع."
+      "text": "جميع الإنجازات من هذا النوع، مع روابط إلى الجهات المانحة، مدرجة في صفحة «الجوائز» في هذا الموقع."
      },
      {
       "type": "p",
@@ -18186,7 +17844,7 @@
      },
      {
       "type": "p",
-      "text": "Два сертификата соответствия техническим регламентам Таможенного союза, выданы 7 и 8 сентября 2026 года на пять лет. Вместе они закрывают 310 артикулов световых композиций."
+      "text": "Два сертификата соответствия техническим регламентам Таможенного союза, выданы 7 и 8 сентября 2026 года на пять лет. Вместе они закрывают 310 артикулов световых композиций — девять из них входят в оба сертификата."
      },
      {
       "type": "p",
@@ -18250,7 +17908,7 @@
      },
      {
       "type": "p",
-      "text": "Серийная сертификация для нас не маркетинговая строчка, а следующий этап взросления: авторский дизайн должен быть не только выразительным, но и полностью готовым к работе в профессиональных проектах. Подробности, полные номера и сроки действия — на странице сертификации."
+      "text": "Серийная сертификация для нас не маркетинговая строчка, а следующий этап взросления: авторский дизайн должен быть не только выразительным, но и полностью готовым к работе в профессиональных проектах. Подробности, полные номера и сроки действия — на странице сертификации: https://vargov.ru/certification"
      }
     ]
    },
@@ -18290,7 +17948,7 @@
      },
      {
       "type": "p",
-      "text": "Two certificates of conformity to the technical regulations of the Customs Union, issued on 7 and 8 September 2026 for five years. Together they cover 310 lighting composition codes."
+      "text": "Two certificates of conformity to the technical regulations of the Customs Union, issued on 7 and 8 September 2026 for five years. Together they cover 310 lighting composition codes — nine of them are in both certificates."
      },
      {
       "type": "p",
@@ -18354,7 +18012,7 @@
      },
      {
       "type": "p",
-      "text": "For us serial certification is not a marketing line but the next step in growing up: authored design should be not only expressive but fully ready for professional projects. Details, full numbers and validity dates are on the certification page."
+      "text": "For us serial certification is not a marketing line but the next step in growing up: authored design should be not only expressive but fully ready for professional projects. Details, full numbers and validity dates are on the certification page: https://vargov.ru/en/certification"
      }
     ]
    },
@@ -18394,7 +18052,7 @@
      },
      {
       "type": "p",
-      "text": "Zwei Konformitätszertifikate nach den technischen Regelwerken der Zollunion, ausgestellt am 7. und 8. September 2026 für fünf Jahre. Zusammen decken sie 310 LC-Codes der Lichtkompositionen ab."
+      "text": "Zwei Konformitätszertifikate nach den technischen Regelwerken der Zollunion, ausgestellt am 7. und 8. September 2026 für fünf Jahre. Zusammen decken sie 310 LC-Codes der Lichtkompositionen ab — neun davon sind in beiden Zertifikaten enthalten."
      },
      {
       "type": "p",
@@ -18458,7 +18116,7 @@
      },
      {
       "type": "p",
-      "text": "Serienzertifizierung ist für uns keine Marketingzeile, sondern der nächste Reifeschritt: Autorendesign soll nicht nur ausdrucksstark, sondern vollständig einsatzbereit für professionelle Projekte sein. Einzelheiten, vollständige Nummern und Laufzeiten stehen auf der Zertifizierungsseite."
+      "text": "Serienzertifizierung ist für uns keine Marketingzeile, sondern der nächste Reifeschritt: Autorendesign soll nicht nur ausdrucksstark, sondern vollständig einsatzbereit für professionelle Projekte sein. Einzelheiten, vollständige Nummern und Laufzeiten stehen auf der Zertifizierungsseite: https://vargov.ru/de/certification"
      }
     ]
    },
@@ -18498,7 +18156,7 @@
      },
      {
       "type": "p",
-      "text": "Deux certificats de conformité aux règlements techniques de l’Union douanière, délivrés les 7 et 8 septembre 2026 pour cinq ans. Ensemble, ils couvrent 310 références LC de compositions lumineuses."
+      "text": "Deux certificats de conformité aux règlements techniques de l’Union douanière, délivrés les 7 et 8 septembre 2026 pour cinq ans. Ensemble, ils couvrent 310 références LC de compositions lumineuses — neuf d’entre elles figurent dans les deux certificats."
      },
      {
       "type": "p",
@@ -18562,7 +18220,7 @@
      },
      {
       "type": "p",
-      "text": "La certification de série n’est pas pour nous une ligne marketing, mais une nouvelle étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification."
+      "text": "La certification de série n’est pas pour nous une ligne marketing, mais une nouvelle étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification : https://vargov.ru/fr/certification"
      }
     ]
    },
@@ -18602,7 +18260,7 @@
      },
      {
       "type": "p",
-      "text": "Due certificati di conformità ai regolamenti tecnici dell’Unione doganale, rilasciati il 7 e l’8 settembre 2026 per cinque anni. Insieme coprono 310 codici LC di composizioni luminose."
+      "text": "Due certificati di conformità ai regolamenti tecnici dell’Unione doganale, rilasciati il 7 e l’8 settembre 2026 per cinque anni. Insieme coprono 310 codici LC di composizioni luminose — nove di questi compaiono in entrambi i certificati."
      },
      {
       "type": "p",
@@ -18666,7 +18324,7 @@
      },
      {
       "type": "p",
-      "text": "Per noi la certificazione di serie non è una riga di marketing ma la tappa successiva della nostra crescita: il design d’autore deve essere non solo espressivo, ma pienamente pronto per i progetti professionali. Dettagli, numeri completi e scadenze sono sulla pagina di certificazione."
+      "text": "Per noi la certificazione di serie non è una riga di marketing ma la tappa successiva della nostra crescita: il design d’autore deve essere non solo espressivo, ma pienamente pronto per i progetti professionali. Dettagli, numeri completi e scadenze sono sulla pagina di certificazione: https://vargov.ru/it/certification"
      }
     ]
    },
@@ -18706,7 +18364,7 @@
      },
      {
       "type": "p",
-      "text": "Dos certificados de conformidad con los reglamentos técnicos de la Unión Aduanera, emitidos el 7 y el 8 de septiembre de 2026 con una vigencia de cinco años. Juntos cubren 310 referencias LC de composiciones luminosas."
+      "text": "Dos certificados de conformidad con los reglamentos técnicos de la Unión Aduanera, emitidos el 7 y el 8 de septiembre de 2026 con una vigencia de cinco años. Juntos cubren 310 referencias LC de composiciones luminosas — nueve de ellas figuran en ambos certificados."
      },
      {
       "type": "p",
@@ -18770,7 +18428,7 @@
      },
      {
       "type": "p",
-      "text": "Para nosotros la certificación en serie no es una línea de marketing, sino el siguiente paso de madurez: el diseño de autor debe ser no solo expresivo, sino plenamente listo para proyectos profesionales. Los detalles, los números completos y las fechas de vigencia están en la página de certificación."
+      "text": "Para nosotros la certificación en serie no es una línea de marketing, sino el siguiente paso de madurez: el diseño de autor debe ser no solo expresivo, sino plenamente listo para proyectos profesionales. Los detalles, los números completos y las fechas de vigencia están en la página de certificación: https://vargov.ru/es/certification"
      }
     ]
    },
@@ -18810,7 +18468,7 @@
      },
      {
       "type": "p",
-      "text": "Hai giấy chứng nhận hợp quy theo các quy chuẩn kỹ thuật của Liên minh Hải quan, cấp ngày 7 và 8 tháng 9 năm 2026, thời hạn năm năm. Tổng cộng hai giấy này bao quát 310 mã LC của các tác phẩm ánh sáng."
+      "text": "Hai giấy chứng nhận hợp quy theo các quy chuẩn kỹ thuật của Liên minh Hải quan, cấp ngày 7 và 8 tháng 9 năm 2026, thời hạn năm năm. Tổng cộng hai giấy này bao quát 310 mã LC của các tác phẩm ánh sáng — chín mã trong số đó có trong cả hai giấy."
      },
      {
       "type": "p",
@@ -18874,7 +18532,7 @@
      },
      {
       "type": "p",
-      "text": "Với chúng tôi, chứng nhận cho sản xuất hàng loạt không phải một dòng tiếp thị mà là bước trưởng thành tiếp theo: thiết kế nguyên bản phải vừa giàu biểu cảm vừa sẵn sàng hoàn toàn cho các dự án chuyên nghiệp. Chi tiết, số hiệu đầy đủ và thời hạn có trên trang chứng nhận."
+      "text": "Với chúng tôi, chứng nhận cho sản xuất hàng loạt không phải một dòng tiếp thị mà là bước trưởng thành tiếp theo: thiết kế nguyên bản phải vừa giàu biểu cảm vừa sẵn sàng hoàn toàn cho các dự án chuyên nghiệp. Chi tiết, số hiệu đầy đủ và thời hạn có trên trang chứng nhận: https://vargov.ru/vi/certification"
      }
     ]
    },
@@ -18914,7 +18572,7 @@
      },
      {
       "type": "p",
-      "text": "شهادتا مطابقة للوائح الفنية للاتحاد الجمركي، صدرتا في 7 و8 سبتمبر 2026 لمدة خمس سنوات. وتغطيان معًا 310 أكواد LC من التركيبات الضوئية."
+      "text": "شهادتا مطابقة للوائح الفنية للاتحاد الجمركي، صدرتا في 7 و8 سبتمبر 2026 لمدة خمس سنوات. وتغطيان معًا 310 أكواد LC من التركيبات الضوئية — تسعة منها مدرجة في الشهادتين كلتيهما."
      },
      {
       "type": "p",
@@ -18978,7 +18636,457 @@
      },
      {
       "type": "p",
-      "text": "شهادة الإنتاج المتسلسل ليست عندنا سطرًا تسويقيًا بل خطوة نضج تالية: على التصميم الذي يحمل توقيع صاحبه أن يكون معبّرًا وجاهزًا تمامًا للمشاريع المهنية في آنٍ واحد. التفاصيل والأرقام الكاملة ومدد السريان في صفحة الشهادات."
+      "text": "شهادة الإنتاج المتسلسل ليست عندنا سطرًا تسويقيًا بل خطوة نضج تالية: على التصميم الذي يحمل توقيع صاحبه أن يكون معبّرًا وجاهزًا تمامًا للمشاريع المهنية في آنٍ واحد. التفاصيل والأرقام الكاملة ومدد السريان في صفحة الشهادات: https://vargov.ru/ar/certification"
+     }
+    ]
+   }
+  },
+  "epda-2026": {
+   "ru": {
+    "title": "Вторая победа на European Product Design Award",
+    "category": "Признание",
+    "date": "22 сентября 2026",
+    "lead": "Композиция LC0543-2 получила Winner в категории Home Lighting: Designer / Custom Lighting. Это вторая наша победа на EPDA — первая была в 2023 году.",
+    "metaLabels": {
+     "category": "Рубрика",
+     "date": "Дата"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "21 сентября жюри European Product Design Award назвало победителей сезона. Среди них наша световая композиция LC0543-2 — она подавалась под названием Crystal Breakthrough, в разделе Professional, категория HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "Что это за премия"
+     },
+     {
+      "type": "p",
+      "text": "EPDA — европейский конкурс продуктового дизайна: заявки судит международное жюри, а у каждого победителя появляется своя страница на сайте премии. Для нас это вторая победа здесь: в 2023 году Winner в категории Home Lighting: Hanging / Pendant получила композиция LC0339."
+     },
+     {
+      "type": "p",
+      "text": "Сертификат подписан президентом премии Хоссейном Фармани. Он выложен в разделе наград — двадцать пятым по счёту."
+     },
+     {
+      "type": "h",
+      "text": "Почему эта композиция"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 — массив тел, отпущенных в воздух: десятки объёмов на разной высоте, и в каждом своя вертикальная щель света. Светится не тело, а щель. Приём у нас не новый, но во множественном числе он читается иначе: там была одна пауза, здесь их ритм."
+     },
+     {
+      "type": "p",
+      "text": "Днём это скульптурное поле: рваная фактура читается рельефом, острия сходятся к одному элементу, висящему ниже всех. Вечером щели загораются по всей глубине массива, и поле превращается в поток, идущий вниз, — свет сочится изнутри, а сам объём остаётся глухим."
+     },
+     {
+      "type": "h",
+      "text": "Что для нас значит награда"
+     },
+     {
+      "type": "p",
+      "text": "Серии здесь нет: число элементов, глубина массива и температура света задаются под конкретное помещение. Такую вещь трудно судить по одной фотографии — и тем ценнее, когда её выбирает жюри, которое за сезон видит сотни работ."
+     },
+     {
+      "type": "p",
+      "text": "В производстве от награды не меняется ничего: та же ручная сборка, те же чертежи и тот же трёхмерный макет, который заказчик видит до запуска. Меняется только уверенность, что направление выбрано верно."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "en": {
+    "title": "A second win at the European Product Design Award",
+    "category": "Recognition",
+    "date": "22 September 2026",
+    "lead": "The LC0543-2 composition has been named Winner in Home Lighting: Designer / Custom Lighting. It is our second win at the EPDA — the first came in 2023.",
+    "metaLabels": {
+     "category": "Category",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "On 21 September the jury of the European Product Design Award named this season's winners. Among them is our light composition LC0543-2 — entered as Crystal Breakthrough, in the Professional section, category HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "About the award"
+     },
+     {
+      "type": "p",
+      "text": "The EPDA is a European product design competition: entries are judged by an international jury, and every winner gets a page of its own on the award's site. This is our second win here: in 2023 the LC0339 composition took Winner in Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "The certificate is signed by the award's president, Hossein Farmani. It sits in our awards section — the twenty-fifth in the list."
+     },
+     {
+      "type": "h",
+      "text": "Why this composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 is an array of bodies released into the air: dozens of volumes at different heights, each with its own vertical slit of light. It is not the body that glows but the slit. The device is not new for us, but in the plural it reads differently: there it was a single pause, here it is their rhythm."
+     },
+     {
+      "type": "p",
+      "text": "By day it is a sculptural field: the torn texture reads as relief, the points converge on a single element hanging lower than the rest. In the evening the slits light up through the whole depth of the array, and the field turns into a stream running downward — the light seeps from inside while the volume itself stays opaque."
+     },
+     {
+      "type": "h",
+      "text": "What the award means to us"
+     },
+     {
+      "type": "p",
+      "text": "There is no series here: the number of elements, the depth of the array and the colour temperature are set for one particular room. A piece like that is hard to judge from a single photograph — which makes it worth more when a jury that sees hundreds of works a season picks it out."
+     },
+     {
+      "type": "p",
+      "text": "Nothing changes in production because of an award: the same assembly by hand, the same drawings and the same 3D model the client sees before anything is made. What changes is only the confidence that the direction is right."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "de": {
+    "title": "Zweiter Sieg beim European Product Design Award",
+    "category": "Anerkennung",
+    "date": "22. September 2026",
+    "lead": "Die Komposition LC0543-2 ist Winner in der Kategorie Home Lighting: Designer / Custom Lighting. Es ist unser zweiter Sieg beim EPDA — der erste war 2023.",
+    "metaLabels": {
+     "category": "Rubrik",
+     "date": "Datum"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Am 21. September hat die Jury des European Product Design Award die Sieger der Saison bekanntgegeben. Darunter ist unsere Lichtkomposition LC0543-2 — eingereicht als Crystal Breakthrough, im Bereich Professional, Kategorie HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "Was für ein Preis ist das?"
+     },
+     {
+      "type": "p",
+      "text": "Der EPDA ist ein europäischer Wettbewerb für Produktdesign: Die Einreichungen bewertet eine internationale Jury, und jeder Sieger erhält eine eigene Seite auf der Website des Preises. Für uns ist es der zweite Sieg hier: 2023 wurde die Komposition LC0339 Winner in der Kategorie Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "Das Zertifikat ist vom Präsidenten des Preises, Hossein Farmani, unterzeichnet. Es ist im Bereich „Auszeichnungen“ zu finden — als fünfundzwanzigstes."
+     },
+     {
+      "type": "h",
+      "text": "Warum diese Komposition"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 ist ein Feld von Körpern, in die Luft entlassen: Dutzende Volumen auf unterschiedlicher Höhe, jedes mit seinem eigenen senkrechten Lichtspalt. Nicht der Körper leuchtet, sondern der Spalt. Das Mittel ist für uns nicht neu, doch im Plural liest es sich anders: dort war es eine einzelne Pause, hier ist es ihr Rhythmus."
+     },
+     {
+      "type": "p",
+      "text": "Tagsüber ist es ein skulpturales Feld: Die aufgerissene Textur wirkt als Relief, die Spitzen laufen auf ein einzelnes Element zu, das tiefer hängt als alle anderen. Am Abend leuchten die Spalte durch die ganze Tiefe des Feldes, und es wird zu einem nach unten gerichteten Strom — das Licht sickert von innen heraus, während das Volumen selbst geschlossen bleibt."
+     },
+     {
+      "type": "h",
+      "text": "Was die Auszeichnung für uns bedeutet"
+     },
+     {
+      "type": "p",
+      "text": "Eine Serie gibt es hier nicht: Anzahl der Elemente, Tiefe des Feldes und Lichtfarbe werden für einen konkreten Raum festgelegt. So etwas lässt sich schwer nach einem einzigen Foto beurteilen — umso mehr zählt es, wenn eine Jury, die in einer Saison Hunderte Arbeiten sieht, es auswählt."
+     },
+     {
+      "type": "p",
+      "text": "In der Fertigung ändert eine Auszeichnung nichts: dieselbe Handmontage, dieselben Zeichnungen und dasselbe 3D-Modell, das der Kunde vor der Produktion sieht. Es ändert sich allein die Gewissheit, dass die Richtung stimmt."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "fr": {
+    "title": "Deuxième victoire à l'European Product Design Award",
+    "category": "Reconnaissance",
+    "date": "22 septembre 2026",
+    "lead": "La composition LC0543-2 est Winner dans la catégorie Home Lighting : Designer / Custom Lighting. C'est notre deuxième victoire à l'EPDA — la première remonte à 2023.",
+    "metaLabels": {
+     "category": "Rubrique",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Le 21 septembre, le jury de l'European Product Design Award a désigné les lauréats de la saison. Parmi eux, notre composition lumineuse LC0543-2 — présentée sous le nom Crystal Breakthrough, section Professional, catégorie HOME (Household Products) / Home Lighting : Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "De quel prix il s'agit"
+     },
+     {
+      "type": "p",
+      "text": "L'EPDA est un concours européen de design produit : les dossiers sont jugés par un jury international, et chaque lauréat reçoit sa propre page sur le site du prix. C'est notre deuxième victoire à ce concours : en 2023, la composition LC0339 a été Winner dans la catégorie Home Lighting : Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "Le certificat est signé par le président du prix, Hossein Farmani. Il figure dans notre section des récompenses — le vingt-cinquième."
+     },
+     {
+      "type": "h",
+      "text": "Pourquoi cette composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 est une masse de corps lâchés dans l'air : des dizaines de volumes à des hauteurs différentes, chacun avec sa fente verticale de lumière. Ce n'est pas le corps qui brille, c'est la fente. Le procédé n'est pas nouveau chez nous, mais au pluriel il se lit autrement : là, c'était une pause unique ; ici, c'est leur rythme."
+     },
+     {
+      "type": "p",
+      "text": "Le jour, c'est un champ sculptural : la texture déchirée se lit comme un relief, les pointes convergent vers un seul élément suspendu plus bas que les autres. Le soir, les fentes s'allument sur toute la profondeur de la masse, et le champ devient un flux descendant — la lumière suinte de l'intérieur tandis que le volume reste opaque."
+     },
+     {
+      "type": "h",
+      "text": "Ce que la récompense signifie pour nous"
+     },
+     {
+      "type": "p",
+      "text": "Il n'y a pas de série ici : le nombre d'éléments, la profondeur de la masse et la température de couleur se règlent pour un espace précis. Une telle pièce se juge mal sur une seule photo — d'où la valeur du choix d'un jury qui voit des centaines de travaux par saison."
+     },
+     {
+      "type": "p",
+      "text": "Une récompense ne change rien à la fabrication : le même assemblage à la main, les mêmes plans et la même maquette 3D que le client voit avant le lancement. Ce qui change, c'est seulement la certitude que la direction est la bonne."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "it": {
+    "title": "Seconda vittoria all'European Product Design Award",
+    "category": "Riconoscimenti",
+    "date": "22 settembre 2026",
+    "lead": "La composizione LC0543-2 è Winner nella categoria Home Lighting: Designer / Custom Lighting. È la nostra seconda vittoria all'EPDA — la prima risale al 2023.",
+    "metaLabels": {
+     "category": "Rubrica",
+     "date": "Data"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Il 21 settembre la giuria dell'European Product Design Award ha annunciato i vincitori della stagione. Tra loro c'è la nostra composizione luminosa LC0543-2 — presentata con il nome Crystal Breakthrough, sezione Professional, categoria HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "Che premio è"
+     },
+     {
+      "type": "p",
+      "text": "L'EPDA è un concorso europeo di design di prodotto: le candidature sono valutate da una giuria internazionale e ogni vincitore riceve una pagina propria sul sito del premio. Per noi è la seconda vittoria qui: nel 2023 la composizione LC0339 è stata Winner nella categoria Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "Il certificato è firmato dal presidente del premio, Hossein Farmani. È pubblicato nella nostra sezione Premi: è il venticinquesimo."
+     },
+     {
+      "type": "h",
+      "text": "Perché questa composizione"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 è un campo di corpi lasciati nell'aria: decine di volumi ad altezze diverse, ciascuno con la propria fessura verticale di luce. Non è il corpo a illuminarsi, ma la fessura. Il procedimento non è nuovo per noi, ma al plurale si legge in modo diverso: là era una singola pausa, qui è il loro ritmo."
+     },
+     {
+      "type": "p",
+      "text": "Di giorno è un campo scultoreo: la texture lacerata si legge come rilievo, le punte convergono su un unico elemento appeso più in basso di tutti. La sera le fessure si accendono per tutta la profondità del campo, che diventa un flusso diretto verso il basso — la luce trasuda dall'interno mentre il volume resta chiuso."
+     },
+     {
+      "type": "h",
+      "text": "Che cosa significa per noi il premio"
+     },
+     {
+      "type": "p",
+      "text": "Qui non c'è una serie: il numero di elementi, la profondità del campo e la temperatura della luce si definiscono per un ambiente preciso. Un pezzo così è difficile da giudicare da una sola fotografia — e vale di più quando la sceglie una giuria che in una stagione vede centinaia di lavori."
+     },
+     {
+      "type": "p",
+      "text": "In produzione un premio non cambia nulla: lo stesso assemblaggio a mano, gli stessi disegni e lo stesso modello 3D che il cliente vede prima che si cominci a produrre. Cambia solo la certezza di aver scelto la direzione giusta."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "es": {
+    "title": "Segunda victoria en el European Product Design Award",
+    "category": "Reconocimiento",
+    "date": "22 de septiembre de 2026",
+    "lead": "La composición LC0543-2 es Winner en la categoría Home Lighting: Designer / Custom Lighting. Es nuestra segunda victoria en el EPDA: la primera fue en 2023.",
+    "metaLabels": {
+     "category": "Sección",
+     "date": "Fecha"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "El 21 de septiembre el jurado del European Product Design Award dio a conocer a los ganadores de la temporada. Entre ellos está nuestra composición luminosa LC0543-2, presentada con el nombre Crystal Breakthrough, en la sección Professional, categoría HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "Qué es este premio"
+     },
+     {
+      "type": "p",
+      "text": "El EPDA es un concurso europeo de diseño de producto: las candidaturas las juzga un jurado internacional y cada ganador recibe su propia página en el sitio del premio. Para nosotros es la segunda victoria aquí: en 2023 la composición LC0339 fue Winner en la categoría Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "El certificado lo firma el presidente del premio, Hossein Farmani. Está en nuestra sección de premios, el vigésimo quinto de la lista."
+     },
+     {
+      "type": "h",
+      "text": "Por qué esta composición"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 es un campo de cuerpos soltados en el aire: decenas de volúmenes a distintas alturas, cada uno con su rendija vertical de luz. No brilla el cuerpo, brilla la rendija. El recurso no es nuevo para nosotros, pero en plural se lee de otra manera: allí era una sola pausa; aquí, un ritmo de pausas."
+     },
+     {
+      "type": "p",
+      "text": "De día es un campo escultórico: la textura desgarrada se lee como relieve y las puntas convergen en un único elemento que cuelga más bajo que los demás. Al anochecer las rendijas se encienden en toda la profundidad del campo, que se convierte en un flujo descendente: la luz rezuma desde dentro mientras el volumen permanece opaco."
+     },
+     {
+      "type": "h",
+      "text": "Qué significa para nosotros el premio"
+     },
+     {
+      "type": "p",
+      "text": "Aquí no hay serie: el número de elementos, la profundidad del campo y la temperatura de la luz se fijan para una sala concreta. Una pieza así es difícil de juzgar por una sola fotografía, y por eso vale más que la elija un jurado que ve cientos de trabajos por temporada."
+     },
+     {
+      "type": "p",
+      "text": "En la producción un premio no cambia nada: el mismo montaje a mano, los mismos planos y la misma maqueta 3D que el cliente ve antes de empezar. Solo cambia la certeza de que la dirección es la correcta."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "vi": {
+    "title": "Chiến thắng thứ hai tại European Product Design Award",
+    "category": "Ghi nhận",
+    "date": "22 tháng 9 năm 2026",
+    "lead": "Tác phẩm LC0543-2 đoạt Winner ở hạng mục Home Lighting: Designer / Custom Lighting. Đây là chiến thắng thứ hai của chúng tôi tại EPDA — lần đầu là năm 2023.",
+    "metaLabels": {
+     "category": "Chuyên mục",
+     "date": "Ngày"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Ngày 21 tháng 9, ban giám khảo European Product Design Award công bố những người thắng giải của mùa này. Trong số đó có tác phẩm ánh sáng LC0543-2 của chúng tôi — dự thi với tên Crystal Breakthrough, nhóm Professional, hạng mục HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "Đây là giải thưởng gì"
+     },
+     {
+      "type": "p",
+      "text": "EPDA là cuộc thi thiết kế sản phẩm của châu Âu: hồ sơ do một ban giám khảo quốc tế chấm, và mỗi người thắng giải có một trang riêng trên website của giải. Với chúng tôi đây là chiến thắng thứ hai ở đây: năm 2023 tác phẩm LC0339 đã đoạt Winner ở hạng mục Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "Chứng nhận do chủ tịch giải, ông Hossein Farmani, ký. Chúng tôi đã đưa nó lên mục Giải thưởng, ở vị trí thứ hai mươi lăm trong danh sách."
+     },
+     {
+      "type": "h",
+      "text": "Vì sao là tác phẩm này"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 là một quần thể khối được thả lơ lửng trong không trung: hàng chục khối ở những độ cao khác nhau, mỗi khối có khe sáng dọc riêng. Phát sáng không phải là khối mà là khe. Thủ pháp này không mới với chúng tôi, nhưng khi được nhân lên thành nhiều, nó được cảm nhận khác hẳn: trước kia là một quãng lặng, còn ở đây là nhịp điệu của cả chuỗi quãng lặng."
+     },
+     {
+      "type": "p",
+      "text": "Ban ngày đó là một cánh đồng điêu khắc: bề mặt rách xé hiện lên như phù điêu, các mũi nhọn hội tụ về một chi tiết treo thấp nhất. Buổi tối, các khe sáng lên suốt chiều sâu của quần thể, và cánh đồng biến thành một dòng chảy đổ xuống — ánh sáng rỉ ra từ bên trong, còn bản thân khối vẫn đặc kín."
+     },
+     {
+      "type": "h",
+      "text": "Giải thưởng có ý nghĩa gì với chúng tôi"
+     },
+     {
+      "type": "p",
+      "text": "Ở đây không có sản xuất hàng loạt: số chi tiết, chiều sâu của quần thể và nhiệt độ màu được tính riêng cho một căn phòng cụ thể. Một món đồ như thế khó đánh giá qua một tấm ảnh — và càng đáng quý khi nó được chọn bởi một ban giám khảo xem hàng trăm tác phẩm mỗi mùa."
+     },
+     {
+      "type": "p",
+      "text": "Giải thưởng không thay đổi gì trong sản xuất: vẫn lắp ráp thủ công, vẫn những bản vẽ ấy và vẫn mô hình 3D mà khách hàng xem trước khi đưa vào sản xuất. Điều duy nhất thay đổi là niềm tin rằng hướng đi đã chọn là đúng."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "ar": {
+    "title": "فوز ثانٍ في European Product Design Award",
+    "category": "التقدير",
+    "date": "22 سبتمبر 2026",
+    "lead": "التركيبة LC0543-2 نالت لقب Winner في فئة Home Lighting: Designer / Custom Lighting. هذا فوزنا الثاني في EPDA، وكان الأول عام 2023.",
+    "metaLabels": {
+     "category": "القسم",
+     "date": "التاريخ"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "في 21 سبتمبر أعلنت لجنة تحكيم European Product Design Award الفائزين لهذا الموسم. من بينهم تركيبتنا الضوئية LC0543-2، وقد قُدِّمت باسم Crystal Breakthrough، في قسم Professional، فئة HOME (Household Products) / Home Lighting: Designer / Custom Lighting."
+     },
+     {
+      "type": "h",
+      "text": "ما هذه الجائزة"
+     },
+     {
+      "type": "p",
+      "text": "EPDA مسابقة أوروبية لتصميم المنتجات: تُقيِّم المشاركاتِ لجنةُ تحكيم دولية، ولكل فائز صفحة خاصة على موقع الجائزة. وهذا فوزنا الثاني هنا: في 2023 نالت التركيبة LC0339 لقب Winner في فئة Home Lighting: Hanging / Pendant."
+     },
+     {
+      "type": "p",
+      "text": "الشهادة موقّعة من رئيس الجائزة حسين فرماني. وهي منشورة في قسم الجوائز لدينا — الخامسة والعشرون في القائمة."
+     },
+     {
+      "type": "h",
+      "text": "لماذا هذه التركيبة"
+     },
+     {
+      "type": "p",
+      "text": "LC0543-2 حقل من الأجسام أُطلقت في الهواء: عشرات الكتل على ارتفاعات مختلفة، في كل منها شقّ ضوئي رأسي خاص بها. لا يضيء الجسم بل الشقّ. الأسلوب ليس جديدًا علينا، لكنه في صيغة الجمع يُقرأ على نحو آخر: هناك كان سكونًا واحدًا، وهنا صار إيقاعًا."
+     },
+     {
+      "type": "p",
+      "text": "في النهار هو حقل نحتي: الملمس الممزّق يُقرأ نقشًا بارزًا، وتتلاقى الرؤوس المدبّبة عند عنصر واحد يتدلّى أخفض من سائر العناصر. في المساء تشتعل الشقوق عبر عمق الحقل كله، فيتحول إلى تيار نازل — يترشّح الضوء من الداخل بينما تبقى الكتلة مصمتة."
+     },
+     {
+      "type": "h",
+      "text": "ماذا تعني لنا الجائزة"
+     },
+     {
+      "type": "p",
+      "text": "لا يوجد هنا إنتاج متسلسل: عدد العناصر وعمق الحقل ودرجة حرارة اللون تُحدَّد لغرفة بعينها. مثل هذه القطعة يصعب الحكم عليها من صورة واحدة، ولذلك يزداد وزن اختيارها من لجنة ترى مئات الأعمال في الموسم."
+     },
+     {
+      "type": "p",
+      "text": "لا تغيّر الجائزة شيئًا في الإنتاج: التجميع اليدوي نفسه، والرسومات نفسها، والنموذج ثلاثي الأبعاد نفسه الذي يراه العميل قبل بدء التصنيع. يتغيّر شيء واحد فقط: اليقين بأن الاتجاه صحيح."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
      }
     ]
    }

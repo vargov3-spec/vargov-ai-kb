@@ -18,7 +18,7 @@ Ya me imagino los comentarios: «puestos a esconderlo, mejor en la Luna» 😅
 
 Seré sincero: no es un montaje ni una broma. Simplemente pasó. Y este formato inesperado me gustó.
 
-Cómo participar:
+Cómo participar
 
 1️⃣ Encontrar el elemento LC0371 en las coordenadas indicadas.
 

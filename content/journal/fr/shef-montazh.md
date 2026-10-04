@@ -8,7 +8,7 @@ Vous pouvez désormais bénéficier de l'accompagnement professionnel de notre s
 
 L'objectif : assister et contrôler l'installation d'une composition lumineuse ou décorative Vargov®Design, même lorsque le montage est réalisé par une équipe extérieure.
 
-À qui cela s'adresse :
+À qui cela s'adresse
 
 — À ceux qui réalisent le montage eux-mêmes ou font appel à des professionnels extérieurs.
 
@@ -16,13 +16,13 @@ L'objectif : assister et contrôler l'installation d'une composition lumineuse o
 
 Il suffit de nous écrire sur WhatsApp : notre spécialiste vous contactera pour vous aider sur toutes les questions liées à la pose et au montage.
 
-Comment ça marche :
+Comment ça marche
 
 Écrivez-nous sur WhatsApp avec la mention « supervision de montage ».
 
 Notre spécialiste vous rappellera et vous conseillera sur tout ce qui touche au montage et au raccordement des compositions lumineuses et décoratives Vargov®Design
 
-Tarif du service :
+Tarif du service
 
 Consultation téléphonique — 5 000 ₽.
 

@@ -14,7 +14,7 @@ We don't make a mass-market product — we make an object that holds an idea, a 
 
 The company's stand drew the attention of architects, designers, procurement specialists and media not only through its visual presence, but through the particular atmosphere the brand's lighting compositions created.
 
-The architecture of the stand:
+The architecture of the stand
 
 A minimal black frame became the backdrop for more than ten signature compositions, assembled by hand from glass, crystal, porcelain and metal.
 
@@ -22,11 +22,11 @@ Floating forms, the intricate geometry of the suspensions, reflections and refra
 
 Here light did not perform a function — it created a state.
 
-Exactly as intended:
+Exactly as intended
 
 “We don't compare ourselves to anyone. We create within our own system of coordinates. One where light is not a tool but a material. Where form gives birth to a feeling rather than merely illuminating it,” said the brand's founder, Anton Vargov, in an interview.
 
-Real conversation, real interest:
+Real conversation, real interest
 
 Hundreds of professional contacts, dozens of meetings, discussions, pieces of feedback.
 

@@ -14,7 +14,7 @@ No creamos un producto de masas, sino un objeto que contiene una idea, un silenc
 
 El estand de la firma atrajo la atención de arquitectos, diseñadores, responsables de compras y medios de comunicación no solo por su imagen visual, sino también por la atmósfera particular que creaban las composiciones luminosas de la marca.
 
-La arquitectura del estand:
+La arquitectura del estand
 
 Una estructura negra minimalista sirvió de fondo a más de diez composiciones de autor, ensambladas a mano en vidrio, cristal, porcelana y metal.
 
@@ -22,11 +22,11 @@ Formas suspendidas, la geometría compleja de los colgantes, reflejos y refracci
 
 Aquí la luz no cumplía una función — creaba un estado.
 
-Exactamente como lo habíamos pensado:
+Exactamente como lo habíamos pensado
 
 «No nos comparamos con nadie. Creamos dentro de nuestro propio sistema de coordenadas. Allí donde la luz no es una herramienta, sino un material. Donde la forma hace nacer una sensación en lugar de limitarse a iluminarla», señaló en una entrevista el fundador de la marca, Anton Vargov.
 
-Conversaciones reales e interés auténtico:
+Conversaciones reales e interés auténtico
 
 Cientos de contactos profesionales, decenas de encuentros, conversaciones, comentarios.
 

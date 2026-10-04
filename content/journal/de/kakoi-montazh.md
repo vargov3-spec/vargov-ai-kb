@@ -8,7 +8,7 @@ Es gibt mehrere Möglichkeiten, Lichtkompositionen von Vargov®Design zu montier
 
 1. Montage an einer vorbereiteten Decke mit Sperrholzverstärkung
 
-Vorteile:
+Vorteile
 
 - Kaum sichtbare Befestigungen: Nach der Montage wirkt die Komposition denkbar klar und elegant, denn sämtliche Montageelemente verschwinden hinter der Decke.
 
@@ -16,7 +16,7 @@ Vorteile:
 
 - Freiheit bei der Anordnung der Elemente: Sie lassen sich auf unterschiedlichen Höhen montieren und exakt nach Montageplan fixieren.
 
-Nachteile:
+Nachteile
 
 - Aufwendige Vorbereitung: Die Decke muss vorab vorbereitet werden (Sperrholzverstärkung, gesetzte Bohrungen), was zusätzliche Kosten und Zeit bedeuten kann.
 
@@ -24,7 +24,7 @@ Nachteile:
 
 2. Montage mit Revisionsklappe
 
-Vorteile:
+Vorteile
 
 - Bequeme Wartung: Die Revisionsklappe gibt schnellen und komfortablen Zugang zu Netzteilen, Verkabelung und Systemkomponenten und erleichtert die Wartung oder den Austausch von Bauteilen.
 
@@ -32,7 +32,7 @@ Vorteile:
 
 - Sicherheit: Bei außerplanmäßiger Wartung oder Reparatur kommt man schnell an das System, ohne die Deckenkonstruktion zu öffnen.
 
-Nachteile:
+Nachteile
 
 - Sichtbare Klappe: Die Revisionsklappe kann an der Decke auffallen und das Raumbild beeinträchtigen, besonders in minimalistischen Interieurs.
 
@@ -40,7 +40,7 @@ Nachteile:
 
 3. Montage auf einer Basisplatte
 
-Vorteile:
+Vorteile
 
 - Vollständig integriertes System: Netzteile und weitere Komponenten der Komposition sitzen in der Basis, der Anschluss wird kompakt und völlig autark.
 
@@ -48,7 +48,7 @@ Vorteile:
 
 - Leichte Wartung: Alle technischen Elemente sind in der Basis gut zugänglich; Wartung und Austausch gelingen, ohne die Decke anzurühren.
 
-Nachteile:
+Nachteile
 
 - Platzbedarf: Die Basis ist ab 80 mm hoch und nimmt zusätzlichen Raum an der Decke ein, was bei niedrigen Decken unerwünscht sein kann.
 

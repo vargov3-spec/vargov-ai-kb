@@ -14,7 +14,7 @@ It is his artistic thinking that shapes the inner system by which Vargov®Design
 
 For Anton Vargov, form never exists for the sake of outward effect.
 
-It is born of observation:
+It is born of observation
 
 — of the plasticity of nature
 

@@ -10,7 +10,7 @@ Bei Vargov®Design achten wir auf jeden einzelnen Aspekt der Herstellung und der
 
 Eine der wichtigsten Prioritäten unseres Hauses ist der Schutz der Originalware vor Fälschungen. Wir wissen, wie viel das Vertrauen unserer Kunden bedeutet, und achten sorgfältig darauf, dass jede Lichtkomposition und jedes Element von Vargov®Design den höchsten Qualitätsansprüchen genügt.
 
-So schützen wir unsere Produkte:
+So schützen wir unsere Produkte
 
 - Einzigartigkeit. Alle Objekte werden von unserem Team entworfen und gefertigt — das garantiert ihre Exklusivität.
 
@@ -22,7 +22,7 @@ So schützen wir unsere Produkte:
 
 Eine sichere Lieferung in einwandfreiem Zustand ist ein wichtiger Teil unserer Zusammenarbeit mit den Kunden. Genau deshalb haben wir ein Verpackungssystem entwickelt, das die Ware auf allen Transportetappen bestmöglich schützt.
 
-Die Verpackungsschritte:
+Die Verpackungsschritte
 
 - Schutz der Elemente. Jedes Autorenelement von Vargov®Design wird in eine spezielle Schutzfolie eingeschlagen. Das verhindert Kratzer, Scheuerstellen und andere Beschädigungen während des Transports.
 

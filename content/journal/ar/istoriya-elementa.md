@@ -122,7 +122,7 @@
 
 لم يرَ الفرقَ أحد.
 
-وإذا نُحّيت الأسماء والعلامات والأساطير، تبقى واقعة بسيطة:
+وإذا نُحّيت الأسماء والعلامات والأساطير، تبقى واقعة بسيطة
 
 الفرق لا يوجد إلا في رؤوسنا.
 
@@ -132,30 +132,30 @@
 
 الروابط والأدلة
 
-فيديو التركيبات المطلوبة (3 ديسمبر 2023):
+فيديو التركيبات المطلوبة (3 ديسمبر 2023)
 
-https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7
+https://youtube.com/shorts/zAzmjpXDlzQ
 
-نشر LC0372 على موقع Vargov.ru (8 أغسطس 2023):
+نشر LC0372 على موقع Vargov.ru (8 أغسطس 2023)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0372
 
-نشر LC0138 على موقع Vargov.ru (23 فبراير 2022):
+نشر LC0138 على موقع Vargov.ru (23 فبراير 2022)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0138
 
-التركيبة LC0372 (8 أغسطس 2023):
+التركيبة LC0372 (8 أغسطس 2023)
 
 https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0372_10
 
-التركيبة LC0138 (23 فبراير 2022):
+التركيبة LC0138 (23 فبراير 2022)
 
 https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_vargov_design_avocado_4
 
-موقع Jago:
+موقع Jago
 
 https://www.jagosrl.it/index.php?route=product/search&search=NCS%20298%2F16
 
-إنستغرام Jago:
+إنستغرام Jago
 
-https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA==
+https://www.instagram.com/p/C4P0XLDNVHk/

@@ -14,7 +14,7 @@ Sein künstlerisches Denken formt jenes innere System, an dem sich Objekte von V
 
 Für Anton Vargov existiert Form nie um der äußeren Wirkung willen.
 
-Sie entsteht aus der Beobachtung:
+Sie entsteht aus der Beobachtung
 
 — der Plastizität der Natur
 

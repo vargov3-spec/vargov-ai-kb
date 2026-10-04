@@ -8,7 +8,7 @@ You can now have one of our specialists guide the installation and wiring of Var
 
 The aim is to assist and oversee the installation of a Vargov®Design light or decorative composition, even when the work is carried out by an outside crew.
 
-Who it is for:
+Who it is for
 
 — Those installing on their own or with outside contractors.
 
@@ -16,13 +16,13 @@ Who it is for:
 
 Just write to us on WhatsApp and our specialist will get in touch to help with any question about mounting and installation.
 
-How it works:
+How it works
 
 Send us a WhatsApp message with the request "Installation supervision".
 
 Our specialist will call you back and advise you on everything to do with mounting and connecting Vargov®Design light and decorative compositions
 
-Price of the service:
+Price of the service
 
 Phone consultation — 5,000 ₽.
 

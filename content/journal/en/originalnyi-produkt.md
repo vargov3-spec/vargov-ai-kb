@@ -10,7 +10,7 @@ At Vargov®Design we pay particular attention to every aspect of making and deli
 
 One of our company's chief priorities is protecting the original product against counterfeits. We understand how much our clients' trust means, and we make sure that every Vargov®Design light composition or element meets the highest standards of quality.
 
-How we protect our products:
+How we protect our products
 
 - Originality. Every piece is designed and made by our own team, which guarantees its exclusivity.
 
@@ -22,7 +22,7 @@ How we protect our products:
 
 Safe, careful delivery is an important part of how we work with our clients. That is precisely why we have developed a packing system that gives the product maximum protection at every stage of transport.
 
-The stages of packing:
+The stages of packing
 
 - Protecting the elements. Every Vargov®Design piece is wrapped in a special protective film. This prevents scratches, scuffs and other damage in transit.
 

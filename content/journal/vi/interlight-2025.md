@@ -14,7 +14,7 @@ Chúng tôi không tạo ra sản phẩm đại trà — mà tạo ra vật th�
 
 Gian trưng bày của công ty thu hút sự chú ý của kiến trúc sư, nhà thiết kế, đơn vị cung ứng và đại diện truyền thông không chỉ nhờ hình ảnh thị giác, mà còn nhờ bầu không khí đặc biệt do các tác phẩm ánh sáng của thương hiệu tạo nên.
 
-Kiến trúc gian trưng bày:
+Kiến trúc gian trưng bày
 
 Bộ khung đen tối giản trở thành phông nền cho hơn mười tác phẩm nguyên bản, được lắp ráp thủ công từ thủy tinh, pha lê, sứ và kim loại.
 
@@ -22,11 +22,11 @@ Những hình khối lơ lửng, hình học phức tạp của hệ treo, các 
 
 Ánh sáng ở đây không thực hiện chức năng — nó tạo ra trạng thái.
 
-Đúng như chủ ý:
+Đúng như chủ ý
 
 «Chúng tôi không so mình với người khác. Chúng tôi sáng tạo trong hệ tọa độ của riêng mình. Nơi ánh sáng không phải là công cụ, mà là vật liệu. Nơi hình khối sinh ra cảm giác, chứ không đơn thuần chiếu sáng nó», — nhà sáng lập thương hiệu Anton Vargov chia sẻ trong một cuộc phỏng vấn.
 
-Giao lưu trực tiếp và sự quan tâm:
+Giao lưu trực tiếp và sự quan tâm
 
 Hàng trăm mối liên hệ chuyên môn, hàng chục cuộc gặp, thảo luận, phản hồi.
 

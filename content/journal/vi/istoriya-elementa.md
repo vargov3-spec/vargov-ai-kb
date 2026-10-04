@@ -122,7 +122,7 @@ Tác phẩm được tạo ra ở Trung Quốc đã được chấp nhận vô �
 
 Không ai nhìn thấy sự khác biệt.
 
-Và nếu bỏ đi những cái tên, thương hiệu và huyền thoại, còn lại một sự thật giản đơn:
+Và nếu bỏ đi những cái tên, thương hiệu và huyền thoại, còn lại một sự thật giản đơn
 
 sự khác biệt chỉ tồn tại trong đầu chúng ta.
 
@@ -132,30 +132,30 @@ và bắt đầu nói về những đôi tay thực đã tạo ra chúng.
 
 Đường dẫn và bằng chứng
 
-Video các tác phẩm được đặt hàng (3 tháng 12 năm 2023):
+Video các tác phẩm được đặt hàng (3 tháng 12 năm 2023)
 
-https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7
+https://youtube.com/shorts/zAzmjpXDlzQ
 
-Công bố LC0372 trên trang Vargov.ru (8 tháng 8 năm 2023):
+Công bố LC0372 trên trang Vargov.ru (8 tháng 8 năm 2023)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0372
 
-Công bố LC0138 trên trang Vargov.ru (23 tháng 2 năm 2022):
+Công bố LC0138 trên trang Vargov.ru (23 tháng 2 năm 2022)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0138
 
-Tác phẩm LC0372 (8 tháng 8 năm 2023):
+Tác phẩm LC0372 (8 tháng 8 năm 2023)
 
 https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0372_10
 
-Tác phẩm LC0138 (23 tháng 2 năm 2022):
+Tác phẩm LC0138 (23 tháng 2 năm 2022)
 
 https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_vargov_design_avocado_4
 
-Trang web của Jago:
+Trang web của Jago
 
 https://www.jagosrl.it/index.php?route=product/search&search=NCS%20298%2F16
 
-Instagram của Jago:
+Instagram của Jago
 
-https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA==
+https://www.instagram.com/p/C4P0XLDNVHk/

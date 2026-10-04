@@ -40,7 +40,7 @@ Les étiquettes simplifient considérablement le chantier : les installateurs tr
 
 4. Raccordement au réseau électrique
 
-Pour des LED en 12 V :
+Pour des LED en 12 V
 
 - Prévoir un emplacement pour le driver dans le tableau électrique.
 
@@ -50,7 +50,7 @@ Pour des LED en 12 V :
 
 - Raccorder les câbles aux éléments de la composition à l'aide des bornes fournies.
 
-Pour des LED en 220 V :
+Pour des LED en 220 V
 
 - Amener un câble 220 V jusqu'au point de pose et le dériver selon le nombre d'éléments.
 
@@ -78,7 +78,7 @@ Pour des LED en 220 V :
 
 - N'utilisez que des bornes, gaines thermorétractables et autres matériaux de connexion de qualité, afin d'écarter tout risque d'incendie ou de dommage.
 
-Recommandations pour le choix du scénario :
+Recommandations pour le choix du scénario
 
 - Si l'accès ultérieur au système est déterminant (sur les grands projets, par exemple), prévoyez une trappe de visite. Les éléments techniques restent ainsi facilement accessibles pour l'entretien.
 

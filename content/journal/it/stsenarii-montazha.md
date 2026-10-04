@@ -40,7 +40,7 @@ La presenza delle targhette semplifica notevolmente il lavoro, perché gli insta
 
 4. Collegamento alla rete elettrica
 
-Per LED a 12 V:
+Per LED a 12 V
 
 - Prevedere lo spazio per l'alimentatore nel quadro elettrico.
 
@@ -50,7 +50,7 @@ Per LED a 12 V:
 
 - Collegare i cavi agli elementi della composizione con i morsetti in dotazione.
 
-Per LED a 220 V:
+Per LED a 220 V
 
 - Posare un cavo a 220 V fino al punto di montaggio ed eseguire le derivazioni per ciascun elemento.
 
@@ -78,7 +78,7 @@ Per LED a 220 V:
 
 - Utilizzare esclusivamente morsetti, guaine termorestringenti e altri materiali di connessione di qualità, per escludere rischi di incendio o danni.
 
-Consigli per la scelta dello scenario:
+Consigli per la scelta dello scenario
 
 - Se in futuro l'accesso all'impianto è determinante (per esempio nei progetti di grandi dimensioni), utilizzare una botola d'ispezione. Gli elementi tecnici restano così facilmente raggiungibili per la manutenzione.
 

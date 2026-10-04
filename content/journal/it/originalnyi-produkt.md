@@ -10,7 +10,7 @@ In Vargov®Design dedichiamo un'attenzione particolare a ogni aspetto della real
 
 Una delle priorità principali della nostra azienda è proteggere il prodotto originale dalle contraffazioni. Sappiamo quanto valga la fiducia dei nostri clienti e vigiliamo con cura affinché ogni composizione luminosa e ogni elemento Vargov®Design risponda a standard qualitativi elevati.
 
-Come tuteliamo i nostri prodotti:
+Come tuteliamo i nostri prodotti
 
 - Unicità. Tutti i pezzi sono progettati e realizzati dal nostro team: una garanzia di esclusività.
 
@@ -22,7 +22,7 @@ Come tuteliamo i nostri prodotti:
 
 Una consegna sicura e curata è una parte importante del rapporto con i nostri clienti. Proprio per questo abbiamo studiato un sistema di imballaggio che protegge al massimo il prodotto in ogni fase del trasporto.
 
-Le fasi dell'imballaggio:
+Le fasi dell'imballaggio
 
 - Protezione degli elementi. Ogni elemento d'autore Vargov®Design viene avvolto in una speciale pellicola protettiva. Questo previene graffi, abrasioni e altri danni durante il trasporto.
 

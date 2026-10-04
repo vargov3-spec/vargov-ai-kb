@@ -14,7 +14,7 @@ Il fondatore e capo designer del marchio è Anton Vargov.
 
 Per Anton Vargov la forma non esiste mai per l'effetto esteriore.
 
-Nasce dall'osservazione:
+Nasce dall'osservazione
 
 — della plasticità della natura
 

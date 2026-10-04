@@ -16,7 +16,7 @@ Genau deshalb wird in Ausschreibungen das Serienzertifikat verlangt und ein Char
 
 Was genau zertifiziert ist
 
-Zwei Konformitätszertifikate nach den technischen Regelwerken der Zollunion, ausgestellt am 7. und 8. September 2026 für fünf Jahre. Zusammen decken sie 310 LC-Codes der Lichtkompositionen ab.
+Zwei Konformitätszertifikate nach den technischen Regelwerken der Zollunion, ausgestellt am 7. und 8. September 2026 für fünf Jahre. Zusammen decken sie 310 LC-Codes der Lichtkompositionen ab — neun davon sind in beiden Zertifikaten enthalten.
 
 Das erste umfasst 53 Codes nach zwei Regelwerken zugleich: TR CU 004/2011 „Über die Sicherheit von Niederspannungsgeräten“ und TR CU 020/2011 „Elektromagnetische Verträglichkeit technischer Mittel“. Das zweite umfasst 266 Codes nach dem Niederspannungsregelwerk.
 
@@ -48,4 +48,4 @@ Es hält sich die Vorstellung, ein Autorenstück und ein prüfbares Dokument geh
 
 Das ist ein bequemer Irrtum, und er stört die Arbeit. Eine für eine bestimmte Decke gebaute Komposition hängt ebenso über Menschen, erwärmt sich, ist ans Stromnetz des Gebäudes angeschlossen — und muss ebenso sicher sein. Der Unterschied zwischen „schön“ und „darf im öffentlichen Raum hängen“ ist genau dieser Dokumentensatz.
 
-Serienzertifizierung ist für uns keine Marketingzeile, sondern der nächste Reifeschritt: Autorendesign soll nicht nur ausdrucksstark, sondern vollständig einsatzbereit für professionelle Projekte sein. Einzelheiten, vollständige Nummern und Laufzeiten stehen auf der Zertifizierungsseite.
+Serienzertifizierung ist für uns keine Marketingzeile, sondern der nächste Reifeschritt: Autorendesign soll nicht nur ausdrucksstark, sondern vollständig einsatzbereit für professionelle Projekte sein. Einzelheiten, vollständige Nummern und Laufzeiten stehen auf der Zertifizierungsseite: https://vargov.ru/de/certification

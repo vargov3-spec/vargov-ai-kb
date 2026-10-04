@@ -8,7 +8,7 @@ Giờ đây bạn có thể nhận được sự đồng hành chuyên nghiệp 
 
 Mục tiêu — hỗ trợ và giám sát việc lắp đặt tác phẩm ánh sáng hoặc trang trí Vargov®Design, ngay cả khi việc thi công do một đội bên ngoài thực hiện.
 
-Phù hợp với ai:
+Phù hợp với ai
 
 — Những ai tự lắp đặt hoặc thuê chuyên gia bên ngoài.
 
@@ -16,13 +16,13 @@ Phù hợp với ai:
 
 Chỉ cần nhắn tin qua WhatsApp, chuyên gia của chúng tôi sẽ liên hệ với bạn để giúp giải quyết mọi vấn đề liên quan đến việc lắp đặt và thi công.
 
-Cách thức hoạt động:
+Cách thức hoạt động
 
 Nhắn cho chúng tôi qua WhatsApp với nội dung «Giám sát lắp đặt».
 
 Chuyên gia của chúng tôi sẽ gọi lại và tư vấn cho bạn về mọi vấn đề liên quan đến việc lắp đặt và đấu nối các tác phẩm ánh sáng và trang trí Vargov®Design
 
-Chi phí dịch vụ:
+Chi phí dịch vụ
 
 Tư vấn qua điện thoại — 5.000 ₽.
 

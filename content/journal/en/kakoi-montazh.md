@@ -8,7 +8,7 @@ There are several ways to install Vargov®Design light compositions, and each on
 
 1. Installation into a prepared ceiling with plywood backing
 
-Pros:
+Pros
 
 - The fixings stay almost invisible: once installed, the composition looks as clean and elegant as it possibly can, because every mounting element is hidden above the ceiling.
 
@@ -16,7 +16,7 @@ Pros:
 
 - Freedom in placing the elements: they can be mounted at different heights and fixed precisely according to the installation drawing.
 
-Cons:
+Cons
 
 - The preparation is demanding: the ceiling has to be prepared in advance (reinforced with plywood backing, holes drilled), which can mean extra cost and extra time.
 
@@ -24,7 +24,7 @@ Cons:
 
 2. Installation using an access hatch
 
-Pros:
+Pros
 
 - Easy servicing: an access hatch gives quick and convenient access to the drivers, the wiring and the components of the system, which makes maintenance or replacement of equipment straightforward.
 
@@ -32,7 +32,7 @@ Pros:
 
 - Safety: should unscheduled servicing or repair work be needed, the system can be reached quickly without disturbing the ceiling structure.
 
-Cons:
+Cons
 
 - The hatch is visible: an access hatch can be noticeable on the ceiling and may affect the look of the room, especially in minimalist interiors.
 
@@ -40,7 +40,7 @@ Cons:
 
 3. Installation on a base plate
 
-Pros:
+Pros
 
 - The system is fully integrated: the drivers and the other components of the composition sit inside the base, which makes the connection compact and entirely self-contained.
 
@@ -48,7 +48,7 @@ Pros:
 
 - Easy servicing: all the technical components are readily accessible in the base, so they can be serviced or replaced without touching the ceiling.
 
-Cons:
+Cons
 
 - The room it takes: the base is 80 mm high and upwards and occupies extra space on the ceiling, which may be unwelcome in rooms with a low ceiling.
 

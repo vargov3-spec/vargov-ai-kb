@@ -14,7 +14,7 @@ Es su pensamiento artístico el que da forma a ese sistema interno por el que lo
 
 Para Anton Vargov la forma nunca existe solo para causar efecto.
 
-Nace de la observación:
+Nace de la observación
 
 — de la plasticidad de la naturaleza
 

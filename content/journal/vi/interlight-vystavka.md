@@ -28,7 +28,7 @@ Interlight 2025 | Moskva, Trung tâm triển lãm quốc tế «Crocus Expo», 2
 
 Mã khuyến mãi để vào cửa miễn phí: IL25-XSPDY
 
-Đại lý tại Nga — vargov.ru/dealers
+Đại lý tại Nga — https://vargov.ru/vi/dealers
 
 Vargov®Design — dành cho những ai nhìn thấy sự khác biệt.
 

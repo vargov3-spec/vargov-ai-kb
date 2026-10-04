@@ -122,7 +122,7 @@ Vargov®Design никогда не был про географию.
 
 Разницы не увидел никто.
 
-И если убрать имена, бренды и легенды, остаётся простой факт:
+И если убрать имена, бренды и легенды, остаётся простой факт
 
 разница существует только в наших головах.
 
@@ -132,30 +132,30 @@ Vargov®Design никогда не был про географию.
 
 Ссылки и доказательства
 
-Видео заказанных композиций (3 декабря 2023):
+Видео заказанных композиций (3 декабря 2023)
 
-https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7
+https://youtube.com/shorts/zAzmjpXDlzQ
 
-Публикация LC0372 на сайте Vargov.ru (8 августа 2023):
+Публикация LC0372 на сайте Vargov.ru (8 августа 2023)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0372
 
-Публикация LC0138 на сайте Vargov.ru (23 февраля 2022):
+Публикация LC0138 на сайте Vargov.ru (23 февраля 2022)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0138
 
-Композиция LC0372 (8 августа 2023):
+Композиция LC0372 (8 августа 2023)
 
 https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0372_10
 
-Композиция LC0138 (23 февраля 2022):
+Композиция LC0138 (23 февраля 2022)
 
 https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_vargov_design_avocado_4
 
-Сайт Jago:
+Сайт Jago
 
 https://www.jagosrl.it/index.php?route=product/search&search=NCS%20298%2F16
 
-Инстаграм Jago:
+Инстаграм Jago
 
-https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA==
+https://www.instagram.com/p/C4P0XLDNVHk/

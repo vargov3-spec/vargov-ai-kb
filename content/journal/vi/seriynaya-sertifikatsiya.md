@@ -16,7 +16,7 @@ Chính vì thế trong đấu thầu người ta yêu cầu giấy chứng nhậ
 
 Chính xác thì cái gì được chứng nhận
 
-Hai giấy chứng nhận hợp quy theo các quy chuẩn kỹ thuật của Liên minh Hải quan, cấp ngày 7 và 8 tháng 9 năm 2026, thời hạn năm năm. Tổng cộng hai giấy này bao quát 310 mã LC của các tác phẩm ánh sáng.
+Hai giấy chứng nhận hợp quy theo các quy chuẩn kỹ thuật của Liên minh Hải quan, cấp ngày 7 và 8 tháng 9 năm 2026, thời hạn năm năm. Tổng cộng hai giấy này bao quát 310 mã LC của các tác phẩm ánh sáng — chín mã trong số đó có trong cả hai giấy.
 
 Giấy thứ nhất cho 53 mã, theo hai quy chuẩn cùng lúc: TR CU 004/2011 «Về an toàn thiết bị điện áp thấp» và TR CU 020/2011 «Tương thích điện từ của thiết bị kỹ thuật». Giấy thứ hai cho 266 mã theo quy chuẩn điện áp thấp.
 
@@ -48,4 +48,4 @@ Có một định kiến dai dẳng rằng tác phẩm nguyên bản và giấy 
 
 Đó là hiểu lầm tiện lợi và nó cản trở công việc. Một tác phẩm được làm riêng cho một trần nhà cụ thể vẫn treo trên đầu người, vẫn nóng lên, vẫn nối vào lưới điện của toà nhà — và phải an toàn y như vậy. Khác biệt giữa «đẹp» và «được phép lắp ở nơi công cộng» chính là bộ hồ sơ này.
 
-Với chúng tôi, chứng nhận cho sản xuất hàng loạt không phải một dòng tiếp thị mà là bước trưởng thành tiếp theo: thiết kế nguyên bản phải vừa giàu biểu cảm vừa sẵn sàng hoàn toàn cho các dự án chuyên nghiệp. Chi tiết, số hiệu đầy đủ và thời hạn có trên trang chứng nhận.
+Với chúng tôi, chứng nhận cho sản xuất hàng loạt không phải một dòng tiếp thị mà là bước trưởng thành tiếp theo: thiết kế nguyên bản phải vừa giàu biểu cảm vừa sẵn sàng hoàn toàn cho các dự án chuyên nghiệp. Chi tiết, số hiệu đầy đủ và thời hạn có trên trang chứng nhận: https://vargov.ru/vi/certification

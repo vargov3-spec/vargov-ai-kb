@@ -14,7 +14,7 @@ Non creiamo un prodotto di massa, ma un oggetto in cui vivono un'idea, un silenz
 
 Lo stand dell'azienda ha attirato l'attenzione di architetti, progettisti, responsabili acquisti e rappresentanti dei media non solo per la sua immagine visiva, ma anche per l'atmosfera particolare creata dalle composizioni luminose del marchio.
 
-L'architettura dello stand:
+L'architettura dello stand
 
 Una struttura nera essenziale ha fatto da sfondo a oltre dieci composizioni d'autore, assemblate a mano in vetro, cristallo, porcellana e metallo.
 
@@ -22,11 +22,11 @@ Forme sospese, la geometria complessa delle sospensioni, riflessi e rifrazioni �
 
 Qui la luce non svolgeva una funzione — creava uno stato d'animo.
 
-Esattamente come volevamo:
+Esattamente come volevamo
 
 «Non ci confrontiamo con nessuno. Creiamo dentro un sistema di coordinate tutto nostro. Là dove la luce non è uno strumento, ma un materiale. Dove la forma genera una sensazione, invece di limitarsi a illuminarla», ha detto in un'intervista il fondatore del marchio, Anton Vargov.
 
-Incontri veri e interesse autentico:
+Incontri veri e interesse autentico
 
 Centinaia di contatti professionali, decine di incontri, discussioni, riscontri.
 

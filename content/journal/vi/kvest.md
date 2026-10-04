@@ -18,7 +18,7 @@ Tôi đoán trước sẽ có những bình luận kiểu: «sao các anh không
 
 Nói thật lòng — đây không phải dàn dựng, cũng không phải trò đùa. Chuyện cứ thế xảy ra thôi. Và tôi thích cái hình thức bất ngờ này.
 
-Điều kiện tham gia:
+Điều kiện tham gia
 
 1️⃣ Tìm thấy chi tiết LC0371 theo tọa độ đã cho.
 

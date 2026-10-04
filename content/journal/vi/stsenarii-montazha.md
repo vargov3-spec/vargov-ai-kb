@@ -40,7 +40,7 @@ Có thẻ đánh dấu, quá trình lắp đặt đơn giản hơn đáng kể, 
 
 4. Đấu nối vào lưới điện
 
-Với diode 12V:
+Với diode 12V
 
 - Dự trù chỗ cho driver trong tủ điện phân phối.
 
@@ -50,7 +50,7 @@ Với diode 12V:
 
 - Nối dây với các chi tiết của tác phẩm bằng cầu đấu có trong bộ.
 
-Với diode 220V:
+Với diode 220V
 
 - Kéo dây 220V đến vị trí lắp đặt, chia mối nối theo số lượng chi tiết.
 
@@ -78,7 +78,7 @@ Với diode 220V:
 
 - Chỉ sử dụng cầu đấu, ống co nhiệt và các vật liệu kết nối chất lượng, để tránh nguy cơ cháy hoặc hư hỏng.
 
-Khuyến nghị chọn kịch bản:
+Khuyến nghị chọn kịch bản
 
 - Nếu việc tiếp cận hệ thống trong tương lai là thiết yếu (ví dụ với các dự án lớn), hãy dùng cửa thăm kỹ thuật. Điều này bảo đảm tiếp cận dễ dàng các chi tiết kỹ thuật để bảo trì.
 

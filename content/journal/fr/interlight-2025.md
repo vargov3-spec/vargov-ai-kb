@@ -14,7 +14,7 @@ Nous ne fabriquons pas un produit de masse — mais un objet qui porte une idée
 
 Le stand de la maison a retenu l'attention des architectes, des designers, des acheteurs projet et des médias, non seulement par son image visuelle, mais aussi par l'atmosphère singulière que créaient les compositions lumineuses de la marque.
 
-L'architecture du stand :
+L'architecture du stand
 
 Une ossature noire minimaliste a servi de toile de fond à plus de dix compositions d'auteur, assemblées à la main en verre, cristal, porcelaine et métal.
 
@@ -22,11 +22,11 @@ Des formes flottantes, la géométrie complexe des suspensions, reflets et réfr
 
 Ici, la lumière ne remplissait pas une fonction — elle créait un état.
 
-Exactement comme prévu :
+Exactement comme prévu
 
 « Nous ne nous comparons à personne. Nous créons dans notre propre système de coordonnées. Là où la lumière n'est pas un outil, mais une matière. Où la forme fait naître une sensation au lieu de simplement l'éclairer », a déclaré en interview le fondateur de la marque, Anton Vargov.
 
-Des échanges vivants et un vrai intérêt :
+Des échanges vivants et un vrai intérêt
 
 Des centaines de contacts professionnels, des dizaines de rencontres, de discussions, de retours.
 

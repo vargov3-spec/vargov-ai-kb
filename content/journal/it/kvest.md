@@ -18,7 +18,7 @@ Immagino già i commenti tipo: «potevate nasconderlo direttamente sulla Luna» 
 
 Sarò sincero: non è una messa in scena né uno scherzo. È andata semplicemente così. E questo formato inatteso mi è piaciuto.
 
-Come partecipare:
+Come partecipare
 
 1️⃣ Trovare l'elemento LC0371 alle coordinate indicate.
 

@@ -8,7 +8,7 @@ Ab sofort können Sie die Montage und den Anschluss von Licht- und Dekorkomposit
 
 Ziel ist die Unterstützung und Kontrolle der Installation einer Licht- oder Dekorkomposition von Vargov®Design — auch dann, wenn die Montage von einem externen Team ausgeführt wird.
 
-Für wen der Service gedacht ist:
+Für wen der Service gedacht ist
 
 — Für alle, die selbst montieren oder externe Fachleute hinzuziehen.
 
@@ -16,13 +16,13 @@ Für wen der Service gedacht ist:
 
 Eine Nachricht über WhatsApp genügt — unser Spezialist meldet sich bei Ihnen und hilft bei allen Fragen rund um Aufbau und Montage.
 
-So funktioniert es:
+So funktioniert es
 
 Schreiben Sie uns auf WhatsApp mit dem Stichwort „Montageüberwachung“.
 
 Unser Spezialist ruft Sie zurück und berät Sie zu allen Fragen der Montage und des Anschlusses von Licht- und Dekorkompositionen von Vargov®Design
 
-Preis der Leistung:
+Preis der Leistung
 
 Telefonberatung — 5 000 ₽.
 

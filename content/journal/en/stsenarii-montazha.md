@@ -40,7 +40,7 @@ The tags make the job considerably simpler, letting fitters work faster and avoi
 
 4. Connecting to the mains
 
-For 12 V LEDs:
+For 12 V LEDs
 
 - Allow space for the driver in the distribution board.
 
@@ -50,7 +50,7 @@ For 12 V LEDs:
 
 - Join the wires to the elements of the composition using the connectors supplied.
 
-For 220 V LEDs:
+For 220 V LEDs
 
 - Run a 220 V cable to the installation point and split it out to the number of elements.
 
@@ -78,7 +78,7 @@ For 220 V LEDs:
 
 - Use only good-quality terminal blocks, heat-shrink tubing and other connection materials, to rule out any risk of fire or damage.
 
-How to choose a scenario:
+How to choose a scenario
 
 - If future access to the system is critical (on large projects, for instance), use an inspection hatch. It keeps the technical parts easy to reach for servicing.
 

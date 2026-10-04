@@ -40,7 +40,7 @@ Die Anhänger vereinfachen den Montageablauf erheblich: Die Monteure arbeiten sc
 
 4. Anschluss an das Stromnetz
 
-Für 12-V-LEDs:
+Für 12-V-LEDs
 
 - Im Verteilerkasten Platz für das Netzteil vorsehen.
 
@@ -50,7 +50,7 @@ Für 12-V-LEDs:
 
 - Die Leitungen mit den mitgelieferten Klemmen an die Elemente der Komposition anschließen.
 
-Für 220-V-LEDs:
+Für 220-V-LEDs
 
 - Eine 220-V-Leitung bis zum Montagepunkt verlegen und auf die Anzahl der Elemente aufteilen.
 
@@ -78,7 +78,7 @@ Für 220-V-LEDs:
 
 - Verwenden Sie ausschließlich hochwertige Klemmen, Schrumpfschläuche und sonstige Verbindungsmaterialien, um Brand- und Beschädigungsrisiken auszuschließen.
 
-Empfehlungen zur Wahl des Szenarios:
+Empfehlungen zur Wahl des Szenarios
 
 - Ist der spätere Zugang zur Anlage entscheidend (etwa bei großen Projekten), verwenden Sie eine Revisionsklappe. So bleiben die technischen Bauteile für die Wartung leicht erreichbar.
 

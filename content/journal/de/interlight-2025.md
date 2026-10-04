@@ -14,7 +14,7 @@ Wir schaffen kein Massenprodukt — sondern ein Objekt, in dem eine Idee steckt,
 
 Der Messestand zog die Aufmerksamkeit von Architekten, Designern, Projekteinkäufern und Medienvertretern auf sich — nicht allein durch sein visuelles Erscheinungsbild, sondern auch durch die besondere Atmosphäre, die die Lichtkompositionen der Marke schufen.
 
-Die Architektur des Standes:
+Die Architektur des Standes
 
 Ein minimalistisches schwarzes Gerüst wurde zur Kulisse für mehr als zehn Autorenkompositionen, von Hand aus Glas, Kristall, Porzellan und Metall zusammengefügt.
 
@@ -22,11 +22,11 @@ Schwebende Formen, die komplexe Geometrie der Abhängungen, Reflexionen und Brec
 
 Licht erfüllte hier keine Funktion — es erzeugte einen Zustand.
 
-Genau so gedacht:
+Genau so gedacht
 
 „Wir vergleichen uns nicht mit anderen. Wir gestalten in einem eigenen Koordinatensystem. Dort, wo Licht kein Werkzeug ist, sondern Material. Wo die Form ein Gefühl hervorbringt, statt es nur zu beleuchten“, sagte der Gründer der Marke, Anton Vargov, im Interview.
 
-Lebendiger Austausch und echtes Interesse:
+Lebendiger Austausch und echtes Interesse
 
 Hunderte fachliche Kontakte, Dutzende Begegnungen, Gespräche, Rückmeldungen.
 

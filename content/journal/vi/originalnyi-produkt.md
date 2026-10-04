@@ -10,7 +10,7 @@ Hệ thống bảo vệ tính nguyên bản toàn diện: sự chú tâm đến 
 
 Một trong những ưu tiên hàng đầu của công ty chúng tôi là bảo vệ sản phẩm nguyên bản khỏi hàng giả. Chúng tôi ý thức được tầm quan trọng của niềm tin từ khách hàng và theo dõi cẩn thận để mỗi tác phẩm ánh sáng hay chi tiết Vargov®Design đều đáp ứng các chuẩn mực chất lượng cao.
 
-Cách chúng tôi bảo vệ sản phẩm của mình:
+Cách chúng tôi bảo vệ sản phẩm của mình
 
 - Tính độc nhất. Mọi sản phẩm đều do đội ngũ của chúng tôi phát triển và tạo ra, điều đó bảo đảm tính độc quyền của chúng.
 
@@ -22,7 +22,7 @@ Cách chúng tôi bảo vệ sản phẩm của mình:
 
 Việc giao hàng an toàn và chất lượng là phần quan trọng trong sự tương tác với khách hàng của chúng tôi. Chính vì vậy chúng tôi xây dựng hệ thống đóng gói bảo đảm sự bảo vệ tối đa cho sản phẩm ở mọi công đoạn vận chuyển.
 
-Các công đoạn đóng gói:
+Các công đoạn đóng gói
 
 - Bảo vệ các chi tiết. Mỗi chi tiết nguyên bản Vargov®Design được bọc trong màng bảo vệ chuyên dụng. Điều này ngăn ngừa trầy xước, mài mòn hay những hư hỏng khác trong quá trình vận chuyển.
 

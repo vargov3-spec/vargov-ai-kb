@@ -8,7 +8,7 @@ Có một số cách lắp đặt các tác phẩm ánh sáng Vargov®Design, m�
 
 1. Lắp lên trần đã chuẩn bị với tấm chờ
 
-Ưu điểm:
+Ưu điểm
 
 - Các điểm bắt gần như vô hình: Sau khi lắp, tác phẩm sẽ trông gọn gàng và thanh lịch nhất có thể, vì mọi chi tiết lắp đặt đều được giấu sau trần.
 
@@ -16,7 +16,7 @@ Có một số cách lắp đặt các tác phẩm ánh sáng Vargov®Design, m�
 
 - Linh hoạt trong bố trí chi tiết: Có thể lắp các chi tiết ở những độ cao khác nhau với sự cố định chính xác theo sơ đồ lắp đặt.
 
-Nhược điểm:
+Nhược điểm
 
 - Chuẩn bị phức tạp: Cần chuẩn bị trần từ trước (gia cố bằng tấm chờ gỗ dán, khoan lỗ), điều này có thể đòi hỏi thêm chi phí và thời gian.
 
@@ -24,7 +24,7 @@ Nhược điểm:
 
 2. Lắp có cửa thăm kỹ thuật
 
-Ưu điểm:
+Ưu điểm
 
 - Thuận tiện bảo trì: Cửa thăm kỹ thuật cho phép tiếp cận nhanh và thuận tiện đến driver, dây dẫn và các chi tiết của hệ thống, giúp việc bảo trì kỹ thuật hoặc thay thế thiết bị dễ dàng hơn.
 
@@ -32,7 +32,7 @@ Nhược điểm:
 
 - An toàn: Khi cần bảo trì đột xuất hoặc sửa chữa, có thể nhanh chóng tiếp cận hệ thống mà không phá vỡ kết cấu trần.
 
-Nhược điểm:
+Nhược điểm
 
 - Cửa thăm lộ ra: Cửa thăm kỹ thuật có thể nhìn thấy trên trần, ảnh hưởng đến diện mạo căn phòng, nhất là trong nội thất tối giản.
 
@@ -40,7 +40,7 @@ Nhược điểm:
 
 3. Lắp trên đế
 
-Ưu điểm:
+Ưu điểm
 
 - Hệ thống tích hợp trọn vẹn: Driver và các chi tiết khác của tác phẩm được đặt trong đế, khiến việc đấu nối gọn gàng và hoàn toàn độc lập.
 
@@ -48,7 +48,7 @@ Nhược điểm:
 
 - Dễ bảo trì: Mọi chi tiết kỹ thuật đều dễ tiếp cận trong đế, giúp việc bảo trì và thay thế đơn giản mà không phải can thiệp vào trần.
 
-Nhược điểm:
+Nhược điểm
 
 - Không gian chiếm dụng: Đế có chiều cao từ 80 mm và chiếm thêm chỗ trên trần, điều có thể không mong muốn trong những phòng trần thấp.
 

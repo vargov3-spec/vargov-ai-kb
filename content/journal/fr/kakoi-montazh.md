@@ -8,7 +8,7 @@ Il existe plusieurs façons de poser les compositions lumineuses Vargov®Design,
 
 1. Pose sur plafond préparé avec renfort en contreplaqué
 
-Avantages :
+Avantages
 
 - Fixations quasi invisibles : une fois posée, la composition paraît aussi nette et élégante que possible, car tous les éléments de fixation disparaissent au-dessus du plafond.
 
@@ -16,7 +16,7 @@ Avantages :
 
 - Liberté d'implantation : les éléments peuvent être posés à des hauteurs différentes et fixés avec précision selon le plan de pose.
 
-Inconvénients :
+Inconvénients
 
 - Préparation exigeante : le plafond doit être préparé au préalable (renfort en contreplaqué, perçage des trous), ce qui peut entraîner des coûts et des délais supplémentaires.
 
@@ -24,7 +24,7 @@ Inconvénients :
 
 2. Pose avec trappe de visite
 
-Avantages :
+Avantages
 
 - Entretien facilité : la trappe de visite offre un accès rapide et commode aux drivers, au câblage et aux composants du système, ce qui simplifie la maintenance ou le remplacement du matériel.
 
@@ -32,7 +32,7 @@ Avantages :
 
 - Sécurité : en cas d'intervention imprévue ou de réparation, on accède rapidement au système sans toucher à la structure du plafond.
 
-Inconvénients :
+Inconvénients
 
 - Trappe visible : la trappe de visite peut se remarquer au plafond et modifier l'aspect de la pièce, surtout dans les intérieurs minimalistes.
 
@@ -40,7 +40,7 @@ Inconvénients :
 
 3. Pose sur platine
 
-Avantages :
+Avantages
 
 - Système entièrement intégré : les drivers et les autres composants de la composition prennent place dans la platine, ce qui rend le raccordement compact et totalement autonome.
 
@@ -48,7 +48,7 @@ Avantages :
 
 - Entretien aisé : tous les organes techniques restent facilement accessibles dans la platine, on peut donc les entretenir et les remplacer sans intervenir sur le plafond.
 
-Inconvénients :
+Inconvénients
 
 - Encombrement : la platine mesure 80 mm de hauteur au minimum et occupe une place supplémentaire au plafond, ce qui peut gêner sous un plafond bas.
 

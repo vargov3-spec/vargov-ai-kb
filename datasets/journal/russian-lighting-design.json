@@ -12,10 +12,6 @@
    "category": "Философия",
    "date": "5 сентября 2026",
    "lead": "Итальянское стекло и скандинавская лампа известны всем. Русская традиция света сводится к люстре — а вырастает из трёх корней, которых у других нет вместе: художественное стекло, скульптура, инженерия.",
-   "metaLabels": {
-    "category": "Рубрика",
-    "date": "Дата"
-   },
    "body": [
     {
      "type": "p",
@@ -75,7 +71,7 @@
     },
     {
      "type": "p",
-     "text": "Двадцать три таких достижения со ссылками на присудившие их организации перечислены на странице «Награды» этого сайта."
+     "text": "Все такие достижения — со ссылками на присудившие их организации — перечислены на странице «Награды» этого сайта."
     },
     {
      "type": "p",
@@ -93,17 +89,17 @@
      "type": "p",
      "text": "Это определение у́же, чем «люстра». Зато вернее."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Рубрика",
+    "date": "Дата"
+   }
   },
   "en": {
    "title": "Russian Lighting Design: Where It Comes From and What It Looks Like Today",
    "category": "Philosophy",
    "date": "5 September 2026",
    "lead": "Italian glass and the Scandinavian lamp are known to everyone. The Russian tradition of light is reduced to the chandelier — yet it grows from three roots no one else has together: art glass, sculpture, engineering.",
-   "metaLabels": {
-    "category": "Category",
-    "date": "Date"
-   },
    "body": [
     {
      "type": "p",
@@ -163,7 +159,7 @@
     },
     {
      "type": "p",
-     "text": "Twenty-three such achievements, with links to the awarding bodies, are listed on the Awards page of this site."
+     "text": "All such achievements, with links to the awarding bodies, are listed on the Awards page of this site."
     },
     {
      "type": "p",
@@ -181,17 +177,17 @@
      "type": "p",
      "text": "That is a narrower definition than “chandelier”. It is also a truer one."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Category",
+    "date": "Date"
+   }
   },
   "de": {
    "title": "Russisches Lichtdesign: Woher es kommt und wie es heute aussieht",
    "category": "Philosophie",
    "date": "5. September 2026",
    "lead": "Italienisches Glas und die skandinavische Leuchte kennt jeder. Die russische Lichttradition wird auf den Kronleuchter reduziert – dabei wächst sie aus drei Wurzeln, die sonst nirgends zusammenkommen: Kunstglas, Skulptur, Ingenieurwesen.",
-   "metaLabels": {
-    "category": "Rubrik",
-    "date": "Datum"
-   },
    "body": [
     {
      "type": "p",
@@ -251,7 +247,7 @@
     },
     {
      "type": "p",
-     "text": "Dreiundzwanzig solcher Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt."
+     "text": "Alle solchen Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt."
     },
     {
      "type": "p",
@@ -269,17 +265,17 @@
      "type": "p",
      "text": "Das ist eine engere Definition als „Kronleuchter“. Dafür eine treffendere."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Rubrik",
+    "date": "Datum"
+   }
   },
   "fr": {
    "title": "Le design lumière russe : d’où il vient et à quoi il ressemble aujourd’hui",
    "category": "Philosophie",
    "date": "5 septembre 2026",
    "lead": "Le verre italien et la lampe scandinave, tout le monde les connaît. La tradition russe de la lumière est réduite au lustre — alors qu’elle se nourrit de trois racines que personne d’autre ne réunit : le verre d’art, la sculpture, l’ingénierie.",
-   "metaLabels": {
-    "category": "Rubrique",
-    "date": "Date"
-   },
    "body": [
     {
      "type": "p",
@@ -339,7 +335,7 @@
     },
     {
      "type": "p",
-     "text": "Vingt-trois distinctions de ce genre, avec les liens vers les organismes qui les ont décernées, sont réunies sur la page « Distinctions » de ce site."
+     "text": "Toutes les distinctions de ce genre, avec les liens vers les organismes qui les ont décernées, sont réunies sur la page « Distinctions » de ce site."
     },
     {
      "type": "p",
@@ -357,17 +353,17 @@
      "type": "p",
      "text": "C’est une définition plus étroite que « lustre ». Elle est aussi plus vraie."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Rubrique",
+    "date": "Date"
+   }
   },
   "it": {
    "title": "Il lighting design russo: da dove nasce e come appare oggi",
    "category": "Filosofia",
    "date": "5 settembre 2026",
    "lead": "Il vetro italiano e la lampada scandinava li conoscono tutti. La tradizione russa della luce viene ridotta al lampadario — eppure cresce da tre radici che nessun altro riunisce: vetro d’arte, scultura, ingegneria.",
-   "metaLabels": {
-    "category": "Rubrica",
-    "date": "Data"
-   },
    "body": [
     {
      "type": "p",
@@ -427,7 +423,7 @@
     },
     {
      "type": "p",
-     "text": "Ventitré risultati di questo tipo, con i link agli enti che li hanno assegnati, sono elencati nella pagina « Premi » di questo sito."
+     "text": "Tutti i risultati di questo tipo, con i link agli enti che li hanno assegnati, sono elencati nella pagina « Premi » di questo sito."
     },
     {
      "type": "p",
@@ -445,17 +441,17 @@
      "type": "p",
      "text": "È una definizione più ristretta di « lampadario ». Ma è più esatta."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Rubrica",
+    "date": "Data"
+   }
   },
   "es": {
    "title": "El diseño de iluminación ruso: de dónde viene y cómo es hoy",
    "category": "Filosofía",
    "date": "5 de septiembre de 2026",
    "lead": "El vidrio italiano y la lámpara escandinava los conoce todo el mundo. La tradición rusa de la luz se reduce a la araña, y sin embargo brota de tres raíces que nadie más reúne: el vidrio artístico, la escultura, la ingeniería.",
-   "metaLabels": {
-    "category": "Sección",
-    "date": "Fecha"
-   },
    "body": [
     {
      "type": "p",
@@ -515,7 +511,7 @@
     },
     {
      "type": "p",
-     "text": "Veintitrés logros de este tipo, con enlaces a las entidades que los concedieron, están recogidos en la página «Premios» de este sitio."
+     "text": "Todos los logros de este tipo, con enlaces a las entidades que los concedieron, están recogidos en la página «Premios» de este sitio."
     },
     {
      "type": "p",
@@ -533,17 +529,17 @@
      "type": "p",
      "text": "Es una definición más estrecha que «araña». Pero más exacta."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Sección",
+    "date": "Fecha"
+   }
   },
   "vi": {
    "title": "Thiết kế chiếu sáng Nga: bắt nguồn từ đâu và hôm nay trông thế nào",
    "category": "Triết lý",
    "date": "5 tháng 9 năm 2026",
    "lead": "Kính Ý và đèn Bắc Âu thì ai cũng biết. Truyền thống ánh sáng Nga bị thu gọn thành chiếc đèn chùm — nhưng nó mọc lên từ ba gốc rễ mà không nơi nào khác có đủ cùng lúc: kính nghệ thuật, điêu khắc, kỹ thuật.",
-   "metaLabels": {
-    "category": "Chuyên mục",
-    "date": "Ngày"
-   },
    "body": [
     {
      "type": "p",
@@ -603,7 +599,7 @@
     },
     {
      "type": "p",
-     "text": "Hai mươi ba thành tựu như vậy, kèm liên kết đến các tổ chức trao giải, được liệt kê trên trang « Giải thưởng » của trang web này."
+     "text": "Tất cả những thành tựu như vậy, kèm liên kết đến các tổ chức trao giải, được liệt kê trên trang « Giải thưởng » của trang web này."
     },
     {
      "type": "p",
@@ -621,17 +617,17 @@
      "type": "p",
      "text": "Đó là một định nghĩa hẹp hơn « đèn chùm ». Nhưng cũng đúng hơn."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "Chuyên mục",
+    "date": "Ngày"
+   }
   },
   "ar": {
    "title": "تصميم الإضاءة الروسي: من أين جاء وكيف يبدو اليوم",
    "category": "الفلسفة",
    "date": "5 سبتمبر 2026",
    "lead": "الزجاج الإيطالي والمصباح الإسكندنافي يعرفهما الجميع. أما التقليد الروسي في الإضاءة فيُختصر في الثريا — بينما ينمو من ثلاثة جذور لا تجتمع في مكان آخر: الزجاج الفني، والنحت، والهندسة.",
-   "metaLabels": {
-    "category": "القسم",
-    "date": "التاريخ"
-   },
    "body": [
     {
      "type": "p",
@@ -691,7 +687,7 @@
     },
     {
      "type": "p",
-     "text": "ثلاثة وعشرون إنجازاً من هذا النوع، مع روابط إلى الجهات المانحة، مدرجة في صفحة «الجوائز» في هذا الموقع."
+     "text": "جميع الإنجازات من هذا النوع، مع روابط إلى الجهات المانحة، مدرجة في صفحة «الجوائز» في هذا الموقع."
     },
     {
      "type": "p",
@@ -709,7 +705,11 @@
      "type": "p",
      "text": "هذا تعريف أضيق من «الثريا». لكنه أصدق."
     }
-   ]
+   ],
+   "metaLabels": {
+    "category": "القسم",
+    "date": "التاريخ"
+   }
   }
  }
 }

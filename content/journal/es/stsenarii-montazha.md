@@ -40,7 +40,7 @@ La presencia de las etiquetas simplifica notablemente el trabajo, porque los mon
 
 4. Conexión a la red eléctrica
 
-Para LED de 12 V:
+Para LED de 12 V
 
 - Prever un espacio para el driver en el cuadro eléctrico.
 
@@ -50,7 +50,7 @@ Para LED de 12 V:
 
 - Unir los cables a los elementos de la composición con los bornes incluidos.
 
-Para LED de 220 V:
+Para LED de 220 V
 
 - Tender un cable de 220 V hasta el punto de montaje y hacer la derivación según el número de elementos.
 
@@ -78,7 +78,7 @@ Para LED de 220 V:
 
 - Utilice únicamente bornes, tubos termorretráctiles y demás materiales de conexión de calidad, para descartar riesgos de incendio o daños.
 
-Recomendaciones para elegir el escenario:
+Recomendaciones para elegir el escenario
 
 - Si el acceso futuro al sistema es determinante (por ejemplo, en proyectos grandes), utilice una trampilla de registro. Así los elementos técnicos quedan fácilmente accesibles para el mantenimiento.
 

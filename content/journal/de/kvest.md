@@ -18,7 +18,7 @@ Ich ahne die Kommentare schon: „Warum habt ihr es nicht gleich auf dem Mond ve
 
 Ehrlich gesagt: Das war nicht inszeniert und kein Scherz. Es ist einfach passiert. Und mir hat dieses unerwartete Format gefallen.
 
-Teilnahmebedingungen:
+Teilnahmebedingungen
 
 1️⃣ Das Element LC0371 an den angegebenen Koordinaten finden.
 

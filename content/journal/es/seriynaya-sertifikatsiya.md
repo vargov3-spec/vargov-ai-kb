@@ -16,7 +16,7 @@ Por eso en las licitaciones se pide el certificado de serie y casi nunca el de l
 
 Qué está certificado exactamente
 
-Dos certificados de conformidad con los reglamentos técnicos de la Unión Aduanera, emitidos el 7 y el 8 de septiembre de 2026 con una vigencia de cinco años. Juntos cubren 310 referencias LC de composiciones luminosas.
+Dos certificados de conformidad con los reglamentos técnicos de la Unión Aduanera, emitidos el 7 y el 8 de septiembre de 2026 con una vigencia de cinco años. Juntos cubren 310 referencias LC de composiciones luminosas — nueve de ellas figuran en ambos certificados.
 
 El primero cubre 53 referencias bajo dos reglamentos a la vez: TR CU 004/2011 «Sobre la seguridad de los equipos de baja tensión» y TR CU 020/2011 «Compatibilidad electromagnética de los medios técnicos». El segundo cubre 266 referencias bajo el reglamento de baja tensión.
 
@@ -48,4 +48,4 @@ Persiste la idea de que la pieza de autor y el documento verificable pertenecen 
 
 Es un error cómodo y estorba el trabajo. Una composición montada para un techo concreto cuelga igualmente sobre las personas, se calienta y se conecta a la red eléctrica del edificio, y debe ser igual de segura. La diferencia entre «es bonito» y «se puede instalar en un espacio público» es justamente ese paquete de documentos.
 
-Para nosotros la certificación en serie no es una línea de marketing, sino el siguiente paso de madurez: el diseño de autor debe ser no solo expresivo, sino plenamente listo para proyectos profesionales. Los detalles, los números completos y las fechas de vigencia están en la página de certificación.
+Para nosotros la certificación en serie no es una línea de marketing, sino el siguiente paso de madurez: el diseño de autor debe ser no solo expresivo, sino plenamente listo para proyectos profesionales. Los detalles, los números completos y las fechas de vigencia están en la página de certificación: https://vargov.ru/es/certification

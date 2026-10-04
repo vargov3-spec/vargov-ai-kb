@@ -14,7 +14,7 @@ Chính tư duy nghệ thuật của ông tạo nên hệ thống nội tại gi�
 
 Với Anton Vargov, hình khối không bao giờ tồn tại vì hiệu ứng bề ngoài.
 
-Nó sinh ra từ sự quan sát:
+Nó sinh ra từ sự quan sát
 
 — độ mềm mại của tự nhiên
 

@@ -4,7 +4,7 @@ Rubrica: Filosofia · Data: 3 settembre 2024 · Slug: svetovaya-ili-dekorativnay
 
 In cosa differiscono le composizioni luminose e quelle decorative: funzioni, obiettivi e attenzione alla distribuzione della luce — spiegato dal brand.
 
-Le composizioni luminose e quelle decorative si distinguono per funzione e finalità:
+Le composizioni luminose e quelle decorative si distinguono per funzione e finalità
 
 Composizioni luminose
 

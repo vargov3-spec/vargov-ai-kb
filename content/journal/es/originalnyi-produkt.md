@@ -10,7 +10,7 @@ En Vargov®Design cuidamos con especial atención cada aspecto de la creación y
 
 Una de las principales prioridades de nuestra casa es proteger el producto original de las falsificaciones. Sabemos lo que vale la confianza de nuestros clientes y velamos con cuidado por que cada composición luminosa y cada elemento de Vargov®Design responda a estándares de calidad exigentes.
 
-Así protegemos nuestros productos:
+Así protegemos nuestros productos
 
 - Singularidad. Todas las piezas están diseñadas y fabricadas por nuestro equipo, lo que garantiza su exclusividad.
 
@@ -22,7 +22,7 @@ Así protegemos nuestros productos:
 
 Una entrega segura y cuidada es una parte importante de la relación con nuestros clientes. Precisamente por eso hemos desarrollado un sistema de embalaje que ofrece al producto la máxima protección en todas las fases del transporte.
 
-Las etapas del embalaje:
+Las etapas del embalaje
 
 - Protección de los elementos. Cada elemento de autor de Vargov®Design se envuelve en una película protectora especial. Así se evitan arañazos, rozaduras y otros daños durante el traslado.
 

@@ -16,7 +16,7 @@ C’est pourquoi les appels d’offres demandent un certificat de série et pres
 
 Ce qui est certifié exactement
 
-Deux certificats de conformité aux règlements techniques de l’Union douanière, délivrés les 7 et 8 septembre 2026 pour cinq ans. Ensemble, ils couvrent 310 références LC de compositions lumineuses.
+Deux certificats de conformité aux règlements techniques de l’Union douanière, délivrés les 7 et 8 septembre 2026 pour cinq ans. Ensemble, ils couvrent 310 références LC de compositions lumineuses — neuf d’entre elles figurent dans les deux certificats.
 
 Le premier couvre 53 références au titre de deux règlements à la fois : TR CU 004/2011 « Sur la sécurité des équipements basse tension » et TR CU 020/2011 « Compatibilité électromagnétique des dispositifs techniques ». Le second couvre 266 références au titre du règlement basse tension.
 
@@ -48,4 +48,4 @@ Une idée tenace veut que la pièce d’auteur et le document vérifiable appart
 
 C’est une erreur commode, et elle gêne le travail. Une composition assemblée pour un plafond précis est suspendue au-dessus des gens, chauffe et se raccorde au réseau électrique du bâtiment comme n’importe quel produit de série, et doit être tout aussi sûre. La différence entre « c’est beau » et « on peut l’installer dans un espace public », c’est précisément ce dossier.
 
-La certification de série n’est pas pour nous une ligne marketing, mais une nouvelle étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification.
+La certification de série n’est pas pour nous une ligne marketing, mais une nouvelle étape de maturité : le design d’auteur doit être non seulement expressif, mais pleinement prêt pour les projets professionnels. Les détails, les numéros complets et les durées de validité sont sur la page de certification : https://vargov.ru/fr/certification

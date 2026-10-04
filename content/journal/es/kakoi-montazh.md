@@ -8,7 +8,7 @@ Existen varias formas de montar las composiciones luminosas Vargov®Design, y ca
 
 1. Montaje en techo preparado con refuerzo de contrachapado
 
-Ventajas:
+Ventajas
 
 - Fijaciones casi invisibles: una vez montada, la composición luce lo más limpia y elegante posible, porque todos los elementos de fijación quedan ocultos tras el techo.
 
@@ -16,7 +16,7 @@ Ventajas:
 
 - Libertad en la disposición de los elementos: pueden montarse a distintas alturas y fijarse con precisión según el plano de montaje.
 
-Inconvenientes:
+Inconvenientes
 
 - Preparación exigente: el techo debe prepararse de antemano (refuerzo de contrachapado, perforación de orificios), lo que puede suponer costes y tiempo adicionales.
 
@@ -24,7 +24,7 @@ Inconvenientes:
 
 2. Montaje con trampilla de registro
 
-Ventajas:
+Ventajas
 
 - Mantenimiento cómodo: la trampilla de registro ofrece un acceso rápido y sencillo a los drivers, el cableado y los componentes del sistema, lo que facilita el mantenimiento o la sustitución de los equipos.
 
@@ -32,7 +32,7 @@ Ventajas:
 
 - Seguridad: si hace falta una intervención imprevista o una reparación, se accede al sistema enseguida sin alterar la estructura del techo.
 
-Inconvenientes:
+Inconvenientes
 
 - Trampilla a la vista: la trampilla de registro puede notarse en el techo y afectar al aspecto de la estancia, sobre todo en interiores minimalistas.
 
@@ -40,7 +40,7 @@ Inconvenientes:
 
 3. Montaje sobre placa base
 
-Ventajas:
+Ventajas
 
 - Sistema plenamente integrado: los drivers y los demás componentes de la composición se alojan en la base, lo que hace la conexión compacta y totalmente autónoma.
 
@@ -48,7 +48,7 @@ Ventajas:
 
 - Mantenimiento sencillo: todos los elementos técnicos quedan a mano dentro de la base, así que se revisan y se sustituyen sin tocar el techo.
 
-Inconvenientes:
+Inconvenientes
 
 - Espacio ocupado: la base mide 80 mm de altura como mínimo y ocupa un lugar adicional en el techo, algo poco deseable en estancias con techos bajos.
 

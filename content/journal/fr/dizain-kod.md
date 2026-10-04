@@ -14,7 +14,7 @@ C'est sa pensée d'artiste qui façonne ce système intérieur grâce auquel les
 
 Pour Anton Vargov, la forme n'existe jamais pour l'effet.
 
-Elle naît de l'observation :
+Elle naît de l'observation
 
 — de la plastique du vivant
 

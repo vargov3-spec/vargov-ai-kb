@@ -8,7 +8,7 @@ Ahora puede contar con el acompañamiento profesional de nuestro especialista pa
 
 El objetivo es asistir y controlar la instalación de una composición luminosa o decorativa de Vargov®Design, incluso cuando el montaje lo realiza un equipo externo.
 
-A quién le conviene:
+A quién le conviene
 
 — A quienes realizan el montaje por su cuenta o con profesionales externos.
 
@@ -16,13 +16,13 @@ A quién le conviene:
 
 Basta con escribirnos por WhatsApp: nuestro especialista se pondrá en contacto para resolver cualquier duda sobre la instalación y el montaje.
 
-Cómo funciona:
+Cómo funciona
 
 Escríbanos por WhatsApp con la petición «supervisión de montaje».
 
 Nuestro especialista le llamará y le asesorará en todo lo relacionado con el montaje y la conexión de las composiciones luminosas y decorativas de Vargov®Design
 
-Precio del servicio:
+Precio del servicio
 
 Consulta telefónica — 5 000 ₽.
 

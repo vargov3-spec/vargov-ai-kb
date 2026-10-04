@@ -28,7 +28,7 @@ Interlight 2025 | موسكو، مركز المعارض الدولي «كروكو
 
 الرمز الترويجي للدخول المجاني: IL25-XSPDY
 
-الموزّعون في روسيا — vargov.ru/dealers
+الموزّعون في روسيا — https://vargov.ru/ar/dealers
 
 Vargov®Design — لمن يرى الفرق.
 

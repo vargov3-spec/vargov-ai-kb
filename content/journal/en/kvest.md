@@ -18,7 +18,7 @@ I can already hear the comments: "why not hide it on the Moon while you're at it
 
 Honestly — this was not staged and it is not a prank. It simply happened. And I liked this unexpected format.
 
-How to take part:
+How to take part
 
 1️⃣ Find the LC0371 element at the coordinates given.
 

@@ -28,7 +28,7 @@ Interlight 2025 | Москва, МВЦ «Крокус Экспо» 21–24 ок�
 
 Промокод для бесплатного посещения: IL25-XSPDY
 
-Дилеры в России — vargov.ru/dealers
+Дилеры в России — https://vargov.ru/dealers
 
 Vargov®Design - для тех, кто видит разницу.
 

@@ -122,7 +122,7 @@ A composition created in China was accepted without question as “Italian”.
 
 Nobody saw the difference.
 
-And once you strip away the names, the brands and the legends, a simple fact remains:
+And once you strip away the names, the brands and the legends, a simple fact remains
 
 the difference exists only in our heads.
 
@@ -132,30 +132,30 @@ and to start talking about the real hands that make them.
 
 Links and evidence
 
-Video of the commissioned compositions (3 December 2023):
+Video of the commissioned compositions (3 December 2023)
 
-https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7
+https://youtube.com/shorts/zAzmjpXDlzQ
 
-LC0372 published on Vargov.ru (8 August 2023):
+LC0372 published on Vargov.ru (8 August 2023)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0372
 
-LC0138 published on Vargov.ru (23 February 2022):
+LC0138 published on Vargov.ru (23 February 2022)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0138
 
-The LC0372 composition (8 August 2023):
+The LC0372 composition (8 August 2023)
 
 https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0372_10
 
-The LC0138 composition (23 February 2022):
+The LC0138 composition (23 February 2022)
 
 https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_vargov_design_avocado_4
 
-Jago website:
+Jago website
 
 https://www.jagosrl.it/index.php?route=product/search&search=NCS%20298%2F16
 
-Jago on Instagram:
+Jago on Instagram
 
-https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA==
+https://www.instagram.com/p/C4P0XLDNVHk/

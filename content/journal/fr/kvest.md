@@ -18,7 +18,7 @@ Je vois déjà les commentaires : « tant qu'à faire, cachez-le sur la Lune » 
 
 Honnêtement, ce n'est ni une mise en scène ni un canular. C'est arrivé, tout simplement. Et ce format inattendu m'a plu.
 
-Conditions de participation :
+Conditions de participation
 
 1️⃣ Retrouver l'élément LC0371 aux coordonnées indiquées.
 

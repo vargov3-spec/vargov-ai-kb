@@ -122,7 +122,7 @@ Eine in China entstandene Komposition wurde vorbehaltlos als „italienisch“ a
 
 Den Unterschied hat niemand gesehen.
 
-Und nimmt man die Namen, die Marken und die Legenden weg, bleibt eine schlichte Tatsache:
+Und nimmt man die Namen, die Marken und die Legenden weg, bleibt eine schlichte Tatsache
 
 Der Unterschied existiert nur in unseren Köpfen.
 
@@ -132,30 +132,30 @@ sondern über die realen Hände zu sprechen, die sie schaffen.
 
 Links und Belege
 
-Video der bestellten Kompositionen (3. Dezember 2023):
+Video der bestellten Kompositionen (3. Dezember 2023)
 
-https://youtube.com/shorts/zAzmjpXDlzQ?si=rHMrvnA1V171-vy7
+https://youtube.com/shorts/zAzmjpXDlzQ
 
-Veröffentlichung von LC0372 auf Vargov.ru (8. August 2023):
+Veröffentlichung von LC0372 auf Vargov.ru (8. August 2023)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-704114966301-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0372
 
-Veröffentlichung von LC0138 auf Vargov.ru (23. Februar 2022):
+Veröffentlichung von LC0138 auf Vargov.ru (23. Februar 2022)
 
-https://vargov.ru/lighting_compositions_vargovdesign_ru/tproduct/725740400-337832505211-svetovaya-kompozitsiya
+https://vargov.ru/catalog/lc0138
 
-Komposition LC0372 (8. August 2023):
+Komposition LC0372 (8. August 2023)
 
 https://3ddd.ru/3dmodels/show/svetovaia_kompozitsiia_vargov_r_design_lc0372_10
 
-Komposition LC0138 (23. Februar 2022):
+Komposition LC0138 (23. Februar 2022)
 
 https://3ddd.ru/3dmodels/show/podvesnaia_kompozitsiia_vargov_design_avocado_4
 
-Website von Jago:
+Website von Jago
 
 https://www.jagosrl.it/index.php?route=product/search&search=NCS%20298%2F16
 
-Jago auf Instagram:
+Jago auf Instagram
 
-https://www.instagram.com/p/C4P0XLDNVHk/?igsh=MTB1NHk3bmU0aWlmdA==
+https://www.instagram.com/p/C4P0XLDNVHk/
