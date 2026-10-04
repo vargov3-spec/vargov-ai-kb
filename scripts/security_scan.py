@@ -1,5 +1,5 @@
 """
-Мониторинг целостности vargov.ru и configurator.vargov.ru.
+Мониторинг целостности vargov.ru, configurator.vargov.ru и vargov.design.
 
 Скачивает страницы сайта (из sitemap.xml) и их JS-бандлы, извлекает все
 внешние домены и сверяет с белым списком. Появление нового домена — признак
@@ -25,13 +25,16 @@ SCAN_DIR.mkdir(exist_ok=True)
 REPORT = SCAN_DIR / "security_report.md"
 
 SITEMAP_URL = "https://vargov.ru/sitemap.xml"
-EXTRA_PAGES = ["https://configurator.vargov.ru/"]
-MAX_PAGES = 8   # было 40: вместе с 8 потоками это профиль нагрузки, который банит fail2ban на vargov.ru
+# vargov.design (конфигуратор на Netlify) добавлен 04.10.2026 по аудиту 03.10 (A302): до этого
+# его главная и бандлы не сверялись. Обход — одна страница и её JS раз в неделю.
+EXTRA_PAGES = ["https://configurator.vargov.ru/", "https://vargov.design/"]
+MAX_PAGES = 8   # было 40: вместе с 8 потоками такой обход упирался в ограничение частоты запросов сервера
 MAX_JS_PER_HOST = 10
 
 # Домены, которым разрешено отдавать скрипты/фреймы/preconnect.
 SCRIPT_ALLOWLIST = {
     "vargov.ru", "www.vargov.ru", "configurator.vargov.ru",
+    "vargov.design",                     # свой конфигуратор (Netlify), страница в EXTRA_PAGES
     "mc.yandex.ru",                      # Яндекс.Метрика
     "static.tildacdn.com", "thumb.tildacdn.com",  # фото товаров конфигуратора
 }
@@ -87,7 +90,7 @@ METRIKA_ID_RE = re.compile(r'(?:tag\.js\?id=|ym\(\s*)(\d{6,})')
 
 
 def curl(url, max_time=30):
-    time.sleep(1.5)  # пауза между обращениями: vargov.ru банит частые запросы с одного адреса
+    time.sleep(1.5)  # пауза между обращениями: сервер ограничивает частоту запросов
     r = subprocess.run(
         ["curl", "-sS", "-L", "--max-time", str(max_time), "-A", "Mozilla/5.0", url],
         capture_output=True, timeout=max_time + 10)
@@ -108,7 +111,7 @@ def main():
     script_hosts, all_hosts, metrika_ids = {}, {}, {}
     fetched_pages = 0
 
-    with ThreadPoolExecutor(max_workers=1) as pool:  # последовательно: сайт держит 20 rps с адреса и банит
+    with ThreadPoolExecutor(max_workers=1) as pool:  # последовательно: сервер ограничивает частоту запросов
         page_bodies = list(zip(pages, pool.map(curl, pages)))
 
         js_urls = set()

@@ -41,10 +41,10 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 
 ## Куда питчить (с учётом реальной специфики площадок) — проверено 2026-07-06
 
-- **Dezeen** — подтверждённые адреса (получены от пользователя напрямую со страниц dezeen.com, 2026-07-06):
-  - **showroom@dezeen.com** — коммерческий запуск продукта/коллекции на Dezeen Showroom.
-  - **exclusives@dezeen.com** — эксклюзивные редакционные истории (предпочитают публиковать первыми).
-  - **china.submissions@dezeen.com** — для WeChat-канала (шанхайская редакция).
+- **Dezeen** — три редакционных канала; адреса подтверждены со страниц dezeen.com 2026-07-06 и хранятся вне открытой базы:
+  - **Dezeen Showroom** — коммерческий запуск продукта/коллекции.
+  - **Dezeen Exclusives** — эксклюзивные редакционные истории (предпочитают публиковать первыми).
+  - **китайская редакция** — WeChat-канал (шанхайская редакция).
   - Требования: JPEG минимум 3000px по короткой стороне, текст о проекте, ссылки, чёткая пометка "exclusive" если эксклюзив, credits для фотографов. Видео тоже приветствуются. Ответ не гарантирован и может занять время — уместно вежливое напоминание.
 - **Archello** — не питч-письмо, а самостоятельная регистрация: [archello.com/archello-for-manufacturers](https://archello.com/archello-for-manufacturers) → кнопка "add brand" → профиль → загрузка товаров. Контент-пакет: [[archello-onboarding]]. ~~Регистрировать должен сам бренд (нужны реквизиты компании).~~ **Сделано 05.09.2026**: профиль https://archello.com/brand/vargov-design заполнен, 9 композиций на модерации (Pending); после модерации исправить в описании «22 награды» на число из `awardsCount()` (на 03.10.2026 — 25).
 - **ArchDaily** — обычно публикует завершённые интерьерные/архитектурные проекты, а не отдельные продукты — нужны реальные кейсы установки композиций Vargov в конкретных объектах с фото и данными архитектора. Пока таких подтверждённых кейсов в базе знаний нет (раздел сайта /projects показывает выставку, шоурум и дилерские площадки).
@@ -53,90 +53,17 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 ## Материалы для отправки (актуальные адреса)
 - Пресс-кит на сайте: **https://vargov.ru/en/press** (факты, биография, фото в высоком разрешении, логотип, награды, пресс-контакт); RU — https://vargov.ru/press.
 - Карточки композиций: `https://vargov.ru/en/catalog/<slug>` (slug — артикул строчными, например `lc0586`); RU — `https://vargov.ru/catalog/<slug>`; другие языки — `https://vargov.ru/<de|it|fr|es|vi|ar>/catalog/<slug>`.
-- Обложки карточек — на самом сайте (`https://vargov.ru/img/catalog/…`, путь `image` в `catalog.generated.json`): LC0586 — `/img/catalog/60c0714ff79dd4b9.jpg`, LC0194 — `/img/catalog/5172bfc300654634.jpg`, LC0487 — `/img/catalog/e342f001455df1d3.jpg`. Старые адреса `static.tildacdn.com` в письмах ниже — архив, больше не использовать.
+- Обложки карточек — на самом сайте (`https://vargov.ru/img/catalog/…`, путь `image` в `catalog.generated.json`): LC0586 — `/img/catalog/60c0714ff79dd4b9.jpg`, LC0194 — `/img/catalog/5172bfc300654634.jpg`, LC0487 — `/img/catalog/e342f001455df1d3.jpg`. Старые адреса `static.tildacdn.com` в архивных письмах больше не использовать.
 - Награды с сертификатами: https://vargov.ru/en/awards. Сертификация (EAC, ТР ТС 004/2011 и 020/2011): https://vargov.ru/en/certification.
 - Подпись для новых писем: *Anton Vargov · Founder & Chief Designer, Vargov® Design · info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en · press kit: https://vargov.ru/en/press*.
 
-## Готовое письмо — Dezeen Showroom (коммерческий листинг)
+## Письма 06.07.2026 — статусы
 
-> Архив: текст в том виде, в каком ушёл 2026-07-06. Формулировки наград в нём устарели (см. «Исправления для следующих писем» ниже) — при повторном контакте использовать «Awards line».
+Тексты трёх июльских писем — архив вне открытой базы: переписку с редакциями в открытом репозитории не держим. Формулировки наград и фраза о «first appearance» в них устарели — при повторном контакте брать «Awards line» и «Исправления для следующих писем» ниже.
 
-**Кому:** showroom@dezeen.com
-**Тема:** Product launch enquiry: Vargov® Design lighting & decorative compositions
-
-Hello Dezeen Showroom team,
-
-I'm Anton Vargov, founder and chief designer of Vargov® Design — a Russian brand creating author's lighting and decorative compositions, manufactured at our own factory and sold through dealers in Russia/CIS, the UAE/Middle East and Southeast Asia. Our work has been recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025.
-
-I'd like to explore listing our products on Dezeen Showroom. Could you share more about the process, requirements and costs involved?
-
-Happy to send high-resolution images (3000px+) and full product information for any pieces you'd like to feature.
-
-Best regards,
-Anton Vargov
-Founder & Chief Designer, Vargov® Design
-info@vargov.ru · vargov.ru · vargov.design
-
-**Статус:** отправлено на showroom@dezeen.com — 2026-07-06; без ответа, **закрыто 04.09.2026**. Повторно не писать.
-
----
-
-## Готовое письмо — Dezeen Exclusives (редакционная история)
-
-> Архив: текст в том виде, в каком ушёл 2026-07-06. Устарели: список наград и фраза про «first appearance at a Russian trade show» (правильно — first own stand). Приложения ссылались на Tilda CDN и временные файлы апскейла.
-
-**Кому:** exclusives@dezeen.com
-**Тема:** Exclusive: "Driplight" — an IV-drip-shaped floor lamp from Vargov® Design (Russia)
-
-Hi Dezeen team,
-
-I'm Anton Vargov, founder and chief designer of Vargov® Design. I'd like to offer you an exclusive on one of our most talked-about pieces: **Driplight**, a floor lamp shaped like a hospital IV drip stand — domestic irony translated into an interior object, for people who aren't afraid of design with a subtext.
-
-Some context on the brand: Vargov® Design creates author's lighting and decorative compositions in Russia, manufactured at our own factory, recognised by the International Design Awards, New York Product Design Awards, RLDC and LOOP Design Awards 2025. In October 2025 we made our first appearance at a Russian trade show, Interlight, where our stand became one of the most talked-about exhibits (interview: https://www.youtube.com/watch?v=_HBECagnlDI).
-
-I've attached three images to start (two enhanced to 4K/print resolution from our original product photography for higher quality; happy to share more or the untouched originals on request). Also happy to send plans and further background exclusively for Dezeen.
-
-Best regards,
-Anton Vargov
-Founder & Chief Designer, Vargov® Design
-info@vargov.ru · vargov.ru · vargov.design
-
----
-
-**Приложить к письму (скачать и прикрепить как файлы):**
-1. https://d8j0ntlcm91z4.cloudfront.net/user_3FgGgz6wweMw2KB5noOUH5JhcbS/hf_20260706_190115_7f4c1815-4ee8-4798-ba42-ba8b15bd43a2.png — 3055×4096, апскейлено до печатного разрешения из оригинала с сайта
-2. https://d8j0ntlcm91z4.cloudfront.net/user_3FgGgz6wweMw2KB5noOUH5JhcbS/hf_20260706_190408_56d8e30d-51a5-4249-b5a1-f3da7d4ac849.png — 4096×4096, апскейлено до печатного разрешения из оригинала с сайта
-3. https://static.tildacdn.com/stor3037-3137-4134-a436-366532643331/cbae37d6b524bdcc3a17fcf731f53bc3.jpg — 1680×1680, оригинал с сайта (не апскейлено)
-
-**Статус:** отправлено на exclusives@dezeen.com — 2026-07-06, без ответа, закрыто. 04.09.2026 ушёл новый повод — эксклюзив MUSE Gold 2026 (LC0564), автоответ о приёме; напоминание не раньше 15.09 ([[outreach-tracker]]).
-
----
-
-## Готовое письмо — ICONIC World / German Design Council
-
-> Архив: текст в том виде, в каком ушёл 2026-07-06. Устарели список наград и «first appearance» — см. исправления ниже.
-
-**Кому:** iconicawards@gdc.de
-**Тема:** Feature request: Vargov® Design — Anton Vargov's profile on ICONIC World
-
-Dear ICONIC World team,
-
-My name is Anton Vargov, founder and chief designer of Vargov® Design, a Russian brand of author's lighting and decorative compositions. I noticed my profile is already listed in your directory (https://www.iconic-world.com/directory/anton-vargov), and I would love to explore an extended feature or interview opportunity with ICONIC World.
-
-A short introduction: Vargov® Design creates unique lighting and decorative compositions at the intersection of art, engineering and contemporary Russian design. Our work has been recognized by the International Design Awards, New York Product Design Awards, RLDC, and LOOP Design Awards 2025. In October 2025 we made our first appearance at a Russian trade show, Interlight, where our stand became one of the most talked-about exhibits (interview: https://www.youtube.com/watch?v=_HBECagnlDI).
-
-I'd be glad to share high-resolution images, our full product catalog, and further background for a feature, interview, or awards consideration — whatever fits your editorial format best.
-
-Best regards,
-Anton Vargov
-Founder & Chief Designer, Vargov® Design
-info@vargov.ru · vargov.ru · vargov.design
-
----
-
-**Проверьте перед отправкой:** это письмо написано от первого лица (Антона Варгова) — если отправлять будете не вы лично или не от его имени, поправьте подпись/тон.
-
-**Статус:** отправлено на iconicawards@gdc.de — 2026-07-06, без ответа; продолжение с MUSE Gold 2026 отправлено 04.09.2026, напоминание не раньше 15.09 ([[outreach-tracker]]).
+- **Dezeen Showroom** — запрос условий коммерческого листинга. Отправлено 2026-07-06; без ответа, **закрыто 04.09.2026**. Повторно не писать.
+- **Dezeen Exclusives** — предложение эксклюзива на Driplight. Отправлено 2026-07-06, без ответа, закрыто. 04.09.2026 ушёл новый повод — эксклюзив MUSE Gold 2026 (LC0564), автоответ о приёме; напоминание не раньше 15.09 ([[outreach-tracker]]).
+- **ICONIC World / German Design Council** — просьба о расширенном материале или интервью по профилю в директории. Отправлено 2026-07-06, без ответа; продолжение с MUSE Gold 2026 отправлено 04.09.2026, напоминание не раньше 15.09 ([[outreach-tracker]]).
 
 ## Исправления для следующих писем (вместо устаревших фраз в архиве)
 
