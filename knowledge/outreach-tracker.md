@@ -1,48 +1,50 @@
 # Трекер обращений
 
-Единая таблица всех писем изданиям, премиям и площадкам. Заведён 2026-09-05; до этого статусы жили в трёх файлах. Правила: одно напоминание не раньше чем через 10 дней тишины, второе — ещё через две недели, после второго — «без ответа, закрыто». Тексты отправленных писем — в [[press-releases-2026-09]] и ниже.
+Сводка обращений бренда к изданиям, премиям и площадкам: кому, когда, статус. Заведён 2026-09-05. Правила: одно напоминание не раньше чем через 10 дней тишины, второе — ещё через две недели, после второго — «без ответа, закрыто».
 
-Раз в две недели (1-го и 15-го) трекер сверяется автоматически: письма без ответа старше 10 дней получают черновик напоминания в разделе внизу. Отправка — только по решению владельца.
+С 03.10.2026 в открытой базе держится только эта сводка. Тексты писем, адреса и имена сотрудников редакций, ответы и черновики напоминаний ведутся в полной версии трекера вне открытого репозитория — переписку с третьими лицами здесь не публикуем. Статусы ниже — на дату последней записи в полной версии.
 
-| Дата | Адресат | Адрес | Повод | Статус | Ответ | Следующий шаг |
-|---|---|---|---|---|---|---|
-| 2026-07-06 | Dezeen Showroom | showroom@dezeen.com | питч Driplight | без ответа, закрыто | — | повторно не писать; новый повод ушёл 04.09 |
-| 2026-07-06 | Dezeen Exclusives | exclusives@dezeen.com | питч Driplight | без ответа, закрыто | — | — |
-| 2026-07-06 | ICONIC World / German Design Council | iconicawards@gdc.de | профиль в директории | без ответа | — | продолжение 04.09 и 07.09 (сломанный редирект + фраза про Китай) |
-| 2026-09-04 | International Awards Associate — контакт IAA по работе с победителями | IAA (адрес — в приватной папке PR владельца) | интервью для Muse.World + персональный релиз, MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
-| 2026-09-04 | Dezeen Exclusives | exclusives@dezeen.com | эксклюзив: MUSE Gold 2026, LC0564 | отправлено, автоответ о приёме | «Thanks for submitting your project to Dezeen» | напоминание не раньше 15.09 |
-| 2026-09-04 | Luxury Lifestyle Awards | pr@luxuryawards.com | обзорный релиз (в отправленной версии — 22 награды; с 05.09 — 23, учесть в напоминании), Winners in Media | отправлено | — | напоминание не раньше 15.09 |
-| 2026-09-04 | ICONIC World | iconicawards@gdc.de | продолжение июльского письма: MUSE Gold 2026 | отправлено | — | напоминание не раньше 15.09 |
-| 2026-09-05 | D5 MAG — Tina King | editor@d5mag.com | исправление фактической ошибки в статье о LC0358 («makes in China») | **ответ 07.09; ссылка на статью отправлена 09.09.2026** | «Can you please share the link of the article with me because I can't seem to find it» | ждать правки текста; напоминание не раньше 19.09 |
-| 2026-09-05 | vamvidnee.ru | info@vamvidnee.ru | дополнение к статье «Российские бренды освещения переживают ренессанс» | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | Wescover | community@wescover.com | онбординг создателя | **аккаунт создан 09.09.2026** — creator MBJed3cAdzl; форму заполнил я, кнопку «Continue» нажал владелец | Megan K 07.09: «Your work looks beautiful» | профиль заполнен (сайт, цитата, био, ценности Handmade + Made to order, четыре рубрики); страницу нельзя отправить на модерацию без хотя бы одного товара — см. [[gap-list-2026-09]] |
-| 2026-09-05 | darc (Mondiale) — редакция | редакция darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено; автоответ: основной адресат недоступен, письмо читает дежурная редакция (копия доставлена) | автоответ | напоминание не раньше 16.09 |
-| 2026-09-05 | arc (Mondiale) — редакция | редакция arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-07 | ICONIC World / German Design Council | iconicawards@gdc.de | сломанный редирект директории и фраза «makes in China» в проиндексированном профиле | **отправлено 07.09.2026** (подтверждено в «Отправленных») | — | **напоминание 18.09 — просьбу переформулировать, см. ниже «Что писать в напоминании ICONIC»** |
-| 2026-09-07 | International Awards Associate — Tyler | адрес в приватной папке PR | уровень награды не выведен текстом на странице победителя + напоминание о письме 04.09 | **отправлено 07.09.2026 ответом В ТУ ЖЕ ЦЕПОЧКУ** (не отдельным письмом — у нас там уже висело письмо без ответа) | — | напоминание не раньше 18.09 |
-| 2026-09-05 | Interior Design (US) — Market Director, cc News | редакция interiordesign.net | новые продукты: Oceanic Illumination, Depth of Water | отправлено; **основной адрес отскочил (550, ящик не существует)**, копия News-редактору доставлена | bounce | найти актуальный адрес Market Director, переслать |
-| 2026-09-05 | Sight Unseen | submissions@ | коллекционные световые скульптуры | отправлено; автоответ: редактор в отпуске до 09.09. **Вечером 05.09 ушло второе письмо** с бессрочной ссылкой на hi-res (vargov.ru/press/…zip + press/ в репозитории), как требуют правила подачи | автоответ | напоминание не раньше 23.09 |
-| 2026-09-05 | Dwell — Design News Editor, cc Market Editor | редакция dwell.com | design news: три композиции | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | Frame | editorial@frameweb.com | editorial review: композиции как пространственные объекты, ссылка на эссе | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | Yatzer | info@yatzer.com | **эксклюзив на Driplight**, первая публикация | отправлено; автоответ «редакция рассмотрит» | автоответ | до ответа Driplight другим не предлагать; напоминание не раньше 19.09 |
-| 2026-09-05 | Hospitality Design — EIC, cc Managing Editor | редакция hospitalitydesign.com | свет для лобби, ресторанов и спа | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | Design Mate | hi@design-mate.ru | история об эссе о русском световом дизайне, интервью | отправлено | — | напоминание не раньше 16.09 |
-| 2026-09-05 | SALON-interior — предметный редактор, cc editor@salon.ru | редакция salon.ru | предметы: Oceanic Illumination, Driplight | отправлено основному адресату; **editor@salon.ru отскочил (550)** | bounce копии | напоминание не раньше 16.09 |
-| 2026-09-05 | Design Milk | форма submit (ClickUp) | Sea Lace LC0487 | отправлено | — | следить за публикациями ~20.09 |
-| 2026-09-05 | Adorno | adorno.design/apply | анкета | отправлено | — | ответ ~03.10 |
-| 2026-09-09 | Dezeen Showroom | showroom@dezeen.com | запрос ставки: цена поста, пакет на несколько, сроки, требования к фото, оплата не из Великобритании; отдельно — обязателен ли блок Materials/Colours | отправлено, **автоответ через минуту** | «A member of our team will get back to you as soon as possible» | ответа ждать; напоминание не раньше 19.09 |
-| 2026-09-09 | Architonic | info@architonic.com | запрос тарифов Membership: цены планов и добавок, можно ли начать не с 500 товаров, отбор и сроки, оплата не из ЕС; отдельно — обязательны ли материалы и размеры в Specifications | отправлено | — | их форма закрыта капчей Turnstile, адрес взят со страницы architonic.com/en/contact; напоминание не раньше 19.09 |
-| 2026-09-05 | Archello | archello.com/brand/vargov-design | профиль + 9 композиций | **профиль опубликован, товары не показаны** | — | 09.09: описание исправлено (23 награды), рубрики бренда проставлены; композиции публично не видны — проверить ещё раз ~16.09 |
-| 2026-09-08 | Galerie Magazine — редакция | editor@galeriemagazine.com | питч под подборки «7 Sculptural Lighting Options» и «12 Wondrous Lighting Designs Inspired by Nature» | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
-| 2026-09-08 | Azure Magazine — автор подборки «5 Sculptural Lighting Fixtures That Marry Light and Form», копия — старшему редактору | редакция azuremagazine.com (адреса — в приватной папке PR) | питч под будущую подборку + предложение spec sheet | **отправлено 08.09.2026** (подтверждено уведомлением «Сообщение отправлено») | — | напоминание не раньше 19.09 |
-
-### Что отправлено на площадки 05.09.2026 (детали заявок)
-
-| Адресат | Канал | Что отправлено | Кто |
+| Дата | Кому | Повод | Статус |
 |---|---|---|---|
-| Design Milk | форма design-milk.com/submit/ (ClickUp) | **отправлено 05.09.2026**: «A design-forward product or collection» / Home Furnishings, «Sea Lace — light composition LC0487 by Vargov® Design», описание без материалов и размеров, 8 фото 1680 px, ссылка на карточку и Instagram, контакт Anton Vargov / info@vargov.ru; редакция ответа не гарантирует | проверить публикации Design Milk ~20.09 |
-| Adorno | adorno.design/apply | **анкета отправлена 05.09.2026** (4 шага: контакты, практика «Brand, Moscow, 5–10 people, продажи регулярно», дисциплина Other, всё производство in-house, стиль Experimental, High-end, 6 фото из пресс-кита); ответ кураторов 3–4 недели | ждать до ~03.10 |
-| Archello | https://archello.com/brand/vargov-design | профиль заполнен 05.09.2026 (описание, сайт, обложка, логотип, соцканалы); девять композиций загружены и отправлены на модерацию Archello (статус Pending): Oceanic Illumination (LC0564), Pond Lifted to the Ceiling (LC0343), White Bodies, Shimmering Trails (LC0236), View from the Bottom of a Pond (LC0237), Pure Plasticity of Line (LC0217), Pure Structure (LC0342), Driplight (LC0586), Sea Lace (LC0487, адрес /product/sea-lace-2), Depth of Water (LC0194). Пустой черновик «Sea Lace» (id 127279) удалён владельцем 05.09.2026. После модерации исправить в описании профиля «22 награды» → 23 | я; проверить статус модерации ~12.09 |
+| 2026-07-06 | Dezeen Showroom | питч Driplight | без ответа, закрыто |
+| 2026-07-06 | Dezeen Exclusives | питч Driplight | без ответа, закрыто |
+| 2026-07-06 | ICONIC World / German Design Council | профиль в директории | без ответа; продолжения 04.09 и 07.09 |
+| 2026-09-04 | International Awards Associate (IAA) | интервью для Muse.World и персональный релиз, MUSE Gold 2026 | отправлено |
+| 2026-09-04 | Dezeen Exclusives | эксклюзив: MUSE Gold 2026, LC0564 | отправлено, автоответ о приёме |
+| 2026-09-04 | Luxury Lifestyle Awards | обзорный релиз о бренде, Winners in Media | отправлено |
+| 2026-09-04 | ICONIC World | продолжение июльского письма: MUSE Gold 2026 | отправлено |
+| 2026-09-05 | D5 MAG | исправление фактической ошибки в статье о LC0358 | ответ 07.09; ссылка на статью отправлена 09.09.2026 |
+| 2026-09-05 | vamvidnee.ru | дополнение к статье «Российские бренды освещения переживают ренессанс» | отправлено |
+| 2026-09-05 | Wescover | онбординг создателя | аккаунт создателя заведён 09.09.2026, профиль отправлен на модерацию 09.09.2026 |
+| 2026-09-05 | darc (Mondiale) | product news / brand feature: «Oceanic Illumination», MUSE Gold 2026 | отправлено, автоответ |
+| 2026-09-05 | arc (Mondiale) | product news: композиции для лобби и атриумов | отправлено |
+| 2026-09-05 | Interior Design (US) | новые продукты: Oceanic Illumination, Depth of Water | отправлено; основной адрес отскочил, копия доставлена |
+| 2026-09-05 | Sight Unseen | коллекционные световые скульптуры | отправлено, автоответ; второе письмо со ссылкой на материалы в высоком разрешении — 05.09 |
+| 2026-09-05 | Dwell | design news: три композиции | отправлено |
+| 2026-09-05 | Frame | editorial review: композиции как пространственные объекты | отправлено |
+| 2026-09-05 | Yatzer | эксклюзив на Driplight | отправлено, автоответ |
+| 2026-09-05 | Hospitality Design | свет для лобби, ресторанов и спа | отправлено |
+| 2026-09-05 | Design Mate | эссе о русском световом дизайне, интервью | отправлено |
+| 2026-09-05 | SALON-interior | предметы: Oceanic Illumination, Driplight | отправлено; копия отскочила |
+| 2026-09-05 | Design Milk | Sea Lace LC0487 (форма подачи на сайте издания) | отправлено |
+| 2026-09-05 | Adorno | анкета на сайте площадки | отправлено, ответ кураторов ожидался ~03.10 |
+| 2026-09-05 | Archello | профиль бренда и 9 композиций | профиль опубликован; композиции на 09.09 публично не видны |
+| 2026-09-07 | ICONIC World / German Design Council | сломанный редирект директории и неверная фраза в проиндексированном профиле | отправлено 07.09.2026 |
+| 2026-09-07 | International Awards Associate (IAA) | уровень награды не выведен текстом на странице победителя | отправлено 07.09.2026 в ту же цепочку |
+| 2026-09-08 | Galerie Magazine | питч под подборки о скульптурном свете | отправлено 08.09.2026 |
+| 2026-09-08 | Azure Magazine | питч под будущую подборку о скульптурном свете | отправлено 08.09.2026 |
+| 2026-09-09 | Dezeen Showroom | запрос условий размещения | отправлено, автоответ |
+| 2026-09-09 | Architonic | запрос тарифов Membership | отправлено |
+| 2026-09-13 | Modlar | бесплатная страница бренда и вопрос, примут ли файлы IFC4 как есть | отправлено 13.09.2026 |
+
+## Сторонние упоминания (страницы на чужих доменах)
+
+| Дата | Площадка | Адрес | Что | Статус |
+|---|---|---|---|---|
+| 2026-09-05 | Wikidata | https://www.wikidata.org/wiki/Q141301076 · https://www.wikidata.org/wiki/Q141300942 | сущности бренда и дизайнера | опубликовано |
+| 2026-09-05 | Archello | https://archello.com/brand/vargov-design | профиль + 9 композиций | на модерации |
+| 05.09 | Яндекс Карты | карточка «Vargov Design» на Нахимовском | владение подтверждено, правки на модерации | см. [[maps-cards]] |
+| 05.09 | Google Карты | профиль: Нахимовский 24, пав. 2, стенд 212 | создан и подтверждён 05.09 | см. [[maps-cards]] |
 
 ## Очередь — не отправлено
 
@@ -53,210 +55,3 @@
 | ~~dexigner.com~~ | — | **вычеркнут 09.09.2026: площадка не поддерживается с 2022 года** | — |
 | Wallpaper*, Elle Decor US, AD US, INMYROOM | — | холодные питчи не принимают или только проекты/реклама | не отправлять |
 | Interior+Design, Elle Decoration RU, AD Russia, Проект Россия | — | сайты недоступны или закрыты (AD Russia — 410), адреса не подтверждены | отложено |
-
----
-
-Архив: тексты в том виде, в каком ушли. В следующих письмах: «на собственном производстве» без указания города/страны; наград — 23.
-
-## Тексты писем 05.09.2026
-
-### vamvidnee.ru — info@vamvidnee.ru
-
-**Тема:** «Российские бренды освещения переживают ренессанс» — дополнение к материалу: Vargov®Design
-
-> Здравствуйте!
->
-> Прочитал вашу статью «Российские бренды освещения переживают ренессанс» — редкий случай, когда о российском свете пишут по существу, с именами и без общих слов.
->
-> Пишу, потому что в подборке нет бренда, который в этом ренессансе участвует уже несколько лет, — Vargov®Design. Мы делаем авторские световые и декоративные композиции: коллекционные световые скульптуры, каждая собирается под конкретный интерьер на собственном производстве в Москве. В каталоге 605 композиций.
->
-> Наш аргумент — международное признание: 22 награды, среди них Product Designer of the Year на NY Product Design Awards 2023, три Platinum (MUSE Design Awards 2023, The London Design Awards 2023, International Architecture & Design Awards 2023) и Gold Winner MUSE Design Awards 2026 за композицию «Oceanic Illumination» — это май этого года. В 2022 году — специальный приз конкурса «Российский светодизайн» на Interlight, в 2025 — собственный стенд на Interlight Moscow.
->
-> Если вы планируете обновлять материал или готовите продолжение — буду рад дать фотографии в печатном качестве, короткий комментарий или интервью. Пресс-кит с фактами и снимками: https://vargov.ru/press, каталог: https://vargov.ru/catalog.
->
-> С уважением,
-> Антон Варгов
-> основатель и главный дизайнер Vargov®Design
-> info@vargov.ru · +7 916 537 33 52 · https://vargov.ru
-
-Примечание: в письме названо 22 награды; с 05.09 их 23 (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) — в напоминании писать 23.
-
-### Wescover — community@wescover.com
-
-**Subject:** Creator onboarding request — Vargov®Design (sculptural lighting, Moscow)
-
-> Hello Wescover team,
->
-> I'm Anton Vargov, founder and lead designer of Vargov®Design — a studio making author-designed lighting and decorative compositions: sculptural chandeliers, light installations and floor objects, each made to order and assembled for a specific interior at our own production in Moscow.
->
-> I understand creator registration is currently paused. I'd like to ask to be placed in the queue for onboarding when it reopens. Our work sits squarely in your Sculptural Chandeliers and Lighting categories, and I believe it would add something the collection doesn't yet have.
->
-> A few facts: 22 international design awards, including Product Designer of the Year at the NY Product Design Awards 2023, Platinum at the MUSE Design Awards 2023 and The London Design Awards 2023, and Gold at the MUSE Design Awards 2026 for "Oceanic Illumination". A catalogue of 605 compositions.
->
-> Website: https://vargov.ru/en · Press kit: https://vargov.ru/en/press · Instagram: @vargov_design
->
-> Thank you — happy to provide anything else you need.
->
-> Anton Vargov
-> Founder & Lead Designer, Vargov®Design
-> info@vargov.ru · https://vargov.ru/en
-
-Note: the letter says 22 awards; since 05.09 the count is 23 (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) — use 23 in the follow-up.
-
-## Сторонние упоминания (страницы на чужих доменах)
-
-| Дата | Площадка | Адрес | Что | Статус |
-|---|---|---|---|---|
-| 2026-09-05 | Wikidata | https://www.wikidata.org/wiki/Q141301076 · https://www.wikidata.org/wiki/Q141300942 | сущности бренда и дизайнера | опубликовано |
-| 2026-09-05 | Archello | https://archello.com/brand/vargov-design | профиль + 9 композиций | на модерации |
-| 05.09 | Яндекс Карты | карточка «Vargov Design» 199433674369 на Нахимовском | владение подтверждено, правки (статус «Работает», график, сайт, телефоны, фото, логотип) на модерации | проверить ~09.09, затем просить отзывы; см. [[maps-cards]] |
-| 05.09 | Google Карты | профиль 08720885483875320357, Нахимовский 24, пав. 2, стенд 212 | создан и **подтверждён** 05.09; часы, описание, соцсети добавлены; дубликат удалён владельцем | 10 фото на проверке; проверить видимость на Картах ~08.09, просить отзывы; см. [[maps-cards]] |
-
-## Черновики напоминаний
-
-*(заполняется автоматической проверкой 1-го и 15-го числа)*
-
-## Тексты писем от 07.09.2026 (отправлены)
-
-### Что писать в напоминании ICONIC 18.09.2026 — просьба изменилась
-
-Первое письмо просило **исправить формулировку** в профиле. Замер выдачи 09.09.2026 показал, что
-исправлять нечего: **страницы не существует**, а её текст живёт в индексе и подаётся языковыми
-моделями как факт о бренде.
-
-Что проверено 09.09.2026 и что надо привести в напоминании дословно:
-
-- на запрос «Anton Vargov lighting designer» модель отвечает, среди прочего:
-  «The company's production capacities are in China, and they deliver products worldwide»;
-- `https://www.iconic-world.com/directory/anton-vargov` → **301** на
-  `https://www.iconic-awards.comdirectory/anton-vargov` (редирект собран с ошибкой, теряет слэш);
-- `https://www.iconic-awards.com/directory/anton-vargov` → **404**.
-
-**Новая просьба:** удалить мёртвый профиль из поисковых индексов (или восстановить его по рабочему
-адресу с исправленным текстом — на их выбор), и починить редирект, который ломает все ссылки на
-директорию, а не только нашу. Довод для них: неработающий редирект бьёт по всем участникам
-директории, а не по одному бренду.
-
-Подробности замера — [[ai-visibility-serp-log]], раздел 2026-09-09.
-
-**Цепочка перепроверена 10.09.2026**, HTTP-запросами без автоперехода. Она длиннее,
-чем записано выше, и это стоит привести полностью — так виднее, что дело в их
-механике, а не в одной странице:
-
-1. `https://www.iconic-world.com/directory/anton-vargov` → **301** →
-   `https://www.iconic-awards.comdirectory/anton-vargov` — в адресе потерян слэш,
-   получается несуществующий хост;
-2. `https://www.iconic-awards.com/directory/anton-vargov` → **301** →
-   `https://iconic-awards.com/directory/anton-vargov` (снимается www);
-3. `https://iconic-awards.com/directory/anton-vargov` → **404**.
-
-### Готовый текст напоминания ICONIC — отправлять 18.09.2026
-
-Отправлять ответом в ту же цепочку (письмо от 07.09), не отдельным письмом.
-
-> Subject: Re: Broken redirect on iconic-world.com/directory + a factual correction
->
-> Dear ICONIC AWARDS team,
->
-> Following up on my message of 7 September. I have re-checked everything today,
-> 10 September 2026, and would like to restate the request more precisely, because
-> what I asked for first is no longer the right ask.
->
-> The redirect chain for a directory profile currently ends nowhere:
->
-> 1. https://www.iconic-world.com/directory/anton-vargov returns 301 to
->    https://www.iconic-awards.comdirectory/anton-vargov — the slash after the
->    domain is missing, so the target host does not exist;
-> 2. https://www.iconic-awards.com/directory/anton-vargov returns 301 to
->    https://iconic-awards.com/directory/anton-vargov;
-> 3. https://iconic-awards.com/directory/anton-vargov returns 404.
->
-> The first of these affects every profile in the directory, not only ours — the
-> rule that builds the redirect drops the slash for all of them. That seemed worth
-> reporting on its own.
->
-> The second point is why I am persistent about it. The profile page is gone, but
-> its text is still held in search indexes and is being served by language models
-> as current fact about our company. Asked "Anton Vargov lighting designer", a model
-> answers, among other things: "The company's production capacities are in China,
-> and they deliver products worldwide." That is not accurate — Vargov®Design designs
-> and produces in-house in Moscow — and the sentence traces back to the ICONIC
-> directory profile.
->
-> So the request is no longer "please correct the wording". There is nothing left
-> to correct on a page that does not exist. It is one of two things, whichever suits
-> you better:
->
-> - remove the dead profile from search indexes (a 410 response instead of the
->   current redirect chain would do it), or
-> - restore the profile at a working address with the production location corrected.
->
-> And separately, the missing slash in the redirect rule — that one costs you every
-> inbound link to the directory.
->
-> I am happy to supply anything you need: award confirmations, certification
-> documents, press materials.
->
-> With kind regards,
-> Anton Vargov
-> Vargov®Design — vargov.ru
-
-
-### German Design Council (ICONIC), iconicawards@gdc.de
-Повод не «где мой профиль», а сломанная механика их сайта — так письмо полезно им самим.
-
-> Subject: Broken redirect on iconic-world.com/directory (all profiles) + factual correction request
->
-> Dear ICONIC AWARDS team,
->
-> Two related issues on the ICONIC World directory, one technical and one factual.
->
-> 1. Every directory URL on iconic-world.com now returns a 301 to an address with a missing slash — for example `https://www.iconic-world.com/directory/anton-vargov` redirects to `https://www.iconic-awards.comdirectory/anton-vargov`, which is not a resolvable host. The same happens for other profiles (Artemide, Vibia Lighting), and `iconic-awards.com/directory/…` returns 404, so the section appears to be missing on the new domain entirely. The pages are still indexed by search engines.
->
-> 2. The indexed text of my profile states that the company designs and manufactures its lighting and decor in China. That is not correct: Vargov®Design is a Russian brand based in Moscow, and its compositions are designed and assembled at the brand's own production. Since the page can no longer be opened or corrected by us, I would be grateful if you could either restore the directory with this sentence amended, or remove the outdated page so that it stops being served in search results.
->
-> Thank you for looking into this.
-
-### IAA — дополнение к напоминанию 15.09
-Отдельным письмом не слать: у нас уже висит без ответа письмо от 04.09.
-
-> One small request about the winners' pages. On `design.museaward.com/winner-info.php?id=40265` (and the 2023 entry, id 13101) the award level — Gold, Platinum — is not present as text on the page: it appears only in the certificate. As a result the page does not confirm the level to search engines or AI assistants that read it. Would it be possible to include the level in the page text?
-
-## Проверка почты
-
-С 08.09.2026 входящие проверяются **ежедневно в 11:07** — задача `daily-inbox-vargov`. Она читает письма за двое суток, отбирает относящиеся к бренду, обновляет строки этого трекера и докладывает владельцу; ничего не отправляет от его имени, кроме продолжения переписок, где разрешение уже дано.
-
-**Найдено при первой проверке 08.09.2026:**
-- **Alibaba IPP — товарный знак VARGOV подтверждён** (07.09, ippnotice@aidcgroup.net): «Your submitted proof of intellectual property right VARGOV商标权 has been successfully authenticated». Кабинет: https://ipp.aidcgroup.net — теперь можно подавать жалобы на нарушителей;
-- **Wescover ответил** (07.09): работы понравились, просят зарегистрировать профиль создателя;
-- **GitHub Support закрыл тикет 4730691**, сообщив, что очистка кэша выполнена. Проверено в тот же день: адрес удалённого файла по старому коммиту <хэш — в приватной копии> по-прежнему отдаёт 200. Отправлен ответ в тикет с этим фактом — переписка продолжается;
-- Dezeen, Archello и IAA прислали служебные письма (подтверждения, автоответы), содержательных ответов нет.
-
-## Modlar — отправлено 13.09.2026, 22:48
-
-**Кому:** content@modlar.com
-**Тема:** Free brand page + one question about IFC4 files — Vargov Design
-(cable-suspended light compositions)
-**Отправлено с** vargov3@gmail.com по прямому распоряжению владельца
-(«отправляй письмо сам, ты это можешь»). Проверено в «Отправленных»: письмо
-первым в списке, адресат `content`, время 22:48. Отбоя не приходило.
-
-**Зачем:** Modlar — единственная из семи библиотек объектов, где размещение
-производителя бесплатно (страница бренда на 6 товаров). Разбор площадок —
-[[bim-biblioteki-2026-09]].
-
-**Главный вопрос письма, ради которого оно и написано:** примут ли они наш файл
-IFC4 КАК ЕСТЬ, без пересборки в свой формат. Если пересоберут — до архитектора
-доедет геометрия, но не точки крепления с нагрузками, то есть ровно то, ради чего
-мы туда идём.
-
-**Что ответ означает для нас:**
-- «примем как есть» → готовим шесть композиций (предварительно LC0343, LC0458,
-  LC0516, LC0496, LC0202, LC0460) с IFC4, PDF-спецификацией, тендерным листом и фотографиями (DXF — нет: с 21.09 только для внутреннего пользования);
-- «пересоберём по-своему» → площадка становится обычной витриной геометрии, и
-  тогда она не про наше отличие; решать, стоит ли она времени, будет владелец.
-
-**Правка перед отправкой:** в черновике стояло «24 awards in 16 international
-programmes». Проверяющий нашёл, что одна из шестнадцати — российский национальный
-конкурс. Отправлено «16 design programmes»: первая же проверка этой строки не
-должна давать повод усомниться в остальных.
