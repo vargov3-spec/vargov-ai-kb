@@ -19,7 +19,7 @@ Archello — это не питч-письмо, а **самостоятельн�
 **Website:** https://vargov.ru
 **Secondary site:** https://vargov.design
 **Founded / based:** Moscow, Russia
-**Address (showroom):** Nakhimovsky Prospekt 24, Pavilion 2, Stand 212, Moscow, Russia
+**Address (showroom):** 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow, Russia
 **Category tags:** Lighting / Decorative lighting / Chandeliers / Wall lights / Floor lamps / Sculptural & decorative objects
 
 **Profile text (EN):**

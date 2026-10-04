@@ -3,7 +3,7 @@
 **Опубликовано 05.09.2026:** Vargov Design — [Q141301076](https://www.wikidata.org/wiki/Q141301076), Anton Vargov — [Q141300942](https://www.wikidata.org/wiki/Q141300942), аккаунт `AntonVargov`. Утверждения вносились через веб-интерфейс (клавиатурный сценарий в редакторе), сверены через API; фактический состав — в [[gap-list-2026-09]], п. 9. Ниже — исходный черновик от 2026-07-06 (формулировки наград пересобраны 2026-09-04); из наград внесена только IDA как сущность Wikidata (Q110427019), остальные премии сущностей в Wikidata не имеют и отражены ссылками described at URL (P973).
 
 ## Почему Wikidata, а не сразу Wikipedia
-У Wikidata порог значимости (notability) сильно ниже, чем у Wikipedia: по [правилам Wikidata](https://www.wikidata.org/wiki/Wikidata:Notability) достаточно, чтобы сущность была «идентифицируемой» и описывалась через «серьёзные, публично доступные источники» — не обязательно СМИ. У нас такие источники есть (см. [[external-references]]): страницы победителей на сайтах самих премий (IDA Design Awards, NY Product Design Awards, MUSE Design Awards, International Architecture & Design Awards · ADC, The London Design Awards, LIT, LOOP, SIT, BLT, European Product Design Award, Luxury Lifestyle Awards). Справочник ICONIC и страница жюри ADD Awards с сентября 2026 недоступны (404) и в заявку не вошли. Всего 23 награды — полный список с официальными формулировками в [[awards-verified]].
+У Wikidata порог значимости (notability) сильно ниже, чем у Wikipedia: по [правилам Wikidata](https://www.wikidata.org/wiki/Wikidata:Notability) достаточно, чтобы сущность была «идентифицируемой» и описывалась через «серьёзные, публично доступные источники» — не обязательно СМИ. У нас такие источники есть (см. [[external-references]]): страницы победителей на сайтах самих премий (IDA Design Awards, NY Product Design Awards, MUSE Design Awards, International Architecture & Design Awards · ADC, The London Design Awards, LIT, LOOP, SIT, BLT, European Product Design Award, Luxury Lifestyle Awards). Справочник ICONIC и страница жюри ADD Awards с сентября 2026 недоступны (404) и в заявку не вошли. Всего наград 25 в 16 программах (`awardsCount()` на 03.10.2026; число брать оттуда, не отсюда) — полный список с официальными формулировками в [[awards-verified]].
 Честно: это защитимый, но не железобетонный кейс — источники есть, но это не крупные независимые публикации в прессе. Пункт может быть создан, но теоретически может быть оспорен другим редактором Wikidata. Для Wikipedia (в отличие от Wikidata) этого пока однозначно недостаточно.
 
 ---
@@ -27,7 +27,7 @@
 
 **Не включать:** место производства (страну). Правило владельца: страну не называть, писать «собственное производство» — на сайте и в llms.txt сделано именно так, и заявка в Wikidata с указанием страны производства противоречила бы публичным материалам бренда.
 
-**Не включать без дополнительной проверки:** точный год основания компании (известна только дата регистрации товарного знака — 2022-04-29 заявка, 2022-10-06 регистрация — это НЕ обязательно год основания бизнеса).
+**Год — 2018, «первые работы бренда»** (слово владельца 02.10.2026: «это год появления первых дизайнов»; не «основан в 2018»). Внесено 02.10.2026 в Q141301076 как inception (P571) = 2018. На сайте то же: `foundingDate: "2018"` в `seo.ts` и «The brand's first designs date from 2018». Не путать с 2022 — это даты товарного знака № 896936 (заявка 2022-04-29, регистрация 2022-10-06), а не год начала работы бренда. Источник у P571 пока ведёт на `brand.md` этой базы (GitHub); перевести его на страницу сайта (https://vargov.ru/en/about) — задача, требующая входа в Wikidata владельцем, см. [[gap-list-2026-09]], раздел 2, п. 13. (До 02.10.2026 здесь стоял запрет вносить год основания без проверки — снят словом владельца.)
 
 ---
 
@@ -53,7 +53,7 @@
 | award received (P166) | IDA Design Awards 2022 — Silver, Illumination — Designer Lighting (LC0236) | https://www.idesignawards.com/social/zoom.php?eid=9-46057-22 |
 | award received (P166) | IDA Design Awards 2025 — Honorable Mention, Home & Living / Lighting (LC0516) | https://www.idesignawards.com/social/zoom.php?eid=9-61165-25 |
 | award received (P166) | Luxury Lifestyle Awards 2024 — Winner, Best Luxury Lighting Design Studio in Dubai, UAE | https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design |
-| position held / jury member | ADD Awards Grand Jury, 10th season | ~~https://addawards.ru/jury/293063/~~ — 404 с 05.09.2026, в Wikidata не внесено (нет живого источника) |
+| position held / jury member | ADD Awards Grand Jury, 10th season | ~~https://addawards.ru/jury/293063/~~ — 404 с 05.09.2026, в Wikidata не внесено. Живые источники членства в жюри есть (проверено 03.10.2026): «Российский светодизайн» 2024 — https://online.gefera.ru/contest/rldc-2024/juri/?juri_id=14245408 и пять страниц жюри IAA — см. [[external-references]]. Но это элемент человека Q141300942, который мы больше не правим (26.09 сторонний участник откатил и наши правки, см. [[ai-visibility-global-2026-09-22]]); вносить ли — решает владелец, и это пересмотр его решения 08.09.2026 о жюри (дословно — [[external-references]], «Страницы жюри»; вопрос — [[awards-verified]]) |
 
 ---
 

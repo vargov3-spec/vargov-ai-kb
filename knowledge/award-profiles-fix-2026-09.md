@@ -1,8 +1,9 @@
 # Профили на сайтах премий: что заменить и на что (22.09.2026)
 
-Зачем. Google AI Overview по «Anton Vargov» и AI Mode по «Vargov Design» пишут «exclusive
-dedicated production factory in China» — со страниц IDA и ADC; та же фраза на SIT и в
-профиле EPDA, у LOOP поле «Location: China». Это био из заявок 2023 года. ИИ считает
+Зачем. Google AI Overview по «Anton Vargov» и AI Mode по «Vargov Design» повторяют фразу
+о «фабрике» бренда с названием страны производства — со страниц IDA и ADC; та же фраза на SIT
+и в профиле EPDA, у LOOP та же страна в поле Location. Это био из заявок 2023 года (дословные
+цитаты — в приватной папке `scan/`, в открытой базе их не держим: они сами называют страну). ИИ считает
 страницы премий официальным источником и цитирует их выше сайта. Правило бренда — страна
 производства не называется; производство своё. Правится только в кабинетах премий —
 входы у владельца. Тексты ниже готовы к вставке; после замены — «Feedback» под AI
@@ -26,8 +27,8 @@ Overview со ссылкой на vargov.ru/en/press (по слову владе
 > specific interior. Founder and lead designer Anton Vargov. 25 awards from international
 > juries. Showroom in Moscow; dealers in Moscow, Dubai and Hanoi.
 
-**Поля:** Country / Location — **Russia / Moscow, Russia** (адрес шоурума: Nakhimovsky
-Prospekt 24, Moscow 117218). Website — https://vargov.ru (EN: https://vargov.ru/en).
+**Поля:** Country / Location — **Russia / Moscow, Russia** (адрес шоурума: 24 Nakhimovsky
+Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow 117218). Website — https://vargov.ru (EN: https://vargov.ru/en).
 Project link — прямой адрес карточки `https://vargov.ru/catalog/<артикул в нижнем
 регистре>`, не старый Tilda-адрес. Other prizes / Previous awards — официальными именами:
 MUSE Design Awards, NY Product Design Awards, The London Design Awards, International
@@ -43,17 +44,17 @@ Interlight Russia · Russian Lighting Design.
 
 | Площадка | Страница | Что стоит сейчас | Что менять |
 |---|---|---|---|
-| IDA · idesignawards.com | `winners/zoom.php?eid=9-61165-25` (LC0516, HM 2025) и `eid=9-46057-22` (LC0236, Silver 2022) | «We take pride in our exclusive Vargov®Design factory in China» | Био участника в кабинете — на текст выше; у обеих страниц одно общее био |
-| ADC · ad-c.org | `winner/light-composition-vargov-design-lc0303/`, `winner/vargov-design-lc0323-drapery/` | био «Our production capacities are in China»; поле production — China | Био и поле production; страна — Russian Federation оставить |
-| SIT Furniture Design Award | страница LC0292 | «design and manufacture of lighting and decor in China» | Био участника |
-| LOOP Design Awards | `project/lighting-composition-lc0458` и список winners-2025 | «Location: China» | Location → Moscow, Russia; если поле не редактируется — письмо организаторам |
-| EPDA · productdesignaward.eu | профиль `directory/user-profile.php?j=3261053` — уже актуален (25 наград, vargov.ru); страница победителя 2026/12910 | Bio с «production capacities are in China», Company «Thailand», Project Link на Tilda-адрес | Bio, Country → Russia, Project Link → https://vargov.ru/catalog/lc0543-2; индекс 143005 → 117218 |
-| NYPDA, London, LIT, BLT, Luxury Lifestyle | страницы победителей | слова «China» нет (проверено curl 22.09, повторно 03.10) | Сверить био при случае, менять не обязательно |
+| IDA · idesignawards.com | `winners/zoom.php?eid=9-61165-25` (LC0516, HM 2025) и `eid=9-46057-22` (LC0236, Silver 2022) | био о «фабрике» бренда с названием страны производства | Био участника в кабинете — на текст выше; у обеих страниц одно общее био |
+| ADC · ad-c.org | `winner/light-composition-vargov-design-lc0303/`, `winner/vargov-design-lc0323-drapery/` | био о производственных мощностях с названием страны; в поле production — та же страна | Био и поле production; страна — Russian Federation оставить |
+| SIT Furniture Design Award | страница LC0292 | био «design and manufacture…» с названием страны производства | Био участника |
+| LOOP Design Awards | `project/lighting-composition-lc0458` и список winners-2025 | в поле Location — страна производства | Location → Moscow, Russia; если поле не редактируется — письмо организаторам |
+| EPDA · productdesignaward.eu | профиль `directory/user-profile.php?j=3261053` — уже актуален (25 наград, vargov.ru); страница победителя 2026/12910 | Bio с фразой о производственных мощностях и страной, Company «Thailand», Project Link на Tilda-адрес | Bio, Country → Russia, Project Link → https://vargov.ru/catalog/lc0543-2; индекс 143005 → 117218 |
+| NYPDA, London, LIT, BLT, Luxury Lifestyle | страницы победителей | страны производства нет (проверено curl 22.09, повторно 03.10) | Сверить био при случае, менять не обязательно |
 
 **Сверка 03.10.2026** (45 публичных страниц, на каждую находку — два независимых опровергателя):
 
-- **Houzee Awards 2023** — `architecture-collection.com/winner/ha2301053/` (LC0335, Gold): в био то же
-  «Our production capacities are in China». 22.09 эту страницу не открывали — проверяли другой адрес.
+- **Houzee Awards 2023** — `architecture-collection.com/winner/ha2301053/` (LC0335, Gold): в био та же
+  фраза о производственных мощностях со страной. 22.09 эту страницу не открывали — проверяли другой адрес.
   Править через редакцию Architecture Collection.
 - **SIT** — страна стоит на обеих страницах победителя: LC0292 (2023, `winners/sit/2023/301/0/`) и
   LC0358 (2025, `winners/sit/2025/571/0/`); у 2025 био к тому же начинается с регистрации знака в 2022.

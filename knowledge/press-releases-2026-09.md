@@ -95,16 +95,16 @@
 
 ---
 
-## 3. Итоговый релиз: 23 награды
+## 3. Итоговый релиз: 25 наград
 
-**Для площадок, которым нужен портрет бренда, а не одна новость.**
+**Для площадок, которым нужен портрет бренда, а не одна новость.** Число наград и программ — из `awardsCount()` на дату отправки (на 03.10.2026 — 25 наград в 16 программах; сверено исполнением `awards.ts`).
 
-> **Vargov® Design: 23 International Design Awards for Author's Lighting Compositions**
-> *Three Platinum titles, a Designer of the Year title and a catalogue of 605 made-to-order compositions*
+> **Vargov® Design: 25 International Design Awards for Author's Lighting Compositions**
+> *Three Platinum titles, a Product Designer of the Year title and a catalogue of 605 made-to-order compositions*
 >
-> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **25 awards from international juries** across fifteen programmes.
+> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **25 awards from international juries** across sixteen programmes.
 >
-> Among them are three **Platinum Winner** titles — at the **MUSE Design Awards 2023** (LC0237), the **International Architecture & Design Awards 2023** (LC0303) and **The London Design Awards 2023** (LC0326) — as well as the title of **Product Designer of the Year** at the **NY Product Design Awards 2023** and a **Gold Winner** at the **MUSE Design Awards 2026** for "Oceanic Illumination" (LC0564). Further recognition comes from the IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, the European Product Design Award, the BLT Built Design Awards, Houzee Awards and the Luxury Lifestyle Awards, where the studio was named **Best Luxury Lighting Design Studio in Dubai, UAE** in 2024.
+> Among them are three **Platinum Winner** titles — at the **MUSE Design Awards 2023** (LC0237), the **International Architecture & Design Awards 2023** (LC0303) and **The London Design Awards 2023** (LC0326) — as well as the title of **Product Designer of the Year** at the **NY Product Design Awards 2023** and a **Gold Winner** at the **MUSE Design Awards 2026** for "Oceanic Illumination" (LC0564). Further recognition comes from the IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, the European Product Design Award, the BLT Built Design Awards, Houzee Awards, ICONIC AWARDS · Innovative Interior and the Luxury Lifestyle Awards, where the studio was named **Best Luxury Lighting Design Studio in Dubai, UAE** in 2024.
 >
 > Founder Anton Vargov also serves as a jury member for design and architecture awards, including the ADD Awards High Jury.
 >
@@ -112,12 +112,16 @@
 >
 > The catalogue comprises 605 compositions in four families — lighting compositions, decorative compositions, floor and table objects, and sculptural decor — with a 3D configurator nominated at Awwwards in 2026.
 >
-> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-three awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov.
+> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-three awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov. *(устарело: число на 06.09.2026 — см. примечание ниже)*
 >
 > Awards with certificates: https://vargov.ru/en/awards
 > Catalogue: https://vargov.ru/en/catalog
 
-Примечание: в версии, отправленной 04.09 в Luxury Lifestyle Awards, — 22 (заголовок, лид и цитата). Формулировка цитаты с «Twenty-three» утверждена владельцем 06.09.2026 — использовать в следующих рассылках.
+Примечание. Цитата основателя — его прямая речь: формулировку с «Twenty-three awards across fifteen programmes» владелец утвердил 06.09.2026, когда `awardsCount()` давал 23, а программ было 15. Число в ней **устарело** и стоит в утверждённом виде: без слова владельца прямую речь не меняем. Заголовок, подзаголовок и лид — не прямая речь, они приведены к `awardsCount()` на 03.10.2026 (25 наград, 16 программ — с ICONIC AWARDS · Innovative Interior, добавленной 13.09). Поэтому сейчас релиз расходится сам с собой (25 в заголовке и лиде, 23 в цитате): перед следующей рассылкой нужно решение владельца по цитате.
+
+**Предлагаемая редакция цитаты — ждёт владельца** (число из `awardsCount()` на 03.10.2026, владелец её не утверждал): «…Twenty-five awards across sixteen programmes tell me that this way of working reads internationally».
+
+Версия, отправленная 04.09 в Luxury Lifestyle Awards, — с числом 22 (заголовок, лид и цитата); это архив, не шаблон.
 
 ---
 
@@ -127,9 +131,9 @@
 | Релиз | Кому | Статус | Почему именно туда |
 |---|---|---|---|
 | 1. MUSE Gold 2026 (LC0564) | **exclusives@dezeen.com** | ✅ отправлено 04.09 | Свежая награда — новый информационный повод, не повтор июльского питча про Driplight. Dezeen предпочитает эксклюзивы, здесь он и есть |
-| 3. Обзорный, 23 награды (в отправленной 04.09 версии — 22) | **pr@luxuryawards.com** | ✅ отправлено 04.09 | Luxury Lifestyle Awards сами наградили бренд в 2024 («Best Luxury Lighting Design Studio in Dubai»), у них есть программа «Winners in Media» и люксовая аудитория. Это их собственный лауреат |
+| 3. Обзорный (в отправленной 04.09 версии — 22 награды; текущая редакция — 25) | **pr@luxuryawards.com** | ✅ отправлено 04.09 | Luxury Lifestyle Awards сами наградили бренд в 2024 («Best Luxury Lighting Design Studio in Dubai»), у них есть программа «Winners in Media» и люксовая аудитория. Это их собственный лауреат |
 | Продолжение июльского письма | **iconicawards@gdc.de** | ✅ отправлено 04.09 | Короткое продолжение июльского письма: с тех пор добавилась MUSE Gold 2026 — новый факт, а не напоминание |
-| Запрос на исправление статьи о LC0358 | **editor@d5mag.com** | ✅ отправлено 05.09 | В единственной редакционной публикации о бренде (D5 MAG, июнь 2025) сказано «makes its lighting in China». Попросили заменить формулировку — см. [[external-references]] |
+| Запрос на исправление статьи о LC0358 | **editor@d5mag.com** | ✅ отправлено 05.09 | В единственной редакционной публикации о бренде (D5 MAG, июнь 2025) была названа страна производства. Попросили заменить формулировку; редакция заменила, но взяла из письма «Founded in 2022» — см. [[external-references]] |
 | 2. Designer of the Year (LC0343) | — | придержан | Это награда самой IAA, и Tyler уже получил письмо 2026-09-04 с наградами семьи, известными на 04.09 (в письме семь позиций, включая LIT, которая к IAA не относится — это 3C Awards; собственно IAA-наград на 04.09 пять, шестая — NYPDA 2023 Gold Winner, Hanging Lamps, LC0313 — найдена 05.09 и в письмо не вошла). Отдельный релиз ему был бы дублем; естественное место этого текста — запрошенное интервью |
 
 Другие контакты премий (ADC, IDA, LIT, SIT, LOOP, BLT, EPDA) не проверены — адреса не подтверждены первоисточником, поэтому не указываю.
