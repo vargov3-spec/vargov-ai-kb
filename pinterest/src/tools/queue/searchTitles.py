@@ -62,8 +62,11 @@ def refresh_site_products(site: Path) -> None:
     """Тип, крепление и раздел — из catalog.generated.json сайта; продуктовая
     часть описания и «Где уместна» — из product-copy/products.ru.json.
 
-    Тип берём именно из catalog.generated.json: у LC0366–LC0380 поле type в
-    product-copy сдвинуто вместе с текстами (A017), а каталог верен."""
+    Тип берём именно из catalog.generated.json: его показывает строка «Тип»
+    карточки сайта. Поле type в product-copy с ним расходится — до 04.10.2026
+    у LC0366–LC0380 оно было сдвинуто вместе с текстами (A017), и после
+    исправления (коммит сайта 37adc3d) у LC0373 там «Световая композиция»,
+    а в каталоге и на карточке — «Настенная композиция»."""
     data = site / "src" / "lib" / "data"
     cat = json.loads((data / "catalog.generated.json").read_text(encoding="utf-8"))
     copy = json.loads((data / "product-copy" / "products.ru.json").read_text(encoding="utf-8"))["items"]
@@ -82,10 +85,13 @@ def refresh_site_products(site: Path) -> None:
     print("site-products: %d артикулов из %s" % (len(out), site), file=sys.stderr)
 
 
-# Описания LC0366–LC0380 на сайте сдвинуты: текст артикула N описывает изделие
-# N+2 (аудит 03.10.2026, A017). Пока сайт их не исправит, форму, цвет и
-# помещение по этим текстам не определяем — в заголовке остаётся только тип.
-SHIFTED = {"LC%04d" % n for n in range(366, 381)}
+# Описания LC0366–LC0380 на сайте были сдвинуты: текст артикула N описывал
+# изделие N+2 (аудит 03.10.2026, A017), и до исправления форма, цвет и
+# помещение у этих артикулов не определялись (исключение SHIFTED). Сайт
+# исправил тексты 04.10.2026 (коммит 37adc3d), исключение снято: заголовки
+# снова собираются из описаний. Пересобирать — только с --site по main сайта,
+# в котором есть 37adc3d; снимок data/site-products.json старше 04.10 несёт
+# сдвинутые тексты.
 
 # --- тип изделия -------------------------------------------------------------
 # (русский тип, английский тип, род русского типа, цеплять ли форму через дефис)
@@ -266,14 +272,39 @@ def _first(rules, blob, min_hits=1):
     return best
 
 
+# --- поправки по тексту сайта ------------------------------------------------
+# Подсчёт слов иногда выбирает то, что текст сайта прямо отрицает или называет
+# второстепенным. Поправка — только когда заголовок спорит с текстом карточки;
+# у каждой — цитата из исправленного описания (сайт 37adc3d, 04.10.2026),
+# сверено с обложками. Ключи: type (кортеж как в EXACT_TYPE), form (пара
+# ru/en; ("", "") — без формы), tone (ключ из TONES по английскому имени).
+TEXT_OVERRIDES = {
+    # «Тот же образ без света… Автор убирает электричество», «Не требует
+    # подводки» — «световая» в заголовке неверно; «стержни» — подставка,
+    # а не форма. Сам текст называет вещь скульптурой.
+    "LC0370": {"type": ("Настольная скульптура", "Table Sculpture", "f", True),
+               "form": ("", "")},
+    # «не строем и не облаком, а траекторией» — «облако» текст отрицает.
+    "LC0371": {"form": ("", "")},
+    # «Та же спираль, поставленная вертикально»; «кольцо» — это основание.
+    "LC0374": {"form": ("спираль", "Spiral")},
+    # «раструбом с волнистым срезом» — волны в вещи нет, это букет раструбов,
+    # а такой формы в списке FORMS нет.
+    "LC0378": {"form": ("", "")},
+    # «белое на тёмном фоне», «без бликов, без цвета» — золото здесь только
+    # точки крепления.
+    "LC0369": {"tone": "White"},
+}
+
+
 def ingredients(sku: str, sp: dict) -> dict:
-    t_ru, t_en, gender, attach = search_type(sp)
-    if sku in SHIFTED:
-        product, where = "", ""
-    else:
-        product, where = sp.get("productRu") or "", sp.get("whereRu") or ""
-    f_ru, f_en = _first(FORMS, product)
+    fix = TEXT_OVERRIDES.get(sku, {})
+    t_ru, t_en, gender, attach = fix.get("type") or search_type(sp)
+    product, where = sp.get("productRu") or "", sp.get("whereRu") or ""
+    f_ru, f_en = fix["form"] if "form" in fix else _first(FORMS, product)
     tone, c_en = _first(TONES, VEIN_RX.sub(" ", product))
+    if "tone" in fix:
+        tone, c_en = next((ru, en) for _rx, ru, en in TONES if en == fix["tone"])
     c_ru = tone[gender] if tone else ""
     s_ru, s_en = _first(SPACES, product + " " + where, SPACE_MIN_HITS)
     # «Ограждение лестницы над лестницей» — помещение уже названо типом.
@@ -326,6 +357,12 @@ def main():
     if "--site" in args:
         refresh_site_products(Path(args[args.index("--site") + 1]))
     site = json.loads(SITE_PRODUCTS.read_text(encoding="utf-8"))
+    # Снимок до исправления A017 узнаётся по тексту: у LC0372 в нём описание
+    # торшера LC0374 («Та же спираль, поставленная вертикально»). С таким
+    # снимком заголовки LC0366–LC0380 снова назвали бы чужую форму и цвет.
+    if (site.get("LC0372", {}).get("productRu") or "").startswith("Та же спираль"):
+        raise SystemExit("data/site-products.json снят до исправления A017 (сайт 37adc3d): "
+                         "пересоберите с --site <папка main сайта, где есть 37adc3d>")
     # Доска — по-прежнему из board-map.json: она нужна очереди, а не заголовку.
     boards = json.loads(Path("data/board-map.json").read_text(encoding="utf-8"))
     generic = boards.get("__generic__", "Hotel & Restaurant Lighting")
