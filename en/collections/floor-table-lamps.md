@@ -35,7 +35,7 @@ Items: 56
 - [LC0215](../products/floor-table-lamps/LC0215.md) — Floor lamp — https://vargov.ru/en/catalog/lc0215
 - [LC0332-1](../products/floor-table-lamps/LC0332-1.md) — Wall light — https://vargov.ru/en/catalog/lc0332-1
 - [LC0340](../products/floor-table-lamps/LC0340.md) — Floor lamp — https://vargov.ru/en/catalog/lc0340
-- [LC0357](../products/floor-table-lamps/LC0357.md) — Wall light — https://vargov.ru/en/catalog/lc0357
+- [LC0357](../products/floor-table-lamps/LC0357.md) — Table art object — https://vargov.ru/en/catalog/lc0357
 - [LC0374](../products/floor-table-lamps/LC0374.md) — Floor lamp — https://vargov.ru/en/catalog/lc0374
 - [LC0377](../products/floor-table-lamps/LC0377.md) — Floor lamp — https://vargov.ru/en/catalog/lc0377
 - [LC0378](../products/floor-table-lamps/LC0378.md) — Floor lamp — https://vargov.ru/en/catalog/lc0378

@@ -284,7 +284,7 @@
 - [LC0489](../products/lighting/LC0489.md) — Световая композиция — https://vargov.ru/catalog/lc0489
 - [LC0490](../products/lighting/LC0490.md) — Световая композиция — https://vargov.ru/catalog/lc0490
 - [LC0491](../products/lighting/LC0491.md) — Световая композиция — https://vargov.ru/catalog/lc0491
-- [LC0492](../products/lighting/LC0492.md) — Настенная композиция — https://vargov.ru/catalog/lc0492
+- [LC0492](../products/lighting/LC0492.md) — Световая композиция — https://vargov.ru/catalog/lc0492
 - [LC0493](../products/lighting/LC0493.md) — Световая композиция — https://vargov.ru/catalog/lc0493
 - [LC0494](../products/lighting/LC0494.md) — Световая композиция — https://vargov.ru/catalog/lc0494
 - [LC0496](../products/lighting/LC0496.md) — Световая композиция — https://vargov.ru/catalog/lc0496

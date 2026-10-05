@@ -20,7 +20,7 @@ Items: 113
 - [LC0017](../products/decorative/LC0017.md) — Decorative composition — https://vargov.ru/en/catalog/lc0017
 - [LC0018](../products/decorative/LC0018.md) — Decorative composition — https://vargov.ru/en/catalog/lc0018
 - [LC0021](../products/decorative/LC0021.md) — Decorative composition — https://vargov.ru/en/catalog/lc0021
-- [LC0024](../products/decorative/LC0024.md) — Light composition — https://vargov.ru/en/catalog/lc0024
+- [LC0024](../products/decorative/LC0024.md) — Lighting composition — https://vargov.ru/en/catalog/lc0024
 - [LC0030](../products/decorative/LC0030.md) — Decorative composition — https://vargov.ru/en/catalog/lc0030
 - [LC0034](../products/decorative/LC0034.md) — Decorative composition — https://vargov.ru/en/catalog/lc0034
 - [LC0037](../products/decorative/LC0037.md) — Decorative composition — https://vargov.ru/en/catalog/lc0037
@@ -30,11 +30,11 @@ Items: 113
 - [LC0055](../products/decorative/LC0055.md) — Decorative composition — https://vargov.ru/en/catalog/lc0055
 - [LC0060](../products/decorative/LC0060.md) — Decorative composition — https://vargov.ru/en/catalog/lc0060
 - [LC0063](../products/decorative/LC0063.md) — Decorative composition — https://vargov.ru/en/catalog/lc0063
-- [LC0078](../products/decorative/LC0078.md) — Light composition — https://vargov.ru/en/catalog/lc0078
+- [LC0078](../products/decorative/LC0078.md) — Lighting composition — https://vargov.ru/en/catalog/lc0078
 - [LC0085](../products/decorative/LC0085.md) — Decorative composition — https://vargov.ru/en/catalog/lc0085
 - [LC0086](../products/decorative/LC0086.md) — Decorative composition — https://vargov.ru/en/catalog/lc0086
 - [LC0087](../products/decorative/LC0087.md) — Decorative composition — https://vargov.ru/en/catalog/lc0087
-- [LC0088](../products/decorative/LC0088.md) — Light composition — https://vargov.ru/en/catalog/lc0088
+- [LC0088](../products/decorative/LC0088.md) — Lighting composition — https://vargov.ru/en/catalog/lc0088
 - [LC0089](../products/decorative/LC0089.md) — Decorative composition — https://vargov.ru/en/catalog/lc0089
 - [LC0090](../products/decorative/LC0090.md) — Decorative composition — https://vargov.ru/en/catalog/lc0090
 - [LC0091](../products/decorative/LC0091.md) — Decorative composition — https://vargov.ru/en/catalog/lc0091
@@ -71,13 +71,13 @@ Items: 113
 - [LC0219](../products/decorative/LC0219.md) — Decorative composition — https://vargov.ru/en/catalog/lc0219
 - [LC0220](../products/decorative/LC0220.md) — Decorative composition — https://vargov.ru/en/catalog/lc0220
 - [LC0224](../products/decorative/LC0224.md) — Decorative composition — https://vargov.ru/en/catalog/lc0224
-- [LC0225](../products/decorative/LC0225.md) — Light composition — https://vargov.ru/en/catalog/lc0225
+- [LC0225](../products/decorative/LC0225.md) — Lighting composition — https://vargov.ru/en/catalog/lc0225
 - [LC0227](../products/decorative/LC0227.md) — Decorative composition — https://vargov.ru/en/catalog/lc0227
 - [LC0229](../products/decorative/LC0229.md) — Decorative composition — https://vargov.ru/en/catalog/lc0229
 - [LC0231](../products/decorative/LC0231.md) — Decorative composition — https://vargov.ru/en/catalog/lc0231
 - [LC0232](../products/decorative/LC0232.md) — Decorative composition — https://vargov.ru/en/catalog/lc0232
 - [LC0236](../products/decorative/LC0236.md) — Decorative composition — https://vargov.ru/en/catalog/lc0236
-- [LC0239](../products/decorative/LC0239.md) — Light composition — https://vargov.ru/en/catalog/lc0239
+- [LC0239](../products/decorative/LC0239.md) — Lighting composition — https://vargov.ru/en/catalog/lc0239
 - [LC0242](../products/decorative/LC0242.md) — Decorative composition — https://vargov.ru/en/catalog/lc0242
 - [LC0260](../products/decorative/LC0260.md) — Decorative composition — https://vargov.ru/en/catalog/lc0260
 - [LC0263](../products/decorative/LC0263.md) — Decorative composition — https://vargov.ru/en/catalog/lc0263
@@ -100,7 +100,7 @@ Items: 113
 - [LC0369](../products/decorative/LC0369.md) — Decorative composition — https://vargov.ru/en/catalog/lc0369
 - [LC0419](../products/decorative/LC0419.md) — Decorative composition — https://vargov.ru/en/catalog/lc0419
 - [LC0454](../products/decorative/LC0454.md) — Decorative composition — https://vargov.ru/en/catalog/lc0454
-- [LC0459](../products/decorative/LC0459.md) — Light composition — https://vargov.ru/en/catalog/lc0459
+- [LC0459](../products/decorative/LC0459.md) — Lighting composition — https://vargov.ru/en/catalog/lc0459
 - [LC0460](../products/decorative/LC0460.md) — Decorative composition — https://vargov.ru/en/catalog/lc0460
 - [LC0468](../products/decorative/LC0468.md) — Decorative composition — https://vargov.ru/en/catalog/lc0468
 - [LC0469](../products/decorative/LC0469.md) — Decorative composition — https://vargov.ru/en/catalog/lc0469
