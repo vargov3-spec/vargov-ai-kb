@@ -1,8 +1,8 @@
 {
  "meta": {
   "kind": "journal",
-  "articleCount": 26,
-  "checksum": "3b9a94147072622a",
+  "articleCount": 27,
+  "checksum": "d89e522dab643e7e",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-04T08:13:11+00:00",
+  "generated": "2026-10-05T09:37:08+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -124,6 +124,10 @@
   "epda-2026": {
    "dateISO": "2026-09-22",
    "categoryId": "recognition"
+  },
+  "russky-dom-2026": {
+   "dateISO": "2026-10-05",
+   "categoryId": "exhibitions"
   }
  },
  "articles": {
@@ -19083,6 +19087,552 @@
      {
       "type": "p",
       "text": "لا تغيّر الجائزة شيئًا في الإنتاج: التجميع اليدوي نفسه، والرسومات نفسها، والنموذج ثلاثي الأبعاد نفسه الذي يراه العميل قبل بدء التصنيع. يتغيّر شيء واحد فقط: اليقين بأن الاتجاه صحيح."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   }
+  },
+  "russky-dom-2026": {
+   "ru": {
+    "title": "Vargov®Design на «Русском доме» 2026",
+    "category": "Выставки",
+    "date": "5 октября 2026",
+    "lead": "С 7 по 9 октября в Гостином дворе мы показываем композицию LC0556 — в капсуле «Тихая сила Камчатки», на стенде К62, в зоне «Лёд и туман».",
+    "metaLabels": {
+     "category": "Рубрика",
+     "date": "Дата"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "7–9 октября в Москве, в Гостином дворе, пройдёт интерьерная выставка «Русский дом». Тема этого года — «Русский Дом: Сердце России»."
+     },
+     {
+      "type": "p",
+      "text": "На стенде К62 — капсула «Тихая сила Камчатки. Как природа становится интерьером». Её автор — Tokareva Design. Характер Камчатки здесь раскрывается через свет, материю, звук, аромат, вкус и прикосновение, а семь зон выстроены в маршрут: от природной стихии — к человеку и диалогу."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design — один из участников капсулы. В её списке рядом с нашим именем стоят слова «Свет как произведение искусства»."
+     },
+     {
+      "type": "h",
+      "text": "Зона «Лёд и туман»"
+     },
+     {
+      "type": "p",
+      "text": "Наш свет — во второй зоне маршрута. Её подзаголовок — «Между ясностью и тайной», а описание у авторов капсулы совсем короткое: здесь форма становится почти невесомой, лёд удерживает свет, а туман стирает границы между объектом и пространством."
+     },
+     {
+      "type": "h",
+      "text": "Светится граница"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 — композиция с сюжетом: из волны выходит стая скатов, и море приходит в движение. Бирюзовые ленты изгибаются гребнями волн или горными хребтами, по их кромке рассыпаны точки тёплого света. Днём с разных сторон в ней читаются то волны, то крылья скатов, то горная гряда."
+     },
+     {
+      "type": "p",
+      "text": "Вечером кромки загораются, скаты уходят в тень, и остаётся северное сияние над водой. Светится граница, а не масса — почти то же, о чём говорит зона. Свет держится на тонкой линии, как во льду, а очертания самой вещи растворяются в полутени, как в тумане. Ясность — у кромки, тайна — во всём остальном."
+     },
+     {
+      "type": "h",
+      "text": "Приходите"
+     },
+     {
+      "type": "p",
+      "text": "«Русский дом» открыт 7–9 октября с 10:00 до 19:00: Гостиный двор, Москва, стенд К62. По стенду проводят экскурсии — записаться можно по ссылке на сайте капсулы. Приходите посмотреть на LC0556 вживую."
+     },
+     {
+      "type": "li",
+      "text": "Композиция LC0556 — https://vargov.ru/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Капсула «Тихая сила Камчатки» — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Выставка «Русский дом» — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "en": {
+    "title": "Vargov®Design at Russky Dom 2026",
+    "category": "Exhibitions",
+    "date": "5 October 2026",
+    "lead": "From 7 to 9 October at Gostiny Dvor we are showing the LC0556 composition — in the capsule “The Quiet Strength of Kamchatka”, stand K62, in the Ice and Mist zone.",
+    "metaLabels": {
+     "category": "Category",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "From 7 to 9 October, Gostiny Dvor in Moscow hosts Russky Dom (Russian House), an interior design exhibition. This year’s theme is “Russian House: The Heart of Russia”."
+     },
+     {
+      "type": "p",
+      "text": "Stand K62 is home to the capsule “The Quiet Strength of Kamchatka. How nature becomes interior”, authored by Tokareva Design. It reveals the character of Kamchatka through light, matter, sound, scent, taste and touch, and its seven zones form a route: from the elemental force of nature to people and dialogue."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design is one of the capsule’s participants. In its list, our name comes with the words “Light as a work of art”."
+     },
+     {
+      "type": "h",
+      "text": "The Ice and Mist zone"
+     },
+     {
+      "type": "p",
+      "text": "Our light is in the second zone of the route. Its subtitle is “Between clarity and mystery”, and the capsule’s authors describe it in a few words: here form becomes almost weightless, ice holds the light, and fog erases the boundaries between object and space."
+     },
+     {
+      "type": "h",
+      "text": "The boundary glows"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 is a composition with a plot: out of a wave a school of manta rays emerges, and the sea begins to move. Turquoise ribbons curve into the crests of waves or into mountain ridges, with points of warm light scattered along their edges. By day, depending on where you stand, you read now waves, now the wings of the rays, now a mountain range."
+     },
+     {
+      "type": "p",
+      "text": "In the evening the edges light up, the rays go into shadow, and what remains is an aurora over water. What glows is the boundary, not the mass — almost exactly what the zone is about. The light holds to a thin line, as in ice, while the outline of the piece itself dissolves into half-shadow, as in fog. Clarity at the edge, mystery everywhere else."
+     },
+     {
+      "type": "h",
+      "text": "Come and see it"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom is open 7–9 October, 10:00–19:00: Gostiny Dvor, Moscow, stand K62. Guided tours of the stand are available — sign up via the link on the capsule’s website. Come and see LC0556 in person."
+     },
+     {
+      "type": "li",
+      "text": "The LC0556 composition — https://vargov.ru/en/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "The capsule’s website (in Russian) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "The Russky Dom exhibition (in Russian) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "de": {
+    "title": "Vargov®Design bei Russky Dom 2026",
+    "category": "Ausstellungen",
+    "date": "5. Oktober 2026",
+    "lead": "Vom 7. bis 9. Oktober zeigen wir im Gostiny Dvor die Komposition LC0556 — in der Kapsel „Die stille Kraft Kamtschatkas“, Stand K62, Zone „Eis und Nebel“.",
+    "metaLabels": {
+     "category": "Rubrik",
+     "date": "Datum"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Vom 7. bis 9. Oktober findet im Moskauer Gostiny Dvor die Interieur-Ausstellung Russky Dom (Russisches Haus) statt. Das Thema in diesem Jahr: „Russisches Haus: Das Herz Russlands“."
+     },
+     {
+      "type": "p",
+      "text": "Auf Stand K62 steht die Kapsel „Die stille Kraft Kamtschatkas. Wie Natur zum Interieur wird“. Urheber der Kapsel ist Tokareva Design. Sie erzählt vom Charakter Kamtschatkas durch Licht, Materie, Klang, Duft, Geschmack und Berührung; ihre sieben Zonen bilden einen Rundgang — von der Naturgewalt zum Menschen und zum Dialog."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design ist einer der Teilnehmer der Kapsel. In ihrer Liste stehen neben unserem Namen die Worte „Licht als Kunstwerk“."
+     },
+     {
+      "type": "h",
+      "text": "Die Zone „Eis und Nebel“"
+     },
+     {
+      "type": "p",
+      "text": "Unser Licht ist in der zweiten Zone des Rundgangs. Ihr Untertitel lautet „Zwischen Klarheit und Geheimnis“, und die Autoren der Kapsel beschreiben sie knapp: Hier wird die Form fast schwerelos, das Eis hält das Licht, und der Nebel verwischt die Grenzen zwischen Objekt und Raum."
+     },
+     {
+      "type": "h",
+      "text": "Es leuchtet die Grenze"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 ist eine Komposition mit Handlung: Aus einer Welle taucht ein Schwarm Rochen auf, und das Meer gerät in Bewegung. Türkisfarbene Bänder biegen sich zu Wellenkämmen oder Bergrücken, über ihre Kanten sind Punkte warmen Lichts gestreut. Tagsüber erkennt man je nach Standpunkt mal Wellen, mal Rochenflügel, mal einen Gebirgszug."
+     },
+     {
+      "type": "p",
+      "text": "Abends entzünden sich die Kanten, die Rochen treten in den Schatten zurück, und es bleibt ein Nordlicht über dem Wasser. Es leuchtet die Grenze, nicht die Masse — fast genau das, wovon die Zone spricht. Das Licht hält sich an einer dünnen Linie wie im Eis, während die Umrisse des Stücks im Halbschatten verschwimmen wie im Nebel. Klarheit an der Kante, Geheimnis überall sonst."
+     },
+     {
+      "type": "h",
+      "text": "Kommen Sie vorbei"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom ist vom 7. bis 9. Oktober von 10:00 bis 19:00 Uhr geöffnet: Gostiny Dvor, Moskau, Stand K62. Am Stand gibt es Führungen — anmelden kann man sich über den Link auf der Website der Kapsel. Kommen Sie und sehen Sie LC0556 mit eigenen Augen."
+     },
+     {
+      "type": "li",
+      "text": "Die Komposition LC0556 — https://vargov.ru/de/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Website der Kapsel (auf Russisch) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Ausstellung Russky Dom (auf Russisch) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "fr": {
+    "title": "Vargov®Design au salon Russky Dom 2026",
+    "category": "Salons",
+    "date": "5 octobre 2026",
+    "lead": "Du 7 au 9 octobre, au Gostiny Dvor, nous présentons la composition LC0556 — dans la capsule « La force tranquille du Kamtchatka », stand K62, zone « Glace et brume ».",
+    "metaLabels": {
+     "category": "Rubrique",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Du 7 au 9 octobre, le Gostiny Dvor de Moscou accueille Russky Dom (« Maison russe »), un salon consacré à l'aménagement intérieur. Le thème de cette année : « Maison russe : le cœur de la Russie »."
+     },
+     {
+      "type": "p",
+      "text": "Sur le stand K62 se trouve la capsule « La force tranquille du Kamtchatka. Comment la nature devient intérieur », conçue par Tokareva Design. Elle révèle le caractère du Kamtchatka par la lumière, la matière, le son, le parfum, le goût et le toucher ; ses sept zones dessinent un parcours : de la force de la nature à l'humain et au dialogue."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design fait partie des participants de la capsule. Dans sa liste, notre nom est accompagné de ces mots : « La lumière comme œuvre d'art »."
+     },
+     {
+      "type": "h",
+      "text": "La zone « Glace et brume »"
+     },
+     {
+      "type": "p",
+      "text": "Notre lumière se trouve dans la deuxième zone du parcours. Son sous-titre : « Entre clarté et mystère ». Les auteurs de la capsule la décrivent en quelques mots : ici, la forme devient presque impondérable, la glace retient la lumière et la brume efface les limites entre l'objet et l'espace."
+     },
+     {
+      "type": "h",
+      "text": "C'est la limite qui luit"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 est une composition avec un récit : d'une vague sort un banc de raies manta, et la mer se met en mouvement. Des rubans turquoise se courbent en crêtes de vagues ou en chaînes de montagnes ; sur leur arête sont semés des points de lumière chaude. Le jour, selon l'endroit d'où l'on regarde, on lit tantôt des vagues, tantôt des ailes de raies, tantôt une crête de montagne."
+     },
+     {
+      "type": "p",
+      "text": "Le soir, les arêtes s'allument, les raies s'enfoncent dans l'ombre, et il reste une aurore boréale au-dessus de l'eau. C'est la limite qui luit, non la masse — presque exactement ce dont parle la zone. La lumière tient sur une ligne fine, comme dans la glace, tandis que le contour de la pièce se dissout dans la pénombre, comme dans la brume. La clarté sur l'arête, le mystère partout ailleurs."
+     },
+     {
+      "type": "h",
+      "text": "Venez la voir"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom est ouvert du 7 au 9 octobre, de 10 h à 19 h : Gostiny Dvor, Moscou, stand K62. Des visites guidées du stand sont proposées — inscription via le lien sur le site de la capsule. Venez voir LC0556 de vos propres yeux."
+     },
+     {
+      "type": "li",
+      "text": "La composition LC0556 — https://vargov.ru/fr/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Site de la capsule (en russe) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Salon Russky Dom (en russe) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "it": {
+    "title": "Vargov®Design a Russky Dom 2026",
+    "category": "Fiere",
+    "date": "5 ottobre 2026",
+    "lead": "Dal 7 al 9 ottobre, al Gostiny Dvor, presentiamo la composizione LC0556 — nella capsula «La forza silenziosa della Kamčatka», stand K62, zona «Ghiaccio e nebbia».",
+    "metaLabels": {
+     "category": "Rubrica",
+     "date": "Data"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Dal 7 al 9 ottobre il Gostiny Dvor di Mosca ospita Russky Dom («Casa russa»), mostra dedicata all'interior design. Il tema di quest'anno è «Casa russa: il cuore della Russia»."
+     },
+     {
+      "type": "p",
+      "text": "Allo stand K62 c'è la capsula «La forza silenziosa della Kamčatka. Come la natura diventa interno», firmata da Tokareva Design. Racconta il carattere della Kamčatka attraverso luce, materia, suono, profumo, gusto e tatto; le sue sette zone formano un percorso: dalla forza della natura all'essere umano e al dialogo."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design è tra i partecipanti della capsula. Nel suo elenco, accanto al nostro nome, ci sono le parole «La luce come opera d'arte»."
+     },
+     {
+      "type": "h",
+      "text": "La zona «Ghiaccio e nebbia»"
+     },
+     {
+      "type": "p",
+      "text": "La nostra luce è nella seconda zona del percorso. Il sottotitolo è «Tra chiarezza e mistero», e gli autori della capsula la descrivono in poche parole: qui la forma diventa quasi senza peso, il ghiaccio trattiene la luce e la nebbia cancella i confini tra oggetto e spazio."
+     },
+     {
+      "type": "h",
+      "text": "Brilla il confine"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 è una composizione con una trama: dall'onda esce un banco di mante, e il mare si mette in movimento. Nastri turchesi si piegano come creste d'onda o catene montuose; lungo il loro bordo sono sparsi punti di luce calda. Di giorno, a seconda di dove ci si trova, si leggono ora onde, ora ali di mante, ora una catena di monti."
+     },
+     {
+      "type": "p",
+      "text": "La sera i bordi si accendono, le mante passano in ombra, e resta un'aurora boreale sopra l'acqua. Brilla il confine, non la massa — quasi esattamente ciò di cui parla la zona. La luce si regge su una linea sottile, come nel ghiaccio, mentre il profilo del pezzo si scioglie nella penombra, come nella nebbia. La chiarezza sul bordo, il mistero in tutto il resto."
+     },
+     {
+      "type": "h",
+      "text": "Venite a vederla"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom è aperto dal 7 al 9 ottobre, dalle 10:00 alle 19:00: Gostiny Dvor, Mosca, stand K62. Sono previste visite guidate dello stand — ci si iscrive tramite il link sul sito della capsula. Venite a vedere LC0556 dal vivo."
+     },
+     {
+      "type": "li",
+      "text": "La composizione LC0556 — https://vargov.ru/it/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Sito della capsula (in russo) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Mostra Russky Dom (in russo) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "es": {
+    "title": "Vargov®Design en Russky Dom 2026",
+    "category": "Ferias",
+    "date": "5 de octubre de 2026",
+    "lead": "Del 7 al 9 de octubre, en el Gostiny Dvor, presentamos la composición LC0556 — en la cápsula «La fuerza serena de Kamchatka», stand K62, zona «Hielo y niebla».",
+    "metaLabels": {
+     "category": "Sección",
+     "date": "Fecha"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Del 7 al 9 de octubre, el Gostiny Dvor de Moscú acoge Russky Dom («Casa Rusa»), una exposición de interiorismo. El tema de este año es «Casa Rusa: el corazón de Rusia»."
+     },
+     {
+      "type": "p",
+      "text": "En el stand K62 está la cápsula «La fuerza serena de Kamchatka. Cómo la naturaleza se convierte en interior», creada por Tokareva Design. Revela el carácter de Kamchatka a través de la luz, la materia, el sonido, el aroma, el sabor y el tacto; sus siete zonas forman un recorrido: de la fuerza de la naturaleza al ser humano y al diálogo."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design es uno de los participantes de la cápsula. En su lista, junto a nuestro nombre, figuran las palabras «La luz como obra de arte»."
+     },
+     {
+      "type": "h",
+      "text": "La zona «Hielo y niebla»"
+     },
+     {
+      "type": "p",
+      "text": "Nuestra luz está en la segunda zona del recorrido. Su subtítulo es «Entre la claridad y el misterio», y los autores de la cápsula la describen en pocas palabras: aquí la forma se vuelve casi ingrávida, el hielo retiene la luz y la niebla borra los límites entre el objeto y el espacio."
+     },
+     {
+      "type": "h",
+      "text": "Brilla el límite"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 es una composición con argumento: de la ola sale un banco de mantas y el mar se pone en movimiento. Las cintas turquesa se curvan como crestas de olas o como cordilleras; a lo largo de su borde se esparcen puntos de luz cálida. De día, según desde dónde se mire, se leen ora olas, ora alas de mantas, ora una cadena montañosa."
+     },
+     {
+      "type": "p",
+      "text": "De noche los bordes se encienden, las mantas se hunden en la sombra y queda una aurora boreal sobre el agua. Brilla el límite, no la masa: casi exactamente aquello de lo que habla la zona. La luz se sostiene en una línea fina, como en el hielo, mientras el contorno de la pieza se disuelve en la penumbra, como en la niebla. La claridad en el borde, el misterio en todo lo demás."
+     },
+     {
+      "type": "h",
+      "text": "Venga a verla"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom abre del 7 al 9 de octubre, de 10:00 a 19:00: Gostiny Dvor, Moscú, stand K62. Hay visitas guiadas por el stand; la inscripción se hace a través del enlace en la web de la cápsula. Venga a ver LC0556 en persona."
+     },
+     {
+      "type": "li",
+      "text": "La composición LC0556 — https://vargov.ru/es/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Web de la cápsula (en ruso) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Exposición Russky Dom (en ruso) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "vi": {
+    "title": "Vargov®Design tại Russky Dom 2026",
+    "category": "Triển lãm",
+    "date": "5 tháng 10 năm 2026",
+    "lead": "Từ ngày 7 đến 9 tháng 10, tại Gostiny Dvor, chúng tôi giới thiệu tác phẩm LC0556 — trong không gian chủ đề “Sức mạnh thầm lặng của Kamchatka”, gian K62, khu “Băng và sương mù”.",
+    "metaLabels": {
+     "category": "Chuyên mục",
+     "date": "Ngày"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Từ ngày 7 đến 9 tháng 10, Gostiny Dvor ở Moskva là nơi diễn ra Russky Dom (“Ngôi nhà Nga”), triển lãm về thiết kế nội thất. Chủ đề năm nay là “Ngôi nhà Nga: Trái tim của nước Nga”."
+     },
+     {
+      "type": "p",
+      "text": "Tại gian K62 là không gian chủ đề “Sức mạnh thầm lặng của Kamchatka. Khi thiên nhiên trở thành nội thất”, với tác giả là Tokareva Design. Không gian này khắc họa tính cách của Kamchatka qua ánh sáng, vật chất, âm thanh, hương thơm, vị giác và xúc giác; bảy khu của nó tạo thành một hành trình: từ sức mạnh của thiên nhiên đến con người và cuộc đối thoại."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design là một trong những đơn vị tham gia không gian này. Trong danh sách của dự án, bên cạnh tên chúng tôi là dòng chữ “Ánh sáng như một tác phẩm nghệ thuật”."
+     },
+     {
+      "type": "h",
+      "text": "Khu “Băng và sương mù”"
+     },
+     {
+      "type": "p",
+      "text": "Ánh sáng của chúng tôi nằm ở khu thứ hai trên hành trình. Tiêu đề phụ của khu là “Giữa trong trẻo và bí ẩn”, và các tác giả mô tả nó thật ngắn gọn: ở đây hình khối trở nên gần như không trọng lượng, băng giữ lại ánh sáng, còn sương mù xóa nhòa ranh giới giữa vật thể và không gian."
+     },
+     {
+      "type": "h",
+      "text": "Ranh giới phát sáng"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 là một tác phẩm có cốt truyện: từ con sóng bơi ra một đàn cá đuối, và biển bắt đầu chuyển mình. Những dải lam ngọc uốn thành các đỉnh sóng hay những dãy núi; dọc mép chúng rắc đầy các điểm sáng ấm. Ban ngày, tùy chỗ bạn đứng, khi thì hiện ra những con sóng, khi thì đôi cánh cá đuối, khi thì một dãy núi."
+     },
+     {
+      "type": "p",
+      "text": "Buổi tối các đường mép bừng sáng, những con cá đuối lùi vào bóng tối, và còn lại một dải cực quang trên mặt nước. Phát sáng là đường ranh giới chứ không phải cả khối — gần như đúng điều mà khu này muốn nói. Ánh sáng bám vào một đường mảnh như trong băng, còn đường nét của chính tác phẩm tan vào vùng bán tối như trong sương. Sự trong trẻo ở đường mép, sự bí ẩn ở mọi phần còn lại."
+     },
+     {
+      "type": "h",
+      "text": "Mời bạn đến xem"
+     },
+     {
+      "type": "p",
+      "text": "Russky Dom mở cửa từ ngày 7 đến 9 tháng 10, từ 10:00 đến 19:00: Gostiny Dvor, Moskva, gian K62. Tại gian có các buổi tham quan có hướng dẫn — đăng ký qua đường dẫn trên trang web của không gian chủ đề. Hãy đến xem LC0556 tận mắt."
+     },
+     {
+      "type": "li",
+      "text": "Tác phẩm LC0556 — https://vargov.ru/vi/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "Trang web của không gian chủ đề (tiếng Nga) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "Triển lãm Russky Dom (tiếng Nga) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "ar": {
+    "title": "Vargov®Design في معرض Russky Dom 2026",
+    "category": "المعارض",
+    "date": "5 أكتوبر 2026",
+    "lead": "من 7 إلى 9 أكتوبر، في غوستيني دفور، نعرض التركيبة LC0556 — ضمن كبسولة «القوة الهادئة لكامتشاتكا»، الجناح K62، منطقة «الجليد والضباب».",
+    "metaLabels": {
+     "category": "القسم",
+     "date": "التاريخ"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "من 7 إلى 9 أكتوبر يستضيف مجمّع غوستيني دفور في موسكو معرض Russky Dom («البيت الروسي») للتصميم الداخلي. وموضوع هذا العام: «البيت الروسي: قلب روسيا»."
+     },
+     {
+      "type": "p",
+      "text": "في الجناح K62 تقع كبسولة «القوة الهادئة لكامتشاتكا. كيف تصبح الطبيعة تصميمًا داخليًا»، وهي من تأليف Tokareva Design. تكشف الكبسولة طبع كامتشاتكا عبر الضوء والمادة والصوت والرائحة والمذاق واللمس، وتشكّل مناطقها السبع مسارًا: من قوة الطبيعة إلى الإنسان والحوار."
+     },
+     {
+      "type": "p",
+      "text": "Vargov®Design من بين المشاركين في الكبسولة. وفي قائمتها تقترن باسمنا عبارة «الضوء عملًا فنيًا»."
+     },
+     {
+      "type": "h",
+      "text": "منطقة «الجليد والضباب»"
+     },
+     {
+      "type": "p",
+      "text": "ضوؤنا في المنطقة الثانية من المسار. عنوانها الفرعي «بين الوضوح والغموض»، ويصفها مؤلّفو الكبسولة بكلمات قليلة: هنا يصير الشكل شبه عديم الوزن، والجليد يحتفظ بالضوء، والضباب يمحو الحدود بين الشيء والفضاء."
+     },
+     {
+      "type": "h",
+      "text": "يضيء الحدّ"
+     },
+     {
+      "type": "p",
+      "text": "LC0556 تركيبة ذات حبكة: من الموجة ينساب سربٌ من أسماك المانتا، فيتحرّك البحر. أشرطة فيروزية تنحني أعرافَ موج أو سلاسلَ جبال، وعلى حوافّها تنتثر نقاط من ضوء دافئ. في النهار، وبحسب مكان وقوفك، تُقرأ تارةً موجاتٍ وتارةً أجنحةَ المانتا وتارةً سلسلةً جبلية."
+     },
+     {
+      "type": "p",
+      "text": "في المساء تشتعل الحواف، وتغور أسماك المانتا في الظل، فيبقى شفقٌ قطبي فوق الماء. يضيء الحدّ لا الكتلة — وهذا تقريبًا ما تتحدّث عنه المنطقة نفسها. يتمسّك الضوء بخط رفيع كما في الجليد، بينما يذوب محيط القطعة في الظل الخفيف كما في الضباب. الوضوح عند الحافة، والغموض في كل ما عداها."
+     },
+     {
+      "type": "h",
+      "text": "تعالوا لرؤيتها"
+     },
+     {
+      "type": "p",
+      "text": "يفتح Russky Dom أبوابه من 7 إلى 9 أكتوبر، من 10:00 حتى 19:00: غوستيني دفور، موسكو، الجناح K62. تُنظَّم في الجناح جولات مع مرشد، والتسجيل عبر الرابط على موقع الكبسولة. تعالوا لرؤية LC0556 بأعينكم."
+     },
+     {
+      "type": "li",
+      "text": "التركيبة LC0556 — https://vargov.ru/ar/catalog/lc0556"
+     },
+     {
+      "type": "li",
+      "text": "موقع الكبسولة (بالروسية) — https://silakamchatki.tilda.ws/"
+     },
+     {
+      "type": "li",
+      "text": "معرض Russky Dom (بالروسية) — https://rdmoscow.ru/"
      },
      {
       "type": "p",

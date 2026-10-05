@@ -72,6 +72,10 @@ Among them: Platinum Winner — MUSE Design Awards 2023, International Architect
 
 In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand.
 
+## Where to see it now
+
+- **7–9 October 2026: Russky Dom (Russian House) interior exhibition, Gostiny Dvor, Moscow, stand K62.** Vargov®Design takes part in the exhibition capsule «Тихая сила Камчатки» ("The Quiet Strength of Kamchatka"), authored by Tokareva Design. Its light is in zone 02 «Лёд и туман» ("Ice and Mist"): the composition [LC0556](https://vargov.ru/en/catalog/lc0556), a school of manta rays rising out of a wave, its edges lit with points of warm light. Exhibition: [rdmoscow.ru](https://rdmoscow.ru/), 10:00–19:00. Capsule and stand tour sign-up (in Russian): [silakamchatki.tilda.ws](https://silakamchatki.tilda.ws/). _Temporary entry, valid until 9 October 2026._
+
 ## Language versions
 
 Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar) · 中文 (knowledge base only) — [zh/llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/zh/llms.txt)

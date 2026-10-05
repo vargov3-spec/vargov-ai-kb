@@ -1,0 +1,76 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ExhibitionEvent",
+      "name": "Русский дом 2026",
+      "alternateName": [
+        "Russky Dom 2026",
+        "Russian House 2026",
+        "Интерьерная выставка «Русский дом»",
+        "Русский дом. Креативные регионы"
+      ],
+      "description": "Russky Dom (Russian House) 2026, an interior exhibition at Gostiny Dvor, Moscow, 7–9 October 2026, open 10:00–19:00. Vargov®Design takes part in the exhibition capsule «Тихая сила Камчатки» (stand K62, authored by Tokareva Design) with the composition LC0556.",
+      "startDate": "2026-10-07T10:00+03:00",
+      "endDate": "2026-10-09T19:00+03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "@id": "_:gostiny-dvor",
+        "name": "Гостиный двор",
+        "alternateName": "Gostiny Dvor",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU"
+        }
+      },
+      "url": "https://rdmoscow.ru/",
+      "organizer": {
+        "@type": "Person",
+        "name": "Андрей Радаев"
+      },
+      "attendee": {
+        "@type": "Organization",
+        "@id": "https://vargov.ru#organization",
+        "name": "Vargov®Design"
+      },
+      "subEvent": {
+        "@type": "ExhibitionEvent",
+        "name": "Тихая сила Камчатки",
+        "alternateName": "Тихая сила Камчатки. Как природа становится интерьером",
+        "description": "Exhibition capsule at Russky Dom 2026, stand K62 (\"The Quiet Strength of Kamchatka. How nature becomes interior\"). The character of Kamchatka is told through light, matter, sound, scent, taste and touch, along a route of seven zones. Author of the capsule: Tokareva Design. Vargov®Design takes part with light (\"Light as a work of art\") in zone 02 «Лёд и туман» (\"Ice and Mist\"); the composition shown is LC0556: a school of manta rays rising out of a wave, its edges lit with points of warm light.",
+        "startDate": "2026-10-07",
+        "endDate": "2026-10-09",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Стенд К62",
+          "alternateName": "Stand K62",
+          "containedInPlace": {
+            "@id": "_:gostiny-dvor"
+          }
+        },
+        "url": "https://silakamchatki.tilda.ws/",
+        "contributor": [
+          {
+            "@type": "Organization",
+            "name": "Tokareva Design",
+            "url": "https://design-tokareva.ru/",
+            "description": "Designer and author of the capsule"
+          },
+          {
+            "@id": "https://vargov.ru#organization"
+          }
+        ],
+        "about": {
+          "@id": "https://vargov.ru/catalog/lc0556#product",
+          "name": "Lighting composition LC0556",
+          "url": "https://vargov.ru/en/catalog/lc0556"
+        }
+      }
+    }
+  ]
+}
