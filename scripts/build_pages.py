@@ -119,6 +119,7 @@ def head(title, desc, canonical, extra=""):
         "<meta name=\"description\" content=\"" + esc(desc) + "\">\n"
         "<meta name=\"robots\" content=\"index,follow,max-snippet:-1,max-image-preview:large\">\n"
         "<link rel=\"canonical\" href=\"" + canonical + "\">\n"
+        "<link rel=\"icon\" href=\"favicon.svg\" type=\"image/svg+xml\">\n"
         "<style>" + CSS + "</style>\n" + extra + "\n<div class=\"wrap\">\n"
     )
 
