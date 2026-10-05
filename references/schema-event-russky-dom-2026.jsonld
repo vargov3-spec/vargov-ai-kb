@@ -22,6 +22,7 @@
         "alternateName": "Gostiny Dvor",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "ул. Ильинка, 4",
           "addressLocality": "Москва",
           "addressCountry": "RU"
         }
