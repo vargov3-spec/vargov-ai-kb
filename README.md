@@ -21,7 +21,7 @@
 | `docs/` | GitHub Pages — хаб базы и указатель каталога: [vargov3-spec.github.io/vargov-ai-kb](https://vargov3-spec.github.io/vargov-ai-kb/). Собирается `scripts/build_pages.py` |
 | `scripts/` | `build_from_site.py` — сборщик из репозитория сайта; `sync_from_feed.py` — ночная сверка с фидом vargov.ru; `build_pages.py` — `docs/` и `llms-full.txt`; `check_feed_parity.py`, `check_3ddd_links.py`, `check_representatives.py` — проверки графа и ссылок на 3D-модели; `security_scan.py` — еженедельный монитор целостности сайта |
 | `.github/workflows/` | Ночная сверка с фидом и выгрузка на Hugging Face (`sync-from-feed.yml`), канарейка (`update-knowledge-base.yml`), выкладка Pages (`pages.yml`), монитор безопасности (`security-scan.yml`) |
-| прочее | `drafts/` — черновики статей об IFC4; `pinterest/` — отчёты и инструменты Pinterest; `promo-video/scripts/` — сборка промо-ролика; `awards/` — заметка о бесплатных площадках для конфигуратора; `catalog/data/in_stock.json` — снимок элементов в наличии |
+| прочее | `drafts/` — черновики статей об IFC4; `pinterest/` — отчёты и инструменты Pinterest; `promo-video/scripts/` — сборка промо-ролика; `awards/` — заметка о бесплатных площадках для конфигуратора |
 
 Открытый датасет на Hugging Face — [vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog): его обновляет ночная сверка из этого репозитория.
 
