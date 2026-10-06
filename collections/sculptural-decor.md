@@ -12,7 +12,7 @@
 - [LC0022](../products/sculptural-decor/LC0022.md) — Декоративный занавес-экран — https://vargov.ru/catalog/lc0022
 - [LC0035](../products/sculptural-decor/LC0035.md) — Настенная композиция — https://vargov.ru/catalog/lc0035
 - [LC0053](../products/sculptural-decor/LC0053.md) — Настенное панно с подсветкой — https://vargov.ru/catalog/lc0053
-- [LC0061](../products/sculptural-decor/LC0061.md) — Напольный светильник-скульптура — https://vargov.ru/catalog/lc0061
+- [LC0061](../products/sculptural-decor/LC0061.md) — Настольный арт-объект — https://vargov.ru/catalog/lc0061
 - [LC0066](../products/sculptural-decor/LC0066.md) — Зеркало — https://vargov.ru/catalog/lc0066
 - [LC0067](../products/sculptural-decor/LC0067.md) — Настенный светильник-кольцо — https://vargov.ru/catalog/lc0067
 - [LC0068](../products/sculptural-decor/LC0068.md) — Зеркало — https://vargov.ru/catalog/lc0068

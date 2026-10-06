@@ -73,7 +73,7 @@ Compositions: 605
 | LC0058 | Lighting composition | https://vargov.ru/en/catalog/lc0058 |  |
 | LC0059 | Lighting composition | https://vargov.ru/en/catalog/lc0059 |  |
 | LC0060 | Decorative composition | https://vargov.ru/en/catalog/lc0060 |  |
-| LC0061 | Floor light-sculpture | https://vargov.ru/en/catalog/lc0061 |  |
+| LC0061 | Table art object | https://vargov.ru/en/catalog/lc0061 |  |
 | LC0062 | Lighting composition | https://vargov.ru/en/catalog/lc0062 |  |
 | LC0063 | Decorative composition | https://vargov.ru/en/catalog/lc0063 |  |
 | LC0064 | Lighting composition | https://vargov.ru/en/catalog/lc0064 |  |

@@ -12,7 +12,7 @@ Items: 82
 - [LC0022](../products/sculptural-decor/LC0022.md) — Decorative screen-curtain — https://vargov.ru/en/catalog/lc0022
 - [LC0035](../products/sculptural-decor/LC0035.md) — Wall composition — https://vargov.ru/en/catalog/lc0035
 - [LC0053](../products/sculptural-decor/LC0053.md) — Backlit wall panel — https://vargov.ru/en/catalog/lc0053
-- [LC0061](../products/sculptural-decor/LC0061.md) — Floor light-sculpture — https://vargov.ru/en/catalog/lc0061
+- [LC0061](../products/sculptural-decor/LC0061.md) — Table art object — https://vargov.ru/en/catalog/lc0061
 - [LC0066](../products/sculptural-decor/LC0066.md) — Mirror — https://vargov.ru/en/catalog/lc0066
 - [LC0067](../products/sculptural-decor/LC0067.md) — Wall light-ring — https://vargov.ru/en/catalog/lc0067
 - [LC0068](../products/sculptural-decor/LC0068.md) — Mirror — https://vargov.ru/en/catalog/lc0068

@@ -73,7 +73,7 @@
 | LC0058 | Световая композиция | https://vargov.ru/catalog/lc0058 |  |
 | LC0059 | Световая композиция | https://vargov.ru/catalog/lc0059 |  |
 | LC0060 | Декоративная композиция | https://vargov.ru/catalog/lc0060 |  |
-| LC0061 | Напольный светильник-скульптура | https://vargov.ru/catalog/lc0061 |  |
+| LC0061 | Настольный арт-объект | https://vargov.ru/catalog/lc0061 |  |
 | LC0062 | Световая композиция | https://vargov.ru/catalog/lc0062 |  |
 | LC0063 | Декоративная композиция | https://vargov.ru/catalog/lc0063 |  |
 | LC0064 | Световая композиция | https://vargov.ru/catalog/lc0064 |  |
