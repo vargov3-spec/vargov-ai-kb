@@ -48,7 +48,7 @@ Für 12-V-LEDs
 
 - Die Decke mit Sperrholz verstärken, die Bohrungen nach dem Montageplan setzen und die Leitungen durchführen.
 
-- Die Leitungen mit den mitgelieferten Klemmen an die Elemente der Komposition anschließen.
+- Die Leitungen mit Klemmen an die Elemente der Komposition anschließen.
 
 Für 220-V-LEDs
 
@@ -56,7 +56,7 @@ Für 220-V-LEDs
 
 - Die Decke mit Sperrholz verstärken, die Bohrungen setzen und die Leitungen durchziehen.
 
-- Der Anschluss erfolgt über die mitgelieferten Spezialklemmen.
+- Der Anschluss erfolgt über Klemmen.
 
 5. Anschlussvarianten
 

@@ -48,7 +48,7 @@ For 12 V LEDs
 
 - Reinforce the ceiling with plywood, drill the holes according to the installation drawing and pull the wires through.
 
-- Join the wires to the elements of the composition using the connectors supplied.
+- Join the wires to the elements of the composition using connectors.
 
 For 220 V LEDs
 
@@ -56,7 +56,7 @@ For 220 V LEDs
 
 - Reinforce the ceiling with plywood, drill the holes and pull the wires through.
 
-- The connection is made through the dedicated terminal blocks supplied.
+- The connection is made through terminal blocks.
 
 5. Connection options
 

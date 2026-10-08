@@ -48,7 +48,7 @@ Para LED de 12 V
 
 - Reforzar el techo con contrachapado, perforar los orificios según el plano de montaje y pasar los cables.
 
-- Unir los cables a los elementos de la composición con los bornes incluidos.
+- Unir los cables a los elementos de la composición con bornes.
 
 Para LED de 220 V
 
@@ -56,7 +56,7 @@ Para LED de 220 V
 
 - Reforzar el techo con contrachapado, perforar los orificios y pasar los cables.
 
-- La conexión se realiza mediante los bornes específicos suministrados.
+- La conexión se realiza mediante bornes.
 
 5. Variantes de conexión
 

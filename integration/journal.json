@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 27,
-  "checksum": "d89e522dab643e7e",
+  "checksum": "474b99f5a1622b38",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-05T09:37:08+00:00",
+  "generated": "2026-10-08T07:38:12+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -12134,7 +12134,7 @@
      },
      {
       "type": "li",
-      "text": "Соединить провода с элементами композиции с помощью клемм, входящих в комплект."
+      "text": "Соединить провода с элементами композиции с помощью клемм."
      },
      {
       "type": "h",
@@ -12150,7 +12150,7 @@
      },
      {
       "type": "li",
-      "text": "Подключение осуществляется через специальные клеммы, поставляемые в комплекте."
+      "text": "Подключение осуществляется через клеммы."
      },
      {
       "type": "h",
@@ -12342,7 +12342,7 @@
      },
      {
       "type": "li",
-      "text": "Join the wires to the elements of the composition using the connectors supplied."
+      "text": "Join the wires to the elements of the composition using connectors."
      },
      {
       "type": "h",
@@ -12358,7 +12358,7 @@
      },
      {
       "type": "li",
-      "text": "The connection is made through the dedicated terminal blocks supplied."
+      "text": "The connection is made through terminal blocks."
      },
      {
       "type": "h",
@@ -12550,7 +12550,7 @@
      },
      {
       "type": "li",
-      "text": "Die Leitungen mit den mitgelieferten Klemmen an die Elemente der Komposition anschließen."
+      "text": "Die Leitungen mit Klemmen an die Elemente der Komposition anschließen."
      },
      {
       "type": "h",
@@ -12566,7 +12566,7 @@
      },
      {
       "type": "li",
-      "text": "Der Anschluss erfolgt über die mitgelieferten Spezialklemmen."
+      "text": "Der Anschluss erfolgt über Klemmen."
      },
      {
       "type": "h",
@@ -12758,7 +12758,7 @@
      },
      {
       "type": "li",
-      "text": "Raccorder les câbles aux éléments de la composition à l'aide des bornes fournies."
+      "text": "Raccorder les câbles aux éléments de la composition à l'aide de bornes."
      },
      {
       "type": "h",
@@ -12774,7 +12774,7 @@
      },
      {
       "type": "li",
-      "text": "Le raccordement se fait par les bornes spécifiques fournies."
+      "text": "Le raccordement se fait par des bornes."
      },
      {
       "type": "h",
@@ -12966,7 +12966,7 @@
      },
      {
       "type": "li",
-      "text": "Collegare i cavi agli elementi della composizione con i morsetti in dotazione."
+      "text": "Collegare i cavi agli elementi della composizione con dei morsetti."
      },
      {
       "type": "h",
@@ -12982,7 +12982,7 @@
      },
      {
       "type": "li",
-      "text": "Il collegamento avviene tramite gli appositi morsetti forniti in dotazione."
+      "text": "Il collegamento avviene tramite morsetti."
      },
      {
       "type": "h",
@@ -13174,7 +13174,7 @@
      },
      {
       "type": "li",
-      "text": "Unir los cables a los elementos de la composición con los bornes incluidos."
+      "text": "Unir los cables a los elementos de la composición con bornes."
      },
      {
       "type": "h",
@@ -13190,7 +13190,7 @@
      },
      {
       "type": "li",
-      "text": "La conexión se realiza mediante los bornes específicos suministrados."
+      "text": "La conexión se realiza mediante bornes."
      },
      {
       "type": "h",
@@ -13382,7 +13382,7 @@
      },
      {
       "type": "li",
-      "text": "Nối dây với các chi tiết của tác phẩm bằng cầu đấu có trong bộ."
+      "text": "Nối dây với các chi tiết của tác phẩm bằng cầu đấu."
      },
      {
       "type": "h",
@@ -13398,7 +13398,7 @@
      },
      {
       "type": "li",
-      "text": "Việc đấu nối thực hiện qua các cầu đấu chuyên dụng đi kèm trong bộ."
+      "text": "Việc đấu nối thực hiện qua cầu đấu."
      },
      {
       "type": "h",
@@ -13590,7 +13590,7 @@
      },
      {
       "type": "li",
-      "text": "وصل الأسلاك بعناصر التركيبة بواسطة أطراف التوصيل المرفقة في الطقم."
+      "text": "وصل الأسلاك بعناصر التركيبة بواسطة أطراف التوصيل."
      },
      {
       "type": "h",
@@ -13606,7 +13606,7 @@
      },
      {
       "type": "li",
-      "text": "يتمّ التوصيل عبر أطراف توصيل خاصة تورَّد ضمن الطقم."
+      "text": "يتمّ التوصيل عبر أطراف توصيل."
      },
      {
       "type": "h",

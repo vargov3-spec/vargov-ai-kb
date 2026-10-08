@@ -48,7 +48,7 @@ Per LED a 12 V
 
 - Rinforzare il soffitto con il compensato, praticare i fori secondo il disegno di montaggio e far passare i cavi.
 
-- Collegare i cavi agli elementi della composizione con i morsetti in dotazione.
+- Collegare i cavi agli elementi della composizione con dei morsetti.
 
 Per LED a 220 V
 
@@ -56,7 +56,7 @@ Per LED a 220 V
 
 - Rinforzare il soffitto con il compensato, praticare i fori e far passare i cavi.
 
-- Il collegamento avviene tramite gli appositi morsetti forniti in dotazione.
+- Il collegamento avviene tramite morsetti.
 
 5. Varianti di collegamento
 

@@ -48,7 +48,7 @@ Pour des LED en 12 V
 
 - Renforcer le plafond au contreplaqué, percer les trous selon le plan de pose et passer les câbles.
 
-- Raccorder les câbles aux éléments de la composition à l'aide des bornes fournies.
+- Raccorder les câbles aux éléments de la composition à l'aide de bornes.
 
 Pour des LED en 220 V
 
@@ -56,7 +56,7 @@ Pour des LED en 220 V
 
 - Renforcer le plafond au contreplaqué, percer les trous et passer les câbles.
 
-- Le raccordement se fait par les bornes spécifiques fournies.
+- Le raccordement se fait par des bornes.
 
 5. Variantes de raccordement
 

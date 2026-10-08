@@ -48,7 +48,7 @@ Với diode 12V
 
 - Gia cố trần bằng gỗ dán, khoan lỗ theo sơ đồ lắp đặt và luồn dây.
 
-- Nối dây với các chi tiết của tác phẩm bằng cầu đấu có trong bộ.
+- Nối dây với các chi tiết của tác phẩm bằng cầu đấu.
 
 Với diode 220V
 
@@ -56,7 +56,7 @@ Với diode 220V
 
 - Gia cố trần bằng gỗ dán, khoan lỗ và luồn dây.
 
-- Việc đấu nối thực hiện qua các cầu đấu chuyên dụng đi kèm trong bộ.
+- Việc đấu nối thực hiện qua cầu đấu.
 
 5. Các phương án đấu nối
 
