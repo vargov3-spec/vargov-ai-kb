@@ -22,7 +22,7 @@ Cách bố trí không nói dối
 
 Một cấu hình luôn cho cùng một cách dàn: đồng nghiệp mở đường dẫn của bạn sẽ thấy đúng như vậy. Nút tạo lại đưa ra phương án khác với cùng mật độ.
 
-Các dải có bộ xử lý riêng: mười mã được dựng không phải như một cụm chi tiết mà như dải liên tục gồm ống thuỷ tinh trên khung — có dáng uốn riêng, chiều dài riêng, bản vẽ riêng và chuyển màu dọc theo dải.
+Các dải có bộ xử lý riêng: mười mã được dựng không phải như một cụm chi tiết mà như dải liên tục gồm ống thuỷ tinh trên khung — có dáng uốn riêng, chiều dài riêng và chuyển màu dọc theo dải.
 
 Những con số thợ lắp cần
 
@@ -58,7 +58,7 @@ Mở ở đâu
 
 Ngoài Nga — vargov.design. Trong Nga — configurator.vargov.ru.
 
-Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình: yêu cầu đi kèm toàn bộ thành phần, và một cửa sổ trò chuyện mở ra — WhatsApp ở nước ngoài, Telegram ở Nga. Câu trả lời đến ngay tại đó.
+Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình: yêu cầu đi kèm toàn bộ thành phần, và một cửa sổ trò chuyện mở ra — WhatsApp ở nước ngoài, Telegram ở Nga. Hãy gửi tin nhắn trong cửa sổ trò chuyện vừa mở — câu trả lời sẽ đến ngay tại đó.
 
 Vargov®Design — dành cho những ai thấy được sự khác biệt.
 

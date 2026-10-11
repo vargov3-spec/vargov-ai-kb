@@ -22,7 +22,7 @@ In un assemblaggio generativo conta non la bella immagine ma l'onestà fisica. N
 
 Una configurazione dà sempre la stessa distribuzione: il collega che apre il vostro link vede esattamente la stessa cosa. Il pulsante di rigenerazione propone un'altra variante della stessa densità.
 
-I nastri hanno un motore a parte: dieci articoli si costruiscono non come nuvola di elementi ma come nastro continuo di tubi di vetro su una struttura — plasticità propria, metratura propria, disegno proprio e passaggio di colore lungo il nastro.
+I nastri hanno un motore a parte: dieci articoli si costruiscono non come nuvola di elementi ma come nastro continuo di tubi di vetro su una struttura — plasticità propria, metratura propria e passaggio di colore lungo il nastro.
 
 I numeri che servono all'installatore
 
@@ -58,7 +58,7 @@ Dove aprirlo
 
 Fuori dalla Russia — vargov.design. In Russia — configurator.vargov.ru.
 
-La composizione finita si invia al progettista del marchio direttamente dal configuratore: la richiesta parte con l'elenco completo degli elementi e si apre una chat — WhatsApp all'estero, Telegram in Russia. La risposta arriva lì.
+La composizione finita si invia al progettista del marchio direttamente dal configuratore: la richiesta parte con l'elenco completo degli elementi e si apre una chat — WhatsApp all'estero, Telegram in Russia. Inviate un messaggio nella chat che si apre — la risposta arriverà lì.
 
 Vargov®Design — per chi vede la differenza.
 

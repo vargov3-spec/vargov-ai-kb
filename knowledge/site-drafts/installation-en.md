@@ -77,8 +77,7 @@ The configurator calculates from the composition itself and shows in the specifi
 - **overall dimensions** — footprint, depth of the element cloud, distance to the ceiling;
 - **the make-up** — element type and count, form, density.
 
-The specification can be saved or printed. **The AutoCAD drawing is sent by the brand bot
-on Telegram** — the button for it sits in the configurator itself.
+The specification can be saved or printed.
 
 A composition is assembled for the room, so these figures differ for each one and are
 calculated before the order, not after.

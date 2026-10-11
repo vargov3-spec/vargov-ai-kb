@@ -22,7 +22,7 @@ What matters in generative assembly is not a pretty picture but physical honesty
 
 One configuration always yields the same layout: a colleague opening your link sees exactly the same thing. A regenerate button offers another variant at the same density.
 
-Ribbons have their own engine: ten articles are built not as a cloud of elements but as a continuous ribbon of glass tubes on a frame — its own plasticity, its own length, its own drawing and a colour transition along it.
+Ribbons have their own engine: ten articles are built not as a cloud of elements but as a continuous ribbon of glass tubes on a frame — its own plasticity, its own length and a colour transition along it.
 
 The figures an installer needs
 
@@ -58,7 +58,7 @@ Where to open it
 
 Outside Russia — vargov.design. Within Russia — configurator.vargov.ru.
 
-A finished composition can be sent to the brand's engineer straight from the configurator: the request goes with the full content, and a chat opens — WhatsApp abroad, Telegram in Russia. The answer arrives in the same chat.
+A finished composition can be sent to the brand's engineer straight from the configurator: the request goes with the full content, and a chat opens — WhatsApp abroad, Telegram in Russia. Send a message in the chat that opens — the answer will come there.
 
 Vargov®Design — for those who see the difference.
 

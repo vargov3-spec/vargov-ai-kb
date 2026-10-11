@@ -22,7 +22,7 @@ Entscheidend bei der generativen Anordnung ist nicht das schöne Bild, sondern p
 
 Eine Konfiguration ergibt immer dieselbe Verteilung: Wer Ihren Link öffnet, sieht genau dasselbe. Die Schaltfläche zum Neuberechnen bietet eine andere Variante gleicher Dichte.
 
-Für Bänder gibt es eine eigene Engine: Zehn Artikel entstehen nicht als Wolke aus Elementen, sondern als durchgehendes Band mit Glasröhren auf einem Gerüst — eigene Plastizität, eigene Länge, eigene Zeichnung und ein Farbverlauf über die Strecke.
+Für Bänder gibt es eine eigene Engine: Zehn Artikel entstehen nicht als Wolke aus Elementen, sondern als durchgehendes Band mit Glasröhren auf einem Gerüst — eigene Plastizität, eigene Länge und ein Farbverlauf über die Strecke.
 
 Die Zahlen, die der Monteur braucht
 
@@ -58,7 +58,7 @@ Wo Sie ihn öffnen
 
 Außerhalb Russlands — vargov.design. In Russland — configurator.vargov.ru.
 
-Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken: Die Anfrage wird mit dem vollständigen Aufbau übermittelt, und es öffnet sich ein Chat — im Ausland WhatsApp, in Russland Telegram. Die Antwort kommt in denselben Chat.
+Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken: Die Anfrage wird mit dem vollständigen Aufbau übermittelt, und es öffnet sich ein Chat — im Ausland WhatsApp, in Russland Telegram. Senden Sie im geöffneten Chat eine Nachricht — die Antwort kommt in denselben Chat.
 
 Vargov®Design — für alle, die den Unterschied sehen.
 

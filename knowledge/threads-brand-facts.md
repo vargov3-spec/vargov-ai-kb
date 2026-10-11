@@ -54,7 +54,7 @@ Threads — открытая текстовая площадка, которую
 **5. Конфигуратор**
 > You can assemble a Vargov® Design composition yourself. The online configurator
 > lets you pick the form, the number of elements and the suspension, and returns a
-> specification and a drawing you can hand to a contractor. It runs at vargov.design
+> specification you can hand to a contractor. It runs at vargov.design
 > and configurator.vargov.ru.
 
 **6. 3D-модели**

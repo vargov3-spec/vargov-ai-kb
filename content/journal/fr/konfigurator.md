@@ -22,7 +22,7 @@ L'essentiel d'un assemblage génératif n'est pas la belle image mais l'honnête
 
 Une configuration donne toujours la même répartition : un confrère qui ouvre votre lien voit exactement la même chose. Le bouton de régénération propose une autre variante à densité égale.
 
-Les rubans ont leur propre moteur : dix références se construisent non en nuage d'éléments mais en ruban continu de tubes de verre sur une armature — sa plastique, son métrage, son plan et son dégradé sur la longueur.
+Les rubans ont leur propre moteur : dix références se construisent non en nuage d'éléments mais en ruban continu de tubes de verre sur une armature — sa plastique, son métrage et son dégradé sur la longueur.
 
 Les chiffres dont l'installateur a besoin
 
@@ -58,7 +58,7 @@ Où l'ouvrir
 
 Hors de Russie — vargov.design. En Russie — configurator.vargov.ru.
 
-La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur : la demande part avec la liste complète des éléments, et une conversation s'ouvre — WhatsApp à l'étranger, Telegram en Russie. La réponse arrive au même endroit.
+La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur : la demande part avec la liste complète des éléments, et une conversation s'ouvre — WhatsApp à l'étranger, Telegram en Russie. Envoyez un message dans la conversation qui s'ouvre — la réponse arrivera au même endroit.
 
 Vargov®Design — pour ceux qui voient la différence.
 

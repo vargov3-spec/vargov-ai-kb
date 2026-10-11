@@ -22,7 +22,7 @@ En un montaje generativo lo decisivo no es la imagen bonita, sino la honestidad 
 
 Una configuración da siempre el mismo reparto: quien abra su enlace verá exactamente lo mismo. El botón de regeneración propone otra variante de la misma densidad.
 
-Las cintas tienen su propio motor: diez referencias se construyen no como nube de elementos, sino como cinta continua de tubos de vidrio sobre una estructura — con su propia plasticidad, su metraje, su plano y su degradado de color a lo largo de la cinta.
+Las cintas tienen su propio motor: diez referencias se construyen no como nube de elementos, sino como cinta continua de tubos de vidrio sobre una estructura — con su propia plasticidad, su metraje y su degradado de color a lo largo de la cinta.
 
 Las cifras que necesita el instalador
 
@@ -58,7 +58,7 @@ Dónde abrirlo
 
 Fuera de Rusia — vargov.design. En Rusia — configurator.vargov.ru.
 
-La composición terminada se envía al ingeniero de la marca directamente desde el configurador: la solicitud sale con el contenido completo y se abre un chat — WhatsApp en el extranjero, Telegram en Rusia. La respuesta llega allí mismo.
+La composición terminada se envía al ingeniero de la marca directamente desde el configurador: la solicitud sale con el contenido completo y se abre un chat — WhatsApp en el extranjero, Telegram en Rusia. Envíe un mensaje en el chat que se abre — la respuesta llegará allí mismo.
 
 Vargov®Design — para quienes ven la diferencia.
 
