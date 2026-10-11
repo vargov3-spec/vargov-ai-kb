@@ -58,7 +58,7 @@ Wo Sie ihn öffnen
 
 Außerhalb Russlands — vargov.design. In Russland — configurator.vargov.ru.
 
-Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken: Die Anfrage wird mit dem vollständigen Aufbau übermittelt, und es öffnet sich ein Chat — im Ausland WhatsApp, in Russland Telegram. Senden Sie im geöffneten Chat eine Nachricht — die Antwort kommt in denselben Chat.
+Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken. Klicken Sie auf „Angebot anfordern“ und wählen Sie Telegram, WhatsApp oder E-Mail: Der Anfragetext wird automatisch eingefügt — Sie müssen nur noch auf „Senden“ klicken. Die Antwort kommt auf demselben Weg zurück.
 
 Vargov®Design — für alle, die den Unterschied sehen.
 

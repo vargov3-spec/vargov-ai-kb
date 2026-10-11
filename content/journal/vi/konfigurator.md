@@ -58,7 +58,7 @@ Mở ở đâu
 
 Ngoài Nga — vargov.design. Trong Nga — configurator.vargov.ru.
 
-Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình: yêu cầu đi kèm toàn bộ thành phần, và một cửa sổ trò chuyện mở ra — WhatsApp ở nước ngoài, Telegram ở Nga. Hãy gửi tin nhắn trong cửa sổ trò chuyện vừa mở — câu trả lời sẽ đến ngay tại đó.
+Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình. Nhấn «Nhận báo giá» rồi chọn Telegram, WhatsApp hoặc email: nội dung yêu cầu sẽ tự điền sẵn — bạn chỉ cần nhấn «Gửi». Câu trả lời sẽ đến qua chính kênh đó.
 
 Vargov®Design — dành cho những ai thấy được sự khác biệt.
 

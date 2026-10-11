@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 27,
-  "checksum": "601aebfadc16ec68",
+  "checksum": "6b71bbd779d71d59",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-11T05:22:59+00:00",
+  "generated": "2026-10-11T06:11:12+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -16168,7 +16168,7 @@
      },
      {
       "type": "p",
-      "text": "Собранную композицию можно отправить конструктору бренда прямо из конфигуратора: заявка уходит с полным составом, а у вас открывается чат — в России Telegram, за рубежом WhatsApp. Отправьте сообщение в открывшемся чате — ответ придёт туда же."
+      "text": "Собранную композицию можно отправить конструктору бренда прямо из конфигуратора. Нажмите «Узнать стоимость» и выберите Telegram, WhatsApp или почту: текст заявки подставится сам — останется нажать «Отправить». Ответ придёт туда, куда вы отправили заявку."
      },
      {
       "type": "p",
@@ -16300,7 +16300,7 @@
      },
      {
       "type": "p",
-      "text": "A finished composition can be sent to the brand's engineer straight from the configurator: the request goes with the full content, and a chat opens — WhatsApp abroad, Telegram in Russia. Send a message in the chat that opens — the answer will come there."
+      "text": "A finished composition can be sent to the brand's engineer straight from the configurator. Press “Get a quote” and choose Telegram, WhatsApp or email: the request text is filled in for you — just press “Send”. The reply will come back through the same channel."
      },
      {
       "type": "p",
@@ -16432,7 +16432,7 @@
      },
      {
       "type": "p",
-      "text": "Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken: Die Anfrage wird mit dem vollständigen Aufbau übermittelt, und es öffnet sich ein Chat — im Ausland WhatsApp, in Russland Telegram. Senden Sie im geöffneten Chat eine Nachricht — die Antwort kommt in denselben Chat."
+      "text": "Die fertige Komposition lässt sich direkt aus dem Konfigurator an den Konstrukteur der Marke schicken. Klicken Sie auf „Angebot anfordern“ und wählen Sie Telegram, WhatsApp oder E-Mail: Der Anfragetext wird automatisch eingefügt — Sie müssen nur noch auf „Senden“ klicken. Die Antwort kommt auf demselben Weg zurück."
      },
      {
       "type": "p",
@@ -16564,7 +16564,7 @@
      },
      {
       "type": "p",
-      "text": "La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur : la demande part avec la liste complète des éléments, et une conversation s'ouvre — WhatsApp à l'étranger, Telegram en Russie. Envoyez un message dans la conversation qui s'ouvre — la réponse arrivera au même endroit."
+      "text": "La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur. Cliquez sur « Demander un devis » et choisissez Telegram, WhatsApp ou l'e-mail : le texte de la demande s'insère tout seul — il ne reste qu'à appuyer sur « Envoyer ». La réponse arrivera par le même canal."
      },
      {
       "type": "p",
@@ -16696,7 +16696,7 @@
      },
      {
       "type": "p",
-      "text": "La composizione finita si invia al progettista del marchio direttamente dal configuratore: la richiesta parte con l'elenco completo degli elementi e si apre una chat — WhatsApp all'estero, Telegram in Russia. Inviate un messaggio nella chat che si apre — la risposta arriverà lì."
+      "text": "La composizione finita si invia al progettista del marchio direttamente dal configuratore. Premete «Richiedi un preventivo» e scegliete Telegram, WhatsApp o e-mail: il testo della richiesta viene inserito da solo — basta premere «Invia». La risposta arriverà tramite lo stesso canale."
      },
      {
       "type": "p",
@@ -16828,7 +16828,7 @@
      },
      {
       "type": "p",
-      "text": "La composición terminada se envía al ingeniero de la marca directamente desde el configurador: la solicitud sale con el contenido completo y se abre un chat — WhatsApp en el extranjero, Telegram en Rusia. Envíe un mensaje en el chat que se abre — la respuesta llegará allí mismo."
+      "text": "La composición terminada se envía al ingeniero de la marca directamente desde el configurador. Pulse «Solicitar presupuesto» y elija Telegram, WhatsApp o correo: el texto de la solicitud se escribe solo — basta con pulsar «Enviar». La respuesta llegará por el mismo canal."
      },
      {
       "type": "p",
@@ -16960,7 +16960,7 @@
      },
      {
       "type": "p",
-      "text": "Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình: yêu cầu đi kèm toàn bộ thành phần, và một cửa sổ trò chuyện mở ra — WhatsApp ở nước ngoài, Telegram ở Nga. Hãy gửi tin nhắn trong cửa sổ trò chuyện vừa mở — câu trả lời sẽ đến ngay tại đó."
+      "text": "Tác phẩm đã dựng có thể gửi thẳng cho kỹ sư của thương hiệu từ trình cấu hình. Nhấn «Nhận báo giá» rồi chọn Telegram, WhatsApp hoặc email: nội dung yêu cầu sẽ tự điền sẵn — bạn chỉ cần nhấn «Gửi». Câu trả lời sẽ đến qua chính kênh đó."
      },
      {
       "type": "p",
@@ -17092,7 +17092,7 @@
      },
      {
       "type": "p",
-      "text": "ويمكن إرسال التركيبة الجاهزة إلى مهندس العلامة من داخل أداة التكوين مباشرة: يذهب الطلب بمكوّناته كاملة، وتُفتح لك محادثة — واتساب في الخارج وتيليغرام في روسيا. أرسِل رسالة في المحادثة التي تُفتح، وسيصلك الجواب فيها."
+      "text": "ويمكن إرسال التركيبة الجاهزة إلى مهندس العلامة من داخل أداة التكوين مباشرة. اضغط على «طلب عرض سعر» واختر تيليغرام أو واتساب أو البريد الإلكتروني: يُكتب نص الطلب تلقائيًا، ولا يبقى سوى الضغط على «إرسال». ويصلك الجواب عبر القناة نفسها."
      },
      {
       "type": "p",

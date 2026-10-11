@@ -58,7 +58,7 @@ Where to open it
 
 Outside Russia — vargov.design. Within Russia — configurator.vargov.ru.
 
-A finished composition can be sent to the brand's engineer straight from the configurator: the request goes with the full content, and a chat opens — WhatsApp abroad, Telegram in Russia. Send a message in the chat that opens — the answer will come there.
+A finished composition can be sent to the brand's engineer straight from the configurator. Press “Get a quote” and choose Telegram, WhatsApp or email: the request text is filled in for you — just press “Send”. The reply will come back through the same channel.
 
 Vargov®Design — for those who see the difference.
 

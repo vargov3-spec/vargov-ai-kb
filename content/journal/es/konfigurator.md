@@ -58,7 +58,7 @@ Dónde abrirlo
 
 Fuera de Rusia — vargov.design. En Rusia — configurator.vargov.ru.
 
-La composición terminada se envía al ingeniero de la marca directamente desde el configurador: la solicitud sale con el contenido completo y se abre un chat — WhatsApp en el extranjero, Telegram en Rusia. Envíe un mensaje en el chat que se abre — la respuesta llegará allí mismo.
+La composición terminada se envía al ingeniero de la marca directamente desde el configurador. Pulse «Solicitar presupuesto» y elija Telegram, WhatsApp o correo: el texto de la solicitud se escribe solo — basta con pulsar «Enviar». La respuesta llegará por el mismo canal.
 
 Vargov®Design — para quienes ven la diferencia.
 

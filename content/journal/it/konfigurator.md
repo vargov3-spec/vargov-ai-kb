@@ -58,7 +58,7 @@ Dove aprirlo
 
 Fuori dalla Russia — vargov.design. In Russia — configurator.vargov.ru.
 
-La composizione finita si invia al progettista del marchio direttamente dal configuratore: la richiesta parte con l'elenco completo degli elementi e si apre una chat — WhatsApp all'estero, Telegram in Russia. Inviate un messaggio nella chat che si apre — la risposta arriverà lì.
+La composizione finita si invia al progettista del marchio direttamente dal configuratore. Premete «Richiedi un preventivo» e scegliete Telegram, WhatsApp o e-mail: il testo della richiesta viene inserito da solo — basta premere «Invia». La risposta arriverà tramite lo stesso canale.
 
 Vargov®Design — per chi vede la differenza.
 

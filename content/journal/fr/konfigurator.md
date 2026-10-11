@@ -58,7 +58,7 @@ Où l'ouvrir
 
 Hors de Russie — vargov.design. En Russie — configurator.vargov.ru.
 
-La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur : la demande part avec la liste complète des éléments, et une conversation s'ouvre — WhatsApp à l'étranger, Telegram en Russie. Envoyez un message dans la conversation qui s'ouvre — la réponse arrivera au même endroit.
+La composition finie s'envoie à l'ingénieur-concepteur de la marque directement depuis le configurateur. Cliquez sur « Demander un devis » et choisissez Telegram, WhatsApp ou l'e-mail : le texte de la demande s'insère tout seul — il ne reste qu'à appuyer sur « Envoyer ». La réponse arrivera par le même canal.
 
 Vargov®Design — pour ceux qui voient la différence.
 
