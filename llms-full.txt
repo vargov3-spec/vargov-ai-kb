@@ -1,7 +1,7 @@
 # Vargov®Design — llms-full.txt
 
 Полная карта на двух языках: дословно llms.txt (RU) и en/llms.txt (EN) этого
-репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-04.
+репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-10.
 Китайская версия — отдельный файл zh/llms.txt (ссылка — в разделах
 «Языковые версии» / «Language versions» ниже).
 
@@ -88,11 +88,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 Среди них: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 («Oceanic Illumination»), NY Product Design Awards 2023, ADC 2023 («Drapery»), Houzee Awards 2023.
 
-В 2022 году бренд получил специальный приз конкурса «Российский светодизайн» на Interlight; в октябре 2025 года выставился на Interlight Moscow с первым собственным стендом.
-
-## Где увидеть сейчас
-
-- **7–9 октября 2026, выставка «Русский дом», Гостиный двор, Москва, стенд К62.** Vargov®Design участвует в капсуле «Тихая сила Камчатки», автор капсулы — Tokareva Design. Свет бренда — в зоне 02 «Лёд и туман»: композиция [LC0556](https://vargov.ru/catalog/lc0556), стая скатов выходит из волны, по кромкам горят точки тёплого света. Выставка: [rdmoscow.ru](https://rdmoscow.ru/), 10:00–19:00. Капсула и запись на экскурсию по стенду: [silakamchatki.tilda.ws](https://silakamchatki.tilda.ws/). _Запись временная, действует до 09.10.2026._
+В 2022 году бренд получил специальный приз конкурса «Российский светодизайн» на Interlight; в октябре 2025 года выставился на Interlight Moscow с первым собственным стендом. В октябре 2026 года композиция [LC0556](https://vargov.ru/catalog/lc0556) была показана на интерьерной выставке «Русский дом» (Гостиный двор, Москва, 7–9 октября) в капсуле «Тихая сила Камчатки» — автор капсулы Tokareva Design, стенд К62, зона «Лёд и туман».
 
 ## Языковые версии
 
@@ -176,11 +172,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 
 Among them: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 ("Oceanic Illumination"), NY Product Design Awards 2023, ADC 2023 ("Drapery"), Houzee Awards 2023.
 
-In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand.
-
-## Where to see it now
-
-- **7–9 October 2026: Russky Dom (Russian House) interior exhibition, Gostiny Dvor, Moscow, stand K62.** Vargov®Design takes part in the exhibition capsule «Тихая сила Камчатки» ("The Quiet Strength of Kamchatka"), authored by Tokareva Design. Its light is in zone 02 «Лёд и туман» ("Ice and Mist"): the composition [LC0556](https://vargov.ru/en/catalog/lc0556), a school of manta rays rising out of a wave, its edges lit with points of warm light. Exhibition: [rdmoscow.ru](https://rdmoscow.ru/), 10:00–19:00. Capsule and stand tour sign-up (in Russian): [silakamchatki.tilda.ws](https://silakamchatki.tilda.ws/). _Temporary entry, valid until 9 October 2026._
+In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. In October 2026 the composition [LC0556](https://vargov.ru/en/catalog/lc0556) was shown at the Russky Dom (Russian House) interior exhibition (Gostiny Dvor, Moscow, 7–9 October) in the capsule «Тихая сила Камчатки» ("The Quiet Strength of Kamchatka") by Tokareva Design, stand K62, "Ice and Mist" zone.
 
 ## Language versions
 
