@@ -62,6 +62,10 @@ DOMAIN_ALLOWLIST = SCRIPT_ALLOWLIST | {
     "fips.ru", "www3.wipo.int", "www.wikidata.org", "vnisi.ru",
     # Соцсети бренда из sameAs.
     "www.facebook.com", "www.instagram.com", "www.pinterest.com",
+    # Свои публикации и профили, добавлены сайтом в октябре 2026: Medium (@antonvargov и статья
+    # про IFC4), LinkedIn (профиль Антона Варгова и та же статья), Hugging Face (набор данных
+    # vargov-design). Тревога 12.10.2026 была на них; ссылки сверены с живыми страницами 13.10.2026.
+    "medium.com", "www.linkedin.com", "huggingface.co",
     # Карточки на картах (hasMap на /showroom).
     "www.google.com", "yandex.ru",
 }
