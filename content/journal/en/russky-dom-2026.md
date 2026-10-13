@@ -16,7 +16,7 @@ Our light is in the second zone of the route. Its subtitle is “Between clarity
 
 The boundary glows
 
-LC0556 is a composition with a plot: out of a wave a school of manta rays emerges, and the sea begins to move. Turquoise ribbons curve into the crests of waves or into mountain ridges, with points of warm light scattered along their edges. By day, depending on where you stand, you read now waves, now the wings of the rays, now a mountain range.
+LC0556 is a composition with a plot: out of a wave a school of manta rays emerges, and the sea begins to move. Green ribbons curve into the crests of waves or into mountain ridges, with points of warm light scattered along their edges. By day, depending on where you stand, you read now waves, now the wings of the rays, now a mountain range.
 
 In the evening the edges light up, the rays go into shadow, and what remains is an aurora over water. What glows is the boundary, not the mass — almost exactly what the zone is about. The light holds to a thin line, as in ice, while the outline of the piece itself dissolves into half-shadow, as in fog. Clarity at the edge, mystery everywhere else.
 

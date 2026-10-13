@@ -16,7 +16,7 @@ La nostra luce è nella seconda zona del percorso. Il sottotitolo è «Tra chiar
 
 Brilla il confine
 
-LC0556 è una composizione con una trama: dall'onda esce un banco di mante, e il mare si mette in movimento. Nastri turchesi si piegano come creste d'onda o catene montuose; lungo il loro bordo sono sparsi punti di luce calda. Di giorno, a seconda di dove ci si trova, si leggono ora onde, ora ali di mante, ora una catena di monti.
+LC0556 è una composizione con una trama: dall'onda esce un banco di mante, e il mare si mette in movimento. Nastri verdi si piegano come creste d'onda o catene montuose; lungo il loro bordo sono sparsi punti di luce calda. Di giorno, a seconda di dove ci si trova, si leggono ora onde, ora ali di mante, ora una catena di monti.
 
 La sera i bordi si accendono, le mante passano in ombra, e resta un'aurora boreale sopra l'acqua. Brilla il confine, non la massa — quasi esattamente ciò di cui parla la zona. La luce si regge su una linea sottile, come nel ghiaccio, mentre il profilo del pezzo si scioglie nella penombra, come nella nebbia. La chiarezza sul bordo, il mistero in tutto il resto.
 

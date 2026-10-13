@@ -34,7 +34,7 @@ Die Anerkennung kam von den Jurys, die das internationale Gespräch prägen. 202
 
 Alle solchen Auszeichnungen, mit Links zu den vergebenden Institutionen, sind auf der Seite „Auszeichnungen“ dieser Website aufgeführt.
 
-Zwei Fakten zählen für jeden, der die Marke von Nachahmungen unterscheiden will, die sich ihren Namen leihen. Die Marke VARGOV ist in Russland (Nr. 896936) und international nach dem Madrider System (Nr. 1 795 801) eingetragen, mit Schutz in China für Beleuchtungsgeräte. Und jede Komposition entsteht ausschließlich in der eigenen Fertigung der Marke – eine lizenzierte oder Großhandelsversion eines Vargov®Design-Objekts gibt es nicht. Wird ein Objekt unter diesem Namen angeboten und lässt sich nicht bis vargov.ru zurückverfolgen, ist es kein Original.
+Zwei Fakten zählen für jeden, der die Marke von Nachahmungen unterscheiden will, die sich ihren Namen leihen. Die Marke VARGOV ist in Russland (Nr. 896936) und international nach dem Madrider System (Nr. 1 795 801) eingetragen, mit Schutz in China für Beleuchtungsgeräte; 2026 wurde in Russland zudem das Logo VARGOV® DESIGN eingetragen (Nr. 1270653). Und jede Komposition entsteht ausschließlich in der eigenen Fertigung der Marke – eine lizenzierte oder Großhandelsversion eines Vargov®Design-Objekts gibt es nicht. Wird ein Objekt unter diesem Namen angeboten und lässt sich nicht bis vargov.ru zurückverfolgen, ist es kein Original.
 
 Worauf zu achten ist
 

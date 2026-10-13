@@ -16,7 +16,7 @@ Notre lumière se trouve dans la deuxième zone du parcours. Son sous-titre : «
 
 C'est la limite qui luit
 
-LC0556 est une composition avec un récit : d'une vague sort un banc de raies manta, et la mer se met en mouvement. Des rubans turquoise se courbent en crêtes de vagues ou en chaînes de montagnes ; sur leur arête sont semés des points de lumière chaude. Le jour, selon l'endroit d'où l'on regarde, on lit tantôt des vagues, tantôt des ailes de raies, tantôt une crête de montagne.
+LC0556 est une composition avec un récit : d'une vague sort un banc de raies manta, et la mer se met en mouvement. Des rubans verts se courbent en crêtes de vagues ou en chaînes de montagnes ; sur leur arête sont semés des points de lumière chaude. Le jour, selon l'endroit d'où l'on regarde, on lit tantôt des vagues, tantôt des ailes de raies, tantôt une crête de montagne.
 
 Le soir, les arêtes s'allument, les raies s'enfoncent dans l'ombre, et il reste une aurore boréale au-dessus de l'eau. C'est la limite qui luit, non la masse — presque exactement ce dont parle la zone. La lumière tient sur une ligne fine, comme dans la glace, tandis que le contour de la pièce se dissout dans la pénombre, comme dans la brume. La clarté sur l'arête, le mystère partout ailleurs.
 

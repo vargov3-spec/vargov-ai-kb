@@ -34,7 +34,7 @@ Sự công nhận đến từ những ban giám khảo định hình diễn đà
 
 Tất cả những thành tựu như vậy, kèm liên kết đến các tổ chức trao giải, được liệt kê trên trang « Giải thưởng » của trang web này.
 
-Hai sự thật quan trọng với bất kỳ ai muốn phân biệt thương hiệu với những bản nhái vay mượn tên nó. Nhãn hiệu VARGOV được đăng ký tại Nga (số 896936) và quốc tế theo Hệ thống Madrid (số 1 795 801), với phạm vi bảo hộ tại Trung Quốc cho thiết bị chiếu sáng. Và mỗi tác phẩm chỉ được sản xuất tại xưởng sản xuất riêng của thương hiệu — không tồn tại phiên bản sản xuất theo giấy phép hay bán sỉ nào của sản phẩm Vargov®Design. Nếu một đồ vật được chào bán dưới tên này mà không truy được nguồn gốc về vargov.ru, thì đó không phải là hàng thật.
+Hai sự thật quan trọng với bất kỳ ai muốn phân biệt thương hiệu với những bản nhái vay mượn tên nó. Nhãn hiệu VARGOV được đăng ký tại Nga (số 896936) và quốc tế theo Hệ thống Madrid (số 1 795 801), với phạm vi bảo hộ tại Trung Quốc cho thiết bị chiếu sáng; năm 2026, logo VARGOV® DESIGN cũng được đăng ký tại Nga (số 1270653). Và mỗi tác phẩm chỉ được sản xuất tại xưởng sản xuất riêng của thương hiệu — không tồn tại phiên bản sản xuất theo giấy phép hay bán sỉ nào của sản phẩm Vargov®Design. Nếu một đồ vật được chào bán dưới tên này mà không truy được nguồn gốc về vargov.ru, thì đó không phải là hàng thật.
 
 Cần nhìn vào điều gì
 

@@ -1,7 +1,7 @@
 # Vargov®Design — llms-full.txt
 
 Полная карта на двух языках: дословно llms.txt (RU) и en/llms.txt (EN) этого
-репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-10.
+репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-12.
 Китайская версия — отдельный файл zh/llms.txt (ссылка — в разделах
 «Языковые версии» / «Language versions» ниже).
 
@@ -48,7 +48,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
 - [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 пресс-фото до 2000 px и логотип, свободны для редакционного использования с указанием «Vargov®Design»
 
-Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы.
+Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы. Логотип VARGOV® DESIGN: Россия, свидетельство № 1270653 (до 12.03.2036), классы 11 и 42 — осветительные приборы и услуги дизайна.
 
 ## Каталог
 
@@ -132,7 +132,7 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
 - [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov®Design”
 
-VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus.
+VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus. VARGOV® DESIGN logo: Russia, registration No. 1270653 (to 12 March 2036), classes 11 and 42 — lighting apparatus and design services.
 
 ## Catalogue
 

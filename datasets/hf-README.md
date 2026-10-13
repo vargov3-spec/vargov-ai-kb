@@ -183,6 +183,8 @@ Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Desi
 [vargov.design](https://vargov.design) was an **Awwwards Nominee** in 2026 — a nomination,
 not a win. The VARGOV trademark is registered in Russia (№ 896936, 6 October 2022) and
 internationally through the Madrid System (№ 1795801, 20 May 2024), class 11.
+The VARGOV® DESIGN logo is registered separately in Russia (№ 1270653, 6 October 2026),
+classes 11 and 42 — lighting apparatus and design services.
 Showroom: 24 Nakhimovsky Prospekt, bldg. 1, pavilion 2, stand 212, Moscow, daily 12:00–20:00.
 
 Compositions are made to order for double-height living rooms, staircases, hotel lobbies and

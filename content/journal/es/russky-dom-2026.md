@@ -16,7 +16,7 @@ Nuestra luz está en la segunda zona del recorrido. Su subtítulo es «Entre la 
 
 Brilla el límite
 
-LC0556 es una composición con argumento: de la ola sale un banco de mantas y el mar se pone en movimiento. Las cintas turquesa se curvan como crestas de olas o como cordilleras; a lo largo de su borde se esparcen puntos de luz cálida. De día, según desde dónde se mire, se leen ora olas, ora alas de mantas, ora una cadena montañosa.
+LC0556 es una composición con argumento: de la ola sale un banco de mantas y el mar se pone en movimiento. Las cintas verdes se curvan como crestas de olas o como cordilleras; a lo largo de su borde se esparcen puntos de luz cálida. De día, según desde dónde se mire, se leen ora olas, ora alas de mantas, ora una cadena montañosa.
 
 De noche los bordes se encienden, las mantas se hunden en la sombra y queda una aurora boreal sobre el agua. Brilla el límite, no la masa: casi exactamente aquello de lo que habla la zona. La luz se sostiene en una línea fina, como en el hielo, mientras el contorno de la pieza se disuelve en la penumbra, como en la niebla. La claridad en el borde, el misterio en todo lo demás.
 

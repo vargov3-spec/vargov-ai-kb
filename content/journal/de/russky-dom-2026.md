@@ -16,7 +16,7 @@ Unser Licht ist in der zweiten Zone des Rundgangs. Ihr Untertitel lautet „Zwis
 
 Es leuchtet die Grenze
 
-LC0556 ist eine Komposition mit Handlung: Aus einer Welle taucht ein Schwarm Rochen auf, und das Meer gerät in Bewegung. Türkisfarbene Bänder biegen sich zu Wellenkämmen oder Bergrücken, über ihre Kanten sind Punkte warmen Lichts gestreut. Tagsüber erkennt man je nach Standpunkt mal Wellen, mal Rochenflügel, mal einen Gebirgszug.
+LC0556 ist eine Komposition mit Handlung: Aus einer Welle taucht ein Schwarm Rochen auf, und das Meer gerät in Bewegung. Grüne Bänder biegen sich zu Wellenkämmen oder Bergrücken, über ihre Kanten sind Punkte warmen Lichts gestreut. Tagsüber erkennt man je nach Standpunkt mal Wellen, mal Rochenflügel, mal einen Gebirgszug.
 
 Abends entzünden sich die Kanten, die Rochen treten in den Schatten zurück, und es bleibt ein Nordlicht über dem Wasser. Es leuchtet die Grenze, nicht die Masse — fast genau das, wovon die Zone spricht. Das Licht hält sich an einer dünnen Linie wie im Eis, während die Umrisse des Stücks im Halbschatten verschwimmen wie im Nebel. Klarheit an der Kante, Geheimnis überall sonst.
 

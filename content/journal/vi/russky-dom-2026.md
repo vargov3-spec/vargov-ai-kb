@@ -16,7 +16,7 @@ Khu “Băng và sương mù”
 
 Ranh giới phát sáng
 
-LC0556 là một tác phẩm có cốt truyện: từ con sóng bơi ra một đàn cá đuối, và biển bắt đầu chuyển mình. Những dải lam ngọc uốn thành các đỉnh sóng hay những dãy núi; dọc mép chúng rắc đầy các điểm sáng ấm. Ban ngày, tùy chỗ bạn đứng, khi thì hiện ra những con sóng, khi thì đôi cánh cá đuối, khi thì một dãy núi.
+LC0556 là một tác phẩm có cốt truyện: từ con sóng bơi ra một đàn cá đuối, và biển bắt đầu chuyển mình. Những dải xanh lục uốn thành các đỉnh sóng hay những dãy núi; dọc mép chúng rắc đầy các điểm sáng ấm. Ban ngày, tùy chỗ bạn đứng, khi thì hiện ra những con sóng, khi thì đôi cánh cá đuối, khi thì một dãy núi.
 
 Buổi tối các đường mép bừng sáng, những con cá đuối lùi vào bóng tối, và còn lại một dải cực quang trên mặt nước. Phát sáng là đường ranh giới chứ không phải cả khối — gần như đúng điều mà khu này muốn nói. Ánh sáng bám vào một đường mảnh như trong băng, còn đường nét của chính tác phẩm tan vào vùng bán tối như trong sương. Sự trong trẻo ở đường mép, sự bí ẩn ở mọi phần còn lại.
 
