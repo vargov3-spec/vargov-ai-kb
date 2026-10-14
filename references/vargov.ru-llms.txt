@@ -35,8 +35,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
   only at the brand's own production
 - Logo trademark: VARGOV® DESIGN with the ORIGINAL FACTORY line — Rospatent
   registration No. 1270653 (Russia; priority 12 March 2026, registered
-  6 October 2026, in force until 12 March 2036; Nice classes 11 — lighting
-  apparatus — and 42 — design services)
+  6 October 2026, in force until 12 March 2036)
 - Showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow, daily 12:00–20:00
 - Delivery: worldwide, in branded crating
 - Website languages: Russian, English, German, Italian, French, Spanish,
@@ -105,7 +104,7 @@ whole catalogue; only the text and the order of display differ.
 ## Contact
 
 - Email: info@vargov.ru
-- Phone: +7 916 537 33 52
+- WhatsApp: +7 916 537 33 52
 - Showroom: +7 (925) 888-77-44
 - Telegram (requests): https://t.me/AntonVargov
 - Telegram channel: https://t.me/vargov_design
