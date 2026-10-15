@@ -102,14 +102,13 @@ PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q14
 
 # Страницы премий, где организатор назвал страну производства (проверено curl 14–15.10.2026).
 # Убрать отсюда адрес, когда страница исправлена, — тогда она вернётся в subjectOf.
+# 15.10.2026 вернулись: ad-c.org ×2 (LC0303, LC0323) и architecture-collection.com (LC0335) —
+# организаторы исправили био и страну по нашему письму; проверено curl 15.10 (страны производства нет).
 AWARD_PAGES_COUNTRY_LEAK = {
     "https://www.idesignawards.com/social/zoom.php?eid=9-61165-25",
     "https://www.idesignawards.com/social/zoom.php?eid=9-46057-22",
     "https://www.sitaward.com/winners/sit/2025/571/0/",
     "https://www.sitaward.com/winners/sit/2023/301/0/",
-    "https://ad-c.org/winner/light-composition-vargov-design-lc0303/",
-    "https://ad-c.org/winner/vargov-design-lc0323-drapery/",
-    "https://architecture-collection.com/winner/ha2301053/",
 }
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
