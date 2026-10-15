@@ -45,6 +45,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 
 - [Product catalogue, JSON-LD (Product graph, 605 items)](https://vargov.ru/catalog.jsonld): machine-readable product data — names, images, awards, canonical URLs in 8 languages
 - [Card texts in eight languages](https://vargov.ru/datasets/products.jsonl): one JSON line per composition — type, description paragraphs, where it works, style, in RU, EN, DE, IT, FR, ES, VI, AR; the same texts the product pages print
+- [Compositions by space (JSON)](https://vargov.ru/for-map.json): for every LC code, the space pages it links to (hotel lobby, stairwell, atrium and the rest), matched from the English "Where it works" text of its card; a pointer to related pages, not a restriction — every composition is made to order for any space
 - [Open knowledge base (datasets, entity graph, press kit)](https://github.com/vargov3-spec/vargov-ai-kb): the same facts as a public repository, mirrored from this site — plain text at https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt. This site is the primary source; the repository follows it
 - [Catalogue dataset on Hugging Face](https://huggingface.co/datasets/vargov-design/vargov-design-catalog): catalogue records and card texts as a public dataset (CC BY 4.0), built from this site's data; this site is the primary source, the dataset follows it
 
@@ -81,14 +82,14 @@ whole catalogue; only the text and the order of display differ.
 - [For architects](https://vargov.ru/en/architects): how bespoke projects run, from sketch to installation
 - [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
 - [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 447.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg
-- [IFC4 from the configurator](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); the file drops into the model with no manual offset — built for the ceiling height set in the Ceiling height field next to the IFC button (2700 mm by default; property CeilingHeight in Vargov_Design on IfcBuilding), fixing points on the ceiling, origin on the floor; a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
+- [Online lighting configurator with IFC4 (BIM) export for architects](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); the file drops into the model with no manual offset — built for the ceiling height set in the Ceiling height field next to the IFC button (2700 mm by default; property CeilingHeight in Vargov_Design on IfcBuilding), fixing points on the ceiling, origin on the floor; a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
 - [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
 - [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf): mounting step by step, from marking out the fixing points to fitting the elements
 - [Connection guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf): electrical connection: parallel wiring only, splitting into branches, sizing the driver, first switch-on
 - Both guides exist in all 8 site languages: /pdf/vargov-installation-<lang>.pdf and /pdf/vargov-connection-<lang>.pdf, where <lang> is ru, en, de, it, fr, es, vi or ar
 - [Certification](https://vargov.ru/en/certification): documents, standards, EAC
 - [Warranty](https://vargov.ru/en/warranty): what is covered, how originals are identified
-- [Configurator](https://vargov.ru/en/configurator): assemble a composition and get a quote
+- [Configurator](https://vargov.ru/en/configurator): assemble a composition, export an IFC4 (BIM) model, a PDF specification and a tender sheet, and get a quote
 
 ## About
 
