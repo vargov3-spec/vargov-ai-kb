@@ -79,27 +79,39 @@ CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sour
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
 # Публичные каналы бренда — только подтверждённые владельцем или его сайтом.
+# 15.10.2026: как на сайте и в том же порядке (seo.ts sameAs + EXTERNAL_PROFILES в orgGraph.ts) + Sketchfab — без vargov.design (это узел
+# приложения, не организации) и без t.me/AntonVargov (личный канал, он в sameAs узла Person); сайт снял оба 03.10.
 ORG_SAME_AS = [
-    "https://vargov.design/",
     "https://t.me/vargov_design",
-    "https://t.me/AntonVargov",
     "https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA",
     "https://rutube.ru/channel/38329605/",
-    "https://3ddd.ru/users/vargov",
-    "https://3dsky.org/users/vargov",
-    "https://www.instagram.com/vargov_design/",
-    "https://www.facebook.com/vargovdesign",
-    "https://www.wikidata.org/wiki/Q141301076",
-    "https://www.pinterest.com/Vargov_Design/",
     GOOGLE_MAPS,
     YANDEX_MAPS,
+    "https://www.instagram.com/vargov_design/",
+    "https://www.facebook.com/vargovdesign",
+    "https://www.pinterest.com/Vargov_Design/",
+    "https://3ddd.ru/users/vargov",
+    "https://3dsky.org/users/vargov",
     REPO_URL,
-    "https://sketchfab.com/vargov",
+    "https://www.wikidata.org/wiki/Q141301076",
     "https://huggingface.co/vargov-design",
+    "https://sketchfab.com/vargov",  # только в базе: на сайте Sketchfab в sameAs нет
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
 PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942",
                   "https://medium.com/@antonvargov", "https://www.linkedin.com/in/anton-vargov-95938643a"]
+
+# Страницы премий, где организатор назвал страну производства (проверено curl 14–15.10.2026).
+# Убрать отсюда адрес, когда страница исправлена, — тогда она вернётся в subjectOf.
+AWARD_PAGES_COUNTRY_LEAK = {
+    "https://www.idesignawards.com/social/zoom.php?eid=9-61165-25",
+    "https://www.idesignawards.com/social/zoom.php?eid=9-46057-22",
+    "https://www.sitaward.com/winners/sit/2025/571/0/",
+    "https://www.sitaward.com/winners/sit/2023/301/0/",
+    "https://ad-c.org/winner/light-composition-vargov-design-lc0303/",
+    "https://ad-c.org/winner/vargov-design-lc0323-drapery/",
+    "https://architecture-collection.com/winner/ha2301053/",
+}
 
 # Ключ раздела -> (подпись RU, подпись EN, адрес RU, адрес EN)
 CATEGORIES = {
@@ -729,7 +741,10 @@ def organization_node(awards: list) -> dict:
         ],
         "award": award_strings(awards),
         "logo": {"@type": "ImageObject", "url": f"{REPO_URL}/raw/main/press/vargov-design-logo-512.png", "width": 512, "height": 512},
-        "sameAs": list(dict.fromkeys(ORG_SAME_AS + hrefs)),
+        # Страницы премий — не sameAs (это не «та же сущность»), а subjectOf. Страницы, где организатор
+        # назвал страну производства, не ссылаем, пока их не исправят (knowledge/award-profiles-fix-2026-09.md).
+        "sameAs": list(ORG_SAME_AS),
+        "subjectOf": [{"@type": "WebPage", "url": u} for u in dict.fromkeys(hrefs) if u not in AWARD_PAGES_COUNTRY_LEAK],
     }
 
 

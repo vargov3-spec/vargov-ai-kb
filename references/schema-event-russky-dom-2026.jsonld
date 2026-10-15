@@ -10,7 +10,7 @@
         "Интерьерная выставка «Русский дом»",
         "Русский дом. Креативные регионы"
       ],
-      "description": "Russky Dom (Russian House) 2026, an interior exhibition at Gostiny Dvor, Moscow, 7–9 October 2026, open 10:00–19:00. Vargov®Design takes part in the exhibition capsule «Тихая сила Камчатки» (stand K62, authored by Tokareva Design) with the composition LC0556.",
+      "description": "Russky Dom (Russian House) 2026, an interior exhibition at Gostiny Dvor, Moscow, 7–9 October 2026, open 10:00–19:00. Vargov®Design took part in the exhibition capsule «Тихая сила Камчатки» (stand K62, authored by Tokareva Design) with the composition LC0556.",
       "startDate": "2026-10-07T10:00+03:00",
       "endDate": "2026-10-09T19:00+03:00",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -41,7 +41,7 @@
         "@type": "ExhibitionEvent",
         "name": "Тихая сила Камчатки",
         "alternateName": "Тихая сила Камчатки. Как природа становится интерьером",
-        "description": "Exhibition capsule at Russky Dom 2026, stand K62 (\"The Quiet Strength of Kamchatka. How nature becomes interior\"). The character of Kamchatka is told through light, matter, sound, scent, taste and touch, along a route of seven zones. Author of the capsule: Tokareva Design. Vargov®Design takes part with light (\"Light as a work of art\") in zone 02 «Лёд и туман» (\"Ice and Mist\"); the composition shown is LC0556: a school of manta rays rising out of a wave, its edges lit with points of warm light.",
+        "description": "Exhibition capsule at Russky Dom 2026, stand K62 (\"The Quiet Strength of Kamchatka. How nature becomes interior\"). The character of Kamchatka was told through light, matter, sound, scent, taste and touch, along a route of seven zones. Author of the capsule: Tokareva Design. Vargov®Design took part with light (\"Light as a work of art\") in zone 02 «Лёд и туман» (\"Ice and Mist\"); the composition shown was LC0556: a school of manta rays rising out of a wave. At the stand the ribbons were green, with points of warm light along their edges; the colour of the ribbon is chosen for each project.",
         "startDate": "2026-10-07",
         "endDate": "2026-10-09",
         "eventStatus": "https://schema.org/EventScheduled",
@@ -71,7 +71,41 @@
           "name": "Lighting composition LC0556",
           "url": "https://vargov.ru/en/catalog/lc0556"
         }
-      }
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/press/vargov-design-lc0556-russky-dom-2026-flock.jpg",
+          "caption": "A school of manta rays of composition LC0556 under the green ribbon at stand K62",
+          "creditText": "Vargov®Design",
+          "copyrightNotice": "© Vargov®Design",
+          "dateCreated": "2026-10-07"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/press/vargov-design-lc0556-russky-dom-2026-ring.jpg",
+          "caption": "Manta rays of composition LC0556 inside the ring of green ribbon at stand K62",
+          "creditText": "Vargov®Design",
+          "copyrightNotice": "© Vargov®Design",
+          "dateCreated": "2026-10-07"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/press/vargov-design-lc0556-russky-dom-2026-manta.jpg",
+          "caption": "A single manta ray of composition LC0556 in the ribbon ring, warm points of light along the edge",
+          "creditText": "Vargov®Design",
+          "copyrightNotice": "© Vargov®Design",
+          "dateCreated": "2026-10-07"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/press/vargov-design-lc0556-russky-dom-2026-tag.jpg",
+          "caption": "A manta ray of composition LC0556 with the VARGOV DESIGN tag at stand K62",
+          "creditText": "Vargov®Design",
+          "copyrightNotice": "© Vargov®Design",
+          "dateCreated": "2026-10-07"
+        }
+      ]
     }
   ]
 }

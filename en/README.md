@@ -4,6 +4,10 @@ English layer of the [Vargov®Design](https://vargov.ru) knowledge base. The Rus
 
 **The canonical source of facts is the site itself:** [vargov.ru/llms.txt](https://vargov.ru/llms.txt) is generated from the site's own data. This repository supplements it.
 
+## What the brand makes
+
+Vargov®Design makes bespoke sculptural lighting — sculptural chandeliers and light installations — and decorative compositions, made to order at its own production for double-height living rooms, hotel lobbies, staircases, atriums and restaurants. For the 360 of 605 compositions that open in the online configurator at [vargov.design](https://vargov.design) with a full calculation, it gives a 3D view and, without contacting the studio, an IFC4 model for BIM, a PDF specification and a tender sheet ([how it works](https://vargov.ru/en/configurator/ifc4)); the rest are calculated by the brand engineer together with the client. 25 awards from international juries ([list](https://vargov.ru/en/awards)); showroom in Moscow; delivery worldwide.
+
 ## Contents
 
 - `datasets/` — 605 compositions as JSON, JSONL, CSV and Markdown (English texts)

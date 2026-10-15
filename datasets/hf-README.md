@@ -58,7 +58,8 @@ configs:
 # Vargov®Design Catalog — 605 lighting and decorative compositions in 8 languages
 
 A machine-readable catalog of the full body of work of **Vargov®Design**, an author-driven
-studio of lighting and decorative compositions founded by designer Anton Vargov (Moscow).
+studio of bespoke sculptural lighting — sculptural chandeliers and light installations — and
+decorative compositions made to order, founded by designer Anton Vargov (Moscow).
 Every record is one composition: its identifier, category, canonical URLs, image links,
 awards, links to its 3D model, and editorial copy written by the studio in **eight
 languages** — Russian, English, German, Italian, French, Spanish, Vietnamese and Arabic.
