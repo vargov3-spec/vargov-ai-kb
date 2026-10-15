@@ -79,7 +79,7 @@ CONFIGURATOR_OWN = Path("V:/защита контента/configurator/data-sour
 DDD_RU, DDD_EN = "https://3ddd.ru/3dmodels/show/", "https://3dsky.org/3dmodels/show/"
 
 # Публичные каналы бренда — только подтверждённые владельцем или его сайтом.
-# 15.10.2026: как на сайте и в том же порядке (seo.ts sameAs + EXTERNAL_PROFILES в orgGraph.ts) + Sketchfab — без vargov.design (это узел
+# 15.10.2026: как на сайте и в том же порядке (seo.ts sameAs + EXTERNAL_PROFILES в orgGraph.ts); Sketchfab — когда его добавит сайт — без vargov.design (это узел
 # приложения, не организации) и без t.me/AntonVargov (личный канал, он в sameAs узла Person); сайт снял оба 03.10.
 ORG_SAME_AS = [
     "https://t.me/vargov_design",
@@ -95,7 +95,6 @@ ORG_SAME_AS = [
     REPO_URL,
     "https://www.wikidata.org/wiki/Q141301076",
     "https://huggingface.co/vargov-design",
-    "https://sketchfab.com/vargov",  # только в базе: на сайте Sketchfab в sameAs нет
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
 PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942",
