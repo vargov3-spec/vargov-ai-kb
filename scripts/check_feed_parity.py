@@ -107,8 +107,14 @@ def main() -> int:
 
         # Узлы Sketchfab в сверку не идут: это наш второй канал, у сайта его нет.
         nodes_mine = [x for x in (a if isinstance(a, list) else [a])
-                      if "sketchfab.com" not in (x.get("url") or "")]
-        nodes_site = b if isinstance(b, list) else [b]
+                      if "sketchfab.com" not in (x.get("url") or "")
+                      and any(h in (x.get("url") or "") for h in ("3ddd.ru", "3dsky.org"))]
+        # С 15.10.2026 в subjectOf у сайта бывают не только 3D-модели: у LC0556 там ещё
+        # ExhibitionEvent «Русский дом 2026». Сверяем только узлы площадок 3D-моделей.
+        def is_model(node) -> bool:
+            url = node.get("url") or ""
+            return any(h in url for h in ("3ddd.ru", "3dsky.org", "sketchfab.com"))
+        nodes_site = [x for x in (b if isinstance(b, list) else [b]) if is_model(x)]
         # Сравниваем по СМЫСЛУ адреса, а не по @type: сайт публикует список
         # моделей под типом 3DModel, база — под CollectionPage. Это расхождение
         # схемы, а не данных; отмечаем отдельным счётчиком и говорим о нём вслух.
