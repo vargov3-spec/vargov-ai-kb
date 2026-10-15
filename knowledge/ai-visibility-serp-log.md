@@ -25,6 +25,26 @@ Instagram за тот же месяц — 15 визитов при глубин�
 
 ---
 
+## 2026-10-15 (промежуточная точка: пробы ассистентов)
+
+Снято 15.10.2026, 02:38–02:45 UTC, браузер владельца, без входа в Perplexity; Google AI Mode — `udm=50&hl=en`.
+Вопросы — из [[ai-probe-set]] (блоки B и E), дословно. Это не полный замер: полный — 22.10.
+
+| Вопрос | Ассистент | Vargov | Что в ответе |
+|---|---|---|---|
+| B2: award-winning studios, bespoke sculptural glass lighting, double-height / hotel lobbies (EN) | Perplexity | **да, первым** | «Vargov Design — bespoke sculptural luminaires…», EPDA названа; источник vargov.ru; дальше Shakúff, Illuminata, Shimale Peleg. 22.09 на тот же вопрос — нет |
+| B3: best bespoke lighting studios, custom sculptural chandelier, double-height, worldwide (EN) | Perplexity | нет | Lindsey Adelman, Willowlamp, Shakúff, Lightart |
+| E1: online lighting configurator that exports IFC for architects (EN) | Perplexity | **да, первым** | «Yes. Vargov® Design is an online 3D configurator… exports an IFC4 model»; PDF-спецификация, лист закупки, ссылка; DIALux — как альтернатива. 27.09 — 0 из 2 |
+| B2 (тот же) | Google AI Mode | нет | Lasvit, Shakúff…; galeriemagazine.com |
+| E1 (тот же) | Google AI Mode | нет | VividWorks, DIALux и пр. |
+
+Итог: Perplexity — 2 из 3 (цель блоков B и E к 22.10 — «≥ 1» — у Perplexity уже выполнена); Google AI Mode — 0 из 2.
+Прочие показатели на 15.10: Hugging Face `vargov-design-catalog` — 1712 скачиваний за 30 дней (02.10 — 463);
+Wikidata Q141301076 — P166 2, описаний 10, меток 7; GitHub vargov-ai-kb — 0 звёзд.
+Не снималось: Duck.ai (GPT), Яндекс Алиса, журнал сервера и Метрика «Из ИИ» — в полном замере 22.10.
+
+---
+
 ## 2026-10-03
 
 Внеочередная точка вместо планового прогона: задача `vargov-ai-serp-monthly` 01–02.10 четыре раза
