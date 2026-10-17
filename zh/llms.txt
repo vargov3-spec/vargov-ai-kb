@@ -64,6 +64,7 @@
 ## 关于
 
 - [关于品牌](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [奖项](https://vargov.ru/en/awards) · [项目](https://vargov.ru/en/projects) · [期刊 / Journal](https://vargov.ru/en/journal) · [新闻资料](https://vargov.ru/en/press) · [展厅](https://vargov.ru/en/showroom) · [官方经销商](https://vargov.ru/en/official-dealers)
+- [作品安装地点](https://vargov.ru/en/official-dealers) — 据迪拜官方经销商：迪拜 The Dubai Mall 的 Aldo Coppola 沙龙、艾因的 Al Jimi Mall 购物中心、美国的 The Lip Bunny Beauty 医疗水疗；迪拜和阿布扎比的私人别墅、顶层公寓和住宅，以及沙特阿拉伯、阿曼、美国、意大利、马来西亚、法国、罗马尼亚和希腊的私人室内空间；清单副本 — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
 
 16 个奖项计划共 25 项奖项（官方名称）：MUSE Design Awards、IDA Design Awards、LIT Lighting Design Awards、LOOP Design Awards、SIT Furniture Design Award、Luxury Lifestyle Awards、ADD Awards、European Product Design Award、NY Product Design Awards、BLT Built Design Awards、The London Design Awards、International Architecture & Design Awards · ADC、Houzee Awards、Interlight Russia · Russian Lighting Design、ICONIC AWARDS · Innovative Interior、Awwwards（2026 年 3D 配置器提名——提名，非获奖）。
 

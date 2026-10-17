@@ -1,7 +1,7 @@
 # Vargov®Design — llms-full.txt
 
 Полная карта на двух языках: дословно llms.txt (RU) и en/llms.txt (EN) этого
-репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-12.
+репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-17.
 Китайская версия — отдельный файл zh/llms.txt (ссылка — в разделах
 «Языковые версии» / «Language versions» ниже).
 
@@ -83,6 +83,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 
 - [О бренде](https://vargov.ru/about) · [Антон Варгов](https://vargov.ru/designer) · [Награды](https://vargov.ru/awards) · [Проекты](https://vargov.ru/projects) · [Журнал](https://vargov.ru/journal) · [Пресс-кит](https://vargov.ru/press) · [Шоурум](https://vargov.ru/showroom) · [Официальные дилеры](https://vargov.ru/official-dealers)
 - [Русский световой дизайн: откуда он вырос и как выглядит сегодня](https://vargov.ru/journal/russian-lighting-design) — эссе в журнале сайта (05.09.2026), восемь языков; копия текста в базе — [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md)
+- [Где установлены композиции](https://vargov.ru/official-dealers) — по данным официального дилера в Дубае: салон Aldo Coppola в The Dubai Mall (Дубай), торговый центр Al Jimi Mall (Аль-Айн), медицинский спа The Lip Bunny Beauty (США); частные виллы, пентхаусы и резиденции в Дубае и Абу-Даби, частные интерьеры в Саудовской Аравии, Омане, США, Италии, Малайзии, Франции, Румынии и Греции; копия списка — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
 
 Награды — 25, в 16 программах (официальные названия): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Российский светодизайн, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 за 3D-конфигуратор — номинация, не победа).
 
@@ -167,6 +168,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 
 - [About the brand](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [Awards](https://vargov.ru/en/awards) · [Projects](https://vargov.ru/en/projects) · [Journal](https://vargov.ru/en/journal) · [Press kit](https://vargov.ru/en/press) · [Showroom](https://vargov.ru/en/showroom) · [Official dealers](https://vargov.ru/en/official-dealers)
 - [Russian Lighting Design: Where It Comes From and What It Looks Like Today](https://vargov.ru/en/journal/russian-lighting-design) — essay in the site journal (5 September 2026), eight languages; text copy in this base — [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md)
+- [Where the compositions are installed](https://vargov.ru/en/official-dealers) — according to the official dealer in Dubai: the Aldo Coppola salon at The Dubai Mall (Dubai), Al Jimi Mall shopping centre (Al Ain), The Lip Bunny Beauty medical spa (USA); private villas, penthouses and residences in Dubai and Abu Dhabi, private interiors in Saudi Arabia, Oman, the USA, Italy, Malaysia, France, Romania and Greece; list copy — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
 
 25 awards across 16 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
 
