@@ -727,7 +727,9 @@ def organization_node(awards: list) -> dict:
             "addressCountry": "RU",
         },
         "foundingDate": "2018",
-        "areaServed": ["RU", "AE", "VN"],
+        # Как на сайте с 03.10.2026 (src/lib/seo.ts, аудит A351): RU/AE/VN — страны дилеров,
+        # читались как «работаем только там»; где стоят дилеры, говорит /official-dealers.
+        "areaServed": {"@type": "Place", "name": "Worldwide"},
         "location": {"@id": SHOWROOM_ID},
         "knowsAbout": ["lighting design", "sculptural chandeliers", "light art installations",
                        "decorative compositions", "made-to-order lighting"],

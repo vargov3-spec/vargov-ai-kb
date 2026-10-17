@@ -70,7 +70,8 @@ def main() -> int:
     args = ap.parse_args()
 
     mine = products(json.loads((KB / "references" / "catalog.jsonld").read_text(encoding="utf-8"))["@graph"])
-    site = products(fetch(args.feed)["@graph"])
+    feed = fetch(args.feed)  # один запрос к сайту на прогон
+    site = products(feed["@graph"])
 
     print(f"артикулов: база {len(mine)}, сайт {len(site)}")
     only_mine = sorted(set(mine) - set(site))
@@ -153,6 +154,26 @@ def main() -> int:
         status = "ок" if not diff else f"расхождений {len(real)}" + (f", порядок ключей {len(order_only)}" if order_only else "")
         print(f"{field:>20}: {status}" + (f" → {real[:3]}" if real else ""))
         problems += len(real)
+
+    # Узел бренда. До 17.10.2026 сверялись только товары, и areaServed в базе две недели
+    # оставался «RU, AE, VN», хотя сайт с 03.10 пишет «Worldwide» (аудит A351).
+    org_id = "https://vargov.ru#organization"
+    org_mine = next((n for n in json.loads((KB / "references" / "catalog.jsonld").read_text(encoding="utf-8"))["@graph"]
+                     if n.get("@id") == org_id), None)
+    org_site = next((n for n in feed["@graph"] if n.get("@id") == org_id), None)
+    if not (org_mine and org_site):
+        print(f"{'Organization':>20}: узла {org_id} нет с одной из сторон")
+        problems += 1
+    else:
+        for field in ("areaServed", "foundingDate"):
+            same = canon(org_mine.get(field)) == canon(org_site.get(field))
+            print(f"{'org.' + field:>20}: " + ("ок" if same else
+                  f"расхождение: база {org_mine.get(field)!r}, сайт {org_site.get(field)!r}"))
+            problems += 0 if same else 1
+        sa, sb = set(org_mine.get("sameAs") or []), set(org_site.get("sameAs") or [])
+        print(f"{'org.sameAs':>20}: " + ("ок" if sa == sb else
+              f"только в базе {sorted(sa - sb)}, только на сайте {sorted(sb - sa)}"))
+        problems += 0 if sa == sb else 1
 
     if only_mine or only_site or problems:
         print("\nСверка НЕ пройдена.")

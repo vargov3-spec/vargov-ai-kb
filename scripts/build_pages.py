@@ -59,7 +59,7 @@ DATASET_ID = "https://github.com/vargov3-spec/vargov-ai-kb#dataset"
 # scripts/build_from_site.py их ещё не знает: локальная пересборка молча вернёт латинский
 # адрес и выбросит остальное (A285, A205, A153, A123). Сверка ниже ловит такой откат.
 SITE_FOUNDING_DATE = "2018"            # первые работы бренда, слово владельца 02.10.2026
-SITE_AREA_SERVED = {"RU", "AE", "VN"}  # Москва, Дубай, Ханой
+SITE_AREA_SERVED = {"@type": "Place", "name": "Worldwide"}  # сайт с 03.10.2026 (seo.ts, аудит A351)
 ORG_SAME_AS_REQUIRED = ("https://huggingface.co/vargov-design",)
 PERSON_SAME_AS_REQUIRED = ("https://medium.com/@antonvargov",
                            "https://www.linkedin.com/in/anton-vargov-95938643a")
@@ -398,9 +398,9 @@ def check_brand_graph():
         if org.get("foundingDate") != SITE_FOUNDING_DATE:
             problems.append(f"{rel}: foundingDate у Organization {org.get('foundingDate')!r}, "
                             f"на сайте {SITE_FOUNDING_DATE!r}")
-        if set(org.get("areaServed") or []) != SITE_AREA_SERVED:
+        if org.get("areaServed") != SITE_AREA_SERVED:
             problems.append(f"{rel}: areaServed у Organization {org.get('areaServed')}, "
-                            f"на сайте {sorted(SITE_AREA_SERVED)}")
+                            f"на сайте {SITE_AREA_SERVED}")
         for node, need, who in ((org, ORG_SAME_AS_REQUIRED, "Organization"),
                                 (person, PERSON_SAME_AS_REQUIRED, "Person")):
             miss = [u for u in need if u not in (node.get("sameAs") or [])]

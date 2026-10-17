@@ -97,11 +97,10 @@
         "https://www.wikidata.org/wiki/Q141301076",
         "https://huggingface.co/vargov-design"
       ],
-      "areaServed": [
-        "RU",
-        "AE",
-        "VN"
-      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
       "subjectOf": [
         {
           "@type": "WebPage",
