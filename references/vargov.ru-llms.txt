@@ -90,6 +90,8 @@ whole catalogue; only the text and the order of display differ.
 - [Certification](https://vargov.ru/en/certification): documents, standards, EAC
 - [Warranty](https://vargov.ru/en/warranty): what is covered, how originals are identified
 - [Configurator](https://vargov.ru/en/configurator): assemble a composition, export an IFC4 (BIM) model, a PDF specification and a tender sheet, and get a quote
+- [Element colour: RAL painting and electroplating](https://vargov.ru/en/specifications/colours): glass, crystal and ceramic elements painted in any of the 210 RAL Classic colours (glass and crystal translucent from 10 to 90 % or opaque, ceramics opaque only) or electroplated — transparent tints for glass and crystal, mirror gold, rose gold and chrome for all three; the brief names the RAL code or the finish
+- [Metal finishes on video](https://vargov.ru/en/specifications/finishes): the JN-9001…JN-9024 finishes of the metal fittings — eight colours, each mirror-polished, brushed with gloss lacquer or brushed with semi-matte lacquer; the physical finish catalogue can be seen at the showroom
 
 ## About
 
