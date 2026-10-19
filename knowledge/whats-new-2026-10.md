@@ -32,16 +32,20 @@
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. У лент, композиций на
   каркасе, готовой сцены и артикулов индивидуального расчёта, а также при монтаже на металлической базе
-  схемы нет. На схеме размечены и точки подвеса контуров подсветки: провод по центру контура и два троса
-  по его концам, с тем же диаметром отверстия, что у остальных точек.
+  схемы нет. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
+  контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
+  схеме сверяется с тем, что записано в ТЗ.
 - **Отверстия в потолке не ближе 10 мм краями.** Раскладка раздвигает их сама, а точки, которые физически
   свести нельзя, объединяются в одно отверстие.
 - **Ссылка воспроизводит ту же раскладку, которую видел заказчик.** Номер генерации раскладки передаётся
   в ссылке вместе с размерами и составом, и страница ТЗ собирает ровно ту композицию, а не похожую. Это
   относится к ТЗ, заведённому ссылкой из конфигуратора: у ТЗ, заполненного руками, ссылки нет, и
   композиция строится по умолчаниям.
-- **Схема высот в PDF — по самой композиции**, а не типовая картинка; у цепочек тоже. Окно предупреждает,
-  когда цепь длиннее заданной зоны.
+- **В PDF ТЗ — данные высот:** H1, H2, H3 и высота потолка; 2D-схему высот PDF не печатает. Окно
+  предупреждает, когда цепь длиннее заданной для неё зоны.
+- **Монтаж на металлическую базу.** На странице ТЗ, в шаге «Монтаж», поле «Вид монтажа» даёт два варианта:
+  монтаж на потолок с закладными или композиция на металлической базе. В 3D-окне база показана, высоты
+  подвеса считаются от её низа, H3 у такой композиции не задаётся. У лент базы нет.
 
 ## Цвет и отделка
 
@@ -62,6 +66,8 @@
   покрытий. Код покрытия переносится в ссылку, заявку и ТЗ. Оттенки на экране приблизительные — в заказе главное
   код. Названия всех 24 покрытий JN и семи покрытий гальваники на восьми языках —
   [[finishes-and-colours-i18n]].
+- **Та же палитра — на странице ТЗ:** гальваника, фирменные цвета и прозрачный бесцветный; каталоги RAL
+  (210 цветов) и покрытий металла (24 кода) на ТЗ и в конфигураторе сверены и совпадают.
 
 ## Удобство
 
@@ -87,6 +93,10 @@
   «Тихая сила Камчатки» Tokareva Design (Гостиный двор, Москва, 7–9 октября 2026); снимки стенда — на странице выставки.
 - **Где установлены композиции** — по данным официального дилера в Дубае: [/official-dealers](https://vargov.ru/official-dealers)
   и вопрос в [FAQ](https://vargov.ru/faq); копия — [[installations]].
+- **Золото NY Product Design Awards 2026** — композиция LC0545-1 (в заявке «Lily Light Composition»)
+  получила Gold Winner в категории «Outdoor Lighting - Designer / Custom Lighting»:
+  [статья журнала](https://vargov.ru/journal/ny-2026) ([EN](https://vargov.ru/en/journal/ny-2026)),
+  [страница победителя](https://nydesignawards.com/winner-info.php?id=4691) на сайте премии. Всего наград 26.
 - **Второй товарный знак:** логотип VARGOV® DESIGN, свидетельство Роспатента № 1270653 (зарегистрирован
   06.10.2026).
 - **Первые работы бренда — 2018 год** (в разметке организации foundingDate 2018; 2022 — год регистрации знака
@@ -137,16 +147,20 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
   production. Ribbons, compositions on a frame, the ready scene and articles calculated individually have
   none, and neither does an installation on a metal base. The drawing also marks the fixing points of the
-  lit contours: a wire at the centre of a contour and two cables at its ends, with the same hole diameter
-  as every other point.
+  lit contours (currently LC0523): a wire at the centre of a contour and two cables at its ends, with the
+  same hole diameter as every other point; the number of points on the drawing is checked against the brief.
 - **Ceiling holes are never closer than 10 mm edge to edge.** The layout moves them apart by itself, and
   points that cannot physically be separated are merged into a single hole.
 - **A link reproduces the very layout the client saw.** The layout generation number now travels in the
   link together with the dimensions and the composition, so the brief page assembles exactly that
   composition rather than a similar one. This applies to a brief opened from a configurator link: a brief
   filled in by hand carries no link, and the composition is built from the defaults.
-- **The height drawing in the PDF is built from the composition itself**, not a generic picture — chains
-  included; the window warns when a chain is longer than the zone set for it.
+- **The brief's PDF carries height figures:** H1, H2, H3 and the ceiling height; it prints no 2D height
+  drawing. The window warns when a chain is longer than the zone set for it.
+- **Installation on a metal base.** On the brief page, in the "Installation" step, the "Type of
+  installation" field offers two options: fixing to the ceiling with embedded anchors, or the composition
+  on a metal base. The base is shown in the 3D view and suspension heights are measured from its underside;
+  H3 is not set for such a composition. Ribbons have no base.
 
 ### Colour and finish
 
@@ -166,6 +180,8 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   without JN codes); where every element carries metal, several finishes can be combined. The finish code goes
   into the share link, the request and the brief. On-screen shades are approximate — the code is what counts. The names of all 24 JN finishes
   and of the seven electroplating finishes in eight languages — [[finishes-and-colours-i18n]].
+- **The same palette on the brief page:** electroplating, the brand colours and clear colourless; the RAL
+  catalogue (210 colours) and the metal finishes (24 codes) match between the brief and the configurator.
 
 ### Convenience
 
@@ -193,6 +209,10 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   of the stand are on the project page.
 - **Where the compositions are installed** — according to the official dealer in Dubai:
   [/en/official-dealers](https://vargov.ru/en/official-dealers) and a question in the [FAQ](https://vargov.ru/en/faq).
+- **Gold at the NY Product Design Awards 2026** — composition LC0545-1 (entered as "Lily Light
+  Composition") took Gold Winner in "Outdoor Lighting - Designer / Custom Lighting":
+  [journal article](https://vargov.ru/en/journal/ny-2026),
+  [winner page](https://nydesignawards.com/winner-info.php?id=4691) on the award site. 26 awards in total.
 - **Second trademark:** the VARGOV® DESIGN logo, Rospatent registration No. 1270653 (registered 6 October 2026).
 - **The brand's first works date from 2018** (foundingDate 2018 in the organisation markup; 2022 is the year the
   VARGOV trademark was registered).
