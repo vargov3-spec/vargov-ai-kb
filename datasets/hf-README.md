@@ -192,8 +192,18 @@ Showroom: 24 Nakhimovsky Prospekt, bldg. 1, pavilion 2, stand 212, Moscow, daily
 Compositions are made to order for double-height living rooms, staircases, hotel lobbies and
 restaurants. For the 360 compositions that open with a full calculation, the configurator
 exports an IFC4 model of the composition — every ceiling fixing point a separate object with
-its own load — together with a PDF specification and a tender sheet; see the founder's
+the number of elements on it and, when the mass is known, an estimated load — together with a
+PDF specification and a tender sheet; see the [IFC4 export page](https://vargov.ru/en/configurator/ifc4)
+and the founder's
 [article on IFC4 before the order](https://medium.com/@antonvargov/why-a-lighting-studio-exports-ifc4-before-you-place-an-order-2013146ae2f9).
+
+**New in October 2026** ([summary](https://github.com/vargov3-spec/vargov-ai-kb/blob/main/knowledge/whats-new-2026-10.md)): the IFC4 export page for architects; the ceiling height
+set before the export; an online production brief filled in from the configurator ("Fill in the spec");
+element colour pages — [RAL painting and electroplating](https://vargov.ru/en/specifications/colours) — and
+[metal finishes](https://vargov.ru/en/specifications/finishes) (24 JN codes); "Get a quote" with a ready
+request in Telegram, WhatsApp or email; a built-in Help mode; ten "by space" showcases with
+[/for-map.json](https://vargov.ru/for-map.json); the Russky Dom 2026 exhibition; where the compositions are
+installed, according to the official dealer in Dubai.
 
 ## Bias, risks and limitations
 
