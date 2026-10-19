@@ -23,7 +23,8 @@
 - **IFC4 для сводной модели.** Идентификаторы (GUID) строятся от конфигурации: одна и та же конфигурация даёт
   те же GUID, разные — разные, поэтому разные композиции одного артикула сводятся в одну BIM-модель без
   совпадений. На нерусском интерфейсе имена в файле английские.
-- **Онлайн-ТЗ на производство** — на vargov.ru, на русском и английском: новое ТЗ можно начать самому,
+- **Онлайн-ТЗ на производство** — [vargov.ru/specifications](https://vargov.ru/specifications)
+  ([EN](https://vargov.ru/en/specifications)), на русском и английском: новое ТЗ можно начать самому,
   сохранённое открывается по своей ссылке. Кнопка конфигуратора «Заполнить ТЗ» открывает страницу ТЗ и сама
   подставляет туда параметры собранной композиции; в ТЗ показывается 3D-окно конфигуратора, собранное по
   параметрам ТЗ.
@@ -107,7 +108,8 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
 - **IFC4 for a federated model.** GUIDs are derived from the configuration: the same configuration always gives
   the same GUIDs and different ones give different GUIDs, so different compositions of one article combine in one
   federated BIM model without clashes. On a non-Russian interface the names in the file are in English.
-- **Online production brief** — on vargov.ru, in Russian and English: a new brief can be started by anyone, a
+- **Online production brief** — [vargov.ru/en/specifications](https://vargov.ru/en/specifications), in Russian
+  and English: a new brief can be started by anyone, a
   saved one opens by its own link. The configurator's "Fill in the spec" button opens the brief page and fills in
   the parameters of the assembled composition; the brief shows the configurator's 3D view built from the brief's
   parameters.

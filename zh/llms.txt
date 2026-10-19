@@ -66,7 +66,7 @@
 - [Vargov®Design 新内容 — 2026 年 10 月](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/whats-new-2026-10.md) — 2026 年 10 月 1 日至 19 日网站与配置器更新汇总（俄文 + 英文）
 - [配置器 IFC4 导出](https://vargov.ru/en/configurator/ifc4) — 面向建筑师的页面：文件包含什么、如何打开。605 件构成中有 360 件可完整计算并导出（2026 年 10 月 19 日），其产品页（英文版）标有 “IFC4 · PDF spec sheet · tender sheet — in the configurator”；导出前设定天花板高度（默认 2700 毫米，为房间高度而非产品尺寸）；GUID 由配置生成，同一货号的不同构成可并入同一个 BIM 模型而不冲突（相同配置生成相同 GUID）
 - [RAL 喷涂与电镀](https://vargov.ru/en/specifications/colours) — RAL Classic，210 种颜色；配置器中一个构成最多可混合 8 种 RAL 颜色，另有电镀（4 种透明色调、3 种镜面镀层）和无色透明；仅在元件物理上可透明时提供透明度 · [金属饰面](https://vargov.ru/en/specifications/finishes) — 24 个编码 JN-9001…JN-9024（8 种颜色 × 3 种工艺），实物色板在展厅
-- 生产任务书可在 vargov.ru 在线填写：配置器中的 “Fill in the spec” 按钮会自动带入构成参数。“Get a quote” 会在 Telegram、WhatsApp 或电子邮件中打开已写好的询价，由访客自行发送，价格按询价报出。“Help mode” — 配置器内置的分步帮助
+- [生产任务书](https://vargov.ru/en/specifications)可在 vargov.ru 在线填写：配置器中的 “Fill in the spec” 按钮会自动带入构成参数。“Get a quote” 会在 Telegram、WhatsApp 或电子邮件中打开已写好的询价，由访客自行发送，价格按询价报出。“Help mode” — 配置器内置的分步帮助
 - [/for-map.json](https://vargov.ru/for-map.json) — 哪些构成适合十个 “按空间” 展示中的哪一个（仅为提示，并非限制）；[vargov.design/llms.txt](https://vargov.design/llms.txt) — 元件参数的原始来源
 
 ## 关于
