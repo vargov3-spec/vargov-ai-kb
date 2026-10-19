@@ -41,8 +41,9 @@
   в ссылке вместе с размерами и составом, и страница ТЗ собирает ровно ту композицию, а не похожую. Это
   относится к ТЗ, заведённому ссылкой из конфигуратора: у ТЗ, заполненного руками, ссылки нет, и
   композиция строится по умолчаниям.
-- **В PDF ТЗ — данные высот:** H1, H2, H3 и высота потолка; 2D-схему высот PDF не печатает. Окно
-  предупреждает, когда цепь длиннее заданной для неё зоны.
+- **В PDF ТЗ — данные высот:** H1, H2, H3 и высота потолка; 2D-схему высот PDF не печатает. Это про схему
+  высот: монтажная схема разметки потолка 1:1 — другой документ, она строится по самой композиции (выше).
+  Окно предупреждает, когда цепь длиннее заданной для неё зоны.
 - **Монтаж на металлическую базу.** На странице ТЗ, в шаге «Монтаж», поле «Вид монтажа» даёт два варианта:
   монтаж на потолок с закладными или композиция на металлической базе. В 3D-окне база показана, высоты
   подвеса считаются от её низа, H3 у такой композиции не задаётся. У лент базы нет.
@@ -156,7 +157,9 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   composition rather than a similar one. This applies to a brief opened from a configurator link: a brief
   filled in by hand carries no link, and the composition is built from the defaults.
 - **The brief's PDF carries height figures:** H1, H2, H3 and the ceiling height; it prints no 2D height
-  drawing. The window warns when a chain is longer than the zone set for it.
+  drawing. This concerns the height drawing only: the 1:1 ceiling setting-out drawing is a different
+  document and is still built from the composition itself (above). The window warns when a chain is longer
+  than the zone set for it.
 - **Installation on a metal base.** On the brief page, in the "Installation" step, the "Type of
   installation" field offers two options: fixing to the ceiling with embedded anchors, or the composition
   on a metal base. The base is shown in the 3D view and suspension heights are measured from its underside;
