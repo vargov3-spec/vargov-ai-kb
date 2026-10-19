@@ -32,7 +32,16 @@
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. У лент, композиций на
   каркасе, готовой сцены и артикулов индивидуального расчёта, а также при монтаже на металлической базе
-  схемы нет.
+  схемы нет. На схеме размечены и точки подвеса контуров подсветки: провод по центру контура и два троса
+  по его концам, с тем же диаметром отверстия, что у остальных точек.
+- **Отверстия в потолке не ближе 10 мм краями.** Раскладка раздвигает их сама, а точки, которые физически
+  свести нельзя, объединяются в одно отверстие.
+- **Ссылка воспроизводит ту же раскладку, которую видел заказчик.** Номер генерации раскладки передаётся
+  в ссылке вместе с размерами и составом, и страница ТЗ собирает ровно ту композицию, а не похожую. Это
+  относится к ТЗ, заведённому ссылкой из конфигуратора: у ТЗ, заполненного руками, ссылки нет, и
+  композиция строится по умолчаниям.
+- **Схема высот в PDF — по самой композиции**, а не типовая картинка; у цепочек тоже. Окно предупреждает,
+  когда цепь длиннее заданной зоны.
 
 ## Цвет и отделка
 
@@ -59,6 +68,8 @@
 - **«Узнать стоимость»** — заявка уже набрана (состав композиции, цвета с долями, покрытие, точки крепления): она
   открывается в Telegram, WhatsApp или в письме, «Отправить» человек нажимает сам; длинная заявка входит в письмо
   или чат не целиком — полный текст копируется в буфер обмена. Ответ приходит туда же. Цена считается по заявке.
+- **Ссылка в ТЗ — без буфера обмена:** конфигуратор открывает страницу ТЗ прямо во вкладке и передаёт
+  параметры туда сам.
 - **«Help режим»** — встроенная помощь в конфигураторе (кнопка в шапке): пояснения к шагам, подсказки к кнопкам и
   полям и «Ведущий по шагам» — карточка «Шаг N из M» от выбора артикула до заявки. Это готовые тексты, не чат-бот.
   Help переведён на все восемь языков интерфейса (русский, английский, немецкий, итальянский, французский,
@@ -125,7 +136,17 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   setting-out drawing — 1 mm on the drawing is 1 mm on the ceiling — from the same layout the fixing
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
   production. Ribbons, compositions on a frame, the ready scene and articles calculated individually have
-  none, and neither does an installation on a metal base.
+  none, and neither does an installation on a metal base. The drawing also marks the fixing points of the
+  lit contours: a wire at the centre of a contour and two cables at its ends, with the same hole diameter
+  as every other point.
+- **Ceiling holes are never closer than 10 mm edge to edge.** The layout moves them apart by itself, and
+  points that cannot physically be separated are merged into a single hole.
+- **A link reproduces the very layout the client saw.** The layout generation number now travels in the
+  link together with the dimensions and the composition, so the brief page assembles exactly that
+  composition rather than a similar one. This applies to a brief opened from a configurator link: a brief
+  filled in by hand carries no link, and the composition is built from the defaults.
+- **The height drawing in the PDF is built from the composition itself**, not a generic picture — chains
+  included; the window warns when a chain is longer than the zone set for it.
 
 ### Colour and finish
 
@@ -152,6 +173,8 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   it opens in Telegram, WhatsApp or an email and the person presses Send; a long request reaches the email or chat
   only in part — the full text is copied to the clipboard. The reply comes back the same way. The price is
   calculated per request.
+- **A link into the brief, without the clipboard:** the configurator opens the brief page in a tab and
+  passes the parameters there itself.
 - **"Help mode"** — built-in help in the configurator (a button in the header): notes for the steps, hints on
   buttons and fields and a step-by-step guide ("Step N of M") from choosing an article to the request. These are
   prepared texts, not a chatbot. Help is translated into all eight interface languages (Russian, English,
