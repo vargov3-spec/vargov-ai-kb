@@ -1,8 +1,8 @@
 {
  "meta": {
   "kind": "journal",
-  "articleCount": 27,
-  "checksum": "adf1bcd15544bec3",
+  "articleCount": 28,
+  "checksum": "5262e6597db14b42",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-19T09:55:34+00:00",
+  "generated": "2026-10-19T15:50:05+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -128,6 +128,10 @@
   "russky-dom-2026": {
    "dateISO": "2026-10-05",
    "categoryId": "exhibitions"
+  },
+  "ny-2026": {
+   "dateISO": "2026-10-19",
+   "categoryId": "recognition"
   }
  },
  "articles": {
@@ -19665,6 +19669,552 @@
      {
       "type": "li",
       "text": "معرض Russky Dom (بالروسية) — https://rdmoscow.ru/"
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   }
+  },
+  "ny-2026": {
+   "ru": {
+    "title": "Золото NY Product Design Awards 2026",
+    "category": "Признание",
+    "date": "19 октября 2026",
+    "lead": "Композиция LC0545-1 получила Gold Winner в категории «Outdoor Lighting - Designer / Custom Lighting». На этой премии бренд отмечали и раньше, но золото в наружном и заказном освещении — впервые.",
+    "metaLabels": {
+     "category": "Рубрика",
+     "date": "Дата"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Жюри NY Product Design Awards объявило ранние результаты сезона 2026. Среди победителей наша световая композиция LC0545-1 — в заявке она называется «Lily Light Composition» — и у неё Gold Winner в категории «Outdoor Lighting - Designer / Custom Lighting». Страница победителя открыта на сайте премии."
+     },
+     {
+      "type": "h",
+      "text": "Что это за премия"
+     },
+     {
+      "type": "p",
+      "text": "NY Product Design Awards — конкурс продуктового дизайна под управлением International Awards Associate: заявки судит международное жюри, а у каждого победителя появляется своя страница на сайте премии. Ценность для нас именно в этом: страница живёт отдельно от нашего сайта, и сослаться на неё можно, не ссылаясь на нас."
+     },
+     {
+      "type": "p",
+      "text": "В разделе наград рядом со ссылкой на страницу премии лежат три изображения: именной сертификат, письмо жюри и статуэтка. В счёт наград идёт только сама награда — письмо остаётся документом к ней."
+     },
+     {
+      "type": "h",
+      "text": "Почему это не «вторая победа»"
+     },
+     {
+      "type": "p",
+      "text": "На NY Product Design Awards бренд отмечали и раньше: в 2023 году Антон Варгов получил титул Product Designer of the Year за композицию LC0343, а композиция LC0313 взяла два золота — в декоративном освещении и в подвесных светильниках. Поэтому называть нынешнюю награду второй победой неверно: к наградам 2023 года добавилось золото 2026-го, и оно первое в категории наружного и заказного освещения."
+     },
+     {
+      "type": "h",
+      "text": "Почему эта композиция"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 — тот же букет, взятый крупнее: венчики укрупнены, гирлянда разжата, между цветами появляется воздух. Вещь перестаёт быть плотной строкой и читается редкой ветвью, где каждый цветок виден отдельно."
+     },
+     {
+      "type": "p",
+      "text": "Контраст двух характеров сохранён: молочно-белые венчики держат матовый покой, дымчато-прозрачные дают глубину и блик. Днём композиция читается пластикой лепестков и промежутками между ними; вечером белые светятся ровно, прозрачные пропускают свет насквозь, и цепочка цветов мерцает через один."
+     },
+     {
+      "type": "h",
+      "text": "Что значит эта категория"
+     },
+     {
+      "type": "p",
+      "text": "Наружное и заказное освещение — не про уличный фонарь. В эту категорию попадают вещи, которые собираются под конкретное место, а не выпускаются рядом одинаковых. Для композиции, где число венчиков, шаг между ними и баланс белого и дымчатого задаются под помещение, это точное попадание."
+     },
+     {
+      "type": "h",
+      "text": "Что меняет награда"
+     },
+     {
+      "type": "p",
+      "text": "В производстве — ничего: та же ручная сборка и тот же трёхмерный макет, который заказчик видит до запуска. Меняется разговор с архитектором: у композиции появляется независимое подтверждение, на которое можно сослаться в проекте."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "en": {
+    "title": "Gold at the NY Product Design Awards 2026",
+    "category": "Recognition",
+    "date": "19 October 2026",
+    "lead": "The LC0545-1 composition has taken Gold Winner in the “Outdoor Lighting - Designer / Custom Lighting” category. The brand has been recognised at these awards before, but gold in outdoor and custom lighting is a first.",
+    "metaLabels": {
+     "category": "Category",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "The NY Product Design Awards jury has announced the early results of the 2026 season. Among the winners is our light composition LC0545-1 — entered as “Lily Light Composition” — and it has taken Gold Winner in the “Outdoor Lighting - Designer / Custom Lighting” category. Its winner’s page is live on the awards website."
+     },
+     {
+      "type": "h",
+      "text": "What this award is"
+     },
+     {
+      "type": "p",
+      "text": "The NY Product Design Awards is a product design competition run by International Awards Associate: entries are judged by an international jury, and every winner gets a page of their own on the awards website. That is exactly where the value lies for us: the page sits outside our own site, so it can be cited without citing us."
+     },
+     {
+      "type": "p",
+      "text": "In the awards section, next to the link to the award page, there are three images: the personalised certificate, the jury’s letter and the trophy. Only the award itself goes into the count — the letter remains the document that comes with it."
+     },
+     {
+      "type": "h",
+      "text": "Why this is not a “second win”"
+     },
+     {
+      "type": "p",
+      "text": "The brand has been recognised at the NY Product Design Awards before: in 2023 Anton Vargov received the title Product Designer of the Year for the LC0343 composition, and the LC0313 composition took two golds — in decorative lighting and in pendant luminaires. So it is wrong to call the current award a second win: the 2023 awards have now been joined by gold in 2026, and that gold is the first in the outdoor and custom lighting category."
+     },
+     {
+      "type": "h",
+      "text": "Why this composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 is the same bouquet at a larger scale: the corollas are enlarged, the garland opens up, and air appears between the flowers. The piece stops being a dense line and reads as a sparse branch, where every flower stands on its own."
+     },
+     {
+      "type": "p",
+      "text": "The contrast between the two characters remains: the milky-white corollas hold a matte calm, the smoky-translucent ones give depth and a highlight. By day the composition reads through the shape of the petals and the gaps between them; in the evening the white ones glow evenly, the translucent ones let the light pass straight through, and the chain of flowers shimmers in alternation."
+     },
+     {
+      "type": "h",
+      "text": "What this category means"
+     },
+     {
+      "type": "p",
+      "text": "Outdoor and custom lighting is not about a street lamp. This category covers pieces that are put together for one particular place rather than made as a run of identical units. For a composition where the number of corollas, the spacing between them and the balance of white and smoky are set to suit the room, it is an exact fit."
+     },
+     {
+      "type": "h",
+      "text": "What the award changes"
+     },
+     {
+      "type": "p",
+      "text": "In production, nothing changes: the same hand assembly and the same three-dimensional mock-up that the client sees before the build begins. What changes is the conversation with the architect: the composition now has independent validation that can be cited in a project."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "de": {
+    "title": "Gold bei den NY Product Design Awards 2026",
+    "category": "Anerkennung",
+    "date": "19. Oktober 2026",
+    "lead": "Die Komposition LC0545-1 wurde als Gold Winner in der Kategorie „Outdoor Lighting - Designer / Custom Lighting“ ausgezeichnet. Die Marke hat bei diesem Preis schon früher Auszeichnungen erhalten, Gold für Außenbeleuchtung und maßgefertigte Leuchten jedoch zum ersten Mal.",
+    "metaLabels": {
+     "category": "Rubrik",
+     "date": "Datum"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Die Jury der NY Product Design Awards hat die frühen Ergebnisse der Saison 2026 bekannt gegeben. Unter den Preisträgern ist unsere Lichtkomposition LC0545-1 – in der Einreichung trägt sie den Namen „Lily Light Composition“ – und sie ist Gold Winner in der Kategorie „Outdoor Lighting - Designer / Custom Lighting“. Die Gewinnerseite ist auf der Website des Preises einsehbar."
+     },
+     {
+      "type": "h",
+      "text": "Was für ein Preis das ist"
+     },
+     {
+      "type": "p",
+      "text": "Die NY Product Design Awards sind ein Produktdesign-Wettbewerb unter der Leitung von International Awards Associate: Die Einreichungen werden von einer internationalen Jury bewertet, und jeder Preisträger erhält eine eigene Seite auf der Website des Preises. Genau darin liegt für uns der Wert: Diese Seite existiert unabhängig von unserer Website, und man kann sich auf sie berufen, ohne sich auf uns zu berufen."
+     },
+     {
+      "type": "p",
+      "text": "Im Bereich der Auszeichnungen finden sich neben dem Link zur Preisseite drei Abbildungen: das personalisierte Zertifikat, das Schreiben der Jury und die Statuette. Gezählt wird nur die Auszeichnung selbst – das Schreiben bleibt ein Dokument dazu."
+     },
+     {
+      "type": "h",
+      "text": "Warum das kein „zweiter Sieg“ ist"
+     },
+     {
+      "type": "p",
+      "text": "Bei den NY Product Design Awards wurde die Marke schon früher ausgezeichnet: 2023 erhielt Anton Vargov den Titel Product Designer of the Year für die Komposition LC0343, und die Komposition LC0313 holte zweimal Gold – in den Kategorien für dekorative Beleuchtung und für Pendelleuchten. Die jetzige Auszeichnung als zweiten Sieg zu bezeichnen, ist deshalb nicht richtig: Zu den Auszeichnungen von 2023 kommt das Gold von 2026 hinzu, und es ist das erste für Außenbeleuchtung und maßgefertigte Leuchten."
+     },
+     {
+      "type": "h",
+      "text": "Warum diese Komposition"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 ist derselbe Strauß, nur größer gefasst: Die Blütenkronen sind vergrößert, die Girlande ist auseinandergezogen, zwischen den Blüten entsteht Luft. Das Stück ist keine dichte Reihe mehr, es liest sich als licht verzweigter Ast, an dem jede Blüte einzeln zu sehen ist."
+     },
+     {
+      "type": "p",
+      "text": "Der Kontrast zweier Charaktere bleibt erhalten: Die milchig-weißen Blütenkronen bewahren eine matte Ruhe, die rauchig-transparenten geben Tiefe und Glanzlicht. Am Tag liest sich die Komposition über die Plastizität der Blütenblätter und die Abstände zwischen ihnen; am Abend leuchten die weißen gleichmäßig, die transparenten lassen das Licht hindurch, und in der Blütenkette funkelt jede zweite Blüte."
+     },
+     {
+      "type": "h",
+      "text": "Was diese Kategorie bedeutet"
+     },
+     {
+      "type": "p",
+      "text": "Bei Außenbeleuchtung und maßgefertigten Leuchten geht es nicht um die Straßenlaterne. In diese Kategorie fallen Objekte, die für einen bestimmten Ort zusammengesetzt werden und nicht in einer Reihe gleicher Exemplare entstehen. Für eine Komposition, bei der die Zahl der Blütenkronen, ihr Abstand und die Balance zwischen den weißen und den rauchigen Blüten auf den Raum abgestimmt werden, ist diese Kategorie eine Punktlandung."
+     },
+     {
+      "type": "h",
+      "text": "Was die Auszeichnung ändert"
+     },
+     {
+      "type": "p",
+      "text": "In der Fertigung ändert sich nichts: dieselbe Handmontage und dasselbe dreidimensionale Modell, das der Kunde vor dem Produktionsstart zu sehen bekommt. Was sich ändert, ist das Gespräch mit dem Architekten: Die Komposition hat nun eine unabhängige Bestätigung, auf die man sich im Projekt berufen kann."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "fr": {
+    "title": "L'or des NY Product Design Awards 2026",
+    "category": "Reconnaissance",
+    "date": "19 octobre 2026",
+    "lead": "La composition LC0545-1 a reçu le Gold Winner dans la catégorie « Outdoor Lighting - Designer / Custom Lighting ». La marque a déjà été distinguée par ce prix, mais c'est la première fois que l'or lui revient en éclairage extérieur et sur mesure.",
+    "metaLabels": {
+     "category": "Rubrique",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Le jury des NY Product Design Awards a annoncé les premiers résultats de la saison 2026. Parmi les lauréats figure notre composition lumineuse LC0545-1 — présentée dans le dossier sous le nom « Lily Light Composition » — avec un Gold Winner dans la catégorie « Outdoor Lighting - Designer / Custom Lighting ». La page du lauréat est en ligne sur le site du prix."
+     },
+     {
+      "type": "h",
+      "text": "De quel prix il s'agit"
+     },
+     {
+      "type": "p",
+      "text": "Les NY Product Design Awards sont un concours de design produit organisé par l'International Awards Associate : les dossiers sont jugés par un jury international, et chaque lauréat reçoit sa propre page sur le site du prix. C'est précisément là que réside la valeur pour nous : cette page existe indépendamment de notre site, et l'on peut s'y référer sans avoir à nous citer."
+     },
+     {
+      "type": "p",
+      "text": "Dans la rubrique des récompenses, à côté du lien vers la page du prix, figurent trois images : le certificat nominatif, la lettre du jury et la statuette. Seule la récompense elle-même entre en compte ; la lettre reste un document qui l'accompagne."
+     },
+     {
+      "type": "h",
+      "text": "Pourquoi ce n'est pas une « deuxième victoire »"
+     },
+     {
+      "type": "p",
+      "text": "La marque avait déjà été distinguée aux NY Product Design Awards : en 2023, Anton Vargov a reçu le titre de Product Designer of the Year pour la composition LC0343, et la composition LC0313 a remporté deux fois l'or — en éclairage décoratif et en luminaires suspendus. Parler aujourd'hui d'une deuxième victoire serait donc inexact : aux récompenses de 2023 s'ajoute l'or de 2026, et c'est le premier dans la catégorie de l'éclairage extérieur et sur mesure."
+     },
+     {
+      "type": "h",
+      "text": "Pourquoi cette composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1, c'est le même bouquet pris en plus grand : les corolles sont agrandies, la guirlande desserrée, de l'air apparaît entre les fleurs. L'objet cesse d'être une ligne dense et se lit comme une branche clairsemée, où l'on distingue chaque fleur séparément."
+     },
+     {
+      "type": "p",
+      "text": "Le contraste des deux caractères est conservé : les corolles blanc laiteux gardent un calme mat, les fumées translucides donnent de la profondeur et un éclat. De jour, la composition se lit par la plastique des pétales et par les intervalles qui les séparent ; le soir, les blanches brillent d'une lueur égale, les fumées laissent passer la lumière de part en part, et la chaîne de fleurs scintille en alternance, une fleur sur deux."
+     },
+     {
+      "type": "h",
+      "text": "Ce que signifie cette catégorie"
+     },
+     {
+      "type": "p",
+      "text": "L'éclairage extérieur et sur mesure, ce n'est pas le lampadaire de rue. Cette catégorie réunit les objets assemblés pour un lieu précis, et non produits en série d'exemplaires identiques. Pour une composition dont le nombre de corolles, l'écart entre elles et l'équilibre du blanc et du fumé se règlent en fonction de la pièce, c'est exactement sa place."
+     },
+     {
+      "type": "h",
+      "text": "Ce que change la récompense"
+     },
+     {
+      "type": "p",
+      "text": "En production, rien : le même assemblage à la main et la même maquette 3D que le client voit avant le lancement. Ce qui change, c'est la conversation avec l'architecte : la composition dispose désormais d'une confirmation indépendante, à laquelle on peut se référer dans un projet."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "it": {
+    "title": "Oro ai NY Product Design Awards 2026",
+    "category": "Riconoscimenti",
+    "date": "19 ottobre 2026",
+    "lead": "La composizione LC0545-1 si è aggiudicata il Gold Winner nella categoria «Outdoor Lighting - Designer / Custom Lighting». Il marchio era già stato premiato in questo concorso, ma l’oro nell’illuminazione per esterni e su misura arriva per la prima volta.",
+    "metaLabels": {
+     "category": "Rubrica",
+     "date": "Data"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "La giuria dei NY Product Design Awards ha annunciato i primi risultati della stagione 2026. Tra i vincitori c’è la nostra composizione luminosa LC0545-1 — nella candidatura si chiama «Lily Light Composition» — che ha ottenuto il Gold Winner nella categoria «Outdoor Lighting - Designer / Custom Lighting». La pagina del vincitore è pubblicata sul sito del premio."
+     },
+     {
+      "type": "h",
+      "text": "Di che premio si tratta"
+     },
+     {
+      "type": "p",
+      "text": "I NY Product Design Awards sono un concorso di product design gestito da International Awards Associate: le candidature vengono valutate da una giuria internazionale e ogni vincitore ottiene una propria pagina sul sito del premio. Per noi il valore sta proprio qui: quella pagina esiste indipendentemente dal nostro sito, e la si può citare senza citare noi."
+     },
+     {
+      "type": "p",
+      "text": "Nella sezione dei riconoscimenti, accanto al link alla pagina del premio, ci sono tre immagini: il certificato nominativo, la lettera della giuria e la statuetta. Nel conteggio dei riconoscimenti entra soltanto il premio in sé: la lettera resta un documento che lo accompagna."
+     },
+     {
+      "type": "h",
+      "text": "Perché non è una «seconda vittoria»"
+     },
+     {
+      "type": "p",
+      "text": "Il marchio era già stato premiato ai NY Product Design Awards: nel 2023 Anton Vargov ha ricevuto il titolo di Product Designer of the Year per la composizione LC0343, e la composizione LC0313 ha conquistato due ori — nell’illuminazione decorativa e nelle lampade a sospensione. Per questo definire l’attuale riconoscimento una seconda vittoria non è corretto: ai riconoscimenti del 2023 si è aggiunto l’oro del 2026, ed è il primo nella categoria dell’illuminazione per esterni e su misura."
+     },
+     {
+      "type": "h",
+      "text": "Perché questa composizione"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 è lo stesso bouquet, visto più da vicino: le corolle sono ingrandite, la ghirlanda si allarga, tra i fiori entra l’aria. L’oggetto smette di essere una fila compatta e si legge come un ramo rado, in cui ogni fiore si distingue singolarmente."
+     },
+     {
+      "type": "p",
+      "text": "Il contrasto fra i due caratteri è conservato: le corolle bianco latte mantengono una quiete opaca, quelle trasparenti color fumo danno profondità e riflesso. Di giorno la composizione si legge nella plastica dei petali e negli intervalli fra loro; di sera quelle bianche diffondono una luce uniforme, quelle trasparenti lasciano passare la luce da parte a parte, e la catena dei fiori luccica a fiori alterni."
+     },
+     {
+      "type": "h",
+      "text": "Che cosa significa questa categoria"
+     },
+     {
+      "type": "p",
+      "text": "L’illuminazione per esterni e su misura non vuol dire lampione da strada. In questa categoria rientrano gli oggetti che vengono assemblati per un luogo preciso, non prodotti in serie di esemplari identici. Per una composizione in cui il numero delle corolle, il passo tra loro e l’equilibrio tra il bianco e il fumé si definiscono in base all’ambiente, questa categoria fa centro."
+     },
+     {
+      "type": "h",
+      "text": "Che cosa cambia con il riconoscimento"
+     },
+     {
+      "type": "p",
+      "text": "In produzione, niente: lo stesso assemblaggio manuale e lo stesso modello tridimensionale che il committente vede prima dell’avvio dei lavori. Cambia il dialogo con l’architetto: la composizione ottiene una conferma indipendente, a cui fare riferimento nel progetto."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "es": {
+    "title": "Oro en los NY Product Design Awards 2026",
+    "category": "Reconocimiento",
+    "date": "19 de octubre de 2026",
+    "lead": "La composición LC0545-1 ha obtenido el Gold Winner en la categoría «Outdoor Lighting - Designer / Custom Lighting». La marca ya había sido reconocida en este premio, pero es la primera vez que logra el oro en iluminación exterior y a medida.",
+    "metaLabels": {
+     "category": "Sección",
+     "date": "Fecha"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "El jurado de los NY Product Design Awards ha anunciado los primeros resultados de la temporada 2026. Entre los ganadores está nuestra composición luminosa LC0545-1 —en la candidatura figura como «Lily Light Composition»— y se ha llevado el Gold Winner en la categoría «Outdoor Lighting - Designer / Custom Lighting». La página del ganador ya está publicada en el sitio del premio."
+     },
+     {
+      "type": "h",
+      "text": "De qué premio se trata"
+     },
+     {
+      "type": "p",
+      "text": "Los NY Product Design Awards son un concurso de diseño de producto gestionado por International Awards Associate: las candidaturas las juzga un jurado internacional y cada ganador obtiene su propia página en el sitio del premio. Para nosotros el valor está justamente en eso: esa página vive al margen de nuestro sitio, y cualquiera puede citarla sin tener que citarnos a nosotros."
+     },
+     {
+      "type": "p",
+      "text": "En la sección de premios, junto al enlace a la página del concurso, hay tres imágenes: el certificado nominativo, la carta del jurado y la estatuilla. En el recuento de premios cuenta solo el premio en sí; la carta sigue siendo un documento que lo acompaña."
+     },
+     {
+      "type": "h",
+      "text": "Por qué no es una «segunda victoria»"
+     },
+     {
+      "type": "p",
+      "text": "En los NY Product Design Awards la marca ya había sido reconocida antes: en 2023 Anton Vargov recibió el título de Product Designer of the Year por la composición LC0343, y la composición LC0313 se llevó dos oros, en iluminación decorativa y en luminarias suspendidas. Por eso no es correcto llamar a este galardón una segunda victoria: a los premios de 2023 se ha sumado el oro de 2026, y este es el primero en la categoría de iluminación exterior y a medida."
+     },
+     {
+      "type": "h",
+      "text": "Por qué esta composición"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 es el mismo ramo, tomado más de cerca: las corolas se agrandan, la guirnalda se afloja, entre las flores aparece aire. La pieza deja de ser una línea densa y se lee como una rama rala, donde cada flor se ve por separado."
+     },
+     {
+      "type": "p",
+      "text": "El contraste de los dos caracteres se mantiene: las corolas de un blanco lechoso conservan una calma mate, las ahumadas y translúcidas aportan profundidad y brillo. De día la composición se lee por la plástica de los pétalos y por los huecos entre ellos; de noche las blancas brillan de manera uniforme, las translúcidas dejan pasar la luz de lado a lado y la cadena de flores titila una flor sí y otra no."
+     },
+     {
+      "type": "h",
+      "text": "Qué significa esta categoría"
+     },
+     {
+      "type": "p",
+      "text": "La iluminación exterior y a medida no va de farolas. En esta categoría entran las piezas que se montan para un lugar concreto, y no se producen en series de ejemplares idénticos. Para una composición en la que el número de corolas, el paso entre ellas y el equilibrio entre el blanco y el ahumado se definen según la estancia, esa categoría da de lleno en la diana."
+     },
+     {
+      "type": "h",
+      "text": "Qué cambia con el premio"
+     },
+     {
+      "type": "p",
+      "text": "En la fabricación, nada: el mismo montaje a mano y la misma maqueta tridimensional que el cliente ve antes de que la pieza entre en producción. Lo que cambia es la conversación con el arquitecto: la composición cuenta ahora con una confirmación independiente a la que se puede remitir en el proyecto."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "vi": {
+    "title": "Giải vàng NY Product Design Awards 2026",
+    "category": "Ghi nhận",
+    "date": "19 tháng 10 năm 2026",
+    "lead": "Tổ hợp ánh sáng LC0545-1 đã giành giải Gold Winner ở hạng mục “Outdoor Lighting - Designer / Custom Lighting”. Thương hiệu từng được ghi nhận tại giải thưởng này trước đây, song đây là lần đầu tiên có giải vàng ở chiếu sáng ngoài trời và chiếu sáng đặt làm riêng.",
+    "metaLabels": {
+     "category": "Chuyên mục",
+     "date": "Ngày"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Ban giám khảo NY Product Design Awards đã công bố kết quả sớm của mùa giải 2026. Trong số các tác phẩm thắng giải có tổ hợp ánh sáng LC0545-1 của chúng tôi — trong hồ sơ dự thi, tác phẩm mang tên “Lily Light Composition” — và nó đã giành giải Gold Winner ở hạng mục “Outdoor Lighting - Designer / Custom Lighting”. Trang dành cho tác phẩm thắng giải đã được mở trên website của giải."
+     },
+     {
+      "type": "h",
+      "text": "Giải thưởng này là gì"
+     },
+     {
+      "type": "p",
+      "text": "NY Product Design Awards là cuộc thi thiết kế sản phẩm do International Awards Associate điều hành: hồ sơ dự thi được một ban giám khảo quốc tế đánh giá, và mỗi tác phẩm thắng giải đều có trang riêng trên website của giải. Giá trị với chúng tôi nằm đúng ở chỗ đó: trang ấy tồn tại độc lập với website của chúng tôi, nên người khác có thể dẫn nguồn trang ấy mà không phải dẫn về chúng tôi."
+     },
+     {
+      "type": "p",
+      "text": "Trong phần giải thưởng, bên cạnh đường dẫn tới trang của giải có ba hình ảnh: giấy chứng nhận ghi tên, thư của ban giám khảo và tượng giải thưởng. Chỉ bản thân giải thưởng được tính vào số giải, còn bức thư chỉ là tài liệu kèm theo."
+     },
+     {
+      "type": "h",
+      "text": "Vì sao đây không phải là “chiến thắng thứ hai”"
+     },
+     {
+      "type": "p",
+      "text": "Thương hiệu từng được ghi nhận tại NY Product Design Awards trước đây: năm 2023, Anton Vargov nhận danh hiệu Product Designer of the Year cho tổ hợp LC0343, còn tổ hợp LC0313 giành hai giải vàng — ở hạng mục chiếu sáng trang trí và ở hạng mục đèn treo. Vì vậy, gọi giải lần này là chiến thắng thứ hai là không đúng: các giải thưởng năm 2023 nay có thêm giải vàng năm 2026, và đây là giải vàng đầu tiên ở hạng mục chiếu sáng ngoài trời và chiếu sáng đặt làm riêng."
+     },
+     {
+      "type": "h",
+      "text": "Vì sao lại là tổ hợp này"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 vẫn là bó hoa ấy, chỉ ở cỡ lớn hơn: các tràng hoa được phóng to, dây hoa được nới rộng, giữa những bông hoa xuất hiện khoảng không. Tác phẩm không còn là một dòng dày đặc mà hiện ra như một nhánh thưa, nơi nhìn rõ từng bông hoa riêng rẽ."
+     },
+     {
+      "type": "p",
+      "text": "Sự tương phản của hai tính cách được giữ nguyên: những tràng hoa trắng sữa giữ vẻ tĩnh lặng mờ đục, những tràng trong suốt màu khói mang lại chiều sâu và điểm lóe sáng. Ban ngày, tổ hợp hiện ra qua đường nét của các cánh hoa và những khoảng trống giữa chúng; buổi tối, những bông trắng sáng đều, những bông trong suốt cho ánh sáng đi xuyên qua, và chuỗi hoa lấp lánh so le, cứ cách một bông."
+     },
+     {
+      "type": "h",
+      "text": "Hạng mục này nghĩa là gì"
+     },
+     {
+      "type": "p",
+      "text": "Chiếu sáng ngoài trời và chiếu sáng đặt làm riêng không phải là chuyện đèn đường. Hạng mục này dành cho những tác phẩm được lắp ghép cho một không gian cụ thể, chứ không làm ra thành loạt giống nhau. Với một tổ hợp mà số tràng hoa, khoảng cách giữa chúng và sự cân bằng giữa màu trắng và màu khói đều được đặt theo không gian, đây đúng là hạng mục của nó."
+     },
+     {
+      "type": "h",
+      "text": "Giải thưởng thay đổi điều gì"
+     },
+     {
+      "type": "p",
+      "text": "Trong sản xuất thì không có gì thay đổi: vẫn là lối lắp ghép thủ công ấy và vẫn là bản dựng ba chiều mà khách hàng nhìn thấy trước khi bắt đầu làm. Điều thay đổi là cuộc trò chuyện với kiến trúc sư: tổ hợp giờ có một sự xác nhận độc lập để dẫn nguồn trong dự án."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "ar": {
+    "title": "ذهبية NY Product Design Awards 2026",
+    "category": "التقدير",
+    "date": "19 أكتوبر 2026",
+    "lead": "حصلت التركيبة LC0545-1 على Gold Winner في فئة «Outdoor Lighting - Designer / Custom Lighting». سبق أن نالت العلامة تكريمًا في هذه الجائزة، لكن الذهب في الإضاءة الخارجية والمصنوعة خصيصًا يأتي للمرة الأولى.",
+    "metaLabels": {
+     "category": "القسم",
+     "date": "التاريخ"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "أعلنت لجنة تحكيم NY Product Design Awards النتائج المبكرة لموسم 2026. ومن بين الفائزين تركيبتنا الضوئية LC0545-1 — واسمها في الترشيح «Lily Light Composition» — وقد نالت Gold Winner في فئة «Outdoor Lighting - Designer / Custom Lighting». وصفحة الفائز متاحة على موقع الجائزة."
+     },
+     {
+      "type": "h",
+      "text": "ما هي هذه الجائزة؟"
+     },
+     {
+      "type": "p",
+      "text": "NY Product Design Awards مسابقة لتصميم المنتجات تديرها International Awards Associate: تقيّم الترشيحاتِ لجنةُ تحكيم دولية، ويحصل كل فائز على صفحة خاصة به على موقع الجائزة. وهنا تكمن القيمة بالنسبة إلينا: الصفحة قائمة بذاتها بعيدًا عن موقعنا، فيمكن الإحالة إليها من دون الإحالة إلينا."
+     },
+     {
+      "type": "p",
+      "text": "في قسم الجوائز، إلى جانب رابط صفحة الجائزة، توجد ثلاث صور: الشهادة الاسمية، ورسالة لجنة التحكيم، والتمثال. ولا يُحسب في الجوائز إلا الجائزة نفسها — أما الرسالة فتبقى مستندًا ملحقًا بها."
+     },
+     {
+      "type": "h",
+      "text": "لماذا لا يُسمّى هذا «فوزًا ثانيًا»؟"
+     },
+     {
+      "type": "p",
+      "text": "سبق أن نالت العلامة تكريمًا في NY Product Design Awards: ففي 2023 حصل Anton Vargov على لقب Product Designer of the Year عن التركيبة LC0343، ونالت التركيبة LC0313 ذهبيتين — في الإضاءة الزخرفية وفي المصابيح المعلّقة. ولهذا فإن تسمية الجائزة الحالية فوزًا ثانيًا غير دقيقة: فإلى جوائز 2023 أُضيف ذهب 2026، وهو الأول في فئة الإضاءة الخارجية والمصنوعة خصيصًا."
+     },
+     {
+      "type": "h",
+      "text": "لماذا هذه التركيبة بالذات؟"
+     },
+     {
+      "type": "p",
+      "text": "LC0545-1 هي الباقة نفسها لكن بمقياس أكبر: التويجات أكبر حجمًا، والسلسلة أكثر انفراجًا، ويتخلّل الهواءُ المسافاتِ بين الأزهار. فلم تبقَ القطعة سطرًا كثيفًا، بل تُقرأ كغصن متفرّق تُرى فيه كل زهرة على حدة."
+     },
+     {
+      "type": "p",
+      "text": "والتضاد بين الطابعين محفوظ: التويجات البيضاء الحليبية تحافظ على سكون غير لامع، والدخانية الشفافة تمنح العمق والوميض. نهارًا تُقرأ التركيبة بانحناء البتلات والمسافات بينها؛ ومساءً تتوهّج البيضاء بثبات، وتمرّر الشفافة الضوء عبرها، فتتلألأ سلسلة الأزهار بالتناوب، واحدةً من كل اثنتين."
+     },
+     {
+      "type": "h",
+      "text": "ماذا تعني هذه الفئة؟"
+     },
+     {
+      "type": "p",
+      "text": "الإضاءة الخارجية والمصنوعة خصيصًا لا تعني عمود إنارة في الشارع. تضمّ هذه الفئة الأعمال التي تُجمَّع لمكان بعينه، لا تلك التي تُنتَج نسخًا متماثلة. وبالنسبة إلى تركيبة يُحدَّد فيها عدد التويجات والمسافة بينها وتوازن الأبيض والدخاني بحسب الحيّز، فهذا إصابةٌ في الهدف تمامًا."
+     },
+     {
+      "type": "h",
+      "text": "ما الذي تغيّره الجائزة؟"
+     },
+     {
+      "type": "p",
+      "text": "في الإنتاج لا شيء: التجميع اليدوي نفسه، والمجسّم الثلاثي الأبعاد نفسه الذي يراه العميل قبل البدء. ما يتغيّر هو الحوار مع المعماري: يصبح للتركيبة تأكيد مستقل يمكن الإحالة إليه في المشروع."
      },
      {
       "type": "p",
