@@ -46,7 +46,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 наград со ссылками на страницы премий
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — PR-кит
 - [guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/guides/russian-lighting-design.md) — эссе «Русский световой дизайн» (RU; EN — en/guides/)
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 пресс-фото до 2000 px (в том числе 4 снимка LC0556 со стенда «Русского дома» 2026) и логотип, свободны для редакционного использования с указанием «Vargov®Design»
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 пресс-фото до 2000 px (в том числе 4 снимка LC0556 со стенда «Русского дома» 2026) и логотип, свободны для редакционного использования с указанием «Vargov®Design»; условия — на странице пресс-кита https://vargov.ru/press, знак авторства «© Vargov®Design» (так же сайт помечает эти снимки в разметке с 19.10.2026)
 
 Товарный знак VARGOV: Россия, свидетельство № 896936 (до 29.04.2032); международная регистрация по Мадридской системе № 1 795 801 с охраной в Китае (до 20.05.2034), класс 11 — осветительные приборы. Логотип VARGOV® DESIGN: Россия, свидетельство № 1270653 (приоритет 12.03.2026, зарегистрирован 06.10.2026, действует до 12.03.2036).
 
@@ -139,7 +139,7 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 awards with links to the award pages
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 press photos up to 2000 px (including 4 shots of LC0556 at the Russky Dom 2026 stand) and the logo, free for editorial use with the credit “Vargov®Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 press photos up to 2000 px (including 4 shots of LC0556 at the Russky Dom 2026 stand) and the logo, free for editorial use with the credit “Vargov®Design”; the terms are on the press kit page https://vargov.ru/en/press and the copyright notice is “© Vargov®Design” (the same wording the site puts in the markup of these images since 19 October 2026)
 
 VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus. VARGOV® DESIGN logo: Russia, registration No. 1270653 (priority 12 March 2026, registered 6 October 2026, in force until 12 March 2036).
 

@@ -30,7 +30,7 @@
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 项奖项，附奖项页面链接
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — 新闻资料包
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — 随笔《俄罗斯灯光设计》（英文）
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 张 2000 px 以内的新闻图片（含 2026 年 Russky Dom 展台上 LC0556 的 4 张照片）及标志，可免费用于编辑用途，署名 “Vargov®Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 张 2000 px 以内的新闻图片（含 2026 年 Russky Dom 展台上 LC0556 的 4 张照片）及标志，可免费用于编辑用途，署名 “Vargov®Design”；使用条款见新闻资料页 https://vargov.ru/en/press，版权标注为 “© Vargov®Design”（自 2026 年 10 月 19 日起，网站在这些图片的结构化数据中使用相同表述）
 
 ## 目录
 
