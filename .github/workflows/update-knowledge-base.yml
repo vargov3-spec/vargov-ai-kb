@@ -104,6 +104,12 @@ jobs:
         # с зеркалом сайта, у хаба то же @id и имя организации и число наград из organization.jsonld.
         run: python scripts/build_pages.py --check
 
+      - name: Число наград в текстах не отстало от графа
+        # Граф сверяется с фидом сайта, а число наград в llms-файлах, README и пресс-ките
+        # вписано словами. 13.09.2026 после 24-й награды llms.txt остался с 23 — два месяца
+        # первый файл для ИИ-обходчиков врал. Эталон — award у Organization.
+        run: python scripts/check_award_count.py
+
       - name: Карта сайта для ИИ жива
         run: |
           code=$(curl -sS -o /tmp/llms.txt -w '%{http_code}' --max-time 30 \
