@@ -28,9 +28,9 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 awards with links to the award pages
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 press photos up to 2000 px and the logo, free for editorial use with the credit “Vargov®Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 press photos up to 2000 px (including 4 shots of LC0556 at the Russky Dom 2026 stand) and the logo, free for editorial use with the credit “Vargov®Design”
 
-VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus. VARGOV® DESIGN logo: Russia, registration No. 1270653 (to 12 March 2036), classes 11 and 42 — lighting apparatus and design services.
+VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus. VARGOV® DESIGN logo: Russia, registration No. 1270653 (priority 12 March 2026, registered 6 October 2026, in force until 12 March 2036).
 
 ## Catalogue
 
@@ -79,4 +79,4 @@ Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.r
 
 ## Contact
 
-Email: info@vargov.ru · Phone and WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow, daily 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)
+Email: info@vargov.ru · WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram: [@vargov_design](https://t.me/vargov_design) · Showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow, daily 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)

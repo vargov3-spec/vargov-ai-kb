@@ -1,6 +1,6 @@
 # Streetlight — уличные световые инсталляции Vargov® Design
 
-Источник: [vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign](https://vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign)
+Источник: [vargov.ru/journal/streetlight](https://vargov.ru/journal/streetlight)
 
 ## Суть направления
 Инициатива Vargov Design по созданию иммерсивных городских световых инсталляций на стыке искусства, технологий и архитектуры — «световые решения, которые становятся неотъемлемой частью городской идентичности».

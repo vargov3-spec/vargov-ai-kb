@@ -1,6 +1,6 @@
 # Lighting vs. decorative composition — what's the difference (per Vargov® Design)
 
-Source: [vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya](https://vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya)
+Source: [vargov.ru/en/journal/svetovaya-ili-dekorativnaya](https://vargov.ru/en/journal/svetovaya-ili-dekorativnaya)
 
 ## Lighting composition
 The primary function is illumination — main, accent, or decorative lighting. The focus is on choosing light sources, their placement and light control to achieve a specific visual effect (LED panels, fixtures, light strips, target brightness levels).

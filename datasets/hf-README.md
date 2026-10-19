@@ -125,7 +125,8 @@ dated snapshot and is not regenerated nightly.
 
 - **Not a price list.** No prices are published anywhere in this dataset.
 - **Not a technical specification.** No engineering data for manufacturing.
-- **Not an image dataset.** Photographs are referenced by URL only; the image files
+- **Not an image dataset.** Catalogue images (studio renders; for part of the catalogue,
+  AI-generated interior visualisations, labelled as such in the site feed) are referenced by URL only; the image files
   themselves are not part of this release (see *Licensing*).
 
 ## Dataset structure
@@ -142,8 +143,8 @@ fields are plain strings.
 | `category_label` | *(i18n)* | Human-readable category name. |
 | `type` | *(i18n)* | Object type, e.g. *Lighting composition*, *Decorative composition*, *Floor lamp*. |
 | `urls` | object | Canonical catalog URL per language. |
-| `image` | string | Primary photograph URL. |
-| `gallery` | list[string] | All photograph URLs for the composition. |
+| `image` | string | Primary catalogue image URL (studio render). |
+| `gallery` | list[string] | All catalogue image URLs for the composition (renders and, for part of the catalogue, AI-generated interior visualisations). |
 | `gallery_total` | int | Length of `gallery`. |
 | `model3d` / `model3d_en` | string \| null | The studio's own 3D-model card on 3ddd.ru / 3dsky.org. Present for 603 of 605 records. |
 | `models_all` / `models_all_en` | string \| null | All 3D models tagged with this article code. |
@@ -184,8 +185,8 @@ Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Desi
 [vargov.design](https://vargov.design) was an **Awwwards Nominee** in 2026 — a nomination,
 not a win. The VARGOV trademark is registered in Russia (№ 896936, 6 October 2022) and
 internationally through the Madrid System (№ 1795801, 20 May 2024), class 11.
-The VARGOV® DESIGN logo is registered separately in Russia (№ 1270653, 6 October 2026),
-classes 11 and 42 — lighting apparatus and design services.
+The VARGOV® DESIGN logo is registered separately in Russia (№ 1270653, registered 6 October 2026,
+in force until 12 March 2036).
 Showroom: 24 Nakhimovsky Prospekt, bldg. 1, pavilion 2, stand 212, Moscow, daily 12:00–20:00.
 
 Compositions are made to order for double-height living rooms, staircases, hotel lobbies and
@@ -217,7 +218,7 @@ its own load — together with a PDF specification and a tender sheet; see the f
 The dataset files are released under **CC BY 4.0**. Attribute as *Vargov®Design* with a
 link to https://vargov.ru.
 
-The **photographs are not included in this dataset** — only their URLs are. The images
+The **catalogue images are not included in this dataset** — only their URLs are. The images
 remain the copyright of Vargov®Design and are not licensed under CC BY 4.0 by this
 release. A separate set of press photographs is cleared for editorial use with attribution:
 see https://github.com/vargov3-spec/vargov-ai-kb/blob/main/press/README.md.

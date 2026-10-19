@@ -1,6 +1,6 @@
 # Vargov®Design
 
-> Vargov®Design 是俄罗斯的作者式灯光与装饰构成品牌：可收藏的光之雕塑，按订单制作。首批作品问世于 2018 年；由设计师 Anton Vargov 创立并主理。自有生产；每一件构成都为特定室内空间组装，其尺度与几何形态依空间调整。商标 VARGOV，俄罗斯注册号 896936；马德里体系国际注册号 1 795 801，在中国受保护（至 2034 年 5 月 20 日），第 11 类——照明装置。标志 VARGOV® DESIGN，俄罗斯注册号 1270653（至 2036 年 3 月 12 日），第 11 类与第 42 类——照明装置与设计服务。
+> Vargov®Design 是俄罗斯的作者式灯光与装饰构成品牌：可收藏的光之雕塑，按订单制作。首批作品问世于 2018 年；由设计师 Anton Vargov 创立并主理。自有生产；每一件构成都为特定室内空间组装，其尺度与几何形态依空间调整。商标 VARGOV，俄罗斯注册号 896936；马德里体系国际注册号 1 795 801，在中国受保护（至 2034 年 5 月 20 日），第 11 类——照明装置。标志 VARGOV® DESIGN，俄罗斯注册号 1270653（优先权日 2026 年 3 月 12 日，注册日 2026 年 10 月 6 日，有效期至 2036 年 3 月 12 日）。
 
 目录收录 605 件构成，货号 LC0001…LC0602，分四个系列。25 项国际评委会奖项。
 
@@ -30,7 +30,7 @@
 - [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 项奖项，附奖项页面链接
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — 新闻资料包
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — 随笔《俄罗斯灯光设计》（英文）
-- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 10 张 2000 px 以内的新闻图片及标志，可免费用于编辑用途，署名 “Vargov®Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 张 2000 px 以内的新闻图片（含 2026 年 Russky Dom 展台上 LC0556 的 4 张照片）及标志，可免费用于编辑用途，署名 “Vargov®Design”
 
 ## 目录
 
@@ -78,4 +78,4 @@
 
 ## 联系方式
 
-邮箱：info@vargov.ru · 电话与 WhatsApp：[+7 916 537 33 52](https://wa.me/79165373352) · Telegram：[@vargov_design](https://t.me/vargov_design) · WeChat ID：Vargov_Design · 展厅：莫斯科 Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212，每日 12:00–20:00 · 官方经销商：莫斯科、迪拜（Sheikh Zayed Road）、河内（Thang Long Avenue）
+邮箱：info@vargov.ru · WhatsApp：[+7 916 537 33 52](https://wa.me/79165373352) · Telegram：[@vargov_design](https://t.me/vargov_design) · WeChat ID：Vargov_Design · 展厅：莫斯科 Nakhimovsky Prospekt 24, bldg. 1, Pavilion 2, Stand 212，每日 12:00–20:00 · 官方经销商：莫斯科、迪拜（Sheikh Zayed Road）、河内（Thang Long Avenue）

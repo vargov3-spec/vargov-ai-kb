@@ -1,6 +1,6 @@
 # Streetlight — urban lighting installations by Vargov® Design
 
-Source: [vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign](https://vargov.ru/tpost/167rlsj5r1-streetlight-ot-vargovdesign)
+Source: [vargov.ru/en/journal/streetlight](https://vargov.ru/en/journal/streetlight)
 
 ## What it is
 Vargov Design's initiative to create immersive urban lighting installations at the intersection of art, technology and architecture — "lighting solutions that become an integral part of a city's identity."

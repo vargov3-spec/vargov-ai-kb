@@ -1,6 +1,6 @@
 # Световая vs декоративная композиция — в чём разница (по материалам Vargov® Design)
 
-Источник: [vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya](https://vargov.ru/tpost/je6ofjylh1-svetovaya-ili-dekorativnaya-kompozitsiya)
+Источник: [vargov.ru/journal/svetovaya-ili-dekorativnaya](https://vargov.ru/journal/svetovaya-ili-dekorativnaya)
 
 ## Световая композиция
 Основная функция — освещение: основное, акцентное или декоративное. Акцент на выборе источников света, их расположении и управлении светом для достижения нужного визуального эффекта (LED-панели, светильники, световые ленты, нужная яркость).

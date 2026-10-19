@@ -43,7 +43,7 @@ Threads — открытая текстовая площадка, которую
 > Vargov® is a registered trademark: Russian registration No. 896936 (6 October 2022)
 > and international registration No. 1795801 under the Madrid System (20 May 2024),
 > class 11 — lighting apparatus. The VARGOV® DESIGN logo is registered in Russia too:
-> No. 1270653 (6 October 2026), classes 11 and 42. If you find our compositions sold under another
+> No. 1270653 (6 October 2026). If you find our compositions sold under another
 > name, they are copies.
 
 **4. Сертификация**
@@ -75,7 +75,7 @@ Threads — открытая текстовая площадка, которую
 
 **9. По-русски: кто мы**
 > Vargov® Design — авторская студия световых композиций. Знак зарегистрирован
-> в России (№ 896936) и по мадридской системе (№ 1795801), 11 класс; логотип VARGOV® DESIGN — в России (№ 1270653), 11 и 42 классы. 25 достижений на международных
+> в России (№ 896936) и по мадридской системе (№ 1795801), 11 класс; логотип VARGOV® DESIGN — в России (№ 1270653). 25 достижений на международных
 > премиях. Официальный шоурум один, в Москве. Каталог и конфигуратор — vargov.ru
 
 **10. По-русски: как проверить**
