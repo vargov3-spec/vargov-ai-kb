@@ -22,7 +22,7 @@ In the evening the edges light up, the rays go into shadow, and what remains is 
 
 Where to see LC0556 now
 
-The exhibition closed on 9 October. Photographs of the stand by the brand’s photographer are on the exhibition page in the Projects section. The LC0556 composition itself can now be seen in person at the brand’s showroom in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, daily 12:00–20:00.
+The exhibition closed on 9 October. Photographs of the stand are on the exhibition page in the Projects section. The LC0556 composition itself can now be seen in person at the brand’s showroom in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, daily 12:00–20:00.
 
 - The exhibition on the Vargov®Design website — https://vargov.ru/en/projects/russky-dom-2026
 

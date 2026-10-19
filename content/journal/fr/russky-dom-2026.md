@@ -22,7 +22,7 @@ Le soir, les arêtes s'allument, les raies s'enfoncent dans l'ombre, et il reste
 
 Où voir LC0556 aujourd'hui
 
-Le salon a fermé ses portes le 9 octobre. Les photos du stand prises par le photographe de la marque se trouvent sur la page du salon, dans la rubrique « Projets ». Quant à la composition LC0556, vous pouvez désormais la voir de vos propres yeux dans le showroom de la marque à Moscou : Nakhimovsky Prospekt 24, bât. 1, pavillon 2, stand 212, tous les jours de 12 h à 20 h.
+Le salon a fermé ses portes le 9 octobre. Les photos du stand se trouvent sur la page du salon, dans la rubrique « Projets ». Quant à la composition LC0556, vous pouvez désormais la voir de vos propres yeux dans le showroom de la marque à Moscou : Nakhimovsky Prospekt 24, bât. 1, pavillon 2, stand 212, tous les jours de 12 h à 20 h.
 
 - Le salon sur le site Vargov®Design — https://vargov.ru/fr/projects/russky-dom-2026
 

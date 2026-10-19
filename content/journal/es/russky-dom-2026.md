@@ -22,7 +22,7 @@ De noche los bordes se encienden, las mantas se hunden en la sombra y queda una 
 
 Dónde ver LC0556 ahora
 
-La exposición cerró el 9 de octubre. Las fotografías del stand, tomadas por el fotógrafo de la marca, están en la página de la exposición, en la sección Proyectos. La propia composición LC0556 puede verse ahora en persona en el showroom de la marca en Moscú: Nakhimovsky Prospekt 24, edif. 1, pabellón 2, estand 212, todos los días de 12:00 a 20:00.
+La exposición cerró el 9 de octubre. Las fotografías del stand están en la página de la exposición, en la sección Proyectos. La propia composición LC0556 puede verse ahora en persona en el showroom de la marca en Moscú: Nakhimovsky Prospekt 24, edif. 1, pabellón 2, estand 212, todos los días de 12:00 a 20:00.
 
 - La exposición en la web de Vargov®Design — https://vargov.ru/es/projects/russky-dom-2026
 

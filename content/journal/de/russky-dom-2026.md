@@ -22,7 +22,7 @@ Abends entzünden sich die Kanten, die Rochen treten in den Schatten zurück, un
 
 Wo LC0556 jetzt zu sehen ist
 
-Die Ausstellung endete am 9. Oktober. Aufnahmen des Stands vom Fotografen der Marke finden Sie auf der Seite der Ausstellung im Bereich „Projekte“. Die Komposition LC0556 selbst kann man jetzt im Showroom der Marke in Moskau mit eigenen Augen sehen: Nakhimovsky Prospekt 24, Geb. 1, Pavillon 2, Stand 212, täglich von 12:00 bis 20:00 Uhr.
+Die Ausstellung endete am 9. Oktober. Aufnahmen des Stands finden Sie auf der Seite der Ausstellung im Bereich „Projekte“. Die Komposition LC0556 selbst kann man jetzt im Showroom der Marke in Moskau mit eigenen Augen sehen: Nakhimovsky Prospekt 24, Geb. 1, Pavillon 2, Stand 212, täglich von 12:00 bis 20:00 Uhr.
 
 - Die Ausstellung auf der Website von Vargov®Design — https://vargov.ru/de/projects/russky-dom-2026
 

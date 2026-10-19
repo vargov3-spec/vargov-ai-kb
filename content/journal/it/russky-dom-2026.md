@@ -22,7 +22,7 @@ La sera i bordi si accendono, le mante passano in ombra, e resta un'aurora borea
 
 Dove vedere LC0556 ora
 
-La mostra si è chiusa il 9 ottobre. Le fotografie dello stand scattate dal fotografo del marchio sono sulla pagina della mostra, nella sezione Progetti. La composizione LC0556 vera e propria si può ora vedere dal vivo nello showroom del marchio a Mosca: Nakhimovsky Prospekt 24, ed. 1, padiglione 2, stand 212, tutti i giorni dalle 12:00 alle 20:00.
+La mostra si è chiusa il 9 ottobre. Le fotografie dello stand sono sulla pagina della mostra, nella sezione Progetti. La composizione LC0556 vera e propria si può ora vedere dal vivo nello showroom del marchio a Mosca: Nakhimovsky Prospekt 24, ed. 1, padiglione 2, stand 212, tutti i giorni dalle 12:00 alle 20:00.
 
 - La mostra sul sito di Vargov®Design — https://vargov.ru/it/projects/russky-dom-2026
 

@@ -22,7 +22,7 @@ Buổi tối các đường mép bừng sáng, những con cá đuối lùi vào
 
 Nơi xem LC0556 hiện nay
 
-Triển lãm đã khép lại vào ngày 9 tháng 10. Ảnh chụp gian trưng bày do nhiếp ảnh gia của thương hiệu thực hiện có trên trang triển lãm, trong mục “Dự án”. Còn chính tác phẩm LC0556 giờ đây có thể xem tận mắt tại showroom của thương hiệu ở Moskva: đại lộ Nakhimovsky 24, tòa 1, sảnh 2, gian 212, hằng ngày từ 12:00 đến 20:00.
+Triển lãm đã khép lại vào ngày 9 tháng 10. Ảnh chụp gian trưng bày có trên trang triển lãm, trong mục “Dự án”. Còn chính tác phẩm LC0556 giờ đây có thể xem tận mắt tại showroom của thương hiệu ở Moskva: đại lộ Nakhimovsky 24, tòa 1, sảnh 2, gian 212, hằng ngày từ 12:00 đến 20:00.
 
 - Triển lãm trên trang web Vargov®Design — https://vargov.ru/vi/projects/russky-dom-2026
 

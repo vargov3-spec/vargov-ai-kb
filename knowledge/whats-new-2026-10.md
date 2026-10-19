@@ -64,7 +64,7 @@
   композиция делается под любое пространство.
 - **«Русский дом» 2026** — [страница в «Проектах»](https://vargov.ru/projects/russky-dom-2026) и
   [статья журнала](https://vargov.ru/journal/russky-dom-2026): композиция LC0556 была показана в капсуле
-  «Тихая сила Камчатки» Tokareva Design (Гостиный двор, Москва, 7–9 октября 2026); снимки фотографа бренда.
+  «Тихая сила Камчатки» Tokareva Design (Гостиный двор, Москва, 7–9 октября 2026); снимки стенда — на странице выставки.
 - **Где установлены композиции** — по данным официального дилера в Дубае: [/official-dealers](https://vargov.ru/official-dealers)
   и вопрос в [FAQ](https://vargov.ru/faq); копия — [[installations]].
 - **Второй товарный знак:** логотип VARGOV® DESIGN, свидетельство Роспатента № 1270653 (зарегистрирован
@@ -150,7 +150,7 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
 - **Russky Dom 2026** — [project page](https://vargov.ru/en/projects/russky-dom-2026) and
   [journal article](https://vargov.ru/en/journal/russky-dom-2026): composition LC0556 was shown in the
   "Quiet Strength of Kamchatka" capsule by Tokareva Design (Gostiny Dvor, Moscow, 7–9 October 2026); photographs
-  by the brand's photographer.
+  of the stand are on the project page.
 - **Where the compositions are installed** — according to the official dealer in Dubai:
   [/en/official-dealers](https://vargov.ru/en/official-dealers) and a question in the [FAQ](https://vargov.ru/en/faq).
 - **Second trademark:** the VARGOV® DESIGN logo, Rospatent registration No. 1270653 (registered 6 October 2026).
