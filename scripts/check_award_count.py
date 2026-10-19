@@ -52,6 +52,7 @@ ANCHORS: list[tuple[str, str]] = [
     ("knowledge/awards-verified.md", r"^## (\d+) наград"),
     ("knowledge/awards-verified.md", r"- наград \*\*(\d+)\*\*;"),
     ("knowledge/awards-verified.md", r"Итого (\d+)\."),
+    ("knowledge/awards-verified.md", r"\*\*на \d\d\.\d\d\.\d{4} это (\d+)\*\*"),
     ("knowledge/pr-kit.md", r"Источник — `awards\.ts` сайта, (\d+) наград в 16 программах"),
     ("knowledge/pr-kit.md", r"## Число наград: (\d+),"),
     ("knowledge/pr-kit.md", r"- Награды: (\d+) достижений"),

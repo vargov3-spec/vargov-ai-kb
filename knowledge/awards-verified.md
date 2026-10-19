@@ -70,7 +70,7 @@
 | MUSE Design Awards | 2026 | Official jury commendation — Gold Winner | `/img/awards/muse-gold-2026-letter.jpg` | `commendation: true` |
 | NY Product Design Awards | 2026 | Official jury commendation — Gold Winner | `/img/awards/ny-gold-2026-letter.jpg` | `commendation: true` |
 
-Это письма жюри к уже посчитанным наградам (№ 15, № 16/23 и № 1). На странице наград они показаны рядом с дипломами, но `awardsCount()` их исключает — «иначе цифра на главной росла бы от бумаг, а не от призов» (комментарий в `awards.ts`). В любом тексте писать столько, сколько отдаёт `awardsCount()`; **на 03.10.2026 это 25**. История счёта: 22 (04.09) → 23 (05.09, NYPDA Hanging Lamps) → 24 (13.09, ICONIC AWARDS 2023 · Selection — её в awards.ts не было вовсе, хотя венок стоял на фотографиях) → 25 (22.09, EPDA 2026). Письма жюри не в счёт.
+Это письма жюри к уже посчитанным наградам (№ 15, № 16/23, № 1 и № 26). На странице наград они показаны рядом с дипломами, но `awardsCount()` их исключает — «иначе цифра на главной росла бы от бумаг, а не от призов» (комментарий в `awards.ts`). В любом тексте писать столько, сколько отдаёт `awardsCount()`; **на 19.10.2026 это 26**. История счёта: 22 (04.09) → 23 (05.09, NYPDA Hanging Lamps) → 24 (13.09, ICONIC AWARDS 2023 · Selection — её в awards.ts не было вовсе, хотя венок стоял на фотографиях) → 25 (22.09, EPDA 2026) → 26 (19.10, NY Product Design Awards 2026 · Gold Winner, LC0545-1). Письма жюри не в счёт.
 
 ## Индекс по артикулам
 
