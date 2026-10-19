@@ -6,7 +6,7 @@
 
 Общий блок для всех релизов:
 
-> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 25 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
+> **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 26 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
 >
 > **Media contact:** info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en
 
@@ -95,14 +95,14 @@
 
 ---
 
-## 3. Итоговый релиз: 25 наград
+## 3. Итоговый релиз: 26 наград
 
-**Для площадок, которым нужен портрет бренда, а не одна новость.** Число наград и программ — из `awardsCount()` на дату отправки (на 03.10.2026 — 25 наград в 16 программах; сверено исполнением `awards.ts`).
+**Для площадок, которым нужен портрет бренда, а не одна новость.** Число наград и программ — из `awardsCount()` на дату отправки (на 19.10.2026 — 26 наград в 16 программах; сверено сборщиком `build_from_site.py` по main сайта 19b68ae).
 
 > **Vargov® Design: 25 International Design Awards for Author's Lighting Compositions**
 > *Three Platinum titles, a Product Designer of the Year title and a catalogue of 605 made-to-order compositions*
 >
-> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **25 awards from international juries** across sixteen programmes.
+> MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **26 awards from international juries** across sixteen programmes.
 >
 > Among them are three **Platinum Winner** titles — at the **MUSE Design Awards 2023** (LC0237), the **International Architecture & Design Awards 2023** (LC0303) and **The London Design Awards 2023** (LC0326) — as well as the title of **Product Designer of the Year** at the **NY Product Design Awards 2023** and a **Gold Winner** at the **MUSE Design Awards 2026** for "Oceanic Illumination" (LC0564). Further recognition comes from the IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, the European Product Design Award, the BLT Built Design Awards, Houzee Awards, ICONIC AWARDS · Innovative Interior and the Luxury Lifestyle Awards, where the studio was named **Best Luxury Lighting Design Studio in Dubai, UAE** in 2024.
 >
@@ -117,7 +117,7 @@
 > Awards with certificates: https://vargov.ru/en/awards
 > Catalogue: https://vargov.ru/en/catalog
 
-Примечание. Цитата основателя — его прямая речь: формулировку с «Twenty-three awards across fifteen programmes» владелец утвердил 06.09.2026, когда `awardsCount()` давал 23, а программ было 15. Число в ней **устарело** и стоит в утверждённом виде: без слова владельца прямую речь не меняем. Заголовок, подзаголовок и лид — не прямая речь, они приведены к `awardsCount()` на 03.10.2026 (25 наград, 16 программ — с ICONIC AWARDS · Innovative Interior, добавленной 13.09). Поэтому сейчас релиз расходится сам с собой (25 в заголовке и лиде, 23 в цитате): перед следующей рассылкой нужно решение владельца по цитате.
+Примечание. Цитата основателя — его прямая речь: формулировку с «Twenty-three awards across fifteen programmes» владелец утвердил 06.09.2026, когда `awardsCount()` давал 23, а программ было 15. Число в ней **устарело** и стоит в утверждённом виде: без слова владельца прямую речь не меняем. Заголовок, подзаголовок и лид — не прямая речь, они приведены к `awardsCount()` на 19.10.2026 (26 наград, 16 программ — с NY Product Design Awards 2026, добавленной 19.10). Поэтому сейчас релиз расходится сам с собой (26 в заголовке и лиде, 23 в цитате): перед следующей рассылкой нужно решение владельца по цитате.
 
 **Предлагаемая редакция цитаты — ждёт владельца** (число из `awardsCount()` на 03.10.2026, владелец её не утверждал): «…Twenty-five awards across sixteen programmes tell me that this way of working reads internationally».
 

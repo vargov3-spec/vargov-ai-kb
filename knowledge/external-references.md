@@ -138,7 +138,7 @@ nature». Причина по журналу 3D-сессии (`pool/sketchfab/ud
 
 ## Обновление 2026-09-04
 
-Полный список независимых источников по наградам — 25 наград со ссылками на
+Полный список независимых источников по наградам — 26 наград со ссылками на
 страницы победителей и сертификаты — теперь ведётся в [[awards-verified]]
 (источник `awards.ts` репозитория сайта). Программ шестнадцать (с 13.09.2026 добавлен ICONIC AWARDS · Innovative Interior): MUSE Design
 Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards,

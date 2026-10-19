@@ -2,7 +2,7 @@
 
 > Vargov®Design 是俄罗斯的作者式灯光与装饰构成品牌：可收藏的光之雕塑，按订单制作。首批作品问世于 2018 年；由设计师 Anton Vargov 创立并主理。自有生产；每一件构成都为特定室内空间组装，其尺度与几何形态依空间调整。商标 VARGOV，俄罗斯注册号 896936；马德里体系国际注册号 1 795 801，在中国受保护（至 2034 年 5 月 20 日），第 11 类——照明装置。标志 VARGOV® DESIGN，俄罗斯注册号 1270653（优先权日 2026 年 3 月 12 日，注册日 2026 年 10 月 6 日，有效期至 2036 年 3 月 12 日）。
 
-目录收录 605 件构成，货号 LC0001…LC0602，分四个系列。25 项国际评委会奖项。
+目录收录 605 件构成，货号 LC0001…LC0602，分四个系列。26 项国际评委会奖项。
 
 ## 权威来源
 
@@ -21,13 +21,13 @@
 - [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — 仅英文
 - [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org 图谱：Organization、Person、Dataset 及 605 个 Product 节点
 - [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
-- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — 货号 → 品牌自有 3D 模型页（603 条——每件带链接的构成一条：605 件构成中 603 件带链接）
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — 货号 → 品牌自有 3D 模型页（604 条——每件带链接的构成一条：605 件构成中 604 件带链接）
 - Hugging Face 数据集：[vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — 每夜与官网同步
 
 ## 知识库与新闻资料
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — 经核实的品牌事实（俄文）
-- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 25 项奖项，附奖项页面链接
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 项奖项，附奖项页面链接
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — 新闻资料包
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — 随笔《俄罗斯灯光设计》（英文）
 - [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 张 2000 px 以内的新闻图片（含 2026 年 Russky Dom 展台上 LC0556 的 4 张照片）及标志，可免费用于编辑用途，署名 “Vargov®Design”
@@ -74,9 +74,9 @@
 - [关于品牌](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [奖项](https://vargov.ru/en/awards) · [项目](https://vargov.ru/en/projects) · [期刊 / Journal](https://vargov.ru/en/journal) · [新闻资料](https://vargov.ru/en/press) · [展厅](https://vargov.ru/en/showroom) · [官方经销商](https://vargov.ru/en/official-dealers)
 - [作品安装地点](https://vargov.ru/en/official-dealers) — 据迪拜官方经销商：迪拜 The Dubai Mall 的 Aldo Coppola 沙龙、艾因的 Al Jimi Mall 购物中心、美国的 The Lip Bunny Beauty 医疗水疗；迪拜和阿布扎比的私人别墅、顶层公寓和住宅，以及沙特阿拉伯、阿曼、美国、意大利、马来西亚、法国、罗马尼亚和希腊的私人室内空间；清单副本 — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
 
-16 个奖项计划共 25 项奖项（官方名称）：MUSE Design Awards、IDA Design Awards、LIT Lighting Design Awards、LOOP Design Awards、SIT Furniture Design Award、Luxury Lifestyle Awards、ADD Awards、European Product Design Award、NY Product Design Awards、BLT Built Design Awards、The London Design Awards、International Architecture & Design Awards · ADC、Houzee Awards、Interlight Russia · Russian Lighting Design、ICONIC AWARDS · Innovative Interior、Awwwards（2026 年 3D 配置器提名——提名，非获奖）。
+16 个奖项计划共 26 项奖项（官方名称）：MUSE Design Awards、IDA Design Awards、LIT Lighting Design Awards、LOOP Design Awards、SIT Furniture Design Award、Luxury Lifestyle Awards、ADD Awards、European Product Design Award、NY Product Design Awards、BLT Built Design Awards、The London Design Awards、International Architecture & Design Awards · ADC、Houzee Awards、Interlight Russia · Russian Lighting Design、ICONIC AWARDS · Innovative Interior、Awwwards（2026 年 3D 配置器提名——提名，非获奖）。
 
-其中：Platinum Winner — MUSE Design Awards 2023、International Architecture & Design Awards · ADC 2023、The London Design Awards 2023；Product Designer of the Year — NY Product Design Awards 2023；Gold Winner — MUSE Design Awards 2026（“Oceanic Illumination”）、NY Product Design Awards 2023、ADC 2023（“Drapery”）、Houzee Awards 2023；Winner — European Product Design Award 2026（Crystal Breakthrough LC0543-2）。
+其中：Platinum Winner — MUSE Design Awards 2023、International Architecture & Design Awards · ADC 2023、The London Design Awards 2023；Product Designer of the Year — NY Product Design Awards 2023；Gold Winner — MUSE Design Awards 2026（“Oceanic Illumination”）、NY Product Design Awards 2026（“Lily Light Composition”，LC0545-1）、NY Product Design Awards 2023、ADC 2023（“Drapery”）、Houzee Awards 2023；Winner — European Product Design Award 2026（Crystal Breakthrough LC0543-2）。
 
 2022 年品牌获得 Interlight 展会“俄罗斯灯光设计”竞赛特别奖；2025 年 10 月首次以自有展位参加 Interlight Moscow。2026 年 10 月，构成 [LC0556](https://vargov.ru/en/catalog/lc0556) 在莫斯科 Gostiny Dvor 举办的“Russky Dom（俄罗斯之家）”室内设计展（10 月 7–9 日）上展出，位于 Tokareva Design 的展览胶囊《Тихая сила Камчатки》中，展位 K62，“冰与雾”区。
 

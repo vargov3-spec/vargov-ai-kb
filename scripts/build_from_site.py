@@ -13,7 +13,7 @@ Actions его не видит. Прежний сканер ходил по жи
 Поэтому источник — файлы репозитория сайта, только на чтение:
   catalog.generated.json          605 композиций: артикул, тип, раздел, снимки
   product-copy/products.<lang>.json  описания на 8 языках, согласованы владельцем
-  awards.ts                       25 наград на 02.10.2026 (число берётся из awardsCount(), дампится через node --experimental-strip-types)
+  awards.ts                       26 наград на 19.10.2026 (число берётся из awardsCount(), дампится через node --experimental-strip-types)
   element-specs.generated.json    параметры ЭЛЕМЕНТА у 336 артикулов: габариты, вес, мощность (см. product_node)
   instock.generated.json          элементы в наличии
 
@@ -95,6 +95,8 @@ ORG_SAME_AS = [
     REPO_URL,
     "https://www.wikidata.org/wiki/Q141301076",
     "https://huggingface.co/vargov-design",
+    # Sketchfab — аккаунт владельца; сайт добавил его в sameAs в октябре 2026 (сверено 19.10.2026).
+    "https://sketchfab.com/vargov",
 ]
 # Страница жюри addawards.ru/jury/293063/ отдаёт 404 (проверено агентом по сайту 05.09.2026) — снята.
 PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q141300942",
@@ -650,7 +652,11 @@ def product_node(rec: dict) -> dict:
     # конкретной вещи, а не о бренде. Форма узла — как в фиде сайта.
     c = rec.get("cert")
     if c:
-        node["hasCertification"] = {
+        # Документов два и они не заменяют друг друга: сертификат — про безопасность
+        # (ТР ТС 004/2011, у части артикулов ещё 020/2011), декларация — про состав
+        # (ТР ЕАЭС 037/2016). У декларации нет issuedBy: её регистрирует заявитель,
+        # а не орган. Форма узлов — как в фиде сайта (сверено 19.10.2026).
+        docs = [{
             "@type": "Certification",
             "name": f"EAC — {c['certificate']}",
             "certificationIdentification": c["certificate"],
@@ -661,7 +667,20 @@ def product_node(rec: dict) -> dict:
             "datePublished": c["fromIso"],
             "expires": c["untilIso"],
             "about": ", ".join(c["regulationsEn"]),
-        }
+        }]
+        d = c.get("declaration")
+        if d:
+            docs.append({
+                "@type": "Certification",
+                "name": f"EAC declaration — {d['number']}",
+                "certificationIdentification": d["number"],
+                "certificationStatus": "https://schema.org/CertificationStatusActive",
+                "validIn": {"@type": "AdministrativeArea", "name": "Eurasian Economic Union"},
+                "datePublished": d["fromIso"],
+                "expires": d["untilIso"],
+                "about": d["regulationEn"],
+            })
+        node["hasCertification"] = docs
     subject = []
     if rec["model3d_en"]:
         # Одна карточка как представитель: у неё есть имя, автор и превью.

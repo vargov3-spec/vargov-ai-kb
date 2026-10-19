@@ -148,7 +148,7 @@ fields are plain strings.
 | `gallery_total` | int | Length of `gallery`. |
 | `model3d` / `model3d_en` | string \| null | The studio's own 3D-model card on 3ddd.ru / 3dsky.org. Present for 603 of 605 records. |
 | `models_all` / `models_all_en` | string \| null | All 3D models tagged with this article code. |
-| `award_winning` | bool | True for 33 records: 25 awards, and paired compositions share one award. |
+| `award_winning` | bool | True for 34 records: 26 awards, and paired compositions share one award. |
 | `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series`. `href` is a link to the awarding body's own page where the programme publishes one; it is `null` where no working public winner page exists. |
 | `cert` | object \| null | Conformity registration numbers and the EAEU technical regulations the object is certified under, with validity dates. Present for 310 records. |
 | `in_stock_elements` | list[object] | Stock availability entries for individual elements. |

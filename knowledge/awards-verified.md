@@ -1,14 +1,14 @@
 # Награды Vargov® Design — верифицированный список
 
-Пересобрано 2026-09-04 из единственного источника истины — `src/lib/data/awards.ts` репозитория сайта (приватный, ветка `main`), функция `awardsCount()` = **25** (пересчитано 2026-09-27 исполнением `awards.ts` из origin/main сайта 19b34fb и повторно 2026-10-03 по main 0fe8a4d: 16 программ, 28 записей, 3 вне счёта; столбцы формулировок, сертификатов и индекс артикулов сверены с `awards.ts` 03.10.2026; до этого 24 — 2026-09-13, после добавления награды № 24 — ICONIC AWARDS 2023 · Innovative Interior · Selection, LC0319 и LC0320). Формулировки уровней взяты дословно из поля `item.en`, сертификаты — из `item.cert` (абсолютный адрес: `https://vargov.ru` + путь). Публичная страница: [vargov.ru/awards](https://vargov.ru/awards) · [vargov.ru/en/awards](https://vargov.ru/en/awards); репозиторий сайта закрыт, и проверить число читателю можно по публичным отражениям `awards.ts`: эта страница, [vargov.ru/llms.txt](https://vargov.ru/llms.txt) и узел Organization в [vargov.ru/catalog.jsonld](https://vargov.ru/catalog.jsonld).
+Пересобрано 2026-09-04 из единственного источника истины — `src/lib/data/awards.ts` репозитория сайта (приватный, ветка `main`), функция `awardsCount()` = **26** (пересчитано 2026-10-19 сборщиком `scripts/build_from_site.py` по main сайта 19b68ae — 16 программ, 30 записей, 4 вне счёта: добавлена награда № 26, NY Product Design Awards 2026 · Gold Winner, LC0545-1; ранее 25 — пересчитано 2026-09-27 исполнением `awards.ts` из origin/main сайта 19b34fb и повторно 2026-10-03 по main 0fe8a4d: 16 программ, 28 записей, 3 вне счёта; столбцы формулировок, сертификатов и индекс артикулов сверены с `awards.ts` 03.10.2026; до этого 24 — 2026-09-13, после добавления награды № 24 — ICONIC AWARDS 2023 · Innovative Interior · Selection, LC0319 и LC0320). Формулировки уровней взяты дословно из поля `item.en`, сертификаты — из `item.cert` (абсолютный адрес: `https://vargov.ru` + путь). Публичная страница: [vargov.ru/awards](https://vargov.ru/awards) · [vargov.ru/en/awards](https://vargov.ru/en/awards); репозиторий сайта закрыт, и проверить число читателю можно по публичным отражениям `awards.ts`: эта страница, [vargov.ru/llms.txt](https://vargov.ru/llms.txt) и узел Organization в [vargov.ru/catalog.jsonld](https://vargov.ru/catalog.jsonld).
 
 Правила владельца (из комментариев `awards.ts`, действуют для всех текстов о наградах — KB, PR, Wikidata, Pinterest):
-- наград **25**; три «Официальных поздравления жюри» (NYPDA 2023 — две записи, MUSE 2026 — одна) — документы к награде, в счёт **не идут**;
+- наград **26**; четыре «Официальных поздравления жюри» (NYPDA 2023 — две записи, MUSE 2026 — одна, NYPDA 2026 — одна) — документы к награде, в счёт **не идут**;
 - NY Product Design Awards 2023, LC0343 — формулировка **«Product Designer of the Year»** (титул), не «Winner»;
 - Awwwards 2026 — только **«Nominee»**; никаких «award-winning» / «winner» про конфигуратор;
 - IDA: LC0236 Silver = **2022**, LC0516 Honorable Mention = **2025** (в июльской версии этого файла у обеих стоял 2026 — исправлено).
 
-## 25 наград
+## 26 наград
 
 Колонка «Первоисточник» — страница премии открыта и сверена в ходе этого проекта; отметка «✔ 2026-09-04» = подтверждено первоисточником на дату пересборки. Остальные строки взяты из `awards.ts` (данные владельца, сертификаты на сайте), их публичные страницы отдельно не открывались.
 
@@ -39,8 +39,9 @@
 | 23 | NY Product Design Awards | 2023 | Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313 | LC0313; награда распространяется на LC0312 — слово владельца 22.09.2026. Третья награда NYPDA 2023 года, отдельная заявка; найдена в кабинете участника 05.09.2026 | https://nydesignawards.com/winner-info.php?id=1005 | `cert-23.jpg`, знак `ny-statuette-gold-2023.png` | ✔ 2026-09-05 |
 | 24 | ICONIC AWARDS · Innovative Interior (German Design Council) | 2023 | Selection · Lighting design · composition LC0319 | LC0319; распространяется на LC0320 (`codes`) | публичной страницы нет: домен iconic-world.com отдаёт 301 на несуществующий хост, раздел directory переехал и отдаёт 404 | нет; знак `iconic-selection-2023-v2.png` (заявка 2366, есть ролик победителя) | — |
 | 25 | European Product Design Award (EPDA) | 2026 | Winner · HOME (Household Products)/Home Lighting: Designer/Custom Lighting · composition LC0543-2 | LC0543-2. Работа подавалась под названием «Crystal Breakthrough» — в формулировке `awards.ts` намеренно оставлен артикул (комментарий там же) | https://www.productdesignaward.eu/winners/epda/2026/12910/ | `epda-2026-cert.jpg`, знак `epda-winner-2026.png` | ✔ 2026-09-22 |
+| 26 | NY Product Design Awards (IAA) | 2026 | Gold Winner · Outdoor Lighting — Designer / Custom Lighting · «Lily Light Composition», composition LC0545-1 | LC0545-1 | https://nydesignawards.com/winner-info.php?id=4691 | `ny-gold-2026-cert.jpg` (именной сертификат); статуэтки нет | ✔ 2026-10-19 |
 
-Сводка по уровням: Platinum Winner — 3 (MUSE 2023, ADC 2023, London 2023); Product Designer of the Year — 1; Gold Winner — 5 (MUSE 2026, NYPDA 2023 ×2 — Decorative Lighting и Hanging Lamps, ADC 2023, Houzee 2023); Silver — 1; Winner — 8 (в том числе EPDA 2026); Honorable Mention — 2; специальный приз — 1; 2-е место — 1; членство в жюри — 1; Nominee — 1; Selection — 1 (ICONIC 2023). Итого 25.
+Сводка по уровням: Platinum Winner — 3 (MUSE 2023, ADC 2023, London 2023); Product Designer of the Year — 1; Gold Winner — 6 (MUSE 2026, NYPDA 2026, NYPDA 2023 ×2 — Decorative Lighting и Hanging Lamps, ADC 2023, Houzee 2023); Silver — 1; Winner — 8 (в том числе EPDA 2026); Honorable Mention — 2; специальный приз — 1; 2-е место — 1; членство в жюри — 1; Nominee — 1; Selection — 1 (ICONIC 2023). Итого 26.
 
 **Пара разделяет премию — правило от 22.09.2026.** Сертификат выдаётся на
 заявочный артикул, но награда бывает шире: владелец подтвердил тремя сообщениями,
@@ -55,13 +56,14 @@
 
 Примечание к строке 14 (проверено 03.10.2026 запросом к странице, аудит): страница `winners/hm/2024/22549323/` озаглавлена «Honorable Mention 2023», а в блоке Prizes на той же странице — «Winner in HOME (Household Products)/Home Lighting: Hanging/Pendant Lighting». Именной сертификат `cert-05.png`: «2023 Winner … has been awarded Winner in HOME (Household Products)/Home Lighting: Hanging/Pendant Lighting». Значит, расхождение — в подписи страницы на стороне премии, а не в `awards.ts`. Исправлять — письмом владельца в EPDA (mail@productdesignaward.eu) с сертификатом; на сайте до этого ничего не менять.
 
-## Три документа, которые в счёт не идут
+## Четыре документа, которые в счёт не идут
 
 | Премия | Год | Формулировка (`item.en`) | Файл | Признак в данных |
 |---|---|---|---|---|
 | NY Product Design Awards | 2023 | Official jury commendation — Product Designer of the Year | нет (у записи в `awards.ts` файла нет) | `commendation: true` |
 | NY Product Design Awards | 2023 | Official jury commendation — Gold Winner | `/img/awards/cert-09.png` | `commendation: true` |
 | MUSE Design Awards | 2026 | Official jury commendation — Gold Winner | `/img/awards/muse-gold-2026-letter.jpg` | `commendation: true` |
+| NY Product Design Awards | 2026 | Official jury commendation — Gold Winner | `/img/awards/ny-gold-2026-letter.jpg` | `commendation: true` |
 
 Это письма жюри к уже посчитанным наградам (№ 15, № 16/23 и № 1). На странице наград они показаны рядом с дипломами, но `awardsCount()` их исключает — «иначе цифра на главной росла бы от бумаг, а не от призов» (комментарий в `awards.ts`). В любом тексте писать столько, сколько отдаёт `awardsCount()`; **на 03.10.2026 это 25**. История счёта: 22 (04.09) → 23 (05.09, NYPDA Hanging Lamps) → 24 (13.09, ICONIC AWARDS 2023 · Selection — её в awards.ts не было вовсе, хотя венок стоял на фотографиях) → 25 (22.09, EPDA 2026). Письма жюри не в счёт.
 

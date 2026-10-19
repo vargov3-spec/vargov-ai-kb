@@ -561,7 +561,7 @@
 | LC0543-2 | Световая композиция | https://vargov.ru/catalog/lc0543-2 | 1 |
 | LC0544 | Световая композиция | https://vargov.ru/catalog/lc0544 |  |
 | LC0545 | Световая композиция | https://vargov.ru/catalog/lc0545 |  |
-| LC0545-1 | Световая композиция | https://vargov.ru/catalog/lc0545-1 |  |
+| LC0545-1 | Световая композиция | https://vargov.ru/catalog/lc0545-1 | 1 |
 | LC0546 | Световая композиция | https://vargov.ru/catalog/lc0546 |  |
 | LC0547 | Световая композиция | https://vargov.ru/catalog/lc0547 |  |
 | LC0548 | Световая композиция | https://vargov.ru/catalog/lc0548 |  |

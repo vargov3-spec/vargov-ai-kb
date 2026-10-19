@@ -15,7 +15,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 
 - Catalogue: 605 compositions, each with images (studio renders; interior visualisations for part of the catalogue) and an LC code; element dimensions and weight for 350 of them, power for 243 (see the machine-readable feed)
 - Source of record for element dimensions, weight, power and mounting is the brand's own 3D configurator — configurator.vargov.ru (RU) and vargov.design (EN); this site republishes those figures unchanged
-- Awards: 25, among them IDA Design Awards, LIT Lighting Design Awards, MUSE
+- Awards: 26, among them IDA Design Awards, LIT Lighting Design Awards, MUSE
   Design Awards, European Product Design Award, NY Product Design Awards,
   BLT Built Design Awards, The London Design Awards, LOOP Design Awards,
   SIT Furniture Design Award

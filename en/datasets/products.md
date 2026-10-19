@@ -561,7 +561,7 @@ Compositions: 605
 | LC0543-2 | Lighting composition | https://vargov.ru/en/catalog/lc0543-2 | 1 |
 | LC0544 | Lighting composition | https://vargov.ru/en/catalog/lc0544 |  |
 | LC0545 | Lighting composition | https://vargov.ru/en/catalog/lc0545 |  |
-| LC0545-1 | Lighting composition | https://vargov.ru/en/catalog/lc0545-1 |  |
+| LC0545-1 | Lighting composition | https://vargov.ru/en/catalog/lc0545-1 | 1 |
 | LC0546 | Lighting composition | https://vargov.ru/en/catalog/lc0546 |  |
 | LC0547 | Lighting composition | https://vargov.ru/en/catalog/lc0547 |  |
 | LC0548 | Lighting composition | https://vargov.ru/en/catalog/lc0548 |  |

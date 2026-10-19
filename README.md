@@ -16,7 +16,7 @@
 | `datasets/`, `en/datasets/` | 605 композиций: JSON, JSONL, CSV, Markdown. RU-версия многоязычная (8 языков), EN — одноязычная. `products-zh.json` / `.jsonl` — китайский текст карточек (снимок 27.09.2026, пояснения — `datasets/README-zh.md`). `hf-README.md` — карточка датасета на Hugging Face |
 | `products/`, `en/products/` | Карточка на композицию: описание, где уместна, стилистика, награды, снимки |
 | `collections/`, `en/collections/` | Четыре раздела каталога со списком артикулов |
-| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 25 наград, реестровые номера знака), Person (основатель), Store (шоурум), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld`, `3ddd-models.json` — артикул → своя карточка 3D-модели, `sketchfab-models.json` — артикул → модель на Sketchfab, `vargov.ru-llms.txt` — дословная копия llms.txt сайта (снимает ночная сверка) |
+| `references/` | `catalog.jsonld` — самодостаточный граф schema.org: узлы Organization (бренд, 26 наград, реестровые номера знака), Person (основатель), Store (шоурум), Dataset и 605 Product. Отдельно `organization.jsonld`, `dataset.jsonld`, `3ddd-models.json` — артикул → своя карточка 3D-модели, `sketchfab-models.json` — артикул → модель на Sketchfab, `vargov.ru-llms.txt` — дословная копия llms.txt сайта (снимает ночная сверка) |
 | `content/journal/`, `integration/journal.json` | Статьи журнала сайта на восьми языках: по файлу на статью и язык, и они же одним пакетом |
 | `guides/`, `en/guides/` | Тематические материалы; `russian-lighting-design.md` — эссе о русском световом дизайне (RU/EN), исходник восьми языков в `datasets/journal/` |
 | `press/` | Пресс-фото: 14 снимков композиций, шоурума и стенда «Русского дома» 2026 до 2000 px и логотип 512 px, свободны для редакционного использования с указанием «Vargov®Design» (`press/README.md`) |
@@ -50,7 +50,7 @@ python scripts/build_pages.py
 
 - в текстах о конкретных изделиях **не называются материалы и размеры**, цены не публикуются — поэтому в Product-узлах нет `material`, `size` и `offers`; параметры элемента (размер, вес, мощность) публикуются там, где их публикует бренд;
 - страна производства не называется: «собственное производство»;
-- формулировки наград — дословно из `awards.ts`: 25 наград (`awardsCount()`), «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; три поздравления жюри в счёт не идут;
+- формулировки наград — дословно из `awards.ts`: 26 наград (`awardsCount()`), «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; три поздравления жюри в счёт не идут;
 - Interlight: специальный приз конкурса 2022 года и **первый собственный стенд** в октябре 2025.
 
 Ничего не выдумано: где данных нет, это сказано прямо, а не заполнено правдоподобным текстом.

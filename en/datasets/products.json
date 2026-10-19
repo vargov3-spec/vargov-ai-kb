@@ -2901,8 +2901,16 @@
     "gallery_total": 12,
     "model3d": "https://3dsky.org/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1-10",
     "model3d_ru": "https://3ddd.ru/3dmodels/show/svetovaia-kompozitsiia-vargov-r-design-lc0545-1-10",
-    "award_winning": false,
-    "awards": [],
+    "award_winning": true,
+    "awards": [
+      {
+        "program": "NY Product Design Awards",
+        "year": "2026",
+        "level": "Gold Winner · Outdoor Lighting — Designer / Custom Lighting · «Lily Light Composition», composition LC0545-1",
+        "href": "https://nydesignawards.com/winner-info.php?id=4691",
+        "series": false
+      }
+    ],
     "in_stock_elements": [],
     "description": "The same bouquet, taken larger. The corollas are scaled up, the garland is loosened, and air appears between the flowers — the piece stops being a dense line and becomes a sparse branch where every flower reads on its own.\n\nThe contrast of two characters is kept: the milky white ones hold a matte calm, the smoky clear ones give depth and highlight. In the loosened arrangement that contrast is seen at once rather than discovered on closer looking.\n\nBy day it is large corollas in the air: matte beside clear, the piece read through the modelling of the petals and the gaps between them. In the evening the white ones glow evenly, the clear ones let the light through and flare, and the chain of flowers begins to shimmer every other one — a flowering that has a rhythm.",
     "where_it_works": "Sitting rooms, dining rooms, bedrooms, reception rooms, boutiques. A loosened arrangement asks for length rather than height: the composition is built along the zone.",

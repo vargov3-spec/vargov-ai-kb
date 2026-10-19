@@ -10,7 +10,6 @@
         "VARGOV"
       ],
       "url": "https://vargov.ru",
-      "foundingDate": "2018",
       "description": "Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov.",
       "founder": {
         "@id": "https://vargov.ru#person"
@@ -23,6 +22,11 @@
         "addressLocality": "Москва",
         "postalCode": "117218",
         "addressCountry": "RU"
+      },
+      "foundingDate": "2018",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
       },
       "location": {
         "@id": "https://vargov.ru#showroom"
@@ -51,6 +55,10 @@
       "award": [
         "European Product Design Award 2026 — Winner · HOME (Household Products)/Home Lighting: Designer/Custom Lighting · composition LC0543-2",
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339",
+        "NY Product Design Awards 2026 — Gold Winner · Outdoor Lighting — Designer / Custom Lighting · «Lily Light Composition», composition LC0545-1",
+        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
+        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
+        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313",
         "MUSE Design Awards 2026 — Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», composition LC0564",
         "MUSE Design Awards 2023 — Platinum Winner · Lighting Design — Designer / Custom Lighting · composition LC0237",
         "Awwwards 2026 — Nominee · Vargov®Design 3D Configurator",
@@ -64,9 +72,6 @@
         "Luxury Lifestyle Awards 2024 — Winner · Best Luxury Lighting Design Studio in Dubai, UAE",
         "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov",
         "ADD Awards 2023 — 2nd place, 9th season · Interior & exterior objects · built project, composition LC0342",
-        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
-        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Decorative Lighting · composition LC0313",
-        "NY Product Design Awards 2023 — Gold Winner · Lamps & Luminaires — Hanging Lamps · composition LC0313",
         "ICONIC AWARDS · Innovative Interior 2023 — Selection · Lighting design · composition LC0319",
         "BLT Built Design Awards 2023 — Winner · Electrical & Lighting Systems · composition LC0343",
         "The London Design Awards 2023 — Platinum Winner · Product Design — Lighting · light composition LC0326",
@@ -92,15 +97,11 @@
         "https://www.pinterest.com/Vargov_Design/",
         "https://3ddd.ru/users/vargov",
         "https://3dsky.org/users/vargov",
-        "https://sketchfab.com/vargov",
         "https://github.com/vargov3-spec/vargov-ai-kb",
         "https://www.wikidata.org/wiki/Q141301076",
-        "https://huggingface.co/vargov-design"
+        "https://huggingface.co/vargov-design",
+        "https://sketchfab.com/vargov"
       ],
-      "areaServed": {
-        "@type": "Place",
-        "name": "Worldwide"
-      },
       "subjectOf": [
         {
           "@type": "WebPage",
@@ -109,6 +110,22 @@
         {
           "@type": "WebPage",
           "url": "https://www.productdesignaward.eu/winners/hm/2024/22549323/"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=4691"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1296"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1004"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1005"
         },
         {
           "@type": "WebPage",
@@ -133,18 +150,6 @@
         {
           "@type": "WebPage",
           "url": "https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1296"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1004"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1005"
         },
         {
           "@type": "WebPage",
@@ -187,8 +192,8 @@
         "name": "Russia"
       },
       "award": [
-        "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov",
-        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343"
+        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
+        "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov"
       ],
       "sameAs": [
         "https://t.me/AntonVargov",
