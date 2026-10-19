@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 27,
-  "checksum": "d4c4e94a0b56c119",
+  "checksum": "76ceb8cf153a650a",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-13T01:22:51+00:00",
+  "generated": "2026-10-19T09:48:13+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -16080,7 +16080,7 @@
      },
      {
       "type": "p",
-      "text": "Цвет берётся из заводского каталога RAL — 210 оттенков с поиском по коду и названию, плюс фирменные белый и золотой. Своей палитры и пипетки в конфигураторе нет намеренно: в спецификацию должен уходить цвет, который производство действительно подберёт."
+      "text": "Цвет элементов берётся из каталога RAL — 210 цветов с поиском по коду и названию; в одной композиции можно смешать до восьми цветов каталога, у каждого своя прозрачность (у лент — один цвет стекла). Рядом — фирменные цвета, гальваника (прозрачные тона и зеркальные покрытия) и «прозрачный бесцветный»; прозрачность предлагается только там, где элемент в жизни бывает прозрачным. У композиций с металлической фурнитурой металл задаётся кодом из каталога покрытий JN — 24 образца, восемь цветов в трёх отделках. Пипетки в конфигураторе нет намеренно: в спецификацию уходит код RAL, название гальваники или код JN — то, что производство действительно повторит."
      },
      {
       "type": "h",
@@ -16116,7 +16116,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 для BIM: длины в миллиметрах, точки крепления — отдельными объектами, у каждой свой тип и нагрузка. Модель собирается под потолок той высоты, что задана в поле «Высота потолка, мм» рядом с кнопкой IFC (по умолчанию 2700 мм): точки крепления на потолке, начало координат на полу. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Трёхмерная модель композиции в max и fbx для собственной визуализации. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
+      "text": "IFC4 для BIM: длины в миллиметрах, точки крепления — отдельными объектами, у каждой — число элементов на ней и, когда известна масса, расчётная нагрузка. Модель собирается под потолок той высоты, что задана в поле «Высота потолка, мм» рядом с кнопкой IFC (по умолчанию 2700 мм): точки крепления на потолке, начало координат на полу. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Готовые 3D-модели артикула (max, fbx) — на 3ddd.ru и 3dsky.org, модель собранной композиции — по запросу. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
      },
      {
       "type": "p",
@@ -16212,7 +16212,7 @@
      },
      {
       "type": "p",
-      "text": "Colour comes from the factory RAL catalogue — 210 shades searchable by code and name, plus the brand's white and gold. There is deliberately no custom palette or eyedropper: the specification must carry a colour the workshop can actually match."
+      "text": "Element colour comes from the RAL catalogue — 210 colours searchable by code and name; up to eight catalogue colours can be mixed in one composition, each with its own transparency (ribbons have a single glass colour). Alongside them are the brand colours, electroplating (transparent tones and mirror finishes) and “clear colourless”; transparency is offered only where the element can actually be transparent. For compositions with metal hardware, the metal is set by a code from the JN finish catalogue — 24 samples, eight colours in three finishes. There is deliberately no eyedropper: the specification carries a RAL code, an electroplating name or a JN code — something the workshop can actually reproduce."
      },
      {
       "type": "h",
@@ -16248,7 +16248,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying its own type and load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
+      "text": "IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of the article (max, fbx) on 3ddd.ru and 3dsky.org; a model of the assembled composition on request. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
      },
      {
       "type": "p",
@@ -16344,7 +16344,7 @@
      },
      {
       "type": "p",
-      "text": "Die Farbe kommt aus dem RAL-Katalog der Fabrik — 210 Töne mit Suche nach Code und Namen, dazu das hauseigene Weiß und Gold. Eine eigene Palette und Pipette gibt es bewusst nicht: In die Spezifikation gehört eine Farbe, die die Fertigung wirklich trifft."
+      "text": "Die Farbe der Elemente kommt aus dem RAL-Katalog — 210 Farben mit Suche nach Code und Namen; in einer Komposition lassen sich bis zu acht Farben des Katalogs mischen, jede mit eigener Transparenz (Bänder haben eine einzige Glasfarbe). Daneben stehen die hauseigenen Farben, die Galvanik (transparente Töne und Spiegelbeschichtungen) und „Klar und farblos“; Transparenz wird nur dort angeboten, wo das Element auch in Wirklichkeit transparent sein kann. Bei Kompositionen mit Metallbeschlägen wird das Metall über einen Code aus dem JN-Oberflächenkatalog festgelegt — 24 Muster, acht Farben in drei Ausführungen. Eine Pipette gibt es im Konfigurator bewusst nicht: In der Spezifikation steht ein RAL-Code, die Bezeichnung der galvanischen Oberfläche oder ein JN-Code — etwas, das die Fertigung tatsächlich reproduzieren kann."
      },
      {
       "type": "h",
@@ -16380,7 +16380,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit eigenem Typ und eigener Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
+      "text": "IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit der Anzahl der daran hängenden Elemente und, wenn die Masse bekannt ist, der rechnerischen Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Fertige 3D-Modelle des Artikels (max, fbx) auf 3ddd.ru und 3dsky.org; ein Modell der zusammengesetzten Komposition auf Anfrage. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
      },
      {
       "type": "p",
@@ -16476,7 +16476,7 @@
      },
      {
       "type": "p",
-      "text": "La couleur vient du nuancier RAL de l'usine — 210 teintes avec recherche par code et par nom, plus le blanc et l'or maison. Ni palette personnelle ni pipette, volontairement : la spécification doit porter une couleur que la production saura réellement obtenir."
+      "text": "La couleur des éléments vient du nuancier RAL — 210 teintes avec recherche par code et par nom ; une même composition peut mêler jusqu'à huit couleurs du nuancier, chacune avec sa propre transparence (les rubans n'ont qu'une seule couleur de verre). S'y ajoutent les couleurs maison, la galvanoplastie (teintes transparentes et finitions miroir) et « Transparent incolore » ; la transparence n'est proposée que là où l'élément peut réellement être transparent. Pour les compositions dotées d'une quincaillerie métallique, le métal est défini par un code du catalogue des finitions JN — 24 échantillons, huit couleurs déclinées en trois finitions. Il n'y a volontairement pas de pipette dans le configurateur : la spécification porte un code RAL, le nom d'une finition galvanique ou un code JN — ce que la production saura réellement reproduire."
      },
      {
       "type": "h",
@@ -16512,7 +16512,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant son type et sa charge. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm », à côté du bouton IFC (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Un modèle 3D en max et fbx pour votre propre visualisation. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
+      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant le nombre d'éléments qui y sont suspendus et, lorsque la masse est connue, la charge calculée. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm », à côté du bouton IFC (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Des modèles 3D prêts à l'emploi de la référence (max, fbx) sur 3ddd.ru et 3dsky.org ; un modèle de la composition assemblée sur demande. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
      },
      {
       "type": "p",
@@ -16608,7 +16608,7 @@
      },
      {
       "type": "p",
-      "text": "Il colore viene dalla cartella RAL di fabbrica — 210 tonalità con ricerca per codice e per nome, più il bianco e l'oro del marchio. Niente palette personale né contagocce, di proposito: nella specifica deve finire un colore che la produzione sappia davvero riprodurre."
+      "text": "Il colore degli elementi viene dalla cartella RAL — 210 colori con ricerca per codice e per nome; in una composizione si possono mescolare fino a otto colori della cartella, ciascuno con la propria trasparenza (i nastri hanno un unico colore di vetro). Accanto ci sono i colori del marchio, la galvanica (toni trasparenti e finiture a specchio) e il «trasparente incolore»; la trasparenza viene proposta solo dove l'elemento, nella realtà, può essere trasparente. Nelle composizioni con ferramenta metallica il metallo si indica con un codice del catalogo delle finiture JN — 24 campioni, otto colori in tre finiture. Nel configuratore, di proposito, non c'è il contagocce: nella specifica finisce un codice RAL, il nome della finitura galvanica o un codice JN — ciò che la produzione sa davvero riprodurre."
      },
      {
       "type": "h",
@@ -16644,7 +16644,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il proprio tipo e carico. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
+      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il numero di elementi che porta e, quando la massa è nota, il carico calcolato. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Modelli 3D pronti dell'articolo (max, fbx) su 3ddd.ru e 3dsky.org; il modello della composizione assemblata, su richiesta. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
      },
      {
       "type": "p",
@@ -16740,7 +16740,7 @@
      },
      {
       "type": "p",
-      "text": "El color se toma del catálogo RAL de fábrica — 210 tonos con búsqueda por código y por nombre, más el blanco y el dorado de la marca. No hay paleta propia ni cuentagotas, y es deliberado: a la especificación debe llegar un color que la producción sepa igualar."
+      "text": "El color de los elementos se toma del catálogo RAL — 210 colores con búsqueda por código y por nombre; en una composición se pueden mezclar hasta ocho colores del catálogo, cada uno con su propia transparencia (las cintas tienen un único color de vidrio). Junto a ellos están los colores de la marca, la galvanoplastia (tonos transparentes y acabados espejo) y el «transparente incoloro»; la transparencia solo se ofrece donde el elemento puede ser transparente en la realidad. En las composiciones con herrajes metálicos, el metal se indica con un código del catálogo de acabados JN — 24 muestras, ocho colores en tres acabados. No hay cuentagotas en el configurador, y es deliberado: a la especificación llega un código RAL, el nombre del acabado galvánico o un código JN — lo que la producción puede reproducir de verdad."
      },
      {
       "type": "h",
@@ -16776,7 +16776,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con su tipo y su carga. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
+      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con el número de elementos que soporta y, cuando se conoce la masa, la carga calculada. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Modelos 3D de la referencia listos para usar (max, fbx) en 3ddd.ru y 3dsky.org; el modelo de la composición montada, bajo pedido. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
      },
      {
       "type": "p",
@@ -16872,7 +16872,7 @@
      },
      {
       "type": "p",
-      "text": "Màu lấy từ bảng RAL của nhà máy — 210 sắc độ, tìm theo mã và tên, cộng với trắng và vàng của thương hiệu. Không có bảng màu riêng hay ống hút màu, và đó là chủ ý: bảng kê phải ghi màu mà xưởng thật sự pha được."
+      "text": "Màu của chi tiết lấy từ bảng RAL — 210 màu, tìm theo mã và tên; trong một tác phẩm có thể trộn tối đa tám màu của bảng, mỗi màu có độ trong suốt riêng (các dải chỉ có một màu thuỷ tinh). Bên cạnh đó là các màu của thương hiệu, lớp mạ điện (tông trong suốt và lớp phủ gương) và «trong suốt không màu»; tùy chọn độ trong suốt chỉ có ở những chi tiết mà ngoài đời thật có thể trong suốt. Với các tác phẩm có phụ kiện kim loại, kim loại được xác định bằng mã trong danh mục lớp phủ JN — 24 mẫu, tám màu với ba kiểu hoàn thiện. Trình cấu hình cố ý không có ống hút màu: bảng kê ghi mã RAL, tên lớp mạ điện hoặc mã JN — những gì xưởng thật sự tái tạo được."
      },
      {
       "type": "h",
@@ -16908,7 +16908,7 @@
      },
      {
       "type": "p",
-      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
+      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang số chi tiết treo trên nó và, khi đã biết khối lượng, cả tải trọng tính toán. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D có sẵn của mã sản phẩm (max, fbx) — trên 3ddd.ru và 3dsky.org, còn mô hình của tác phẩm đã dựng — theo yêu cầu. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
      },
      {
       "type": "p",
@@ -17004,7 +17004,7 @@
      },
      {
       "type": "p",
-      "text": "اللون يُؤخذ من كتالوج RAL المصنعي — 210 درجات مع بحث بالرمز والاسم، إضافة إلى الأبيض والذهبي الخاصين بالعلامة. ولا توجد لوحة ألوان خاصة ولا قطّارة، وذلك عن قصد: يجب أن تصل إلى المواصفة درجة يستطيع الإنتاج مطابقتها فعلًا."
+      "text": "لون العناصر يُؤخذ من كتالوج RAL — 210 ألوان مع بحث بالرمز والاسم؛ ويمكن في التركيبة الواحدة مزج ما يصل إلى ثمانية ألوان من الكتالوج، لكلٍّ منها شفافيته الخاصة (أما الأشرطة فلها لون زجاج واحد). وإلى جانبها الألوان الخاصة بالعلامة، والطلاء الكهربائي (درجات شفافة وطلاءات مرآوية) و«شفاف عديم اللون»؛ ولا تُعرض الشفافية إلا حيث يمكن أن يكون العنصر شفافًا في الواقع. وفي التركيبات ذات التجهيزات المعدنية يُحدَّد المعدن برمز من كتالوج طلاءات JN — 24 عيّنة، ثمانية ألوان بثلاثة تشطيبات. وليس في أداة التكوين قطّارة، وذلك عن قصد: فالمواصفة تتضمّن رمز RAL أو اسم الطلاء الكهربائي أو رمز JN — أي ما يستطيع الإنتاج تكراره فعلًا."
      },
      {
       "type": "h",
@@ -17040,7 +17040,7 @@
      },
      {
       "type": "p",
-      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تثبيت كائن مستقلّ يحمل نوعه وحمله. ويُبنى النموذج تحت سقف بالارتفاع المحدَّد في حقل «ارتفاع السقف، مم» (2700 مم افتراضيًا) بجوار زرّ IFC: نقاط التثبيت على السقف، ونقطة الأصل على الأرضية. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونموذج ثلاثي الأبعاد بصيغتَي max وfbx لإعداد صورك التصوّرية بنفسك. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
+      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تثبيت كائن مستقلّ يحمل عدد العناصر المعلّقة عليها، والحمل المحسوب حين تكون الكتلة معروفة. ويُبنى النموذج تحت سقف بالارتفاع المحدَّد في حقل «ارتفاع السقف، مم» (2700 مم افتراضيًا) بجوار زرّ IFC: نقاط التثبيت على السقف، ونقطة الأصل على الأرضية. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونماذج ثلاثية الأبعاد جاهزة للصنف (max وfbx) على 3ddd.ru و3dsky.org، أما نموذج التركيبة المجمَّعة فعند الطلب. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
      },
      {
       "type": "p",
@@ -19100,7 +19100,7 @@
     "title": "Vargov®Design на «Русском доме» 2026",
     "category": "Выставки",
     "date": "5 октября 2026",
-    "lead": "С 7 по 9 октября в Гостином дворе мы показываем композицию LC0556 — в капсуле «Тихая сила Камчатки», на стенде К62, в зоне «Лёд и туман».",
+    "lead": "С 7 по 9 октября 2026 года в Гостином дворе мы показывали композицию LC0556 — в капсуле «Тихая сила Камчатки», на стенде К62, в зоне «Лёд и туман».",
     "metaLabels": {
      "category": "Рубрика",
      "date": "Дата"
@@ -19108,15 +19108,15 @@
     "body": [
      {
       "type": "p",
-      "text": "7–9 октября в Москве, в Гостином дворе, пройдёт интерьерная выставка «Русский дом». Тема этого года — «Русский Дом: Сердце России»."
+      "text": "7–9 октября 2026 года в Москве, в Гостином дворе, прошла интерьерная выставка «Русский дом». Тема года — «Русский Дом: Сердце России»."
      },
      {
       "type": "p",
-      "text": "На стенде К62 — капсула «Тихая сила Камчатки. Как природа становится интерьером». Её автор — Tokareva Design. Характер Камчатки здесь раскрывается через свет, материю, звук, аромат, вкус и прикосновение, а семь зон выстроены в маршрут: от природной стихии — к человеку и диалогу."
+      "text": "На стенде К62 стояла капсула «Тихая сила Камчатки. Как природа становится интерьером». Её автор — Tokareva Design. Характер Камчатки в ней раскрывался через свет, материю, звук, аромат, вкус и прикосновение, а семь зон были выстроены в маршрут: от природной стихии — к человеку и диалогу."
      },
      {
       "type": "p",
-      "text": "Vargov®Design — один из участников капсулы. В её списке рядом с нашим именем стоят слова «Свет как произведение искусства»."
+      "text": "Vargov®Design был одним из участников капсулы. В её списке рядом с нашим именем стояли слова «Свет как произведение искусства»."
      },
      {
       "type": "h",
@@ -19124,7 +19124,7 @@
      },
      {
       "type": "p",
-      "text": "Наш свет — во второй зоне маршрута. Её подзаголовок — «Между ясностью и тайной», а описание у авторов капсулы совсем короткое: здесь форма становится почти невесомой, лёд удерживает свет, а туман стирает границы между объектом и пространством."
+      "text": "Наш свет стоял во второй зоне маршрута. Её подзаголовок — «Между ясностью и тайной», а описание у авторов капсулы совсем короткое: здесь форма становится почти невесомой, лёд удерживает свет, а туман стирает границы между объектом и пространством."
      },
      {
       "type": "h",
@@ -19140,11 +19140,15 @@
      },
      {
       "type": "h",
-      "text": "Приходите"
+      "text": "Где увидеть LC0556 сейчас"
      },
      {
       "type": "p",
-      "text": "«Русский дом» открыт 7–9 октября с 10:00 до 19:00: Гостиный двор, Москва, стенд К62. По стенду проводят экскурсии — записаться можно по ссылке на сайте капсулы. Приходите посмотреть на LC0556 вживую."
+      "text": "Выставка закрылась 9 октября. Снимки стенда, сделанные фотографом бренда, — на странице выставки в разделе «Проекты». Саму композицию LC0556 теперь можно увидеть вживую в шоуруме бренда в Москве: Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212, ежедневно с 12:00 до 20:00."
+     },
+     {
+      "type": "li",
+      "text": "Выставка на сайте Vargov®Design — https://vargov.ru/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19168,7 +19172,7 @@
     "title": "Vargov®Design at Russky Dom 2026",
     "category": "Exhibitions",
     "date": "5 October 2026",
-    "lead": "From 7 to 9 October at Gostiny Dvor we are showing the LC0556 composition — in the capsule “The Quiet Strength of Kamchatka”, stand K62, in the Ice and Mist zone.",
+    "lead": "From 7 to 9 October 2026 at Gostiny Dvor we showed the LC0556 composition — in the capsule “The Quiet Strength of Kamchatka”, stand K62, in the Ice and Mist zone.",
     "metaLabels": {
      "category": "Category",
      "date": "Date"
@@ -19176,15 +19180,15 @@
     "body": [
      {
       "type": "p",
-      "text": "From 7 to 9 October, Gostiny Dvor in Moscow hosts Russky Dom (Russian House), an interior design exhibition. This year’s theme is “Russian House: The Heart of Russia”."
+      "text": "From 7 to 9 October 2026, Gostiny Dvor in Moscow hosted Russky Dom (Russian House), an interior design exhibition. The year’s theme was “Russian House: The Heart of Russia”."
      },
      {
       "type": "p",
-      "text": "Stand K62 is home to the capsule “The Quiet Strength of Kamchatka. How nature becomes interior”, authored by Tokareva Design. It reveals the character of Kamchatka through light, matter, sound, scent, taste and touch, and its seven zones form a route: from the elemental force of nature to people and dialogue."
+      "text": "Stand K62 was home to the capsule “The Quiet Strength of Kamchatka. How nature becomes interior”, authored by Tokareva Design. It revealed the character of Kamchatka through light, matter, sound, scent, taste and touch, and its seven zones formed a route: from the elemental force of nature to people and dialogue."
      },
      {
       "type": "p",
-      "text": "Vargov®Design is one of the capsule’s participants. In its list, our name comes with the words “Light as a work of art”."
+      "text": "Vargov®Design was one of the capsule’s participants. In its list, our name came with the words “Light as a work of art”."
      },
      {
       "type": "h",
@@ -19192,7 +19196,7 @@
      },
      {
       "type": "p",
-      "text": "Our light is in the second zone of the route. Its subtitle is “Between clarity and mystery”, and the capsule’s authors describe it in a few words: here form becomes almost weightless, ice holds the light, and fog erases the boundaries between object and space."
+      "text": "Our light was in the second zone of the route. Its subtitle is “Between clarity and mystery”, and the capsule’s authors describe it in a few words: here form becomes almost weightless, ice holds the light, and fog erases the boundaries between object and space."
      },
      {
       "type": "h",
@@ -19208,11 +19212,15 @@
      },
      {
       "type": "h",
-      "text": "Come and see it"
+      "text": "Where to see LC0556 now"
      },
      {
       "type": "p",
-      "text": "Russky Dom is open 7–9 October, 10:00–19:00: Gostiny Dvor, Moscow, stand K62. Guided tours of the stand are available — sign up via the link on the capsule’s website. Come and see LC0556 in person."
+      "text": "The exhibition closed on 9 October. Photographs of the stand by the brand’s photographer are on the exhibition page in the Projects section. The LC0556 composition itself can now be seen in person at the brand’s showroom in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, daily 12:00–20:00."
+     },
+     {
+      "type": "li",
+      "text": "The exhibition on the Vargov®Design website — https://vargov.ru/en/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19236,7 +19244,7 @@
     "title": "Vargov®Design bei Russky Dom 2026",
     "category": "Ausstellungen",
     "date": "5. Oktober 2026",
-    "lead": "Vom 7. bis 9. Oktober zeigen wir im Gostiny Dvor die Komposition LC0556 — in der Kapsel „Die stille Kraft Kamtschatkas“, Stand K62, Zone „Eis und Nebel“.",
+    "lead": "Vom 7. bis 9. Oktober 2026 zeigten wir im Gostiny Dvor die Komposition LC0556 — in der Kapsel „Die stille Kraft Kamtschatkas“, Stand K62, Zone „Eis und Nebel“.",
     "metaLabels": {
      "category": "Rubrik",
      "date": "Datum"
@@ -19244,15 +19252,15 @@
     "body": [
      {
       "type": "p",
-      "text": "Vom 7. bis 9. Oktober findet im Moskauer Gostiny Dvor die Interieur-Ausstellung Russky Dom (Russisches Haus) statt. Das Thema in diesem Jahr: „Russisches Haus: Das Herz Russlands“."
+      "text": "Vom 7. bis 9. Oktober 2026 fand im Moskauer Gostiny Dvor die Interieur-Ausstellung Russky Dom (Russisches Haus) statt. Das Thema des Jahres lautete „Russisches Haus: Das Herz Russlands“."
      },
      {
       "type": "p",
-      "text": "Auf Stand K62 steht die Kapsel „Die stille Kraft Kamtschatkas. Wie Natur zum Interieur wird“. Urheber der Kapsel ist Tokareva Design. Sie erzählt vom Charakter Kamtschatkas durch Licht, Materie, Klang, Duft, Geschmack und Berührung; ihre sieben Zonen bilden einen Rundgang — von der Naturgewalt zum Menschen und zum Dialog."
+      "text": "Auf Stand K62 befand sich die Kapsel „Die stille Kraft Kamtschatkas. Wie Natur zum Interieur wird“. Urheber der Kapsel ist Tokareva Design. Sie erzählte vom Charakter Kamtschatkas durch Licht, Materie, Klang, Duft, Geschmack und Berührung; ihre sieben Zonen bildeten einen Rundgang — von der Naturgewalt zum Menschen und zum Dialog."
      },
      {
       "type": "p",
-      "text": "Vargov®Design ist einer der Teilnehmer der Kapsel. In ihrer Liste stehen neben unserem Namen die Worte „Licht als Kunstwerk“."
+      "text": "Vargov®Design war einer der Teilnehmer der Kapsel. In ihrer Liste standen neben unserem Namen die Worte „Licht als Kunstwerk“."
      },
      {
       "type": "h",
@@ -19260,7 +19268,7 @@
      },
      {
       "type": "p",
-      "text": "Unser Licht ist in der zweiten Zone des Rundgangs. Ihr Untertitel lautet „Zwischen Klarheit und Geheimnis“, und die Autoren der Kapsel beschreiben sie knapp: Hier wird die Form fast schwerelos, das Eis hält das Licht, und der Nebel verwischt die Grenzen zwischen Objekt und Raum."
+      "text": "Unser Licht stand in der zweiten Zone des Rundgangs. Ihr Untertitel lautet „Zwischen Klarheit und Geheimnis“, und die Autoren der Kapsel beschreiben sie knapp: Hier wird die Form fast schwerelos, das Eis hält das Licht, und der Nebel verwischt die Grenzen zwischen Objekt und Raum."
      },
      {
       "type": "h",
@@ -19276,11 +19284,15 @@
      },
      {
       "type": "h",
-      "text": "Kommen Sie vorbei"
+      "text": "Wo LC0556 jetzt zu sehen ist"
      },
      {
       "type": "p",
-      "text": "Russky Dom ist vom 7. bis 9. Oktober von 10:00 bis 19:00 Uhr geöffnet: Gostiny Dvor, Moskau, Stand K62. Am Stand gibt es Führungen — anmelden kann man sich über den Link auf der Website der Kapsel. Kommen Sie und sehen Sie LC0556 mit eigenen Augen."
+      "text": "Die Ausstellung endete am 9. Oktober. Aufnahmen des Stands vom Fotografen der Marke finden Sie auf der Seite der Ausstellung im Bereich „Projekte“. Die Komposition LC0556 selbst kann man jetzt im Showroom der Marke in Moskau mit eigenen Augen sehen: Nakhimovsky Prospekt 24, Geb. 1, Pavillon 2, Stand 212, täglich von 12:00 bis 20:00 Uhr."
+     },
+     {
+      "type": "li",
+      "text": "Die Ausstellung auf der Website von Vargov®Design — https://vargov.ru/de/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19304,7 +19316,7 @@
     "title": "Vargov®Design au salon Russky Dom 2026",
     "category": "Salons",
     "date": "5 octobre 2026",
-    "lead": "Du 7 au 9 octobre, au Gostiny Dvor, nous présentons la composition LC0556 — dans la capsule « La force tranquille du Kamtchatka », stand K62, zone « Glace et brume ».",
+    "lead": "Du 7 au 9 octobre 2026, au Gostiny Dvor, nous avons présenté la composition LC0556 — dans la capsule « La force tranquille du Kamtchatka », stand K62, zone « Glace et brume ».",
     "metaLabels": {
      "category": "Rubrique",
      "date": "Date"
@@ -19312,15 +19324,15 @@
     "body": [
      {
       "type": "p",
-      "text": "Du 7 au 9 octobre, le Gostiny Dvor de Moscou accueille Russky Dom (« Maison russe »), un salon consacré à l'aménagement intérieur. Le thème de cette année : « Maison russe : le cœur de la Russie »."
+      "text": "Du 7 au 9 octobre 2026, le Gostiny Dvor de Moscou a accueilli Russky Dom (« Maison russe »), un salon consacré à l'aménagement intérieur. Le thème de l'année était « Maison russe : le cœur de la Russie »."
      },
      {
       "type": "p",
-      "text": "Sur le stand K62 se trouve la capsule « La force tranquille du Kamtchatka. Comment la nature devient intérieur », conçue par Tokareva Design. Elle révèle le caractère du Kamtchatka par la lumière, la matière, le son, le parfum, le goût et le toucher ; ses sept zones dessinent un parcours : de la force de la nature à l'humain et au dialogue."
+      "text": "Sur le stand K62 se trouvait la capsule « La force tranquille du Kamtchatka. Comment la nature devient intérieur », conçue par Tokareva Design. Elle révélait le caractère du Kamtchatka par la lumière, la matière, le son, le parfum, le goût et le toucher ; ses sept zones dessinaient un parcours : de la force de la nature à l'humain et au dialogue."
      },
      {
       "type": "p",
-      "text": "Vargov®Design fait partie des participants de la capsule. Dans sa liste, notre nom est accompagné de ces mots : « La lumière comme œuvre d'art »."
+      "text": "Vargov®Design faisait partie des participants de la capsule. Dans sa liste, notre nom était accompagné de ces mots : « La lumière comme œuvre d'art »."
      },
      {
       "type": "h",
@@ -19328,7 +19340,7 @@
      },
      {
       "type": "p",
-      "text": "Notre lumière se trouve dans la deuxième zone du parcours. Son sous-titre : « Entre clarté et mystère ». Les auteurs de la capsule la décrivent en quelques mots : ici, la forme devient presque impondérable, la glace retient la lumière et la brume efface les limites entre l'objet et l'espace."
+      "text": "Notre lumière se trouvait dans la deuxième zone du parcours. Son sous-titre : « Entre clarté et mystère ». Les auteurs de la capsule la décrivent en quelques mots : ici, la forme devient presque impondérable, la glace retient la lumière et la brume efface les limites entre l'objet et l'espace."
      },
      {
       "type": "h",
@@ -19344,11 +19356,15 @@
      },
      {
       "type": "h",
-      "text": "Venez la voir"
+      "text": "Où voir LC0556 aujourd'hui"
      },
      {
       "type": "p",
-      "text": "Russky Dom est ouvert du 7 au 9 octobre, de 10 h à 19 h : Gostiny Dvor, Moscou, stand K62. Des visites guidées du stand sont proposées — inscription via le lien sur le site de la capsule. Venez voir LC0556 de vos propres yeux."
+      "text": "Le salon a fermé ses portes le 9 octobre. Les photos du stand prises par le photographe de la marque se trouvent sur la page du salon, dans la rubrique « Projets ». Quant à la composition LC0556, vous pouvez désormais la voir de vos propres yeux dans le showroom de la marque à Moscou : Nakhimovsky Prospekt 24, bât. 1, pavillon 2, stand 212, tous les jours de 12 h à 20 h."
+     },
+     {
+      "type": "li",
+      "text": "Le salon sur le site Vargov®Design — https://vargov.ru/fr/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19372,7 +19388,7 @@
     "title": "Vargov®Design a Russky Dom 2026",
     "category": "Fiere",
     "date": "5 ottobre 2026",
-    "lead": "Dal 7 al 9 ottobre, al Gostiny Dvor, presentiamo la composizione LC0556 — nella capsula «La forza silenziosa della Kamčatka», stand K62, zona «Ghiaccio e nebbia».",
+    "lead": "Dal 7 al 9 ottobre 2026, al Gostiny Dvor, abbiamo presentato la composizione LC0556 — nella capsula «La forza silenziosa della Kamčatka», stand K62, zona «Ghiaccio e nebbia».",
     "metaLabels": {
      "category": "Rubrica",
      "date": "Data"
@@ -19380,15 +19396,15 @@
     "body": [
      {
       "type": "p",
-      "text": "Dal 7 al 9 ottobre il Gostiny Dvor di Mosca ospita Russky Dom («Casa russa»), mostra dedicata all'interior design. Il tema di quest'anno è «Casa russa: il cuore della Russia»."
+      "text": "Dal 7 al 9 ottobre 2026 il Gostiny Dvor di Mosca ha ospitato Russky Dom («Casa russa»), mostra dedicata all'interior design. Il tema dell'anno era «Casa russa: il cuore della Russia»."
      },
      {
       "type": "p",
-      "text": "Allo stand K62 c'è la capsula «La forza silenziosa della Kamčatka. Come la natura diventa interno», firmata da Tokareva Design. Racconta il carattere della Kamčatka attraverso luce, materia, suono, profumo, gusto e tatto; le sue sette zone formano un percorso: dalla forza della natura all'essere umano e al dialogo."
+      "text": "Allo stand K62 si trovava la capsula «La forza silenziosa della Kamčatka. Come la natura diventa interno», firmata da Tokareva Design. Raccontava il carattere della Kamčatka attraverso luce, materia, suono, profumo, gusto e tatto; le sue sette zone formavano un percorso: dalla forza della natura all'essere umano e al dialogo."
      },
      {
       "type": "p",
-      "text": "Vargov®Design è tra i partecipanti della capsula. Nel suo elenco, accanto al nostro nome, ci sono le parole «La luce come opera d'arte»."
+      "text": "Vargov®Design era tra i partecipanti della capsula. Nel suo elenco, accanto al nostro nome, c'erano le parole «La luce come opera d'arte»."
      },
      {
       "type": "h",
@@ -19396,7 +19412,7 @@
      },
      {
       "type": "p",
-      "text": "La nostra luce è nella seconda zona del percorso. Il sottotitolo è «Tra chiarezza e mistero», e gli autori della capsula la descrivono in poche parole: qui la forma diventa quasi senza peso, il ghiaccio trattiene la luce e la nebbia cancella i confini tra oggetto e spazio."
+      "text": "La nostra luce si trovava nella seconda zona del percorso. Il sottotitolo è «Tra chiarezza e mistero», e gli autori della capsula la descrivono in poche parole: qui la forma diventa quasi senza peso, il ghiaccio trattiene la luce e la nebbia cancella i confini tra oggetto e spazio."
      },
      {
       "type": "h",
@@ -19412,11 +19428,15 @@
      },
      {
       "type": "h",
-      "text": "Venite a vederla"
+      "text": "Dove vedere LC0556 ora"
      },
      {
       "type": "p",
-      "text": "Russky Dom è aperto dal 7 al 9 ottobre, dalle 10:00 alle 19:00: Gostiny Dvor, Mosca, stand K62. Sono previste visite guidate dello stand — ci si iscrive tramite il link sul sito della capsula. Venite a vedere LC0556 dal vivo."
+      "text": "La mostra si è chiusa il 9 ottobre. Le fotografie dello stand scattate dal fotografo del marchio sono sulla pagina della mostra, nella sezione Progetti. La composizione LC0556 vera e propria si può ora vedere dal vivo nello showroom del marchio a Mosca: Nakhimovsky Prospekt 24, ed. 1, padiglione 2, stand 212, tutti i giorni dalle 12:00 alle 20:00."
+     },
+     {
+      "type": "li",
+      "text": "La mostra sul sito di Vargov®Design — https://vargov.ru/it/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19440,7 +19460,7 @@
     "title": "Vargov®Design en Russky Dom 2026",
     "category": "Ferias",
     "date": "5 de octubre de 2026",
-    "lead": "Del 7 al 9 de octubre, en el Gostiny Dvor, presentamos la composición LC0556 — en la cápsula «La fuerza serena de Kamchatka», stand K62, zona «Hielo y niebla».",
+    "lead": "Del 7 al 9 de octubre de 2026, en el Gostiny Dvor, expusimos la composición LC0556 — en la cápsula «La fuerza serena de Kamchatka», stand K62, zona «Hielo y niebla».",
     "metaLabels": {
      "category": "Sección",
      "date": "Fecha"
@@ -19448,15 +19468,15 @@
     "body": [
      {
       "type": "p",
-      "text": "Del 7 al 9 de octubre, el Gostiny Dvor de Moscú acoge Russky Dom («Casa Rusa»), una exposición de interiorismo. El tema de este año es «Casa Rusa: el corazón de Rusia»."
+      "text": "Del 7 al 9 de octubre de 2026, el Gostiny Dvor de Moscú acogió Russky Dom («Casa Rusa»), una exposición de interiorismo. El tema del año fue «Casa Rusa: el corazón de Rusia»."
      },
      {
       "type": "p",
-      "text": "En el stand K62 está la cápsula «La fuerza serena de Kamchatka. Cómo la naturaleza se convierte en interior», creada por Tokareva Design. Revela el carácter de Kamchatka a través de la luz, la materia, el sonido, el aroma, el sabor y el tacto; sus siete zonas forman un recorrido: de la fuerza de la naturaleza al ser humano y al diálogo."
+      "text": "En el stand K62 estaba la cápsula «La fuerza serena de Kamchatka. Cómo la naturaleza se convierte en interior», creada por Tokareva Design. Revelaba el carácter de Kamchatka a través de la luz, la materia, el sonido, el aroma, el sabor y el tacto; sus siete zonas formaban un recorrido: de la fuerza de la naturaleza al ser humano y al diálogo."
      },
      {
       "type": "p",
-      "text": "Vargov®Design es uno de los participantes de la cápsula. En su lista, junto a nuestro nombre, figuran las palabras «La luz como obra de arte»."
+      "text": "Vargov®Design fue uno de los participantes de la cápsula. En su lista, junto a nuestro nombre, figuraban las palabras «La luz como obra de arte»."
      },
      {
       "type": "h",
@@ -19464,7 +19484,7 @@
      },
      {
       "type": "p",
-      "text": "Nuestra luz está en la segunda zona del recorrido. Su subtítulo es «Entre la claridad y el misterio», y los autores de la cápsula la describen en pocas palabras: aquí la forma se vuelve casi ingrávida, el hielo retiene la luz y la niebla borra los límites entre el objeto y el espacio."
+      "text": "Nuestra luz estaba en la segunda zona del recorrido. Su subtítulo es «Entre la claridad y el misterio», y los autores de la cápsula la describen en pocas palabras: aquí la forma se vuelve casi ingrávida, el hielo retiene la luz y la niebla borra los límites entre el objeto y el espacio."
      },
      {
       "type": "h",
@@ -19480,11 +19500,15 @@
      },
      {
       "type": "h",
-      "text": "Venga a verla"
+      "text": "Dónde ver LC0556 ahora"
      },
      {
       "type": "p",
-      "text": "Russky Dom abre del 7 al 9 de octubre, de 10:00 a 19:00: Gostiny Dvor, Moscú, stand K62. Hay visitas guiadas por el stand; la inscripción se hace a través del enlace en la web de la cápsula. Venga a ver LC0556 en persona."
+      "text": "La exposición cerró el 9 de octubre. Las fotografías del stand, tomadas por el fotógrafo de la marca, están en la página de la exposición, en la sección Proyectos. La propia composición LC0556 puede verse ahora en persona en el showroom de la marca en Moscú: Nakhimovsky Prospekt 24, edif. 1, pabellón 2, estand 212, todos los días de 12:00 a 20:00."
+     },
+     {
+      "type": "li",
+      "text": "La exposición en la web de Vargov®Design — https://vargov.ru/es/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19508,7 +19532,7 @@
     "title": "Vargov®Design tại Russky Dom 2026",
     "category": "Triển lãm",
     "date": "5 tháng 10 năm 2026",
-    "lead": "Từ ngày 7 đến 9 tháng 10, tại Gostiny Dvor, chúng tôi giới thiệu tác phẩm LC0556 — trong không gian chủ đề “Sức mạnh thầm lặng của Kamchatka”, gian K62, khu “Băng và sương mù”.",
+    "lead": "Từ ngày 7 đến 9 tháng 10 năm 2026, tại Gostiny Dvor, chúng tôi đã giới thiệu tác phẩm LC0556 — trong không gian chủ đề “Sức mạnh thầm lặng của Kamchatka”, gian K62, khu “Băng và sương mù”.",
     "metaLabels": {
      "category": "Chuyên mục",
      "date": "Ngày"
@@ -19516,15 +19540,15 @@
     "body": [
      {
       "type": "p",
-      "text": "Từ ngày 7 đến 9 tháng 10, Gostiny Dvor ở Moskva là nơi diễn ra Russky Dom (“Ngôi nhà Nga”), triển lãm về thiết kế nội thất. Chủ đề năm nay là “Ngôi nhà Nga: Trái tim của nước Nga”."
+      "text": "Từ ngày 7 đến 9 tháng 10 năm 2026, tại Gostiny Dvor ở Moskva đã diễn ra Russky Dom (“Ngôi nhà Nga”), triển lãm về thiết kế nội thất. Chủ đề của năm là “Ngôi nhà Nga: Trái tim của nước Nga”."
      },
      {
       "type": "p",
-      "text": "Tại gian K62 là không gian chủ đề “Sức mạnh thầm lặng của Kamchatka. Khi thiên nhiên trở thành nội thất”, với tác giả là Tokareva Design. Không gian này khắc họa tính cách của Kamchatka qua ánh sáng, vật chất, âm thanh, hương thơm, vị giác và xúc giác; bảy khu của nó tạo thành một hành trình: từ sức mạnh của thiên nhiên đến con người và cuộc đối thoại."
+      "text": "Tại gian K62 đã được dựng không gian chủ đề “Sức mạnh thầm lặng của Kamchatka. Khi thiên nhiên trở thành nội thất”, với tác giả là Tokareva Design. Không gian này đã khắc họa tính cách của Kamchatka qua ánh sáng, vật chất, âm thanh, hương thơm, vị giác và xúc giác; bảy khu của nó được xếp thành một hành trình: từ sức mạnh của thiên nhiên đến con người và cuộc đối thoại."
      },
      {
       "type": "p",
-      "text": "Vargov®Design là một trong những đơn vị tham gia không gian này. Trong danh sách của dự án, bên cạnh tên chúng tôi là dòng chữ “Ánh sáng như một tác phẩm nghệ thuật”."
+      "text": "Vargov®Design là một trong những đơn vị đã tham gia không gian này. Trong danh sách của dự án, bên cạnh tên chúng tôi có dòng chữ “Ánh sáng như một tác phẩm nghệ thuật”."
      },
      {
       "type": "h",
@@ -19532,7 +19556,7 @@
      },
      {
       "type": "p",
-      "text": "Ánh sáng của chúng tôi nằm ở khu thứ hai trên hành trình. Tiêu đề phụ của khu là “Giữa trong trẻo và bí ẩn”, và các tác giả mô tả nó thật ngắn gọn: ở đây hình khối trở nên gần như không trọng lượng, băng giữ lại ánh sáng, còn sương mù xóa nhòa ranh giới giữa vật thể và không gian."
+      "text": "Ánh sáng của chúng tôi đã được đặt ở khu thứ hai trên hành trình. Tiêu đề phụ của khu là “Giữa trong trẻo và bí ẩn”, và các tác giả mô tả nó thật ngắn gọn: ở đây hình khối trở nên gần như không trọng lượng, băng giữ lại ánh sáng, còn sương mù xóa nhòa ranh giới giữa vật thể và không gian."
      },
      {
       "type": "h",
@@ -19548,11 +19572,15 @@
      },
      {
       "type": "h",
-      "text": "Mời bạn đến xem"
+      "text": "Nơi xem LC0556 hiện nay"
      },
      {
       "type": "p",
-      "text": "Russky Dom mở cửa từ ngày 7 đến 9 tháng 10, từ 10:00 đến 19:00: Gostiny Dvor, Moskva, gian K62. Tại gian có các buổi tham quan có hướng dẫn — đăng ký qua đường dẫn trên trang web của không gian chủ đề. Hãy đến xem LC0556 tận mắt."
+      "text": "Triển lãm đã khép lại vào ngày 9 tháng 10. Ảnh chụp gian trưng bày do nhiếp ảnh gia của thương hiệu thực hiện có trên trang triển lãm, trong mục “Dự án”. Còn chính tác phẩm LC0556 giờ đây có thể xem tận mắt tại showroom của thương hiệu ở Moskva: đại lộ Nakhimovsky 24, tòa 1, sảnh 2, gian 212, hằng ngày từ 12:00 đến 20:00."
+     },
+     {
+      "type": "li",
+      "text": "Triển lãm trên trang web Vargov®Design — https://vargov.ru/vi/projects/russky-dom-2026"
      },
      {
       "type": "li",
@@ -19576,7 +19604,7 @@
     "title": "Vargov®Design في معرض Russky Dom 2026",
     "category": "المعارض",
     "date": "5 أكتوبر 2026",
-    "lead": "من 7 إلى 9 أكتوبر، في غوستيني دفور، نعرض التركيبة LC0556 — ضمن كبسولة «القوة الهادئة لكامتشاتكا»، الجناح K62، منطقة «الجليد والضباب».",
+    "lead": "من 7 إلى 9 أكتوبر 2026، في غوستيني دفور، عرضنا التركيبة LC0556 — ضمن كبسولة «القوة الهادئة لكامتشاتكا»، الجناح K62، منطقة «الجليد والضباب».",
     "metaLabels": {
      "category": "القسم",
      "date": "التاريخ"
@@ -19584,15 +19612,15 @@
     "body": [
      {
       "type": "p",
-      "text": "من 7 إلى 9 أكتوبر يستضيف مجمّع غوستيني دفور في موسكو معرض Russky Dom («البيت الروسي») للتصميم الداخلي. وموضوع هذا العام: «البيت الروسي: قلب روسيا»."
+      "text": "من 7 إلى 9 أكتوبر 2026 استضاف مجمّع غوستيني دفور في موسكو معرض Russky Dom («البيت الروسي») للتصميم الداخلي. وكان موضوع العام: «البيت الروسي: قلب روسيا»."
      },
      {
       "type": "p",
-      "text": "في الجناح K62 تقع كبسولة «القوة الهادئة لكامتشاتكا. كيف تصبح الطبيعة تصميمًا داخليًا»، وهي من تأليف Tokareva Design. تكشف الكبسولة طبع كامتشاتكا عبر الضوء والمادة والصوت والرائحة والمذاق واللمس، وتشكّل مناطقها السبع مسارًا: من قوة الطبيعة إلى الإنسان والحوار."
+      "text": "في الجناح K62 أُقيمت كبسولة «القوة الهادئة لكامتشاتكا. كيف تصبح الطبيعة تصميمًا داخليًا»، وهي من تأليف Tokareva Design. كشفت الكبسولة طبع كامتشاتكا عبر الضوء والمادة والصوت والرائحة والمذاق واللمس، وشكّلت مناطقها السبع مسارًا: من قوة الطبيعة إلى الإنسان والحوار."
      },
      {
       "type": "p",
-      "text": "Vargov®Design من بين المشاركين في الكبسولة. وفي قائمتها تقترن باسمنا عبارة «الضوء عملًا فنيًا»."
+      "text": "كانت Vargov®Design من بين المشاركين في الكبسولة. وفي قائمتها اقترنت باسمنا عبارة «الضوء عملًا فنيًا»."
      },
      {
       "type": "h",
@@ -19600,7 +19628,7 @@
      },
      {
       "type": "p",
-      "text": "ضوؤنا في المنطقة الثانية من المسار. عنوانها الفرعي «بين الوضوح والغموض»، ويصفها مؤلّفو الكبسولة بكلمات قليلة: هنا يصير الشكل شبه عديم الوزن، والجليد يحتفظ بالضوء، والضباب يمحو الحدود بين الشيء والفضاء."
+      "text": "كان ضوؤنا في المنطقة الثانية من المسار. عنوانها الفرعي «بين الوضوح والغموض»، ويصفها مؤلّفو الكبسولة بكلمات قليلة: هنا يصير الشكل شبه عديم الوزن، والجليد يحتفظ بالضوء، والضباب يمحو الحدود بين الشيء والفضاء."
      },
      {
       "type": "h",
@@ -19616,11 +19644,15 @@
      },
      {
       "type": "h",
-      "text": "تعالوا لرؤيتها"
+      "text": "أين تشاهدون LC0556 الآن"
      },
      {
       "type": "p",
-      "text": "يفتح Russky Dom أبوابه من 7 إلى 9 أكتوبر، من 10:00 حتى 19:00: غوستيني دفور، موسكو، الجناح K62. تُنظَّم في الجناح جولات مع مرشد، والتسجيل عبر الرابط على موقع الكبسولة. تعالوا لرؤية LC0556 بأعينكم."
+      "text": "اختُتم المعرض في 9 أكتوبر. صور الجناح بعدسة مصوّر العلامة منشورة على صفحة المعرض في قسم «المشاريع». أما التركيبة LC0556 نفسها فيمكنكم الآن رؤيتها بأعينكم في صالة عرض العلامة في موسكو: جادة ناخيموفسكي 24، المبنى 1، القاعة 2، الجناح 212، يوميًا من 12:00 حتى 20:00."
+     },
+     {
+      "type": "li",
+      "text": "المعرض على موقع Vargov®Design — https://vargov.ru/ar/projects/russky-dom-2026"
      },
      {
       "type": "li",

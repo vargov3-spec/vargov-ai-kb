@@ -14,7 +14,7 @@ You set a catalogue article and the cloud's dimensions in millimetres — the en
 
 Density is airy, medium, dense — or an exact number of elements. Layout vertical, horizontal or mixed; rotation random, from the centre or on a regular grid; tilt on any axis from −90° to +90°. Two articles can be mixed in one composition at a chosen ratio.
 
-Colour comes from the factory RAL catalogue — 210 shades searchable by code and name, plus the brand's white and gold. There is deliberately no custom palette or eyedropper: the specification must carry a colour the workshop can actually match.
+Element colour comes from the RAL catalogue — 210 colours searchable by code and name; up to eight catalogue colours can be mixed in one composition, each with its own transparency (ribbons have a single glass colour). Alongside them are the brand colours, electroplating (transparent tones and mirror finishes) and “clear colourless”; transparency is offered only where the element can actually be transparent. For compositions with metal hardware, the metal is set by a code from the JN finish catalogue — 24 samples, eight colours in three finishes. There is deliberately no eyedropper: the specification carries a RAL code, an electroplating name or a JN code — something the workshop can actually reproduce.
 
 A layout that does not lie
 
@@ -32,7 +32,7 @@ Weight is not a reference figure. It decides which anchor holds the suspension a
 
 What you can take away
 
-IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying its own type and load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. A 3D model of the composition in max and fbx for your own visualisation. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration.
+IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of the article (max, fbx) on 3ddd.ru and 3dsky.org; a model of the assembled composition on request. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration.
 
 The composition can be tried on in your own room from a phone: USDZ on iOS, GLB on Android. The interface runs in eight languages, Arabic right-to-left included.
 

@@ -14,7 +14,7 @@ Si indica un articolo di catalogo e le misure della nuvola in millimetri — il 
 
 Densità ariosa, media, fitta — oppure numero esatto di elementi. Disposizione verticale, orizzontale, mista; rotazione casuale, dal centro o a griglia regolare; inclinazione su qualsiasi asse da −90° a +90°. In una composizione si possono mescolare due articoli nella proporzione scelta.
 
-Il colore viene dalla cartella RAL di fabbrica — 210 tonalità con ricerca per codice e per nome, più il bianco e l'oro del marchio. Niente palette personale né contagocce, di proposito: nella specifica deve finire un colore che la produzione sappia davvero riprodurre.
+Il colore degli elementi viene dalla cartella RAL — 210 colori con ricerca per codice e per nome; in una composizione si possono mescolare fino a otto colori della cartella, ciascuno con la propria trasparenza (i nastri hanno un unico colore di vetro). Accanto ci sono i colori del marchio, la galvanica (toni trasparenti e finiture a specchio) e il «trasparente incolore»; la trasparenza viene proposta solo dove l'elemento, nella realtà, può essere trasparente. Nelle composizioni con ferramenta metallica il metallo si indica con un codice del catalogo delle finiture JN — 24 campioni, otto colori in tre finiture. Nel configuratore, di proposito, non c'è il contagocce: nella specifica finisce un codice RAL, il nome della finitura galvanica o un codice JN — ciò che la produzione sa davvero riprodurre.
 
 Una distribuzione che non mente
 
@@ -32,7 +32,7 @@ Il peso non è un dato accessorio. Da esso dipende quale tassello regge la sospe
 
 Che cosa si porta via
 
-IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il proprio tipo e carico. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Un modello 3D in max e fbx per la propria visualizzazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione.
+IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il numero di elementi che porta e, quando la massa è nota, il carico calcolato. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Modelli 3D pronti dell'articolo (max, fbx) su 3ddd.ru e 3dsky.org; il modello della composizione assemblata, su richiesta. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione.
 
 La composizione si può provare nella propria stanza dal telefono: USDZ su iOS, GLB su Android. L'interfaccia funziona in otto lingue, arabo da destra a sinistra compreso.
 

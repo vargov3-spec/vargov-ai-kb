@@ -14,7 +14,7 @@ Sie geben eine Katalogposition und die Maße der Wolke in Millimetern vor — di
 
 Dichte: luftig, mittel, dicht — oder eine exakte Anzahl von Elementen. Anordnung vertikal, horizontal, gemischt; Drehung zufällig, aus der Mitte oder im regelmäßigen Raster; Neigung um jede Achse von −90° bis +90°. In einer Komposition lassen sich zwei Artikel in gewähltem Verhältnis mischen.
 
-Die Farbe kommt aus dem RAL-Katalog der Fabrik — 210 Töne mit Suche nach Code und Namen, dazu das hauseigene Weiß und Gold. Eine eigene Palette und Pipette gibt es bewusst nicht: In die Spezifikation gehört eine Farbe, die die Fertigung wirklich trifft.
+Die Farbe der Elemente kommt aus dem RAL-Katalog — 210 Farben mit Suche nach Code und Namen; in einer Komposition lassen sich bis zu acht Farben des Katalogs mischen, jede mit eigener Transparenz (Bänder haben eine einzige Glasfarbe). Daneben stehen die hauseigenen Farben, die Galvanik (transparente Töne und Spiegelbeschichtungen) und „Klar und farblos“; Transparenz wird nur dort angeboten, wo das Element auch in Wirklichkeit transparent sein kann. Bei Kompositionen mit Metallbeschlägen wird das Metall über einen Code aus dem JN-Oberflächenkatalog festgelegt — 24 Muster, acht Farben in drei Ausführungen. Eine Pipette gibt es im Konfigurator bewusst nicht: In der Spezifikation steht ein RAL-Code, die Bezeichnung der galvanischen Oberfläche oder ein JN-Code — etwas, das die Fertigung tatsächlich reproduzieren kann.
 
 Eine Verteilung, die nicht lügt
 
@@ -32,7 +32,7 @@ Das Gewicht ist keine Nebenangabe. Von ihm hängt ab, welcher Anker die Aufhäng
 
 Was Sie mitnehmen können
 
-IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit eigenem Typ und eigener Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Ein 3D-Modell der Komposition in max und fbx für die eigene Visualisierung. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration.
+IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit der Anzahl der daran hängenden Elemente und, wenn die Masse bekannt ist, der rechnerischen Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Fertige 3D-Modelle des Artikels (max, fbx) auf 3ddd.ru und 3dsky.org; ein Modell der zusammengesetzten Komposition auf Anfrage. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration.
 
 Die Komposition lässt sich mit dem Smartphone im eigenen Raum ausprobieren: USDZ auf iOS, GLB auf Android. Die Oberfläche läuft in acht Sprachen, Arabisch von rechts nach links inbegriffen.
 

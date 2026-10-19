@@ -14,7 +14,7 @@ Se indica una referencia del catálogo y las medidas de la nube en milímetros �
 
 Densidad ligera, media, densa — o número exacto de elementos. Disposición vertical, horizontal, mixta; rotación aleatoria, desde el centro o en retícula regular; inclinación en cualquier eje de −90° a +90°. En una composición se pueden mezclar dos referencias en la proporción elegida.
 
-El color se toma del catálogo RAL de fábrica — 210 tonos con búsqueda por código y por nombre, más el blanco y el dorado de la marca. No hay paleta propia ni cuentagotas, y es deliberado: a la especificación debe llegar un color que la producción sepa igualar.
+El color de los elementos se toma del catálogo RAL — 210 colores con búsqueda por código y por nombre; en una composición se pueden mezclar hasta ocho colores del catálogo, cada uno con su propia transparencia (las cintas tienen un único color de vidrio). Junto a ellos están los colores de la marca, la galvanoplastia (tonos transparentes y acabados espejo) y el «transparente incoloro»; la transparencia solo se ofrece donde el elemento puede ser transparente en la realidad. En las composiciones con herrajes metálicos, el metal se indica con un código del catálogo de acabados JN — 24 muestras, ocho colores en tres acabados. No hay cuentagotas en el configurador, y es deliberado: a la especificación llega un código RAL, el nombre del acabado galvánico o un código JN — lo que la producción puede reproducir de verdad.
 
 Un reparto que no miente
 
@@ -32,7 +32,7 @@ El peso no es un dato accesorio. De él depende qué anclaje sostiene la suspens
 
 Qué se lleva uno
 
-IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con su tipo y su carga. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Un modelo 3D en max y fbx para la visualización propia. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración.
+IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con el número de elementos que soporta y, cuando se conoce la masa, la carga calculada. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Modelos 3D de la referencia listos para usar (max, fbx) en 3ddd.ru y 3dsky.org; el modelo de la composición montada, bajo pedido. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración.
 
 La composición puede probarse en la propia sala desde el teléfono: USDZ en iOS, GLB en Android. La interfaz funciona en ocho idiomas, árabe de derecha a izquierda incluido.
 

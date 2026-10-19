@@ -14,7 +14,7 @@ Bạn chọn mã sản phẩm trong danh mục và kích thước cụm theo mil
 
 Mật độ thoáng, vừa, dày — hoặc số chi tiết chính xác. Bố trí dọc, ngang, hỗn hợp; xoay ngẫu nhiên, từ tâm hoặc theo lưới đều; nghiêng theo bất kỳ trục nào từ −90° đến +90°. Trong một tác phẩm có thể trộn hai mã theo tỉ lệ đặt trước.
 
-Màu lấy từ bảng RAL của nhà máy — 210 sắc độ, tìm theo mã và tên, cộng với trắng và vàng của thương hiệu. Không có bảng màu riêng hay ống hút màu, và đó là chủ ý: bảng kê phải ghi màu mà xưởng thật sự pha được.
+Màu của chi tiết lấy từ bảng RAL — 210 màu, tìm theo mã và tên; trong một tác phẩm có thể trộn tối đa tám màu của bảng, mỗi màu có độ trong suốt riêng (các dải chỉ có một màu thuỷ tinh). Bên cạnh đó là các màu của thương hiệu, lớp mạ điện (tông trong suốt và lớp phủ gương) và «trong suốt không màu»; tùy chọn độ trong suốt chỉ có ở những chi tiết mà ngoài đời thật có thể trong suốt. Với các tác phẩm có phụ kiện kim loại, kim loại được xác định bằng mã trong danh mục lớp phủ JN — 24 mẫu, tám màu với ba kiểu hoàn thiện. Trình cấu hình cố ý không có ống hút màu: bảng kê ghi mã RAL, tên lớp mạ điện hoặc mã JN — những gì xưởng thật sự tái tạo được.
 
 Cách bố trí không nói dối
 
@@ -32,7 +32,7 @@ Trọng lượng không phải con số tham khảo. Nó quyết định loại 
 
 Những gì mang đi được
 
-Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang kiểu treo cùng tải trọng của nó. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D ở định dạng max và fbx để bạn tự dựng ảnh. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình.
+Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang số chi tiết treo trên nó và, khi đã biết khối lượng, cả tải trọng tính toán. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D có sẵn của mã sản phẩm (max, fbx) — trên 3ddd.ru và 3dsky.org, còn mô hình của tác phẩm đã dựng — theo yêu cầu. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình.
 
 Có thể ướm tác phẩm vào phòng của mình bằng điện thoại: USDZ trên iOS, GLB trên Android. Giao diện có tám ngôn ngữ, kể cả tiếng Ả Rập từ phải sang trái.
 
