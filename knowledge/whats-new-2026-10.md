@@ -28,6 +28,11 @@
   сохранённое открывается по своей ссылке. Кнопка конфигуратора «Заполнить ТЗ» открывает страницу ТЗ и сама
   подставляет туда параметры собранной композиции; в ТЗ показывается 3D-окно конфигуратора, собранное по
   параметрам ТЗ.
+- **Разметка потолка в натуральную величину.** Для подвесных композиций страница ТЗ готовит монтажную
+  схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
+  точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. У лент, композиций на
+  каркасе, готовой сцены и артикулов индивидуального расчёта, а также при монтаже на металлической базе
+  схемы нет.
 
 ## Цвет и отделка
 
@@ -46,7 +51,8 @@
   брашировка с глянцевым лаком; брашировка с полуматовым лаком). В конфигураторе — у композиций с металлической
   фурнитурой (у лент свой каркас без кодов JN); где металл есть на каждом элементе, можно выбрать несколько
   покрытий. Код покрытия переносится в ссылку, заявку и ТЗ. Оттенки на экране приблизительные — в заказе главное
-  код.
+  код. Названия всех 24 покрытий JN и семи покрытий гальваники на восьми языках —
+  [[finishes-and-colours-i18n]].
 
 ## Удобство
 
@@ -55,6 +61,8 @@
   или чат не целиком — полный текст копируется в буфер обмена. Ответ приходит туда же. Цена считается по заявке.
 - **«Help режим»** — встроенная помощь в конфигураторе (кнопка в шапке): пояснения к шагам, подсказки к кнопкам и
   полям и «Ведущий по шагам» — карточка «Шаг N из M» от выбора артикула до заявки. Это готовые тексты, не чат-бот.
+  Help переведён на все восемь языков интерфейса (русский, английский, немецкий, итальянский, французский,
+  испанский, арабский, вьетнамский); в окне ТЗ режима помощи нет.
 
 ## Сайт
 
@@ -113,6 +121,11 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   saved one opens by its own link. The configurator's "Fill in the spec" button opens the brief page and fills in
   the parameters of the assembled composition; the brief shows the configurator's 3D view built from the brief's
   parameters.
+- **Ceiling setting-out at full size.** For suspended compositions the brief page prepares a 1:1
+  setting-out drawing — 1 mm on the drawing is 1 mm on the ceiling — from the same layout the fixing
+  points, the IFC model and the PDF are computed from; it opens once the order has been released to
+  production. Ribbons, compositions on a frame, the ready scene and articles calculated individually have
+  none, and neither does an installation on a metal base.
 
 ### Colour and finish
 
@@ -130,7 +143,8 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   JN-9001…JN-9024 — 8 colours, each in three finishes (mirror polish; brushed with gloss lacquer; brushed with
   semi-matt lacquer). In the configurator — for compositions with metal hardware (ribbons have their own frame
   without JN codes); where every element carries metal, several finishes can be combined. The finish code goes
-  into the share link, the request and the brief. On-screen shades are approximate — the code is what counts.
+  into the share link, the request and the brief. On-screen shades are approximate — the code is what counts. The names of all 24 JN finishes
+  and of the seven electroplating finishes in eight languages — [[finishes-and-colours-i18n]].
 
 ### Convenience
 
@@ -140,7 +154,8 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   calculated per request.
 - **"Help mode"** — built-in help in the configurator (a button in the header): notes for the steps, hints on
   buttons and fields and a step-by-step guide ("Step N of M") from choosing an article to the request. These are
-  prepared texts, not a chatbot.
+  prepared texts, not a chatbot. Help is translated into all eight interface languages (Russian, English,
+  German, Italian, French, Spanish, Arabic, Vietnamese); the brief's 3D window carries no help mode.
 
 ### Website
 

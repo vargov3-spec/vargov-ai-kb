@@ -66,6 +66,9 @@ DOMAIN_ALLOWLIST = SCRIPT_ALLOWLIST | {
     # про IFC4), LinkedIn (профиль Антона Варгова и та же статья), Hugging Face (набор данных
     # vargov-design). Тревога 12.10.2026 была на них; ссылки сверены с живыми страницами 13.10.2026.
     "medium.com", "www.linkedin.com", "huggingface.co",
+    # Sketchfab — аккаунт владельца, сайт добавил ссылку в sameAs в октябре 2026.
+    # Тревога 19.10.2026 была на ней; на главной стоит https://sketchfab.com/vargov (проверено 19.10.2026).
+    "sketchfab.com",
     # Карточки на картах (hasMap на /showroom).
     "www.google.com", "yandex.ru",
 }
