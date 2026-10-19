@@ -110,7 +110,7 @@
 - Email: info@vargov.ru
 - WhatsApp: +7 916 537 33 52 (https://wa.me/79165373352) — с 13.10.2026 номер публикуется только как WhatsApp (решение владельца; коммит сайта 8d04ad8)
 - WhatsApp: https://wa.me/79165373352 (старый `wa.me/message/SAC5LWOV5QMXC1` не использовать)
-- Telegram бренда: https://t.me/vargov_design (@vargov_design); личный: https://t.me/AntonVargov
+- Telegram — два адреса с разной ролью, как на сайте (CONTACTS в seo.ts, llms.txt сайта): для заявок — https://t.me/AntonVargov (туда же уходит «Узнать стоимость» из конфигуратора); канал бренда — https://t.me/vargov_design
 - WeChat: Vargov_Design
 - YouTube: https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA · RuTube: https://rutube.ru/channel/38329605/
 - `sameAs` в Organization JSON-LD — 14 адресов, ровно как на сайте (сверено с фидом 17.10.2026, check_feed_parity сверяет и узел бренда): Telegram-канал бренда, YouTube, RuTube, Google Карты, Яндекс Карты, Instagram, Facebook, Pinterest, 3ddd, 3dsky, GitHub vargov-ai-kb, Wikidata, Hugging Face и с 15.10.2026 Sketchfab (владелец: «sketchfab.com/vargov — это наш офф канал с 3д моделями»; коммит сайта 014c9d6). Личный Telegram основателя — в sameAs узла Person; vargov.design — приложение, а не организация. Страницы победителей премий — не в sameAs, а в `subjectOf` (17 с 15.10.2026); 4 страницы, где организатор назвал страну производства (IDA ×2, SIT ×2), не ссылаются, пока их не исправят (ADC ×2 и Houzee исправлены и вернулись 15.10). Видимой ссылки на Instagram в подвале нет (решение владельца); MAX на новом сайте не публикуется.
