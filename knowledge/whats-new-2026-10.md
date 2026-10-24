@@ -37,7 +37,9 @@
   схеме сверяется с тем, что записано в ТЗ.
 - **FBX собранной композиции.** Рядом с выгрузкой IFC появилась кнопка «Скачать FBX (3ds Max)»:
   композиция в сборе, отдельными объектами, в миллиметрах, вместе с нитями, креплениями и плоскостью
-  потолка; цвета стекла и покрытия фурнитуры переносятся, текстур нет. Это модель для визуализации:
+  потолка; цвета стекла и покрытия фурнитуры переносятся, текстур нет. Одинаковые элементы в файле —
+  копии одной геометрии, поэтому композиция открывается отдельными объектами, а не единым телом.
+  Это модель для визуализации:
   свойств BIM — нагрузок, массы, мощности, артикулов — в ней нет, они остаются в IFC4. У лент такой
   выгрузки нет. Начало координат — потолок (у IFC4 правило своё, начало на полу); при импорте в
   3ds Max в окне Units нужно выбрать «File units converted to: Millimeters».
@@ -159,6 +161,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
 - **FBX of the assembled composition.** Next to the IFC export there is now a "Download FBX (3ds Max)"
   button: the whole composition as separate objects, in millimetres, together with the wires, the fixings
   and the ceiling plane; the colours of the glass and of the hardware finish carry over, textures do not.
+  Identical elements in the file are copies of one geometry, so the composition opens as separate objects
+  rather than a single body.
   It is a model for visualisation: it holds no BIM properties — no loads, mass, power or article codes,
   those stay in the IFC4 file. Ribbons have no such export. The origin is at the ceiling (IFC4 has its own
   rule, origin on the floor); on import into 3ds Max choose "File units converted to: Millimetres" in the
