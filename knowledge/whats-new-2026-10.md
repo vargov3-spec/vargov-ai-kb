@@ -2,8 +2,8 @@
 
 Сводка нововведений на сайте [vargov.ru](https://vargov.ru) и в 3D-конфигураторе
 ([vargov.design](https://vargov.design), русская копия [configurator.vargov.ru](https://configurator.vargov.ru))
-с 1 по 19 октября 2026 года. Всё перечисленное уже выложено — сверено с агентами сайта и конфигуратора
-19.10.2026. Числа — снимок на 19.10.2026: они считаются из данных и меняются.
+с 1 по 24 октября 2026 года. Всё перечисленное уже выложено — сверено с агентами сайта и конфигуратора
+19 и 24.10.2026. Числа — снимок на 24.10.2026: они считаются из данных и меняются.
 
 ## Для архитекторов и проектировщиков
 
@@ -35,6 +35,12 @@
   схемы нет. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
   контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
   схеме сверяется с тем, что записано в ТЗ.
+- **FBX собранной композиции.** Рядом с выгрузкой IFC появилась кнопка «Скачать FBX (3ds Max)»:
+  композиция в сборе, отдельными объектами, в миллиметрах, вместе с нитями, креплениями и плоскостью
+  потолка; цвета стекла и покрытия фурнитуры переносятся, текстур нет. Это модель для визуализации:
+  свойств BIM — нагрузок, массы, мощности, артикулов — в ней нет, они остаются в IFC4. У лент такой
+  выгрузки нет. Начало координат — потолок (у IFC4 правило своё, начало на полу); при импорте в
+  3ds Max в окне Units нужно выбрать «File units converted to: Millimeters».
 - **Отверстия в потолке не ближе 10 мм краями.** Раскладка раздвигает их сама, а точки, которые физически
   свести нельзя, объединяются в одно отверстие.
 - **Ссылка воспроизводит ту же раскладку, которую видел заказчик.** Номер генерации раскладки передаётся
@@ -117,8 +123,8 @@
 
 A summary of what changed on [vargov.ru](https://vargov.ru) and in the 3D configurator
 ([vargov.design](https://vargov.design); Russian copy [configurator.vargov.ru](https://configurator.vargov.ru))
-between 1 and 19 October 2026. Everything listed is live — checked with the website and configurator agents on
-19 October 2026. Numbers are a snapshot as of 19 October 2026: they are computed from data and change.
+between 1 and 24 October 2026. Everything listed is live — checked with the website and configurator agents on
+19 and 24 October 2026. Numbers are a snapshot as of 24 October 2026: they are computed from data and change.
 
 ### For architects and specifiers
 
@@ -150,6 +156,13 @@ between 1 and 19 October 2026. Everything listed is live — checked with the we
   none, and neither does an installation on a metal base. The drawing also marks the fixing points of the
   lit contours (currently LC0523): a wire at the centre of a contour and two cables at its ends, with the
   same hole diameter as every other point; the number of points on the drawing is checked against the brief.
+- **FBX of the assembled composition.** Next to the IFC export there is now a "Download FBX (3ds Max)"
+  button: the whole composition as separate objects, in millimetres, together with the wires, the fixings
+  and the ceiling plane; the colours of the glass and of the hardware finish carry over, textures do not.
+  It is a model for visualisation: it holds no BIM properties — no loads, mass, power or article codes,
+  those stay in the IFC4 file. Ribbons have no such export. The origin is at the ceiling (IFC4 has its own
+  rule, origin on the floor); on import into 3ds Max choose "File units converted to: Millimetres" in the
+  Units dialog.
 - **Ceiling holes are never closer than 10 mm edge to edge.** The layout moves them apart by itself, and
   points that cannot physically be separated are merged into a single hole.
 - **A link reproduces the very layout the client saw.** The layout generation number now travels in the

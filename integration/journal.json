@@ -2,7 +2,7 @@
  "meta": {
   "kind": "journal",
   "articleCount": 28,
-  "checksum": "5262e6597db14b42",
+  "checksum": "a1018e99b28ba23f",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-19T15:50:05+00:00",
+  "generated": "2026-10-24T16:28:09+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -16120,7 +16120,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 для BIM: длины в миллиметрах, точки крепления — отдельными объектами, у каждой — число элементов на ней и, когда известна масса, расчётная нагрузка. Модель собирается под потолок той высоты, что задана в поле «Высота потолка, мм» рядом с кнопкой IFC (по умолчанию 2700 мм): точки крепления на потолке, начало координат на полу. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Готовые 3D-модели артикула (max, fbx) — на 3ddd.ru и 3dsky.org, модель собранной композиции — по запросу. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
+      "text": "IFC4 для BIM: длины в миллиметрах, точки крепления — отдельными объектами, у каждой — число элементов на ней и, когда известна масса, расчётная нагрузка. Модель собирается под потолок той высоты, что задана в поле «Высота потолка, мм» рядом с кнопкой IFC (по умолчанию 2700 мм): точки крепления на потолке, начало координат на полу. PDF-спецификация с составом, массой, мощностью, монтажом, сроком изготовления и гарантией, с QR на саму конфигурацию. Тендерный лист для закупки и таможни. Чертёж DXF для AutoCAD — только для внутреннего пользования: производство и дилеры бренда. Готовые 3D-модели артикула (max, fbx) — на 3ddd.ru и 3dsky.org. Собранную композицию можно скачать в FBX для 3ds Max — кнопкой рядом с выгрузкой IFC: геометрия и цвета отдельными объектами, вместе с нитями и креплениями, в миллиметрах. Свойств BIM в ней нет — они живут в IFC4; у лент такой выгрузки нет. Сохранённые проекты живут в самом браузере, без учётной записи, а ссылка несёт полное состояние конфигурации."
      },
      {
       "type": "p",
@@ -16252,7 +16252,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of the article (max, fbx) on 3ddd.ru and 3dsky.org; a model of the assembled composition on request. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
+      "text": "IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field next to the IFC button (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of the article (max, fbx) are on 3ddd.ru and 3dsky.org. The assembled composition can be downloaded as an FBX for 3ds Max — with the button next to the IFC export: geometry and colours as separate objects, together with the wires and the fixings, in millimetres. It holds no BIM properties — those live in IFC4; ribbons have no such export. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration."
      },
      {
       "type": "p",
@@ -16384,7 +16384,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit der Anzahl der daran hängenden Elemente und, wenn die Masse bekannt ist, der rechnerischen Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Fertige 3D-Modelle des Artikels (max, fbx) auf 3ddd.ru und 3dsky.org; ein Modell der zusammengesetzten Komposition auf Anfrage. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
+      "text": "IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit der Anzahl der daran hängenden Elemente und, wenn die Masse bekannt ist, der rechnerischen Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ neben der IFC-Schaltfläche eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Fertige 3D-Modelle des Artikels (max, fbx) liegen auf 3ddd.ru und 3dsky.org. Die zusammengesetzte Komposition lässt sich als FBX für 3ds Max herunterladen – über die Schaltfläche neben dem IFC-Export: Geometrie und Farben als getrennte Objekte, samt Seilen und Befestigungen, in Millimetern. BIM-Eigenschaften sind darin nicht enthalten – die stecken in IFC4; für Bänder gibt es diesen Export nicht. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration."
      },
      {
       "type": "p",
@@ -16516,7 +16516,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant le nombre d'éléments qui y sont suspendus et, lorsque la masse est connue, la charge calculée. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm », à côté du bouton IFC (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Des modèles 3D prêts à l'emploi de la référence (max, fbx) sur 3ddd.ru et 3dsky.org ; un modèle de la composition assemblée sur demande. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
+      "text": "IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant le nombre d'éléments qui y sont suspendus et, lorsque la masse est connue, la charge calculée. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm », à côté du bouton IFC (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Les modèles 3D prêts à l'emploi de la référence (max, fbx) se trouvent sur 3ddd.ru et 3dsky.org. La composition assemblée, elle, se télécharge en FBX pour 3ds Max, par le bouton placé à côté de l'export IFC : géométrie et couleurs en objets distincts, avec les fils et les fixations, en millimètres. Ce fichier ne porte aucune propriété BIM — celles-ci restent dans l'IFC4 ; les rubans n'ont pas cet export. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration."
      },
      {
       "type": "p",
@@ -16648,7 +16648,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il numero di elementi che porta e, quando la massa è nota, il carico calcolato. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. Modelli 3D pronti dell'articolo (max, fbx) su 3ddd.ru e 3dsky.org; il modello della composizione assemblata, su richiesta. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
+      "text": "IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il numero di elementi che porta e, quando la massa è nota, il carico calcolato. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» accanto al pulsante IFC (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. I modelli 3D pronti dell'articolo (max, fbx) si trovano su 3ddd.ru e 3dsky.org. La composizione assemblata si può scaricare in FBX per 3ds Max, con il pulsante accanto a quello dell'IFC: geometria e colori come oggetti separati, insieme ai cavi e ai fissaggi, in millimetri. Nell'FBX non ci sono proprietà BIM — quelle restano nell'IFC4; i nastri non hanno questa esportazione. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione."
      },
      {
       "type": "p",
@@ -16780,7 +16780,7 @@
      },
      {
       "type": "p",
-      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con el número de elementos que soporta y, cuando se conoce la masa, la carga calculada. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Modelos 3D de la referencia listos para usar (max, fbx) en 3ddd.ru y 3dsky.org; el modelo de la composición montada, bajo pedido. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
+      "text": "IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con el número de elementos que soporta y, cuando se conoce la masa, la carga calculada. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» junto al botón IFC (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Los modelos 3D de la referencia listos para usar (max, fbx) están en 3ddd.ru y 3dsky.org. La composición montada puede descargarse en FBX para 3ds Max con el botón que está al lado de la exportación IFC: la geometría y los colores como objetos independientes, junto con los hilos y las fijaciones, en milímetros. No lleva propiedades BIM: esas viven en el IFC4; las cintas no tienen esa exportación. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración."
      },
      {
       "type": "p",
@@ -16912,7 +16912,7 @@
      },
      {
       "type": "p",
-      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang số chi tiết treo trên nó và, khi đã biết khối lượng, cả tải trọng tính toán. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D có sẵn của mã sản phẩm (max, fbx) — trên 3ddd.ru và 3dsky.org, còn mô hình của tác phẩm đã dựng — theo yêu cầu. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
+      "text": "Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang số chi tiết treo trên nó và, khi đã biết khối lượng, cả tải trọng tính toán. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» cạnh nút IFC (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D có sẵn của mã sản phẩm (max, fbx) — trên 3ddd.ru và 3dsky.org. Tác phẩm đã dựng có thể tải về dưới dạng FBX cho 3ds Max — bằng nút nằm cạnh nút xuất IFC: hình khối và màu sắc tách thành các đối tượng riêng, cùng với dây treo và các bộ phận cố định, tính bằng milimét. Tệp FBX không có thuộc tính BIM — chúng nằm trong IFC4; riêng các dải thì không có bản xuất này. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình."
      },
      {
       "type": "p",
@@ -17044,7 +17044,7 @@
      },
      {
       "type": "p",
-      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تثبيت كائن مستقلّ يحمل عدد العناصر المعلّقة عليها، والحمل المحسوب حين تكون الكتلة معروفة. ويُبنى النموذج تحت سقف بالارتفاع المحدَّد في حقل «ارتفاع السقف، مم» (2700 مم افتراضيًا) بجوار زرّ IFC: نقاط التثبيت على السقف، ونقطة الأصل على الأرضية. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونماذج ثلاثية الأبعاد جاهزة للصنف (max وfbx) على 3ddd.ru و3dsky.org، أما نموذج التركيبة المجمَّعة فعند الطلب. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
+      "text": "ملف IFC4 لنمذجة BIM: الأطوال بالمليمترات، وكلّ نقطة تثبيت كائن مستقلّ يحمل عدد العناصر المعلّقة عليها، والحمل المحسوب حين تكون الكتلة معروفة. ويُبنى النموذج تحت سقف بالارتفاع المحدَّد في حقل «ارتفاع السقف، مم» (2700 مم افتراضيًا) بجوار زرّ IFC: نقاط التثبيت على السقف، ونقطة الأصل على الأرضية. ومواصفة PDF بالمكوّنات والكتلة والقدرة والتركيب ومدّة التصنيع والضمان، مع رمز QR يفتح التكوين نفسه. وورقة مناقصة للمشتريات والجمارك. ومخطّط DXF لأوتوكاد مخصّص للاستخدام الداخلي فقط: لقسم التصنيع ولموزّعي العلامة. ونماذج ثلاثية الأبعاد جاهزة للصنف (max وfbx) على 3ddd.ru و3dsky.org. ويمكن تنزيل التركيبة المجمَّعة بصيغة FBX لـ3ds Max بالزرّ المجاور لتصدير IFC: الهندسة والألوان كائنات مستقلّة، مع خيوط التعليق وعناصر التثبيت، والمقاسات بالمليمترات. وليس في FBX خصائص BIM — فمكانها في IFC4؛ أما الأشرطة فليس لها هذا التصدير. وتبقى المشاريع المحفوظة في المتصفّح نفسه دون حساب، ويحمل الرابط حالة التكوين كاملة."
      },
      {
       "type": "p",
