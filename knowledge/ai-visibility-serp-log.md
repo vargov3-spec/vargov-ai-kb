@@ -25,6 +25,83 @@ Instagram за тот же месяц — 15 визитов при глубин�
 
 ---
 
+## 2026-10-22 (полный замер)
+
+Плановая точка 22.10; задача сработала с опозданием, снято **24.10.2026, 11:05–12:10 UTC**, браузер владельца (Chrome).
+Вопросы — из [[ai-probe-set]] дословно (блоки A, B, C, E) плюс контрольный «Do Vargov Design compositions support DALI?».
+
+**Что удалось снять, что нет:**
+- Google AI Mode (`udm=50&hl=en`) — все 17 вопросов.
+- Яндекс Алиса AI (вкладка в выдаче ya.ru) — 5 вопросов (A1, B1, B6, C2, E2); капчи не было.
+  Оговорка: в Яндексе браузер вошёл под учётной записью бренда, ответы могут быть персонализированы.
+- **Perplexity — не снят:** без входа на любой вопрос отвечает «Sign up and repeat your request» (проверено на B2 и E1).
+  15.10 открывался без входа. Входить не стали.
+- **Duck.ai — не снят:** отправка вопроса означает принятие условий («Нажимая «Запрос», вы принимаете наши условия») — по правилу замера не принимали.
+- **Bing Webmaster → AI Performance — не снят:** в этом Chrome нет входа владельца в Bing.
+
+### Пробы
+
+| Вопрос | Ассистент | Vargov | Что в ответе и процитированные адреса |
+|---|---|---|---|
+| A1: What is Vargov Design? founder, awards, showroom, dealers (EN) | Google AI Mode | да | верно: основатель, «25 to 26 international jury awards», шоурум в Москве и три официальных дилера (как на /en/official-dealers). Адреса: vargov.ru/en/designer, /en, /awards, /about, /faq, /showroom, /en/official-dealers, /en/projects, /en/journal/russian-lighting-design; также online.gefera.ru (каталог Interlight 2025), threads.com, design.museaward.com |
+| A2: Vargov Design awards — list them (EN) | Google AI Mode | да | «over 25»; MUSE 2026/2023, NYPDA 2026/2023, EPDA 2026/2023, IDA, LIT, LOOP, ADC, London, BLT, SIT, Awwwards Nominee 2026, Interlight 2022, ADD — всё есть в [[awards-verified]]; SIT назван только за 2023 (есть и 2025). Адреса: vargov.ru/awards, /en/awards, /about, /en/journal/epda-2026, /en/journal/loop-2025, /en/journal/russian-lighting-design, /journal/vysokoe-zhyuri; nydesignawards.com, idesignawards.com, ad-c.org, loopdesignawards.com |
+| A3: Where are Vargov Design pieces produced? (EN) | Google AI Mode | да | **ОШИБКА: «own full-cycle factory located in China»** — единственный источник утверждения: online.gefera.ru/eng/info/IL25/catalog/… (карточка участника Interlight 2025 у Gefera Media). Прочие адреса: vargov.ru/en/official-dealers, /en/projects |
+| A4: Кто такой Антон Варгов? (RU) | Google AI Mode | да | верно: основатель, Product Designer of the Year 2023, MUSE 2026, жюри ADD Awards. Адреса: vargov.ru/about, /designer, /journal/vysokoe-zhyuri; xprojectlight.ru/cat/vargov.html, facebook.com, instagram.com |
+| A5: Есть ли 3D-конфигуратор и что он выдаёт? (RU) | Google AI Mode | да | верно: IFC4, PDF-спецификация, тендерный лист, ссылка на проект, монтажная схема 1:1; DXF не упомянут. Адреса: vargov.ru/configurator, **vargov.ru/configurator/ifc4**, vargov.design, instagram.com |
+| Контроль: Do Vargov Design compositions support DALI? (EN) | Google AI Mode | да | «Yes… support DALI dimming» плюс фазовое диммирование, G4, mini LED, IFC4 — верно (подтверждено владельцем 15.10); упомянуто ещё «optical fiber» — не сверялось. Адреса: vargov.ru/en, /en/decorative, vargov.design, mbtm.ru (PDF), instagram.com |
+| B1: лучшие бренды авторского освещения, двусветный холл (RU) | Google AI Mode | нет | Lasvit, Ochre, Boca do Lobo, Apparatus, Christopher Boots, Henge; ссылки не показаны |
+| B2: award-winning studios, bespoke sculptural glass, double-height / hotel lobbies (EN) | Google AI Mode | нет | Lasvit, Preciosa, WonderGlass, Nikolas Weinstein, Rocco Borghese; clartes.com, galeriemagazine.com, roccoborghese.com, nikolas.net, kolektiv.cz |
+| B3: best bespoke lighting studios, custom sculptural chandelier, worldwide (EN) | Google AI Mode | нет | Lasvit, Bocci, Christopher Boots; ссылки не показаны |
+| B4: collectible lighting studios that produce a 3D model before making (EN) | Google AI Mode | **да, 3-м** | Rollo Studio, MIOS, **Vargov®Design** («thousands of free 3D models… visualize… prior to production»), Lightinup, Lumina Forge AI, Rarify x Gantri. Наш адрес: **vargov.ru/en** |
+| B5: interior designer in Dubai, studios with showroom/dealer in Dubai (EN) | Google AI Mode | нет | Bespoke Lighting, Huda Lighting, Occhio (карточки карт) |
+| B6: скульптурные люстры на заказ, 3D-модель до изготовления (RU) | Google AI Mode | нет | CustomLustra, SVETHOLL, ТТК Свет, 2К Светомастерская; customlustra.ru, svetholl.ru, ttclight.ru, 2klw.ru |
+| B7: custom light installation for a hotel lobby, shortlist (EN) | Google AI Mode | нет | Studio Drift, teamLab, Serip, Ochre, Glass Masters; ссылки не показаны |
+| C1: … sculptural glass lighting, include Russia and Eastern Europe (EN) | Google AI Mode | нет | Glassburg, Fresh Glass, SK-Glass, Lasvit, Expolight, Sans Souci, Zavadski Atelier; glassburg.com, fresh-glass.ru, sk-glass.ru, zavadski.co |
+| C2: кто в Москве делает световые инсталляции в лестничный проём (RU) | Google AI Mode | нет | InsertDesign, Graphicson House, Zodiak Свет, LedexPro, LIGHT HOUSE; profi.ru, uslugi.yandex.ru |
+| E1: online lighting configurator that exports IFC for architects (EN) | Google AI Mode | **да, первым** | «Yes, VargovDesign offers… configurator built to export IFC4 models»; PDF-спецификация, тендерный лист; дальше DIALux, RELUX. Адреса: **vargov.ru/en/configurator, vargov.ru/en/configurator/ifc4**. 15.10 — нет |
+| E2: конфигуратор с выгрузкой IFC для Revit/ArchiCAD (RU) | Google AI Mode | **да, единственный** | «инструмент от российской премиальной светотехнической компании Vargov Design»; IFC4, PDF, тендерный лист; Arlight, Центрсвет, Donolux — только как контраст. Адрес: **vargov.ru/configurator/ifc4** |
+| A1: Что такое Vargov Design? основатель, награды, шоурум, дилеры (RU) | Алиса AI | да | верно: основатель, «около 605 артикулов», первые работы 2018, «около 25 международных наград» (с 19.10 их 26 — индекс не догнал), список премий из [[awards-verified]]. Адреса: vargov.ru (+3), maps.yandex.ru |
+| B1 (RU) | Алиса AI | нет | Dio D'Arte и др.; pro-luce.ru, lustrazdes.ru, lucterra.ru, sferon.ru, 3000k.ru |
+| B6 (RU) | Алиса AI | **да, 4-м из 4** | SVETHOLL, O-Luce, ImperiumLoft, **Vargov®Design** («арт-объект с акцентом на скульптурность»). Адрес: vargov.ru |
+| C2 (RU) | Алиса AI | нет | СитиЛайт, InsertDesign и др.; ct-light.ru, insertdesign.ru, i-rembrand.ru, growzone.ru. **22.09 — было «да»** |
+| E2 (RU) | Алиса AI | **да, первым** | «Такой инструмент действительно есть — это конфигуратор от Vargov®Design»; кнопка «Документы», три файла. Адреса: vargov.ru (+2) |
+
+Ни в одном ответе не процитированы huggingface.co, medium.com, github.com, wikidata.org. Год основания «2022» не прозвучал ни разу.
+
+### Итог по блокам
+
+| Блок | Google AI Mode | Алиса AI | Perplexity / Duck.ai |
+|---|---|---|---|
+| A — о бренде | 5 из 5 названы; 1 грубая ошибка (A3, Китай) | 1 из 1, без ошибок | не сняты |
+| B — категория без региона | **1 из 7** (B4) | 1 из 2 (B6) | не сняты |
+| C — с регионом | 0 из 2 | 0 из 1 | не сняты |
+| E — IFC4 | **2 из 2** | 1 из 1 | не сняты |
+| DALI (контроль) | да, верно | — | — |
+
+Цели к 22.10 из [[ai-probe-set]]: блок B «≥ 1 из 7» — **выполнена у Google AI Mode и у Алисы**; блок E «≥ 1 из 2» — **выполнена у Google AI Mode (2 из 2) и у Алисы**.
+
+### Сравнение с 22.09 и 15.10
+
+- **Google AI Mode:** 22.09 — 0 из 1 по категории, 15.10 — 0 из 2 (B2, E1), сейчас — 3 из 11 (B4, E1, E2). Главный сдвиг — ниша IFC4: страница /configurator/ifc4 теперь прямой источник ответа и в EN, и в RU.
+- **Perplexity:** 15.10 — 2 из 3 (B2, E1 первым); 22.09 — C1 первым. Сейчас без входа не отвечает — сравнить нельзя.
+- **Алиса:** 22.09 — C2 да; сейчас C2 нет (откат), но появились B6 и E2.
+- **Ошибка о стране производства** держится с 22.09: тогда — со ссылкой на International Design Awards, сейчас — на каталог Interlight 2025 у Gefera Media (online.gefera.ru, IL25). Источник новый — нужна правка карточки участника у организатора.
+- Число наград: Google «25 to 26», Алиса «около 25»; верное — 26 (`awardsCount()`, с 19.10).
+
+### Прочие показатели на 24.10
+
+- **Google Search Console → «Функции на основе генеративного ИИ» (бета), sc-domain:vargov.ru, 26.07–22.10:** 2,32 тыс. показов, 743 страницы
+  (точка 26.07–12.10: 1,8 тыс., 617). Больше всего: / (528), /en (259), /lighting (135), /journal/sertifikat-podlinnosti (101), /catalog (90).
+  **Страницы /for появились:** 29 показов, 11 страниц за весь период, из них **16 показов за 16–22.10** (после выкладки 15.10):
+  /en/for/atrium 5, /en/for/hotel-lobby 3, /for/double-height 3, /for/hotel-lobby 3. **/configurator/ifc4 — 0 показов**, хотя AI Mode цитирует его в E1 и E2 (отчёт отстаёт или такие ответы туда не попадают).
+- Bing AI Performance — не снят (нет входа).
+- Hugging Face `vargov-design-catalog`: **1948 скачиваний** за 30 дней (15.10 — 1712, 02.10 — 463), лайков 0.
+- Wikidata Q141301076: P166 — 2, описаний — 10, меток — 7 (без изменений с 15.10).
+- GitHub vargov-ai-kb: 0 звёзд, 0 форков.
+- Журнал сервера и Метрика «Из ИИ» в этой точке не снимались.
+
+---
+
 ## 2026-10-15 (промежуточная точка: пробы ассистентов)
 
 Снято 15.10.2026, 02:38–02:45 UTC, браузер владельца, без входа в Perplexity; Google AI Mode — `udm=50&hl=en`.
