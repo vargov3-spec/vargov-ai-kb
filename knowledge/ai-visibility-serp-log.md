@@ -100,6 +100,35 @@ Instagram за тот же месяц — 15 визитов при глубин�
 - GitHub vargov-ai-kb: 0 звёзд, 0 форков.
 - Журнал сервера и Метрика «Из ИИ» в этой точке не снимались.
 
+### Дополнение 24.10.2026, 18:55–19:05 UTC+3 — Perplexity и Bing сняты после входа владельца
+
+Владелец вошёл в обе учётные записи по просьбе из этого замера, поэтому две дыры закрыты.
+
+**Perplexity (вошёл как Vargov Design, бесплатный план).**
+
+| Вопрос | Vargov | Что в ответе |
+|---|---|---|
+| E1 (EN, дословно из [[ai-probe-set]]) | **назван — и с грубой ошибкой** | «Vargov®Design offers an online generative configurator… but its listed deliverables are **DXF, PDF specification, MAX, and FBX — not IFC**. So… an architect would generally need to convert or rebuild the composition in their BIM environment». Первыми идут DIALux evo / Pro и ReluxDesktop. Источник ошибки назван прямо: **https://vargov.ru/en/configurator** |
+| E2 (RU, дословно) | нет | DIALux Pro + Bridge for Revit, ReluxDesktop, Performance in Lighting Light-Performer, Panasonic Lighting BIM, D-LUCE, Eaton; 35 источников |
+
+**Почему это важнее, чем «не назвали».** По E1 модель не промолчала, а **активно утверждает обратное тому, что мы продвигаем**: будто IFC мы не даём. Проверил страницу curl'ом в тот же час: на `/en/configurator` строка `IFC4` встречается 20 раз, «PDF specification» и «tender sheet» по 8. То есть снимок не устарел — модель **слепила список из соседних фрагментов живого текста**: «The DXF drawing for AutoCAD is for internal use only… Ready-made 3D models of the article (max, fbx) on 3ddd.ru and 3dsky.org». Перечисление форматов идёт подряд, а IFC4 упомянут в соседнем блоке — и в список выдачи не попал.
+
+**Отсюда правка, не зависящая от Perplexity:** состав файлов для посетителя должен читаться одной строкой, с IFC4 первым, а DXF (внутренний) и max/fbx (готовые модели на чужих площадках) — отдельно и так, чтобы их нельзя было прочесть как «что отдаёт конфигуратор». Передано агенту сайта.
+
+**Bing Webmaster → AI Performance (Microsoft Copilots and Partners), 29.07–21.10.2026:**
+- **Total Citations 117** (точка 11.10 — 94, то есть +23 за десять дней), Avg. Cited Pages 1.
+- Всплески: 14.08 — 18, 07.10 — 21, 21.10 — 15; в остальные дни 0–7.
+- **Grounding Queries — ровно один: «vargov design»** (Informational / Design), 80 цитат, доля 73,39 %.
+  То есть Copilot цитирует нас **только по брендовому запросу**, как и 11.10; категорийной видимости там нет.
+- Цитируемых страниц 16: `/en` 54, `/` 12, `/catalog/lc0358` 11, `/en/catalog` 10, `/en/catalog/lc0358` 7,
+  `/designer` 6, `/en/about` 4, `/de` 3, `/en/decorative` 2, далее по одной — `/catalog/lc0340`,
+  `/en/catalog/lc0080`, `/catalog/lc0571`, `/it/projects/russky-dom-2026`,
+  `/de/journal/russian-lighting-design`, `/en/catalog/lc0333`, `/en/lighting`.
+- **`/configurator/ifc4` не цитируется ни разу**, хотя у Google AI Mode это прямой источник ответов E1 и E2.
+  Ниша IFC4 пока живёт только в Google.
+- Побочное наблюдение: цитируются немецкая и итальянская версии страниц — многоязычие работает на видимость.
+
+
 ---
 
 ## 2026-10-15 (промежуточная точка: пробы ассистентов)
