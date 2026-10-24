@@ -97,12 +97,16 @@
         "https://www.pinterest.com/Vargov_Design/",
         "https://3ddd.ru/users/vargov",
         "https://3dsky.org/users/vargov",
-        "https://sketchfab.com/vargov",
         "https://github.com/vargov3-spec/vargov-ai-kb",
         "https://www.wikidata.org/wiki/Q141301076",
-        "https://huggingface.co/vargov-design"
+        "https://huggingface.co/vargov-design",
+        "https://sketchfab.com/vargov"
       ],
       "subjectOf": [
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=4691"
+        },
         {
           "@type": "WebPage",
           "url": "https://www.productdesignaward.eu/winners/epda/2026/12910/"
@@ -110,22 +114,6 @@
         {
           "@type": "WebPage",
           "url": "https://www.productdesignaward.eu/winners/hm/2024/22549323/"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=4691"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1296"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1004"
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://nydesignawards.com/winner-info.php?id=1005"
         },
         {
           "@type": "WebPage",
@@ -141,6 +129,14 @@
         },
         {
           "@type": "WebPage",
+          "url": "https://www.idesignawards.com/social/zoom.php?eid=9-61165-25"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://www.idesignawards.com/social/zoom.php?eid=9-46057-22"
+        },
+        {
+          "@type": "WebPage",
           "url": "https://litawards.com/winners/winner.php?id=2414&mode=hm"
         },
         {
@@ -150,6 +146,18 @@
         {
           "@type": "WebPage",
           "url": "https://luxurylifestyleawards.com/winners/lighting-design-studio/vargov-design"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1296"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1004"
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://nydesignawards.com/winner-info.php?id=1005"
         },
         {
           "@type": "WebPage",
@@ -192,8 +200,8 @@
         "name": "Russia"
       },
       "award": [
-        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343",
-        "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov"
+        "ADD Awards 2024 — High Jury member of the award's 10th season — Anton Vargov",
+        "NY Product Design Awards 2023 — Product Designer of the Year · Lamps & Luminaires — Pendant Luminaires · composition LC0343"
       ],
       "sameAs": [
         "https://t.me/AntonVargov",

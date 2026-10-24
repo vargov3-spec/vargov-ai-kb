@@ -107,8 +107,10 @@ PERSON_SAME_AS = ["https://t.me/AntonVargov", "https://www.wikidata.org/wiki/Q14
 # 15.10.2026 вернулись: ad-c.org ×2 (LC0303, LC0323) и architecture-collection.com (LC0335) —
 # организаторы исправили био и страну по нашему письму; проверено curl 15.10 (страны производства нет).
 AWARD_PAGES_COUNTRY_LEAK = {
-    "https://www.idesignawards.com/social/zoom.php?eid=9-61165-25",
-    "https://www.idesignawards.com/social/zoom.php?eid=9-46057-22",
+    # 24.10.2026 обе страницы IDA вернулись: био в профиле заявителя заменено на текст без
+    # страны (профиль idesignawards.com/submit/profile.php, вход владельца), и страницы
+    # победителей подтянули его сразу — проверено curl: «china» 0 вхождений, стоит новое
+    # описание с «26 awards from international juries».
     "https://www.sitaward.com/winners/sit/2025/571/0/",
     "https://www.sitaward.com/winners/sit/2023/301/0/",
 }

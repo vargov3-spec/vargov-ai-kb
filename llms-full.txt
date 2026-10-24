@@ -1,7 +1,7 @@
 # Vargov®Design — llms-full.txt
 
 Полная карта на двух языках: дословно llms.txt (RU) и en/llms.txt (EN) этого
-репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-19.
+репозитория, склеенные сборщиком scripts/build_pages.py. Собрано 2026-10-24.
 Китайская версия — отдельный файл zh/llms.txt (ссылка — в разделах
 «Языковые версии» / «Language versions» ниже).
 
