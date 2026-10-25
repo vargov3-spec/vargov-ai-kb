@@ -27,12 +27,18 @@
   ([EN](https://vargov.ru/en/specifications)), на русском и английском: новое ТЗ можно начать самому,
   сохранённое открывается по своей ссылке. Кнопка конфигуратора «Заполнить ТЗ» открывает страницу ТЗ и сама
   подставляет туда параметры собранной композиции; в ТЗ показывается 3D-окно конфигуратора, собранное по
-  параметрам ТЗ.
+  параметрам ТЗ. Вход и регистрация не нужны: форму открывает и сохраняет любой посетитель, учётной записи
+  нет, обязательно только поле «Объект», а доступ к сохранённому ТЗ держится на ключе в ссылке. Сразу после
+  сохранения доступны страница «3D-конфигурация» (3D-окно по каждой композиции с её параметрами,
+  полноэкранный режим и AR на iPhone), PDF ТЗ на русском и английском и выгрузка FBX. Цены в ТЗ нет —
+  это техническое задание на производство, не заявка и не заказ.
 - **Разметка потолка в натуральную величину.** Для подвесных композиций страница ТЗ готовит монтажную
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. У лент, композиций на
   каркасе, готовой сцены и артикулов индивидуального расчёта, а также при монтаже на металлической базе
-  схемы нет. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
+  схемы нет. В файле схемы четыре листа — для плоттера и A4, каждый на потолок и на пол; печатать нужно
+  строго 100 %, без «вписать в страницу», и проверять отрезок 100 мм линейкой. Лист плоттера идёт одним
+  куском до 5 м, схема больше режется на части, листы A4 склеиваются по меткам. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
   контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
   схеме сверяется с тем, что записано в ТЗ.
 - **FBX собранной композиции.** Рядом с выгрузкой IFC появилась кнопка «Скачать FBX (3ds Max)»:
@@ -149,8 +155,11 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   the same GUIDs and different ones give different GUIDs, so different compositions of one article combine in one
   federated BIM model without clashes. On a non-Russian interface the names in the file are in English.
 - **Online production brief** — [vargov.ru/en/specifications](https://vargov.ru/en/specifications), in Russian
-  and English: a new brief can be started by anyone, a
-  saved one opens by its own link. The configurator's "Fill in the spec" button opens the brief page and fills in
+  and English only: a new brief can be started by anyone, a saved one opens by its own link. No sign-in and no
+  registration — there is no account at all; only the "Object" field is required, and access to a saved brief
+  rests on the key in its link. Available immediately after saving: the "3D configuration" page (the 3D view of
+  each composition with its parameters, full-screen mode and AR on iPhone), the brief as a PDF in Russian and
+  English, and the FBX export. The brief carries no price — it is a production brief, not a quote or an order. The configurator's "Fill in the spec" button opens the brief page and fills in
   the parameters of the assembled composition; the brief shows the configurator's 3D view built from the brief's
   parameters.
 - **Ceiling setting-out at full size.** For suspended compositions the brief page prepares a 1:1
@@ -160,6 +169,9 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   none, and neither does an installation on a metal base. The drawing also marks the fixing points of the
   lit contours (currently LC0523): a wire at the centre of a contour and two cables at its ends, with the
   same hole diameter as every other point; the number of points on the drawing is checked against the brief.
+  The file holds four sheets — plotter size and A4, each for the ceiling and for the floor. Print at exactly
+  100 %, never "fit to page": a 100 mm segment on the sheet is there to be checked with a ruler. The plotter
+  sheet runs in one piece up to 5 m and is split beyond that; A4 sheets are joined along their marks.
 - **FBX of the assembled composition.** Next to the IFC export there is now a "Download FBX (3ds Max)"
   button: the whole composition as separate objects, in millimetres, together with the wires, the fixings
   and the ceiling plane; the colours of the glass and of the hardware finish carry over, textures do not.
