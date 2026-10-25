@@ -1,0 +1,31 @@
+# Lastenheft für die Fertigung: Was der Konfigurator ausfüllt und was der Nutzer selbst einträgt
+
+Rubrik: Fertigung · Datum: 25. Oktober 2026 · Slug: tz-na-proizvodstvo
+
+Das technische Lastenheft für die Fertigung entsteht direkt auf der Website: Das leere Formular kann jeder Besucher öffnen, ohne Login und ohne Benutzerkonto. Wir zeigen, was man sofort erhält und was erst nach dem Start in die Fertigung dazukommt.
+
+Die Seite vargov.ru/specifications stellt das technische Lastenheft für die Fertigung zusammen – die Unterlage, nach der die Komposition gefertigt und bei einem Teil der Kompositionen zusätzlich die Decke markiert wird. Das leere Formular kann jeder Besucher öffnen: Login, Registrierung und Benutzerkonto sind dafür nicht nötig – es gibt sie hier gar nicht.
+
+Was Auftraggeber und Architekt davon haben
+
+Das Lastenheft ist keine Anfrage, keine Bestellung und kein Kostenvoranschlag: Preise stehen nicht darin und können dort auch nicht stehen. Es ist die Zusammenstellung dessen, was in die Fertigung geht: die Artikelnummern der Kompositionen, ihre Parameter, die Anordnung, die Farben. Dem Auftraggeber erlaubt es, die Lösung einmal zu prüfen und zu bestätigen, statt sie im Schriftwechsel immer wieder zu beschreiben. Dem Architekten gibt es ein PDF des Lastenhefts, das er dem Projekt beilegen kann, und einen Link mit Schlüssel, über den sich das Lastenheft öffnen, ergänzen und bestätigen lässt.
+
+Wie es ausgefüllt wird
+
+Es gibt zwei Wege. Ist die Komposition im Konfigurator schon zusammengestellt, wird ihr Link im ersten Schritt des Lastenhefts eingefügt, und die Felder füllen sich von selbst: Artikelnummer, Maße, Farben, Anordnung. Im Konfigurator selbst gibt es dafür die Schaltfläche „Заполнить ТЗ“ (Lastenheft ausfüllen). Ist die Komposition noch nicht zusammengestellt, wird das Lastenheft Schritt für Schritt ausgefüllt, beginnend mit der Artikelnummer; wo ein Parameter noch nicht bekannt ist, steht die Schaltfläche „Уточню позже“ (Gebe ich später an) bereit. Pflicht ist allein das Feld „Объект“ (Objekt) – zum Beispiel „Restaurant, Moskau“. Name und Kontakt sind freiwillig; trägt man sie ein, erscheint ein Kontrollkästchen für die Einwilligung in die Datenverarbeitung.
+
+Ein Link mit Schlüssel statt Kundenkonto
+
+Nach einem Klick auf „Сохранить данные“ (Daten speichern) erhält man seinen eigenen Link mit Schlüssel. Über ihn lässt sich das Lastenheft öffnen, ergänzen und bestätigen. Ein persönliches Kundenkonto gibt es nicht – alles hängt an diesem Link, und den Schlüssel bewahrt der Kunde selbst auf: Ist der Link verloren, kann nur der Manager das Lastenheft wiederherstellen. Solange der Manager das Lastenheft nicht in die Fertigung gegeben hat, lässt es sich ändern, und jede Änderung wirkt sich darauf aus, was später gedruckt wird.
+
+Was sofort verfügbar ist
+
+Direkt nach dem Speichern öffnet sich die Seite „3D-конфигурация“ (3D-Konfiguration): zu jeder Komposition ein 3D-Fenster des Konfigurators und darunter ihre Parameter. Das ist eine Ansicht am Bildschirm, eine Datei gibt es hier nicht; es gibt einen Vollbildmodus und AR auf dem iPhone. Sofort verfügbar ist auch das PDF des Lastenhefts selbst, über die Schaltflächen „PDF RU“ und „PDF EN“: Das ist bereits eine Datei, sie öffnet sich in einem neuen Tab und lässt sich herunterladen. Unter dem 3D-Fenster erscheint, sobald das Fenster die Komposition aufgebaut hat, eine Schaltfläche zum Herunterladen des 3D-Modells als FBX für 3ds Max.
+
+Der Montageplan 1:1 – und warum er erst später erscheint
+
+Der Plan für die Deckenmarkierung ist ein eigenes PDF, und er wird erst verfügbar, nachdem der Manager das Lastenheft in die Fertigung gegeben hat; vorher ist die Schaltfläche inaktiv, mit dem ausdrücklichen Hinweis: „Станет доступна после запуска в производство“ (Wird nach dem Start in die Fertigung verfügbar). Der Grund ist einfach: Solange am Lastenheft noch geändert wird, ändert sich auch die Markierung – und eine Markierung zu drucken, die morgen anders aussieht, ist sinnlos. Die Datei enthält vier Varianten: einen Bogen für den Plotter und A4-Bögen, jeweils für die Decke und für den Boden. Gedruckt wird strikt mit 100 %, ohne „вписать в страницу“ (an Seitengröße anpassen); auf dem Bogen ist eine Strecke von 100 mm aufgetragen, um den Maßstab mit dem Lineal zu prüfen. Der Plotterbogen kommt in einem Stück mit einer Seitenlänge bis 5 m; ein Plan über 5 m wird in Teile zerlegt, die A4-Bögen werden an den Passmarken zusammengeklebt. Es ist ein Bogen im Maßstab 1:1 zum Ausdrucken – wie genau der Maßstab stimmt, hängt davon ab, wie er gedruckt wurde, deshalb sollte die Kontrollstrecke vor Beginn der Arbeiten nachgemessen werden.
+
+Wo die Grenzen liegen
+
+Ein Lastenheft lässt sich nur für jene Kompositionen anlegen, die der Konfigurator vollständig berechnet: am 25. Oktober 2026 sind das 360 von 605. Eine fremde Artikelnummer nimmt das Feld nicht an — es erscheint die rote Zeile „рассчитывается индивидуально“ (wird individuell kalkuliert): Solche Artikelnummern gehören gar nicht zu diesen 360, der Konfigurator berechnet sie nicht. Einen Montageplan 1:1 gibt es bei 345 dieser 360. Bei zehn Bändern fehlt er: Ein Band hat keine Wolke aus Elementen, es ist anders aufgebaut. Bei vier Kompositionen auf einer Rahmenkonstruktion fehlt er ebenfalls: Ihre Elemente hängen an der Rahmenkonstruktion und nicht an der Decke, zur Decke führt keine einzige Leitung. Und er fehlt bei einer fertigen Szene — der Wandleuchte LC0406-1: Ihre Komposition ist vorgefertigt und nicht berechnet, es gibt keine Verteilung und damit auch keine Deckenmarkierung. Unabhängig von der Artikelnummer, allein nach dem Lastenheft selbst: Ist darin die Montage auf einer Metallbasis gewählt, entfällt der Montageplan 1:1 — bei jeder Artikelnummer, denn bei dieser Montageart wird er nicht gebraucht. Die Seite gibt es in zwei Sprachen: vargov.ru/specifications und vargov.ru/en/specifications — weitere Sprachversionen existieren nicht. Für Suchmaschinen ist sie gesperrt, und von anderen Seiten der Website führen keine Links dorthin: erreichbar ist sie nur über den direkten Link — aus einem Beitrag oder aus dem Konfigurator.

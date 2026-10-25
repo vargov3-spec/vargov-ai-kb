@@ -34,9 +34,12 @@
   это техническое задание на производство, не заявка и не заказ.
 - **Разметка потолка в натуральную величину.** Для подвесных композиций страница ТЗ готовит монтажную
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
-  точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. У лент, композиций на
-  каркасе, готовой сцены и артикулов индивидуального расчёта, а также при монтаже на металлической базе
-  схемы нет. В файле схемы четыре листа — для плоттера и A4, каждый на потолок и на пол; печатать нужно
+  точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема есть у 345 из 360 композиций, которые
+  конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (у ленты нет облака элементов), у 4 композиций
+  на каркасе (элементы висят на каркасе, нитей к потолку ноль) и у готовой сцены LC0406-1 — это настенное
+  бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
+  индивидуального расчёта в эти 360 не входят вовсе. Отдельно от артикула, по самому ТЗ: если в нём выбран
+  монтаж на металлическую базу, схема 1:1 не выдаётся — при таком монтаже она не нужна. В файле схемы четыре листа — для плоттера и A4, каждый на потолок и на пол; печатать нужно
   строго 100 %, без «вписать в страницу», и проверять отрезок 100 мм линейкой. Лист плоттера идёт одним
   куском до 5 м, схема больше режется на части, листы A4 склеиваются по меткам. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
   контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
@@ -165,8 +168,12 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
 - **Ceiling setting-out at full size.** For suspended compositions the brief page prepares a 1:1
   setting-out drawing — 1 mm on the drawing is 1 mm on the ceiling — from the same layout the fixing
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
-  production. Ribbons, compositions on a frame, the ready scene and articles calculated individually have
-  none, and neither does an installation on a metal base. The drawing also marks the fixing points of the
+  production. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
+  25 October 2026): 10 ribbons have none (a ribbon has no cloud of elements), nor do 4 compositions on a
+  frame (their elements hang from the frame, with zero strands to the ceiling), nor the ready scene LC0406-1 —
+  a wall light whose composition is ready-made rather than calculated, so there is no layout to set out. Articles
+  calculated individually are not part of those 360 at all. A separate matter, belonging to the brief: if it
+  specifies mounting on the metal base, no 1:1 drawing is issued — that mounting does not need one. The drawing also marks the fixing points of the
   lit contours (currently LC0523): a wire at the centre of a contour and two cables at its ends, with the
   same hole diameter as every other point; the number of points on the drawing is checked against the brief.
   The file holds four sheets — plotter size and A4, each for the ceiling and for the floor. Print at exactly

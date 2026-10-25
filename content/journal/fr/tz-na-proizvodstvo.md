@@ -1,0 +1,31 @@
+# Cahier des charges de production : ce que remplit le configurateur et ce que remplit l'utilisateur
+
+Rubrique: Production · Date: 25 octobre 2026 · Slug: tz-na-proizvodstvo
+
+Le cahier des charges de production s'établit directement sur le site : n'importe quel visiteur peut ouvrir le formulaire vierge, sans connexion ni compte. Voyons ce que l'on obtient tout de suite et ce qui n'arrive qu'après le lancement en production.
+
+La page vargov.ru/specifications rassemble le cahier des charges de production : le document qui sert à fabriquer la composition et, pour une partie des compositions, à tracer également les repères au plafond. N'importe quel visiteur peut ouvrir le formulaire vierge : ni connexion, ni inscription, ni compte ne sont nécessaires — et il n'en existe pas.
+
+À quoi cela sert au client et à l'architecte
+
+Le cahier des charges n'est ni une demande, ni une commande, ni un devis : il ne comporte aucun prix et ne peut pas en comporter. C'est le récapitulatif de tout ce qui part en production : les références des compositions, leurs paramètres, l'implantation, les couleurs. Au client, il permet de vérifier et de valider la solution une fois pour toutes, au lieu de la reformuler d'un échange à l'autre. À l'architecte, il apporte le PDF du cahier des charges, que l'on peut joindre au dossier de projet, et un lien à clé qui permet d'ouvrir, de compléter et de valider le document.
+
+Comment on le remplit
+
+Deux possibilités. Si la composition est déjà assemblée dans le configurateur, il suffit de coller son lien à la première étape du cahier des charges : les champs se remplissent d'eux-mêmes — référence, dimensions, couleurs, implantation. Le configurateur dispose pour cela d'un bouton « Заполнить ТЗ » (« Remplir le cahier des charges »). Si la composition n'est pas encore assemblée, le cahier des charges se remplit étape par étape, en commençant par la référence ; là où un paramètre reste inconnu, un bouton « Уточню позже » (« Je préciserai plus tard ») est prévu. Un seul champ est obligatoire, « Объект » (« Site ») — par exemple « Restaurant, Moscou ». Le nom et le contact sont facultatifs ; dès qu'on les saisit, une case à cocher de consentement au traitement des données apparaît.
+
+Un lien à clé au lieu d'un espace client
+
+Après le clic sur « Сохранить данные » (« Enregistrer les données »), on reçoit son propre lien à clé. C'est par lui que le cahier des charges s'ouvre, se complète et se valide. Il n'y a pas d'espace client : tout tient à ce lien, et la clé reste chez celui qui l'a reçue — si le lien est perdu, seul le chargé d'affaires peut retrouver le document. Tant que le chargé d'affaires n'a pas lancé le cahier des charges en production, celui-ci peut être modifié, et chaque modification change ce qui sortira ensuite à l'impression.
+
+Ce qui est disponible tout de suite
+
+Dès l'enregistrement, la page « 3D-конфигурация » (« Configuration 3D ») s'ouvre : pour chaque composition, une fenêtre 3D du configurateur et, sous la fenêtre, ses paramètres. C'est un affichage à l'écran, il n'y a pas de fichier ici ; un mode plein écran et la réalité augmentée sur iPhone sont proposés. Le PDF du cahier des charges lui-même est également disponible immédiatement, par les boutons « PDF RU » et « PDF EN » : là, c'est bien un fichier, il s'ouvre dans un nouvel onglet et se télécharge. Sous la fenêtre 3D, lorsque celle-ci a assemblé la composition, apparaît un bouton d'export du modèle 3D au format FBX pour 3ds Max.
+
+Le plan de pose 1:1 et pourquoi il n'apparaît que plus tard
+
+Le plan de repérage au plafond est un PDF distinct, et il ne devient disponible qu'une fois que le chargé d'affaires a lancé le cahier des charges en production ; avant cela, le bouton est inactif et le dit franchement : « Станет доступна после запуска в производство » (« Disponible après le lancement en production »). La raison est simple : tant que le cahier des charges est modifié, le repérage change avec lui, et cela ne sert à rien d'imprimer un tracé qui sera différent demain. Le fichier contient quatre variantes : une feuille pour traceur et des feuilles A4, chacune en version plafond et en version sol. L'impression doit être strictement à 100 %, sans l'option « вписать в страницу » (« ajuster à la page ») ; la feuille porte un segment de 100 mm qui permet de vérifier l'échelle à la règle. La feuille de traceur sort d'un seul tenant jusqu'à 5 m de côté ; au-delà de 5 m, le plan est découpé en plusieurs parties, et les feuilles A4 se collent en suivant les repères. C'est une feuille 1:1 destinée à l'impression : la justesse de l'échelle dépend de la façon dont elle a été imprimée, c'est pourquoi il vaut mieux mesurer le segment de contrôle avant de commencer les travaux.
+
+Où sont les limites
+
+Un cahier des charges ne peut être établi que pour les compositions que le configurateur calcule intégralement : 360 sur 605 au 25 octobre 2026. Une référence qui n'est pas la nôtre ne peut pas être saisie dans le champ — une ligne rouge apparaît : « рассчитывается индивидуально » (« calcul individuel ») ; ces références ne sont pas comprises dans ces 360, le configurateur ne les calcule tout simplement pas. Le plan de pose 1:1 existe pour 345 de ces 360. Il n'existe pas pour dix rubans : un ruban n'a pas de nuage d'éléments, il est conçu autrement. Il n'existe pas non plus pour quatre compositions sur ossature : leurs éléments sont suspendus à l'ossature et non au plafond, aucun fil ne rejoint le plafond. Et il n'existe pas pour une scène prête à l'emploi, l'applique murale LC0406-1 : sa composition est prête et non calculée, il n'y a pas d'implantation, donc pas de tracé au plafond non plus. Un dernier cas ne dépend pas de la référence mais du cahier des charges lui-même : si l'on y a choisi la pose sur base métallique, le plan 1:1 n'est pas délivré, pour n'importe quelle référence, car une telle pose n'en a pas besoin. La page existe en deux langues : vargov.ru/specifications et vargov.ru/en/specifications ; il n'y a pas d'autres versions linguistiques. Elle est fermée à l'indexation par les moteurs de recherche et aucune autre page du site n'y renvoie — on n'y accède que par un lien direct : depuis une publication ou depuis le configurateur.

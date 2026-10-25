@@ -1,8 +1,8 @@
 {
  "meta": {
   "kind": "journal",
-  "articleCount": 28,
-  "checksum": "24f4ee1e781013b7",
+  "articleCount": 29,
+  "checksum": "8d69a1f9f3d6d4ec",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-24T16:51:15+00:00",
+  "generated": "2026-10-25T10:27:59+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -132,6 +132,10 @@
   "ny-2026": {
    "dateISO": "2026-10-19",
    "categoryId": "recognition"
+  },
+  "tz-na-proizvodstvo": {
+   "dateISO": "2026-10-25",
+   "categoryId": "production"
   }
  },
  "articles": {
@@ -20219,6 +20223,520 @@
      {
       "type": "p",
       "text": "Made in Vargov."
+     }
+    ]
+   }
+  },
+  "tz-na-proizvodstvo": {
+   "ru": {
+    "title": "ТЗ на производство: что заполняет конфигуратор, а что человек",
+    "category": "Производство",
+    "date": "25 октября 2026",
+    "lead": "Техническое задание на производство собирается прямо на сайте: пустую форму открывает любой посетитель, без входа и учётной записи. Разбираем, что человек получает сразу, а что — только после запуска в производство.",
+    "metaLabels": {
+     "category": "Рубрика",
+     "date": "Дата"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Страница vargov.ru/specifications собирает техническое задание на производство — то, по чему композицию изготавливают, а для части композиций ещё и размечают потолок. Открыть пустую форму может любой посетитель: вход, регистрация и учётная запись для этого не нужны и не существуют."
+     },
+     {
+      "type": "h",
+      "text": "Зачем это заказчику и архитектору"
+     },
+     {
+      "type": "p",
+      "text": "Техническое задание — не заявка, не заказ и не смета: цены в нём нет и быть не может. Это свод того, что уходит в производство: артикулы композиций, их параметры, раскладка, цвета. Заказчику оно даёт возможность один раз проверить и подтвердить решение, а не пересказывать его в переписке. Архитектору — PDF задания, который можно приложить к проекту, и ссылка с ключом, по которой задание открывается, дописывается и подтверждается."
+     },
+     {
+      "type": "h",
+      "text": "Как оно заполняется"
+     },
+     {
+      "type": "p",
+      "text": "Путей два. Если композиция уже собрана в конфигураторе, её ссылка вставляется в первом шаге ТЗ, и поля заполняются сами: артикул, размеры, цвета, раскладка. В самом конфигураторе для этого есть кнопка «Заполнить ТЗ». Если композиция ещё не собрана, задание заполняется по шагам, начиная с артикула; там, где параметр пока неизвестен, есть кнопка «Уточню позже». Обязательно только поле «Объект» — например, «Ресторан, Москва». Имя и контакт необязательны; если человек их вписывает, появляется галочка согласия на обработку данных."
+     },
+     {
+      "type": "h",
+      "text": "Ссылка с ключом вместо кабинета"
+     },
+     {
+      "type": "p",
+      "text": "После кнопки «Сохранить данные» человек получает свою ссылку с ключом. По ней ТЗ открывается, дописывается и подтверждается. Личного кабинета нет — всё держится на этой ссылке, и ключ хранится у человека: если ссылка потеряна, восстановить задание может только менеджер. Пока менеджер не запустил ТЗ в производство, его можно править, и каждая правка меняет то, что потом выйдет на печать."
+     },
+     {
+      "type": "h",
+      "text": "Что доступно сразу"
+     },
+     {
+      "type": "p",
+      "text": "Сразу после сохранения открывается страница «3D-конфигурация»: по каждой композиции — 3D-окно конфигуратора, а под окном её параметры. Это показ на экране, файла здесь нет; есть полноэкранный режим и AR на iPhone. Сразу доступен и PDF самого ТЗ, кнопки «PDF RU» и «PDF EN»: это уже файл, он открывается в новой вкладке и скачивается. Под 3D-окном, когда окно собрало композицию, появляется кнопка выгрузки 3D-модели FBX для 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "Монтажная схема 1:1 и почему она появляется позже"
+     },
+     {
+      "type": "p",
+      "text": "Схема разметки потолка — отдельный PDF, и она становится доступна только после того, как менеджер запустит ТЗ в производство; до этого кнопка неактивна и прямо говорит: «Станет доступна после запуска в производство». Причина простая: пока задание правится, меняется и разметка, а печатать разметку, которая завтра станет другой, незачем. В файле четыре варианта: лист для плоттера и листы A4, каждый — на потолок и на пол. Печать строго 100 %, без «вписать в страницу»; на листе есть отрезок 100 мм, чтобы проверить масштаб линейкой. Лист плоттера идёт одним куском со стороной до 5 м, схема больше 5 м режется на части, листы A4 склеиваются по меткам. Это лист 1:1 для печати — верность масштаба зависит от того, как его напечатали, поэтому контрольный отрезок стоит измерить до начала работ."
+     },
+     {
+      "type": "h",
+      "text": "Где границы"
+     },
+     {
+      "type": "p",
+      "text": "ТЗ заводится только на те композиции, которые конфигуратор считает полностью: 360 из 605 на 25 октября 2026 года. Чужой артикул в поле не вписывается — появляется красная строка «рассчитывается индивидуально»: такие артикулы в эти 360 не входят вовсе, конфигуратор их не рассчитывает. Монтажная схема 1:1 есть у 345 из этих 360. Её нет у десяти лент: у ленты нет облака элементов, у неё своё устройство. Нет у четырёх композиций на каркасе: элементы висят на каркасе, а не на потолке, нитей к потолку ноль. И нет у одной готовой сцены — настенного бра LC0406-1: композиция у него готовая, а не рассчитанная, раскладки нет, значит нет и разметки потолка. Отдельно от артикула, по самому заданию: если в нём выбран монтаж на металлическую базу, схема 1:1 не выдаётся, потому что при таком монтаже она не нужна. Страница существует на двух языках: vargov.ru/specifications и vargov.ru/en/specifications, других языковых версий нет. От поисковых систем она закрыта, ссылок с других страниц сайта на неё нет — попасть туда можно только по прямой ссылке: из поста или из конфигуратора."
+     }
+    ]
+   },
+   "en": {
+    "title": "Production spec: what the configurator fills in, and what is left to the person",
+    "category": "Production",
+    "date": "October 25, 2026",
+    "lead": "The production spec is put together right on the website: any visitor can open the blank form — no sign-in, no account. Here is what a person gets straight away, and what arrives only once the spec is released to production.",
+    "metaLabels": {
+     "category": "Category",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "The page vargov.ru/specifications assembles the production spec — the document a composition is manufactured from and, for some compositions, the document the ceiling is marked out from as well. Any visitor can open the blank form: no sign-in, no registration and no account are needed, and none of them exist."
+     },
+     {
+      "type": "h",
+      "text": "Why it matters to the client and the architect"
+     },
+     {
+      "type": "p",
+      "text": "A production spec is not an inquiry, not an order and not a quote: there is no price in it and there cannot be one. It is a summary of everything that goes into production: the SKUs of the compositions, their parameters, the layout, the colors. For the client it is a chance to check and confirm the design once, instead of having to restate it in correspondence. For the architect it is a PDF of the spec that can be attached to the project, plus a keyed link for opening the spec, adding to it and confirming it."
+     },
+     {
+      "type": "h",
+      "text": "How it gets filled in"
+     },
+     {
+      "type": "p",
+      "text": "There are two routes. If the composition has already been built in the configurator, its link is pasted into the first step of the spec and the fields fill themselves in: SKU, dimensions, colors, layout. The configurator itself has a button for this — “Заполнить ТЗ” (Fill in the spec). If the composition has not been built yet, the spec is filled in step by step, starting with the SKU; wherever a parameter is still unknown, there is a button marked “Уточню позже” (I’ll specify later). The only mandatory field is “Объект” (Project) — “Restaurant, Moscow”, for instance. A name and contact details are optional; if the person enters them, a consent checkbox for data processing appears."
+     },
+     {
+      "type": "h",
+      "text": "A keyed link instead of an account"
+     },
+     {
+      "type": "p",
+      "text": "Pressing “Сохранить данные” (Save data) gives the person their own keyed link. That link is how the spec is opened, added to and confirmed. There is no account area — everything rests on this link, and the key stays with the person: if the link is lost, only a manager can recover the spec. Until the manager releases the spec to production it can still be edited, and every edit changes what will later come out in print."
+     },
+     {
+      "type": "h",
+      "text": "What is available immediately"
+     },
+     {
+      "type": "p",
+      "text": "Saving opens the “3D-конфигурация” (3D configuration) page right away: for every composition there is a configurator 3D window, with the composition’s parameters below it. This is a view on screen, not a file; there is a full-screen mode and AR on iPhone. The PDF of the spec itself is available immediately too, through the “PDF RU” and “PDF EN” buttons: that one is a file — it opens in a new tab and downloads. Below the 3D window, once the window has assembled the composition, a button appears for exporting the 3D model as FBX for 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "The 1:1 installation plan, and why it comes later"
+     },
+     {
+      "type": "p",
+      "text": "The ceiling marking plan is a separate PDF, and it becomes available only after the manager releases the spec to production; until then the button is inactive and says so outright: “Станет доступна после запуска в производство” (Available once the spec is released to production). The reason is simple: while the spec is still being edited the markings change with it, and there is no point printing markings that will be different tomorrow. The file holds four versions: a plotter sheet and A4 sheets, each of them for the ceiling and for the floor. Print at exactly 100%, with no “вписать в страницу” (fit to page); the sheet carries a 100 mm segment so the scale can be checked with a ruler. The plotter sheet comes as a single piece with sides of up to 5 m; a plan larger than 5 m is cut into parts, and A4 sheets are joined along the marks. This is a 1:1 sheet for printing — how true the scale is depends on how it was printed, so the control segment is worth measuring before work begins."
+     },
+     {
+      "type": "h",
+      "text": "Where the limits are"
+     },
+     {
+      "type": "p",
+      "text": "A spec can be created only for the compositions the configurator calculates in full: 360 of 605 as of October 25, 2026. An SKU that is not ours cannot be entered in the field — a red line appears instead: “рассчитывается индивидуально” (calculated individually); SKUs like that are not part of those 360 at all, because the configurator does not calculate them. Of those 360, 345 have the 1:1 installation plan. Ten ribbons do not: a ribbon has no cloud of elements, it is built on a different principle altogether. Four compositions on a frame do not either: their elements hang on the frame rather than from the ceiling, so the number of suspension lines running to the ceiling is zero. And one ready scene does not — the LC0406-1 wall sconce: its composition comes ready-made rather than calculated, there is no layout, and with no layout there is nothing to mark out on the ceiling. One more case belongs to the individual spec rather than to the SKU: if installation on a metal base is chosen in it, the 1:1 plan is not issued, because that kind of mounting does not need one — and that holds for any SKU, whichever one it is. The page exists in two languages — vargov.ru/specifications and vargov.ru/en/specifications — and there are no other language versions. It is closed to search engines and no other page of the site links to it: the only way in is a direct link, from a post or from the configurator."
+     }
+    ]
+   },
+   "de": {
+    "title": "Lastenheft für die Fertigung: Was der Konfigurator ausfüllt und was der Nutzer selbst einträgt",
+    "category": "Fertigung",
+    "date": "25. Oktober 2026",
+    "lead": "Das technische Lastenheft für die Fertigung entsteht direkt auf der Website: Das leere Formular kann jeder Besucher öffnen, ohne Login und ohne Benutzerkonto. Wir zeigen, was man sofort erhält und was erst nach dem Start in die Fertigung dazukommt.",
+    "metaLabels": {
+     "category": "Rubrik",
+     "date": "Datum"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Die Seite vargov.ru/specifications stellt das technische Lastenheft für die Fertigung zusammen – die Unterlage, nach der die Komposition gefertigt und bei einem Teil der Kompositionen zusätzlich die Decke markiert wird. Das leere Formular kann jeder Besucher öffnen: Login, Registrierung und Benutzerkonto sind dafür nicht nötig – es gibt sie hier gar nicht."
+     },
+     {
+      "type": "h",
+      "text": "Was Auftraggeber und Architekt davon haben"
+     },
+     {
+      "type": "p",
+      "text": "Das Lastenheft ist keine Anfrage, keine Bestellung und kein Kostenvoranschlag: Preise stehen nicht darin und können dort auch nicht stehen. Es ist die Zusammenstellung dessen, was in die Fertigung geht: die Artikelnummern der Kompositionen, ihre Parameter, die Anordnung, die Farben. Dem Auftraggeber erlaubt es, die Lösung einmal zu prüfen und zu bestätigen, statt sie im Schriftwechsel immer wieder zu beschreiben. Dem Architekten gibt es ein PDF des Lastenhefts, das er dem Projekt beilegen kann, und einen Link mit Schlüssel, über den sich das Lastenheft öffnen, ergänzen und bestätigen lässt."
+     },
+     {
+      "type": "h",
+      "text": "Wie es ausgefüllt wird"
+     },
+     {
+      "type": "p",
+      "text": "Es gibt zwei Wege. Ist die Komposition im Konfigurator schon zusammengestellt, wird ihr Link im ersten Schritt des Lastenhefts eingefügt, und die Felder füllen sich von selbst: Artikelnummer, Maße, Farben, Anordnung. Im Konfigurator selbst gibt es dafür die Schaltfläche „Заполнить ТЗ“ (Lastenheft ausfüllen). Ist die Komposition noch nicht zusammengestellt, wird das Lastenheft Schritt für Schritt ausgefüllt, beginnend mit der Artikelnummer; wo ein Parameter noch nicht bekannt ist, steht die Schaltfläche „Уточню позже“ (Gebe ich später an) bereit. Pflicht ist allein das Feld „Объект“ (Objekt) – zum Beispiel „Restaurant, Moskau“. Name und Kontakt sind freiwillig; trägt man sie ein, erscheint ein Kontrollkästchen für die Einwilligung in die Datenverarbeitung."
+     },
+     {
+      "type": "h",
+      "text": "Ein Link mit Schlüssel statt Kundenkonto"
+     },
+     {
+      "type": "p",
+      "text": "Nach einem Klick auf „Сохранить данные“ (Daten speichern) erhält man seinen eigenen Link mit Schlüssel. Über ihn lässt sich das Lastenheft öffnen, ergänzen und bestätigen. Ein persönliches Kundenkonto gibt es nicht – alles hängt an diesem Link, und den Schlüssel bewahrt der Kunde selbst auf: Ist der Link verloren, kann nur der Manager das Lastenheft wiederherstellen. Solange der Manager das Lastenheft nicht in die Fertigung gegeben hat, lässt es sich ändern, und jede Änderung wirkt sich darauf aus, was später gedruckt wird."
+     },
+     {
+      "type": "h",
+      "text": "Was sofort verfügbar ist"
+     },
+     {
+      "type": "p",
+      "text": "Direkt nach dem Speichern öffnet sich die Seite „3D-конфигурация“ (3D-Konfiguration): zu jeder Komposition ein 3D-Fenster des Konfigurators und darunter ihre Parameter. Das ist eine Ansicht am Bildschirm, eine Datei gibt es hier nicht; es gibt einen Vollbildmodus und AR auf dem iPhone. Sofort verfügbar ist auch das PDF des Lastenhefts selbst, über die Schaltflächen „PDF RU“ und „PDF EN“: Das ist bereits eine Datei, sie öffnet sich in einem neuen Tab und lässt sich herunterladen. Unter dem 3D-Fenster erscheint, sobald das Fenster die Komposition aufgebaut hat, eine Schaltfläche zum Herunterladen des 3D-Modells als FBX für 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "Der Montageplan 1:1 – und warum er erst später erscheint"
+     },
+     {
+      "type": "p",
+      "text": "Der Plan für die Deckenmarkierung ist ein eigenes PDF, und er wird erst verfügbar, nachdem der Manager das Lastenheft in die Fertigung gegeben hat; vorher ist die Schaltfläche inaktiv, mit dem ausdrücklichen Hinweis: „Станет доступна после запуска в производство“ (Wird nach dem Start in die Fertigung verfügbar). Der Grund ist einfach: Solange am Lastenheft noch geändert wird, ändert sich auch die Markierung – und eine Markierung zu drucken, die morgen anders aussieht, ist sinnlos. Die Datei enthält vier Varianten: einen Bogen für den Plotter und A4-Bögen, jeweils für die Decke und für den Boden. Gedruckt wird strikt mit 100 %, ohne „вписать в страницу“ (an Seitengröße anpassen); auf dem Bogen ist eine Strecke von 100 mm aufgetragen, um den Maßstab mit dem Lineal zu prüfen. Der Plotterbogen kommt in einem Stück mit einer Seitenlänge bis 5 m; ein Plan über 5 m wird in Teile zerlegt, die A4-Bögen werden an den Passmarken zusammengeklebt. Es ist ein Bogen im Maßstab 1:1 zum Ausdrucken – wie genau der Maßstab stimmt, hängt davon ab, wie er gedruckt wurde, deshalb sollte die Kontrollstrecke vor Beginn der Arbeiten nachgemessen werden."
+     },
+     {
+      "type": "h",
+      "text": "Wo die Grenzen liegen"
+     },
+     {
+      "type": "p",
+      "text": "Ein Lastenheft lässt sich nur für jene Kompositionen anlegen, die der Konfigurator vollständig berechnet: am 25. Oktober 2026 sind das 360 von 605. Eine fremde Artikelnummer nimmt das Feld nicht an — es erscheint die rote Zeile „рассчитывается индивидуально“ (wird individuell kalkuliert): Solche Artikelnummern gehören gar nicht zu diesen 360, der Konfigurator berechnet sie nicht. Einen Montageplan 1:1 gibt es bei 345 dieser 360. Bei zehn Bändern fehlt er: Ein Band hat keine Wolke aus Elementen, es ist anders aufgebaut. Bei vier Kompositionen auf einer Rahmenkonstruktion fehlt er ebenfalls: Ihre Elemente hängen an der Rahmenkonstruktion und nicht an der Decke, zur Decke führt keine einzige Leitung. Und er fehlt bei einer fertigen Szene — der Wandleuchte LC0406-1: Ihre Komposition ist vorgefertigt und nicht berechnet, es gibt keine Verteilung und damit auch keine Deckenmarkierung. Unabhängig von der Artikelnummer, allein nach dem Lastenheft selbst: Ist darin die Montage auf einer Metallbasis gewählt, entfällt der Montageplan 1:1 — bei jeder Artikelnummer, denn bei dieser Montageart wird er nicht gebraucht. Die Seite gibt es in zwei Sprachen: vargov.ru/specifications und vargov.ru/en/specifications — weitere Sprachversionen existieren nicht. Für Suchmaschinen ist sie gesperrt, und von anderen Seiten der Website führen keine Links dorthin: erreichbar ist sie nur über den direkten Link — aus einem Beitrag oder aus dem Konfigurator."
+     }
+    ]
+   },
+   "fr": {
+    "title": "Cahier des charges de production : ce que remplit le configurateur et ce que remplit l'utilisateur",
+    "category": "Production",
+    "date": "25 octobre 2026",
+    "lead": "Le cahier des charges de production s'établit directement sur le site : n'importe quel visiteur peut ouvrir le formulaire vierge, sans connexion ni compte. Voyons ce que l'on obtient tout de suite et ce qui n'arrive qu'après le lancement en production.",
+    "metaLabels": {
+     "category": "Rubrique",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "La page vargov.ru/specifications rassemble le cahier des charges de production : le document qui sert à fabriquer la composition et, pour une partie des compositions, à tracer également les repères au plafond. N'importe quel visiteur peut ouvrir le formulaire vierge : ni connexion, ni inscription, ni compte ne sont nécessaires — et il n'en existe pas."
+     },
+     {
+      "type": "h",
+      "text": "À quoi cela sert au client et à l'architecte"
+     },
+     {
+      "type": "p",
+      "text": "Le cahier des charges n'est ni une demande, ni une commande, ni un devis : il ne comporte aucun prix et ne peut pas en comporter. C'est le récapitulatif de tout ce qui part en production : les références des compositions, leurs paramètres, l'implantation, les couleurs. Au client, il permet de vérifier et de valider la solution une fois pour toutes, au lieu de la reformuler d'un échange à l'autre. À l'architecte, il apporte le PDF du cahier des charges, que l'on peut joindre au dossier de projet, et un lien à clé qui permet d'ouvrir, de compléter et de valider le document."
+     },
+     {
+      "type": "h",
+      "text": "Comment on le remplit"
+     },
+     {
+      "type": "p",
+      "text": "Deux possibilités. Si la composition est déjà assemblée dans le configurateur, il suffit de coller son lien à la première étape du cahier des charges : les champs se remplissent d'eux-mêmes — référence, dimensions, couleurs, implantation. Le configurateur dispose pour cela d'un bouton « Заполнить ТЗ » (« Remplir le cahier des charges »). Si la composition n'est pas encore assemblée, le cahier des charges se remplit étape par étape, en commençant par la référence ; là où un paramètre reste inconnu, un bouton « Уточню позже » (« Je préciserai plus tard ») est prévu. Un seul champ est obligatoire, « Объект » (« Site ») — par exemple « Restaurant, Moscou ». Le nom et le contact sont facultatifs ; dès qu'on les saisit, une case à cocher de consentement au traitement des données apparaît."
+     },
+     {
+      "type": "h",
+      "text": "Un lien à clé au lieu d'un espace client"
+     },
+     {
+      "type": "p",
+      "text": "Après le clic sur « Сохранить данные » (« Enregistrer les données »), on reçoit son propre lien à clé. C'est par lui que le cahier des charges s'ouvre, se complète et se valide. Il n'y a pas d'espace client : tout tient à ce lien, et la clé reste chez celui qui l'a reçue — si le lien est perdu, seul le chargé d'affaires peut retrouver le document. Tant que le chargé d'affaires n'a pas lancé le cahier des charges en production, celui-ci peut être modifié, et chaque modification change ce qui sortira ensuite à l'impression."
+     },
+     {
+      "type": "h",
+      "text": "Ce qui est disponible tout de suite"
+     },
+     {
+      "type": "p",
+      "text": "Dès l'enregistrement, la page « 3D-конфигурация » (« Configuration 3D ») s'ouvre : pour chaque composition, une fenêtre 3D du configurateur et, sous la fenêtre, ses paramètres. C'est un affichage à l'écran, il n'y a pas de fichier ici ; un mode plein écran et la réalité augmentée sur iPhone sont proposés. Le PDF du cahier des charges lui-même est également disponible immédiatement, par les boutons « PDF RU » et « PDF EN » : là, c'est bien un fichier, il s'ouvre dans un nouvel onglet et se télécharge. Sous la fenêtre 3D, lorsque celle-ci a assemblé la composition, apparaît un bouton d'export du modèle 3D au format FBX pour 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "Le plan de pose 1:1 et pourquoi il n'apparaît que plus tard"
+     },
+     {
+      "type": "p",
+      "text": "Le plan de repérage au plafond est un PDF distinct, et il ne devient disponible qu'une fois que le chargé d'affaires a lancé le cahier des charges en production ; avant cela, le bouton est inactif et le dit franchement : « Станет доступна после запуска в производство » (« Disponible après le lancement en production »). La raison est simple : tant que le cahier des charges est modifié, le repérage change avec lui, et cela ne sert à rien d'imprimer un tracé qui sera différent demain. Le fichier contient quatre variantes : une feuille pour traceur et des feuilles A4, chacune en version plafond et en version sol. L'impression doit être strictement à 100 %, sans l'option « вписать в страницу » (« ajuster à la page ») ; la feuille porte un segment de 100 mm qui permet de vérifier l'échelle à la règle. La feuille de traceur sort d'un seul tenant jusqu'à 5 m de côté ; au-delà de 5 m, le plan est découpé en plusieurs parties, et les feuilles A4 se collent en suivant les repères. C'est une feuille 1:1 destinée à l'impression : la justesse de l'échelle dépend de la façon dont elle a été imprimée, c'est pourquoi il vaut mieux mesurer le segment de contrôle avant de commencer les travaux."
+     },
+     {
+      "type": "h",
+      "text": "Où sont les limites"
+     },
+     {
+      "type": "p",
+      "text": "Un cahier des charges ne peut être établi que pour les compositions que le configurateur calcule intégralement : 360 sur 605 au 25 octobre 2026. Une référence qui n'est pas la nôtre ne peut pas être saisie dans le champ — une ligne rouge apparaît : « рассчитывается индивидуально » (« calcul individuel ») ; ces références ne sont pas comprises dans ces 360, le configurateur ne les calcule tout simplement pas. Le plan de pose 1:1 existe pour 345 de ces 360. Il n'existe pas pour dix rubans : un ruban n'a pas de nuage d'éléments, il est conçu autrement. Il n'existe pas non plus pour quatre compositions sur ossature : leurs éléments sont suspendus à l'ossature et non au plafond, aucun fil ne rejoint le plafond. Et il n'existe pas pour une scène prête à l'emploi, l'applique murale LC0406-1 : sa composition est prête et non calculée, il n'y a pas d'implantation, donc pas de tracé au plafond non plus. Un dernier cas ne dépend pas de la référence mais du cahier des charges lui-même : si l'on y a choisi la pose sur base métallique, le plan 1:1 n'est pas délivré, pour n'importe quelle référence, car une telle pose n'en a pas besoin. La page existe en deux langues : vargov.ru/specifications et vargov.ru/en/specifications ; il n'y a pas d'autres versions linguistiques. Elle est fermée à l'indexation par les moteurs de recherche et aucune autre page du site n'y renvoie — on n'y accède que par un lien direct : depuis une publication ou depuis le configurateur."
+     }
+    ]
+   },
+   "it": {
+    "title": "Specifica tecnica per la produzione: cosa compila il configuratore e cosa la persona",
+    "category": "Produzione",
+    "date": "25 ottobre 2026",
+    "lead": "La specifica tecnica per la produzione si compila direttamente sul sito: il modulo vuoto lo apre qualsiasi visitatore, senza login né account. Vediamo cosa la persona ottiene subito e cosa invece soltanto dopo l'avvio della produzione.",
+    "metaLabels": {
+     "category": "Categoria",
+     "date": "Data"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "La pagina vargov.ru/specifications raccoglie la specifica tecnica per la produzione: il documento in base al quale la composizione viene realizzata e con cui, per una parte delle composizioni, si traccia anche il soffitto. Il modulo vuoto può aprirlo qualsiasi visitatore: login, registrazione e account non servono e nemmeno esistono."
+     },
+     {
+      "type": "h",
+      "text": "A cosa serve al committente e all'architetto"
+     },
+     {
+      "type": "p",
+      "text": "La specifica tecnica non è una richiesta, non è un ordine e non è un preventivo: non contiene prezzi e non può contenerli. È il riepilogo di ciò che va in produzione: i codici articolo delle composizioni, i loro parametri, la disposizione, i colori. Al committente dà la possibilità di verificare e confermare la soluzione una volta per tutte, invece di ripeterla nella corrispondenza. All'architetto dà il PDF della specifica, da allegare al progetto, e un link con chiave con cui la specifica si apre, si completa e si conferma."
+     },
+     {
+      "type": "h",
+      "text": "Come si compila"
+     },
+     {
+      "type": "p",
+      "text": "Le strade sono due. Se la composizione è già stata assemblata nel configuratore, il suo link si inserisce nel primo passaggio della specifica e i campi si compilano da sé: codice articolo, dimensioni, colori, disposizione. Nel configuratore, proprio per questo, c'è il pulsante «Заполнить ТЗ» (compila la specifica tecnica). Se la composizione non è ancora assemblata, la specifica si compila passo per passo partendo dal codice articolo; dove un parametro non è ancora noto c'è il pulsante «Уточню позже» (lo preciso più tardi). L'unico campo obbligatorio è «Объект» (oggetto): per esempio «Ristorante, Mosca». Nome e contatto non sono obbligatori; se la persona li inserisce, compare la casella di consenso al trattamento dei dati."
+     },
+     {
+      "type": "h",
+      "text": "Un link con chiave al posto dell'area personale"
+     },
+     {
+      "type": "p",
+      "text": "Dopo aver premuto il pulsante «Сохранить данные» (salva i dati), la persona riceve il proprio link con chiave. Da quel link la specifica si apre, si completa e si conferma. Non esiste un'area personale: tutto si regge su questo link e la chiave resta in mano alla persona; se il link va perso, solo il manager può recuperare la specifica. Finché il manager non ha mandato la specifica in produzione, la si può modificare, e ogni modifica cambia ciò che poi andrà in stampa."
+     },
+     {
+      "type": "h",
+      "text": "Che cosa è disponibile subito"
+     },
+     {
+      "type": "p",
+      "text": "Subito dopo il salvataggio si apre la pagina «3D-конфигурация» (configurazione 3D): per ogni composizione c'è la finestra 3D del configuratore e, sotto la finestra, i suoi parametri. È una visualizzazione a schermo, qui non c'è nessun file; sono disponibili la modalità a tutto schermo e l'AR su iPhone. È subito disponibile anche il PDF della specifica stessa, con i pulsanti «PDF RU» e «PDF EN»: questo è già un file, si apre in una nuova scheda e si scarica. Sotto la finestra 3D, quando la finestra ha assemblato la composizione, compare il pulsante di esportazione del modello 3D FBX per 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "Lo schema di montaggio 1:1 e perché arriva più tardi"
+     },
+     {
+      "type": "p",
+      "text": "Lo schema di tracciamento del soffitto è un PDF a parte e diventa disponibile solo dopo che il manager ha mandato la specifica in produzione; prima di quel momento il pulsante è inattivo e lo dice chiaramente: «Станет доступна после запуска в производство» (sarà disponibile dopo l'avvio della produzione). Il motivo è semplice: finché la specifica viene modificata cambia anche il tracciamento, e stampare un tracciamento che domani sarà diverso non ha senso. Nel file ci sono quattro varianti: il foglio per plotter e i fogli A4, ciascuno nella versione per il soffitto e in quella per il pavimento. La stampa deve essere esattamente al 100 %, senza «вписать в страницу» (adatta alla pagina); sul foglio è riportato un segmento di 100 mm, per verificare la scala con un righello. Il foglio per plotter è un pezzo unico con lato fino a 5 m, uno schema più grande di 5 m viene diviso in parti, i fogli A4 si incollano in corrispondenza dei segni. È un foglio 1:1 destinato alla stampa: la fedeltà della scala dipende da come è stato stampato, quindi conviene misurare il segmento di controllo prima di iniziare i lavori."
+     },
+     {
+      "type": "h",
+      "text": "Dove sono i limiti"
+     },
+     {
+      "type": "p",
+      "text": "La specifica si crea soltanto per le composizioni che il configuratore calcola per intero: 360 su 605 al 25 ottobre 2026. Un codice articolo estraneo non si può inserire nel campo: compare la riga rossa «рассчитывается индивидуально» (calcolo individuale) — articoli di questo tipo non rientrano affatto in quei 360, il configuratore non li calcola. Lo schema di montaggio 1:1 esiste per 345 di queste 360. Non c'è per dieci nastri: il nastro non ha una nuvola di elementi, è costruito in un altro modo. Non c'è per quattro composizioni su telaio: lì gli elementi sono appesi al telaio e non al soffitto, e i fili diretti al soffitto sono zero. E non c'è per una scena pronta, l'applique da parete LC0406-1: la sua composizione è predefinita e non calcolata, non ha una disposizione e quindi nemmeno un tracciamento del soffitto. A prescindere dal codice articolo, conta la singola specifica: se al suo interno è stato scelto il montaggio su base metallica, lo schema 1:1 non viene rilasciato, perché con quel tipo di montaggio non serve. La pagina esiste in due lingue: vargov.ru/specifications e vargov.ru/en/specifications; non esistono altre versioni linguistiche. È chiusa ai motori di ricerca e dalle altre pagine del sito non c'è alcun link che la raggiunga: ci si arriva solo con un link diretto, da un post o dal configuratore."
+     }
+    ]
+   },
+   "es": {
+    "title": "Especificación técnica para producción: qué rellena el configurador y qué la persona",
+    "category": "Producción",
+    "date": "25 de octubre de 2026",
+    "lead": "La especificación técnica para producción se elabora directamente en el sitio: cualquier visitante puede abrir el formulario vacío, sin iniciar sesión ni tener cuenta. Repasamos qué obtiene la persona de inmediato y qué solo cuando la especificación se lanza a producción.",
+    "metaLabels": {
+     "category": "Categoría",
+     "date": "Fecha"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "La página vargov.ru/specifications reúne la especificación técnica para producción: lo que sirve para fabricar la composición y, en algunas composiciones, también para marcar el techo. Cualquier visitante puede abrir el formulario vacío: para ello no hacen falta inicio de sesión, registro ni cuenta, y de hecho no existen."
+     },
+     {
+      "type": "h",
+      "text": "Para qué le sirve al cliente y al arquitecto"
+     },
+     {
+      "type": "p",
+      "text": "La especificación técnica no es una solicitud, ni un pedido, ni un presupuesto: no lleva precios ni puede llevarlos. Es el conjunto de lo que pasa a producción: las referencias de las composiciones, sus parámetros, la distribución, los colores. Al cliente le permite revisar y confirmar la solución una sola vez, en lugar de ir repitiéndola en una cadena de correos. Al arquitecto le da el PDF de la especificación, que puede adjuntar al proyecto, y un enlace con clave desde el que la especificación se abre, se completa y se confirma."
+     },
+     {
+      "type": "h",
+      "text": "Cómo se rellena"
+     },
+     {
+      "type": "p",
+      "text": "Hay dos vías. Si la composición ya está montada en el configurador, su enlace se pega en el primer paso de la especificación y los campos se rellenan solos: referencia, medidas, colores, distribución. Para eso, el propio configurador tiene el botón «Заполнить ТЗ» (rellenar la especificación técnica). Si la composición aún no está montada, la especificación se rellena paso a paso, empezando por la referencia; allí donde un parámetro todavía no se conoce, está el botón «Уточню позже» (lo concretaré más tarde). El único campo obligatorio es «Объект» (objeto), por ejemplo: «Restaurante, Moscú». El nombre y el contacto son opcionales; si la persona los escribe, aparece la casilla de consentimiento para el tratamiento de datos."
+     },
+     {
+      "type": "h",
+      "text": "Un enlace con clave en lugar de un área personal"
+     },
+     {
+      "type": "p",
+      "text": "Al pulsar «Сохранить данные» (guardar los datos), la persona recibe su enlace con clave. Con él la especificación se abre, se completa y se confirma. No hay área personal: todo se sostiene en ese enlace, y la clave la guarda la persona; si el enlace se pierde, solo el gestor puede recuperar la especificación. Mientras el gestor no la haya lanzado a producción, se puede modificar, y cada cambio altera lo que después saldrá impreso."
+     },
+     {
+      "type": "h",
+      "text": "Qué está disponible de inmediato"
+     },
+     {
+      "type": "p",
+      "text": "Justo después de guardar se abre la página «3D-конфигурация» (configuración 3D): para cada composición, la ventana 3D del configurador y, debajo, sus parámetros. Es una vista en pantalla, aquí no hay archivo; sí hay modo de pantalla completa y AR en iPhone. También está disponible de inmediato el PDF de la propia especificación, con los botones «PDF RU» y «PDF EN»: eso ya es un archivo, se abre en una pestaña nueva y se descarga. Debajo de la ventana 3D, cuando la ventana ha montado la composición, aparece el botón de descarga del modelo 3D en FBX para 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "El plano de montaje 1:1 y por qué aparece más tarde"
+     },
+     {
+      "type": "p",
+      "text": "El plano de marcado del techo es un PDF aparte y solo queda disponible después de que el gestor lance la especificación a producción; hasta entonces el botón está inactivo y lo dice sin rodeos: «Станет доступна после запуска в производство» (estará disponible tras el lanzamiento a producción). El motivo es sencillo: mientras la especificación se corrige, el marcado cambia con ella, y no tiene sentido imprimir un marcado que mañana será otro. El archivo contiene cuatro variantes: la hoja para plóter y las hojas A4, cada una para el techo y para el suelo. Hay que imprimir estrictamente al 100 %, sin «вписать в страницу» (ajustar a la página); en la hoja hay un segmento de 100 mm para comprobar la escala con una regla. La hoja de plóter sale de una sola pieza con un lado de hasta 5 m; un plano de más de 5 m se divide en partes, y las hojas A4 se pegan guiándose por las marcas. Es una hoja 1:1 para imprimir: la fidelidad de la escala depende de cómo se haya impreso, así que conviene medir el segmento de control antes de empezar los trabajos."
+     },
+     {
+      "type": "h",
+      "text": "Dónde están los límites"
+     },
+     {
+      "type": "p",
+      "text": "La especificación se crea solo para las composiciones que el configurador calcula por completo: 360 de 605 a 25 de octubre de 2026. Una referencia ajena no se acepta en el campo: aparece una línea roja, «рассчитывается индивидуально» (se calcula de forma individual); esas referencias no entran en esas 360 en absoluto, el configurador no las calcula. Hay plano de montaje 1:1 para 345 de esas 360. No lo tienen diez cintas: la cinta no tiene nube de elementos, su construcción es otra. No lo tienen cuatro composiciones sobre bastidor: sus elementos cuelgan del bastidor y no del techo, así que al techo no va ni un solo hilo. Y no lo tiene una escena preparada, el aplique de pared LC0406-1: su composición viene ya hecha y no calculada, no hay distribución y, por tanto, tampoco marcado del techo. Y hay un caso que no depende de la referencia, sino del propio encargo: si en él se ha elegido el montaje sobre base metálica, el plano 1:1 no se entrega con ninguna referencia, porque con ese montaje no hace falta. La página existe en dos idiomas: vargov.ru/specifications y vargov.ru/en/specifications; no hay versiones en otros idiomas. Está cerrada a los buscadores y ninguna otra página del sitio enlaza con ella: solo se puede llegar por enlace directo, desde una publicación o desde el configurador."
+     }
+    ]
+   },
+   "vi": {
+    "title": "Đặc tả kỹ thuật cho sản xuất: phần nào trình cấu hình tự điền, phần nào người dùng phải điền",
+    "category": "Sản xuất",
+    "date": "25 tháng 10 năm 2026",
+    "lead": "Bản đặc tả kỹ thuật cho sản xuất được lập ngay trên website: biểu mẫu trống thì bất kỳ khách truy cập nào cũng mở được, không cần đăng nhập, không cần tài khoản. Cùng xem người dùng nhận được gì ngay, còn gì thì chỉ có sau khi đặc tả được chuyển vào sản xuất.",
+    "metaLabels": {
+     "category": "Chuyên mục",
+     "date": "Ngày"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Trang vargov.ru/specifications là nơi lập bản đặc tả kỹ thuật cho sản xuất – tài liệu để chế tạo tổ hợp, mà với một phần tổ hợp thì còn dùng để đánh dấu vị trí trên trần. Biểu mẫu trống thì bất kỳ khách truy cập nào cũng mở được: để làm việc đó không cần đăng nhập, đăng ký hay tài khoản – những thứ đó vừa không cần, vừa không tồn tại."
+     },
+     {
+      "type": "h",
+      "text": "Điều này có ích gì cho khách hàng và kiến trúc sư"
+     },
+     {
+      "type": "p",
+      "text": "Đặc tả kỹ thuật không phải là đơn yêu cầu, không phải đơn hàng, cũng không phải dự toán: trong đó không có giá và cũng không thể có giá. Đây là bản tổng hợp những gì sẽ đi vào sản xuất: mã sản phẩm của các tổ hợp, thông số, cách bố trí, màu sắc. Với khách hàng, nó cho phép kiểm tra và xác nhận phương án một lần, thay vì phải mô tả lại phương án đó trong thư từ qua lại. Với kiến trúc sư, đó là bản PDF của đặc tả để đính kèm vào hồ sơ dự án, cùng một liên kết có khóa để mở, bổ sung và xác nhận đặc tả."
+     },
+     {
+      "type": "h",
+      "text": "Đặc tả được điền ra sao"
+     },
+     {
+      "type": "p",
+      "text": "Có hai cách. Nếu tổ hợp đã được dựng trong trình cấu hình, chỉ cần dán liên kết của nó vào bước đầu tiên của đặc tả, các trường sẽ được điền tự động: mã sản phẩm, kích thước, màu sắc, cách bố trí. Trong chính trình cấu hình có nút “Заполнить ТЗ” (Điền đặc tả) dành cho việc này. Nếu tổ hợp còn chưa được dựng, đặc tả được điền theo từng bước, bắt đầu từ mã sản phẩm; chỗ nào thông số còn chưa rõ thì có nút “Уточню позже” (Tôi sẽ nói rõ sau). Chỉ trường “Объект” (Công trình) là bắt buộc – chẳng hạn “Nhà hàng, Moskva”. Tên và thông tin liên hệ thì không bắt buộc; nếu người dùng điền chúng, sẽ xuất hiện ô tích đồng ý cho xử lý dữ liệu."
+     },
+     {
+      "type": "h",
+      "text": "Liên kết có khóa thay cho trang tài khoản"
+     },
+     {
+      "type": "p",
+      "text": "Sau khi bấm nút “Сохранить данные” (Lưu dữ liệu), người dùng nhận được liên kết có khóa của riêng mình. Qua liên kết đó có thể mở, bổ sung và xác nhận đặc tả. Không có trang tài khoản cá nhân – mọi thứ dựa vào liên kết này, và khóa nằm trong tay người dùng: nếu mất liên kết thì chỉ nhân viên phụ trách mới phục hồi được đặc tả. Chừng nào nhân viên phụ trách chưa chuyển đặc tả vào sản xuất thì đặc tả vẫn sửa được, và mỗi lần sửa đều thay đổi những gì sau này sẽ được in ra."
+     },
+     {
+      "type": "h",
+      "text": "Những gì có ngay lập tức"
+     },
+     {
+      "type": "p",
+      "text": "Ngay sau khi lưu, trang “3D-конфигурация” (Cấu hình 3D) sẽ mở ra: với mỗi tổ hợp là một cửa sổ 3D của trình cấu hình, bên dưới cửa sổ là thông số của tổ hợp đó. Đây chỉ là phần hiển thị trên màn hình, không có tệp nào ở đây; có chế độ toàn màn hình và AR trên iPhone. Bản PDF của chính đặc tả cũng có ngay, qua các nút “PDF RU” và “PDF EN”: cái này thì đã là tệp, mở ra ở tab mới và tải về được. Bên dưới cửa sổ 3D, khi cửa sổ đã dựng xong tổ hợp, sẽ xuất hiện nút xuất mô hình 3D FBX cho 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "Sơ đồ lắp đặt 1:1 và lý do nó xuất hiện muộn hơn"
+     },
+     {
+      "type": "p",
+      "text": "Sơ đồ đánh dấu trần là một tệp PDF riêng, và nó chỉ có sau khi nhân viên phụ trách chuyển đặc tả vào sản xuất; trước đó nút không bấm được và ghi rõ: “Станет доступна после запуска в производство” (Sẽ có sau khi chuyển vào sản xuất). Lý do rất đơn giản: chừng nào đặc tả còn được sửa thì phần đánh dấu cũng còn thay đổi, mà in một bản đánh dấu ngày mai sẽ khác đi thì chẳng ích gì. Trong tệp có bốn phương án: bản in cho máy in khổ lớn (plotter) và bản in khổ A4, mỗi loại đều có bản cho trần và bản cho sàn. In đúng 100 %, không dùng chế độ “vừa với trang”; trên bản in có một đoạn 100 mm để kiểm tra tỷ lệ bằng thước. Bản in khổ lớn là một mảnh liền với cạnh tối đa 5 m, sơ đồ lớn hơn 5 m được cắt thành nhiều phần, còn các tờ A4 thì dán lại với nhau theo dấu canh. Đây là bản in tỷ lệ 1:1 – độ chính xác của tỷ lệ phụ thuộc vào cách người ta in nó, vì vậy nên đo đoạn kiểm tra trước khi bắt đầu thi công."
+     },
+     {
+      "type": "h",
+      "text": "Giới hạn nằm ở đâu"
+     },
+     {
+      "type": "p",
+      "text": "Đặc tả kỹ thuật chỉ lập được cho những tổ hợp mà trình cấu hình tính được trọn vẹn: 360 trong số 605, tính đến ngày 25 tháng 10 năm 2026. Mã sản phẩm không thuộc số đó thì không điền được vào trường – sẽ hiện ra dòng chữ đỏ «рассчитывается индивидуально» (được tính riêng cho từng trường hợp): những mã như vậy hoàn toàn không nằm trong 360 mã nói trên, trình cấu hình không tính chúng. Sơ đồ lắp đặt 1:1 có cho 345 trong số 360 tổ hợp đó. Mười mã dạng dải không có sơ đồ này: dải không có cụm chi tiết, nó có cấu tạo riêng. Bốn tổ hợp trên khung cũng không có: các chi tiết của chúng treo vào khung chứ không treo vào trần, số dây treo lên trần bằng không. Và sơ đồ cũng không có ở một cảnh dựng sẵn – đèn gắn tường LC0406-1: tổ hợp của nó là có sẵn chứ không phải do tính toán mà ra, không có cách bố trí, nghĩa là cũng không có phần đánh dấu trần. Riêng một trường hợp nữa, không phụ thuộc vào mã sản phẩm mà vào chính bản đặc tả: nếu trong đặc tả chọn cách lắp trên đế kim loại thì sơ đồ 1:1 không được xuất ra, vì với cách lắp đó nó không cần đến. Trang có hai bản ngôn ngữ: vargov.ru/specifications và vargov.ru/en/specifications, không có bản ngôn ngữ nào khác. Trang không mở cho các công cụ tìm kiếm, không một trang nào khác của website dẫn liên kết tới nó – chỉ vào được bằng liên kết trực tiếp: từ một bài đăng hoặc từ trình cấu hình."
+     }
+    ]
+   },
+   "ar": {
+    "title": "المواصفة الفنية للإنتاج: ما تملؤه أداة التكوين وما يملؤه الشخص",
+    "category": "الإنتاج",
+    "date": "25 أكتوبر 2026",
+    "lead": "تُجمَع المواصفة الفنية للإنتاج على الموقع مباشرة: النموذج الفارغ يفتحه أي زائر، بلا تسجيل دخول ولا حساب. نستعرض ما يحصل عليه الشخص فورًا، وما لا يُتاح إلا بعد إحالة المواصفة إلى الإنتاج.",
+    "metaLabels": {
+     "category": "القسم",
+     "date": "التاريخ"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "تجمع صفحة vargov.ru/specifications المواصفة الفنية للإنتاج — أي المستند الذي تُصنَع التركيبة بناءً عليه، ويُعلَّم به السقف أيضًا في جزء من التركيبات. وفتح النموذج الفارغ متاح لأي زائر: فلا حاجة إلى تسجيل دخول ولا تسجيل ولا حساب، وهذه كلها غير موجودة أصلًا."
+     },
+     {
+      "type": "h",
+      "text": "ما الفائدة منها للعميل والمعماري"
+     },
+     {
+      "type": "p",
+      "text": "المواصفة الفنية ليست طلبًا ولا أمر شراء ولا تقدير تكاليف: فهي لا تحمل سعرًا، ولا يمكن أن تحمله. إنها بيان بكل ما يذهب إلى الإنتاج: رموز أصناف التركيبات وخصائصها والتوزيع والألوان. وهي تتيح للعميل أن يراجع الحل ويعتمده مرة واحدة، بدلًا من أن يعيد شرحه في المراسلات. وتمنح المعماري ملف PDF للمواصفة يمكن إرفاقه بالمشروع، ورابطًا بمفتاح تُفتَح به المواصفة وتُستكمَل وتُعتمد."
+     },
+     {
+      "type": "h",
+      "text": "كيف تُملأ المواصفة"
+     },
+     {
+      "type": "p",
+      "text": "هناك طريقان. إذا كانت التركيبة مجمَّعة في أداة التكوين بالفعل، يُلصَق رابطها في الخطوة الأولى من المواصفة، فتُملأ الحقول من تلقاء نفسها: رمز الصنف والمقاسات والألوان والتوزيع. ولهذا الغرض زر «Заполнить ТЗ» (ملء المواصفة الفنية) في أداة التكوين نفسها. وإذا لم تكن التركيبة مجمَّعة بعد، تُملأ المواصفة خطوة بخطوة بدءًا من رمز الصنف؛ وحيث تكون إحدى الخصائص غير معروفة بعد، هناك زر «Уточню позже» (سأحدده لاحقًا). والحقل الإلزامي الوحيد هو «Объект» (المنشأة) — مثلًا «مطعم، موسكو». أما الاسم وبيانات التواصل فغير إلزامية؛ وإذا كتبها الشخص، يظهر مربع اختيار للموافقة على معالجة البيانات."
+     },
+     {
+      "type": "h",
+      "text": "رابط بمفتاح بدلًا من حساب شخصي"
+     },
+     {
+      "type": "p",
+      "text": "بعد الضغط على زر «Сохранить данные» (حفظ البيانات) يحصل الشخص على رابط خاص به يحمل مفتاحًا. وبهذا الرابط تُفتَح المواصفة وتُستكمَل وتُعتمد. ولا يوجد حساب شخصي — فكل شيء قائم على هذا الرابط، والمفتاح يبقى عند الشخص: فإذا فُقد الرابط، لا يستطيع استعادة المواصفة إلا المدير. وما دام المدير لم يُحِل المواصفة إلى الإنتاج، يمكن تعديلها، وكل تعديل يغيّر ما سيخرج إلى الطباعة بعد ذلك."
+     },
+     {
+      "type": "h",
+      "text": "ما يُتاح فورًا"
+     },
+     {
+      "type": "p",
+      "text": "بعد الحفظ مباشرة تُفتَح صفحة «3D-конфигурация» (التكوين ثلاثي الأبعاد): لكل تركيبة نافذة أداة التكوين ثلاثية الأبعاد، وتحت النافذة خصائصها. وهذا عرض على الشاشة، لا ملف هنا؛ وهناك وضع ملء الشاشة والواقع المعزز (AR) على iPhone. ويُتاح فورًا كذلك ملف PDF للمواصفة نفسها عبر زرَّي «PDF RU» و«PDF EN»: هذا ملف فعلي، يُفتَح في تبويب جديد ويمكن تنزيله. وتحت النافذة ثلاثية الأبعاد، بعد أن تُجمِّع النافذة التركيبة، يظهر زر تصدير النموذج ثلاثي الأبعاد بصيغة FBX لبرنامج 3ds Max."
+     },
+     {
+      "type": "h",
+      "text": "مخطط التركيب بمقياس 1:1 ولماذا يظهر لاحقًا"
+     },
+     {
+      "type": "p",
+      "text": "مخطط تعليم السقف ملف PDF منفصل، ولا يُتاح إلا بعد أن يُحيل المدير المواصفة إلى الإنتاج؛ وقبل ذلك يكون الزر غير نشط ويقول صراحة: «Станет доступна после запуска в производство» (ستتاح بعد الإحالة إلى الإنتاج). والسبب بسيط: ما دامت المواصفة تُعدَّل، يتغير معها تعليم السقف، ولا معنى لطباعة تعليمٍ سيصبح غدًا مختلفًا. وفي الملف أربعة خيارات: ورقة للراسمة وأوراق A4، كل منها للسقف وللأرضية. والطباعة بنسبة 100 % تمامًا، دون «вписать в страницу» (الاحتواء في الصفحة)؛ وعلى الورقة خط بطول 100 مم للتحقق من المقياس بالمسطرة. وورقة الراسمة تأتي قطعة واحدة بضلع يصل إلى 5 م، والمخطط الأكبر من 5 م يُقطَّع إلى أجزاء، وأوراق A4 تُلصَق معًا حسب العلامات. وهذه ورقة بمقياس 1:1 للطباعة — ودقة المقياس تعتمد على طريقة طباعتها، لذا يُستحسن قياس الخط المرجعي قبل بدء العمل."
+     },
+     {
+      "type": "h",
+      "text": "أين تقع الحدود"
+     },
+     {
+      "type": "p",
+      "text": "لا تُنشَأ المواصفة الفنية إلا للتركيبات التي تحسبها أداة التكوين بالكامل: 360 من 605 بتاريخ 25 أكتوبر 2026. ورمز صنف من غيرها لا يُكتَب في الحقل، بل يظهر سطر أحمر «рассчитывается индивидуально» (يُحسَب بشكل فردي): فهذه الأصناف لا تدخل في الـ 360 أصلًا، وأداة التكوين لا تحسبها. أما مخطط التركيب بمقياس 1:1 فموجود لـ 345 من هذه الـ 360. وهو غير موجود لعشرة أشرطة: فالشريط لا سحابة عناصر له، إذ له بنيته الخاصة. وغير موجود لأربع تركيبات على هيكل: فعناصرها تتعلق بالهيكل لا بالسقف، وعدد الخيوط الممتدة إلى السقف صفر. وغير موجود لمشهد جاهز واحد — مصباح الحائط LC0406-1: فتركيبته جاهزة لا محسوبة، ولا توزيع لها، ومن ثم لا تعليم للسقف. وبمعزل عن رمز الصنف، وبحسب المواصفة نفسها: إذا اختير فيها التركيب على قاعدة معدنية، فلا يُصدَر مخطط 1:1، لأنه غير لازم مع هذا النوع من التركيب. والصفحة موجودة بلغتين: vargov.ru/specifications وvargov.ru/en/specifications، ولا توجد نسخ بلغات أخرى. وهي محجوبة عن محركات البحث، ولا روابط إليها من صفحات الموقع الأخرى — فلا يمكن الوصول إليها إلا برابط مباشر: من منشور أو من أداة التكوين."
      }
     ]
    }
