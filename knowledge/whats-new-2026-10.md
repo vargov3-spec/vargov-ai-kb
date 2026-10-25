@@ -34,7 +34,8 @@
   это техническое задание на производство, не заявка и не заказ.
 - **Разметка потолка в натуральную величину.** Для подвесных композиций страница ТЗ готовит монтажную
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
-  точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема есть у 345 из 360 композиций, которые
+  точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема предварительная: перед разметкой
+  потолка её подтверждает технолог производства. Схема есть у 345 из 360 композиций, которые
   конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (у ленты нет облака элементов), у 4 композиций
   на каркасе (элементы висят на каркасе, нитей к потолку ноль) и у готовой сцены LC0406-1 — это настенное
   бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
@@ -54,8 +55,6 @@
   сцены и ленты; у артикулов индивидуального расчёта кнопки нет, потому что нет и самой композиции. Круг тот же, что у выгрузки IFC4: 360 композиций из 605 (проверено 25.10.2026 — прогоном open-skus.json конфигуратора и датасета каталога).
   Начало координат — потолок (у IFC4 правило своё, начало на полу); при импорте в 3ds Max в окне Units
   нужно выбрать «File units converted to: Millimeters».
-- **Отверстия в потолке не ближе 10 мм краями.** Раскладка раздвигает их сама, а точки, которые физически
-  свести нельзя, объединяются в одно отверстие.
 - **Ссылка воспроизводит ту же раскладку, которую видел заказчик.** Номер генерации раскладки передаётся
   в ссылке вместе с размерами и составом, и страница ТЗ собирает ровно ту композицию, а не похожую. Это
   относится к ТЗ, заведённому ссылкой из конфигуратора: у ТЗ, заполненного руками, ссылки нет, и
@@ -168,7 +167,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
 - **Ceiling setting-out at full size.** For suspended compositions the brief page prepares a 1:1
   setting-out drawing — 1 mm on the drawing is 1 mm on the ceiling — from the same layout the fixing
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
-  production. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
+  production. The drawing is preliminary: before the ceiling is set out, it is confirmed by the
+  production engineer. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
   25 October 2026): 10 ribbons have none (a ribbon has no cloud of elements), nor do 4 compositions on a
   frame (their elements hang from the frame, with zero strands to the ceiling), nor the ready scene LC0406-1 —
   a wall light whose composition is ready-made rather than calculated, so there is no layout to set out. Articles
@@ -190,8 +190,6 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   no button, because there is no composition to export. The scope is the same as for the IFC4 export: 360 compositions out of 605 (verified on 25 October 2026 against the configurator's open-skus.json and the catalogue dataset). The origin is at the ceiling (IFC4 has its own
   rule, origin on the floor); on import into 3ds Max choose "File units converted to: Millimetres" in the
   Units dialog.
-- **Ceiling holes are never closer than 10 mm edge to edge.** The layout moves them apart by itself, and
-  points that cannot physically be separated are merged into a single hole.
 - **A link reproduces the very layout the client saw.** The layout generation number now travels in the
   link together with the dimensions and the composition, so the brief page assembles exactly that
   composition rather than a similar one. This applies to a brief opened from a configurator link: a brief
