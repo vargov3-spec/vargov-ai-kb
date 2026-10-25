@@ -59,12 +59,12 @@
 - [大型玻璃构成有多重](https://vargov.ru/en/guides/chandelier-weight) — 八件经计算的构成，从 4.3 kg（11 件元件）到 447.7 kg（241 件元件），含固定点数量与单点荷载。2026 年 9 月 27 日按实心/空心玻璃标注计算，2026 年 10 月 2 日发布；页面上的数字来自配置器数据。
 - [安装](https://vargov.ru/en/installation) · [安装指南（PDF）](https://vargov.ru/pdf/vargov-installation-en.pdf) · [接线指南（PDF）](https://vargov.ru/pdf/vargov-connection-en.pdf) — 安装指南有八种语言：`vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
 - [认证](https://vargov.ru/en/certification) — 两份欧亚经济联盟系列证书（TR CU 004/2011、020/2011）及两份 TR EAEU 037/2016 声明，覆盖 310 个 LC 货号，EAC 标志，有效至 2031 年；系列范围意味着所列货号的每一件产品均在覆盖之内，而非单一批次
-- [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并访客可自行导出 **IFC4（BIM）模型**、PDF 规格书和招标清单；DXF 图纸仅供内部使用：品牌的生产部门与经销商（灯带及链式构成 LC0537、LC0591、LC0358 不提供 DXF）。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
+- [保修](https://vargov.ru/en/warranty) · [配置器](https://vargov.design) — 为房间生成构成，并访客可自行导出 **IFC4（BIM）模型**、用于 3ds Max 的 FBX 模型、PDF 规格书和招标清单；DXF 图纸仅供内部使用：品牌的生产部门与经销商（灯带及链式构成 LC0537、LC0591、LC0358 不提供 DXF）。发光货号导出为 IfcLightFixture，装饰货号为 IfcFurnishingElement；吊顶固定点作为独立对象输出，各带自身荷载。没有 Revit 族（.rfa）——该格式为专有格式，品牌不提供。
 
 ## 2026 年 10 月新内容
 
 - [Vargov®Design 新内容 — 2026 年 10 月](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/whats-new-2026-10.md) — 2026 年 10 月 1 日至 19 日网站与配置器更新汇总（俄文 + 英文）
-- [配置器 IFC4 导出](https://vargov.ru/en/configurator/ifc4) — 面向建筑师的页面：文件包含什么、如何打开。605 件构成中有 360 件可完整计算并导出（2026 年 10 月 19 日），其产品页（英文版）标有 “IFC4 · PDF spec sheet · tender sheet — in the configurator”；导出前设定天花板高度（默认 2700 毫米，为房间高度而非产品尺寸）；GUID 由配置生成，同一货号的不同构成可并入同一个 BIM 模型而不冲突（相同配置生成相同 GUID）
+- [配置器 IFC4 导出](https://vargov.ru/en/configurator/ifc4) — 面向建筑师的页面：文件包含什么、如何打开。605 件构成中有 360 件可完整计算并导出（2026 年 10 月 25 日以 open-skus.json 与数据集核对），其产品页（英文版）标有 “IFC4 · PDF spec sheet · tender sheet — in the configurator”；导出前设定天花板高度（默认 2700 毫米，为房间高度而非产品尺寸）；GUID 由配置生成，同一货号的不同构成可并入同一个 BIM 模型而不冲突（相同配置生成相同 GUID）。自 2026 年 10 月 24 日起，同一步骤旁还提供 **用于 3ds Max 的 FBX 导出** — 范围相同，同样是这 360 件构成：构成为整体、各为独立对象、单位为毫米，吊线与吊顶固定件为实体（每个孔一个），并含天花板平面；原点位于天花板，构成向下悬挂（IFC4 的原点在地面）；颜色会保留，但没有贴图与 UV，相同元素为同一几何体的副本；FBX 不含 BIM 属性 — 荷载、质量、功率与货号仍保留在 IFC4 中；导入时请在 Units 对话框中选择 “File units converted to: Millimeters”。灯带同样提供 FBX 导出
 - [RAL 喷涂与电镀](https://vargov.ru/en/specifications/colours) — RAL Classic，210 种颜色；配置器中一个构成最多可混合 8 种 RAL 颜色，另有电镀（4 种透明色调、3 种镜面镀层）和无色透明；仅在元件物理上可透明时提供透明度 · [金属饰面](https://vargov.ru/en/specifications/finishes) — 24 个编码 JN-9001…JN-9024（8 种颜色 × 3 种工艺），实物色板在展厅
 - [生产任务书](https://vargov.ru/en/specifications)可在 vargov.ru 在线填写：配置器中的 “Fill in the spec” 按钮会自动带入构成参数。“Get a quote” 会在 Telegram、WhatsApp 或电子邮件中打开已写好的询价，由访客自行发送，价格按询价报出。“Help mode” — 配置器内置的分步帮助
 - [/for-map.json](https://vargov.ru/for-map.json) — 哪些构成适合十个 “按空间” 展示中的哪一个（仅为提示，并非限制）；[vargov.design/llms.txt](https://vargov.design/llms.txt) — 元件参数的原始来源

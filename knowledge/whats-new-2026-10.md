@@ -42,7 +42,7 @@
   Это модель для визуализации:
   свойств BIM — нагрузок, массы, мощности, артикулов — в ней нет, они остаются в IFC4. Скачать можно
   любую композицию, которую конфигуратор рассчитывает: облака, цепочки, композиции на каркасе, готовые
-  сцены и ленты; у артикулов индивидуального расчёта кнопки нет, потому что нет и самой композиции.
+  сцены и ленты; у артикулов индивидуального расчёта кнопки нет, потому что нет и самой композиции. Круг тот же, что у выгрузки IFC4: 360 композиций из 605 (проверено 25.10.2026 — прогоном open-skus.json конфигуратора и датасета каталога).
   Начало координат — потолок (у IFC4 правило своё, начало на полу); при импорте в 3ds Max в окне Units
   нужно выбрать «File units converted to: Millimeters».
 - **Отверстия в потолке не ближе 10 мм краями.** Раскладка раздвигает их сама, а точки, которые физически
@@ -168,7 +168,7 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   It is a model for visualisation: it holds no BIM properties — no loads, mass, power or article codes,
   those stay in the IFC4 file. Any composition the configurator calculates can be downloaded this way —
   clouds, chains, compositions on a frame, ready scenes and ribbons; articles calculated individually have
-  no button, because there is no composition to export. The origin is at the ceiling (IFC4 has its own
+  no button, because there is no composition to export. The scope is the same as for the IFC4 export: 360 compositions out of 605 (verified on 25 October 2026 against the configurator's open-skus.json and the catalogue dataset). The origin is at the ceiling (IFC4 has its own
   rule, origin on the floor); on import into 3ds Max choose "File units converted to: Millimetres" in the
   Units dialog.
 - **Ceiling holes are never closer than 10 mm edge to edge.** The layout moves them apart by itself, and
