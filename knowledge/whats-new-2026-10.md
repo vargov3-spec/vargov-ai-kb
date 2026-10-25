@@ -41,7 +41,9 @@
   на каркасе (элементы висят на каркасе, нитей к потолку ноль) и у готовой сцены LC0406-1 — это настенное
   бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
   индивидуального расчёта в эти 360 не входят вовсе. Отдельно от артикула, по самому ТЗ: если в нём выбран
-  монтаж на металлическую базу, схема 1:1 не выдаётся — при таком монтаже она не нужна. В файле схемы четыре листа — для плоттера и A4, каждый на потолок и на пол; печатать нужно
+  монтаж на металлическую базу, схема 1:1 не выдаётся — заказчику она при таком монтаже не нужна: база
+  приходит с готовыми отверстиями и монтажными элементами, а порядок установки описан в печатной
+  инструкции, которая идёт вместе с ней. В файле схемы четыре листа — для плоттера и A4, каждый на потолок и на пол; печатать нужно
   строго 100 %, без «вписать в страницу», и проверять отрезок 100 мм линейкой. Лист плоттера идёт одним
   куском до 5 м, схема больше режется на части, листы A4 склеиваются по меткам. На схеме размечены и точки подвеса контуров подсветки (сейчас это LC0523): провод по центру
   контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
@@ -175,7 +177,9 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   frame (their elements hang from the frame, with zero strands to the ceiling), nor the ready scene LC0406-1 —
   a wall light whose composition is ready-made rather than calculated, so there is no layout to set out. Articles
   calculated individually are not part of those 360 at all. A separate matter, belonging to the brief: if it
-  specifies mounting on the metal base, no 1:1 drawing is issued — that mounting does not need one. The drawing also marks the fixing points of the
+  specifies mounting on the metal base, no 1:1 drawing is issued — the client does not need one with that
+  mounting: the base arrives with its holes and fixings already in place, and the installation sequence is
+  set out in the printed instruction that comes with it. The drawing also marks the fixing points of the
   lit contours (currently LC0523): a wire at the centre of a contour and two cables at its ends, with the
   same hole diameter as every other point; the number of points on the drawing is checked against the brief.
   The file holds four sheets — plotter size and A4, each for the ceiling and for the floor. Print at exactly
