@@ -35,7 +35,8 @@
 - **Разметка потолка в натуральную величину.** Для подвесных композиций страница ТЗ готовит монтажную
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема предварительная: перед разметкой
-  потолка её подтверждает технолог производства. Схема есть у 345 из 360 композиций, которые
+  потолка её подтверждает технолог производства, и эта пометка напечатана на листе,
+  который уходит на производство. Схема есть у 345 из 360 композиций, которые
   конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (у ленты нет облака элементов), у 4 композиций
   на каркасе (элементы висят на каркасе, нитей к потолку ноль) и у готовой сцены LC0406-1 — это настенное
   бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
@@ -168,7 +169,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   setting-out drawing — 1 mm on the drawing is 1 mm on the ceiling — from the same layout the fixing
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
   production. The drawing is preliminary: before the ceiling is set out, it is confirmed by the
-  production engineer. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
+  production engineer, and that note is printed on the sheet that goes to
+  production. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
   25 October 2026): 10 ribbons have none (a ribbon has no cloud of elements), nor do 4 compositions on a
   frame (their elements hang from the frame, with zero strands to the ceiling), nor the ready scene LC0406-1 —
   a wall light whose composition is ready-made rather than calculated, so there is no layout to set out. Articles
