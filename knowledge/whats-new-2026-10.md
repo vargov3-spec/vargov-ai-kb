@@ -55,8 +55,9 @@
   свойств BIM — нагрузок, массы, мощности, артикулов — в ней нет, они остаются в IFC4. Скачать можно
   любую композицию, которую конфигуратор рассчитывает: облака, цепочки, композиции на каркасе, готовые
   сцены и ленты; у артикулов индивидуального расчёта кнопки нет, потому что нет и самой композиции. Круг тот же, что у выгрузки IFC4: 360 композиций из 605 (проверено 25.10.2026 — прогоном open-skus.json конфигуратора и датасета каталога).
-  Начало координат — потолок (у IFC4 правило своё, начало на полу); при импорте в 3ds Max в окне Units
-  нужно выбрать «File units converted to: Millimeters».
+  Начало координат — потолок (у IFC4 правило своё, начало на полу). Файл вставляется обычным импортом:
+  масштаб объявлен внутри, пересчитывать ничего не нужно, а разворот в привычный Z-вверх делает сам
+  импортёр.
 - **Ссылка воспроизводит ту же раскладку, которую видел заказчик.** Номер генерации раскладки передаётся
   в ссылке вместе с размерами и составом, и страница ТЗ собирает ровно ту композицию, а не похожую. Это
   относится к ТЗ, заведённому ссылкой из конфигуратора: у ТЗ, заполненного руками, ссылки нет, и
@@ -193,8 +194,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   those stay in the IFC4 file. Any composition the configurator calculates can be downloaded this way —
   clouds, chains, compositions on a frame, ready scenes and ribbons; articles calculated individually have
   no button, because there is no composition to export. The scope is the same as for the IFC4 export: 360 compositions out of 605 (verified on 25 October 2026 against the configurator's open-skus.json and the catalogue dataset). The origin is at the ceiling (IFC4 has its own
-  rule, origin on the floor); on import into 3ds Max choose "File units converted to: Millimetres" in the
-  Units dialog.
+  rule, origin on the floor). The file goes in with a plain import: the scale is declared inside it,
+  nothing needs rescaling, and the importer itself turns it to the Z-up Max expects.
 - **A link reproduces the very layout the client saw.** The layout generation number now travels in the
   link together with the dimensions and the composition, so the brief page assembles exactly that
   composition rather than a similar one. This applies to a brief opened from a configurator link: a brief
