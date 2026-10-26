@@ -1,6 +1,6 @@
 # Светильник, который не доезжает до модели
 
-*Эссе для архитекторов и проектировщиков: что должно лежать в файле, чтобы декоративный светильник вообще мог участвовать в координации. Опубликовано 26.10.2026. Английская версия — ниже.*
+*Эссе для архитекторов и проектировщиков: что должно лежать в файле, чтобы декоративный светильник вообще мог участвовать в координации. Опубликовано 26.10.2026. Английская версия — ниже. Английский текст также опубликован на Medium: https://medium.com/@antonvargov/the-light-fitting-that-never-arrives-in-the-model-1e9090f2d25f*
 
 Модель здания знает о потолке много. Она знает плиту, инженерию над ней, отделку под ней, где садятся спринклеры и где конструктив не примет ещё один анкер. Чего она обычно не знает — так это того единственного предмета, на который смотрят все, кто входит в комнату.
 
@@ -60,7 +60,7 @@
 
 # The light fitting that never arrives in the model
 
-*An essay for architects, about what has to be inside a file before a decorative light fitting can take part in coordination at all. Published 26 October 2026.*
+*An essay for architects, about what has to be inside a file before a decorative light fitting can take part in coordination at all. Published 26 October 2026. Also on Medium: https://medium.com/@antonvargov/the-light-fitting-that-never-arrives-in-the-model-1e9090f2d25f*
 
 A building model knows a great deal about a ceiling. It knows the slab, the services above it, the finish below it, where the sprinklers land and where the structure will not take another anchor. What it often does not know is the one object everybody looks at when they walk into the room.
 
