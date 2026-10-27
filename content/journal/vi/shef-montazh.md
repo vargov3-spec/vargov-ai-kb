@@ -24,7 +24,7 @@ Chuyên gia của chúng tôi sẽ gọi lại và tư vấn cho bạn về mọ
 
 Chi phí dịch vụ
 
-Tư vấn qua điện thoại — 5.000 ₽.
+Tư vấn qua điện thoại — theo thỏa thuận.
 
 Khi cần thiết — chuyên gia đến công trình để giám sát và đưa khuyến nghị tại chỗ. Chi phí đến công trình được tính riêng và thỏa thuận theo từng trường hợp.
 

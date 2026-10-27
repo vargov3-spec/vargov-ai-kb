@@ -24,7 +24,7 @@ Il nostro specialista vi richiamerà e vi consiglierà su tutto ciò che riguard
 
 Costo del servizio
 
-Consulenza telefonica — 5 000 ₽.
+Consulenza telefonica — da concordare.
 
 Se necessario, lo specialista può recarsi in cantiere per il controllo e i consigli sul posto. La trasferta si paga a parte e il costo si concorda caso per caso.
 

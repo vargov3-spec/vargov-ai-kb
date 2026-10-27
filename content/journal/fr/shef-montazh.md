@@ -24,7 +24,7 @@ Notre spécialiste vous rappellera et vous conseillera sur tout ce qui touche au
 
 Tarif du service
 
-Consultation téléphonique — 5 000 ₽.
+Consultation téléphonique — à convenir.
 
 Si nécessaire, le spécialiste peut se déplacer sur le chantier pour contrôler et conseiller sur place. Le déplacement est facturé séparément et son tarif est convenu au cas par cas.
 

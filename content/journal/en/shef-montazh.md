@@ -24,7 +24,7 @@ Our specialist will call you back and advise you on everything to do with mounti
 
 Price of the service
 
-Phone consultation — 5,000 ₽.
+Phone consultation — by arrangement.
 
 If needed, the specialist can come to the site to supervise and advise on the spot. The site visit is charged separately and its price is agreed individually.
 

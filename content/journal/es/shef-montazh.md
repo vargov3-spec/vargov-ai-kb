@@ -24,7 +24,7 @@ Nuestro especialista le llamará y le asesorará en todo lo relacionado con el m
 
 Precio del servicio
 
-Consulta telefónica — 5 000 ₽.
+Consulta telefónica — a convenir.
 
 Si es necesario, el especialista puede desplazarse a la obra para supervisar y asesorar in situ. El desplazamiento se paga aparte y su coste se acuerda de forma individual.
 

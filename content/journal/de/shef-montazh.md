@@ -24,7 +24,7 @@ Unser Spezialist ruft Sie zurück und berät Sie zu allen Fragen der Montage und
 
 Preis der Leistung
 
-Telefonberatung — 5 000 ₽.
+Telefonberatung — nach Vereinbarung.
 
 Bei Bedarf kommt der Spezialist zur Kontrolle und Beratung vor Ort. Der Vor-Ort-Termin wird gesondert berechnet, der Preis wird individuell vereinbart.
 

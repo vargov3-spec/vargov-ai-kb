@@ -181,11 +181,11 @@
      "https://medium.com/@antonvargov",
      "https://www.linkedin.com/in/anton-vargov-95938643a"
     ],
-    "not_in_graph_yet": {
+    "not_in_sameAs_by_owner": {
      "bluesky": "https://bsky.app/profile/vargovdesign.bsky.social"
     }
    },
-   "note": "organization — 14 адресов, как в sameAs узла Organization сайта и графа; person — sameAs узла Person (Medium основателя здесь). Bluesky: профиль заведён и оформлен 26.10.2026, в sameAs сайта и графа его пока нет — задача стороне сайта; сторож его не требует",
+   "note": "organization — 14 адресов, как в sameAs узла Organization сайта и графа; person — sameAs узла Person (Medium основателя здесь, его поставил сайт 02.10.2026). Bluesky: профиль заведён 26.10.2026, но решение владельца 27.10.2026 (через агента сайта): Medium и Bluesky в sameAs бренда НЕ добавлять; сторож их не требует",
    "source": "references/organization.jsonld — Organization.sameAs (14), Person.sameAs (4); Bluesky — публичный API AT Protocol, профиль vargovdesign.bsky.social (26.10.2026)",
    "checked": "2026-10-26"
   },
