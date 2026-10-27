@@ -36,11 +36,13 @@
 
 ## Где файл заканчивается
 
-Четыре границы, названные прямо, — потому что архитектор, обжигавшийся на обещаниях поставщиков, читает сначала их.
+Пять границ, названных прямо, — потому что архитектор, обжигавшийся на обещаниях поставщиков, читает сначала их.
 
 **Это координационные данные, а не цеховой чертёж.** Расчёт концептуальный, финальную спецификацию подтверждает конструктор бренда; в самой выгрузке это написано. Файл годится, чтобы поставить изделие на место, проверить габариты и внести нагрузки в разговор с конструктором, — но не чтобы сверлить по нему как по подписанному документу.
 
-**Точки крепления выгружаются не у всех.** Композиции на каркасе и готовые сцены висят на каркасе, а не на плите: крепить к потолку нечего, и точек в файле нет. Это пять артикулов из трёхсот шестидесяти, выгружаемых полностью.
+**Точки крепления выгружаются не у всех.** У композиций на каркасе элементы держит каркас, а не плита: к потолку подвешен сам каркас; в файл уходит число его подвесов, но не их координаты — сами точки видны на чертеже каркаса и на виде сбоку в конфигураторе. Готовая сцена LC0406-1 — настенное бра: потолочных точек у него нет вовсе. Это пять артикулов из трёхсот шестидесяти, выгружаемых полностью.
+
+**Чего в файле нет.** Самих тросов и проводов — только точки, где они приходят в потолок; несущего каркаса и контуров подсветки — их геометрия живёт мимо слоя, из которого собирается экспорт.
 
 **В эти триста шестьдесят входит не весь каталог.** Полностью выгружаются 360 композиций из 605. Остальное — смешанная группа: настенные и напольные предметы, скульптурные объекты и вещи шоурума, которых конфигуратор не собирает вовсе, и подвесные композиции, считающиеся индивидуально.
 
@@ -96,11 +98,13 @@ Alongside the model, the same step produces a specification and a tender sheet f
 
 ## Where the file stops
 
-Four limits, stated plainly, because an architect who has been burned by supplier promises reads these first.
+Five limits, stated plainly, because an architect who has been burned by supplier promises reads these first.
 
 **It is coordination data, not a shop drawing.** The calculation is conceptual, and the final specification is confirmed by the brand's own engineer. The export says so itself. Use it to position, to check clearances and to carry loads into the structural conversation — not as a signed document to drill from.
 
-**Not every composition exports fixing points.** Compositions built on a frame, and ready-made scenes, hang from the frame rather than from the slab; there is nothing to fix to the ceiling, and the file contains no fixing points. That is five catalogue items of the three hundred and sixty that export in full.
+**Not every composition exports fixing points.** In compositions built on a frame the elements are carried by the frame, not by the slab: the frame itself is suspended from the ceiling; the file records how many suspensions it has, but not where they are — the points themselves are shown on the frame drawing and on the side view in the configurator. The ready-made scene LC0406-1 is a wall light: it has no ceiling points at all. That is five catalogue items of the three hundred and sixty that export in full.
+
+**What is not in the file.** The cables and wires themselves — only the points where they meet the ceiling; the load-bearing frame and the lit contours — their geometry lives outside the layer the export is built from.
 
 **Not every catalogue item is in that number.** Three hundred and sixty of the six hundred and five compositions export in full. The rest are a mixed group — wall and floor pieces, sculptural objects and showroom items that the configurator does not assemble at all, alongside suspended compositions that are quoted individually.
 

@@ -99,7 +99,7 @@
 
 **Для площадок, которым нужен портрет бренда, а не одна новость.** Число наград и программ — из `awardsCount()` на дату отправки (на 19.10.2026 — 26 наград в 16 программах; сверено сборщиком `build_from_site.py` по main сайта 19b68ae).
 
-> **Vargov® Design: 25 International Design Awards for Author's Lighting Compositions**
+> **Vargov® Design: 26 International Design Awards for Author's Lighting Compositions**
 > *Three Platinum titles, a Product Designer of the Year title and a catalogue of 605 made-to-order compositions*
 >
 > MOSCOW, September 2026 — Vargov® Design, a Russian brand of author's lighting and decorative compositions, holds **26 awards from international juries** across sixteen programmes.
@@ -112,14 +112,14 @@
 >
 > The catalogue comprises 605 compositions in four families — lighting compositions, decorative compositions, floor and table objects, and sculptural decor — with a 3D configurator nominated at Awwwards in 2026.
 >
-> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-three awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov. *(устарело: число на 06.09.2026 — см. примечание ниже)*
+> "We do not build a catalogue in the ordinary sense. Every composition is assembled for one specific interior, and its scale and geometry are decided by the space rather than by us. Twenty-three awards across fifteen programmes tell me that this way of working reads internationally," says Anton Vargov. *(устарело: число на 06.09.2026 — ждёт решения владельца, см. примечание ниже)*
 >
 > Awards with certificates: https://vargov.ru/en/awards
 > Catalogue: https://vargov.ru/en/catalog
 
-Примечание. Цитата основателя — его прямая речь: формулировку с «Twenty-three awards across fifteen programmes» владелец утвердил 06.09.2026, когда `awardsCount()` давал 23, а программ было 15. Число в ней **устарело** и стоит в утверждённом виде: без слова владельца прямую речь не меняем. Заголовок, подзаголовок и лид — не прямая речь, они приведены к `awardsCount()` на 19.10.2026 (26 наград, 16 программ — с NY Product Design Awards 2026, добавленной 19.10). Поэтому сейчас релиз расходится сам с собой (26 в заголовке и лиде, 23 в цитате): перед следующей рассылкой нужно решение владельца по цитате.
+Примечание. Цитата основателя — его прямая речь: формулировку с «Twenty-three awards across fifteen programmes» владелец утвердил 06.09.2026, когда `awardsCount()` давал 23, а программ было 15. Число в ней **устарело** и стоит в утверждённом виде: без слова владельца прямую речь не меняем. Заголовок, подзаголовок и лид — не прямая речь, они приведены к `awardsCount()` (26 наград, 16 программ — с NY Product Design Awards 2026, добавленной 19.10): лид — 19.10.2026, заголовок — только 26.10.2026 (до этого в нём стояло «25», и сверка 26.10 нашла в одном релизе три разных числа: 25, 26 и 23). Поэтому сейчас релиз расходится сам с собой (26 в заголовке и лиде, 23 в цитате): перед следующей рассылкой нужно решение владельца по цитате.
 
-**Предлагаемая редакция цитаты — ждёт владельца** (число из `awardsCount()` на 03.10.2026, владелец её не утверждал): «…Twenty-five awards across sixteen programmes tell me that this way of working reads internationally».
+**Предлагаемая редакция цитаты — ждёт владельца** (число из `awardsCount()` на 26.10.2026, владелец её не утверждал): «…Twenty-six awards across sixteen programmes tell me that this way of working reads internationally».
 
 Версия, отправленная 04.09 в Luxury Lifestyle Awards, — с числом 22 (заголовок, лид и цитата); это архив, не шаблон.
 

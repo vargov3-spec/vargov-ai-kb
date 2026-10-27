@@ -12,7 +12,8 @@
   заказа выдать модель композиции в формате IFC4, PDF-спецификацию и тендерный лист — без обращения к бренду.
   Светящийся элемент выгружается как IfcLightFixture, несветящийся — как IfcFurnishingElement; каждая точка
   крепления к потолку — отдельный объект с числом элементов на ней и, когда известна масса, расчётной нагрузкой
-  (у композиций на каркасе точек крепления в файле нет). DXF — только для внутреннего пользования.
+  (у композиций на каркасе точек крепления к потолку в файле нет: элементы держит каркас; в файл уходит
+  число подвесов самого каркаса — свойство SuspensionCount, без координат). DXF — только для внутреннего пользования.
 - **Полный расчёт — у 360 композиций из 605** (19.10.2026). На их карточках vargov.ru стоит строка
   «IFC4 · PDF-спецификация · тендерный лист — в конфигураторе»; остальные композиции рассчитываются
   индивидуально, и строки у них нет.
@@ -37,7 +38,8 @@
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема предварительная: перед разметкой
   потолка её подтверждает технолог производства, и эта пометка напечатана на самих листах схемы. Схема есть у 345 из 360 композиций, которые
   конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (у ленты нет облака элементов), у 4 композиций
-  на каркасе (элементы висят на каркасе, нитей к потолку ноль) и у готовой сцены LC0406-1 — это настенное
+  на каркасе (у элементов своих нитей к потолку нет — они висят на каркасе, а сам каркас подвешен к потолку;
+  в IFC4 записано число подвесов каркаса, без координат, а сами точки видны на чертеже каркаса и на виде сбоку) и у готовой сцены LC0406-1 — это настенное
   бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
   индивидуального расчёта в эти 360 не входят вовсе. Отдельно от артикула, по самому ТЗ: если в нём выбран
   монтаж на металлическую базу, схема 1:1 не выдаётся — заказчику она при таком монтаже не нужна: база
@@ -48,8 +50,8 @@
   контура и два троса по его концам, с тем же диаметром отверстия, что у остальных точек; число точек на
   схеме сверяется с тем, что записано в ТЗ.
 - **FBX собранной композиции.** Рядом с выгрузкой IFC появилась кнопка «Скачать FBX (3ds Max)»:
-  композиция в сборе, отдельными объектами, в миллиметрах, вместе с нитями, креплениями и плоскостью
-  потолка; цвета стекла и покрытия фурнитуры переносятся, текстур нет. Одинаковые элементы в файле —
+  композиция в сборе, отдельными объектами, в миллиметрах, вместе с нитями, креплениями (одно крепление на
+  каждое отверстие в потолке: две нити в одном отверстии несут один узел) и плоскостью потолка; цвета стекла и покрытия фурнитуры переносятся, текстур нет. Одинаковые элементы в файле —
   копии одной геометрии, поэтому композиция открывается отдельными объектами, а не единым телом.
   Это модель для визуализации:
   свойств BIM — нагрузок, массы, мощности, артикулов — в ней нет, они остаются в IFC4. Скачать можно
@@ -148,7 +150,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   together with a PDF specification and a tender sheet — without contacting the brand. Light-emitting elements are
   exported as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point is a separate object
   with the number of elements on it and, when the mass is known, an estimated load (compositions hung on a frame
-  have no fixing points in the file). DXF is for internal use only.
+  have no ceiling fixing points in the file: the frame carries the elements; the file records the number of
+  the frame's own suspensions — property SuspensionCount — without their coordinates). DXF is for internal use only.
 - **Full calculation: 360 of 605 compositions** (19 October 2026). Their vargov.ru pages carry the line
   "IFC4 · PDF spec sheet · tender sheet — in the configurator"; the other compositions are calculated
   individually and do not show the line.
@@ -173,7 +176,9 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   production. The drawing is preliminary: before the ceiling is set out, it is confirmed by the
   production engineer, and that note is printed on the drawing sheets themselves. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
   25 October 2026): 10 ribbons have none (a ribbon has no cloud of elements), nor do 4 compositions on a
-  frame (their elements hang from the frame, with zero strands to the ceiling), nor the ready scene LC0406-1 —
+  frame (their elements have no strands of their own to the ceiling — they hang from the frame, and the frame
+  itself is suspended from the ceiling; IFC4 records the number of its suspensions, without coordinates,
+  and the points themselves are shown on the frame drawing and on the side view), nor the ready scene LC0406-1 —
   a wall light whose composition is ready-made rather than calculated, so there is no layout to set out. Articles
   calculated individually are not part of those 360 at all. A separate matter, belonging to the brief: if it
   specifies mounting on the metal base, no 1:1 drawing is issued — the client does not need one with that
@@ -186,8 +191,8 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   100 %, never "fit to page": a 100 mm segment on the sheet is there to be checked with a ruler. The plotter
   sheet runs in one piece up to 5 m and is split beyond that; A4 sheets are joined along their marks.
 - **FBX of the assembled composition.** Next to the IFC export there is now a "Download FBX (3ds Max)"
-  button: the whole composition as separate objects, in millimetres, together with the wires, the fixings
-  and the ceiling plane; the colours of the glass and of the hardware finish carry over, textures do not.
+  button: the whole composition as separate objects, in millimetres, together with the wires, the fixings (one per
+  ceiling hole: two strands in one hole share one fixing) and the ceiling plane; the colours of the glass and of the hardware finish carry over, textures do not.
   Identical elements in the file are copies of one geometry, so the composition opens as separate objects
   rather than a single body.
   It is a model for visualisation: it holds no BIM properties — no loads, mass, power or article codes,

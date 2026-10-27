@@ -31,18 +31,18 @@ KB = Path(__file__).resolve().parent.parent
 
 # (файл, регулярное выражение с одной группой — числом)
 ANCHORS: list[tuple[str, str]] = [
-    ("llms.txt", r"(\d+) международных наград"),
+    ("llms.txt", r"(\d+) достижений на международных премиях"),
     ("llms.txt", r"Награды — (\d+), в 16 программах"),
     ("llms.txt", r"awards-verified\.md\) — (\d+) наград со ссылками"),
-    ("en/llms.txt", r"(\d+) international awards\."),
+    ("en/llms.txt", r"(\d+) awards from international juries\."),
     ("en/llms.txt", r"(\d+) awards across 16 programmes"),
     ("en/llms.txt", r"awards-verified\.md\) — (\d+) awards with links"),
     ("zh/llms.txt", r"(\d+) 项国际评委会奖项"),
     ("zh/llms.txt", r"16 个奖项计划共 (\d+) 项奖项"),
     ("zh/llms.txt", r"awards-verified\.md\) — (\d+) 项奖项"),
     # llms-full.txt собирается из llms.txt и en/llms.txt дословно — проверяем обе половины.
-    ("llms-full.txt", r"(\d+) международных наград"),
-    ("llms-full.txt", r"(\d+) international awards\."),
+    ("llms-full.txt", r"(\d+) достижений на международных премиях"),
+    ("llms-full.txt", r"(\d+) awards from international juries\."),
     ("README.md", r"Organization \(бренд, (\d+) наград"),
     ("README.md", r"дословно из `awards\.ts`: (\d+) наград"),
     ("en/README.md", r"(\d+) awards from international juries"),

@@ -1,4 +1,5 @@
 ---
+draft_note: "черновик; финальная версия — knowledge/ifc4-in-the-model-essay.md"
 title: "Why a lighting studio exports IFC4 before you place an order"
 author: Anton Vargov, founder and lead designer, Vargov® Design
 channel: LinkedIn article (founder's profile)

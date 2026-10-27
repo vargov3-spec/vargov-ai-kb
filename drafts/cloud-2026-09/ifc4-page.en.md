@@ -1,4 +1,5 @@
 ---
+draft_note: "черновик; финальная версия — knowledge/ifc4-in-the-model-essay.md"
 title: "IFC4 from the configurator: what an architect gets and how to use it"
 meta_title: "IFC4 Chandelier Configurator for Architects · Vargov Design"
 meta_description: "Online lighting configurator with IFC4 export: build a composition for your room, download the BIM model, PDF specification and tender sheet."

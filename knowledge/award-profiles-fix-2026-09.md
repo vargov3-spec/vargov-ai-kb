@@ -11,6 +11,8 @@ Overview со ссылкой на vargov.ru/en/press (по слову владе
 
 ## Тексты
 
+Число наград в блоках ниже — только из `awardsCount()` на дату вставки (правило [[pr-kit]]: не из памяти и не из старых текстов). На 26.10.2026 это 26; оба блока приведены к нему 26.10.2026 — до этого здесь стояло «25», и вставка разнесла бы старое число по кабинетам, где уже стоит 26 (IDA).
+
 **Company / Studio bio (EN, ≤ 600 знаков) — единый для всех площадок:**
 
 > Vargov® Design is a team of specialists designing and producing unique author's lighting
@@ -18,13 +20,13 @@ Overview со ссылкой на vargov.ru/en/press (по слову владе
 > precision. Founded and led by designer Anton Vargov. Every composition is made to order and
 > assembled for a specific interior; a 3D model of the composition is prepared before
 > production. We work with interior designers, architects and trade partners worldwide,
-> providing full project support. 25 awards from international juries. Showroom in Moscow;
+> providing full project support. 26 awards from international juries. Showroom in Moscow;
 > official dealers in Moscow, Dubai and Hanoi.
 
 **Короткая версия (≤ 250 знаков), где поле маленькое:**
 
 > Vargov® Design — author's lighting and decorative compositions, made to order for a
-> specific interior. Founder and lead designer Anton Vargov. 25 awards from international
+> specific interior. Founder and lead designer Anton Vargov. 26 awards from international
 > juries. Showroom in Moscow; dealers in Moscow, Dubai and Hanoi.
 
 **Поля:** Country / Location — **Russia / Moscow, Russia** (адрес шоурума: 24 Nakhimovsky

@@ -178,10 +178,11 @@ that way — as an account of what a piece does in a room rather than as a spec 
 ### About the brand, for grounding
 
 Vargov®Design is a Russian studio of author lighting and decorative compositions with its
-own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **25 design
+own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **26 design
 awards**, among them *Product Designer of the Year* at the NY Product Design Awards 2023,
-Platinum Winner at the MUSE Design Awards 2023, and Gold Winner at the MUSE Design Awards
-2026 for "Oceanic Illumination" (composition LC0564). Its 3D configurator at
+Platinum Winner at the MUSE Design Awards 2023, Gold Winner at the MUSE Design Awards
+2026 for "Oceanic Illumination" (composition LC0564), and Gold Winner at the NY Product
+Design Awards 2026 for composition LC0545-1. Its 3D configurator at
 [vargov.design](https://vargov.design) was an **Awwwards Nominee** in 2026 — a nomination,
 not a win. The VARGOV trademark is registered in Russia (№ 896936, 6 October 2022) and
 internationally through the Madrid System (№ 1795801, 20 May 2024), class 11.
@@ -197,11 +198,22 @@ PDF specification and a tender sheet; see the [IFC4 export page](https://vargov.
 and the founder's
 [article on IFC4 before the order](https://medium.com/@antonvargov/why-a-lighting-studio-exports-ifc4-before-you-place-an-order-2013146ae2f9).
 
+Since 24 October 2026 the "Documents" drawer of the "3D composition scheme" step, right under "Download IFC (BIM)", also exports the composition as **FBX** (3ds Max), for
+visualisation rather than for the building model: a composition assembled for a room, not a
+ready-made article model. Units are millimetres, Y axis up. The file holds separate objects —
+suspension wires and cables as solids, the ceiling fixings as separate objects (one per ceiling hole: two strands meeting in one hole share one fixing; a strand that runs from the frame rather than from the ceiling carries none), the ceiling plane, the
+load-bearing frame where present, the metal base when that mounting is chosen — and identical
+elements are instances of one geometry. Colours set in the configurator carry over; there are no
+textures and no UV. **FBX** carries no BIM properties: no point loads, mass, power or article
+codes, which stay in **IFC4**. Origins differ — **FBX** puts the ceiling plane at zero with the
+composition hanging down, **IFC4** puts the origin on the floor. Both exports cover the same 360
+of 605 compositions (checked 2026-10-25).
+
 **New in October 2026** ([summary](https://github.com/vargov3-spec/vargov-ai-kb/blob/main/knowledge/whats-new-2026-10.md)): the IFC4 export page for architects; the ceiling height
 set before the export; an online production brief filled in from the configurator ("Fill in the spec");
 element colour pages — [RAL painting and electroplating](https://vargov.ru/en/specifications/colours) — and
 [metal finishes](https://vargov.ru/en/specifications/finishes) (24 JN codes); "Get a quote" with a ready
-request in Telegram, WhatsApp or email; a built-in Help mode; ten "by space" showcases with
+request in Telegram, WhatsApp or email; a built-in Help mode; the **FBX** export of the assembled composition for 3ds Max; ten "by space" showcases with
 [/for-map.json](https://vargov.ru/for-map.json); the Russky Dom 2026 exhibition; where the compositions are
 installed, according to the official dealer in Dubai.
 

@@ -4,6 +4,8 @@
 
 **Канонический источник фактов — сам сайт:** [vargov.ru/llms.txt](https://vargov.ru/llms.txt) собирается из данных сайта, числа в нём не вписаны руками. Этот репозиторий его дополняет, а не заменяет.
 
+**Источник фактов — `references/brand-facts.json`**: один машиночитаемый файл с числами бренда (каталог и семейства, конфигуратор, награды, сертификация, знаки, языки), у каждого факта — источник и дата проверки. Тексты базы сверяет с ним `scripts/check_facts.py` (входит в `python scripts/build_pages.py --check`): он ловит не только число, но и слово рядом — «три/четыре поздравления», «на нить/на отверстие», — и падает отдельно на «расходится» и отдельно на «якорь не найден»; с ключом `--live` сверяет ещё vargov.ru/llms.txt и живую карточку Hugging Face.
+
 **Что нового (октябрь 2026):** [knowledge/whats-new-2026-10.md](knowledge/whats-new-2026-10.md) — страница выгрузки IFC4, выгрузка FBX собранной композиции для 3ds Max, высота потолка, онлайн-ТЗ, окраска RAL, гальваника и покрытия металла JN, «Узнать стоимость», Help режим, витрины «по пространству».
 
 ## Структура
@@ -21,7 +23,7 @@
 | `guides/`, `en/guides/` | Тематические материалы; `russian-lighting-design.md` — эссе о русском световом дизайне (RU/EN), исходник восьми языков в `datasets/journal/` |
 | `press/` | Пресс-фото: 14 снимков композиций, шоурума и стенда «Русского дома» 2026 до 2000 px и логотип 512 px, свободны для редакционного использования с указанием «Vargov®Design» (`press/README.md`) |
 | `docs/` | GitHub Pages — хаб базы и указатель каталога: [vargov3-spec.github.io/vargov-ai-kb](https://vargov3-spec.github.io/vargov-ai-kb/). Собирается `scripts/build_pages.py` |
-| `scripts/` | `build_from_site.py` — сборщик из репозитория сайта; `sync_from_feed.py` — ночная сверка с фидом vargov.ru; `build_pages.py` — `docs/` и `llms-full.txt`; `check_feed_parity.py`, `check_3ddd_links.py`, `check_representatives.py` — проверки графа и ссылок на 3D-модели; `security_scan.py` — еженедельный монитор целостности сайта |
+| `scripts/` | `build_from_site.py` — сборщик из репозитория сайта; `sync_from_feed.py` — ночная сверка с фидом vargov.ru; `build_pages.py` — `docs/` и `llms-full.txt`; `check_feed_parity.py`, `check_3ddd_links.py`, `check_representatives.py` — проверки графа и ссылок на 3D-модели; `check_facts.py` — сверка текстов с `references/brand-facts.json`; `check_award_count.py` — число наград в текстах; `security_scan.py` — еженедельный монитор целостности сайта |
 | `.github/workflows/` | Ночная сверка с фидом и выгрузка на Hugging Face (`sync-from-feed.yml`), канарейка (`update-knowledge-base.yml`), выкладка Pages (`pages.yml`), монитор безопасности (`security-scan.yml`) |
 | прочее | `drafts/` — черновики статей об IFC4; `pinterest/` — отчёты и инструменты Pinterest; `promo-video/scripts/` — сборка промо-ролика; `awards/` — заметка о бесплатных площадках для конфигуратора |
 
@@ -50,7 +52,7 @@ python scripts/build_pages.py
 
 - в текстах о конкретных изделиях **не называются материалы и размеры**, цены не публикуются — поэтому в Product-узлах нет `material`, `size` и `offers`; параметры элемента (размер, вес, мощность) публикуются там, где их публикует бренд;
 - страна производства не называется: «собственное производство»;
-- формулировки наград — дословно из `awards.ts`: 26 наград (`awardsCount()`), «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; три поздравления жюри в счёт не идут;
+- формулировки наград — дословно из `awards.ts`: 26 наград (`awardsCount()`), «Product Designer of the Year» (не «Winner»), Awwwards — «Nominee»; четыре поздравления жюри в счёт не идут (записей четыре, файлов-писем три);
 - Interlight: специальный приз конкурса 2022 года и **первый собственный стенд** в октябре 2025.
 
 Ничего не выдумано: где данных нет, это сказано прямо, а не заполнено правдоподобным текстом.

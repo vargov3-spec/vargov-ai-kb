@@ -1,0 +1,204 @@
+{
+ "_about": "Единый источник фактов бренда Vargov®Design для текстов базы знаний (llms.txt на трёх языках, README, knowledge/*, карточка датасета). У каждого факта: value — значение; source — файл и способ проверки; checked — дата проверки (ISO). Даты — отдельными полями в ISO (ГГГГ-ММ-ДД), не внутри строк. Тексты сверяет scripts/check_facts.py (входит в python scripts/build_pages.py --check). Правило: число в тексте меняется только вместе с этим файлом.",
+ "checked": "2026-10-26",
+ "facts": {
+  "catalogue_total": {
+   "value": 605,
+   "source": "datasets/products.json — число записей (python -I: len = 605); references/catalog.jsonld — 605 узлов Product; products/<раздел>/*.md — 605 файлов",
+   "checked": "2026-10-26"
+  },
+  "catalogue_codes": {
+   "value": {"first": "LC0001", "last": "LC0602"},
+   "source": "datasets/products.json — min/max поля code",
+   "checked": "2026-10-26"
+  },
+  "families": {
+   "value": {"lighting": 354, "decorative": 113, "sculptural-decor": 82, "floor-table-lamps": 56},
+   "labels_ru": {"lighting": "Световые композиции", "decorative": "Декоративные композиции", "sculptural-decor": "Скульптурные композиции", "floor-table-lamps": "Торшеры и арт-объекты"},
+   "labels_en": {"lighting": "Lighting compositions", "decorative": "Decorative compositions", "sculptural-decor": "Sculptural compositions & décor", "floor-table-lamps": "Floor lamps, sconces, table art objects"},
+   "section_titles_ru": {"lighting": "Световые композиции", "decorative": "Декоративные композиции", "sculptural-decor": "Скульптурные композиции и декор", "floor-table-lamps": "Торшеры, бра, настольные арт-объекты"},
+   "section_titles_zh": {"lighting": "灯光构成", "decorative": "装饰构成", "sculptural-decor": "雕塑构成与装饰", "floor-table-lamps": "落地灯、壁灯与桌面艺术品"},
+   "source": "datasets/products.json — Counter(category) и category_label (ru/en); 354 + 113 + 82 + 56 = 605; названия разделов сайта — llms.txt / en/llms.txt / zh/llms.txt, раздел «Каталог»",
+   "checked": "2026-10-26"
+  },
+  "open_with_calc": {
+   "value": 360,
+   "source": "конфигуратор V:\\защита контента\\configurator\\public\\open-skus.json — count = 360, skus = 360 уникальных (правило opensWithCalc, src/engine/openable.ts); llms.txt «Полный расчёт и выгрузка — у 360 композиций из 605»",
+   "checked": "2026-10-26"
+  },
+  "mounting_scheme": {
+   "value": 345,
+   "source": "360 − 10 лент − 4 каркасных − 1 готовая сцена = 345 (open-skus.json: count, series.*.ribbon, frames; src/data/fixed-scenes.json: сцены); прогон конфигуратора 25.10.2026 (llms.txt:73, whats-new-2026-10.md)",
+   "checked": "2026-10-26"
+  },
+  "ribbons": {
+   "value": ["LC0104", "LC0217", "LC0217-1", "LC0228", "LC0279", "LC0280", "LC0326", "LC0327", "LC0328", "LC0329"],
+   "source": "конфигуратор public/open-skus.json — series с ribbon: true (10); src/engine/openable.ts RIBBON_SKUS",
+   "checked": "2026-10-26"
+  },
+  "frame": {
+   "value": ["LC0284", "LC0406", "LC0434", "LC0463"],
+   "source": "конфигуратор public/open-skus.json — frames (4)",
+   "checked": "2026-10-26"
+  },
+  "fixed_scenes": {
+   "value": ["LC0406-1"],
+   "note": "готовая вещь со своей 3D-моделью — настенное бра (слово владельца 05.10.2026, src/engine/openable.ts:40-46); потолочных точек нет",
+   "source": "конфигуратор src/data/fixed-scenes.json — сцены: [LC0406-1]",
+   "checked": "2026-10-26"
+  },
+  "models3d_linked": {
+   "value": 603,
+   "without": ["LC0255", "LC0257"],
+   "source": "datasets/products.json — model3d непуст у 603 записей, пусто у LC0255 и LC0257; references/catalog.jsonld — узел 3DModel есть у 603 Product",
+   "checked": "2026-10-26"
+  },
+  "models3d_registry_entries": {
+   "value": 603,
+   "source": "references/3ddd-models.json — len(items) = 603 после снятия фантома LC0104-1 (26.10.2026; правило — no_own_card в references/3ddd-corrections.json). Проверка: scripts/build_pages.py --check сверяет число в трёх llms с len(items)",
+   "checked": "2026-10-26"
+  },
+  "models3d_graph_nodes": {
+   "value": 969,
+   "per_product": {"1": 237, "2": 366, "0": 2},
+   "source": "references/catalog.jsonld — узлов 3DModel в subjectOf всего 969: у 237 артикулов один (3ddd/3dsky), у 366 два (плюс Sketchfab), у 2 ни одного; 237 + 366 × 2 = 969",
+   "checked": "2026-10-26"
+  },
+  "collection_pages": {
+   "value": 603,
+   "source": "references/catalog.jsonld — узлов CollectionPage (аккаунтный список по тегу) 603, по одному у каждого артикула с моделями",
+   "checked": "2026-10-26"
+  },
+  "awards_total": {
+   "value": 26,
+   "wording_ru": "26 достижений на международных премиях",
+   "wording_en": "26 awards from international juries",
+   "wording_note": "правило knowledge/pr-kit.md: среди 26 есть номинация (Awwwards 2026) и судейство (ADD Awards 2024), поэтому не «26 наград», а «достижений на премиях» / «awards from international juries»",
+   "source": "references/organization.jsonld — Organization.award, 26 записей (эталон, пишет ночная сверка из awardsCount() сайта); knowledge/awards-verified.md — таблица из 26 строк; scripts/check_award_count.py",
+   "checked": "2026-10-26"
+  },
+  "awards_programmes": {
+   "value": 16,
+   "source": "knowledge/awards-verified.md:3 — 16 программ, 30 записей, 4 вне счёта (пересчёт сборщиком 19.10.2026); llms.txt «Награды — 26, в 16 программах». В datasets/products.json программ 14: награды без артикула (Awwwards, Luxury Lifestyle Awards, жюри ADD) в записях товаров не стоят",
+   "checked": "2026-10-26"
+  },
+  "commendations": {
+   "value": 4,
+   "word_ru": "четыре",
+   "files": 3,
+   "source": "knowledge/awards-verified.md, раздел «Четыре документа, которые в счёт не идут»: NYPDA 2023 ×2, MUSE 2026, NYPDA 2026 (commendation: true); файлов-писем три — у одной записи NYPDA 2023 файла нет. 26 + 4 = 30 записей",
+   "checked": "2026-10-26"
+  },
+  "awarded_skus": {
+   "value": 34,
+   "source": "datasets/products.json — award_winning = true у 34 записей; references/catalog.jsonld — поле award у 34 Product; knowledge/awards-verified.md, индекс по артикулам (3 + 1 + 18 + 4 + 8 = 34); живая /awards — 34 кода (проверка аудита 26.10.2026)",
+   "checked": "2026-10-26"
+  },
+  "certification": {
+   "value": {"tr_cu_004": 310, "tr_cu_020": 53, "tr_eaeu_037": 310, "certificates": 2, "declarations": 2, "valid_until_year": 2031},
+   "certificate_until": ["2031-09-06", "2031-09-07"],
+   "declaration_until": "2031-08-27",
+   "source": "datasets/products.json — cert непуст у 310 записей; регламенты по записям: ТР ТС 004/2011 — 310, ТР ТС 020/2011 — 53, ТР ЕАЭС 037/2016 — 310; сертификатов два (05272/26 — 004+020, 53 артикула; 05285/26 — 004, 257), деклараций две (71518/26 — 53; 71557/26 — 257); живой vargov.ru/llms.txt: «TR CU 004/2011 cover 310 LC pieces, 53 of them also to TR CU 020/2011»",
+   "checked": "2026-10-26"
+  },
+  "trademark": {
+   "value": {"ru_no": 896936, "ru_registered_year": 2022, "ir_no": 1795801, "ir_class": 11, "logo_ru_no": 1270653},
+   "ru_until": "2032-04-29",
+   "ir_registered": "2024-05-20",
+   "ir_china_until": "2034-05-20",
+   "logo_priority": "2026-03-12",
+   "logo_registered": "2026-10-06",
+   "logo_until": "2036-03-12",
+   "source": "llms.txt:36 и en/llms.txt:35 (№ 896936 до 29.04.2032; № 1 795 801, Китай до 20.05.2034, класс 11; логотип № 1270653: приоритет 12.03.2026, регистрация 06.10.2026, до 12.03.2036); knowledge/brand.md:21,:24 (дата регистрации IR 20.05.2024); knowledge/whats-new-2026-10.md (2022 — год регистрации знака VARGOV); references/organization.jsonld — identifier 896936 и 1795801. Точной даты регистрации № 896936 в llms.txt и brand.md нет — не вписана",
+   "checked": "2026-10-26"
+  },
+  "fbx_button_path": {
+   "value": {"step_ru": "3D схема композиции", "drawer_ru": "Документы", "under_ru": "Скачать IFC (BIM)", "button_ru": "Скачать FBX (3ds Max)", "step_en": "3D composition scheme", "drawer_en": "Documents", "under_en": "Download IFC (BIM)", "button_en": "Download FBX (3ds Max)", "step_zh": "3D 组合方案", "drawer_zh": "文档"},
+   "since": "2026-10-24",
+   "source": "коммит базы d3688d9 (26.10.2026): агент конфигуратора проверил по разметке — ящик «Документы» живёт в шаге «3D схема композиции», а не в «Стоимости и производстве»; llms.txt:71, en/llms.txt:70",
+   "checked": "2026-10-26"
+  },
+  "fbx_fixings": {
+   "value": {"ru": "одно крепление на каждое отверстие", "en": "one per ceiling hole", "zh": "每个吊顶孔一个"},
+   "forbidden": {"ru": "крепление на каждую нить", "en": "one per strand", "zh": "每根吊线一个"},
+   "source": "конфигуратор src/ui/View3D.tsx:3559-3563 («одно крепление на ОТВЕРСТИЕ, а не на нить — у второй нити того же отверстия его нет (d.cap === false), и нить, идущая не от потолка (y0 — от каркаса к трубке), крепления не несёт»), условие :3596",
+   "checked": "2026-10-26"
+  },
+  "frame_hang": {
+   "value": {"ru": "у элементов своих нитей к потолку нет", "en": "the elements have no strands of their own", "en_whats_new": "their elements have no strands of their own", "zh": "元件自身没有通向吊顶的吊线"},
+   "forbidden": {"ru": "нитей к потолку ноль", "en": "zero strands to the ceiling", "zh": "吊线为零"},
+   "note": "элементы держит каркас, сам каркас подвешен к потолку тросами (frame.ts:1-4; расчёт frame.ts:268-293, 1226); в IFC4 записано число подвесов каркаса — свойство SuspensionCount (ifc.ts:555), без координат; объектами точек нет (ifc.ts:62-65); сами точки видны на чертеже каркаса и на виде сбоку (sideSvg.ts); в схему 1:1 не входят",
+   "source": "конфигуратор src/engine/frame.ts:1-4, src/engine/ifc.ts:62-65",
+   "checked": "2026-10-26"
+  },
+  "ifc_class": {
+   "value": {"by": "element", "lit": "IfcLightFixture", "unlit": "IfcFurnishingElement", "exception": "LC0523"},
+   "note": "класс решается по элементу (ifc.ts:434); у LC0523 свет дают контуры подсветки, которых в файле нет, hasLight снят сборщиком — элементы уходят IfcFurnishingElement (ifcBake.ts:57-62); у точек контура подсветки LoadKg = 0 (Designer.tsx:3211-3216)",
+   "source": "конфигуратор src/engine/ifc.ts:434, src/engine/ifcBake.ts:50-62",
+   "checked": "2026-10-26"
+  },
+  "ifc_absent": {
+   "value": ["самих тросов и проводов (только точки, где они приходят в потолок)", "несущего каркаса", "контуров подсветки"],
+   "source": "конфигуратор src/engine/ifc.ts:62-65 («ЧЕГО В ФАЙЛЕ НЕТ»)",
+   "checked": "2026-10-26"
+  },
+  "ceiling_default_mm": {
+   "value": 2700,
+   "source": "конфигуратор src/engine/ifc.ts:341 (2700, если высоту не передали), src/ui/Designer.tsx:873-874 (по аудиту 26.10.2026); llms.txt:71, whats-new-2026-10.md",
+   "checked": "2026-10-26"
+  },
+  "languages_site": {
+   "value": ["ru", "en", "de", "it", "fr", "es", "vi", "ar"],
+   "source": "llms.txt:90 — раздел «Языковые версии»; datasets/products.json — поля i18n с ключами ru, en, de, it, fr, es, vi, ar",
+   "checked": "2026-10-26"
+  },
+  "languages_kb_only": {
+   "value": ["zh"],
+   "source": "zh/llms.txt и datasets/products-zh.json — только база знаний, версии сайта на китайском нет (llms.txt:90)",
+   "checked": "2026-10-26"
+  },
+  "sameAs": {
+   "value": {
+    "organization": [
+     "https://t.me/vargov_design",
+     "https://www.youtube.com/channel/UCKvjqNdKMn4fk95wNc765MA",
+     "https://rutube.ru/channel/38329605/",
+     "https://www.google.com/maps?cid=2970420474499935128",
+     "https://yandex.ru/maps/org/vargov_design/102611426185/",
+     "https://www.instagram.com/vargov_design/",
+     "https://www.facebook.com/vargovdesign",
+     "https://www.pinterest.com/Vargov_Design/",
+     "https://3ddd.ru/users/vargov",
+     "https://3dsky.org/users/vargov",
+     "https://sketchfab.com/vargov",
+     "https://github.com/vargov3-spec/vargov-ai-kb",
+     "https://www.wikidata.org/wiki/Q141301076",
+     "https://huggingface.co/vargov-design"
+    ],
+    "person": [
+     "https://t.me/AntonVargov",
+     "https://www.wikidata.org/wiki/Q141300942",
+     "https://medium.com/@antonvargov",
+     "https://www.linkedin.com/in/anton-vargov-95938643a"
+    ],
+    "not_in_graph_yet": {
+     "bluesky": "https://bsky.app/profile/vargovdesign.bsky.social"
+    }
+   },
+   "note": "organization — 14 адресов, как в sameAs узла Organization сайта и графа; person — sameAs узла Person (Medium основателя здесь). Bluesky: профиль заведён и оформлен 26.10.2026, в sameAs сайта и графа его пока нет — задача стороне сайта; сторож его не требует",
+   "source": "references/organization.jsonld — Organization.sameAs (14), Person.sameAs (4); Bluesky — публичный API AT Protocol, профиль vargovdesign.bsky.social (26.10.2026)",
+   "checked": "2026-10-26"
+  },
+  "hf_dataset": {
+   "value": "https://huggingface.co/datasets/vargov-design/vargov-design-catalog",
+   "source": "README.md:30; zh/llms.txt:25; живая карточка — raw README датасета",
+   "checked": "2026-10-26"
+  },
+  "live_sources": {
+   "value": {"site_llms": "https://vargov.ru/llms.txt", "hf_readme_raw": "https://huggingface.co/datasets/vargov-design/vargov-design-catalog/raw/main/README.md"},
+   "note": "сверяются только с ключом --live, по одному запросу каждый; к vargov.ru — с ?qa=1",
+   "source": "llms.txt:11 (канонический источник); datasets/hf-README.md — локальная копия карточки",
+   "checked": "2026-10-26"
+  }
+ }
+}

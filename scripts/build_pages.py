@@ -21,7 +21,10 @@ sameAs, zh у Dataset — см. check_brand_graph). Расхождение пе�
 
 python scripts/build_pages.py --check — те же сверки плюс «сгенерированное не
 отстало от источника» (llms-full.txt содержит llms.txt и en/llms.txt дословно, хаб
-печатает текущее число наград), БЕЗ записи файлов; код выхода 1 при расхождении.
+печатает текущее число наград) и сверка текстов с единым источником фактов
+references/brand-facts.json (scripts/check_facts.py: число И слово рядом, три
+языка, запрещённые прежние формулировки), БЕЗ записи файлов; код выхода 1 при
+расхождении.
 Этот режим для канарейки (.github/workflows/update-knowledge-base.yml): правка
 llms.txt руками без пересборки иначе молча оставляет llms-full.txt старым (A110).
 
@@ -451,11 +454,22 @@ def check_generated():
     return problems
 
 
+def check_facts_texts():
+    """Тексты базы против references/brand-facts.json — scripts/check_facts.py.
+    Якорь ловит число И слово рядом («три/четыре поздравления», «на нить/на отверстие»)
+    в трёх языках; «якорь не найден» — тоже расхождение. Список строк."""
+    import sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import check_facts
+    bad, unknown = check_facts.run(live_mode=False)
+    return [f"check_facts: {p}" for p in bad + unknown]
+
+
 if __name__ == "__main__":
     import sys
     if "--check" in sys.argv[1:]:
         # Режим канарейки: только чтение, ни одного файла не пишет.
-        probs = check_llms_numbers() + check_brand_graph() + check_generated()
+        probs = check_llms_numbers() + check_brand_graph() + check_generated() + check_facts_texts()
         for p in probs:
             print("РАСХОЖДЕНИЕ:", p)
         if probs:
