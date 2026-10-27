@@ -1,0 +1,3427 @@
+{
+ "meta": {
+  "version": "2026-10-27.1",
+  "checksum": "cdc39acac06abf8b",
+  "count": 108,
+  "updated": "2026-10-27",
+  "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
+  "categories": [
+   "catalog",
+   "choice",
+   "custom",
+   "ordering",
+   "price",
+   "materials",
+   "colours",
+   "sizes",
+   "installation",
+   "connection",
+   "production-time",
+   "delivery",
+   "certification",
+   "warranty",
+   "configurator",
+   "brief",
+   "bim",
+   "dealers",
+   "showroom",
+   "awards",
+   "brand",
+   "care",
+   "other"
+  ]
+ },
+ "entries": [
+  {
+   "id": "Q001",
+   "category": "brand",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что такое Vargov Design и что вы делаете — люстры, скульптуры? Вы магазин или сами производите?",
+     "Чем занимается Vargov Design?",
+     "Вы производитель или перепродаёте чужое?"
+    ],
+    "en": [
+     "What is Vargov Design and what do you make — chandeliers, sculptures; are you a shop or do you make the pieces yourselves?",
+     "What does Vargov Design do?",
+     "Are you a manufacturer or a reseller?"
+    ]
+   },
+   "a": {
+    "ru": "Vargov®Design — российский бренд авторских световых и декоративных композиций: коллекционные световые скульптуры, каждая со своим артикулом LC. Мы не перепродаём чужое: у нас собственное производство, изготовление под заказ — композиция собирается под конкретный интерьер, а масштаб и геометрия подстраиваются под пространство. В каталоге 605 композиций в четырёх семействах: световые, декоративные, скульптурные и торшеры, бра, настольные арт-объекты.",
+    "en": "Vargov®Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures, each with its own LC article code. We do not resell other people's work: we have our own production, made to order, so every composition is assembled for a specific interior and its scale and geometry are adjusted to the space. The catalogue holds 605 compositions in four families: lighting, decorative, sculptural, and floor lamps, sconces and table art objects."
+   },
+   "sources": [
+    "/about",
+    "/catalog"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q002",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Кто автор бренда (Антон Варгов), с какого года вы существуете и когда появились первые работы?",
+     "Кто основатель Vargov Design?",
+     "С какого года существует бренд?"
+    ],
+    "en": [
+     "Who is the author of the brand (Anton Vargov), since when does the brand exist, and when did the first works appear?",
+     "Who founded Vargov Design?",
+     "Since what year does the brand exist?"
+    ]
+   },
+   "a": {
+    "ru": "Основатель и главный дизайнер бренда — Антон Варгов (Москва), эксперт и член жюри российских и международных премий в области дизайна и архитектуры. Первые работы бренда — 2018 год; это год появления первых дизайнов, а не год основания компании. Подробнее об авторе — на странице vargov.ru/designer.",
+    "en": "The brand's founder and chief designer is Anton Vargov (Moscow), an expert and jury member of Russian and international design and architecture awards. The brand's first works date from 2018 — the year the first designs appeared, not a company founding date. More about the author is on vargov.ru/en/designer."
+   },
+   "sources": [
+    "/designer",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q003",
+   "category": "brand",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Чем ваш дизайн отличается от остальных, в чём идея?",
+     "В чём фирменный стиль Vargov Design?",
+     "Почему ваши композиции узнаваемы?"
+    ],
+    "en": [
+     "What makes your design different from the rest — what is the idea behind it?",
+     "What is the Vargov Design signature style?",
+     "Why are your compositions recognisable?"
+    ]
+   },
+   "a": {
+    "ru": "В основе Vargov®Design не визуальный стиль, а авторский способ Антона Варгова видеть форму, свет и пространство. Форма рождается из наблюдения: за природной пластикой, архитектурным ритмом и поведением света внутри материала. Каждый объект проходит авторский отбор — без случайного декора, визуального шума и формы ради формы. Подробнее — в статье журнала «Дизайн-код Vargov®Design»: vargov.ru/journal/dizain-kod.",
+    "en": "At the heart of Vargov®Design is not a visual style but Anton Vargov's own way of seeing form, light and space. Form is born of observation: of the plasticity of nature, architectural rhythm and the way light behaves inside a material. Every object passes through the author's selection — no decorative accident, no visual noise, no form for form's sake. More in the journal article “The design code of Vargov®Design”: vargov.ru/en/journal/dizain-kod."
+   },
+   "sources": [
+    "/journal/dizain-kod",
+    "/journal/russian-lighting-design"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q004",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "У вас своя фабрика или заказы размещены у подрядчиков?",
+     "Вы сами производите или отдаёте на сторону?",
+     "Кто изготавливает композиции?"
+    ],
+    "en": [
+     "Do you have your own factory, or are orders placed with subcontractors?",
+     "Do you make the pieces yourselves or outsource?",
+     "Who manufactures the compositions?"
+    ]
+   },
+   "a": {
+    "ru": "У нас собственное производство, изготовление под заказ. Мы сознательно развиваем одно собственное предприятие, а не размещаем заказы на разных сторонних заводах, — так мы контролируем каждый этап вплоть до финальной сборки композиции. Всё, что выходит с производства, несёт фирменный знак бренда.",
+    "en": "We have our own production, made to order. We deliberately develop one enterprise of our own rather than placing orders at various third-party plants, so we control every stage up to the final assembly of the composition. Everything that leaves production carries the brand's mark."
+   },
+   "sources": [
+    "/journal"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q005",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "В какой стране производится продукция, вы российский бренд? Нужно подтвердить происхождение для закупки или тендера.",
+     "Страна происхождения товара?",
+     "Где вы производите и чем это подтвердить для тендера?"
+    ],
+    "en": [
+     "In which country are the products made, and is it a Russian brand? I need to confirm the country of origin for procurement.",
+     "What is the country of origin of your products?",
+     "Where are the pieces produced and how can I document it for a tender?"
+    ]
+   },
+   "a": {
+    "ru": "Vargov®Design — российский бренд, у нас собственное производство, изготовление под заказ. Для закупки и тендера сведения о происхождении изделия и о производстве указаны в PDF-спецификации и тендерном листе — их конфигуратор выгружает для композиций с полным расчётом (360 из 605). Если документ нужен напрямую или композиции нет среди этих 360, напишите менеджеру — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Vargov®Design is a Russian brand with its own production, made to order. For procurement and tenders the information on the origin of the product and on production is given in the PDF specification and the tender sheet, which the configurator exports for compositions with a full calculation (360 of 605). If you need a document directly, or your composition is not among those 360, write to the manager — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q006",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Товарный знак зарегистрирован? Действует ли охрана за рубежом, например в Китае?",
+     "Зарегистрирован ли знак VARGOV?",
+     "Защищён ли ваш бренд в Китае?"
+    ],
+    "en": [
+     "Is the trademark registered, and is it protected abroad, for example in China?",
+     "Is the VARGOV trademark registered?",
+     "Is your brand protected in China?"
+    ]
+   },
+   "a": {
+    "ru": "Да. Товарный знак VARGOV зарегистрирован в России, свидетельство № 896936 (до 29.04.2032). По международной регистрации № 1 795 801 (Мадридская система) он охраняется в Китае до 20.05.2034. Отдельно зарегистрирован логотип VARGOV® DESIGN — свидетельство № 1270653. Охрана в других странах в наших материалах не указана — это уточняет менеджер.",
+    "en": "Yes. The VARGOV trademark is registered in Russia, registration No. 896936 (to 29 April 2032). Under international registration No. 1 795 801 (Madrid System) it is protected in China until 20 May 2034. The VARGOV® DESIGN logo is registered separately, No. 1270653. Protection in other countries is not stated in our materials — the manager can clarify."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q007",
+   "category": "brand",
+   "roles": [
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли использовать ваши фото и логотип в презентации для клиента?",
+     "Могу ли я взять ваши снимки для концепции?",
+     "Можно ли ставить ваш логотип в мудборд?"
+    ],
+    "en": [
+     "May I use your photos and logo in a presentation for my client?",
+     "Can I take your pictures for my concept?",
+     "May I put your logo on a mood board?"
+    ]
+   },
+   "a": {
+    "ru": "Пресс-фото бренда и логотип свободны для редакционного использования с указанием «Vargov®Design» (знак авторства «© Vargov®Design»); условия — на странице vargov.ru/press. Отдельных правил для презентации вашему клиенту в наших материалах нет, поэтому лучше согласовать это с менеджером — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "The brand's press photos and logo are free for editorial use with the credit “Vargov®Design” (copyright line “© Vargov®Design”); the terms are on vargov.ru/en/press. Our materials set no separate rules for a presentation to your client, so please agree it with the manager — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/press"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q008",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как отличить оригинал от подделки, в том числе если люстру предлагают не через дилеров или в интернете заметно дешевле?",
+     "Как проверить, что композиция оригинальная?",
+     "Мне предлагают Vargov не у вас — это подделка?"
+    ],
+    "en": [
+     "How can I tell an original from a copy, including when a chandelier is offered outside the dealer network or much cheaper online?",
+     "How do I check that a composition is genuine?",
+     "Someone offers me a Vargov piece elsewhere — is it a fake?"
+    ]
+   },
+   "a": {
+    "ru": "Оригинальная композиция Vargov®Design имеет авторский артикул LC и знак «Made in Vargov®»; гарантия распространяется только на оригинальные изделия. Оригинал приходит в фирменной упаковке: на каждом элементе защитная плёнка, в коробке картонный приветственный лист с логотипом и сведениями о товарном знаке, а коробка заклеена фирменной лентой с логотипом. Оригинальная продукция доступна только через Vargov®Design и наших официальных партнёров — список на vargov.ru/official-dealers. Если предложение пришло не от них и не от бренда, напишите нам: мы подтвердим подлинность поставщика.",
+    "en": "A genuine Vargov®Design composition has its own LC article code and the “Made in Vargov®” mark; the warranty covers original pieces only. An original arrives in branded packaging: protective film on every element, a card welcome sheet with the logo and trademark details inside the box, and the box sealed with branded tape bearing the logo. Original products are available only through Vargov®Design and our official partners — the list is on vargov.ru/en/official-dealers. If an offer comes from neither, write to us and we will confirm whether the supplier is genuine."
+   },
+   "sources": [
+    "/official-dealers",
+    "/warranty"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q009",
+   "category": "brand",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Дадите ли вместе с покупкой сертификат или другой документ, подтверждающий подлинность?",
+     "Есть ли сертификат подлинности?",
+     "Будет ли подпись автора на документе?"
+    ],
+    "en": [
+     "Do you provide a certificate or document of authenticity with the purchase?",
+     "Is there a certificate of authenticity?",
+     "Will the document carry the author's signature?"
+    ]
+   },
+   "a": {
+    "ru": "Да, по желанию покупателя мы готовим сертификат подлинности с живой подписью Антона Варгова — достаточно сообщить об этом при оформлении заказа. Кроме того, подлинность оригинала подтверждают фирменная упаковка и приветственный лист со сведениями о товарном знаке. В каком виде и для каких заказов выдаётся сертификат, уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Yes, at the buyer's request we prepare a certificate of authenticity signed in ink by Anton Vargov — just mention it when placing the order. The authenticity of an original is also confirmed by the branded packaging and the welcome sheet with trademark details. The manager will clarify in what form and for which orders the certificate is issued — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q010",
+   "category": "awards",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько у бренда наград, настоящие ли это премии и где можно проверить по первоисточникам?",
+     "Какие у вас награды и можно ли их проверить?",
+     "Это реальные международные конкурсы?"
+    ],
+    "en": [
+     "How many awards does the brand have, are they real competitions, and where can I verify them at the source?",
+     "What awards do you have and can they be verified?",
+     "Are these real international competitions?"
+    ]
+   },
+   "a": {
+    "ru": "У бренда 26 достижений на международных премиях в 16 программах — среди них MUSE Design Awards, NY Product Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, IDA, LIT, LOOP, SIT и European Product Design Award. Среди них Platinum Winner на MUSE 2023, ADC 2023 и London 2023 и Product Designer of the Year на NY Product Design Awards 2023. На странице vargov.ru/awards собраны именные сертификаты и письма жюри, а где премия документа не выдаёт — ссылка на её страницу, так что проверить можно по первоисточнику.",
+    "en": "The brand has 26 awards from international juries across 16 programmes, including MUSE Design Awards, NY Product Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, IDA, LIT, LOOP, SIT and European Product Design Award. Among them are Platinum Winner at MUSE 2023, ADC 2023 and London 2023, and Product Designer of the Year at the NY Product Design Awards 2023. The page vargov.ru/en/awards collects the named certificates and jury letters, and where a programme issues no document there is a link to its page, so each entry can be checked at the source."
+   },
+   "sources": [
+    "/awards"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q011",
+   "category": "awards",
+   "roles": [
+    "architect",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Это 26 побед или среди них есть номинации и просто участие?",
+     "Все ли ваши награды — победы?",
+     "Есть ли среди наград номинации?"
+    ],
+    "en": [
+     "Are the 26 awards all wins, or do they include nominations and mere participation?",
+     "Are all your awards wins?",
+     "Do your awards include nominations?"
+    ]
+   },
+   "a": {
+    "ru": "Не все, поэтому мы и говорим «26 достижений на международных премиях», а не «26 побед». Среди них есть номинация — Awwwards 2026, за 3D-конфигуратор (это номинация, не победа), и работа в жюри — Антон Варгов, член Высокого жюри ADD Awards 2024. Остальные — победы, призовые места и отметки жюри; официальный уровень каждой записи указан на vargov.ru/awards.",
+    "en": "Not all of them, which is why we say “26 awards from international juries” rather than “26 wins”. They include a nomination — Awwwards 2026, for the 3D configurator (a nomination, not a win) — and jury service: Anton Vargov was a High Jury member of ADD Awards 2024. The rest are wins, placings and jury selections; the official level of every entry is shown on vargov.ru/en/awards."
+   },
+   "sources": [
+    "/awards"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q012",
+   "category": "awards",
+   "roles": [
+    "architect",
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Какие именно композиции отмечены наградами и какая награда у выбранного мной артикула?",
+     "Есть ли награда у артикула LC…?",
+     "Какие композиции у вас наградные?"
+    ],
+    "en": [
+     "Which compositions have won awards, and which award belongs to the article I picked?",
+     "Does article LC… have an award?",
+     "Which of your compositions are award-winning?"
+    ]
+   },
+   "a": {
+    "ru": "Наградами отмечены 34 артикула (их больше, чем достижений: награда иногда распространяется на близкие артикулы — пару или целую серию). Например: LC0564 — Gold Winner, MUSE Design Awards 2026; LC0237 — Platinum Winner, MUSE 2023; LC0303 — Platinum Winner, International Architecture & Design Awards · ADC 2023; LC0326 — Platinum Winner, The London Design Awards 2023; LC0343 — Product Designer of the Year, NY Product Design Awards 2023; LC0545-1 — Gold Winner, NY Product Design Awards 2026. Полный список с кодами — на vargov.ru/awards; назовите свой артикул, и менеджер подтвердит, есть ли у него награда.",
+    "en": "34 articles carry awards (more than there are awards, because an award sometimes extends to closely related articles — a pair or a whole series). For example: LC0564 — Gold Winner, MUSE Design Awards 2026; LC0237 — Platinum Winner, MUSE 2023; LC0303 — Platinum Winner, International Architecture & Design Awards · ADC 2023; LC0326 — Platinum Winner, The London Design Awards 2023; LC0343 — Product Designer of the Year, NY Product Design Awards 2023; LC0545-1 — Gold Winner, NY Product Design Awards 2026. The full list with codes is on vargov.ru/en/awards; tell us your article code and the manager will confirm whether it has an award."
+   },
+   "sources": [
+    "/awards"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q013",
+   "category": "catalog",
+   "roles": [
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что у вас есть кроме люстр — бра, торшеры, панно, перегородки, настольные? Сколько всего моделей и как каталог разложен по разделам?",
+     "А кроме люстр что вы делаете?",
+     "Сколько позиций в каталоге и какие там разделы?",
+     "Где каталог?",
+     "Покажите каталог"
+    ],
+    "en": [
+     "What do you offer besides chandeliers — sconces, floor lamps, panels, partitions, table pieces? How many models in total and how is the catalogue organised?",
+     "What else do you make besides chandeliers?",
+     "How many items are in the catalogue and what are the sections?",
+     "Where is the catalogue?",
+     "Show me the catalogue"
+    ]
+   },
+   "a": {
+    "ru": "Кроме световых композиций у нас есть торшеры, бра, настенные панно, декоративные перегородки, зеркала и настольные арт-объекты. В каталоге 605 композиций в четырёх разделах: световые — 354, декоративные — 113, скульптурные композиции и декор — 82, торшеры, бра и настольные арт-объекты — 56. Всё это изготавливаем под заказ в собственном производстве. Искать удобно по артикулу, по типу или по фотографии: vargov.ru/catalog.",
+    "en": "Besides lighting compositions we make floor lamps, sconces, wall panels, decorative partitions, mirrors and table art objects. The catalogue has 605 compositions in four sections: lighting 354, decorative 113, sculptural compositions and décor 82, and floor lamps, sconces and table art objects 56. Everything is made to order in our own production. You can search by LC code, filter by type or search by photograph: vargov.ru/en/catalog."
+   },
+   "sources": [
+    "/catalog"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/catalog",
+    "text": {
+     "ru": "Каталог композиций",
+     "en": "Composition catalogue"
+    }
+   }
+  },
+  {
+   "id": "Q014",
+   "category": "catalog",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Я увидел(а) вашу люстру на фото, артикула не знаю. Как найти её на сайте?",
+     "Как найти композицию по фотографии?",
+     "Не знаю артикул — как определить, какая это модель?"
+    ],
+    "en": [
+     "I saw your chandelier in a photo and I don't know the code. How do I find it on the site?",
+     "How can I find a composition by a photo?",
+     "I don't know the LC code — how do I identify the model?"
+    ]
+   },
+   "a": {
+    "ru": "В каталоге vargov.ru/catalog есть поиск по фотографии — начните с него. Композиции можно также отфильтровать по типу, а если артикул известен, ввести его в поиск. Если найти не получилось, опишите менеджеру, что вы видели (кнопки Telegram, WhatsApp, почта), — разберёмся вместе.",
+    "en": "The catalogue at vargov.ru/en/catalog has a search by photograph — start there. You can also filter compositions by type, or type the LC code into the search if you know it. If it doesn't work out, describe to the manager what you saw (Telegram, WhatsApp or e-mail buttons) and we will work it out together."
+   },
+   "sources": [
+    "/catalog"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/catalog",
+    "text": {
+     "ru": "Каталог композиций",
+     "en": "Composition catalogue"
+    }
+   }
+  },
+  {
+   "id": "Q015",
+   "category": "catalog",
+   "roles": [
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Какая у вас самая популярная, самая ходовая композиция?",
+     "Что у вас чаще всего покупают?",
+     "Какая модель бестселлер?"
+    ],
+    "en": [
+     "Which is your most popular, best-selling composition?",
+     "What do people buy from you most often?",
+     "What is your bestseller?"
+    ]
+   },
+   "a": {
+    "ru": "Рейтинга самых ходовых композиций мы не публикуем, поэтому не буду называть одну. Могу показать композиции, отмеченные на международных премиях: таких в каталоге 34, они собраны на странице vargov.ru/awards. Ещё можно начать с подборок «по пространству» (vargov.ru/for) — там впереди то, с чего обычно начинают выбор. А что заказывают чаще всего, спросите у менеджера (кнопки Telegram, WhatsApp, почта).",
+    "en": "We do not publish a ranking of best-selling compositions, so I won't single one out. I can point you to the compositions marked at international awards — there are 34 of them in the catalogue, gathered at vargov.ru/en/awards. You can also start from the “by space” showcases (vargov.ru/en/for), where the pieces people usually begin with come first. For what is ordered most often, ask the manager (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/awards",
+    "/for"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q016",
+   "category": "catalog",
+   "roles": [
+    "architect",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какие габариты у конкретной композиции (например LC0102) — нужны для планов и разрезов — и сколько места она займёт в комнате?",
+     "Какой размер у LC0102?",
+     "Дайте габариты композиции для проекта."
+    ],
+    "en": [
+     "What are the dimensions of a specific composition (e.g. LC0102) — I need them for plans and sections — and how much room will it take up?",
+     "What is the size of LC0102?",
+     "Please give me the composition dimensions for my project."
+    ]
+   },
+   "a": {
+    "ru": "Размер композиции мы не публикуем в общем виде: каждая собирается под конкретное помещение, поэтому он считается под вашу комнату. Для планов и разрезов размер даёт конфигуратор: он раскладывает композицию в 3D для вашего помещения и выдаёт PDF-спецификацию, тендерный лист и модель IFC4 — это для композиций, которые он считает полностью (360 из 605). На части карточек на сайте есть параметры отдельных элементов или габарит изделия. Нужного артикула нет в конфигураторе или нужны точные габариты — напишите менеджеру артикул и размеры помещения (кнопки Telegram, WhatsApp, почта).",
+    "en": "We do not publish composition sizes in general form: each one is assembled for a specific room, so the size is calculated for yours. For plans and sections the size comes from the configurator: it lays the composition out in 3D for your room and produces a PDF specification, a tender sheet and an IFC4 model — for the compositions it calculates in full (360 of 605). Some product pages also show the parameters of individual elements or the size of the piece. If your code is not in the configurator or you need exact dimensions, send the manager the LC code and the room size (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q017",
+   "category": "choice",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Чем «световая» композиция отличается от «декоративной» и что брать в гостиную?",
+     "В чём разница между световой и декоративной композицией?",
+     "Что лучше в гостиную — световая или декоративная?"
+    ],
+    "en": [
+     "How does a “lighting” composition differ from a “decorative” one, and what should I take for a living room?",
+     "What is the difference between lighting and decorative compositions?",
+     "Lighting or decorative — which is better for a living room?"
+    ]
+   },
+   "a": {
+    "ru": "Световые композиции создаются прежде всего для освещения — основного, акцентного или декоративного, поэтому в них важны источники света и то, как свет распределяется. Декоративные — прежде всего для эстетики: важны дизайн, форма, цвет и текстура, а не функции освещения. Граница подвижна: свет может быть частью декора. В каталоге 354 световые и 113 декоративных композиций (vargov.ru/lighting, vargov.ru/decorative). Что взять в гостиную, зависит от того, нужен ли комнате основной свет или акцент, — расскажите о комнате менеджеру (кнопки Telegram, WhatsApp, почта); разбор есть в журнале: vargov.ru/journal/svetovaya-ili-dekorativnaya.",
+    "en": "Lighting compositions are made first of all to light a space — main, accent or decorative light — so the light sources and how light is distributed matter most. Decorative compositions are about aesthetics: design, form, colour and texture matter most, not the lighting function. The line is flexible: light can be part of the décor. The catalogue has 354 lighting and 113 decorative compositions (vargov.ru/en/lighting, vargov.ru/en/decorative). What to choose for a living room depends on whether it needs main light or an accent — tell the manager about the room (Telegram, WhatsApp or e-mail buttons); there is a longer note in our journal: vargov.ru/en/journal/svetovaya-ili-dekorativnaya."
+   },
+   "sources": [
+    "/journal/svetovaya-ili-dekorativnaya",
+    "/lighting",
+    "/decorative"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q018",
+   "category": "choice",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что подойдёт для двусветной гостиной, лестничного пролёта и лестницы?",
+     "Какой светильник повесить в двусветную гостиную?",
+     "Что повесить в лестничный проём?"
+    ],
+    "en": [
+     "What suits a double-height living room, a stairwell and a staircase?",
+     "Which light fixture should I hang in a double-height living room?",
+     "What can I hang in a stairwell?"
+    ]
+   },
+   "a": {
+    "ru": "Для двусветной гостиной мы делаем каскадные композиции, рассчитанные под высоту именно этого объёма: нижнюю точку определяют от планировки — над столом, над лестницей, в проёме между зонами. Для лестничного пролёта композицию собирают под габарит проёма: длина берётся на весь пролёт, а зона движения и поручень учитываются с первого эскиза. На лестнице композицию видят вблизи, поэтому уместны крупные формы. Подборки: vargov.ru/for/double-height и vargov.ru/for/stairwell — это подсказка, а не ограничение: любая композиция делается под любое пространство.",
+    "en": "For a double-height living room we make cascade compositions sized to the height of that exact volume: the lowest point is set from the floor plan — over the table, over the stairs, in the opening between zones. For a stairwell the composition is built to the opening: the length runs the whole flight, and the traffic zone and handrail are taken into account from the first sketch. On stairs a composition is seen up close, so large forms work well. See vargov.ru/en/for/double-height and vargov.ru/en/for/stairwell — these showcases are a hint, not a limit: any composition is made for any space."
+   },
+   "sources": [
+    "/for/double-height",
+    "/for/stairwell",
+    "/for-map.json"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q019",
+   "category": "choice",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Что подойдёт для лобби отеля, ресторана и других общественных пространств, с чего начать, что по масштабу и сколько таких композиций нужно?",
+     "Свет для лобби отеля — с чего начать?",
+     "Сколько композиций нужно в холл или ресторан?"
+    ],
+    "en": [
+     "What suits a hotel lobby, a restaurant and other public spaces — where to start, what about scale and how many compositions are needed?",
+     "Lighting for a hotel lobby — where do I begin?",
+     "How many compositions does a lobby or restaurant need?"
+    ]
+   },
+   "a": {
+    "ru": "Для лобби и общественных пространств мы собираем композицию под объём конкретного помещения: длину каскада, плотность и разброс элементов подбирают по высоте потолка и площади зоны. Чаще берут вертикальные каскады — они читаются со всех точек, и снизу, и с антресоли. Подвес и обслуживание продумываем с самого начала, чтобы к любому элементу можно было подойти без разборки композиции. Начните с витрины vargov.ru/for/hotel-lobby (для ресторана — vargov.ru/for/restaurant), а масштаб и число композиций мы определяем по вашей планировке: пришлите её менеджеру (кнопки Telegram, WhatsApp, почта).",
+    "en": "For a lobby or other public space we build the composition for that specific volume: the length of the cascade and the density and spread of the elements are chosen from the ceiling height and the area of the zone. Vertical cascades are used most often — they read from every viewpoint, from below and from a mezzanine. We plan suspension and maintenance from the start, so every element can be reached without taking the composition apart. Begin with the showcase vargov.ru/en/for/hotel-lobby (for a restaurant — vargov.ru/en/for/restaurant); scale and the number of compositions we work out from your plan, so send it to the manager (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/for/hotel-lobby",
+    "/for/restaurant"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q020",
+   "category": "choice",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Хочу над обеденным столом что-то необычное, не классику. С чего начать?",
+     "Какой светильник повесить над обеденным столом?",
+     "Нужно что-то нестандартное над столом."
+    ],
+    "en": [
+     "I want something unusual over my dining table, not a classic. Where do I start?",
+     "What should I hang over a dining table?",
+     "I need something non-standard over the table."
+    ]
+   },
+   "a": {
+    "ru": "Мы делаем авторские световые скульптуры, и над столом главное — пропорция: композицию подбирают по длине столешницы, а не по площади комнаты. Под вытянутый стол берут линейные композиции, под круглый — собранные к центру. У каждой композиции в карточке есть строки «Где уместна» и «Стилистика», по ним видно характер вещи. Начните с подборки vargov.ru/for/dining или с поиска по фотографии в каталоге vargov.ru/catalog. Что подойдёт именно вам, подскажет менеджер (кнопки Telegram, WhatsApp, почта).",
+    "en": "We make author-designed light sculptures, and over a dining table proportion matters most: the composition is chosen from the length of the tabletop, not from the area of the room. For an elongated table linear compositions work, for a round one — compositions gathered towards the centre. Each composition page has the lines “Where it works” and “Style”, which show the character of the piece. Begin with the showcase vargov.ru/en/for/dining or with the search by photograph in the catalogue vargov.ru/en/catalog. What suits you best, the manager will help you decide (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/for/dining",
+    "/catalog"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q021",
+   "category": "choice",
+   "roles": [
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Подойдёт ли ваша композиция к скандинавскому или классическому интерьеру? Подскажите по стилю.",
+     "Какие композиции подходят для скандинавского стиля?",
+     "Впишется ли ваш светильник в классический интерьер?"
+    ],
+    "en": [
+     "Will your composition suit a Scandinavian or a classical interior? Please advise on style.",
+     "Which compositions suit Scandinavian style?",
+     "Will your fixture fit a classical interior?"
+    ]
+   },
+   "a": {
+    "ru": "Подойдёт ли композиция к скандинавскому или классическому интерьеру, зависит от самой композиции и интерьера, поэтому общего ответа дать нельзя. У каждой композиции в карточке есть строки «Стилистика» и «Где уместна»: по ним видно характер вещи и в какое пространство она встаёт. Посмотрите каталог vargov.ru/catalog или подборки «по пространству» (vargov.ru/for). Для точного совета пришлите менеджеру фото или описание интерьера и понравившиеся артикулы (кнопки Telegram, WhatsApp, почта).",
+    "en": "Whether a composition suits a Scandinavian or a classical interior depends on the composition itself and on the interior, so there is no single answer. Each composition page has the lines “Style” and “Where it works”, which show the character of the piece and the kind of space it suits. Browse the catalogue at vargov.ru/en/catalog or the “by space” showcases (vargov.ru/en/for). For precise advice send the manager a photo or description of the interior and the codes you like (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/catalog",
+    "/for"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q022",
+   "category": "choice",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли взять ту же композицию, но меньше, в другом цвете, с другой длиной подвеса и числом элементов?",
+     "Можно ли изменить размер и цвет композиции?",
+     "Делаете ли вы вариант той же модели под мой интерьер?"
+    ],
+    "en": [
+     "Can I take the same composition but smaller, in a different colour, with a different drop length and number of elements?",
+     "Can the size and colour of a composition be changed?",
+     "Do you make a variant of the same model for my interior?"
+    ]
+   },
+   "a": {
+    "ru": "Да, это основа нашего подхода: любая композиция делается под заказ. Масштаб, длина подвеса и цвет кабеля рассчитываются под конкретное пространство, цвет элементов и покрытие фурнитуры подбираются под интерьер, а для каждой композиции описано, что в ней настраивается индивидуально, например число элементов. Точные размеры и состав подтверждаем по вашей заявке: назовите менеджеру артикул и пожелания (кнопки Telegram, WhatsApp, почта) или соберите вариант в конфигураторе, если композиция там считается: vargov.ru/configurator.",
+    "en": "Yes, that is the core of our approach: every composition is made to order. The scale, drop length and cable colour are worked out for the specific space, the colour of the elements and the finish of the hardware are chosen for the interior, and for each composition we describe what is customised — for example the number of elements. We confirm exact sizes and make-up from your request: give the manager the LC code and your wishes (Telegram, WhatsApp or e-mail buttons), or build a variant in the configurator if the composition is calculated there: vargov.ru/en/configurator."
+   },
+   "sources": [
+    "/configurator",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q023",
+   "category": "choice",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как подобрать размер композиции под помещение — высокий потолок, большой проём, комната 25 м²? Хватит ли света?",
+     "Какого размера люстра нужна в мою комнату?",
+     "Хватит ли света от одной композиции?"
+    ],
+    "en": [
+     "How do I choose the size of a composition for a room — a high ceiling, a large opening, a 25 m² room? Will the light be enough?",
+     "What size of chandelier do I need for my room?",
+     "Will one composition give enough light?"
+    ]
+   },
+   "a": {
+    "ru": "Размер композиции под помещение подбирает конфигуратор: в нём задаётся помещение, он раскладывает композицию в 3D, считает точки крепления и выдаёт PDF-спецификацию. Для высокого потолка, большого проёма или небольшой комнаты подход один: масштаб и геометрия подстраиваются под объём. Хватит ли света, мы по формулам заранее не говорим — опубликованных расчётов освещённости у нас нет, поэтому это разбирает менеджер по вашей планировке (кнопки Telegram, WhatsApp, почта). Конфигуратор: vargov.ru/configurator.",
+    "en": "The size of a composition for a room is chosen in the configurator: you set up the room, and it lays the composition out in 3D, counts the ceiling mounting points and produces a PDF specification. For a high ceiling, a large opening or a small room the approach is the same: scale and geometry adapt to the volume. As for whether the light will be enough, we do not give formulas in advance — we have no published lighting calculations, so the manager goes through it with you from your plan (Telegram, WhatsApp or e-mail buttons). The configurator: vargov.ru/en/configurator."
+   },
+   "sources": [
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q024",
+   "category": "choice",
+   "roles": [
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как считать высоту и длину подвеса, если потолок выше трёх метров или всего 2,5 метра? Можно ли вообще повесить?",
+     "Какую длину подвеса выбрать при высоком потолке?",
+     "Можно ли повесить композицию при низком потолке?"
+    ],
+    "en": [
+     "How do I work out the drop height and length if the ceiling is over three metres or only 2.5 metres? Can it be hung at all?",
+     "What drop length should I choose for a high ceiling?",
+     "Can a composition be hung under a low ceiling?"
+    ]
+   },
+   "a": {
+    "ru": "Высоту помещения и высоты подвеса задают в конфигураторе и в онлайн-ТЗ. При выгрузке IFC высота потолка по умолчанию — 2700 мм: это высота помещения, а не размер изделия, и её нужно заменить на вашу. Можно ли повесить композицию при вашем потолке и какая длина подвеса подойдёт, в общем виде мы не называем: длина подвеса рассчитывается под пространство. Напишите менеджеру артикул и высоту потолка (кнопки Telegram, WhatsApp, почта) — мы рассчитаем.",
+    "en": "The room height and the drop heights are set in the configurator and in the online production brief. When exporting IFC, the default ceiling height is 2700 mm: that is the height of the room, not the size of the piece, and you should replace it with your own. Whether a composition can be hung under your ceiling and what drop length suits it, we do not state in general terms: the drop length is calculated for the space. Send the manager the LC code and the ceiling height (Telegram, WhatsApp or e-mail buttons) and we will work it out."
+   },
+   "sources": [
+    "/specifications",
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q025",
+   "category": "choice",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "На какой высоте от пола вешать люстру над столом и какой диаметр брать под комнату 30 м²?",
+     "Как высоко вешать люстру над обеденным столом?",
+     "Какого размера люстра нужна над столом?"
+    ],
+    "en": [
+     "At what height above the floor should I hang a chandelier over a table, and what diameter for a 30 m² room?",
+     "How high should a chandelier hang over a dining table?",
+     "What size of chandelier do I need over a table?"
+    ]
+   },
+   "a": {
+    "ru": "Над обеденным столом композиция висит ниже, чем где-либо ещё, и оказывается на уровне глаз сидящих. Высоту подвеса считают от столешницы, а не от пола — так, чтобы свет ложился на стол, а сидящие видели друг друга. Размер подбирают по длине стола, а не по площади комнаты: площадь комнаты сама по себе его не определяет. Точную высоту и размер мы рассчитаем под ваш стол и потолок — пришлите менеджеру планировку и высоту потолка (кнопки Telegram, WhatsApp, почта). Подробнее: vargov.ru/for/dining.",
+    "en": "Over a dining table a composition hangs lower than anywhere else and ends up at the eye level of people seated. The drop is measured from the tabletop, not from the floor — so that the light falls on the table and diners can see each other. The size is chosen from the length of the table, not the area of the room, which does not determine it on its own. We will work out the exact height and size for your table and ceiling — send the manager your plan and the ceiling height (Telegram, WhatsApp or e-mail buttons). More at vargov.ru/en/for/dining."
+   },
+   "sources": [
+    "/for/dining"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q026",
+   "category": "colours",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли покрасить элементы в любой цвет RAL, в том числе корпоративный, и смешать несколько цветов в одной композиции? Сколько цветов допускается?",
+     "Делаете ли вы окраску в цвет RAL?",
+     "Можно ли сделать композицию в корпоративных цветах?"
+    ],
+    "en": [
+     "Can the elements be painted in any RAL colour, including a corporate one, and can several colours be mixed in one composition? How many colours are allowed?",
+     "Do you paint in RAL colours?",
+     "Can a composition be made in our corporate colours?"
+    ]
+   },
+   "a": {
+    "ru": "Да, цвет элементов подбирается под проект по каталогу RAL Classic, и в одной композиции можно смешать несколько цветов: в конфигураторе у каждого своя доля и, где элементы бывают прозрачными, своя прозрачность. Есть и гальваника — прозрачные и зеркальные покрытия; кодов у неё нет, в техническом задании на производство её пишут названием. Если корпоративный цвет есть в каталоге RAL Classic, назовите его код; предельное число цветов в одной композиции и цвет вне этого каталога подтвердит менеджер (кнопки Telegram, WhatsApp, почта). Подробности: vargov.ru/specifications/colours.",
+    "en": "Yes, the colour of the elements is chosen for your project from the RAL Classic catalogue, and several colours can be mixed in one composition: in the configurator each has its own share and, where the elements can be transparent, its own transparency. There is also electroplating — transparent and mirror finishes; it has no codes, so in the production brief it is written by name. If your corporate colour is in the RAL Classic catalogue, give its code; the maximum number of colours in one composition and any colour outside that catalogue the manager will confirm (Telegram, WhatsApp or e-mail buttons). Details: vargov.ru/en/specifications/colours."
+   },
+   "sources": [
+    "/specifications/colours"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q027",
+   "category": "colours",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какие покрытия металлической фурнитуры бывают, есть ли коды, как указать нужное в заказе или ведомости и насколько точен цвет на экране?",
+     "Есть ли у покрытий фурнитуры коды?",
+     "Какой цвет фурнитуры указать в спецификации?"
+    ],
+    "en": [
+     "What coatings are available for the metal hardware, are there codes, how do I specify the one I need in an order or schedule, and how accurate is the colour on screen?",
+     "Do the hardware finishes have codes?",
+     "Which hardware colour should I put in the specification?"
+    ]
+   },
+   "a": {
+    "ru": "У покрытий фурнитуры есть каталог с кодами формата JN: каждый цвет доступен в нескольких отделках — зеркальная полировка, брашировка с глянцевым лаком и брашировка с полуматовым лаком. Код покрытия переносится в ссылку конфигуратора, заявку и ТЗ — его и указывайте в заказе или ведомости. Цвета на экране приблизительные, главное — код; живые образцы можно посмотреть в шоуруме. Каталог: vargov.ru/specifications/finishes.",
+    "en": "The hardware finishes come as a catalogue with JN-format codes: each colour is available in several finishes — mirror polish, brushed with gloss lacquer and brushed with semi-matt lacquer. The finish code is carried into the configurator link, the request and the production brief, so put that code in your order or schedule. Colours on screen are approximate; the code is what matters, and live samples can be seen in the showroom. The catalogue: vargov.ru/en/specifications/finishes."
+   },
+   "sources": [
+    "/specifications/finishes"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q028",
+   "category": "colours",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Из какого материала сделаны элементы? Нужно указать материалы в ведомости отделки.",
+     "Из чего сделана композиция?",
+     "Дайте перечень материалов для ведомости."
+    ],
+    "en": [
+     "What material are the elements made of? I need to list the materials in a finishes schedule.",
+     "What is the composition made of?",
+     "Please give me a list of materials for my schedule."
+    ]
+   },
+   "a": {
+    "ru": "Из FAQ сайта: «Литое стекло ручной работы, огранённый хрусталь, спечённая керамика, латунь и нержавеющая сталь. Оттенок стекла и финиш металла (брашированная или полированная латунь, графит, патинированная бронза, чёрный хром) подбираются под интерьер». Для ведомости отделки по конкретным артикулам напишите менеджеру — он подскажет, что указать (кнопки Telegram, WhatsApp, почта). Цвета RAL и коды покрытий фурнитуры — на страницах vargov.ru/specifications/colours и vargov.ru/specifications/finishes.",
+    "en": "From the site FAQ: “Hand-cast glass, cut crystal, sintered ceramics, brass and stainless steel. The glass tint and metal finish (brushed or polished brass, graphite, patinated bronze, black chrome) are matched to the interior.” For a finishes schedule on specific article codes, write to the manager — they will tell you what to list (Telegram, WhatsApp or e-mail buttons). RAL colours and hardware finish codes are on vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes."
+   },
+   "sources": [
+    "/faq",
+    "/specifications/colours",
+    "/specifications/finishes"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость 27.10.2026: дословно web/src/lib/data/faq.ts:82-83, :151-152; решение владельца 02.10.2026 «FAQ о материалах — оставить как есть»",
+   "focus": {
+    "path": "/faq",
+    "text": {
+     "ru": "Из каких материалов создаются композиции?",
+     "en": "What materials are the compositions made of?"
+    }
+   }
+  },
+  {
+   "id": "Q029",
+   "category": "configurator",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что такое ваш конфигуратор, как собрать в нём композицию под мою комнату и какие файлы я получу на выходе?",
+     "Как работает конфигуратор на сайте?",
+     "Как подобрать композицию под мой потолок онлайн?",
+     "Что можно скачать из конфигуратора?",
+     "Где конфигуратор?",
+     "Как открыть конфигуратор?"
+    ],
+    "en": [
+     "What is your configurator, how do I build a composition for my room in it, and which files do I get out of it?",
+     "How does the configurator work?",
+     "How can I design a composition for my ceiling online?",
+     "What can I download from the configurator?",
+     "Where is the configurator?",
+     "How do I open the configurator?"
+    ]
+   },
+   "a": {
+    "ru": "Конфигуратор — это онлайн-инструмент: он собирает подвесную композицию из фирменных элементов под ваше помещение и сразу показывает её в 3D. Вы выбираете артикул и задаёте размеры зоны в миллиметрах, форму, плотность и цвета. На выходе — модель IFC4 для BIM, PDF-спецификация и тендерный лист, которые посетитель выгружает сам, и FBX для 3ds Max. Полный расчёт и выгрузка есть у 360 композиций из 605, остальные рассчитываем индивидуально. Открыть: vargov.ru/configurator.",
+    "en": "The configurator is an online tool: it builds a suspended composition from the brand's own elements for your room and shows it in 3D straight away. You choose the article and set the zone size in millimetres, the shape, density and colours. What you get out is an IFC4 model for BIM, a PDF specification and a tender sheet, which the visitor exports without contacting us, plus an FBX for 3ds Max. A full calculation and export is available for 360 of the 605 compositions; the rest are calculated individually. Open it at vargov.ru/en/configurator."
+   },
+   "sources": [
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/configurator",
+    "text": {
+     "ru": "Генеративный 3D-конфигуратор",
+     "en": "Generative 3D configurator"
+    }
+   }
+  },
+  {
+   "id": "Q030",
+   "category": "configurator",
+   "roles": [
+    "architect",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Нужно ли регистрироваться или платить, чтобы пользоваться конфигуратором и скачать IFC4-модель, без звонка вам?",
+     "Конфигуратор бесплатный?",
+     "Нужен ли аккаунт, чтобы скачать IFC?",
+     "Надо ли сначала связываться с вами, чтобы получить файлы?"
+    ],
+    "en": [
+     "Do I need to register or pay to use the configurator and to download the IFC4 model, or to contact you first?",
+     "Is the configurator free?",
+     "Do I need an account to download the IFC?",
+     "Do I have to contact you before I can get the files?"
+    ]
+   },
+   "a": {
+    "ru": "Регистрироваться не нужно: личного кабинета нет, композиция собирается и выгружается прямо в браузере, а сохранённые проекты хранятся там же. Модель IFC4, PDF-спецификацию и тендерный лист для композиций с полным расчётом вы выгружаете сами, без обращения к нам. Условий оплаты за пользование конфигуратором на сайте не указано — если нужно подтверждение, спросите менеджера (Telegram, WhatsApp, e-mail).",
+    "en": "No registration is needed: there is no account, the composition is built and exported right in the browser, and saved projects are kept there too. For compositions with a full calculation you export the IFC4 model, the PDF specification and the tender sheet yourself, with no need to contact us. The site states no payment terms for using the configurator — if you need confirmation, ask the manager (Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q031",
+   "category": "configurator",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Почему у моего артикула нет полной выгрузки (расчёта, IFC, кнопки) и пишет «рассчитывается индивидуально»? Можно ли собрать мой LC… в конфигураторе?",
+     "Почему мой LC не открывается в конфигураторе?",
+     "Что значит «рассчитывается индивидуально»?",
+     "Как узнать, можно ли выгрузить IFC по моему артикулу?"
+    ],
+    "en": [
+     "Why does my article have no full calculation or IFC export ('calculated individually'), and can my LC… be built in the configurator?",
+     "Why won't my LC code open in the configurator?",
+     "What does 'calculated individually' mean?",
+     "How do I find out whether I can export IFC for my article?"
+    ]
+   },
+   "a": {
+    "ru": "Полный расчёт — 3D-раскладка, IFC4, PDF-спецификация и тендерный лист — есть у 360 композиций из 605. Остальные конфигуратор не рассчитывает: это настенные и напольные предметы, скульптурные объекты и вещи шоурума, а также подвесные композиции, которые считаются индивидуально, — их рассчитывает конструктор бренда вместе с вами. Есть ли ваш артикул среди 360, видно на его карточке на vargov.ru: у таких стоит строка «IFC4 · PDF-спецификация · тендерный лист — в конфигураторе». Если строки нет, напишите менеджеру номер LC… (Telegram, WhatsApp, e-mail) — рассчитаем композицию индивидуально.",
+    "en": "A full calculation — 3D layout, IFC4, PDF specification and tender sheet — is available for 360 of the 605 compositions. The configurator does not calculate the others: they are wall and floor pieces, sculptural objects and showroom items, plus suspended compositions that are calculated individually — the brand engineer works those out together with you. You can see whether your article is among the 360 on its product card at vargov.ru: those carry the line “IFC4 · PDF spec sheet · tender sheet — in the configurator”. If the line is missing, send the manager your LC… code (Telegram, WhatsApp, e-mail) and we will calculate the composition individually."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q032",
+   "category": "configurator",
+   "roles": [
+    "architect",
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли показать клиенту собранную композицию в 3D или в дополненной реальности и переслать ему ссылку на мою конфигурацию?",
+     "Как отправить клиенту ссылку на мою композицию?",
+     "Есть ли AR для примерки люстры в помещении?"
+    ],
+    "en": [
+     "Can I show a client the composition in 3D or augmented reality and send them a link to my configuration?",
+     "How do I send my client a link to my composition?",
+     "Is there AR to try the fixture in a room?"
+    ]
+   },
+   "a": {
+    "ru": "Да. Конфигуратор показывает собранную композицию в 3D, а кнопкой «Поделиться» вы получаете ссылку: клиент, открыв её, увидит ту же раскладку. С телефона композицию можно примерить в своём помещении в AR; на iPhone и iPad модель крепится к настоящему потолку, а на Android и компьютере AR берёт ту высоту потолка, что задана для выгрузки. Высота сохраняется в ссылке на конфигурацию.",
+    "en": "Yes. The configurator shows the composition in 3D, and the “Share” button gives you a link: your client opens it and sees the same layout. From a phone you can try the composition in your own room in AR; on iPhone and iPad the model attaches to the real ceiling, while on Android and desktop AR uses the ceiling height set for the export. That height is saved in the configuration link."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q033",
+   "category": "bim",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Как правильно вставить ваш IFC в Revit или ArchiCAD — открывать как проект или подключать как ссылку?",
+     "Как импортировать ваш IFC в Revit?",
+     "Куда вставлять IFC в ArchiCAD и надо ли двигать модель по высоте?"
+    ],
+    "en": [
+     "How should I bring your IFC into Revit or ArchiCAD — open it as a project or link it?",
+     "How do I import your IFC into Revit?",
+     "How do I place the IFC in ArchiCAD, and do I need to move it vertically?"
+    ]
+   },
+   "a": {
+    "ru": "Вставляйте IFC командой импорта или подключения (связи) IFC, а не открывайте его отдельным проектом — так композиция встанет в вашу модель. Перед выгрузкой в разделе «Документы» задайте высоту потолка в поле «Высота потолка, мм» (по умолчанию 2700 мм): тогда по высоте двигать модель не нужно — начало координат на полу, точки крепления на потолке, а положение в плане вы задаёте сами. Данные лежат в наборах свойств Vargov_Design и Vargov_Mount, длины в миллиметрах. После вставки прогоните обычную проверку на пересечения. Подойдёт любая программа с импортом IFC4, в том числе Revit, ArchiCAD, Allplan, Tekla и Navisworks.",
+    "en": "Bring the IFC in with your IFC import or link command rather than opening it as a separate project, so the composition lands in your model. Before exporting, open “Documents” and set the ceiling height in the “Ceiling height, mm” field (2700 mm by default): then no vertical offset is needed — the origin is on the floor, the fixing points sit on the ceiling, and the position on plan is yours. The data sits in the Vargov_Design and Vargov_Mount property sets, with lengths in millimetres. Run your usual clash check after placing it. Any application with IFC4 import works, including Revit, ArchiCAD, Allplan, Tekla and Navisworks."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q034",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли у вас семейство Revit (.rfa) или BIM-модель, и в каком формате вы её отдаёте?",
+     "Дадите ли вы .rfa для Revit?",
+     "В каком формате BIM-модель вашей люстры?"
+    ],
+    "en": [
+     "Do you have a Revit family (.rfa) or a BIM model, and in what format do you provide it?",
+     "Can you give me an .rfa for Revit?",
+     "What BIM format is your fixture model in?"
+    ]
+   },
+   "a": {
+    "ru": "Семейства Revit (.rfa) у бренда нет: формат закрытый, мы его не выпускаем. BIM-модель отдаём в формате IFC4 — конфигуратор выгружает её под вашу композицию, а Revit, ArchiCAD, Allplan, Tekla и Navisworks открывают её импортом или подключением IFC (программа, читающая только IFC2x3, не откроет). Для визуализации есть FBX для 3ds Max — в нём нет свойств BIM, они остаются в IFC4, — и готовые 3D-модели артикулов на 3ddd.ru и 3dsky.org. Выгрузка IFC4 доступна для 360 композиций из 605.",
+    "en": "The brand has no Revit family (.rfa): the format is closed and we do not issue it. We provide the BIM model as IFC4 — the configurator exports it for your composition, and Revit, ArchiCAD, Allplan, Tekla and Navisworks open it through IFC import or link (an application limited to IFC2x3 will not open it). For visualisation there is an FBX for 3ds Max — it carries no BIM properties, those stay in IFC4 — and ready-made 3D models of the articles on 3ddd.ru and 3dsky.org. IFC4 export is available for 360 of the 605 compositions."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q035",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Что внутри файла IFC — классы объектов, точки крепления отдельными объектами, нагрузки на каждую — и в каких программах он открывается?",
+     "Какие данные в вашем IFC?",
+     "Есть ли в IFC точки подвеса и нагрузка на каждую?"
+    ],
+    "en": [
+     "What is inside the IFC file — object classes, fixing points as separate objects, the load on each — and which software opens it?",
+     "What data does your IFC carry?",
+     "Does the IFC include suspension points and the load on each?"
+    ]
+   },
+   "a": {
+    "ru": "В файле IFC4 — композиция под ваше помещение: светящиеся элементы выгружаются как IfcLightFixture, несветящиеся — как IfcFurnishingElement, а у LC0434 и LC0463 все элементы идут как IfcLightFixture, у LC0523 — как IfcFurnishingElement. Каждая точка крепления к потолку — отдельный объект (IfcDiscreteAccessory) с типом подвеса, числом элементов на точке и, когда известна масса, расчётной нагрузкой (свойство LoadKg, в килограммах); данные лежат в наборах Vargov_Design и Vargov_Mount, длины в миллиметрах. У композиций на каркасе точек крепления в файле нет: записано только число подвесов каркаса (свойство SuspensionCount). Самих тросов и проводов, несущего каркаса и контуров подсветки в файле нет. Открывается в программах с импортом IFC4: Revit, ArchiCAD, Allplan, Tekla, Navisworks.",
+    "en": "The IFC4 file holds the composition built for your room: lit elements are exported as IfcLightFixture and unlit ones as IfcFurnishingElement, except that in LC0434 and LC0463 every element is exported as IfcLightFixture and in LC0523 every element as IfcFurnishingElement. Every ceiling fixing point is a separate object (IfcDiscreteAccessory) carrying the suspension type, the number of elements on it and, when the mass is known, an estimated load (the LoadKg property, in kilograms); the data sits in the Vargov_Design and Vargov_Mount property sets, with lengths in millimetres. Compositions hung on a frame have no ceiling fixing points in the file: only the number of the frame's suspensions is recorded (the SuspensionCount property). The cables and wires themselves, the load-bearing frame and the lit contours are not in the file. It opens in applications with IFC4 import: Revit, ArchiCAD, Allplan, Tekla, Navisworks."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q036",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Как светильники классифицированы в IFC — осветительные приборы или предметы мебели — попадут ли они в мою спецификацию светильников и как отделить свет от декора?",
+     "Какой класс IFC у ваших светильников?",
+     "Попадёт ли декоративный элемент в ведомость светильников?"
+    ],
+    "en": [
+     "How are the luminaires classified in IFC (light fixtures or furnishing elements), will they appear in my luminaire schedule, and how do I separate light fittings from decor?",
+     "Which IFC class do your fixtures use?",
+     "Will a decorative element show up in my luminaire schedule?"
+    ]
+   },
+   "a": {
+    "ru": "Класс решается по элементу, а не по артикулу: светящийся элемент выгружается как IfcLightFixture, несветящийся — как IfcFurnishingElement. Как правило, в спецификацию светильников попадают только светящиеся элементы, а декор остаётся отдельно, как предметы обстановки, — так свет и декор разделены уже классом IFC. Известные исключения: у LC0434 и LC0463 свет дают диоды на каркасе, самих источников в файле нет, и все элементы композиции выгружаются как IfcLightFixture; у LC0523 свет дают контуры подсветки, которых в файле нет, и его элементы уходят как IfcFurnishingElement.",
+    "en": "The class is decided per element, not per article: a lit element is exported as IfcLightFixture, an unlit one as IfcFurnishingElement. As a rule only lit elements appear in the luminaire schedule, while decor stays apart as furnishing elements — so light and decor are already separated by the IFC class. The known exceptions: in LC0434 and LC0463 the light comes from diodes on the frame, the light sources themselves are not in the file, and every element of the composition is exported as IfcLightFixture; in LC0523 the light comes from backlight contours that are not in the file, so its elements are exported as IfcFurnishingElement."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q037",
+   "category": "bim",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Если три варианта одной люстры висят в разных помещениях, не склеятся ли они при сведении моделей из-за одинаковых идентификаторов?",
+     "Не слипнутся ли одинаковые светильники при сведении моделей?",
+     "Одинаковые ли GUID у разных конфигураций одного артикула?"
+    ],
+    "en": [
+     "If three variants of the same luminaire hang in different rooms, will they merge into one in a federated model because of identical IDs?",
+     "Will identical fixtures collapse into one when models are federated?",
+     "Do different configurations of the same article share GUIDs?"
+    ]
+   },
+   "a": {
+    "ru": "Разные конфигурации не склеятся. Идентификаторы (GUID) строятся от конфигурации: одна и та же конфигурация даёт те же GUID, разные — разные. Поэтому три разные композиции одного артикула в разных помещениях сводятся в одну BIM-модель как три отдельных объекта, без совпадений. Файл IFC делается на композицию, а не на артикул.",
+    "en": "Different configurations will not merge. The identifiers (GUIDs) are derived from the configuration: the same configuration gives the same GUIDs, different ones give different GUIDs. So three different compositions of one article in different rooms are combined into one BIM model as three separate objects, with no identifier clashes. The IFC file is made per composition, not per article."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q038",
+   "category": "bim",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли по вашему IFC выпускать рабочую документацию или он только для координации и проверки коллизий?",
+     "Можно ли брать нагрузки из IFC в расчёт конструкций?",
+     "Это рабочий чертёж или данные для координации?"
+    ],
+    "en": [
+     "Can I issue working documentation from your IFC, or is it for coordination and clash checks only?",
+     "Can I use the loads from the IFC in structural calculations?",
+     "Is it a shop drawing or coordination data?"
+    ]
+   },
+   "a": {
+    "ru": "Файл IFC — это данные для координации, а не подписанный рабочий чертёж: им можно поставить композицию на место, проверить пересечения и внести нагрузки в разговор с конструктором, в том числе для предварительного подбора узлов. Расчёт концептуальный — об этом сказано в подвале каждой PDF-спецификации и каждого тендерного листа, а финальную спецификацию до производства подтверждает конструктор бренда. Поэтому сверлить по файлу как по рабочему документу не стоит.",
+    "en": "The IFC file is coordination data, not a signed shop drawing: use it to position the composition, check clashes and bring the loads into the conversation with the structural engineer, including preliminary sizing of the nodes. The calculation is conceptual — it says so in the footer of every PDF specification and tender sheet — and the final specification is confirmed by the brand engineer before production. So do not drill from the file as if it were a working document."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q039",
+   "category": "bim",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "На какую высоту потолка собирается модель и можно ли изменить её перед выгрузкой?",
+     "Как задать высоту потолка для IFC?",
+     "Какая высота потолка по умолчанию в IFC?"
+    ],
+    "en": [
+     "What ceiling height is the model built for, and can I change it before exporting?",
+     "How do I set the ceiling height for the IFC?",
+     "What is the default ceiling height in the IFC?"
+    ]
+   },
+   "a": {
+    "ru": "По умолчанию модель собирается под потолок 2700 мм — это высота помещения, а не размер изделия. Перед выгрузкой её можно изменить: в разделе «Документы» есть поле «Высота потолка, мм» над кнопкой IFC. Композиция встаёт под этот потолок, точки крепления садятся на него, начало координат остаётся на полу. Та же высота сохраняется в ссылке на конфигурацию и используется в AR на Android и компьютере.",
+    "en": "By default the model is built for a 2700 mm ceiling — that is the height of the room, not a size of the piece. You can change it before exporting: in “Documents” there is a “Ceiling height, mm” field above the IFC button. The composition is placed under that ceiling, the fixing points sit on it, and the origin stays on the floor. The same height is saved in the configuration link and is used by AR on Android and desktop."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q040",
+   "category": "bim",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "У композиции на каркасе или у ленты нет точек крепления в файле. Где взять места подвеса для проекта?",
+     "Где взять координаты подвеса каркасной композиции?",
+     "Как узнать точки крепления ленты для проекта потолка?"
+    ],
+    "en": [
+     "A frame-mounted composition or a ribbon has no fixing points in the file — where do I get the suspension positions for my design?",
+     "Where do I get the suspension coordinates for a frame composition?",
+     "How do I find the fixing points of a ribbon for my ceiling design?"
+    ]
+   },
+   "a": {
+    "ru": "У композиций на каркасе элементы держит каркас, а сам каркас подвешен к потолку: в IFC4 записано число подвесов каркаса (свойство SuspensionCount), но не их координаты. Сами точки видны на чертеже каркаса и на виде сбоку в конфигураторе. Монтажной схемы разметки потолка 1:1 у композиций на каркасе и у лент нет — у ленты своё устройство. Узлы подвеса для вашего проекта запросите у менеджера: info@vargov.ru, Telegram или WhatsApp.",
+    "en": "In frame compositions the elements are carried by the frame, and the frame itself is suspended from the ceiling: the IFC4 records the number of the frame's suspensions (the SuspensionCount property) but not their coordinates. The points themselves are visible on the frame drawing and on the side view in the configurator. The 1:1 ceiling-marking plan is not produced for frame compositions or ribbons — a ribbon has its own construction. Ask the manager for the suspension nodes for your project: info@vargov.ru, Telegram or WhatsApp."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q041",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли получить чертёж или 2D-блок в DWG либо DXF (AutoCAD) для вставки в план потолков?",
+     "Дадите ли DWG для AutoCAD?",
+     "Есть ли DXF-блок светильника?"
+    ],
+    "en": [
+     "Can I get a drawing or 2D block in DWG or DXF (AutoCAD) to drop into a reflected ceiling plan?",
+     "Can you give me a DWG for AutoCAD?",
+     "Is there a DXF block for the fixture?"
+    ]
+   },
+   "a": {
+    "ru": "Чертёж DXF у нас только для внутреннего пользования — для производства и дилеров бренда; посетитель сайта его не выгружает. Самостоятельно выгружаются модель IFC4, PDF-спецификация, тендерный лист и FBX для 3ds Max, а про формат DWG в наших материалах ничего нет. Если вам нужен 2D-блок для плана потолков, напишите менеджеру (Telegram, WhatsApp, e-mail) — он уточнит, что можно предоставить под ваш проект.",
+    "en": "The DXF drawing is for internal use only — for the brand's production and dealers; site visitors do not export it. What you export yourself is the IFC4 model, the PDF specification, the tender sheet and an FBX for 3ds Max, and our materials say nothing about a DWG format. If you need a 2D block for a ceiling plan, write to the manager (Telegram, WhatsApp, e-mail) — they will check what can be provided for your project."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q042",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Где скачать готовые 3D-модели ваших композиций для рендера и визуализации (3ddd, 3dsky)?",
+     "Есть ли у вас 3D-модели для 3ds Max?",
+     "Где взять модель композиции для визуализации?"
+    ],
+    "en": [
+     "Where can I download ready-made 3D models of your compositions for rendering and visualisation (3ddd, 3dsky)?",
+     "Do you have 3D models for 3ds Max?",
+     "Where can I get a model of a composition for my visualisation?"
+    ]
+   },
+   "a": {
+    "ru": "Готовые 3D-модели лежат в нашем аккаунте на 3ddd (3ddd.ru/users/vargov) и на 3dsky (3dsky.org/users/vargov); часть композиций есть и на Sketchfab. Ссылки на модели есть у 603 из 605 композиций — нет их только у LC0255 и LC0257. Найдите нужную композицию в каталоге vargov.ru/catalog и откройте модель по ссылке у карточки. Если нужной модели нет, запросите её у менеджера (кнопки Telegram, WhatsApp, почта).",
+    "en": "Ready-made 3D models are in our account on 3ddd (3ddd.ru/users/vargov) and on 3dsky (3dsky.org/users/vargov); some compositions are also on Sketchfab. Model links exist for 603 of the 605 compositions — only LC0255 and LC0257 have none. Find the composition in the catalogue at vargov.ru/en/catalog and open the model through the link by its page. If the model you need is not there, request it from the manager (Telegram, WhatsApp or e-mail buttons)."
+   },
+   "sources": [
+    "/catalog"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q043",
+   "category": "bim",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли выгрузка в FBX для 3ds Max — где кнопка, в каком масштабе приходит файл, есть ли текстуры, цвета, подвесы и свойства BIM?",
+     "Можно ли выгрузить композицию в FBX?",
+     "Что внутри файла FBX из конфигуратора?"
+    ],
+    "en": [
+     "Is there an FBX export for 3ds Max — where is the button, at what scale does the file arrive, does it have textures, colours, drops and BIM properties?",
+     "Can I export a composition to FBX?",
+     "What is inside the FBX file from the configurator?"
+    ]
+   },
+   "a": {
+    "ru": "Да: в конфигураторе, в шаге «3D схема композиции», в ящике «Документы», сразу под кнопкой «Скачать IFC (BIM)» есть кнопка «Скачать FBX (3ds Max)». Композиция приходит в сборе отдельными объектами, в миллиметрах — масштаб объявлен внутри файла, пересчитывать ничего не нужно; начало координат — потолок. Переносятся цвет и прозрачность, нити подвеса идут телами, потолочные крепления — отдельными объектами, есть плоскость потолка. Текстур и UV нет, и свойств BIM в FBX нет: нагрузки, масса, мощность и артикулы остаются в IFC4. Выгрузка есть у 360 композиций из 605, которые конфигуратор считает полностью; у лент своя кнопка в панели ленты. Подробнее: vargov.ru/configurator/fbx.",
+    "en": "Yes: in the configurator, in the step “3D composition scheme”, in the “Documents” box, right under the “Download IFC (BIM)” button, there is a “Download FBX (3ds Max)” button. The composition arrives assembled, as separate objects, in millimetres — the scale is declared inside the file, so nothing needs converting; the origin is the ceiling. Colour and transparency carry over, the suspension strands come as solid bodies, the ceiling fixings as separate objects, and a ceiling plane is included. There are no textures or UVs, and no BIM properties in the FBX: loads, mass, power and article codes stay in IFC4. The export is available for 360 of the 605 compositions, the ones the configurator calculates in full; ribbons have their own button in the ribbon panel. More at vargov.ru/en/configurator/fbx."
+   },
+   "sources": [
+    "/configurator/fbx",
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q044",
+   "category": "brief",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Что такое ТЗ на производство на вашем сайте: нужна ли регистрация, есть ли в нём цена и что я получу сразу?",
+     "Что такое ТЗ на vargov.ru?",
+     "Нужно ли входить в кабинет, чтобы заполнить ТЗ?",
+     "Какие файлы дают сразу после сохранения ТЗ?",
+     "Где заполнить ТЗ?",
+     "Где ТЗ на производство?",
+     "Как заполнить техническое задание?"
+    ],
+    "en": [
+     "What is the production brief on your site — do I need to register, is there a price in it, and what do I get immediately?",
+     "What is the production spec on vargov.ru?",
+     "Do I need to sign in to fill in the spec?",
+     "Which files are available right after I save the spec?",
+     "Where do I fill in the production brief?",
+     "Where is the brief form?"
+    ]
+   },
+   "a": {
+    "ru": "ТЗ на производство — это страница vargov.ru/specifications, где собирается задание, по которому композицию изготавливают: артикулы, параметры, раскладка, цвета. Вход и регистрация не нужны — учётной записи нет, обязательно только поле «Объект». Цены в ТЗ нет: это не заявка, не заказ и не смета. Сразу после сохранения доступны страница «3D-конфигурация» (3D-окно с параметрами, полноэкранный режим и AR на iPhone), PDF ТЗ на русском и английском и кнопка выгрузки FBX. Монтажная схема разметки потолка 1:1 откроется позже — после запуска ТЗ в производство.",
+    "en": "The production spec is the page vargov.ru/en/specifications where the brief a composition is manufactured from is put together: articles, parameters, layout, colours. No sign-in or registration is needed — there is no account, and only the “Project” field is mandatory. There is no price in the spec: it is not an inquiry, an order or a quote. Right after saving you get the “3D configuration” page (a 3D window with the parameters, full-screen mode and AR on iPhone), the spec PDF in Russian and English, and an FBX export button. The 1:1 ceiling-marking plan opens later — once the spec is released to production."
+   },
+   "sources": [
+    "/specifications"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/specifications",
+    "text": {
+     "ru": "ТЗ на производство",
+     "en": "Production brief"
+    }
+   }
+  },
+  {
+   "id": "Q045",
+   "category": "brief",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Я потерял ссылку на своё ТЗ — как её восстановить, как вернуться к сохранённому и можно ли править после сохранения?",
+     "Потерял ссылку на ТЗ, что делать?",
+     "Можно ли изменить ТЗ после сохранения?"
+    ],
+    "en": [
+     "I lost the link to my production brief — how do I recover it, how do I come back to a saved one, and can I edit it after saving?",
+     "I lost my spec link, what now?",
+     "Can I change the spec after saving it?"
+    ]
+   },
+   "a": {
+    "ru": "Личного кабинета нет: сохранённое ТЗ открывается по своей ссылке с ключом, и этот ключ хранится у вас — по той же ссылке ТЗ можно открыть, дописать и подтвердить. Пока менеджер не запустил ТЗ в производство, его можно править, и каждая правка меняет то, что потом выйдет на печать. Если ссылка потеряна, восстановить ТЗ может только менеджер — напишите ему (Telegram, WhatsApp, e-mail).",
+    "en": "There is no account area: a saved spec opens through its own keyed link, and the key is kept by you — the same link lets you open the spec, add to it and confirm it. Until the manager releases the spec to production it can still be edited, and every edit changes what will later come out in print. If the link is lost, only the manager can recover the spec — write to them (Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q046",
+   "category": "brief",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Что именно входит в PDF-спецификацию и тендерный лист — есть ли код ТН ВЭД и документы соответствия — и можно ли приложить их к закупочной документации?",
+     "Что в тендерном листе?",
+     "Есть ли в ваших документах код ТН ВЭД?"
+    ],
+    "en": [
+     "What exactly is in the PDF specification and the tender sheet — customs HS code, conformity documents — and can I attach them to procurement documents?",
+     "What does the tender sheet contain?",
+     "Do your documents include an HS code?"
+    ]
+   },
+   "a": {
+    "ru": "PDF-спецификация описывает композицию, собранную под ваше помещение: артикул, форму, число элементов, габарит и высоту, массу, мощность, крепление с нагрузкой на точку, сведения о сроке изготовления и гарантии, снимок 3D и QR на эту же конфигурацию; это печатная сводка для комплекта проекта и для заказчика. Тендерный лист — спецификация для закупки: позиция, технические данные, монтаж, код ТН ВЭД для таможни и документы соответствия; он идёт в тендерную и закупочную документацию. В подвале каждого из двух документов стоит оговорка, что расчёт концептуальный, а финальную спецификацию подтверждает конструктор бренда. Полные тексты сертификатов и перечень артикулов — у менеджера по запросу.",
+    "en": "The PDF specification describes the composition built for your room: article, shape, number of elements, size and height, mass, power, the fixing with the load per point, production-lead-time and warranty entries, a 3D snapshot and a QR code to the same configuration; it is a printed summary for the project set and the client. The tender sheet is a procurement specification: the line item, technical data, installation, the customs HS code and the conformity documents, and it goes into tender and procurement documentation. The footer of each of the two documents states that the calculation is conceptual and the final specification is confirmed by the brand engineer. Full certificate texts and the list of articles are available from the manager on request."
+   },
+   "sources": [
+    "/architects"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q047",
+   "category": "certification",
+   "roles": [
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Какой пакет документов вы дадите для закупки и приёмки объекта — сертификаты, декларации, инструкции, паспорт изделия?",
+     "Есть ли сертификаты на светильники для объекта?",
+     "Какие документы идут вместе с изделием?",
+     "Есть ли паспорт изделия?"
+    ],
+    "en": [
+     "What document package will you provide for procurement and site handover — certificates, declarations, instructions, a product passport?",
+     "Do you have certificates for the fixtures for a project?",
+     "Which documents come with the product?",
+     "Is there a product passport?"
+    ]
+   },
+   "a": {
+    "ru": "Для закупки и приёмки у нас есть два серийных сертификата ЕАЭС (ТР ТС 004/2011, у 53 артикулов ещё и ТР ТС 020/2011) и две декларации ТР ЕАЭС 037/2016 на 310 артикулов LC, они действуют до 2031 года. Сертификат серийный — он покрывает каждое изделие артикула, а не партию; записи открыты в реестре Росаккредитации. Полные тексты и перечень артикулов предоставляет менеджер по запросу. Кроме того, есть инструкции по монтажу и подключению в PDF (vargov.ru/installation) и PDF-спецификация с тендерным листом из конфигуратора. Паспорт изделия и другие формы в наших материалах не описаны — этот вопрос уточните у менеджера.",
+    "en": "For procurement and handover we have two serial EAEU certificates (TR CU 004/2011, with 53 articles also covered by TR CU 020/2011) and two TR EAEU 037/2016 declarations covering 310 LC articles, valid until 2031. The certificate is serial — it covers every product of the article, not a batch; the records are open in the Rosaccreditation register. Full texts and the list of articles are available from the manager on request. In addition there are installation and wiring instructions as PDFs (vargov.ru/en/installation) and the PDF specification with the tender sheet from the configurator. A product passport and other forms are not described in our materials — please ask the manager."
+   },
+   "sources": [
+    "/certification",
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q048",
+   "category": "brief",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли документация на английском и других языках для иностранного заказчика?",
+     "Есть ли инструкция на английском?",
+     "На каких языках PDF и интерфейс?"
+    ],
+    "en": [
+     "Is documentation available in English and other languages for a foreign client?",
+     "Is there an installation guide in English?",
+     "Which languages do the PDFs and the interface support?"
+    ]
+   },
+   "a": {
+    "ru": "Частично да. Сайт и интерфейс конфигуратора работают на восьми языках; PDF-инструкция по монтажу есть на всех восьми, инструкция по подключению — на русском и английском, PDF ТЗ — на русском и английском. В файле IFC4 при нерусском интерфейсе имена на английском, а пояснения к свойствам остаются русскими. На каких языках выходят PDF-спецификация, тендерный лист и документы соответствия, в наших материалах не указано — это уточните у менеджера (Telegram, WhatsApp, e-mail).",
+    "en": "Partly, yes. The site and the configurator interface work in eight languages; the PDF installation guide comes in all eight, the wiring guide in Russian and English, and the spec PDF in Russian and English. In the IFC4 file, with a non-Russian interface the names are in English, while the property descriptions stay in Russian. Which languages the PDF specification, the tender sheet and the conformity documents come in is not stated in our materials — please ask the manager (Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q049",
+   "category": "certification",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Нужны документы для LEED или BREEAM: экологическая декларация, данные по составу изделий. Есть ли?",
+     "Есть ли EPD на светильники?",
+     "Подходят ли ваши документы для зелёной сертификации здания?"
+    ],
+    "en": [
+     "I need documents for LEED or BREEAM — an environmental declaration, product composition data. Do you have them?",
+     "Do you have an EPD for the fixtures?",
+     "Are your documents suitable for green building certification?"
+    ]
+   },
+   "a": {
+    "ru": "Экологических деклараций (EPD) и документов под LEED или BREEAM в наших материалах нет. Есть декларации ТР ЕАЭС 037/2016 об ограничении опасных веществ на 310 артикулов LC, действующие до 2031 года, — это документы ЕАЭС, а не европейская RoHS. Подойдут ли они вашему пакету, зависит от требований системы оценки, поэтому напишите менеджеру (Telegram, WhatsApp, e-mail) с перечнем нужных документов.",
+    "en": "Our materials contain no environmental declarations (EPD) and no documents prepared for LEED or BREEAM. What we do have are TR EAEU 037/2016 declarations on the restriction of hazardous substances covering 310 LC articles, valid until 2031 — these are EAEU documents, not the European RoHS. Whether they fit your package depends on the requirements of the rating system, so please write to the manager (Telegram, WhatsApp, e-mail) with the list of documents you need."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q050",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какие сертификаты и декларации у вас есть? Можно ли приложить их к тендерной документации или дать управляющей компании и проектировщику? Сертифицирована ли продукция в ЕАЭС и до какого года документы действуют?",
+     "Есть ли у вас сертификаты на светильники?",
+     "Сертификаты ЕАЭС и декларации есть?",
+     "Можно приложить ваши сертификаты к тендеру?"
+    ],
+    "en": [
+     "Which certificates and declarations do you have, can I attach them to tender documentation or give them to the building management, and until when are they valid?",
+     "Do you have certificates for your luminaires?",
+     "Are your products certified in the EAEU?",
+     "Can I attach your certificates to a tender?"
+    ]
+   },
+   "a": {
+    "ru": "Да, продукция сертифицирована в ЕАЭС: два серийных сертификата соответствия по ТР ТС 004/2011 охватывают 310 артикулов LC, из них 53 также по ТР ТС 020/2011 (электромагнитная совместимость). Есть и две декларации ТР ЕАЭС 037/2016 об ограничении опасных веществ на те же артикулы, продукция маркируется знаком EAC. Документы действуют до 2031 года. Полные тексты, приложения с перечнем артикулов и протоколы испытаний высылаем по запросу — для тендерной и рабочей документации, управляющей компании или проектировщика. Подробнее: vargov.ru/certification.",
+    "en": "Yes, our products are certified in the EAEU: two serial certificates of conformity to TR CU 004/2011 cover 310 LC articles, 53 of them also to TR CU 020/2011 (electromagnetic compatibility). There are also two declarations to TR EAEU 037/2016 (restriction of hazardous substances) for the same articles, and the products carry the EAC mark. The documents are valid until 2031. We send the full texts, the appendices listing the articles and the test reports on request, for tender and working documentation, a management company or a designer. More: vargov.ru/en/certification."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q051",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Все ли артикулы сертифицированы и есть ли сертификат именно на мой артикул?",
+     "Сертифицирована ли конкретная модель?",
+     "Какие артикулы не входят в сертификат?"
+    ],
+    "en": [
+     "Is every article certified, and is there a certificate for my specific article?",
+     "Is my particular model covered by the certificate?",
+     "Which articles are not covered by the certificate?"
+    ]
+   },
+   "a": {
+    "ru": "Не все: сертификаты и декларации охватывают 310 артикулов из 605 в каталоге. Перечень артикулов указан в приложениях к документам, мы высылаем его по запросу. Чтобы проверить свой артикул, назовите его менеджеру — кнопки Telegram, WhatsApp или e-mail под ответом.",
+    "en": "Not all of them: the certificates and declarations cover 310 of the 605 articles in the catalogue. The list of articles is in the appendices to the documents, and we send it on request. To check your article, give its code to the manager with the buttons below (Telegram, WhatsApp or e-mail)."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q052",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Как убедиться, что документ настоящий, и где взять номера сертификатов и деклараций, чтобы проверить их в реестре?",
+     "Как проверить сертификат в реестре?",
+     "Где посмотреть номера ваших деклараций?"
+    ],
+    "en": [
+     "How can I verify that a certificate is genuine, and where do I get certificate and declaration numbers to check in the register?",
+     "How do I check your certificate in the register?",
+     "Where can I find the numbers of your declarations?"
+    ]
+   },
+   "a": {
+    "ru": "Сертификат и декларация — это записи в реестре Росаккредитации: по регистрационному номеру там видно, кто выдал документ, на что и до какого числа. Полные номера опубликованы на странице vargov.ru/certification, так что проверить их можно, не спрашивая нас. Сканы бланков мы публично не выкладываем, но полный пакет документов высылаем по запросу.",
+    "en": "Certificates and declarations are entries in the Rosaccreditation register: by the registration number you can see who issued the document, for what and until when. The full numbers are published on vargov.ru/en/certification, so you can check them without asking us. We do not publish scans of the forms, but we send the full set of documents on request."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q053",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Сертификат серийный или на партию? Придётся ли оформлять новые документы на каждую поставку?",
+     "Нужен ли новый сертификат на каждую поставку?",
+     "Сертификат партионный?"
+    ],
+    "en": [
+     "Is the certificate serial or per batch — will new documents be needed for each delivery?",
+     "Do we need a new certificate for every shipment?",
+     "Is the certificate valid for one batch only?"
+    ]
+   },
+   "a": {
+    "ru": "Сертификат серийный: он действует на каждое изделие перечисленных артикулов, а не на отдельную партию. Поэтому оформлять новые документы под каждую поставку не нужно. Срок действия документов — до 2031 года.",
+    "en": "The certificate is serial: it covers every unit of the listed articles, not a single batch. So no new documents are needed for each delivery. The documents are valid until 2031."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q054",
+   "category": "certification",
+   "roles": [
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Пришлите сканы сертификатов и протоколы испытаний — для комиссии, управляющей компании или проектировщика.",
+     "Можно получить сканы сертификатов?",
+     "Нужны протоколы испытаний для комиссии."
+    ],
+    "en": [
+     "Can you send scans of the certificates and the test reports?",
+     "Can I get copies of your certificates?",
+     "I need the test reports for our commission."
+    ]
+   },
+   "a": {
+    "ru": "Да. Полный пакет — сертификаты, приложения с перечнем артикулов, декларации и протоколы испытаний — высылаем по запросу на почту или в мессенджер, в том виде, в каком его принимают в тендерной и исполнительной документации. На сайте сканы бланков не публикуем, там только номера для проверки в реестре. Напишите менеджеру (Telegram, WhatsApp или info@vargov.ru) и укажите артикулы или объект.",
+    "en": "Yes. We send the full set — certificates, appendices listing the articles, declarations and test reports — on request by e-mail or messenger, in the form accepted in tender and as-built documentation. We do not publish scans of the forms on the site, only the numbers for checking in the register. Write to the manager (Telegram, WhatsApp or info@vargov.ru) and name the articles or the project."
+   },
+   "sources": [
+    "/certification",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q055",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли у вас европейский сертификат CE и RoHS для поставки в Европу или за пределы ЕАЭС?",
+     "Есть ли у вас CE?",
+     "Есть ли RoHS?",
+     "Можно ли поставлять светильники в Европу?"
+    ],
+    "en": [
+     "Do you have CE and RoHS for supply to Europe or outside the EAEU?",
+     "Do you have CE marking?",
+     "Do you have RoHS?",
+     "Can you supply the luminaires to Europe?"
+    ]
+   },
+   "a": {
+    "ru": "CE-сертификата у нас нет: продукция сертифицирована в ЕАЭС — серийные сертификаты соответствия и знак EAC. Ограничение опасных веществ подтверждено декларациями ТР ЕАЭС 037/2016: это аналог RoHS в ЕАЭС, но не европейская RoHS. Какие документы нужны для поставки за пределы ЕАЭС, зависит от страны и проекта — уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "We do not hold a CE certificate: our products are certified in the EAEU — serial certificates of conformity and the EAC mark. Restriction of hazardous substances is confirmed by TR EAEU 037/2016 declarations: an EAEU analogue of RoHS, but not the EU RoHS. Which documents are needed for supply outside the EAEU depends on the country and the project — ask the manager with the buttons below (Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q056",
+   "category": "certification",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какая степень защиты IP у светильников? Можно ли ставить в спа, у бассейна, в ванной, в детской, на террасе или на улице?",
+     "Какой у вас IP?",
+     "Можно ли повесить в ванной или у бассейна?",
+     "Подойдёт ли композиция для улицы или террасы?"
+    ],
+    "en": [
+     "What IP rating do the luminaires have, and can they be used in a spa, by a pool, in a bathroom, a nursery or outdoors?",
+     "What is your IP rating?",
+     "Can I hang a composition in a bathroom or by a pool?",
+     "Is a composition suitable for a terrace or outdoors?"
+    ]
+   },
+   "a": {
+    "ru": "Степень защиты IP у нас — любая по запросу: она задаётся при изготовлении под условия помещения, а не выбирается из готового ряда. Назовите условия — влажность, улицу, бассейн, хаммам — и композицию изготовят под них. Готового значения IP для всех изделий мы не публикуем, поэтому допустимость ванной, детской, террасы или спа подтверждает менеджер по вашему проекту (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Our ingress protection is any IP rating on request: it is set during manufacture to suit the room, not picked from a ready-made range. Tell us the conditions — humidity, outdoors, pool, hammam — and the composition will be built for them. We do not publish one ready IP value for all products, so whether a bathroom, nursery, terrace or spa is suitable is confirmed by the manager for your project (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q057",
+   "category": "certification",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Нужно заключение по пожарной безопасности и класс пожарной опасности на изделия. Есть ли?",
+     "Есть ли заключение по пожарной безопасности?",
+     "Какой класс пожарной опасности у светильников?"
+    ],
+    "en": [
+     "I need a fire-safety conclusion and a fire hazard class for the products. Do you have them?",
+     "Do you have a fire-safety certificate?",
+     "What is the fire hazard class of the luminaires?"
+    ]
+   },
+   "a": {
+    "ru": "Заключения по пожарной безопасности и класса пожарной опасности в наших открытых материалах нет, поэтому подтверждать их наличие мы не будем. Что есть: серийные сертификаты соответствия ЕАЭС и декларации на 310 артикулов, они действуют до 2031 года. Для закупочной документации напишите менеджеру кнопками Telegram, WhatsApp или e-mail — уточним, какие ещё документы доступны.",
+    "en": "Our public materials contain no fire-safety conclusion or fire hazard class, so we will not confirm that they exist. What we have: EAEU serial certificates of conformity and declarations covering 310 articles, valid until 2031. For your procurement documents, write to the manager with the buttons below (Telegram, WhatsApp or e-mail) — we will check which other documents are available."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q058",
+   "category": "certification",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Входит ли продукция в реестр российской промышленной продукции Минпромторга? Нужно для госзакупки.",
+     "Вы в реестре Минпромторга?",
+     "Подходите ли вы для госзакупки по реестру российской продукции?"
+    ],
+    "en": [
+     "Is your product listed in the Russian industrial products register of the Ministry of Industry and Trade? I need it for a public tender.",
+     "Are you in the Minpromtorg register?",
+     "Do you qualify for a public tender that requires the Russian industrial products register?"
+    ]
+   },
+   "a": {
+    "ru": "В наших открытых материалах нет сведений о включении продукции в реестр российской промышленной продукции Минпромторга, поэтому подтверждать это мы не будем. Записи наших сертификатов и деклараций открыты в другом реестре — Росаккредитации, их можно проверить по номеру. Для госзакупки напишите менеджеру кнопками Telegram, WhatsApp или e-mail.",
+    "en": "Our public materials say nothing about the products being listed in the Ministry of Industry and Trade register of Russian industrial products, so we will not confirm it. The entries for our certificates and declarations are open in a different register, that of Rosaccreditation, and can be checked by number. For a public tender, write to the manager with the buttons below (Telegram, WhatsApp or e-mail)."
+   },
+   "sources": [
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q059",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какой световой поток, цветовая температура (тёплый или холодный свет, можно ли менять оттенок) и CRI? Есть ли файлы IES/LDT?",
+     "Какая цветовая температура у света?",
+     "Есть ли файлы IES?",
+     "Какой световой поток и CRI?"
+    ],
+    "en": [
+     "What are the luminous flux, colour temperature (warm or cool, can the shade be changed) and CRI, and are there IES/LDT photometric files?",
+     "What is the colour temperature of the light?",
+     "Do you have IES files?",
+     "What are the luminous flux and CRI?"
+    ]
+   },
+   "a": {
+    "ru": "Для светящихся элементов цвет света выбирают при оформлении технического задания на vargov.ru/specifications: он задаётся диапазоном из списка и точнее не настраивается, а менять оттенок после изготовления мы не обещаем. Световой поток, CRI и файлы IES/LDT в открытых материалах не опубликованы, поэтому цифр не называем. Мощность и напряжение композиции указаны в спецификации и тендерном листе, которые выгружаются из конфигуратора для композиций, которые он считает. Что доступно по вашей композиции, уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For light-emitting elements the light colour is chosen when the production brief is filled in at vargov.ru/en/specifications: it is set as a range from a list and cannot be tuned more precisely, and we do not promise that the shade can be changed after manufacture. Luminous flux, CRI and IES/LDT files are not published in our public materials, so we do not quote figures. The power and voltage of a composition are given in the specification and the tender sheet exported from the configurator, for the compositions it calculates. What is available for your composition is confirmed by the manager — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q060",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли диммировать свет и управлять им (DALI, 0–10 В, Zigbee, с телефона), подключить к умному дому?",
+     "Можно ли димировать светильник?",
+     "Поддерживается DALI?",
+     "Подключается ли к умному дому?"
+    ],
+    "en": [
+     "Can the light be dimmed or controlled (DALI, 0–10 V, Zigbee, from a phone) and connected to a smart home?",
+     "Can the luminaire be dimmed?",
+     "Is DALI supported?",
+     "Can it be connected to a smart home system?"
+    ]
+   },
+   "a": {
+    "ru": "Да, для светящихся элементов диммирование возможно: в техническом задании на производство его выбирают из вариантов — DALI, 0–10 В, Triac или без диммирования, а на странице для застройщиков vargov.ru/developers указана совместимость с DALI и сценарным управлением зданием. Zigbee, управление с телефона и подключение к умному дому в открытых материалах не описаны, поэтому ничего не обещаем. Какой вариант подойдёт для вашей композиции и её питания, уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Yes, for light-emitting elements dimming is possible: in the production brief it is chosen from DALI, 0–10 V, Triac or none, and the page for developers at vargov.ru/en/developers states compatibility with DALI and building scenario control. Zigbee, phone control and smart-home connection are not described in our public materials, so we promise nothing. Which option suits your composition and its power supply is confirmed by the manager — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/catalog/lc0586"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q061",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какое питание нужно композиции — низковольтное или 220 В, нужен ли драйвер, где его размещать и сколько линий тянуть? Нужен ли отдельный электрик?",
+     "Какое питание нужно — 12 В или 220 В?",
+     "Нужен ли драйвер и где его ставить?",
+     "Нужен ли электрик для подключения?"
+    ],
+    "en": [
+     "What power supply does the composition need — low voltage or 220 V — is a driver required, where does it go, and how many lines do I run?",
+     "Does it run on 12 V or 220 V?",
+     "Is a driver needed and where does it go?",
+     "Do I need an electrician to connect it?"
+    ]
+   },
+   "a": {
+    "ru": "Питание бывает двух видов, сценарий выбирают под проект: 12–24 В через драйвер или 220 В — прямое подключение к сети без драйвера. Для 12–24 В драйвер входит в комплект поставки, его размещают в электрощитке или в запотолочном пространстве, а слаботочные провода идут от него по числу световых элементов. Для 220 В провод прокладывают от щитка к месту монтажа и разводят на элементы. Схемы питания — в PDF-инструкции по подключению: vargov.ru/pdf/vargov-connection-ru.pdf. Требований к квалификации электрика в наших материалах нет, но мы настоятельно рекомендуем доверить монтаж и подключение официальным монтажникам.",
+    "en": "There are two power options, chosen per project: 12–24 V through a driver, or 220 V — a direct mains connection without a driver. For 12–24 V the driver is included in the delivery and goes in the distribution board or the void above the ceiling, with low-voltage cables running from it, one per lighting element. For 220 V a cable is run from the board to the installation point and split across the elements. The power schemes are in the PDF wiring guide: vargov.ru/pdf/vargov-connection-en.pdf. Our materials set no electrician qualification requirements, but we strongly recommend leaving installation and wiring to the official installers."
+   },
+   "sources": [
+    "/installation",
+    "/pdf/vargov-connection-ru.pdf",
+    "/pdf/vargov-connection-en.pdf"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q062",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Сколько элементов в базовой сборке, какая мощность у одного элемента и сколько ватт потребляет композиция? Нужно заложить нагрузку на щит.",
+     "Сколько ватт потребляет композиция?",
+     "Какая мощность одного элемента?",
+     "Какую нагрузку закладывать на электрощит?"
+    ],
+    "en": [
+     "How many elements are in a composition's base build, what is the power of one element, and what is the total draw for sizing the panel load?",
+     "How many watts does a composition draw?",
+     "What is the power of a single element?",
+     "What load should I allow for on the distribution board?"
+    ]
+   },
+   "a": {
+    "ru": "Единой цифры на любую композицию мы не называем: число элементов подбирается под помещение, а мощность в данных конфигуратора указана на элемент. Для вашей композиции число элементов, мощность и напряжение выводятся в PDF-спецификацию и тендерный лист — нагрузку на щит берите оттуда. Так работает для 360 композиций из 605, которые считает конфигуратор; для остальных цифры назовёт менеджер (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "We do not quote one figure for every composition: the number of elements is chosen for the room, and the configurator data gives power per element. For your composition the number of elements, power and voltage are printed in the PDF specification and the tender sheet — take the panel load from there. This works for the 360 of 605 compositions the configurator calculates; for the rest the manager will give the figures (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q063",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Сколько точек крепления нужно в потолке под композицию?",
+     "Сколько отверстий в потолке нужно сделать?",
+     "Сколько подвесов у композиции?",
+     "Сколько точек крепления у люстры?"
+    ],
+    "en": [
+     "How many ceiling fixing points does a composition need?",
+     "How many holes must be made in the ceiling?",
+     "How many suspension points does a composition have?",
+     "How many fixing points does a chandelier need?"
+    ]
+   },
+   "a": {
+    "ru": "Как правило, точек крепления в потолке столько, сколько элементов в композиции: каждый элемент висит на своей нити, тогда как у цельного светильника вся масса приходит в один узел. Артикулы-исключения названы поимённо на странице vargov.ru/guides/tochki-krepleniya. Точное число для вашей композиции считает конфигуратор и выводит в спецификацию; у композиций на каркасе к потолку подвешен сам каркас. Если композицию конфигуратор не считает, число точек назовёт менеджер (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "As a rule a composition has as many ceiling fixing points as it has elements: each element hangs on its own line, whereas a single-body fitting brings its whole mass to one node. The exceptions are listed by article code at vargov.ru/en/guides/mounting-points. The configurator calculates the exact number for your composition and prints it in the specification; for compositions on a frame it is the frame itself that hangs from the ceiling. If the configurator does not calculate your composition, the manager will give the number (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/guides/tochki-krepleniya",
+    "/guides/mounting-points"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q064",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько весит композиция и какая нагрузка приходится на каждую точку подвеса?",
+     "Сколько весит композиция?",
+     "Какая нагрузка на потолок?",
+     "Какая нагрузка на одну точку крепления?"
+    ],
+    "en": [
+     "How much does a composition weigh and what load falls on each suspension point?",
+     "What does the composition weigh?",
+     "What load does it put on the ceiling?",
+     "What is the load on a single fixing point?"
+    ]
+   },
+   "a": {
+    "ru": "Для композиций, которые считает конфигуратор (360 из 605), вес композиции и нагрузку на каждую точку подвеса он считает по её составу и выводит в PDF-спецификацию и тендерный лист; в файле IFC4 нагрузка записана для каждой точки. Расчёт концептуальный: финальную спецификацию подтверждает конструктор бренда. Для ориентира на сайте есть таблица посчитанных композиций: vargov.ru/guides/ves-kompozitsii. Цифры по вашему проекту назовёт менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For the compositions the configurator calculates (360 of 605), it calculates the weight of the composition and the load on each suspension point from its make-up and prints them in the PDF specification and the tender sheet; the IFC4 file records the load for every point. The calculation is conceptual: the final specification is confirmed by the brand's engineer. For orientation, the site has a table of calculated compositions: vargov.ru/en/guides/chandelier-weight. The manager will give the figures for your project — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/guides/ves-kompozitsii",
+    "/guides/chandelier-weight"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q065",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Выдержит ли перекрытие или потолок, кто это проверяет и можно ли брать нагрузки из вашей модели прямо в расчёт перекрытия?",
+     "Выдержит ли мой потолок композицию?",
+     "Кто проверяет перекрытие?",
+     "Можно ли брать нагрузки из IFC в расчёт перекрытия?"
+    ],
+    "en": [
+     "Will my slab or ceiling take it, who verifies that, and can I take the loads from your model straight into the slab calculation?",
+     "Will my ceiling carry the composition?",
+     "Who checks the slab?",
+     "Can I use the loads from the IFC file in the slab calculation?"
+    ]
+   },
+   "a": {
+    "ru": "Для композиций, которые считает конфигуратор (360 из 605), нагрузку на каждую точку подвеса он считает сам: она указана в спецификации и записана для каждой точки в файле IFC4 (vargov.ru/configurator/ifc4). Расчёт концептуальный, финальную спецификацию подтверждает конструктор бренда, поэтому брать нагрузки в расчёт перекрытия стоит после этого подтверждения. Выдержит ли именно ваше перекрытие, наши материалы не оценивают — это решается по проекту вместе с менеджером, передайте ему артикул и данные о перекрытии (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "For the compositions the configurator calculates (360 of 605), it calculates the load on each suspension point itself: it is stated in the specification and recorded for every point in the IFC4 file (vargov.ru/en/configurator/ifc4). The calculation is conceptual and the final specification is confirmed by the brand's engineer, so the loads are best taken into the slab calculation after that confirmation. Whether your particular slab will carry it is not assessed in our materials — it is settled per project with the manager, so send the article code and the slab details (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/configurator/ifc4"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q066",
+   "category": "installation",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "На чём подвешены элементы — на тросе или на проводе, и от чего зависит выбор?",
+     "Трос или провод — как вы выбираете?",
+     "Почему одни элементы на проводе, а другие на тросе?"
+    ],
+    "en": [
+     "What are the elements hung on — cable or wire — and what decides the choice?",
+     "Cable or wire — how do you choose?",
+     "Why are some elements on a wire and others on a cable?"
+    ]
+   },
+   "a": {
+    "ru": "Выбор зависит от света: светящийся элемент вешают на провод, который одновременно держит его и питает, а декоративный элемент без света — на трос. Толщину нити подбирают по массе элемента, а тяжёлому элементу дают несколько нитей, а не другой узел. Сколько именно нитей нужно, рассчитывают на производстве под конкретное изделие; в спецификации конфигуратора указано, сколько проводов и сколько тросов в вашей композиции.",
+    "en": "The choice depends on the light: a light-emitting element hangs on a wire that both holds it and feeds it, while a decorative element without light hangs on a cable. The thickness of the line follows the mass of the element, and a heavy element gets several lines rather than a different node. How many lines are needed is calculated at the factory for the specific piece; the configurator specification states how many wires and how many cables your composition has."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q067",
+   "category": "installation",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли страховочные тросы и как защищены от падения отдельные элементы?",
+     "Есть ли страховочный трос?",
+     "Что если элемент оторвётся?",
+     "Как композиция защищена от падения?"
+    ],
+    "en": [
+     "Are there safety cables, and how are individual elements protected against falling?",
+     "Is there a safety cable?",
+     "What happens if an element breaks loose?",
+     "How is the composition protected against falling?"
+    ]
+   },
+   "a": {
+    "ru": "Про страховочные тросы и защиту отдельных элементов от падения в открытых материалах ничего не сказано, поэтому лишнего мы не утверждаем. Известно, что у композиций на нитях каждый элемент висит на своей нити, число нитей для тяжёлого элемента рассчитывают на производстве, а финальную спецификацию подтверждает конструктор бренда. Подробности по вашей композиции уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Our public materials say nothing about safety cables or protection of individual elements against falling, so we do not claim more than we know. What is known: in compositions hung on lines each element hangs on its own line, the number of lines for a heavy element is calculated at the factory, and the final specification is confirmed by the brand's engineer. The manager will clarify the details for your composition — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q068",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что нужно подготовить в потолке до монтажа — гипсокартонный потолок, закладные, ревизионный лючок, отверстия, место под драйвер? Что сделать до приезда композиции?",
+     "Как подготовить потолок к монтажу?",
+     "Нужны ли закладные в гипсокартоне?",
+     "Что сделать до приезда композиции?"
+    ],
+    "en": [
+     "What must be prepared in the ceiling before installation — plasterboard ceiling, embedded supports, access hatch, holes, driver location — and what must be done before the composition arrives?",
+     "How do I prepare the ceiling for installation?",
+     "Do I need plywood backing in a plasterboard ceiling?",
+     "What should be done before the composition arrives?"
+    ]
+   },
+   "a": {
+    "ru": "Потолок из гипсокартона усиливают фанерными закладными в точках крепления (толщина указана на странице vargov.ru/installation), а отверстия сверлят по монтажной схеме 1:1 — их диаметр зависит от типа подвеса и массы элемента. Заранее предусмотрите место для драйвера: в электрощитке или в запотолочном пространстве (если есть ревизионный лючок). Если потолок не готовить, композицию можно смонтировать на основании: ему достаточно одного вывода 220 В. При получении осмотрите упаковку, сфотографируйте дефекты; печатная схема 1:1 лежит в одной из коробок. Порядок работ — в PDF-инструкции vargov.ru/pdf/vargov-installation-ru.pdf, детали для вашего потолка уточнит менеджер.",
+    "en": "A plasterboard ceiling is reinforced with plywood backing at the fixing points (the thickness is given on the installation page, vargov.ru/en/installation), and the holes are drilled to the 1:1 installation drawing — their diameter depends on the type of suspension and the mass of the element. Allow in advance for the driver: in the distribution board or in the void above the ceiling (if there is an access hatch). If you do not want to prepare the ceiling, the composition can be installed on a base, which needs only a single 220 V supply point. On delivery, inspect the packaging and photograph any defects; the printed 1:1 drawing is in one of the boxes. The sequence of work is in the PDF guide vargov.ru/pdf/vargov-installation-en.pdf, and the manager will clarify the details for your ceiling."
+   },
+   "sources": [
+    "/installation",
+    "/pdf/vargov-installation-ru.pdf",
+    "/pdf/vargov-installation-en.pdf"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q069",
+   "category": "installation",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Какое минимальное расстояние допустимо между соседними отверстиями в потолке?",
+     "Как близко друг к другу можно сверлить отверстия?",
+     "Минимальный шаг между точками крепления?"
+    ],
+    "en": [
+     "What is the minimum allowed distance between neighbouring holes in the ceiling?",
+     "How close together can the holes be drilled?",
+     "What is the minimum spacing between fixing points?"
+    ]
+   },
+   "a": {
+    "ru": "Допустимые расстояния между соседними отверстиями в открытых материалах не опубликованы, поэтому цифр мы не называем. Положение каждого отверстия задаёт монтажная схема 1:1, а перед разметкой потолка её подтверждает технолог производства. Если вы проектируете потолок заранее, напишите менеджеру — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The permitted distances between neighbouring holes are not published in our public materials, so we do not quote figures. The position of every hole is set by the 1:1 installation drawing, which the production engineer confirms before the ceiling is set out. If you are designing the ceiling in advance, write to the manager — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q070",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какие бывают варианты монтажа — закладные, ревизионный лючок, основание — как выбрать, и можно ли повесить, не вскрывая потолок?",
+     "Какие есть способы монтажа?",
+     "Нужен ли ревизионный лючок?",
+     "Можно ли смонтировать без подготовки потолка?"
+    ],
+    "en": [
+     "What installation options are there (prepared ceiling with embedded supports, access hatch, base), how do I choose, and can it be hung without opening the ceiling?",
+     "What installation methods do you offer?",
+     "Do I need an access hatch?",
+     "Can it be installed without preparing the ceiling?"
+    ]
+   },
+   "a": {
+    "ru": "Вариантов три. Подготовленный потолок с закладными скрывает все крепления и занимает минимум места, но потолок нужно подготовить заранее. Ревизионный лючок даёт быстрый доступ к драйверам и проводке, но место под него надо предусмотреть при проектировании потолка. Основание (база) не требует подготовки потолка — достаточно одного вывода 220 В, и все технические части доступны в нём, но оно занимает место и добавляет объём. Для низких потолков и минимализма подходят закладные без базы, для крупных проектов с обслуживанием — лючок, для высоких потолков — база.",
+    "en": "There are three options. A prepared ceiling with embedded supports hides all the fixings and takes up the least space, but the ceiling has to be prepared in advance. An access hatch gives quick access to the drivers and wiring, but space for it must be allowed for when the ceiling is designed. A base needs no ceiling preparation — a single 220 V outlet is enough, and all the technical parts are accessible in it — but it takes up room and adds visual bulk. For low ceilings and minimalist interiors, embedded supports without a base fit best; for large projects that need servicing, a hatch; for high ceilings, a base."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q071",
+   "category": "installation",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "У меня натяжной потолок — как крепить композицию и возможно ли это вообще?",
+     "Можно ли повесить композицию на натяжной потолок?",
+     "Как монтировать на натяжной потолок?"
+    ],
+    "en": [
+     "I have a stretch ceiling — how do I fix the composition, and is it possible at all?",
+     "Can a composition be hung from a stretch ceiling?",
+     "How is installation on a stretch ceiling done?"
+    ]
+   },
+   "a": {
+    "ru": "Да, наши композиции интегрируются в любые виды натяжных потолков. Для сложных подвесных композиций важны точная подготовка закладных, расчёт нагрузок и правильная разводка, поэтому монтаж на натяжной потолок выполняют партнёры Vargov®Design — от классических потолков до многоуровневых. Ролик о таком монтаже есть на странице vargov.ru/installation. Технические подробности крепления для вашего потолка уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Yes, our compositions integrate into every kind of stretch ceiling. For complex suspended compositions precise backing, load calculations and correct wiring matter, so installation onto stretch ceilings is carried out by Vargov®Design partners — from classic ceilings to multi-level structures. There is a video of such an installation on vargov.ru/en/installation. The manager will clarify the technical details of fixing for your ceiling — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q072",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Когда я получу схему разметки потолка 1:1, можно ли получить её до заказа и как её печатать? Нужна, чтобы подготовить отверстия до отделки.",
+     "Можно ли получить монтажную схему 1:1 до заказа?",
+     "Как печатать схему разметки потолка?",
+     "Когда будет схема 1:1?"
+    ],
+    "en": [
+     "When do I get the 1:1 ceiling setting-out drawing, can I have it before ordering, and how should it be printed?",
+     "Can I get the 1:1 drawing before I order?",
+     "How do I print the ceiling setting-out drawing?",
+     "When will the 1:1 drawing be ready?"
+    ]
+   },
+   "a": {
+    "ru": "Электронная схема 1:1 выдаётся после утверждения 3D-модели или макета; в онлайн-техзадании её кнопка открывается, когда менеджер запустит ТЗ в производство, а до этого неактивна. Схема предварительная: перед разметкой потолка её подтверждает технолог производства, и это напечатано на листах. В файле четыре листа — для плоттера и для A4, каждый на потолок и на пол; печатать нужно строго в масштабе 100 %, без «вписать в страницу». Печатная схема на баннерной ткани приходит вместе с композицией, в одной из коробок. Схема есть у 345 из 360 композиций, которые считает конфигуратор; если отверстия нужно подготовить до отделки, обсудите сроки с менеджером (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The electronic 1:1 drawing is issued once the 3D model or mock-up has been approved; in the online brief its button opens when the manager starts the brief in production, and is inactive until then. The drawing is preliminary: the production engineer confirms it before the ceiling is set out, and that note is printed on the sheets. The file holds four sheets — plotter and A4, each for the ceiling and for the floor; print at exactly 100 %, never “fit to page”. The printed drawing on banner fabric arrives with the composition, in one of the boxes. The drawing exists for 345 of the 360 compositions the configurator calculates; if the holes must be prepared before finishing, agree the timing with the manager (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/installation",
+    "/specifications"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q073",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли смонтировать силами нашей бригады или электрика, или обязательно монтажники бренда? Что с гарантией?",
+     "Можем ли мы монтировать своей бригадой?",
+     "Обязательны ли ваши монтажники?",
+     "Сохранится ли гарантия при самостоятельном монтаже?"
+    ],
+    "en": [
+     "Can our own crew or electrician install it, or must it be the brand's installers — and what happens to the warranty?",
+     "Can our own team install it?",
+     "Are your installers mandatory?",
+     "Is the warranty kept if we install it ourselves?"
+    ]
+   },
+   "a": {
+    "ru": "Из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми. Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку, помогая избежать ошибок и сохранить гарантию. Требований к квалификации электрика и точных условий гарантии при сторонней установке в открытых материалах нет — уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Because of the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact. You can also install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation, helping you avoid mistakes and keep the warranty. Our public materials set no electrician qualification requirements and give no exact warranty conditions for third-party installation — please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q074",
+   "category": "installation",
+   "roles": [
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "В каких странах у вас есть официальные монтажники? Нужны в Дубае, во Вьетнаме и в Сочи.",
+     "Есть ли ваши монтажники в Дубае?",
+     "Есть ли монтаж во Вьетнаме?",
+     "Кто монтирует в России?"
+    ],
+    "en": [
+     "In which countries do you have official installers (for example Dubai, Vietnam, Sochi)?",
+     "Do you have installers in Dubai?",
+     "Is installation available in Vietnam?",
+     "Who installs in Russia?"
+    ]
+   },
+   "a": {
+    "ru": "Официальные монтажники и дилеры указаны на странице vargov.ru/official-dealers по трём направлениям: Россия и страны СНГ; Дубай — с регионом «Персидский залив, Ближний Восток, Америка, Европа, Азия, Африка и другие регионы»; Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия и Сингапур. Контакты — на той же странице. По Сочи отдельных данных у нас нет, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Official installers and dealers are listed at vargov.ru/en/official-dealers in three groups: Russia and the CIS; Dubai, with the region “Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions”; and Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore. Their contacts are on the same page. We have no separate information on Sochi, so please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/official-dealers"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q075",
+   "category": "installation",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что такое шеф-монтаж, когда он нужен и как его заказать?",
+     "Как заказать шеф-монтаж?",
+     "Что входит в шеф-монтаж?"
+    ],
+    "en": [
+     "What is chief-installer supervision, when is it needed and how do I order it?",
+     "How do I order supervised installation?",
+     "What does supervised installation include?"
+    ]
+   },
+   "a": {
+    "ru": "Шеф-монтаж — это профессиональное сопровождение монтажа и подключения композиций нашим специалистом: помощь и контроль установки, даже если монтаж выполняет сторонняя бригада. Он подойдёт тем, кто монтирует своими силами или со сторонними специалистами и хочет избежать ошибок и сохранить гарантию. Чтобы заказать, напишите в WhatsApp запрос «Шеф-монтаж» — специалист перезвонит и проконсультирует. При необходимости возможен выезд специалиста на объект.",
+    "en": "Supervised installation (“Шеф-монтаж”) is professional guidance of the installation and wiring of the compositions by our specialist: help and oversight of the installation even when an outside team does the work. It suits those who install themselves or through outside specialists and want to avoid mistakes and keep the warranty. To order, send a WhatsApp message with the request “Supervised installation” — the specialist will call you back and advise. Where required, a specialist can also attend the site."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q076",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько стоит шеф-монтаж?",
+     "Какая цена шеф-монтажа?",
+     "Сколько стоит выезд специалиста на объект?"
+    ],
+    "en": [
+     "How much does chief-installer supervision cost?",
+     "What is the price of supervised installation?",
+     "How much does a specialist visit to the site cost?"
+    ]
+   },
+   "a": {
+    "ru": "Консультация по телефону — по согласованию. Выезд специалиста на объект оплачивается отдельно, и его стоимость оговаривается индивидуально. Чтобы узнать условия, напишите в WhatsApp запрос «Шеф-монтаж».",
+    "en": "A telephone consultation is by arrangement. A specialist visit to the site is charged separately and the cost is agreed individually. To learn the terms, send a WhatsApp message with the request “Supervised installation”."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q077",
+   "category": "care",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как ухаживать за композицией, как мыть и чем протирать элементы?",
+     "Как мыть люстру?",
+     "Чем протирать элементы композиции?",
+     "Есть ли инструкция по уходу?"
+    ],
+    "en": [
+     "How do I care for the composition, how do I clean it and what do I wipe it with?",
+     "How do I wash a chandelier?",
+     "What should I wipe the elements with?",
+     "Is there a care guide?"
+    ]
+   },
+   "a": {
+    "ru": "Инструкции по уходу — как мыть композицию и чем протирать элементы — в наших открытых материалах нет, поэтому мы не советуем наугад, чтобы не повредить изделие. Рекомендации по уходу для вашей модели уточнит менеджер: напишите ему кнопками Telegram, WhatsApp или e-mail и назовите артикул.",
+    "en": "Our public materials contain no care instructions — how to wash the composition or what to wipe the elements with — so we do not advise at random, to avoid damaging the piece. The manager will clarify care recommendations for your model: write with the buttons below (Telegram, WhatsApp or e-mail) and give the article code."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q078",
+   "category": "care",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что делать, если перегорит светодиод или драйвер? Как менять источник света, можно ли обслужить без вскрытия потолка и где взять запасной элемент?",
+     "Что если перегорит диод?",
+     "Как заменить драйвер?",
+     "Где взять запасной элемент?"
+    ],
+    "en": [
+     "What if an LED or the driver fails — how is the light source replaced, can it be serviced without opening the ceiling, and where do I get a spare element?",
+     "What if an LED burns out?",
+     "How is the driver replaced?",
+     "Where can I get a spare element?"
+    ]
+   },
+   "a": {
+    "ru": "Обслуживание зависит от способа монтажа: ревизионный лючок даёт быстрый доступ к драйверам, проводке и элементам без нарушения потолка, на основании (базе) технические части доступны внутри неё, а на закладных без лючка для замены драйвера нужен доступ в запотолочное пространство. Порядок замены светодиода или драйвера, срок службы источников света и запасные элементы в открытых материалах не описаны — уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Servicing depends on the installation method: an access hatch gives quick access to the drivers, wiring and elements without disturbing the ceiling; on a base the technical parts are accessible inside it; and with embedded supports but no hatch, replacing a driver means getting into the void above the ceiling. How an LED or driver is replaced, the service life of the light sources and spare elements are not described in our public materials — please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q079",
+   "category": "warranty",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какая у вас гарантия — на какой срок, что она покрывает и какой срок службы?",
+     "Какой срок гарантии?",
+     "Что входит в гарантию?",
+     "Какой срок службы у светильников?"
+    ],
+    "en": [
+     "What warranty do you give — for how long, what does it cover, and what is the service life?",
+     "How long is the warranty?",
+     "What does the warranty cover?",
+     "What is the service life of the luminaires?"
+    ]
+   },
+   "a": {
+    "ru": "На сайте слово «гарантия» означает подлинность: она распространяется на оригинальные изделия Vargov®Design, защищённые многоступенчатой упаковкой и зарегистрированным товарным знаком. Срок гарантии, то, что она покрывает, и срок службы в открытых материалах не опубликованы, поэтому цифр мы не называем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "On our site the word “warranty” means authenticity: it applies to original Vargov®Design products, protected by multi-stage packaging and a registered trademark. The warranty term, what it covers and the service life are not published in our public materials, so we do not quote figures. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q080",
+   "category": "ordering",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "На какой стадии проекта подключать вас и что я получу на каждом этапе?",
+     "Когда архитектору лучше выйти на вас?",
+     "Что вы даёте проектировщику по ходу работы?",
+     "Какие у вас этапы работы с архитекторами?"
+    ],
+    "en": [
+     "At which project stage should I involve you, and what do I get at each step?",
+     "When should an architect get in touch with you?",
+     "What do you give a designer during the project?",
+     "What are your stages when working with architects?"
+    ]
+   },
+   "a": {
+    "ru": "Мы работаем с архитекторами и дизайнерами как соавторы и сопровождаем проект от первой консультации до монтажа. Вы получаете расчёт композиции под ваше пространство, техническую документацию (монтажная схема 1:1 на баннерной ткани, узлы крепления, электрические характеристики, спецификация), а также визуализации и данные для проекта. Для композиций с полным расчётом — это 360 из 605 в каталоге — конфигуратор сам выгружает модель IFC4 (BIM), PDF-спецификацию и тендерный лист. Пошагового плана по этапам мы на сайте не публикуем, поэтому порядок работы разберёт менеджер: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "We work with architects and designers as co-authors and support the project from the first consultation to installation. You get the composition calculated for your space, technical documentation (a 1:1 installation drawing on banner fabric, fixing details, electrical characteristics, a specification), plus visualisations and data for your project. For compositions that open with a full calculation — 360 of the 605 in the catalogue — the configurator itself exports an IFC4 (BIM) model, a PDF specification and a tender sheet. We do not publish a stage-by-stage plan, so a manager will walk you through the order of work: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/architects"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q081",
+   "category": "ordering",
+   "roles": [
+    "architect",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как оформить запрос по проекту — что прислать — и как быстро вы ответите и пришлёте расчёт?",
+     "Что нужно прислать, чтобы вы посчитали?",
+     "Как быстро вы отвечаете на заявку?",
+     "Как запросить спецификацию и коммерческое предложение?",
+     "Как с вами связаться?",
+     "Контакты",
+     "Как заказать?"
+    ],
+    "en": [
+     "How do I submit a project enquiry, what should I send, and how fast will you reply with a quote?",
+     "What do I need to send you to get a quote?",
+     "How quickly do you answer an enquiry?",
+     "How do I request a specification and quotation?",
+     "How do I contact you?",
+     "Contacts",
+     "How do I order?"
+    ]
+   },
+   "a": {
+    "ru": "Назовите артикул LC или опишите задачу и пространство — через форму на сайте, в WhatsApp (+7 916 537 33 52), в Telegram (@AntonVargov) или на info@vargov.ru. Спецификацию и коммерческое предложение готовим в течение 24 часов. Если вы уже собрали вариант в конфигураторе, кнопка «Узнать стоимость» откроет готовую заявку в Telegram, WhatsApp или в письме — вам останется нажать «Отправить»; стоимость мы считаем по заявке.",
+    "en": "Give us the LC code, or describe the task and the space — via the website form, WhatsApp (+7 916 537 33 52), Telegram (@AntonVargov) or info@vargov.ru. We prepare the specification and quotation within 24 hours. If you have already built a variant in the configurator, the “Get a quote” button opens a ready request in Telegram, WhatsApp or an e-mail — you just press “Send”; the cost is calculated from that request."
+   },
+   "sources": [
+    "/faq",
+    "/contacts"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/contacts",
+    "text": {
+     "ru": "Запросить проект",
+     "en": "Request a project"
+    }
+   }
+  },
+  {
+   "id": "Q082",
+   "category": "ordering",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Куда написать, чтобы начать расчёт, и как связаться напрямую — WhatsApp, Telegram, почта, где посмотреть видео работающих светильников?",
+     "Как с вами связаться?",
+     "Есть ли у вас WhatsApp или Telegram?",
+     "Где посмотреть видео ваших работ?"
+    ],
+    "en": [
+     "Where do I write to start a quote, and how can I contact you directly (WhatsApp, Telegram, email, videos of the lights switched on)?",
+     "How can I contact you?",
+     "Do you have WhatsApp or Telegram?",
+     "Where can I see videos of your work?"
+    ]
+   },
+   "a": {
+    "ru": "Пишите напрямую: WhatsApp +7 916 537 33 52, Telegram @AntonVargov (для заявок) или info@vargov.ru — отвечаем в течение 24 часов. Видео готовых работ мы публикуем на официальных каналах бренда на RuTube и YouTube. Вживую композиции можно посмотреть в нашем шоуруме в Москве: Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212, ежедневно с 12:00 до 20:00.",
+    "en": "Write to us directly: WhatsApp +7 916 537 33 52, Telegram @AntonVargov (for requests) or info@vargov.ru — we reply within 24 hours. Videos of finished works are published on the brand's official RuTube and YouTube channels. You can also see the compositions in person at our Moscow showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, open daily 12:00–20:00."
+   },
+   "sources": [
+    "/contacts",
+    "/faq",
+    "/showroom"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q083",
+   "category": "ordering",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Я не в Москве и без дизайнера. Можно просто написать вам и заказать?",
+     "Можно заказать без дизайнера, самому?",
+     "Я живу в другом городе — как у вас заказать?",
+     "Нужен ли дизайнер, чтобы купить у вас светильник?"
+    ],
+    "en": [
+     "I am not in Moscow and have no designer — can I just write to you and place an order?",
+     "Can I order directly without a designer?",
+     "I live in another city — how do I order from you?",
+     "Do I need a designer to buy a light from you?"
+    ]
+   },
+   "a": {
+    "ru": "Да, можно просто написать нам напрямую — мы принимаем обращения и от частных клиентов, и от дизайнеров, и доставляем по всему миру. Назовите артикул LC из каталога или опишите задачу: через форму на сайте, в WhatsApp, Telegram (@AntonVargov) или на info@vargov.ru — спецификацию и коммерческое предложение готовим в течение 24 часов. Если хотите примерить композицию к своему интерьеру, соберите вариант в конфигураторе (для композиций, которые открываются с полным расчётом) и отправьте нам. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, монтаж выполняют официальные монтажники бренда.",
+    "en": "Yes, you can simply write to us directly — we take enquiries from private clients as well as designers, and we deliver worldwide. Give us the LC code from the catalogue or describe the task: via the website form, WhatsApp, Telegram (@AntonVargov) or info@vargov.ru — we prepare the specification and quotation within 24 hours. If you want to try a composition in your own interior, build a variant in the configurator (for compositions that open with a full calculation) and send it to us. Compositions ship in export packaging with timber crating, and installation is carried out by the brand's official installers."
+   },
+   "sources": [
+    "/faq",
+    "/contacts"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q084",
+   "category": "ordering",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Как проходит заказ по шагам — от заявки до монтажа: договор, предоплата, этапы?",
+     "Расскажите, как устроен заказ от заявки до установки.",
+     "Есть ли предоплата и договор?",
+     "Какие этапы у заказа?"
+    ],
+    "en": [
+     "How does an order go step by step, from enquiry to installation: contract, prepayment, stages?",
+     "Walk me through an order from enquiry to installation.",
+     "Is there a prepayment and a contract?",
+     "What are the stages of an order?"
+    ]
+   },
+   "a": {
+    "ru": "Вы называете артикул LC или описываете задачу — мы готовим спецификацию и коммерческое предложение в течение 24 часов; срок производства фиксируется в спецификации. Каждая композиция производится индивидуально, в комплекте — монтажная схема 1:1 на баннерной ткани. Дальше доставка по всему миру в экспортной упаковке и монтаж официальными монтажниками бренда; шеф-монтаж — по согласованию. Договор, предоплату и этапы оплаты на сайте мы не публикуем — их подтвердит менеджер: Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "You give us the LC code or describe the task — we prepare the specification and quotation within 24 hours, and the production lead time is fixed in the specification. Every composition is made individually, and a 1:1 installation drawing on banner fabric is included. Then comes worldwide delivery in export packaging and installation by the brand's official installers; supervised installation is by arrangement. We do not publish the contract, prepayment and payment stages on the website — a manager will confirm them: Telegram, WhatsApp or e-mail, buttons below."
+   },
+   "sources": [
+    "/faq",
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q085",
+   "category": "ordering",
+   "roles": [
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли сделать светильник по эскизу клиента или похожий на журнальный образец, а не из каталога?",
+     "Сделаете по моему эскизу?",
+     "Можете повторить светильник с фото из журнала?",
+     "Принимаете индивидуальный дизайн вне каталога?"
+    ],
+    "en": [
+     "Can you make a light to my own sketch, or something similar to one from a magazine, rather than from the catalogue?",
+     "Will you make it from my sketch?",
+     "Can you reproduce a light from a magazine photo?",
+     "Do you accept a one-off design outside the catalogue?"
+    ]
+   },
+   "a": {
+    "ru": "Все наши композиции делаются под заказ: масштаб, длина подвеса, цвет кабеля, оттенки и отделка рассчитываются под ваше пространство. Изготовление светильника по вашему эскизу или по образцу из журнала, вне каталога, на сайте не описано, поэтому это нужно уточнить у менеджера до расчёта. Пришлите ему эскиз или фото-образец: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "All our compositions are made to order: scale, suspension length, cable colour, tints and finishes are calculated for your space. Making a light to your own sketch or to a magazine example, outside the catalogue, is not described on the website, so please check it with a manager before any quotation. Send them your sketch or reference photo: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q086",
+   "category": "ordering",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какие условия оплаты — нужна ли предоплата и сколько, как закрывается сделка?",
+     "Сколько надо заплатить вперёд?",
+     "Как у вас происходит оплата заказа?",
+     "Предоплата обязательна?"
+    ],
+    "en": [
+     "What are the payment terms — is a prepayment required and how much — and how is the deal closed?",
+     "How much do I have to pay upfront?",
+     "How does payment work for an order?",
+     "Is a prepayment mandatory?"
+    ]
+   },
+   "a": {
+    "ru": "Условия оплаты — нужна ли предоплата, в какие этапы и как — на сайте не опубликованы, поэтому в чате мы их не называем. Менеджер подтвердит их при расчёте: спецификацию и коммерческое предложение мы готовим в течение 24 часов. Напишите ему: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "The payment terms — whether a prepayment is needed, in which stages and how — are not published on the website, so we do not state them in the chat. A manager will confirm them when preparing your quote: we send the specification and quotation within 24 hours. Write to them: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/faq",
+    "/contacts"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q087",
+   "category": "ordering",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Вы работаете с НДС? Выставите счёт на ООО и пришлёте закрывающие документы?",
+     "Можно оплатить по счёту от юрлица?",
+     "Дадите документы для бухгалтерии?",
+     "Есть ли у вас НДС?"
+    ],
+    "en": [
+     "Do you work with VAT, invoice a company and send the closing documents?",
+     "Can a company pay by invoice?",
+     "Will you provide documents for our accounting?",
+     "Do you charge VAT?"
+    ]
+   },
+   "a": {
+    "ru": "Работа с НДС, выставление счёта на организацию и перечень закрывающих документов на сайте не описаны, поэтому в чате мы их не подтверждаем. Это уточняет менеджер при оформлении заказа — напишите ему, что заказ нужен на юридическое лицо: Telegram, WhatsApp или e-mail, кнопки ниже. Сертификаты соответствия (они охватывают 310 артикулов LC) для тендерной и рабочей документации предоставляем по запросу.",
+    "en": "Working with VAT, invoicing a company and the list of closing documents are not described on the website, so we do not confirm them in the chat. A manager will clarify this when your order is set up — tell them the order is for a legal entity: Telegram, WhatsApp or e-mail, buttons below. Certificates of conformity (covering 310 LC articles) are available on request for tender and project documentation."
+   },
+   "sources": [
+    "/faq",
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q088",
+   "category": "price",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько стоит композиция? Назовите цену по артикулу.",
+     "Сколько стоит LC0602?",
+     "Какая цена на люстру?"
+    ],
+    "en": [
+     "How much does a composition cost? Please give the price for a code.",
+     "How much is LC0602?",
+     "What is the price of a chandelier?"
+    ]
+   },
+   "a": {
+    "ru": "Цен мы не публикуем: каждая композиция делается под заказ, и цена считается по заявке. В конфигураторе кнопка «Узнать стоимость» открывает уже набранную заявку — состав композиции, цвета с долями, покрытие, точки крепления — в Telegram, WhatsApp или письме, остаётся нажать «Отправить». Либо назовите артикул менеджеру (кнопки Telegram, WhatsApp, почта): спецификацию и расчёт готовим в течение суток.",
+    "en": "We do not publish prices: every composition is made to order and the price is calculated per request. In the configurator the “Get a quote” button opens a ready-made request — the make-up of the composition, colours with their shares, finish, mounting points — in Telegram, WhatsApp or an e-mail, and you only press “Send”. Or give the manager the LC code (Telegram, WhatsApp or e-mail buttons): we prepare the specification and the calculation within a day."
+   },
+   "sources": [
+    "/faq",
+    "/configurator"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q089",
+   "category": "price",
+   "roles": [
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Хотя бы примерно — от какой суммы начинается и от чего зависит цена?",
+     "Какой порядок цен на ваши композиции?",
+     "От чего зависит стоимость композиции?"
+    ],
+    "en": [
+     "Roughly — where do prices start and what does the price depend on?",
+     "What is the price range of your compositions?",
+     "What does the cost of a composition depend on?"
+    ]
+   },
+   "a": {
+    "ru": "Ориентировочных сумм и диапазонов мы не называем: композиции делаются под заказ, и цена считается по заявке. В заявку входят состав композиции, цвета с долями, покрытие и точки крепления. Откройте заявку кнопкой «Узнать стоимость» в конфигураторе или напишите менеджеру артикул и задачу (кнопки Telegram, WhatsApp, почта) — спецификацию и расчёт готовим в течение суток.",
+    "en": "We do not give approximate figures or ranges: compositions are made to order and the price is calculated per request. The request contains the make-up of the composition, colours with their shares, finish and the mounting points. Open the request with the “Get a quote” button in the configurator, or write to the manager with the LC code and your task (Telegram, WhatsApp or e-mail buttons) — we prepare the specification and the calculation within a day."
+   },
+   "sources": [],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q090",
+   "category": "price",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли комиссия дизайнеру, скидки, рассрочка или партнёрская программа?",
+     "Платите ли вы вознаграждение дизайнерам и архитекторам?",
+     "Есть ли скидки или рассрочка?"
+    ],
+    "en": [
+     "Is there a commission for designers, discounts, instalments or a partner programme?",
+     "Do you pay a fee to designers and architects?",
+     "Are there discounts or instalment plans?"
+    ]
+   },
+   "a": {
+    "ru": "У нас есть партнёрские условия для дилеров и комплектаторов объектов и отдельные условия для постоянных партнёров, но что именно в них входит, на сайте не опубликовано. Про вознаграждение дизайнеру, скидки и рассрочку на сайте ничего не сказано, поэтому ничего не буду обещать. Это обсуждает менеджер: напишите ему кнопками Telegram, WhatsApp или почтой и расскажите о проекте. Для дилеров и комплектаторов есть страница vargov.ru/dealers.",
+    "en": "We have partner terms for dealers and for contractors who equip projects, and separate terms for regular partners, but what they include is not published on the site. The site says nothing about designer commission, discounts or instalments, so I won't promise anything. The manager discusses this: write via the Telegram, WhatsApp or e-mail buttons and tell them about your project. For dealers and contractors there is the page vargov.ru/en/dealers."
+   },
+   "sources": [
+    "/dealers",
+    "/architects"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q091",
+   "category": "production-time",
+   "roles": [
+    "architect",
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Какой срок изготовления композиции?",
+     "Сколько делается заказ?",
+     "Через сколько получу светильник?",
+     "За сколько вы производите композицию?"
+    ],
+    "en": [
+     "What is the production lead time?",
+     "How long does an order take?",
+     "When will I receive the light?",
+     "How long does it take you to make a composition?"
+    ]
+   },
+   "a": {
+    "ru": "Каждая композиция производится индивидуально: срок зависит от масштаба и конфигурации и фиксируется в спецификации, поэтому единого срока мы не называем. Для срочных проектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов. Срок под ваш проект назовёт менеджер вместе со спецификацией: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "Every composition is made individually: the lead time depends on scale and configuration and is fixed in the specification, so we do not quote a single standard term. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum order 10 elements. A manager will give the term for your project together with the specification: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/faq",
+    "/in-stock"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q092",
+   "category": "production-time",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Успеете ли вы к жёсткой дате — объект открывается через два месяца или нужно к Новому году?",
+     "Мне нужно к определённому числу — успеете?",
+     "Можете сделать срочно к открытию?",
+     "Успеем к Новому году?"
+    ],
+    "en": [
+     "Can you meet a hard deadline — the venue opens in two months, or I need it by New Year?",
+     "I need it by a specific date — can you make it?",
+     "Can you do it urgently for an opening?",
+     "Will it be ready by New Year?"
+    ]
+   },
+   "a": {
+    "ru": "Конкретную дату в чате мы не обещаем: срок композиции зависит от масштаба и конфигурации и фиксируется в спецификации после расчёта. Для срочных объектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов; цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта сохраняются. Напишите менеджеру дату и артикул или задачу — он подтвердит, реально ли успеть: Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "We do not promise a specific date in the chat: the lead time depends on scale and configuration and is fixed in the specification after the calculation. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum 10 elements; element colour, suspension length, cable colour and mounting-kit colour are all kept. Send a manager your date and the LC code or the task, and they will confirm whether it is feasible: Telegram, WhatsApp or e-mail, buttons below."
+   },
+   "sources": [
+    "/in-stock",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q093",
+   "category": "production-time",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что у вас в наличии для срочного объекта? Что такое «элементы в наличии», какой минимальный заказ и можно ли получить быстрее?",
+     "Что есть на складе?",
+     "Какой минимальный заказ по программе «в наличии»?",
+     "Как получить быстрее стандартного срока?"
+    ],
+    "en": [
+     "What is in stock for an urgent project — what are the 'elements in stock', what is the minimum order, and can I get it faster that way?",
+     "What do you have in the warehouse?",
+     "What is the minimum order in the in-stock programme?",
+     "How can I get it faster than the standard term?"
+    ]
+   },
+   "a": {
+    "ru": "В наличии у нас не готовые композиции, а основные элементы: из них под ваш интерьер собирается композиция — по-прежнему индивидуально. Заказ от 10 элементов, сборка занимает 15–20 рабочих дней вместо стандартного цикла — это быстрый путь для срочного объекта. Кастомизация сохраняется: цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта, как в обычном заказе. Актуальный список — на vargov.ru/in-stock, он регулярно обновляется; наличие и сроки подтвердит менеджер: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "What we keep in stock are not finished compositions but the main elements: your composition is assembled from them for your interior — still individually. The minimum order is 10 elements, and assembly takes 15–20 business days instead of the standard cycle — the fast route for an urgent project. Customisation is kept: element colour, suspension length, cable colour and mounting-kit colour, as in a regular order. The current list is at vargov.ru/en/in-stock and is updated regularly; a manager will confirm availability and timing: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/in-stock"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q094",
+   "category": "delivery",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Доставляете ли вы в другие страны и как упаковываете, чтобы ничего не разбилось?",
+     "Отправляете за границу?",
+     "Как вы упаковываете груз?",
+     "Дойдёт ли в целости при международной доставке?"
+    ],
+    "en": [
+     "Do you deliver to other countries, and how is the cargo packed so nothing breaks?",
+     "Do you ship abroad?",
+     "How do you pack the cargo?",
+     "Will it arrive intact with international shipping?"
+    ]
+   },
+   "a": {
+    "ru": "Да, доставляем по всему миру. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, а при необходимости — ещё и в фанерном ящике. Всего семь ступеней защиты: от защитной плёнки на каждом элементе и плотного пенопласта в коробке до обрешётки, нейлоновой мешковины и финального слоя плёнки. Подробнее — на vargov.ru/warranty.",
+    "en": "Yes, we deliver worldwide. Compositions ship in export packaging with timber crating and, where needed, an additional plywood box. There are seven layers of protection in all: from protective film on every element and dense foam inside the box to the crating, nylon sacking and a final layer of heavy film. More detail at vargov.ru/en/warranty."
+   },
+   "sources": [
+    "/warranty",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q095",
+   "category": "delivery",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Привезли, а коробка помята. Что проверить при приёмке, что делать и в какие сроки подавать претензию?",
+     "Груз пришёл повреждённым — что делать?",
+     "Как принимать посылку и что с ней делать, если упаковка мятая?",
+     "Как оформить рекламацию на доставку?"
+    ],
+    "en": [
+     "The box is dented on arrival — what should I check and do, and by what deadline do I file a claim?",
+     "The shipment arrived damaged — what do I do?",
+     "How should I inspect the delivery if the packaging is crushed?",
+     "How do I file a claim about delivery damage?"
+    ]
+   },
+   "a": {
+    "ru": "При получении внимательно осмотрите коробки и упаковку. Если заметили повреждения, сфотографируйте их и свяжитесь с нашей службой поддержки. Срок подачи претензии и условия замены или компенсации на сайте не опубликованы — их подтвердит менеджер, поэтому пишите ему с фото: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "When the delivery arrives, inspect the boxes and the packaging carefully. If you notice any damage, photograph it and contact our support team. The claim deadline and the terms of replacement or compensation are not published on the website — a manager will confirm them, so please write with the photos: Telegram, WhatsApp or e-mail — buttons below."
+   },
+   "sources": [
+    "/warranty",
+    "/installation"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q096",
+   "category": "delivery",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько идёт доставка в мой город и сколько она стоит?",
+     "За сколько дней привезёте в мой город?",
+     "Во сколько мне обойдётся доставка?",
+     "Доставка в регион — сроки и стоимость?"
+    ],
+    "en": [
+     "How long does delivery to my city take and how much does it cost?",
+     "How many days to deliver to my city?",
+     "What will the delivery cost me?",
+     "Delivery to my region — how long and how much?"
+    ]
+   },
+   "a": {
+    "ru": "Мы доставляем по всему миру, но сроки и стоимость доставки по городам на сайте не опубликованы, поэтому в чате мы их не называем. Они уточняются по проекту: напишите менеджеру город доставки и артикул или задачу — Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "We deliver worldwide, but delivery times and costs for individual cities are not published on the website, so we do not quote them in the chat. They are clarified per project: send a manager the delivery city and the LC code or the task — Telegram, WhatsApp or e-mail, buttons below."
+   },
+   "sources": [
+    "/faq",
+    "/contacts"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q097",
+   "category": "delivery",
+   "roles": [
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Какие условия поставки: Incoterms, страхование груза, таможенное оформление, код ТН ВЭД?",
+     "Есть ли у вас код ТН ВЭД для таможни?",
+     "Кто оформляет таможню и страхует груз?",
+     "Какие документы для закупки и таможни?"
+    ],
+    "en": [
+     "What are the delivery terms — Incoterms, cargo insurance, customs clearance, HS code?",
+     "Do you provide an HS code for customs?",
+     "Who handles customs clearance and cargo insurance?",
+     "What documents do you provide for procurement and customs?"
+    ]
+   },
+   "a": {
+    "ru": "Для закупки у нас есть тендерный лист — спецификация с техническими характеристиками, монтажом, документами соответствия и кодом ТН ВЭД для таможни; его выгружает конфигуратор для 360 из 605 композиций. Сертификаты соответствия (они охватывают 310 артикулов LC) предоставляем по запросу для тендерной документации. Доставка идёт по всему миру в экспортной упаковке с деревянной обрешёткой. Условия поставки по Incoterms, страхование груза и таможенное оформление на сайте не описаны — их подтвердит менеджер: Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "For procurement we have a tender sheet — a specification with technical data, installation, conformity documents and the HS code for customs; the configurator exports it for 360 of the 605 compositions. Certificates of conformity (covering 310 LC articles) are available on request for tender documentation. Delivery is worldwide in export packaging with timber crating. Incoterms, cargo insurance and customs clearance are not described on the website — a manager will confirm them: Telegram, WhatsApp or e-mail, buttons below."
+   },
+   "sources": [
+    "/architects",
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q098",
+   "category": "showroom",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Где ваш шоурум, когда он работает, в том числе по выходным, и можно ли увидеть включённые композиции?",
+     "Адрес шоурума и часы работы?",
+     "Можно ли посмотреть композиции вживую?",
+     "Где шоурум?",
+     "Адрес шоурума",
+     "Часы работы шоурума"
+    ],
+    "en": [
+     "Where is your showroom, when is it open (weekends included), and can I see compositions switched on?",
+     "Showroom address and opening hours?",
+     "Can I see the compositions in person?",
+     "Where is the showroom?",
+     "Showroom address and hours"
+    ]
+   },
+   "a": {
+    "ru": "Наш шоурум — в Москве: Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212. Он открыт ежедневно, в том числе по выходным, с 12:00 до 20:00; телефон шоурума +7 925 888 77 44. Композиции показаны собранными и включёнными, а рядом можно вблизи рассмотреть элементы-образцы. Напишите нам заранее — подготовим интересующие вас композиции к показу.",
+    "en": "Our showroom is in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212. It is open daily, weekends included, 12:00–20:00; showroom phone +7 925 888 77 44. The compositions are shown assembled and switched on, and sample elements stand beside them so you can look at them up close. Write to us in advance and we will prepare the compositions you are interested in."
+   },
+   "sources": [
+    "/showroom",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
+   "focus": {
+    "path": "/showroom",
+    "text": {
+     "ru": "Официальный шоу-рум",
+     "en": "Official showroom"
+    }
+   }
+  },
+  {
+   "id": "Q099",
+   "category": "showroom",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Нужно ли записываться на визит заранее или можно просто прийти? Есть ли парковка?",
+     "Можно прийти без записи?",
+     "Где припарковаться у шоурума?"
+    ],
+    "en": [
+     "Do I need to book a visit in advance, or can I just walk in — and is there parking?",
+     "Can I come without an appointment?",
+     "Where can I park near the showroom?"
+    ]
+   },
+   "a": {
+    "ru": "Шоурум открыт ежедневно с 12:00 до 20:00. На странице шоурума мы просим написать заранее или записаться на посещение — так мы подготовим к показу нужные композиции. Обязательна ли запись и где можно припарковаться, в наших материалах не сказано: это лучше уточнить у менеджера (кнопки Telegram, WhatsApp, e-mail) или по телефону шоурума +7 925 888 77 44.",
+    "en": "The showroom is open daily 12:00–20:00. On the showroom page we ask you to write in advance or book a visit, so that we can prepare the compositions you want to see. Whether a booking is mandatory and where to park is not stated in our materials: please check with the manager (Telegram, WhatsApp, e-mail buttons) or by the showroom phone +7 925 888 77 44."
+   },
+   "sources": [
+    "/showroom",
+    "/contacts"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q100",
+   "category": "showroom",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли в шоуруме посмотреть образцы цветов и покрытий, получить образцы элементов с собой или по почте?",
+     "Есть ли образцы покрытий?",
+     "Вышлете образцы по почте?"
+    ],
+    "en": [
+     "Can I see finish and colour samples in the showroom, take element samples away, or have them posted to me?",
+     "Do you have finish samples?",
+     "Can you post samples to me?"
+    ]
+   },
+   "a": {
+    "ru": "В шоуруме рядом с композициями стоят элементы-образцы, которые можно рассмотреть вблизи, а покрытия металла там собраны в живой каталог. Цвета и покрытия можно посмотреть и на сайте — vargov.ru/specifications/colours и vargov.ru/specifications/finishes (оттенки на экране приблизительные). Выдаются ли образцы с собой и отправляются ли по почте, в наших материалах не сказано — уточните у менеджера, кнопки Telegram, WhatsApp и e-mail.",
+    "en": "In the showroom, sample elements stand beside the compositions so you can look at them up close, and the metal finishes are gathered there in a physical catalogue. Colours and finishes can also be viewed on the site — vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes (on-screen shades are approximate). Whether samples can be taken away or posted is not stated in our materials — please ask the manager via the Telegram, WhatsApp or e-mail buttons."
+   },
+   "sources": [
+    "/specifications/colours",
+    "/specifications/finishes",
+    "/showroom"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q101",
+   "category": "dealers",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли у вас дилер или представитель в моём городе или стране — Петербург, Казань, Дубай, Вьетнам, Европа?",
+     "Где ваши дилеры?",
+     "Кто представляет бренд в моей стране?"
+    ],
+    "en": [
+     "Do you have a dealer or representative in my city or country (St Petersburg, Kazan, Dubai, Vietnam, Europe)?",
+     "Where are your dealers?",
+     "Who represents the brand in my country?"
+    ]
+   },
+   "a": {
+    "ru": "У нас три официальных дилера, каждый отвечает за свой регион: Россия и страны СНГ — Москва; Персидский залив, Ближний Восток, Америка, Европа, Азия, Африка и другие регионы — Дубай; Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия и Сингапур — Ханой. Отдельных дилеров в Петербурге и Казани на сайте нет: Россия — регион московского дилера. Контакты дилеров — на vargov.ru/official-dealers, а по любому другому городу или стране напишите менеджеру, мы доставляем по всему миру.",
+    "en": "We have three official dealers, each responsible for a region: Russia and the CIS — Moscow; the Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions — Dubai; Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore — Hanoi. There are no separate dealers listed in St Petersburg or Kazan: Russia is the Moscow dealer's region. Dealer contacts are on vargov.ru/en/official-dealers; for any other city or country write to the manager — we deliver worldwide."
+   },
+   "sources": [
+    "/official-dealers",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q102",
+   "category": "dealers",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Я живу в Дубае. Как у вас купить и кто мне это установит?",
+     "Как заказать в ОАЭ?",
+     "Кто делает монтаж в Дубае?"
+    ],
+    "en": [
+     "I live in Dubai — how can I buy from you and who will install it?",
+     "How do I order in the UAE?",
+     "Who handles installation in Dubai?"
+    ]
+   },
+   "a": {
+    "ru": "Дубай — регион официального дилера Vargov®Design: он отвечает за поставку, монтаж и обслуживание композиций, его контакты есть на vargov.ru/official-dealers. Мы доставляем по всему миру в фирменной обрешётке. Подобрать композицию под ваш интерьер можно в конфигураторе на нашем сайте, а с заказом поможет менеджер — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Dubai is the region of the official Vargov®Design dealer, who is responsible for supply, installation and servicing of the compositions; the contacts are on vargov.ru/en/official-dealers. We deliver worldwide in branded timber crating. You can shape a composition for your interior in the configurator on our site, and the manager will help with the order — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/official-dealers",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q103",
+   "category": "dealers",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Как стать дилером или партнёром студии и на каких условиях?",
+     "Как подать заявку на дилерство?",
+     "Есть ли партнёрская программа для дизайнеров и комплектаторов?"
+    ],
+    "en": [
+     "How can we become a dealer or partner, and on what terms?",
+     "How do I apply to be a dealer?",
+     "Is there a partner programme for designers and project outfitters?"
+    ]
+   },
+   "a": {
+    "ru": "Оставьте заявку на странице «Дилерам и комплектаторам» — vargov.ru/dealers. Бренд предоставляет статус официального представителя, партнёрские условия, доступ к полному каталогу артикулов LC и поддержку международной логистики. Сами условия в открытых материалах не опубликованы: после заявки их для вашего региона назовёт менеджер — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Leave an application on the “For dealers and procurement” page — vargov.ru/en/dealers. The brand offers official-representative status, partner terms, access to the full LC catalogue and support with international logistics. The terms themselves are not published: after your application the manager will go through them for your region — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/dealers",
+    "/faq",
+    "/official-dealers"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q104",
+   "category": "other",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Где ваши композиции уже установлены — отели, торговые центры, рестораны, частные дома? Есть ли объекты, на которые можно сослаться?",
+     "Какие у вас реализованные проекты?",
+     "Можно ли посмотреть примеры установок?"
+    ],
+    "en": [
+     "Where are your compositions already installed — hotels, shopping centres, restaurants, private homes — and are there projects I can reference?",
+     "What completed projects do you have?",
+     "Can I see examples of installations?"
+    ]
+   },
+   "a": {
+    "ru": "По данным официального дилера в Дубае, композиции установлены в общественных местах — салоне Aldo Coppola в The Dubai Mall (Дубай), торговом центре Al Jimi Mall (Аль-Айн), медицинском спа The Lip Bunny Beauty (США) — и в частных интерьерах: виллах, пентхаусах и резиденциях в ОАЭ, Саудовской Аравии, Омане, США, Италии, Малайзии, Франции, Румынии и Греции. Какая композиция где и в каком году установлена, на сайте не указано; отелей и ресторанов в этом списке нет. Список — на vargov.ru/official-dealers, а вживую композиции можно увидеть в нашем шоуруме в Москве. Если нужен референс для вашего проекта, напишите менеджеру — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "According to the official dealer in Dubai, the compositions are installed in public places — the Aldo Coppola salon at The Dubai Mall (Dubai), the Al Jimi Mall shopping centre (Al Ain), The Lip Bunny Beauty medical spa (USA) — and in private interiors: villas, penthouses and residences in the UAE, Saudi Arabia, Oman, the USA, Italy, Malaysia, France, Romania and Greece. Which composition is where, and in which year, is not stated on the site; there are no hotels or restaurants in this list. The list is on vargov.ru/en/official-dealers, and you can see the compositions in person in our Moscow showroom. If you need a reference for your project, write to the manager — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/official-dealers",
+    "/faq",
+    "/projects"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q105",
+   "category": "other",
+   "roles": [
+    "architect"
+   ],
+   "q": {
+    "ru": [
+     "Есть ли реализованные объекты в России — отель или ресторан — с фото и именем архитектора?",
+     "Какие у вас проекты в России?",
+     "Есть ли кейсы с фото и архитектором?"
+    ],
+    "en": [
+     "Are there completed projects in Russia — a hotel or restaurant — with photos and the architect's name?",
+     "What projects do you have in Russia?",
+     "Do you have case studies with photos and the architect named?"
+    ]
+   },
+   "a": {
+    "ru": "В наших опубликованных материалах нет реализованных объектов в России — отелей или ресторанов — с фото и именем архитектора. Мы публикуем список установок по данным официального дилера в Дубае (vargov.ru/official-dealers), а в московском шоуруме композиции можно увидеть вживую. Если вам нужен референс для проекта, напишите менеджеру — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Our published materials do not include completed projects in Russia — hotels or restaurants — with photos and the architect's name. We publish a list of installations based on the official dealer in Dubai (vargov.ru/en/official-dealers), and the compositions can be seen in person in the Moscow showroom. If you need a reference for your project, write to the manager — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/official-dealers",
+    "/showroom"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q106",
+   "category": "other",
+   "roles": [
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Мы открываем ресторан. Вы работаете с коммерческими объектами и можете дать документы для согласований?",
+     "Подходят ли ваши композиции для ресторана, отеля, бутика?",
+     "Какие документы вы даёте для проекта?"
+    ],
+    "en": [
+     "We are opening a restaurant — do you work with commercial projects, and can you supply documents for approvals?",
+     "Are your compositions suitable for a restaurant, hotel or boutique?",
+     "What documents do you provide for a project?"
+    ]
+   },
+   "a": {
+    "ru": "Да, наши композиции подбираются и для коммерческих пространств: у нас есть подборки для ресторана и бара, банкетного зала, холла отеля, бутика и спа (vargov.ru/for/restaurant), а установки есть в салоне, торговом центре и спа. Для согласований серийные сертификаты и декларации ЕАЭС охватывают 310 артикулов LC (проверьте, входит ли выбранный), полные тексты выдаются по запросу, а конфигуратор для композиций с полным расчётом (360 из 605) выгружает PDF-спецификацию, тендерный лист и модель IFC4. Условия работы с коммерческими заказчиками и другие нужные документы уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Yes, our compositions are selected for commercial spaces too: we have curated selections for a restaurant and bar, banquet hall, hotel lobby, boutique and spa (vargov.ru/en/for/restaurant), and there are installations in a salon, a shopping centre and a spa. For approvals, the serial EAEU certificates and declarations cover 310 LC articles (please check that your choice is among them), full texts are provided on request, and for compositions with a full calculation (360 of 605) the configurator exports a PDF specification, a tender sheet and an IFC4 model. For terms of working with commercial clients and any other documents you need, please ask the manager — Telegram, WhatsApp and e-mail buttons."
+   },
+   "sources": [
+    "/for/restaurant",
+    "/certification"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "Q107",
+   "category": "other",
+   "roles": [
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Проводите ли вы обучение или вебинары для дизайнеров?",
+     "Есть ли курсы или презентации для дизайнеров?",
+     "Можно ли получить обучение по вашим композициям?"
+    ],
+    "en": [
+     "Do you run training sessions or webinars for designers?",
+     "Do you have courses or presentations for designers?",
+     "Can I get training on your compositions?"
+    ]
+   },
+   "a": {
+    "ru": "В наших материалах нет сведений об обучении или вебинарах для дизайнеров. Для дизайнеров и архитекторов мы готовим визуализации и техническую документацию, а в конфигураторе можно собрать композицию под помещение и выгрузить модель IFC4, PDF-спецификацию и тендерный лист. О консультации или презентации для вашей команды спросите менеджера — кнопки Telegram, WhatsApp и e-mail. Как идёт проект, описано на vargov.ru/architects.",
+    "en": "Our materials say nothing about training or webinars for designers. For designers and architects we prepare visualisations and technical documentation, and in the configurator you can build a composition for a room and export an IFC4 model, a PDF specification and a tender sheet. For a consultation or presentation for your team, ask the manager — Telegram, WhatsApp and e-mail buttons. How a project runs is described on vargov.ru/en/architects."
+   },
+   "sources": [
+    "/architects"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+  },
+  {
+   "id": "W001",
+   "category": "catalog",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Что есть в наличии?",
+     "Где посмотреть элементы в наличии?",
+     "Можно ли быстрее, из того, что есть на складе?"
+    ],
+    "en": [
+     "What is in stock?",
+     "Where can I see the elements in stock?",
+     "Can it be faster, from what is in stock?"
+    ]
+   },
+   "a": {
+    "ru": "Элементы, которые есть на складе, показаны на странице «Элементы в наличии» — она обновляется четыре раза в день. Из них можно собрать композицию по программе Ready Elements in Stock: при заказе от 10 элементов — за 15–20 рабочих дней. Остальные композиции делаются под заказ, и срок фиксируется в спецификации.",
+    "en": "Elements that are in our warehouse are shown on the \"Elements in stock\" page, which is updated four times a day. A composition can be assembled from them under the Ready Elements in Stock programme: for an order of 10 elements or more, in 15–20 business days. Other compositions are made to order, and the lead time is fixed in the specification."
+   },
+   "sources": [
+    "/in-stock",
+    "/faq"
+   ],
+   "updated": "2026-10-27",
+   "checked_by": "ИИ-видимость 27.10.2026: llms.txt:45, сайт faq.ts:86-87, решение владельца 02.10 «15–20 рабочих дней — оставить»",
+   "focus": {
+    "path": "/in-stock",
+    "text": {
+     "ru": "Элементы в наличии",
+     "en": "Elements in stock"
+    }
+   }
+  }
+ ]
+}

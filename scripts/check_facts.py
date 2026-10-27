@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
 import re
 import sys
 import urllib.request
@@ -545,6 +546,77 @@ def live(F: dict) -> list[tuple[str, str, str, str, str]]:
     return out
 
 
+ASSISTANT_PACK = "integration/assistant-answers.json"
+ASSISTANT_CATEGORIES = {"catalog", "choice", "custom", "ordering", "price", "materials", "colours", "sizes",
+                        "installation", "connection", "production-time", "delivery", "certification", "warranty",
+                        "configurator", "brief", "bim", "dealers", "showroom", "awards", "brand", "care", "other"}
+# Запреты для ответов помощника на сайте (договор с агентом сайта 27.10.2026): ответ — опубликованный факт о бренде.
+ASSISTANT_FORBIDDEN = [
+    (r"₽|\bруб(?:\.|л|ей)|\$\s?\d|\d\s?\$|\bUSD\b|€|\bEUR\b", "цены не называем (шеф-монтаж — «по согласованию»)"),
+    (r"клемм|\bterminal block", "клеммы не упоминаем"),
+    (r"Crystal Breakthrough", "конкурсное название не публикуем (владелец 27.10.2026)"),
+    (r"\b2[0-9]\s+(?:наград|international (?:design )?awards)", "награды: «26 достижений на международных премиях» / «26 awards from international juries»"),
+    (r"\b(?:10|15|30)\s?(?:мм|mm)\b", "числа правила зазора между отверстиями — внутренние (владелец 25.10.2026)"),
+    (r"(?:металлическ\w*|metal) (?:баз\w*|base)[^.]{0,60}(?:схем\w* 1:1|1:1 drawing)", "схема 1:1 при металлической базе — внутренний документ"),
+]
+# страна производства: Китай допустим только в связке с охраной товарного знака
+ASSISTANT_COUNTRY = r"Кита\w*|\bChina\b|\bChinese\b|\bКНР\b"
+ASSISTANT_COUNTRY_OK = r"охран|protect|Мадрид|Madrid|товарн\w+ знак|trademark"
+
+
+def assistant_pack(F: dict) -> tuple[list[str], list[str]]:
+    """Пакет ответов помощника: структура, запреты, числа из brand-facts.json. (расхождения, не определено)."""
+    bad: list[str] = []
+    unknown: list[str] = []
+    p = KB / ASSISTANT_PACK
+    if not p.is_file():
+        return bad, unknown
+    try:
+        pkg = json.loads(p.read_text(encoding="utf-8"))
+        entries = pkg["entries"]
+        meta = pkg["meta"]
+    except (ValueError, KeyError) as e:
+        return bad, [f"НЕ СМОГ ОПРЕДЕЛИТЬ: {ASSISTANT_PACK} — не читается: {e}"]
+    canon = json.dumps(entries, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    real = hashlib.sha256(canon.encode("utf-8")).hexdigest()[:16]
+    if meta.get("checksum") != real:
+        bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — meta.checksum — ожидалось «{real}» — найдено «{meta.get('checksum')}»")
+    if meta.get("count") != len(entries):
+        bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — meta.count — ожидалось «{len(entries)}» — найдено «{meta.get('count')}»")
+    total = str(F["catalogue_total"]["value"])
+    allowed_of_total = {str(F[k]["value"]) for k in ("open_with_calc", "mounting_scheme", "models3d_linked", "awarded_skus")}
+    allowed_of_total.add(str(F["certification"]["value"]["tr_cu_004"]))
+    awards = str(F["awards_total"]["value"])
+    seen = set()
+    for e in entries:
+        eid = e.get("id", "?")
+        if eid in seen:
+            bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — {eid} — id повторяется")
+        seen.add(eid)
+        if e.get("category") not in ASSISTANT_CATEGORIES:
+            bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — {eid} — категория вне закрытого списка — найдено «{e.get('category')}»")
+        focus = e.get("focus")
+        if focus and not str(focus.get("path", "")).startswith("/"):
+            bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — {eid} — focus.path должен начинаться с «/» — найдено «{focus.get('path')}»")
+        for lang, text in (e.get("a") or {}).items():
+            where = f"{ASSISTANT_PACK} — {eid}/{lang}"
+            for rx, why in ASSISTANT_FORBIDDEN:
+                m = re.search(rx, text, re.IGNORECASE)
+                if m:
+                    bad.append(f"РАСХОДИТСЯ: {where} — запрещённое — ожидалось «нет: {why}» — найдено «{m.group(0)}»")
+            for m in re.finditer(ASSISTANT_COUNTRY, text):
+                around = text[max(0, m.start() - 120):m.end() + 60]
+                if not re.search(ASSISTANT_COUNTRY_OK, around, re.IGNORECASE):
+                    bad.append(f"РАСХОДИТСЯ: {where} — страна производства не называется — найдено «{m.group(0)}»")
+            for m in re.finditer(rf"\b(\d{{2,3}})\s+(?:из|of(?: the)?)\s+{total}\b", text):
+                if m.group(1) not in allowed_of_total:
+                    bad.append(f"РАСХОДИТСЯ: {where} — «N из {total}» — ожидалось одно из {sorted(allowed_of_total)} — найдено «{m.group(1)}»")
+            for m in re.finditer(r"\b(\d{2})\s+(?:достижени\w*|awards from international juries)", text):
+                if m.group(1) != awards:
+                    bad.append(f"РАСХОДИТСЯ: {where} — число наград — ожидалось «{awards}» — найдено «{m.group(1)}»")
+    return bad, unknown
+
+
 def run(live_mode: bool = False) -> tuple[list[str], list[str]]:
     """Возвращает (расхождения, не определено) — готовые строки для печати."""
     F = load_facts()
@@ -595,6 +667,9 @@ def run(live_mode: bool = False) -> tuple[list[str], list[str]]:
             unknown.append(f"НЕ СМОГ ОПРЕДЕЛИТЬ: {rel} — {fact} — {got}")
         else:
             notes.append(got if rel == "" else f"{rel}: {got}")
+    pack_bad, pack_unknown = assistant_pack(F)
+    bad += pack_bad
+    unknown += pack_unknown
     if live_mode:
         for kind, src, fact, exp, got in live(F):
             tag = "[live] "
