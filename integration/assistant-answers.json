@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-10-27.1",
-  "checksum": "cdc39acac06abf8b",
+  "version": "2026-10-27.2",
+  "checksum": "71891f8abe56b787",
   "count": 108,
   "updated": "2026-10-27",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -231,14 +231,16 @@
     ]
    },
    "a": {
-    "ru": "Пресс-фото бренда и логотип свободны для редакционного использования с указанием «Vargov®Design» (знак авторства «© Vargov®Design»); условия — на странице vargov.ru/press. Отдельных правил для презентации вашему клиенту в наших материалах нет, поэтому лучше согласовать это с менеджером — кнопки Telegram, WhatsApp и e-mail.",
-    "en": "The brand's press photos and logo are free for editorial use with the credit “Vargov®Design” (copyright line “© Vargov®Design”); the terms are on vargov.ru/en/press. Our materials set no separate rules for a presentation to your client, so please agree it with the manager — Telegram, WhatsApp and e-mail buttons."
+    "ru": "Да: мы предоставляем визуализации и данные для встраивания композиции в проект и презентацию клиенту — попросите их у менеджера (кнопки Telegram, WhatsApp, почта). PDF-каталог тоже сделан для презентаций клиенту. Пресс-фото и логотип для публикаций о бренде — в пресс-ките на vargov.ru/press, с подписью «© Vargov®Design».",
+    "en": "Yes: we provide visualisations and data for placing the composition in your project and your presentation to the client — ask the manager for them (Telegram, WhatsApp or e-mail buttons). The PDF catalogue is also made for client presentations. Press photos and the logo for publications about the brand are in the press kit at vargov.ru/en/press, credited “© Vargov®Design”."
    },
    "sources": [
+    "/architects",
+    "/catalog",
     "/press"
    ],
    "updated": "2026-10-27",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/src/app/architects/page.tsx:39 («для встраивания… в проект и презентацию клиенту»), web/src/app/catalog/page.tsx:45 (PDF-каталог для презентаций клиенту), web/src/app/press/page.tsx:121, 220-221"
   },
   {
    "id": "Q008",
@@ -2113,7 +2115,10 @@
      "Что нужно подготовить в потолке до монтажа — гипсокартонный потолок, закладные, ревизионный лючок, отверстия, место под драйвер? Что сделать до приезда композиции?",
      "Как подготовить потолок к монтажу?",
      "Нужны ли закладные в гипсокартоне?",
-     "Что сделать до приезда композиции?"
+     "Что сделать до приезда композиции?",
+     "Что подготовить в потолке?",
+     "Что сделать до приезда люстры?",
+     "Электрику что сказать заранее?"
     ],
     "en": [
      "What must be prepared in the ceiling before installation — plasterboard ceiling, embedded supports, access hatch, holes, driver location — and what must be done before the composition arrives?",
@@ -2173,7 +2178,10 @@
      "Какие бывают варианты монтажа — закладные, ревизионный лючок, основание — как выбрать, и можно ли повесить, не вскрывая потолок?",
      "Какие есть способы монтажа?",
      "Нужен ли ревизионный лючок?",
-     "Можно ли смонтировать без подготовки потолка?"
+     "Можно ли смонтировать без подготовки потолка?",
+     "Как вешается?",
+     "Как крепится к потолку?",
+     "А если потолок уже готов, без вскрытия можно?"
     ],
     "en": [
      "What installation options are there (prepared ceiling with embedded supports, access hatch, base), how do I choose, and can it be hung without opening the ceiling?",
@@ -2235,7 +2243,10 @@
      "Когда я получу схему разметки потолка 1:1, можно ли получить её до заказа и как её печатать? Нужна, чтобы подготовить отверстия до отделки.",
      "Можно ли получить монтажную схему 1:1 до заказа?",
      "Как печатать схему разметки потолка?",
-     "Когда будет схема 1:1?"
+     "Когда будет схема 1:1?",
+     "Где взять схему отверстий?",
+     "Когда дадите разметку для потолка?",
+     "Шаблон для дырок в потолке есть?"
     ],
     "en": [
      "When do I get the 1:1 ceiling setting-out drawing, can I have it before ordering, and how should it be printed?",
@@ -2269,7 +2280,11 @@
      "Можно ли смонтировать силами нашей бригады или электрика, или обязательно монтажники бренда? Что с гарантией?",
      "Можем ли мы монтировать своей бригадой?",
      "Обязательны ли ваши монтажники?",
-     "Сохранится ли гарантия при самостоятельном монтаже?"
+     "Сохранится ли гарантия при самостоятельном монтаже?",
+     "Муж сам повесит?",
+     "Можно своим электриком повесить?",
+     "Сами смонтируем, можно?",
+     "Наш мастер справится?"
     ],
     "en": [
      "Can our own crew or electrician install it, or must it be the brand's installers — and what happens to the warranty?",
@@ -2300,7 +2315,10 @@
      "В каких странах у вас есть официальные монтажники? Нужны в Дубае, во Вьетнаме и в Сочи.",
      "Есть ли ваши монтажники в Дубае?",
      "Есть ли монтаж во Вьетнаме?",
-     "Кто монтирует в России?"
+     "Кто монтирует в России?",
+     "Монтаж в Сочи делаете?",
+     "Приедете повесить в другой город?",
+     "Монтажники есть в Питере?"
     ],
     "en": [
      "In which countries do you have official installers (for example Dubai, Vietnam, Sochi)?",
@@ -2331,7 +2349,10 @@
     "ru": [
      "Что такое шеф-монтаж, когда он нужен и как его заказать?",
      "Как заказать шеф-монтаж?",
-     "Что входит в шеф-монтаж?"
+     "Что входит в шеф-монтаж?",
+     "Шеф-монтаж это что?",
+     "Сколько стоит ваш монтажник?",
+     "Ваш мастер может проконтролировать?"
     ],
     "en": [
      "What is chief-installer supervision, when is it needed and how do I order it?",
@@ -2394,7 +2415,11 @@
      "Как ухаживать за композицией, как мыть и чем протирать элементы?",
      "Как мыть люстру?",
      "Чем протирать элементы композиции?",
-     "Есть ли инструкция по уходу?"
+     "Есть ли инструкция по уходу?",
+     "Чем мыть?",
+     "Как протирать от пыли?",
+     "Можно мыть водой?",
+     "Чем чистить люстру?"
     ],
     "en": [
      "How do I care for the composition, how do I clean it and what do I wipe it with?",
@@ -2404,14 +2429,15 @@
     ]
    },
    "a": {
-    "ru": "Инструкции по уходу — как мыть композицию и чем протирать элементы — в наших открытых материалах нет, поэтому мы не советуем наугад, чтобы не повредить изделие. Рекомендации по уходу для вашей модели уточнит менеджер: напишите ему кнопками Telegram, WhatsApp или e-mail и назовите артикул.",
-    "en": "Our public materials contain no care instructions — how to wash the composition or what to wipe the elements with — so we do not advise at random, to avoid damaging the piece. The manager will clarify care recommendations for your model: write with the buttons below (Telegram, WhatsApp or e-mail) and give the article code."
+    "ru": "Перед любой чисткой обесточьте композицию. Пыль снимают чистой сухой тканью, пятна — слегка влажной тканью и сразу насухо. Спирт, кислоты, растворители и абразивы недопустимы: они портят покрытие и лак. Не мойте элементы под струёй воды.",
+    "en": "Switch the composition off before any cleaning. Remove dust with a clean dry cloth; wipe spots with a slightly damp cloth and dry immediately. Alcohol, acids, solvents and abrasives must not be used: they damage the finish and the lacquer. Do not wash the elements under running water."
    },
    "sources": [
-    "/warranty"
+    "/specifications/colours",
+    "/installation"
    ],
    "updated": "2026-10-27",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/src/components/specs/text.ts:1103-1104 (careText), web/docs/connection/connection-ru.html:246-252 («Шаг 10. Уход»)"
   },
   {
    "id": "Q078",
@@ -2427,7 +2453,11 @@
      "Что делать, если перегорит светодиод или драйвер? Как менять источник света, можно ли обслужить без вскрытия потолка и где взять запасной элемент?",
      "Что если перегорит диод?",
      "Как заменить драйвер?",
-     "Где взять запасной элемент?"
+     "Где взять запасной элемент?",
+     "Перегорела лампочка что делать",
+     "Один элемент не горит",
+     "Сломался драйвер",
+     "Разбился элемент, можно докупить?"
     ],
     "en": [
      "What if an LED or the driver fails — how is the light source replaced, can it be serviced without opening the ceiling, and where do I get a spare element?",
@@ -2437,14 +2467,15 @@
     ]
    },
    "a": {
-    "ru": "Обслуживание зависит от способа монтажа: ревизионный лючок даёт быстрый доступ к драйверам, проводке и элементам без нарушения потолка, на основании (базе) технические части доступны внутри неё, а на закладных без лючка для замены драйвера нужен доступ в запотолочное пространство. Порядок замены светодиода или драйвера, срок службы источников света и запасные элементы в открытых материалах не описаны — уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "Servicing depends on the installation method: an access hatch gives quick access to the drivers, wiring and elements without disturbing the ceiling; on a base the technical parts are accessible inside it; and with embedded supports but no hatch, replacing a driver means getting into the void above the ceiling. How an LED or driver is replaced, the service life of the light sources and spare elements are not described in our public materials — please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Блок питания (драйвер) остаётся доступным — через ревизионный лючок или внутри основания; его срок службы меньше срока службы композиции, и заменяется он без демонтажа изделия. Для объектов мы даём гарантийное обслуживание и запасные элементы. Если перестал светиться элемент или нужен запасной — напишите менеджеру с артикулом (кнопки Telegram, WhatsApp, почта), он подскажет порядок замены.",
+    "en": "The power supply (driver) stays accessible — through an inspection hatch or inside the base; it has a shorter service life than the composition and is replaced without dismantling the piece. For projects we provide warranty service and spare elements. If an element has stopped lighting or you need a spare, write to the manager with the article code (Telegram, WhatsApp or e-mail buttons) and they will explain how to replace it."
    },
    "sources": [
-    "/installation"
+    "/installation",
+    "/developers"
    ],
    "updated": "2026-10-27",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/docs/connection/connection-ru.html:104-106 (блок доступен, служит меньше, замена без демонтажа), web/src/app/developers/page.tsx:47 (гарантийное обслуживание и запасные элементы), web/src/app/installation/page.tsx:159-191 (лючок, основание)"
   },
   {
    "id": "Q079",
@@ -2459,7 +2490,11 @@
      "Какая у вас гарантия — на какой срок, что она покрывает и какой срок службы?",
      "Какой срок гарантии?",
      "Что входит в гарантию?",
-     "Какой срок службы у светильников?"
+     "Какой срок службы у светильников?",
+     "Гарантия есть?",
+     "Сколько гарантия?",
+     "Если сломается — починят?",
+     "Гарантия на люстру"
     ],
     "en": [
      "What warranty do you give — for how long, what does it cover, and what is the service life?",
@@ -2759,7 +2794,13 @@
     "ru": [
      "Сколько стоит композиция? Назовите цену по артикулу.",
      "Сколько стоит LC0602?",
-     "Какая цена на люстру?"
+     "Какая цена на люстру?",
+     "Сколько стоит?",
+     "Цена?",
+     "Скок стоит?",
+     "Сколько стоит такая люстра",
+     "Почём эта?",
+     "Цена люстры LC0102"
     ],
     "en": [
      "How much does a composition cost? Please give the price for a code.",
@@ -2789,7 +2830,11 @@
     "ru": [
      "Хотя бы примерно — от какой суммы начинается и от чего зависит цена?",
      "Какой порядок цен на ваши композиции?",
-     "От чего зависит стоимость композиции?"
+     "От чего зависит стоимость композиции?",
+     "От скольки цены начинаются?",
+     "Примерно сколько выйдет?",
+     "Почему так дорого?",
+     "Хотя бы порядок цен"
     ],
     "en": [
      "Roughly — where do prices start and what does the price depend on?",
@@ -2849,7 +2894,11 @@
      "Какой срок изготовления композиции?",
      "Сколько делается заказ?",
      "Через сколько получу светильник?",
-     "За сколько вы производите композицию?"
+     "За сколько вы производите композицию?",
+     "Сколько делаете?",
+     "Как долго ждать?",
+     "Когда будет готово?",
+     "Сколько по времени изготовление"
     ],
     "en": [
      "What is the production lead time?",
@@ -2883,7 +2932,11 @@
      "Успеете ли вы к жёсткой дате — объект открывается через два месяца или нужно к Новому году?",
      "Мне нужно к определённому числу — успеете?",
      "Можете сделать срочно к открытию?",
-     "Успеем к Новому году?"
+     "Успеем к Новому году?",
+     "Успеете к Новому году?",
+     "Надо срочно, за месяц сделаете?",
+     "К открытию успеете?",
+     "А побыстрее можно?"
     ],
     "en": [
      "Can you meet a hard deadline — the venue opens in two months, or I need it by New Year?",
@@ -2950,7 +3003,10 @@
      "Доставляете ли вы в другие страны и как упаковываете, чтобы ничего не разбилось?",
      "Отправляете за границу?",
      "Как вы упаковываете груз?",
-     "Дойдёт ли в целости при международной доставке?"
+     "Дойдёт ли в целости при международной доставке?",
+     "Как упаковано?",
+     "Не разобьётся при доставке?",
+     "Стекляшки не побьются в дороге?"
     ],
     "en": [
      "Do you deliver to other countries, and how is the cargo packed so nothing breaks?",
@@ -2983,7 +3039,10 @@
      "Привезли, а коробка помята. Что проверить при приёмке, что делать и в какие сроки подавать претензию?",
      "Груз пришёл повреждённым — что делать?",
      "Как принимать посылку и что с ней делать, если упаковка мятая?",
-     "Как оформить рекламацию на доставку?"
+     "Как оформить рекламацию на доставку?",
+     "Пришла мятая коробка",
+     "Разбилось при доставке что делать",
+     "Привезли с трещиной"
     ],
     "en": [
      "The box is dented on arrival — what should I check and do, and by what deadline do I file a claim?",
@@ -3014,7 +3073,11 @@
      "Сколько идёт доставка в мой город и сколько она стоит?",
      "За сколько дней привезёте в мой город?",
      "Во сколько мне обойдётся доставка?",
-     "Доставка в регион — сроки и стоимость?"
+     "Доставка в регион — сроки и стоимость?",
+     "Сколько доставка?",
+     "Доставка бесплатная?",
+     "Доставите в Краснодар?",
+     "Сколько ехать до Казани"
     ],
     "en": [
      "How long does delivery to my city take and how much does it cost?",
@@ -3081,7 +3144,11 @@
      "Можно ли посмотреть композиции вживую?",
      "Где шоурум?",
      "Адрес шоурума",
-     "Часы работы шоурума"
+     "Часы работы шоурума",
+     "Где посмотреть вживую?",
+     "Где шоурум находится?",
+     "Во сколько работаете?",
+     "Вы открыты в выходные?"
     ],
     "en": [
      "Where is your showroom, when is it open (weekends included), and can I see compositions switched on?",
@@ -3121,7 +3188,10 @@
     "ru": [
      "Нужно ли записываться на визит заранее или можно просто прийти? Есть ли парковка?",
      "Можно прийти без записи?",
-     "Где припарковаться у шоурума?"
+     "Где припарковаться у шоурума?",
+     "Можно приехать без записи?",
+     "Нужно записываться?",
+     "Парковка есть?"
     ],
     "en": [
      "Do I need to book a visit in advance, or can I just walk in — and is there parking?",
