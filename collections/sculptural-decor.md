@@ -9,21 +9,21 @@
 - [LC0011](../products/sculptural-decor/LC0011.md) — Настенная композиция — https://vargov.ru/catalog/lc0011
 - [LC0019](../products/sculptural-decor/LC0019.md) — Настенное панно — https://vargov.ru/catalog/lc0019
 - [LC0020](../products/sculptural-decor/LC0020.md) — Световая композиция — https://vargov.ru/catalog/lc0020
-- [LC0022](../products/sculptural-decor/LC0022.md) — Декоративный занавес-экран — https://vargov.ru/catalog/lc0022
+- [LC0022](../products/sculptural-decor/LC0022.md) — Декоративная композиция — https://vargov.ru/catalog/lc0022
 - [LC0035](../products/sculptural-decor/LC0035.md) — Настенная композиция — https://vargov.ru/catalog/lc0035
 - [LC0053](../products/sculptural-decor/LC0053.md) — Настенное панно с подсветкой — https://vargov.ru/catalog/lc0053
 - [LC0061](../products/sculptural-decor/LC0061.md) — Настольный арт-объект — https://vargov.ru/catalog/lc0061
-- [LC0066](../products/sculptural-decor/LC0066.md) — Зеркало — https://vargov.ru/catalog/lc0066
-- [LC0067](../products/sculptural-decor/LC0067.md) — Настенный светильник-кольцо — https://vargov.ru/catalog/lc0067
-- [LC0068](../products/sculptural-decor/LC0068.md) — Зеркало — https://vargov.ru/catalog/lc0068
-- [LC0069](../products/sculptural-decor/LC0069.md) — Зеркало — https://vargov.ru/catalog/lc0069
-- [LC0070](../products/sculptural-decor/LC0070.md) — Зеркало с подсветкой — https://vargov.ru/catalog/lc0070
-- [LC0071](../products/sculptural-decor/LC0071.md) — Настенный светильник-кольцо — https://vargov.ru/catalog/lc0071
-- [LC0072](../products/sculptural-decor/LC0072.md) — Настенный светильник-кольцо — https://vargov.ru/catalog/lc0072
-- [LC0073](../products/sculptural-decor/LC0073.md) — Настенный светильник — https://vargov.ru/catalog/lc0073
-- [LC0074](../products/sculptural-decor/LC0074.md) — Настенный светильник — https://vargov.ru/catalog/lc0074
-- [LC0075](../products/sculptural-decor/LC0075.md) — Световая композиция — https://vargov.ru/catalog/lc0075
-- [LC0076](../products/sculptural-decor/LC0076.md) — Световая композиция — https://vargov.ru/catalog/lc0076
+- [LC0066](../products/sculptural-decor/LC0066.md) — Настенная скульптура — https://vargov.ru/catalog/lc0066
+- [LC0067](../products/sculptural-decor/LC0067.md) — Настенная скульптура — https://vargov.ru/catalog/lc0067
+- [LC0068](../products/sculptural-decor/LC0068.md) — Настенная скульптура — https://vargov.ru/catalog/lc0068
+- [LC0069](../products/sculptural-decor/LC0069.md) — Настенная скульптура — https://vargov.ru/catalog/lc0069
+- [LC0070](../products/sculptural-decor/LC0070.md) — Настенная скульптура — https://vargov.ru/catalog/lc0070
+- [LC0071](../products/sculptural-decor/LC0071.md) — Настенная световая скульптура-бра — https://vargov.ru/catalog/lc0071
+- [LC0072](../products/sculptural-decor/LC0072.md) — Настенная скульптура — https://vargov.ru/catalog/lc0072
+- [LC0073](../products/sculptural-decor/LC0073.md) — Настенная скульптура — https://vargov.ru/catalog/lc0073
+- [LC0074](../products/sculptural-decor/LC0074.md) — Настенная скульптура — https://vargov.ru/catalog/lc0074
+- [LC0075](../products/sculptural-decor/LC0075.md) — Подвесная скульптура — https://vargov.ru/catalog/lc0075
+- [LC0076](../products/sculptural-decor/LC0076.md) — Подвесная скульптура — https://vargov.ru/catalog/lc0076
 - [LC0077](../products/sculptural-decor/LC0077.md) — Декоративная композиция — https://vargov.ru/catalog/lc0077
 - [LC0079](../products/sculptural-decor/LC0079.md) — Арт-объект — https://vargov.ru/catalog/lc0079
 - [LC0080](../products/sculptural-decor/LC0080.md) — Зеркало — https://vargov.ru/catalog/lc0080
@@ -39,49 +39,49 @@
 - [LC0122](../products/sculptural-decor/LC0122.md) — Настенное панно — https://vargov.ru/catalog/lc0122
 - [LC0123](../products/sculptural-decor/LC0123.md) — Настенное панно — https://vargov.ru/catalog/lc0123
 - [LC0148](../products/sculptural-decor/LC0148.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0148
-- [LC0149](../products/sculptural-decor/LC0149.md) — Биокамин — https://vargov.ru/catalog/lc0149
+- [LC0149](../products/sculptural-decor/LC0149.md) — Декор камина — https://vargov.ru/catalog/lc0149
 - [LC0150](../products/sculptural-decor/LC0150.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0150
 - [LC0151](../products/sculptural-decor/LC0151.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0151
 - [LC0157](../products/sculptural-decor/LC0157.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0157
 - [LC0158](../products/sculptural-decor/LC0158.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0158
 - [LC0159](../products/sculptural-decor/LC0159.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0159
 - [LC0160](../products/sculptural-decor/LC0160.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0160
-- [LC0162](../products/sculptural-decor/LC0162.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0162
-- [LC0163](../products/sculptural-decor/LC0163.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0163
+- [LC0162](../products/sculptural-decor/LC0162.md) — Настенная композиция — https://vargov.ru/catalog/lc0162
+- [LC0163](../products/sculptural-decor/LC0163.md) — Настенная композиция — https://vargov.ru/catalog/lc0163
 - [LC0230](../products/sculptural-decor/LC0230.md) — Настенная композиция — https://vargov.ru/catalog/lc0230
 - [LC0241](../products/sculptural-decor/LC0241.md) — Декоративная композиция — https://vargov.ru/catalog/lc0241
 - [LC0243](../products/sculptural-decor/LC0243.md) — Световая композиция — https://vargov.ru/catalog/lc0243
 - [LC0244](../products/sculptural-decor/LC0244.md) — Настенное панно — https://vargov.ru/catalog/lc0244
 - [LC0245](../products/sculptural-decor/LC0245.md) — Настенная композиция — https://vargov.ru/catalog/lc0245
 - [LC0246](../products/sculptural-decor/LC0246.md) — Настенная композиция — https://vargov.ru/catalog/lc0246
-- [LC0247](../products/sculptural-decor/LC0247.md) — Арт-объект — https://vargov.ru/catalog/lc0247
-- [LC0248](../products/sculptural-decor/LC0248.md) — Биокамин — https://vargov.ru/catalog/lc0248
-- [LC0249](../products/sculptural-decor/LC0249.md) — Биокамин — https://vargov.ru/catalog/lc0249
-- [LC0250](../products/sculptural-decor/LC0250.md) — Парковая скульптура — https://vargov.ru/catalog/lc0250
+- [LC0247](../products/sculptural-decor/LC0247.md) — Скульптура — https://vargov.ru/catalog/lc0247
+- [LC0248](../products/sculptural-decor/LC0248.md) — Декор камина — https://vargov.ru/catalog/lc0248
+- [LC0249](../products/sculptural-decor/LC0249.md) — Декор камина — https://vargov.ru/catalog/lc0249
+- [LC0250](../products/sculptural-decor/LC0250.md) — Ландшафтная скульптура — https://vargov.ru/catalog/lc0250
 - [LC0251](../products/sculptural-decor/LC0251.md) — Декоративное панно с подсветкой — https://vargov.ru/catalog/lc0251
 - [LC0252](../products/sculptural-decor/LC0252.md) — Декоративное панно с подсветкой — https://vargov.ru/catalog/lc0252
-- [LC0253](../products/sculptural-decor/LC0253.md) — Арт-объект — https://vargov.ru/catalog/lc0253
+- [LC0253](../products/sculptural-decor/LC0253.md) — Скульптура — https://vargov.ru/catalog/lc0253
 - [LC0255](../products/sculptural-decor/LC0255.md) — Световая композиция — https://vargov.ru/catalog/lc0255
 - [LC0257](../products/sculptural-decor/LC0257.md) — Световая композиция — https://vargov.ru/catalog/lc0257
 - [LC0258](../products/sculptural-decor/LC0258.md) — Настенная композиция — https://vargov.ru/catalog/lc0258
 - [LC0261](../products/sculptural-decor/LC0261.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0261
 - [LC0266](../products/sculptural-decor/LC0266.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0266
 - [LC0268](../products/sculptural-decor/LC0268.md) — Декоративное панно — https://vargov.ru/catalog/lc0268
-- [LC0269](../products/sculptural-decor/LC0269.md) — Настенное зеркало с подсветкой — https://vargov.ru/catalog/lc0269
+- [LC0269](../products/sculptural-decor/LC0269.md) — Зеркало — https://vargov.ru/catalog/lc0269
 - [LC0309](../products/sculptural-decor/LC0309.md) — Декоративная композиция — https://vargov.ru/catalog/lc0309
-- [LC0315](../products/sculptural-decor/LC0315.md) — Световая композиция — https://vargov.ru/catalog/lc0315
-- [LC0316](../products/sculptural-decor/LC0316.md) — Настенный светильник-скульптура — https://vargov.ru/catalog/lc0316
+- [LC0315](../products/sculptural-decor/LC0315.md) — Настенная композиция — https://vargov.ru/catalog/lc0315
+- [LC0316](../products/sculptural-decor/LC0316.md) — Зеркало — https://vargov.ru/catalog/lc0316
 - [LC0321](../products/sculptural-decor/LC0321.md) — Лестничное ограждение — https://vargov.ru/catalog/lc0321
-- [LC0324](../products/sculptural-decor/LC0324.md) — Настенные светильники — https://vargov.ru/catalog/lc0324
-- [LC0325](../products/sculptural-decor/LC0325.md) — Светильник-скульптура — https://vargov.ru/catalog/lc0325
+- [LC0324](../products/sculptural-decor/LC0324.md) — Зеркало — https://vargov.ru/catalog/lc0324
+- [LC0325](../products/sculptural-decor/LC0325.md) — Ландшафтная скульптура — https://vargov.ru/catalog/lc0325
 - [LC0330](../products/sculptural-decor/LC0330.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0330
 - [LC0331](../products/sculptural-decor/LC0331.md) — Декоративная перегородка — https://vargov.ru/catalog/lc0331
-- [LC0356](../products/sculptural-decor/LC0356.md) — Торшер — https://vargov.ru/catalog/lc0356
+- [LC0356](../products/sculptural-decor/LC0356.md) — Декоративная композиция — https://vargov.ru/catalog/lc0356
 - [LC0366](../products/sculptural-decor/LC0366.md) — Световая композиция — https://vargov.ru/catalog/lc0366
 - [LC0370](../products/sculptural-decor/LC0370.md) — Декоративная композиция — https://vargov.ru/catalog/lc0370
 - [LC0373](../products/sculptural-decor/LC0373.md) — Настенная композиция — https://vargov.ru/catalog/lc0373
-- [LC0495](../products/sculptural-decor/LC0495.md) — Скульптурная композиция — https://vargov.ru/catalog/lc0495
-- [LC0506](../products/sculptural-decor/LC0506.md) — Скульптурная композиция — https://vargov.ru/catalog/lc0506
+- [LC0495](../products/sculptural-decor/LC0495.md) — Настенная композиция — https://vargov.ru/catalog/lc0495
+- [LC0506](../products/sculptural-decor/LC0506.md) — Настенная композиция — https://vargov.ru/catalog/lc0506
 - [LC0543](../products/sculptural-decor/LC0543.md) — Настенный арт-объект — https://vargov.ru/catalog/lc0543
 - [LC0561](../products/sculptural-decor/LC0561.md) — Настенный арт-объект — https://vargov.ru/catalog/lc0561
 - [LC0575](../products/sculptural-decor/LC0575.md) — Настенные световые композиции — https://vargov.ru/catalog/lc0575

@@ -50,8 +50,8 @@
 - [LC0559](../products/floor-table-lamps/LC0559.md) — Торшер — вертикальная световая скульптура — https://vargov.ru/catalog/lc0559
 - [LC0560](../products/floor-table-lamps/LC0560.md) — Торшер — вертикальная световая скульптура — https://vargov.ru/catalog/lc0560
 - [LC0562](../products/floor-table-lamps/LC0562.md) — Торшер pop-art — https://vargov.ru/catalog/lc0562
-- [LC0563](../products/floor-table-lamps/LC0563.md) — Бра-скульптурная композиция — https://vargov.ru/catalog/lc0563
-- [LC0564](../products/floor-table-lamps/LC0564.md) — Бра-скульптурная композиция — https://vargov.ru/catalog/lc0564
+- [LC0563](../products/floor-table-lamps/LC0563.md) — Бра-настенная скульптура — https://vargov.ru/catalog/lc0563
+- [LC0564](../products/floor-table-lamps/LC0564.md) — Бра-настенная скульптура — https://vargov.ru/catalog/lc0564
 - [LC0565](../products/floor-table-lamps/LC0565.md) — Бра — https://vargov.ru/catalog/lc0565
 - [LC0567](../products/floor-table-lamps/LC0567.md) — Бра — https://vargov.ru/catalog/lc0567
 - [LC0569](../products/floor-table-lamps/LC0569.md) — Настольный арт-объект — https://vargov.ru/catalog/lc0569

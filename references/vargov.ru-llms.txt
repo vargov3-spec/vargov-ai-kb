@@ -58,6 +58,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 - [Sculptural compositions & décor](https://vargov.ru/en/sculptural-decor): wall and free-standing sculpture
 - [Elements in stock](https://vargov.ru/en/in-stock): warehouse elements, not finished compositions — assembly for your project in 15–20 business days, minimum 10 elements; updated four times a day
 - [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf): full catalogue for download
+- [Materials](https://vargov.ru/en/materials): hot-cast glass, crystal, ceramics, brass and metal — how the material shapes the light and the character of a composition
 
 ## By space
 
@@ -65,6 +66,8 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 gets decided at the design stage — height, load, suspension, access for
 maintenance. Every composition is built for its space, so each page shows the
 whole catalogue; only the text and the order of display differ.
+
+- [All spaces](https://vargov.ru/en/for): the index of the pages below
 
 - [Hotel lobby and public spaces](https://vargov.ru/en/for/hotel-lobby)
 - [Double-height living room](https://vargov.ru/en/for/double-height)
@@ -83,6 +86,8 @@ whole catalogue; only the text and the order of display differ.
 - [How many ceiling mounting points a light fixture needs](https://vargov.ru/en/guides/mounting-points): one point per element for a composition on cables, one node for a single-body fitting, and the nine SKUs where neither rule holds
 - [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight): eight calculated compositions, 4.3 to 447.7 kg, with element counts, mounting points and load per point; one composition laid out seven ways, 1.8 to 6.8 kg
 - [Online lighting configurator with IFC4 (BIM) export for architects](https://vargov.ru/en/configurator/ifc4): what the IFC4 export holds and how to open it in Revit, ArchiCAD and other BIM software — the class set per element: lit elements as IfcLightFixture, unlit ones as IfcFurnishingElement; every ceiling fixing point a separate IfcDiscreteAccessory with its own load (property set Vargov_Mount: SuspensionType, ElementsAtPoint, LoadKg); the file drops into the model with no manual offset — built for the ceiling height set in the Ceiling height field next to the IFC button (2700 mm by default; property CeilingHeight in Vargov_Design on IfcBuilding), fixing points on the ceiling, origin on the floor; a PDF specification and a tender sheet alongside; 360 of 605 compositions open with a full calculation; no Revit family (.rfa); DXF drawings are for internal use only: the brand's production and dealers
+- [FBX model from the configurator](https://vargov.ru/en/configurator/fbx): a composition assembled in the configurator downloads as FBX and opens in 3ds Max — separate objects with colours, threads, ceiling fixings and a ceiling plane, at real size, no rescaling
+- [Production](https://vargov.ru/en/production): from sketch and mock-up to hand assembly, 1:1 installation drawings and installation on site; individual production and the ready elements in stock
 - [Installation](https://vargov.ru/en/installation): suspension, load, wiring, service access
 - [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf): mounting step by step, from marking out the fixing points to fitting the elements
 - [Connection guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf): electrical connection: parallel wiring only, splitting into branches, sizing the driver, first switch-on
@@ -93,6 +98,11 @@ whole catalogue; only the text and the order of display differ.
 - [Element colour: RAL painting and electroplating](https://vargov.ru/en/specifications/colours): glass, crystal and ceramic elements painted in any of the 210 RAL Classic colours (glass and crystal translucent from 10 to 90 % or opaque, ceramics opaque only) or electroplated — transparent tints for glass and crystal, mirror gold, rose gold and chrome for all three; the brief names the RAL code or the finish
 - [Metal finishes on video](https://vargov.ru/en/specifications/finishes): the JN-9001…JN-9024 finishes of the metal fittings — eight colours, each mirror-polished, brushed with gloss lacquer or brushed with semi-matte lacquer; the physical finish catalogue can be seen at the showroom
 
+## For dealers, developers and HoReCa
+
+- [For dealers and procurement](https://vargov.ru/en/dealers): official representation, partner terms, fast specifications, export packaging and international logistics
+- [For developers, hotels and restaurants](https://vargov.ru/en/developers): large-scale lighting installations for lobbies, atriums and public areas; fixed timelines, tender documentation, installation turnkey
+
 ## About
 
 - [About the brand](https://vargov.ru/en/about)
@@ -100,18 +110,26 @@ whole catalogue; only the text and the order of display differ.
 - [Awards](https://vargov.ru/en/awards): full list, with winner pages and certificates where the award body issued them
 - [Projects](https://vargov.ru/en/projects): Russky Dom 2026 (exhibition, 7–9 October 2026, Gostiny Dvor, Moscow — composition LC0556 in the “Ice and Mist” zone of the “Quiet Strength of Kamchatka” capsule by Tokareva Design, stand K62); Interlight Moscow 2025 (exhibition); Vargov®Design official showroom (permanent display)
 - [Journal](https://vargov.ru/en/journal): how compositions are made, installed and certified
+- [Composition videos](https://vargov.ru/en/video): films of finished compositions — glass, moving light, scale; the official RuTube and YouTube channels
+- [Frequently asked questions](https://vargov.ru/en/faq): materials, production timelines, customisation, delivery, installation, the showroom and dealership
 - [Press kit](https://vargov.ru/en/press): photographs and facts for publication
 - [Showroom](https://vargov.ru/en/showroom): visiting, address, opening hours
 - [Official dealers](https://vargov.ru/en/official-dealers): Moscow, Dubai, Hanoi
 
 ## Contact
 
+- [Contacts page](https://vargov.ru/en/contacts): showroom address and opening hours, direct lines and the request form
 - Email: info@vargov.ru
 - WhatsApp: +7 916 537 33 52
 - Showroom: +7 (925) 888-77-44
 - Telegram (requests): https://t.me/AntonVargov
 - Telegram channel: https://t.me/vargov_design
 - WhatsApp: https://wa.me/79165373352
+
+## Legal
+
+- [Privacy policy](https://vargov.ru/en/privacy): what the site collects and how it is handled
+- [Consent to the processing of personal data](https://vargov.ru/en/consent): the terms a visitor agrees to when sending a request, prepared in accordance with Russian Federal Law No. 152-FZ
 
 ## Other languages
 

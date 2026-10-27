@@ -45,10 +45,10 @@
 - [LC0100](../products/decorative/LC0100.md) — Декоративная композиция — https://vargov.ru/catalog/lc0100
 - [LC0104](../products/decorative/LC0104.md) — Декоративная композиция — https://vargov.ru/catalog/lc0104
 - [LC0107](../products/decorative/LC0107.md) — Декоративная композиция — https://vargov.ru/catalog/lc0107
-- [LC0108](../products/decorative/LC0108.md) — Световая композиция-занавес — https://vargov.ru/catalog/lc0108
+- [LC0108](../products/decorative/LC0108.md) — Декоративная композиция — https://vargov.ru/catalog/lc0108
 - [LC0109](../products/decorative/LC0109.md) — Декоративная композиция — https://vargov.ru/catalog/lc0109
 - [LC0124](../products/decorative/LC0124.md) — Декоративная композиция — https://vargov.ru/catalog/lc0124
-- [LC0126](../products/decorative/LC0126.md) — Световая композиция-занавес — https://vargov.ru/catalog/lc0126
+- [LC0126](../products/decorative/LC0126.md) — Декоративная композиция — https://vargov.ru/catalog/lc0126
 - [LC0130](../products/decorative/LC0130.md) — Декоративная композиция — https://vargov.ru/catalog/lc0130
 - [LC0131](../products/decorative/LC0131.md) — Декоративная композиция — https://vargov.ru/catalog/lc0131
 - [LC0136](../products/decorative/LC0136.md) — Декоративная композиция — https://vargov.ru/catalog/lc0136

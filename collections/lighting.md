@@ -224,7 +224,7 @@
 - [LC0416](../products/lighting/LC0416.md) — Световая композиция — https://vargov.ru/catalog/lc0416
 - [LC0417](../products/lighting/LC0417.md) — Световая композиция — https://vargov.ru/catalog/lc0417
 - [LC0418](../products/lighting/LC0418.md) — Световая композиция — https://vargov.ru/catalog/lc0418
-- [LC0421](../products/lighting/LC0421.md) — Световая скульптура — https://vargov.ru/catalog/lc0421
+- [LC0421](../products/lighting/LC0421.md) — Световая композиция — https://vargov.ru/catalog/lc0421
 - [LC0422](../products/lighting/LC0422.md) — Световая композиция — https://vargov.ru/catalog/lc0422
 - [LC0423](../products/lighting/LC0423.md) — Световая композиция — https://vargov.ru/catalog/lc0423
 - [LC0424](../products/lighting/LC0424.md) — Световая композиция — https://vargov.ru/catalog/lc0424
@@ -336,7 +336,7 @@
 - [LC0553](../products/lighting/LC0553.md) — Световая композиция — https://vargov.ru/catalog/lc0553
 - [LC0554](../products/lighting/LC0554.md) — Световая композиция — https://vargov.ru/catalog/lc0554
 - [LC0555](../products/lighting/LC0555.md) — Световая композиция — https://vargov.ru/catalog/lc0555
-- [LC0556](../products/lighting/LC0556.md) — Световая композиция — https://vargov.ru/catalog/lc0556
+- [LC0556](../products/lighting/LC0556.md) — Авторская тематическая композиция — https://vargov.ru/catalog/lc0556
 - [LC0566](../products/lighting/LC0566.md) — Световая композиция — https://vargov.ru/catalog/lc0566
 - [LC0568](../products/lighting/LC0568.md) — Световая композиция — https://vargov.ru/catalog/lc0568
 - [LC0570](../products/lighting/LC0570.md) — Световая композиция — https://vargov.ru/catalog/lc0570
