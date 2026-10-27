@@ -23,7 +23,7 @@
   },
   "open_with_calc": {
    "value": 360,
-   "source": "конфигуратор V:\\защита контента\\configurator\\public\\open-skus.json — count = 360, skus = 360 уникальных (правило opensWithCalc, src/engine/openable.ts); llms.txt «Полный расчёт и выгрузка — у 360 композиций из 605»",
+   "source": "конфигуратор public/open-skus.json (https://vargov.design/open-skus.json) — count = 360, skus = 360 уникальных (правило opensWithCalc, src/engine/openable.ts); llms.txt «Полный расчёт и выгрузка — у 360 композиций из 605»",
    "checked": "2026-10-26"
   },
   "mounting_scheme": {
