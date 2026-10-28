@@ -562,6 +562,9 @@ ASSISTANT_FORBIDDEN = [
 # страна производства: Китай допустим только в связке с охраной товарного знака
 ASSISTANT_COUNTRY = r"Кита\w*|\bChina\b|\bChinese\b|\bКНР\b"
 ASSISTANT_COUNTRY_OK = r"охран|protect|Мадрид|Madrid|товарн\w+ знак|trademark"
+# ИИ выбирает готовый ответ из кандидатов и ошибается; ответ с голым «Да»/«Нет» в начале, выданный на чужой
+# вопрос, читается как обещание («аренда на съёмку?» → «Да: мы предоставляем визуализации…», выборка 28.10.2026)
+ASSISTANT_BARE_YESNO = r"^\s*(?:Да|Нет|Не все|Частично(?: да)?|Yes|No|Not all(?: of them)?|Partly(?:, yes)?)\s*[,.:;!—–-]"
 
 
 def assistant_pack(F: dict) -> tuple[list[str], list[str]]:
@@ -600,6 +603,9 @@ def assistant_pack(F: dict) -> tuple[list[str], list[str]]:
             bad.append(f"РАСХОДИТСЯ: {ASSISTANT_PACK} — {eid} — focus.path должен начинаться с «/» — найдено «{focus.get('path')}»")
         for lang, text in (e.get("a") or {}).items():
             where = f"{ASSISTANT_PACK} — {eid}/{lang}"
+            m = re.match(ASSISTANT_BARE_YESNO, text)
+            if m:
+                bad.append(f"РАСХОДИТСЯ: {where} — ответ начинается с голого да/нет — ожидалось «утверждение, понятное без вопроса» — найдено «{m.group(0).strip()}»")
             for rx, why in ASSISTANT_FORBIDDEN:
                 m = re.search(rx, text, re.IGNORECASE)
                 if m:

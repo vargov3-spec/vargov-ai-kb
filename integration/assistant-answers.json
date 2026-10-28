@@ -1,9 +1,9 @@
 {
  "meta": {
-  "version": "2026-10-27.2",
-  "checksum": "71891f8abe56b787",
+  "version": "2026-10-28.1",
+  "checksum": "bd1f8a742d9c9dc2",
   "count": 108,
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
    "catalog",
@@ -203,13 +203,13 @@
     ]
    },
    "a": {
-    "ru": "Да. Товарный знак VARGOV зарегистрирован в России, свидетельство № 896936 (до 29.04.2032). По международной регистрации № 1 795 801 (Мадридская система) он охраняется в Китае до 20.05.2034. Отдельно зарегистрирован логотип VARGOV® DESIGN — свидетельство № 1270653. Охрана в других странах в наших материалах не указана — это уточняет менеджер.",
-    "en": "Yes. The VARGOV trademark is registered in Russia, registration No. 896936 (to 29 April 2032). Under international registration No. 1 795 801 (Madrid System) it is protected in China until 20 May 2034. The VARGOV® DESIGN logo is registered separately, No. 1270653. Protection in other countries is not stated in our materials — the manager can clarify."
+    "ru": "Товарный знак VARGOV зарегистрирован в России, свидетельство № 896936 (до 29.04.2032). По международной регистрации № 1 795 801 (Мадридская система) он охраняется в Китае до 20.05.2034. Отдельно зарегистрирован логотип VARGOV® DESIGN — свидетельство № 1270653. Охрана в других странах в наших материалах не указана — это уточняет менеджер.",
+    "en": "The VARGOV trademark is registered in Russia, registration No. 896936 (to 29 April 2032). Under international registration No. 1 795 801 (Madrid System) it is protected in China until 20 May 2034. The VARGOV® DESIGN logo is registered separately, No. 1270653. Protection in other countries is not stated in our materials — the manager can clarify."
    },
    "sources": [
     "/warranty"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -231,15 +231,15 @@
     ]
    },
    "a": {
-    "ru": "Да: мы предоставляем визуализации и данные для встраивания композиции в проект и презентацию клиенту — попросите их у менеджера (кнопки Telegram, WhatsApp, почта). PDF-каталог тоже сделан для презентаций клиенту. Пресс-фото и логотип для публикаций о бренде — в пресс-ките на vargov.ru/press, с подписью «© Vargov®Design».",
-    "en": "Yes: we provide visualisations and data for placing the composition in your project and your presentation to the client — ask the manager for them (Telegram, WhatsApp or e-mail buttons). The PDF catalogue is also made for client presentations. Press photos and the logo for publications about the brand are in the press kit at vargov.ru/en/press, credited “© Vargov®Design”."
+    "ru": "Мы предоставляем визуализации и данные для встраивания композиции в проект и презентацию клиенту — попросите их у менеджера (кнопки Telegram, WhatsApp, почта). PDF-каталог тоже сделан для презентаций клиенту. Пресс-фото и логотип для публикаций о бренде — в пресс-ките на vargov.ru/press, с подписью «© Vargov®Design».",
+    "en": "We provide visualisations and data for placing the composition in your project and your presentation to the client — ask the manager for them (Telegram, WhatsApp or e-mail buttons). The PDF catalogue is also made for client presentations. Press photos and the logo for publications about the brand are in the press kit at vargov.ru/en/press, credited “© Vargov®Design”."
    },
    "sources": [
     "/architects",
     "/catalog",
     "/press"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/src/app/architects/page.tsx:39 («для встраивания… в проект и презентацию клиенту»), web/src/app/catalog/page.tsx:45 (PDF-каталог для презентаций клиенту), web/src/app/press/page.tsx:121, 220-221"
   },
   {
@@ -287,22 +287,24 @@
     "ru": [
      "Дадите ли вместе с покупкой сертификат или другой документ, подтверждающий подлинность?",
      "Есть ли сертификат подлинности?",
-     "Будет ли подпись автора на документе?"
+     "Будет ли подпись автора на документе?",
+     "Может ли автор подписать документ — это подарок?"
     ],
     "en": [
      "Do you provide a certificate or document of authenticity with the purchase?",
      "Is there a certificate of authenticity?",
-     "Will the document carry the author's signature?"
+     "Will the document carry the author's signature?",
+     "Can the designer sign a certificate? It is a gift."
     ]
    },
    "a": {
-    "ru": "Да, по желанию покупателя мы готовим сертификат подлинности с живой подписью Антона Варгова — достаточно сообщить об этом при оформлении заказа. Кроме того, подлинность оригинала подтверждают фирменная упаковка и приветственный лист со сведениями о товарном знаке. В каком виде и для каких заказов выдаётся сертификат, уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
-    "en": "Yes, at the buyer's request we prepare a certificate of authenticity signed in ink by Anton Vargov — just mention it when placing the order. The authenticity of an original is also confirmed by the branded packaging and the welcome sheet with trademark details. The manager will clarify in what form and for which orders the certificate is issued — Telegram, WhatsApp and e-mail buttons."
+    "ru": "По желанию покупателя мы готовим сертификат подлинности с живой подписью Антона Варгова — достаточно сообщить об этом при оформлении заказа. Кроме того, подлинность оригинала подтверждают фирменная упаковка и приветственный лист со сведениями о товарном знаке. В каком виде и для каких заказов выдаётся сертификат, уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "At the buyer's request we prepare a certificate of authenticity signed in ink by Anton Vargov — just mention it when placing the order. The authenticity of an original is also confirmed by the branded packaging and the welcome sheet with trademark details. The manager will clarify in what form and for which orders the certificate is issued — Telegram, WhatsApp and e-mail buttons."
    },
    "sources": [
     "/warranty"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -356,13 +358,13 @@
     ]
    },
    "a": {
-    "ru": "Не все, поэтому мы и говорим «26 достижений на международных премиях», а не «26 побед». Среди них есть номинация — Awwwards 2026, за 3D-конфигуратор (это номинация, не победа), и работа в жюри — Антон Варгов, член Высокого жюри ADD Awards 2024. Остальные — победы, призовые места и отметки жюри; официальный уровень каждой записи указан на vargov.ru/awards.",
-    "en": "Not all of them, which is why we say “26 awards from international juries” rather than “26 wins”. They include a nomination — Awwwards 2026, for the 3D configurator (a nomination, not a win) — and jury service: Anton Vargov was a High Jury member of ADD Awards 2024. The rest are wins, placings and jury selections; the official level of every entry is shown on vargov.ru/en/awards."
+    "ru": "Из 26 не все — победы, поэтому мы и говорим «26 достижений на международных премиях», а не «26 побед». Среди них есть номинация — Awwwards 2026, за 3D-конфигуратор (это номинация, не победа), и работа в жюри — Антон Варгов, член Высокого жюри ADD Awards 2024. Остальные — победы, призовые места и отметки жюри; официальный уровень каждой записи указан на vargov.ru/awards.",
+    "en": "The 26 are not all wins, which is why we say “26 awards from international juries” rather than “26 wins”. They include a nomination — Awwwards 2026, for the 3D configurator (a nomination, not a win) — and jury service: Anton Vargov was a High Jury member of ADD Awards 2024. The rest are wins, placings and jury selections; the official level of every entry is shown on vargov.ru/en/awards."
    },
    "sources": [
     "/awards"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -701,14 +703,14 @@
     ]
    },
    "a": {
-    "ru": "Да, это основа нашего подхода: любая композиция делается под заказ. Масштаб, длина подвеса и цвет кабеля рассчитываются под конкретное пространство, цвет элементов и покрытие фурнитуры подбираются под интерьер, а для каждой композиции описано, что в ней настраивается индивидуально, например число элементов. Точные размеры и состав подтверждаем по вашей заявке: назовите менеджеру артикул и пожелания (кнопки Telegram, WhatsApp, почта) или соберите вариант в конфигураторе, если композиция там считается: vargov.ru/configurator.",
-    "en": "Yes, that is the core of our approach: every composition is made to order. The scale, drop length and cable colour are worked out for the specific space, the colour of the elements and the finish of the hardware are chosen for the interior, and for each composition we describe what is customised — for example the number of elements. We confirm exact sizes and make-up from your request: give the manager the LC code and your wishes (Telegram, WhatsApp or e-mail buttons), or build a variant in the configurator if the composition is calculated there: vargov.ru/en/configurator."
+    "ru": "Любая композиция делается под заказ — это основа нашего подхода. Масштаб, длина подвеса и цвет кабеля рассчитываются под конкретное пространство, цвет элементов и покрытие фурнитуры подбираются под интерьер, а для каждой композиции описано, что в ней настраивается индивидуально, например число элементов. Точные размеры и состав подтверждаем по вашей заявке: назовите менеджеру артикул и пожелания (кнопки Telegram, WhatsApp, почта) или соберите вариант в конфигураторе, если композиция там считается: vargov.ru/configurator.",
+    "en": "Every composition is made to order — that is the core of our approach. The scale, drop length and cable colour are worked out for the specific space, the colour of the elements and the finish of the hardware are chosen for the interior, and for each composition we describe what is customised — for example the number of elements. We confirm exact sizes and make-up from your request: give the manager the LC code and your wishes (Telegram, WhatsApp or e-mail buttons), or build a variant in the configurator if the composition is calculated there: vargov.ru/en/configurator."
    },
    "sources": [
     "/configurator",
     "/faq"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -722,12 +724,16 @@
     "ru": [
      "Как подобрать размер композиции под помещение — высокий потолок, большой проём, комната 25 м²? Хватит ли света?",
      "Какого размера люстра нужна в мою комнату?",
-     "Хватит ли света от одной композиции?"
+     "Хватит ли света от одной композиции?",
+     "Делаете ли вы светотехнический расчёт освещённости?",
+     "Хватит ли её одной как единственного света в комнате?"
     ],
     "en": [
      "How do I choose the size of a composition for a room — a high ceiling, a large opening, a 25 m² room? Will the light be enough?",
      "What size of chandelier do I need for my room?",
-     "Will one composition give enough light?"
+     "Will one composition give enough light?",
+     "Can you do a lighting calculation in DIALux or Relux?",
+     "Will it be enough as the only light in a room?"
     ]
    },
    "a": {
@@ -737,7 +743,7 @@
    "sources": [
     "/configurator"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -811,22 +817,24 @@
     "ru": [
      "Можно ли покрасить элементы в любой цвет RAL, в том числе корпоративный, и смешать несколько цветов в одной композиции? Сколько цветов допускается?",
      "Делаете ли вы окраску в цвет RAL?",
-     "Можно ли сделать композицию в корпоративных цветах?"
+     "Можно ли сделать композицию в корпоративных цветах?",
+     "Можно ли сделать в фирменных цветах заказчика?"
     ],
     "en": [
      "Can the elements be painted in any RAL colour, including a corporate one, and can several colours be mixed in one composition? How many colours are allowed?",
      "Do you paint in RAL colours?",
-     "Can a composition be made in our corporate colours?"
+     "Can a composition be made in our corporate colours?",
+     "Can you match our brand colours?"
     ]
    },
    "a": {
-    "ru": "Да, цвет элементов подбирается под проект по каталогу RAL Classic, и в одной композиции можно смешать несколько цветов: в конфигураторе у каждого своя доля и, где элементы бывают прозрачными, своя прозрачность. Есть и гальваника — прозрачные и зеркальные покрытия; кодов у неё нет, в техническом задании на производство её пишут названием. Если корпоративный цвет есть в каталоге RAL Classic, назовите его код; предельное число цветов в одной композиции и цвет вне этого каталога подтвердит менеджер (кнопки Telegram, WhatsApp, почта). Подробности: vargov.ru/specifications/colours.",
-    "en": "Yes, the colour of the elements is chosen for your project from the RAL Classic catalogue, and several colours can be mixed in one composition: in the configurator each has its own share and, where the elements can be transparent, its own transparency. There is also electroplating — transparent and mirror finishes; it has no codes, so in the production brief it is written by name. If your corporate colour is in the RAL Classic catalogue, give its code; the maximum number of colours in one composition and any colour outside that catalogue the manager will confirm (Telegram, WhatsApp or e-mail buttons). Details: vargov.ru/en/specifications/colours."
+    "ru": "Цвет элементов подбирается под проект по каталогу RAL Classic, и в одной композиции можно смешать несколько цветов: в конфигураторе у каждого своя доля и, где элементы бывают прозрачными, своя прозрачность. Есть и гальваника — прозрачные и зеркальные покрытия; кодов у неё нет, в техническом задании на производство её пишут названием. Если корпоративный цвет есть в каталоге RAL Classic, назовите его код; предельное число цветов в одной композиции и цвет вне этого каталога подтвердит менеджер (кнопки Telegram, WhatsApp, почта). Подробности: vargov.ru/specifications/colours.",
+    "en": "The colour of the elements is chosen for your project from the RAL Classic catalogue, and several colours can be mixed in one composition: in the configurator each has its own share and, where the elements can be transparent, its own transparency. There is also electroplating — transparent and mirror finishes; it has no codes, so in the production brief it is written by name. If your corporate colour is in the RAL Classic catalogue, give its code; the maximum number of colours in one composition and any colour outside that catalogue the manager will confirm (Telegram, WhatsApp or e-mail buttons). Details: vargov.ru/en/specifications/colours."
    },
    "sources": [
     "/specifications/colours"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1025,11 +1033,11 @@
     ]
    },
    "a": {
-    "ru": "Да. Конфигуратор показывает собранную композицию в 3D, а кнопкой «Поделиться» вы получаете ссылку: клиент, открыв её, увидит ту же раскладку. С телефона композицию можно примерить в своём помещении в AR; на iPhone и iPad модель крепится к настоящему потолку, а на Android и компьютере AR берёт ту высоту потолка, что задана для выгрузки. Высота сохраняется в ссылке на конфигурацию.",
-    "en": "Yes. The configurator shows the composition in 3D, and the “Share” button gives you a link: your client opens it and sees the same layout. From a phone you can try the composition in your own room in AR; on iPhone and iPad the model attaches to the real ceiling, while on Android and desktop AR uses the ceiling height set for the export. That height is saved in the configuration link."
+    "ru": "Конфигуратор показывает собранную композицию в 3D, а кнопкой «Поделиться» вы получаете ссылку: клиент, открыв её, увидит ту же раскладку. С телефона композицию можно примерить в своём помещении в AR; на iPhone и iPad модель крепится к настоящему потолку, а на Android и компьютере AR берёт ту высоту потолка, что задана для выгрузки. Высота сохраняется в ссылке на конфигурацию.",
+    "en": "The configurator shows the composition in 3D, and the “Share” button gives you a link: your client opens it and sees the same layout. From a phone you can try the composition in your own room in AR; on iPhone and iPad the model attaches to the real ceiling, while on Android and desktop AR uses the ceiling height set for the export. That height is saved in the configuration link."
    },
    "sources": [],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1341,14 +1349,14 @@
     ]
    },
    "a": {
-    "ru": "Да: в конфигураторе, в шаге «3D схема композиции», в ящике «Документы», сразу под кнопкой «Скачать IFC (BIM)» есть кнопка «Скачать FBX (3ds Max)». Композиция приходит в сборе отдельными объектами, в миллиметрах — масштаб объявлен внутри файла, пересчитывать ничего не нужно; начало координат — потолок. Переносятся цвет и прозрачность, нити подвеса идут телами, потолочные крепления — отдельными объектами, есть плоскость потолка. Текстур и UV нет, и свойств BIM в FBX нет: нагрузки, масса, мощность и артикулы остаются в IFC4. Выгрузка есть у 360 композиций из 605, которые конфигуратор считает полностью; у лент своя кнопка в панели ленты. Подробнее: vargov.ru/configurator/fbx.",
-    "en": "Yes: in the configurator, in the step “3D composition scheme”, in the “Documents” box, right under the “Download IFC (BIM)” button, there is a “Download FBX (3ds Max)” button. The composition arrives assembled, as separate objects, in millimetres — the scale is declared inside the file, so nothing needs converting; the origin is the ceiling. Colour and transparency carry over, the suspension strands come as solid bodies, the ceiling fixings as separate objects, and a ceiling plane is included. There are no textures or UVs, and no BIM properties in the FBX: loads, mass, power and article codes stay in IFC4. The export is available for 360 of the 605 compositions, the ones the configurator calculates in full; ribbons have their own button in the ribbon panel. More at vargov.ru/en/configurator/fbx."
+    "ru": "В конфигураторе, в шаге «3D схема композиции», в ящике «Документы», сразу под кнопкой «Скачать IFC (BIM)» есть кнопка «Скачать FBX (3ds Max)». Композиция приходит в сборе отдельными объектами, в миллиметрах — масштаб объявлен внутри файла, пересчитывать ничего не нужно; начало координат — потолок. Переносятся цвет и прозрачность, нити подвеса идут телами, потолочные крепления — отдельными объектами, есть плоскость потолка. Текстур и UV нет, и свойств BIM в FBX нет: нагрузки, масса, мощность и артикулы остаются в IFC4. Выгрузка есть у 360 композиций из 605, которые конфигуратор считает полностью; у лент своя кнопка в панели ленты. Подробнее: vargov.ru/configurator/fbx.",
+    "en": "In the configurator, in the step “3D composition scheme”, in the “Documents” box, right under the “Download IFC (BIM)” button, there is a “Download FBX (3ds Max)” button. The composition arrives assembled, as separate objects, in millimetres — the scale is declared inside the file, so nothing needs converting; the origin is the ceiling. Colour and transparency carry over, the suspension strands come as solid bodies, the ceiling fixings as separate objects, and a ceiling plane is included. There are no textures or UVs, and no BIM properties in the FBX: loads, mass, power and article codes stay in IFC4. The export is available for 360 of the 605 compositions, the ones the configurator calculates in full; ribbons have their own button in the ribbon panel. More at vargov.ru/en/configurator/fbx."
    },
    "sources": [
     "/configurator/fbx",
     "/configurator/ifc4"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1367,7 +1375,8 @@
      "Какие файлы дают сразу после сохранения ТЗ?",
      "Где заполнить ТЗ?",
      "Где ТЗ на производство?",
-     "Как заполнить техническое задание?"
+     "Как заполнить техническое задание?",
+     "Есть ли онлайн-форма, чтобы передать техзадание?"
     ],
     "en": [
      "What is the production brief on your site — do I need to register, is there a price in it, and what do I get immediately?",
@@ -1375,7 +1384,8 @@
      "Do I need to sign in to fill in the spec?",
      "Which files are available right after I save the spec?",
      "Where do I fill in the production brief?",
-     "Where is the brief form?"
+     "Where is the brief form?",
+     "Is there an online form to send you a brief?"
     ]
    },
    "a": {
@@ -1385,7 +1395,7 @@
    "sources": [
     "/specifications"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026",
    "focus": {
     "path": "/specifications",
@@ -1504,11 +1514,11 @@
     ]
    },
    "a": {
-    "ru": "Частично да. Сайт и интерфейс конфигуратора работают на восьми языках; PDF-инструкция по монтажу есть на всех восьми, инструкция по подключению — на русском и английском, PDF ТЗ — на русском и английском. В файле IFC4 при нерусском интерфейсе имена на английском, а пояснения к свойствам остаются русскими. На каких языках выходят PDF-спецификация, тендерный лист и документы соответствия, в наших материалах не указано — это уточните у менеджера (Telegram, WhatsApp, e-mail).",
-    "en": "Partly, yes. The site and the configurator interface work in eight languages; the PDF installation guide comes in all eight, the wiring guide in Russian and English, and the spec PDF in Russian and English. In the IFC4 file, with a non-Russian interface the names are in English, while the property descriptions stay in Russian. Which languages the PDF specification, the tender sheet and the conformity documents come in is not stated in our materials — please ask the manager (Telegram, WhatsApp, e-mail)."
+    "ru": "Документация на других языках есть частично. Сайт и интерфейс конфигуратора работают на восьми языках; PDF-инструкция по монтажу есть на всех восьми, инструкция по подключению — на русском и английском, PDF ТЗ — на русском и английском. В файле IFC4 при нерусском интерфейсе имена на английском, а пояснения к свойствам остаются русскими. На каких языках выходят PDF-спецификация, тендерный лист и документы соответствия, в наших материалах не указано — это уточните у менеджера (Telegram, WhatsApp, e-mail).",
+    "en": "Documentation in other languages is partly available. The site and the configurator interface work in eight languages; the PDF installation guide comes in all eight, the wiring guide in Russian and English, and the spec PDF in Russian and English. In the IFC4 file, with a non-Russian interface the names are in English, while the property descriptions stay in Russian. Which languages the PDF specification, the tender sheet and the conformity documents come in is not stated in our materials — please ask the manager (Telegram, WhatsApp, e-mail)."
    },
    "sources": [],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1563,13 +1573,13 @@
     ]
    },
    "a": {
-    "ru": "Да, продукция сертифицирована в ЕАЭС: два серийных сертификата соответствия по ТР ТС 004/2011 охватывают 310 артикулов LC, из них 53 также по ТР ТС 020/2011 (электромагнитная совместимость). Есть и две декларации ТР ЕАЭС 037/2016 об ограничении опасных веществ на те же артикулы, продукция маркируется знаком EAC. Документы действуют до 2031 года. Полные тексты, приложения с перечнем артикулов и протоколы испытаний высылаем по запросу — для тендерной и рабочей документации, управляющей компании или проектировщика. Подробнее: vargov.ru/certification.",
-    "en": "Yes, our products are certified in the EAEU: two serial certificates of conformity to TR CU 004/2011 cover 310 LC articles, 53 of them also to TR CU 020/2011 (electromagnetic compatibility). There are also two declarations to TR EAEU 037/2016 (restriction of hazardous substances) for the same articles, and the products carry the EAC mark. The documents are valid until 2031. We send the full texts, the appendices listing the articles and the test reports on request, for tender and working documentation, a management company or a designer. More: vargov.ru/en/certification."
+    "ru": "Продукция сертифицирована в ЕАЭС: два серийных сертификата соответствия по ТР ТС 004/2011 охватывают 310 артикулов LC, из них 53 также по ТР ТС 020/2011 (электромагнитная совместимость). Есть и две декларации ТР ЕАЭС 037/2016 об ограничении опасных веществ на те же артикулы, продукция маркируется знаком EAC. Документы действуют до 2031 года. Полные тексты, приложения с перечнем артикулов и протоколы испытаний высылаем по запросу — для тендерной и рабочей документации, управляющей компании или проектировщика. Подробнее: vargov.ru/certification.",
+    "en": "Our products are certified in the EAEU: two serial certificates of conformity to TR CU 004/2011 cover 310 LC articles, 53 of them also to TR CU 020/2011 (electromagnetic compatibility). There are also two declarations to TR EAEU 037/2016 (restriction of hazardous substances) for the same articles, and the products carry the EAC mark. The documents are valid until 2031. We send the full texts, the appendices listing the articles and the test reports on request, for tender and working documentation, a management company or a designer. More: vargov.ru/en/certification."
    },
    "sources": [
     "/certification"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1593,13 +1603,13 @@
     ]
    },
    "a": {
-    "ru": "Не все: сертификаты и декларации охватывают 310 артикулов из 605 в каталоге. Перечень артикулов указан в приложениях к документам, мы высылаем его по запросу. Чтобы проверить свой артикул, назовите его менеджеру — кнопки Telegram, WhatsApp или e-mail под ответом.",
-    "en": "Not all of them: the certificates and declarations cover 310 of the 605 articles in the catalogue. The list of articles is in the appendices to the documents, and we send it on request. To check your article, give its code to the manager with the buttons below (Telegram, WhatsApp or e-mail)."
+    "ru": "Сертификаты и декларации охватывают не все артикулы: 310 из 605 в каталоге. Перечень артикулов указан в приложениях к документам, мы высылаем его по запросу. Чтобы проверить свой артикул, назовите его менеджеру — кнопки Telegram, WhatsApp или e-mail под ответом.",
+    "en": "The certificates and declarations do not cover every article: 310 of the 605 in the catalogue. The list of articles is in the appendices to the documents, and we send it on request. To check your article, give its code to the manager with the buttons below (Telegram, WhatsApp or e-mail)."
    },
    "sources": [
     "/certification"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1681,14 +1691,14 @@
     ]
    },
    "a": {
-    "ru": "Да. Полный пакет — сертификаты, приложения с перечнем артикулов, декларации и протоколы испытаний — высылаем по запросу на почту или в мессенджер, в том виде, в каком его принимают в тендерной и исполнительной документации. На сайте сканы бланков не публикуем, там только номера для проверки в реестре. Напишите менеджеру (Telegram, WhatsApp или info@vargov.ru) и укажите артикулы или объект.",
-    "en": "Yes. We send the full set — certificates, appendices listing the articles, declarations and test reports — on request by e-mail or messenger, in the form accepted in tender and as-built documentation. We do not publish scans of the forms on the site, only the numbers for checking in the register. Write to the manager (Telegram, WhatsApp or info@vargov.ru) and name the articles or the project."
+    "ru": "Полный пакет — сертификаты, приложения с перечнем артикулов, декларации и протоколы испытаний — высылаем по запросу на почту или в мессенджер, в том виде, в каком его принимают в тендерной и исполнительной документации. На сайте сканы бланков не публикуем, там только номера для проверки в реестре. Напишите менеджеру (Telegram, WhatsApp или info@vargov.ru) и укажите артикулы или объект.",
+    "en": "We send the full set — certificates, appendices listing the articles, declarations and test reports — on request by e-mail or messenger, in the form accepted in tender and as-built documentation. We do not publish scans of the forms on the site, only the numbers for checking in the register. Write to the manager (Telegram, WhatsApp or info@vargov.ru) and name the articles or the project."
    },
    "sources": [
     "/certification",
     "/faq"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -1860,23 +1870,25 @@
      "Можно ли диммировать свет и управлять им (DALI, 0–10 В, Zigbee, с телефона), подключить к умному дому?",
      "Можно ли димировать светильник?",
      "Поддерживается DALI?",
-     "Подключается ли к умному дому?"
+     "Подключается ли к умному дому?",
+     "Можно ли приглушать свет вечером?"
     ],
     "en": [
      "Can the light be dimmed or controlled (DALI, 0–10 V, Zigbee, from a phone) and connected to a smart home?",
      "Can the luminaire be dimmed?",
      "Is DALI supported?",
-     "Can it be connected to a smart home system?"
+     "Can it be connected to a smart home system?",
+     "Can I turn the light down in the evening?"
     ]
    },
    "a": {
-    "ru": "Да, для светящихся элементов диммирование возможно: в техническом задании на производство его выбирают из вариантов — DALI, 0–10 В, Triac или без диммирования, а на странице для застройщиков vargov.ru/developers указана совместимость с DALI и сценарным управлением зданием. Zigbee, управление с телефона и подключение к умному дому в открытых материалах не описаны, поэтому ничего не обещаем. Какой вариант подойдёт для вашей композиции и её питания, уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Yes, for light-emitting elements dimming is possible: in the production brief it is chosen from DALI, 0–10 V, Triac or none, and the page for developers at vargov.ru/en/developers states compatibility with DALI and building scenario control. Zigbee, phone control and smart-home connection are not described in our public materials, so we promise nothing. Which option suits your composition and its power supply is confirmed by the manager — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Для светящихся элементов диммирование возможно: в техническом задании на производство его выбирают из вариантов — DALI, 0–10 В, Triac или без диммирования, а на странице для застройщиков vargov.ru/developers указана совместимость с DALI и сценарным управлением зданием. Zigbee, управление с телефона и подключение к умному дому в открытых материалах не описаны, поэтому ничего не обещаем. Какой вариант подойдёт для вашей композиции и её питания, уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For light-emitting elements dimming is possible: in the production brief it is chosen from DALI, 0–10 V, Triac or none, and the page for developers at vargov.ru/en/developers states compatibility with DALI and building scenario control. Zigbee, phone control and smart-home connection are not described in our public materials, so we promise nothing. Which option suits your composition and its power supply is confirmed by the manager — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/catalog/lc0586"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -2220,13 +2232,13 @@
     ]
    },
    "a": {
-    "ru": "Да, наши композиции интегрируются в любые виды натяжных потолков. Для сложных подвесных композиций важны точная подготовка закладных, расчёт нагрузок и правильная разводка, поэтому монтаж на натяжной потолок выполняют партнёры Vargov®Design — от классических потолков до многоуровневых. Ролик о таком монтаже есть на странице vargov.ru/installation. Технические подробности крепления для вашего потолка уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Yes, our compositions integrate into every kind of stretch ceiling. For complex suspended compositions precise backing, load calculations and correct wiring matter, so installation onto stretch ceilings is carried out by Vargov®Design partners — from classic ceilings to multi-level structures. There is a video of such an installation on vargov.ru/en/installation. The manager will clarify the technical details of fixing for your ceiling — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Наши композиции интегрируются в любые виды натяжных потолков. Для сложных подвесных композиций важны точная подготовка закладных, расчёт нагрузок и правильная разводка, поэтому монтаж на натяжной потолок выполняют партнёры Vargov®Design — от классических потолков до многоуровневых. Ролик о таком монтаже есть на странице vargov.ru/installation. Технические подробности крепления для вашего потолка уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Our compositions integrate into every kind of stretch ceiling. For complex suspended compositions precise backing, load calculations and correct wiring matter, so installation onto stretch ceilings is carried out by Vargov®Design partners — from classic ceilings to multi-level structures. There is a video of such an installation on vargov.ru/en/installation. The manager will clarify the technical details of fixing for your ceiling — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/installation"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -2290,7 +2302,9 @@
      "Can our own crew or electrician install it, or must it be the brand's installers — and what happens to the warranty?",
      "Can our own team install it?",
      "Are your installers mandatory?",
-     "Is the warranty kept if we install it ourselves?"
+     "Is the warranty kept if we install it ourselves?",
+     "Can my own handyman or electrician hang it?",
+     "Do I need your installers, or can a local contractor do it?"
     ]
    },
    "a": {
@@ -2300,7 +2314,7 @@
    "sources": [
     "/installation"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -2642,14 +2656,14 @@
     ]
    },
    "a": {
-    "ru": "Да, можно просто написать нам напрямую — мы принимаем обращения и от частных клиентов, и от дизайнеров, и доставляем по всему миру. Назовите артикул LC из каталога или опишите задачу: через форму на сайте, в WhatsApp, Telegram (@AntonVargov) или на info@vargov.ru — спецификацию и коммерческое предложение готовим в течение 24 часов. Если хотите примерить композицию к своему интерьеру, соберите вариант в конфигураторе (для композиций, которые открываются с полным расчётом) и отправьте нам. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, монтаж выполняют официальные монтажники бренда.",
-    "en": "Yes, you can simply write to us directly — we take enquiries from private clients as well as designers, and we deliver worldwide. Give us the LC code from the catalogue or describe the task: via the website form, WhatsApp, Telegram (@AntonVargov) or info@vargov.ru — we prepare the specification and quotation within 24 hours. If you want to try a composition in your own interior, build a variant in the configurator (for compositions that open with a full calculation) and send it to us. Compositions ship in export packaging with timber crating, and installation is carried out by the brand's official installers."
+    "ru": "Можно просто написать нам напрямую — мы принимаем обращения и от частных клиентов, и от дизайнеров, и доставляем по всему миру. Назовите артикул LC из каталога или опишите задачу: через форму на сайте, в WhatsApp, Telegram (@AntonVargov) или на info@vargov.ru — спецификацию и коммерческое предложение готовим в течение 24 часов. Если хотите примерить композицию к своему интерьеру, соберите вариант в конфигураторе (для композиций, которые открываются с полным расчётом) и отправьте нам. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, монтаж выполняют официальные монтажники бренда.",
+    "en": "You can simply write to us directly — we take enquiries from private clients as well as designers, and we deliver worldwide. Give us the LC code from the catalogue or describe the task: via the website form, WhatsApp, Telegram (@AntonVargov) or info@vargov.ru — we prepare the specification and quotation within 24 hours. If you want to try a composition in your own interior, build a variant in the configurator (for compositions that open with a full calculation) and send it to us. Compositions ship in export packaging with timber crating, and installation is carried out by the brand's official installers."
    },
    "sources": [
     "/faq",
     "/contacts"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -2665,13 +2679,16 @@
      "Как проходит заказ по шагам — от заявки до монтажа: договор, предоплата, этапы?",
      "Расскажите, как устроен заказ от заявки до установки.",
      "Есть ли предоплата и договор?",
-     "Какие этапы у заказа?"
+     "Какие этапы у заказа?",
+     "Что происходит после того, как я вам напишу?"
     ],
     "en": [
      "How does an order go step by step, from enquiry to installation: contract, prepayment, stages?",
      "Walk me through an order from enquiry to installation.",
      "Is there a prepayment and a contract?",
-     "What are the stages of an order?"
+     "What are the stages of an order?",
+     "What happens after I contact you?",
+     "First time ordering something custom — what are the steps?"
     ]
    },
    "a": {
@@ -2682,7 +2699,7 @@
     "/faq",
     "/installation"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -2862,12 +2879,14 @@
     "ru": [
      "Есть ли комиссия дизайнеру, скидки, рассрочка или партнёрская программа?",
      "Платите ли вы вознаграждение дизайнерам и архитекторам?",
-     "Есть ли скидки или рассрочка?"
+     "Есть ли скидки или рассрочка?",
+     "Можно ли купить в кредит или оплатить частями?"
     ],
     "en": [
      "Is there a commission for designers, discounts, instalments or a partner programme?",
      "Do you pay a fee to designers and architects?",
-     "Are there discounts or instalment plans?"
+     "Are there discounts or instalment plans?",
+     "Can I pay in instalments or get financing?"
     ]
    },
    "a": {
@@ -2878,7 +2897,7 @@
     "/dealers",
     "/architects"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -3016,14 +3035,14 @@
     ]
    },
    "a": {
-    "ru": "Да, доставляем по всему миру. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, а при необходимости — ещё и в фанерном ящике. Всего семь ступеней защиты: от защитной плёнки на каждом элементе и плотного пенопласта в коробке до обрешётки, нейлоновой мешковины и финального слоя плёнки. Подробнее — на vargov.ru/warranty.",
-    "en": "Yes, we deliver worldwide. Compositions ship in export packaging with timber crating and, where needed, an additional plywood box. There are seven layers of protection in all: from protective film on every element and dense foam inside the box to the crating, nylon sacking and a final layer of heavy film. More detail at vargov.ru/en/warranty."
+    "ru": "Доставляем по всему миру. Композиции отправляем в экспортной упаковке с деревянной обрешёткой, а при необходимости — ещё и в фанерном ящике. Всего семь ступеней защиты: от защитной плёнки на каждом элементе и плотного пенопласта в коробке до обрешётки, нейлоновой мешковины и финального слоя плёнки. Подробнее — на vargov.ru/warranty.",
+    "en": "We deliver worldwide. Compositions ship in export packaging with timber crating and, where needed, an additional plywood box. There are seven layers of protection in all: from protective film on every element and dense foam inside the box to the crating, nylon sacking and a final layer of heavy film. More detail at vargov.ru/en/warranty."
    },
    "sources": [
     "/warranty",
     "/faq"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
@@ -3417,14 +3436,14 @@
     ]
    },
    "a": {
-    "ru": "Да, наши композиции подбираются и для коммерческих пространств: у нас есть подборки для ресторана и бара, банкетного зала, холла отеля, бутика и спа (vargov.ru/for/restaurant), а установки есть в салоне, торговом центре и спа. Для согласований серийные сертификаты и декларации ЕАЭС охватывают 310 артикулов LC (проверьте, входит ли выбранный), полные тексты выдаются по запросу, а конфигуратор для композиций с полным расчётом (360 из 605) выгружает PDF-спецификацию, тендерный лист и модель IFC4. Условия работы с коммерческими заказчиками и другие нужные документы уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
-    "en": "Yes, our compositions are selected for commercial spaces too: we have curated selections for a restaurant and bar, banquet hall, hotel lobby, boutique and spa (vargov.ru/en/for/restaurant), and there are installations in a salon, a shopping centre and a spa. For approvals, the serial EAEU certificates and declarations cover 310 LC articles (please check that your choice is among them), full texts are provided on request, and for compositions with a full calculation (360 of 605) the configurator exports a PDF specification, a tender sheet and an IFC4 model. For terms of working with commercial clients and any other documents you need, please ask the manager — Telegram, WhatsApp and e-mail buttons."
+    "ru": "Наши композиции подбираются и для коммерческих пространств: у нас есть подборки для ресторана и бара, банкетного зала, холла отеля, бутика и спа (vargov.ru/for/restaurant), а установки есть в салоне, торговом центре и спа. Для согласований серийные сертификаты и декларации ЕАЭС охватывают 310 артикулов LC (проверьте, входит ли выбранный), полные тексты выдаются по запросу, а конфигуратор для композиций с полным расчётом (360 из 605) выгружает PDF-спецификацию, тендерный лист и модель IFC4. Условия работы с коммерческими заказчиками и другие нужные документы уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
+    "en": "Our compositions are selected for commercial spaces too: we have curated selections for a restaurant and bar, banquet hall, hotel lobby, boutique and spa (vargov.ru/en/for/restaurant), and there are installations in a salon, a shopping centre and a spa. For approvals, the serial EAEU certificates and declarations cover 310 LC articles (please check that your choice is among them), full texts are provided on request, and for compositions with a full calculation (360 of 605) the configurator exports a PDF specification, a tender sheet and an IFC4 model. For terms of working with commercial clients and any other documents you need, please ask the manager — Telegram, WhatsApp and e-mail buttons."
    },
    "sources": [
     "/for/restaurant",
     "/certification"
    ],
-   "updated": "2026-10-27",
+   "updated": "2026-10-28",
    "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
   },
   {
