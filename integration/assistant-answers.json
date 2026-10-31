@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-10-31.2",
-  "checksum": "382d0f966e8fff7c",
+  "version": "2026-10-31.3",
+  "checksum": "76f2368361371c73",
   "count": 108,
   "updated": "2026-10-31",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -337,15 +337,15 @@
     ]
    },
    "a": {
-    "ru": "Оригинальная композиция Vargov®Design имеет авторский артикул LC и знак «Made in Vargov®»; гарантия — 12 месяцев с момента получения при условии нашего монтажа — распространяется только на оригинальные изделия. Оригинал приходит в фирменной упаковке: на каждом элементе защитная плёнка, в коробке картонный приветственный лист с логотипом и сведениями о товарном знаке, а коробка заклеена фирменной лентой с логотипом. Оригинальная продукция доступна только через Vargov®Design и наших официальных партнёров — список на vargov.ru/official-dealers. Если предложение пришло не от них и не от бренда, напишите нам: мы подтвердим подлинность поставщика.",
-    "en": "A genuine Vargov®Design composition has its own LC article code and the “Made in Vargov®” mark; the warranty — 12 months from receipt, provided the installation is carried out by us — covers original pieces only. An original arrives in branded packaging: protective film on every element, a card welcome sheet with the logo and trademark details inside the box, and the box sealed with branded tape bearing the logo. Original products are available only through Vargov®Design and our official partners — the list is on vargov.ru/en/official-dealers. If an offer comes from neither, write to us and we will confirm whether the supplier is genuine."
+    "ru": "Оригинальная композиция Vargov®Design имеет авторский артикул LC и знак «Made in Vargov®»; гарантия — 12 месяцев с момента получения при условии нашего монтажа под ключ — распространяется только на оригинальные изделия. Оригинал приходит в фирменной упаковке: на каждом элементе защитная плёнка, в коробке картонный приветственный лист с логотипом и сведениями о товарном знаке, а коробка заклеена фирменной лентой с логотипом. Оригинальная продукция доступна только через Vargov®Design и наших официальных партнёров — список на vargov.ru/official-dealers. Если предложение пришло не от них и не от бренда, напишите нам: мы подтвердим подлинность поставщика.",
+    "en": "A genuine Vargov®Design composition has its own LC article code and the “Made in Vargov®” mark; the warranty — 12 months from receipt, provided we carry out the full turnkey installation — covers original pieces only. An original arrives in branded packaging: protective film on every element, a card welcome sheet with the logo and trademark details inside the box, and the box sealed with branded tape bearing the logo. Original products are available only through Vargov®Design and our official partners — the list is on vargov.ru/en/official-dealers. If an offer comes from neither, write to us and we will confirm whether the supplier is genuine."
    },
    "sources": [
     "/official-dealers",
     "/warranty"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 (агенту сайта 14:52 UTC и агенту «присутствие в ИИ» 15:31 UTC «наш монтаж это полный монтаж под ключ, не услуга шеф монтаж»; сверено по журналам); сверка фактов 27.10.2026"
   },
   {
    "id": "Q009",
@@ -2962,14 +2962,14 @@
     ]
    },
    "a": {
-    "ru": "Гарантия — 12 месяцев с момента получения при условии нашего монтажа, поэтому из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми. Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку и помогает избежать ошибок. Как действует гарантия при установке вашей бригадой и есть ли требования к квалификации электрика, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "The warranty is 12 months from receipt, provided the installation is carried out by us, so given the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact. You can also install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation and helps you avoid mistakes. How the warranty applies when your own team installs, and whether there are electrician qualification requirements, please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Гарантия — 12 месяцев с момента получения при условии нашего монтажа, то есть полного монтажа под ключ нашими специалистами; поэтому из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми. Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку и помогает избежать ошибок, но шеф-монтаж — это не монтаж под ключ, и условие гарантии он не заменяет. Есть ли требования к квалификации электрика, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The warranty is 12 months from receipt, provided we carry out the full turnkey installation; so given the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact. You can also install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation and helps you avoid mistakes, but supervised installation is not a turnkey installation and does not meet the warranty condition. Whether there are electrician qualification requirements, please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 (агенту сайта 14:52 UTC и агенту «присутствие в ИИ» 15:31 UTC «наш монтаж это полный монтаж под ключ, не услуга шеф монтаж»; сверено по журналам); сверка фактов 27.10.2026"
   },
   {
    "id": "Q074",
@@ -3047,14 +3047,14 @@
     ]
    },
    "a": {
-    "ru": "Шеф-монтаж — это профессиональное сопровождение монтажа и подключения композиций нашим специалистом: помощь и контроль установки, даже если монтаж выполняет сторонняя бригада. Он подойдёт тем, кто монтирует своими силами или со сторонними специалистами и хочет избежать ошибок и сохранить гарантию. Чтобы заказать, напишите в WhatsApp запрос «Шеф-монтаж» — специалист перезвонит и проконсультирует. При необходимости возможен выезд специалиста на объект.",
-    "en": "Supervised installation (“Шеф-монтаж”) is professional guidance of the installation and wiring of the compositions by our specialist: help and oversight of the installation even when an outside team does the work. It suits those who install themselves or through outside specialists and want to avoid mistakes and keep the warranty. To order, send a WhatsApp message with the request “Supervised installation” — the specialist will call you back and advise. Where required, a specialist can also attend the site."
+    "ru": "Шеф-монтаж — это профессиональное сопровождение монтажа и подключения композиций нашим специалистом: помощь и контроль установки, даже если монтаж выполняет сторонняя бригада. Он подойдёт тем, кто монтирует своими силами или со сторонними специалистами и хочет избежать ошибок. Гарантия 12 месяцев действует при нашем монтаже под ключ, а шеф-монтаж — отдельная услуга и монтажом под ключ не считается. Чтобы заказать, напишите в WhatsApp запрос «Шеф-монтаж» — специалист перезвонит и проконсультирует. При необходимости возможен выезд специалиста на объект.",
+    "en": "Supervised installation (“Шеф-монтаж”) is professional guidance of the installation and wiring of the compositions by our specialist: help and oversight of the installation even when an outside team does the work. It suits those who install themselves or through outside specialists and want to avoid mistakes. The 12-month warranty applies when we carry out the full turnkey installation; supervised installation is a separate service and does not count as a turnkey installation. To order, send a WhatsApp message with the request “Supervised installation” — the specialist will call you back and advise. Where required, a specialist can also attend the site."
    },
    "sources": [
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 (агенту сайта 14:52 UTC и агенту «присутствие в ИИ» 15:31 UTC «наш монтаж это полный монтаж под ключ, не услуга шеф монтаж»; сверено по журналам); сверка фактов 27.10.2026"
   },
   {
    "id": "Q076",
@@ -3226,14 +3226,14 @@
     ]
    },
    "a": {
-    "ru": "Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа. Кроме того, на сайте слово «гарантия» означает подлинность: она распространяется только на оригинальные изделия Vargov®Design, защищённые многоступенчатой упаковкой и зарегистрированным товарным знаком. Что именно покрывает гарантия и каков срок службы, в открытых материалах не опубликовано, поэтому этого мы не обещаем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "The product warranty is 12 months from receipt, provided the installation is carried out by us. In addition, on our site the word “warranty” means authenticity: it applies only to original Vargov®Design products, protected by multi-stage packaging and a registered trademark. What exactly the warranty covers and the service life are not published in our public materials, so we do not promise them. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа под ключ (шеф-монтаж таким монтажом не считается). Кроме того, на сайте слово «гарантия» означает подлинность: она распространяется только на оригинальные изделия Vargov®Design, защищённые многоступенчатой упаковкой и зарегистрированным товарным знаком. Что именно покрывает гарантия и каков срок службы, в открытых материалах не опубликовано, поэтому этого мы не обещаем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The product warranty is 12 months from receipt, provided we carry out the full turnkey installation (supervised installation does not count as such). In addition, on our site the word “warranty” means authenticity: it applies only to original Vargov®Design products, protected by multi-stage packaging and a registered trademark. What exactly the warranty covers and the service life are not published in our public materials, so we do not promise them. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/warranty"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 (агенту сайта 14:52 UTC и агенту «присутствие в ИИ» 15:31 UTC «наш монтаж это полный монтаж под ключ, не услуга шеф монтаж»; сверено по журналам); сверка фактов 27.10.2026"
   },
   {
    "id": "Q080",
