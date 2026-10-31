@@ -338,6 +338,10 @@ def anchors(F: dict) -> list[tuple[str, str, str, tuple]]:
     return A
 
 
+# конкурсное название LC0543-2 владелец оставил вне публикации; собрано из частей, чтобы сторож сам его не публиковал
+CONTEST_NAME = " ".join(("Crystal", "Breakthrough"))
+
+
 def forbidden(F: dict) -> list[tuple[str, str, str]]:
     """(файл, запрещённая фраза, почему). Прежние неверные формулировки не должны вернуться."""
     fix, fr = F["fbx_fixings"]["forbidden"], F["frame_hang"]["forbidden"]
@@ -353,7 +357,8 @@ def forbidden(F: dict) -> list[tuple[str, str, str]]:
                 (f, "nothing to fix to the ceiling", "the frame is suspended from the ceiling")]
     out += [("zh/llms.txt", fix["zh"], "FBX：每孔一个固定件"),
             ("zh/llms.txt", fr["zh"], "骨架吊于吊顶"),
-            ("zh/llms.txt", "Crystal Breakthrough", "конкурсное название владелец оставил вне публикации (awards-verified.md, строка 25 таблицы)"),
+            ("zh/llms.txt", CONTEST_NAME, "конкурсное название владелец оставил вне публикации (awards-verified.md, строка 25 таблицы)"),
+            ("knowledge/awards-verified.md", CONTEST_NAME, "конкурсное название владелец оставил вне публикации (27.10.2026)"),
             ("zh/llms.txt", "价格与生产", "ящик «Документы» — в шаге «3D схема композиции» (коммит d3688d9)"),
             ("datasets/hf-README.md", "Price & production", "the Documents drawer is in the 3D composition scheme step (commit d3688d9)")]
     for f in ("llms.txt", "llms-full.txt", "knowledge/brand.md"):
@@ -554,7 +559,7 @@ ASSISTANT_CATEGORIES = {"catalog", "choice", "custom", "ordering", "price", "mat
 ASSISTANT_FORBIDDEN = [
     (r"₽|\bруб(?:\.|л|ей)|\$\s?\d|\d\s?\$|\bUSD\b|€|\bEUR\b", "цены не называем (шеф-монтаж — «по согласованию»)"),
     (r"клемм|\bterminal block", "клеммы не упоминаем"),
-    (r"Crystal Breakthrough", "конкурсное название не публикуем (владелец 27.10.2026)"),
+    (r"Crystal\s+Breakthrough", "конкурсное название не публикуем (владелец 27.10.2026)"),
     (r"\b2[0-9]\s+(?:наград|international (?:design )?awards)", "награды: «26 достижений на международных премиях» / «26 awards from international juries»"),
     (r"\b(?:10|15|30)\s?(?:мм|mm)\b", "числа правила зазора между отверстиями — внутренние (владелец 25.10.2026)"),
     (r"(?:металлическ\w*|metal) (?:баз\w*|base)[^.]{0,60}(?:схем\w* 1:1|1:1 drawing)", "схема 1:1 при металлической базе — внутренний документ"),
