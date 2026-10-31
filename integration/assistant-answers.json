@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-10-31.1",
-  "checksum": "4826b349dbb1d59e",
+  "version": "2026-10-31.2",
+  "checksum": "382d0f966e8fff7c",
   "count": 108,
   "updated": "2026-10-31",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -337,15 +337,15 @@
     ]
    },
    "a": {
-    "ru": "Оригинальная композиция Vargov®Design имеет авторский артикул LC и знак «Made in Vargov®»; гарантия распространяется только на оригинальные изделия. Оригинал приходит в фирменной упаковке: на каждом элементе защитная плёнка, в коробке картонный приветственный лист с логотипом и сведениями о товарном знаке, а коробка заклеена фирменной лентой с логотипом. Оригинальная продукция доступна только через Vargov®Design и наших официальных партнёров — список на vargov.ru/official-dealers. Если предложение пришло не от них и не от бренда, напишите нам: мы подтвердим подлинность поставщика.",
-    "en": "A genuine Vargov®Design composition has its own LC article code and the “Made in Vargov®” mark; the warranty covers original pieces only. An original arrives in branded packaging: protective film on every element, a card welcome sheet with the logo and trademark details inside the box, and the box sealed with branded tape bearing the logo. Original products are available only through Vargov®Design and our official partners — the list is on vargov.ru/en/official-dealers. If an offer comes from neither, write to us and we will confirm whether the supplier is genuine."
+    "ru": "Оригинальная композиция Vargov®Design имеет авторский артикул LC и знак «Made in Vargov®»; гарантия — 12 месяцев с момента получения при условии нашего монтажа — распространяется только на оригинальные изделия. Оригинал приходит в фирменной упаковке: на каждом элементе защитная плёнка, в коробке картонный приветственный лист с логотипом и сведениями о товарном знаке, а коробка заклеена фирменной лентой с логотипом. Оригинальная продукция доступна только через Vargov®Design и наших официальных партнёров — список на vargov.ru/official-dealers. Если предложение пришло не от них и не от бренда, напишите нам: мы подтвердим подлинность поставщика.",
+    "en": "A genuine Vargov®Design composition has its own LC article code and the “Made in Vargov®” mark; the warranty — 12 months from receipt, provided the installation is carried out by us — covers original pieces only. An original arrives in branded packaging: protective film on every element, a card welcome sheet with the logo and trademark details inside the box, and the box sealed with branded tape bearing the logo. Original products are available only through Vargov®Design and our official partners — the list is on vargov.ru/en/official-dealers. If an offer comes from neither, write to us and we will confirm whether the supplier is genuine."
    },
    "sources": [
     "/official-dealers",
     "/warranty"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q009",
@@ -2262,14 +2262,14 @@
     ]
    },
    "a": {
-    "ru": "Степень защиты IP у нас — любая по запросу: она задаётся при изготовлении под условия помещения, а не выбирается из готового ряда. Назовите условия — влажность, улицу, бассейн, хаммам — и композицию изготовят под них. Готового значения IP для всех изделий мы не публикуем, поэтому допустимость ванной, детской, террасы или спа подтверждает менеджер по вашему проекту (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "Our ingress protection is any IP rating on request: it is set during manufacture to suit the room, not picked from a ready-made range. Tell us the conditions — humidity, outdoors, pool, hammam — and the composition will be built for them. We do not publish one ready IP value for all products, so whether a bathroom, nursery, terrace or spa is suitable is confirmed by the manager for your project (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Степень защиты IP задаётся по проекту и подтверждается после проверки: единого значения для всех изделий мы не публикуем и не выбираем его из готового ряда. Назовите условия — влажность, улица, бассейн, хаммам, — и менеджер после проверки проекта скажет, возможно ли исполнение для такой зоны. Поэтому допустимость ванной, детской, террасы или спа подтверждается только по вашему проекту (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The IP rating is set per project and confirmed after a check: we do not publish one value for all products and do not pick it from a ready-made range. Tell us the conditions — humidity, outdoors, pool, hammam — and after checking the project the manager will say whether a version for that zone is possible. So whether a bathroom, nursery, terrace or spa is suitable is confirmed only for your project (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q057",
@@ -2421,14 +2421,14 @@
     ]
    },
    "a": {
-    "ru": "Для светящихся элементов диммирование возможно: в техническом задании на производство его выбирают из вариантов — DALI, 0–10 В, Triac или без диммирования, а на странице для застройщиков vargov.ru/developers указана совместимость с DALI и сценарным управлением зданием. Zigbee, управление с телефона и подключение к умному дому в открытых материалах не описаны, поэтому ничего не обещаем. Какой вариант подойдёт для вашей композиции и её питания, уточнит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "For light-emitting elements dimming is possible: in the production brief it is chosen from DALI, 0–10 V, Triac or none, and the page for developers at vargov.ru/en/developers states compatibility with DALI and building scenario control. Zigbee, phone control and smart-home connection are not described in our public materials, so we promise nothing. Which option suits your composition and its power supply is confirmed by the manager — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Диммирование светящихся элементов задаётся по проекту и подтверждается после проверки: в техническом задании на производство предусмотрены варианты DALI, 0–10 В, Triac или без диммирования, а на странице для застройщиков vargov.ru/developers указана совместимость с DALI и сценарным управлением зданием. Какой вариант подойдёт вашей композиции и её питанию, менеджер подтвердит после проверки проекта — кнопки Telegram, WhatsApp, e-mail. Zigbee, управление с телефона и подключение к умному дому в открытых материалах не описаны, поэтому их мы не обещаем.",
+    "en": "Dimming of light-emitting elements is set per project and confirmed after a check: the production brief provides for DALI, 0–10 V, Triac or no dimming, and the page for developers at vargov.ru/en/developers states compatibility with DALI and building scenario control. Which option suits your composition and its power supply the manager confirms after checking the project — buttons below: Telegram, WhatsApp, e-mail. Zigbee, phone control and smart-home connection are not described in our public materials, so we do not promise them."
    },
    "sources": [
     "/catalog/lc0586"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q061",
@@ -2962,14 +2962,14 @@
     ]
    },
    "a": {
-    "ru": "Из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми. Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку, помогая избежать ошибок и сохранить гарантию. Требований к квалификации электрика и точных условий гарантии при сторонней установке в открытых материалах нет — уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "Because of the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact. You can also install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation, helping you avoid mistakes and keep the warranty. Our public materials set no electrician qualification requirements and give no exact warranty conditions for third-party installation — please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Гарантия — 12 месяцев с момента получения при условии нашего монтажа, поэтому из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми. Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку и помогает избежать ошибок. Как действует гарантия при установке вашей бригадой и есть ли требования к квалификации электрика, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The warranty is 12 months from receipt, provided the installation is carried out by us, so given the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact. You can also install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation and helps you avoid mistakes. How the warranty applies when your own team installs, and whether there are electrician qualification requirements, please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q074",
@@ -3226,14 +3226,14 @@
     ]
    },
    "a": {
-    "ru": "На сайте слово «гарантия» означает подлинность: она распространяется на оригинальные изделия Vargov®Design, защищённые многоступенчатой упаковкой и зарегистрированным товарным знаком. Срок гарантии, то, что она покрывает, и срок службы в открытых материалах не опубликованы, поэтому цифр мы не называем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "On our site the word “warranty” means authenticity: it applies to original Vargov®Design products, protected by multi-stage packaging and a registered trademark. The warranty term, what it covers and the service life are not published in our public materials, so we do not quote figures. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа. Кроме того, на сайте слово «гарантия» означает подлинность: она распространяется только на оригинальные изделия Vargov®Design, защищённые многоступенчатой упаковкой и зарегистрированным товарным знаком. Что именно покрывает гарантия и каков срок службы, в открытых материалах не опубликовано, поэтому этого мы не обещаем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The product warranty is 12 months from receipt, provided the installation is carried out by us. In addition, on our site the word “warranty” means authenticity: it applies only to original Vargov®Design products, protected by multi-stage packaging and a registered trademark. What exactly the warranty covers and the service life are not published in our public materials, so we do not promise them. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/warranty"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q080",
@@ -3444,15 +3444,15 @@
     ]
    },
    "a": {
-    "ru": "Вы называете артикул LC или описываете задачу — мы готовим спецификацию и коммерческое предложение в течение 24 часов; срок производства фиксируется в спецификации. Каждая композиция производится индивидуально, в комплекте — монтажная схема 1:1 на баннерной ткани. Дальше доставка по всему миру в экспортной упаковке и монтаж официальными монтажниками бренда; шеф-монтаж — по согласованию. Договор, предоплату и этапы оплаты на сайте мы не публикуем — их подтвердит менеджер: Telegram, WhatsApp или e-mail, кнопки ниже.",
-    "en": "You give us the LC code or describe the task — we prepare the specification and quotation within 24 hours, and the production lead time is fixed in the specification. Every composition is made individually, and a 1:1 installation drawing on banner fabric is included. Then comes worldwide delivery in export packaging and installation by the brand's official installers; supervised installation is by arrangement. We do not publish the contract, prepayment and payment stages on the website — a manager will confirm them: Telegram, WhatsApp or e-mail, buttons below."
+    "ru": "Вы называете артикул LC или описываете задачу — мы готовим спецификацию и коммерческое предложение в течение 24 часов. Оплата — 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки; точные сроки оплаты — в договоре. Каждая композиция производится индивидуально, ориентировочно за 40–90 рабочих дней (точный срок — в договоре-спецификации), в комплекте — монтажная схема 1:1 на баннерной ткани. Дальше доставка по всему миру в экспортной упаковке и монтаж официальными монтажниками бренда; шеф-монтаж — по согласованию. Договор подтвердит менеджер: Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "You give us the LC code or describe the task — we prepare the specification and quotation within 24 hours. Payment is a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment; the exact payment deadlines are in the contract. Every composition is made individually, indicatively in 40–90 business days (the exact term is in the contract specification), and a 1:1 installation drawing on banner fabric is included. Then comes worldwide delivery in export packaging and installation by the brand's official installers; supervised installation is by arrangement. A manager will confirm the contract: Telegram, WhatsApp or e-mail, buttons below."
    },
    "sources": [
     "/faq",
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q085",
@@ -3527,15 +3527,15 @@
     ]
    },
    "a": {
-    "ru": "Условия оплаты — нужна ли предоплата, в какие этапы и как — на сайте не опубликованы, поэтому в чате мы их не называем. Менеджер подтвердит их при расчёте: спецификацию и коммерческое предложение мы готовим в течение 24 часов. Напишите ему: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "The payment terms — whether a prepayment is needed, in which stages and how — are not published on the website, so we do not state them in the chat. A manager will confirm them when preparing your quote: we send the specification and quotation within 24 hours. Write to them: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "Оплата идёт в два этапа: 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки. Точные сроки оплаты фиксируются в договоре. Спецификацию и коммерческое предложение мы готовим в течение 24 часов, счёт и договор подтвердит менеджер: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "Payment is made in two stages: a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment. The exact payment deadlines are set in the contract. We prepare the specification and quotation within 24 hours, and a manager will confirm the invoice and the contract: Telegram, WhatsApp or e-mail — buttons below."
    },
    "sources": [
     "/faq",
     "/contacts"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q087",
@@ -3740,15 +3740,15 @@
     ]
    },
    "a": {
-    "ru": "Каждая композиция производится индивидуально: срок зависит от масштаба и конфигурации и фиксируется в спецификации, поэтому единого срока мы не называем. Для срочных проектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов. Срок под ваш проект назовёт менеджер вместе со спецификацией: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "Every composition is made individually: the lead time depends on scale and configuration and is fixed in the specification, so we do not quote a single standard term. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum order 10 elements. A manager will give the term for your project together with the specification: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "Ориентировочный срок изготовления — 40–90 рабочих дней: он зависит от модели, сложности и объёма заказа, а точный срок фиксируется в договоре-спецификации; доставка в этот срок не входит. Для срочных проектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов. Срок под ваш проект назовёт менеджер вместе со спецификацией: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "The indicative production lead time is 40–90 business days: it depends on the model, its complexity and the order volume, and the exact term is fixed in the contract specification; delivery is not included in this term. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum order 10 elements. A manager will give the term for your project together with the specification: Telegram, WhatsApp or e-mail — buttons below."
    },
    "sources": [
     "/faq",
     "/in-stock"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q092",
@@ -3787,15 +3787,15 @@
     ]
    },
    "a": {
-    "ru": "Конкретную дату в чате мы не обещаем: срок композиции зависит от масштаба и конфигурации и фиксируется в спецификации после расчёта. Для срочных объектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов; цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта сохраняются. Напишите менеджеру дату и артикул или задачу — он подтвердит, реально ли успеть: Telegram, WhatsApp или e-mail, кнопки ниже.",
-    "en": "We do not promise a specific date in the chat: the lead time depends on scale and configuration and is fixed in the specification after the calculation. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum 10 elements; element colour, suspension length, cable colour and mounting-kit colour are all kept. Send a manager your date and the LC code or the task, and they will confirm whether it is feasible: Telegram, WhatsApp or e-mail, buttons below."
+    "ru": "Конкретную дату в чате мы не обещаем: ориентировочный срок изготовления — 40–90 рабочих дней в зависимости от модели, сложности и объёма, точный срок фиксируется в договоре-спецификации, а доставка идёт отдельно. Для срочных объектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов; цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта сохраняются. Напишите менеджеру дату и артикул или задачу — он подтвердит, реально ли успеть: Telegram, WhatsApp или e-mail, кнопки ниже.",
+    "en": "We do not promise a specific date in the chat: the indicative production lead time is 40–90 business days depending on the model, its complexity and the volume, the exact term is fixed in the contract specification, and delivery comes on top. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum 10 elements; element colour, suspension length, cable colour and mounting-kit colour are all kept. Send a manager your date and the LC code or the task, and they will confirm whether it is feasible: Telegram, WhatsApp or e-mail, buttons below."
    },
    "sources": [
     "/in-stock",
     "/faq"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
   },
   {
    "id": "Q093",
@@ -4456,15 +4456,15 @@
     ]
    },
    "a": {
-    "ru": "Элементы, которые есть на складе, показаны на странице «Элементы в наличии» — она обновляется четыре раза в день. Из них можно собрать композицию по программе Ready Elements in Stock: при заказе от 10 элементов — за 15–20 рабочих дней. Остальные композиции делаются под заказ, и срок фиксируется в спецификации.",
-    "en": "Elements that are in our warehouse are shown on the \"Elements in stock\" page, which is updated four times a day. A composition can be assembled from them under the Ready Elements in Stock programme: for an order of 10 elements or more, in 15–20 business days. Other compositions are made to order, and the lead time is fixed in the specification."
+    "ru": "Элементы, которые есть на складе, показаны на странице «Элементы в наличии» — она обновляется четыре раза в день. Из них можно собрать композицию по программе Ready Elements in Stock: при заказе от 10 элементов — за 15–20 рабочих дней. Остальные композиции делаются под заказ — ориентировочно за 40–90 рабочих дней, точный срок фиксируется в договоре-спецификации.",
+    "en": "Elements that are in our warehouse are shown on the \"Elements in stock\" page, which is updated four times a day. A composition can be assembled from them under the Ready Elements in Stock programme: for an order of 10 elements or more, in 15–20 business days. Other compositions are made to order — indicatively in 40–90 business days, with the exact term fixed in the contract specification."
    },
    "sources": [
     "/in-stock",
     "/faq"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость 27.10.2026: llms.txt:45, сайт faq.ts:86-87, решение владельца 02.10 «15–20 рабочих дней — оставить»",
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026",
    "focus": {
     "path": "/in-stock",
     "text": {
