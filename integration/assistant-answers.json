@@ -1,8 +1,8 @@
 {
  "meta": {
-  "version": "2026-10-31.3",
-  "checksum": "76f2368361371c73",
-  "count": 108,
+  "version": "2026-10-31.4",
+  "checksum": "862e97bfd658a71f",
+  "count": 115,
   "updated": "2026-10-31",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
@@ -2248,7 +2248,8 @@
      "Можно ли композицию на террасу под навес или улица её испортит?",
      "а в ванной можно вешать? там пар, нормально будет?",
      "Для спа-зоны отеля нужны светильники с определённой степенью защиты. Можете изготовить под такие условия?",
-     "Детская и зона у бассейна — какую степень защиты от воды и пыли писать в смете для ваших светильников?"
+     "Детская и зона у бассейна — какую степень защиты от воды и пыли писать в смете для ваших светильников?",
+     "Можно повесить композицию на улице, под открытым небом?"
     ],
     "en": [
      "What IP rating do the luminaires have, and can they be used in a spa, by a pool, in a bathroom, a nursery or outdoors?",
@@ -2258,18 +2259,19 @@
      "Which ingress protection class applies to your compositions? I need it for the lighting schedule.",
      "Can a composition hang above a bathtub or in a steam room?",
      "Is there a version suitable for a covered outdoor terrace or the poolside?",
-     "Can the IP rating be specified at the order stage for a humid room?"
+     "Can the IP rating be specified at the order stage for a humid room?",
+     "Can a composition be installed outdoors, in the open air?"
     ]
    },
    "a": {
-    "ru": "Степень защиты IP задаётся по проекту и подтверждается после проверки: единого значения для всех изделий мы не публикуем и не выбираем его из готового ряда. Назовите условия — влажность, улица, бассейн, хаммам, — и менеджер после проверки проекта скажет, возможно ли исполнение для такой зоны. Поэтому допустимость ванной, детской, террасы или спа подтверждается только по вашему проекту (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "The IP rating is set per project and confirmed after a check: we do not publish one value for all products and do not pick it from a ready-made range. Tell us the conditions — humidity, outdoors, pool, hammam — and after checking the project the manager will say whether a version for that zone is possible. So whether a bathroom, nursery, terrace or spa is suitable is confirmed only for your project (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Степень защиты IP задаётся по проекту и подтверждается после проверки: единого значения для всех изделий мы не публикуем и не выбираем его из готового ряда. Назовите условия — влажность, улица, бассейн, хаммам, — и менеджер после проверки проекта скажет, возможно ли исполнение для такой зоны. Поэтому допустимость ванной, детской, террасы или спа подтверждается только по вашему проекту (кнопки Telegram, WhatsApp, e-mail), а уличную эксплуатацию без соответствующего исполнения и документации мы не обещаем.",
+    "en": "The IP rating is set per project and confirmed after a check: we do not publish one value for all products and do not pick it from a ready-made range. Tell us the conditions — humidity, outdoors, pool, hammam — and after checking the project the manager will say whether a version for that zone is possible. So whether a bathroom, nursery, terrace or spa is suitable is confirmed only for your project (buttons below: Telegram, WhatsApp, e-mail), and we do not promise outdoor use without a suitable version and documentation."
    },
    "sources": [
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: решения владельца 31.10.2026 агенту сайта (сверено по журналу его сессии); сверка фактов 27.10.2026; дополнено 31.10.2026 по FAQ владельца (№87, №53, №80)"
   },
   {
    "id": "Q057",
@@ -2736,7 +2738,9 @@
      "Прораб просит перечень: что подготовить в потолке до установки светильника, что оставить, что усилить?",
      "Какого диаметра отверстия готовить в потолке под подвесы и от чего это зависит?",
      "Место под блок питания надо предусматривать в потолке заранее? Где его обычно прячут?",
-     "Потолочникам нужно передать задание до начала отделки: усиление, люк, отверстия. Что из этого обязательно?"
+     "Потолочникам нужно передать задание до начала отделки: усиление, люк, отверстия. Что из этого обязательно?",
+     "Можно ли крепить композицию прямо к гипсокартону?",
+     "у нас гипсокартон, просто на дюбели повесить можно?"
     ],
     "en": [
      "What must be prepared in the ceiling before installation — plasterboard ceiling, embedded supports, access hatch, holes, driver location — and what must be done before the composition arrives?",
@@ -2746,12 +2750,13 @@
      "The plasterboard ceiling will be closed next week. What do we need to build in for your pendant first?",
      "What should the ceiling subcontractor complete before delivery: blocking, openings, driver access?",
      "What diameter should the ceiling holes be, and what does that depend on?",
-     "Where should we plan space for the power supply unit when designing the ceiling?"
+     "Where should we plan space for the power supply unit when designing the ceiling?",
+     "Can the composition be fixed straight to plasterboard?"
     ]
    },
    "a": {
-    "ru": "Потолок из гипсокартона усиливают фанерными закладными в точках крепления (толщина указана на странице vargov.ru/installation), а отверстия сверлят по монтажной схеме 1:1 — их диаметр зависит от типа подвеса и массы элемента. Заранее предусмотрите место для драйвера: в электрощитке или в запотолочном пространстве (если есть ревизионный лючок). Если потолок не готовить, композицию можно смонтировать на основании: ему достаточно одного вывода 220 В. При получении осмотрите упаковку, сфотографируйте дефекты; печатная схема 1:1 лежит в одной из коробок. Порядок работ — в PDF-инструкции vargov.ru/pdf/vargov-installation-ru.pdf, детали для вашего потолка уточнит менеджер.",
-    "en": "A plasterboard ceiling is reinforced with plywood backing at the fixing points (the thickness is given on the installation page, vargov.ru/en/installation), and the holes are drilled to the 1:1 installation drawing — their diameter depends on the type of suspension and the mass of the element. Allow in advance for the driver: in the distribution board or in the void above the ceiling (if there is an access hatch). If you do not want to prepare the ceiling, the composition can be installed on a base, which needs only a single 220 V supply point. On delivery, inspect the packaging and photograph any defects; the printed 1:1 drawing is in one of the boxes. The sequence of work is in the PDF guide vargov.ru/pdf/vargov-installation-en.pdf, and the manager will clarify the details for your ceiling."
+    "ru": "Крепить композицию прямо к гипсокартону без проверки несущей способности потолка и перекрытия в точках крепления нельзя: тяжёлым композициям нужна рассчитанная несущая конструкция. Потолок из гипсокартона усиливают фанерными закладными в точках крепления (толщина указана на странице vargov.ru/installation), а отверстия сверлят по монтажной схеме 1:1 — их диаметр зависит от типа подвеса и массы элемента. Заранее предусмотрите место для драйвера: в электрощитке или в запотолочном пространстве (если есть ревизионный лючок). Если потолок не готовить, композицию можно смонтировать на основании: ему достаточно одного вывода 220 В; можно ли крепить основание к вашему потолку, подтвердит менеджер. При получении осмотрите упаковку; повреждения зафиксируйте на фото и видео и сохраните упаковку и упаковочный лист; печатная схема 1:1 лежит в одной из коробок. Порядок работ — в PDF-инструкции vargov.ru/pdf/vargov-installation-ru.pdf, детали для вашего потолка уточнит менеджер.",
+    "en": "A composition must not be fixed straight to plasterboard without checking what the ceiling structure can carry at the fixing points: heavy compositions need a calculated load-bearing structure. A plasterboard ceiling is reinforced with plywood backing at the fixing points (the thickness is given on the installation page, vargov.ru/en/installation), and the holes are drilled to the 1:1 installation drawing — their diameter depends on the type of suspension and the mass of the element. Allow in advance for the driver: in the distribution board or in the void above the ceiling (if there is an access hatch). If you do not want to prepare the ceiling, the composition can be installed on a base, which needs only a single 220 V supply point; whether the base can be fixed to your ceiling the manager will confirm. On delivery, inspect the packaging; record any damage in photos and video and keep the packaging and the packing list; the printed 1:1 drawing is in one of the boxes. The sequence of work is in the PDF guide vargov.ru/pdf/vargov-installation-en.pdf, and the manager will clarify the details for your ceiling."
    },
    "sources": [
     "/installation",
@@ -2759,7 +2764,7 @@
     "/pdf/vargov-installation-en.pdf"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026; дополнено 31.10.2026 по FAQ владельца (№87, №53, №80)"
   },
   {
    "id": "Q069",
@@ -3159,9 +3164,8 @@
      "Как заменить драйвер?",
      "Где взять запасной элемент?",
      "Перегорела лампочка что делать",
-     "Один элемент не горит",
+     "Один элемент перестал гореть со временем",
      "Сломался драйвер",
-     "Разбился элемент, можно докупить?",
      "Через пару лет часть элементов погасла. Это ремонтируется или менять всё?",
      "Можно ли докупить запасные элементы заранее, на случай боя при монтаже?",
      "Блок питания спрятан в потолке. Как до него добраться, если сломается?",
@@ -3188,7 +3192,7 @@
     "/developers"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/docs/connection/connection-ru.html:104-106 (блок доступен, служит меньше, замена без демонтажа), web/src/app/developers/page.tsx:47 (гарантийное обслуживание и запасные элементы), web/src/app/installation/page.tsx:159-191 (лючок, основание)"
+   "checked_by": "ИИ-видимость 27.10.2026, источники агента сайта: web/docs/connection/connection-ru.html:104-106 (блок доступен, служит меньше, замена без демонтажа), web/src/app/developers/page.tsx:47 (гарантийное обслуживание и запасные элементы), web/src/app/installation/page.tsx:159-191 (лючок, основание); 31.10.2026 вопросы о разбитом элементе перенесены в Q108"
   },
   {
    "id": "Q079",
@@ -3921,15 +3925,15 @@
     ]
    },
    "a": {
-    "ru": "При получении внимательно осмотрите коробки и упаковку. Если заметили повреждения, сфотографируйте их и свяжитесь с нашей службой поддержки. Срок подачи претензии и условия замены или компенсации на сайте не опубликованы — их подтвердит менеджер, поэтому пишите ему с фото: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "When the delivery arrives, inspect the boxes and the packaging carefully. If you notice any damage, photograph it and contact our support team. The claim deadline and the terms of replacement or compensation are not published on the website — a manager will confirm them, so please write with the photos: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "При получении внимательно осмотрите коробки и упаковку. Если заметили повреждения, зафиксируйте их на фото и видео — и упаковку, и сами элементы, — и сохраните упаковку и упаковочный лист. Срок подачи претензии и условия замены или компенсации на сайте не опубликованы — их подтвердит менеджер, поэтому пишите ему с фото и видео для проверки: Telegram, WhatsApp или e-mail — кнопки ниже.",
+    "en": "When the delivery arrives, inspect the boxes and the packaging carefully. If you notice any damage, record it in photos and video — both the packaging and the elements themselves — and keep the packaging and the packing list. The claim deadline and the terms of replacement or compensation are not published on the website — a manager will confirm them, so please write with the photos and video for the check: Telegram, WhatsApp or e-mail — buttons below."
    },
    "sources": [
     "/warranty",
     "/installation"
    ],
    "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026"
+   "checked_by": "ИИ-видимость: два независимых прогона сверки фактов 27.10.2026; дополнено 31.10.2026 по FAQ владельца (№87, №53, №80)"
   },
   {
    "id": "Q096",
@@ -4472,6 +4476,297 @@
      "en": "Elements in stock"
     }
    }
+  },
+  {
+   "id": "Q108",
+   "category": "care",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Разбился один элемент композиции — можно заказать замену?",
+     "Можно заказать запасной элемент вместо разбитого?",
+     "Один элемент треснул при монтаже. Что делать?",
+     "у нас кот уронил один элемент, его можно как-то докупить?",
+     "Сделаете ещё один такой же элемент, если старый разбился?",
+     "Как быстро сделаете замену одного разбитого элемента?",
+     "При уборке разбили подвесной элемент. Есть запчасти?",
+     "Можно ли через год дозаказать один элемент к уже висящей композиции на замену разбитого?",
+     "Что нужно прислать, чтобы вам изготовили новый элемент взамен разбитого?",
+     "разбили плафон на люстре, менять всю люстру или можно один?"
+    ],
+    "en": [
+     "One element of the composition broke — can I order a replacement?",
+     "Can I order a spare element to replace a broken one?",
+     "An element cracked during installation. What should we do?",
+     "our cat knocked one piece down, can we buy just that one?",
+     "Will you make another identical element if one got broken?",
+     "How quickly can you make a replacement for one broken element?",
+     "What do you need from me to make a new element to replace a broken one?",
+     "a shade on the chandelier broke — do I have to replace the whole thing?"
+    ]
+   },
+   "a": {
+    "ru": "Замену разбитого элемента мы рассматриваем по артикулу композиции, фотографиям и обстоятельствам повреждения: можно ли изготовить и отправить запасной элемент, а также срок и условия подтверждаются индивидуально. Пришлите менеджеру артикул LC, фото повреждённого элемента и коротко опишите, как это случилось, — кнопки Telegram, WhatsApp, e-mail. Если элемент пришёл повреждённым при доставке, зафиксируйте на фото и видео и упаковку, и элемент и сохраните упаковку и упаковочный лист.",
+    "en": "We consider replacing a broken element on the basis of the composition's article code, photos and the circumstances of the damage: whether a spare element can be made and sent, and its timing and terms, are confirmed individually. Send the manager the LC code, photos of the damaged element and a short note on how it happened — buttons below: Telegram, WhatsApp, e-mail. If the element arrived damaged in transit, record both the packaging and the element in photos and video, and keep the packaging and the packing list."
+   },
+   "sources": [],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q109",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Композиция не включается после монтажа — что делать?",
+     "Повесили люстру, а она не горит. Что проверить?",
+     "После подключения свет не загорается, в чём может быть причина?",
+     "Электрик подключил, а композиция не светится. Куда смотреть?",
+     "люстра смонтирована но не работает, что делать??",
+     "Часть элементов не светится сразу после монтажа — это брак или ошибка подключения?",
+     "Подали питание, а композиция молчит. Может, драйвер?",
+     "Что прислать менеджеру, если композиция не заработала после установки?",
+     "Мы всё собрали по схеме, а света нет. Как быть?",
+     "не включается светильник после установки, может что-то перепутали с проводами"
+    ],
+    "en": [
+     "The composition does not switch on after installation — what should I do?",
+     "We hung the chandelier but it doesn't light up. What should we check?",
+     "After connecting it nothing lights up — what could be wrong?",
+     "The electrician wired it but the composition stays dark. Where to look?",
+     "light installed but not working, help",
+     "Some elements don't light right after installation — defect or wiring mistake?",
+     "Power is on but the composition does nothing. Could it be the driver?",
+     "What should I send the manager if the composition did not work after installation?"
+    ]
+   },
+   "a": {
+    "ru": "Если композиция не включается после монтажа, прекратите попытки подключения и привлеките квалифицированного электрика: пусть он сверит подключение с электрической схемой композиции (схемы питания — в PDF-инструкции vargov.ru/pdf/vargov-connection-ru.pdf), проверит входное напряжение и драйвер, если композиция питается через него. Затем отправьте менеджеру фото подключения и маркировки компонентов — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "If the composition does not switch on after installation, stop trying to connect it and bring in a qualified electrician: have them check the wiring against the composition’s electrical diagram (the power diagrams are in the connection guide, vargov.ru/pdf/vargov-connection-en.pdf), and check the supply voltage and the driver, if the composition runs through one. Then send the manager photos of the connection and of the component markings — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/pdf/vargov-connection-ru.pdf",
+    "/pdf/vargov-connection-en.pdf"
+   ],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q110",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли подключить светодиоды на 12 В напрямую к сети 220 В?",
+     "Можно G4 на 12 вольт воткнуть сразу в 220?",
+     "Электрик хочет подключить композицию напрямую в сеть, без драйвера. Так можно?",
+     "Драйвер обязательно ставить или можно сразу в розетку?",
+     "а если подключить низковольтные лампы без блока питания, что будет?",
+     "Что будет, если подать 220 В на элементы, рассчитанные на 12 В?",
+     "Можно обойтись без драйвера, чтобы не искать для него место?",
+     "Наш электрик говорит, что блок питания лишний. Это так?",
+     "Как правильно подключать композицию с низковольтными светодиодами?"
+    ],
+    "en": [
+     "Can 12 V LEDs be connected directly to 230 V mains?",
+     "Can I plug 12-volt G4 lamps straight into the mains?",
+     "Our electrician wants to wire the composition directly to the mains without a driver. Is that OK?",
+     "Do I really need the driver, or can it go straight into the socket?",
+     "what happens if low-voltage lamps are connected without a power supply?",
+     "What happens if 220 V is applied to elements rated for 12 V?",
+     "Can we skip the driver so we don't need space for it?",
+     "How should a composition with low-voltage LEDs be connected?"
+    ]
+   },
+   "a": {
+    "ru": "Светодиоды, рассчитанные на 12 В (например, G4 на 12 В), нельзя подключать напрямую к сети 220 В: неправильное напряжение может вывести их из строя и создать опасность. Подключайте композицию строго по её электрической схеме: низковольтную (12–24 В) — через драйвер, который входит в комплект поставки, а композицию на 220 В — напрямую к сети, без драйвера. Схемы питания — в PDF-инструкции по подключению: vargov.ru/pdf/vargov-connection-ru.pdf. Если сомневаетесь, какое питание у вашей композиции, уточните у менеджера до подключения — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "LEDs rated for 12 V (for example 12 V G4) must not be connected directly to 220 V mains: the wrong voltage can destroy them and create a hazard. Connect the composition strictly according to its electrical diagram: a low-voltage one (12–24 V) through the driver, which is included in the delivery, and a 220 V one directly to the mains, without a driver. The power diagrams are in the connection guide: vargov.ru/pdf/vargov-connection-en.pdf. If you are unsure what supply your composition needs, ask the manager before connecting — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation",
+    "/pdf/vargov-connection-ru.pdf",
+    "/pdf/vargov-connection-en.pdf"
+   ],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q111",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли подвесить что-то на элементы композиции или использовать их как опору?",
+     "Выдержат ли элементы, если на них что-то повесить?",
+     "Можно декор прицепить прямо к подвескам люстры?",
+     "Элементы композиции несущие? Можно на них опереть конструкцию?",
+     "хотим повесить гирлянду на люстру к новому году, не сломается?",
+     "Можно ли закрепить массивный объект на элементах композиции?",
+     "Элементы могут держать вес, например полку или кашпо?",
+     "Дизайнер предлагает подвесить на композицию дополнительные декоративные детали. Это допустимо?",
+     "Можно ли нагружать подвесные элементы?"
+    ],
+    "en": [
+     "Can I hang something on the elements of the composition or use them as a support?",
+     "Will the elements hold if something is hung on them?",
+     "Can we attach decor directly to the chandelier's pendants?",
+     "Are the elements load-bearing? Can a structure rest on them?",
+     "we want to hang a garland on the chandelier for christmas, will it break?",
+     "Can a heavy object be fixed to the composition's elements?",
+     "Our designer wants to hang extra decorative parts on the composition. Is that acceptable?",
+     "Can the hanging elements take extra load?"
+    ]
+   },
+   "a": {
+    "ru": "Элементы композиции не должны выполнять несущую функцию: подвешивать на них другие предметы, нагружать их или использовать как опору нельзя, если это специально не рассчитано конструкцией композиции. Если по проекту нужно закрепить что-то на композиции, сначала опишите задачу менеджеру — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The elements of a composition must not act as a load-bearing part: do not hang other objects on them, load them or use them as a support unless the composition’s structure is specifically designed for it. If your project needs something fixed to the composition, describe the task to the manager first — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q112",
+   "category": "colours",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Почему цвет на фото и в визуализации отличается от реального?",
+     "Цвет будет точно как на экране?",
+     "На фото элементы зелёные, а в жизни другие?",
+     "Можно ли добиться точного цвета по визуализации?",
+     "на сайте оттенок один, у меня на телефоне другой — какой правильный?",
+     "Почему свет на фото выглядит теплее, чем вживую?",
+     "Как убедиться, что цвет элементов совпадёт с нашим интерьером?",
+     "Совпадёт ли цвет с рендером, который вы прислали?",
+     "Цвет света на ваших видео холоднее, чем мне нужно. Это реальный цвет?"
+    ],
+    "en": [
+     "Why does the colour in photos and renders differ from the real piece?",
+     "Will the colour be exactly as on screen?",
+     "In the photo the elements look green — is that the real colour?",
+     "Can you match the colour of the visualisation exactly?",
+     "the shade on your site looks different on my phone, which one is right?",
+     "Why does the light look warmer in photos than in real life?",
+     "How can I be sure the element colour will match our interior?",
+     "Will the colour match the render you sent?"
+    ]
+   },
+   "a": {
+    "ru": "Цвет на экране, в визуализации и на фото может отличаться от реального: камера, экспозиция, баланс белого, окружающий свет и настройки экрана меняют восприятие. Поэтому точное совпадение с экранной картинкой мы не обещаем: об итоговом цвете элементов можно судить только по физическому образцу, а цвет света определяется характеристикой источника, выбранной в техническом задании на производство (vargov.ru/specifications), а не фото. Элементы-образцы можно рассмотреть в шоуруме; можно ли подготовить образец для вашего заказа, уточните у менеджера до заказа — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Colour on a screen, in a render or in a photo can differ from reality: the camera, exposure, white balance, ambient light and screen settings all change how it looks. So we do not promise an exact match with an on-screen image: the final colour of the elements can only be judged from a physical sample, and the colour of light is set by the light-source characteristic chosen in the production brief (vargov.ru/en/specifications), not by photos. Sample elements can be seen in the showroom; whether a sample can be prepared for your order, ask the manager before ordering — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/specifications",
+    "/showroom"
+   ],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q113",
+   "category": "custom",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Зачем нужна новая форма и почему нестандартная композиция делается дольше?",
+     "Почему композиция нестандартной формы делается дольше каталожной?",
+     "Почему для нестандартной геометрии нужна новая форма?",
+     "Если нужна своя форма элемента, это сильно дороже и дольше?",
+     "почему кастом так долго делается?",
+     "Что влияет на срок, если композиция нестандартная?",
+     "Как новая форма элемента влияет на срок и цену?",
+     "Почему за нестандартную форму берут больше и делают дольше?",
+     "Нужна ли отдельная форма под наш элемент и как это отразится на сроках?"
+    ],
+    "en": [
+     "Why is a new mould needed, and why does a custom composition take longer?",
+     "Why does a composition with a non-standard shape take longer than a catalogue one?",
+     "Why does non-standard geometry need a new mould?",
+     "If we need our own element shape, is it much more expensive and slower?",
+     "why does custom take so long?",
+     "What affects the lead time for a non-standard composition?",
+     "How does a new element mould affect timing and price?",
+     "Will our element need a separate mould, and how does that affect timing?"
+    ]
+   },
+   "a": {
+    "ru": "Любая наша композиция делается под заказ, но если нужной геометрии нет среди существующих форм, может потребоваться новая форма — это влияет на цену и срок. Композиция нестандартной формы делается дольше и по другим причинам: может понадобиться подбор оттенка, испытания, повторные образцы и тестовая сборка. Не каждую форму можно изготовить: реализуемость новой формы определяется после оценки конструкции и технологии изготовления. Возможность, срок и стоимость оцениваются по чертежам и параметрам вашего проекта — пришлите их менеджеру: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Every composition we make is made to order, but if the required geometry is not among the existing moulds, a new mould may be needed — this affects the price and the lead time. A composition with a non-standard shape also takes longer for other reasons: shade matching, testing, repeat samples and a trial assembly may be needed. Not every shape can be made: whether a new shape is feasible is decided after the structure and the manufacturing technology have been assessed. Feasibility, timing and cost are assessed from the drawings and parameters of your project; send them to the manager — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
+  },
+  {
+   "id": "Q114",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Подойдёт ли композиция для сети 110 В?",
+     "У нас в стране 110 вольт, композиция будет работать?",
+     "Делаете ли исполнение под американскую сеть 110–120 В?",
+     "Объект в США — подойдёт ли ваше питание?",
+     "на 110в работает или нужен переходник?",
+     "Можно ли заказать композицию под другое напряжение сети?",
+     "Нужен ли отдельный драйвер для сети 110 В?",
+     "Мы в Канаде — какое исполнение нужно по питанию?"
+    ],
+    "en": [
+     "Is the composition suitable for 110 V mains?",
+     "We have 110 volts in our country — will the composition work?",
+     "Do you make a version for the US 110–120 V mains?",
+     "The project is in the USA — will your power supply work?",
+     "does it work on 110v or do I need an adapter?",
+     "Can I order a composition for a different mains voltage?",
+     "Is a separate driver needed for 110 V mains?",
+     "We are in Canada — what power version do we need?"
+    ]
+   },
+   "a": {
+    "ru": "Для сети 110 В нужна отдельная комплектация: отдельное исполнение или совместимый входной драйвер, и не все комплектации для этого адаптированы. Поэтому возможность подтверждается по вашему проекту: назовите менеджеру страну объекта, напряжение сети и артикул LC — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "110 V mains needs a dedicated configuration — a separate version or a compatible input driver — and not every configuration is adapted for it. So whether it is possible is confirmed for your project: tell the manager the country of the site, the mains voltage and the LC code — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-10-31",
+   "checked_by": "ИИ-видимость: FAQ владельца по переписке с фабрикой (передан агенту сайта 31.10.2026 12:01 UTC «это все для ИИ-помощника»), только пункты с меткой «П»/«У» в формулировке «ответ клиенту», без страны, «ручной работы» и цен; сверено с пакетом"
   }
  ]
 }
