@@ -111,6 +111,7 @@ whole catalogue; only the text and the order of display differ.
 - [Projects](https://vargov.ru/en/projects): Russky Dom 2026 (exhibition, 7–9 October 2026, Gostiny Dvor, Moscow — composition LC0556 in the “Ice and Mist” zone of the “Quiet Strength of Kamchatka” capsule by Tokareva Design, stand K62); Interlight Moscow 2025 (exhibition); Vargov®Design official showroom (permanent display)
 - [Journal](https://vargov.ru/en/journal): how compositions are made, installed and certified
 - [Composition videos](https://vargov.ru/en/video): films of finished compositions — glass, moving light, scale; the official RuTube and YouTube channels
+- [Choreographed by Light](https://vargov.ru/en/video/choreographed-by-light): a 30-second Vargov®Design film — a dancer moves through a home lit by compositions LC0287, LC0545-1 and LC0549; made with generative AI from real compositions, not footage
 - [Frequently asked questions](https://vargov.ru/en/faq): materials, production timelines, customisation, delivery, installation, the showroom and dealership
 - [Press kit](https://vargov.ru/en/press): photographs and facts for publication
 - [Showroom](https://vargov.ru/en/showroom): visiting, address, opening hours
