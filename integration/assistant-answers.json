@@ -1,8 +1,8 @@
 {
  "meta": {
-  "version": "2026-11-01.5",
-  "checksum": "c87aeec839f75420",
-  "count": 167,
+  "version": "2026-11-01.6",
+  "checksum": "3c061105d6b0a458",
+  "count": 168,
   "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
@@ -5137,7 +5137,6 @@
      "What shipping paperwork comes with the goods: commercial invoice, packing list, conformity certificates?",
      "hs code for your lights?",
      "do you ship DDP or is customs on us",
-     "Is cargo insurance included or do we arrange it?",
      "what incoterms do you work on",
      "where do i find the hs code for customs"
     ]
@@ -5151,7 +5150,7 @@
     "/certification"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+   "checked_by": "ИИ-видимость: отдельная запись о страховании груза по просьбе агента сайта 01.11.2026 (вопрос уходил в Q097 о ТН ВЭД); факты — Q097 и слово владельца 01.11 «полная гарантия на груз до момента монтажа»; workflow pack10-cargo-insurance"
   },
   {
    "id": "Q098",
@@ -8460,6 +8459,48 @@
    ],
    "updated": "2026-11-01",
    "checked_by": "ИИ-видимость: слово владельца 01.11.2026 10:59 UTC «полная гарантия на груз до момента монтажа» (передано агентом сайта, сверено по его журналу); workflow pack9-cargo-guarantee (черновик, 2 линзы, итог, переводы)"
+  },
+  {
+   "id": "Q167",
+   "category": "delivery",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Застрахован ли груз?",
+     "Кто страхует груз при доставке?",
+     "Страховка груза входит в стоимость?",
+     "груз застрахован на время перевозки?",
+     "Нужно ли нам самим страховать композицию на время перевозки?",
+     "Вы страхуете отправку или это делает покупатель?",
+     "а страховка на доставку есть?",
+     "Для договора нужно знать, кто страхует груз в пути — вы или мы",
+     "страхуете ли вы посылку",
+     "Входит ли страховка в доставку?"
+    ],
+    "en": [
+     "Is the cargo insured?",
+     "Is cargo insurance included or do we arrange it?",
+     "Who insures the shipment in transit?",
+     "is shipping insured",
+     "Do we need to take out our own insurance for the delivery?",
+     "Does the delivery price include insurance?",
+     "Our contract needs to state who insures the goods in transit — you or us?"
+    ]
+   },
+   "a": {
+    "ru": "Страхование груза и условия поставки по Incoterms для вашей поставки подтверждает менеджер. Отдельно от страхования действует полная гарантия на груз до момента монтажа. Если груз пришёл с повреждениями, зафиксируйте их на фото и видео, сохраните упаковку и упаковочный лист и напишите менеджеру — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The manager will confirm cargo insurance and the Incoterms for your shipment. Separately from insurance, we give a full guarantee on the shipment until installation. If it arrives damaged, record the damage in photos and video, keep the packaging and the packing list, and write to the manager — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/contacts"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: отдельная запись о страховании груза по просьбе агента сайта 01.11.2026 (вопрос уходил в Q097 о ТН ВЭД); факты — Q097 и слово владельца 01.11 «полная гарантия на груз до момента монтажа»; workflow pack10-cargo-insurance"
   }
  ]
 }
