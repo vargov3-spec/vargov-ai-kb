@@ -1,8 +1,8 @@
 {
  "meta": {
-  "version": "2026-11-01.6",
-  "checksum": "3c061105d6b0a458",
-  "count": 168,
+  "version": "2026-11-01.7",
+  "checksum": "6a627d623d9f0ee2",
+  "count": 169,
   "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
@@ -5421,7 +5421,8 @@
      "В Дубае можно заказать напрямую у вашего офиса?",
      "номер вашего офиса в Дубае дайте",
      "Куда писать в Дубае по стоимости, срокам и доставке?",
-     "почта дубайского офиса какая?"
+     "почта дубайского офиса какая?",
+     "Сервис и обслуживание в ОАЭ — к кому обращаться?"
     ],
     "en": [
      "How do I order in the UAE?",
@@ -5439,7 +5440,8 @@
      "dubai office contact?",
      "Who do I WhatsApp in Dubai about price and delivery?",
      "Can I place an order with your Dubai office?",
-     "email for the dubai office"
+     "email for the dubai office",
+     "Who handles maintenance and service in the UAE?"
     ]
    },
    "a": {
@@ -5452,7 +5454,7 @@
     "/dealers"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: кандидаты агента сайта из постов Telegram и статей «Прямой речи» (01.11.2026, 114 пар) и автоответы WhatsApp владельца с его решениями 01.11 («Называть шкалу», «Как в автоответе»); workflow pack8-tg-journal-whatsapp (черновик, 3 линзы, правка, перепроверка, сведение, переводы)"
+   "checked_by": "ИИ-видимость: запись «Обслуживание композиции» по просьбе агента сайта 01.11.2026 (владелец спросил «обслуживание» и получил Q102 про Дубай); факты — Q077, Q078, Q079, Q101/Q102; workflow pack11-maintenance"
   },
   {
    "id": "Q103",
@@ -8501,6 +8503,59 @@
    ],
    "updated": "2026-11-01",
    "checked_by": "ИИ-видимость: отдельная запись о страховании груза по просьбе агента сайта 01.11.2026 (вопрос уходил в Q097 о ТН ВЭД); факты — Q097 и слово владельца 01.11 «полная гарантия на груз до момента монтажа»; workflow pack10-cargo-insurance"
+  },
+  {
+   "id": "Q168",
+   "category": "care",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Обслуживание",
+     "Техническое обслуживание",
+     "Сервисное обслуживание",
+     "Сервис",
+     "Обслуживание композиции",
+     "Нужно ли обслуживать композицию?",
+     "Кто обслуживает композиции после монтажа?",
+     "Как обслуживать люстру?",
+     "Какое обслуживание нужно композиции после монтажа?",
+     "Как устроено обслуживание после установки: уход, драйвер, гарантия, кто этим занимается?",
+     "У вас есть сервис после покупки или потом мы сами по себе?",
+     "Что входит в сервисное обслуживание композиции?",
+     "Мы управляем отелем, кто будет обслуживать композиции после сдачи объекта?",
+     "техобслуживание люстры кто делает"
+    ],
+    "en": [
+     "Maintenance",
+     "Service",
+     "Servicing",
+     "Does it need maintenance?",
+     "Who services the fixtures?",
+     "What maintenance does the composition need once it is installed?",
+     "Do you provide after-sales service for your compositions?",
+     "How is servicing organised after installation: care, driver, warranty, who does it?",
+     "We run a hotel, who will service the compositions after handover?",
+     "maintenance of the chandelier, what's involved"
+    ]
+   },
+   "a": {
+    "ru": "Для ухода композицию обесточивают, пыль снимают чистой сухой тканью, а спирт, кислоты, растворители и абразивы не используют: они портят покрытие и лак. Блок питания (драйвер) остаётся доступным — через ревизионный лючок или в основании — и заменяется без демонтажа изделия; для объектов мы даём гарантийное обслуживание и запасные элементы. Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа под ключ (шеф-монтаж таким монтажом не считается). В своих регионах за поставку, монтаж и обслуживание композиций отвечают официальные дилеры, их контакты — на vargov.ru/official-dealers. Если элемент перестал светиться, напишите менеджеру с артикулом — кнопки Telegram, WhatsApp, e-mail, — он подскажет порядок замены.",
+    "en": "For care, the composition is switched off before cleaning, dust is removed with a clean dry cloth, and alcohol, acids, solvents and abrasives are not used: they damage the finish and the lacquer. The power supply (driver) stays accessible — through an inspection hatch or in the base — and is replaced without dismantling the piece; for projects we provide warranty service and spare elements. The product warranty is 12 months from receipt, provided we carry out the full turnkey installation (supervised installation does not count as such). In their regions the official dealers are responsible for supply, installation and servicing of the compositions; their contacts are on vargov.ru/en/official-dealers. If an element stops lighting, write to the manager with the article code — buttons below: Telegram, WhatsApp, e-mail — and they will explain how to replace it."
+   },
+   "sources": [
+    "/installation",
+    "/specifications/colours",
+    "/developers",
+    "/warranty",
+    "/official-dealers"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: запись «Обслуживание композиции» по просьбе агента сайта 01.11.2026 (владелец спросил «обслуживание» и получил Q102 про Дубай); факты — Q077, Q078, Q079, Q101/Q102; workflow pack11-maintenance"
   }
  ]
 }
