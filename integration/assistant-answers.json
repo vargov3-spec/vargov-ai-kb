@@ -1,9 +1,9 @@
 {
  "meta": {
-  "version": "2026-10-31.5",
-  "checksum": "0adceeb87e4a97fb",
-  "count": 121,
-  "updated": "2026-10-31",
+  "version": "2026-11-01.1",
+  "checksum": "a21cf52ecd1c1c07",
+  "count": 134,
+  "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
    "catalog",
@@ -444,14 +444,14 @@
     ]
    },
    "a": {
-    "ru": "По желанию покупателя мы готовим сертификат подлинности с живой подписью Антона Варгова — достаточно сообщить об этом при оформлении заказа. Кроме того, подлинность оригинала подтверждают фирменная упаковка и приветственный лист со сведениями о товарном знаке. В каком виде и для каких заказов выдаётся сертификат, уточните у менеджера — кнопки Telegram, WhatsApp и e-mail.",
-    "en": "At the buyer's request we prepare a certificate of authenticity signed in ink by Anton Vargov — just mention it when placing the order. The authenticity of an original is also confirmed by the branded packaging and the welcome sheet with trademark details. The manager will clarify in what form and for which orders the certificate is issued — Telegram, WhatsApp and e-mail buttons."
+    "ru": "Сертификат подлинности с живой подписью Антона Варгова мы готовим по желанию покупателя — достаточно сказать об этом менеджеру при оформлении заказа (кнопки Telegram, WhatsApp, e-mail). Кроме того, подлинность оригинала подтверждают авторский артикул LC и знак «Made in Vargov®», фирменная упаковка и приветственный лист со сведениями о товарном знаке.",
+    "en": "At the buyer's request we prepare a certificate of authenticity signed in ink by Anton Vargov — just tell the manager when placing the order (buttons below: Telegram, WhatsApp, e-mail). The authenticity of an original is also confirmed by the LC article code and the “Made in Vargov®” mark, the branded packaging and the welcome sheet with trademark details."
    },
    "sources": [
     "/warranty"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q010",
@@ -779,14 +779,14 @@
     ]
    },
    "a": {
-    "ru": "Размер композиции мы не публикуем в общем виде: каждая собирается под конкретное помещение, поэтому он считается под вашу комнату. Для планов и разрезов размер даёт конфигуратор: он раскладывает композицию в 3D для вашего помещения и выдаёт PDF-спецификацию, тендерный лист и модель IFC4 — это для композиций, которые он считает полностью (360 из 605). На части карточек на сайте есть параметры отдельных элементов или габарит изделия. Нужного артикула нет в конфигураторе или нужны точные габариты — напишите менеджеру артикул и размеры помещения (кнопки Telegram, WhatsApp, почта).",
-    "en": "We do not publish composition sizes in general form: each one is assembled for a specific room, so the size is calculated for yours. For plans and sections the size comes from the configurator: it lays the composition out in 3D for your room and produces a PDF specification, a tender sheet and an IFC4 model — for the compositions it calculates in full (360 of 605). Some product pages also show the parameters of individual elements or the size of the piece. If your code is not in the configurator or you need exact dimensions, send the manager the LC code and the room size (Telegram, WhatsApp or e-mail buttons)."
+    "ru": "Размер композиции рассчитывается под ваше помещение: каждая собирается под конкретную комнату. Для планов и разрезов размер даёт конфигуратор: он раскладывает композицию в 3D для вашего помещения и выдаёт PDF-спецификацию, тендерный лист и модель IFC4 — это для композиций, которые он считает полностью (360 из 605). На части карточек на сайте есть параметры отдельных элементов или габарит изделия. Нужного артикула нет в конфигураторе или нужны точные габариты — напишите менеджеру артикул и размеры помещения (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The size of a composition is calculated for your room: each one is assembled for a specific space. For plans and sections the size comes from the configurator: it lays the composition out in 3D for your room and produces a PDF specification, a tender sheet and an IFC4 model — for the compositions it calculates in full (360 of 605). Some product pages also show the parameters of individual elements or the size of the piece. If your code is not in the configurator or you need exact dimensions, send the manager the LC code and the room size (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/configurator"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q017",
@@ -1154,15 +1154,15 @@
     ]
    },
    "a": {
-    "ru": "Высоту помещения и высоты подвеса задают в конфигураторе и в онлайн-ТЗ. При выгрузке IFC высота потолка по умолчанию — 2700 мм: это высота помещения, а не размер изделия, и её нужно заменить на вашу. Можно ли повесить композицию при вашем потолке и какая длина подвеса подойдёт, в общем виде мы не называем: длина подвеса рассчитывается под пространство. Напишите менеджеру артикул и высоту потолка (кнопки Telegram, WhatsApp, почта) — мы рассчитаем.",
-    "en": "The room height and the drop heights are set in the configurator and in the online production brief. When exporting IFC, the default ceiling height is 2700 mm: that is the height of the room, not the size of the piece, and you should replace it with your own. Whether a composition can be hung under your ceiling and what drop length suits it, we do not state in general terms: the drop length is calculated for the space. Send the manager the LC code and the ceiling height (Telegram, WhatsApp or e-mail buttons) and we will work it out."
+    "ru": "Длина подвеса рассчитывается под ваше пространство: высоту помещения и высоты подвеса задают в конфигураторе и в онлайн-ТЗ. При выгрузке IFC высота потолка по умолчанию — 2700 мм: это высота помещения, а не размер изделия, и её нужно заменить на вашу. От высоты зависит и способ монтажа: для низких потолков подходят закладные без основания, для высоких — монтаж на основании (базе). Можно ли повесить выбранную композицию при вашем потолке и какая длина подвеса подойдёт, мы рассчитаем — напишите менеджеру артикул и высоту потолка (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The drop length is calculated for your space: the room height and the drop heights are set in the configurator and in the online production brief. When exporting IFC, the default ceiling height is 2700 mm: that is the height of the room, not the size of the piece, and you should replace it with your own. The height also affects the mounting method: for low ceilings, recessed fixings without a base are suitable, for high ceilings — mounting on a base. Whether the chosen composition can hang under your ceiling and what drop length suits it, we will calculate — send the manager the LC code and the ceiling height (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/specifications",
     "/configurator"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q025",
@@ -1250,14 +1250,14 @@
     ]
    },
    "a": {
-    "ru": "Цвет элементов подбирается под проект по каталогу RAL Classic, и в одной композиции можно смешать несколько цветов: в конфигураторе у каждого своя доля и, где элементы бывают прозрачными, своя прозрачность. Есть и гальваника — прозрачные и зеркальные покрытия; кодов у неё нет, в техническом задании на производство её пишут названием. Если корпоративный цвет есть в каталоге RAL Classic, назовите его код; предельное число цветов в одной композиции и цвет вне этого каталога подтвердит менеджер (кнопки Telegram, WhatsApp, почта). Подробности: vargov.ru/specifications/colours.",
-    "en": "The colour of the elements is chosen for your project from the RAL Classic catalogue, and several colours can be mixed in one composition: in the configurator each has its own share and, where the elements can be transparent, its own transparency. There is also electroplating — transparent and mirror finishes; it has no codes, so in the production brief it is written by name. If your corporate colour is in the RAL Classic catalogue, give its code; the maximum number of colours in one composition and any colour outside that catalogue the manager will confirm (Telegram, WhatsApp or e-mail buttons). Details: vargov.ru/en/specifications/colours."
+    "ru": "Цвет элементов подбирается под проект по каталогу RAL Classic, и в одной композиции можно смешать несколько цветов: в конфигураторе у каждого своя доля и, где элементы бывают прозрачными, своя прозрачность. Есть и гальваника — прозрачные и зеркальные покрытия; кодов у неё нет, в техническом задании на производство её пишут названием. Если корпоративный цвет есть в RAL Classic, назовите его код; вне каталога можно рассмотреть индивидуальный подбор оттенка по вашему референсу, в том числе по Pantone и NCS: точное совпадение не гарантируется — результат зависит от материала и технологии, — а нестандартный цвет согласуется с производством по физическому образцу. Предельное число цветов подтвердит менеджер (кнопки Telegram, WhatsApp, e-mail). Подробности: vargov.ru/specifications/colours.",
+    "en": "The colour of the elements is chosen for your project from the RAL Classic catalogue, and several colours can be mixed in one composition: in the configurator each has its own share and, where the elements can be transparent, its own transparency. There is also electroplating — transparent and mirror finishes; it has no codes, so in the production brief it is written by name. If your corporate colour is in RAL Classic, give its code; outside the catalogue, individual matching of a shade to your reference, including Pantone and NCS, can be considered: an exact match is not guaranteed — the result depends on the material and the technology — and a non-standard colour is agreed with production on a physical sample. The maximum number of colours the manager will confirm (buttons below: Telegram, WhatsApp, e-mail). Details: vargov.ru/en/specifications/colours."
    },
    "sources": [
     "/specifications/colours"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q027",
@@ -1326,7 +1326,10 @@
      "Клиентка боится, что внутри пластик. Из чего всё сделано, чтобы я ответил(а) ей точно?",
      "из чего делаете элементы?",
      "какие материалы используются в ваших композициях",
-     "Для ведомости отделки нужно указать материал по артикулу, к кому обратиться?"
+     "Для ведомости отделки нужно указать материал по артикулу, к кому обратиться?",
+     "Это ручная работа или заводское производство?",
+     "Стекло у вас выдувают вручную?",
+     "люстры собираете руками?"
     ],
     "en": [
      "What is the composition made of?",
@@ -1339,20 +1342,23 @@
      "what r ur lamps made from?",
      "Which materials do you use in your compositions?",
      "For the finishes schedule I need the material per article — who can help?",
-     "what are the elements made of, need it for the spec"
+     "what are the elements made of, need it for the spec",
+     "Is it handmade or factory-made?",
+     "Is your glass hand-blown?",
+     "are the chandeliers assembled by hand"
     ]
    },
    "a": {
-    "ru": "Из FAQ сайта: «Литое стекло ручной работы, огранённый хрусталь, спечённая керамика, латунь и нержавеющая сталь. Оттенок стекла и финиш металла (брашированная или полированная латунь, графит, патинированная бронза, чёрный хром) подбираются под интерьер». Для ведомости отделки по конкретным артикулам напишите менеджеру — он подскажет, что указать (кнопки Telegram, WhatsApp, почта). Цвета RAL и коды покрытий фурнитуры — на страницах vargov.ru/specifications/colours и vargov.ru/specifications/finishes.",
-    "en": "From the site FAQ: “Hand-cast glass, cut crystal, sintered ceramics, brass and stainless steel. The glass tint and metal finish (brushed or polished brass, graphite, patinated bronze, black chrome) are matched to the interior.” For a finishes schedule on specific article codes, write to the manager — they will tell you what to list (Telegram, WhatsApp or e-mail buttons). RAL colours and hardware finish codes are on vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes."
+    "ru": "Композиции Vargov®Design создаются из художественного стекла, хрусталя, керамики и металла с применением различных производственных технологий и ручной обработки. Сборка композиций осуществляется вручную. Не всё стекло производится одинаково — используются горячее литьё в формы, ручное формование, обработка и другие технологии, поэтому способ изготовления мы называем только для конкретного изделия: для ведомости отделки по артикулам напишите менеджеру (кнопки Telegram, WhatsApp, e-mail). Цвета RAL и коды покрытий фурнитуры — на vargov.ru/specifications/colours и vargov.ru/specifications/finishes.",
+    "en": "Vargov®Design compositions are created from art glass, crystal, ceramics and metal using a range of production technologies and hand finishing. The compositions are assembled by hand. Not all glass is made the same way — hot casting in moulds, hand forming, finishing and other technologies are used — so we describe the manufacturing method only for a specific piece: for a finishes schedule by article code, write to the manager (buttons below: Telegram, WhatsApp, e-mail). RAL colours and hardware finish codes are on vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes."
    },
    "sources": [
     "/faq",
     "/specifications/colours",
     "/specifications/finishes"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете",
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)",
    "focus": {
     "path": "/faq",
     "text": {
@@ -2913,16 +2919,16 @@
     ]
    },
    "a": {
-    "ru": "Питание бывает двух видов, сценарий выбирают под проект: 12–24 В через драйвер или 220 В — прямое подключение к сети без драйвера. Схемы питания — в PDF-инструкции по подключению: vargov.ru/pdf/vargov-connection-ru.pdf. Для 12–24 В драйвер входит в комплект поставки, его размещают в электрощитке или в запотолочном пространстве, а слаботочные провода идут от него по числу световых элементов. Для 220 В провод прокладывают от щитка к месту монтажа и разводят на элементы. Требований к квалификации электрика в наших материалах нет, но мы настоятельно рекомендуем доверить монтаж и подключение официальным монтажникам.",
-    "en": "There are two power options, chosen per project: 12–24 V through a driver, or 220 V — a direct mains connection without a driver. For 12–24 V the driver is included in the delivery and goes in the distribution board or the void above the ceiling, with low-voltage cables running from it, one per lighting element. For 220 V a cable is run from the board to the installation point and split across the elements. The power schemes are in the PDF wiring guide: vargov.ru/pdf/vargov-connection-en.pdf. Our materials set no electrician qualification requirements, but we strongly recommend leaving installation and wiring to the official installers."
+    "ru": "Питание бывает двух видов, сценарий выбирают под проект: 12–24 В через драйвер или 220 В — прямое подключение к сети без драйвера. Схемы питания — в PDF-инструкции по подключению: vargov.ru/pdf/vargov-connection-ru.pdf. Для 12–24 В драйвер входит в комплект поставки, его размещают в электрощитке или в запотолочном пространстве, а слаботочные провода идут от него по числу световых элементов. Для 220 В провод прокладывают от щитка к месту монтажа и разводят на элементы. Подключайте композицию строго по её электрической схеме; светодиоды на 12 В нельзя включать напрямую в сеть 220 В. Мы настоятельно рекомендуем доверить монтаж и подключение официальным монтажным партнёрам Vargov®Design — это отдельная платная услуга, стоимость рассчитывается индивидуально; можно заказать и шеф-монтаж.",
+    "en": "There are two power options, chosen per project: 12–24 V through a driver, or 220 V — a direct mains connection without a driver. For 12–24 V the driver is included in the delivery and goes in the distribution board or the void above the ceiling, with low-voltage cables running from it, one per lighting element. For 220 V a cable is run from the board to the installation point and split across the elements. The power schemes are in the PDF wiring guide: vargov.ru/pdf/vargov-connection-en.pdf. Connect the composition strictly according to its wiring diagram; 12 V LEDs must never be connected directly to 220 V mains. We strongly recommend leaving installation and wiring to the official Vargov®Design installation partners — a separate paid service, priced individually; supervised installation can also be ordered."
    },
    "sources": [
     "/installation",
     "/pdf/vargov-connection-ru.pdf",
     "/pdf/vargov-connection-en.pdf"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q062",
@@ -2962,14 +2968,14 @@
     ]
    },
    "a": {
-    "ru": "Единой цифры на любую композицию мы не называем: число элементов подбирается под помещение, а мощность в данных конфигуратора указана на элемент. Для вашей композиции число элементов, мощность и напряжение выводятся в PDF-спецификацию и тендерный лист — нагрузку на щит берите оттуда. Так работает для 360 композиций из 605, которые считает конфигуратор; для остальных цифры назовёт менеджер (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "We do not quote one figure for every composition: the number of elements is chosen for the room, and the configurator data gives power per element. For your composition the number of elements, power and voltage are printed in the PDF specification and the tender sheet — take the panel load from there. This works for the 360 of 605 compositions the configurator calculates; for the rest the manager will give the figures (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Мощность считается под вашу композицию: число элементов подбирается под помещение, а в данных конфигуратора мощность указана на элемент. Для вашей композиции число элементов, мощность и напряжение выводятся в PDF-спецификацию и тендерный лист — нагрузку на щит берите оттуда. Так работает для 360 композиций из 605, которые считает конфигуратор; для остальных цифры назовёт менеджер (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Power is calculated for your composition: the number of elements is chosen for the room, and the configurator data gives power per element. For your composition the number of elements, power and voltage are printed in the PDF specification and the tender sheet — take the panel load from there. This works for the 360 of 605 compositions the configurator calculates; for the rest the manager will give the figures (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/configurator"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q063",
@@ -3110,14 +3116,14 @@
     ]
    },
    "a": {
-    "ru": "Для композиций, которые считает конфигуратор (360 из 605), нагрузку на каждую точку подвеса он считает сам: она указана в спецификации и записана для каждой точки в файле IFC4 (vargov.ru/configurator/ifc4). Расчёт концептуальный, финальную спецификацию подтверждает конструктор бренда, поэтому брать нагрузки в расчёт перекрытия стоит после этого подтверждения. Выдержит ли именно ваше перекрытие, наши материалы не оценивают — это решается по проекту вместе с менеджером, передайте ему артикул и данные о перекрытии (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "For the compositions the configurator calculates (360 of 605), it calculates the load on each suspension point itself: it is stated in the specification and recorded for every point in the IFC4 file (vargov.ru/en/configurator/ifc4). The calculation is conceptual and the final specification is confirmed by the brand's engineer, so the loads are best taken into the slab calculation after that confirmation. Whether your particular slab will carry it is not assessed in our materials — it is settled per project with the manager, so send the article code and the slab details (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Для композиций, которые считает конфигуратор (360 из 605), нагрузку на каждую точку подвеса он считает сам: она указана в спецификации и записана для каждой точки в файле IFC4 (vargov.ru/configurator/ifc4). Расчёт концептуальный, финальную спецификацию подтверждает конструктор бренда, поэтому брать нагрузки в расчёт перекрытия стоит после этого подтверждения. Несущую способность именно вашего потолка и перекрытия проверяют по проекту: крепить композицию прямо к гипсокартону без проверки несущей способности потолка и перекрытия в точках крепления нельзя, тяжёлым композициям нужна рассчитанная несущая конструкция. Передайте менеджеру артикул и данные о перекрытии (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "For the compositions the configurator calculates (360 of 605), it calculates the load on each suspension point itself: it is stated in the specification and recorded for every point in the IFC4 file (vargov.ru/en/configurator/ifc4). The calculation is conceptual and the final specification is confirmed by the brand's engineer, so the loads are best taken into the slab calculation after that confirmation. The load-bearing capacity of your particular ceiling and slab is checked per project: a composition must not be fixed straight to plasterboard without checking what the ceiling and slab can carry at the fixing points, and heavy compositions need a calculated load-bearing structure. Send the manager the article code and the slab details (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/configurator/ifc4"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q066",
@@ -3301,12 +3307,12 @@
     ]
    },
    "a": {
-    "ru": "Допустимые расстояния между соседними отверстиями в открытых материалах не опубликованы, поэтому цифр мы не называем. Положение каждого отверстия задаёт монтажная схема 1:1, а перед разметкой потолка её подтверждает технолог производства. Если вы проектируете потолок заранее, напишите менеджеру — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "The permitted distances between neighbouring holes are not published in our public materials, so we do not quote figures. The position of every hole is set by the 1:1 installation drawing, which the production engineer confirms before the ceiling is set out. If you are designing the ceiling in advance, write to the manager — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Положение каждого отверстия, а значит и расстояния между соседними, задаёт монтажная схема 1:1 вашей композиции; перед разметкой потолка её подтверждает технолог производства. Электронная схема выдаётся после утверждения 3D-модели или макета, когда ТЗ запущено в производство; она есть у 345 из 360 композиций, которые считает конфигуратор, а у композиций на каркасе и у лент схемы разметки нет — узлы подвеса для них даёт менеджер. Если вы проектируете потолок заранее и отверстия нужно подготовить до отделки, обсудите сроки с менеджером — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The position of every hole, and therefore the distances between neighbouring ones, is set by the 1:1 installation drawing of your composition; the production engineer confirms it before the ceiling is set out. The electronic drawing is issued once the 3D model or mock-up has been approved and the brief has been started in production; it exists for 345 of the 360 compositions the configurator calculates, while frame compositions and ribbons have no ceiling-marking drawing — the manager provides their suspension nodes. If you are designing the ceiling in advance and the holes must be prepared before finishing, agree the timing with the manager — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q070",
@@ -3510,14 +3516,14 @@
     ]
    },
    "a": {
-    "ru": "Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку и помогает избежать ошибок. Но из-за сложности композиций мы настоятельно рекомендуем официальных монтажников Vargov®Design: так все элементы работают корректно и остаются целыми, а гарантия — 12 месяцев с момента получения — действует только при нашем монтаже под ключ; шеф-монтаж её условие не заменяет. Есть ли требования к квалификации электрика, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "You can install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation and helps you avoid mistakes. But given the complexity of the compositions we strongly recommend the official Vargov®Design installers: that keeps every element working correctly and intact, and the warranty — 12 months from receipt — applies only when we carry out the full turnkey installation; supervised installation does not meet that condition. Whether there are electrician qualification requirements, please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Монтировать можно и своими силами или со сторонней бригадой — для этого есть шеф-монтаж: наш специалист консультирует и контролирует установку и помогает избежать ошибок. Но из-за сложности композиций мы настоятельно рекомендуем монтаж под ключ силами официальных монтажных партнёров Vargov®Design — это отдельная платная услуга, её стоимость рассчитывается индивидуально. Так все элементы работают корректно и остаются целыми. Гарантия — 12 месяцев с момента получения при условии нашего монтажа под ключ; шеф-монтаж это условие не заменяет. Подключайте композицию строго по её электрической схеме (схемы питания — в PDF-инструкции vargov.ru/pdf/vargov-connection-ru.pdf). Чтобы заказать монтаж или шеф-монтаж, напишите менеджеру — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "You can install with your own team or outside specialists — that is what supervised installation is for: our specialist advises on and oversees the installation and helps you avoid mistakes. But given the complexity of the compositions we strongly recommend turnkey installation by the official Vargov®Design installation partners — a separate paid service whose cost is calculated individually. That keeps every element working correctly and intact. The warranty is 12 months from receipt, provided we carry out the turnkey installation; supervised installation does not meet that condition. Connect the composition strictly according to its wiring diagram (the power schemes are in the PDF guide vargov.ru/pdf/vargov-connection-en.pdf). To order installation or supervised installation, write to the manager — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/installation"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q074",
@@ -3564,14 +3570,14 @@
     ]
    },
    "a": {
-    "ru": "Официальные монтажники и дилеры указаны на странице vargov.ru/official-dealers по трём направлениям: Россия и страны СНГ; Дубай — с регионом «Персидский залив, Ближний Восток, Америка, Европа, Азия, Африка и другие регионы»; Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия и Сингапур. Контакты — на той же странице. По Сочи отдельных данных у нас нет, уточните у менеджера (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "Official installers and dealers are listed at vargov.ru/en/official-dealers in three groups: Russia and the CIS; Dubai, with the region “Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions”; and Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore. Their contacts are on the same page. We have no separate information on Sochi, so please ask the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Официальные монтажники и дилеры указаны на странице vargov.ru/official-dealers по трём направлениям: Россия и страны СНГ; Дубай — с регионом «Персидский залив, Ближний Восток, Америка, Европа, Азия, Африка и другие регионы»; Вьетнам, Лаос, Камбоджа, Таиланд, Малайзия и Сингапур. Контакты — на той же странице. Сочи входит в направление «Россия и страны СНГ»: Россия — регион московского официального дилера. Монтаж силами официальных монтажных партнёров — отдельная платная услуга, стоимость рассчитывается индивидуально; можно заказать и шеф-монтаж. Чтобы организовать монтаж на вашем объекте, напишите менеджеру — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Official installers and dealers are listed at vargov.ru/en/official-dealers in three groups: Russia and the CIS; Dubai, with the region “Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions”; and Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore. Their contacts are on the same page. Sochi falls under “Russia and the CIS”: Russia is the region of the Moscow official dealer. Installation by the official installation partners is a separate paid service, priced individually; supervised installation can also be ordered. To arrange installation at your site, write to the manager — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/official-dealers"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q075",
@@ -3587,7 +3593,6 @@
      "Что такое шеф-монтаж, когда он нужен и как его заказать?",
      "Как заказать шеф-монтаж?",
      "Что входит в шеф-монтаж?",
-     "Сколько стоит ваш монтажник?",
      "Ваш мастер может проконтролировать?",
      "Что за услуга такая, шеф-монтаж? Это когда ваш человек сам всё вешает?",
      "Мы вешаем сами, но боимся накосячить. Можно кого-то от вас, чтобы подсказал по ходу?",
@@ -3615,14 +3620,14 @@
     ]
    },
    "a": {
-    "ru": "Шеф-монтаж — это профессиональное сопровождение монтажа и подключения композиций нашим специалистом: помощь и контроль установки, даже если монтаж выполняет сторонняя бригада. Он подойдёт тем, кто монтирует своими силами или со сторонними специалистами и хочет избежать ошибок. Гарантия 12 месяцев действует при нашем монтаже под ключ, а шеф-монтаж — отдельная услуга и монтажом под ключ не считается. Чтобы заказать, напишите в WhatsApp запрос «Шеф-монтаж» — специалист перезвонит и проконсультирует. При необходимости возможен выезд специалиста на объект.",
-    "en": "Supervised installation (“Шеф-монтаж”) is professional guidance of the installation and wiring of the compositions by our specialist: help and oversight of the installation even when an outside team does the work. It suits those who install themselves or through outside specialists and want to avoid mistakes. The 12-month warranty applies when we carry out the full turnkey installation; supervised installation is a separate service and does not count as a turnkey installation. To order, send a WhatsApp message with the request “Supervised installation” — the specialist will call you back and advise. Where required, a specialist can also attend the site."
+    "ru": "Шеф-монтаж — это профессиональное сопровождение монтажа и подключения композиций нашим специалистом: помощь и контроль установки, даже если монтаж выполняет сторонняя бригада. Он подойдёт тем, кто монтирует своими силами или со сторонними специалистами и хочет избежать ошибок. Гарантия — 12 месяцев с момента получения при условии нашего монтажа под ключ, а шеф-монтаж — отдельная услуга и монтажом под ключ не считается. Чтобы заказать, напишите в WhatsApp запрос «Шеф-монтаж» — специалист перезвонит и проконсультирует. Выезд специалиста на объект возможен по предварительному согласованию.",
+    "en": "Supervised installation (“Шеф-монтаж”) is professional guidance of the installation and wiring of the compositions by our specialist: help and oversight of the installation even when an outside team does the work. It suits those who install themselves or through outside specialists and want to avoid mistakes. The warranty is 12 months from receipt, provided we carry out the turnkey installation; supervised installation is a separate service and does not count as a turnkey installation. To order, send a WhatsApp message with the request “Supervised installation” — the specialist will call you back and advise. A specialist visit to the site is possible by prior arrangement."
    },
    "sources": [
     "/installation"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q076",
@@ -3662,14 +3667,14 @@
     ]
    },
    "a": {
-    "ru": "Консультация по телефону — по согласованию. Выезд специалиста на объект оплачивается отдельно, и его стоимость оговаривается индивидуально. Чтобы узнать условия, напишите в WhatsApp запрос «Шеф-монтаж».",
-    "en": "A telephone consultation is by arrangement. A specialist visit to the site is charged separately and the cost is agreed individually. To learn the terms, send a WhatsApp message with the request “Supervised installation”."
+    "ru": "Консультация по телефону — по согласованию. Выезд специалиста на объект возможен по предварительному согласованию, оплачивается отдельно, и его стоимость оговаривается индивидуально. Чтобы узнать условия, напишите в WhatsApp запрос «Шеф-монтаж». Монтаж под ключ силами официальных монтажных партнёров — отдельная платная услуга, её стоимость тоже рассчитывается индивидуально.",
+    "en": "A telephone consultation is by arrangement. A specialist visit to the site is possible by prior arrangement, is charged separately and its cost is agreed individually. To learn the terms, send a WhatsApp message with the request “Supervised installation”. Turnkey installation by the official installation partners is a separate paid service, and its cost is also calculated individually."
    },
    "sources": [
     "/installation"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q077",
@@ -3825,14 +3830,14 @@
     ]
    },
    "a": {
-    "ru": "Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа под ключ (шеф-монтаж таким монтажом не считается). Что именно покрывает гарантия и каков срок службы, в открытых материалах не опубликовано, поэтому этого мы не обещаем. Строка о гарантии есть в спецификации проекта, а условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "The product warranty is 12 months from receipt, provided we carry out the full turnkey installation (supervised installation does not count as such). What exactly the warranty covers and the service life are not published in our public materials, so we do not promise them. A warranty line appears in the project specification, and the manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Гарантия на изделие — 12 месяцев с момента получения при условии нашего монтажа под ключ (шеф-монтаж таким монтажом не считается). Для оформленного заказа приоритет у подписанного договора и согласованной спецификации; строка о гарантии есть и в PDF-спецификации проекта. Случаи производственного брака или повреждений менеджер рассматривает отдельно. Для объектов мы даём гарантийное обслуживание и запасные элементы, а блок питания (драйвер), чей срок службы меньше срока службы композиции, остаётся доступным и заменяется без демонтажа изделия. Условия для вашего заказа подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The product warranty is 12 months from receipt, provided we carry out the full turnkey installation (supervised installation does not count as such). For a placed order the signed contract and the agreed specification take priority; a warranty line also appears in the project's PDF specification. Cases of manufacturing defects or damage are reviewed separately by the manager. For projects we provide warranty service and spare elements, and the power supply (driver), whose service life is shorter than that of the composition, stays accessible and is replaced without dismantling the piece. The manager will confirm the terms for your order — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/warranty"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q080",
@@ -3871,14 +3876,14 @@
     ]
    },
    "a": {
-    "ru": "Мы работаем с архитекторами и дизайнерами как соавторы и сопровождаем проект от первой консультации до монтажа. Вы получаете расчёт композиции под ваше пространство, техническую документацию (монтажная схема 1:1 на баннерной ткани, узлы крепления, электрические характеристики, спецификация), а также визуализации и данные для проекта. Для композиций с полным расчётом — это 360 из 605 в каталоге — конфигуратор сам выгружает модель IFC4 (BIM), PDF-спецификацию и тендерный лист. Пошагового плана по этапам мы на сайте не публикуем, поэтому порядок работы разберёт менеджер: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "We work with architects and designers as co-authors and support the project from the first consultation to installation. You get the composition calculated for your space, technical documentation (a 1:1 installation drawing on banner fabric, fixing details, electrical characteristics, a specification), plus visualisations and data for your project. For compositions that open with a full calculation — 360 of the 605 in the catalogue — the configurator itself exports an IFC4 (BIM) model, a PDF specification and a tender sheet. We do not publish a stage-by-stage plan, so a manager will walk you through the order of work: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "Выйти на нас можно уже с первой консультации: мы работаем с архитекторами и дизайнерами как соавторы и сопровождаем проект до монтажа. По шагам: вы называете артикул LC или описываете задачу — спецификацию и коммерческое предложение мы готовим в течение 24 часов; для композиций с полным расчётом (360 из 605) конфигуратор сам выгружает модель IFC4 (BIM), PDF-спецификацию и тендерный лист, а ТЗ на производство собирается на vargov.ru/specifications. Оплата — 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки. Электронная монтажная схема 1:1 выдаётся после утверждения 3D-модели или макета, когда ТЗ запущено в производство; она есть у 345 из 360 композиций, которые считает конфигуратор, а у композиций на каркасе и у лент схемы разметки нет. Изготовление — ориентировочно 40–90 рабочих дней, точный срок фиксируется в договоре-спецификации; там, где есть схема 1:1, её печатная версия на баннерной ткани приходит вместе с композицией. Дальше — доставка по всему миру и монтаж под ключ силами официальных монтажных партнёров бренда (отдельная платная услуга, стоимость рассчитывается индивидуально); шеф-монтаж — по согласованию. По ходу работы вы получаете визуализации и техническую документацию: узлы крепления, электрические характеристики, спецификацию. Договор и график по вашему объекту подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "You can bring us in from the very first consultation: we work with architects and designers as co-authors and support the project all the way to installation. Step by step: you give us the LC code or describe the task, and we prepare the specification and quotation within 24 hours; for compositions with a full calculation (360 of the 605) the configurator itself exports an IFC4 (BIM) model, a PDF specification and a tender sheet, and the production brief is put together at vargov.ru/en/specifications. Payment is a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment. The electronic 1:1 installation drawing is issued once the 3D model or mock-up has been approved and the brief has been started in production; it exists for 345 of the 360 compositions the configurator calculates, while frame compositions and ribbons have no ceiling-marking drawing. Production takes indicatively 40–90 business days and the exact term is fixed in the contract specification; where a 1:1 drawing exists, its printed version on banner fabric arrives with the composition. Then comes worldwide delivery and turnkey installation by the brand's official installation partners (a separate paid service, priced individually); supervised installation is by arrangement. Along the way you get visualisations and technical documentation: fixing details, electrical characteristics, the specification. The manager will confirm the contract and the schedule for your project — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/architects"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q081",
@@ -4095,41 +4100,41 @@
     "ru": [
      "Сделаете по моему эскизу?",
      "Можно ли сделать светильник по эскизу клиента или похожий на журнальный образец, а не из каталога?",
-     "Можете повторить светильник с фото из журнала?",
      "Принимаете индивидуальный дизайн вне каталога?",
-     "Есть фото светильника, который понравился клиенту, он не ваш. Возьмётесь сделать аналог?",
      "У нас авторский эскиз светильника для ресторана. Вы делаете по чужим чертежам?",
      "Могу прислать рисунок от руки. Сделаете по нему что-то уникальное?",
      "В каталоге ничего не подходит под концепцию. Разрабатываете индивидуальные решения?",
      "Есть 3D-модель от дизайнера. Можете изготовить по ней, не из каталога?",
      "изготовите люстру по нашему чертежу?",
-     "есть картинка из интернета, можно сделать что-то похожее?",
-     "Делаете эксклюзив под проект, не из каталога?"
+     "Разработаете оригинальную композицию под нашу архитектуру и бюджет?",
+     "Можете придумать авторскую вещь специально под стилистику нашего интерьера?",
+     "под наш бюджет сделаете что-то своё, не каталожное?",
+     "Делаете уникальную композицию под проект, не из каталога?"
     ],
     "en": [
      "Will you make it from my sketch?",
      "Can you make a light to my own sketch, or something similar to one from a magazine, rather than from the catalogue?",
-     "Can you reproduce a light from a magazine photo?",
      "Do you accept a one-off design outside the catalogue?",
-     "A client likes a fixture from another brand. Would you build something similar for them?",
      "Do you manufacture to a designer's drawings or 3D model rather than from your catalogue?",
      "Nothing in the catalogue fits our concept. Can you develop a bespoke piece?",
      "I have a hand sketch of a pendant. Who do I send it to, and do you take such commissions?",
      "can you build from our drawings",
-     "make something like a pic i found online?",
      "one-off custom chandelier possible?",
-     "do you take commissions to a client's own design"
+     "do you take commissions to a client's own design",
+     "Can you design an original piece for our architecture and budget?",
+     "could you come up with your own design for our interior style",
+     "We need something bespoke within our budget — do you create pieces from scratch?"
     ]
    },
    "a": {
-    "ru": "Все наши композиции делаются под заказ: масштаб, длина подвеса, цвет кабеля, оттенки и отделка рассчитываются под ваше пространство. Изготовление светильника по вашему эскизу или по образцу из журнала, вне каталога, на сайте не описано, поэтому это нужно уточнить у менеджера до расчёта. Пришлите ему эскиз или фото-образец: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "All our compositions are made to order: scale, suspension length, cable colour, tints and finishes are calculated for your space. Making a light to your own sketch or to a magazine example, outside the catalogue, is not described on the website, so please check it with a manager before any quotation. Send them your sketch or reference photo: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "Большинство наших композиций изготавливается индивидуально под параметры заказчика: масштаб, длина подвеса, цвет кабеля, оттенки и отделка рассчитываются под ваше пространство. Копий изделий других брендов мы не делаем, но можем разработать собственное оригинальное решение под архитектуру, стилистику и бюджет вашего проекта. Возможность, срок и стоимость изготовления по вашему эскизу оцениваются по чертежам и параметрам проекта. Пришлите менеджеру эскиз, чертёж или фото-референс с описанием задачи: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Most of our compositions are made individually to the customer's parameters: scale, suspension length, cable colour, tints and finishes are calculated for your space. We do not make copies of other brands' products, but we can develop our own original solution to suit the architecture, style and budget of your project. Whether a piece can be made to your sketch, and its timing and cost, are assessed from the drawings and parameters of the project. Send the manager your sketch, drawing or reference photo with a description of the task: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/faq"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q086",
@@ -4171,15 +4176,15 @@
     ]
    },
    "a": {
-    "ru": "Оплата идёт в два этапа: 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки. Точные сроки оплаты фиксируются в договоре. Спецификацию и коммерческое предложение мы готовим в течение 24 часов, счёт и договор подтвердит менеджер: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "Payment is made in two stages: a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment. The exact payment deadlines are set in the contract. We prepare the specification and quotation within 24 hours, and a manager will confirm the invoice and the contract: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "Стандартная схема оплаты — два этапа: 50 % предоплаты для запуска производства и 50 % после уведомления о готовности изделия и фото- или видеоотчёта, до отгрузки. Точные сроки оплаты фиксируются в договоре (в действующих типовых договорах встречается срок оплаты первого счёта 5 календарных дней), а другие условия возможны только после отдельного согласования. Спецификацию и коммерческое предложение мы готовим в течение 24 часов, счёт и договор подтвердит менеджер: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Our standard payment scheme has two stages: a 50% prepayment to start production and 50% after we notify you that the piece is ready and send a photo or video report, before shipment. The exact payment deadlines are set in the contract (a 5-calendar-day term for paying the first invoice can be found in our current standard contracts), and other terms are possible only by separate agreement. We prepare the specification and quotation within 24 hours, and a manager will confirm the invoice and the contract: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/faq",
     "/contacts"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q087",
@@ -4199,7 +4204,10 @@
      "Покупаем от юрлица для объекта, оплата безналом. Как это оформить?",
      "счёт на юрлицо выставите?",
      "УПД даёте?",
-     "Работаете по безналу с компаниями и с НДС?"
+     "Работаете по безналу с компаниями и с НДС?",
+     "Цены у вас с НДС или без?",
+     "В договоре стоимость указана с налогом или без?",
+     "Оплата идёт на счёт ИП или компании?"
     ],
     "en": [
      "Do you charge VAT?",
@@ -4212,19 +4220,22 @@
      "can you invoice our company",
      "do you issue vat invoices",
      "which closing paperwork comes with the delivery for our accounts team",
-     "b2b purchase by bank transfer possible?"
+     "b2b purchase by bank transfer possible?",
+     "Are your prices with or without VAT?",
+     "Is VAT included in the contract price?",
+     "is the seller a sole proprietor or a company"
     ]
    },
    "a": {
-    "ru": "Работа с НДС, выставление счёта на организацию и перечень закрывающих документов на сайте не описаны, поэтому в чате мы их не подтверждаем. Это уточняет менеджер при оформлении заказа — напишите ему, что заказ нужен на юридическое лицо: Telegram, WhatsApp или e-mail, кнопки ниже. Сертификаты соответствия (они охватывают 310 артикулов LC) для тендерной и рабочей документации предоставляем по запросу.",
-    "en": "Working with VAT, invoicing a company and the list of closing documents are not described on the website, so we do not confirm them in the chat. A manager will clarify this when your order is set up — tell them the order is for a legal entity: Telegram, WhatsApp or e-mail, buttons below. Certificates of conformity (covering 310 LC articles) are available on request for tender and project documentation."
+    "ru": "Стоимость по действующим типовым договорам указывается без НДС. Для заказов в России стандартный вариант — безналичная оплата на расчётный счёт ИП в российской валюте по внутреннему курсу компании. Как оформить счёт и договор на вашу организацию и какие закрывающие документы идут с поставкой, подтвердит менеджер — напишите ему, что заказ нужен на юридическое лицо: кнопки Telegram, WhatsApp, e-mail. Сертификаты соответствия (они охватывают 310 артикулов LC) для тендерной и рабочей документации предоставляем по запросу.",
+    "en": "Under our current standard contracts the price is stated without VAT. For orders in Russia the standard option is a bank transfer to the sole proprietor's (IP) settlement account in roubles at the company's internal exchange rate. How the invoice and contract are issued to your company and which closing documents come with the delivery, the manager will confirm — tell them the order is for a legal entity: buttons below: Telegram, WhatsApp, e-mail. Certificates of conformity (covering 310 LC articles) are available on request for tender and project documentation."
    },
    "sources": [
     "/faq",
     "/certification"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q088",
@@ -4273,15 +4284,15 @@
     ]
    },
    "a": {
-    "ru": "Цен мы не публикуем: каждая композиция делается под заказ, и цена считается по заявке. В конфигураторе кнопка «Узнать стоимость» открывает уже набранную заявку — состав композиции, цвета с долями, покрытие, точки крепления — в Telegram, WhatsApp или письме, остаётся нажать «Отправить». Либо назовите артикул менеджеру (кнопки Telegram, WhatsApp, почта): спецификацию и расчёт готовим в течение суток.",
-    "en": "We do not publish prices: every composition is made to order and the price is calculated per request. In the configurator the “Get a quote” button opens a ready-made request — the make-up of the composition, colours with their shares, finish, mounting points — in Telegram, WhatsApp or an e-mail, and you only press “Send”. Or give the manager the LC code (Telegram, WhatsApp or e-mail buttons): we prepare the specification and the calculation within a day."
+    "ru": "Цена рассчитывается под ваш проект: каждая композиция делается под заказ, а стоимость подтверждается в коммерческом предложении или счёте. В конфигураторе кнопка «Узнать стоимость» открывает уже набранную заявку — состав композиции, цвета с долями, покрытие, точки крепления — в Telegram, WhatsApp или письме, остаётся нажать «Отправить». Либо назовите артикул менеджеру (кнопки Telegram, WhatsApp, e-mail): спецификацию и расчёт готовим в течение суток.",
+    "en": "The price is calculated for your project: every composition is made to order, and the cost is confirmed in the quotation or invoice. In the configurator the “Get a quote” button opens a ready-made request — the make-up of the composition, colours with their shares, finish, mounting points — in Telegram, WhatsApp or an e-mail, and you only press “Send”. Or give the manager the LC code (buttons below: Telegram, WhatsApp, e-mail): we prepare the specification and the calculation within a day."
    },
    "sources": [
     "/faq",
     "/configurator"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q089",
@@ -4324,12 +4335,12 @@
     ]
    },
    "a": {
-    "ru": "Ориентировочных сумм и диапазонов мы не называем: композиции делаются под заказ, и цена считается по заявке. В заявку входят состав композиции, цвета с долями, покрытие и точки крепления. Откройте заявку кнопкой «Узнать стоимость» в конфигураторе или напишите менеджеру артикул и задачу (кнопки Telegram, WhatsApp, почта) — спецификацию и расчёт готовим в течение суток.",
-    "en": "We do not give approximate figures or ranges: compositions are made to order and the price is calculated per request. The request contains the make-up of the composition, colours with their shares, finish and the mounting points. Open the request with the “Get a quote” button in the configurator, or write to the manager with the LC code and your task (Telegram, WhatsApp or e-mail buttons) — we prepare the specification and the calculation within a day."
+    "ru": "Цена рассчитывается под ваш проект по заявке, поэтому ориентировочных сумм и диапазонов в чате нет. Зависит она от состава заявки: состав композиции, цвета с долями, покрытие и точки крепления; если нужной геометрии нет среди существующих форм и нужна новая форма, это тоже влияет на цену и срок. Монтаж — отдельная платная услуга, его стоимость рассчитывается индивидуально. Откройте заявку кнопкой «Узнать стоимость» в конфигураторе или напишите менеджеру артикул и задачу (кнопки Telegram, WhatsApp, e-mail) — спецификацию и расчёт готовим в течение суток, стоимость подтверждается в коммерческом предложении или счёте.",
+    "en": "The price is calculated for your project from the request, so there are no approximate figures or ranges in the chat. It depends on what the request contains: the make-up of the composition, colours with their shares, finish and the mounting points; if the geometry you need is not among the existing forms and a new form is required, that also affects the price and the lead time. Installation is a separate paid service, priced individually. Open the request with the “Get a quote” button in the configurator, or write to the manager with the LC code and your task (buttons below: Telegram, WhatsApp, e-mail) — we prepare the specification and the calculation within a day, and the cost is confirmed in the quotation or invoice."
    },
    "sources": [],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q090",
@@ -4346,7 +4357,11 @@
      "Мы архитектурное бюро и регулярно подбираем свет на объекты. Есть ли особые условия для постоянных партнёров?",
      "скинете цену если возьмём две люстры?",
      "Если будем заказывать регулярно, условия станут лучше?",
-     "акции сейчас какие то есть? черная пятница там"
+     "акции сейчас какие то есть? черная пятница там",
+     "Какая скидка при крупном заказе?",
+     "Постоянным клиентам скидки делаете?",
+     "Берём свет на весь объект, сколько процентов скинете?",
+     "при повторной покупке будет скидка?"
     ],
     "en": [
      "Do you offer any discounts?",
@@ -4355,19 +4370,23 @@
      "do u have sales or promo right now",
      "Is there a better rate for repeat customers?",
      "can you knock something off the price",
-     "Do you offer special terms for architects who specify your lights regularly?"
+     "Do you offer special terms for architects who specify your lights regularly?",
+     "What discount do you give on a large order?",
+     "Do repeat buyers get a discount?",
+     "how many % off for a whole-project order",
+     "We've worked with you before — is there a discount for returning clients?"
     ]
    },
    "a": {
-    "ru": "Скидок и акций на сайте мы не публикуем, поэтому скидку в чате не обещаю. Для дилеров и комплектаторов объектов есть партнёрские условия, для постоянных партнёров — отдельные, но что в них входит, на сайте не раскрыто (vargov.ru/dealers). Условия под ваш заказ обсуждает менеджер: напишите ему кнопками Telegram, WhatsApp или почтой и расскажите о проекте.",
-    "en": "We do not publish discounts or promotions on the website, so I cannot promise a discount in the chat. Dealers and project procurers have partner terms, and regular partners have separate ones, but what they include is not disclosed on the website (vargov.ru/en/dealers). Terms for your order are discussed by the manager: write to them via Telegram, WhatsApp or e-mail and tell them about the project."
+    "ru": "При крупных заказах, повторных покупках и постоянном сотрудничестве могут предоставляться индивидуальные скидки. Размер скидки определяется отдельно, поэтому конкретных процентов в чате не называю. Для дилеров и комплектаторов объектов есть партнёрские условия — vargov.ru/dealers. Чтобы обсудить скидку на ваш заказ, расскажите менеджеру о проекте: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Individual discounts may be granted for large orders, repeat purchases and ongoing cooperation. The size of the discount is determined separately, so I do not quote percentages in the chat. Dealers and project procurers have partner terms — vargov.ru/en/dealers. To discuss a discount on your order, tell the manager about the project: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/dealers",
     "/architects"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q091",
@@ -4470,15 +4489,15 @@
     ]
    },
    "a": {
-    "ru": "Конкретную дату в чате мы не обещаем: ориентировочный срок изготовления — 40–90 рабочих дней в зависимости от модели, сложности и объёма, точный срок фиксируется в договоре-спецификации, а доставка идёт отдельно. Для срочных объектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов; цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта сохраняются. Напишите менеджеру дату и артикул или задачу — он подтвердит, реально ли успеть: Telegram, WhatsApp или e-mail, кнопки ниже.",
-    "en": "We do not promise a specific date in the chat: the indicative production lead time is 40–90 business days depending on the model, its complexity and the volume, the exact term is fixed in the contract specification, and delivery comes on top. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum 10 elements; element colour, suspension length, cable colour and mounting-kit colour are all kept. Send a manager your date and the LC code or the task, and they will confirm whether it is feasible: Telegram, WhatsApp or e-mail, buttons below."
+    "ru": "Успеем ли к вашей дате, менеджер подтвердит по проекту: ориентировочный срок изготовления — 40–90 рабочих дней в зависимости от модели, сложности и объёма, точный срок фиксируется в договоре-спецификации, а срок доставки добавляется к нему. Для срочных объектов есть программа Ready Elements in Stock — сборка из складских элементов за 15–20 рабочих дней, заказ от 10 элементов; цвет элемента, длина подвеса, цвет кабеля и цвет монтажного комплекта сохраняются. Напишите менеджеру дату и артикул или задачу: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Whether we can meet your date, the manager will confirm for your project: the indicative production lead time is 40–90 business days depending on the model, its complexity and the volume, the exact term is fixed in the contract specification, and delivery time is added to it. For urgent projects there is the Ready Elements in Stock programme — assembly from warehouse elements in 15–20 business days, minimum 10 elements; element colour, suspension length, cable colour and mounting-kit colour are all kept. Send the manager your date and the LC code or the task: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/in-stock",
     "/faq"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q093",
@@ -4612,7 +4631,8 @@
      "Груз пришёл с повреждениями, а монтаж через три дня. Как действовать и с чего начать?",
      "привезли ящик с вмятиной, что делать до того как вскрывать",
      "Получили на объекте коробку с повреждённым углом. Как зафиксировать, чтобы потом не было проблем?",
-     "транспортная компания привезла побитую коробку что делать"
+     "транспортная компания привезла побитую коробку что делать",
+     "После распаковки нашли производственный брак — куда обращаться?"
     ],
     "en": [
      "The shipment arrived damaged — what do I do?",
@@ -4628,19 +4648,20 @@
      "What should we photograph if the delivery arrives with damaged packaging?",
      "something broke in shipping, how do i report it",
      "Is there a deadline to report transport damage?",
-     "package arrived torn, pieces rattling inside"
+     "package arrived torn, pieces rattling inside",
+     "We found a manufacturing defect after unpacking — who do we contact?"
     ]
    },
    "a": {
-    "ru": "При получении внимательно осмотрите коробки и упаковку. Если заметили повреждения, зафиксируйте их на фото и видео — и упаковку, и сами элементы, — и сохраните упаковку и упаковочный лист. Срок подачи претензии и условия замены или компенсации на сайте не опубликованы — их подтвердит менеджер, поэтому пишите ему с фото и видео для проверки: Telegram, WhatsApp или e-mail — кнопки ниже.",
-    "en": "When the delivery arrives, inspect the boxes and the packaging carefully. If you notice any damage, record it in photos and video — both the packaging and the elements themselves — and keep the packaging and the packing list. The claim deadline and the terms of replacement or compensation are not published on the website — a manager will confirm them, so please write with the photos and video for the check: Telegram, WhatsApp or e-mail — buttons below."
+    "ru": "При получении внимательно осмотрите коробки и упаковку. Если заметили повреждения, зафиксируйте их на фото и видео — и упаковку, и сами элементы, — и сохраните упаковку и упаковочный лист. Случаи повреждений и производственного брака мы рассматриваем отдельно: пришлите фото и видео менеджеру (кнопки Telegram, WhatsApp, e-mail) — он разберёт ваш случай и подскажет дальнейшие шаги.",
+    "en": "When the delivery arrives, inspect the boxes and the packaging carefully. If you notice any damage, record it in photos and video — both the packaging and the elements themselves — and keep the packaging and the packing list. Cases of damage and manufacturing defects are considered separately: send the photos and video to the manager (buttons below: Telegram, WhatsApp, e-mail) — they will review your case and advise on the next steps."
    },
    "sources": [
     "/warranty",
     "/installation"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q096",
@@ -4685,15 +4706,15 @@
     ]
    },
    "a": {
-    "ru": "Мы доставляем по всему миру, но сроки и стоимость доставки по городам на сайте не опубликованы, поэтому в чате мы их не называем. Они уточняются по проекту: напишите менеджеру город доставки и артикул или задачу — Telegram, WhatsApp или e-mail, кнопки ниже.",
-    "en": "We deliver worldwide, but delivery times and costs for individual cities are not published on the website, so we do not quote them in the chat. They are clarified per project: send a manager the delivery city and the LC code or the task — Telegram, WhatsApp or e-mail, buttons below."
+    "ru": "Стоимость и срок доставки рассчитываются под ваш заказ и город доставки. Доставляем по всему миру: композиции едут в экспортной упаковке с деревянной обрешёткой, а при необходимости — ещё и в фанерном ящике. Срок доставки не входит в срок изготовления (ориентировочно 40–90 рабочих дней) и добавляется к нему. Напишите менеджеру город доставки и артикул или задачу — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Delivery cost and time are calculated for your order and delivery city. We deliver worldwide: compositions travel in export packaging with timber crating and, where needed, an additional plywood box. Delivery time is not included in the production lead time (indicatively 40–90 business days) and is added to it. Send the manager the delivery city and the LC code or the task — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/faq",
     "/contacts"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q097",
@@ -4734,15 +4755,15 @@
     ]
    },
    "a": {
-    "ru": "Для закупки у нас есть тендерный лист — спецификация с техническими характеристиками, монтажом, документами соответствия и кодом ТН ВЭД для таможни; его выгружает конфигуратор для 360 из 605 композиций. Сертификаты соответствия (они охватывают 310 артикулов LC) предоставляем по запросу для тендерной документации. Доставка идёт по всему миру в экспортной упаковке с деревянной обрешёткой. Условия поставки по Incoterms, страхование груза и таможенное оформление на сайте не описаны — их подтвердит менеджер: Telegram, WhatsApp или e-mail, кнопки ниже.",
-    "en": "For procurement we have a tender sheet — a specification with technical data, installation, conformity documents and the HS code for customs; the configurator exports it for 360 of the 605 compositions. Certificates of conformity (covering 310 LC articles) are available on request for tender documentation. Delivery is worldwide in export packaging with timber crating. Incoterms, cargo insurance and customs clearance are not described on the website — a manager will confirm them: Telegram, WhatsApp or e-mail, buttons below."
+    "ru": "Для закупки у нас есть тендерный лист — спецификация с техническими характеристиками, монтажом, документами соответствия и кодом ТН ВЭД для таможни; его выгружает конфигуратор для 360 из 605 композиций. Сертификаты соответствия (они охватывают 310 артикулов LC) предоставляем по запросу для тендерной документации. Доставка идёт по всему миру в экспортной упаковке с деревянной обрешёткой. Условия поставки по Incoterms, страхование груза и таможенное оформление для вашей поставки подтвердит менеджер: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For procurement we have a tender sheet — a specification with technical data, installation, conformity documents and the HS code for customs; the configurator exports it for 360 of the 605 compositions. Certificates of conformity (covering 310 LC articles) are available on request for tender documentation. Delivery is worldwide in export packaging with timber crating. The manager will confirm Incoterms, cargo insurance and customs clearance for your shipment: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/architects",
     "/certification"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q098",
@@ -4772,7 +4793,10 @@
      "Планирую поездку в Москву из Новосибирска. Есть место, где можно рассмотреть и увидеть включённый свет?",
      "в москве есть место где ваши люстры висят включёнными?",
      "Какой адрес у шоурума, хочу привезти заказчика",
-     "до скольки открыт шоурум сегодня"
+     "до скольки открыт шоурум сегодня",
+     "Шоурум работает в праздники? Хотим приехать 4 ноября",
+     "На новогодних каникулах вы открыты?",
+     "в праздничные дни график шоурума другой?"
     ],
     "en": [
      "Where is the showroom?",
@@ -4789,19 +4813,22 @@
      "what time does the showroom close",
      "Can I bring a client to see the pieces lit up in Moscow?",
      "address of the moscow showroom pls",
-     "Is there a place in Moscow to view your lights in person?"
+     "Is there a place in Moscow to view your lights in person?",
+     "Is the showroom open on public holidays?",
+     "Are you open over the New Year holidays?",
+     "do opening hours change on holidays"
     ]
    },
    "a": {
-    "ru": "Наш шоурум — в Москве: Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212. Он открыт ежедневно, в том числе по выходным, с 12:00 до 20:00; телефон шоурума +7 925 888 77 44. Композиции показаны собранными и включёнными, а рядом можно вблизи рассмотреть элементы-образцы. Напишите нам заранее — подготовим интересующие вас композиции к показу.",
-    "en": "Our showroom is in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212. It is open daily, weekends included, 12:00–20:00; showroom phone +7 925 888 77 44. The compositions are shown assembled and switched on, and sample elements stand beside them so you can look at them up close. Write to us in advance and we will prepare the compositions you are interested in."
+    "ru": "Наш шоурум — в Москве: Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212. Он открыт ежедневно, в том числе по выходным, с 12:00 до 20:00; телефон шоурума +7 925 888 77 44. Композиции показаны собранными и включёнными, а рядом можно вблизи рассмотреть элементы-образцы. Напишите нам заранее или запишитесь на посещение — подготовим интересующие вас композиции к показу; работу в государственные праздники тоже лучше подтвердить заранее.",
+    "en": "Our showroom is in Moscow: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212. It is open daily, weekends included, 12:00–20:00; showroom phone +7 925 888 77 44. The compositions are shown assembled and switched on, and sample elements stand beside them so you can look at them up close. Write to us in advance or book a visit and we will prepare the compositions you are interested in; on public holidays it is best to confirm opening in advance as well."
    },
    "sources": [
     "/showroom",
     "/faq"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете",
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)",
    "focus": {
     "path": "/showroom",
     "text": {
@@ -4852,15 +4879,15 @@
     ]
    },
    "a": {
-    "ru": "Шоурум открыт ежедневно с 12:00 до 20:00. На странице шоурума мы просим написать заранее или записаться на посещение — так мы подготовим к показу нужные композиции. Обязательна ли запись и где можно припарковаться, в наших материалах не сказано: это лучше уточнить у менеджера (кнопки Telegram, WhatsApp, e-mail) или по телефону шоурума +7 925 888 77 44.",
-    "en": "The showroom is open daily 12:00–20:00. On the showroom page we ask you to write in advance or book a visit, so that we can prepare the compositions you want to see. Whether a booking is mandatory and where to park is not stated in our materials: please check with the manager (Telegram, WhatsApp, e-mail buttons) or by the showroom phone +7 925 888 77 44."
+    "ru": "Шоурум открыт ежедневно с 12:00 до 20:00; работу в государственные праздники лучше подтвердить заранее. Мы советуем записаться на посещение или написать заранее — так мы подготовим к показу нужные композиции. Записаться можно у менеджера (кнопки Telegram, WhatsApp, e-mail) или по телефону шоурума +7 925 888 77 44; там же можно спросить про парковку. Адрес: Москва, Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212.",
+    "en": "The showroom is open daily 12:00–20:00; on public holidays it is best to confirm opening in advance. We recommend booking a visit or writing in advance, so that we can prepare the compositions you want to see. You can book with the manager (buttons below: Telegram, WhatsApp, e-mail) or by the showroom phone +7 925 888 77 44; you can ask about parking there too. Address: Moscow, Nakhimovsky Prospekt 24, bldg 1, pavilion 2, stand 212."
    },
    "sources": [
     "/showroom",
     "/contacts"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q100",
@@ -4883,7 +4910,11 @@
      "Образцы фурнитуры есть? Хочу приложить к ведомости отделки",
      "можно посмотреть образцы цветов вживую",
      "Пришлёте пару элементов-образцов в Петербург, чтобы клиент выбрал оттенок?",
-     "образец покрытия можно взять с собой из шоурума?"
+     "образец покрытия можно взять с собой из шоурума?",
+     "Изготовите образец элемента и отправите транспортной компанией?",
+     "Сколько стоят образцы и их доставка?",
+     "Образцы стекла и керамики можно вживую посмотреть?",
+     "отправка образцов бесплатная?"
     ],
     "en": [
      "Do you have finish samples?",
@@ -4896,20 +4927,24 @@
      "can i get a sample sent",
      "do you have colour samples i can look at",
      "Could you mail a finish sample to our studio?",
-     "can i take a sample element home from the showroom"
+     "can i take a sample element home from the showroom",
+     "Can you make a sample element and ship it by a transport company?",
+     "How much do samples and their shipping cost?",
+     "Can I see glass and ceramic samples in person?",
+     "is shipping of samples free"
     ]
    },
    "a": {
-    "ru": "В шоуруме рядом с композициями стоят элементы-образцы, которые можно рассмотреть вблизи, а покрытия металла там собраны в живой каталог. Цвета и покрытия можно посмотреть и на сайте — vargov.ru/specifications/colours и vargov.ru/specifications/finishes (оттенки на экране приблизительные). Выдаются ли образцы с собой и отправляются ли по почте, в наших материалах не сказано — уточните у менеджера, кнопки Telegram, WhatsApp и e-mail.",
-    "en": "In the showroom, sample elements stand beside the compositions so you can look at them up close, and the metal finishes are gathered there in a physical catalogue. Colours and finishes can also be viewed on the site — vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes (on-screen shades are approximate). Whether samples can be taken away or posted is not stated in our materials — please ask the manager via the Telegram, WhatsApp or e-mail buttons."
+    "ru": "Образцы стеклянных, керамических и других элементов можно посмотреть в шоуруме — они стоят рядом с композициями, а покрытия металла собраны там в живой каталог. Также возможны изготовление и отправка образцов вам, в том числе транспортной компанией; стоимость образцов и доставки определяется индивидуально. Цвета и покрытия можно заранее посмотреть на vargov.ru/specifications/colours и vargov.ru/specifications/finishes (оттенки на экране приблизительные). Чтобы заказать образцы, напишите менеджеру, какие элементы и оттенки нужны: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Samples of glass, ceramic and other elements can be seen in the showroom — they stand beside the compositions, and the metal finishes are gathered there in a physical catalogue. Samples can also be made and sent to you, including by a transport company; the cost of the samples and of their delivery is determined individually. Colours and finishes can be previewed on vargov.ru/en/specifications/colours and vargov.ru/en/specifications/finishes (on-screen shades are approximate). To order samples, tell the manager which elements and shades you need: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/specifications/colours",
     "/specifications/finishes",
     "/showroom"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q101",
@@ -5040,16 +5075,16 @@
     ]
    },
    "a": {
-    "ru": "Оставьте заявку на странице «Дилерам и комплектаторам» — vargov.ru/dealers. Бренд предоставляет статус официального представителя, партнёрские условия, доступ к полному каталогу артикулов LC и поддержку международной логистики. Сами условия в открытых материалах не опубликованы: после заявки их для вашего региона назовёт менеджер — кнопки Telegram, WhatsApp и e-mail.",
-    "en": "Leave an application on the “For dealers and procurement” page — vargov.ru/en/dealers. The brand offers official-representative status, partner terms, access to the full LC catalogue and support with international logistics. The terms themselves are not published: after your application the manager will go through them for your region — Telegram, WhatsApp and e-mail buttons."
+    "ru": "Оставьте заявку на странице «Дилерам и комплектаторам» — vargov.ru/dealers. Бренд предоставляет статус официального представителя, партнёрские условия, доступ к полному каталогу артикулов LC и поддержку международной логистики. Сами партнёрские условия для вашего региона менеджер назовёт после заявки — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Leave an application on the “For dealers and procurement” page — vargov.ru/en/dealers. The brand offers official-representative status, partner terms, access to the full LC catalogue and support with international logistics. The manager will go through the partner terms for your region after your application — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/dealers",
     "/faq",
     "/official-dealers"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q104",
@@ -5326,12 +5361,12 @@
     ]
    },
    "a": {
-    "ru": "Замену разбитого элемента мы рассматриваем по артикулу композиции, фотографиям и обстоятельствам повреждения: можно ли изготовить и отправить запасной элемент, а также срок и условия подтверждаются индивидуально. Пришлите менеджеру артикул LC, фото повреждённого элемента и коротко опишите, как это случилось, — кнопки Telegram, WhatsApp, e-mail. Если элемент пришёл повреждённым при доставке, зафиксируйте на фото и видео и упаковку, и элемент и сохраните упаковку и упаковочный лист.",
-    "en": "We consider replacing a broken element on the basis of the composition's article code, photos and the circumstances of the damage: whether a spare element can be made and sent, and its timing and terms, are confirmed individually. Send the manager the LC code, photos of the damaged element and a short note on how it happened — buttons below: Telegram, WhatsApp, e-mail. If the element arrived damaged in transit, record both the packaging and the element in photos and video, and keep the packaging and the packing list."
+    "ru": "Замену разбитого элемента мы рассматриваем по артикулу композиции, фотографиям и обстоятельствам повреждения: можно ли изготовить и отправить запасной элемент, а также срок и условия подтверждаются индивидуально. Пришлите менеджеру артикул LC, фото повреждённого элемента и коротко опишите, как это случилось, — кнопки Telegram, WhatsApp, e-mail. Если элемент пришёл повреждённым при доставке или вы видите производственный брак, это рассматривается отдельно: зафиксируйте на фото и видео и упаковку, и элемент и сохраните упаковку и упаковочный лист.",
+    "en": "We consider replacing a broken element on the basis of the composition's article code, photos and the circumstances of the damage: whether a spare element can be made and sent, and its timing and terms, are confirmed individually. Send the manager the LC code, photos of the damaged element and a short note on how it happened — buttons below: Telegram, WhatsApp, e-mail. If the element arrived damaged in transit or you see a manufacturing defect, this is considered separately: record both the packaging and the element in photos and video, and keep the packaging and the packing list."
    },
    "sources": [],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q109",
@@ -5523,15 +5558,15 @@
     ]
    },
    "a": {
-    "ru": "Цвет на экране, в визуализации и на фото может отличаться от реального: камера, экспозиция, баланс белого, окружающий свет и настройки экрана меняют восприятие. Поэтому точное совпадение с экранной картинкой мы не обещаем: об итоговом цвете элементов можно судить только по физическому образцу, а цвет света определяется характеристикой источника, выбранной в техническом задании на производство (vargov.ru/specifications), а не фото. Элементы-образцы можно рассмотреть в шоуруме; можно ли подготовить образец для вашего заказа, уточните у менеджера до заказа — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Colour on a screen, in a render or in a photo can differ from reality: the camera, exposure, white balance, ambient light and screen settings all change how it looks. So we do not promise an exact match with an on-screen image: the final colour of the elements can only be judged from a physical sample, and the colour of light is set by the light-source characteristic chosen in the production brief (vargov.ru/en/specifications), not by photos. Sample elements can be seen in the showroom; whether a sample can be prepared for your order, ask the manager before ordering — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Цвет на экране, в визуализации и на фото может отличаться от реального: камера, экспозиция, баланс белого, окружающий свет и настройки экрана меняют восприятие. Поэтому точное совпадение с экранной картинкой мы не обещаем: об итоговом цвете элементов можно судить только по физическому образцу, а цвет света определяется характеристикой источника, выбранной в техническом задании на производство (vargov.ru/specifications), а не фото. Образцы стеклянных, керамических и других элементов можно посмотреть в шоуруме; возможны также изготовление и отправка образцов вам, в том числе транспортной компанией, — стоимость образцов и доставки определяется индивидуально. Обсудите образец с менеджером до заказа — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Colour on a screen, in a render or in a photo can differ from reality: the camera, exposure, white balance, ambient light and screen settings all change how it looks. So we do not promise an exact match with an on-screen image: the final colour of the elements can only be judged from a physical sample, and the colour of light is set by the light-source characteristic chosen in the production brief (vargov.ru/en/specifications), not by photos. Samples of glass, ceramic and other elements can be seen in the showroom; samples can also be made and sent to you, including by a transport company — the cost of the samples and of delivery is set individually. Discuss a sample with the manager before ordering — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/specifications",
     "/showroom"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q113",
@@ -5694,7 +5729,10 @@
      "оплата в кредит возможна?",
      "Сумма большая, есть ли беспроцентная рассрочка?",
      "Для закупки нужна постоплата, вы так работаете?",
-     "можно оплатить долями или сплитом?"
+     "можно оплатить долями или сплитом?",
+     "Дадите отсрочку оплаты на 30 дней?",
+     "Индивидуальные условия оплаты можно согласовать?",
+     "остаток можно заплатить через месяц после поставки?"
     ],
     "en": [
      "Do you offer instalment plans?",
@@ -5708,18 +5746,21 @@
      "any credit or instalment plan for big orders",
      "We need net 60 payment terms — do you accept that?",
      "can i spread the payment over a few months",
-     "Can the payment be split into several parts, or is there some kind of financing?"
+     "Can the payment be split into several parts, or is there some kind of financing?",
+     "Can we have 30-day payment terms?",
+     "Are individual payment terms negotiable?",
+     "can the balance be paid a month after delivery"
     ]
    },
    "a": {
-    "ru": "Рассрочки, кредита и отсрочки платежа на сайте нет, поэтому их не обещаю. Порядок оплаты у нас такой: 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки; точные сроки оплаты фиксируются в договоре. Если вам нужны другие условия, обсудите их с менеджером — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Instalments, credit and deferred payment are not offered on the website, so I do not promise them. Our payment order is a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment; the exact payment deadlines are set in the contract. If you need other terms, discuss them with the manager — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Стандартная схема оплаты — 50 % предоплаты для запуска производства и 50 % после уведомления о готовности и фото- или видеоотчёта, до отгрузки; точные сроки оплаты фиксируются в договоре. Рассрочку, кредит и отсрочку платежа, в том числе на 30 дней, как стандартные условия мы не предлагаем. Индивидуальные условия возможны только после отдельного согласования — обсудите их с менеджером: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Our standard payment scheme is a 50% prepayment to start production and 50% after we notify you that the order is ready and send a photo or video report, before shipment; the exact payment deadlines are set in the contract. We do not offer instalments, credit or deferred payment, including 30-day terms, as standard conditions. Individual terms are possible only by separate agreement — discuss them with the manager: buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "/faq"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   },
   {
    "id": "Q117",
@@ -5920,6 +5961,544 @@
    "sources": [],
    "updated": "2026-10-31",
    "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+  },
+  {
+   "id": "Q121",
+   "category": "other",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно взять композицию в аренду на выставку?",
+     "Сдаёте люстры напрокат для фотосессии?",
+     "У нас трёхдневное мероприятие в отеле, хотим украсить зал вашим светом на время. Это реально?",
+     "есть прокат люстр под банкет?",
+     "Снимаем рекламный ролик, нужна эффектная люстра в кадр на пару дней. Арендовать у вас можно?",
+     "Для стенда на выставке нужна композиция на неделю, покупать не планируем. Как быть?",
+     "Даёте свои светильники во временное пользование для декораций?",
+     "скока стоит прокат композиции на сутки",
+     "Готовим интерьерную съёмку для журнала — можно взять у вас композицию на время?",
+     "Есть у вас услуга аренды декоративных композиций для ивентов?"
+    ],
+    "en": [
+     "Can we rent a composition for a trade show?",
+     "do you hire out chandeliers for events",
+     "We're shooting a commercial and need a statement light for two days — is rental possible?",
+     "Is short-term rental available for a photo shoot?",
+     "hire a pendant for a gala dinner?",
+     "Our fair stand needs a pendant for one week only. Do you lease pieces?",
+     "Do you lend lights to set designers for film productions?",
+     "Is there a rental service for your decorative compositions?"
+    ]
+   },
+   "a": {
+    "ru": "Аренда композиций не входит в наши стандартные услуги. Запросы на композиции для выставки, мероприятия или съёмки менеджер рассматривает индивидуально — опишите ему задачу и сроки: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Renting out compositions is not one of our standard services. Requests for compositions for an exhibition, an event or a shoot are considered individually by the manager — describe the task and the dates to them: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q122",
+   "category": "ordering",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно вернуть люстру, если не подошла?",
+     "Передумали до запуска в производство — заказ можно отменить?",
+     "Композиция не смотрится в комнате, примете её обратно?",
+     "возврат возможен? повесили, а мужу не нравится",
+     "Можно обменять одну композицию на другую после доставки?",
+     "Заказчик отказался от проекта после предоплаты. Что теперь с заказом?",
+     "какие у вас условия возврата товара",
+     "Изделие под заказ можно вернуть по закону о защите прав потребителей?",
+     "Хотим поменять уже изготовленную композицию на другую модель — так можно?",
+     "Отмена заказа на этапе производства — как это происходит?"
+    ],
+    "en": [
+     "Can I return a chandelier if it doesn't suit the room?",
+     "What is your return policy?",
+     "We changed our mind before production started — can the order be cancelled?",
+     "can i swap it for a different model after delivery",
+     "The client cancelled the project after paying the deposit. What happens now?",
+     "refund possible if we don't like it?",
+     "Are made-to-order pieces returnable?",
+     "How do cancellations work once manufacturing has begun?"
+    ]
+   },
+   "a": {
+    "ru": "Большинство наших композиций изготавливается индивидуально под параметры заказчика. Условия отмены, возврата и обмена зависят от характеристик конкретного изделия, договора и применимого законодательства. Каждое такое обращение рассматривает менеджер — назовите ему артикул LC и опишите ситуацию: кнопки Telegram, WhatsApp, e-mail. Случаи производственного брака или повреждений рассматриваются отдельно: зафиксируйте их на фото и видео и сохраните упаковку и упаковочный лист.",
+    "en": "Most of our compositions are made individually to the customer's parameters. The terms of cancellation, return and exchange depend on the characteristics of the specific piece, the contract and the applicable law. Each such request is handled by the manager — give them the LC code and describe the situation: buttons below: Telegram, WhatsApp, e-mail. Cases of manufacturing defects or damage are considered separately: record them in photos and video and keep the packaging and the packing list."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q123",
+   "category": "custom",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сделайте как у Bocci",
+     "Можете повторить люстру известного итальянского бренда по фото?",
+     "Клиентка хочет точную копию светильника Lasvit, возьмётесь?",
+     "нужна реплика дизайнерской люстры, делаете?",
+     "Изготовите аналог люстры другой фабрики один в один?",
+     "У заказчика референс — светильник чужого бренда. Скопируете форму и стекло?",
+     "сделаете похожую на бокки серию 28?",
+     "Оригинал слишком дорогой — можно заказать у вас копию этой модели?",
+     "Повторите дизайн конкурента, если мы пришлём его чертежи?",
+     "Нашли люстру в европейском каталоге, нужна точно такая же",
+     "Можете повторить светильник с фото из журнала?",
+     "Есть фото светильника, который понравился клиенту, он не ваш. Возьмётесь сделать аналог?",
+     "есть картинка из интернета, можно сделать что-то похожее?"
+    ],
+    "en": [
+     "Can you make something like Bocci?",
+     "We need a replica of a famous designer chandelier — do you do that?",
+     "Could you copy a pendant from another brand exactly from a photo?",
+     "make a knock-off of a well-known italian lamp?",
+     "The client wants an exact copy of a competitor's light. Is that possible?",
+     "do u make dupes of designer lamps",
+     "Can you reproduce another manufacturer's fixture one-to-one if we send drawings?",
+     "The original costs too much — can you build the same design for us?",
+     "Can you reproduce a light from a magazine photo?",
+     "A client likes a fixture from another brand. Would you build something similar for them?",
+     "make something like a pic i found online?"
+    ]
+   },
+   "a": {
+    "ru": "Vargov®Design производит авторские композиции и не изготавливает копии изделий других брендов. Мы можем разработать для вас собственное оригинальное решение, подходящее под архитектуру, стилистику и бюджет проекта, — без воспроизведения чужого дизайна. Опишите менеджеру задачу и пришлите фото пространства: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Vargov®Design makes original compositions of its own and does not produce copies of other brands' products. We can develop our own original solution for you to suit the architecture, style and budget of the project — without reproducing someone else's design. Describe the task to the manager and send photos of the space: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q124",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Монтаж под ключ во что обойдётся?",
+     "Во сколько обойдётся установка люстры вашими монтажниками?",
+     "установка люстры включена в стоимость или это доп услуга?",
+     "Из чего складывается цена работ монтажников?",
+     "Для сметы нужна цена монтажа под ключ официальными партнёрами, как её получить?",
+     "Сколько возьмут ваши монтажники за каскад на высоком потолке?",
+     "Монтаж при заказе композиции бесплатный?",
+     "скока за установку берёте",
+     "Можно сразу заказать композицию вместе с монтажом? Как считается цена работ?",
+     "Объект за городом, потолок 6 метров. Во сколько выйдет монтаж?"
+    ],
+    "en": [
+     "How much does turnkey installation cost?",
+     "Do I pay extra for your crew to install it?",
+     "what do your installers charge to hang it",
+     "What does the installation price depend on?",
+     "I need a figure for full installation by your partners for the budget — how do I get one?",
+     "Is installation free when we order a composition?",
+     "can we order the piece together with installation, how is that priced",
+     "Double-height ceiling, out-of-town site — what will mounting cost?"
+    ]
+   },
+   "a": {
+    "ru": "Монтаж под ключ выполняют официальные монтажные партнёры Vargov®Design — это отдельная платная услуга. Её стоимость рассчитывается индивидуально с учётом размеров композиции, высоты потолка, сложности креплений, расположения объекта и дополнительных работ, поэтому цену в чате не называем. Гарантия — 12 месяцев с момента получения при условии нашего монтажа под ключ. Если монтируете своими силами, можно заказать шеф-монтаж — сопровождение установки нашим специалистом; гарантийного условия он не заменяет. Для расчёта напишите менеджеру артикул LC и где находится объект: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Turnkey installation is carried out by the official Vargov®Design installation partners and is a separate paid service. Its cost is calculated individually, taking into account the size of the composition, the ceiling height, the complexity of the fixings, the location of the site and any additional work, so we do not quote prices in the chat. The warranty is 12 months from receipt, provided we carry out the turnkey installation. If you install with your own team, you can order supervised installation, where our specialist oversees the work; it does not replace the warranty condition. For a calculation, send the manager the LC code and the location of the site: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q125",
+   "category": "ordering",
+   "roles": [
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно оплатить картой?",
+     "Принимаете оплату в долларах?",
+     "Можно заплатить наличными в шоуруме?",
+     "Мы в Дубае, можно рассчитаться в дирхамах?",
+     "Как оплатить из-за границы, международный перевод возможен?",
+     "В какой валюте цена и по какому курсу считаете?",
+     "оплата только безналом или можно наличкой",
+     "Принимаете SWIFT-переводы от иностранной компании?",
+     "Есть онлайн-оплата прямо на сайте?",
+     "Клиент хочет платить в евро, это возможно?"
+    ],
+    "en": [
+     "Do you accept credit cards?",
+     "Do you accept payment in US dollars?",
+     "We're in Dubai — can we pay in dirhams?",
+     "cash payment ok?",
+     "What currency are your prices in and what exchange rate do you use?",
+     "Can a foreign company pay you by international wire transfer?",
+     "is there online payment on the website",
+     "pay in euros possible?"
+    ]
+   },
+   "a": {
+    "ru": "Для заказов в России стандартный вариант — безналичная оплата на расчётный счёт ИП в российской валюте по внутреннему курсу компании; стоимость по действующим типовым договорам указывается без НДС. Другие формы оплаты — наличный расчёт, международный перевод, оплата в иностранной валюте — согласовываются индивидуально с учётом страны и юридических условий сделки. Оплату картой, в долларах или дирхамах в чате не подтверждаю: это решает менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For orders in Russia the standard option is a bank transfer to the sole proprietor's (IP) settlement account in roubles at the company's internal exchange rate; under our current standard contracts the price is stated without VAT. Other forms of payment — cash, an international transfer, payment in a foreign currency — are agreed individually, taking into account the country and the legal terms of the deal. I cannot confirm payment by card, in dollars or in dirhams in the chat: the manager decides this — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q126",
+   "category": "delivery",
+   "roles": [
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можете подержать готовую люстру у себя, пока не закончится ремонт?",
+     "Объект не готов к монтажу, где хранить композицию?",
+     "Хранение заказа до монтажа платное?",
+     "Ремонт затянулся на полгода, композиция уже готова — подержите на складе?",
+     "есть у вас склад чтобы заказ полежал до монтажа",
+     "Сколько можно бесплатно хранить готовый заказ?",
+     "Можно отгрузить позже, когда объект будет готов, а пока хранить у вас?",
+     "Заказ готов, а у нас ещё штукатурка. Что делать?",
+     "Где будет лежать люстра, если мы не можем принять её сразу после изготовления?",
+     "подержите заказ пару месяцев до переезда?"
+    ],
+    "en": [
+     "Can you store the finished piece until our renovation is done?",
+     "The site isn't ready for installation — can you hold the order?",
+     "Is storage before installation charged?",
+     "how long can you keep my order in your warehouse",
+     "Our fit-out is delayed by months and the composition is ready. Can it wait with you?",
+     "free storage until we're ready?",
+     "Can delivery be postponed and the order kept with you meanwhile?",
+     "Where does the chandelier stay if we can't accept it right after production?"
+    ]
+   },
+   "a": {
+    "ru": "Временное хранение готового заказа до монтажа возможно по предварительному согласованию. Срок, место и возможная стоимость хранения определяются индивидуально; бесплатное бессрочное хранение мы не обещаем. Если объект ещё не готов к монтажу, обсудите хранение с менеджером заранее: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Temporary storage of a finished order until installation is possible by prior arrangement. The period, place and any cost of storage are determined individually; we do not promise free storage for an unlimited time. If the site is not yet ready for installation, discuss storage with the manager in advance: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q127",
+   "category": "installation",
+   "roles": [
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Снимете старую люстру перед установкой новой?",
+     "Демонтаж старого светильника входит в монтаж?",
+     "Переезжаем в новую квартиру — можете перевесить композицию?",
+     "Нужно снять вашу композицию и повесить в другом зале, делаете такое?",
+     "старую хрустальную люстру кто демонтирует, вы или нам искать электрика",
+     "Можно перенести композицию на другой объект после продажи дома?",
+     "Ваши монтажники могут снять и заново смонтировать люстру после ремонта потолка?",
+     "перевесить люстру в другую комнату поможете?",
+     "Ресторан переезжает, композицию надо снять и перевезти. Вы этим занимаетесь?",
+     "Демонтаж и повторный монтаж — это отдельная услуга?"
+    ],
+    "en": [
+     "Can you take down our old chandelier before installing the new one?",
+     "Is removal of the existing light included in installation?",
+     "We're moving house — can you re-hang the composition in the new place?",
+     "could your guys take it down and rehang it in another room",
+     "Can your installers dismantle and reinstall the piece after ceiling repairs?",
+     "Our restaurant is relocating; can the installation be removed and refitted at the new venue?",
+     "who removes the old fixture, you or our electrician",
+     "Do you offer reinstallation if we move the light to another property?"
+    ]
+   },
+   "a": {
+    "ru": "Демонтаж старой люстры, повторный монтаж и перенос композиции на новое место не входят в стандартную поставку. Возможность таких работ рассматривается индивидуально с монтажными специалистами — напишите менеджеру, что нужно сделать и где находится объект: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Removing an old chandelier, reinstalling a composition or moving it to a new place are not part of the standard delivery. Whether such work is possible is considered individually with the installation specialists — tell the manager what needs to be done and where the site is: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q128",
+   "category": "delivery",
+   "roles": [
+    "procurement",
+    "designer"
+   ],
+   "q": {
+    "ru": [
+     "Можно отгрузить заказ частями?",
+     "Две композиции готовы, третья нет — отправите готовые сразу?",
+     "Нужна поставка по этапам: сначала лобби, потом номера. Возможно?",
+     "частичная отгрузка бывает?",
+     "Можно забрать часть элементов раньше, а остальное потом?",
+     "Объект сдаётся очередями, отгрузите партиями под каждую очередь?",
+     "За отгрузку в несколько приёмов придётся доплатить?",
+     "отправьте сначала то что уже сделано, остальное догоните",
+     "Для тендера нужен график поставки двумя партиями — так работаете?",
+     "Можно разделить поставку на несколько машин по мере готовности?"
+    ],
+    "en": [
+     "Can the order be shipped in parts?",
+     "Two pieces are ready and one isn't — can you send the finished ones now?",
+     "We need phased deliveries: lobby first, guest floors later. Possible?",
+     "partial shipment ok?",
+     "Is there an extra charge for splitting the delivery?",
+     "can we get some elements early and the rest later",
+     "Our tender requires delivery in two batches — do you work that way?",
+     "ship whatever is finished first?"
+    ]
+   },
+   "a": {
+    "ru": "Частичная отгрузка возможна по отдельному согласованию — с учётом готовности изделий, упаковки и логистики; для всех заказов мы её не обещаем. Дополнительные расходы на неё рассчитываются отдельно. Обсудите график отгрузок с менеджером: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Partial shipment is possible by separate agreement, taking into account the readiness of the pieces, the packaging and the logistics; we do not promise it for every order. Any additional costs are calculated separately. Discuss the shipment schedule with the manager: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q129",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можете приехать на объект и сделать замер?",
+     "Кто-то от вас приезжает посмотреть помещение перед заказом?",
+     "Нужен замерщик для подбора люстры, есть такая услуга?",
+     "Приедете к нам в Подмосковье, чтобы помочь выбрать композицию на месте?",
+     "техническая консультация прямо на объекте возможна?",
+     "Можно вызвать вашего специалиста оценить потолок до заказа?",
+     "замер у вас бесплатный?",
+     "Объект в Казани, ваш человек может приехать на осмотр?",
+     "Архитектор просит представителя бренда на площадку для согласования. Это возможно?",
+     "приедете посмотреть где будет висеть, сами не можем определиться"
+    ],
+    "en": [
+     "Can someone come to the site to take measurements?",
+     "Do you visit the property before ordering to help choose a piece?",
+     "is a site survey free",
+     "Our project is outside Moscow — can your specialist come for a consultation on site?",
+     "Can you send someone to check the ceiling before we order?",
+     "The architect wants a brand representative at the site meeting. Possible?",
+     "do you do on-site measuring",
+     "Can your team assess the space in person and suggest a composition?"
+    ]
+   },
+   "a": {
+    "ru": "Выезд на объект возможен по предварительному согласованию с нашими специалистами или монтажными партнёрами. Можно ли провести замер, техническую консультацию или подбор композиции на месте, зависит от того, где находится объект; стоимость выезда согласовывается индивидуально. Напишите менеджеру город объекта и задачу: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "A visit to the site is possible by prior arrangement with our specialists or installation partners. Whether measurements, a technical consultation or choosing a composition on site can be done depends on where the site is; the cost of the visit is agreed individually. Send the manager the city of the site and the task: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q130",
+   "category": "custom",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно получить эксклюзив на модель, чтобы её больше никому не продавали?",
+     "Даёте исключительное право на композицию для нашего отеля?",
+     "Хотим, чтобы такой люстры не было ни у кого в городе. Можете гарантировать?",
+     "эксклюзивные права на дизайн продаёте?",
+     "Если закажем серийную LC, вы закрепите её только за нами?",
+     "Нужна уникальная композиция, которую не будут повторять для других клиентов. Как это оформить?",
+     "Девелопер хочет эксклюзив на светильник для своего ЖК. Обсуждаемо?",
+     "можно выкупить модель целиком?",
+     "Наш заказ будет уникальным или эту модель продают всем?",
+     "Лицензия на использование вашего дизайна в нашей сети ресторанов возможна?"
+    ],
+    "en": [
+     "Can we get exclusivity on a model so nobody else can buy it?",
+     "Do you grant exclusive rights to a design for one hotel?",
+     "we want a chandelier no one else in the city has, can you guarantee that",
+     "Is it possible to buy out a model completely?",
+     "Will our piece be one of a kind, or do you sell the same model to everyone?",
+     "Our developer client wants an exclusive fixture for their residential complex. Negotiable?",
+     "license your design for our restaurant chain?",
+     "If we order a catalogue LC model, can it be reserved just for us?"
+    ]
+   },
+   "a": {
+    "ru": "Все модели LC — авторские разработки Vargov®Design, и эксклюзивное право на серийную модель автоматически не предоставляется. Разработку уникальной композиции и специальные условия использования дизайна можно обсудить индивидуально с владельцем бренда — опишите менеджеру проект: кнопки Telegram, WhatsApp, e-mail. Речь здесь о дизайне модели, а не о дилерской эксклюзивности по региону: о представительстве бренда в вашем регионе — на vargov.ru/dealers.",
+    "en": "All LC models are original designs by Vargov®Design, and an exclusive right to a series model is not granted automatically. Developing a unique composition and special terms for the use of a design can be discussed individually with the owner of the brand — describe your project to the manager: buttons below: Telegram, WhatsApp, e-mail. This concerns the design of a model, not regional dealer exclusivity: for representing the brand in your region, see vargov.ru/en/dealers."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q131",
+   "category": "colours",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно подобрать цвет по Pantone?",
+     "У нас палитра проекта задана по NCS, сделаете в ней?",
+     "Нужен оттенок как на образце ткани, кода RAL нет. Подберёте?",
+     "по пантону красите?",
+     "Гарантируете точное попадание в цвет Pantone из брендбука?",
+     "Дизайнер дал код NCS, сможете повторить его в стекле?",
+     "цвет не из рал, а по нашему образцу краски, реально?",
+     "Насколько точно совпадёт цвет, если подбирать по референсу заказчика?",
+     "Пришлём физический образец цвета — сделаете элементы в этот тон?",
+     "Только RAL или другие системы цветов тоже принимаете?"
+    ],
+    "en": [
+     "Is Pantone matching possible for the elements?",
+     "Our palette is specified in NCS — can you work with that?",
+     "do u match pantone",
+     "Will the result match our Pantone code exactly?",
+     "We have a fabric swatch with no RAL code — can you match the shade?",
+     "Is it RAL only, or do you accept other colour systems?",
+     "If we send a physical colour sample, can the elements be made in that tone?",
+     "if the client gives a reference shade, will the result be identical"
+    ]
+   },
+   "a": {
+    "ru": "Индивидуальный подбор оттенка по вашему референсу можно рассмотреть и вне RAL — в том числе по Pantone и NCS. Точное совпадение не гарантируется — результат зависит от материала и технологии, а нестандартный цвет согласуется по физическому образцу с производством. Пришлите менеджеру код или образец цвета и артикул LC: кнопки Telegram, WhatsApp, e-mail. Цвета каталога RAL Classic — на vargov.ru/specifications/colours.",
+    "en": "Individual matching of a shade to your reference can be considered outside RAL as well — including Pantone and NCS. An exact match is not guaranteed — the result depends on the material and the technology, and a non-standard colour is agreed with production on a physical sample. Send the manager the colour code or sample and the LC code: buttons below: Telegram, WhatsApp, e-mail. The RAL Classic colours are on vargov.ru/en/specifications/colours."
+   },
+   "sources": [
+    "/specifications/colours"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q132",
+   "category": "price",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Сколько действует коммерческое предложение?",
+     "Цена в КП зафиксирована или может измениться?",
+     "Мы получили расчёт месяц назад, он ещё в силе?",
+     "Если оплатим через два месяца, цена останется прежней?",
+     "за сколько дней нужно оплатить первый счёт",
+     "Курс в предложении фиксированный?",
+     "Можно зафиксировать стоимость до утверждения проекта заказчиком?",
+     "Когда цена окончательно фиксируется — после договора или после предоплаты?",
+     "Тендер затянулся на полгода, ваше предложение будет действительно?",
+     "цена может вырасти пока мы думаем?"
+    ],
+    "en": [
+     "How long is your quotation valid?",
+     "Is the price in the quote fixed or can it change?",
+     "We got a quote a month ago — does it still stand?",
+     "If we pay in two months, will the price stay the same?",
+     "how many days do we have to pay the first invoice",
+     "Is the exchange rate in the offer locked?",
+     "Our tender may take six months — will your offer still be valid?",
+     "when exactly does the price become fixed"
+    ]
+   },
+   "a": {
+    "ru": "Стоимость и курс подтверждаются в коммерческом предложении или счёте, и до оплаты условия могут пересматриваться, поэтому бессрочно цену мы не фиксируем. В действующих типовых договорах встречается срок оплаты первого счёта 5 календарных дней; точный срок указан в вашем договоре. После внесения предоплаты условия фиксируются в соответствии с договором. Актуальность вашего КП подтвердит менеджер: кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The price and the exchange rate are confirmed in the commercial proposal or the invoice, and until payment the terms may be revised, so we do not fix the price indefinitely. A 5-calendar-day term for paying the first invoice can be found in our current standard contracts; the exact term is stated in your contract. Once the prepayment is made, the terms are fixed in accordance with the contract. The manager will confirm whether your quotation is still current: buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q133",
+   "category": "other",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Где почитать отзывы о вас?",
+     "Есть отзывы реальных покупателей?",
+     "Какой у вас рейтинг на Яндекс Картах?",
+     "отзывы клиентов где посмотреть",
+     "Хочу убедиться, что вам можно доверять. Где отзывы?",
+     "Есть ли отзывы и фото уже сделанных работ?",
+     "Клиент просит отзывы других заказчиков перед оплатой — куда его направить?",
+     "На Google Картах есть ваши отзывы?",
+     "что пишут о вас покупатели",
+     "Где посмотреть оценки вашего шоурума?"
+    ],
+    "en": [
+     "Where can I read reviews about you?",
+     "Do you have customer reviews?",
+     "what's your rating on google maps",
+     "Are there testimonials from real clients?",
+     "My client wants to see other buyers' feedback before paying — where should I send them?",
+     "any reviews i can check",
+     "Where are the showroom ratings published?",
+     "Can I see reviews and photos of completed projects?"
+    ]
+   },
+   "a": {
+    "ru": "Опубликованные отзывы, если они есть, можно прочитать на официальных страницах нашего шоурума в Яндекс Картах (https://yandex.ru/maps/org/vargov_design/102611426185/) и в Google Картах (https://www.google.com/maps?cid=2970420474499935128). Выставочные материалы бренда — выставки и шоурум — собраны на vargov.ru/projects, ролики композиций вживую — на vargov.ru/video, а список установок по данным официального дилера в Дубае — на vargov.ru/official-dealers. Сами композиции можно увидеть в нашем шоуруме в Москве.",
+    "en": "Published reviews, where available, can be read on the official pages of our showroom on Yandex Maps (https://yandex.ru/maps/org/vargov_design/102611426185/) and Google Maps (https://www.google.com/maps?cid=2970420474499935128). The brand's exhibition materials — exhibitions and the showroom — are at vargov.ru/en/projects, live videos of the compositions at vargov.ru/en/video, and the list of installations reported by the official dealer in Dubai at vargov.ru/en/official-dealers. You can also see the compositions themselves in our Moscow showroom."
+   },
+   "sources": [
+    "/projects",
+    "/video",
+    "/showroom",
+    "/official-dealers"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
   }
  ]
 }
