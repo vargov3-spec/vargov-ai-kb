@@ -1,8 +1,8 @@
 {
  "meta": {
-  "version": "2026-11-01.2",
-  "checksum": "23cead845e147bab",
-  "count": 134,
+  "version": "2026-11-01.3",
+  "checksum": "ac100701c9c713e2",
+  "count": 140,
   "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
@@ -3291,16 +3291,16 @@
     ]
    },
    "a": {
-    "ru": "Крепить композицию прямо к гипсокартону без проверки несущей способности потолка и перекрытия в точках крепления нельзя: тяжёлым композициям нужна рассчитанная несущая конструкция. Потолок из гипсокартона усиливают фанерными закладными в точках крепления (толщина указана на странице vargov.ru/installation), а отверстия сверлят по монтажной схеме 1:1 — их диаметр зависит от типа подвеса и массы элемента. Заранее предусмотрите место для драйвера: в электрощитке или в запотолочном пространстве (если есть ревизионный лючок). Если потолок не готовить, композицию можно смонтировать на основании: ему достаточно одного вывода 220 В; можно ли крепить основание к вашему потолку, подтвердит менеджер. При получении осмотрите упаковку; повреждения зафиксируйте на фото и видео и сохраните упаковку и упаковочный лист; печатная схема 1:1 лежит в одной из коробок. Порядок работ — в PDF-инструкции vargov.ru/pdf/vargov-installation-ru.pdf, детали для вашего потолка уточнит менеджер.",
-    "en": "A composition must not be fixed straight to plasterboard without checking what the ceiling structure can carry at the fixing points: heavy compositions need a calculated load-bearing structure. A plasterboard ceiling is reinforced with plywood backing at the fixing points (the thickness is given on the installation page, vargov.ru/en/installation), and the holes are drilled to the 1:1 installation drawing — their diameter depends on the type of suspension and the mass of the element. Allow in advance for the driver: in the distribution board or in the void above the ceiling (if there is an access hatch). If you do not want to prepare the ceiling, the composition can be installed on a base, which needs only a single 220 V supply point; whether the base can be fixed to your ceiling the manager will confirm. On delivery, inspect the packaging; record any damage in photos and video and keep the packaging and the packing list; the printed 1:1 drawing is in one of the boxes. The sequence of work is in the PDF guide vargov.ru/pdf/vargov-installation-en.pdf, and the manager will clarify the details for your ceiling."
+    "ru": "Крепить композицию прямо к гипсокартону без проверки несущей способности потолка и перекрытия в точках крепления нельзя: тяжёлым композициям нужна рассчитанная несущая конструкция. Потолок из гипсокартона усиливают фанерными закладными в точках крепления (толщина указана на странице vargov.ru/installation), а отверстия сверлят по монтажной схеме 1:1 — их диаметр зависит от типа подвеса и массы элемента. Заранее предусмотрите место для драйвера: в электрощитке или в запотолочном пространстве (если есть ревизионный лючок). Если потолок не готовить, композицию можно смонтировать на основании: ему достаточно одного вывода 220 В; можно ли крепить основание к вашему потолку, подтвердит менеджер. При получении осмотрите упаковку; повреждения зафиксируйте на фото и видео и сохраните упаковку и упаковочный лист; печатная схема 1:1 лежит в одной из коробок: для отдельных комплектов её кладут сверху и маркируют эту коробку, а где именно она лежит, подтверждает упаковочный лист. Порядок работ — в PDF-инструкции vargov.ru/pdf/vargov-installation-ru.pdf, детали для вашего потолка уточнит менеджер.",
+    "en": "A composition must not be fixed straight to plasterboard without checking what the ceiling structure can carry at the fixing points: heavy compositions need a calculated load-bearing structure. A plasterboard ceiling is reinforced with plywood backing at the fixing points (the thickness is given on the installation page, vargov.ru/en/installation), and the holes are drilled to the 1:1 installation drawing — their diameter depends on the type of suspension and the mass of the element. Allow in advance for the driver: in the distribution board or in the void above the ceiling (if there is an access hatch). If you do not want to prepare the ceiling, the composition can be installed on a base, which needs only a single 220 V supply point; whether the base can be fixed to your ceiling the manager will confirm. On delivery, inspect the packaging; record any damage in photos and video and keep the packaging and the packing list; the printed 1:1 drawing is in one of the boxes: for some kits it is placed on top and that box is marked, and its exact location is confirmed by the packing list. The sequence of work is in the PDF guide vargov.ru/pdf/vargov-installation-en.pdf, and the manager will clarify the details for your ceiling."
    },
    "sources": [
     "/installation",
     "/pdf/vargov-installation-ru.pdf",
     "/pdf/vargov-installation-en.pdf"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
   },
   {
    "id": "Q069",
@@ -3467,7 +3467,10 @@
      "схему 1:1 когда выдаёте, после утверждения модели?",
      "в каком масштабе печатать шаблон потолка, чтобы совпало",
      "шаблон разметки на ткани приходит с люстрой или его печатать самим?",
-     "монтажная схема 1:1 сразу после ТЗ доступна?"
+     "монтажная схема 1:1 сразу после ТЗ доступна?",
+     "В какой коробке лежит схема 1:1?",
+     "Пришло несколько коробок — как понять, где монтажная схема?",
+     "где искать шаблон разметки среди ящиков, их много"
     ],
     "en": [
      "When will the 1:1 drawing be ready?",
@@ -3484,19 +3487,22 @@
      "is the fabric template shipped with the fixture?",
      "why is the 1:1 button disabled on my spec page",
      "is the setting-out drawing final or provisional?",
-     "when does the 1:1 mounting scheme become available after the brief?"
+     "when does the 1:1 mounting scheme become available after the brief?",
+     "Which box is the 1:1 drawing in?",
+     "several boxes arrived, how do we find the one with the mounting template?",
+     "Where in the shipment is the printed setting-out drawing packed?"
     ]
    },
    "a": {
-    "ru": "Электронная схема 1:1 выдаётся после утверждения 3D-модели или макета; в онлайн-техзадании её кнопка открывается, когда менеджер запустит ТЗ в производство, а до этого неактивна. Схема предварительная: перед разметкой потолка её подтверждает технолог производства, и это напечатано на листах. В файле четыре листа — для плоттера и для A4, каждый на потолок и на пол; печатать нужно строго в масштабе 100 %, без «вписать в страницу». Печатная схема на баннерной ткани приходит вместе с композицией, в одной из коробок. Схема есть у 345 из 360 композиций, которые считает конфигуратор; если отверстия нужно подготовить до отделки, обсудите сроки с менеджером (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "The electronic 1:1 drawing is issued once the 3D model or mock-up has been approved; in the online brief its button opens when the manager starts the brief in production, and is inactive until then. The drawing is preliminary: the production engineer confirms it before the ceiling is set out, and that note is printed on the sheets. The file holds four sheets — plotter and A4, each for the ceiling and for the floor; print at exactly 100 %, never “fit to page”. The printed drawing on banner fabric arrives with the composition, in one of the boxes. The drawing exists for 345 of the 360 compositions the configurator calculates; if the holes must be prepared before finishing, agree the timing with the manager (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Электронная схема 1:1 выдаётся после утверждения 3D-модели или макета; в онлайн-техзадании её кнопка открывается, когда менеджер запустит ТЗ в производство, а до этого неактивна. Схема предварительная: перед разметкой потолка её подтверждает технолог производства, и это напечатано на листах. В файле четыре листа — для плоттера и для A4, каждый на потолок и на пол; печатать нужно строго в масштабе 100 %, без «вписать в страницу». Печатная схема на баннерной ткани приходит вместе с композицией, в одной из коробок: для отдельных комплектов её кладут сверху и маркируют эту коробку, а где именно она лежит, подтверждает упаковочный лист. Схема есть у 345 из 360 композиций, которые считает конфигуратор; если отверстия нужно подготовить до отделки, обсудите сроки с менеджером (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The electronic 1:1 drawing is issued once the 3D model or mock-up has been approved; in the online brief its button opens when the manager starts the brief in production, and is inactive until then. The drawing is preliminary: the production engineer confirms it before the ceiling is set out, and that note is printed on the sheets. The file holds four sheets — plotter and A4, each for the ceiling and for the floor; print at exactly 100 %, never “fit to page”. The printed drawing on banner fabric arrives with the composition, in one of the boxes: for some kits it is placed on top and that box is marked, and its exact location is confirmed by the packing list. The drawing exists for 345 of the 360 compositions the configurator calculates; if the holes must be prepared before finishing, agree the timing with the manager (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/installation",
     "/specifications"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
   },
   {
    "id": "Q073",
@@ -5662,7 +5668,11 @@
      "Нужна ли отдельная форма под наш элемент и как это отразится на сроках?",
      "зачем делать новую форму под наш элемент",
      "Почему нестандартная композиция дольше обычной, что там происходит?",
-     "кастомная форма это сколько по сроку дольше"
+     "кастомная форма это сколько по сроку дольше",
+     "Зачем нужна новая пресс-форма?",
+     "Для чего под наш элемент делать пресс-форму?",
+     "пресс-форма под заказ — зачем она вообще нужна",
+     "Почему для своего плафона требуется отдельная пресс-форма и как это скажется на заказе?"
     ],
     "en": [
      "Why does non-standard geometry need a new mould?",
@@ -5676,7 +5686,10 @@
      "why do you need a new mould",
      "custom shape takes longer, why",
      "What extra steps does a non-standard composition involve?",
-     "does a custom element need its own mould"
+     "does a custom element need its own mould",
+     "Why would a new press mould be needed?",
+     "what is the press mold for when the shape is custom",
+     "Does our own element shape mean you have to make a pressing mould first?"
     ]
    },
    "a": {
@@ -5684,8 +5697,8 @@
     "en": "Every composition we make is made to order, but if the required geometry is not among the existing moulds, a new mould may be needed — this affects the price and the lead time. A composition with a non-standard shape also takes longer for other reasons: shade matching, testing, repeat samples and a trial assembly may be needed. Not every shape can be made: whether a new shape is feasible is decided after the structure and the manufacturing technology have been assessed. Feasibility, timing and cost are assessed from the drawings and parameters of your project; send them to the manager — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
   },
   {
    "id": "Q114",
@@ -6571,6 +6584,239 @@
    ],
    "updated": "2026-11-01",
    "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+  },
+  {
+   "id": "Q134",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Зачем нужен тестовый подвес на производстве?",
+     "Для чего вы делаете пробную сборку композиции до отправки?",
+     "Что проверяют, когда собирают люстру целиком у себя на производстве?",
+     "Почему окончательную монтажную схему дают только после пробного подвеса?",
+     "тестовый подвес это обязательно? зачем он",
+     "Вы сначала вешаете композицию у себя, чтобы посмотреть, как легли элементы?",
+     "Пробная сборка на производстве влияет на сроки и на разметку отверстий?",
+     "Как проверяется расположение элементов до того, как композиция уедет к нам?"
+    ],
+    "en": [
+     "Why is a test hang done at production?",
+     "What does a trial assembly of the composition check before it ships?",
+     "why do you hang the whole piece at your workshop first",
+     "Is the final mounting drawing prepared only after the test assembly?",
+     "Does a trial hang at production affect the drawing or the timing?",
+     "do you test-assemble the chandelier before sending it?"
+    ]
+   },
+   "a": {
+    "ru": "Тестовый подвес — это пробная сборка композиции на производстве: он помогает проверить геометрию, плотность и фактическое расположение элементов. Для некоторых моделей окончательная монтажная схема готовится после тестовой сборки; электронная схема 1:1 при этом предварительная, и перед разметкой потолка её подтверждает технолог производства. Тестовая сборка может понадобиться и нестандартной композиции — вместе с подбором оттенка, испытаниями и повторными образцами она влияет на срок. Нужен ли тестовый подвес вашей композиции и как он отразится на сроке, подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "A test hang is a trial assembly of the composition at production: it helps check the geometry, the density and the actual position of the elements. For some models the final installation drawing is prepared after the test assembly; the electronic 1:1 drawing is preliminary meanwhile, and the production engineer confirms it before the ceiling is set out. A non-standard composition may also need a trial assembly — together with shade matching, testing and repeat samples, it affects the lead time. Whether your composition needs a test hang and how it affects the timing, the manager will confirm — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
+  },
+  {
+   "id": "Q135",
+   "category": "warranty",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Нашли царапины или сколы на элементах — что делать?",
+     "На стекле видны пузырьки и тонкие линии — это брак?",
+     "Возможны ли у ваших элементов царапины, сколы и неровности?",
+     "Распаковали композицию, на одном плафоне скол по краю. Это допустимо или менять?",
+     "внутри элемента какие-то полоски и пузырьки, так и должно быть?",
+     "Как сообщить о дефекте внешнего вида, если упаковка была целой?",
+     "Неровная поверхность у пары элементов — это особенность или недостаток качества?",
+     "Кто решает, допустим ли дефект на элементе, и что для этого прислать?"
+    ],
+    "en": [
+     "I found scratches or chips on the elements — what now?",
+     "There are small bubbles and lines in the glass — is that a defect?",
+     "unpacked it and one shade has a chipped edge, is that acceptable",
+     "How do I report a visual flaw if the packaging arrived intact?",
+     "Some elements have an uneven surface. Is that normal or a quality issue?",
+     "who decides whether a blemish on an element is acceptable?"
+    ]
+   },
+   "a": {
+    "ru": "Если при получении или распаковке вы заметили на элементах царапины, сколы, неровности, пузырьки или линии в стекле, зафиксируйте их на фото и видео и сохраните упаковку и упаковочный лист. Не любой дефект можно автоматически считать допустимым: причина зависит от технологии изготовления элемента, поэтому каждый случай проверяется отдельно — по фото и видео, со сверкой с образцом и нормами качества. Пришлите фото и видео менеджеру вместе с артикулом LC — кнопки Telegram, WhatsApp, e-mail: он разберёт ваш случай и подскажет дальнейшие шаги. Если повреждена и упаковка, снимите и её: случаи повреждений при доставке и производственного брака рассматриваются отдельно.",
+    "en": "If on delivery or unpacking you notice scratches, chips, unevenness, or bubbles or lines in the glass on the elements, record them in photos and video and keep the packaging and the packing list. Not every flaw can automatically be considered acceptable: the cause depends on the technology used to make the element, so each case is checked individually — from the photos and video, against the sample and the quality standards. Send the photos and video to the manager together with the LC code — buttons below: Telegram, WhatsApp, e-mail: they will review your case and advise on the next steps. If the packaging is damaged too, photograph it as well: cases of transport damage and manufacturing defects are considered separately."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
+  },
+  {
+   "id": "Q136",
+   "category": "materials",
+   "roles": [
+    "architect",
+    "designer",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно сделать элементы с пузырьками?",
+     "Хотим стекло с эффектом пузырьков внутри — такое делаете?",
+     "Можно ли расположить пузырьки строго в определённых местах элемента?",
+     "пузырьки в плафонах можно заказать специально?",
+     "Дизайнер просит, чтобы пузырьков было побольше и только у края. Это реально?",
+     "Количество и размер пузырьков в стекле можно задать заранее?",
+     "Как увидеть, какими получатся пузырьки, до того как запускать заказ?",
+     "стекло с воздушными пузырьками — есть такая опция?"
+    ],
+    "en": [
+     "Can you make glass with bubbles?",
+     "We'd like a bubbled-glass effect in the elements. Is that possible?",
+     "Can the bubbles be placed exactly where we want them?",
+     "can i choose how many bubbles there are and how big",
+     "How can we see what the bubbles will look like before ordering?",
+     "seeded glass option for the pendants?"
+    ]
+   },
+   "a": {
+    "ru": "Стекло с пузырьками возможно для ряда форм — после проверки по образцу: можно ли сделать такой эффект для выбранного элемента, сколько будет пузырьков и как они будут выглядеть, подтверждается по образцу. Точно расположить пузырьки в заданных местах, как правило, нельзя гарантировать: их позиционирование технологически ограничено, поэтому вид пузырьков тоже согласуется по образцу. Образцы элементов можно посмотреть в шоуруме; возможны также изготовление и отправка образца вам, в том числе транспортной компанией, — стоимость образцов и доставки определяется индивидуально. Назовите менеджеру артикул LC и опишите желаемый эффект — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Glass with bubbles is possible for a number of shapes — after checking on a sample: whether the effect can be made for the chosen element, how many bubbles there will be and what they will look like is confirmed on a sample. Placing the bubbles exactly in set spots usually cannot be guaranteed: their positioning is technologically limited, so the look of the bubbles is also agreed on a sample. Samples of elements can be seen in the showroom; samples can also be made and sent to you, including by a transport company — the cost of the samples and of delivery is set individually. Give the manager the LC code and describe the effect you want — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/showroom"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
+  },
+  {
+   "id": "Q137",
+   "category": "connection",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Сколько драйверов понадобится?",
+     "Как считают число блоков питания под люстру?",
+     "Один драйвер на всю композицию или несколько?",
+     "сколько трансформаторов идёт на одну люстру",
+     "Электрик спрашивает, сколько драйверов закладывать в щит. От чего зависит их число?",
+     "Почему у разных композиций разное количество драйверов?",
+     "Если элементов много, драйверов тоже станет больше?",
+     "Сколько источников питания понадобится для большой композиции на 12 В?"
+    ],
+    "en": [
+     "How many drivers will I need?",
+     "How is the number of power supply units worked out?",
+     "one driver for the whole chandelier or several?",
+     "Why do different compositions come with a different number of drivers?",
+     "how many transformers per fixture",
+     "Our electrician needs the driver count for the panel. What does it depend on?"
+    ]
+   },
+   "a": {
+    "ru": "Число драйверов рассчитывают под конкретную композицию: по её суммарной мощности, схеме распределения нагрузки и характеристикам выбранных источников питания, поэтому одной цифры для всех композиций нет. Драйвер нужен при питании 12–24 В и входит в комплект поставки; при 220 В композицию подключают к сети напрямую, без драйвера. Тип и мощность источников питания подбирают по электрической схеме конкретного заказа — подключайте строго по ней, а место под драйверы предусмотрите заранее: в электрощитке или в запотолочном пространстве. Если композицию считает конфигуратор, её мощность выводится в PDF-спецификацию; сколько драйверов будет в вашем заказе, подтвердит менеджер после инженерной проверки — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "The number of drivers is calculated for the specific composition: from its total power, the load distribution scheme and the characteristics of the chosen power supplies, so there is no single figure for all compositions. A driver is needed for a 12–24 V supply and is included in the delivery; with 220 V the composition is connected directly to the mains, without a driver. The type and power of the power supplies are chosen according to the wiring diagram of the specific order — connect strictly to it, and plan space for the drivers in advance: in the distribution board or in the void above the ceiling. If the configurator calculates the composition, its power is printed in the PDF specification; how many drivers your order will have, the manager will confirm after an engineering check — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation",
+    "/pdf/vargov-connection-ru.pdf",
+    "/pdf/vargov-connection-en.pdf"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
+  },
+  {
+   "id": "Q138",
+   "category": "installation",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement"
+   ],
+   "q": {
+    "ru": [
+     "Можно ли повесить композицию на металлическую раму?",
+     "Подвесы можно крепить не к потолку, а к металлической раме?",
+     "У нас над потолком металлоконструкция, композицию можно закрепить на неё?",
+     "монтажная рама из металла подойдёт для вашей люстры?",
+     "Проектируем металлическую раму под светильник — что нужно учесть по вашей композиции?",
+     "Можно ли разместить драйверы на монтажной раме рядом с креплениями?",
+     "Конструктор предлагает стальную раму вместо закладных. Это допустимо?",
+     "Кто оценивает, выдержит ли металлическая рама композицию?"
+    ],
+    "en": [
+     "Can a composition be mounted on a metal frame?",
+     "can we hang it from a steel mounting frame instead of the ceiling",
+     "Our engineer proposes a steel frame instead of embedded supports. Is that acceptable?",
+     "There's a metal structure above the ceiling — can the suspensions be fixed to it?",
+     "Who checks whether a metal mounting frame can carry the composition?",
+     "What do we need to consider when designing a metal frame for your fixture?"
+    ]
+   },
+   "a": {
+    "ru": "Металлическая монтажная рама возможна для отдельных композиций — после инженерной оценки: проверяют точки крепления, нагрузку и место размещения драйверов. Заранее обещать такой монтаж для любой композиции мы не можем, а несущую способность конструкции, к которой крепится рама, проверяют по проекту. На странице vargov.ru/installation описаны три варианта монтажа: подготовленный потолок с закладными, ревизионный лючок и основание (база), которому достаточно одного вывода 220 В. Чтобы оценить вариант с рамой, пришлите менеджеру артикул LC и чертёж или описание рамы и перекрытия — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "A metal mounting frame is possible for individual compositions — after an engineering assessment that checks the fixing points, the load and where the drivers will go. We cannot promise such an installation for every composition in advance, and the load-bearing capacity of the structure the frame is fixed to is checked per project. The installation page, vargov.ru/en/installation, describes three installation options: a prepared ceiling with embedded supports, an access hatch, and a base, which needs only a single 220 V supply point. To assess the frame option, send the manager the LC code and a drawing or description of the frame and the slab — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/installation"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
+  },
+  {
+   "id": "Q139",
+   "category": "delivery",
+   "roles": [
+    "architect",
+    "designer",
+    "procurement",
+    "client"
+   ],
+   "q": {
+    "ru": [
+     "Можно заказать фанерный ящик?",
+     "Сколько стоит дополнительный фанерный ящик?",
+     "Хотим отправку в фанерном ящике для надёжности. Это возможно и за сколько?",
+     "Фанерный ящик входит в стоимость или считается отдельно?",
+     "фанерный короб под люстру за доп плату делаете?",
+     "Насколько фанерный ящик увеличит объём и вес груза?",
+     "Для морской перевозки нужен усиленный ящик из фанеры — организуете?",
+     "как посчитать стоимость фанерной тары для нашего заказа"
+    ],
+    "en": [
+     "Can I order a plywood crate?",
+     "How much does an extra plywood box cost?",
+     "is the plywood case included or charged separately",
+     "We want the shipment in a plywood case for extra protection. Possible?",
+     "Will a plywood box add to the shipping volume and weight?",
+     "price for reinforced plywood packaging?"
+    ]
+   },
+   "a": {
+    "ru": "Для хрупких и крупногабаритных изделий, дополнительно к экспортной упаковке с деревянной обрешёткой, можно предусмотреть защитную фанерную упаковку — фанерный ящик. Это дополнительная упаковка: её необходимость и стоимость рассчитываются индивидуально с учётом размера, массы, маршрута доставки и требований к перевозке. Фанерный ящик может увеличить объём и вес груза — это тоже учитывается в расчёте. Чтобы получить расчёт, напишите менеджеру артикул LC и город доставки — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "For fragile and large pieces, in addition to the export packaging with timber crating, protective plywood packaging — a plywood box — can be provided. It is additional packaging: whether it is needed and what it costs are calculated individually, taking into account the size, mass, delivery route and transport requirements. A plywood box may increase the volume and weight of the shipment — this is also taken into account in the calculation. To get a calculation, send the manager the LC code and the delivery city — buttons below: Telegram, WhatsApp, e-mail."
+   },
+   "sources": [
+    "/warranty"
+   ],
+   "updated": "2026-11-01",
+   "checked_by": "ИИ-видимость: вопросы FAQ владельца без ответа (файл «анализ переписок», п. 4, 12, 19–21, 44, 56, 76–78, 85; «12 вопросов» §09) — workflow pack7-faq-gaps (черновик, 2 линзы проверки, 3 правки)"
   }
  ]
 }
