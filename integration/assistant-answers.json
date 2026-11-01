@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-11-01.9",
-  "checksum": "ef9a97600a27b95c",
+  "version": "2026-11-01.10",
+  "checksum": "f75bd0f3117f08fd",
   "count": 169,
   "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -8247,7 +8247,9 @@
      "Хочу, чтобы в композиции были и стеклянные, и керамические элементы с золотом — так делаете?",
      "Для лобби нужна композиция, где цветное стекло сочетается с металлом в золоте. Есть такие примеры?",
      "Есть модели, где белая керамика и прозрачное стекло вместе?",
-     "Торшер LC0194 — какое там стекло и из чего стойки?"
+     "Торшер LC0194 — какое там стекло и из чего стойки?",
+     "LC0417 из каких элементов собрана?",
+     "Из каких материалов диски LC0596?"
     ],
     "en": [
      "Can different materials be combined in one composition?",
@@ -8259,24 +8261,29 @@
      "do u do pieces with glass and ceramic together?",
      "Looking for a piece where coloured glass is paired with gold-finished metal — any examples?",
      "Is there a model with white ceramic and clear glass elements together?",
-     "LC0194 floor lamp — what glass is it and what are the stands made of?"
+     "LC0194 floor lamp — what glass is it and what are the stands made of?",
+     "What materials are the LC0596 discs made of?"
     ]
    },
    "a": {
-    "ru": "В одной композиции можно сочетать разные материалы и отделки — в каталоге есть такие примеры. В LC0548 белые керамические пластины с органической перфорацией сочетаются с каскадами рубинового стекла, а LC0553 собрана из керамических элементов с белой глянцевой эмалью и зеркальным гальваническим покрытием. В LC0491 соединены элементы из керамики и стекла. В торшере LC0194 прозрачные стеклянные элементы насыщенного зелёно-бирюзового оттенка выстроены слоями вокруг источника света, а тонкие стойки и основание сделаны из металла с тёплым золотым покрытием. Какие сочетания возможны в выбранной вами композиции, подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Different materials and finishes can be combined in one composition — the catalogue has examples. In LC0548 white ceramic plates with an organic perforation are combined with cascades of ruby glass, while LC0553 is assembled from ceramic elements with a white glossy enamel and a mirror electroplated finish. LC0491 brings together ceramic and glass elements. In the LC0194 floor lamp, clear glass elements in a rich green-turquoise shade are layered around the light source, while the slender stands and the base are made of metal with a warm gold coating. Which combinations are possible in the composition you have chosen, the manager will confirm — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "В одной композиции можно сочетать разные материалы и отделки — в каталоге есть такие примеры. В LC0417 соединены три типа элементов: белая керамика с глянцевой эмалью, керамика с зеркальным золотым покрытием и прозрачное фактурное стекло. Круглые диски LC0596 выполнены из двух материалов: белые — из художественной керамики, прозрачные — из фактурного стекла, а латунные центральные акценты объединяют их в одну композицию. В LC0548 белые керамические пластины с органической перфорацией сочетаются с каскадами рубинового стекла, а LC0553 собрана из керамических элементов с белой глянцевой эмалью и зеркальным гальваническим покрытием. В LC0491 соединены элементы из керамики и стекла. В торшере LC0194 прозрачные стеклянные элементы насыщенного зелёно-бирюзового оттенка выстроены слоями вокруг источника света, а тонкие стойки и основание сделаны из металла с тёплым золотым покрытием. Какие сочетания возможны в выбранной вами композиции, подтвердит менеджер — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Different materials and finishes can be combined in one composition — the catalogue has examples. LC0417 brings together three types of elements: white ceramic with a glossy enamel, ceramic with a mirror-gold finish and clear textured glass. The round discs of LC0596 are made of two materials: the white ones of art ceramic and the clear ones of textured glass, and brass central accents unite them into one composition. In LC0548 white ceramic plates with an organic perforation are combined with cascades of ruby glass, while LC0553 is assembled from ceramic elements with a white glossy enamel and a mirror electroplated finish. LC0491 brings together ceramic and glass elements. In the LC0194 floor lamp, clear glass elements in a rich green-turquoise shade are layered around the light source, while the slender stands and the base are made of metal with a warm gold coating. Which combinations are possible in the composition you have chosen, the manager will confirm — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
+    "https://t.me/vargov_design/3192",
+    "https://t.me/vargov_design/3114",
     "https://t.me/vargov_design/3028",
     "https://t.me/vargov_design/3038",
     "https://t.me/vargov_design/2957",
+    "/catalog/lc0417",
+    "/catalog/lc0596",
     "/catalog/lc0548",
     "/catalog/lc0553",
     "/catalog/lc0491",
     "/catalog/lc0194"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: материалы сверены с разметкой владельца (element-specs.json, коммит конфигуратора e02ddcff, все записи elementMaterialsFrom = owner) по просьбе агента сайта 01.11.2026; LC0417 и LC0596 сняты — третья страница разметки 01.11 «стекло» против постов 3015, 3192, 3114 «керамика и стекло», до слова владельца; LC0491 — слово владельца 14.10 «микс элементов: керамика и стекло»"
+   "checked_by": "ИИ-видимость: материалы сверены с разметкой владельца (element-specs.json, e02ddcff) и его словами в чате сессии сайта 01.11.2026: LC0417 — «используется стекло и керамика, прозрачные это стекло, белый и золотой-керамика» (17:21 UTC, как в постах 3015 и 3192); LC0596 — выбор «Керамика и стекло» на вопрос с цитатой поста 3114 и «да, белые это керамика, прозрачные это стекло» (17:22–17:23 UTC); LC0491 — слово владельца 14.10 «микс элементов: керамика и стекло»"
   },
   {
    "id": "Q164",
@@ -8377,11 +8384,12 @@
     ]
    },
    "a": {
-    "ru": "Золото в наших композициях работает по-разному, в зависимости от изделия. У LC0296 обратная сторона каждого элемента покрыта золотым гальваническим слоем при белой глянцевой лицевой стороне, а хрустальные элементы настенной композиции LC0373 обрамлены краем с зеркальным золотым покрытием. В стекло бра LC0332-1 и настольного арт-объекта LC0569 добавлены мельчайшие частицы золотой фольги: они улавливают свет и создают тонкое внутреннее мерцание; внутренняя поверхность керамических элементов LC0165 покрыта золотой паталью, а внутри хрустальных элементов LC0544 — рельефная золотая форма. В конфигураторе рядом с каталогом RAL есть фирменный золотой цвет, а в ТЗ на производство (vargov.ru/specifications) среди подсказок цвета — «зеркальное золото». Можно ли повторить такую отделку в другой композиции, подтвердит менеджер: назовите артикул LC и опишите желаемый эффект — кнопки Telegram, WhatsApp, e-mail.",
-    "en": "Gold works in different ways in our compositions, depending on the piece. On LC0296 the back of every element carries a gold electroplated layer while the front is glossy white, and the crystal elements of the LC0373 wall composition are framed by an edge with a mirror-gold finish. Tiny particles of gold foil are added to the glass of the LC0332-1 sconce and the LC0569 table art object: they catch the light and create a subtle inner shimmer; the inner surface of the LC0165 ceramic elements is covered with gold metal leaf, and inside the LC0544 crystal elements sits a relief gold form. In the configurator, alongside the RAL catalogue, there is the brand gold colour, and in the production brief (vargov.ru/en/specifications) the colour suggestions include \"mirror gold\". Whether such a finish can be repeated in another composition, the manager will confirm: give the LC code and describe the effect you want — buttons below: Telegram, WhatsApp, e-mail."
+    "ru": "Золото в наших композициях работает по-разному, в зависимости от изделия. У LC0296 обратная сторона каждого элемента покрыта золотым гальваническим слоем при белой глянцевой лицевой стороне, в LC0417 есть элементы из керамики с зеркальным золотым покрытием, а хрустальные элементы настенной композиции LC0373 обрамлены краем с зеркальным золотым покрытием. В стекло бра LC0332-1 и настольного арт-объекта LC0569 добавлены мельчайшие частицы золотой фольги: они улавливают свет и создают тонкое внутреннее мерцание; внутренняя поверхность керамических элементов LC0165 покрыта золотой паталью, а внутри хрустальных элементов LC0544 — рельефная золотая форма. В конфигураторе рядом с каталогом RAL есть фирменный золотой цвет, а в ТЗ на производство (vargov.ru/specifications) среди подсказок цвета — «зеркальное золото». Можно ли повторить такую отделку в другой композиции, подтвердит менеджер: назовите артикул LC и опишите желаемый эффект — кнопки Telegram, WhatsApp, e-mail.",
+    "en": "Gold works in different ways in our compositions, depending on the piece. On LC0296 the back of every element carries a gold electroplated layer while the front is glossy white; LC0417 includes ceramic elements with a mirror-gold finish, and the crystal elements of the LC0373 wall composition are framed by an edge with a mirror-gold finish. Tiny particles of gold foil are added to the glass of the LC0332-1 sconce and the LC0569 table art object: they catch the light and create a subtle inner shimmer; the inner surface of the LC0165 ceramic elements is covered with gold metal leaf, and inside the LC0544 crystal elements sits a relief gold form. In the configurator, alongside the RAL catalogue, there is the brand gold colour, and in the production brief (vargov.ru/en/specifications) the colour suggestions include \"mirror gold\". Whether such a finish can be repeated in another composition, the manager will confirm: give the LC code and describe the effect you want — buttons below: Telegram, WhatsApp, e-mail."
    },
    "sources": [
     "https://t.me/vargov_design/3014",
+    "https://t.me/vargov_design/3192",
     "https://t.me/vargov_design/2977",
     "https://t.me/vargov_design/3052",
     "https://t.me/vargov_design/2978",
@@ -8393,7 +8401,7 @@
     "/specifications"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: материалы сверены с разметкой владельца (element-specs.json, коммит конфигуратора e02ddcff, все записи elementMaterialsFrom = owner) по просьбе агента сайта 01.11.2026; LC0417 и LC0596 сняты — третья страница разметки 01.11 «стекло» против постов 3015, 3192, 3114 «керамика и стекло», до слова владельца; LC0491 — слово владельца 14.10 «микс элементов: керамика и стекло»"
+   "checked_by": "ИИ-видимость: материалы сверены с разметкой владельца (element-specs.json, e02ddcff) и его словами в чате сессии сайта 01.11.2026: LC0417 — «используется стекло и керамика, прозрачные это стекло, белый и золотой-керамика» (17:21 UTC, как в постах 3015 и 3192); LC0596 — выбор «Керамика и стекло» на вопрос с цитатой поста 3114 и «да, белые это керамика, прозрачные это стекло» (17:22–17:23 UTC); LC0491 — слово владельца 14.10 «микс элементов: керамика и стекло»"
   },
   {
    "id": "Q166",
