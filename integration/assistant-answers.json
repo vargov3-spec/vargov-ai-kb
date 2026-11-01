@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-11-01.7",
-  "checksum": "6a627d623d9f0ee2",
+  "version": "2026-11-01.8",
+  "checksum": "08a93704bb21701b",
   "count": 169,
   "updated": "2026-11-01",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -7235,18 +7235,16 @@
     ]
    },
    "a": {
-    "ru": "Хрусталь — один из материалов наших композиций, наряду с художественным стеклом, керамикой и металлом. LC0544 собрана из авторских хрустальных элементов сложной многогранной огранки с рельефной золотой формой внутри: хрусталь в ней работает как линза, преломляет свет и усиливает глубину. Настенная композиция LC0373 выполнена из хрустальных элементов органичной формы с краем в зеркальном золотом покрытии, у торшера LC0212 — каскад хрустальных элементов, а у торшера LC0593 одна из версий верхних элементов — фактурный хрусталь. На vargov.ru/materials о хрустале сказано: модули огранены так, чтобы дробить свет на направленные блики, а материал даёт композициям глубину и характерное холодное мерцание. Подобрать композицию из хрусталя под ваш интерьер поможет менеджер (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "Crystal is one of the materials of our compositions, alongside art glass, ceramic and metal. LC0544 is assembled from the brand's own crystal elements with a complex multifaceted cut and a relief gold form inside: in it the crystal works like a lens, refracting the light and deepening it. The LC0373 wall composition is made of crystal elements of an organic form with an edge in a mirror-gold finish, the LC0212 floor lamp has a cascade of crystal elements, and one of the versions of the LC0593 floor lamp's top elements is textured crystal. As vargov.ru/en/materials puts it, the crystal modules are cut to split light into directed sparkles, and the material gives the compositions depth and a characteristic cool shimmer. The manager will help you choose a crystal composition for your interior (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Хрусталь — один из материалов наших композиций, наряду с художественным стеклом, керамикой и металлом. LC0544 собрана из авторских хрустальных элементов сложной многогранной огранки с рельефной золотой формой внутри: хрусталь в ней работает как линза, преломляет свет и усиливает глубину. Настенная композиция LC0373 выполнена из хрустальных элементов органичной формы с краем в зеркальном золотом покрытии. Из хрусталя также, например, световые композиции LC0383, LC0466, LC0400, LC0302, LC0028, LC0027, LC0478 и LC0138. На vargov.ru/materials о хрустале сказано: модули огранены так, чтобы дробить свет на направленные блики, а материал даёт композициям глубину и характерное холодное мерцание. Подобрать композицию из хрусталя под ваш интерьер поможет менеджер (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "Crystal is one of the materials of our compositions, alongside art glass, ceramic and metal. LC0544 is assembled from the brand's own crystal elements with a complex multifaceted cut and a relief gold form inside: in it the crystal works like a lens, refracting the light and deepening it. The LC0373 wall composition is made of crystal elements of an organic form with an edge in a mirror-gold finish. Crystal is also used, for example, in the LC0383, LC0466, LC0400, LC0302, LC0028, LC0027, LC0478 and LC0138 lighting compositions. As vargov.ru/en/materials puts it, the crystal modules are cut to split light into directed sparkles, and the material gives the compositions depth and a characteristic cool shimmer. The manager will help you choose a crystal composition for your interior (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "https://t.me/vargov_design/3006",
     "https://t.me/vargov_design/2977",
-    "https://t.me/vargov_design/2947",
-    "https://t.me/vargov_design/3110",
     "/materials"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: кандидаты агента сайта из постов Telegram и статей «Прямой речи» (01.11.2026, 114 пар) и автоответы WhatsApp владельца с его решениями 01.11 («Называть шкалу», «Как в автоответе»); workflow pack8-tg-journal-whatsapp (черновик, 3 линзы, правка, перепроверка, сведение, переводы)"
+   "checked_by": "ИИ-видимость: материалы по слову владельца 01.11.2026 — вторая страница разметки (LC0593 — только «керамика» при подсказке «если версий несколько — отметьте все»), чат сессии сайта (LC0383, LC0466, LC0400, LC0302, LC0028, LC0027, LC0478, LC0138 — «хрусталь») и разметка 13.10 (LC0212 — «стекло», «металл»); просьба агента сайта убрать хрусталь LC0593 из Q140"
   },
   {
    "id": "Q141",
@@ -7264,8 +7262,7 @@
      "есть торшер с мраморным основанием?",
      "Торшер LC0593 бывает со стеклом вместо керамики?",
      "Ищу торшер-скульптуру для гостиной, хочу понять материалы: камень, стекло, металл?",
-     "Какие версии бывают у торшера LC0593?",
-     "торшер из мрамора и хрусталя у вас есть?"
+     "Какие версии бывают у торшера LC0593?"
     ],
     "en": [
      "What are your floor lamps made of?",
@@ -7277,8 +7274,8 @@
     ]
    },
    "a": {
-    "ru": "Материалы торшера зависят от модели. У LC0593 тонкие металлические стебли поднимаются из массивного цилиндрического основания, а верхние элементы, в зависимости от выбранной версии, бывают из художественной керамики, из прозрачного или цветного художественного стекла или из фактурного хрусталя. У LC0207 тонкие стеклянные «ветви» стоят на основании из натурального мрамора, а у LC0212 массивное основание из тёмного мрамора держит каскад хрустальных элементов, в верхней части — латунная геометрия. Все торшеры, бра и настольные арт-объекты собраны на vargov.ru/floor-table-lamps.",
-    "en": "The materials of a floor lamp depend on the model. On LC0593 slender metal stems rise from a massive cylindrical base, and the top elements, depending on the version chosen, are made of art ceramic, of clear or coloured art glass, or of textured crystal. On LC0207 slender glass \"branches\" stand on a base of natural marble, while on LC0212 a massive dark-marble base holds a cascade of crystal elements, with brass geometry in the upper part. All floor lamps, wall lights and table art objects are collected at vargov.ru/en/floor-table-lamps."
+    "ru": "Материалы торшера зависят от модели. У LC0593 тонкие металлические стебли поднимаются из массивного цилиндрического основания, а верхние элементы выполнены из художественной керамики. У LC0207 тонкие стеклянные «ветви» стоят на основании из натурального мрамора, а у LC0212 массивное основание из тёмного мрамора держит каскад стеклянных элементов, в верхней части — латунная геометрия. Если для торшера нужен другой материал элементов, возможно ли это, скажет менеджер (кнопки Telegram, WhatsApp, e-mail). Все торшеры, бра и настольные арт-объекты собраны на vargov.ru/floor-table-lamps.",
+    "en": "The materials of a floor lamp depend on the model. On LC0593 slender metal stems rise from a massive cylindrical base, and the top elements are made of art ceramic. On LC0207 slender glass \"branches\" stand on a base of natural marble, while on LC0212 a massive dark-marble base holds a cascade of glass elements, with brass geometry in the upper part. If you need a different element material for a floor lamp, the manager will tell you whether it is possible (buttons below: Telegram, WhatsApp, e-mail). All floor lamps, wall lights and table art objects are collected at vargov.ru/en/floor-table-lamps."
    },
    "sources": [
     "https://t.me/vargov_design/3110",
@@ -7287,7 +7284,7 @@
     "/floor-table-lamps"
    ],
    "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: кандидаты агента сайта из постов Telegram и статей «Прямой речи» (01.11.2026, 114 пар) и автоответы WhatsApp владельца с его решениями 01.11 («Называть шкалу», «Как в автоответе»); workflow pack8-tg-journal-whatsapp (черновик, 3 линзы, правка, перепроверка, сведение, переводы)"
+   "checked_by": "ИИ-видимость: материалы по слову владельца 01.11.2026 — вторая страница разметки (LC0593 — только «керамика» при подсказке «если версий несколько — отметьте все»), чат сессии сайта (LC0383, LC0466, LC0400, LC0302, LC0028, LC0027, LC0478, LC0138 — «хрусталь») и разметка 13.10 (LC0212 — «стекло», «металл»); просьба агента сайта убрать хрусталь LC0593 из Q140"
   },
   {
    "id": "Q142",
