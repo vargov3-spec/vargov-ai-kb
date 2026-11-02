@@ -1,9 +1,9 @@
 {
  "meta": {
-  "version": "2026-11-01.10",
-  "checksum": "f75bd0f3117f08fd",
+  "version": "2026-11-02.1",
+  "checksum": "cd7658ead2336840",
   "count": 169,
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
    "catalog",
@@ -7574,8 +7574,8 @@
     ]
    },
    "a": {
-    "ru": "Композиция LC0545-1 получила Gold Winner NY Product Design Awards 2026 в категории «Outdoor Lighting - Designer / Custom Lighting», но наружное и заказное освещение — не про уличный фонарь. В эту категорию попадают вещи, которые собираются под конкретное место, а не выпускаются рядом одинаковых: у LC0545-1 число венчиков, шаг между ними и баланс белого и дымчатого задаются под помещение. Степень защиты IP задаётся по проекту, и уличную эксплуатацию без соответствующего исполнения и документации мы не обещаем. Если композиция нужна для террасы или улицы, назовите условия менеджеру — после проверки проекта он скажет, возможно ли такое исполнение (кнопки Telegram, WhatsApp, e-mail).",
-    "en": "The LC0545-1 composition took Gold Winner at the NY Product Design Awards 2026 in the “Outdoor Lighting - Designer / Custom Lighting” category, but outdoor and custom lighting is not about a street lamp. This category covers pieces that are put together for one particular place rather than made as a run of identical units: for LC0545-1 the number of corollas, the spacing between them and the balance of white and smoky are set to suit the room. The IP rating is set per project, and we do not promise outdoor use without a suitable version and documentation. If you need the composition for a terrace or outdoors, tell the manager the conditions, and after checking the project they will say whether such a version is possible (buttons below: Telegram, WhatsApp, e-mail)."
+    "ru": "Композиция LC0545-1 получила Gold Winner NY Product Design Awards 2026 в категории «Outdoor Lighting - Designer / Custom Lighting», но наружное и заказное освещение — не про уличный фонарь. В эту категорию попадают вещи, которые собираются под конкретное место, а не выпускаются рядом одинаковых: у LC0545-1 размер и число элементов задаются под помещение. Степень защиты IP задаётся по проекту, и уличную эксплуатацию без соответствующего исполнения и документации мы не обещаем. Если композиция нужна для террасы или улицы, назовите условия менеджеру — после проверки проекта он скажет, возможно ли такое исполнение (кнопки Telegram, WhatsApp, e-mail).",
+    "en": "The LC0545-1 composition took Gold Winner at the NY Product Design Awards 2026 in the “Outdoor Lighting - Designer / Custom Lighting” category, but outdoor and custom lighting is not about a street lamp. This category covers pieces that are put together for one particular place rather than made as a run of identical units: for LC0545-1 the size and the number of elements are set to suit the room. The IP rating is set per project, and we do not promise outdoor use without a suitable version and documentation. If you need the composition for a terrace or outdoors, tell the manager the conditions, and after checking the project they will say whether such a version is possible (buttons below: Telegram, WhatsApp, e-mail)."
    },
    "sources": [
     "/journal/ny-2026",
@@ -7590,8 +7590,8 @@
      "en": "Outdoor and custom lighting is not about a street lamp. This category covers pieces that are put together for one particular place rather than made as a run of identical units."
     }
    },
-   "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: кандидаты агента сайта из постов Telegram и статей «Прямой речи» (01.11.2026, 114 пар) и автоответы WhatsApp владельца с его решениями 01.11 («Называть шкалу», «Как в автоответе»); workflow pack8-tg-journal-whatsapp (черновик, 3 линзы, правка, перепроверка, сведение, переводы)"
+   "updated": "2026-11-02",
+   "checked_by": "ИИ-видимость: сверка материалов всего пакета 02.11.2026 (workflow pack-materials-audit: 5 читателей, по 2 опровергателя на находку) против element-specs.json конфигуратора dccf951a и постов владельца. LC0545-1 — пост 3020 «Зелёное и прозрачное стекло сочетается с тёплой латунью» и снимки карточки (белые и дымчатые цветы — это LC0545); LC0053 — разметка владельца 13.10 «оргстекло» против поста 3027 «стеклянная оболочка», материал оболочки снят до слова владельца"
   },
   {
    "id": "Q149",
@@ -7852,8 +7852,8 @@
     ]
    },
    "a": {
-    "ru": "Композиции с растениями у нас есть: настенное панно с подсветкой LC0053 — фито-модуль, внутри прозрачного объёма которого собран микромир из тропических стабилизированных растений; стеклянная оболочка защищает растения и превращает их в художественный объект, а мягкий свет пронизывает листву. Такое панно уместно и в интерьерах без окон — в коридорах, гардеробных, спа-зонах; состав растений, плотность посадки и температура подсветки подбираются индивидуально, на заказ. У настольного арт-объекта LC0061 есть исполнение, где на поверхность керамического скульптурного элемента нанесён стабилизированный мох, а тёплые световые окна словно прорастают сквозь него изнутри. Карточки: vargov.ru/catalog/lc0053 и vargov.ru/catalog/lc0061.",
-    "en": "We do have compositions with plants: the LC0053 backlit wall panel is a phyto-module, with a small world of preserved tropical plants gathered inside its transparent volume; the glass shell protects the plants and turns them into an art object, while soft light passes through the foliage. The panel also works in interiors without windows — corridors, dressing rooms, spas; the plant selection, the planting density and the colour temperature of the backlight are made to order. The LC0061 table art object comes in a version where preserved moss is applied to the surface of a ceramic sculptural element, and warm windows of light seem to grow through it from inside. Product pages: vargov.ru/en/catalog/lc0053 and vargov.ru/en/catalog/lc0061."
+    "ru": "Композиции с растениями у нас есть: настенное панно с подсветкой LC0053 — фито-модуль, внутри прозрачного объёма которого собран микромир из тропических стабилизированных растений; оболочка защищает растения и превращает их в художественный объект, а мягкий свет пронизывает листву. Такое панно уместно и в интерьерах без окон — в коридорах, гардеробных, спа-зонах; состав растений, плотность посадки и температура подсветки подбираются индивидуально, на заказ. У настольного арт-объекта LC0061 есть исполнение, где на поверхность керамического скульптурного элемента нанесён стабилизированный мох, а тёплые световые окна словно прорастают сквозь него изнутри. Карточки: vargov.ru/catalog/lc0053 и vargov.ru/catalog/lc0061.",
+    "en": "We do have compositions with plants: the LC0053 backlit wall panel is a phyto-module, with a small world of preserved tropical plants gathered inside its transparent volume; the shell protects the plants and turns them into an art object, while soft light passes through the foliage. The panel also works in interiors without windows — corridors, dressing rooms, spas; the plant selection, the planting density and the colour temperature of the backlight are made to order. The LC0061 table art object comes in a version where preserved moss is applied to the surface of a ceramic sculptural element, and warm windows of light seem to grow through it from inside. Product pages: vargov.ru/en/catalog/lc0053 and vargov.ru/en/catalog/lc0061."
    },
    "sources": [
     "https://t.me/vargov_design/3027",
@@ -7861,8 +7861,8 @@
     "/catalog/lc0053",
     "/catalog/lc0061"
    ],
-   "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: кандидаты агента сайта из постов Telegram и статей «Прямой речи» (01.11.2026, 114 пар) и автоответы WhatsApp владельца с его решениями 01.11 («Называть шкалу», «Как в автоответе»); workflow pack8-tg-journal-whatsapp (черновик, 3 линзы, правка, перепроверка, сведение, переводы)"
+   "updated": "2026-11-02",
+   "checked_by": "ИИ-видимость: сверка материалов всего пакета 02.11.2026 (workflow pack-materials-audit: 5 читателей, по 2 опровергателя на находку) против element-specs.json конфигуратора dccf951a и постов владельца. LC0545-1 — пост 3020 «Зелёное и прозрачное стекло сочетается с тёплой латунью» и снимки карточки (белые и дымчатые цветы — это LC0545); LC0053 — разметка владельца 13.10 «оргстекло» против поста 3027 «стеклянная оболочка», материал оболочки снят до слова владельца"
   },
   {
    "id": "Q155",
