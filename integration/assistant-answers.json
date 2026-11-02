@@ -1,7 +1,7 @@
 {
  "meta": {
-  "version": "2026-11-02.1",
-  "checksum": "cd7658ead2336840",
+  "version": "2026-11-02.2",
+  "checksum": "7e9a724157e0a08c",
   "count": 169,
   "updated": "2026-11-02",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
@@ -7852,8 +7852,8 @@
     ]
    },
    "a": {
-    "ru": "Композиции с растениями у нас есть: настенное панно с подсветкой LC0053 — фито-модуль, внутри прозрачного объёма которого собран микромир из тропических стабилизированных растений; оболочка защищает растения и превращает их в художественный объект, а мягкий свет пронизывает листву. Такое панно уместно и в интерьерах без окон — в коридорах, гардеробных, спа-зонах; состав растений, плотность посадки и температура подсветки подбираются индивидуально, на заказ. У настольного арт-объекта LC0061 есть исполнение, где на поверхность керамического скульптурного элемента нанесён стабилизированный мох, а тёплые световые окна словно прорастают сквозь него изнутри. Карточки: vargov.ru/catalog/lc0053 и vargov.ru/catalog/lc0061.",
-    "en": "We do have compositions with plants: the LC0053 backlit wall panel is a phyto-module, with a small world of preserved tropical plants gathered inside its transparent volume; the shell protects the plants and turns them into an art object, while soft light passes through the foliage. The panel also works in interiors without windows — corridors, dressing rooms, spas; the plant selection, the planting density and the colour temperature of the backlight are made to order. The LC0061 table art object comes in a version where preserved moss is applied to the surface of a ceramic sculptural element, and warm windows of light seem to grow through it from inside. Product pages: vargov.ru/en/catalog/lc0053 and vargov.ru/en/catalog/lc0061."
+    "ru": "Композиции с растениями у нас есть: настенное панно с подсветкой LC0053 — фито-модуль, внутри прозрачного объёма которого собран микромир из тропических стабилизированных растений; оболочка из оргстекла защищает растения и превращает их в художественный объект, а мягкий свет пронизывает листву. Такое панно уместно и в интерьерах без окон — в коридорах, гардеробных, спа-зонах; состав растений, плотность посадки и температура подсветки подбираются индивидуально, на заказ. У настольного арт-объекта LC0061 есть исполнение, где на поверхность керамического скульптурного элемента нанесён стабилизированный мох, а тёплые световые окна словно прорастают сквозь него изнутри. Карточки: vargov.ru/catalog/lc0053 и vargov.ru/catalog/lc0061.",
+    "en": "We do have compositions with plants: the LC0053 backlit wall panel is a phyto-module, with a small world of preserved tropical plants gathered inside its transparent volume; the acrylic shell protects the plants and turns them into an art object, while soft light passes through the foliage. The panel also works in interiors without windows — corridors, dressing rooms, spas; the plant selection, the planting density and the colour temperature of the backlight are made to order. The LC0061 table art object comes in a version where preserved moss is applied to the surface of a ceramic sculptural element, and warm windows of light seem to grow through it from inside. Product pages: vargov.ru/en/catalog/lc0053 and vargov.ru/en/catalog/lc0061."
    },
    "sources": [
     "https://t.me/vargov_design/3027",
@@ -7862,7 +7862,7 @@
     "/catalog/lc0061"
    ],
    "updated": "2026-11-02",
-   "checked_by": "ИИ-видимость: сверка материалов всего пакета 02.11.2026 (workflow pack-materials-audit: 5 читателей, по 2 опровергателя на находку) против element-specs.json конфигуратора dccf951a и постов владельца. LC0545-1 — пост 3020 «Зелёное и прозрачное стекло сочетается с тёплой латунью» и снимки карточки (белые и дымчатые цветы — это LC0545); LC0053 — разметка владельца 13.10 «оргстекло» против поста 3027 «стеклянная оболочка», материал оболочки снят до слова владельца"
+   "checked_by": "ИИ-видимость: материал оболочки LC0053 — выбор владельца 02.11.2026 06:56 UTC «Оргстекло» на вопрос агента сайта с цитатами разметки 13.10 («стабилизированные растения, оргстекло») и поста 3027 («Стеклянная оболочка…»); совпадает с element-specs (acrylic)"
   },
   {
    "id": "Q155",
