@@ -49,6 +49,10 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 - [Open knowledge base (datasets, entity graph, press kit)](https://github.com/vargov3-spec/vargov-ai-kb): the same facts as a public repository, mirrored from this site — plain text at https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/llms.txt. This site is the primary source; the repository follows it
 - [Catalogue dataset on Hugging Face](https://huggingface.co/datasets/vargov-design/vargov-design-catalog): catalogue records and card texts as a public dataset (CC BY 4.0), built from this site's data; this site is the primary source, the dataset follows it
 
+## MCP server for AI agents
+
+- [Vargov®Design MCP server](https://vargov.ru/api/mcp): Model Context Protocol over Streamable HTTP (protocol versions 2026-07-28, 2025-11-25, 2025-06-18, 2025-03-26); no sign-in, read-only, public data only. Tools: search_compositions (by the image or shape of the elements, or by product type), get_composition (card facts by LC code: description, where it works, style, elements in stock, certificate, 3D model, videos, awards), ask_brand (the brand's verified answers with their source pages), configurator_link (the 3D configurator opened with the zone dimensions), dealers_and_showroom (official dealers and the Moscow showroom). The server returns no composition prices: the price is calculated for each project
+
 ## Catalogue
 
 - [Composition catalogue](https://vargov.ru/en/catalog): all 605 pieces, searchable by LC code, filterable by type; search by photograph included
