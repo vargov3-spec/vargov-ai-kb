@@ -2,7 +2,7 @@
 
 Sección: Autenticidad · Fecha: 3 de septiembre de 2024 · Slug: sertifikat-podlinnosti
 
-Cada pieza va acompañada de un certificado de autenticidad firmado personalmente por Anton Vargov — la prueba de autoría y originalidad en un mercado lleno de imitaciones.
+A petición del comprador, la pieza va acompañada de un certificado de autenticidad firmado personalmente por Anton Vargov — la prueba de autoría y originalidad en un mercado lleno de imitaciones.
 
 Cada pieza que sale del taller de Vargov®Design es mucho más que un elemento de decoración o de iluminación. Es una obra de arte única: el resultado de la creatividad, la maestría y las tecnologías más avanzadas. Sabemos cuánto importa a nuestros clientes tener la certeza de la autenticidad y la exclusividad de lo que adquieren. Por eso, a petición del comprador, emitimos un certificado de autenticidad que acredita la autoría y la originalidad de la pieza.
 

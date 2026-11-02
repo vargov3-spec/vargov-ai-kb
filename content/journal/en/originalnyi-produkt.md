@@ -44,7 +44,7 @@ We know that delivery, especially over long distances, can carry risks, so we of
 
 - Timber crating. For added security the box is placed inside timber crating, which minimises the risk of damage. The crating forms a sturdy frame around the box and shields it from outside impact.
 
-- Plywood box. Where required, pieces can be packed into plywood boxes, which give maximum protection. Packing of this kind starts at $80 per 1 m³.
+- Plywood box. Where required, pieces can be packed into plywood boxes, which give maximum protection. The cost of such packing is calculated individually.
 
 - Nylon sacking. One more layer of protection is the nylon sacking wrapped around the box once the crating is complete. This layer keeps moisture and dust out, which matters especially on long journeys or in storage.
 

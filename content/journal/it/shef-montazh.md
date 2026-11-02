@@ -12,7 +12,7 @@ A chi è rivolto
 
 — A chi esegue il montaggio in proprio o con l'aiuto di professionisti esterni.
 
-— A chi vuole evitare errori, mantenere la garanzia e ottenere un risultato impeccabile.
+— A chi vuole evitare errori e ottenere un risultato impeccabile.
 
 Basta scriverci su WhatsApp: il nostro specialista vi contatterà per aiutarvi con qualsiasi questione legata all'installazione e al montaggio.
 

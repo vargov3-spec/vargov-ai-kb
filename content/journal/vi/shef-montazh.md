@@ -12,7 +12,7 @@ Phù hợp với ai
 
 — Những ai tự lắp đặt hoặc thuê chuyên gia bên ngoài.
 
-— Những ai muốn tránh sai sót, giữ nguyên bảo hành và có được kết quả hoàn hảo.
+— Những ai muốn tránh sai sót và có được kết quả hoàn hảo.
 
 Chỉ cần nhắn tin qua WhatsApp, chuyên gia của chúng tôi sẽ liên hệ với bạn để giúp giải quyết mọi vấn đề liên quan đến việc lắp đặt và thi công.
 

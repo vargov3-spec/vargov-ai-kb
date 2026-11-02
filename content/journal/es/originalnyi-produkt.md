@@ -44,7 +44,7 @@ Sabemos que el envío, sobre todo a larga distancia, puede conllevar riesgos, as
 
 - Jaula de madera. Para mayor seguridad, la caja se coloca dentro de una jaula de madera que reduce al mínimo el riesgo de daños. La jaula forma un armazón resistente alrededor de la caja y la protege de los impactos externos.
 
-- Caja de contrachapado. Si es necesario, las piezas pueden embalarse en cajas de contrachapado, que garantizan la máxima protección. El coste de este embalaje parte de 80 $ por 1 m³.
+- Caja de contrachapado. Si es necesario, las piezas pueden embalarse en cajas de contrachapado, que garantizan la máxima protección. El coste de este embalaje se calcula de forma individual.
 
 - Arpillera de nailon. Una capa más de protección es la arpillera de nailon que envuelve la caja una vez enjaulada. Esta capa impide la entrada de humedad y polvo, algo especialmente importante en transportes largos o durante el almacenamiento.
 

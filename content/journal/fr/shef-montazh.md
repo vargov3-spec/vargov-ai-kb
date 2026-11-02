@@ -12,7 +12,7 @@ L'objectif : assister et contrôler l'installation d'une composition lumineuse o
 
 — À ceux qui réalisent le montage eux-mêmes ou font appel à des professionnels extérieurs.
 
-— À ceux qui veulent éviter les erreurs, conserver la garantie et obtenir un résultat impeccable.
+— À ceux qui veulent éviter les erreurs et obtenir un résultat impeccable.
 
 Il suffit de nous écrire sur WhatsApp : notre spécialiste vous contactera pour vous aider sur toutes les questions liées à la pose et au montage.
 

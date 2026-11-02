@@ -12,7 +12,7 @@ Who it is for
 
 — Those installing on their own or with outside contractors.
 
-— Those who want to avoid mistakes, keep the warranty and get a flawless result.
+— Those who want to avoid mistakes and get a flawless result.
 
 Just write to us on WhatsApp and our specialist will get in touch to help with any question about mounting and installation.
 

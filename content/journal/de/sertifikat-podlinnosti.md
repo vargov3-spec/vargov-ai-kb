@@ -2,7 +2,7 @@
 
 Rubrik: Echtheit · Datum: 3. September 2024 · Slug: sertifikat-podlinnosti
 
-Jedes Stück wird von einem Echtheitszertifikat mit der persönlichen Unterschrift von Anton Vargov begleitet — Beleg für Autorschaft und Originalität in einem Markt voller Nachahmungen.
+Auf Wunsch des Käufers wird das Stück von einem Echtheitszertifikat mit der persönlichen Unterschrift von Anton Vargov begleitet — Beleg für Autorschaft und Originalität in einem Markt voller Nachahmungen.
 
 Jedes Objekt, das die Manufaktur von Vargov®Design verlässt, ist mehr als ein Dekor- oder Beleuchtungselement. Es ist ein einzigartiges Kunstwerk — die Summe aus Kreativität, Handwerkskunst und fortschrittlicher Technologie. Wir wissen, wie wichtig es unseren Kunden ist, sich der Echtheit und Exklusivität ihres Erwerbs sicher zu sein. Deshalb stellen wir auf Wunsch des Käufers ein Echtheitszertifikat aus, das Urheberschaft und Authentizität des Objekts bestätigt.
 

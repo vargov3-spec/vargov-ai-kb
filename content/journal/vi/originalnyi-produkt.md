@@ -44,7 +44,7 @@ Chúng tôi hiểu rằng việc giao hàng, nhất là trên quãng đường x
 
 - Đóng khung gỗ. Để tăng độ chắc chắn, hộp được đặt trong khung gỗ, giúp giảm thiểu nguy cơ hư hỏng. Khung gỗ tạo thành lớp vỏ vững chắc quanh hộp, bảo vệ nó khỏi các tác động bên ngoài.
 
-- Thùng gỗ dán. Khi cần, sản phẩm có thể được đóng trong thùng gỗ dán, bảo đảm sự bảo vệ tối đa. Chi phí loại bao bì này từ 80$ cho 1 m³.
+- Thùng gỗ dán. Khi cần, sản phẩm có thể được đóng trong thùng gỗ dán, bảo đảm sự bảo vệ tối đa. Chi phí loại bao bì này được tính riêng cho từng đơn hàng.
 
 - Bao nylon. Lớp bảo vệ bổ sung là lớp bao nylon quấn quanh hộp sau khi đã đóng khung gỗ. Lớp này ngăn ẩm và bụi lọt vào bên trong, điều đặc biệt quan trọng khi vận chuyển dài ngày hoặc lưu kho.
 

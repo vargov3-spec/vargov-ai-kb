@@ -44,7 +44,7 @@ Sappiamo che la spedizione, soprattutto sulle lunghe distanze, può comportare d
 
 - Gabbia di legno. Per maggiore sicurezza la scatola viene inserita in una gabbia di legno che riduce al minimo il rischio di danni. La gabbia forma un telaio robusto attorno alla scatola e la difende dalle sollecitazioni esterne.
 
-- Cassa di compensato. Se necessario, i pezzi possono essere imballati in casse di compensato, che garantiscono la massima protezione. Il costo di questo imballo parte da 80 $ per 1 m³.
+- Cassa di compensato. Se necessario, i pezzi possono essere imballati in casse di compensato, che garantiscono la massima protezione. Il costo di questo imballo viene calcolato individualmente.
 
 - Tela di nylon. Un ulteriore strato di protezione è la tela di nylon che avvolge la scatola dopo l'ingabbiatura. Questo strato impedisce l'ingresso di umidità e polvere, aspetto particolarmente importante nei trasporti lunghi o in caso di stoccaggio.
 

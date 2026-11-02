@@ -12,7 +12,7 @@ A quién le conviene
 
 — A quienes realizan el montaje por su cuenta o con profesionales externos.
 
-— A quienes quieren evitar errores, conservar la garantía y lograr un resultado impecable.
+— A quienes quieren evitar errores y lograr un resultado impecable.
 
 Basta con escribirnos por WhatsApp: nuestro especialista se pondrá en contacto para resolver cualquier duda sobre la instalación y el montaje.
 

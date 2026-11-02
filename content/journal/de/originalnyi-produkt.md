@@ -44,7 +44,7 @@ Uns ist bewusst, dass eine Lieferung — gerade über weite Strecken — mit Ris
 
 - Holzverschlag. Für zusätzliche Sicherheit kommt die Kiste in einen Holzverschlag, der das Beschädigungsrisiko minimiert. Der Verschlag bildet einen stabilen Rahmen um die Kiste und schirmt sie gegen äußere Einwirkungen ab.
 
-- Sperrholzkiste. Bei Bedarf können die Objekte in Sperrholzkisten verpackt werden, die maximalen Schutz bieten. Eine solche Verpackung kostet ab 80 $ pro 1 m³.
+- Sperrholzkiste. Bei Bedarf können die Objekte in Sperrholzkisten verpackt werden, die maximalen Schutz bieten. Die Kosten einer solchen Verpackung werden individuell berechnet.
 
 - Nylongewebe. Eine weitere Schutzschicht ist das Nylongewebe, das die Kiste nach dem Verschlag umhüllt. Diese Schicht hält Feuchtigkeit und Staub fern — besonders wichtig bei langen Transporten oder bei Lagerung.
 

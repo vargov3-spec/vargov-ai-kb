@@ -44,7 +44,7 @@ Nous savons que la livraison, en particulier sur de longues distances, peut comp
 
 - Caisse bois. Pour plus de sûreté, le colis est placé dans une caisse bois à claire-voie qui réduit au minimum le risque de dommages. Elle forme une ossature solide autour du colis et le protège des agressions extérieures.
 
-- Caisse en contreplaqué. Si nécessaire, les pièces peuvent être emballées dans des caisses en contreplaqué, qui garantissent une protection maximale. Le prix de cet emballage démarre à 80 $ le m³.
+- Caisse en contreplaqué. Si nécessaire, les pièces peuvent être emballées dans des caisses en contreplaqué, qui garantissent une protection maximale. Le prix de cet emballage est calculé au cas par cas.
 
 - Toile de nylon. Couche de protection supplémentaire : une toile de nylon enveloppe le colis une fois celui-ci mis en caisse. Cette couche empêche l'humidité et la poussière de pénétrer, ce qui est particulièrement important lors des transports longs ou du stockage.
 

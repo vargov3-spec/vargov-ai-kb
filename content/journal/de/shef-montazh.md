@@ -12,7 +12,7 @@ Für wen der Service gedacht ist
 
 — Für alle, die selbst montieren oder externe Fachleute hinzuziehen.
 
-— Für alle, die Fehler vermeiden, ihren Garantieanspruch behalten und ein perfektes Ergebnis erzielen wollen.
+— Für alle, die Fehler vermeiden und ein perfektes Ergebnis erzielen wollen.
 
 Eine Nachricht über WhatsApp genügt — unser Spezialist meldet sich bei Ihnen und hilft bei allen Fragen rund um Aufbau und Montage.
 

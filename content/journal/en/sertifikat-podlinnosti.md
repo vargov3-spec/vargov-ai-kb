@@ -2,7 +2,7 @@
 
 Category: Authenticity · Date: 3 September 2024 · Slug: sertifikat-podlinnosti
 
-Every piece ships with a certificate of authenticity personally signed by Anton Vargov — proof of authorship and originality in a market of imitations.
+At the buyer’s request, a piece comes with a certificate of authenticity personally signed by Anton Vargov — proof of authorship and originality in a market of imitations.
 
 Every piece that leaves the Vargov®Design workshop is more than an element of décor or lighting. It is a singular work of art — the sum of creativity, craft and advanced technology. We understand how much it matters to our clients to be certain that what they have bought is authentic and exclusive. That is why, at the buyer's request, we issue a certificate of authenticity confirming the authorship and the originality of the piece.
 
