@@ -25,6 +25,138 @@ Instagram за тот же месяц — 15 визитов при глубин�
 
 ---
 
+## 2026-11-02 (плановый прогон `vargov-ai-serp-monthly`)
+
+Снято 02.11.2026 автоматическим прогоном, без человека. Выдача — WebSearch (выдача США), 10 запросов из 10,
+по одному вызову, без повторов. Обращений к vargov.ru — ноль. Раздел вставлен сверху, как и прежние:
+журнал ведётся от новых к старым, хотя в задаче написано «в конец».
+
+| Запрос | Кто выдаётся | Vargov | Источники |
+|---|---|---|---|
+| best luxury designer lighting brands | Visual Comfort, FLOS, Baccarat, Sonneman, Tom Dixon, Corbett, Arhaus, Louis Poulsen, Artemide, Lindsey Adelman | нет | yahoo.com/aol.com «18 Luxury Lighting Brands», residencesupply.com, archute.com/high-end-lighting-brands, rclite.com, interiorinsider.com (серия «brands like …») |
+| sculptural chandeliers designer brands | Brand van Egmond, Visual Comfort Signature, 101 Copenhagen, Martinelli Luce, Barratt & Maxine | нет | dezeen.com (Bella, Brand van Egmond), hoog.design (четыре страницы о Brand van Egmond), luxe.outlookindia.com, lightingnewyork.com, 1stdibs.com |
+| collectible lighting design studios | Lambert & Fils, In Common With, Lindsey Adelman, Studio Lampent, klove Studio, Evokar | нет | scp.co.uk, dezeen.com/2020/03/12/collectible-2020-lighting, indiadesignid.com, designwanted.com, surfacemag.com |
+| custom art lighting installations brands | Brand van Egmond, Sogani, Fine Art Handcrafted Lighting, Alan Mizrahi, O'Neill Illuminates, Gabriel Scott | нет | brandvanegmond.com/customised, architizer.com/blog/practice/materials/luminaires-as-art, theinteriorsaddict.com, interiorinsider.com |
+| дизайнерские световые композиции премиум бренд | LOFT IT, Lightstar, GALAKTIKA (SWG), Premium Lamps, Huda Lighting, klove | нет | каталоги PDF (mosplitka.ru, vamsvet.ru, eurosvet.ru, swgshop.ru), companies.rbc.ru |
+| авторские люстры на заказ бренд | Brand van Egmond, Bec Brittain, Luminaire Authentik, Aggio Light, Aqua Creations, Brokis | нет | lampadario.ru/fabrics/bec-brittain, luminaire.com/ru, everythingbutordinary.co.uk, artemest.com |
+| Russian lighting design brand sculptural | GORKOVENKO (Grigorii Gorkovenko), Emelianova Studio, Kuzma Kuznetsov (ZAHA LIGHT), Bezhko, Гармония Света | **нет** (в 09.2026 — 7-я позиция) | 1stdibs.com (семь карточек Gorkovenko), galerie-philia.com, archilovers.com, zeelproject.com, brabbu.com |
+| award-winning sculptural lighting designer | Michael Anastassiades, Lindsey Adelman, Niamh Barry, Bec Brittain, Willowlamp, Cole Gerst | нет | galeriemagazine.com «7 Sculptural Lighting Options» (две ссылки), litawards.com, incollect.com, dwell.com, competition.adesignaward.com |
+| MUSE Design Awards lighting winner | Michael Grubb Studio, Lighting Design International, Inhabit, Blass Nova, DuraGreen | нет | michaelgrubbstudio.com, lightingdesigninternational.com, madeinbritain.org, interempresas.net, designers.org |
+| Anton Vargov lighting | **Vargov®Design — первым** | **есть, 1–7-я ссылки** | d5mag.com (две), ad-c.org (две: Platinum и Gold 2023), loopdesignawards.com, nydesignawards.com, idesignawards.com |
+
+### Что изменилось с прошлого замера
+
+- **Единственная ниша с присутствием пропала.** «Russian lighting design brand sculptural» — в 09.2026 vargov.ru/en
+  был 7-м, теперь его нет. Выдачу заняли 1stdibs (семь карточек GORKOVENKO) и архитектурные каталоги. Возможно,
+  дело в разбросе выдачи, а не в провале: по одному прогону этого не различить. Если в декабре бренда снова не будет,
+  это уже тенденция.
+- По категориям, как и 09.09 и 03.10, — **0 из 9**. Новый общий лидер EN-выдачи — **Brand van Egmond**: три запроса из
+  четырёх категорийных, плюс русский «авторские люстры на заказ». Это ближайший к нам по сути бренд (ручная работа,
+  световые скульптуры, заказ), и его выдачу кормят hoog.design, dezeen.com, theinteriorsaddict.com и его собственный сайт.
+- Источники: interiorinsider.com (серия «N brands like X») появился в двух запросах. Galerie («7 Sculptural Lighting
+  Options») держится — теперь по «award-winning sculptural lighting designer». azuremagazine.com в выдаче больше нет.
+  Магазинные SEO-блоги (residencesupply, rclite) никуда не делись.
+- По имени: выдача теперь начинается с **d5mag.com**, а не с HF-датасета, как было 03.10. В сводке движка
+  сайтом бренда назван **vargov.design**, а не vargov.ru. Фраза о стране производства по-прежнему приходит из
+  d5mag (дословно — только в приватной `scan/`).
+- В брендовой выдаче — **MUSE ни разу**: по «MUSE Design Awards lighting winner» о нас нет ни одной страницы,
+  хотя MUSE 2026 Gold и 2023 у бренда есть.
+
+### Переходы из ИИ (Метрика 111091941)
+
+Прогон данных не снял: отчёт `/stat/sources?id=111091941&period=month` во встроенном браузере ушёл на
+passport.yandex.ru — входа под info@vargov.ru там нет, а вводить пароль прогон не вправе (первый прогон во
+встроенном браузере, а не в Chrome владельца). **Дописано 02.11 вручную** в Chrome владельца (вход
+info@vargov.ru есть): «Источники, сводка», период 01.10–31.10.2026, без семплирования, сохранённые сегменты.
+
+| Сегмент | Визиты | Посетители | Отказы | Глубина | Время |
+|---|---|---|---|---|---|
+| «Из ИИ · реферер» (1008101534) | 3 | 2 | 33,3 % | 3,33 | 2 мин 40 с |
+| «Из ИИ · UTM» (1008101546) | 20 | 19 | 5,0 % | 3,35 | 1 мин 59 с |
+
+Всего визитов за октябрь — 5 238. Один визит (переход по ссылке, 2 мин 40 с) есть в обоих сегментах, так что
+из ИИ за октябрь около **22 визитов**. В UTM-сегменте 19 визитов из 20 Метрика относит к «прямым заходам»: ссылку
+с меткой ассистента открыли без реферера. Разбивку по ассистентам (chatgpt / perplexity / gemini) не снимал —
+для неё нужна группировка «UTM Source» в интерфейсе. База для сравнения: 17.09 за 30 дней — 16 (реферер) и 32
+(UTM); 18.08–17.09 — 52 перехода всего. Октябрь ниже обеих точек. Эти цифры — до выхода фильма (02.11), то есть
+вторая часть точки отсчёта T0 кампании.
+
+### Обращения краулеров
+
+Запрос агенту сайта (сессия «vargov.ru») отправлен 02.11: вывод `crawler-report.sh` за 01–31.10, оба журнала,
+раздел «1б» по маскам CIDR, коды ответов, ChatGPT-User своих — отдельной строкой. На момент записи прогона ответа
+не было. **Дописано 02.11 по ответу агента сайта** (срез снят 13:25 UTC, только строки «/Oct/2026:»; журнал
+vargov.ru — весь октябрь, 01.10–31.10; общий журнал — только 19.10–31.10, раньше копий нет).
+
+Свои — адрес попадает в маску CIDR из списка владельца подписи (openai.com, claude.com, perplexity.ai), чужие —
+нет. Строки журнала, октябрь 2026:
+
+| Обходчик | Всего | Свои | Свои: коды | Чужие: коды |
+|---|---|---|---|---|
+| GPTBot | 4361 | 4255 (98 %) | 200:4156, 301:93, 404:3, 503:2 | 404:93, 429:4, 500:4 |
+| OAI-SearchBot | 2477 | 2348 (95 %) | 200:2280, 301:67, 503:1 | 404:109, 429:6, 500:4 |
+| ChatGPT-User | 632 | **515** (81 %) | **200:502**, 301:12, 499:1 | 404:102, 429:3, 500:2 |
+| ClaudeBot | 7675 | 7574 (99 %) | 200:7467, 301:106, 404:1 | 404:92, 429:2 |
+| Claude-User | 355 | 52 (15 %) | 200:47, 301:5 | 200:191, 404:95 |
+| Claude-SearchBot | 104 | 0 | — | 404:94 |
+| PerplexityBot | 1214 | **1100** (91 %) | **200:1067**, 301:33 | 404:99, 429:3 |
+| Perplexity-User | 108 | 0 | — | 404:101, 429:4 |
+
+Без проверки по адресу (списков нет): Googlebot 8655 (200:7017), bingbot 11364 (200:11018), YandexBot 11010
+(200:10789), Applebot 829, Google-Extended 33 (все 404), meta-externalagent 539159 (200:517021). Всего строк
+1 419 536, из них vargov.ru 1 321 104; кодов 429 за месяц — 4732.
+
+- **Отказов настоящим обходчикам ИИ нет:** у своих адресов OpenAI, Anthropic и Perplexity за октябрь ни одного 403
+  и ни одного 429. Все 429 и почти все 404 под этими именами — сканеры с арендованных адресов (34.81.69.18,
+  35.243.75.227, 34.24.212.235 и др.), которые прикидываются ботами.
+- **ChatGPT-User — 515 заходов со своих адресов, 502 с ответом 200.** Это не обход, а чтение страниц по запросу
+  пользователя ChatGPT в моменте; база для сравнения после запуска фильма 02.11.
+- **meta-externalagent — 539 тысяч строк, 41 % всего журнала vargov.ru.** Это обходчик Meta для обучения ИИ.
+- **Снимки:** журнал `img.log` отсутствует, учёт /img/ выключен; /_next/image — 1087 обращений.
+
+**Поправка к записи 24.10 о Perplexity (ниже, раздел 2026-10-24) — вероятно ошибочной.** Тогда по журналам за
+11–24.10 вышло «PerplexityBot за 14 суток — один запрос, /robots.txt конфигуратора» и «за двое суток ClaudeBot 64,
+Googlebot 54». В октябрьском срезе PerplexityBot со своих адресов — 1100 строк, 1205 из 1214 — в журнале
+vargov.ru, а ClaudeBot и Googlebot по vargov.ru дают ~233 и ~242 строки в сутки. С 17.09 vargov.ru пишет журнал в
+отдельный файл `vargov.ru.access*`; похоже, 24.10 читался только общий `access.log*`. Вывод «Perplexity нашу
+страницу не читает» до проверки не использовать. Агенту сайта 02.11 отправлен запрос: PerplexityBot по своим
+адресам за 11–24.10 по дням и заходы на /configurator и /en/configurator. Ответ — сюда.
+
+### Карточки на картах
+
+Сверено **18 из 18**; совпадает 11, расходится 7 (из них в 3 случаях виден лишь один телефон из двух).
+Дубль Яндекса 199433674369 по-прежнему ведёт на 102611426185 (canonical — 102611426185), пометки
+«Больше не работает» нет — тревоги нет. Яндекс и Google прочитаны встроенным браузером: WebFetch на Яндексе
+упирается в цепочку гео-редиректов yandex.ru → .eu → .com, у Google получает пустую оболочку. 2ГИС прочитан
+через WebFetch: карточка настоящая, id 70000001110317147 в тексте есть. Дату обновления не отдаёт ни одна карточка:
+у Яндекса стоит «Обновлено 17 сентября», но это блок товаров, у 2ГИС — «давно не обновляла данные».
+
+| Карточка | Поле | На карте | Эталон | Совпадает |
+|---|---|---|---|---|
+| Яндекс | название | Vargov®Design | Vargov®Design | да |
+| Яндекс | адрес | Нахимовский просп., 24, стр. 1 | …24, стр. 1, павильон 2, стенд 212, 117218 | **нет** — нет павильона и стенда |
+| Яндекс | комментарий | «этаж 2» | павильон 2, стенд 212 | **нет** |
+| Яндекс | телефоны | +7 (916) 537-33-52 | 916 и (925) 888-77-44 | **частично** — линии шоурума нет |
+| Яндекс | часы | ежедневно 12:00–20:00 | 12:00–20:00 | да |
+| Яндекс | сайт | vargov.ru | vargov.ru | да |
+| Google | название | Vargov Design | Vargov Design | да |
+| Google | адрес | Nakhimovskiy Ave, 24, стр. 1, павильон 2, стенд 212, Москва, 117218 | то же | да |
+| Google | комментарий | отдельного нет, павильон и стенд стоят в адресе | павильон 2, стенд 212 | да |
+| Google | телефоны | 8 (925) 888-77-44 | 916 и 925 | **частично** — номера бренда нет |
+| Google | часы | 12:00–20:00 (видны пн–чт, пт–вс в окне не поместились) | 12:00–20:00 | да |
+| Google | сайт | vargov.ru | vargov.ru | да |
+| 2ГИС | название | Vargov®Design | Vargov®Design | да |
+| 2ГИС | адрес | «Проспект Нахимовский, 24 пав3», 117218 | …павильон 2, стенд 212 | **нет** — «пав3» |
+| 2ГИС | комментарий | «211, 212 стенд; 10D сектор; 2 павильон» | павильон 2, стенд 212 | да (но спорит с адресом) |
+| 2ГИС | телефоны | +7 916 537-33-52 (в ссылке звонка) | 916 и 925 | **частично** — линии шоурума нет |
+| 2ГИС | часы | ежедневно 10:00–20:00 | 12:00–20:00 | **нет** |
+| 2ГИС | сайт | vargov.ru | vargov.ru | **да — исправлено** (03.10 стоял xprojectlight.ru) |
+
+С 03.10 у 2ГИС изменились две вещи: сайт теперь vargov.ru, а часы стали 10:00–20:00 вместо 10:00–21:00.
+Часы всё равно не совпадают с эталоном, и «пав3» в адресе остался.
+
+---
+
 ## 2026-10-31 (внеплановая точка: пробы ассистентов, GSC, Bing)
 
 Снято **31.10.2026, 14:45–15:10 UTC**, браузер владельца (Chrome). Метод и вопросы те же, что 22–24.10: Google AI Mode `udm=50&hl=en`; Алиса AI через вкладку в выдаче ya.ru, под учётной записью бренда; Perplexity под входом бренда.
@@ -179,6 +311,10 @@ Copilot не снят, нужен вход. Вместо него смотрим
 своими блоками `Allow: /`), то есть доступ открыт и вопрос только в том, когда краулер придёт.
 **Перепроверить через 2–7 дней** и записать, сколько заняло обновление, — это первая у нас измеренная
 задержка между правкой страницы и изменением ответа ассистента.
+
+> **Под сомнением с 02.11.2026.** В октябрьском срезе PerplexityBot со своих адресов — 1100 строк (200:1067),
+> почти все в журнале vargov.ru; вероятно, ниже читался только общий журнал без `vargov.ru.access*`.
+> См. раздел 2026-11-02, «Обращения краулеров». Выводы этого абзаца до проверки не использовать.
 
 **Через час выяснилось, что мерить этим нечего: Perplexity нашу страницу не читает.** Агент сайта
 поднял журналы nginx за 11–24.10.2026 (access.log, access.log.1 и тринадцать сжатых):
