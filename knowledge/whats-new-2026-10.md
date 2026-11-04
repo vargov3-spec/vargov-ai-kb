@@ -18,8 +18,7 @@
   «IFC4 · PDF-спецификация · тендерный лист — в конфигураторе»; остальные композиции рассчитываются
   индивидуально, и строки у них нет.
 - **Высота потолка.** Перед выгрузкой IFC задаётся высота помещения (по умолчанию 2700 мм — это высота потолка,
-  а не размер изделия): модель встаёт под потолок, точки крепления — на нём, начало координат — на полу. Ту же
-  высоту берёт AR на Android и компьютере (на iPhone и iPad модель крепится к настоящему потолку); высота
+  а не размер изделия): модель встаёт под потолок, точки крепления — на нём, начало координат — на полу. Ту же высоту берёт AR на iPhone и iPad; с 04.11.2026 модель там стоит в полный рост от пола, креплениями вверх, а на остальных устройствах скачивается файл GLB с той же моделью; высота
   сохраняется в ссылке на конфигурацию.
 - **IFC4 для сводной модели.** Идентификаторы (GUID) строятся от конфигурации: одна и та же конфигурация даёт
   те же GUID, разные — разные, поэтому разные композиции одного артикула сводятся в одну BIM-модель без
@@ -157,7 +156,7 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   individually and do not show the line.
 - **Ceiling height.** Before the IFC export the room height is set (default 2,700 mm — the ceiling height, not a
   product size): the model hangs under that ceiling, fixing points on it, origin on the floor. The same height is
-  used by AR on Android and desktop (on iPhone and iPad the model attaches to the real ceiling) and is kept in the
+  used by AR on iPhone and iPad (since 4 November 2026 the model stands at full height from the floor, fixings up; other devices download a GLB file with the same model) and is kept in the
   share link.
 - **IFC4 for a federated model.** GUIDs are derived from the configuration: the same configuration always gives
   the same GUIDs and different ones give different GUIDs, so different compositions of one article combine in one
