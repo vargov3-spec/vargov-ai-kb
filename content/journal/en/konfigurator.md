@@ -34,7 +34,7 @@ What you can take away
 
 IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of a catalogue item (max, fbx) are on 3ddd.ru and 3dsky.org. An assembled composition can be downloaded as an FBX for 3ds Max — using the button next to the IFC export: geometry and colours as separate objects, complete with suspension strands and fixings, in millimetres. It carries no BIM properties; those live in IFC4. Every composition the configurator calculates is available for download. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration.
 
-The composition can be tried on in your own room from a phone: USDZ on iOS, GLB on Android. The interface runs in eight languages, Arabic right-to-left included.
+The composition can be tried on in your own room from a phone: on iPhone and iPad in AR, with the model standing on the floor, fixings up, and the camera pointed at the floor; other devices download a GLB file with the same model. The interface runs in eight languages, Arabic right-to-left included.
 
 How it differs from a typical configurator
 
