@@ -10,7 +10,7 @@ The configurator removes that correspondence. The composition is assembled strai
 
 What it does
 
-You set a catalogue article and the cloud's dimensions in millimetres — the engine pulls in the element's real sizes, its wattage and its three-dimensional form. Then comes the shape of the composition itself: cube, sphere, dome, cone, cylinder, pyramid, cascade, ring, wave, spiral, drop, lens, funnel, frame, arc, serpentine, helix, tiers, bowl, wedge or bioform — twenty-one options.
+You set a catalogue article and the composition's dimensions in millimetres — the engine pulls in the element's real sizes, its wattage and its three-dimensional form. Then comes the shape of the composition itself: cube, sphere, dome, cone, cylinder, pyramid, cascade, ring, wave, spiral, drop, lens, funnel, frame, arc, serpentine, helix, tiers, bowl, wedge or bioform — twenty-one options.
 
 Density is airy, medium, dense — or an exact number of elements. Layout vertical, horizontal or mixed; rotation random, from the centre or on a regular grid; tilt on any axis from −90° to +90°. Two articles can be mixed in one composition at a chosen ratio.
 
@@ -26,7 +26,7 @@ Ribbons have their own engine: ten articles are built not as a cloud of elements
 
 The figures an installer needs
 
-The configurator shows the number of elements, the cloud's actual dimensions, the lowest point below the ceiling, a breakdown by size, total wattage — and the weight of the composition, calculated automatically from its content.
+The configurator shows the number of elements, the actual dimensions, the height to the ceiling, a breakdown by size, total wattage — and the weight of the composition, calculated automatically from its content.
 
 Weight is not a reference figure. It decides which anchor holds the suspension and whether the slab needs reinforcing. That number used to be worked out by email once the content was agreed; now it is there from the start, alongside the silhouette.
 
@@ -34,7 +34,7 @@ What you can take away
 
 IFC4 for BIM: lengths in millimetres, every fixing point a separate object carrying the number of elements on it and, when the mass is known, an estimated load. The model is built for the ceiling height set in the “Ceiling height, mm” field (2700 mm by default): fixing points on the ceiling, origin on the floor. A PDF specification with content, mass, power, mounting, lead time and warranty, and a QR code for the configuration itself. A tender sheet for purchasing and customs. The DXF drawing for AutoCAD is for internal use only: the brand's production and dealers. Ready-made 3D models of a catalogue item (max, fbx) are on 3ddd.ru and 3dsky.org. An assembled composition can be downloaded as an FBX for 3ds Max — using the button next to the IFC export: geometry and colours as separate objects, complete with suspension strands and fixings, in millimetres. It carries no BIM properties; those live in IFC4. Every composition the configurator calculates is available for download. Saved projects live in the browser itself, with no account, and the link carries the full state of the configuration.
 
-The composition can be tried on in your own room from a phone: on iPhone and iPad in AR, with the model standing on the floor, fixings up, and the camera pointed at the floor; other devices download a GLB file with the same model. The interface runs in eight languages, Arabic right-to-left included.
+The composition can be tried on in your own room from a phone: on iPhone and iPad in AR, with the camera pointed at the ceiling, where the composition hangs; on Android, AR opens right in the browser — the camera is pointed at the floor, and a tap on the screen places the composition under a ceiling of the height set in the “Ceiling height, mm” field; where AR is not available, a GLB file with the same model is downloaded. The interface runs in eight languages, Arabic right-to-left included.
 
 How it differs from a typical configurator
 

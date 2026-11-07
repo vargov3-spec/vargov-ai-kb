@@ -39,3 +39,7 @@ Para terminar
 En Vargov®Design hacemos todo lo posible para que cada elemento de nuestro trabajo — desde el diseño hasta la entrega — sea impecable. Estamos convencidos de que nuestra pieza le acompañará durante muchos años, y valoramos su confianza.
 
 Si le queda alguna duda sobre el embalaje o la entrega, póngase en contacto con nuestro servicio de atención al cliente. ¡Siempre estaremos encantados de ayudarle!
+
+Actualización del 7 de noviembre de 2026
+
+La frontera entre composición luminosa y composición decorativa no está en los elementos. Cualquier elemento luminoso puede realizarse también en versión decorativa, sin luz: así, la composición puede ser totalmente decorativa o una mezcla de elementos luminosos y decorativos. También a la inversa: los elementos decorativos pueden formar una composición luminosa — la luz se integra en el propio elemento o, en una composición suspendida, se añade en forma de elementos luminosos suspendidos por separado (diodos) entre los elementos de la composición.

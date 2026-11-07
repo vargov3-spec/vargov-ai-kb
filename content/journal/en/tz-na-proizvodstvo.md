@@ -20,7 +20,7 @@ Pressing “Сохранить данные” (Save data) gives the person thei
 
 What is available immediately
 
-Saving opens the “3D-конфигурация” (3D configuration) page right away: for every composition there is a configurator 3D window, with the composition’s parameters below it. This is a view on screen, not a file; there is a full-screen mode and AR on iPhone. The PDF of the spec itself is available immediately too, through the “PDF RU” and “PDF EN” buttons: that one is a file — it opens in a new tab and downloads. Below the 3D window, once the window has assembled the composition, a button appears for exporting the 3D model as FBX for 3ds Max.
+Saving opens the “3D-конфигурация” (3D configuration) page right away: for every composition there is a configurator 3D window, with the composition’s parameters below it. This is a view on screen, not a file; there is a full-screen mode and AR on iPhone and iPad. The PDF of the spec itself is available immediately too, through the “PDF RU” and “PDF EN” buttons: that one is a file — it opens in a new tab and downloads. Below the 3D window, once the window has assembled the composition, a button appears for exporting the 3D model as FBX for 3ds Max.
 
 The 1:1 installation plan, and why it comes later
 

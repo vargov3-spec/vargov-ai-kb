@@ -39,3 +39,7 @@ Fazit
 Bei Vargov®Design tun wir alles dafür, dass jeder Bestandteil unserer Arbeit — von der Entwicklung bis zur Lieferung — makellos ist. Wir sind sicher, dass unser Produkt Ihnen viele Jahre Freude bereiten wird, und wir schätzen Ihr Vertrauen.
 
 Wenn Sie noch Fragen zur Verpackung oder zur Lieferung haben, wenden Sie sich bitte an unseren Kundenservice. Wir helfen Ihnen jederzeit gern!
+
+Nachtrag vom 7. November 2026
+
+Die Grenze zwischen Lichtkomposition und dekorativer Komposition liegt nicht in den Elementen. Jedes leuchtende Element lässt sich auch dekorativ ausführen, ohne Licht: So entsteht eine rein dekorative Komposition oder eine Mischung aus leuchtenden und dekorativen Elementen. Umgekehrt lässt sich auch aus dekorativen Elementen eine Lichtkomposition zusammenstellen: Das Licht wird in das Element selbst integriert oder, bei einer Hängekomposition, in Form separat hängender Leuchtelemente (LEDs) zwischen den Elementen der Komposition hinzugefügt.

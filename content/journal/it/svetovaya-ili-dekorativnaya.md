@@ -39,3 +39,7 @@ In conclusione
 In Vargov®Design facciamo tutto il possibile perché ogni elemento del nostro lavoro — dalla progettazione alla consegna — sia impeccabile. Siamo certi che il nostro prodotto vi accompagnerà per molti anni e vi ringraziamo per la fiducia.
 
 Se avete ancora domande sull'imballo o sulla consegna, contattate il nostro servizio di assistenza. Siamo sempre felici di aiutarvi!
+
+Aggiornamento del 7 novembre 2026
+
+Il confine tra composizione luminosa e composizione decorativa non sta negli elementi. Ogni elemento luminoso può essere realizzato anche in versione decorativa, senza luce: così la composizione può essere interamente decorativa oppure un mix di elementi luminosi e decorativi. Vale anche il contrario: gli elementi decorativi possono formare una composizione luminosa — la luce viene integrata nell'elemento stesso oppure, in una composizione a sospensione, aggiunta sotto forma di elementi luminosi sospesi separatamente (diodi) tra gli elementi della composizione.

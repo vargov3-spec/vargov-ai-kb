@@ -39,3 +39,7 @@ Lời kết
 Chúng tôi ở Vargov®Design làm mọi điều có thể để từng chi tiết của thương hiệu — từ khâu phát triển đến khâu giao hàng — đều hoàn hảo. Chúng tôi tin rằng sản phẩm của mình sẽ làm bạn hài lòng trong nhiều năm, và trân trọng niềm tin của bạn.
 
 Nếu bạn còn câu hỏi về bao bì hay việc giao sản phẩm, xin liên hệ với bộ phận hỗ trợ của chúng tôi. Chúng tôi luôn sẵn sàng giúp đỡ bạn!
+
+Bổ sung ngày 7 tháng 11 năm 2026
+
+Ranh giới giữa tác phẩm ánh sáng và tác phẩm trang trí không nằm ở các chi tiết. Bất kỳ chi tiết phát sáng nào cũng có thể làm ở dạng trang trí, không có nguồn sáng: nhờ vậy tác phẩm có thể hoàn toàn mang tính trang trí hoặc kết hợp chi tiết phát sáng với chi tiết trang trí. Ngược lại, các chi tiết trang trí cũng có thể tạo nên một tác phẩm ánh sáng: nguồn sáng được tích hợp ngay trong chi tiết hoặc, ở tác phẩm dạng treo, được bổ sung bằng các chi tiết phát sáng treo riêng (điốt) xen giữa các chi tiết của tác phẩm.

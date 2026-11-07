@@ -20,7 +20,7 @@ Nach einem Klick auf „Сохранить данные“ (Daten speichern) erh
 
 Was sofort verfügbar ist
 
-Direkt nach dem Speichern öffnet sich die Seite „3D-конфигурация“ (3D-Konfiguration): zu jeder Komposition ein 3D-Fenster des Konfigurators und darunter ihre Parameter. Das ist eine Ansicht am Bildschirm, eine Datei gibt es hier nicht; es gibt einen Vollbildmodus und AR auf dem iPhone. Sofort verfügbar ist auch das PDF des Lastenhefts selbst, über die Schaltflächen „PDF RU“ und „PDF EN“: Das ist bereits eine Datei, sie öffnet sich in einem neuen Tab und lässt sich herunterladen. Unter dem 3D-Fenster erscheint, sobald das Fenster die Komposition aufgebaut hat, eine Schaltfläche zum Herunterladen des 3D-Modells als FBX für 3ds Max.
+Direkt nach dem Speichern öffnet sich die Seite „3D-конфигурация“ (3D-Konfiguration): zu jeder Komposition ein 3D-Fenster des Konfigurators und darunter ihre Parameter. Das ist eine Ansicht am Bildschirm, eine Datei gibt es hier nicht; es gibt einen Vollbildmodus und AR auf iPhone und iPad. Sofort verfügbar ist auch das PDF des Lastenhefts selbst, über die Schaltflächen „PDF RU“ und „PDF EN“: Das ist bereits eine Datei, sie öffnet sich in einem neuen Tab und lässt sich herunterladen. Unter dem 3D-Fenster erscheint, sobald das Fenster die Komposition aufgebaut hat, eine Schaltfläche zum Herunterladen des 3D-Modells als FBX für 3ds Max.
 
 Der Montageplan 1:1 – und warum er erst später erscheint
 

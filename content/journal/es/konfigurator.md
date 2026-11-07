@@ -10,7 +10,7 @@ El configurador elimina ese intercambio. La composición se monta directamente e
 
 Qué hace
 
-Se indica una referencia del catálogo y las medidas de la nube en milímetros — el motor carga los tamaños reales del elemento, su potencia y su forma tridimensional. Luego se elige la forma de la composición: cubo, esfera, semiesfera, cono, cilindro, pirámide, cascada, anillo, onda, espiral, gota, lente, embudo, marco, arco, serpentina, hélice, niveles, cuenco, cuña o bioforma — veintiuna variantes.
+Se indica una referencia del catálogo y las medidas de la composición en milímetros — el motor carga los tamaños reales del elemento, su potencia y su forma tridimensional. Luego se elige la forma de la composición: cubo, esfera, semiesfera, cono, cilindro, pirámide, cascada, anillo, onda, espiral, gota, lente, embudo, marco, arco, serpentina, hélice, niveles, cuenco, cuña o bioforma — veintiuna variantes.
 
 Densidad ligera, media, densa — o número exacto de elementos. Disposición vertical, horizontal, mixta; rotación aleatoria, desde el centro o en retícula regular; inclinación en cualquier eje de −90° a +90°. En una composición se pueden mezclar dos referencias en la proporción elegida.
 
@@ -26,7 +26,7 @@ Las cintas tienen su propio motor: diez referencias se construyen no como nube d
 
 Las cifras que necesita el instalador
 
-El configurador muestra el número de elementos, las medidas reales de la nube, el punto más bajo desde el techo, el desglose por tamaños, la potencia total — y el peso de la composición, calculado automáticamente a partir de sus elementos.
+El configurador muestra el número de elementos, las medidas reales, la altura hasta el techo, el desglose por tamaños, la potencia total — y el peso de la composición, calculado automáticamente a partir de sus elementos.
 
 El peso no es un dato accesorio. De él depende qué anclaje sostiene la suspensión y si hay que reforzar el forjado. Antes esa cifra se calculaba por correo, con la composición ya cerrada; ahora está desde el principio, junto a la silueta.
 
@@ -34,7 +34,7 @@ Qué se lleva uno
 
 IFC4 para BIM: longitudes en milímetros, cada punto de fijación es un objeto propio, con el número de elementos que soporta y, cuando se conoce la masa, la carga calculada. El modelo se construye bajo un techo de la altura indicada en el campo «Altura del techo, mm» (2700 mm por defecto): puntos de fijación en el techo, origen de coordenadas en el suelo. Una especificación en PDF con la lista de elementos, masa, potencia, montaje, plazo de fabricación y garantía, y un código QR que enlaza con la configuración. Una hoja de licitación para compras y aduana. El plano DXF para AutoCAD es solo para uso interno: la producción y los distribuidores de la marca. Los modelos 3D ya listos de la referencia (max, fbx) están en 3ddd.ru y 3dsky.org. La composición montada puede descargarse en FBX para 3ds Max con el botón que está al lado de la exportación IFC: la geometría y los colores como objetos independientes, junto con los hilos y las fijaciones, en milímetros. No lleva propiedades BIM: esas viven en el IFC4. Se puede descargar cualquier composición que el configurador calcule. Los proyectos guardados viven en el propio navegador, sin cuenta, y el enlace lleva el estado completo de la configuración.
 
-La composición puede probarse en la propia sala desde el teléfono: en iPhone y iPad en AR, con el modelo apoyado en el suelo, las fijaciones hacia arriba y la cámara apuntando al suelo; los demás dispositivos descargan un archivo GLB con el mismo modelo. La interfaz funciona en ocho idiomas, árabe de derecha a izquierda incluido.
+La composición puede probarse en la propia sala desde el teléfono: en iPhone y iPad en AR, con la cámara apuntando al techo, del que queda colgada la composición; en Android, la AR se abre directamente en el navegador: se apunta la cámara al suelo, se toca la pantalla y la composición queda bajo un techo de la altura indicada en el campo «Altura del techo, mm»; donde la AR no está disponible, se descarga un archivo GLB con el mismo modelo. La interfaz funciona en ocho idiomas, árabe de derecha a izquierda incluido.
 
 En qué se diferencia de un configurador corriente
 

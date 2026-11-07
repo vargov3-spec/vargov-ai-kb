@@ -20,7 +20,7 @@ Al pulsar «Сохранить данные» (guardar los datos), la persona re
 
 Qué está disponible de inmediato
 
-Justo después de guardar se abre la página «3D-конфигурация» (configuración 3D): para cada composición, la ventana 3D del configurador y, debajo, sus parámetros. Es una vista en pantalla, aquí no hay archivo; sí hay modo de pantalla completa y AR en iPhone. También está disponible de inmediato el PDF de la propia especificación, con los botones «PDF RU» y «PDF EN»: eso ya es un archivo, se abre en una pestaña nueva y se descarga. Debajo de la ventana 3D, cuando la ventana ha montado la composición, aparece el botón de descarga del modelo 3D en FBX para 3ds Max.
+Justo después de guardar se abre la página «3D-конфигурация» (configuración 3D): para cada composición, la ventana 3D del configurador y, debajo, sus parámetros. Es una vista en pantalla, aquí no hay archivo; sí hay modo de pantalla completa y AR en iPhone y iPad. También está disponible de inmediato el PDF de la propia especificación, con los botones «PDF RU» y «PDF EN»: eso ya es un archivo, se abre en una pestaña nueva y se descarga. Debajo de la ventana 3D, cuando la ventana ha montado la composición, aparece el botón de descarga del modelo 3D en FBX para 3ds Max.
 
 El plano de montaje 1:1 y por qué aparece más tarde
 

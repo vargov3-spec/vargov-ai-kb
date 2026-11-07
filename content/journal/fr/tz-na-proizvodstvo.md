@@ -20,7 +20,7 @@ Après le clic sur « Сохранить данные » (« Enregistrer les don
 
 Ce qui est disponible tout de suite
 
-Dès l'enregistrement, la page « 3D-конфигурация » (« Configuration 3D ») s'ouvre : pour chaque composition, une fenêtre 3D du configurateur et, sous la fenêtre, ses paramètres. C'est un affichage à l'écran, il n'y a pas de fichier ici ; un mode plein écran et la réalité augmentée sur iPhone sont proposés. Le PDF du cahier des charges lui-même est également disponible immédiatement, par les boutons « PDF RU » et « PDF EN » : là, c'est bien un fichier, il s'ouvre dans un nouvel onglet et se télécharge. Sous la fenêtre 3D, lorsque celle-ci a assemblé la composition, apparaît un bouton d'export du modèle 3D au format FBX pour 3ds Max.
+Dès l'enregistrement, la page « 3D-конфигурация » (« Configuration 3D ») s'ouvre : pour chaque composition, une fenêtre 3D du configurateur et, sous la fenêtre, ses paramètres. C'est un affichage à l'écran, il n'y a pas de fichier ici ; un mode plein écran et la réalité augmentée sur iPhone et iPad sont proposés. Le PDF du cahier des charges lui-même est également disponible immédiatement, par les boutons « PDF RU » et « PDF EN » : là, c'est bien un fichier, il s'ouvre dans un nouvel onglet et se télécharge. Sous la fenêtre 3D, lorsque celle-ci a assemblé la composition, apparaît un bouton d'export du modèle 3D au format FBX pour 3ds Max.
 
 Le plan de pose 1:1 et pourquoi il n'apparaît que plus tard
 

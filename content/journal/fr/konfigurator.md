@@ -10,7 +10,7 @@ Le configurateur supprime cet échange. La composition s'assemble directement da
 
 Ce qu'il fait
 
-Vous indiquez une référence du catalogue et les dimensions du nuage en millimètres — le moteur récupère les tailles réelles de l'élément, sa puissance et sa forme tridimensionnelle. Vient ensuite la forme de la composition elle-même : cube, sphère, demi-sphère, cône, cylindre, pyramide, cascade, anneau, vague, spirale, goutte, lentille, entonnoir, cadre, arc, serpentin, hélice, étages, coupe, coin ou bioforme — vingt et une possibilités.
+Vous indiquez une référence du catalogue et les dimensions de la composition en millimètres — le moteur récupère les tailles réelles de l'élément, sa puissance et sa forme tridimensionnelle. Vient ensuite la forme de la composition elle-même : cube, sphère, demi-sphère, cône, cylindre, pyramide, cascade, anneau, vague, spirale, goutte, lentille, entonnoir, cadre, arc, serpentin, hélice, étages, coupe, coin ou bioforme — vingt et une possibilités.
 
 Densité aérée, moyenne, dense — ou nombre exact d'éléments. Disposition verticale, horizontale, mixte ; rotation aléatoire, depuis le centre ou en trame régulière ; inclinaison sur tout axe de −90° à +90°. Deux références peuvent se mêler dans une même composition, dans la proportion choisie.
 
@@ -26,7 +26,7 @@ Les rubans ont leur propre moteur : dix références se construisent non en nuag
 
 Les chiffres dont l'installateur a besoin
 
-Le configurateur affiche le nombre d'éléments, les dimensions réelles du nuage, le point bas sous le plafond, la répartition par tailles, la puissance totale — et le poids de la composition, calculé automatiquement d'après ses éléments.
+Le configurateur affiche le nombre d'éléments, les dimensions réelles, la hauteur jusqu'au plafond, la répartition par tailles, la puissance totale — et le poids de la composition, calculé automatiquement d'après ses éléments.
 
 Le poids n'est pas une donnée d'appoint. Il détermine quelle cheville tient la suspension et s'il faut renforcer la dalle. Ce chiffre se calculait autrefois par courriel, une fois la liste des éléments arrêtée ; il est désormais là dès le début, à côté de la silhouette.
 
@@ -34,7 +34,7 @@ Ce que vous emportez
 
 IFC4 pour le BIM : longueurs en millimètres, chaque point de fixation est un objet distinct portant le nombre d'éléments qui y sont suspendus et, lorsque la masse est connue, la charge calculée. Le modèle est construit sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm » (2700 mm par défaut) : points de fixation au plafond, origine des coordonnées au sol. Une spécification PDF avec nomenclature, masse, puissance, montage, délai de fabrication et garantie, et un QR code vers la configuration elle-même. Une feuille d'appel d'offres pour les achats et la douane. Le plan DXF pour AutoCAD est réservé à un usage interne : la production et les revendeurs de la marque. Les modèles 3D prêts à l'emploi de la référence (max, fbx) se trouvent sur 3ddd.ru et 3dsky.org. La composition assemblée, elle, se télécharge en FBX pour 3ds Max, par le bouton placé à côté de l'export IFC : géométrie et couleurs en objets distincts, avec les fils et les fixations, en millimètres. Ce fichier ne porte aucune propriété BIM — celles-ci restent dans l'IFC4. Toute composition que le configurateur calcule peut être téléchargée. Les projets enregistrés restent dans le navigateur lui-même, sans compte, et le lien porte l'état complet de la configuration.
 
-La composition peut s'essayer dans votre pièce depuis un téléphone : sur iPhone et iPad en réalité augmentée, le modèle posé au sol, les fixations vers le haut, la caméra pointée vers le sol ; les autres appareils téléchargent un fichier GLB avec le même modèle. L'interface fonctionne en huit langues, arabe de droite à gauche compris.
+La composition peut s'essayer dans votre pièce depuis un téléphone : sur iPhone et iPad en réalité augmentée, la caméra pointée vers le plafond, où la composition vient se suspendre ; sur Android, la réalité augmentée s'ouvre directement dans le navigateur : on pointe la caméra vers le sol, on touche l'écran, et la composition se place sous un plafond à la hauteur saisie dans le champ « Hauteur sous plafond, mm » ; là où la réalité augmentée n'est pas disponible, un fichier GLB avec le même modèle est téléchargé. L'interface fonctionne en huit langues, arabe de droite à gauche compris.
 
 En quoi il diffère d'un configurateur ordinaire
 

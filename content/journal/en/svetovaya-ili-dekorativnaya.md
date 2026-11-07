@@ -39,3 +39,7 @@ In closing
 At Vargov®Design we do everything we can to make sure every part of what we do — from design to delivery — is flawless. We are confident our work will give you pleasure for many years, and we value your trust.
 
 If you still have questions about packaging or delivery, please get in touch with our support team. We are always glad to help!
+
+Addendum, 7 November 2026
+
+What separates a lighting composition from a decorative one is not the elements. Any lit element can be made decorative, without light: this way a composition can be entirely decorative or a mix of lit and decorative elements. The reverse is also true: decorative elements can be assembled into a lighting composition — the light is built into the element itself or, in a pendant composition, added as separately hanging light elements (diodes) among the elements of the composition.

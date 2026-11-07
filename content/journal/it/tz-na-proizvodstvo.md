@@ -20,7 +20,7 @@ Dopo aver premuto il pulsante «Сохранить данные» (salva i dati)
 
 Che cosa è disponibile subito
 
-Subito dopo il salvataggio si apre la pagina «3D-конфигурация» (configurazione 3D): per ogni composizione c'è la finestra 3D del configuratore e, sotto la finestra, i suoi parametri. È una visualizzazione a schermo, qui non c'è nessun file; sono disponibili la modalità a tutto schermo e l'AR su iPhone. È subito disponibile anche il PDF della specifica stessa, con i pulsanti «PDF RU» e «PDF EN»: questo è già un file, si apre in una nuova scheda e si scarica. Sotto la finestra 3D, quando la finestra ha assemblato la composizione, compare il pulsante di esportazione del modello 3D FBX per 3ds Max.
+Subito dopo il salvataggio si apre la pagina «3D-конфигурация» (configurazione 3D): per ogni composizione c'è la finestra 3D del configuratore e, sotto la finestra, i suoi parametri. È una visualizzazione a schermo, qui non c'è nessun file; sono disponibili la modalità a tutto schermo e l'AR su iPhone e iPad. È subito disponibile anche il PDF della specifica stessa, con i pulsanti «PDF RU» e «PDF EN»: questo è già un file, si apre in una nuova scheda e si scarica. Sotto la finestra 3D, quando la finestra ha assemblato la composizione, compare il pulsante di esportazione del modello 3D FBX per 3ds Max.
 
 Lo schema di montaggio 1:1 e perché arriva più tardi
 

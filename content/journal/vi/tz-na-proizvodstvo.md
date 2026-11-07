@@ -20,7 +20,7 @@ Sau khi bấm nút “Сохранить данные” (Lưu dữ liệu), ng�
 
 Những gì có ngay lập tức
 
-Ngay sau khi lưu, trang “3D-конфигурация” (Cấu hình 3D) sẽ mở ra: với mỗi tổ hợp là một cửa sổ 3D của trình cấu hình, bên dưới cửa sổ là thông số của tổ hợp đó. Đây chỉ là phần hiển thị trên màn hình, không có tệp nào ở đây; có chế độ toàn màn hình và AR trên iPhone. Bản PDF của chính đặc tả cũng có ngay, qua các nút “PDF RU” và “PDF EN”: cái này thì đã là tệp, mở ra ở tab mới và tải về được. Bên dưới cửa sổ 3D, khi cửa sổ đã dựng xong tổ hợp, sẽ xuất hiện nút xuất mô hình 3D FBX cho 3ds Max.
+Ngay sau khi lưu, trang “3D-конфигурация” (Cấu hình 3D) sẽ mở ra: với mỗi tổ hợp là một cửa sổ 3D của trình cấu hình, bên dưới cửa sổ là thông số của tổ hợp đó. Đây chỉ là phần hiển thị trên màn hình, không có tệp nào ở đây; có chế độ toàn màn hình và AR trên cả iPhone lẫn iPad. Bản PDF của chính đặc tả cũng có ngay, qua các nút “PDF RU” và “PDF EN”: cái này thì đã là tệp, mở ra ở tab mới và tải về được. Bên dưới cửa sổ 3D, khi cửa sổ đã dựng xong tổ hợp, sẽ xuất hiện nút xuất mô hình 3D FBX cho 3ds Max.
 
 Sơ đồ lắp đặt 1:1 và lý do nó xuất hiện muộn hơn
 

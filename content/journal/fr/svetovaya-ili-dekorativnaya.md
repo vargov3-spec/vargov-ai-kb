@@ -39,3 +39,7 @@ Pour conclure
 Chez Vargov®Design, nous mettons tout en œuvre pour que chaque étape — de la conception à la livraison — soit irréprochable. Nous sommes convaincus que nos pièces vous accompagneront de longues années, et nous vous remercions de votre confiance.
 
 Si vous avez encore des questions sur l'emballage ou la livraison, n'hésitez pas à contacter notre service client. Nous sommes toujours là pour vous aider !
+
+Complément du 7 novembre 2026
+
+La frontière entre composition lumineuse et composition décorative ne tient pas aux éléments. Tout élément lumineux peut aussi être réalisé en version décorative, sans lumière : la composition peut ainsi être entièrement décorative ou mêler éléments lumineux et décoratifs. À l'inverse, les éléments décoratifs peuvent aussi former une composition lumineuse : la lumière est intégrée à l'élément lui-même ou, dans une composition suspendue, ajoutée sous forme d'éléments lumineux suspendus séparément (diodes) parmi les éléments de la composition.

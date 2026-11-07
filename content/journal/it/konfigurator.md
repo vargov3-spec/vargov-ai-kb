@@ -10,7 +10,7 @@ Il configuratore elimina questo scambio. La composizione si assembla direttament
 
 Che cosa fa
 
-Si indica un articolo di catalogo e le misure della nuvola in millimetri — il motore richiama le dimensioni reali dell'elemento, la sua potenza e la sua forma tridimensionale. Poi si sceglie la forma della composizione: cubo, sfera, semisfera, cono, cilindro, piramide, cascata, anello, onda, spirale, goccia, lente, imbuto, cornice, arco, serpentina, elica, livelli, coppa, cuneo o bioforma — ventuno varianti.
+Si indica un articolo di catalogo e le misure della composizione in millimetri — il motore richiama le dimensioni reali dell'elemento, la sua potenza e la sua forma tridimensionale. Poi si sceglie la forma della composizione: cubo, sfera, semisfera, cono, cilindro, piramide, cascata, anello, onda, spirale, goccia, lente, imbuto, cornice, arco, serpentina, elica, livelli, coppa, cuneo o bioforma — ventuno varianti.
 
 Densità ariosa, media, fitta — oppure numero esatto di elementi. Disposizione verticale, orizzontale, mista; rotazione casuale, dal centro o a griglia regolare; inclinazione su qualsiasi asse da −90° a +90°. In una composizione si possono mescolare due articoli nella proporzione scelta.
 
@@ -26,7 +26,7 @@ I nastri hanno un motore a parte: dieci articoli si costruiscono non come nuvola
 
 I numeri che servono all'installatore
 
-Il configuratore mostra il numero di elementi, le misure effettive della nuvola, il punto più basso dal soffitto, la ripartizione per formati, la potenza totale — e il peso della composizione, calcolato automaticamente in base agli elementi che la compongono.
+Il configuratore mostra il numero di elementi, le misure effettive, l'altezza fino al soffitto, la ripartizione per formati, la potenza totale — e il peso della composizione, calcolato automaticamente in base agli elementi che la compongono.
 
 Il peso non è un dato accessorio. Da esso dipende quale tassello regge la sospensione e se il solaio va rinforzato. Prima quel numero si calcolava via mail, a composizione già decisa; ora è lì fin dall'inizio, accanto alla silhouette.
 
@@ -34,7 +34,7 @@ Che cosa si porta via
 
 IFC4 per il BIM: lunghezze in millimetri, ogni punto di fissaggio è un oggetto a sé, con il numero di elementi che porta e, quando la massa è nota, il carico calcolato. Il modello è costruito sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm» (2700 mm per impostazione predefinita): punti di fissaggio sul soffitto, origine delle coordinate a pavimento. Una specifica PDF con l'elenco degli elementi, massa, potenza, montaggio, tempi di produzione e garanzia, e un QR che rimanda alla configurazione stessa. Una scheda di gara per acquisti e dogana. Il disegno DXF per AutoCAD è riservato all'uso interno: la produzione e i rivenditori del marchio. I modelli 3D pronti dell'articolo (max, fbx) si trovano su 3ddd.ru e 3dsky.org. La composizione assemblata si può scaricare in FBX per 3ds Max, con il pulsante accanto all'esportazione IFC: geometria e colori come oggetti separati, insieme ai cavi e ai fissaggi, in millimetri. Nell'FBX non ci sono proprietà BIM: quelle restano nell'IFC4. È scaricabile qualsiasi composizione calcolata dal configuratore. I progetti salvati restano nel browser stesso, senza account, e il link porta con sé lo stato completo della configurazione.
 
-La composizione si può provare nella propria stanza dal telefono: su iPhone e iPad in AR, con il modello appoggiato a terra, i fissaggi verso l'alto e la fotocamera puntata sul pavimento; gli altri dispositivi scaricano un file GLB con lo stesso modello. L'interfaccia funziona in otto lingue, arabo da destra a sinistra compreso.
+La composizione si può provare nella propria stanza dal telefono: su iPhone e iPad in AR, con la fotocamera puntata verso il soffitto, a cui la composizione viene appesa; su Android l'AR si apre direttamente nel browser: si punta la fotocamera sul pavimento, si tocca lo schermo e la composizione appare sotto un soffitto all'altezza impostata nel campo «Altezza del soffitto, mm»; dove l'AR non è disponibile, si scarica un file GLB con lo stesso modello. L'interfaccia funziona in otto lingue, arabo da destra a sinistra compreso.
 
 In che cosa differisce da un configuratore qualunque
 

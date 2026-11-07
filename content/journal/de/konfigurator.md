@@ -10,7 +10,7 @@ Der Konfigurator erspart diesen Schriftwechsel. Die Komposition entsteht direkt 
 
 Was er kann
 
-Sie geben eine Katalogposition und die Maße der Wolke in Millimetern vor — die Engine zieht die realen Baugrößen des Elements, seine Leistung und seine 3D-Form heran. Dann folgt die Form der Komposition selbst: Würfel, Kugel, Halbkugel, Kegel, Zylinder, Pyramide, Kaskade, Ring, Welle, Spirale, Tropfen, Linse, Trichter, Rahmen, Bogen, Schlangenlinie, Helix, Etagen, Schale, Keil oder Bioform — einundzwanzig Varianten.
+Sie geben eine Katalogposition und die Maße der Komposition in Millimetern vor — die Engine zieht die realen Baugrößen des Elements, seine Leistung und seine 3D-Form heran. Dann folgt die Form der Komposition selbst: Würfel, Kugel, Halbkugel, Kegel, Zylinder, Pyramide, Kaskade, Ring, Welle, Spirale, Tropfen, Linse, Trichter, Rahmen, Bogen, Schlangenlinie, Helix, Etagen, Schale, Keil oder Bioform — einundzwanzig Varianten.
 
 Dichte: luftig, mittel, dicht — oder eine exakte Anzahl von Elementen. Anordnung vertikal, horizontal, gemischt; Drehung zufällig, aus der Mitte oder im regelmäßigen Raster; Neigung um jede Achse von −90° bis +90°. In einer Komposition lassen sich zwei Artikel in gewähltem Verhältnis mischen.
 
@@ -26,7 +26,7 @@ Für Bänder gibt es eine eigene Engine: Zehn Artikel entstehen nicht als Wolke 
 
 Die Zahlen, die der Monteur braucht
 
-Der Konfigurator zeigt die Anzahl der Elemente, die tatsächlichen Maße der Wolke, den tiefsten Punkt unter der Decke, die Aufteilung nach Baugrößen, die Gesamtleistung — und das Gewicht der Komposition, automatisch aus ihrem Aufbau berechnet.
+Der Konfigurator zeigt die Anzahl der Elemente, die tatsächlichen Maße, die Höhe bis zur Decke, die Aufteilung nach Baugrößen, die Gesamtleistung — und das Gewicht der Komposition, automatisch aus ihrem Aufbau berechnet.
 
 Das Gewicht ist keine Nebenangabe. Von ihm hängt ab, welcher Anker die Aufhängung trägt und ob die Decke verstärkt werden muss. Früher wurde diese Zahl per E-Mail ermittelt, wenn der Aufbau bereits feststand; jetzt steht sie von Anfang an neben der Silhouette.
 
@@ -34,7 +34,7 @@ Was Sie mitnehmen können
 
 IFC4 für BIM: Längen in Millimetern, jeder Befestigungspunkt ein eigenes Objekt mit der Anzahl der daran hängenden Elemente und, wenn die Masse bekannt ist, der rechnerischen Last. Das Modell wird unter eine Decke in der Höhe gesetzt, die im Feld „Deckenhöhe, mm“ eingetragen ist (standardmäßig 2700 mm): Befestigungspunkte an der Decke, Koordinatenursprung auf dem Boden. Eine PDF-Spezifikation mit Aufbau, Masse, Leistung, Montage, Fertigungszeit und Garantie sowie QR-Code zur Konfiguration selbst. Ein Ausschreibungsblatt für Einkauf und Zoll. Die DXF-Zeichnung für AutoCAD ist nur für den internen Gebrauch bestimmt: Fertigung und Händler der Marke. Fertige 3D-Modelle des Artikels (max, fbx) liegen auf 3ddd.ru und 3dsky.org. Die zusammengestellte Komposition lässt sich als FBX für 3ds Max herunterladen – über die Schaltfläche neben dem IFC-Export: Geometrie und Farben als getrennte Objekte, samt Seilen und Befestigungen, in Millimetern. BIM-Eigenschaften sind darin nicht enthalten – die stecken in IFC4. Herunterladen lässt sich jede Komposition, die der Konfigurator berechnet. Gespeicherte Projekte liegen im Browser selbst, ohne Konto, und der Link trägt den vollständigen Zustand der Konfiguration.
 
-Die Komposition lässt sich mit dem Smartphone im eigenen Raum ausprobieren: auf iPhone und iPad in AR – das Modell steht mit den Befestigungen nach oben auf dem Boden, die Kamera wird auf den Boden gerichtet; andere Geräte laden eine GLB-Datei mit demselben Modell herunter. Die Oberfläche läuft in acht Sprachen, Arabisch von rechts nach links inbegriffen.
+Die Komposition lässt sich mit dem Smartphone im eigenen Raum ausprobieren: auf iPhone und iPad in AR – die Kamera wird auf die Decke gerichtet, und die Komposition wird daran aufgehängt; auf Android öffnet sich AR direkt im Browser – die Kamera wird auf den Boden gerichtet, und nach einem Tippen auf den Bildschirm hängt die Komposition unter einer Decke in der Höhe, die im Feld „Deckenhöhe, mm“ eingetragen ist; wo AR nicht verfügbar ist, wird eine GLB-Datei mit demselben Modell heruntergeladen. Die Oberfläche läuft in acht Sprachen, Arabisch von rechts nach links inbegriffen.
 
 Worin er sich von einem üblichen Konfigurator unterscheidet
 

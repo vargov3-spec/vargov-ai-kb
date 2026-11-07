@@ -10,7 +10,7 @@ Trình cấu hình xoá bỏ phần thư từ đó. Tác phẩm được dựng 
 
 Nó làm được gì
 
-Bạn chọn mã sản phẩm trong danh mục và kích thước cụm theo milimét — bộ xử lý tự lấy đúng kích cỡ thật của chi tiết, công suất và hình khối ba chiều của nó. Tiếp đó là hình dạng của cả tác phẩm: khối lập phương, hình cầu, bán cầu, hình nón, hình trụ, hình chóp, thác đổ, vòng tròn, sóng, xoắn ốc, giọt nước, thấu kính, phễu, khung, cung, uốn lượn, xoắn vít, tầng bậc, hình bát, hình nêm hoặc dạng sinh học — hai mươi mốt lựa chọn.
+Bạn chọn mã sản phẩm trong danh mục và kích thước tác phẩm theo milimét — bộ xử lý tự lấy đúng kích cỡ thật của chi tiết, công suất và hình khối ba chiều của nó. Tiếp đó là hình dạng của cả tác phẩm: khối lập phương, hình cầu, bán cầu, hình nón, hình trụ, hình chóp, thác đổ, vòng tròn, sóng, xoắn ốc, giọt nước, thấu kính, phễu, khung, cung, uốn lượn, xoắn vít, tầng bậc, hình bát, hình nêm hoặc dạng sinh học — hai mươi mốt lựa chọn.
 
 Mật độ thoáng, vừa, dày — hoặc số chi tiết chính xác. Bố trí dọc, ngang, hỗn hợp; xoay ngẫu nhiên, từ tâm hoặc theo lưới đều; nghiêng theo bất kỳ trục nào từ −90° đến +90°. Trong một tác phẩm có thể trộn hai mã theo tỉ lệ đặt trước.
 
@@ -26,7 +26,7 @@ Các dải có bộ xử lý riêng: mười mã được dựng không phải n
 
 Những con số thợ lắp cần
 
-Trình cấu hình hiển thị số chi tiết, kích thước thực của cụm, điểm thấp nhất tính từ trần, phân bổ theo cỡ, tổng công suất — và trọng lượng tác phẩm, được tính tự động theo thành phần.
+Trình cấu hình hiển thị số chi tiết, kích thước thực, chiều cao đến trần, phân bổ theo cỡ, tổng công suất — và trọng lượng tác phẩm, được tính tự động theo thành phần.
 
 Trọng lượng không phải con số tham khảo. Nó quyết định loại bu lông nở nào giữ được bộ treo và có cần gia cố sàn hay không. Trước kia con số ấy được tính qua thư từ khi thành phần đã chốt; nay nó có ngay từ đầu, cạnh hình dáng.
 
@@ -34,7 +34,7 @@ Những gì mang đi được
 
 Tệp IFC4 cho BIM: chiều dài tính bằng milimét, mỗi điểm treo là một đối tượng riêng mang số chi tiết treo trên nó và, khi đã biết khối lượng, cả tải trọng tính toán. Mô hình được dựng dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm» (mặc định 2700 mm): các điểm treo nằm trên trần, gốc tọa độ ở sàn. Bảng kê PDF với thành phần, khối lượng, công suất, lắp đặt, thời gian sản xuất và bảo hành, kèm mã QR dẫn tới chính cấu hình đó. Bảng dự thầu cho mua sắm và hải quan. Bản vẽ DXF cho AutoCAD chỉ dùng nội bộ: xưởng sản xuất và các đại lý của thương hiệu. Mô hình 3D có sẵn của mã sản phẩm (max, fbx) — trên 3ddd.ru và 3dsky.org. Tác phẩm đã dựng có thể tải về dưới dạng FBX cho 3ds Max — bằng nút nằm cạnh nút xuất IFC: hình khối và màu sắc tách thành các đối tượng riêng, cùng với dây treo và các bộ phận cố định, tính bằng milimét. Tệp FBX không có thuộc tính BIM — chúng nằm trong IFC4. Có thể tải về bất kỳ tác phẩm nào mà trình cấu hình tính toán được. Dự án đã lưu nằm ngay trong trình duyệt, không cần tài khoản, còn đường dẫn mang theo toàn bộ trạng thái cấu hình.
 
-Có thể ướm tác phẩm vào phòng của mình bằng điện thoại: trên iPhone và iPad bằng AR — mô hình đứng trên sàn, các bộ phận cố định hướng lên trên, camera chĩa xuống sàn; các thiết bị khác tải về tệp GLB chứa cùng mô hình đó. Giao diện có tám ngôn ngữ, kể cả tiếng Ả Rập từ phải sang trái.
+Có thể ướm tác phẩm vào phòng của mình bằng điện thoại: trên iPhone và iPad bằng AR — hướng camera lên trần nhà, tác phẩm sẽ được treo lên trần; trên Android, AR mở ngay trong trình duyệt — hướng camera xuống sàn và chạm vào màn hình, tác phẩm sẽ treo dưới trần ở chiều cao đã nhập trong ô «Chiều cao trần, mm»; nếu AR không khả dụng, tệp GLB chứa cùng mô hình đó sẽ được tải về. Giao diện có tám ngôn ngữ, kể cả tiếng Ả Rập từ phải sang trái.
 
 Khác gì so với một trình cấu hình thông thường
 
