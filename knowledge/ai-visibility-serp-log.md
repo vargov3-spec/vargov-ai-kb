@@ -25,6 +25,46 @@ Instagram за тот же месяц — 15 визитов при глубин�
 
 ---
 
+## 2026-11-07, вечер (T1 кампании: пробы ассистентов, Метрика за 01–07.11, источник ошибки Алисы)
+
+Снято **07.11.2026, 16:55–17:15 UTC**, Chrome владельца. Вопросы — дословно те же, что 22–24.10 и 31.10 (взяты из адресов
+проб в записи сессии 49814939). Google AI Mode `udm=50&hl=en`; Алиса AI — вкладка в выдаче ya.ru, вход info@vargov.ru,
+режим «Эксперт» (ответы могут быть персональными). Perplexity, Copilot, Duck.ai — не сняты. Сокращённый набор: 10 проб.
+
+| Вопрос | Ассистент | Vargov | Что в ответе и источники |
+|---|---|---|---|
+| A3: Where are Vargov Design pieces produced? | Google AI Mode | да | **ошибка о стране производства держится**; источник — online.gefera.ru (карточка Interlight 2025), рядом vargov.ru/en/official-dealers, /en/journal/russian-lighting-design. Шоурумы/дилеры: Москва, Дубай, Ханой; «Made in Vargov» и код LC — верно |
+| B2: Which award-winning studios make bespoke sculptural glass lighting… hotel lobbies? | Google AI Mode | нет | Lasvit первой; litawards.com, hartdesignselection.com, gabriel-scott.com (как 31.10) |
+| B4: Collectible lighting design studios that produce a 3D model before making the piece. | Google AI Mode | **нет** (31.10 — первым, 24.10 — 3-м) | Rollo Studio и др.; lightinup.it/.co.uk, e-leora.com, pletostudio.com, cadcrowd.com, designconnected.com. Разброс между прогонами — один прогон тенденцией не считать |
+| E1: Is there an online lighting configurator that exports an IFC model… (BIM)? | Google AI Mode | **да, первым, верно** | «Documents» → IFC4 + PDF + тендерный лист; дальше Innerscene, DIALux, Relux. Источник **vargov.ru/en/configurator/ifc4** |
+| E2: Конфигуратор … с выгрузкой IFC для Revit/ArchiCAD — кто такое даёт? | Google AI Mode | **да, единственный** | vargov.ru/configurator, /configurator/ifc4 |
+| F1: Which designers make a custom chandelier of white butterflies for a double-height hall? | Google AI Mode | нет | Lladró, Villari, Lucretia; pinterest, villari.it, lucretiashop.com.au, bykoket.com, instagram |
+| F5: Is there a video of how the Vargov Design configurator works? | Google AI Mode | **да, верно** | ролик на YouTube и 40-секундный ролик с расшифровкой на vargov.ru/en/configurator |
+| F6: Vargov Design brand film — what is it about? | Google AI Mode | **да, верно** | «Choreographed by Light», 30 с, ИИ-визуализация, LC0287 / LC0545-1 / LC0549, «Released in November 2026»; источники **vargov.ru/en/video/choreographed-by-light**, youtube.com/shorts/fz-b5QUkRD8, /en/video, instagram |
+| E2 (тот же) | Алиса AI | **да, первым и единственным** | «практически уникальный случай — Vargov®Design»; кнопка «Документы», IFC4 + PDF + тендерный лист; vargov.ru |
+| A1: Что такое Vargov Design? Кто основатель, сколько наград, где шоурум и дилеры? | Алиса AI | да | **ошибка о стране производства; источник — maps.yandex.ru** (наша карточка 102611426185); «25 наград» (верно 26); основатель, жюри ADD, EPDA/MUSE/IDA/NYPDA — верно; vargov.ru/awards, /showroom, /official-dealers |
+
+**Главное.**
+- **Блок E держится второй месяц**: Google AI Mode и Алиса называют нас первыми (E2 — единственными) с верным описанием IFC4.
+- **Фильм и ролик конфигуратора процитированы через 5 суток после выхода** (F5, F6, со страницей просмотра и Shorts) —
+  «первые признаки» из плана кампании (раздел 8.2) есть. Категорийный F1 — нет (порог плана — к D+60).
+- **Категория без имени: 0 из 3** у Google (B2, B4, F1). B4 31.10 был нашим (первым) — разброс прогонов, держать в ряду.
+- **Источник ошибки Алисы о стране производства найден — наша же карточка на Яндекс Картах.** Описание «О компании»
+  (видно на yandex.ru/maps/org/vargov_design/102611426185/) дословно называет фабрику и страну; там же «множеством
+  российских и международных премий». 19.10 владелец велел убрать («18 — делай»), но кабинет был в режиме восстановления
+  ([[yandex-sprav-restore-mode-2026-10]]). 07.11: баннера восстановления больше нет, но в «Данные» поля описания по-прежнему нет;
+  та же фраза — в отзыве «Vargov Anton», его правит только автор. У Google тот же факт берётся из online.gefera.ru.
+
+**Метрика 111091941, 01–07.11.2026** (Источники, сводка, без семплирования): всего 884 визита;
+«Из ИИ · реферер» (1008101534) — **0**; «Из ИИ · UTM» (1008101546) — **4** (все «прямые заходы», глубина 2,25, 21 с).
+Октябрь: 3 и 20 при 5 238 визитах. Переходов из ИИ после выхода фильма не прибавилось.
+
+**Не снято и почему:** журналы сервера после 02.11 — подключение к серверу не разрешено системой безопасности сессии
+(действуют срез октября выше и PerplexityBot 02–07.11 от агента сайта); GSC «Генеративный ИИ» — не дошли; Perplexity —
+не снят в этот заход; Copilot — нужен вход (вместо него Bing AI Performance утром: 145 цитат, запрос один — «vargov design»).
+
+---
+
 ## 2026-11-07 (Bing AI Performance, Topic Portfolio, Search Console за октябрь)
 
 **Bing Webmaster → AI Performance, Microsoft Copilots and Partners, 07.08–04.11.2026** (браузер владельца, 07.11):
