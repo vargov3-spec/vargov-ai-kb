@@ -25,6 +25,46 @@ Instagram за тот же месяц — 15 визитов при глубин�
 
 ---
 
+## 2026-11-07 (Bing AI Performance, Topic Portfolio, Search Console за октябрь)
+
+**Bing Webmaster → AI Performance, Microsoft Copilots and Partners, 07.08–04.11.2026** (браузер владельца, 07.11):
+Total Citations **145** (21.10 — 117, то есть +28 за две недели). Всплески: 06.10 — 21, 21.10 — 15, **02.11 — 22**
+(по порядку значений в отчёте; в записи 24.10 первый всплеск стоит как 07.10).
+Grounding Queries по-прежнему одна: «vargov design» (Informational / Design), 83 цитаты, доля 73,45 %.
+
+Цитируемых страниц 18 (было 16). Появилось новое: **`/en/journal/muse-2026` — 22 цитаты, второе место** после `/en`
+(58), и `/en/journal/sit-2025` — 4. Дальше `/catalog/lc0358` 11, `/en/catalog` 10, `/` 9, `/en/catalog/lc0358` 7,
+`/designer` 6, `/en/about` 4, `/de` 3, `/en/decorative` 2, `/en/lighting` 2. То есть Copilot начал брать статьи журнала.
+Причину всплеска 02.11 отчёт не показывает; совпадение с днём выхода фильма ничего не доказывает: цитируется статья о
+премии MUSE, а не страница фильма. `/configurator/ifc4` и страница фильма в списке первых 16 строк не появились
+(две последние строки отчёта не прочитаны).
+
+**Topic Portfolio (бета, новая вкладка, данные за сентябрь).** Тема одна — Design (размер темы 50–100 млн, сайтов в
+цитатах 50–100 тыс., запросов 100–500 тыс.). Подсказки Bing «где цитируют других, а вас нет» — 21 запрос, из них
+прочитано 20:
+- 101–500 цитат: front design, organic design, geometrical design, scabdesign, **lighting design**, london design
+  week, form & refine, **architectural products**, mambo unlimited ideas, exhibition architect;
+- 51–100: architecte ia, emerging architecture firms 2026, tendances papier peint 2026, best websites for house
+  plans, secto design;
+- 11–50: **visual comfort revit families**, modern office furniture design, organic space, set design website,
+  collaborative tables.
+
+Сам Bing пишет, что подписи тем делает ИИ и подсказки не гарантируют цитат. Большинство запросов чужие (бренды, обои,
+мебель). По делу для нас три выделенных; «visual comfort revit families» — запрос о семействах Revit у
+производителя света, то есть ниша, где у нас есть IFC4 и нет .rfa.
+
+**Google Search Console, письмо «Эффективность за октябрь» (03.11):** vargov.ru — 672 клика, 8,99 тыс. показов, 525
+страниц показано впервые. Страницы: `/` 363, `/en` 94, `/lighting` 18; рост `/` +28, `/catalog/lc0334` +6,
+`/catalog/lc0546` +4. Запросы: vargov design 103, vargov 83, варгов дизайн 51; рост варгов дизайн +17, варгов +7,
+vargov lighting +7. Страны: Россия 379, Казахстан 25, Индия 23. Устройства: компьютер 437, мобильные 231, планшеты 4.
+Клики из картинок и видео — 0. Всё это брендовые запросы: категорийной выдачи и здесь нет.
+
+**PerplexityBot (агент сайта, срез 07.11, журнал только до 02.11):** новых заходов на `/en/configurator` после 24.10
+нет; на `/en/configurator/ifc4` — 31.10 02:46, 01.11 11:48, 02.11 14:30 UTC, все до правки 02.11 15:41 UTC;
+`/configurator/ifc4` (RU) не брался. Срез 03–07.11 будет при следующем заходе на сервер.
+
+---
+
 ## 2026-11-02 (плановый прогон `vargov-ai-serp-monthly`)
 
 Снято 02.11.2026 автоматическим прогоном, без человека. Выдача — WebSearch (выдача США), 10 запросов из 10,
