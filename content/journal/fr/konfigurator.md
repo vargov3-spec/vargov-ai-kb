@@ -22,7 +22,7 @@ L'essentiel d'un assemblage génératif n'est pas la belle image mais l'honnête
 
 Une configuration donne toujours la même répartition : un confrère qui ouvre votre lien voit exactement la même chose. Le bouton de régénération propose une autre variante à densité égale.
 
-Les rubans ont leur propre moteur : dix références se construisent non en nuage d'éléments mais en ruban continu de tubes de verre sur une armature — sa plastique, son métrage et son dégradé sur la longueur.
+Les rubans ont leur propre moteur : dix références se construisent non à partir d'éléments suspendus séparément mais en ruban continu de tubes de verre sur une armature — sa plastique, son métrage et son dégradé sur la longueur.
 
 Les chiffres dont l'installateur a besoin
 

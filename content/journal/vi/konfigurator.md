@@ -22,7 +22,7 @@ Cách bố trí không nói dối
 
 Một cấu hình luôn cho cùng một cách dàn: đồng nghiệp mở đường dẫn của bạn sẽ thấy đúng như vậy. Nút tạo lại đưa ra phương án khác với cùng mật độ.
 
-Các dải có bộ xử lý riêng: mười mã được dựng không phải như một cụm chi tiết mà như dải liên tục gồm ống thuỷ tinh trên khung — có dáng uốn riêng, chiều dài riêng và chuyển màu dọc theo dải.
+Các dải có bộ xử lý riêng: mười mã được dựng không phải từ các chi tiết treo riêng lẻ mà thành một dải liên tục gồm ống thuỷ tinh trên khung — có dáng uốn riêng, chiều dài riêng và chuyển màu dọc theo dải.
 
 Những con số thợ lắp cần
 

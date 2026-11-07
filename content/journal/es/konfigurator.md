@@ -22,7 +22,7 @@ En un montaje generativo lo decisivo no es la imagen bonita, sino la honestidad 
 
 Una configuración da siempre el mismo reparto: quien abra su enlace verá exactamente lo mismo. El botón de regeneración propone otra variante de la misma densidad.
 
-Las cintas tienen su propio motor: diez referencias se construyen no como nube de elementos, sino como cinta continua de tubos de vidrio sobre una estructura — con su propia plasticidad, su metraje y su degradado de color a lo largo de la cinta.
+Las cintas tienen su propio motor: diez referencias se construyen no a partir de elementos suspendidos por separado, sino como cinta continua de tubos de vidrio sobre una estructura — con su propia plasticidad, su metraje y su degradado de color a lo largo de la cinta.
 
 Las cifras que necesita el instalador
 

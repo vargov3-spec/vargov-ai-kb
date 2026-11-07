@@ -36,7 +36,7 @@
   схему разметки 1:1 — 1 мм на чертеже равен 1 мм на потолке — по той же раскладке, из которой считаются
   точки крепления, IFC и PDF; схему открывают после запуска заказа в производство. Схема предварительная: перед разметкой
   потолка её подтверждает технолог производства, и эта пометка напечатана на самих листах схемы. Схема есть у 345 из 360 композиций, которые
-  конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (у ленты нет облака элементов), у 4 композиций
+  конфигуратор рассчитывает (его прогон 25.10.2026): её нет у 10 лент (лента не состоит из отдельно подвешенных элементов), у 4 композиций
   на каркасе (у элементов своих нитей к потолку нет — они висят на каркасе, а сам каркас подвешен к потолку;
   в IFC4 записано число подвесов каркаса, без координат, а сами точки видны на чертеже каркаса и на виде сбоку) и у готовой сцены LC0406-1 — это настенное
   бра, композиция у него готовая, а не рассчитанная: раскладки нет, значит нет и разметки потолка. Артикулы
@@ -174,7 +174,7 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
   points, the IFC model and the PDF are computed from; it opens once the order has been released to
   production. The drawing is preliminary: before the ceiling is set out, it is confirmed by the
   production engineer, and that note is printed on the drawing sheets themselves. The drawing exists for 345 of the 360 compositions the configurator calculates (its run of
-  25 October 2026): 10 ribbons have none (a ribbon has no cloud of elements), nor do 4 compositions on a
+  25 October 2026): 10 ribbons have none (a ribbon is not made of separately suspended elements), nor do 4 compositions on a
   frame (their elements have no strands of their own to the ceiling — they hang from the frame, and the frame
   itself is suspended from the ceiling; IFC4 records the number of its suspensions, without coordinates,
   and the points themselves are shown on the frame drawing and on the side view), nor the ready scene LC0406-1 —

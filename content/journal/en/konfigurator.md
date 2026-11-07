@@ -22,7 +22,7 @@ What matters in generative assembly is not a pretty picture but physical honesty
 
 One configuration always yields the same layout: a colleague opening your link sees exactly the same thing. A regenerate button offers another variant at the same density.
 
-Ribbons have their own engine: ten articles are built not as a cloud of elements but as a continuous ribbon of glass tubes on a frame — its own plasticity, its own length and a colour transition along it.
+Ribbons have their own engine: ten articles are built not from separately suspended elements but as a continuous ribbon of glass tubes on a frame — its own plasticity, its own length and a colour transition along it.
 
 The figures an installer needs
 

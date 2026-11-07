@@ -22,7 +22,7 @@ Entscheidend bei der generativen Anordnung ist nicht das schöne Bild, sondern p
 
 Eine Konfiguration ergibt immer dieselbe Verteilung: Wer Ihren Link öffnet, sieht genau dasselbe. Die Schaltfläche zum Neuberechnen bietet eine andere Variante gleicher Dichte.
 
-Für Bänder gibt es eine eigene Engine: Zehn Artikel entstehen nicht als Wolke aus Elementen, sondern als durchgehendes Band mit Glasröhren auf einem Gerüst — eigene Plastizität, eigene Länge und ein Farbverlauf über die Strecke.
+Für Bänder gibt es eine eigene Engine: Zehn Artikel entstehen nicht aus separat aufgehängten Elementen, sondern als durchgehendes Band mit Glasröhren auf einem Gerüst — eigene Plastizität, eigene Länge und ein Farbverlauf über die Strecke.
 
 Die Zahlen, die der Monteur braucht
 
