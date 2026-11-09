@@ -3133,28 +3133,28 @@
         {
           "@type": "PropertyValue",
           "name": "Element size H300",
-          "value": "L120 × W90 × H300 mm"
+          "value": "L25–120 × W25–50 × H120–300 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H300",
-          "value": 0.68,
+          "value": 0.57,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
-          "value": "L140 × W110 × H350 mm"
+          "value": "L30–140 × W30–60 × H140–350 mm"
         },
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 1.06,
+          "value": 0.91,
           "unitCode": "KGM"
         },
         {
           "@type": "PropertyValue",
-          "name": "Power per diode",
+          "name": "Power per link of the set",
           "value": 2,
           "unitCode": "WTT"
         }
@@ -6777,7 +6777,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H250",
-          "value": 0.48,
+          "value": 0.46,
           "unitCode": "KGM"
         },
         {
@@ -6799,7 +6799,7 @@
         {
           "@type": "PropertyValue",
           "name": "Element weight H350",
-          "value": 0.9,
+          "value": 0.87,
           "unitCode": "KGM"
         },
         {
