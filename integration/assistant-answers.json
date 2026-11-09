@@ -1,9 +1,9 @@
 {
  "meta": {
-  "version": "2026-11-07.1",
-  "checksum": "a58bf457a3157185",
+  "version": "2026-11-09.1",
+  "checksum": "00f8c93d0fbe3312",
   "count": 169,
-  "updated": "2026-11-07",
+  "updated": "2026-11-09",
   "contract": "id, category, roles, q{ru,en}, a{ru,en}, sources, updated, checked_by, focus? — договор с агентом сайта 27.10.2026",
   "categories": [
    "catalog",
@@ -4860,10 +4860,11 @@
    },
    "sources": [
     "/in-stock",
-    "/faq"
+    "/faq",
+    "/materials#parts"
    ],
-   "updated": "2026-11-01",
-   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка)"
+   "updated": "2026-11-09",
+   "checked_by": "ИИ-видимость: решения владельца по помощнику 31.10.2026 19:31 UTC (дословно в памяти assistant-owner-decisions-2026-10-31) и чистка лишних «не опубликовано»; workflow pack6-owner-decisions (черновики, 3 линзы) + pack6-consolidate (сведение, повторная проверка); 09.11.2026 — источник /materials#parts («Провод и крепления») по решению владельца 09.11.2026 10:56 UTC в сессии сайта"
   },
   {
    "id": "Q093",
@@ -4913,10 +4914,11 @@
     "en": "What we keep in stock are not finished compositions but the main elements: your composition is assembled from them for your interior — still individually. The minimum order is 10 elements, and assembly takes 15–20 business days instead of the standard cycle — the fast route for an urgent project. Customisation is kept: element colour, suspension length, cable colour and mounting-kit colour, as in a regular order. The current list is at vargov.ru/en/in-stock and is updated four times a day; a manager will confirm availability and timing: Telegram, WhatsApp or e-mail — buttons below."
    },
    "sources": [
-    "/in-stock"
+    "/in-stock",
+    "/materials#parts"
    ],
-   "updated": "2026-10-31",
-   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете"
+   "updated": "2026-11-09",
+   "checked_by": "ИИ-видимость: разбор помощника 31.10.2026 (workflow assistant-review: карта кода, офлайн-прогон, 4 линзы, скептик) и пачка формулировок pack-canon-paraphrase; ответы — только из опубликованного на сайте и решений владельца, записанных в пакете; 09.11.2026 — источник /materials#parts («Провод и крепления») по решению владельца 09.11.2026 10:56 UTC в сессии сайта"
   },
   {
    "id": "Q094",
