@@ -63,6 +63,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 - [Elements in stock](https://vargov.ru/en/in-stock): warehouse elements, not finished compositions — assembly for your project in 15–20 business days, minimum 10 elements; updated four times a day
 - [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf): full catalogue for download
 - [Materials](https://vargov.ru/en/materials): hot-cast glass, crystal, ceramics, brass and metal — how the material shapes the light and the character of a composition
+- [Ceramic lighting compositions](https://vargov.ru/en/ceramics) ([RU](https://vargov.ru/ceramics)): 167 compositions with ceramic elements — ceramics only, ceramics with glass or crystal, ceramics or opaque white glass as a choice; a 3D model for every piece, configurator calculation with IFC4 export for 81
 
 ## By space
 

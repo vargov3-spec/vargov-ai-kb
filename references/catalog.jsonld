@@ -13828,6 +13828,37 @@
           "datePublished": "2026-08-29",
           "expires": "2031-08-27",
           "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
         }
       ],
       "subjectOf": [
@@ -17006,6 +17037,37 @@
           "datePublished": "2026-08-29",
           "expires": "2031-08-27",
           "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
         }
       ],
       "subjectOf": [
@@ -17125,6 +17187,37 @@
           "@type": "Certification",
           "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71518/26",
           "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71518/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
           "certificationStatus": "https://schema.org/CertificationStatusActive",
           "validIn": {
             "@type": "AdministrativeArea",
@@ -17261,6 +17354,37 @@
           "@type": "Certification",
           "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71518/26",
           "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71518/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
           "certificationStatus": "https://schema.org/CertificationStatusActive",
           "validIn": {
             "@type": "AdministrativeArea",
@@ -24263,6 +24387,37 @@
           "datePublished": "2026-08-29",
           "expires": "2031-08-27",
           "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
         }
       ],
       "subjectOf": [
@@ -26633,6 +26788,37 @@
           "datePublished": "2026-08-29",
           "expires": "2031-08-27",
           "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
         }
       ],
       "subjectOf": [
@@ -28071,6 +28257,37 @@
           "@type": "Certification",
           "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71518/26",
           "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71518/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
           "certificationStatus": "https://schema.org/CertificationStatusActive",
           "validIn": {
             "@type": "AdministrativeArea",
@@ -34769,6 +34986,37 @@
           "datePublished": "2026-08-29",
           "expires": "2031-08-27",
           "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
         }
       ],
       "subjectOf": [
@@ -34884,6 +35132,37 @@
           "@type": "Certification",
           "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71518/26",
           "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71518/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-08-29",
+          "expires": "2031-08-27",
+          "about": "TR EAEU 037/2016"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC — ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationIdentification": "ЕАЭС RU C-CN.СП28.В.05285/26",
+          "certificationStatus": "https://schema.org/CertificationStatusActive",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Test-St. Petersburg LLC",
+            "identifier": "ROSS RU.0001.10SP28"
+          },
+          "validIn": {
+            "@type": "AdministrativeArea",
+            "name": "Eurasian Economic Union"
+          },
+          "datePublished": "2026-09-08",
+          "expires": "2031-09-07",
+          "about": "TR CU 004/2011"
+        },
+        {
+          "@type": "Certification",
+          "name": "EAC declaration — ЕАЭС N RU Д-CN.РА07.В.71557/26",
+          "certificationIdentification": "ЕАЭС N RU Д-CN.РА07.В.71557/26",
           "certificationStatus": "https://schema.org/CertificationStatusActive",
           "validIn": {
             "@type": "AdministrativeArea",
