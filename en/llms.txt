@@ -24,6 +24,13 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - Hugging Face dataset: [vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — refreshed by the nightly sync from this repository
 - [references/brand-facts.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/brand-facts.json) — machine-readable source of the brand's numbers (catalogue and families, configurator, awards, certification, trademarks, languages), each with its source and check date; `scripts/check_facts.py` checks the texts of this base against it
 
+## MCP servers for AI agents
+
+Two read-only Model Context Protocol servers give AI assistants the brand's own published data — no sign-in, no prices.
+
+- [Remote server on the site](https://vargov.ru/api/mcp) — Streamable HTTP, in the official MCP Registry as `ru.vargov/vargov-design`. Tools: search_compositions (by the image or shape of the elements, or by product type), get_composition (card facts by LC code), ask_brand (the brand's published answers with their source pages), configurator_link (the 3D configurator opened with the zone dimensions), dealers_and_showroom (official dealers and the Moscow showroom). For a project outside Russia and the CIS the contact it returns is the official dealer of that region; the brand's direct contacts come in a separate field
+- [npm package @vargov/mcp](https://www.npmjs.com/package/@vargov/mcp) — offline, stdio (`npx -y @vargov/mcp`), in the registry as `io.github.vargov3-spec/vargov-mcp`. Tools: search_compositions, get_composition, build_configurator_link, how_to_get_bim (the IFC4 and FBX steps), brand_facts, dealer_for_country (the regional dealer for a country)
+
 ## Knowledge base and press materials
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — verified brand facts (Russian)

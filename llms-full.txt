@@ -42,6 +42,13 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 - [references/brand-facts.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/brand-facts.json) — машиночитаемый источник чисел бренда (каталог и семейства, конфигуратор, награды, сертификация, знаки, языки), у каждого факта — источник и дата проверки; тексты базы сверяет с ним `scripts/check_facts.py`
 - Карточки: `products/<раздел>/<артикул>.md` (RU) и `en/products/<раздел>/<артикул>.md` (EN)
 
+## MCP-серверы для ИИ-агентов
+
+Два сервера Model Context Protocol только для чтения отдают ИИ-ассистентам опубликованные данные бренда — без входа и без цен.
+
+- [Сервер на сайте](https://vargov.ru/api/mcp) — Streamable HTTP, в официальном реестре MCP как `ru.vargov/vargov-design`. Инструменты: search_compositions (по образу или форме элементов, по типу изделия), get_composition (факты карточки по коду LC), ask_brand (опубликованные ответы бренда со страницами-источниками), configurator_link (3D-конфигуратор с размерами зоны), dealers_and_showroom (официальные дилеры и шоурум в Москве). Для проекта за пределами России и СНГ сервер отдаёт контакт официального дилера этого региона, прямые контакты бренда — отдельным полем
+- [npm-пакет @vargov/mcp](https://www.npmjs.com/package/@vargov/mcp) — работает без сети, stdio (`npx -y @vargov/mcp`), в реестре как `io.github.vargov3-spec/vargov-mcp`. Инструменты: search_compositions, get_composition, build_configurator_link, how_to_get_bim (как выгрузить IFC4 и FBX), brand_facts, dealer_for_country (дилер региона по стране)
+
 ## База знаний и пресс-материалы
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — проверенные факты о бренде
@@ -138,6 +145,13 @@ Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/li
 - [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (603 entries — one for each composition that carries a link: 603 of the 605 in the catalogue; only LC0255 and LC0257 have no model)
 - Hugging Face dataset: [vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — refreshed by the nightly sync from this repository
 - [references/brand-facts.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/brand-facts.json) — machine-readable source of the brand's numbers (catalogue and families, configurator, awards, certification, trademarks, languages), each with its source and check date; `scripts/check_facts.py` checks the texts of this base against it
+
+## MCP servers for AI agents
+
+Two read-only Model Context Protocol servers give AI assistants the brand's own published data — no sign-in, no prices.
+
+- [Remote server on the site](https://vargov.ru/api/mcp) — Streamable HTTP, in the official MCP Registry as `ru.vargov/vargov-design`. Tools: search_compositions (by the image or shape of the elements, or by product type), get_composition (card facts by LC code), ask_brand (the brand's published answers with their source pages), configurator_link (the 3D configurator opened with the zone dimensions), dealers_and_showroom (official dealers and the Moscow showroom). For a project outside Russia and the CIS the contact it returns is the official dealer of that region; the brand's direct contacts come in a separate field
+- [npm package @vargov/mcp](https://www.npmjs.com/package/@vargov/mcp) — offline, stdio (`npx -y @vargov/mcp`), in the registry as `io.github.vargov3-spec/vargov-mcp`. Tools: search_compositions, get_composition, build_configurator_link, how_to_get_bim (the IFC4 and FBX steps), brand_facts, dealer_for_country (the regional dealer for a country)
 
 ## Knowledge base and press materials
 

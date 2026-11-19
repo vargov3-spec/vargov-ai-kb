@@ -25,6 +25,13 @@
 - Hugging Face 数据集：[vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — 每夜与官网同步
 - [references/brand-facts.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/brand-facts.json) — 品牌数字的机器可读来源（目录与系列、配置器、奖项、认证、商标、语言），每项均附来源与核对日期；`scripts/check_facts.py` 据此核对知识库文本
 
+## 面向 AI 智能体的 MCP 服务器
+
+两个只读的 Model Context Protocol 服务器向 AI 助手提供品牌已公开的数据——无需登录，不含价格。
+
+- [网站上的远程服务器](https://vargov.ru/api/mcp) — Streamable HTTP，在官方 MCP 注册表中为 `ru.vargov/vargov-design`。工具：search_compositions（按元素的形象或形状、按产品类型）、get_composition（按 LC 编号的卡片信息）、ask_brand（品牌已公开的回答及来源页面）、configurator_link（带区域尺寸打开 3D 配置器）、dealers_and_showroom（官方经销商与莫斯科展厅）。俄罗斯及独联体以外的项目，返回该地区官方经销商的联系方式；品牌直接联系方式在单独字段中
+- [npm 包 @vargov/mcp](https://www.npmjs.com/package/@vargov/mcp) — 离线运行，stdio（`npx -y @vargov/mcp`），在注册表中为 `io.github.vargov3-spec/vargov-mcp`。工具：search_compositions、get_composition、build_configurator_link、how_to_get_bim（如何导出 IFC4 和 FBX）、brand_facts、dealer_for_country（按国家查询所在地区的经销商）
+
 ## 知识库与新闻资料
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — 经核实的品牌事实（俄文）
