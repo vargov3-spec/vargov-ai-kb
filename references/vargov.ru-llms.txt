@@ -51,7 +51,8 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 
 ## MCP server for AI agents
 
-- [Vargov®Design MCP server](https://vargov.ru/api/mcp): Model Context Protocol over Streamable HTTP (protocol versions 2026-07-28, 2025-11-25, 2025-06-18, 2025-03-26); no sign-in, read-only, public data only. Tools: search_compositions (by the image or shape of the elements, or by product type), get_composition (card facts by LC code: description, where it works, style, elements in stock, certificate, 3D model, videos, awards), ask_brand (the brand's verified answers with their source pages), configurator_link (the 3D configurator opened with the zone dimensions), dealers_and_showroom (official dealers and the Moscow showroom). The server returns no composition prices: the price is calculated for each project
+- [Vargov®Design MCP server](https://vargov.ru/api/mcp): Model Context Protocol over Streamable HTTP (protocol versions 2026-07-28, 2025-11-25, 2025-06-18, 2025-03-26); no sign-in, read-only, public data only. Tools: search_compositions (by the image or shape of the elements, by product type, or by element material confirmed by the brand — ceramic in the three groups of the Ceramics page, glass, crystal, metal), get_composition (card facts by LC code: description, where it works, style, elements in stock, certificate, 3D model, videos, awards, confirmed material), ask_brand (the brand's verified answers with their source pages; with the project's country, the official dealer for that region), configurator_link (the 3D configurator opened with the zone dimensions), dealers_and_showroom (official dealers and the Moscow showroom). The server returns no composition prices: the price is calculated for each project
+- [Connecting the MCP servers](https://vargov.ru/en/ai-agents) ([RU](https://vargov.ru/ai-agents)): how to add the server in Claude, Claude Code, ChatGPT, Cursor and VS Code, the tools of both servers, a worked example; the npm package @vargov/mcp (registry name io.github.vargov3-spec/vargov-mcp) runs locally with the catalogue data bundled
 
 ## Catalogue
 
@@ -63,7 +64,7 @@ Each piece carries an LC article code (LC0001 … LC0602). The catalogue holds
 - [Elements in stock](https://vargov.ru/en/in-stock): warehouse elements, not finished compositions — assembly for your project in 15–20 business days, minimum 10 elements; updated four times a day
 - [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf): full catalogue for download
 - [Materials](https://vargov.ru/en/materials): hot-cast glass, crystal, ceramics, brass and metal — how the material shapes the light and the character of a composition
-- [Ceramic lighting compositions](https://vargov.ru/en/ceramics) ([RU](https://vargov.ru/ceramics)): 167 compositions with ceramic elements — ceramics only, ceramics with glass or crystal, ceramics or opaque white glass as a choice; a 3D model for every piece, configurator calculation with IFC4 export for 81
+- [Ceramic lighting compositions](https://vargov.ru/en/ceramics) ([RU](https://vargov.ru/ceramics)): 180 compositions with ceramic elements — ceramics only, ceramics with glass or crystal, ceramics or opaque white glass as a choice; a 3D model for every piece, configurator calculation with IFC4 export for 89
 
 ## By space
 
