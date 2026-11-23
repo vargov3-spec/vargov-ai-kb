@@ -82,6 +82,7 @@ knowledge/awards-verified.md. Факты о бренде — knowledge/brand.md.
 ## Архитекторам и проектировщикам
 
 - [Как идёт проект](https://vargov.ru/architects) — от эскиза до монтажа
+- [«Защита проекта»](https://pro.vargov.ru) — закрытый портал Vargov®Design для дизайнеров интерьера и архитекторов: специалист закрепляет за собой объект, в который предлагает композиции Vargov®Design. Доступ — по запросу на странице входа портала; условия сотрудничества видны только внутри портала, после входа.
 - [Сколько точек крепления нужно светильнику](https://vargov.ru/guides/tochki-krepleniya) — у цельного прибора вся масса приходит в один узел; у композиции на тросах точек столько, сколько элементов: каждый висит на своей нити. Девять артикулов-исключений названы поимённо.
 - [Сколько весит большая стеклянная композиция](https://vargov.ru/guides/ves-kompozitsii) — таблица восьми посчитанных композиций: от 4,3 кг (11 элементов) до 447,7 кг (241 элемент), с числом точек крепления и нагрузкой на точку. Прогон 27.09.2026 с разметкой стекла на цельное и полое, выложен 02.10.2026; числа на странице считаются из данных конфигуратора.
 - [Монтаж и подключение](https://vargov.ru/installation) · [Инструкция по монтажу, PDF](https://vargov.ru/pdf/vargov-installation-ru.pdf) · [Инструкция по подключению, PDF](https://vargov.ru/pdf/vargov-connection-ru.pdf) — монтажная есть на восьми языках: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
@@ -186,6 +187,7 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 ## For architects and specifiers
 
 - [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
+- ["Project protection"](https://pro.vargov.ru) — a private Vargov®Design portal for interior designers and architects: a specialist registers the project in which they propose Vargov®Design compositions. Access is on request from the portal's sign-in page; the terms of cooperation are shown only inside the portal, after sign-in.
 - [How many ceiling mounting points a fitting needs](https://vargov.ru/en/guides/mounting-points) — a single-body fitting brings its whole mass to one node; a composition on cables needs as many points as it has elements, each on its own line. Nine exception SKUs are listed by code.
 - [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight) — eight calculated compositions, from 4.3 kg (11 elements) to 447.7 kg (241 elements), with fixing-point counts and load per point. Run of 27 September 2026 with the solid/hollow glass markup, published 2 October 2026; the numbers on the page come from the configurator data.
 - [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`

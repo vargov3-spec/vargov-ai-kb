@@ -63,6 +63,7 @@
 ## 面向建筑师与设计师
 
 - [定制项目如何进行](https://vargov.ru/en/architects) — 从草图到安装
+- [“项目保护”（Project protection）](https://pro.vargov.ru)——Vargov®Design 面向室内设计师和建筑师的非公开门户：专业人士可将其推荐使用 Vargov®Design 作品的项目登记在自己名下。访问需在门户登录页申请；合作条件仅在登录门户后可见。
 - [一件灯具需要多少个吊顶固定点](https://vargov.ru/en/guides/mounting-points) — 整体式灯具将全部重量集中于一个节点；吊索构成的固定点数等于元件数，每件各占一根吊线。九个例外货号按编号列出。
 - [大型玻璃构成有多重](https://vargov.ru/en/guides/chandelier-weight) — 八件经计算的构成，从 4.3 kg（11 件元件）到 447.7 kg（241 件元件），含固定点数量与单点荷载。2026 年 9 月 27 日按实心/空心玻璃标注计算，2026 年 10 月 2 日发布；页面上的数字来自配置器数据。
 - [安装](https://vargov.ru/en/installation) · [安装指南（PDF）](https://vargov.ru/pdf/vargov-installation-en.pdf) · [接线指南（PDF）](https://vargov.ru/pdf/vargov-connection-en.pdf) — 安装指南有八种语言：`vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
