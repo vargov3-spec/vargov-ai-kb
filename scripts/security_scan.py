@@ -71,6 +71,10 @@ DOMAIN_ALLOWLIST = SCRIPT_ALLOWLIST | {
     "sketchfab.com",
     # Карточки на картах (hasMap на /showroom).
     "www.google.com", "yandex.ru",
+    # MAX — мессенджер бренда (подвал и контакты, 20.11.2026); реестр MCP и npm — ссылки на свой
+    # MCP-сервер со страницы /ai-agents (19.11.2026). Тревога 23.11.2026 была на них; ссылки есть
+    # в коде сайта (seo.ts, aiAgentsPage.ts), внесены по слову владельца 23.11.2026.
+    "max.ru", "registry.modelcontextprotocol.io", "www.npmjs.com",
 }
 
 # Ожидаемый счётчик Метрики: 111091941 — vargov.ru. Больше никаких.
