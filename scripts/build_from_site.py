@@ -563,11 +563,20 @@ def load_stock(path: Path) -> dict[str, list]:
             print(f"  ! {it.get('sku')}: «{it.get('stock')}» без ряда конфигуратора — не печатаю")
             continue
         col, mat = it.get("color") or {}, it.get("material") or {}
+        # ready — штуки склада; perElement — сколько складских штук в одном элементе
+        # композиции (LC0489: склад ведёт сегмент «150+150», в элементе H600 их два —
+        # владелец 24.11). Печатаем целые элементы, как bySku конфигуратора.
+        ready, per = int(it.get("ready") or 0), int(it.get("perElement") or 1)
+        if per < 1:
+            die(f"{it.get('sku')}: perElement={it.get('perElement')!r}")
+        if ready % per:
+            print(f"  ! {it.get('sku')}: {ready} шт. склада не делится на perElement={per} — "
+                  f"печатаю {ready // per} целых")
         out.setdefault(it["sku"], []).append({
             "size": " / ".join(labels),
             "color": {"ru": _tidy(col.get("ru")), "en": _tidy(col.get("en"))},
             "material": {"ru": _tidy(mat.get("ru")), "en": _tidy(mat.get("en"))},
-            "qty": str(it.get("ready") or 0),
+            "qty": str(ready // per),
         })
     STOCK = out
     return out
