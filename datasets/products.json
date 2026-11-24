@@ -8185,7 +8185,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H300",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "120"
+      }
+    ],
     "description": {
       "ru": "Композиция о начале осени. Дымчатые и светлые листья чередуются, придавая облаку глубину и погоду — то, чего не бывает у однородной массы: небо в первые осенние дни выглядит именно так.\n\nКрупные листья с тончайшей жилковой фактурой падают широким облаком, каждый на своём тросе, каждый со своим поворотом. Золотые конусы наверху читаются черешками, с которых лист только что сорвался.\n\nДнём фактура делает поверхность живой: свет пробегает по прожилкам, и каждый лист получает собственный узор. Вечером прожилки загораются изнутри — крона светится жилками, а не плоскостью.",
       "en": "A composition about the beginning of autumn. Smoky and pale leaves alternate, giving the cloud a depth and a weather that a uniform mass never has: the sky in the first days of autumn looks exactly like this.\n\nLarge leaves with the finest vein texture fall as a broad cloud, each on its own cable, each at its own turn. Gold cones at the top read as stalks from which the leaf has only just come away.\n\nBy day the texture makes the surface alive: light runs along the veins and every leaf gets a pattern of its own. In the evening the veins light from within — the canopy glows by its veining rather than by its plane.",
@@ -11218,7 +11225,7 @@
       {
         "size": "L300",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "80"
       }
     ],
@@ -12223,7 +12230,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H200",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "50"
+      }
+    ],
     "description": {
       "ru": "Композиция о стружке из-под резца. Упругие кольца и полукольца рифлёных лент повторяют форму, которая возникает сама — как побочный результат работы. Автор делает её главной.\n\nКаждый завиток несёт золотую капсулу света; облако вертикальное, плотное.\n\nДнём это вихрь рифлёных витков: композиция читается пластикой и штриховкой, живая и подвижная. Вечером свет бежит по спиралям, соскальзывает с витков и заполняет пространство танцующими бликами — облако начинает вращаться.",
       "en": "A composition about a shaving off a cutting tool. Springy rings and half-rings of ribbed ribbon repeat a form that arises by itself — as a by-product of work. The author makes it the main thing.\n\nEvery curl carries a gold capsule of light; the cloud is vertical and dense.\n\nBy day it is a vortex of ribbed coils: the composition reads through plasticity and hatching, alive and mobile. In the evening light runs along the spirals, slips off the coils and fills the space with dancing highlights — the cloud begins to turn.",
@@ -13757,7 +13771,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H300",
+        "material_en": "crystal",
+        "color_en": "transparent with air bubbles",
+        "qty": "40"
+      }
+    ],
     "description": {
       "ru": "Композиция о потоке, остановленном в движении. Каждая лента имеет собственную пластику: где волна, где натянутая ткань, где струя воздуха. Одинаковых нет, потому что поток не повторяется.\n\nВ толще — сотни воздушных пузырьков; золотые зажимы перехватывают ленту по всей длине. Тонкие подвесы растворяются в темноте, и колонны парят.\n\nДнём это прозрачный лес вертикалей: пузырьки читаются на просвет, ленты — плавными волнами, вещь лёгкая и почти невидимая. Вечером свет входит внутрь через зажимы и зажигает пузырьки — толща наливается искрами, и колонны становятся светящимися насквозь.",
       "en": "A composition about a current stopped mid-movement. Every ribbon has a plasticity of its own: here a wave, there stretched cloth, there a jet of air. There are no two alike, because a current does not repeat itself.\n\nIn the mass there are hundreds of air bubbles; gold clasps catch the ribbon along its whole length. The fine suspensions dissolve into the dark, and the columns hover.\n\nBy day it is a clear forest of verticals: the bubbles read against the light, the ribbons as smooth waves, a piece light and almost invisible. In the evening light enters through the clasps and ignites the bubbles — the mass fills with sparks and the columns become luminous right through.",
@@ -18311,9 +18332,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D300",
+        "size": "H300",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -26263,9 +26284,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "W230 D100 H250",
+        "size": "H250",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "120"
       }
     ],
@@ -26509,7 +26530,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H180",
+        "material_en": "crystal",
+        "color_en": "clear",
+        "qty": "40"
+      }
+    ],
     "description": {
       "ru": "Композиция-цитата. Силуэт старинной подвески увеличен и очищен от лишнего: фигурный, почти кружевной контур остался, а всё, что делало его мишурой, убрано. Форма узнаваема, исполнение минималистично.\n\nОгранка идёт только по краю и ловит свет, рассыпая его радужными искрами; гладкий центр остаётся прозрачным, и сквозь него видно соседние подвески. Каскад собирается ярусами и сходится острым клином.\n\nДнём это прозрачная кружевная графика с золотыми свечами между элементами — вещь читается контурами и наложениями. Вечером огранённые кромки вспыхивают радугой, а гладкие середины остаются тёмными: каскад светится по краям, оставаясь прозрачным внутри.",
       "en": "A composition as quotation. The silhouette of an old crystal pendant is enlarged and cleared of everything surplus: the shaped, almost lacework contour remains and everything that made it tinsel is removed. The form is recognisable, the execution minimal.\n\nThe faceting runs only along the edge and catches light, scattering it as rainbow sparks; the smooth centre stays clear and the neighbouring pendants are visible through it. The cascade is assembled in tiers and converges into a sharp wedge.\n\nBy day it is clear lacework graphic with gold candles between the elements — a piece read through contours and overlays. In the evening the faceted edges flare into rainbow while the smooth centres stay dark: the cascade glows around its edges and remains transparent within.",
@@ -27707,7 +27735,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "L250",
+        "material_en": "crystal",
+        "color_en": "gold, clear",
+        "qty": "100"
+      }
+    ],
     "description": {
       "ru": "Развитие темы колец в парадном масштабе. Кольца крупнее и толще, внутри — россыпь пузырьков: толща выглядит газированной, живой, будто движение внутри неё ещё не закончилось.\n\nДержат их широкие ленты полированного золота, изгибающиеся вокруг колец, как оправа держит камень. Приём ювелирный, и он задаёт всю логику вещи: прозрачное здесь — драгоценность, металл — только оправа.\n\nДнём это ювелирная работа: золото, прозрачность, точность соединений — объект для рассматривания вблизи. Вечером свет идёт от золотых зажимов внутрь кольца, пузырьки вспыхивают, и каждое превращается в светящийся обруч с искрящейся сердцевиной. Отдельные элементы становятся неразличимы — остаётся плотное сияющее облако.",
       "en": "A development of the ring theme at a formal scale. The rings are larger and thicker, with a scattering of bubbles inside: the mass looks aerated, alive, as though the movement in it had not yet finished.\n\nThey are held by broad bands of polished gold that curve around the rings the way a setting holds a stone. The device is a jeweller's, and it sets the whole logic of the piece: the transparent here is the gem, the metal only the setting.\n\nBy day it is a jeweller's work: gold, transparency, precision of joints — an object to be examined close up. In the evening light travels from the gold clasps into the ring, the bubbles flare, and each ring becomes a glowing hoop with a sparkling core. The separate elements become indistinguishable — what remains is a dense radiant cloud.",
@@ -27840,14 +27875,14 @@
       {
         "size": "L250",
         "material_en": "glass",
-        "color_en": "clear бесцветный с пузырьками воздуха",
-        "qty": "100"
+        "color_en": "transparent colorless with air bubbles",
+        "qty": "120"
       },
       {
         "size": "L250",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
-        "qty": "100"
+        "color_en": "clear/colourless",
+        "qty": "280"
       }
     ],
     "description": {
@@ -28947,13 +28982,13 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D40 H400",
+        "size": "H400",
         "material_en": "crystal",
-        "color_en": "clear бесцветный",
-        "qty": "100"
+        "color_en": "clear/colourless",
+        "qty": "150"
       },
       {
-        "size": "W40 H500",
+        "size": "H500",
         "material_en": "glass",
         "color_en": "rust",
         "qty": "100"
@@ -30776,9 +30811,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D110 H300",
-        "material_en": "crystal,metal",
-        "color_en": "clear бесцветный с пузырьками воздуха",
+        "size": "H300",
+        "material_en": "crystal, metal",
+        "color_en": "transparent colorless with air bubbles",
         "qty": "70"
       }
     ],
@@ -32255,9 +32290,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D300",
+        "size": "Ø300",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -34872,7 +34907,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H150",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "220"
+      }
+    ],
     "description": {
       "ru": "Костёр, застывший в момент вспышки. Языки закручены спиралью и вытянуты вверх — движение направлено против силы тяжести, и это единственное, что композиция утверждает.\n\nЗеркальное напыление изнутри меняет природу элементов: они читаются не прозрачными, а металлическими, и отражают друг друга, создавая внутри кольца бесконечное золотое эхо. Свет подсвечивает языки снизу — оттуда, откуда горит настоящий огонь.\n\nДнём композиция выглядит как гигантская брошь; вечером — как пламя, которому не дали погаснуть.",
       "en": "A bonfire arrested at the moment of the flare. The tongues are twisted into spirals and drawn upward — the movement runs against gravity, and that is the only thing the composition asserts.\n\nA mirrored coating on the inside changes the nature of the elements: they read as metallic rather than clear, and reflect one another, creating an endless gold echo inside the ring. The light lifts the tongues from below — from where a real fire burns.\n\nBy day the composition looks like a giant brooch; in the evening, like a flame that was not allowed to go out.",
@@ -35889,9 +35931,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D100120(G4)",
+        "size": "Ø120",
         "material_en": "crystal",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -36319,7 +36361,20 @@
     "award_winning": false,
     "cert": null,
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H250",
+        "material_en": "glass",
+        "color_en": "clear/colourless",
+        "qty": "50"
+      },
+      {
+        "size": "H250",
+        "material_en": "glass",
+        "color_en": "gold foil",
+        "qty": "50"
+      }
+    ],
     "description": {
       "ru": "Золото, живущее в глубине, а не на поверхности. Фольга впаяна в толщу — лист выглядит одновременно прозрачным и металлическим, и это противоречие не разрешается ни с какой точки обзора.\n\nПрожилки вытравлены с обратной стороны и вспыхивают при подсветке. Каждый лист повёрнут по-своему: одни плашмя, другие ребром, третьи в развороте — падение, снятое с длинной выдержкой.\n\nДнём это гербарий, поднятый в воздух: сухая графика прожилок на просвет. Вечером листья загораются изнутри, и каскад становится осенним дождём, у которого золото не отражённое, а собственное.",
       "en": "Gold that lives in the depth rather than on the surface. Foil is fused into the mass — the leaf looks transparent and metallic at once, and the contradiction is never resolved from any viewpoint.\n\nThe veins are etched from the reverse and flare under light. Every leaf is turned its own way: some flat, some edge-on, some mid-turn — a fall recorded at a long exposure.\n\nBy day it is a herbarium lifted into the air: the dry graphic of veins seen against the light. In the evening the leaves catch fire from within, and the cascade becomes an autumn rain whose gold is not reflected but its own.",
@@ -36555,9 +36610,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "L200",
+        "size": "H200",
         "material_en": "ceramic",
-        "color_en": "glossy white /gold",
+        "color_en": "glossy white/gold",
         "qty": "70"
       }
     ],
@@ -39346,9 +39401,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D300",
+        "size": "Ø300",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -39914,7 +39969,20 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "L100",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "20"
+      },
+      {
+        "size": "L180",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "65"
+      }
+    ],
     "description": {
       "ru": "Поле, зависшее в невесомости. Между элементами много воздуха — композиция не давит массой, она распределена по объёму так, что взгляд проходит насквозь.\n\nСвет спрятан лишь в отдельных цветах; остальные его подхватывают и переотражают. Из-за этого светящихся точек в разы меньше, чем элементов, и композиция мерцает неравномерно, как настоящее поле в сумерках.\n\nДнём объект почти прозрачен и читается только бликами — его легко не заметить. Вечером зажигаются узловые цветы, а прозрачные вспыхивают отражённым светом: получается звёздное поле с тёплыми сгущениями.",
       "en": "A field suspended in weightlessness. There is a great deal of air between the elements — the composition does not press down with mass, it is distributed through the volume so that the gaze passes right through.\n\nThe light is hidden in only some of the flowers; the rest pick it up and pass it on. There are therefore many times fewer glowing points than elements, and the composition shimmers unevenly, like a real field at dusk.\n\nBy day the object is almost transparent and reads only through highlights — it is easy to miss. In the evening the key flowers light up and the clear ones flare with borrowed light: the result is a starfield with warm thickenings.",
@@ -40254,10 +40322,10 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D250",
+        "size": "L250",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
-        "qty": "120"
+        "color_en": "clear colorless",
+        "qty": "150"
       }
     ],
     "description": {
@@ -40487,15 +40555,15 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D200",
+        "size": "Ø200",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       },
       {
-        "size": "D250",
+        "size": "Ø250",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -43066,9 +43134,9 @@
     ],
     "in_stock_elements": [
       {
-        "size": "D200 H800",
+        "size": "L200",
         "material_en": "ceramic",
-        "color_en": "glossy white /gold foil",
+        "color_en": "glossy white/gold foil",
         "qty": "250"
       }
     ],
@@ -43191,7 +43259,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H300",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "40"
+      }
+    ],
     "description": {
       "ru": "Линза вместо лампы. Элементы не светятся сами — они собирают свет, который приходит сверху и сбоку, и работают оптикой, а не источником.\n\nКривизна каждого серпа устроена так, что в глубине возникает золотое ядро, а по утолщённой кромке идёт светящаяся нить. Форма прозрачна до невидимости, а свет в ней виден — предмет исчезает, эффект остаётся.\n\nДнём композиция почти не читается: только блики и контуры на светлом фоне. Вечером она превращается в облако тёплых огней, каждый из которых вставлен в невидимую оправу.",
       "en": "A lens instead of a lamp. The elements do not glow of themselves — they gather light arriving from above and from the side, and work as optics rather than as a source.\n\nThe curvature of every crescent is arranged so that a gold core appears in its depth while a glowing thread runs along the thickened rim. The form is transparent to the point of invisibility, yet the light within it is visible — the object disappears and the effect remains.\n\nBy day the composition barely reads: only highlights and contours against a pale ground. In the evening it becomes a cloud of warm lights, each set into an invisible mount.",
@@ -43311,7 +43386,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "Ø250",
+        "material_en": "ceramic+glass",
+        "color_en": "gold, clear",
+        "qty": "26"
+      }
+    ],
     "description": {
       "ru": "Птицы не светятся — светятся цветы. Разделение ролей строгое: источник внизу, отражатель вверху, и вся сцена держится на том, что охотник освещён своей добычей.\n\nФорма птиц обобщена до нескольких плоскостей, но узнаётся мгновенно. Часть стаи зеркальная и золотая, часть матовая и графитовая — разнородность делает её живой, а не штампованной.\n\nДнём это скульптура: тёмные силуэты, полированные бока, чистая пластика. Вечером под каждой птицей загорается цветок, и на полированном металле проступают тёплые пятна — стая зависает над полем, которое её и освещает.",
       "en": "The birds do not glow — the flowers do. The division of roles is strict: source below, reflector above, and the whole scene rests on the hunter being lit by its prey.\n\nThe form of the birds is reduced to a few planes but is recognised instantly. Part of the flock is mirrored and gold, part matte and graphite — the variety keeps it alive rather than stamped out.\n\nBy day it is sculpture: dark silhouettes, polished flanks, pure plasticity. In the evening a flower lights up beneath every bird, and warm patches appear on the polished metal — a flock hovering above the field that lights it.",
@@ -44811,7 +44893,14 @@
     "award_winning": false,
     "cert": null,
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H200",
+        "material_en": "ceramic",
+        "color_en": "glossy white",
+        "qty": "60"
+      }
+    ],
     "description": {
       "ru": "Поле, увиденное снизу. Цветы смотрят вниз, висят на своей длине троса, гуще внизу и разреженнее вверху — перевёрнутая пирамида, в которую зритель смотрит из-под земли.\n\nСвет спрятан в золотых сердцевинах и уходит в кисти, загораясь на кончиках яркими точками. Белая форма света не даёт вовсе — она работает силуэтом, а вся яркость собрана в сердцевинах и нитях.\n\nДнём это поле цветов, подвешенное к потолку, — белое, матовое, спокойное. Вечером под каждым цветком повисает собственная светящаяся бахрома: рой светлячков, у каждого из которых своя чашечка.",
       "en": "A meadow seen from below. The flowers face downward, each hanging at its own cable length, denser below and sparser above — an inverted pyramid the viewer looks into from underground.\n\nThe light hides in the gold hearts and runs down into the tassels, flaring at their tips as bright points. The white form gives no light at all — it works as silhouette, while all the brightness gathers in the hearts and threads.\n\nBy day it is a field of flowers hung from the ceiling — white, matte, calm. In the evening a luminous fringe of its own hangs beneath every flower: a swarm of fireflies, each with its own cup.",
@@ -45042,9 +45131,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D90 H350",
+        "size": "H350",
         "material_en": "glass",
-        "color_en": "clear бесцветный с пузырьками воздуха",
+        "color_en": "transparent colorless with air bubbles",
         "qty": "200"
       }
     ],
@@ -53103,7 +53192,20 @@
     "award_winning": false,
     "cert": null,
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H100",
+        "material_en": "glass",
+        "color_en": "full amber",
+        "qty": "200"
+      },
+      {
+        "size": "H100",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "60"
+      }
+    ],
     "description": {
       "ru": "Композиция о штрихе. По всей длине листа идут частые продольные борозды, и это меняет всё: поверхность при повороте меняет плотность, а свет по ней идёт не пятном, а линиями. Форма получает собственную графику — рифление работает как штриховка на офорте.\n\nПирамида плотная к центру и разрежённая по краям, вниз спускаются одиночные листья. Между ними расставлены пустые тросы со светящимися точками — они задают объём и не дают массе слипнуться.\n\nДнём это осенняя листва, поднятая под потолок: янтарные листья вперемешку с прозрачными, тёплая масса, живущая отражениями на бороздах. Вечером свет входит с черешка и растекается по рифлению — каждый лист светится штрихами, янтарные наливаются медью, прозрачные дают белые искры на рёбрах. Источники теряются в слоях, светится вся крона.",
       "en": "A composition about the stroke. Close longitudinal grooves run the whole length of the leaf, and that changes everything: the surface shifts in density as it turns, and light travels across it in lines rather than patches. The form acquires graphics of its own — the ribbing works like hatching in an etching.\n\nThe pyramid is dense toward the centre and thinned at the edges, with single leaves descending below. Bare cables with glowing points are set between them — they establish the volume and stop the mass congealing.\n\nBy day it is autumn foliage lifted to the ceiling: amber leaves mixed with clear ones, a warm mass living on the reflections along the grooves. In the evening the light enters at the stalk and spreads along the ribbing — every leaf glows in strokes, the amber ones fill with copper, the clear ones throw white sparks along their ribs. The sources are lost among the layers and the whole crown glows.",
@@ -53779,7 +53881,7 @@
       {
         "size": "L200",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "200"
       },
       {
@@ -54023,9 +54125,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D250",
+        "size": "Ø250",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "100"
       }
     ],
@@ -54732,7 +54834,14 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H300",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "180"
+      }
+    ],
     "description": {
       "ru": "Композиция о двух направлениях. Здесь две формы работают в противоположные стороны: раструбы раскрыты вверх и отдают свет потолку, сосульки свисают вниз и уносят его к столу. Один объект светит одновременно вверх и вниз, и это не техническое решение, а сюжет.\n\nРаструбы собраны плотной группой в центре — поле цветов или ряд граммофонных труб. Сосульки с рваной оплавленной поверхностью образуют бахрому по краям. Тон янтарный, разной плотности: где-то почти бесцветный, где-то густеющий до медового.\n\nДнём это заросль стеклянных цветов — тёплая, прозрачная, читаемая на просвет. Вечером свет из глубины раструбов уходит вверх и ложится на потолок мягким тёплым пятном, а сосульки подхватывают его и проводят вниз, вспыхивая на кончиках. Поле, из которого сыплются искры.",
       "en": "A composition about two directions. Two forms work in opposite ways here: the bells open upward and give their light to the ceiling, the icicles hang down and carry it to the table. One object lights both up and down, and that is not a technical solution but a subject.\n\nThe bells are gathered into a dense group at the centre — a field of flowers or a rank of gramophone horns. Icicles with ragged fire-polished surfaces form a fringe at the edges. The tone is amber at varying densities: almost colourless in places, thickening to honey in others.\n\nBy day it is a thicket of clear flowers — warm, translucent, read against the light. In the evening the light from deep in the bells rises and settles on the ceiling as a soft warm patch, while the icicles pick it up and carry it down, flaring at their tips. A field from which sparks are falling.",
@@ -57639,7 +57748,20 @@
       }
     },
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H350",
+        "material_en": "glass",
+        "color_en": "transparent colorless with air bubbles",
+        "qty": "250"
+      },
+      {
+        "size": "H350",
+        "material_en": "glass",
+        "color_en": "clear/colourless",
+        "qty": "300"
+      }
+    ],
     "description": {
       "ru": "Композиция о пещере. Сталактит растёт тысячи лет по капле — форма, целиком состоящая из времени. Верхняя кромка композиции ровная, нижняя волнистая: срез пещеры, где выросло неравномерно.\n\nКаждая гранёная капля с лёгким перекрутом висит на собственном стержне со светящейся точкой на конце, стержни разной длины. Между ними расставлены пустые — они работают штриховкой и задают глубину.\n\nДнём композиция читается графично, одной штриховкой: прозрачные формы, тонкие линии, почти чертёж. Вечером свет идёт от точки прямо в толщу, преломляется на каждом ребре и вспыхивает у основания капли, а сам стержень остаётся невидимым. Из-за плотности свет передаётся от капли к капле, и весь объём начинает светиться — ряд сосулек, повисших над столом.",
       "en": "A composition about a cave. A stalactite grows drop by drop over thousands of years — a form made entirely of time. The upper edge of the composition is level, the lower one wavy: a section through a cave where growth has been uneven.\n\nEach faceted drop with its slight twist hangs on its own rod with a glowing point at the end, the rods varying in length. Bare rods are set between them — they work as hatching and give depth.\n\nBy day the composition reads graphically, through hatching alone: clear forms, fine lines, almost a technical drawing. In the evening the light travels from the point straight into the body, refracts on every rib and flares at the base of the drop, while the rod itself stays invisible. Because the array is dense, the light passes from drop to drop and the whole volume begins to glow — a row of icicles hung above the table.",
@@ -59385,9 +59507,9 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "D30 L300",
+        "size": "L300",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "200"
       }
     ],
@@ -64332,13 +64454,13 @@
     "awards": [],
     "in_stock_elements": [
       {
-        "size": "L170",
+        "size": "H170",
         "material_en": "glass",
-        "color_en": "clear бесцветный",
+        "color_en": "clear/colourless",
         "qty": "200"
       },
       {
-        "size": "L170",
+        "size": "H170",
         "material_en": "glass",
         "color_en": "gold",
         "qty": "200"
@@ -66631,7 +66753,20 @@
     "award_winning": false,
     "cert": null,
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H130",
+        "material_en": "ceramic",
+        "color_en": "glossy white/gold",
+        "qty": "100"
+      },
+      {
+        "size": "H190",
+        "material_en": "ceramic",
+        "color_en": "glossy white/gold",
+        "qty": "100"
+      }
+    ],
     "description": {
       "ru": "Композиция о контуре. По кромке каждого лепестка проложена тонкая золотая полоса — она обводит форму и вспыхивает на изгибах. Приём ювелирный: так обводят эмаль перегородкой, чтобы цвет не растёкся. Здесь она не удерживает ничего, только очерчивает.\n\nМасса собрана линзой — широкая в середине, сужающаяся к острым концам с обеих сторон. Лепестки уложены слоями, вразнобой развёрнутые; верхняя половина занята штриховкой нитей, вся масса внизу.\n\nДнём это охапка лепестков, схваченная золотой нитью: молочно-белое с горячим контуром, вещь графичная. Вечером белое рассеивает свет и светится ровно, без бликов, а золотые кромки перехватывают его и обводят каждый лепесток горячей линией. Источник не читается — светится сама масса, очерченная сотнями золотых контуров. Облако, у которого горят края.",
       "en": "A composition about the outline. A fine gold band runs along the rim of every petal, tracing the form and flaring at each bend. The device comes from jewellery: this is how cloisonné enamel is bounded so the colour cannot run. Here it holds nothing — it only draws.\n\nThe mass is gathered into a lens shape: wide at the centre, tapering to sharp points at both ends. The petals are layered, each turned differently; the upper half is given over to the hatching of the suspension threads, the whole mass sits below.\n\nBy day it is an armful of petals caught on a gold thread: milky white with a hot contour, a graphic piece. In the evening the white diffuses the light and glows evenly, without a single flare, while the gold rims intercept it and trace every petal with a burning line. The source is never visible — the mass itself glows, drawn out by hundreds of gold outlines. A cloud with burning edges.",
@@ -68119,7 +68254,14 @@
     "award_winning": false,
     "cert": null,
     "awards": [],
-    "in_stock_elements": [],
+    "in_stock_elements": [
+      {
+        "size": "H100",
+        "material_en": "glass",
+        "color_en": "clear",
+        "qty": "150"
+      }
+    ],
     "description": {
       "ru": "Композиция о трёх поведениях одного луча. Белый глянец, полированное золото и прозрачное перемешаны без порядка, и в любой точке композиции рядом оказываются все три. Именно это делает массу неоднородной: она никогда не выглядит ровной.\n\nЧаша глубокая, масса плотная внизу и разрежённая наверху, где отдельные лепестки отрываются и висят поодиночке среди штриховки нитей с мелкими точечными огнями.\n\nДнём это охапка лепестков, зависшая под потолком: белое, золотое и прозрачное вперемешку, вещь читается пластикой смятого края. Вечером белые лепестки рассеивают свет и светятся ровно, золотые отражают и вспыхивают горячим, прозрачные пропускают и дают ледяные искры. Облако, в котором свет ведёт себя по-разному в каждой точке.",
       "en": "A composition about three behaviours of one beam. White gloss, polished gold and clear are mixed without system, so at any point in the composition all three fall side by side. That is exactly what keeps the mass uneven: it never looks flat.\n\nThe bowl is deep, the mass dense below and thinned above, where single petals break away and hang alone among the hatching of threads with small point lights.\n\nBy day it is an armful of petals suspended below the ceiling: white, gold and clear intermixed, read through the plasticity of the crumpled edge. In the evening the white petals diffuse the light and glow evenly, the gold ones reflect and flare hot, the clear ones transmit it and throw icy sparks. A cloud in which light behaves differently at every point.",
@@ -68220,7 +68362,7 @@
       {
         "size": "L150",
         "material_en": "ceramic",
-        "color_en": "glossy white /gold",
+        "color_en": "glossy white/gold",
         "qty": "250"
       }
     ],
