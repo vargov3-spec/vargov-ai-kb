@@ -15,7 +15,7 @@ Actions его не видит. Прежний сканер ходил по жи
   product-copy/products.<lang>.json  описания на 8 языках, согласованы владельцем
   awards.ts                       26 наград на 19.10.2026 (число берётся из awardsCount(), дампится через node --experimental-strip-types)
   element-specs.generated.json    параметры ЭЛЕМЕНТА у 336 артикулов: габариты, вес, мощность (см. product_node)
-  instock.generated.json          элементы в наличии
+  (наличие — НЕ из сайта, а из stock-sizes.json конфигуратора, см. STOCK_SIZES ниже)
 
 ПРАВИЛА ВЛАДЕЛЬЦА, зашитые в вывод: не называть материалы и размеры
 конкретных изделий, не публиковать цены. Поэтому в Product-узлах нет
@@ -38,6 +38,16 @@ from pathlib import Path
 
 KB = Path(__file__).resolve().parent.parent
 DEFAULT_SITE = Path("V:/new site Vargov Design/web")
+
+# Элементы в наличии. Размер — ТОЛЬКО подписью конфигуратора (H170, Ø250), не записью
+# склада (L170, D250): владелец 24.11.2026 — «размеры всегда должны соответствовать
+# размерам указанным в конфигураторе и быть такими на сайте, в ТЗ, запросы»; склад
+# «заполняет менеджер и может допускать ошибки, главные и верные значения в
+# конфигураторе». Перевод склад → ряд конфигуратора делает сам конфигуратор и кладёт
+# в public/stock-sizes.json (items[].sizes[].label — верная подпись, items[].stock —
+# запись менеджера, её не печатаем). Прежний instock.generated.json сайта (28.08) —
+# со складскими подписями, его не читаем.
+STOCK_SIZES = Path("V:/защита контента/configurator/public/stock-sizes.json")
 
 LOCALES = ["ru", "en", "de", "it", "fr", "es", "vi", "ar"]
 SITE_URL = "https://vargov.ru"
@@ -161,11 +171,7 @@ def load_site(site: Path) -> dict:
         if len(copy[lang]) < 500:
             die(f"описаний на {lang} слишком мало: {len(copy[lang])}")
 
-    instock: dict[str, list] = {}
-    f = data_dir / "instock.generated.json"
-    if f.is_file():
-        for rec in json.loads(f.read_text(encoding="utf-8")):
-            instock.setdefault(rec["code"], []).append(rec)
+    instock = load_stock(STOCK_SIZES)
 
     return {"catalog": catalog, "copy": copy, "instock": instock,
             "awards": dump_awards(site), "models": load_models_3d(),
@@ -444,11 +450,7 @@ def build_records(site_data: dict) -> list[dict]:
             "award_winning": bool((per_lang["ru"] or {}).get("awardWinning")),
             "cert": cert.get(code),
             "awards": awards_for(code, awards),
-            "in_stock_elements": [
-                {"size": r.get("size"), "material_en": (r.get("material") or {}).get("en"),
-                 "color_en": (r.get("color") or {}).get("en"), "qty": r.get("qty")}
-                for r in instock.get(code, [])
-            ],
+            "in_stock_elements": stock_dataset(instock, code),
             "description": {}, "where_it_works": {}, "style": {},
             "made_to_order": {}, "snippet": {},
         }
@@ -523,12 +525,7 @@ def product_page(rec: dict, lang: str) -> str:
             out.append(line)
         out.append("")
 
-    if rec["in_stock_elements"]:
-        out += [f"## {L['stock']}", ""]
-        for e in rec["in_stock_elements"]:
-            bits = [b for b in (e["size"], e["color_en"], e["material_en"]) if b]
-            out.append(f"- {', '.join(bits)} — {e['qty']}")
-        out.append("")
+    out += stock_section(STOCK, rec["code"], lang)
 
     if rec["gallery"]:
         out += [f"## {L['img']}", ""]
@@ -539,6 +536,62 @@ def product_page(rec: dict, lang: str) -> str:
 
 ELEMENT_SPECS: dict = {}
 SKETCHFAB_MAP: dict = {}
+STOCK: dict = {}
+
+
+def _tidy(s: str | None) -> str:
+    """Запись менеджера как есть, только без разнобоя: «Gold,Clear» → «gold, clear»."""
+    s = re.sub(r"\s*,\s*", ", ", (s or "").strip())
+    s = re.sub(r"\s*/\s*", "/", s)
+    return s.lower()
+
+
+def load_stock(path: Path) -> dict[str, list]:
+    """Наличие по stock-sizes.json конфигуратора: размер — подпись ряда конфигуратора."""
+    global STOCK
+    if not path.is_file():
+        die(f"нет файла наличия конфигуратора: {path}")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    items = data.get("items")
+    if data.get("v") != 1 or not isinstance(items, list) or not items:
+        die(f"stock-sizes.json не того вида (v={data.get('v')}, items={type(items).__name__})")
+    out: dict[str, list] = {}
+    for it in items:
+        labels = [s.get("label") for s in (it.get("sizes") or []) if s.get("label")]
+        if not labels:
+            # Конфигуратор не нашёл ряд — складскую подпись не печатаем, позицию пропускаем.
+            print(f"  ! {it.get('sku')}: «{it.get('stock')}» без ряда конфигуратора — не печатаю")
+            continue
+        col, mat = it.get("color") or {}, it.get("material") or {}
+        out.setdefault(it["sku"], []).append({
+            "size": " / ".join(labels),
+            "color": {"ru": _tidy(col.get("ru")), "en": _tidy(col.get("en"))},
+            "material": {"ru": _tidy(mat.get("ru")), "en": _tidy(mat.get("en"))},
+            "qty": str(it.get("ready") or 0),
+        })
+    STOCK = out
+    return out
+
+
+def stock_dataset(stock: dict, code: str) -> list[dict]:
+    """Поле in_stock_elements датасетов: ключи прежние, размер — подпись конфигуратора."""
+    return [{"size": e["size"], "material_en": e["material"]["en"] or None,
+             "color_en": e["color"]["en"] or None, "qty": e["qty"]}
+            for e in stock.get(code, [])]
+
+
+def stock_section(stock: dict, code: str, lang: str) -> list[str]:
+    """Раздел «Элементы в наличии» карточки; пусто, если на складе артикула нет."""
+    rows = stock.get(code) or []
+    if not rows:
+        return []
+    ru = lang == "ru"
+    out = [f"## {'Элементы в наличии' if ru else 'Elements in stock'}", ""]
+    for e in rows:
+        bits = [b for b in (e["size"], e["color"][lang], e["material"][lang]) if b]
+        out.append(f"- {', '.join(bits)} — {e['qty']}")
+    out.append("")
+    return out
 
 
 def _range(a, b) -> str:

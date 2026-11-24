@@ -38,7 +38,9 @@ python scripts/build_from_site.py --site <путь к свежей копии р
 python scripts/build_pages.py
 ```
 
-Сборщик читает **репозиторий сайта** (по умолчанию `V:/new site Vargov Design/web`; перед сборкой копию обновить) — `catalog.generated.json`, описания `product-copy/*.json` на восьми языках, `awards.ts`, `instock.generated.json` — и пересобирает датасеты, карточки, коллекции и JSON-LD. `build_pages.py` после этого собирает `docs/` и `llms-full.txt` и сверяет числа llms-файлов с данными репозитория.
+Сборщик читает **репозиторий сайта** (по умолчанию `V:/new site Vargov Design/web`; перед сборкой копию обновить) — `catalog.generated.json`, описания `product-copy/*.json` на восьми языках, `awards.ts`, а наличие — из `public/stock-sizes.json` конфигуратора (размер подписью конфигуратора: H170, Ø250, а не складской записью) — и пересобирает датасеты, карточки, коллекции и JSON-LD. `build_pages.py` после этого собирает `docs/` и `llms-full.txt` и сверяет числа llms-файлов с данными репозитория.
+
+Только наличие, без полной пересборки: `python -I -X utf8 scripts/stock_from_configurator.py --check` (показать) и без `--check` (записать) — меняет раздел «Элементы в наличии» карточек и поле `in_stock_elements` датасетов.
 
 Ночью то, чем владеет фид сайта (награды, ссылки, параметры элементов, сертификаты), переносит `scripts/sync_from_feed.py` в GitHub Actions — без локальной сборки.
 

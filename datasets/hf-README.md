@@ -151,7 +151,7 @@ fields are plain strings.
 | `award_winning` | bool | True for 34 records: 26 awards, and paired compositions share one award. |
 | `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series`. `href` is a link to the awarding body's own page where the programme publishes one; it is `null` where no working public winner page exists. |
 | `cert` | object \| null | Conformity registration numbers and the EAEU technical regulations the object is certified under, with validity dates. Present for 310 records. |
-| `in_stock_elements` | list[object] | Stock availability entries for individual elements. |
+| `in_stock_elements` | list[object] | Stock availability entries for individual elements: `size` is the element size as labelled in the configurator (e.g. H170, Ø250), `qty` is the number of ready elements. |
 | `description` | *(i18n)* | Long-form editorial description, several paragraphs. |
 | `snippet` | *(i18n)* | Short summary, suitable as a search result or meta description. |
 | `where_it_works` | *(i18n)* | Where the composition is appropriate in an interior. |
