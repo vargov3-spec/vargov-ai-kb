@@ -8190,7 +8190,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -11226,7 +11227,8 @@
         "size": "L300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "80"
+        "qty": "80",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -12235,7 +12237,8 @@
         "size": "H200",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -13776,7 +13779,19 @@
         "size": "H300",
         "material_en": "crystal",
         "color_en": "transparent with air bubbles",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": [
+          "H600"
+        ]
+      },
+      {
+        "size": "H600",
+        "material_en": "crystal",
+        "color_en": "transparent with air bubbles",
+        "qty": "20",
+        "same_stock_as": [
+          "H300"
+        ]
       }
     ],
     "description": {
@@ -18335,7 +18350,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -26287,7 +26303,8 @@
         "size": "H250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -26535,7 +26552,8 @@
         "size": "H180",
         "material_en": "crystal",
         "color_en": "clear",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -27740,7 +27758,8 @@
         "size": "L250",
         "material_en": "crystal",
         "color_en": "gold, clear",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -27876,13 +27895,15 @@
         "size": "L250",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       },
       {
         "size": "L250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "280"
+        "qty": "280",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -28985,13 +29006,15 @@
         "size": "H400",
         "material_en": "crystal",
         "color_en": "clear/colourless",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       },
       {
         "size": "H500",
         "material_en": "glass",
         "color_en": "rust",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -30814,7 +30837,8 @@
         "size": "H300",
         "material_en": "crystal, metal",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "70"
+        "qty": "70",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -32293,7 +32317,8 @@
         "size": "Ø300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -34912,7 +34937,8 @@
         "size": "H150",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "220"
+        "qty": "220",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -35934,7 +35960,8 @@
         "size": "Ø120",
         "material_en": "crystal",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -36366,13 +36393,15 @@
         "size": "H250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       },
       {
         "size": "H250",
         "material_en": "glass",
         "color_en": "gold foil",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -36613,7 +36642,8 @@
         "size": "H200",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "70"
+        "qty": "70",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -39404,7 +39434,8 @@
         "size": "Ø300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -39974,13 +40005,15 @@
         "size": "L100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "20"
+        "qty": "20",
+        "same_stock_as": null
       },
       {
         "size": "L180",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "65"
+        "qty": "65",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -40325,7 +40358,8 @@
         "size": "L250",
         "material_en": "glass",
         "color_en": "clear colorless",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -40558,13 +40592,15 @@
         "size": "Ø200",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       },
       {
         "size": "Ø250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -43137,7 +43173,8 @@
         "size": "L200",
         "material_en": "ceramic",
         "color_en": "glossy white/gold foil",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -43264,7 +43301,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -43391,7 +43429,8 @@
         "size": "Ø250",
         "material_en": "ceramic+glass",
         "color_en": "gold, clear",
-        "qty": "26"
+        "qty": "26",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -44898,7 +44937,8 @@
         "size": "H200",
         "material_en": "ceramic",
         "color_en": "glossy white",
-        "qty": "60"
+        "qty": "60",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -45134,7 +45174,8 @@
         "size": "H350",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -53197,13 +53238,15 @@
         "size": "H100",
         "material_en": "glass",
         "color_en": "full amber",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "H100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "60"
+        "qty": "60",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -53882,13 +53925,15 @@
         "size": "L200",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "L200",
         "material_en": "glass",
         "color_en": "gold",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -54128,7 +54173,8 @@
         "size": "Ø250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -54839,7 +54885,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "180"
+        "qty": "180",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -57753,13 +57800,15 @@
         "size": "H350",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       },
       {
         "size": "H350",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "300"
+        "qty": "300",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -59510,7 +59559,8 @@
         "size": "L300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -64457,13 +64507,15 @@
         "size": "H170",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "H170",
         "material_en": "glass",
         "color_en": "gold",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -66758,13 +66810,15 @@
         "size": "H130",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       },
       {
         "size": "H190",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -68259,7 +68313,8 @@
         "size": "H100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       }
     ],
     "description": {
@@ -68363,7 +68418,8 @@
         "size": "L150",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       }
     ],
     "description": {

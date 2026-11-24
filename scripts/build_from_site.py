@@ -563,30 +563,51 @@ def load_stock(path: Path) -> dict[str, list]:
             print(f"  ! {it.get('sku')}: «{it.get('stock')}» без ряда конфигуратора — не печатаю")
             continue
         col, mat = it.get("color") or {}, it.get("material") or {}
-        # ready — штуки склада; perElement — сколько складских штук в одном элементе
-        # композиции (LC0489: склад ведёт сегмент «150+150», в элементе H600 их два —
-        # владелец 24.11). Печатаем целые элементы, как bySku конфигуратора.
-        ready, per = int(it.get("ready") or 0), int(it.get("perElement") or 1)
-        if per < 1:
-            die(f"{it.get('sku')}: perElement={it.get('perElement')!r}")
-        if ready % per:
-            print(f"  ! {it.get('sku')}: {ready} шт. склада не делится на perElement={per} — "
-                  f"печатаю {ready // per} целых")
-        out.setdefault(it["sku"], []).append({
-            "size": " / ".join(labels),
+        sku, ready = it.get("sku"), int(it.get("ready") or 0)
+        sizes = [s for s in (it.get("sizes") or []) if s.get("label")]
+
+        def whole(s: dict) -> str:
+            # ready — штуки склада; sizes[].perElement — сколько их в одном элементе
+            # этого размера (LC0489: склад ведёт «150+150», в H600 их два). Печатаем
+            # целые элементы, как bySku конфигуратора.
+            per = int(s.get("perElement") or 1)
+            if per < 1:
+                die(f"{sku}: perElement={s.get('perElement')!r}")
+            if ready % per:
+                print(f"  ! {sku}: {ready} шт. склада не делится на perElement={per} у "
+                      f"{s['label']} — печатаю {ready // per} целых")
+            return str(ready // per)
+
+        if it.get("alt"):
+            # alt: true — из одного запаса собирается любой из размеров, числа не
+            # складываются (LC0489: 40 × H300 или 20 × H600; владелец 24.11 «Да, оба»).
+            variants = [{"size": s["label"], "qty": whole(s)} for s in sizes]
+        else:
+            # Несколько размеров без alt — как прежде, одной строкой через « / »;
+            # perElement к такой строке не отнести — молча не делим.
+            if len(sizes) > 1 and any(int(s.get("perElement") or 1) != 1 for s in sizes):
+                die(f"{sku}: несколько размеров без alt и с perElement — неясно, что печатать")
+            variants = [{"size": " / ".join(labels), "qty": whole(sizes[0])}]
+        out.setdefault(sku, []).append({
+            "variants": variants,
             "color": {"ru": _tidy(col.get("ru")), "en": _tidy(col.get("en"))},
             "material": {"ru": _tidy(mat.get("ru")), "en": _tidy(mat.get("en"))},
-            "qty": str(ready // per),
         })
     STOCK = out
     return out
 
 
 def stock_dataset(stock: dict, code: str) -> list[dict]:
-    """Поле in_stock_elements датасетов: ключи прежние, размер — подпись конфигуратора."""
-    return [{"size": e["size"], "material_en": e["material"]["en"] or None,
-             "color_en": e["color"]["en"] or None, "qty": e["qty"]}
-            for e in stock.get(code, [])]
+    """Поле in_stock_elements датасетов: строка на размер, размер — подпись конфигуратора.
+    same_stock_as — другие размеры из того же запаса (числа не складываются), иначе null."""
+    rows = []
+    for e in stock.get(code, []):
+        vs = e["variants"]
+        for v in vs:
+            rows.append({"size": v["size"], "material_en": e["material"]["en"] or None,
+                         "color_en": e["color"]["en"] or None, "qty": v["qty"],
+                         "same_stock_as": [o["size"] for o in vs if o is not v] or None})
+    return rows
 
 
 def stock_section(stock: dict, code: str, lang: str) -> list[str]:
@@ -597,8 +618,13 @@ def stock_section(stock: dict, code: str, lang: str) -> list[str]:
     ru = lang == "ru"
     out = [f"## {'Элементы в наличии' if ru else 'Elements in stock'}", ""]
     for e in rows:
-        bits = [b for b in (e["size"], e["color"][lang], e["material"][lang]) if b]
-        out.append(f"- {', '.join(bits)} — {e['qty']}")
+        first, *rest = e["variants"]
+        bits = [b for b in (first["size"], e["color"][lang], e["material"][lang]) if b]
+        line = f"- {', '.join(bits)} — {first['qty']}"
+        if rest:  # alt: размеры из одного запаса — «или», не сумма
+            alt = (" или " if ru else " or ").join(f"{v['size']} — {v['qty']}" for v in rest)
+            line += f" {'или' if ru else 'or'} {alt} ({'из одного запаса' if ru else 'from the same stock'})"
+        out.append(line)
     out.append("")
     return out
 

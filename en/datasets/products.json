@@ -3439,7 +3439,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about the beginning of autumn. Smoky and pale leaves alternate, giving the cloud a depth and a weather that a uniform mass never has: the sky in the first days of autumn looks exactly like this.\n\nLarge leaves with the finest vein texture fall as a broad cloud, each on its own cable, each at its own turn. Gold cones at the top read as stalks from which the leaf has only just come away.\n\nBy day the texture makes the surface alive: light runs along the veins and every leaf gets a pattern of its own. In the evening the veins light from within — the canopy glows by its veining rather than by its plane.",
@@ -4555,7 +4556,8 @@
         "size": "L300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "80"
+        "qty": "80",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a double temperament. The wings are clear, the bodies gold: the cold anatomy of flight and a warm heart inside every bird. The source is hidden in the body and the light comes out through the mass of the wing.\n\nEvery wing is worked down to the individual feather — a detailed form rather than a silhouette.\n\nBy day it is a clear flock with gold bodies spread across a wide front: the composition reads through anatomy and the highlights on the feathers. In the evening the light comes out through the mass and the feathers catch an icy fire — the bodies stay warm points, the wings turn cold.",
@@ -4941,7 +4943,8 @@
         "size": "H200",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a shaving off a cutting tool. Springy rings and half-rings of ribbed ribbon repeat a form that arises by itself — as a by-product of work. The author makes it the main thing.\n\nEvery curl carries a gold capsule of light; the cloud is vertical and dense.\n\nBy day it is a vortex of ribbed coils: the composition reads through plasticity and hatching, alive and mobile. In the evening light runs along the spirals, slips off the coils and fills the space with dancing highlights — the cloud begins to turn.",
@@ -5518,7 +5521,19 @@
         "size": "H300",
         "material_en": "crystal",
         "color_en": "transparent with air bubbles",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": [
+          "H600"
+        ]
+      },
+      {
+        "size": "H600",
+        "material_en": "crystal",
+        "color_en": "transparent with air bubbles",
+        "qty": "20",
+        "same_stock_as": [
+          "H300"
+        ]
       }
     ],
     "description": "A composition about a current stopped mid-movement. Every ribbon has a plasticity of its own: here a wave, there stretched cloth, there a jet of air. There are no two alike, because a current does not repeat itself.\n\nIn the mass there are hundreds of air bubbles; gold clasps catch the ribbon along its whole length. The fine suspensions dissolve into the dark, and the columns hover.\n\nBy day it is a clear forest of verticals: the bubbles read against the light, the ribbons as smooth waves, a piece light and almost invisible. In the evening light enters through the clasps and ignites the bubbles — the mass fills with sparks and the columns become luminous right through.",
@@ -7254,7 +7269,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a ring on water. The rays radiate from one point, and even a static form reads as movement — a drawing that always has a source and a direction.\n\nThe contour is deliberately imperfect: a live asymmetry makes the form natural rather than drafted. No disc repeats its neighbour.\n\nBy day it is clear cushions with a radial texture: the drawing reads against the light, and the uneven edge keeps the composition from turning mechanical. In the evening light from the gold capsules runs along the rays from centre to edge, and every disc begins to breathe — an impulse repeating over and over.",
@@ -10113,7 +10129,8 @@
         "size": "H250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a section. A dense concentric cutting — the section of a shell or a fingerprint enlarged to the size of a platter. A drawing that in nature is unique to every specimen is repeated here by the dozen, and that is the paradox of the piece.\n\nThe discs hang in tilted tiers, overlapping like scales. As you walk around, the grooves play a moiré — the drawing seems to rotate.\n\nBy day it is clear sections on gold spokes: pure texture, no colour, a piece for those who value optics over decor. In the evening light enters along the spoke and spreads through the grooves, turning every disc into a glowing spiral. The composition starts to rotate before your eyes.",
@@ -10199,7 +10216,8 @@
         "size": "H180",
         "material_en": "crystal",
         "color_en": "clear",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": null
       }
     ],
     "description": "A composition as quotation. The silhouette of an old crystal pendant is enlarged and cleared of everything surplus: the shaped, almost lacework contour remains and everything that made it tinsel is removed. The form is recognisable, the execution minimal.\n\nThe faceting runs only along the edge and catches light, scattering it as rainbow sparks; the smooth centre stays clear and the neighbouring pendants are visible through it. The cascade is assembled in tiers and converges into a sharp wedge.\n\nBy day it is clear lacework graphic with gold candles between the elements — a piece read through contours and overlays. In the evening the faceted edges flare into rainbow while the smooth centres stay dark: the cascade glows around its edges and remains transparent within.",
@@ -10629,7 +10647,8 @@
         "size": "L250",
         "material_en": "crystal",
         "color_en": "gold, clear",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "A development of the ring theme at a formal scale. The rings are larger and thicker, with a scattering of bubbles inside: the mass looks aerated, alive, as though the movement in it had not yet finished.\n\nThey are held by broad bands of polished gold that curve around the rings the way a setting holds a stone. The device is a jeweller's, and it sets the whole logic of the piece: the transparent here is the gem, the metal only the setting.\n\nBy day it is a jeweller's work: gold, transparency, precision of joints — an object to be examined close up. In the evening light travels from the gold clasps into the ring, the bubbles flare, and each ring becomes a glowing hoop with a sparkling core. The separate elements become indistinguishable — what remains is a dense radiant cloud.",
@@ -10685,13 +10704,15 @@
         "size": "L250",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "120"
+        "qty": "120",
+        "same_stock_as": null
       },
       {
         "size": "L250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "280"
+        "qty": "280",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about manta rays going round an obstacle. The shoal moves diagonally, deeper and lower — not as a formation and not as a cloud but as a trajectory: the way they pass an obstruction without breaking the group.\n\nEvery ray is cast whole: a thick body with a lens inside and a wing edge so fine it is almost a thread. The difference in thickness is the principal device — a dense body against a vanishing edge.\n\nBy day the object all but dissolves: only highlights and contours are visible, the shoal guessed at rather than read. In the evening light from the fixing points floods the wing from within — a wave of light runs along the clear body, the tip of the tail flares as a point — and the shoal appears entire, \"swimming\" slowly as the viewer moves.",
@@ -11156,13 +11177,15 @@
         "size": "H400",
         "material_en": "crystal",
         "color_en": "clear/colourless",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       },
       {
         "size": "H500",
         "material_en": "glass",
         "color_en": "rust",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about ripple. Thousands of narrow plates of varying length fold into a spiral that twists downward through several floors. Polished mirror, matte and clear are intermixed — three behaviours of light within one mass.\n\nThe device is separation: the light lives only in the ends of the clear strips, runs their whole length and breaks out below as a bright point. The mirrored ones do not transmit it at all — they only reflect their neighbours.\n\nBy day it is strict graphic work: vertical strokes of varying density, almost a draft drawing read through lines. In the evening the spiral comes alive — light runs from level to level, the composition shimmers like scales or like ripple under a lamp, and seems to be turning slowly.",
@@ -11821,7 +11844,8 @@
         "size": "H300",
         "material_en": "crystal, metal",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "70"
+        "qty": "70",
+        "same_stock_as": null
       }
     ],
     "description": "Water frozen together with everything that was in it. Inside each element there is a suspension: bubbles, sparks, grains, as though the sea had frozen before it could let go of the plankton.\n\nThe form is reduced to a minimum — a smooth cylinder, a smooth lens, not one gesture. All the work is given to the depth: the blue elements damp the light and hold shadow, the clear ones multiply it, and the field comes out layered, with hollows and flares.\n\nThe intent here is not in the form but in the state: the composition does not depict water, it reproduces the sensation of looking through a body of it.\n\nBy day it is a clear mass with a suspension inside — a piece read through depth and layers, calm and cold. In the evening the blue elements damp the light and hold shadow, the clear ones multiply it, and the field comes alive with hollows and flares: a look through water at dusk.",
@@ -12398,7 +12422,8 @@
         "size": "Ø300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "Hoarfrost enlarged to the size of a palm. Inside each plate needles radiate from the centre — the drawing winter makes on a window overnight and erases by noon.\n\nHere it is arrested. The light stands exactly at the centre of the pattern and ignites the whole of it, turning every element into a snowflake under a magnifier.\n\nA crumpled edge and a gold border argue with the coldness of the drawing. The piece lives off that argument: ice graphics in a warm setting.\n\nBy day the thickness produces powerful distortion: through one plate you see the next, refracted and enlarged — a depth that should not exist in a flat object. In the evening the light stands exactly at the centre of the pattern and ignites the whole of it, turning every element into a snowflake under a magnifier.",
@@ -13416,7 +13441,8 @@
         "size": "H150",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "220"
+        "qty": "220",
+        "same_stock_as": null
       }
     ],
     "description": "A bonfire arrested at the moment of the flare. The tongues are twisted into spirals and drawn upward — the movement runs against gravity, and that is the only thing the composition asserts.\n\nA mirrored coating on the inside changes the nature of the elements: they read as metallic rather than clear, and reflect one another, creating an endless gold echo inside the ring. The light lifts the tongues from below — from where a real fire burns.\n\nBy day the composition looks like a giant brooch; in the evening, like a flame that was not allowed to go out.",
@@ -13777,7 +13803,8 @@
         "size": "Ø120",
         "material_en": "crystal",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "Stones split by hand rather than worked on a machine. The faceting is deliberately irregular — the piece is about chance being more precise than symmetry.\n\nInside each element its own lamp burns, and the facets work as prisms: the light comes out in bundles, breaks up, reflects in its neighbours. Varying the drop height gives the scattering volume — a cloud of jewels suspended in the air.\n\nBy day it is a collection of minerals laid out on invisible shelves. In the evening it becomes the heat of coals lifted to the ceiling and left there to burn down.",
@@ -13952,13 +13979,15 @@
         "size": "H250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       },
       {
         "size": "H250",
         "material_en": "glass",
         "color_en": "gold foil",
-        "qty": "50"
+        "qty": "50",
+        "same_stock_as": null
       }
     ],
     "description": "Gold that lives in the depth rather than on the surface. Foil is fused into the mass — the leaf looks transparent and metallic at once, and the contradiction is never resolved from any viewpoint.\n\nThe veins are etched from the reverse and flare under light. Every leaf is turned its own way: some flat, some edge-on, some mid-turn — a fall recorded at a long exposure.\n\nBy day it is a herbarium lifted into the air: the dry graphic of veins seen against the light. In the evening the leaves catch fire from within, and the cascade becomes an autumn rain whose gold is not reflected but its own.",
@@ -14060,7 +14089,8 @@
         "size": "H200",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "70"
+        "qty": "70",
+        "same_stock_as": null
       }
     ],
     "description": "A garland that does not end. The composition is built like a line of text: it runs the length of the table and has neither a beginning nor a full stop — only rhythm.\n\nThe rhythm is set by alternation: some leaves glow evenly and softly, others flare with sharp highlights. The light is hidden at the base of each and lifts it from below, leaving the upper side in shadow — foliage as seen by someone standing under the canopy.\n\nBy day it is a botanical garland, fine and graphic. In the evening it becomes a ribbon of light drawn across the room with every second leaf alight.",
@@ -15068,7 +15098,8 @@
         "size": "Ø300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "The same pattern, but with the structure left open. The bar is not hidden — it cuts the circle in half and becomes part of the drawing rather than a service detail.\n\nThe discs overlap, and the light passes through several layers in a row. The relief is laid over itself and a moiré appears — a moving pattern that exists in no single element.\n\nBy day it is a bundle of flowers on gold stems, dense and sculptural. In the evening it becomes a cascade of glowing rosettes with every facet alight and a ripple running between the layers.",
@@ -15278,13 +15309,15 @@
         "size": "L100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "20"
+        "qty": "20",
+        "same_stock_as": null
       },
       {
         "size": "L180",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "65"
+        "qty": "65",
+        "same_stock_as": null
       }
     ],
     "description": "A field suspended in weightlessness. There is a great deal of air between the elements — the composition does not press down with mass, it is distributed through the volume so that the gaze passes right through.\n\nThe light is hidden in only some of the flowers; the rest pick it up and pass it on. There are therefore many times fewer glowing points than elements, and the composition shimmers unevenly, like a real field at dusk.\n\nBy day the object is almost transparent and reads only through highlights — it is easy to miss. In the evening the key flowers light up and the clear ones flare with borrowed light: the result is a starfield with warm thickenings.",
@@ -15431,7 +15464,8 @@
         "size": "L250",
         "material_en": "glass",
         "color_en": "clear colorless",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       }
     ],
     "description": "A shoal held still in the current. Every wing is curved in its own way: some folded almost in half, others barely bent — phases of a single movement laid out through the air.\n\nThe light spreads along the concave surface from inside: from below you see a glowing underside, from above the plate stays dark. The composition shows itself only to whoever stands beneath it — from above it barely exists.\n\nBy day it is a shoal mid-turn — smoky pink, iridescent, with inner currents running through the mass. In the evening it becomes a cloud of glowing wings at different heights with darkness falling away between them.",
@@ -15525,13 +15559,15 @@
         "size": "Ø200",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       },
       {
         "size": "Ø250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "Pebbles from a river shallow, lifted into the air. The form is worn down to complete simplicity: not one corner, not one detail, only a smooth volume.\n\nThe light floods the stone entirely and a bright rim appears along its edge. Varying the drop height turns the field into a relief: waves, shallows, depths — a map of the riverbed carried up to the ceiling.\n\nBy day it is a scattering of amber set in mid-air, warm and heavy to the eye. In the evening every element burns with a fire of its own, and the field becomes a shallow in which the sun got tangled and cannot get out.",
@@ -16520,7 +16556,8 @@
         "size": "L200",
         "material_en": "ceramic",
         "color_en": "glossy white/gold foil",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       }
     ],
     "description": "Marked Award Winning — the badge appears on the brand photography for this item.\n\nMass gives form, light gives movement. The whole idea rests on that division: the white bodies are motionless and silent, while the trail beneath them lives and stirs at the slightest movement of air.\n\nThe threads glow only at their tips, so a cloud of shimmering points hangs beneath every figure — the wake of particles behind a creature moving through water. The body does not glow at all: it only casts a shadow onto its own trail.\n\nBy day it is a flock of white sculptures below the ceiling — dense, matte, without a single highlight. In the evening the bodies recede into shadow and only the luminous rain remains: the flock disappears while its wake stays.",
@@ -16567,7 +16604,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "40"
+        "qty": "40",
+        "same_stock_as": null
       }
     ],
     "description": "A lens instead of a lamp. The elements do not glow of themselves — they gather light arriving from above and from the side, and work as optics rather than as a source.\n\nThe curvature of every crescent is arranged so that a gold core appears in its depth while a glowing thread runs along the thickened rim. The form is transparent to the point of invisibility, yet the light within it is visible — the object disappears and the effect remains.\n\nBy day the composition barely reads: only highlights and contours against a pale ground. In the evening it becomes a cloud of warm lights, each set into an invisible mount.",
@@ -16614,7 +16652,8 @@
         "size": "Ø250",
         "material_en": "ceramic+glass",
         "color_en": "gold, clear",
-        "qty": "26"
+        "qty": "26",
+        "same_stock_as": null
       }
     ],
     "description": "The birds do not glow — the flowers do. The division of roles is strict: source below, reflector above, and the whole scene rests on the hunter being lit by its prey.\n\nThe form of the birds is reduced to a few planes but is recognised instantly. Part of the flock is mirrored and gold, part matte and graphite — the variety keeps it alive rather than stamped out.\n\nBy day it is sculpture: dark silhouettes, polished flanks, pure plasticity. In the evening a flower lights up beneath every bird, and warm patches appear on the polished metal — a flock hovering above the field that lights it.",
@@ -17226,7 +17265,8 @@
         "size": "H200",
         "material_en": "ceramic",
         "color_en": "glossy white",
-        "qty": "60"
+        "qty": "60",
+        "same_stock_as": null
       }
     ],
     "description": "A meadow seen from below. The flowers face downward, each hanging at its own cable length, denser below and sparser above — an inverted pyramid the viewer looks into from underground.\n\nThe light hides in the gold hearts and runs down into the tassels, flaring at their tips as bright points. The white form gives no light at all — it works as silhouette, while all the brightness gathers in the hearts and threads.\n\nBy day it is a field of flowers hung from the ceiling — white, matte, calm. In the evening a luminous fringe of its own hangs beneath every flower: a swarm of fireflies, each with its own cup.",
@@ -17323,7 +17363,8 @@
         "size": "H350",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": "A grove, not a row. The leaves hang at varied levels and orientations, and between them run bare rods with glowing points: hatching that establishes volume where there is no foliage.\n\nThe colour is subdued and olive: in places the surface is almost colourless, in others it thickens to bottle green. The faceted planes catch light differently, and one and the same green reads now warm, now cold.\n\nBy day the composition is restrained, almost graphic — dark foliage against a pale ground. In the evening the green fills from within, the tips flare as points, and the chrome reflects it all upward: a deep green tone rarely seen in ceiling light.",
@@ -20312,13 +20353,15 @@
         "size": "H100",
         "material_en": "glass",
         "color_en": "full amber",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "H100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "60"
+        "qty": "60",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about the stroke. Close longitudinal grooves run the whole length of the leaf, and that changes everything: the surface shifts in density as it turns, and light travels across it in lines rather than patches. The form acquires graphics of its own — the ribbing works like hatching in an etching.\n\nThe pyramid is dense toward the centre and thinned at the edges, with single leaves descending below. Bare cables with glowing points are set between them — they establish the volume and stop the mass congealing.\n\nBy day it is autumn foliage lifted to the ceiling: amber leaves mixed with clear ones, a warm mass living on the reflections along the grooves. In the evening the light enters at the stalk and spreads along the ribbing — every leaf glows in strokes, the amber ones fill with copper, the clear ones throw white sparks along their ribs. The sources are lost among the layers and the whole crown glows.",
@@ -20559,13 +20602,15 @@
         "size": "L200",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "L200",
         "material_en": "glass",
         "color_en": "gold",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about movement in a circle. The shoal runs in a closed loop around an empty centre — and that emptiness is the point: the fish are circling around something that is not there. The device comes from the behaviour of real shoals, which gather into a torus when they defend themselves.\n\nThe ring is not flat: on one stretch the shoal rises, on another it drops, and the loop turns out to be twisted through space. Density is uneven — in places the fish move in a wall, elsewhere they break away alone.\n\nBy day it is graphics on the ceiling: narrow forked-tail silhouettes, clear mixed with gold, read through outline. In the evening the level of light shifts around the circle — one arc burns bright, the opposite one is nearly in shadow: the clear bodies give white flares along their rims, the gold ones light up whole. A shoal circling an invisible centre.",
@@ -20645,7 +20690,8 @@
         "size": "Ø250",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a galaxy in your hand. Thousands of the finest bubbles are sealed within the body of each dish, gathered into a spiral around the centre. This is not decoration but structure: a spiral of air fixed in a clear mass, repeating the pattern by which star systems are built.\n\nThe dishes are irregular and asymmetrical, each with its own geometry. There are few of them, they hang at varied heights and are tilted at different angles. The voids between them are as much part of the composition as the elements.\n\nBy day it is a set of clear bowls: the spirals of bubbles are visible against the light and the piece reads through detail. In the evening a point lights up at the centre of each dish, the light scatters along the spiral and a luminous galaxy appears around it — denser toward the centre. The light emerges both upward and downward, so table and ceiling are lit at once. A cluster of nebulae.",
@@ -20918,7 +20964,8 @@
         "size": "H300",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "180"
+        "qty": "180",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about two directions. Two forms work in opposite ways here: the bells open upward and give their light to the ceiling, the icicles hang down and carry it to the table. One object lights both up and down, and that is not a technical solution but a subject.\n\nThe bells are gathered into a dense group at the centre — a field of flowers or a rank of gramophone horns. Icicles with ragged fire-polished surfaces form a fringe at the edges. The tone is amber at varying densities: almost colourless in places, thickening to honey in others.\n\nBy day it is a thicket of clear flowers — warm, translucent, read against the light. In the evening the light from deep in the bells rises and settles on the ceiling as a soft warm patch, while the icicles pick it up and carry it down, flaring at their tips. A field from which sparks are falling.",
@@ -22027,13 +22074,15 @@
         "size": "H350",
         "material_en": "glass",
         "color_en": "transparent colorless with air bubbles",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       },
       {
         "size": "H350",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "300"
+        "qty": "300",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a cave. A stalactite grows drop by drop over thousands of years — a form made entirely of time. The upper edge of the composition is level, the lower one wavy: a section through a cave where growth has been uneven.\n\nEach faceted drop with its slight twist hangs on its own rod with a glowing point at the end, the rods varying in length. Bare rods are set between them — they work as hatching and give depth.\n\nBy day the composition reads graphically, through hatching alone: clear forms, fine lines, almost a technical drawing. In the evening the light travels from the point straight into the body, refracts on every rib and flares at the base of the drop, while the rod itself stays invisible. Because the array is dense, the light passes from drop to drop and the whole volume begins to glow — a row of icicles hung above the table.",
@@ -22718,7 +22767,8 @@
         "size": "L300",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about hatching. Short clear rods hang horizontally, the rows running in tiers, curving as they rise and fall. Hundreds of lines oriented one way and layered over each other give the effect of pencil hatching — a volume built out of separate strokes.\n\nDensity is uneven: in places the strokes bunch into tight packs, elsewhere they hang alone far from the mass. That is how a hand hatches, not a machine.\n\nBy day the composition is all but invisible — the colourless rods read only through highlights, and the drawing in the air is barely guessed at. In the evening the light enters a rod at one end and travels its whole length, so every stroke lights up as an even line. What remains is a drawing suspended in the air — a sketch made in light.",
@@ -24512,13 +24562,15 @@
         "size": "H170",
         "material_en": "glass",
         "color_en": "clear/colourless",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       },
       {
         "size": "H170",
         "material_en": "glass",
         "color_en": "gold",
-        "qty": "200"
+        "qty": "200",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a vortex. The mass begins broad at the top, twists into a spiral and descends, narrowing to single elements. The cables vanish into darkness and do not read, so the scales seem to hang unsupported, caught in a current.\n\nThe elements are small, no larger than a palm, and mean nothing individually — only the mass works. Clear, gold and dark bronze are intermixed: three ways of meeting light in one current.\n\nBy day it is the trace left by a whirlwind: a drawing in the air, living on reflections, all but imperceptible. In the evening not every element glows but one in ten — the gold ones give warm flares, the clear ones cold sparks, the bronze ones almost extinguish. Most of the mass stays dark, and that is exactly why the composition reads as movement rather than object: a current of sparks descending between floors.",
@@ -25385,13 +25437,15 @@
         "size": "H130",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       },
       {
         "size": "H190",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "100"
+        "qty": "100",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about the outline. A fine gold band runs along the rim of every petal, tracing the form and flaring at each bend. The device comes from jewellery: this is how cloisonné enamel is bounded so the colour cannot run. Here it holds nothing — it only draws.\n\nThe mass is gathered into a lens shape: wide at the centre, tapering to sharp points at both ends. The petals are layered, each turned differently; the upper half is given over to the hatching of the suspension threads, the whole mass sits below.\n\nBy day it is an armful of petals caught on a gold thread: milky white with a hot contour, a graphic piece. In the evening the white diffuses the light and glows evenly, without a single flare, while the gold rims intercept it and trace every petal with a burning line. The source is never visible — the mass itself glows, drawn out by hundreds of gold outlines. A cloud with burning edges.",
@@ -25976,7 +26030,8 @@
         "size": "H100",
         "material_en": "glass",
         "color_en": "clear",
-        "qty": "150"
+        "qty": "150",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about three behaviours of one beam. White gloss, polished gold and clear are mixed without system, so at any point in the composition all three fall side by side. That is exactly what keeps the mass uneven: it never looks flat.\n\nThe bowl is deep, the mass dense below and thinned above, where single petals break away and hang alone among the hatching of threads with small point lights.\n\nBy day it is an armful of petals suspended below the ceiling: white, gold and clear intermixed, read through the plasticity of the crumpled edge. In the evening the white petals diffuse the light and glow evenly, the gold ones reflect and flare hot, the clear ones transmit it and throw icy sparks. A cloud in which light behaves differently at every point.",
@@ -26021,7 +26076,8 @@
         "size": "L150",
         "material_en": "ceramic",
         "color_en": "glossy white/gold",
-        "qty": "250"
+        "qty": "250",
+        "same_stock_as": null
       }
     ],
     "description": "A composition about a current. The arc rises at one end, sags in the middle and lifts again; the petals are turned along that line, in layers. Density grows toward the centre and falls toward the ends, where single elements break away and hang alone — a flock moving as one.\n\nThe surface is smooth, without texture of any kind: only form and finish are at work. White gloss and polished gold — two ways of meeting light, and nothing more.\n\nBy day it is the pure contrast of two surfaces: opaque gloss beside mirrored gold, read through silhouette and highlight. In the evening the gold petals reflect the light and flare into radiant stars, while the white ones diffuse it and stay soft patches. A current in which every second element burns.",
