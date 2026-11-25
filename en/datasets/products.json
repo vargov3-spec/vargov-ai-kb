@@ -2028,6 +2028,13 @@
     "award_winning": true,
     "awards": [
       {
+        "program": "LIT Lighting Design Awards",
+        "year": "2026",
+        "level": "Winner · Designer / Custom Lighting · composition LC0564",
+        "href": "https://litawards.com/winners/winner.php?id=5005&mode=win",
+        "series": false
+      },
+      {
         "program": "MUSE Design Awards",
         "year": "2026",
         "level": "Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», composition LC0564",

@@ -4632,6 +4632,15 @@
     "cert": null,
     "awards": [
       {
+        "program": "LIT Lighting Design Awards",
+        "program_en": "LIT Lighting Design Awards",
+        "year": "2026",
+        "level_en": "Winner · Designer / Custom Lighting · composition LC0564",
+        "level_ru": "Winner · Designer / Custom Lighting · композиция LC0564",
+        "href": "https://litawards.com/winners/winner.php?id=5005&mode=win",
+        "series": false
+      },
+      {
         "program": "MUSE Design Awards",
         "program_en": "MUSE Design Awards",
         "year": "2026",

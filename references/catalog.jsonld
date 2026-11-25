@@ -53,6 +53,7 @@
         }
       ],
       "award": [
+        "LIT Lighting Design Awards 2026 — Winner · Designer / Custom Lighting · composition LC0564",
         "NY Product Design Awards 2026 — Gold Winner · Outdoor Lighting — Designer / Custom Lighting · «Lily Light Composition», composition LC0545-1",
         "European Product Design Award 2026 — Winner · HOME (Household Products)/Home Lighting: Designer/Custom Lighting · composition LC0543-2",
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339",
@@ -103,6 +104,10 @@
         "https://huggingface.co/vargov-design"
       ],
       "subjectOf": [
+        {
+          "@type": "WebPage",
+          "url": "https://litawards.com/winners/winner.php?id=5005&mode=win"
+        },
         {
           "@type": "WebPage",
           "url": "https://nydesignawards.com/winner-info.php?id=4691"
@@ -297,7 +302,7 @@
         "Russian design",
         "made to order"
       ],
-      "dateModified": "2026-10-24",
+      "dateModified": "2026-11-25",
       "distribution": [
         {
           "@type": "DataDownload",
@@ -4290,6 +4295,7 @@
       "inLanguage": "en",
       "description": "A composition about living matter. A band of mirrored gold with ragged edges is stitched with cells — the skeleton of a sea sponge; inside the cells sit milky…",
       "award": [
+        "LIT Lighting Design Awards 2026 — Winner · Designer / Custom Lighting · composition LC0564",
         "MUSE Design Awards 2026 — Gold Winner · Lighting Design — Designer / Custom Lighting · «Oceanic Illumination», composition LC0564"
       ],
       "subjectOf": [

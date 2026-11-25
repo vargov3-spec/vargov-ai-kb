@@ -2,7 +2,7 @@
 
 > Vargov®Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
 
-The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 26 awards from international juries.
+The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 27 awards from international juries.
 
 ## Canonical source
 
@@ -34,7 +34,7 @@ Two read-only Model Context Protocol servers give AI assistants the brand's own 
 ## Knowledge base and press materials
 
 - [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — verified brand facts (Russian)
-- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 awards with links to the award pages
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 27 awards with links to the award pages
 - [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
 - [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
 - [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 press photos up to 2000 px (including 4 shots of LC0556 at the Russky Dom 2026 stand) and the logo, free for editorial use with the credit “Vargov®Design”; the terms are on the press kit page https://vargov.ru/en/press and the copyright notice is “© Vargov®Design” (the same wording the site puts in the markup of these images since 19 October 2026)
@@ -87,9 +87,9 @@ VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); internatio
 - [Where the compositions are installed](https://vargov.ru/en/official-dealers) — according to the official dealer in Dubai: the Aldo Coppola salon at The Dubai Mall (Dubai), Al Jimi Mall shopping centre (Al Ain), The Lip Bunny Beauty medical spa (USA); private villas, penthouses and residences in Dubai and Abu Dhabi, private interiors in Saudi Arabia, Oman, the USA, Italy, Malaysia, France, Romania and Greece; list copy — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
 - [Who supplies and installs](https://vargov.ru/en/official-dealers) — three official dealers, each responsible for supply, installation and servicing of the compositions in its region: Russia and the CIS — Moscow; the Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions — Dubai; Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore — Hanoi. Orders for Dubai and that region are accepted by the brand's office in Dubai. Installation by the official installation partners is a separate service, priced individually; supervised installation can also be ordered. Dealer contacts are on the official dealers page
 
-26 awards across 16 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
+27 awards across 16 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
 
-Among them: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 ("Oceanic Illumination"), NY Product Design Awards 2026 ("Lily Light Composition", LC0545-1), NY Product Design Awards 2023, ADC 2023 ("Drapery"), Houzee Awards 2023; Winner — European Product Design Award 2026 (LC0543-2).
+Among them: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 ("Oceanic Illumination"), NY Product Design Awards 2026 ("Lily Light Composition", LC0545-1), NY Product Design Awards 2023, ADC 2023 ("Drapery"), Houzee Awards 2023; Winner — European Product Design Award 2026 (LC0543-2), LIT Lighting Design Awards 2026 (LC0564).
 
 In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. In October 2026 the composition [LC0556](https://vargov.ru/en/catalog/lc0556) was shown at the Russky Dom (Russian House) interior exhibition (Gostiny Dvor, Moscow, 7–9 October) in the capsule «Тихая сила Камчатки» ("The Quiet Strength of Kamchatka") by Tokareva Design, stand K62, "Ice and Mist" zone.
 

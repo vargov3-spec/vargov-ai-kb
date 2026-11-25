@@ -119,7 +119,7 @@
 - **Золото NY Product Design Awards 2026** — композиция LC0545-1 (в заявке «Lily Light Composition»)
   получила Gold Winner в категории «Outdoor Lighting - Designer / Custom Lighting»:
   [статья журнала](https://vargov.ru/journal/ny-2026) ([EN](https://vargov.ru/en/journal/ny-2026)),
-  [страница победителя](https://nydesignawards.com/winner-info.php?id=4691) на сайте премии. Всего наград 26.
+  [страница победителя](https://nydesignawards.com/winner-info.php?id=4691) на сайте премии. Всего наград 27. В октябре было 26; 27-я — LIT Lighting Design Awards 2026 · Winner, LC0564 (25.11.2026).
 - **Второй товарный знак:** логотип VARGOV® DESIGN, свидетельство Роспатента № 1270653 (зарегистрирован
   06.10.2026).
 - **Первые работы бренда — 2018 год** (в разметке организации foundingDate 2018; 2022 — год регистрации знака
@@ -263,7 +263,7 @@ between 1 and 24 October 2026. Everything listed is live — checked with the we
 - **Gold at the NY Product Design Awards 2026** — composition LC0545-1 (entered as "Lily Light
   Composition") took Gold Winner in "Outdoor Lighting - Designer / Custom Lighting":
   [journal article](https://vargov.ru/en/journal/ny-2026),
-  [winner page](https://nydesignawards.com/winner-info.php?id=4691) on the award site. 26 awards in total.
+  [winner page](https://nydesignawards.com/winner-info.php?id=4691) on the award site. 27 awards in total (as of 25 November 2026, after the LIT Lighting Design Awards 2026 Winner, LC0564; 26 in October).
 - **Second trademark:** the VARGOV® DESIGN logo, Rospatent registration No. 1270653 (registered 6 October 2026).
 - **The brand's first works date from 2018** (foundingDate 2018 in the organisation markup; 2022 is the year the
   VARGOV trademark was registered).

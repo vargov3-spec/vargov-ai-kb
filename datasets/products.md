@@ -579,7 +579,7 @@
 | LC0561 | Настенный арт-объект | https://vargov.ru/catalog/lc0561 |  |
 | LC0562 | Торшер pop-art | https://vargov.ru/catalog/lc0562 |  |
 | LC0563 | Бра-настенная скульптура | https://vargov.ru/catalog/lc0563 |  |
-| LC0564 | Бра-настенная скульптура | https://vargov.ru/catalog/lc0564 | 1 |
+| LC0564 | Бра-настенная скульптура | https://vargov.ru/catalog/lc0564 | 2 |
 | LC0565 | Бра | https://vargov.ru/catalog/lc0565 |  |
 | LC0566 | Световая композиция | https://vargov.ru/catalog/lc0566 |  |
 | LC0567 | Бра | https://vargov.ru/catalog/lc0567 |  |

@@ -579,7 +579,7 @@ Compositions: 605
 | LC0561 | Wall art object | https://vargov.ru/en/catalog/lc0561 |  |
 | LC0562 | Pop-art floor lamp | https://vargov.ru/en/catalog/lc0562 |  |
 | LC0563 | Wall light — sculptural composition | https://vargov.ru/en/catalog/lc0563 |  |
-| LC0564 | Wall light — sculptural composition | https://vargov.ru/en/catalog/lc0564 | 1 |
+| LC0564 | Wall light — sculptural composition | https://vargov.ru/en/catalog/lc0564 | 2 |
 | LC0565 | Wall light | https://vargov.ru/en/catalog/lc0565 |  |
 | LC0566 | Lighting composition | https://vargov.ru/en/catalog/lc0566 |  |
 | LC0567 | Wall light | https://vargov.ru/en/catalog/lc0567 |  |

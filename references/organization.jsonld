@@ -53,6 +53,7 @@
         }
       ],
       "award": [
+        "LIT Lighting Design Awards 2026 — Winner · Designer / Custom Lighting · composition LC0564",
         "NY Product Design Awards 2026 — Gold Winner · Outdoor Lighting — Designer / Custom Lighting · «Lily Light Composition», composition LC0545-1",
         "European Product Design Award 2026 — Winner · HOME (Household Products)/Home Lighting: Designer/Custom Lighting · composition LC0543-2",
         "European Product Design Award 2023 — Winner · Home Lighting: Hanging / Pendant · composition LC0339",
@@ -103,6 +104,10 @@
         "https://huggingface.co/vargov-design"
       ],
       "subjectOf": [
+        {
+          "@type": "WebPage",
+          "url": "https://litawards.com/winners/winner.php?id=5005&mode=win"
+        },
         {
           "@type": "WebPage",
           "url": "https://nydesignawards.com/winner-info.php?id=4691"

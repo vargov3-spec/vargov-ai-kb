@@ -148,7 +148,7 @@ fields are plain strings.
 | `gallery_total` | int | Length of `gallery`. |
 | `model3d` / `model3d_en` | string \| null | The studio's own 3D-model card on 3ddd.ru / 3dsky.org. Present for 603 of 605 records. |
 | `models_all` / `models_all_en` | string \| null | All 3D models tagged with this article code. |
-| `award_winning` | bool | True for 34 records: 26 awards, and paired compositions share one award. |
+| `award_winning` | bool | True for 34 records: 27 awards, and paired compositions share one award. |
 | `awards` | list[object] | `program`, `program_en`, `year`, `level_en`, `level_ru`, `href`, `series`. `href` is a link to the awarding body's own page where the programme publishes one; it is `null` where no working public winner page exists. |
 | `cert` | object \| null | Conformity registration numbers and the EAEU technical regulations the object is certified under, with validity dates. Present for 310 records. |
 | `in_stock_elements` | list[object] | Stock availability entries for individual elements: `size` is the element size as labelled in the configurator (e.g. H170, Ø250), `qty` is the number of ready elements. `same_stock_as` lists the other sizes made from the same stock, so the quantities are alternatives, not a sum (LC0489: 40 × H300 or 20 × H600); `null` when the stock serves one size only. |
@@ -178,7 +178,7 @@ that way — as an account of what a piece does in a room rather than as a spec 
 ### About the brand, for grounding
 
 Vargov®Design is a Russian studio of author lighting and decorative compositions with its
-own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **26 design
+own production, founded and led by Anton Vargov in Moscow; its first works date from 2018. The studio holds **27 design
 awards**, among them *Product Designer of the Year* at the NY Product Design Awards 2023,
 Platinum Winner at the MUSE Design Awards 2023, Gold Winner at the MUSE Design Awards
 2026 for "Oceanic Illumination" (composition LC0564), and Gold Winner at the NY Product

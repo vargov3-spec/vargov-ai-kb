@@ -70,23 +70,23 @@
    "checked": "2026-10-26"
   },
   "awards_total": {
-   "value": 26,
-   "wording_ru": "26 достижений на международных премиях",
-   "wording_en": "26 awards from international juries",
-   "wording_note": "правило knowledge/pr-kit.md: среди 26 есть номинация (Awwwards 2026) и судейство (ADD Awards 2024), поэтому не «26 наград», а «достижений на премиях» / «awards from international juries»",
-   "source": "references/organization.jsonld — Organization.award, 26 записей (эталон, пишет ночная сверка из awardsCount() сайта); knowledge/awards-verified.md — таблица из 26 строк; scripts/check_award_count.py",
-   "checked": "2026-10-26"
+   "value": 27,
+   "wording_ru": "27 достижений на международных премиях",
+   "wording_en": "27 awards from international juries",
+   "wording_note": "правило knowledge/pr-kit.md: среди 27 есть номинация (Awwwards 2026) и судейство (ADD Awards 2024), поэтому не «27 наград», а «достижений на премиях» / «awards from international juries»",
+   "source": "references/organization.jsonld — Organization.award, 27 записей (эталон, пишет ночная сверка из awardsCount() сайта); knowledge/awards-verified.md — таблица из 27 строк; scripts/check_award_count.py",
+   "checked": "2026-11-25"
   },
   "awards_programmes": {
    "value": 16,
-   "source": "knowledge/awards-verified.md:3 — 16 программ, 30 записей, 4 вне счёта (пересчёт сборщиком 19.10.2026); llms.txt «Награды — 26, в 16 программах». В datasets/products.json программ 14: награды без артикула (Awwwards, Luxury Lifestyle Awards, жюри ADD) в записях товаров не стоят",
+   "source": "knowledge/awards-verified.md:3 — 16 программ, 31 запись, 4 вне счёта (пересчёт 25.11.2026, награда № 27 — LIT 2026); llms.txt «Награды — 27, в 16 программах». В datasets/products.json программ 14: награды без артикула (Awwwards, Luxury Lifestyle Awards, жюри ADD) в записях товаров не стоят",
    "checked": "2026-10-26"
   },
   "commendations": {
    "value": 4,
    "word_ru": "четыре",
    "files": 3,
-   "source": "knowledge/awards-verified.md, раздел «Четыре документа, которые в счёт не идут»: NYPDA 2023 ×2, MUSE 2026, NYPDA 2026 (commendation: true); файлов-писем три — у одной записи NYPDA 2023 файла нет. 26 + 4 = 30 записей",
+   "source": "knowledge/awards-verified.md, раздел «Четыре документа, которые в счёт не идут»: NYPDA 2023 ×2, MUSE 2026, NYPDA 2026 (commendation: true); файлов-писем три — у одной записи NYPDA 2023 файла нет. 27 + 4 = 31 запись",
    "checked": "2026-10-26"
   },
   "awarded_skus": {
