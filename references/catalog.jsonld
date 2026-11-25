@@ -7432,6 +7432,17 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
+          "name": "Element size H300",
+          "value": "L75 × W35 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.25,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
           "name": "Element size H350",
           "value": "L85 × W40 × H350 mm"
         },
@@ -11389,6 +11400,17 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
+          "name": "Element size H200",
+          "value": "L110 × W30 × H200 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H200",
+          "value": 0.11,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
           "name": "Element size H300",
           "value": "L160 × W45 × H300 mm"
         },
@@ -12767,6 +12789,17 @@
       "inLanguage": "en",
       "description": "A composition about a current stopped mid-movement. Every ribbon has a plasticity of its own: here a wave, there stretched cloth, there a jet of air.",
       "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H300",
+          "value": "L75 × W75 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.78,
+          "unitCode": "KGM"
+        },
         {
           "@type": "PropertyValue",
           "name": "Element size H600",
@@ -24478,6 +24511,28 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
+          "name": "Element size H180",
+          "value": "L80 × W15 × H180 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H180",
+          "value": 0.26,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H250",
+          "value": "L110 × W20 × H250 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H250",
+          "value": 0.61,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
           "name": "Element size H300",
           "value": "L130 × W20 × H300 mm"
         },
@@ -35612,13 +35667,13 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Element size L160",
-          "value": "L160 × W160 × H80 mm"
+          "name": "Element size L180",
+          "value": "L180 × W180 × H90 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight L160",
-          "value": 0.55,
+          "name": "Element weight L180",
+          "value": 0.79,
           "unitCode": "KGM"
         },
         {
@@ -37843,6 +37898,17 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
+          "name": "Element size L200",
+          "value": "L270 × W200 × H470 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight L200",
+          "value": 0.42,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
           "name": "Element size L250",
           "value": "L340 × W250 × H590 mm"
         },
@@ -37912,6 +37978,17 @@
       "inLanguage": "en",
       "description": "A lens instead of a lamp. The elements do not glow of themselves — they gather light arriving from above and from the side, and work as optics rather than as a…",
       "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H300",
+          "value": "L80 × W75 × H300 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H300",
+          "value": 0.31,
+          "unitCode": "KGM"
+        },
         {
           "@type": "PropertyValue",
           "name": "Element size H350",
@@ -55101,12 +55178,12 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H180",
-          "value": "L55 × W30 × H180 mm"
+          "name": "Element size H170",
+          "value": "L55 × W30 × H170 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H180",
+          "name": "Element weight H170",
           "value": 0.07,
           "unitCode": "KGM"
         },
@@ -57256,12 +57333,23 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H180",
-          "value": "L90 × W60 × H180 mm"
+          "name": "Element size H130",
+          "value": "L65 × W45 × H130 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H180",
+          "name": "Element weight H130",
+          "value": 0.32,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element size H190",
+          "value": "L90 × W60 × H190 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight H190",
           "value": 0.81,
           "unitCode": "KGM"
         },
