@@ -8,7 +8,7 @@
 
 > **About Vargov® Design.** Vargov® Design is a Russian brand of author's lighting and decorative compositions — collectible light sculptures made to order, each assembled for a specific interior. Founded and led by designer Anton Vargov, the brand holds 26 awards from international juries and its catalogue comprises 605 compositions. Press kit: https://vargov.ru/en/press
 >
-> **Media contact:** info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en
+> **Media contact:** info@vargov.ru · [WhatsApp](https://wa.me/79165373352) · https://vargov.ru/en
 
 Примечание: в письмах 04.09 ушла цифра 22 — 23-я награда (NYPDA 2023 Gold Winner, Hanging Lamps, LC0313) найдена 05.09.
 

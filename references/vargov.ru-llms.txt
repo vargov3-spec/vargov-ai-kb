@@ -128,7 +128,6 @@ whole catalogue; only the text and the order of display differ.
 
 - [Contacts page](https://vargov.ru/en/contacts): showroom address and opening hours, direct lines and the request form
 - Email: info@vargov.ru
-- WhatsApp: +7 916 537 33 52
 - Showroom: +7 (925) 888-77-44
 - Telegram (requests): https://t.me/AntonVargov
 - Telegram channel: https://t.me/vargov_design

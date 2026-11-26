@@ -827,7 +827,6 @@ def organization_node(awards: list) -> dict:
         ),
         "founder": {"@id": PERSON_ID},
         "email": "info@vargov.ru",
-        "telephone": "+7 916 537 33 52",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
@@ -883,7 +882,7 @@ def store_node() -> dict:
         "url": f"{SITE_URL}/en/showroom",
         "image": f"{REPO_RAW}/press/vargov-design-showroom-cover.jpg",
         "parentOrganization": {"@id": ORG_ID},
-        "telephone": ["+7 925 888-77-44", "+7 916 537-33-52"],
+        "telephone": "+7 925 888-77-44",
         "email": "info@vargov.ru",
         "address": {
             "@type": "PostalAddress",

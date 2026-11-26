@@ -55,7 +55,7 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 - Карточки композиций: `https://vargov.ru/en/catalog/<slug>` (slug — артикул строчными, например `lc0586`); RU — `https://vargov.ru/catalog/<slug>`; другие языки — `https://vargov.ru/<de|it|fr|es|vi|ar>/catalog/<slug>`.
 - Обложки карточек — на самом сайте (`https://vargov.ru/img/catalog/…`, путь `image` в `catalog.generated.json`): LC0586 — `/img/catalog/60c0714ff79dd4b9.jpg`, LC0194 — `/img/catalog/5172bfc300654634.jpg`, LC0487 — `/img/catalog/e342f001455df1d3.jpg`. Старые адреса `static.tildacdn.com` в архивных письмах больше не использовать.
 - Награды с сертификатами: https://vargov.ru/en/awards. Сертификация (EAC, ТР ТС 004/2011 и 020/2011): https://vargov.ru/en/certification.
-- Подпись для новых писем: *Anton Vargov · Founder & Chief Designer, Vargov® Design · info@vargov.ru · +7 916 537 33 52 · https://vargov.ru/en · press kit: https://vargov.ru/en/press*.
+- Подпись для новых писем: *Anton Vargov · Founder & Chief Designer, Vargov® Design · info@vargov.ru · [WhatsApp](https://wa.me/79165373352) · https://vargov.ru/en · press kit: https://vargov.ru/en/press*.
 
 ## Письма 06.07.2026 — статусы
 
@@ -85,7 +85,7 @@ Anton Vargov is the founder and chief designer of Vargov® Design, based in Mosc
 - Конфигуратор: онлайн-конфигуратор бренда умеет ещё до заказа выдать модель композиции в формате IFC4, где точки крепления к потолку — отдельные объекты со своей нагрузкой (у композиций с полным расчётом; у каркасных композиций и готовых сцен точек крепления в файле нет) — https://vargov.ru/configurator/ifc4 (EN — https://vargov.ru/en/configurator/ifc4). Фраза в boilerplate утверждена владельцем 16.10.2026.
 - Официальные дилеры: Москва, Дубай, Ханой — https://vargov.ru/en/official-dealers (названия дилеров — в приватной папке PR владельца)
 - Шоурум: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow; ежедневно 12:00–20:00; +7 (925) 888-77-44
-- Контакты: info@vargov.ru · WhatsApp +7 916 537 33 52 (https://wa.me/79165373352; с 13.10.2026 номер публикуется только как WhatsApp — решение владельца) · Telegram для заявок https://t.me/AntonVargov · Telegram-канал https://t.me/vargov_design (две роли, как в llms.txt сайта)
+- Контакты: info@vargov.ru · [WhatsApp](https://wa.me/79165373352) (с 26.11.2026 номер текстом не пишем — только ссылка WhatsApp; решение владельца) · Telegram для заявок https://t.me/AntonVargov · Telegram-канал https://t.me/vargov_design (две роли, как в llms.txt сайта)
 - Сайт: https://vargov.ru (EN — https://vargov.ru/en); llms.txt — https://vargov.ru/llms.txt; конфигуратор — https://vargov.design/ (EN), https://configurator.vargov.ru/ (RU)
 
 См. также [[awards-verified]], [[external-references]], [[brand]], [[archello-onboarding]].

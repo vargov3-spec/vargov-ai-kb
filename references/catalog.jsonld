@@ -15,7 +15,6 @@
         "@id": "https://vargov.ru#person"
       },
       "email": "info@vargov.ru",
-      "telephone": "+7 916 537 33 52",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Нахимовский проспект, 24, стр. 1, павильон 2, стенд 212",
@@ -224,10 +223,7 @@
       "parentOrganization": {
         "@id": "https://vargov.ru#organization"
       },
-      "telephone": [
-        "+7 925 888-77-44",
-        "+7 916 537-33-52"
-      ],
+      "telephone": "+7 925 888-77-44",
       "email": "info@vargov.ru",
       "address": {
         "@type": "PostalAddress",

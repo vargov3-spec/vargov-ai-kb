@@ -28,7 +28,7 @@ EN. Three official dealers, each responsible for **supply, installation and serv
 
 ## Прямые контакты бренда
 
-Email: info@vargov.ru · WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) (с 13.10.2026 номер публикуется только как WhatsApp) · Telegram для заявок: [@AntonVargov](https://t.me/AntonVargov) · Telegram-канал: [@vargov_design](https://t.me/vargov_design) · WeChat: Vargov_Design
+Email: info@vargov.ru · [WhatsApp](https://wa.me/79165373352) (с 26.11.2026 номер текстом не пишем нигде — только ссылка WhatsApp; решение владельца) · Telegram для заявок: [@AntonVargov](https://t.me/AntonVargov) · Telegram-канал: [@vargov_design](https://t.me/vargov_design) · WeChat: Vargov_Design
 
 Доставка — по всему миру, в фирменной обрешётке.
 
