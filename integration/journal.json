@@ -1,8 +1,8 @@
 {
  "meta": {
   "kind": "journal",
-  "articleCount": 29,
-  "checksum": "bc79abc6d9b7a74c",
+  "articleCount": 30,
+  "checksum": "055bc02e1cd41524",
   "schemaVersion": 2,
   "locales": [
    "ru",
@@ -17,7 +17,7 @@
   "rtlLocales": [
    "ar"
   ],
-  "generated": "2026-10-27T12:00:00+00:00",
+  "generated": "2026-11-26T06:28:12+00:00",
   "checksumMethod": "sha256 первых 16 знаков от articles, канонический JSON с сортировкой ключей"
  },
  "articleMeta": {
@@ -136,6 +136,10 @@
   "tz-na-proizvodstvo": {
    "dateISO": "2026-10-25",
    "categoryId": "production"
+  },
+  "lit-2026": {
+   "dateISO": "2026-11-26",
+   "categoryId": "recognition"
   }
  },
  "articles": {
@@ -20805,6 +20809,552 @@
      {
       "type": "p",
       "text": "لا تُنشَأ المواصفة الفنية إلا للتركيبات التي تحسبها أداة التكوين بالكامل: 360 من 605 بتاريخ 25 أكتوبر 2026. ورمز صنف من غيرها لا يُكتَب في الحقل، بل يظهر سطر أحمر «рассчитывается индивидуально» (يُحسَب بشكل فردي): فهذه الأصناف لا تدخل في الـ 360 أصلًا، وأداة التكوين لا تحسبها. أما مخطط التركيب بمقياس 1:1 فموجود لـ 345 من هذه الـ 360. وهو غير موجود لعشرة أشرطة: فالشريط لا يتكوَّن من عناصر معلَّقة بشكل منفصل، إذ له بنيته الخاصة. وغير موجود لأربع تركيبات على هيكل: فعناصرها ليس لها خيوط خاصة إلى السقف: فهي تتعلق بالهيكل. أما الهيكل نفسه فمعلَّق بالسقف، غير أن نقاط تعليقه مبيَّنة في مخطط الهيكل لا في مخطط السقف. وغير موجود لمشهد جاهز واحد — مصباح الحائط LC0406-1: فتركيبته جاهزة لا محسوبة، ولا توزيع لها، ومن ثم لا تعليم للسقف. وبمعزل عن رمز الصنف، وبحسب المواصفة نفسها: إذا اختير فيها التركيب على قاعدة معدنية، فلا يُصدَر مخطط 1:1، لأنه غير لازم مع هذا النوع من التركيب. والصفحة موجودة بلغتين: vargov.ru/specifications وvargov.ru/en/specifications، ولا توجد نسخ بلغات أخرى. وهي محجوبة عن محركات البحث، ولا روابط إليها من صفحات الموقع الأخرى — فلا يمكن الوصول إليها إلا برابط مباشر: من منشور أو من أداة التكوين."
+     }
+    ]
+   }
+  },
+  "lit-2026": {
+   "ru": {
+    "title": "Вторая победа на LIT Lighting Design Awards",
+    "category": "Признание",
+    "date": "26 ноября 2026",
+    "lead": "Композиция LC0564 получила Winner в категории Designer / Custom Lighting. Это вторая наша победа на LIT — первая была в 2022 году, в той же категории.",
+    "metaLabels": {
+     "category": "Рубрика",
+     "date": "Дата"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Жюри LIT Lighting Design Awards назвало победителей сезона 2026. Среди них наша настенная композиция LC0564 — Winner в категории Designer / Custom Lighting. Страница победителя открыта на сайте премии: там названы студия Vargov Design, ведущий дизайнер Антон Варгов и категория."
+     },
+     {
+      "type": "h",
+      "text": "Что это за премия"
+     },
+     {
+      "type": "p",
+      "text": "LIT Lighting Design Awards — международная премия светового дизайна (Швейцария). Она отмечает работы в трёх направлениях: световой продукт, архитектурный и сценический свет. Заявки оценивает жюри из практиков отрасли, преподавателей и представителей профильной прессы."
+     },
+     {
+      "type": "p",
+      "text": "В 2026 году премии исполнилось десять лет — юбилей отметили в июне церемонией в Париже. Юбилейный сезон, по данным организаторов, собрал 1 022 заявки из 63 стран."
+     },
+     {
+      "type": "p",
+      "text": "Именной сертификат подписан руководством премии. Он лежит в разделе наград вместе со знаком победителя 2026 года."
+     },
+     {
+      "type": "h",
+      "text": "Почему эта композиция"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 — композиция о подводном мире. Золотой ажурный каркас с неровным, рваным контуром напоминает костяк морской губки; в его ячейках сидят молочные пузыри, будто воздух, остановленный на пути к поверхности. Кажется, что структура продолжает расти прямо на стене."
+     },
+     {
+      "type": "p",
+      "text": "Днём это золотой рельеф с молочными вставками: вещь читается силуэтом и плотным переплетением ячеек. Вечером свет изнутри выходит через отверстия тёплыми пятнами и острыми золотыми бликами, и рельеф становится глубже."
+     },
+     {
+      "type": "p",
+      "text": "Это вторая награда композиции в этом году: в августе LC0564 получила Gold Winner на MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "Вторая победа на LIT"
+     },
+     {
+      "type": "p",
+      "text": "На LIT бренд отмечали и раньше. В 2022 году композиция LC0223 стала победителем в той же категории — тогда она называлась Designer and Custom Lighting, — а в 2025 году композиция LC0447 получила Honorable Mention. Победа 2026 года — вторая: почётное упоминание в счёт побед не идёт."
+     },
+     {
+      "type": "h",
+      "text": "Что значит эта категория"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting — авторский свет и вещи, которые собираются под конкретное место, а не выпускаются рядом одинаковых. LC0564 живёт одиночно, как акцент, или серией — тогда ячейки разрастаются по стене колонией; размер и число элементов подбираются под пространство."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "en": {
+    "title": "A second win at the LIT Lighting Design Awards",
+    "category": "Recognition",
+    "date": "26 November 2026",
+    "lead": "The LC0564 composition has been named Winner in Designer / Custom Lighting. It is our second win at LIT — the first came in 2022, in the same category.",
+    "metaLabels": {
+     "category": "Category",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "The LIT Lighting Design Awards jury has named the winners of the 2026 season. Among them is our wall composition LC0564 — Winner in Designer / Custom Lighting. The winner's page is open on the award's website: it names the studio, Vargov Design, the lead designer, Anton Vargov, and the category."
+     },
+     {
+      "type": "h",
+      "text": "What this award is"
+     },
+     {
+      "type": "p",
+      "text": "The LIT Lighting Design Awards is an international lighting-design prize based in Switzerland. It recognises work in three fields: lighting products, architectural lighting and entertainment lighting. Entries are judged by a jury of industry practitioners, academics and members of the trade press."
+     },
+     {
+      "type": "p",
+      "text": "In 2026 the award turned ten, and the anniversary was marked in June with a ceremony in Paris. According to the organisers, the anniversary season drew 1,022 entries from 63 countries."
+     },
+     {
+      "type": "p",
+      "text": "The named certificate is signed by the award's leadership. It sits in the awards section together with the 2026 winner's mark."
+     },
+     {
+      "type": "h",
+      "text": "Why this composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 is a composition about the underwater world. A gold openwork frame with an uneven, torn outline recalls the skeleton of a sea sponge; its cells hold milky bubbles, like air stopped on its way to the surface. The structure seems to keep growing right on the wall."
+     },
+     {
+      "type": "p",
+      "text": "By day it is a gold relief with milky inserts, read through its silhouette and the dense weave of its cells. In the evening the light inside escapes through the openings in warm patches and sharp gold glints, and the relief grows deeper."
+     },
+     {
+      "type": "p",
+      "text": "It is the composition's second award this year: in August LC0564 took Gold Winner at the MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "A second win at LIT"
+     },
+     {
+      "type": "p",
+      "text": "The brand has been recognised at LIT before. In 2022 the LC0223 composition won in the same category — then called Designer and Custom Lighting — and in 2025 the LC0447 composition received an Honorable Mention. The 2026 win is the second: an honourable mention does not count as a win."
+     },
+     {
+      "type": "h",
+      "text": "What this category means"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting covers authored light and pieces assembled for a specific place rather than produced as a run of identical items. LC0564 works on its own, as an accent, or in a series — then the cells spread across the wall like a colony; the size and the number of elements are chosen for the space."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "de": {
+    "title": "Zweiter Sieg bei den LIT Lighting Design Awards",
+    "category": "Anerkennung",
+    "date": "26. November 2026",
+    "lead": "Die Komposition LC0564 ist Winner in der Kategorie Designer / Custom Lighting. Es ist unser zweiter Sieg bei LIT — der erste war 2022, in derselben Kategorie.",
+    "metaLabels": {
+     "category": "Rubrik",
+     "date": "Datum"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Die Jury der LIT Lighting Design Awards hat die Gewinner der Saison 2026 bekanntgegeben. Unter ihnen ist unsere Wandkomposition LC0564 — Winner in der Kategorie Designer / Custom Lighting. Die Gewinnerseite ist auf der Website des Preises öffentlich: Dort sind das Studio Vargov Design, der Lead Designer Anton Vargov und die Kategorie genannt."
+     },
+     {
+      "type": "h",
+      "text": "Was für ein Preis das ist"
+     },
+     {
+      "type": "p",
+      "text": "Die LIT Lighting Design Awards sind ein internationaler Lichtdesignpreis mit Sitz in der Schweiz. Ausgezeichnet werden Arbeiten in drei Bereichen: Lichtprodukte, Architekturlicht sowie Bühnen- und Veranstaltungslicht. Die Einreichungen bewertet eine Jury aus Praktikern der Branche, Hochschullehrern und Vertretern der Fachpresse."
+     },
+     {
+      "type": "p",
+      "text": "2026 wurde der Preis zehn Jahre alt; das Jubiläum wurde im Juni mit einer Zeremonie in Paris gefeiert. Nach Angaben der Veranstalter gingen in der Jubiläumssaison 1.022 Einreichungen aus 63 Ländern ein."
+     },
+     {
+      "type": "p",
+      "text": "Das namentliche Zertifikat ist von der Leitung des Preises unterzeichnet. Es liegt im Bereich der Auszeichnungen, zusammen mit dem Gewinnerzeichen 2026."
+     },
+     {
+      "type": "h",
+      "text": "Warum diese Komposition"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 ist eine Komposition über die Unterwasserwelt. Ein goldenes, durchbrochenes Gerüst mit unebener, gerissener Kontur erinnert an das Skelett eines Meeresschwamms; in seinen Zellen sitzen milchige Blasen, wie Luft, die auf dem Weg zur Oberfläche angehalten wurde. Die Struktur scheint direkt an der Wand weiterzuwachsen."
+     },
+     {
+      "type": "p",
+      "text": "Tagsüber ist sie ein goldenes Relief mit milchigen Einsätzen, lesbar an ihrer Silhouette und am dichten Geflecht der Zellen. Abends tritt das Licht von innen durch die Öffnungen in warmen Flecken und scharfen goldenen Reflexen aus, und das Relief wird tiefer."
+     },
+     {
+      "type": "p",
+      "text": "Es ist die zweite Auszeichnung der Komposition in diesem Jahr: Im August erhielt LC0564 Gold Winner bei den MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "Der zweite Sieg bei LIT"
+     },
+     {
+      "type": "p",
+      "text": "Bei LIT wurde die Marke schon früher ausgezeichnet. 2022 gewann die Komposition LC0223 in derselben Kategorie — damals hieß sie Designer and Custom Lighting —, und 2025 erhielt die Komposition LC0447 eine Honorable Mention. Der Sieg 2026 ist der zweite: Eine lobende Erwähnung zählt nicht als Sieg."
+     },
+     {
+      "type": "h",
+      "text": "Was diese Kategorie bedeutet"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting steht für Autorenlicht und für Stücke, die für einen bestimmten Ort gebaut und nicht als Reihe gleicher Exemplare gefertigt werden. LC0564 wirkt allein als Akzent oder in Serie — dann breiten sich die Zellen wie eine Kolonie über die Wand aus; Größe und Zahl der Elemente werden auf den Raum abgestimmt."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "fr": {
+    "title": "Deuxième victoire aux LIT Lighting Design Awards",
+    "category": "Reconnaissance",
+    "date": "26 novembre 2026",
+    "lead": "La composition LC0564 est Winner dans la catégorie Designer / Custom Lighting. C'est notre deuxième victoire aux LIT — la première remonte à 2022, dans la même catégorie.",
+    "metaLabels": {
+     "category": "Rubrique",
+     "date": "Date"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Le jury des LIT Lighting Design Awards a désigné les lauréats de la saison 2026. Parmi eux figure notre composition murale LC0564 — Winner dans la catégorie Designer / Custom Lighting. La page du lauréat est ouverte sur le site du prix : on y trouve le studio Vargov Design, le designer principal Anton Vargov et la catégorie."
+     },
+     {
+      "type": "h",
+      "text": "De quel prix il s'agit"
+     },
+     {
+      "type": "p",
+      "text": "Les LIT Lighting Design Awards sont un prix international de design lumière basé en Suisse. Ils distinguent des travaux dans trois domaines : le produit d'éclairage, l'éclairage architectural et l'éclairage scénique. Les candidatures sont évaluées par un jury de professionnels du secteur, d'universitaires et de représentants de la presse spécialisée."
+     },
+     {
+      "type": "p",
+      "text": "En 2026, le prix a eu dix ans, et l'anniversaire a été célébré en juin par une cérémonie à Paris. Selon les organisateurs, la saison anniversaire a réuni 1 022 candidatures venues de 63 pays."
+     },
+     {
+      "type": "p",
+      "text": "Le certificat nominatif est signé par la direction du prix. Il figure dans la rubrique des récompenses, avec le label du lauréat 2026."
+     },
+     {
+      "type": "h",
+      "text": "Pourquoi cette composition"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 est une composition sur le monde sous-marin. Une armature ajourée dorée, au contour irrégulier et déchiré, rappelle le squelette d'une éponge de mer ; dans ses alvéoles se logent des bulles laiteuses, comme de l'air arrêté en route vers la surface. La structure semble continuer à pousser à même le mur."
+     },
+     {
+      "type": "p",
+      "text": "Le jour, c'est un relief doré aux inserts laiteux, qui se lit par sa silhouette et le réseau serré de ses alvéoles. Le soir, la lumière intérieure s'échappe par les ouvertures en taches chaudes et en reflets dorés acérés, et le relief gagne en profondeur."
+     },
+     {
+      "type": "p",
+      "text": "C'est la deuxième récompense de la composition cette année : en août, LC0564 a obtenu le Gold Winner aux MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "Une deuxième victoire aux LIT"
+     },
+     {
+      "type": "p",
+      "text": "La marque a déjà été distinguée aux LIT. En 2022, la composition LC0223 a gagné dans la même catégorie — elle s'appelait alors Designer and Custom Lighting —, et en 2025 la composition LC0447 a reçu une Honorable Mention. La victoire de 2026 est la deuxième : une mention honorable ne compte pas comme une victoire."
+     },
+     {
+      "type": "h",
+      "text": "Ce que signifie cette catégorie"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting désigne la lumière d'auteur et les pièces assemblées pour un lieu précis, et non produites en série d'exemplaires identiques. LC0564 vit seule, comme un accent, ou en série — les alvéoles se propagent alors sur le mur comme une colonie ; la taille et le nombre d'éléments sont choisis pour l'espace."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "it": {
+    "title": "Seconda vittoria ai LIT Lighting Design Awards",
+    "category": "Riconoscimenti",
+    "date": "26 novembre 2026",
+    "lead": "La composizione LC0564 è Winner nella categoria Designer / Custom Lighting. È la nostra seconda vittoria ai LIT — la prima risale al 2022, nella stessa categoria.",
+    "metaLabels": {
+     "category": "Rubrica",
+     "date": "Data"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "La giuria dei LIT Lighting Design Awards ha proclamato i vincitori della stagione 2026. Tra loro c'è la nostra composizione da parete LC0564 — Winner nella categoria Designer / Custom Lighting. La pagina del vincitore è pubblica sul sito del premio: riporta lo studio Vargov Design, il lead designer Anton Vargov e la categoria."
+     },
+     {
+      "type": "h",
+      "text": "Di che premio si tratta"
+     },
+     {
+      "type": "p",
+      "text": "I LIT Lighting Design Awards sono un premio internazionale di lighting design con sede in Svizzera. Premiano lavori in tre ambiti: prodotto illuminotecnico, illuminazione architetturale e illuminazione per lo spettacolo. Le candidature sono valutate da una giuria di professionisti del settore, docenti e rappresentanti della stampa specializzata."
+     },
+     {
+      "type": "p",
+      "text": "Nel 2026 il premio ha compiuto dieci anni, festeggiati a giugno con una cerimonia a Parigi. Secondo gli organizzatori, la stagione dell'anniversario ha raccolto 1.022 candidature da 63 paesi."
+     },
+     {
+      "type": "p",
+      "text": "Il certificato nominativo è firmato dalla direzione del premio. Si trova nella sezione dei riconoscimenti, insieme al marchio del vincitore 2026."
+     },
+     {
+      "type": "h",
+      "text": "Perché questa composizione"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 è una composizione sul mondo sottomarino. Un telaio traforato dorato, dal contorno irregolare e strappato, ricorda lo scheletro di una spugna marina; nelle sue celle stanno bolle lattiginose, come aria fermata mentre sale verso la superficie. La struttura sembra continuare a crescere direttamente sulla parete."
+     },
+     {
+      "type": "p",
+      "text": "Di giorno è un rilievo dorato con inserti lattiginosi, che si legge per la silhouette e per il fitto intreccio delle celle. La sera la luce interna esce dalle aperture in macchie calde e riflessi dorati taglienti, e il rilievo si fa più profondo."
+     },
+     {
+      "type": "p",
+      "text": "È il secondo riconoscimento della composizione quest'anno: ad agosto LC0564 ha ottenuto il Gold Winner ai MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "La seconda vittoria ai LIT"
+     },
+     {
+      "type": "p",
+      "text": "Il marchio era già stato premiato ai LIT. Nel 2022 la composizione LC0223 ha vinto nella stessa categoria — allora si chiamava Designer and Custom Lighting —, e nel 2025 la composizione LC0447 ha ricevuto una Honorable Mention. La vittoria del 2026 è la seconda: una menzione d'onore non conta come vittoria."
+     },
+     {
+      "type": "h",
+      "text": "Che cosa significa questa categoria"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting indica la luce d'autore e i pezzi assemblati per un luogo preciso, non prodotti in serie di esemplari identici. LC0564 vive da sola, come accento, oppure in serie — e allora le celle si estendono sulla parete come una colonia; dimensioni e numero degli elementi si scelgono in base allo spazio."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "es": {
+    "title": "Segunda victoria en los LIT Lighting Design Awards",
+    "category": "Reconocimiento",
+    "date": "26 de noviembre de 2026",
+    "lead": "La composición LC0564 es Winner en la categoría Designer / Custom Lighting. Es nuestra segunda victoria en los LIT: la primera fue en 2022, en la misma categoría.",
+    "metaLabels": {
+     "category": "Sección",
+     "date": "Fecha"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "El jurado de los LIT Lighting Design Awards ha anunciado los ganadores de la temporada 2026. Entre ellos está nuestra composición de pared LC0564: Winner en la categoría Designer / Custom Lighting. La página del ganador está abierta en la web del premio; en ella figuran el estudio Vargov Design, el diseñador principal Anton Vargov y la categoría."
+     },
+     {
+      "type": "h",
+      "text": "De qué premio se trata"
+     },
+     {
+      "type": "p",
+      "text": "Los LIT Lighting Design Awards son un premio internacional de diseño de iluminación con sede en Suiza. Distinguen trabajos en tres ámbitos: producto de iluminación, iluminación arquitectónica e iluminación escénica. Las candidaturas las evalúa un jurado de profesionales del sector, académicos y representantes de la prensa especializada."
+     },
+     {
+      "type": "p",
+      "text": "En 2026 el premio cumplió diez años, y el aniversario se celebró en junio con una ceremonia en París. Según los organizadores, la temporada del aniversario reunió 1022 candidaturas de 63 países."
+     },
+     {
+      "type": "p",
+      "text": "El certificado nominativo lo firma la dirección del premio. Está en la sección de premios, junto con el distintivo de ganador 2026."
+     },
+     {
+      "type": "h",
+      "text": "Por qué esta composición"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 es una composición sobre el mundo submarino. Un armazón calado dorado, de contorno irregular y desgarrado, recuerda el esqueleto de una esponja marina; en sus celdas se alojan burbujas lechosas, como aire detenido camino de la superficie. La estructura parece seguir creciendo sobre la propia pared."
+     },
+     {
+      "type": "p",
+      "text": "De día es un relieve dorado con inserciones lechosas, que se lee por su silueta y por el denso entramado de sus celdas. Al caer la tarde, la luz interior sale por las aberturas en manchas cálidas y destellos dorados afilados, y el relieve gana profundidad."
+     },
+     {
+      "type": "p",
+      "text": "Es el segundo premio de la composición este año: en agosto LC0564 obtuvo Gold Winner en los MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "La segunda victoria en los LIT"
+     },
+     {
+      "type": "p",
+      "text": "La marca ya había sido distinguida en los LIT. En 2022 la composición LC0223 ganó en la misma categoría —entonces se llamaba Designer and Custom Lighting—, y en 2025 la composición LC0447 recibió una Honorable Mention. La victoria de 2026 es la segunda: una mención honorífica no cuenta como victoria."
+     },
+     {
+      "type": "h",
+      "text": "Qué significa esta categoría"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting reúne la luz de autor y las piezas que se montan para un lugar concreto, no las que se fabrican en series de ejemplares idénticos. LC0564 funciona sola, como acento, o en serie: entonces las celdas se extienden por la pared como una colonia; el tamaño y el número de elementos se eligen para el espacio."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "vi": {
+    "title": "Chiến thắng thứ hai tại LIT Lighting Design Awards",
+    "category": "Ghi nhận",
+    "date": "26 tháng 11 năm 2026",
+    "lead": "Tác phẩm LC0564 đoạt Winner ở hạng mục Designer / Custom Lighting. Đây là chiến thắng thứ hai của chúng tôi tại LIT — lần đầu là năm 2022, cùng hạng mục.",
+    "metaLabels": {
+     "category": "Chuyên mục",
+     "date": "Ngày"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "Ban giám khảo LIT Lighting Design Awards đã công bố những người chiến thắng mùa giải 2026. Trong số đó có tác phẩm gắn tường LC0564 của chúng tôi — Winner ở hạng mục Designer / Custom Lighting. Trang người chiến thắng được công khai trên website của giải: ở đó ghi tên studio Vargov Design, nhà thiết kế chính Anton Vargov và hạng mục."
+     },
+     {
+      "type": "h",
+      "text": "Giải thưởng này là gì"
+     },
+     {
+      "type": "p",
+      "text": "LIT Lighting Design Awards là giải thưởng thiết kế chiếu sáng quốc tế có trụ sở tại Thụy Sĩ. Giải vinh danh các công trình ở ba lĩnh vực: sản phẩm chiếu sáng, chiếu sáng kiến trúc và chiếu sáng sân khấu – giải trí. Các bài dự thi được chấm bởi ban giám khảo gồm những người làm nghề, giới học thuật và đại diện báo chí chuyên ngành."
+     },
+     {
+      "type": "p",
+      "text": "Năm 2026 giải tròn mười năm; lễ kỷ niệm được tổ chức vào tháng Sáu tại Paris. Theo ban tổ chức, mùa giải kỷ niệm nhận được 1.022 bài dự thi từ 63 quốc gia."
+     },
+     {
+      "type": "p",
+      "text": "Giấy chứng nhận ghi tên do ban lãnh đạo giải ký. Giấy chứng nhận được đặt trong mục giải thưởng, cùng với biểu trưng người chiến thắng năm 2026."
+     },
+     {
+      "type": "h",
+      "text": "Vì sao lại là tác phẩm này"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 là tác phẩm về thế giới dưới đáy biển. Khung chạm thủng màu vàng kim với đường viền gồ ghề như bị xé gợi nhớ bộ xương của một con bọt biển; trong các ô của nó là những bong bóng trắng sữa, như không khí bị giữ lại trên đường nổi lên mặt nước. Cấu trúc dường như vẫn tiếp tục lớn lên ngay trên bức tường."
+     },
+     {
+      "type": "p",
+      "text": "Ban ngày, đó là một phù điêu vàng kim với những mảng trắng sữa, được nhận ra qua dáng hình và mạng ô đan dày. Buổi tối, ánh sáng bên trong thoát ra qua các lỗ thành những đốm ấm và những tia phản chiếu vàng sắc nét, và phù điêu trở nên sâu hơn."
+     },
+     {
+      "type": "p",
+      "text": "Đây là giải thưởng thứ hai của tác phẩm trong năm nay: tháng Tám, LC0564 đã đoạt Gold Winner tại MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "Chiến thắng thứ hai tại LIT"
+     },
+     {
+      "type": "p",
+      "text": "Thương hiệu từng được ghi nhận tại LIT trước đây. Năm 2022, tác phẩm LC0223 thắng giải ở cùng hạng mục — khi đó có tên Designer and Custom Lighting — và năm 2025, tác phẩm LC0447 nhận Honorable Mention. Chiến thắng năm 2026 là lần thứ hai: một bằng khen danh dự không được tính là chiến thắng."
+     },
+     {
+      "type": "h",
+      "text": "Hạng mục này nghĩa là gì"
+     },
+     {
+      "type": "p",
+      "text": "Designer / Custom Lighting dành cho ánh sáng mang dấu ấn tác giả và những tác phẩm được lắp ráp cho một không gian cụ thể, chứ không sản xuất hàng loạt những bản giống hệt nhau. LC0564 có thể đứng một mình như một điểm nhấn, hoặc thành loạt — khi đó các ô lan rộng trên tường như một quần thể; kích thước và số lượng phần tử được chọn theo không gian."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
+     }
+    ]
+   },
+   "ar": {
+    "title": "فوز ثانٍ في LIT Lighting Design Awards",
+    "category": "التقدير",
+    "date": "26 نوفمبر 2026",
+    "lead": "التركيبة LC0564 نالت لقب Winner في فئة Designer / Custom Lighting. هذا فوزنا الثاني في LIT، وكان الأول عام 2022 في الفئة نفسها.",
+    "metaLabels": {
+     "category": "القسم",
+     "date": "التاريخ"
+    },
+    "body": [
+     {
+      "type": "p",
+      "text": "أعلنت لجنة تحكيم LIT Lighting Design Awards أسماء الفائزين في موسم 2026، ومن بينهم تركيبتنا الجدارية LC0564 التي نالت لقب Winner في فئة Designer / Custom Lighting. صفحة الفائز متاحة على موقع الجائزة، وفيها اسم الاستوديو Vargov Design والمصمم الرئيسي أنطون فارغوف والفئة."
+     },
+     {
+      "type": "h",
+      "text": "ما هي هذه الجائزة؟"
+     },
+     {
+      "type": "p",
+      "text": "LIT Lighting Design Awards جائزة دولية لتصميم الإضاءة مقرها سويسرا. تكرّم الأعمال في ثلاثة مجالات: منتجات الإضاءة، والإضاءة المعمارية، وإضاءة العروض. وتقيّم المشاركاتِ لجنةُ تحكيم من ممارسي القطاع والأكاديميين وممثلي الصحافة المتخصصة."
+     },
+     {
+      "type": "p",
+      "text": "في عام 2026 أتمّت الجائزة عشر سنوات، واحتُفل بالذكرى في يونيو بحفل أُقيم في باريس. ووفق المنظمين، استقطب موسم الذكرى 1022 مشاركة من 63 دولة."
+     },
+     {
+      "type": "p",
+      "text": "الشهادة الاسمية موقّعة من إدارة الجائزة، وهي معروضة في قسم الجوائز إلى جانب شارة الفائز لعام 2026."
+     },
+     {
+      "type": "h",
+      "text": "لماذا هذه التركيبة بالذات؟"
+     },
+     {
+      "type": "p",
+      "text": "LC0564 تركيبة عن العالم تحت الماء. هيكل مخرّم ذهبي بحافة غير منتظمة كأنها ممزقة يستحضر هيكل إسفنجة بحرية، وفي خلاياه فقاعات حليبية كأنها هواء توقّف في طريقه إلى السطح. ويبدو أن البنية ما زالت تنمو على الجدار نفسه."
+     },
+     {
+      "type": "p",
+      "text": "في النهار هي نقش بارز ذهبي بإدراجات حليبية، يُقرأ من خلال صورته الظلية وتشابك خلاياه الكثيف. وفي المساء يخرج الضوء من الداخل عبر الفتحات بقعًا دافئة وومضات ذهبية حادة، فيزداد النقش عمقًا."
+     },
+     {
+      "type": "p",
+      "text": "إنها الجائزة الثانية للتركيبة هذا العام: ففي أغسطس نالت LC0564 لقب Gold Winner في MUSE Design Awards 2026."
+     },
+     {
+      "type": "h",
+      "text": "الفوز الثاني في LIT"
+     },
+     {
+      "type": "p",
+      "text": "سبق أن نالت العلامة تقديرًا في LIT. ففي عام 2022 فازت التركيبة LC0223 في الفئة نفسها، وكانت تُسمّى آنذاك Designer and Custom Lighting، وفي عام 2025 نالت التركيبة LC0447 تنويهًا شرفيًا (Honorable Mention). فوز 2026 هو الثاني، فالتنويه الشرفي لا يُحتسب فوزًا."
+     },
+     {
+      "type": "h",
+      "text": "ماذا تعني هذه الفئة؟"
+     },
+     {
+      "type": "p",
+      "text": "تجمع فئة Designer / Custom Lighting الضوءَ الذي يحمل توقيع مؤلفه والقطعَ التي تُجمَّع لمكان بعينه، لا تلك التي تُنتَج سلسلةً من نسخ متطابقة. تعيش LC0564 منفردة كلمسة مميزة، أو ضمن سلسلة، وعندها تنتشر الخلايا على الجدار كمستعمرة؛ ويُختار الحجم وعدد العناصر بحسب المكان."
+     },
+     {
+      "type": "p",
+      "text": "Made in Vargov."
      }
     ]
    }
