@@ -11963,6 +11963,17 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
+          "name": "Element size L200",
+          "value": "L200 × W40 × H60 mm"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Element weight L200",
+          "value": 0.21,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
           "name": "Element size L250",
           "value": "L250 × W50 × H75 mm"
         },
