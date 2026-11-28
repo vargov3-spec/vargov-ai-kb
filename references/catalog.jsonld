@@ -40406,12 +40406,12 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H180",
+          "name": "Element size H170",
           "value": "L55 × W30 × H180 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H180",
+          "name": "Element weight H170",
           "value": 0.07,
           "unitCode": "KGM"
         },
@@ -55476,12 +55476,12 @@
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Element size H180",
+          "name": "Element size H170",
           "value": "L55 × W30 × H180 mm"
         },
         {
           "@type": "PropertyValue",
-          "name": "Element weight H180",
+          "name": "Element weight H170",
           "value": 0.07,
           "unitCode": "KGM"
         },
